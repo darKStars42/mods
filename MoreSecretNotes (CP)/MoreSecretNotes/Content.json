@@ -1,0 +1,227 @@
+{
+	"Format": "2.5.0",
+	"Changes": [
+		{
+			"Action": "Include",
+			"FromFile": "assets/mail.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Tilemaps.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/objects.json"
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Backwoods",
+			"FromFile": "assets/bush.tmx",
+			"ToArea": {
+				"X": 28,
+				"Y": 26,
+				"Width": 2,
+				"Height": 2
+			},
+			"PatchMode": "Overlay"
+		},
+		{
+			"Action": "EditMap",
+			"Priority": "Early",
+			"Target": "Maps/Backwoods",
+			"MapTiles": [
+				{
+					"Layer": "Paths",
+					"Position": {
+						"X": 28,
+						"Y": 26
+					},
+					"Remove": true
+				}
+			]
+		},
+		{
+			"Target": "Mods/ichortower.SecretNoteFramework/Notes",
+			"Action": "EditData",
+			"Entries": {
+				"{{ModId}}_SecretNote01": {
+					"Title": "{{i18n:translation-key}}",
+					"Contents": "{{i18n:translation-key-2}}"
+				},
+				"{{ModId}}_SecretNote02": {
+					"Title": "{{i18n:translation-key-3}}",
+					"Contents": "{{i18n:translation-key-4}}",
+					"Conditions": "PLAYER_HAS_ACHIEVEMENT Current 5",
+					"ActionsOnFirstRead": [
+						"AddMoney 1000000",
+						"AddItem 74 5 0"
+					]
+				},
+				"{{ModId}}_SecretNote03": {
+					"Title": "{{i18n:translation-key-5}}",
+					"Contents": "{{i18n:translation-key-6}}"
+				},
+				"{{ModId}}_SecretNote04": {
+					"Title": "{{i18n:translation-key-7}}",
+					"Contents": "{{i18n:translation-key-8}}"
+				},
+				"{{ModId}}_SecretNote05": {
+					"Title": "{{i18n:translation-key-9}}",
+					"Contents": "{{i18n:translation-key-10}}"
+				},
+				"{{ModId}}_SecretNote06": {
+					"Title": "{{i18n:translation-key-11}}",
+					"Contents": "{{i18n:translation-key-12}}"
+				},
+				"{{ModId}}_SecretNote07": {
+					"Title": "{{i18n:translation-key-13}}",
+					"Contents": "{{i18n:translation-key-14}}"
+				},
+				"{{ModId}}_SecretNote08": {
+					"Title": "{{i18n:translation-key-15}}",
+					"Contents": "{{i18n:translation-key-16}}"
+				},
+				"{{ModId}}_SecretNote09": {
+					"Title": "{{i18n:translation-key-17}}",
+					"Contents": "{{i18n:translation-key-18}}"
+				},
+				"{{ModId}}_SecretNote10": {
+					"Title": "{{i18n:translation-key-19}}",
+					"Contents": "{{i18n:translation-key-20}}",
+					"Conditions": "LOCATION_ACCESSIBLE Desert"
+				},
+				"{{ModId}}_SecretNote11": {
+					"Title": "{{i18n:translation-key-21}}",
+					"Contents": "{{i18n:translation-key-22}}",
+					"Conditions": "MINE_LOWEST_LEVEL_REACHED 170",
+					"ActionsOnFirstRead": [
+						"AddMoney 5000"
+					]
+				},
+				"{{ModId}}_SecretNote12": {
+					"Title": "{{i18n:translation-key-23}}",
+					"Contents": "{{i18n:translation-key-24}}",
+					"Conditions": "RANDOM 0.0 [@addDailyLuck]",
+					"ActionsOnFirstRead": [
+						"AddMoney 1000"
+					]
+				},
+				"{{ModId}}_SecretNote13": {
+					"Title": "{{i18n:translation-key-25}}",
+					"Contents": "{{i18n:translation-key-26}}",
+					"Conditions": "MINE_LOWEST_LEVEL_REACHED 270",
+					"ActionsOnFirstRead": [
+						"AddMoney 100000"
+					]
+				},
+				"{{ModId}}_SecretNote14": {
+					"Title": "{{i18n:translation-key-27}}",
+					"Contents": "{{i18n:translation-key-28}}",
+					"Conditions": "PLAYER_CURRENT_MONEY Host 50000",
+					"ActionsOnFirstRead": [
+						"AddMoney -50000"
+					]
+				},
+				"{{ModId}}_SecretNote15": {
+					"Title": "{{i18n:translation-key-29}}",
+					"Contents": "{{i18n:translation-key-30}}"
+				},
+				"{{ModId}}_SecretNote16": {
+					"Title": "{{i18n:translation-key-31}}",
+					"Contents": "{{i18n:translation-key-32}}"
+				},
+				"{{ModId}}_SecretNote17": {
+					"Title": "{{i18n:translation-key-33}}",
+					"Contents": "{{i18n:translation-key-34}}",
+					"Conditions": "PLAYER_FRIENDSHIP_POINTS Current Abigail 2500",
+					"ActionsOnFirstRead": [
+						"AddItem 66 1"
+					]
+				},
+				"{{ModId}}_SecretNote18": {
+					"Title": "{{i18n:translation-key-35}}",
+					"Contents": "{{i18n:translation-key-36}}",
+					"Conditions": "IS_COMMUNITY_CENTER_COMPLETE true",
+					"ActionsOnFirstRead": [
+						"AddMoney 50000"
+					]
+				},
+				"{{ModId}}_SecretNote19": {
+					"Title": "{{i18n:translation-key-37}}",
+					"Contents": "*{{i18n:translation-key-38}}",
+					"Conditions": "DAY_OF_MONTH 1",
+					"ActionsOnFirstRead": [
+						"AddItem 499 3"
+					]
+				},
+				"{{ModId}}_SecretNote20": {
+					"Title": "{{i18n:translation-key-39}}",
+					"Contents": "{{i18n:translation-key-40}}"
+				},
+				"{{ModId}}_SecretNote21": {
+					"Title": "{{i18n:translation-key-41}}",
+					"Contents": "{{i18n:translation-key-42}}",
+					"ActionsOnFirstRead": [
+						"AddMail Host LewisDiaryRead"
+					]
+				},
+				"{{ModId}}_SecretNote22": {
+					"Title": "{{i18n:translation-key-43}}",
+					"Contents": "^Made by: Vincent",
+					"NoteImageTexture": "Mods/NotAGardener.MoreSecretNotes/SecretNotesImages",
+					"NoteImageTextureIndex": 3
+				},
+				"{{ModId}}_SecretNote23": {
+					"Title": "{{i18n:translation-key-44}}",
+					"Contents": "^A photo taken from space...",
+					"NoteImageTexture": "Mods/NotAGardener.MoreSecretNotes/vincentdrawing",
+					"NoteImageTextureIndex": 3
+				},
+				"{{ModId}}_SecretNote24": {
+					"Title": "{{i18n:translation-key-45}}",
+					"NoteImageTexture": "Mods/NotAGardener.MoreSecretNotes/backwoods",
+					"NoteImageTextureIndex": 3,
+					"ActionsOnFirstRead": [
+						"AddMail Host {{ModId}}_24Read received"
+					]
+				},
+				"{{ModId}}_SecretNote25": {
+					"Title": "{{i18n:translation-key-47}}",
+					"NoteImageTexture": "Mods/NotAGardener.MoreSecretNotes/directions",
+					"NoteImageTextureIndex": 3,
+					"ActionsOnFirstRead": [
+						"AddMail Host {{ModId}}_25Read received"
+					]
+				},
+				"{{ModId}}_SecretNote26": {
+					"Title": "{{i18n:translation-key-49}}",
+					"Contents": "{{i18n:translation-key-50}}"
+				},
+				"{{ModId}}_SecretNote27": {
+					"Title": "{{i18n:translation-key-51}}",
+					"Contents": "{{i18n:translation-key-52}}"
+				}
+			}
+		},
+		{
+			"Target": "Mods/NotAGardener.MoreSecretNotes/SecretNotesImages",
+			"Action": "Load",
+			"FromFile": "assets/textures/vincentdrawing.png"
+		},
+		{
+			"Target": "Mods/NotAGardener.MoreSecretNotes/vincentdrawing",
+			"Action": "Load",
+			"FromFile": "assets/textures/SecretNotesImages.png"
+		},
+		{
+			"Target": "Mods/NotAGardener.MoreSecretNotes/backwoods",
+			"Action": "Load",
+			"FromFile": "assets/textures/backwoods.png"
+		},
+		{
+			"Target": "Mods/NotAGardener.MoreSecretNotes/directions",
+			"Action": "Load",
+			"FromFile": "assets/textures/directions.png"
+		}
+	]
+}

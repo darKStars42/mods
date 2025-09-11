@@ -1,0 +1,103 @@
+{
+    "Changes": 
+        [
+
+// ***** DAILY DIALOGUE AFTER QUITTING (after 10 heart event)
+
+// (before CC complete)
+    {
+        "LogName": "Quit Dialogue",
+            "Action": "EditData",
+            "When": {
+                "HasFlag |contains=ccIsComplete": false
+            },
+            "Target": "Characters/Dialogue/SVTNiki",
+            "Entries": {
+                "Wed": "{{i18n:SVTNiki.DailyDialogue.Wed.{{Random: 5,6,7,8 }} }}",
+            }
+    },
+// (after CC complete)
+
+    {
+        "LogName": "Quit Dialogue",
+        "Action": "EditData",
+        "When": {
+            "HasFlag": "ccIsComplete"
+        },
+        "Target": "Characters/Dialogue/SVTNiki",
+        "Entries": {
+            "Wed": "{{i18n:SVTNiki.DailyDialogue.Wed.{{Random: {{Range: 7,10}} }} }}",
+        }
+    },
+
+// (CC independent)
+{
+    "LogName": "Seasonal Dialogue (Quit)",
+    "Action": "EditData",
+    "Target": "Characters/Dialogue/SVTNiki",
+    "Entries": {
+        "spring_1": "{{i18n:SVTNiki.spring_1}}",
+        "spring_5": "{{i18n:SVTNiki.spring_Fri.1}}",
+        "spring_7": "{{i18n:SVTNiki.spring_Sun.quit.1}}", // Changed
+        "spring_12": "{{i18n:SVTNiki.spring_Fri.2}}",
+        "spring_14": "{{i18n:SVTNiki.spring_Sun.2}}",
+        "spring_19": "{{i18n:SVTNiki.spring_Fri.3}}",
+        "spring_21": "{{i18n:SVTNiki.spring_Sun.3}}",
+        "spring_26": "{{i18n:SVTNiki.spring_Fri.4}}",
+        "spring_28": "{{i18n:SVTNiki.spring_Sun.4}}",
+
+        "summer_5": "{{i18n:SVTNiki.summer_Fri.1}}",
+        "summer_7": "{{i18n:SVTNiki.summer_Sun.1}}",
+        "summer_12": "{{i18n:SVTNiki.summer_Fri.2}}",
+        "summer_14": "{{i18n:SVTNiki.summer_Sun.2}}",
+        "summer_19": "{{i18n:SVTNiki.summer_Fri.3}}",
+        "summer_21": "{{i18n:SVTNiki.summer_Sun.3}}",
+        "summer_26": "{{i18n:SVTNiki.summer_Fri.4}}",
+        "summer_28": "{{i18n:SVTNiki.summer_Sun.4}}",
+
+        "fall_5": "{{i18n:SVTNiki.fall_Fri.1}}",
+        "fall_7": "{{i18n:SVTNiki.fall_Sun.quit.1}}", // Changed
+        "fall_12": "{{i18n:SVTNiki.fall_Fri.2}}",
+        "fall_14": "{{i18n:SVTNiki.fall_Sun.2}}",
+        "fall_19": "{{i18n:SVTNiki.fall_Fri.3}}",
+        "fall_21": "{{i18n:SVTNiki.fall_Sun.3}}",
+        "fall_26": "{{i18n:SVTNiki.fall_Fri.4}}",
+        "fall_28": "{{i18n:SVTNiki.fall_Sun.4}}",
+
+        "winter_5": "{{i18n:SVTNiki.winter_Fri.quit.1}}", // Changed
+        "winter_7": "{{i18n:SVTNiki.winter_Sun.quit.1}}", // Changed
+        "winter_12": "{{i18n:SVTNiki.winter_Fri.2}}",
+        "winter_14": "{{i18n:SVTNiki.winter_Sun.2}}",
+        "winter_19": "{{i18n:SVTNiki.winter_Fri.3}}",
+        "winter_21": "{{i18n:SVTNiki.winter_Sun.3}}",
+        "winter_26": "{{i18n:SVTNiki.winter_Fri.4}}",
+        "winter_28": "{{i18n:SVTNiki.winter_Sun.4}}",
+
+/*        "summer_1": 
+        "fall_1": "",
+        "winter_1": "",
+*/
+
+/*        "spring_12": "", // Day before the Egg Festival
+        "spring_23": "", // Day before the Flower Dance
+        "summer_10": "", // Day before the Luau
+        "summer_27": "", // Day before the Midnight Jellies
+        "fall_15": "", // Day before the Stardew Fair
+        "fall_26": "", // Day before Spirit's Eve
+        "winter_7": "", // Day before the Ice Festival
+        "winter_24": "", // Day before Winter Star
+        */
+                }
+        },
+    
+        {	
+            "LogName": "Quit Dialogue - rainy day",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/rainy",
+            "Entries": {
+                    "SVTNiki": "{{i18n:SVTNiki.rainy.quit.{{Random:{{Range: 1,6}} }} }}"
+                     }
+        },
+    
+    ]
+}

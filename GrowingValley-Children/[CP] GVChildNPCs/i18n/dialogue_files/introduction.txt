@@ -1,0 +1,155 @@
+
+------------------
+Introduction to dialogue_files
+------------------
+
+If you need to make a change for your translation that can't be done in the i18n file alone, such as:
+	- passing a token that isn't included into the i18n token so you can use it
+	- adding completely new lines if, for example, the dialogue needs variants for gendered language that doesn't exist in English
+
+These files will give you quite a lot more power to do so. In fact, if you need to, you can translate just by changing the dialogue in these files, without using i18n at all!
+
+------------------
+Making a replacement file (best for a translation that won't use i18n):
+------------------
+Copy/paste the file you want to replace, then change the language code at the end of the name from "en" to the language code of your target language (such as "zh" or "ru"), and it will automatically be used instead of the en version. Otherwise, the en version of the file will load by default.
+
+For example, if I wanted to replace the contents of "default_firstborn.en.json" to write a French translation, the new file for the replacement would be named "default_firstborn.fr.json".
+
+------------------
+Making an edit file (best for translations that still use i18n):
+------------------
+If there's a specific line of dialogue you want to target while keeping the rest the same, you can apply an edit to the "en" file. 
+
+Copy/paste the file you want to edit, but add "_edit" before ".en". Then, change the "en" at the end of the name into the language code of your target language (such as "zh" or "ru"). This file will apply edits to the default en version of the file when playing in the target language. You can delete everything in this file except for the entries you want to edit. Make sure to delete the Include action at the bottom of the file, too.
+
+For example, if I wanted to edit parts of "default_firstborn.en.json" to write a French translation, the new file to apply the edits would be named "default_firstborn_edit.fr.json".
+
+- NOTE: Gift taste dialogue (love, like, neutral, dislike, hate) currently can't be edited using these steps for an edit file (unique gift lines can, though). Once LittleNPCs is updated for Content Patcher 2.1.0+, I'll be able to use a CP 2.3.0 feature that'll make this easily possible.
+
+I've left example files that separate the SebMaru spouse check in the default_firstborn and default_secondborn files when the game language is set to Chinese, allowing them to refer to Robin as their paternal or their maternal grandmother depending on the player's spouse. 
+	- The translations used in this example are taken and modified from Tbelost's Mandarin Chinese translation of Growing Valley, with a minor context correction included (though if there's an issue with my corrections or modifications, or any other concern, please let me know!)
+
+
+------------------
+
+------------------
+If you want to make edits to the dialogue files, you're probably going to want to know about this mod's tokens. I'll include the full explanation below in case you're interested, but I'll cover the basics and most relevant details to start:
+
+Most relevant to translating might be the gender of the player's spouse or roommate; this can be checked with the {{CompanionGender}} token, which should return Male, Female, or Undefined. For handling gendered language, you may need to split dialogue edits up using a "When" condition. This link has more information about When conditions: https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide/tokens.md#conditions
+			Preformatted When conditions for copy/pasting: 
+			Male spouse/roommate:	
+			"When": {"CompanionGender": "Male"},
+			
+			Female spouse/roommate:
+			"When": {"CompanionGender": "Female"},
+			
+			Undefined spouse/roommate:
+			"When": {"CompanionGender|contains=Male,Female": false},
+
+Though it isn't currently used for the English dialogue (at least, not while I'm writing this), the gender of the children can be checked in the same manner with {{FirstbornGender}} and {{SecondbornGender}} if needed. You can use the same preformatted "When" conditions as above, just changing the token name.
+
+You may want to dodge using the pronoun system in translation and instead rely entirely on gender for all gendered language, especially if the target language has grammar that just isn't compatible with the setup. I've implemented manual toggles for overriding gender checks, so players will still have some options.
+
+The other important tokens are the parental terms. {{Random: {{ParentFarmer}} }} is the token used when children talk about the player, and {{Random: {{ParentSpouse}} }} is the token for talking about the spouse/roommate. You won't see the "Random" part in the i18n file because I passed it in the i18n token, but if you directly edit the dialogue files, you'll need to include it.
+
+The children's own names use the token {{FirstbornDisplayName}} or {{SecondbornDisplayName}}.
+The spouse's name uses the token {{SpouseName}}, which gets the spouse's translated name if a translation exists.
+The roommate's name uses the token {{RoommateName}}, which gets the roommate's translated name if a translation exists.
+
+If you want to pass additional existing tokens into existing i18n keys, you can read about it here: https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide/translations.md#can-i-use-content-patcher-tokens-in-i18n-files
+Looking at my existing dialogue that passes tokens in i18n could help too.
+
+------------------
+
+------------------
+This is the full-length guide to tokens that I include in my custom child template files (though it might not be so useful, as it's written to guide people through writing original dialogue): 
+
+If the child says their own name, use the {{FirstbornDisplayName}} token or {{SecondbornDisplayName}} token to grab it, depending on their age order. Same goes for their sibling's name, though the token for {{SecondbornDisplayName}} will fail if an older child doesn't have a younger sibling.
+
+There are 2 tokens for parental titles (one for the player, one for spouse/roommates) and 6 spouse/roommate pronoun tokens.
+	
+	ParentFarmer is the token for the player as a parent. This will typically be something like Mom, Dad, Mama, Papa, or the player's name. Actually, the player can configure it to be whatever they want... but those are the terms you should expect ahaha.
+		Copy/paste:
+		{{Random: {{ParentFarmer}} }}
+	
+	Similar to ParentFarmer, ParentSpouse is the token for the player's spouse or roommate (yes, it applies to roommates too... I named it too early...). It can also be anything, but expect parental titles (again, Mom, Dad, and the like) or the character's name.
+		Copy/paste:
+		{{Random: {{ParentSpouse}} }}
+	
+	The pronoun tokens for the player's companion are as follows: 
+	
+		SpSub (subject pronouns such as He, She, or They)
+		Copy/paste: 
+			START OF A SENTENCE:
+			{{Random: {{SpSub}} }}
+			
+			MIDDLE OF A SENTENCE:
+			{{lowercase:{{Random: {{SpSub}} }} }}
+			
+		
+		SpObj (object pronouns such as Him, Her, or Them)
+		Copy/paste: 
+			START OF A SENTENCE:
+			{{Random: {{SpObj}} }}
+			
+			MIDDLE OF A SENTENCE:
+			{{lowercase:{{Random: {{SpObj}} }} }}
+			
+		SpPD (possessive determiners such as His, Her, or Their)
+		Copy/paste: 
+			START OF A SENTENCE:
+			{{Random: {{SpPD}} }}
+			
+			MIDDLE OF A SENTENCE:
+			{{lowercase:{{Random: {{SpPD}} }} }}
+			
+		SpPos (possessive pronouns such as His, Hers, or Theirs)
+		Copy/paste: 
+			START OF A SENTENCE:
+			{{Random: {{SpPos}} }}
+			
+			MIDDLE OF A SENTENCE:
+			{{lowercase:{{Random: {{SpPos}} }} }}
+			
+		SpRef (reflexive pronouns such as Himself, Herself, Themselves, or Themself)
+		Copy/paste: 
+			START OF A SENTENCE:
+			{{Random: {{SpRef}} }}
+			
+			MIDDLE OF A SENTENCE:
+			{{lowercase:{{Random: {{SpRef}} }} }}
+			
+		SpPlu (a true/false value which, when true, indicates that following verbs should follow plural congugation patterning. E.g.: "they is" when false, "they are" when true. You'll want a "When" condition on some of your dialogue edits to account for this. https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide/tokens.md#conditions)
+			Copy/paste: 
+			FALSE (IS):	
+			"When": {"SpPlu": "false"},
+			
+			TRUE (ARE):
+			"When": {"SpPlu": "true"},
+		
+	
+	Each of these tokens (except the last true/false token) can take multiple values separated by commas, so I recommend that you use them all alongside "Random" (e.g.: instead of just "{{ParentFarmer}}", use "{{Random: {{ParentFarmer}} }}"
+	
+	In addition, pronoun tokens recommend an uppercase first letter for the input, so if you use one mid-sentence (you likely will), make sure to use "lowercase" too (e.g "{{lowercase:{{Random: {{SpSub}} }} }}")
+	
+	I've left copy/paste notes that you can just... copy/paste into the places where you need each value ahaha
+	
+	In addition to that, I have a few tokens I made for easy use in conditions.
+		SiblingStatus: "only" (when there is only one child), "newborn" (added in 1.0.1, when there is a second child who hasn't yet become an NPC) "sibling" (when there is more than one NPC child)
+		FarmerCompanion: "single" (when farmer has no roommate/spouse), "company" (when farmer has a roommate or spouse)
+		CompanionType: "spouse" (when farmer has a spouse), "roommate" (when farmer has a roommate), "none" (when farmer has neither)
+		SpouseName: Gets the display name of the player's spouse
+		RoommateName: Gets the display name of the player's roommate
+		LeoHome: "mainlandLeo" (when Leo has moved into his treehouse on the mainland), "islandLeo" (before Leo has moved into his treehouse on the mainland)
+
+	If you want to write dialogue for the first born child that only appears when they have a younger sibling, you should use a "When" condition on some of your dialogue edits. https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide/tokens.md#conditions
+			Copy/paste: 
+			NO SIBLING:	
+			"When": {"SiblingStatus": "only"},
+			
+			HAS BABY/TODDLER SIBLING:
+			"When": {"SiblingStatus": "newborn"},
+			
+			HAS LITTLENPC SIBLING:
+			"When": {"SiblingStatus": "sibling"},

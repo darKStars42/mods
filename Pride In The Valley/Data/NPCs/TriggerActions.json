@@ -1,0 +1,123 @@
+{
+    "Changes": [
+        {
+            "LogName": "PITV's Trigger Actions For Quests",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "sapphicsaph_pitv.Rainbow_Shells": {
+                    "Id": "sapphicsaph_pitv.Rainbow_Shells",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current sapphicsaph_pitv.RainbowCraftMail tomorrow",
+                    "Condition": "PLAYER_FRIENDSHIP_POINTS Current Penny 375, SEASON spring summer, PLAYER_HAS_MAIL Any sapphicsaph_pitv.PrideVolumeWelcome Received"
+                },
+                "sapphicsaph_pitv.Soup_For_Seb": {
+                    "Id": "sapphicsaph_pitv.Soup_For_Seb",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current sapphicsaph_pitv.SoupForSebMail tomorrow",
+                    "Condition": "YEAR 2, PLAYER_NPC_RELATIONSHIP Current Sam Friendly, PLAYER_NPC_RELATIONSHIP Current Sebastian Friendly, PLAYER_HAS_COOKING_RECIPE Current Pumpkin Soup, SEASON summer fall, PLAYER_FARMHOUSE_UPGRADE Current 1"
+                },
+                "sapphicsaph_pitv.Fruits_Salad": {
+                    "Id": "sapphicsaph_pitv.Fruits_Salad",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current sapphicsaph_pitv.FruitsSaladMail tomorrow",
+                    "Condition": "SEASON summer, PLAYER_NPC_RELATIONSHIP Current Leah Friendly, PLAYER_NPC_RELATIONSHIP Current Haley Friendly, PLAYER_FARMING_LEVEL Current 4"
+                },
+                "sapphicsaph_pitv.Bartender_Hobby": {
+                    "Id": "sapphicsaph_pitv.Bartender_Hobby",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current sapphicsaph_pitv.BartenderHobbyMail tomorrow",
+                    "Condition": "PLAYER_STAT Any rabbitWoolProduced 8, PLAYER_HEARTS Current Vincent 4, DAY_OF_WEEK Tue Wed Fri"
+                },
+                "sapphicsaph_pitv.Cacti_For_A_Guy": {
+                    "Id": "sapphicsaph_pitv.Cacti_For_A_Guy",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current sapphicsaph_pitv.CactiForAGuyMail tomorrow",
+                    "Condition": "PLAYER_VISITED_LOCATION Any Desert, PLAYER_NPC_RELATIONSHIP Current Sebastian Friendly, PLAYER_NPC_RELATIONSHIP Current Sam Friendly, SEASON fall winter"
+                },
+                "sapphicsaph_pitv.Artisan_Gus": {
+                    "Id": "sapphicsaph_pitv.Artisan_Gus",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current sapphicsaph_pitv.ArtisanGusMail tomorrow",
+                    "Condition": "YEAR 2, PLAYER_NPC_RELATIONSHIP Current Emily Friendly, PLAYER_STAT Any duckEggsLayed 16"
+                },
+                "sapphicsaph_pitv.Willy_Mead": {
+                    "Id": "sapphicsaph_pitv.Willy_Mead",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current sapphicsaph_pitv.WillyMeadMail tomorrow",
+                    "Condition": "YEAR 2, PLAYER_FARMING_LEVEL Current 8, season spring fall, PLAYER_HEARTS Current Willy 6"
+                },
+                "sapphicsaph_pitv.Partners_In_Pineapples": {
+                    "Id": "sapphicsaph_pitv.Partners_In_Pineapples",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current sapphicsaph_pitv.PartnersInPineapplesMail tomorrow",
+                    "Condition": "IS_VISITING_ISLAND Jodi"
+                }
+            }
+        },
+
+        {
+            "LogName": "PITV's Trigger Action For Hat Mouse Mail",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "sapphicsaph_pitv.Hat_Mouse_Mail": {
+                    "Id": "sapphicsaph_pitv.Hat_Mouse_Mail",
+                    "Trigger": "DayStarted",
+                    "Actions": [
+                        "AddMail Current sapphicsaph_pitv.ValidHatMouseMail now",
+                        "AddConversationTopic HatMouseTheAllyPITV 7"
+                    ],
+                    "Condition": "SEASON_DAY fall 18"
+                }
+            }
+        },
+
+        {
+            "LogName": "PITV'S Trigger Actions For GSFP",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "sapphicsaph_pitv.Pride_Volume_Welcome": {
+                    "Id": "sapphicsaph_pitv.Pride_Volume_Welcome",
+                    "Trigger": "DayStarted",
+                    "Actions": [
+                        "AddMail Current sapphicsaph_pitv.PrideVolumeWelcome now",
+                        "AddConversationTopic WelcomeToPridePITV 7"
+                    ],
+                    "Condition": "SEASON_DAY spring 15"
+                },
+                "sapphicsaph_pitv.Pride_Volume_1": {
+                    "Id": "sapphicsaph_pitv.Pride_Volume_1",
+                    "Trigger": "DayStarted",
+                    "Actions": [
+                        "AddMail Current sapphicsaph_pitv.PrideVolume1 now",
+                        "AddConversationTopic PrideSeasonStartPITV 7"
+                    ],
+                    "Condition": "SEASON_DAY summer 1"
+                },
+                "sapphicsaph_pitv.Pride_Volume_2": {
+                    "Id": "sapphicsaph_pitv.Pride_Volume_2",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current sapphicsaph_pitv.PrideVolume2 now",
+                    "Condition": "SEASON_DAY summer 8"
+                },
+                "sapphicsaph_pitv.Pride_Volume_3": {
+                    "Id": "sapphicsaph_pitv.Pride_Volume_3",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current sapphicsaph_pitv.PrideVolume3 now",
+                    "Condition": "SEASON_DAY summer 15"
+                },
+                "sapphicsaph_pitv.Pride_Volume_4": {
+                    "Id": "sapphicsaph_pitv.Pride_Volume_4",
+                    "Trigger": "DayStarted",
+                    "Actions": [
+                        "AddMail Current sapphicsaph_pitv.PrideVolume4 now",
+                        "AddConversationTopic PrideSeasonGiftPITV 7"
+                    ],
+                    "Condition": "SEASON_DAY summer 22"
+                }
+            }
+        }
+    ]
+}

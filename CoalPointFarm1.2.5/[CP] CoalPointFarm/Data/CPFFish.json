@@ -1,0 +1,181 @@
+{
+	"Changes": [
+		
+		//BEHAVIOUR
+		{
+			"LogName": "Coal Point Farm Fish Objects",
+			"Action": "EditData",
+			"Target": "Data/Fish",
+			"Entries": {
+				"{{ModId}}_CPFCoalFish": "Coal Fish/70/smooth/12/28/600 1200 2000 2600/spring/both/684 .35/1/.30/.1/0/true",
+				"{{ModId}}_CPFPinefin": "Pinefin/50/mixed/8/16/600 2600/spring/both/684 .35/1/.40/.1/0/true",
+				"{{ModId}}_CPFAlgaeCoveredChub": "Algae-Covered Chub/35/dart/12/25/600 2600/spring/both/684 .35/2/.55/.1/0/true",
+			},
+		},
+		
+		//AQUARIUM
+		{
+			"LogName": "Coal Point Farm Fish Aquarium Tiles",
+			"Action": "Load",
+			"Target": "CoalPointFarmAquariumFish",
+			"FromFile": "assets/sprites/CPFAquariumFish.png",
+		},
+		{
+			"LogName": "Coal Point Farm Fish Aquarium",
+			"Action": "EditData",
+			"Target": "Data/AquariumFish",
+			"Entries": {
+				"{{ModId}}_CPFCoalFish": "0/fish/////CoalPointFarmAquariumFish",
+				"{{ModId}}_CPFPinefin": "2/fish/////CoalPointFarmAquariumFish",
+				"{{ModId}}_CPFAlgaeCoveredChub": "1/fish/////CoalPointFarmAquariumFish",
+			},
+		},
+		
+		//FISH PONDS
+		{
+			"LogName": "Coal Point Farm Fish Pond Data",
+			"Action": "EditData",
+			"Target": "Data/FishPondData",
+			"Entries": {
+				"{{ModId}}_CPFCoalFish": {
+					"ID": "{{ModId}}_CPFCoalFish",
+					"RequiredTags": [
+						"fish_coalfish"
+					],
+					"SpawnTime": -1,
+					"ProducedItems": [
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.2,
+							"ItemID": "(O)812", //Roe
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.4,
+							"ItemID": "(O)812", //Roe
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 10,
+							"Chance": 0.99,
+							"ItemID": "(O)382", //Coal
+							"MinQuantity": 10,
+							"MaxQuantity": 10
+						}
+					],
+					"PopulationGates": {
+						"3": [
+							"(O)68 3",
+							"(O)70 3",
+							"(O)66 3"
+						],
+						"6": [
+							"(O)68 5",
+							"(O)70 5",
+							"(O)66 5",
+							"(O)64 3",
+							"(O)60 3"
+						],
+						"9": [
+							"(O)72 5"
+						],
+					}
+				},
+				"{{ModId}}_CPFAlgaeCoveredChub": {
+					"ID": "{{ModId}}_CPFAlgaeCoveredChub",
+					"RequiredTags": [
+						"fish_algaecoveredchub"
+					],
+					"SpawnTime": -1,
+					"ProducedItems": [
+						{
+							"RequiredPopulation": 1,
+							"Chance": 0.3,
+							"ItemID": "(O)153", //Algae
+							"MinQuantity": 2,
+							"MaxQuantity": 5
+						},
+						{
+							"RequiredPopulation": 3,
+							"Chance": 0.5,
+							"ItemID": "(O)153", //Algae
+							"MinQuantity": 2,
+							"MaxQuantity": 5
+						},
+						{
+							"RequiredPopulation": 6,
+							"Chance": 0.5,
+							"ItemID": "(O)812", //Roe
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 10,
+							"Chance": 0.8,
+							"ItemID": "(O)812", //Roe
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						}
+					],
+					"PopulationGates": {
+						"2": [
+							"(O)92 30",
+							"(O)771 15",
+						],
+						"5": [
+							"(O)702 2 5",
+						],
+						"9": [
+							"(O)196 2",
+						],
+					}
+				},
+				"{{ModId}}_CPFPinefin": {
+					"ID": "{{ModId}}_CPFPinefin",
+					"RequiredTags": [
+						"fish_pinefin"
+					],
+					"SpawnTime": -1,
+					"ProducedItems": [
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.3,
+							"ItemID": "(O)812", //Roe
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 6,
+							"Chance": 0.5,
+							"ItemID": "(O)726", //Pine Tar
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 10,
+							"Chance": 0.8,
+							"ItemID": "(O)726", //Pine Tar
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						}
+					],
+					"PopulationGates": {
+						"5": [
+							"(O)726 1 3",
+							"(O)725 1 3",
+							"(O)724 1 3",
+						],
+						"8": [
+							"(O)726 2 5",
+							"(O)725 2 5",
+							"(O)724 2 5",
+						],
+					}
+				},
+			}
+		}
+	]
+}

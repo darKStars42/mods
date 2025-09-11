@@ -1,0 +1,126 @@
+{
+    "Format": "2.7.0",
+    "Changes": [
+		{
+			"Action": "Load",
+            "Target": "JulyAsparagus/object, JulyAsparagus/crop, JulyAsparagus/roasted_asparagus",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+		},
+		       {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "JulyAsparagus_AsparagusSeeds": {
+                    "Name": "JulyAsparagus_AsparagusSeeds",
+                    "Displayname": "{{i18n:JulyAsparagus_AsparagusSeeds.Displayname}}",
+                    "Description": "{{i18n:JulyAsparagus_AsparagusSeeds.Description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 20,
+                    "Texture": "JulyAsparagus/object",
+                    "SpriteIndex": 0,
+                },
+                "JulyAsparagus_Asparagus": {
+                    "Name": "JulyAsparagus_Asparagus",
+                    "Displayname": "{{i18n:JulyAsparagus_Asparagus.Displayname}}",
+                    "Description": "{{i18n:JulyAsparagus_Asparagus.Description}}",
+                    "Type": "Basic",
+                    "Category": -75,
+                    "Price": 180,
+                    "Edibility": 10,
+                    "Texture": "JulyAsparagus/object",
+                    "SpriteIndex": 1,
+                    "ExcludeFromShippingCollection": false,
+                },
+				"JulyAsparagus_RoastedAsparagus": {
+                    "Name": "JulyAsparagus_RoastedAsparagus",
+                    "Displayname": "{{i18n:JulyAsparagus_RoastedAsparagus.Displayname}}",
+                    "Description": "{{i18n:JulyAsparagus_RoastedAsparagus.Description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 550,
+                    "Texture": "JulyAsparagus/roasted_asparagus",
+                    "SpriteIndex": 0,
+					"Edibility": 100
+                }
+            }
+        },
+		        {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "JulyAsparagus_AsparagusSeeds": {
+                    "Seasons": [
+                        "spring"
+                    ],
+                    "DaysInPhase": [
+                        1,
+                        3,
+                        4,
+						4
+                    ],
+                    "RegrowDays": -1,
+                    "HarvestMinStack": 1,
+                    "HarvestMaxStack": 1,
+                    "HarvestItemId": "JulyAsparagus_Asparagus",
+					"HarvestMethod": "Scythe",
+                    "Texture": "JulyAsparagus/crop",
+                    "SpriteIndex": 0,
+                    "CountForMonoculture": true,
+                    "CountForPolyculture": true,
+                }
+            }
+        },
+		        { 
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "SeedShop",
+                "Items"
+            ],
+            "Entries": {
+                "JulyAsparagus_AsparagusSeeds": {
+                    "Id": "JulyAsparagus_AsparagusSeeds",
+                    "ItemId": "JulyAsparagus_AsparagusSeeds",
+					"Condition": "SEASON Spring"
+                }
+            },
+			 "MoveEntries": [
+                {
+                    "ID": "JulyAsparagus_AsparagusSeeds",
+                    "AfterID": "(O)474"
+                }
+            ]
+        },
+				        { 
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Saloon",
+                "Items"
+            ],
+            "Entries": {
+                "JulyAsparagus_RoastedAsparagusRecipe": {
+                    "Id": "JulyAsparagus_RoastedAsparagusRecipe",
+                    "ItemId": "JulyAsparagus_RoastedAsparagus",
+					"IsRecipe": true,
+					"ObjectInternalName": "JulyAsparagus_RoastedAsparagus",
+					"Price": 500
+                }
+            },
+			 "MoveEntries": [
+                {
+                    "ID": "JulyAsparagus_RoastedAsparagusRecipe",
+                    "AfterID": "(O)395"
+                }
+            ]
+        },
+				{
+			"Action": "EditData",
+			"Target": "Data/CookingRecipes",
+			"Entries": {
+			"JulyAsparagus_RoastedAsparagus": "JulyAsparagus_Asparagus 2 (O)247 1/10 10/JulyAsparagus_RoastedAsparagus/null/"
+			}
+		}
+    ]
+}

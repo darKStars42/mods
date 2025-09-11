@@ -1,0 +1,148 @@
+{
+	"Changes": [
+		{
+			"LogName": "NPC Manifestation",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"James": {
+					"DisplayName": "{{i18n: SKE.James}}",
+					"Gender": "Male",
+					"Age": "Child",
+					"BirthSeason": "Spring",
+					"BirthDay": 20,
+					"HomeRegion": "Town",
+					"Manner": "Polite",
+					"SocialAnxiety": "Outgoing",
+					"Optimism": "Neutral",
+					"CanBeRomanced": false,
+					"LoveInterest": null,
+					"IntroductionsQuest": "{{IncludeInIntroductions}}",
+					"CanVisitIsland": "!DAY_OF_WEEK Tuesday Wednesday Friday",
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "JoshHouse",
+							"Tile": {
+								"X": 23,
+								"Y": 11
+							},
+							"Direction": "Down"
+						}
+					],
+					"Breather": false,
+					"Appearance": [
+						{
+							"Id": "James.Spring",
+							"Season": "Spring",
+							"Portrait": "Portraits/James_Spring",
+							"Sprite": "Characters/James_Spring"
+						},
+						{
+							"Id": "James.Summer",
+							"Season": "Summer",
+							"Portrait": "Portraits/James_Summer",
+							"Sprite": "Characters/James_Summer"
+						},
+						{
+							"Id": "James.Fall",
+							"Season": "Fall",
+							"Portrait": "Portraits/James_Fall",
+							"Sprite": "Characters/James_Fall"
+						},
+						{
+							"Id": "James.WinterIndoor",
+							"Season": "Winter",
+							"Outdoors": false,
+							"Portrait": "Portraits/James_Winter_Inside",
+							"Sprite": "Characters/James_Winter_Inside"
+						},
+						{
+							"Id": "James.WinterOutdoor",
+							"Season": "Winter",
+							"Indoors": false,
+							"Portrait": "Portraits/James_Winter_Outside",
+							"Sprite": "Characters/James_Winter_Outside"
+						},
+						{
+							"Id": "James.Beach",
+							"IsIslandAttire": true,
+							"Portrait": "Portraits/James_Summer",
+							"Sprite": "Characters/James_Summer"
+						}
+					]
+				}
+			}
+		},
+		{
+			"LogName": "James Base Art Loads",
+			"Action": "Load",
+			"Target": "Portraits/James, Characters/James",
+			"FromFile": "Assets/James/{{Target}}_Spring.png",
+			"Priority": "Exclusive"
+
+		},
+		{
+			"LogName": "James Seasonal Art Loads",
+			"Action": "Load",
+			"Target": "Portraits/James_Spring, Characters/James_Spring, Portraits/James_Summer, Characters/James_Summer, Portraits/James_Fall, Characters/James_Fall, Portraits/James_Winter_Inside, Characters/James_Winter_Inside, Portraits/James_Winter_Outside, Characters/James_Winter_Outside",
+			"FromFile": "assets/James/{{Target}}.png",
+			"Priority": "Exclusive"
+		},
+		{
+			"LogName": "James Dialogue & Schedule Blank",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/James, Characters/schedules/James",
+			"FromFile": "Data/blank.json"
+		},
+		{
+			"LogName": "James Dialogue & Schedule Includes",
+			"Action": "Include",
+			"FromFile": "Data/James/James_Dialogue.json, Data/James/James_Schedule.json"
+		},
+		{
+			"LogName": "James Festival Includes",
+			"Action": "Include",
+			"FromFile": "Data/James/James_Festivals.json",
+			"When": {
+				"VisitFestivals": "True"
+			}
+		},
+		{
+			"LogName": "NPC Gift Tastes",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"James": "{{i18n: SKE.James.love}}/373 340 223 233/{{i18n: SKE.James.like}}/167 799 798 767 305 420 422 682 156/{{i18n: SKE.James.dislike}}/18 22 402 418 421/{{i18n: SKE.James.hate}}/221 346/{{i18n: SKE.James.neutral}}/690/"
+			}
+		},
+		{
+			"LogName": "Animations",
+			"Action": "EditData",
+			"Target": "Data/animationDescriptions",
+			"Entries": {
+				"James_Read": "24/24/24",
+				"James_Sleep": "24/24/24",
+				"James_PlayToys": "18/19/19"
+			}
+		},
+		{
+			"LogName": "James Room",
+			"Action": "EditMap",
+			"Target": "Maps/JoshHouse",
+			"MapProperties": {
+				"Doors": "5 9 1 120 10 9 1 120 28 10 1 120"
+			},
+			"FromFile": "Assets/James/JamesRoom{{SVELUTICompat}}",
+			"ToArea": {
+				"X": 11,
+				"Y": 8,
+				"Width": 15,
+				"Height": 7
+			},
+			"When": {
+				"RoomsEnabled": "true"
+			}
+		}
+	]
+}

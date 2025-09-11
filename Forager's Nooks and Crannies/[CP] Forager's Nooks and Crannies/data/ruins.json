@@ -1,0 +1,180 @@
+{
+		
+"Changes": [
+
+{
+	"LogName":"Map Patch Secret Woods for Ruins",
+	"Action": "EditMap",
+	"Target": "Maps/Woods", 
+	"FromFile": "assets/Maps/WoodsEditRuins.tmx",
+	"ToArea": {
+			"X": 42,
+			"Y": 27,
+			"Width": 1,
+			"Height": 3
+			},
+	"When": {
+		"Atelier.Cauldron/ConfigValue:WildFood": true, "IsCommunityCenterComplete": true
+	}
+},
+
+{
+	"LogName":"Add Warp to Secret Woods for Ruins",
+	"Action": "EditMap",
+	"Target": "Maps/Woods",
+	"MapTiles": [
+		{
+		"Position": {
+			"X": 42,
+			"Y": 28
+		},
+		"Layer": "Buildings",
+		"SetProperties": {"Action": "Warp 12 1 Wildflour.NooksCrannies_Ruins"}
+		}
+	],
+	"When": {
+		"Atelier.Cauldron/ConfigValue:WildFood": true, "IsCommunityCenterComplete": true
+	}
+},
+
+{
+	"LogName":"Add Warps to Ruins",
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_Ruins",
+	"AddWarps": [
+		"12 -1 Woods 43 28"
+	]	
+},
+
+////////////////////////
+// WILD TREE SPAWNING //
+////////////////////////
+
+{
+	"LogName":"Tree Spawn WF Enabled",
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_Ruins",
+	"When": {"Atelier.Cauldron/ConfigValue:WildFood": "True", "HasMod |contains=Wildflour.SASS": false},
+	"MapTiles": [
+		{
+			"Position": { "X": 29, "Y": 18 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.AtelierGoods_Pistachio_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 40, "Y": 18 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.AtelierGoods_Cashew_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 26, "Y": 25 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.AtelierGoods_Cacao_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 43, "Y": 25 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.AtelierGoods_Elder_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 40, "Y": 31 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.AtelierGoods_Anise_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 29, "Y": 31 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.AtelierGoods_Lemon_Sapling"
+			}
+		},
+	]
+},
+
+{
+	"LogName":"Tree Spawn SBV Alchemist Installed",
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_Ruins",
+	"When": {"HasMod |contains=Wildflour.SASS": true, "HasSeenEvent":"Wildflour.SASS_FaeFlowers"},
+	"MapTiles": [
+		{
+			"Position": { "X": 29, "Y": 18 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.SASS_Lilygrove_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 40, "Y": 18 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.SASS_Honeyshire_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 26, "Y": 25 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.SASS_Mossflower_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 43, "Y": 25 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.SASS_Summerdell_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 40, "Y": 31 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit Wildflour.SASS_Noonvale_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 29, "Y": 31 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"Paths",
+			"SetProperties": {
+			"SpawnTree": "fruit 628"
+			}
+		}
+	]
+}
+
+	]
+}

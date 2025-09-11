@@ -1,0 +1,157 @@
+{
+	"Changes": [
+	
+		//Adding to World MapPath
+		{
+			"LogName": "Coal Point Editing World Map",
+			"Action": "EditData",
+			"Target": "Data/WorldMap",
+			"TargetField": [
+				"Valley",
+				"MapAreas",
+			],
+			"Entries": {
+				"CoalPointFarm": {
+					"Id": "CoalPointFarm",
+					"Condition": null,
+					"PixelArea": {
+						"X": 72,
+						"Y": 22,
+						"Width": 22,
+						"Height": 33
+					},
+					"ScrollText": "{{i18n:DisplayName.CoalPointFarm}}",
+					"Tooltips": [
+					{
+						"Id": "ToolTipCoalPointFarmhouse",
+						"Text": "{{i18n:DisplayName.CoalPointFarmhouse}}",
+						"PixelArea": {
+							"X": 86,
+							"Y": 23,
+							"Width": 6,
+							"Height": 8
+						},
+					},
+					{
+						"Id": "ToolTipMoraMarcusHouse",
+						"Text": "{{i18n:DisplayName.APTMMHouse}}",
+						"PixelArea": {
+							"X": 75,
+							"Y": 30,
+							"Width": 4,
+							"Height": 5
+						},
+					},
+					],
+					"WorldPositions": [
+					{
+						"Id": "CoalPointFarm",
+						"LocationNames": [ "CoalPointFarm" ],
+						"TileArea": {
+							"X": 0,
+							"Y": 0,
+							"Width": 0,
+							"Height": 0
+						},
+						"MapPixelArea": {
+							"X": 72,
+							"Y": 23,
+							"Width": 17,
+							"Height": 21
+						},
+						"ScrollText": "{{i18n:DisplayName.CoalPointFarm}}",
+					},
+					],
+				},
+			},
+		},
+		//Editing World Map
+		 {   
+            "LogName": "Editing World Map",
+            "Action": "EditImage",
+            "Target": "LooseSprites/map",
+            "FromFile": "assets/maps/worldmapedits/worldmap{{CPFRecolorToken}}/CoalPointFarmWorldMap{{Season}}.png",
+            "ToArea": {"X": 72, "Y": 22, "Width": 22, "Height": 33},
+            "PatchMode": "Overlay",
+			"When":{
+				"CPFRecolorToken | contains=VPR": false
+			}
+        },
+        {
+            "LogName": "Editing World Map Seasonal",
+            "Action": "EditImage",
+            "Target": "LooseSprites/map_{{season}}",
+            "FromFile": "assets/maps/worldmapedits/worldmap{{CPFRecolorToken}}/CoalPointFarmWorldMap{{Season}}.png",
+            "ToArea": {"X": 72, "Y": 22, "Width": 22, "Height": 33},
+            "PatchMode": "Overlay",
+			"When":{
+				"CPFRecolorToken | contains=VPR": false
+			}
+        },
+		 {   
+            "LogName": "Editing World Map",
+            "Action": "EditImage",
+            "Target": "LooseSprites/map",
+            "FromFile": "assets/maps/worldmapedits/worldmap{{CPFRecolorToken}}/CoalPointFarmWorldMap{{Season}}{{VPRFall}}.png",
+            "ToArea": {"X": 72, "Y": 22, "Width": 22, "Height": 33},
+            "PatchMode": "Overlay",
+			"When": {
+				"CPFRecolorToken": "VPR",
+			}
+        },
+        {
+            "LogName": "Editing World Map Seasonal",
+            "Action": "EditImage",
+            "Target": "LooseSprites/map_{{season}}",
+            "FromFile": "assets/maps/worldmapedits/worldmap{{CPFRecolorToken}}/CoalPointFarmWorldMap{{Season}}{{VPRFall}}.png",
+            "ToArea": {"X": 72, "Y": 22, "Width": 22, "Height": 33},
+            "PatchMode": "Overlay",
+			"When": {
+				"CPFRecolorToken": "VPR",
+			}
+        },
+		 {   
+            "LogName": "Editing World Map",
+            "Action": "EditImage",
+            "Target": "LooseSprites/map",
+            "FromFile": "assets/maps/worldmapedits/worldmap{{CPFRecolorToken}}/CoalPointFarmWorldMap{{Season}}{{VPRFall}}.png",
+            "ToArea": {"X": 72, "Y": 22, "Width": 22, "Height": 33},
+            "PatchMode": "Overlay",
+			"When": {
+				"CPFMapEdits": "VPR",
+			}
+        },
+        {
+            "LogName": "Editing World Map Seasonal",
+            "Action": "EditImage",
+            "Target": "LooseSprites/map_{{season}}",
+            "FromFile": "assets/maps/worldmapedits/worldmap{{CPFRecolorToken}}/CoalPointFarmWorldMap{{Season}}{{VPRFall}}.png",
+            "ToArea": {"X": 72, "Y": 22, "Width": 22, "Height": 33},
+            "PatchMode": "Overlay",
+			"When": {
+				"CPFMapEdits": "VPR",
+			}
+        },
+		//Editing Calico Desert
+		{
+			"LogName": "Coal Point Farm's Edit to Calico Desert's Tooltip",
+			"Action": "EditData",
+			"Target": "Data/WorldMap",
+			"TargetField": [
+				"Valley",
+				"MapAreas",
+				"Desert",
+				"Tooltips",
+				"#0",
+			],
+			"Entries": {
+				"PixelArea": {
+				"X": 0,
+				"Y": 0,
+				"Width": 67,
+				"Height": 38
+				}
+			}
+		}
+	]
+}

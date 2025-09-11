@@ -1,0 +1,76 @@
+{
+    "Changes": 
+    [
+        {
+            "LogName": "Book Item Texture",
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Book/ASBook",
+            "FromFile": "Assets/Images/Book/ASBook/ASCookBook.png"
+        },
+
+        {
+            "LogName":"Add book to object data",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries":
+            {
+                "Book_SpiceUp":
+                {
+                    "Name": "Spice up your kitchen!",
+                    "DisplayName": "{{i18n:object.BookAS.name}}",
+                    "Description": "{{i18n:object.BookAS.description}}",
+                    "Type": "asdf",
+                    "Category": -102,
+                    "Price": 2500,
+                    "Texture": "Mods/{{ModId}}/Book/ASBook",
+                    "Edibility": -300,
+                    "IsDrink": false,
+                    "Buffs": null,
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromFishingCollection": false,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": false,
+                    "ContextTags": [
+                    "color_red",
+                    "book_item",
+                    "spu_recipe_book",
+                    "Book"
+                    ],
+                    "CustomFields": {
+                        "Spiderbuttons.SpecialPowerUtilities/Books/RecipePrefix": "{{ModId}}_AS_"
+                    }
+                }
+            }
+        },
+
+        {
+            "Action":"EditData",
+            "Target": "Strings/Objects",
+            "Entries":
+            {
+                "SpiceUp_Name": "{{i18n:object.BookAS.name}}",
+                "SpiceUp_Description": "{{i18n:object.BookAS.description}}"
+            }
+        },
+
+        {
+            "LogName":"Add Asia Book to Desert Trader",
+            "Action":"EditData",
+            "Target":"Data/Shops",
+            "TargetField": ["DesertTrade", "Items"],
+            "Entries":
+            {
+                    "{{ModId}}_ASBook":
+                    {
+                      "TradeItemId":"279",
+                      "TradeItemAmount":1,
+                      "ItemId":"Book_SpiceUp"
+                    }
+            }
+        }
+    ]
+}

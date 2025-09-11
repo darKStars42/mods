@@ -1,0 +1,64 @@
+{ 
+	"Changes":
+	[
+		{	// Tarefas Diarias Vanilla
+			"LogName":"Lee Agendamentos",
+			"Action":"EditData",
+			"Target":"Characters/Schedules/Lee",
+			"When": { "HasSeenEvent: anyPlayer|contains=90205264": true, "HasSeenEvent: anyPlayer|contains=90805264": false },
+			"Update": "OnDayStart",
+			"Entries":
+			{
+			"rain": "610 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"/1100 Casa.Superior 18 15 1 Le.Senta.Di /1300 Casa.Superior 18 9 0 Le.Cos.Rab.Long /1500 Casa.Interior 18 5 2 lee_sleep /2000 Casa.Interior 8 18 2 Le.Senta.Fr \"Strings\\schedules\\Lee:L.Mia.00\"/2330 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"",		
+
+			"spring": "610 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"/830 Town 28 57 1 Le.Sen.Late.Di /930 Town 32 89 2 Le.Senta.Fr /1300 Town 53 72 0 Le.Cos.Rab.Long /1530 Town 10 51 0 Le.Cos.Rab.Pert /1700 Town 10 53 2 Le.Fre.Ling /1830 Casa.Interior 18 5 2 lee_sleep",
+			"spring_Tue": "GOTO spring",
+			"spring_Wed": "GOTO spring",
+			"spring_Thu": "610 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"/810 Forest 72 39 2 Le.Lingua /1030 Forest 72 39 2 Le.Senta.Fr /1330 Town 24 96 0 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"/1630 Town 10 51 0 Le.Cos.Rab.Pert /1800 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"",
+			"spring_Fri": "GOTO spring_Thu",
+			"spring_Sat": "610 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"/1100 Beach 32 14 2 Le.Bariga \"Strings\\schedules\\Lee:L.Barriga.00\"/1400 Mountain 30 20 1 Le.Senta.Di /1930 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"",
+			"spring_Sun": "GOTO spring_Sat",
+			
+			"summer": "GOTO spring",
+			"summer_Tue": "GOTO spring",
+			"summer_Wed": "GOTO spring",
+			"summer_Thu": "GOTO spring_Thu",
+			"summer_Fri": "GOTO spring_Thu",
+			"summer_Sat": "GOTO spring_Sat",
+			"summer_Sun": "GOTO spring_Sat",
+			
+			"fall": "610 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"/930 BusStop 26 12 2 Le.Bariga \"Strings\\schedules\\Lee:L.Barriga.00\"/1140 Railroad 34 40 2 Le.Senta.Fr \"Strings\\schedules\\Lee:L.Uiva.00\"/1600 Casa.Interior 18 5 2 lee_sleep",
+			"fall_Wed": "GOTO fall",
+			"fall_Wed": "GOTO fall",
+			"fall_Thu": "610 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"/810 Forest 72 39 2 Le.Lingua /1030 Forest 72 39 2 Le.Senta.Fr /1330 Town 53 72 0 Le.Cos.Rab.Long /1700 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"",
+			"fall_Fri": "GOTO fall_Thu",
+			"fall_Sat": "610 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"/1100 Beach 42 8 2 Le.Senta.Fr /1400 Forest 99 22 0 Le.De.Pé /1830 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"",
+			"fall_Sun": "GOTO fall_Sat",
+			
+			"winter": "GOTO fall",
+			"winter_Tue": "GOTO fall",
+			"winter_Wed": "GOTO fall",
+			"winter_Thu": "GOTO fall_Thu",
+			"winter_Fri": "GOTO fall_Thu",
+			"winter_Sat": "GOTO fall_Sat",
+			"winter_Sun": "GOTO fall_Sat"
+			}
+		},
+		{	// Tarefas Diarias Final
+			"LogName": "Lee Agendamentos Final",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Lee",
+			"When": { "HasSeenEvent: anyPlayer|contains=90805264": true, "HasSeenEvent: anyPlayer|contains=58614000": false, "HasSeenEvent: anyPlayer|contains=91105264": false },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"rain": "610 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"/1300 Casa.Interior 15 12 2 Le.Bariga \"Strings\\schedules\\Lee:L.Barriga.00\"/1500 Casa.Superior 18 9 0 Le.Cos.Rab.Long /1800 Casa.Interior 18 9 2 Le.Osso /2330 Casa.Interior 18 5 2 lee_sleep",		
+				
+			"spring": "610 Casa.Interior 18 5 2 Le.Dorme \"Strings\\schedules\\Lee:L.Dorme.00\"/930 Town 32 89 2 Le.Senta.Fr /1300 Town 53 72 0 Le.Cos.Rab.Long /1530 Town 10 51 0 Le.Cos.Rab.Pert /1700 Town 10 53 2 Le.Fre.Ling /1830 Casa.Interior 18 5 2 lee_sleep",
+			"summer": "GOTO spring",
+			"fall": "GOTO spring",
+			"winter": "GOTO spring"
+			}
+		}
+	]
+}

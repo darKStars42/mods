@@ -1,0 +1,574 @@
+{
+   "Changes": [
+		{
+			"LogName": "Add gift dialogue to gift tastes for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 0],
+					"Value": "{{i18n:SebastianChild.GiftTastes.Love {{FirstbornTokenPass}} }}", //Loved gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 2],
+					"Value": "{{i18n:SebastianChild.GiftTastes.Like {{FirstbornTokenPass}} }}", //Liked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 8],
+					"Value": "{{i18n:SebastianChild.GiftTastes.Neutral {{FirstbornTokenPass}} }}", //Neutral gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 4],
+					"Value": "{{i18n:SebastianChild.GiftTastes.Dislike {{FirstbornTokenPass}} }}", //Disliked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 6],
+					"Value": "{{i18n:SebastianChild.GiftTastes.Hate {{FirstbornTokenPass}} }}", //Hated gift
+					"Delimiter": "",
+				},
+			],
+		},
+		
+		{
+			"LogName": "Fill firstborn's empty schedule dialogue with that of Sebastian's daughter.",
+			"Action": "EditData",
+			"Target": "Strings/schedules/{{FirstbornName}}",
+			"Entries": {
+				"rain.000": "{{i18n:SebastianChild.Schedule.rain.000 {{FirstbornTokenPass}} }}",
+				"rain2.000": "{{i18n:SebastianChild.Schedule.rain2.000 {{FirstbornTokenPass}} }}",
+				"GreenRain.000": "{{i18n:SebastianChild.Schedule.GreenRain.000 {{FirstbornTokenPass}} }}",
+				"GreenRain.001": "{{i18n:SebastianChild.Schedule.GreenRain.001 {{FirstbornTokenPass}} }}",
+				"Sun.000": "{{i18n:SebastianChild.Schedule.Sun.000 {{FirstbornTokenPass}} }}",
+				"Sun.001": "{{i18n:SebastianChild.Schedule.Sun.001 {{FirstbornTokenPass}} }}",
+				"summer_Sun.001": "{{i18n:SebastianChild.Schedule.summer_Sun.001 {{FirstbornTokenPass}} }}",
+				"fall_Sun.001": "{{i18n:SebastianChild.Schedule.fall_Sun.001 {{FirstbornTokenPass}} }}",
+				"Mon.000": "{{i18n:SebastianChild.Schedule.Mon.000 {{FirstbornTokenPass}} }}",
+				"Mon.001": "{{i18n:SebastianChild.Schedule.Mon.001 {{FirstbornTokenPass}} }}",
+				"Tue.000": "{{i18n:SebastianChild.Schedule.Tue.000 {{FirstbornTokenPass}} }}",
+				"Tue.001": "{{i18n:SebastianChild.Schedule.Tue.001 {{FirstbornTokenPass}} }}",
+				"Fri.000": "{{i18n:SebastianChild.Schedule.Fri.000 {{FirstbornTokenPass}} }}",
+				"Fri.001": "{{i18n:SebastianChild.Schedule.Fri.001_plural_{{CoPlu1}} {{FirstbornTokenPass}} }}",
+				"DesertFestival.000": "{{i18n:SebastianChild.Schedule.DesertFestival.000 {{FirstbornTokenPass}} }}",
+				"winter_16.000": "{{i18n:SebastianChild.Schedule.winter_16.000 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.000": "{{i18n:SebastianChild.Schedule.Schoolhouse.000 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.001": "{{i18n:SebastianChild.Schedule.Schoolhouse.001 {{FirstbornTokenPass}} }}",
+			}
+		},
+		{
+			"LogName": "Fill firstborn's empty dialogue with that of Sebastian's daughter.",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{FirstbornName}}",
+			"Entries": {
+				"AcceptBirthdayGift_Positive": "{{i18n:SebastianChild.Dialogue.BirthdayGift_Positive {{FirstbornTokenPass}} }}",
+				"AcceptBirthdayGift_Negative": "{{i18n:SebastianChild.Dialogue.BirthdayGift_Negative {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)StardropTea": "{{i18n:SebastianChild.Dialogue.Gift_StardropTea {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)208": "{{i18n:SebastianChild.Dialogue.Gift_GlazedYams {{FirstbornTokenPass}} }}",
+				"AcceptGift_(TR)FrogEgg": "{{i18n:SebastianChild.Dialogue.Gift_FrogEgg {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)236": "{{i18n:SebastianChild.Dialogue.Gift_PumpkinSoup {{FirstbornTokenPass}} }}",
+				"AcceptGift_wood_item": "{{i18n:SebastianChild.Dialogue.Gift_wood_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_category_vegetable": "{{i18n:SebastianChild.Dialogue.Gift_category_vegetable {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)245": "{{i18n:SebastianChild.Dialogue.Gift_Sugar {{FirstbornTokenPass}} }}",
+				"AcceptGift_coffee_item": "{{i18n:SebastianChild.Dialogue.Gift_coffee_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_alcohol_item": "{{i18n:SebastianChild.Dialogue.Gift_alcohol_item {{FirstbornTokenPass}} }}",
+				"Resort_Entering": "{{i18n:SebastianChild.Dialogue.Resort_Entering {{FirstbornTokenPass}} }}",
+				"Resort_Leaving": "{{i18n:SebastianChild.Dialogue.Resort_Leaving {{FirstbornTokenPass}} }}",
+				"Resort": "{{i18n:SebastianChild.Dialogue.Resort {{FirstbornTokenPass}} }}",
+				"GreenRain": "{{i18n:SebastianChild.Dialogue.GreenRain {{FirstbornTokenPass}} }}",
+				"Mon": "{{i18n:SebastianChild.Dialogue.Mon {{FirstbornTokenPass}} }}",
+				"Tue": "{{i18n:SebastianChild.Dialogue.Tue {{FirstbornTokenPass}} }}",
+				"Wed": "{{i18n:SebastianChild.Dialogue.Wed {{FirstbornTokenPass}} }}",
+				"Thu": "{{i18n:SebastianChild.Dialogue.Thu {{FirstbornTokenPass}} }}",
+				"Fri": "{{i18n:SebastianChild.Dialogue.Fri {{FirstbornTokenPass}} }}",
+				"Sat": "{{i18n:SebastianChild.Dialogue.Sat {{FirstbornTokenPass}} }}",
+				"Sun": "{{i18n:SebastianChild.Dialogue.Sun {{FirstbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:SebastianChild.Dialogue.summer_Mon {{FirstbornTokenPass}} }}",
+				"summer_Tue": "{{i18n:SebastianChild.Dialogue.summer_Tue {{FirstbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:SebastianChild.Dialogue.summer_Wed {{FirstbornTokenPass}} }}",
+				"summer_Thu": "{{i18n:SebastianChild.Dialogue.summer_Thu {{FirstbornTokenPass}} }}",
+				"summer_Fri": "{{i18n:SebastianChild.Dialogue.summer_Fri {{FirstbornTokenPass}} }}",
+				"summer_Sat": "{{i18n:SebastianChild.Dialogue.summer_Sat {{FirstbornTokenPass}} }}",
+				"summer_Sun": "{{i18n:SebastianChild.Dialogue.summer_Sun {{FirstbornTokenPass}} }}",
+				"fall_Mon": "{{i18n:SebastianChild.Dialogue.fall_Mon {{FirstbornTokenPass}} }}",
+				"fall_Tue": "{{i18n:SebastianChild.Dialogue.fall_Tue {{FirstbornTokenPass}} }}",
+				"fall_Wed": "{{i18n:SebastianChild.Dialogue.fall_Wed {{FirstbornTokenPass}} }}",
+				"fall_Thu": "{{i18n:SebastianChild.Dialogue.fall_Thu {{FirstbornTokenPass}} }}",
+				"fall_Fri": "{{i18n:SebastianChild.Dialogue.fall_Fri_plural_{{CoPlu1}} {{FirstbornTokenPass}} }}",
+				"fall_Sat": "{{i18n:SebastianChild.Dialogue.fall_Sat {{FirstbornTokenPass}} }}",
+				"fall_Sun": "{{i18n:SebastianChild.Dialogue.fall_Sun {{FirstbornTokenPass}} }}",
+				"winter_Mon": "{{i18n:SebastianChild.Dialogue.winter_Mon {{FirstbornTokenPass}} }}",
+				"winter_Tue": "{{i18n:SebastianChild.Dialogue.winter_Tue {{FirstbornTokenPass}} }}",
+				"winter_Wed": "{{i18n:SebastianChild.Dialogue.winter_Wed {{FirstbornTokenPass}} }}",
+				"winter_Thu": "{{i18n:SebastianChild.Dialogue.winter_Thu {{FirstbornTokenPass}} }}",
+				"winter_Fri": "{{i18n:SebastianChild.Dialogue.winter_Fri {{FirstbornTokenPass}} }}",
+				"winter_Sat": "{{i18n:SebastianChild.Dialogue.winter_Sat {{FirstbornTokenPass}} }}",
+				"winter_Sun": "{{i18n:SebastianChild.Dialogue.winter_Sun {{FirstbornTokenPass}} }}",
+			}
+		},
+		{
+            "LogName": "Add rain dialogue for Sebastian's daughter as firstborn.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/rainy",
+            "Entries": {
+				"{{FirstbornName}}": "{{i18n:SebastianChild.Dialogue.Rain {{FirstbornTokenPass}} }}",
+			}
+		},
+		
+		
+        {
+			"LogName": "Add Egg Festival dialogue for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring13",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.spring13_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.spring13_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Flower Dance dialogue for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.spring24_y1_plural_{{CoPlu1}} {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.spring24_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Luau dialogue for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer11",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.summer11_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.summer11_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Moonlight Jellies dialogue for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer28",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.summer28_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.summer28_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Fair dialogue for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.fall16_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.fall16_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Spirit's Eve dialogue for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.fall27_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.fall27_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Festival of Ice dialogue for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.winter8_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.winter8_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Winter Star dialogue for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.winter25_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.winter25_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add movie invite dialogue for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Strings/Characters",
+			"Entries": {
+				"MovieInvite_Invited_{{FirstbornName}}": "{{i18n:SebastianChild.Movie.Invite_Accept {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+		
+		
+		{
+			"LogName": "Add dialogue for attending movies with other parent for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_3", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.With_Parent_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": {
+					"ResponsePoint": null,
+					"Script": "/message \"{{i18n:GeneralChildren.Movie.With_Parent_Script {{FirstbornTokenPass}} }}\"",
+					"Text": null
+				},
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.With_Parent_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add canon dialogue for attending movies with Robin for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_4", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.With_Robin_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.With_Robin_After {{FirstbornTokenPass}} }}"
+				}
+			},
+			"When": {
+				"FirstbornDialogue|contains=Canonical": true,
+			},
+		},
+		
+		{
+			"LogName": "Add canon dialogue for winter_movie_0 for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_5", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.winter_0_Before_plural_{{CoPlu1}} {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.winter_0_After {{FirstbornTokenPass}} }}"
+				}
+			},
+			"When": {
+				"FirstbornDialogue|contains=Canonical": true,
+			},
+		},
+		
+		{
+			"LogName": "Add dialogue for loved movies for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_6", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.love_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.love_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for liked movies for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_7", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.like_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.like_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for disliked movies for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_8", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.dislike_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.dislike_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Edit Little Red School House map string for Growing Valley; Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Strings/StringsFromMaps",
+            "Entries": {
+				"Desk.18": "{{i18n:Schoolhouse.Desk18.SebastianChild {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+			},
+		},
+		
+		//Conditional dialogue (schedules)
+		{
+            "LogName": "Edit schedule dialogue for Sebastian's daughter as firstborn to use genericized versions.",
+            "Action": "EditData",
+            "Target": "Strings/schedules/{{FirstbornName}}",
+            "Entries": {
+				"Sun.000": "{{i18n:SebastianChild.Schedule.Sun.000.noncanon {{FirstbornTokenPass}} }}",
+				"Sun.001": "{{i18n:SebastianChild.Schedule.Sun.001.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Sun.001": "{{i18n:SebastianChild.Schedule.summer_Sun.001.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Sun.001": "{{i18n:SebastianChild.Schedule.fall_Sun.001.noncanon {{FirstbornTokenPass}} }}",
+				"Mon.000": "{{i18n:SebastianChild.Schedule.Mon.000.noncanon {{FirstbornTokenPass}} }}",
+				"Mon.001": "{{i18n:SebastianChild.Schedule.Mon.001.noncanon {{FirstbornTokenPass}} }}",
+				"Fri.000": "{{i18n:SebastianChild.Schedule.Fri.000.noncanon {{FirstbornTokenPass}} }}",
+				"Fri.001": "{{i18n:SebastianChild.Schedule.Fri.001.noncanon {{FirstbornTokenPass}} }}",
+				"DesertFestival.000": "{{i18n:SebastianChild.Schedule.DesertFestival.000.noncanon {{FirstbornTokenPass}} }}",
+				"winter_16.000": "{{i18n:SebastianChild.Schedule.winter_16.000.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		
+		//Conditional dialogue (regular)
+		{
+            "LogName": "Edit dialogue for Sebastian's daughter as firstborn to use genericized versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"Mon": "{{i18n:SebastianChild.Dialogue.Mon.noncanon {{FirstbornTokenPass}} }}",
+				"Wed": "{{i18n:SebastianChild.Dialogue.Wed.noncanon {{FirstbornTokenPass}} }}",
+				"Fri": "{{i18n:SebastianChild.Dialogue.Fri.noncanon {{FirstbornTokenPass}} }}",
+				"Sun": "{{i18n:SebastianChild.Dialogue.Sun.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:SebastianChild.Dialogue.summer_Mon.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:SebastianChild.Dialogue.summer_Wed.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Fri": "{{i18n:SebastianChild.Dialogue.summer_Fri.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Sat": "{{i18n:SebastianChild.Dialogue.summer_Sat.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Sun": "{{i18n:SebastianChild.Dialogue.summer_Sun.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Mon": "{{i18n:SebastianChild.Dialogue.fall_Mon.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Wed": "{{i18n:SebastianChild.Dialogue.fall_Wed.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Fri": "{{i18n:SebastianChild.Dialogue.fall_Fri.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Sun": "{{i18n:SebastianChild.Dialogue.fall_Sun.noncanon {{FirstbornTokenPass}} }}",
+				"winter_Fri": "{{i18n:SebastianChild.Dialogue.winter_Fri.noncanon {{FirstbornTokenPass}} }}",
+				"winter_Sun": "{{i18n:SebastianChild.Dialogue.winter_Sun.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		{
+            "LogName": "Edit dialogue for Sebastian's daughter as firstborn to use single parenting versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"Wed": "{{i18n:SebastianChild.Dialogue.Wed.single {{FirstbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:SebastianChild.Dialogue.summer_Mon.single {{FirstbornTokenPass}} }}",
+				"winter_Fri": "{{i18n:SebastianChild.Dialogue.winter_Fri.single {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Single": true,
+			},
+		},
+		
+		//Conditional dialogue (festivals)
+        {
+			"LogName": "Edit Egg Festival dialogue for Sebastian's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring13",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.spring13_y1.noncanon {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.spring13_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Flower Dance dialogue for Sebastian's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.spring24_y1.noncanon {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.spring24_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Luau dialogue for Sebastian's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer11",
+			"Entries": {
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.summer11_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Moonlight Jellies dialogue for Sebastian's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer28",
+			"Entries": {
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.summer28_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Fair dialogue for Sebastian's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.fall16_y1.noncanon {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.fall16_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Spirit's Eve dialogue for Sebastian's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.fall27_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Festival of Ice dialogue for Sebastian's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.winter8_y1.noncanon {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.winter8_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Winter Star dialogue for Sebastian's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:SebastianChild.Festivals.winter25_y1.noncanon {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:SebastianChild.Festivals.winter25_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		
+		//Conditional dialogue (movies)
+		
+		{
+			"LogName": "Add noncanon/single dialogue for attending movies with Robin for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_4", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.With_Robin_Before.noncanon {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.With_Robin_After.noncanon {{FirstbornTokenPass}} }}"
+				}
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		{
+			"LogName": "Add noncanon/single dialogue for winter_movie_0 for Sebastian's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_5", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.winter_0_Before.noncanon {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:SebastianChild.Movie.winter_0_After.noncanon {{FirstbornTokenPass}} }}"
+				}
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		
+		
+   		{      
+			"LogName": "Include dialogue files which have been modified for translation for Sebastian's daughter as firstborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Sebastian/valid_firstborn_Sebastian_edit.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+		
+   ]
+}

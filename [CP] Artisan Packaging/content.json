@@ -1,0 +1,66 @@
+{
+    "Format": "2.0.5",
+    "ConfigSchema": {
+        "removefromshipping": {
+            "AllowValues": "true, false",
+            "Default": true
+        },
+        "needsiron": {
+            "AllowValues": "true, false",
+            "Default": false
+        },
+        "boxersource": {
+            "AllowValues": "Skill, Time, Shop, None, Disabled",
+            "Default": "Shop"
+        },
+        "packersource": {
+            "AllowValues": "Skill, Time, Shop, None, Disabled",
+            "Default": "Time"
+        },
+        "cannersource": {
+            "AllowValues": "Skill, Time, Shop, None, Disabled",
+            "Default": "Skill"
+        }
+    },
+    "Changes": [
+        {
+            "Action": "Include",
+            "FromFile": "patches/objects.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "patches/bigcraftables.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "patches/craftingrecipes.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "patches/machines.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "patches/shops.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "patches/triggeractions.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "patches/mail.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "patches/gifttastes.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "patches/converter.json",
+            "When": {
+                "HasMod": "jabbic.jaartisanpackaging"
+            }
+        }
+    ]
+}

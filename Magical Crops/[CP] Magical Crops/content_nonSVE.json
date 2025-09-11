@@ -1,0 +1,69 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Events/WizardHouse",
+            "Entries": {
+                //King Parsnip event
+                "87620001/n KingParsnipLetter": "WizardSong/6 19/farmer 8 23 0 Wizard 6 16 0/ignoreCollisions farmer/move farmer 0 -2 0/speak Wizard \"{{i18n: 87620001.1}}\" true/faceDirection Wizard 1/faceDirection Wizard 2/move farmer -2 0 3/move farmer 0 -3 0/speak Wizard \"{{i18n: 87620001.2}}\"/faceDirection Wizard 0/speak Wizard \"{{i18n: 87620001.3}}\"/faceDirection Wizard 2/speak Wizard \"{{i18n: 87620001.4}}\"/emote farmer 56/speak Wizard \"{{i18n: 87620001.5}}\"/move Wizard 0 1 2/pause 1000/addItem (O)King_Parsnip_Seeds 3/move Wizard 0 -1 2/speak Wizard \"{{i18n: 87620001.6}}\"/viewport move 4 5 1000/speak Wizard \"{{i18n: 87620001.7}}\"/AddQuest 8762001/pause 500/end",
+                //AQF questline
+                //remove ancient Fruit, remove bringAncientFruit quest, add bring AQF quest
+                "87620002/n AncientSeedsLetter/i 454": "WizardSong/6 19/farmer 7 21 3 Wizard 6 16 0/ignoreCollisions farmer/move farmer -1 0 0/pause 50/move farmer 0 -3 0/faceDirection Wizard 2/speak Wizard \"{{i18n: 87620002.1}}\"/emote farmer 56/move farmer 0 -1 0/pause 400/removeItem 454/move farmer 0 1 0/speak Wizard \"{{i18n: 87620002.2}}\"/showFrame Wizard 16/pause 500/playSound wand/warp Wizard -3000 -3000/specificTemporarySprite wizardWarp/pause 2000/faceDirection farmer 3/faceDirection farmer 1/faceDirection farmer 2/pause 2000/faceDirection Wizard 0 true/faceDirection farmer 1 true/pause 50/faceDirection farmer 0/pause 400/fade/message \"{{i18n: 87620002.3}}\"/warp farmer 8 21/pause 600/fade unfade/playSound doorClose/warp Wizard 9 33/move Wizard 0 -5 3/faceDirection farmer 2 true/pause 50/move Wizard -1 0 0/pause 50/move Wizard 0 -5 0/speak Wizard \"{{i18n: 87620002.4}}\" /speak Wizard \"{{i18n: 87620002.5}}\"/move Wizard 0 -1 0/pause 400/addItem (O)Blink_Seeds 3/move Wizard 0 1 0/speak Wizard \"{{i18n: 87620002.6}}\"/pause 200/RemoveQuest 8762002/AddQuest 8762004/end warpOut",
+                //remove AQF, remove AQF quest and replace with locationQuest
+                "87620003/e 87620002/n AncientSeedsLetter/i (O)Blink_Fruit": "WizardSong/6 19/farmer 8 23 0 Wizard 6 16 0/ignoreCollisions farmer/move farmer 0 -2 0/faceDirection Wizard 2/speak Wizard \"{{i18n: 87620003.1}}\"/emote farmer 56/move farmer -2 0 0/move farmer 0 -4 0/removeItem (O)Blink_Fruit/pause 500/move farmer 0 1 0/faceDirection Wizard 3/speak Wizard \"{{i18n: 87620003.2}}\"/faceDirection Wizard 2/speak Wizard \"{{i18n: 87620003.3}}\"/RemoveQuest 8762004/AddQuest 8762005/pause 500/end",
+            },
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Events/Forest",
+            "Entries": {
+                //wizard gives cake plant seeds
+                "87620004/n CakePlantLetter": "playful/6 35/farmer 11 39 3 Wizard 5 34 3/AddBigProp 3 35 (BC)Pink_Cake_Decoration/ignoreCollisions farmer/addObject 3 34 748/move farmer -3 0 0/pause 10/move farmer 0 -2 0/pause 10/move farmer -3 0 0/pause 10/move farmer 0 -1 0/faceDirection Wizard 2/speak Wizard \"{{i18n: 87620004.1}}\"/faceDirection Wizard 3/speak Wizard \"{{i18n: 87620004.2}}\"/faceDirection Wizard 3/emote Wizard 12 true/speak Wizard \"{{i18n: 87620004.3}}\"/pause 500/faceDirection Wizard 2/speak Wizard \"{{i18n: 87620004.4}}\"/pause 500/emote farmer 56/pause 500/speak Wizard \"{{i18n: 87620004.5}}\"/emote farmer 8/speak Wizard \"{{i18n: 87620004.6}}\"/jump farmer/startJittering/showFrame 94/pause 1200/AddQuest 8762008/addItem (O)Cake_Plant_Seeds 3/end",
+            },
+        },
+/*
+        {
+            "Action": "EditData",
+            "Target": "Data/Events/AdventureGuild",
+            "Entries": {
+                //wizard gives cake plant seeds
+                "87620005/e 87620004/i {{spacechase0.JsonAssets/ObjectId:Cake Poop}}": "MarlonsTheme/6 14/farmer 6 16 0 Marlon 4 11 2/move farmer -3 0 0/pause 10/move farmer 0 -2 0/pause 10/move farmer -3 0 0/pause 10/move farmer 0 -1 0/removeItem {{spacechase0.JsonAssets/ObjectId:Cake Poop}}/RemoveQuest 8762008/AddQuest 8762009/end",
+            },
+        },*/
+        //Quests
+        {
+            "Action": "EditData",
+            "Target": "Data/Quests",
+            "Entries": {
+                //King Parsnip Quest
+                //"8762000": "Location/Mysterious Seeds/The Wizard apparently found some mysterious seeds.../Visit the Wizard in his tower/WizardHouse/8762001/0/{{spacechase0.JsonAssets/ObjectId:King Parsnip}}/false",
+                "8762001": "ItemDelivery/{{i18n: q_8762001_title}}/{{i18n: q_8762001_description}}/{{i18n: q_8762001_objective}}/Wizard (O)King_Parsnip/-1/500/-1/false/{{i18n: q_8762001_response}}",
+                //bring ancient crop to Wizard
+                "8762002": "Basic/{{i18n: q_8762002_title}}/{{i18n: q_8762002_description}}/{{i18n: q_8762002_objective}}/Wizard 20000/-1/500/-1/false",
+                //bring AQF to Wizard (replace quest with locationquest during event)
+                "8762004": "Basic/{{i18n: q_8762004_title}}/{{i18n: q_8762004_description}}/{{i18n: q_8762004_objective}}/-1/-1/-1/-1/false",
+                "8762005": "Location/{{i18n: q_8762004_title}}/{{i18n: q_8762004_description}}/{{i18n: q_8762004_objective}}/WizardHouse/-1/3000/-1/false",
+                //Balanced Seeds
+                "8762007": "ItemDelivery/{{i18n: q_8762007_title}}/{{i18n: q_8762007_description}}/{{i18n: q_8762007_objective}}/Wizard (O)Balanced_Fruit/-1/500/-1/false/{{i18n: q_8762007_response}}",
+                //bring marlon cake poop
+                "8762008": "ItemDelivery/{{i18n: q_8762008_title}}/{{i18n: q_8762008_description}}/{{i18n: q_8762008_objective}}/Wizard (O)Cake_Poop/-1/1500/-1/false/{{i18n: q_8762008_response}}",
+                //Invisible seeds
+                "8762010": "ItemDelivery/{{i18n: q_8762010_title}}/{{i18n: q_8762010_description}}/{{i18n: q_8762010_objective}}/Wizard (O)Invisible_Fruit/-1/250/-1/false/$1 InvisibleSeedsGiven#{{i18n: q_8762010_response}} #$e# {{i18n: q_8762010_response}}",
+                "8762011": "ItemDelivery/{{i18n: q_8762011_title}}/{{i18n: q_8762011_description}}/{{i18n: q_8762011_objective}}/Wizard (O)Invisible_Fruit/-1/300/-1/false/{{i18n: q_8762011_response}}",
+            },
+        },
+         {
+         "Action": "EditMap",
+         "Target": "Maps/WizardHouse",
+         "FromFile": "assets/shop.tmx",
+         //"FromArea": { "X": 0, "Y": 0, "Width": 2, "Height": 2 },
+         "ToArea": { "X": 10, "Y": 22, "Width": 2, "Height": 2 },
+		 "PatchMode": "Overlay",
+      },
+
+    ]
+}
+//[quest:KingParsnipSeeds shekurika.MagicalCrops.QF]
+//patch reload shekurika.MagicalCrops.CP
+//eventforget 87620001

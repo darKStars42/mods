@@ -1,0 +1,46 @@
+{
+  "Changes": [
+  //Mail
+	{
+	"Action": "EditData",
+	"Target": "Data/Mail",
+	"Entries": {
+		"angelofstars.honeyroastedcarrots_recipe": "[letterbg 0]{{i18n:honeyroastedcarrotsrecipe.text}} %item cookingRecipe {{ModId}}_HoneyRoastedCarrots %%[#]{{i18n:honeyroastedcarrotsrecipe.name}}",
+		"angelofstars.carrotcake_recipe": "[letterbg 0]{{i18n:carrotcakerecipe.text}} %item cookingRecipe {{ModId}}_CarrotCake %%[#]{{i18n:carrotcakerecipe.name}}",
+		"angelofstars.carrotstew_recipe": "[letterbg 0]{{i18n:carrotstewrecipe.text}} %item cookingRecipe {{ModId}}_CarrotStew %%[#]{{i18n:carrotstew.name}}",
+		"angelofstars.colorfulcarrotselling": "[letterbg 0]{{i18n:colorfulcarrotselling.text}} [#]{{i18n: colorfulcarrotselling.name}}",
+			}
+		},
+//Mail Events
+	{
+	"Action": "EditData",
+	"Target": "Data/TriggerActions",
+	"Entries": {
+	"{{ModId}}_HCarrotsMail": {
+    "Id": "{{ModId}}_HCarrotsMail",
+    "Trigger": "DayEnding",
+    "Condition": "PLAYER_HEARTS Current Dwarf 4",
+    "Action": "AddMail Current angelofstars.honeyroastedcarrots_recipe tomorrow"
+	},
+	"{{ModId}}_CCarrotsMail": {
+    "Id": "{{ModId}}_CCarrotsMail",
+    "Trigger": "DayEnding",
+    "Condition": "PLAYER_HEARTS Current Dwarf 2, PLAYER_SHIPPED_BASIC_ITEM Current Carrot",
+    "Action": "AddMail Current angelofstars.colorfulcarrotselling tomorrow"
+	},
+	"{{ModId}}_CarrotCake": {
+    "Id": "{{ModId}}_CarrotCake",
+    "Trigger": "DayEnding",
+    "Condition": "PLAYER_HEARTS Current Jodi 8",
+    "Action": "AddMail Current angelofstars.carrotcake_recipe tomorrow"
+	},
+	"{{ModId}}_CarrotStew": {
+    "Id": "{{ModId}}_CarrotStew",
+    "Trigger": "DayEnding",
+    "Condition": "PLAYER_HEARTS Current Dwarf 8",
+    "Action": "AddMail Current angelofstars.carrotstew_recipe tomorrow"
+	},
+					}
+			}
+		]
+}

@@ -1,0 +1,24 @@
+{
+	"Changes": [
+
+		{	"LogName": "Harvey Pregnancy Event 1",
+			"Action": "EditData",
+			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HavingChild": "@{{playerName}}",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+			"Entries": {"64780016/O Harvey": "continue/28 30/farmer 27 30 0 Harvey 29 25 3/skippable/addConversationTopic FarmerPregnantHarvey 13/addConversationTopic FarmerCheckUp 6/addMailReceived Pregnant1_Harvey/Skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak Harvey \"{{i18n:64780016_1}}$h #$b# {{i18n:64780016_2}}$s#$b# {{i18n:64780016_3}}\"/pause 500 /move farmer 0 0 2/ playSound croak/animate farmer false false 350 104 105/pause 1000/emote farmer 28/move farmer 0 0 1/pause 500/speak Harvey \"{{i18n:64780016_4}}$s#$b# {{i18n:64780016_5}}$s\"/viewport -100 100/changeLocation Hospital/viewport 5 5/warp farmer 3 5/warp Harvey 5 8/move Harvey 0 -3 3 false/speak Harvey \"{{i18n:64780016_6}}\"/pause 500/emote farmer 8/pause 1000/speak Harvey \"{{i18n:64780016_7}}$h#$b#{{i18n:64780016_8}}$l\"/pause 500/emote farmer 32/end"},
+
+		},	
+		{	"LogName": "Harvey Birth Event 1", 
+			"Action": "EditData",
+    			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+   			"Entries": {"64780028/e 64780016/O Harvey/n Pregnant1_Harvey/A FarmerPregnantHarvey/t 600 700": "sappypiano/-100 -100/Harvey 34 14 3 farmer 33 14 2/addConversationTopic HarveyBabySleep 14/skippable/makeInvisible 33 14 3 3/showFrame Harvey 35/showFrame 0/pause 500/speak Harvey \"{{i18n:64780028_1}}#$b# {{i18n:64780028_2}} $8#$b# {{i18n:64780028_3}} $8\"/viewport 34 14 clamp true/shake Harvey 2500/positionOffset Harvey -20 0/showFrame farmer 54/pause 2500/speak Harvey \"{{i18n:64780028_4}}#$b# {{i18n:64780028_5}}\"/positionOffset Harvey 20 0/showframe Harvey 34/emote farmer 60/speak Harvey \"{{i18n:64780028_6}}$2#$b# {{i18n:64780028_7}} $h #$b#{{i18n:64780028_8}} #$b# {{i18n:64780028_9}} $l #$b# {{i18n:64780028_10}} #$b#{{i18n:64780028_11}} #$b# {{i18n:64780028_12}}$l\"/emote Harvey 20/speak Harvey \"{{i18n:64780028_13}}\"/fade/viewport -100 -100 true/showframe 0/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}$7\"/addTemporaryActor {{BabyorBaby_Dark}} 22 15 34 15 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -53/showFrame Harvey 0/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/fade/viewport 34 14 clamp true/emote Harvey 32/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_5}}$l\"/emote farmer 20/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_8}}\"/pause 1000/end"},
+		},
+
+]
+}

@@ -1,0 +1,68 @@
+{
+  "Changes": [
+	{ 	// Edward Parametros
+      "LogName": "Parametros",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Posicionamento/Edward_Ps.json, Ativos/Personagens/Agenda/Ed_Agenda.json"
+	}, 
+    { 	//Branco e Incluir
+      "LogName": "Arquivo Branco",
+      "Action": "Load",
+      "Target": "Characters/Schedules/Edward, Characters/Dialogue/Edward, Characters/Dialogue/MarriageDialogueEdward",
+      "FromFile": "Ativos/Personagens/Vazio.json"
+    },
+	{
+      "LogName": "Textos, Animados, Eventos",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Textos/Ed_Dialogos.json, Ativos/Personagens/Textos/Ed_Casado.json, Ativos/Personagens/Animados/Animados.json, Ativos/Personagens/Eventos/Ed_Eventos.json"
+    },
+	{	//Festivais
+      "LogName": "Festivais",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Festivais/Ed_Festival.01.json",
+	  "When": { "HasSeenEvent: anyPlayer|contains=90305264": true, "HasSeenEvent: anyPlayer|contains=61743008": false, "HasSeenEvent: anyPlayer|contains=61743010": false, "HasSeenEvent: anyPlayer|contains=58614300": false }
+    },
+	{	//Dialogos & Reações - Extras Pos Produção 
+      "LogName": "Presentes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Edward": "{{i18n:Ed.gift.love}}/426 459 348 226 215 197 206 241 303 346 424 732 787 -7/{{i18n:Ed.gift.like}}/413 288 287 286 773 -6 -5 -2/{{i18n:Ed.gift.dislike}}/682 393 397 148 154 155 158 162 245 -80/{{i18n:Ed.gift.hate}}/721 648 128 -75 -20/{{i18n:Ed.gift.neutral}}/350 223 167 91 196 201 243 395 -26 -81 -79 -12 -27 -4/ "
+      }
+    },
+	{
+	  "LogName": "Extras Comentarios",
+	  "Action": "EditData",
+	  "Target": "Characters/Dialogue/Edward",
+	  "Entries": {
+	  	"DumpsterDiveComment": "{{i18n:Edward.DumpsterDive}}",
+		"AcceptGift_(O)StardropTea": "{{i18n:Ed.gift.love}}"
+	  }
+	},
+	{
+		"LogName": "Edward Engagement Dialogue",
+		"Action": "EditData",
+		"Target": "Data/EngagementDialogue",
+		"Entries": 
+		{	
+		"Edward0": "{{i18n:Ed.PréCas.01}}",
+		"Edward1": "{{i18n:Ed.PréCas.02}}"
+		}
+	},
+	{	// Quarto e Patio de Casado
+      "Action": "Load",
+      "Target": "Maps/Casado.Quarto_Edward",
+      "FromFile": "Ativos/Mapas/Casado.Quarto_Edward.tmx"
+    }, 
+	{
+	  "Action": "Load",
+	  "Target": "Maps/Casado.Patio_Edward",
+	  "FromFile": "Ativos/Mapas/Casado.Patio_Edward.tmx"
+	},
+	{
+	  "Action": "Load",
+	  "Target": "Maps/Casado.Patio.Rdx_Edward",
+	  "FromFile": "Ativos/Mapas/Casado.Patio.Rdx_Edward.tmx"
+	}
+  ]
+}

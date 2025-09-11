@@ -1,0 +1,59 @@
+{
+	"Changes": [
+        // Edit Mill
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [
+				"Mill",
+				"ItemConversions"
+			],
+			"Entries": {
+				"Adderroot": {
+					"Id": "Adderroot",
+					"SourceChest": "Input",
+					"DestinationChest": "Output",
+					"RequiredTags": [
+						"adderroot_item"
+					],
+					"ProducedItems": [
+						{
+							"ItemId": "Adderroot_Flour",
+							"MinStack": 2
+						},
+					],
+					"MaxDailyConversions": -1
+				}
+			}
+		},
+         // Edit Keg
+            {
+                 "Action": "EditData",
+                "Target": "Data/Machines",
+                "TargetField": [ "(BC)12", "OutputRules" ],
+                "Entries": {
+                     "BlackBeer": {
+                         "Id": "BlackBeer",
+                        "Triggers": 
+                              [
+                                {
+                                    "RequiredItemId": "BlackOat",
+                                }
+                            ],
+                        "OutputItem":
+                            [
+                                {
+                                    "ItemId": "BlackBeer",
+                                }
+                             ],
+                        "MinutesUntilReady": 2250,
+                    },
+                },
+                "MoveEntries": 
+			[
+				{ "Id": "BlackBeer", "ToPosition": "Top" },
+			]
+        }
+    ]
+    
+}

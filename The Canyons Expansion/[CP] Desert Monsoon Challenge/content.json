@@ -1,0 +1,1808 @@
+{
+	"Format": "2.5.3",
+
+	"Changes": [
+	//load assets
+ {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Tortoise",
+            "FromFile": "assets/Tortoise.png"  
+        },
+		    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/BabyTortoise",
+            "FromFile": "assets/BabyTortoise.png"  
+        },
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/objects",
+            "FromFile": "assets/objects.png"  
+        },
+		{
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/creosotecrop",
+            "FromFile": "assets/creosotecrop.png"  
+        },
+				{
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/IslandTurtle",
+            "FromFile": "assets/IslandTurtle.png"  
+        },
+			{
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/IslandTurtle2",
+            "FromFile": "assets/IslandTurtle2.png"  
+        },
+
+								{
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Tortoise2",
+            "FromFile": "assets/Tortoise2.png"  
+        },
+						{
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Tortoise3",
+            "FromFile": "assets/Tortoise3.png"  
+        },
+		
+      {
+        //Seed Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_creosoteseeds": {
+            "Name": "CC_CreosoteSeeds",
+            "Displayname": "Creosote Seeds",
+            "Description": "Grows in the summer or indoors all year. Takes 13 days to fully grow and produces puffs every 5 days after.",
+            "Type": "Seeds",
+            "Category": -74,
+            "Texture": "Mods/{{ModId}}/objects",
+			"SpriteIndex": 0,
+            "Price": 20
+          }
+        }
+      },
+      {
+        //Puff Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Rainpuff": {
+            "Name": "CC_Rainpuff",
+            "Displayname": "Rainpuff",
+            "Description": "A soft white ball that smells like rain and butterscotch.",
+            "Type": "Basic",
+            "Category": -81,
+            "Texture": "Mods/{{ModId}}/objects",
+			"SpriteIndex": 1,
+			"Edibility": -300, 
+            "Price": 2,
+			"ContextTags": [ "color_white", "tea_item", "cc_forage" ]
+          }
+        }
+      },
+
+      {
+        //Tea Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Remedytea": {
+            "Name": "CC_Remedytea",
+            "Displayname": "Remedy Tea",
+            "Description": "Sweet-smelling herbal remedy that protects the immune system all day.",
+            "Type": "Cooking",
+            "Category": -7,
+            "Texture": "Mods/{{ModId}}/objects",
+			"SpriteIndex": 3,
+			   "Edibility": 30,
+          "IsDrink": true,
+            "Price": 25,
+			 "Buffs": [
+            {
+              "Id": "RemedyDrink",
+			  "GlowColor": null,
+              "BuffId": null,
+              "IconTexture": null,
+              "IconSpriteIndex": 0,
+              "Duration": -2,
+              "IsDebuff": false,
+              "CustomAttributes": {
+                "FarmingLevel": 0.0,
+                "FishingLevel": 0.0,
+                "MiningLevel": 0.0,
+                "LuckLevel": 0.0,
+                "ForagingLevel": 0.0,
+                "MaxStamina": 0.0,
+                "MagneticRadius": 0.0,
+                "Speed": 1.2,
+                "Defense": 0.0,
+				"Immunity": 5.0,
+                "Attack": 0.0
+              },      
+			  "CustomFields": null
+            }
+          ],
+          }
+        }
+      },
+	  
+      {
+        //Tea Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Tarotea": {
+            "Name": "CC_Tarotea",
+            "Displayname": "Milky Tea",
+            "Description": "A thick and creamy brew that raises stamina all day.",
+            "Type": "Cooking",
+            "Category": -7,
+            "Texture": "Mods/{{ModId}}/objects",
+			"SpriteIndex": 2,
+			   "Edibility": 30,
+          "IsDrink": true,
+            "Price": 500,
+			 "Buffs": [
+            {
+              "Id": "MilkyDrink",
+              "BuffId": null,
+              "IconTexture": null,
+              "IconSpriteIndex": 0,
+              "Duration": -2,
+              "IsDebuff": false,
+              "GlowColor": null,
+              "CustomAttributes": {
+                "FarmingLevel": 0.0,
+                "FishingLevel": 0.0,
+                "MiningLevel": 0.0,
+                "LuckLevel": 0.0,
+                "ForagingLevel": 0.0,
+                "MaxStamina": 50.0,
+                "MagneticRadius": 0.0,
+                "Speed": 1.2,
+                "Defense": 0.0,
+				"Immunity": 0.0,
+                "Attack": 0.0
+              },      
+			  "CustomFields": null
+            }
+          ],
+          }
+        }
+      },
+	        {
+        //Tea Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Ferntea": {
+            "Name": "CC_Ferntea",
+            "Displayname": "Fiddlehead Tea",
+            "Description": "Earthy and bitter, it raises attack power all day.",
+            "Type": "Cooking",
+            "Category": -7,
+            "Texture": "Mods/{{ModId}}/objects",
+			"SpriteIndex": 6,
+			   "Edibility": 30,
+          "IsDrink": true,
+            "Price": 500,
+			 "Buffs": [
+            {
+              "Id": "FernDrink",
+              "BuffId": null,
+              "IconTexture": null,
+              "IconSpriteIndex": 0,
+              "Duration": -2,
+              "IsDebuff": false,
+              "GlowColor": null,
+              "CustomAttributes": {
+                "FarmingLevel": 0.0,
+                "FishingLevel": 0.0,
+                "MiningLevel": 0.0,
+                "LuckLevel": 0.0,
+                "ForagingLevel": 0.0,
+                "MaxStamina": 0.0,
+                "MagneticRadius": 0.0,
+                "Speed": 1.2,
+                "Defense": 0.0,
+				"Immunity": 0.0,
+                "Attack": 5.0
+              },      
+			  "CustomFields": null
+            }
+          ],
+          }
+        }
+      },
+
+      {
+        //Tea Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Gingertea": {
+            "Name": "CC_Gingertea",
+            "Displayname": "Ginger Root Tea",
+            "Description": "Sparkling and bright drink that focuses your attention all day.",
+            "Type": "Cooking",
+            "Category": -7,
+            "Texture": "Mods/{{ModId}}/objects",
+			"SpriteIndex": 5,
+			   "Edibility": 30,
+          "IsDrink": true,
+            "Price": 175,
+			 "Buffs": [
+            {
+              "Id": "GingeryDrink",
+              "BuffId": null,
+              "IconTexture": null,
+              "IconSpriteIndex": 0,
+              "Duration": -2,
+              "IsDebuff": false,
+              "GlowColor": null,
+              "CustomAttributes": {
+                "FarmingLevel": 0.0,
+                "FishingLevel": 0.0,
+                "MiningLevel": 0.0,
+                "LuckLevel": 0.0,
+                "ForagingLevel": 0.0,
+                "MaxStamina": 0.0,
+                "MagneticRadius": 0.0,
+                "Speed": 1.2,
+                "Defense": 0.0,
+				"Immunity": 0.0,
+                "Attack": 0.0,
+				"CriticalChanceMultiplier":2.0,
+              },      
+			  "CustomFields": null
+            }
+          ],
+          }
+        }
+      },
+	       {
+        //Tea Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Cactustea": {
+            "Name": "CC_Cactustea",
+            "Displayname": "Cactus Fruit Tea",
+            "Description": "Fruity, fermented tea that makes you feel lucky.",
+            "Type": "Cooking",
+            "Category": -7,
+            "Texture": "Mods/{{ModId}}/objects",
+			   "Edibility": 30,
+          "IsDrink": true,
+			"SpriteIndex": 4,
+            "Price": 175,
+			 "Buffs": [
+            {
+              "Id": "CactusDrink",
+              "BuffId": null,
+              "IconTexture": null,
+              "IconSpriteIndex": 0,
+              "Duration": -2,
+              "IsDebuff": false,
+              "GlowColor": null,
+              "CustomAttributes": {
+                "FarmingLevel": 0.0,
+                "FishingLevel": 0.0,
+                "MiningLevel": 0.0,
+                "LuckLevel": 5.0,
+                "ForagingLevel": 0.0,
+                "MaxStamina": 0.0,
+                "MagneticRadius": 0.0,
+                "Speed": 1.2,
+                "Defense": 0.0,
+				"Immunity": 0.0,
+                "Attack": 0.0
+              },      
+			  "CustomFields": null
+            }
+          ],
+          }
+        }
+      },
+	        {
+        //Egg Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Tortoiseegg": {
+           "Name": "TortoiseEgg",
+    "DisplayName": "Tortoise Egg",
+    "Description": "Desert tortoises are said to grow quite large! Pickle 5 or incubate.",
+    "Type": "Basic",
+    "Category": -5,
+    "Price": 80,
+    "Texture": "Mods/{{ModId}}/objects",
+    "SpriteIndex": 7,
+    "ColorOverlayFromNextIndex": false,
+    "Edibility": 15,
+    "IsDrink": false,
+    "Buffs": null,
+    "GeodeDropsDefaultItems": false,
+    "GeodeDrops": null,
+    "ArtifactSpotChances": null,
+    "CanBeGivenAsGift": true,
+    "CanBeTrashed": true,
+    "ExcludeFromFishingCollection": false,
+    "ExcludeFromShippingCollection": false,
+    "ExcludeFromRandomSale": true,
+    "ContextTags": [
+      "color_white",
+      "egg_item"
+	  
+              ],      
+			  "CustomFields": null
+            
+          }
+          }
+        },
+			        {
+        //Egg Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Turtegg": {
+           "Name": "CC_Turtegg",
+    "DisplayName": "Turtle Eggs",
+    "Description": "Island turtles lay eggs in clutches - they're fragile! Incubate or pickle a batch.",
+    "Type": "Basic",
+    "Category": -5,
+    "Price": 80,
+    "Texture": "Mods/{{ModId}}/objects",
+    "SpriteIndex": 11,
+    "ColorOverlayFromNextIndex": false,
+    "Edibility": 15,
+    "IsDrink": false,
+    "Buffs": null,
+    "GeodeDropsDefaultItems": false,
+    "GeodeDrops": null,
+    "ArtifactSpotChances": null,
+    "CanBeGivenAsGift": true,
+    "CanBeTrashed": true,
+    "ExcludeFromFishingCollection": false,
+    "ExcludeFromShippingCollection": false,
+    "ExcludeFromRandomSale": true,
+    "ContextTags": [
+      "color_white",
+      "egg_item"
+	  
+              ],      
+			  "CustomFields": null
+            
+          }
+          }
+        },
+  {
+        //Shell Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Tortoiseshell": {
+           "Name": "Tortoiseshell",
+    "DisplayName": "Scute Flake",
+    "Description": "A highly-prized flake of tortoise shell that sheds off naturally.",
+    "Type": "Basic",
+    "Category": -8,
+    "Price": 150,
+    "Texture": "Mods/{{ModId}}/objects",
+    "SpriteIndex": 9,
+    "ColorOverlayFromNextIndex": false,
+    "Edibility": -1,
+    "IsDrink": false,
+    "Buffs": null,
+    "GeodeDropsDefaultItems": false,
+    "GeodeDrops": null,
+    "ArtifactSpotChances": null,
+    "CanBeGivenAsGift": true,
+    "CanBeTrashed": true,
+    "ExcludeFromFishingCollection": false,
+    "ExcludeFromShippingCollection": false,
+    "ExcludeFromRandomSale": true,
+    "ContextTags": [
+   
+              ],      
+			  "CustomFields": null
+            
+          }
+          }
+        },
+		  {
+        //Egg 2 Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Pickledegg": {
+           "Name": "Pickledegg",
+    "DisplayName": "Pickled Eggs",
+    "Description": "Softly boiled and fermented with spiced vinegar. Gets tangier with age!",
+    "Type": "Basic",
+    "Category": -26,
+    "Price": 950,
+    "Texture": "Mods/{{ModId}}/objects",
+    "SpriteIndex": 8,
+    "ColorOverlayFromNextIndex": false,
+    "Edibility": -1,
+    "IsDrink": false,
+    "Buffs": null,
+    "GeodeDropsDefaultItems": false,
+    "GeodeDrops": null,
+    "ArtifactSpotChances": null,
+    "CanBeGivenAsGift": true,
+    "CanBeTrashed": true,
+    "ExcludeFromFishingCollection": false,
+    "ExcludeFromShippingCollection": false,
+    "ExcludeFromRandomSale": true,
+    "ContextTags": [
+   
+              ],      
+			  "CustomFields": null
+            
+          }
+          }
+        },
+		 {
+        //Shell 2 Object
+        "Action": "EditData",
+        "Target": "Data/Objects",
+        "Entries": {
+          "CC_Hairpin": {
+           "Name": "Hairpin",
+    "DisplayName": "Tortoiseshell Hairpin",
+    "Description": "An elegant, hand-sculpted pin for fancy hairstyles. Ethically sourced!",
+    "Type": "Basic",
+    "Category": -26,
+    "Price": 900,
+    "Texture": "Mods/{{ModId}}/objects",
+    "SpriteIndex": 10,
+    "ColorOverlayFromNextIndex": false,
+    "Edibility": -1,
+    "IsDrink": false,
+    "Buffs": null,
+    "GeodeDropsDefaultItems": false,
+    "GeodeDrops": null,
+    "ArtifactSpotChances": null,
+    "CanBeGivenAsGift": true,
+    "CanBeTrashed": true,
+    "ExcludeFromFishingCollection": false,
+    "ExcludeFromShippingCollection": false,
+    "ExcludeFromRandomSale": true,
+    "ContextTags": [
+   
+              ],      
+			  "CustomFields": null
+            
+          }
+          }
+        },
+		//Add Tort
+		{
+			"Action": "EditData",
+			"Target": "Data/FarmAnimals",
+			"Entries": {
+				  "CC_Turt": {
+    "DisplayName": "Island Turtle",
+    "House": "Coop",
+    "Gender": "MaleOrFemale",
+    "SellPrice": 1200,
+    "EggItemIds": [
+      "CC_Turtegg"
+    ],
+    "IncubationTime": -1,
+    "IncubatorParentSheetOffset": 1,
+    "BirthText": "An island turtle managed to hatch!",
+    "DaysToMature": 2,
+    "CanGetPregnant": false,
+    "DaysToProduce": 4,
+    "HarvestType": "DropOvernight",
+    "HarvestTool": null,
+    "ProduceItemIds": [
+      {
+        "Id": "Default",
+        "Condition": null,
+        "MinimumFriendship": 0,
+        "ItemId": "CC_Turtegg"
+      }
+    ],
+    "DeluxeProduceItemIds": [
+      {
+        "Id": "Default",
+        "Condition": null,
+        "MinimumFriendship": 0,
+        "ItemId": ""
+      }
+    ],
+    "ProduceOnMature": false,
+    "FriendshipForFasterProduce": -1,
+    "DeluxeProduceMinimumFriendship": 200,
+    "DeluxeProduceCareDivisor": 4750.0,
+    "DeluxeProduceLuckMultiplier": 1.01,
+    "CanEatGoldenCrackers": true,
+    "ProfessionForHappinessBoost": 2,
+    "ProfessionForQualityBoost": 2,
+    "ProfessionForFasterProduce": -1,
+    "Sound": "turtle_pet",
+    "BabySound": "turtle_pet",
+    "Texture": "Mods/{{ModId}}/IslandTurtle",
+    "HarvestedTexture": null,
+    "BabyTexture": "Mods/{{ModId}}/IslandTurtle",
+    "UseFlippedRightForLeft": false,
+    "SpriteWidth": 16,
+    "SpriteHeight": 16,
+    "UseDoubleUniqueAnimationFrames": true,
+    "SleepFrame": 16,
+    "EmoteOffset": {
+      "X": 0,
+      "Y": -16
+    },
+    "SwimOffset": {
+      "X": 0,
+      "Y": 112
+    },
+    "Skins": [
+		{
+							"id": "IslandColor",
+							"Weight": 2,
+							"Texture": "Mods/{{ModId}}/IslandTurtle2",
+							"BabyTexture": "Mods/{{ModId}}/IslandTurtle2"
+						}
+			
+					],
+    "ShadowWhenBabySwims": null,
+    "ShadowWhenBaby": {
+                    "Visible": false,
+                },
+    "ShadowWhenAdultSwims": null,
+    "ShadowWhenAdult": {
+                    "Visible": false,
+                },
+    "Shadow": null,
+    "CanSwim": true,
+    "BabiesFollowAdults": true,
+    "GrassEatAmount": 2,
+    "HappinessDrain": 5,
+    "UpDownPetHitboxTileSize": "1, 1",
+    "LeftRightPetHitboxTileSize": "1, 1",
+    "BabyUpDownPetHitboxTileSize": "1, 1",
+    "BabyLeftRightPetHitboxTileSize": "1, 1",
+    "ShowInSummitCredits": true,
+    "CustomFields": null
+  }
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/FarmAnimals",
+			"Entries": {
+				"CC_DesertTortoise": {
+					"DisplayName": "Tortoise",
+					"House": "Barn",
+					"Gender": "MaleOrFemale",
+					"PurchasePrice": -1,
+					"SellPrice": 5000,
+					"EggItemIds": [
+						"CC_Tortoiseegg"
+					],
+					"BirthText": "A tortoise hatchling has emerged!",
+					"DaysToMature": 10,
+					"DaysToProduce": 1,
+					"ProduceItemIds": [
+						{
+							"ItemId": "CC_Tortoiseegg",
+						},
+						{
+							"ItemId": "CC_Tortoiseshell",
+						}
+						
+					],
+					"DeluxeProduceItemIds": [
+						{
+							"ItemId": "CC_Tortoiseegg",
+						},
+						{
+							"ItemId": "CC_Tortoiseshell",
+						}
+					],
+					"HarvestType": "DropOvernight",
+					"Sound": "turtle_pet",
+					"BabySound": "turtle_pet",
+					"Texture": "Mods/{{ModId}}/Tortoise",
+					"BabyTexture": "Mods/{{ModId}}/BabyTortoise",
+					"SpriteWidth": 32,
+					"SpriteHeight": 32,
+					"EmoteOffset": {
+						"X": 0,
+						"Y": 0,
+						},
+					"UpDownPetHitboxTileSize": "1, 2",
+					"LeftRightPetHitboxTileSize": "2, 2",
+					"BabyUpDownPetHitboxTileSize": "1, 1",
+					"BabyLeftRightPetHitboxTileSize": "1, 1",
+					"UseDoubleUniqueAnimationFrames": false,
+					"UseFlippedRightForLeft": true,
+					"SleepFrame": 12,
+					"SpeedOverride": 1,
+					"Skins": [
+						{
+							"id": "TColor",
+							"Weight": 3,
+							"Texture": "Mods/{{ModId}}/Tortoise2",
+							"BabyTexture": "Mods/{{ModId}}/BabyTortoise"
+						},
+							{
+							"id": "TColor1",
+							"Weight": 3,
+							"Texture": "Mods/{{ModId}}/Tortoise3",
+							"BabyTexture": "Mods/{{ModId}}/BabyTortoise"
+						}
+					],
+					"ShadowWhenBaby": {
+							"Visible": false
+						},
+					"ShadowWhenAdult": {
+							"Visible": false
+						},
+					"CanSwim": false,
+					"CanGetPregnant": false,
+					"BabiesFollowAdults": true,
+					"GrassEatAmount": 3,
+					"HappinessDrain": 7,
+					"CustomFields": {
+						
+					}
+				}	
+			}
+		},
+	  
+      {
+        //Crop
+        "Action": "EditData",
+        "Target": "Data/Crops",
+        "Entries": {
+          "CC_creosoteseeds": {
+            "Seasons": ["summer"],
+            "DaysInPhase": [1, 2, 3, 3, 4],
+			"RegrowDays": 4,
+			"HarvestMinStack": 2,
+			"HarvestMaxStack": 3,
+			"ExtraHarvestChance": 0.55,
+			   "IsRaised": false,
+    "IsPaddyCrop": false,
+    "NeedsWatering": true,
+			"HarvestItemId": "CC_Rainpuff",
+            "Texture": "Mods/{{ModId}}/creosotecrop",
+			"SpriteIndex": 0
+          },
+        }
+      },
+	  //Machine
+		   
+	 {
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [
+        "(BC)15",
+        "OutputRules"
+      ],
+      "Entries": {
+        "CC_EggtoPickle": {
+        "Id": "EggtoPickle",
+        "Triggers": [
+          {
+            "Id": "ItemPlacedInMachine",
+            "Trigger": "ItemPlacedInMachine",
+            "RequiredItemId": "CC_Tortoiseegg",
+            "RequiredTags": null,
+            "RequiredCount": 5,
+            "Condition": null
+          }
+        ],
+        "UseFirstValidOutput": false,
+        "OutputItem": [
+          {
+            "CustomData": null,
+            "OutputMethod": null,
+            "CopyColor": false,
+            "CopyPrice": false,
+            "CopyQuality": false,
+            "PreserveType": null,
+            "PreserveId": null,
+            "IncrementMachineParentSheetIndex": 0,
+            "PriceModifiers": null,
+            "PriceModifierMode": "Stack",
+            "Condition": null,
+            "Id": "CC_Pickledegg",
+            "ItemId": "CC_Pickledegg",
+            "RandomItemId": null,
+            "MaxItems": null,
+            "MinStack": -1,
+            "MaxStack": -1,
+            "Quality": -1,
+            "ObjectInternalName": null,
+            "ObjectDisplayName": null,
+            "ToolUpgradeLevel": -1,
+            "IsRecipe": false,
+            "StackModifiers": null,
+            "StackModifierMode": "Stack",
+            "QualityModifiers": null,
+            "QualityModifierMode": "Stack",
+            "ModData": null,
+            "PerItemCondition": null
+          }
+        ],
+        "MinutesUntilReady": 4000,
+        "DaysUntilReady": -1,
+        "InvalidCountMessage": null,
+        "RecalculateOnCollect": false
+       },
+      },
+      "MoveEntries": [
+        {
+          "Id": "CC_PickledEgg",
+          "BeforeID": "CC_Tortoiseegg"
+        }
+      ]
+    },
+	 {
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [
+        "(BC)15",
+        "OutputRules"
+      ],
+      "Entries": {
+        "CC_EggtoPickle2": {
+        "Id": "EggtoPickle2",
+        "Triggers": [
+          {
+            "Id": "ItemPlacedInMachine",
+            "Trigger": "ItemPlacedInMachine",
+            "RequiredItemId": "CC_Turtegg",
+            "RequiredTags": null,
+            "RequiredCount": 1,
+            "Condition": null
+          }
+        ],
+        "UseFirstValidOutput": false,
+        "OutputItem": [
+          {
+            "CustomData": null,
+            "OutputMethod": null,
+            "CopyColor": false,
+            "CopyPrice": false,
+            "CopyQuality": false,
+            "PreserveType": null,
+            "PreserveId": null,
+            "IncrementMachineParentSheetIndex": 0,
+            "PriceModifiers": null,
+            "PriceModifierMode": "Stack",
+            "Condition": null,
+            "Id": "CC_Pickledegg",
+            "ItemId": "CC_Pickledegg",
+            "RandomItemId": null,
+            "MaxItems": null,
+            "MinStack": -1,
+            "MaxStack": -1,
+            "Quality": -1,
+            "ObjectInternalName": null,
+            "ObjectDisplayName": null,
+            "ToolUpgradeLevel": -1,
+            "IsRecipe": false,
+            "StackModifiers": null,
+            "StackModifierMode": "Stack",
+            "QualityModifiers": null,
+            "QualityModifierMode": "Stack",
+            "ModData": null,
+            "PerItemCondition": null
+          }
+        ],
+        "MinutesUntilReady": 4000,
+        "DaysUntilReady": -1,
+        "InvalidCountMessage": null,
+        "RecalculateOnCollect": false
+       },
+      },
+      "MoveEntries": [
+        {
+          "Id": "CC_PickledEgg",
+          "BeforeID": "CC_Turtegg"
+        }
+      ]
+    },
+		//Load Maps
+		{
+			"Action": "Load",
+			"Target": "maps/DesertChallenge",
+			"FromFile": "assets/DesertChallenge.tmx"
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "DesertChallenge": {
+					"DisplayName": "Desert Challenge",
+					"ExcludeFromNpcPathfinding": false,
+					"CreateOnLoad": {
+					  "MapPath": "maps/DesertChallenge",
+					  "Type": "StardewValley.GameLocation",
+					  "AlwaysActive": true
+					},
+					"CanPlantHere": null,
+					"CanHaveGreenRainSpawns": false,
+					"ArtifactSpots": [
+					  {
+						"Chance": 0.08,
+						"ApplyGenerousEnchantment": true,
+						"OneDebrisPerDrop": true,
+						"Precedence": 0,
+						"ContinueOnDrop": false,
+						"Condition": null,
+						"Id": "(O)378",
+						"ItemId": "(O)378",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": 1,
+						"MaxStack": 3,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null
+					  }
+				],
+
+			
+					"MinDailyWeeds": 5,
+					"MaxDailyWeeds": 20,
+					"FirstDayWeedMultiplier": 30,
+					"MinDailyForageSpawn": 2,
+					"MaxDailyForageSpawn": 8,
+					"MaxSpawnedForageAtOnce": 8,
+					"ChanceForClay": 0.03,
+					"Music": [],
+					"MusicDefault": null,
+					"MusicContext": "Default",
+					"MusicIgnoredInRain": false,
+					"MusicIgnoredInSpring": false,
+					"MusicIgnoredInSummer": false,
+					"MusicIgnoredInFall": false,
+					"MusicIgnoredInFallDebris": false,
+					"MusicIgnoredInWinter": false,
+					"MusicIsTownTheme": false,
+					"CustomFields": null
+                }
+            }
+        },
+{
+			"Action": "Load",
+			"Target": "maps/FlamingoCave",
+			"FromFile": "assets/FlamingoCave.tmx"
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "FlamingoCave": {
+					"DisplayName": "FlamingoCave",
+					"ExcludeFromNpcPathfinding": false,
+					"CreateOnLoad": {
+					  "MapPath": "maps/FlamingoCave",
+					  "Type": "StardewValley.GameLocation",
+					  "AlwaysActive": true
+					},
+					"CanPlantHere": null,
+					"CanHaveGreenRainSpawns": false,
+					"ArtifactSpots": [
+					  {
+						"Chance": 0.08,
+						"ApplyGenerousEnchantment": true,
+						"OneDebrisPerDrop": true,
+						"Precedence": 0,
+						"ContinueOnDrop": false,
+						"Condition": null,
+						"Id": "(O)378",
+						"ItemId": "(O)378",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": 1,
+						"MaxStack": 3,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null
+					  }
+				],
+
+			
+					"MinDailyWeeds": 5,
+					"MaxDailyWeeds": 20,
+					"FirstDayWeedMultiplier": 30,
+					"MinDailyForageSpawn": 2,
+					"MaxDailyForageSpawn": 8,
+					"MaxSpawnedForageAtOnce": 8,
+					"ChanceForClay": 0.03,
+					"Music": [],
+					"MusicDefault": null,
+					"MusicContext": "Default",
+					"MusicIgnoredInRain": false,
+					"MusicIgnoredInSpring": false,
+					"MusicIgnoredInSummer": false,
+					"MusicIgnoredInFall": false,
+					"MusicIgnoredInFallDebris": false,
+					"MusicIgnoredInWinter": false,
+					"MusicIsTownTheme": false,
+					"CustomFields": null
+                }
+            }
+        },
+		{
+			"Action": "Load",
+			"Target": "maps/WarpCave",
+			"FromFile": "assets/WarpCave.tmx"
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "WarpCave": {
+					"DisplayName": "WarpCave",
+					"ExcludeFromNpcPathfinding": false,
+					"CreateOnLoad": {
+					  "MapPath": "maps/WarpCave",
+					  "Type": "StardewValley.GameLocation",
+					  "AlwaysActive": true
+					},
+					"CanPlantHere": null,
+					"CanHaveGreenRainSpawns": false,
+					"ArtifactSpots": [
+					  {
+						"Chance": 0.08,
+						"ApplyGenerousEnchantment": true,
+						"OneDebrisPerDrop": true,
+						"Precedence": 0,
+						"ContinueOnDrop": false,
+						"Condition": null,
+						"Id": "(O)378",
+						"ItemId": "(O)378",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": 1,
+						"MaxStack": 3,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null
+					  }
+				],
+
+			
+					"MinDailyWeeds": 5,
+					"MaxDailyWeeds": 20,
+					"FirstDayWeedMultiplier": 30,
+					"MinDailyForageSpawn": 2,
+					"MaxDailyForageSpawn": 8,
+					"MaxSpawnedForageAtOnce": 8,
+					"ChanceForClay": 0.03,
+					"Music": [],
+					"MusicDefault": null,
+					"MusicContext": "Default",
+					"MusicIgnoredInRain": false,
+					"MusicIgnoredInSpring": false,
+					"MusicIgnoredInSummer": false,
+					"MusicIgnoredInFall": false,
+					"MusicIgnoredInFallDebris": false,
+					"MusicIgnoredInWinter": false,
+					"MusicIsTownTheme": false,
+					"CustomFields": null
+                }
+            }
+        },
+		{
+			"Action": "Load",
+			"Target": "maps/DesertSummit",
+			"FromFile": "assets/DesertSummit.tmx"
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "DesertSummit": {
+					"DisplayName": "Desert Summit",
+					"ExcludeFromNpcPathfinding": false,
+					"CreateOnLoad": {
+					  "MapPath": "maps/DesertSummit",
+					  "Type": "StardewValley.GameLocation",
+					  "AlwaysActive": true
+					},
+					"CanPlantHere": null,
+					"CanHaveGreenRainSpawns": false,
+					"ArtifactSpots": [
+					  {
+						"Chance": 0.08,
+						"ApplyGenerousEnchantment": true,
+						"OneDebrisPerDrop": true,
+						"Precedence": 0,
+						"ContinueOnDrop": false,
+						"Condition": null,
+						"Id": "(O)378",
+						"ItemId": "(O)378",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": 1,
+						"MaxStack": 3,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null
+					  }
+				],
+
+					"Forage": [
+					  {
+						"Chance": 0.9,
+						"Season": "Spring",
+						"Condition": null,
+						"Id": "(O)259",
+						"ItemId": "(O)259",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": -1,
+						"MaxStack": -1,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null
+					  }
+					 ],
+					"MinDailyWeeds": 5,
+					"MaxDailyWeeds": 20,
+					"FirstDayWeedMultiplier": 30,
+					"MinDailyForageSpawn": 2,
+					"MaxDailyForageSpawn": 8,
+					"MaxSpawnedForageAtOnce": 8,
+					"ChanceForClay": 0.03,
+					"Music": [],
+					"MusicDefault": null,
+					"MusicContext": "Default",
+					"MusicIgnoredInRain": false,
+					"MusicIgnoredInSpring": false,
+					"MusicIgnoredInSummer": false,
+					"MusicIgnoredInFall": false,
+					"MusicIgnoredInFallDebris": false,
+					"MusicIgnoredInWinter": false,
+					"MusicIsTownTheme": false,
+					"CustomFields": null
+                }
+            }
+        },
+			{
+			"Action": "Load",
+			"Target": "maps/DesertDry",
+			"FromFile": "assets/DesertDry.tmx"
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "DesertDry": {
+					"DisplayName": "Desert Dry Season",
+					"ExcludeFromNpcPathfinding": false,
+					"CreateOnLoad": {
+					  "MapPath": "maps/DesertDry",
+					  "Type": "StardewValley.GameLocation",
+					  "AlwaysActive": true
+					},
+					"CanPlantHere": null,
+					"CanHaveGreenRainSpawns": false,
+					"ArtifactSpots": [
+					  {
+						"Chance": 0.08,
+						"ApplyGenerousEnchantment": true,
+						"OneDebrisPerDrop": true,
+						"Precedence": 0,
+						"ContinueOnDrop": false,
+						"Condition": null,
+						"Id": "(O)378",
+						"ItemId": "(O)378",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": 1,
+						"MaxStack": 3,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null
+					  }
+				],
+
+					"Forage": [
+					  {
+						"Chance": 0.9,
+						"Season": "Spring",
+						"Condition": null,
+						"Id": "(O)259",
+						"ItemId": "(O)259",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": -1,
+						"MaxStack": -1,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null
+					  }
+					 ],
+					"MinDailyWeeds": 5,
+					"MaxDailyWeeds": 20,
+					"FirstDayWeedMultiplier": 30,
+					"MinDailyForageSpawn": 2,
+					"MaxDailyForageSpawn": 8,
+					"MaxSpawnedForageAtOnce": 8,
+					"ChanceForClay": 0.03,
+					"Music": [],
+					"MusicDefault": null,
+					"MusicContext": "Default",
+					"MusicIgnoredInRain": false,
+					"MusicIgnoredInSpring": false,
+					"MusicIgnoredInSummer": false,
+					"MusicIgnoredInFall": false,
+					"MusicIgnoredInFallDebris": false,
+					"MusicIgnoredInWinter": false,
+					"MusicIsTownTheme": false,
+					"CustomFields": null
+                }
+            }
+        },
+			        {
+            "Action": "Load",
+            "Target": "Data/Events/DesertDry",
+            "FromFile": "assets/DesertDry.json",
+        },
+				        {
+            "Action": "Load",
+            "Target": "Data/Events/DesertDry2",
+            "FromFile": "assets/DesertDry2.json",
+        },
+			{
+			"Action": "Load",
+			"Target": "maps/DesertFinal",
+			"FromFile": "assets/DesertFinal.tmx"
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "DesertFinal": {
+					"DisplayName": "Desert Final",
+					"ExcludeFromNpcPathfinding": false,
+					"CreateOnLoad": {
+					  "MapPath": "maps/DesertFinal",
+					  "Type": "StardewValley.GameLocation",
+					  "AlwaysActive": true
+					},
+					"CanPlantHere": null,
+					"CanHaveGreenRainSpawns": false,
+					"ArtifactSpots": [
+					  {
+						"Chance": 0.08,
+						"ApplyGenerousEnchantment": true,
+						"OneDebrisPerDrop": true,
+						"Precedence": 0,
+						"ContinueOnDrop": false,
+						"Condition": null,
+						"Id": "(O)378",
+						"ItemId": "(O)378",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": 1,
+						"MaxStack": 3,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null,
+				
+					  }
+					  ],
+		
+
+			
+					"MinDailyWeeds": 5,
+					"MaxDailyWeeds": 20,
+					"FirstDayWeedMultiplier": 30,
+					"MinDailyForageSpawn": 2,
+					"MaxDailyForageSpawn": 8,
+					"MaxSpawnedForageAtOnce": 8,
+					"ChanceForClay": 0.03,
+					"Music": [],
+					"MusicDefault": null,
+					"MusicContext": "Default",
+					"MusicIgnoredInRain": false,
+					"MusicIgnoredInSpring": false,
+					"MusicIgnoredInSummer": false,
+					"MusicIgnoredInFall": false,
+					"MusicIgnoredInFallDebris": false,
+					"MusicIgnoredInWinter": false,
+					"MusicIsTownTheme": false,
+					"CustomFields": null
+                }
+            }
+        },
+		  {
+            "Action": "Load",
+            "Target": "Data/Events/TurtleSummit",
+            "FromFile": "assets/TurtleSummit.json",
+        },
+			{
+			"Action": "Load",
+			"Target": "maps/TurtleSummit",
+			"FromFile": "assets/TurtleSummit.tmx"
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "TurtleSummit": {
+					"DisplayName": "Turtle Summit",
+					"ExcludeFromNpcPathfinding": false,
+					"CreateOnLoad": {
+					  "MapPath": "maps/TurtleSummit",
+					  "Type": "StardewValley.GameLocation",
+					  "AlwaysActive": true
+					},
+					"CanPlantHere": null,
+					"CanHaveGreenRainSpawns": false,
+					"ArtifactSpots": [
+					  {
+						"Chance": 0.08,
+						"ApplyGenerousEnchantment": true,
+						"OneDebrisPerDrop": true,
+						"Precedence": 0,
+						"ContinueOnDrop": false,
+						"Condition": null,
+						"Id": "(O)378",
+						"ItemId": "(O)378",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": 1,
+						"MaxStack": 3,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null,
+				
+					  }
+					  ],
+		
+
+			
+					"MinDailyWeeds": 5,
+					"MaxDailyWeeds": 20,
+					"FirstDayWeedMultiplier": 30,
+					"MinDailyForageSpawn": 2,
+					"MaxDailyForageSpawn": 8,
+					"MaxSpawnedForageAtOnce": 8,
+					"ChanceForClay": 0.03,
+					"Music": [],
+					"MusicDefault": null,
+					"MusicContext": "Default",
+					"MusicIgnoredInRain": false,
+					"MusicIgnoredInSpring": false,
+					"MusicIgnoredInSummer": false,
+					"MusicIgnoredInFall": false,
+					"MusicIgnoredInFallDebris": false,
+					"MusicIgnoredInWinter": false,
+					"MusicIsTownTheme": false,
+					"CustomFields": null
+                }
+            }
+        },
+		{
+			"Action": "Load",
+			"Target": "maps/DesertDry2",
+			"FromFile": "assets/DesertDry2.tmx"
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "DesertDry2": {
+					"DisplayName": "Desert Dry2",
+					"ExcludeFromNpcPathfinding": false,
+					"CreateOnLoad": {
+					  "MapPath": "maps/DesertDry2",
+					  "Type": "StardewValley.GameLocation",
+					  "AlwaysActive": true
+					},
+					"CanPlantHere": null,
+					"CanHaveGreenRainSpawns": false,
+					"ArtifactSpots": [
+					  {
+						"Chance": 0.08,
+						"ApplyGenerousEnchantment": true,
+						"OneDebrisPerDrop": true,
+						"Precedence": 0,
+						"ContinueOnDrop": false,
+						"Condition": null,
+						"Id": "(O)378",
+						"ItemId": "(O)378",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": 1,
+						"MaxStack": 3,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null
+					  }
+				],
+
+			
+					"MinDailyWeeds": 5,
+					"MaxDailyWeeds": 20,
+					"FirstDayWeedMultiplier": 30,
+					"MinDailyForageSpawn": 2,
+					"MaxDailyForageSpawn": 8,
+					"MaxSpawnedForageAtOnce": 8,
+					"ChanceForClay": 0.03,
+					"Music": [],
+					"MusicDefault": null,
+					"MusicContext": "Default",
+					"MusicIgnoredInRain": false,
+					"MusicIgnoredInSpring": false,
+					"MusicIgnoredInSummer": false,
+					"MusicIgnoredInFall": false,
+					"MusicIgnoredInFallDebris": false,
+					"MusicIgnoredInWinter": false,
+					"MusicIsTownTheme": false,
+					"CustomFields": null
+                }
+            }
+        },
+		{
+			"Action": "Load",
+			"Target": "maps/warper3",
+			"FromFile": "assets/warper3.tmx"
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "warper3": {
+					"DisplayName": "warper3",
+					"ExcludeFromNpcPathfinding": false,
+					"CreateOnLoad": {
+					  "MapPath": "maps/warper3",
+					  "Type": "StardewValley.GameLocation",
+					  "AlwaysActive": true
+					},
+					"CanPlantHere": null,
+					"CanHaveGreenRainSpawns": false,
+					"ArtifactSpots": [
+					  {
+						"Chance": 0.08,
+						"ApplyGenerousEnchantment": true,
+						"OneDebrisPerDrop": true,
+						"Precedence": 0,
+						"ContinueOnDrop": false,
+						"Condition": null,
+						"Id": "(O)378",
+						"ItemId": "(O)378",
+						"RandomItemId": null,
+						"MaxItems": null,
+						"MinStack": 1,
+						"MaxStack": 3,
+						"Quality": -1,
+						"ObjectInternalName": null,
+						"ObjectDisplayName": null,
+						"ToolUpgradeLevel": -1,
+						"IsRecipe": false,
+						"StackModifiers": null,
+						"StackModifierMode": "Stack",
+						"QualityModifiers": null,
+						"QualityModifierMode": "Stack",
+						"ModData": null,
+						"PerItemCondition": null
+					  }
+				],
+
+			
+					"MinDailyWeeds": 5,
+					"MaxDailyWeeds": 20,
+					"FirstDayWeedMultiplier": 30,
+					"MinDailyForageSpawn": 2,
+					"MaxDailyForageSpawn": 8,
+					"MaxSpawnedForageAtOnce": 8,
+					"ChanceForClay": 0.03,
+					"Music": [],
+					"MusicDefault": null,
+					"MusicContext": "Default",
+					"MusicIgnoredInRain": false,
+					"MusicIgnoredInSpring": false,
+					"MusicIgnoredInSummer": false,
+					"MusicIgnoredInFall": false,
+					"MusicIgnoredInFallDebris": false,
+					"MusicIgnoredInWinter": false,
+					"MusicIsTownTheme": false,
+					"CustomFields": null
+                }
+            }
+        },
+//Events
+		        {
+            "LogName": "Starting Event",
+            "Action": "EditData",
+            "Target": "Data/Events/SandyHouse",
+            "Entries": 
+            {
+            "supertime/f Sandy 1000/Time 2100 2400": "nightTime/4 6/farmer 4 9 0 Sandy 3 5 1 Wizard 4 5 3/skippable/addConversationTopic supertiming 5/pause 800/speak Sandy \"Are you sure it's tonight?$s#$b#The sky is so clear right now!$s\"/pause 200/speak Wizard \"I am certain.#$b#The pheonicopteridae have begun their dancing ritual.\"/pause 300/faceDirection Sandy 2/faceDirection Wizard 2/emote Sandy 16/pause 400/move farmer 0 -2 0/speak Sandy \"@! What are you doing here so late?#$b#The bus to the valley left hours ago...#$b#Unless you were planning to drive yourself back?\"/pause 200/speak Wizard \"Your timing is unfortunate, @.\"/emote Sandy 16/faceDirection Sandy 1/pause 400/faceDirection Sandy 2/pause 200/speak Sandy \"Oh, you already know each other?#$b#I should have guessed you would make friends with such a mysterious guy!\"/pause 400/emote Wizard 40/pause 400/speak Wizard \"'Mysterious guy,' hmm...#$b#No matter your purpose, you should get back to the valley as soon as possible.#$b#The desert will not be safe tonight.\"/pause 400/speak Sandy \"Ugh... it's true. I really messed up this time!$s#$b#I should have taken some time off last week.$s#$b#Now I'll have to wait another year...$s\"/pause 300/emote Wizard 40/pause 200/speak Wizard \"Tell me @, how much do you know about desert ecosystems?\"/emote farmer 8/pause 300/playMusic LavaMine/speak Wizard \"You have likely noticed that the desert does not follow the same seasons as the valley.#$b#But the region still has it's own elemental cycles.$2#$b#There is the long dry season, but also a wet season once a year.#$b#It occurs when the rain elementals build to a breaking point.#$b#It is a storm of all storms!$2#$b#The monsoon!$2\"/pause 600/emote Sandy 40/stopMusic LavaMine/pause 600/speak Sandy \"Luckily, this area of the desert stays pretty safe.#$b#It's protected by some 'powerful forces,' whatever that means.#$b#The problem is that there's a special plant that grows in those canyons.#$b#Every summer, they drop these cute puffballs that smell like rain.#$b#It's called a creosote. Have you heard of it?\"/pause 200/speak Wizard \"Or perhaps you know it by its medicinal term... chaparral.#$b#Or the apothecarian name... greasewood.\"/pause 400/speak Sandy \"When the monsoon hits, it'll wash away all the rainpuffs.#$b#It's terrible... if it wasn't already so late, I'd rush out to get them right now.$s\"/pause 200/emote Wizard 40/emote Sandy 40/pause 400/question fork1 \"#Offer to help Sandy#Ask the Wizard to warp you home\"/fork GoHome/pause 200/speak Sandy \"Oh wow, really?$h#$b#That would be amazing, @!#$b#Even just one would help so much!$h\"/pause 100/faceDirection Wizard 3/pause 200/faceDirection Wizard 2/pause 200/speak Wizard \"Did you... not listen to my explanation?#$b#The monsoon is highly powerful. Not even my advanced magics can fully stop it.#$b#...#$b#But I can try to keep it at bay for a little while.\"/pause 200/faceDirection Sandy 1/speak Sandy \"Yes!$h\"/pause 200/speak Wizard \"Be warned... unless you have your own methods of pausing the clock, the night is not young.\"/pause 200/showFrame Wizard 16/pause 200/playSound shwip/faceDirection Wizard 3 true/pause 50/faceDirection Wizard 0 true/pause 50/faceDirection Wizard 1 true/pause 50/faceDirection Wizard 2 true/pause 50/showFrame Wizard 16/pause 500/playSound wand/pause 200/shake Wizard 300/pause 600/speak Wizard \"There is now a teleportation scroll waiting for you by the bus stop outside.#$b#One time use only.$2#$b#The canyon twists and turns.$2#$b#Follow the light!$2\"/pause 400/playSound shwip/faceDirection Wizard 3 true/pause 50/faceDirection Wizard 0 true/pause 50/faceDirection Wizard 1 true/pause 50/faceDirection Wizard 2 true/pause 50/showFrame Wizard 16/pause 500/playSound wand/pause 400/warp Wizard -3000 -3000/specificTemporarySprite wizardWarp/screenFlash 1/pause 400/faceDirection Sandy 2/pause 200/speak Sandy \"I'll be waiting up for you, @!\"/pause 200/end", 
+"GoHome": "pause 300/speak Wizard \"Of course.\"/pause 300/speak Sandy \"It was nice to see you, @!#$b#Maybe next year you'll get a chance to try my rainpuff tea!\"/pause 200/playSound wand/pause 400/end newDay/"			}
+           
+        },
+		 {
+            "LogName": "Starting Event",
+            "Action": "EditData",
+            "Target": "Data/Events/SandyHouse",
+            "Entries": 
+            {
+            "youmadeit/i CC_Rainpuff":"rain/4 6/Sandy 3 5 2 farmer 4 7 0/skippable/addConversationTopic creosoteking 5/pause 200/emote Sandy 16/pause 200/move Sandy 1 0 1/move Sandy 0 1 2/pause 200/speak Sandy \"I'm so glad you're okay!#$b#When the rain started, but you weren't back...$s#$b#I was so worried!$s\"/pause 200/stopMusic rain/pause 300/playMusic nightTime/faceDirection Sandy 0/pause 600/faceDirection Sandy 2/pause 200/speak Sandy \"And just like that, the 'magical barrier' is up again.#$b#So...$s#$b#How did it go out there?\"/pause 200/faceDirection farmer 2/pause 200/itemAboveHead CC_Rainpuff/emote Sandy 16/pause 1400/faceDirection farmer 0/removeItem CC_Rainpuff 1 /emote Sandy 56/pause 400/speak Sandy \"You're a lifesaver, @.$h#$b#These rainpuffs can be distilled into the most amazing tea.#$b#The boss in back really likes them.#$b#I'm sure he won't mind if I share the recipe with you!$h\"/pause 200/addCookingRecipe CC_Remedytea/message \"You learned how to brew Remedy Tea!\"/pause 500/speak Sandy \"Whew... everything turned out okay.#$b#Oh! And here's one more thing for you, since it's the middle of the night...\"/pause 200/addItem 688 1 0/pause 600/speak Sandy \"You know... I bet a farmer like you could figure out how to grow creosote bushes.#$b#It would be cool if they were growing on a local farm... wink wink.$h#$b#Okay, @, get home safe!\"/pause 200/end" }
+		 },
+		 		 {
+            "LogName": "Starting Event",
+            "Action": "EditData",
+            "Target": "Data/Events/SandyHouse",
+            "Entries": 
+            {
+            "specialwarp/i CC_Remedytea":"summer_day_ambient/4 6/Sandy 2 5 2 farmer 4 9 0 Bouncer 4 8 2/skippable/addConversationTopic warptime 5/playSound doorClose/pause 200/emote farmer 16/pause 200/speak Bouncer \"Hey.\"/pause 600/speak Bouncer \"What's that you got there?\"/pause 600/speak Bouncer \"Remedy Tea, huh?#$b#...#$b#Since it'll help the boss out, I'm setting something up for you.#$b#It's outside by the bus stop.\"/pause 300/emote Sandy 40/pause 300/speak Sandy \"Uhm...$s#$b#Can I get either of you anything or...?\"/pause 200/speak Bouncer \"...#$b#Actually...\"/pause 400/end" }
+		 },
+		  		 {
+            "LogName": "Starting Event",
+            "Action": "EditData",
+            "Target": "Data/Events/DesertDry",
+            "Entries": 
+            {
+            "flamevent/Tile 13 16/Time 600 2500":"wavy/13 16/farmer 13 16 0/skippable/playSound Ostrich/pause 600/message \"Oh? Riddle?\"/question fork1 \"Answer what?#324#177#236\"/fork fork2/message \"No good!\"/pause 200/end",
+  "fork2": "pause 300/message \"Correct one!\"/pause 200/message \"Clever one!#Maybe you take care of the little guy in there.\"/pause 200/playSound wand/pause 500/playSound Ostrich/screenFlash 1/pause 400/removeTile 13 15 Buildings/removeTile 13 14 Front/end"
+	}
+		 },
+		   		 {
+            "LogName": "Starting Event",
+            "Action": "EditData",
+            "Target": "Data/Events/DesertDry2",
+            "Entries": 
+            {
+            "flameagain/Tile 13 16/SawEvent flamevent":"wavy/13 16/farmer 13 16 0/skippable/playSound Ostrich/pause 600/message \"Ohh? You want in here again?#Sand shift always after the big rain.#Old cave, new cave.#Don't get lost!\"/pause 200/playSound wand/pause 500/playSound Ostrich/screenFlash 1/pause 400/removeTile 13 15 Buildings/removeTile 13 14 Front/end"
+	}
+		 },
+		
+		 	 {
+            "LogName": "Starting Event",
+            "Action": "EditData",
+            "Target": "Data/Events/TurtleSummit",
+            "Entries": 
+            {
+            "flamsum/Tile 33 24/Time 600 2500":"wavy/30 28/farmer 33 24 1/skippable/playSound Ostrich/pause 600/message \"Oh, howdy there!#You must be a big riddle fan to come all this way.#Say, you ever flown to Ginger Island?#Our cousins are always busy over there collecting shiny stones.\"/pause 200/playSound Ostrich/pause 200/question fork1 \"If each Gem Bird found 15 shiny stones, how many would they have total?#15#60#40#85\"/fork fork3/message \"No good!#Not a big riddle fan after all...\"/pause 200/end",
+  "fork3": "pause 300/message \"Correct one!\"/pause 200/message \"Listen, the last time I saw my cousin he gave me some little guys.#He says there aren't many of them left in the wild.#You think you could keep them safe?\"/pause 200/playSound Ostrich/pause 200/itemAboveHead CC_Turtegg/addItem CC_Turtegg 1/pause 1400/end"
+	}
+		 },
+		 
+//Warps
+
+			{
+		"LogName":"Warp1",
+		"Action": "EditMap",
+		"Target": "Maps/Desert", 
+		"SetProperties": {
+        "CurrentTime": "{{Time}}"
+    },
+    "Update": "OnLocationChange",
+		"FromFile": "assets/Desertwarper.tmx",
+		"ToArea": {
+				"X": 25,
+				"Y": 23,
+				"Width": 1,
+				"Height": 1
+				},
+				"When": {
+					"HasSeenEvent:hostPlayer |contains=supertime": true
+				},
+	},
+		{
+		"LogName":"Warp2",
+		"Action": "EditMap",
+		"Target": "Maps/Desert", 
+		"SetProperties": {
+        "CurrentTime": "{{Time}}"
+    },
+    "Update": "OnLocationChange",
+		"FromFile": "assets/warper2.tmx",
+		"PatchMode": "Overlay",
+		"ToArea": {
+				"X": 24,
+				"Y": 22,
+				"Width": 1,
+				"Height": 2
+				},
+				"When": {
+					"HasSeenEvent:hostPlayer |contains=specialwarp": true
+				},
+	},
+
+			{
+		"LogName":"RemoveWarp1",
+		"Action": "EditMap",
+		"Target": "Maps/Desert", 
+			"SetProperties": {
+        "CurrentTime": "{{Time}}"
+    },
+    "Update": "OnLocationChange",
+		"When":{"HasSeenEvent:hostPlayer |contains=youmadeit": true},
+	"MapTiles": [
+                {
+                    "Position": { "X": 25, "Y": 23 },
+                    "Layer": "Buildings",
+                    "Remove": true
+	}
+	]
+			},
+			
+			{
+		"LogName":"ChangeWarp2",
+		"Action": "EditMap",
+		"Target": "Maps/Desert", 
+		"SetProperties": {
+        "CurrentTime": "{{Time}}"
+    },
+		 "Update": "OnLocationChange",
+		"When":{"HasVisitedLocation:hostPlayer |contains=FlamingoCave": true},
+	"MapTiles": [
+                {
+                    "Position": { "X": 24, "Y": 23 },
+                    "Layer": "Buildings",
+                    "Remove": true
+	},
+	       {
+                    "Position": { "X": 24, "Y": 22 },
+                    "Layer": "Front",
+                    "Remove": true
+	}
+	]
+			},
+			  	{
+		"LogName":"Warp1",
+		"Action": "EditMap",
+		"Target": "Maps/Desert", 
+		"SetProperties": {
+        "CurrentTime": "{{Time}}"
+    },
+    "Update": "OnLocationChange",
+		"FromFile": "assets/warper3.tmx",
+		"PatchMode": "Overlay",
+		"ToArea": {
+				"X": 25,
+				"Y": 22,
+				"Width": 1,
+				"Height": 2
+				},
+				"When": {
+					"HasVisitedLocation:hostPlayer |contains=FlamingoCave": true
+				},
+	},
+    
+			
+		//Dialogue	
+			
+		{ 
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Sandy",
+			"Entries": {
+		  "supertiming": "Are you going to use the scroll?#$b#Stay safe, okay?#$b#Thank you again!$h",
+		  "creosoteking": "If you brew some of that tea, will you bring me a cup?",
+		  "warptime": "That was interesting.#$b#You make friends all over the place, don't you sweetie?"
+			},
+		},
+		{ 
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Wizard",
+			"Entries": {
+		  "creosoteking": "That was quite a move you pulled in the desert.#$b#I hope it was worth it."
+			},
+		},
+		//Recipes
+			 {
+      "Action": "EditData",
+      "Target": "Data/CookingRecipes",
+      "Entries": {
+        "CC_Remedytea": "CC_Rainpuff 5 815 5 245 1/999 999/CC_Remedytea/none/",
+        "CC_Tarotea": "CC_Rainpuff 5 830 1 245 1/999 999/CC_Tarotea/none/",
+        "CC_Gingertea": "CC_Rainpuff 5 829 1 245 1/999 999/CC_Gingertea/none/",
+        "CC_Cactustea": "CC_Rainpuff 5 90 1 245 1/999 999/CC_Cactustea/none/",
+		"CC_Ferntea": "CC_Rainpuff 5 259 1 MossySeed 1/999 999/CC_Ferntea/none/"
+      }
+    },
+			    {
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Hairpin": "CC_Tortoiseshell 1 881 5/999 999/CC_Hairpin/none/"
+      }
+    },
+	//Shop
+		 {
+        "LogName": "Load Shop Portraits",
+        "Action": "Load",
+        "Target": "Portraits/Flamingo_Shop",
+        "FromFile": "assets/Flamingo_Vanilla.png"
+    },
+		{
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "Entries": {
+                "Flamingo_Shop": {
+                    "Owners": [
+                        {
+                            "Name": "AnyOrNone",
+							"PurchaseSound": "Ostrich",
+							 "Id": "Flamingo",
+                        "Portrait": "Portraits/Flamingo_Shop",
+                            "Dialogues": [
+               
+                                {
+                                    "Id": "FlamingoDefault",
+                                    "Dialogue": "Ohh? Trade me with?"
+                                }
+                            ]
+                        }
+                    ],
+
+                    "Items": [
+				{
+                    "Id": "Hairpin_Recipe",
+                    "ItemId": "CC_Hairpin",
+                   "TradeItemID": "CC_Rainpuff",
+                        "TradeItemAmount": 100,
+                    "IsRecipe": true
+                },
+                       
+                  {
+                    "Id": "CC_Cactustea",
+                    "ItemId": "CC_Cactustea",
+                   "TradeItemID": "CC_Rainpuff",
+                        "TradeItemAmount": 100,
+                    "IsRecipe": true
+                },
+				{
+                    "Id": "CC_Gingertea",
+                    "ItemId": "CC_Gingertea",
+                   "TradeItemID": "CC_Rainpuff",
+                        "TradeItemAmount": 100,
+                    "IsRecipe": true
+                },
+					{
+                    "Id": "CC_Tarotea",
+                    "ItemId": "CC_Tarotea",
+                   "TradeItemID": "CC_Rainpuff",
+                        "TradeItemAmount": 100,
+                    "IsRecipe": true
+                },
+					{
+                    "Id": "CC_Ferntea",
+                    "ItemId": "CC_Ferntea",
+                   "TradeItemID": "CC_Rainpuff",
+                        "TradeItemAmount": 100,
+                    "IsRecipe": true
+                }
+					
+							 
+                    ]
+                }
+            }
+		},
+	//Strings
+		{
+			"Action": "EditData",
+			"Target": "Strings/StringsFromMaps",
+			"Entries": {
+				"blueman": "Twelve flamingos are standing in a row, and every other flamingo has a leg tucked up. How many legs can you see?",
+				"flamingo1": "Do you like riddles?#Some cactus grow their first arm at 75 years old, and each arm after that every 25 years.#How old is a cactus with four arms?",
+				"goldman": "If every palm tree grows two coconuts, how many trees would you need to match the number of flamingo legs?#Also, if you want to go home, the warp is to your right.",
+				"goldman2":"I wonder what the flamingos eat to stay so pink?#Cactus fruit?#Or are there... desert shrimps?",
+				"blueman2":"I bet those old mine tunnels run through this canyon.#I'm always hearing weird sounds at night.",
+				"hiddenman": "Don't overthink it. The key is to add them all together.",
+				"touchit": "You wanna go back to the top, kid?"
+
+			}
+		},
+//Weather
+				  {
+            "Action": "EditData",
+            "Target": "Data/LocationContexts",
+            "Entries": {
+              "DesertFinal": {
+                
+             
+				"WeatherConditions": [
+				{ "Id": "Finalweather",
+				"Weather": "Storm"
+				}
+		
+				]
+			  }
+					  }
+					  },
+			
+		
+	]
+}

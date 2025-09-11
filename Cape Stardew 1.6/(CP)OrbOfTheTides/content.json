@@ -1,0 +1,37 @@
+{
+  "Format": "2.5.0",
+"DynamicTokens": [
+{
+      "Name": "orbLightUnlock",
+      "Value": "{{HasFlag: anyPlayer |contains=orbLightUnlocked}}",
+},
+],
+ "Changes": [
+
+  
+
+{
+      "Action": "Include",
+      "FromFile": "Objects/Orb/object.json"
+    },
+
+{
+            "Action": "EditData",
+            "Target": "Data/AudioChanges",
+            "Entries": {
+                        "portalActive": {
+                            "ID": "portalActive",
+                            "Category": "Sound",
+                            "FilePaths": [ "{{AbsoluteFilePath: assets/audio/portalactive.ogg}}" ],
+                            "StreamedVorbis": false,
+                            "Looped": false
+                        },
+                        
+                        
+                        
+            },
+        },
+
+]
+
+}

@@ -1,0 +1,85 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_Ancient_Researcher": {
+                    "Name": "{{ModId}}_Ancient_Researcher",
+                    "DisplayName": "{{i18n:Ancient_Researcher.DisplayName}}",
+                    "Description": "{{i18n:Ancient_Researcher.Description}}",
+                    "Texture": "Mods/{{ModId}}/Ancient_Researcher",
+                    "Price": 5000
+                }
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Ancient_Researcher",
+            "FromFile": "assets/Ancient_Researcher/{{TargetWithoutPath}}.png"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_Ancient_Researcher": {
+                    "HasInput": false,
+                    "HasOutput": false,
+                    "InteractMethod": null,
+                    "OutputRules": [
+                        {
+                            "Id": "Compote",
+                            "Triggers": [
+                                {
+                                    "Id": "ItemPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "{{ModId}}_Ancient_Garlic",
+                                    "RequiredTags": null,
+                                    "RequiredCount": 1,
+                                    "Condition": null
+                                }
+                            ],
+                            "UseFirstValidOutput": false,
+                            "OutputItem": [
+                                {
+                                    "CustomData": {
+                                      "AgingMultiplier": "1"
+                                    },
+                                    "CopyColor": false,
+                                    "CopyPrice": false,
+                                    "CopyQuality": false,
+                                    "PreserveType": null,
+                                    "PreserveId": null,
+                                    "IncrementMachineParentSheetIndex": 0,
+                                    "PriceModifierMode": "Stack",
+                                    "Condition": null,
+                                    "Id": null,
+                                    "ItemId": null,
+                                    "RandomItemId": ["{{ModId}}_Immortal_Potion"],
+                                    "MaxItems": null,
+                                    "MinStack": -1,
+                                    "MaxStack": -1,
+                                    "Quality": 1,
+                                    "ObjectInternalName": null,
+                                    "ObjectDisplayName": null,
+                                    "ToolUpgradeLevel": -1,
+                                    "IsRecipe": true,
+                                    "StackModifiers": null,
+                                    "StackModifierMode": "Stack",
+                                    "QualityModifiers": null,
+                                    "QualityModifierMode": "Stack",
+                                    "ModData": null,
+                                    "PerItemCondition": null
+                                }
+                            ],
+                            "MinutesUntilReady": 10,
+                            "DaysUntilReady": -1,
+                            "InvalidCountMessage": null,
+                            "RecalculateOnCollect": false
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

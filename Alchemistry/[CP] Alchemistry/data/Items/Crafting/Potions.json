@@ -1,0 +1,462 @@
+{
+    "Changes": [
+
+        //Load icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/ObjectsPotions",
+            "FromFile": "assets/Items/Crafting/potions.png"
+        },
+
+/*----------------------------------------------------
+Potion Objects
+----------------------------------------------------*/
+        {
+            "LogName":"Add Alchemistry Potions",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModID}}_BarkskinElixir": {
+                    "Name": "{{ModID}}_BarkskinElixir",
+                    "DisplayName": "{{i18n:Alchemistry_BarkskinElixir.name}}",
+                    "Description": "{{i18n:Alchemistry_BarkskinElixir.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPotions",
+                    "SpriteIndex": 0,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 150,
+                    "Edibility": 20,
+                    "IsDrink": true,
+                    "Buffs": [
+                        {
+                            "Id": null,
+                            "DisplayName": "{{i18n:Alchemistry_BarkskinBuff.name}}",
+                            "Description": "{{i18n:Alchemistry_BarkskinBuff.description}}",
+                            "IsDebuff": false,
+                            "GlowColor": null,
+                            "Duration": 500,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 10,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                    "Defense": 1.0
+                                }
+                        }
+                    ],
+                    "ContextTags": [
+                        "potion_item_consumable"
+                    ]
+                },
+                "{{ModID}}_IronbarkElixir": {
+                    "Name": "{{ModID}}_IronbarkElixir",
+                    "DisplayName": "{{i18n:Alchemistry_IronbarkElixir.name}}",
+                    "Description": "{{i18n:Alchemistry_IronbarkElixir.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPotions",
+                    "SpriteIndex": 1,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 400,
+                    "Edibility": 80,
+                    "IsDrink": true,
+                    "Buffs": [
+                        {
+                            "Id": null,
+                            "DisplayName": "{{i18n:Alchemistry_IronbarkBuff.name}}",
+                            "Description": "{{i18n:Alchemistry_IronbarkBuff.description}}",
+                            "IsDebuff": false,
+                            "GlowColor": null,
+                            "Duration": 600,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 10,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                    "Defense": 3.0
+                                }
+                        }
+                    ],
+                    "ContextTags": [
+                        "potion_item_consumable"
+                    ]
+                },
+                "{{ModID}}_LesserWylderBrew": {
+                    "Name": "{{ModID}}_LesserWylderBrew",
+                    "DisplayName": "{{i18n:Alchemistry_LesserWylderBrew.name}}",
+                    "Description": "{{i18n:Alchemistry_LesserWylderBrew.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPotions",
+                    "SpriteIndex": 2,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 400,
+                    "Edibility": 15,
+                    "IsDrink": true,
+                    "Buffs": [
+                        {
+                            "Id": null,
+                            "DisplayName": "{{i18n:Alchemistry_LesserWylderBuff.name}}",
+                            "Description": "{{i18n:Alchemistry_LesserWylderBuff.description}}",
+                            "IsDebuff": false,
+                            "GlowColor": null,
+                            "Duration": 600,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 5,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                    "FarmingLevel": 1.0,
+                                    "FishingLevel": 1.0,
+                                    "MiningLevel": 1.0,
+                                    "ForagingLevel": 1.0,
+                                    "MagneticRadius": 1.0,
+                                    "Speed": 1.0
+                                }
+                        }
+                    ],
+                    "ContextTags": [
+                        "potion_item_consumable"
+                    ]
+                },
+                "{{ModID}}_GreaterWylderBrew": {
+                    "Name": "{{ModID}}_GreaterWylderBrew",
+                    "DisplayName": "{{i18n:Alchemistry_GreaterWylderBrew.name}}",
+                    "Description": "{{i18n:Alchemistry_GreaterWylderBrew.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPotions",
+                    "SpriteIndex": 3,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 600,
+                    "Edibility": 35,
+                    "IsDrink": true,
+                    "Buffs": [
+                        {
+                            "Id": null,
+                            "DisplayName": "{{i18n:Alchemistry_GreaterWylderBuff.name}}",
+                            "Description": "{{i18n:Alchemistry_GreaterWylderBuff.description}}",
+                            "IsDebuff": false,
+                            "GlowColor": null,
+                            "Duration": 600,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 5,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                    "FarmingLevel": 3.0,
+                                    "FishingLevel": 3.0,
+                                    "MiningLevel": 3.0,
+                                    "ForagingLevel": 3.0,
+                                    "MagneticRadius": 2.0,
+                                    "Speed": 2.0
+                                }
+                        }
+                    ],
+                    "ContextTags": [
+                        "potion_item_consumable"
+                    ]
+                },
+                "{{ModID}}_TearofDreamer": {
+                    "Name": "{{ModID}}_TearofDreamer",
+                    "DisplayName": "{{i18n:Alchemistry_TearofDreamer.name}}",
+                    "Description": "{{i18n:Alchemistry_TearofDreamer.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPotions",
+                    "SpriteIndex": 4,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 175,
+                    "Edibility": -10,
+                    "IsDrink": true,
+                    "Buffs": [
+                        {
+                            "Id": null,
+                            "BuffId": "26",
+                            "DisplayName": "{{i18n:Alchemistry_TearofDreamerBuff.name}}",
+                            "Description": "{{i18n:Alchemistry_TearofDreamerBuff.description}}",
+                            "IsDebuff": true,
+                            "GlowColor": null,
+                            "Duration": 300,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 17,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                    "Defense": -1.0,
+                                    "Speed": -2.0
+                                }
+                        }
+                    ],
+                    "ContextTags": [
+                        "potion_item_consumable"
+                    ]
+                },
+                "{{ModID}}_Polaritea": {
+                    "Name": "{{ModID}}_Polaritea",
+                    "DisplayName": "{{i18n:Alchemistry_Polaritea.name}}",
+                    "Description": "{{i18n:Alchemistry_Polaritea.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPotions",
+                    "SpriteIndex": 5,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 250,
+                    "Edibility": 15,
+                    "IsDrink": true,
+                    "Buffs": [
+                        {
+                            "Id": null,
+                            "DisplayName": "{{i18n:Alchemistry_PolariteaBuff.name}}",
+                            "Description": "{{i18n:Alchemistry_PolariteaBuff.description}}",
+                            "IsDebuff": false,
+                            "GlowColor": null,
+                            "Duration": 600,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 8,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                    "Mining": 3.0,
+                                    "MagneticRadius": 2.0,
+                                    "Speed": 1.0
+                                }
+                        }
+                    ],
+                    "ContextTags": [
+                        "potion_item_consumable"
+                    ]
+                },
+                "{{ModID}}_Fatalitea": {
+                    "Name": "{{ModID}}_Fatalitea",
+                    "DisplayName": "{{i18n:Alchemistry_Fatalitea.name}}",
+                    "Description": "{{i18n:Alchemistry_Fatalitea.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPotions",
+                    "SpriteIndex": 6,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 450,
+                    "Edibility": 25,
+                    "IsDrink": true,
+                    "Buffs": [
+                        {
+                            "Id": null,
+                            "DisplayName": "{{i18n:Alchemistry_FataliteaBuff.name}}",
+                            "Description": "{{i18n:Alchemistry_FataliteaBuff.description}}",
+                            "IsDebuff": false,
+                            "GlowColor": null,
+                            "Duration": 800,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 20,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                    "Attack": 2.0,
+                                    "Speed": 2.0
+                                }
+                        }
+                    ],
+                    "ContextTags": [
+                        "potion_item_consumable"
+                    ]
+                },
+                "{{ModID}}_Immunitea": {
+                    "Name": "{{ModID}}_Immunitea",
+                    "DisplayName": "{{i18n:Alchemistry_Immunitea.name}}",
+                    "Description": "{{i18n:Alchemistry_Immunitea.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPotions",
+                    "SpriteIndex": 7,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 700,
+                    "Edibility": 70,
+                    "IsDrink": true,
+                    "Buffs": [
+                        {
+                            "Id": null,
+                            "BuffId": "28",
+                            "DisplayName": "{{i18n:Alchemistry_ImmuniteaBuff.name}}",
+                            "Description": "{{i18n:Alchemistry_ImmuniteaBuff.description}}",
+                            "IsDebuff": false,
+                            "GlowColor": null,
+                            "Duration": 800,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 20,
+                            "Effects": null,
+                            "CustomAttributes": 
+                                {
+                                    "Attack": 5.0,
+                                    "Speed": 2.0
+                                }
+                        }
+                    ],
+                    "ContextTags": [
+                        "potion_item_consumable"
+                    ]
+                },
+                "{{ModID}}_BlessingFromBeyond": {
+                    "Name": "{{ModID}}_BlessingFromBeyond",
+                    "DisplayName": "{{i18n:Alchemistry_BlessingFromBeyond.name}}",
+                    "Description": "{{i18n:Alchemistry_BlessingFromBeyond.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPotions",
+                    "SpriteIndex": 8,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 850,
+                    "Edibility": 5,
+                    "IsDrink": true,
+                    "Buffs": [
+                        {
+                            "Id": null,
+                            "DisplayName": "{{i18n:Alchemistry_BlessingFromBeyondBuff.name}}",
+                            "Description": "{{i18n:Alchemistry_BlessingFromBeyondBuff.description}}",
+                            "IsDebuff": false,
+                            "GlowColor": null,
+                            "Duration": 1200,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 21,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                    "LuckLevel": 3.0
+                                }
+                        }
+                    ],
+                    "ContextTags": [
+                        "potion_item_consumable"
+                    ]
+                },
+                "{{ModID}}_BeguilingBubbles": {
+                    "Name": "{{ModID}}_BeguilingBubbles",
+                    "DisplayName": "{{i18n:Alchemistry_BeguilingBubbles.name}}",
+                    "Description": "{{i18n:Alchemistry_BeguilingBubbles.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPotions",
+                    "SpriteIndex": 9,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 900,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "potion_item_consumable"
+                    ]
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Perfection Tracker Disabled
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BarkskinElixir" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_IronbarkElixir" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_LesserWylderBrew" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_GreaterWylderBrew" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_TearofDreamer" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Polaritea" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Fatalitea" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Immunitea" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BlessingFromBeyond" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BeguilingBubbles" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        }
+    ]
+}

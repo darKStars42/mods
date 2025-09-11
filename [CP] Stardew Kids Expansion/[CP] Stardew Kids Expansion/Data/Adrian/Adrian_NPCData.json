@@ -1,0 +1,165 @@
+{
+	"Changes": [
+		{
+			"LogName": "NPC Manifestation",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"Adrian": {
+					"DisplayName": "{{i18n: SKE.Adrian}}",
+					"Gender": "Male",
+					"Age": "Child",
+					"BirthSeason": "Summer",
+					"BirthDay": 14,
+					"HomeRegion": "Town",
+					"Manner": "Polite",
+					"SocialAnxiety": "Outgoing",
+					"Optimism": "Neutral",
+					"CanBeRomanced": false,
+					"LoveInterest": null,
+					"IntroductionsQuest": "{{IncludeInIntroductions}}",
+					"CanVisitIsland": "!DAY_OF_WEEK Tuesday Wednesday Friday",
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "SeedShop",
+							"Tile": {
+								"X": 28,
+								"Y": 28
+							},
+							"Direction": "Down"
+						}
+					],
+					"Breather": false,
+					"Appearance": [
+						{
+							"Id": "Adrian.Spring",
+							"Season": "Spring",
+							"Portrait": "Portraits/Adrian_Spring",
+							"Sprite": "Characters/Adrian_Spring"
+						},
+						{
+							"Id": "Adrian.Summer",
+							"Season": "Summer",
+							"Portrait": "Portraits/Adrian_Summer",
+							"Sprite": "Characters/Adrian_Summer"
+						},
+						{
+							"Id": "Adrian.Fall",
+							"Season": "Fall",
+							"Portrait": "Portraits/Adrian_Fall",
+							"Sprite": "Characters/Adrian_Fall"
+						},
+						{
+							"Id": "Adrian.WinterIndoor",
+							"Season": "Winter",
+							"Outdoors": false,
+							"Portrait": "Portraits/Adrian_Winter_Inside",
+							"Sprite": "Characters/Adrian_Winter_Inside"
+						},
+						{
+							"Id": "Adrian.WinterOutdoor",
+							"Season": "Winter",
+							"Indoors": false,
+							"Portrait": "Portraits/Adrian_Winter_Outside",
+							"Sprite": "Characters/Adrian_Winter_Outside"
+						},
+						{
+							"Id": "Adrian.Beach",
+							"IsIslandAttire": true,
+							"Portrait": "Portraits/Adrian_Summer",
+							"Sprite": "Characters/Adrian_Summer"
+						}
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Adrian Base Art Loads",
+			"Action": "Load",
+			"Target": "Portraits/Adrian, Characters/Adrian",
+			"FromFile": "Assets/Adrian/{{Target}}_Spring.png"
+		},
+		{
+			"LogName": "Adrian Seasonal Art Loads",
+			"Action": "Load",
+			"Target": "Portraits/Adrian_Spring, Characters/Adrian_Spring, Portraits/Adrian_Summer, Characters/Adrian_Summer, Portraits/Adrian_Fall, Characters/Adrian_Fall, Portraits/Adrian_Winter_Inside, Characters/Adrian_Winter_Inside, Portraits/Adrian_Winter_Outside, Characters/Adrian_Winter_Outside",
+			"FromFile": "assets/Adrian/{{Target}}.png"
+		},
+		{
+			"LogName": "Adrian Dialogue & Schedule Blank",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/Adrian, Characters/schedules/Adrian",
+			"FromFile": "Data/blank.json"
+		},
+		{
+			"LogName": "Adrian Dialogue & Schedule Includes",
+			"Action": "Include",
+			"FromFile": "Data/Adrian/Adrian_Dialogue.json, Data/Adrian/Adrian_Schedule.json"
+		},
+		{
+			"LogName": "Adrian Festival Includes",
+			"Action": "Include",
+			"FromFile": "Data/Adrian/Adrian_Festivals.json",
+			"When": {
+				"VisitFestivals": "True"
+			}
+		},
+		{
+			"LogName": "Adrian Gift Tastes",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {				
+				"Adrian": "{{i18n: SKE.Adrian.love}}/206/{{i18n: SKE.Adrian.like}}/211/{{i18n: SKE.Adrian.dislike}}/208/{{i18n: SKE.Adrian.hate}}/216 346/{{i18n: SKE.Adrian.neutral}}/224/"
+			}
+		},
+		{
+			"LogName": "Adrian Animations",
+			"Action": "EditData",
+			"Target": "Data/animationDescriptions",
+			"Entries": {
+				"Adrian_Read": "24/24/24",
+				"Adrian_Sleep": "24/24/24",
+				"Adrian_PlayToys": "18/19/19"
+			}
+		},
+		{
+			"LogName": "Adrian Room",
+			"Action": "EditMap",
+			"Target": "Maps/SeedShop",
+			"MapProperties": {
+				"Doors": "13 11 1 120 20 11 1 120 14 16 1 120 25 27 1 120"
+			},
+			"FromFile": "Assets/Adrian/AdrianRoom{{SVELUTICompat}}",
+			"ToArea": {
+				"X": 23,
+				"Y": 23,
+				"Width": 9,
+				"Height": 9
+			},
+			"When": {
+				"HasMod |contains= Xiddav.Parks": false,
+				"RoomsEnabled": "true"
+			}
+		},
+		{
+			"LogName": "Adrian Room - AFT",
+			"Action": "EditMap",
+			"Target": "Maps/SeedShop",
+			"MapProperties": {
+                "Doors": "13 11 1 120 20 11 1 120 14 16 1 120 36 27 1 120"
+			},
+			"FromFile": "Assets/Adrian/AdrianRoom_AFT.tmx",
+			"ToArea": {
+				"X": 34,
+				"Y": 23,
+				"Width": 9,
+				"Height": 9
+			},
+			"When": {
+				"HasMod |contains= Xiddav.Parks": true,
+				"RoomsEnabled": "true"
+			}
+		}
+	]
+}

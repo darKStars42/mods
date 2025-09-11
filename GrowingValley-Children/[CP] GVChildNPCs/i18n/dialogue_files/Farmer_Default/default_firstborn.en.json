@@ -1,0 +1,447 @@
+{
+   "Changes": [
+		{
+			"LogName": "Add gift dialogue to gift tastes for firstborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 0],
+					"Value": "{{i18n:Firstborn.GiftTastes.Love {{FirstbornTokenPass}} }}", //Loved gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 2],
+					"Value": "{{i18n:Firstborn.GiftTastes.Like {{FirstbornTokenPass}} }}", //Liked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 8],
+					"Value": "{{i18n:Firstborn.GiftTastes.Neutral_{{SiblingStatus}} {{FirstbornTokenPass}} }}", //Neutral gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 4],
+					"Value": "{{i18n:Firstborn.GiftTastes.Dislike {{FirstbornTokenPass}} }}", //Disliked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 6],
+					"Value": "{{i18n:Firstborn.GiftTastes.Hate {{FirstbornTokenPass}} }}", //Hated gift
+					"Delimiter": "",
+				},
+			],
+		},
+		
+		{
+			"LogName": "Fill firstborn's empty schedule dialogue.",
+			"Action": "EditData",
+			"Target": "Strings/schedules/{{FirstbornName}}",
+			"Entries": {
+				"winter_Tue.000": "{{i18n:Firstborn.Schedule.winter_Tue.000 {{FirstbornTokenPass}} }}",
+				"DesertFestival.000": "{{i18n:Firstborn.Schedule.DesertFestival.000 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.000": "{{i18n:Firstborn.Schedule.Schoolhouse.000 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.001": "{{i18n:Firstborn.Schedule.Schoolhouse.001 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.002": "{{i18n:Firstborn.Schedule.Schoolhouse.002 {{FirstbornTokenPass}} }}",
+			}
+		},
+		{
+			"LogName": "Fill firstborn's empty dialogue.",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{FirstbornName}}",
+			"Entries": {
+				"AcceptBirthdayGift_Positive": "{{i18n:Firstborn.Dialogue.BirthdayGift_Positive {{FirstbornTokenPass}} }}",
+				"AcceptBirthdayGift_Negative": "{{i18n:Firstborn.Dialogue.BirthdayGift_Negative {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)StardropTea": "{{i18n:Firstborn.Dialogue.Gift_StardropTea {{FirstbornTokenPass}} }}",
+				"AcceptGift_category_vegetable": "{{i18n:Firstborn.Dialogue.Gift_category_vegetable {{FirstbornTokenPass}} }}",
+				"AcceptGift_coffee_item": "{{i18n:Firstborn.Dialogue.Gift_coffee_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_alcohol_item": "{{i18n:Firstborn.Dialogue.Gift_alcohol_item {{FirstbornTokenPass}}  }}",
+				"Resort_Entering": "{{i18n:Firstborn.Dialogue.Resort_Entering {{FirstbornTokenPass}} }}",
+				"Resort_Leaving": "{{i18n:Firstborn.Dialogue.Resort_Leaving_{{SiblingStatus}} {{FirstbornTokenPass}} }}",
+				"Resort": "{{i18n:Firstborn.Dialogue.Resort {{FirstbornTokenPass}} }}",
+				"GreenRain": "{{i18n:Firstborn.Dialogue.GreenRain {{FirstbornTokenPass}} }}",
+				"Mon": "{{i18n:Firstborn.Dialogue.Mon {{FirstbornTokenPass}} }}",
+				"Tue": "{{i18n:Firstborn.Dialogue.Tue {{FirstbornTokenPass}} }}",
+				"Wed": "{{i18n:Firstborn.Dialogue.Wed {{FirstbornTokenPass}} }}",
+				"Thu": "{{i18n:Firstborn.Dialogue.Thu {{FirstbornTokenPass}} }}",
+				"Fri": "{{i18n:Firstborn.Dialogue.Fri_{{SiblingStatus}} {{FirstbornTokenPass}} }}",
+				"Sat": "{{i18n:Firstborn.Dialogue.Sat {{FirstbornTokenPass}} }}",
+				"Sun": "{{i18n:Firstborn.Dialogue.Sun {{FirstbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:Firstborn.Dialogue.summer_Mon {{FirstbornTokenPass}} }}",
+				"summer_Tue": "{{i18n:Firstborn.Dialogue.summer_Tue {{FirstbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:Firstborn.Dialogue.summer_Wed {{FirstbornTokenPass}} }}",
+				"summer_Thu": "{{i18n:Firstborn.Dialogue.summer_Thu_{{SiblingStatus}} {{FirstbornTokenPass}} }}",
+				"summer_Fri": "{{i18n:Firstborn.Dialogue.summer_Fri {{FirstbornTokenPass}} }}",
+				"summer_Sat": "{{i18n:Firstborn.Dialogue.summer_Sat {{FirstbornTokenPass}} }}",
+				"summer_Sun": "{{i18n:Firstborn.Dialogue.summer_Sun {{FirstbornTokenPass}} }}",
+				"fall_Mon": "{{i18n:Firstborn.Dialogue.fall_Mon {{FirstbornTokenPass}} }}",
+				"fall_Tue": "{{i18n:Firstborn.Dialogue.fall_Tue {{FirstbornTokenPass}} }}",
+				"fall_Wed": "{{i18n:Firstborn.Dialogue.fall_Wed {{FirstbornTokenPass}} }}",
+				"fall_Thu": "{{i18n:Firstborn.Dialogue.fall_Thu_{{SiblingStatus}} {{FirstbornTokenPass}} }}",
+				"fall_Fri": "{{i18n:Firstborn.Dialogue.fall_Fri {{FirstbornTokenPass}} }}",
+				"fall_Sat": "{{i18n:Firstborn.Dialogue.fall_Sat {{FirstbornTokenPass}} }}",
+				"fall_Sun": "{{i18n:Firstborn.Dialogue.fall_Sun {{FirstbornTokenPass}} }}",
+				"winter_Mon": "{{i18n:Firstborn.Dialogue.winter_Mon {{FirstbornTokenPass}} }}",
+				"winter_Tue": "{{i18n:Firstborn.Dialogue.winter_Tue {{FirstbornTokenPass}} }}",
+				"winter_Wed": "{{i18n:Firstborn.Dialogue.winter_Wed {{FirstbornTokenPass}} }}",
+				"winter_Thu": "{{i18n:Firstborn.Dialogue.winter_Thu {{FirstbornTokenPass}} }}",
+				"winter_Fri": "{{i18n:Firstborn.Dialogue.winter_Fri {{FirstbornTokenPass}} }}",
+				"winter_Sat": "{{i18n:Firstborn.Dialogue.winter_Sat {{FirstbornTokenPass}} }}",
+				"winter_Sun": "{{i18n:Firstborn.Dialogue.winter_Sun {{FirstbornTokenPass}} }}",
+			},
+		},
+		{
+            "LogName": "Add rain dialogue for firstborn.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/rainy",
+            "Entries": {
+				"{{FirstbornName}}": "{{i18n:Firstborn.Dialogue.Rain {{FirstbornTokenPass}} }}",
+			}
+		},
+		
+        {
+			"LogName": "Add Egg Festival dialogue for firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring13",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:Firstborn.Festivals.spring13_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:Firstborn.Festivals.spring13_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Flower Dance dialogue for firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:Firstborn.Festivals.spring24_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:Firstborn.Festivals.spring24_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Luau dialogue for firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer11",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:Firstborn.Festivals.summer11_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:Firstborn.Festivals.summer11_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Moonlight Jellies dialogue for firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer28",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:Firstborn.Festivals.summer28_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:Firstborn.Festivals.summer28_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Fair dialogue for firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:Firstborn.Festivals.fall16_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:Firstborn.Festivals.fall16_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Spirit's Eve dialogue for firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:Firstborn.Festivals.fall27_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:Firstborn.Festivals.fall27_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Festival of Ice dialogue for firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:Firstborn.Festivals.winter8_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:Firstborn.Festivals.winter8_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Winter Star dialogue for firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:Firstborn.Festivals.winter25_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:Firstborn.Festivals.winter25_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+		{
+			"LogName": "Add dialogue for attending movies with other parent for firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_3", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:Firstborn.Movie.With_Parent_Before {{FirstbornTokenPass}} }}"
+					},
+				"DuringMovie": {
+					"ResponsePoint": null,
+					"Script": "/message \"{{i18n:GeneralChildren.Movie.With_Parent_Script {{FirstbornTokenPass}} }}\"",
+					"Text": null
+				},
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:Firstborn.Movie.With_Parent_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for loved movies for firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_4", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:Firstborn.Movie.love_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:Firstborn.Movie.love_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for liked movies for firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_5", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:Firstborn.Movie.like_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:Firstborn.Movie.like_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Edit Little Red School House map string for Growing Valley default firstborn.",
+			"Action": "EditData",
+			"Target": "Strings/StringsFromMaps",
+            "Entries": {
+				"Desk.18": "{{i18n:Schoolhouse.Desk18.Firstborn {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+			},
+		},
+		
+		//Conditional dialogue (schedules)
+		{
+            "LogName": "Edit firstborn schedule dialogue when married/roommates with Sebastian or Maru.",
+            "Action": "EditData",
+            "Target": "Strings/schedules/{{FirstbornName}}",
+            "Entries": {
+				"winter_Tue.000": "{{i18n:Firstborn.Schedule.winter_Tue.000.SebMaru {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"PlayerCompanion|contains=Sebastian,Maru": true,
+				"FirstbornDialogue|contains=Generic, Single": false,
+			},
+		},
+		{
+            "LogName": "Edit firstborn schedule dialogue when married/roommates with Sam.",
+            "Action": "EditData",
+            "Target": "Strings/schedules/{{FirstbornName}}",
+            "Entries": {
+				"winter_Tue.000": "{{i18n:Firstborn.Schedule.winter_Tue.000.Sam {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"PlayerCompanion|contains=Sam": true,
+				"FirstbornDialogue|contains=Generic, Single": false,
+			},
+		},
+		{
+            "LogName": "Edit firstborn schedule dialogue when married/roommates with Shane.",
+            "Action": "EditData",
+            "Target": "Strings/schedules/{{FirstbornName}}",
+            "Entries": {
+				"winter_Tue.000": "{{i18n:Firstborn.Schedule.winter_Tue.000.Shane {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"PlayerCompanion|contains=Shane": true,
+				"FirstbornDialogue|contains=Generic, Single": false,
+			},
+		},
+		
+		//Conditional dialogue (regular)
+		{
+            "LogName": "Edit firstborn dialogue when married/roommates with Sam.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"Tue": "{{i18n:Firstborn.Dialogue.Tue.Sam {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"PlayerCompanion|contains=Sam": true,
+				"FirstbornDialogue|contains=Generic, Single": false,
+			},
+		},
+		{
+            "LogName": "Edit firstborn dialogue when married/roommates with Jodi.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"Tue": "{{i18n:Firstborn.Dialogue.Tue.Jodi {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"PlayerCompanion|contains=Jodi": true,
+				"FirstbornDialogue|contains=Generic, Single": false,
+			},
+		},
+		{
+            "LogName": "Edit firstborn dialogue when married/roommates with Abigail.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"winter_Mon": "{{i18n:Firstborn.Dialogue.winter_Mon.Abigail {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"PlayerCompanion|contains=Abigail": true,
+				"FirstbornDialogue|contains=Generic, Single": false,
+			},
+		},
+		{
+            "LogName": "Edit firstborn dialogue when married/roommates with Pierre or Caroline.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"winter_Mon": "{{i18n:Firstborn.Dialogue.winter_Mon.PierreCarol {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"PlayerCompanion|contains=Pierre,Caroline": true,
+				"FirstbornDialogue|contains=Generic, Single": false,
+			},
+		},
+		{
+            "LogName": "Edit firstborn dialogue when married/roommates with Emily or Krobus.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"winter_Sun": "{{i18n:Firstborn.Dialogue.winter_Sun.EmilyKrobus {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"PlayerCompanion|contains=Emily,Krobus": true,
+				"FirstbornDialogue|contains=Generic, Single": false,
+			},
+		},
+		{
+            "LogName": "Edit firstborn dialogue to use genericized versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"Tue": "{{i18n:Firstborn.Dialogue.Tue.noncanon {{FirstbornTokenPass}} }}",
+				"winter_Mon": "{{i18n:Firstborn.Dialogue.winter_Mon.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic": true,
+			},
+		},
+		{
+            "LogName": "Edit firstborn dialogue to use single parenting versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"AcceptGift_alcohol_item": "{{i18n:Firstborn.Dialogue.Gift_alcohol_item.single {{FirstbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:Firstborn.Dialogue.summer_Mon.single {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Single": true,
+			},
+		},
+		{
+            "LogName": "Change firstborn winter Tuesday dialogue when LRSH is installed.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"winter_Tue": "{{i18n:Firstborn.Dialogue.winter_Tue.LRSH {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+			},
+		},
+		
+		//Conditional dialogue (festivals)
+		{
+            "LogName": "Edit firstborn Flower Dance dialogue when married/roommates with Krobus.",
+            "Action": "EditData",
+            "Target": "data/festivals/spring24",
+            "Entries": {
+				 "{{FirstbornName}}": "{{i18n:Firstborn.Festivals.spring24_y1.Krobus {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"PlayerCompanion|contains=Krobus": true,
+				"FirstbornDialogue|contains=Generic, Single": false,
+			},
+		},
+		{
+            "LogName": "Edit firstborn Spirit's Eve dialogue when married/roommates with Krobus.",
+            "Action": "EditData",
+            "Target": "data/festivals/fall27",
+            "Entries": {
+				 "{{FirstbornName}}_y2": "{{i18n:Firstborn.Festivals.fall27_y2.Krobus {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"PlayerCompanion|contains=Krobus": true,
+				"FirstbornDialogue|contains=Generic, Single": false,
+			},
+		},
+		{
+            "LogName": "Edit firstborn Flower Dance dialogue to use single parenting versions.",
+            "Action": "EditData",
+            "Target": "data/festivals/spring24",
+            "Entries": {
+				 "{{FirstbornName}}": "{{i18n:Firstborn.Festivals.spring24_y1.single {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Single": true,
+			},
+		},
+		
+		
+		
+   		{      
+			"LogName": "Include dialogue files which have been modified for translation for default firstborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Farmer_Default/default_firstborn_edit.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+		
+   ]
+}

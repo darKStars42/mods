@@ -1,0 +1,812 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DaLion.Taxes</name>
+    </assembly>
+    <members>
+        <member name="T:DaLion.Taxes.Commands.DoTaxesCommand">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Commands.DoTaxesCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Commands.DoTaxesCommand.#ctor(DaLion.Shared.Commands.CommandHandler)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Commands.DoTaxesCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="P:DaLion.Taxes.Commands.DoTaxesCommand.Triggers">
+            <inheritdoc />
+        </member>
+        <member name="P:DaLion.Taxes.Commands.DoTaxesCommand.Documentation">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Taxes.Commands.DoTaxesCommand.CallbackImpl(System.String,System.String[])">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.Commands.SendLetterCommand">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Commands.SendLetterCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Commands.SendLetterCommand.#ctor(DaLion.Shared.Commands.CommandHandler)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Commands.SendLetterCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="P:DaLion.Taxes.Commands.SendLetterCommand.Triggers">
+            <inheritdoc />
+        </member>
+        <member name="P:DaLion.Taxes.Commands.SendLetterCommand.Documentation">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Taxes.Commands.SendLetterCommand.CallbackImpl(System.String,System.String[])">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.Commands.SetCommand">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Commands.SetCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Commands.SetCommand.#ctor(DaLion.Shared.Commands.CommandHandler)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Commands.SetCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="P:DaLion.Taxes.Commands.SetCommand.Triggers">
+            <inheritdoc />
+        </member>
+        <member name="P:DaLion.Taxes.Commands.SetCommand.Documentation">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Taxes.Commands.SetCommand.CallbackImpl(System.String,System.String[])">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Taxes.Commands.SetCommand.GetUsage">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.Framework.CountyService">
+            <summary>Collects federal taxes.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.CountyService.CalculateTaxes">
+            <summary>Calculates due property tax for farm.</summary>
+            <returns>The amount of income tax due in gold, along with other relevant stats.</returns>
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Events.HostModMessageReceivedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.HostModMessageReceivedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.HostModMessageReceivedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.HostModMessageReceivedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="P:DaLion.Taxes.Framework.Events.HostModMessageReceivedEvent.IsEnabled">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.HostModMessageReceivedEvent.OnModMessageReceivedImpl(System.Object,StardewModdingAPI.Events.ModMessageReceivedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Events.TaxAssetRequestedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.TaxAssetRequestedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.TaxAssetRequestedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.TaxAssetRequestedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.TaxAssetRequestedEvent.Initialize">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Events.TaxDayEndingEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.TaxDayEndingEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.TaxDayEndingEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.TaxDayEndingEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.TaxDayEndingEvent.OnDayEndingImpl(System.Object,StardewModdingAPI.Events.DayEndingEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Events.TaxDayStartedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.TaxDayStartedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.TaxDayStartedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.TaxDayStartedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.TaxDayStartedEvent.OnDayStartedImpl(System.Object,StardewModdingAPI.Events.DayStartedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Events.TaxGameLaunchedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.TaxGameLaunchedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.TaxGameLaunchedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.TaxGameLaunchedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.TaxGameLaunchedEvent.OnGameLaunchedImpl(System.Object,StardewModdingAPI.Events.GameLaunchedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Events.TaxSaveLoadedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.TaxSaveLoadedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.TaxSaveLoadedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Events.TaxSaveLoadedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Events.TaxSaveLoadedEvent.OnSaveLoadedImpl(System.Object,StardewModdingAPI.Events.SaveLoadedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Extensions.FarmerExtensions">
+            <summary>Extensions for the <see cref="T:StardewValley.Farmer"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Extensions.FarmerExtensions.ShouldPayTaxes(StardewValley.Farmer)">
+            <summary>Determines whether the <paramref name="farmer"/> is liable for paying taxes.</summary>
+            <param name="farmer">The <see cref="T:StardewValley.Farmer"/>.</param>
+            <returns><see langword="true"/> if the <paramref name="farmer"/> is the main player or using separate wallets, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Extensions.FarmExtensions">
+            <summary>Extensions for the <see cref="T:StardewValley.Farm"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Extensions.FarmExtensions.Appraise(StardewValley.Farm)">
+            <summary>Determines the total property value of the <paramref name="farm"/>.</summary>
+            <param name="farm">The <see cref="T:StardewValley.Farm"/>.</param>
+            <returns>The total values of agriculture activities, livestock and buildings on the <paramref name="farm"/>, as well as the total number of tiles used by all of those activities.</returns>
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Extensions.Game1Extensions">
+            <summary>Extensions for the <see cref="T:StardewValley.Game1"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Extensions.Game1Extensions.CountPlayerArtisanMachines(StardewValley.Game1)">
+            <summary>Counts the total number of placed Artisan Machines in the game world.</summary>
+            <param name="game1">The <see cref="T:StardewValley.Game1"/> instance.</param>
+            <returns>The total number of placed Artisan Machines in the game world.</returns>
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Extensions.SObjectExtensions">
+            <summary>Extensions for the <see cref="T:StardewValley.Object"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Extensions.SObjectExtensions.IsArtisanMachine(StardewValley.Object)">
+            <summary>Determines whether <paramref name="object"/> is an artisan machine.</summary>
+            <param name="object">The <see cref="T:StardewValley.Object"/>.</param>
+            <returns><see langword="true"/> if the <paramref name="object"/> is a machine that creates artisan goods, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Integrations.ProfessionsIntegration">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Integrations.ProfessionsIntegration"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Integrations.ProfessionsIntegration.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Integrations.ProfessionsIntegration"/> class.</summary>
+        </member>
+        <member name="T:DaLion.Taxes.Framework.Lookups">
+            <summary>Holds maps which may be referenced by different modules.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.Framework.Lookups.ArtisanMachines">
+            <summary>Gets the qualified IDs of the Artisan machines.</summary>
+        </member>
+        <member name="F:DaLion.Taxes.Framework.Mail.FrsIntro">
+            <summary>The FRS intro letter.</summary>
+        </member>
+        <member name="F:DaLion.Taxes.Framework.Mail.FrsNotice">
+            <summary>The FRS taxation notice letter.</summary>
+        </member>
+        <member name="F:DaLion.Taxes.Framework.Mail.FrsOutstanding">
+            <summary>The FRS outstanding debt letter.</summary>
+        </member>
+        <member name="F:DaLion.Taxes.Framework.Mail.FrsDeduction">
+            <summary>The FRS tax deduction letter.</summary>
+        </member>
+        <member name="F:DaLion.Taxes.Framework.Mail.LewisIntro">
+            <summary>Lewis' taxation intro letter.</summary>
+        </member>
+        <member name="F:DaLion.Taxes.Framework.Mail.LewisNotice">
+            <summary>Lewis' taxation notice letter.</summary>
+        </member>
+        <member name="F:DaLion.Taxes.Framework.Mail.LewisOutstanding">
+            <summary>Lewis' outstanding debt letter.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Patchers.CarpenterMenuConsumeResourcesPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Patchers.CarpenterMenuConsumeResourcesPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Patchers.CarpenterMenuConsumeResourcesPatcher.CarpenterMenuConsumeResourcesPostfix(StardewValley.Menus.CarpenterMenu)">
+            <summary>Patch to deduct building expenses.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Patchers.FarmerHasOrWillReceiveMailPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Patchers.FarmerHasOrWillReceiveMailPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Patchers.FarmerHasOrWillReceiveMailPatcher.FarmerHasOrWillReceiveMailPrefix(System.Boolean@,System.String)">
+            <summary>Patch to allow receiving multiple letters from the FRS.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Patchers.PurchaseAnimalsSetUpForReturnAfterPurchasingAnimalPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Patchers.PurchaseAnimalsSetUpForReturnAfterPurchasingAnimalPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Patchers.PurchaseAnimalsSetUpForReturnAfterPurchasingAnimalPatcher.PurchaseAnimalsMenuSetUpForReturnAfterPurchasingAnimalPostfix(StardewValley.FarmAnimal,System.Int32)">
+            <summary>Patch to deduct animal expenses.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Patchers.ShopMenuTryToPurchaseItemPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.Framework.Patchers.ShopMenuTryToPurchaseItemPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.Patchers.ShopMenuTryToPurchaseItemPatcher.ShopMenuTryToPurchaseItemTranspiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.Emit.ILGenerator,System.Reflection.MethodBase)">
+            <summary>Patch to deduct tool and other expenses.</summary>
+        </member>
+        <member name="T:DaLion.Taxes.Framework.PostalService">
+            <summary>Delivers mail.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.PostalService.Send(DaLion.Taxes.Framework.Mail)">
+            <summary>Sends the post to the local player.</summary>
+            <param name="mail">The <see cref="T:DaLion.Taxes.Framework.Mail"/> to send.</param>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.PostalService.HasSent(DaLion.Taxes.Framework.Mail)">
+            <summary>Checks whether the local player has received this post.</summary>
+            <param name="mail">The <see cref="T:DaLion.Taxes.Framework.Mail"/> to be sent.</param>
+            <returns><see langword="true"/> if the player has or will receive the post, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="T:DaLion.Taxes.Framework.RevenueService">
+            <summary>Collects federal taxes.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.Framework.RevenueService.CalculateTaxes(StardewValley.Farmer)">
+            <summary>Calculates due income tax for the <paramref name="farmer"/>.</summary>
+            <param name="farmer">The <see cref="T:StardewValley.Farmer"/>.</param>
+            <returns>The amount of income tax due in gold, along with other relevant stats.</returns>
+        </member>
+        <member name="T:DaLion.Taxes.ITaxesApi">
+            <summary>The public interface for the Taxes mod API.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.ITaxesApi.CalculateIncomeTax(StardewValley.Farmer)">
+            <summary>Evaluates the due income tax and other relevant stats for the <paramref name="farmer"/>.</summary>
+            <param name="farmer">The <see cref="T:StardewValley.Farmer"/>. Defaults to <see cref="P:StardewValley.Game1.player"/>.</param>
+            <returns>The amount of income tax due in gold, along with total income, business expenses, eligible deductions and total taxable amount (in that order).</returns>
+        </member>
+        <member name="M:DaLion.Taxes.ITaxesApi.CalculatePropertyTax">
+            <summary>Determines the total property value of the farm.</summary>
+            <returns>The total values of agriculture activities, livestock and buildings on the farm, as well as the total number of tiles used by all of those activities.</returns>
+        </member>
+        <member name="T:DaLion.Taxes.TaxesApi">
+            <summary>The <see cref="T:DaLion.Taxes.TaxesMod"/> API implementation.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.TaxesApi.CalculateIncomeTax(StardewValley.Farmer)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Taxes.TaxesApi.CalculatePropertyTax">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.TaxesConfig">
+            <summary>Config schema for the Taxes mod.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.TaxRatePerIncomeBracket">
+            <summary>Gets the taxable income percentage at each income threshold.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.DeductibleAnimalExpenses">
+            <summary>Gets the percentage of gold spent on animal purchases and supplies that should be tax-deductible.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.DeductibleBuildingExpenses">
+            <summary>Gets the percentage of gold spent constructing farm buildings that should be tax-deductible.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.DeductibleSeedExpenses">
+            <summary>Gets the percentage of gold spent on seed purchases that should be tax-deductible.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.DeductibleToolExpenses">
+            <summary>Gets the percentage of gold spent on tool purchases and upgrades that should be tax-deductible.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.DeductibleExtras">
+            <summary>Gets a dictionary of extra objects that should be tax-deductible.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.IncomeTaxDay">
+            <summary>Gets or sets the day of the season when income taxes are charged.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.IncomeTaxLatenessFine">
+            <summary>Gets the percentage rate charged overdue income taxes not paid in time.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.BaselineUnusedTileCost">
+            <summary>Gets the baseline cost of each unused tile.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.UnusedTileTaxRate">
+            <summary>Gets the property tax rate of an unused tile.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.UsedTileTaxRate">
+            <summary>Gets the property tax rate of a tile used for agriculture or livestock.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.BuildingTaxRate">
+            <summary>Gets the property tax rate of a tile used for real-estate.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.ExemptMagicalBuildings">
+            <summary>Gets a value indicating whether magical buildings are exempted from property taxes.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.PropertyTaxDay">
+            <summary>Gets or sets the day of the season when property taxes are charged.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.PropertyTaxLatenessFine">
+            <summary>Gets the flat rate charged overdue income taxes not paid in time.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.AnnualInterest">
+            <summary>
+                Gets the interest rate charged annually over any outstanding debt. Interest is accrued daily at a rate of 1/112 the
+                annual rate.
+            </summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.DefaultArtisanValueCropMultiplier">
+            <summary>Gets a multiplier which is used to estimate the value of artisan products derived from crops.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesConfig.DefaultArtisanValueProduceMultiplier">
+            <summary>Gets a multiplier which is used to estimate the value of artisan products derived from animal produce.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.TaxesConfigMenu.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Taxes.TaxesConfigMenu"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.TaxesConfigMenu.BuildMenu">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Taxes.TaxesConfigMenu.ResetConfig">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Taxes.TaxesConfigMenu.SaveAndApply">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.TaxesMod">
+            <summary>The mod entry point.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesMod.Instance">
+            <summary>Gets the static <see cref="T:DaLion.Taxes.TaxesMod"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesMod.Config">
+            <summary>Gets or sets the <see cref="T:DaLion.Taxes.TaxesConfig"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesMod.Data">
+            <summary>Gets the <see cref="T:DaLion.Shared.Data.ModDataManager"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesMod.EventManager">
+            <summary>Gets the <see cref="T:DaLion.Shared.Events.EventManager"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesMod.Broadcaster">
+            <summary>Gets the <see cref="P:DaLion.Taxes.TaxesMod.Broadcaster"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesMod.Log">
+            <summary>Gets the <see cref="T:DaLion.Shared.Logger"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesMod.ModHelper">
+            <summary>Gets the <see cref="T:StardewModdingAPI.IModHelper"/> API.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesMod.Manifest">
+            <summary>Gets the <see cref="T:StardewModdingAPI.IManifest"/> API.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesMod.UniqueId">
+            <summary>Gets the unique ID for this mod.</summary>
+        </member>
+        <member name="P:DaLion.Taxes.TaxesMod._I18n">
+            <summary>Gets the <see cref="T:StardewModdingAPI.ITranslationHelper"/> API.</summary>
+        </member>
+        <member name="M:DaLion.Taxes.TaxesMod.Entry(StardewModdingAPI.IModHelper)">
+            <summary>The mod entry point, called after the mod is first loaded.</summary>
+            <param name="helper">Provides simplified APIs for writing mods.</param>
+        </member>
+        <member name="M:DaLion.Taxes.TaxesMod.GetApi">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Taxes.I18n">
+            <summary>Get translations from the mod's <c>i18n</c> folder.</summary>
+            <remarks>This is auto-generated from the <c>i18n/default.json</c> file when the project is compiled.</remarks>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Translations">
+            <summary>The mod's translation helper.</summary>
+        </member>
+        <member name="T:DaLion.Taxes.I18n.Keys">
+            <summary>A lookup of available translation keys.</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Schema">
+            <summary>The unique key for a translation equivalent to "https://smapi.io/schemas/i18n.json".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Mail_Frs_Intro">
+            <summary>The unique key for a translation equivalent to "Department of the Treasury^Ferngill Revenue Service^^^{{honorific}} Taxpayer,^^This letter is to inform you that your recent address change to Pelican Town, Stardew Valley has been filed and registered. All future correspondence will be directed to {{farm}} farm.^^We kindly remind you that federal income tax contributions are due end-of-day on the 1st of every season. For your convenience, your due obligations will be automatically deducted from your balance. If your balance is insufficient, ...".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Mail_Frs_Notice">
+            <summary>The unique key for a translation equivalent to "Department of the Treasury^Ferngill Revenue Service^^^{{honorific}} Taxpayer,^^This letter is to inform you that your total accrued income tax for the closing season in the amount of {{due}}g will be deducted from your balance automatically {{when}}.^^Please keep this letter in your permanent records should you need to resolve any questions regarding your fiscal status.^^^Sincerely,^^Laura D. Pretto^Executive Directrice, Ferngill Revenue Service[#]FRS Monthly Notice".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Mail_Frs_Deduction">
+            <summary>The unique key for a translation equivalent to "Department of the Treasury^Ferngill Revenue Service^^^{{honorific}} Taxpayer,^^This letter is to inform you that your total accrued income tax for the closing season is {{accrued}}g. In light of your recent environmentalist activities you are qualified for a deduction of {{deductible}} as per section 501(c)(3) of the Ferngill Revenue Code.^^As such, your final due income tax in the amount of {{final}}g will be deducted from your balance automatically {{when}}.^^Please keep this letter in your...".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Mail_Frs_Deduction_Max">
+            <summary>The unique key for a translation equivalent to "Department of the Treasury^Ferngill Revenue Service^^^{{honorific}} Taxpayer,^^This letter is to inform you that your total accrued income tax for the closing season is {{accrued}}g. In light of your recent environmentalist activities you are qualified for a complete deduction of your Federal income tax as per section 501(c)(3) of the Ferngill Revenue Code. As such, no charges will be made to your balance during the current season.^^Please keep this letter in your permanent records should you...".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Mail_Frs_Outstanding">
+            <summary>The unique key for a translation equivalent to "Department of the Treasury^Ferngill Revenue Service^^^{{honorific}} Taxpayer,^^This letter is to inform you that your total due income tax for the previous season in the amount of {{due}}g could not be fully deducted from your balance. In accordance with section 501(c)(1) of the Ferngill Revenue Code, you will be fined an additional {{fine}} and all future income to {{farm}} farm will be levied until your outstanding debt, totaling {{outstanding}}g, is completely settled. Please keep in mind ...".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Mail_Lewis_Intro">
+            <summary>The unique key for a translation equivalent to "@,^Welcome to Pelican Town! I hope you're settling nicely into your new home. Just a friendly heads-up: as the new owner of {{farm}} you are responsible for the farm's property taxes. Each year, the county performs a Use-Value Assessment (UVA) of local farmlands, which means taxes are calculated based on the property's use for farming; in other words, unused land will generally be charged *more* than actively used land, so you best get started with clearing that debris!^^Your late grandfather...".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Mail_Lewis_Notice">
+            <summary>The unique key for a translation equivalent to "@,^As you are aware, one of my duties as mayor of Pelican Town is to levy taxes on all the town's properties. During the preceding fiscal year, the county's assessment of {{farm}} farm's property determined a UVA valuation of {{valuation}}g. As a result, you are liable for {{due}}g in total property taxes for the applicable tax period. This amount will be charged from your account on the {{day}} of Spring. ^On behalf of Pelican Town, I am deeply grateful for your ongoing contributions to our ...".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Mail_Lewis_Outstanding">
+            <summary>The unique key for a translation equivalent to "@,^It seems like your account did not have enough funds to cover the entirety of your property taxes for the current period. As per county policy, I take no pleasure in informing that you will be fined an additional {{fine}} lateness fine. The outstanding amount of {{outstanding}}g will be sold to the Bank of Stardew, who is authorized to seize all shipping income until paid in full, subject to a {{interest}} yearly interest rate. ^Please know that the people of Pelican Town are here to suppo...".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Hud_Tax_Debit">
+            <summary>The unique key for a translation equivalent to "{{amount}}g was debited from your account for tax payment.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Hud_Debt_Debit">
+            <summary>The unique key for a translation equivalent to "{{amount}}g was withheld from yesterday's shipment toward outstanding debts.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Honorific_Male">
+            <summary>The unique key for a translation equivalent to "Dear".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Honorific_Female">
+            <summary>The unique key for a translation equivalent to "Dear".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.When_Tonight">
+            <summary>The unique key for a translation equivalent to "tonight".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.When_Day">
+            <summary>The unique key for a translation equivalent to "on the {{day}} day of the current season".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_Sections_Txs_Income">
+            <summary>The unique key for a translation equivalent to "Income Tax".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_TaxRatePerIncomeBracket_Title">
+            <summary>The unique key for a translation equivalent to "Tax Rates Per Income Bracket".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_TaxRatePerIncomeBracket_Desc">
+            <summary>The unique key for a translation equivalent to "The tax rates applied at each income bracket. In each pair, the first number represents the incoming ceiling for that bracket, and the second number represents the taxable percentage of income within that bracket.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_IncomeBracket_Title">
+            <summary>The unique key for a translation equivalent to "Bracket".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_IncomeBracket_Desc">
+            <summary>The unique key for a translation equivalent to "The income ceiling for this bracket. All income between the previous bracket and this number will be taxed at the correponding tax rate.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_TaxRate_Title">
+            <summary>The unique key for a translation equivalent to "Tax Rate".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_TaxRate_Desc">
+            <summary>The unique key for a translation equivalent to "The taxable percentage of income within this bracket.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleAnimalExpenses_Title">
+            <summary>The unique key for a translation equivalent to "Deductible Animal Expenses".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleAnimalExpenses_Desc">
+            <summary>The unique key for a translation equivalent to "What percentage of gold spent on animal purchases and supplies should be tax-deductible.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleBuildingExpenses_Title">
+            <summary>The unique key for a translation equivalent to "Deductible Building Expenses".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleBuildingExpenses_Desc">
+            <summary>The unique key for a translation equivalent to "What percentage of gold spent constructing farm buildings is tax-deductible.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleSeedExpenses_Title">
+            <summary>The unique key for a translation equivalent to "Deductible Seed Expenses".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleSeedExpenses_Desc">
+            <summary>The unique key for a translation equivalent to "What percentage of gold spent on seed purchases should be tax-deductible.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleToolExpenses_Title">
+            <summary>The unique key for a translation equivalent to "Deductible Tool Expenses".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleToolExpenses_Desc">
+            <summary>The unique key for a translation equivalent to "What percentage of gold spent on tool purchases and upgrades should be tax-deductible.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleExtras_Title">
+            <summary>The unique key for a translation equivalent to "Other Deductibles".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleExtras_Desc">
+            <summary>The unique key for a translation equivalent to "What percentage of gold spent on the specific item should be tax-deductible. Items must be added manually to do this list.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleExtras_Label_Key">
+            <summary>The unique key for a translation equivalent to "Object Name".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DeductibleExtras_Label_Value">
+            <summary>The unique key for a translation equivalent to "Deductible Pct".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_IncomeTaxDay_Title">
+            <summary>The unique key for a translation equivalent to "Due Date".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_IncomeTaxDay_Desc">
+            <summary>The unique key for a translation equivalent to "The day of the season when income taxes are charged.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_IncomeTaxLatenessFine_Title">
+            <summary>The unique key for a translation equivalent to "Lateness Fine".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_IncomeTaxLatenessFine_Desc">
+            <summary>The unique key for a translation equivalent to "A one-time penalty rate charged over the unpaid amount when income taxes are not paid on-time.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_Sections_Txs_Property">
+            <summary>The unique key for a translation equivalent to "Property Tax".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_BaselineUnusedTileCost_Title">
+            <summary>The unique key for a translation equivalent to "Baseline Unused Tile Cost".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_BaselineUnusedTileCost_Desc">
+            <summary>The unique key for a translation equivalent to "The baseline gold cost of unused tiles.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_UnusedTileTaxRate_Title">
+            <summary>The unique key for a translation equivalent to "Unused Tile Tax Rate".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_UnusedTileTaxRate_Desc">
+            <summary>The unique key for a translation equivalent to "The tax rate charged over a tile not actively used for productive means.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_UsedTileTaxRate_Title">
+            <summary>The unique key for a translation equivalent to "Used Tile Tax Rate".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_UsedTileTaxRate_Desc">
+            <summary>The unique key for a translation equivalent to "The tax rate charged over a tile actively used for agriculture, livestock or forestry.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_BuildingTaxRate_Title">
+            <summary>The unique key for a translation equivalent to "Building Tile Tax Rate".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_BuildingTaxRate_Desc">
+            <summary>The unique key for a translation equivalent to "The tax rate charged over a tile occupied by a constructed building (magical buildings are.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_ExemptMagicalBuildings_Title">
+            <summary>The unique key for a translation equivalent to "Exempt Magical Buildings".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_ExemptMagicalBuildings_Desc">
+            <summary>The unique key for a translation equivalent to "Whether or not magical buildings (i.e., those summoned at the Wizard's Tower) are exempt from property taxes.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_PropertyTaxDay_Title">
+            <summary>The unique key for a translation equivalent to "Due Date".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_PropertyTaxDay_Desc">
+            <summary>The unique key for a translation equivalent to "The day of the season when property taxes are charged.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_PropertyTaxLatenessFine_Title">
+            <summary>The unique key for a translation equivalent to "Lateness Fine".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_PropertyTaxLatenessFine_Desc">
+            <summary>The unique key for a translation equivalent to "A one-time penalty rate charged once over the unpaid amount, when property taxes are not paid on-time.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_AnnualInterest_Title">
+            <summary>The unique key for a translation equivalent to "Annual Intereset".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_AnnualInterest_Desc">
+            <summary>The unique key for a translation equivalent to "The interest rate charged annually over any outstanding debt. Interest is accrued daily at a rate of 1/112 the annual rate.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DefaultArtisanValueCropMultiplier_Title">
+            <summary>The unique key for a translation equivalent to "Default Artisan Value Crop Multiplier".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DefaultArtisanValueCropMultiplier_Desc">
+            <summary>The unique key for a translation equivalent to "The multiplier which is used to estimate the value of artisan products derived from crops.".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DefaultArtisanValueProduceMultiplier_Title">
+            <summary>The unique key for a translation equivalent to "Default Artisan Value Produce Multiplier".</summary>
+        </member>
+        <member name="F:DaLion.Taxes.I18n.Keys.Gmcm_DefaultArtisanValueProduceMultiplier_Desc">
+            <summary>The unique key for a translation equivalent to "The multiplier which is used to estimate the value of artisan products derived from animal produce.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Init(StardewModdingAPI.ITranslationHelper)">
+            <summary>Construct an instance.</summary>
+            <param name="translations">The mod's translation helper.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Schema">
+            <summary>Get a translation equivalent to "https://smapi.io/schemas/i18n.json".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Mail_Frs_Intro(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Get a translation equivalent to "Department of the Treasury^Ferngill Revenue Service^^^{{honorific}} Taxpayer,^^This letter is to inform you that your recent address change to Pelican Town, Stardew Valley has been filed and registered. All future correspondence will be directed to {{farm}} farm.^^We kindly remind you that federal income tax contributions are due end-of-day on the 1st of every season. For your convenience, your due obligations will be automatically deducted from your balance. If your balance is insufficient, ...".</summary>
+            <param name="honorific">The value to inject for the <c>{{honorific}}</c> token.</param>
+            <param name="farm">The value to inject for the <c>{{farm}}</c> token.</param>
+            <param name="fine">The value to inject for the <c>{{fine}}</c> token.</param>
+            <param name="interest">The value to inject for the <c>{{interest}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Mail_Frs_Notice(System.Object,System.Object,System.Object)">
+            <summary>Get a translation equivalent to "Department of the Treasury^Ferngill Revenue Service^^^{{honorific}} Taxpayer,^^This letter is to inform you that your total accrued income tax for the closing season in the amount of {{due}}g will be deducted from your balance automatically {{when}}.^^Please keep this letter in your permanent records should you need to resolve any questions regarding your fiscal status.^^^Sincerely,^^Laura D. Pretto^Executive Directrice, Ferngill Revenue Service[#]FRS Monthly Notice".</summary>
+            <param name="honorific">The value to inject for the <c>{{honorific}}</c> token.</param>
+            <param name="due">The value to inject for the <c>{{due}}</c> token.</param>
+            <param name="when">The value to inject for the <c>{{when}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Mail_Frs_Deduction(System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Get a translation equivalent to "Department of the Treasury^Ferngill Revenue Service^^^{{honorific}} Taxpayer,^^This letter is to inform you that your total accrued income tax for the closing season is {{accrued}}g. In light of your recent environmentalist activities you are qualified for a deduction of {{deductible}} as per section 501(c)(3) of the Ferngill Revenue Code.^^As such, your final due income tax in the amount of {{final}}g will be deducted from your balance automatically {{when}}.^^Please keep this letter in your...".</summary>
+            <param name="honorific">The value to inject for the <c>{{honorific}}</c> token.</param>
+            <param name="accrued">The value to inject for the <c>{{accrued}}</c> token.</param>
+            <param name="deductible">The value to inject for the <c>{{deductible}}</c> token.</param>
+            <param name="final">The value to inject for the <c>{{final}}</c> token.</param>
+            <param name="when">The value to inject for the <c>{{when}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Mail_Frs_Deduction_Max(System.Object,System.Object)">
+            <summary>Get a translation equivalent to "Department of the Treasury^Ferngill Revenue Service^^^{{honorific}} Taxpayer,^^This letter is to inform you that your total accrued income tax for the closing season is {{accrued}}g. In light of your recent environmentalist activities you are qualified for a complete deduction of your Federal income tax as per section 501(c)(3) of the Ferngill Revenue Code. As such, no charges will be made to your balance during the current season.^^Please keep this letter in your permanent records should you...".</summary>
+            <param name="honorific">The value to inject for the <c>{{honorific}}</c> token.</param>
+            <param name="accrued">The value to inject for the <c>{{accrued}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Mail_Frs_Outstanding(System.Object,System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Get a translation equivalent to "Department of the Treasury^Ferngill Revenue Service^^^{{honorific}} Taxpayer,^^This letter is to inform you that your total due income tax for the previous season in the amount of {{due}}g could not be fully deducted from your balance. In accordance with section 501(c)(1) of the Ferngill Revenue Code, you will be fined an additional {{fine}} and all future income to {{farm}} farm will be levied until your outstanding debt, totaling {{outstanding}}g, is completely settled. Please keep in mind ...".</summary>
+            <param name="honorific">The value to inject for the <c>{{honorific}}</c> token.</param>
+            <param name="due">The value to inject for the <c>{{due}}</c> token.</param>
+            <param name="fine">The value to inject for the <c>{{fine}}</c> token.</param>
+            <param name="farm">The value to inject for the <c>{{farm}}</c> token.</param>
+            <param name="outstanding">The value to inject for the <c>{{outstanding}}</c> token.</param>
+            <param name="interest">The value to inject for the <c>{{interest}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Mail_Lewis_Intro(System.Object)">
+            <summary>Get a translation equivalent to "@,^Welcome to Pelican Town! I hope you're settling nicely into your new home. Just a friendly heads-up: as the new owner of {{farm}} you are responsible for the farm's property taxes. Each year, the county performs a Use-Value Assessment (UVA) of local farmlands, which means taxes are calculated based on the property's use for farming; in other words, unused land will generally be charged *more* than actively used land, so you best get started with clearing that debris!^^Your late grandfather...".</summary>
+            <param name="farm">The value to inject for the <c>{{farm}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Mail_Lewis_Notice(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Get a translation equivalent to "@,^As you are aware, one of my duties as mayor of Pelican Town is to levy taxes on all the town's properties. During the preceding fiscal year, the county's assessment of {{farm}} farm's property determined a UVA valuation of {{valuation}}g. As a result, you are liable for {{due}}g in total property taxes for the applicable tax period. This amount will be charged from your account on the {{day}} of Spring. ^On behalf of Pelican Town, I am deeply grateful for your ongoing contributions to our ...".</summary>
+            <param name="farm">The value to inject for the <c>{{farm}}</c> token.</param>
+            <param name="valuation">The value to inject for the <c>{{valuation}}</c> token.</param>
+            <param name="due">The value to inject for the <c>{{due}}</c> token.</param>
+            <param name="day">The value to inject for the <c>{{day}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Mail_Lewis_Outstanding(System.Object,System.Object,System.Object)">
+            <summary>Get a translation equivalent to "@,^It seems like your account did not have enough funds to cover the entirety of your property taxes for the current period. As per county policy, I take no pleasure in informing that you will be fined an additional {{fine}} lateness fine. The outstanding amount of {{outstanding}}g will be sold to the Bank of Stardew, who is authorized to seize all shipping income until paid in full, subject to a {{interest}} yearly interest rate. ^Please know that the people of Pelican Town are here to suppo...".</summary>
+            <param name="fine">The value to inject for the <c>{{fine}}</c> token.</param>
+            <param name="outstanding">The value to inject for the <c>{{outstanding}}</c> token.</param>
+            <param name="interest">The value to inject for the <c>{{interest}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Hud_Tax_Debit(System.Object)">
+            <summary>Get a translation equivalent to "{{amount}}g was debited from your account for tax payment.".</summary>
+            <param name="amount">The value to inject for the <c>{{amount}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Hud_Debt_Debit(System.Object)">
+            <summary>Get a translation equivalent to "{{amount}}g was withheld from yesterday's shipment toward outstanding debts.".</summary>
+            <param name="amount">The value to inject for the <c>{{amount}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Honorific_Male">
+            <summary>Get a translation equivalent to "Dear".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Honorific_Female">
+            <summary>Get a translation equivalent to "Dear".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.When_Tonight">
+            <summary>Get a translation equivalent to "tonight".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.When_Day(System.Object)">
+            <summary>Get a translation equivalent to "on the {{day}} day of the current season".</summary>
+            <param name="day">The value to inject for the <c>{{day}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_Sections_Txs_Income">
+            <summary>Get a translation equivalent to "Income Tax".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_TaxRatePerIncomeBracket_Title">
+            <summary>Get a translation equivalent to "Tax Rates Per Income Bracket".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_TaxRatePerIncomeBracket_Desc">
+            <summary>Get a translation equivalent to "The tax rates applied at each income bracket. In each pair, the first number represents the incoming ceiling for that bracket, and the second number represents the taxable percentage of income within that bracket.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_IncomeBracket_Title">
+            <summary>Get a translation equivalent to "Bracket".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_IncomeBracket_Desc">
+            <summary>Get a translation equivalent to "The income ceiling for this bracket. All income between the previous bracket and this number will be taxed at the correponding tax rate.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_TaxRate_Title">
+            <summary>Get a translation equivalent to "Tax Rate".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_TaxRate_Desc">
+            <summary>Get a translation equivalent to "The taxable percentage of income within this bracket.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleAnimalExpenses_Title">
+            <summary>Get a translation equivalent to "Deductible Animal Expenses".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleAnimalExpenses_Desc">
+            <summary>Get a translation equivalent to "What percentage of gold spent on animal purchases and supplies should be tax-deductible.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleBuildingExpenses_Title">
+            <summary>Get a translation equivalent to "Deductible Building Expenses".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleBuildingExpenses_Desc">
+            <summary>Get a translation equivalent to "What percentage of gold spent constructing farm buildings is tax-deductible.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleSeedExpenses_Title">
+            <summary>Get a translation equivalent to "Deductible Seed Expenses".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleSeedExpenses_Desc">
+            <summary>Get a translation equivalent to "What percentage of gold spent on seed purchases should be tax-deductible.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleToolExpenses_Title">
+            <summary>Get a translation equivalent to "Deductible Tool Expenses".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleToolExpenses_Desc">
+            <summary>Get a translation equivalent to "What percentage of gold spent on tool purchases and upgrades should be tax-deductible.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleExtras_Title">
+            <summary>Get a translation equivalent to "Other Deductibles".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleExtras_Desc">
+            <summary>Get a translation equivalent to "What percentage of gold spent on the specific item should be tax-deductible. Items must be added manually to do this list.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleExtras_Label_Key">
+            <summary>Get a translation equivalent to "Object Name".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DeductibleExtras_Label_Value">
+            <summary>Get a translation equivalent to "Deductible Pct".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_IncomeTaxDay_Title">
+            <summary>Get a translation equivalent to "Due Date".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_IncomeTaxDay_Desc">
+            <summary>Get a translation equivalent to "The day of the season when income taxes are charged.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_IncomeTaxLatenessFine_Title">
+            <summary>Get a translation equivalent to "Lateness Fine".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_IncomeTaxLatenessFine_Desc">
+            <summary>Get a translation equivalent to "A one-time penalty rate charged over the unpaid amount when income taxes are not paid on-time.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_Sections_Txs_Property">
+            <summary>Get a translation equivalent to "Property Tax".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_BaselineUnusedTileCost_Title">
+            <summary>Get a translation equivalent to "Baseline Unused Tile Cost".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_BaselineUnusedTileCost_Desc">
+            <summary>Get a translation equivalent to "The baseline gold cost of unused tiles.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_UnusedTileTaxRate_Title">
+            <summary>Get a translation equivalent to "Unused Tile Tax Rate".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_UnusedTileTaxRate_Desc">
+            <summary>Get a translation equivalent to "The tax rate charged over a tile not actively used for productive means.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_UsedTileTaxRate_Title">
+            <summary>Get a translation equivalent to "Used Tile Tax Rate".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_UsedTileTaxRate_Desc">
+            <summary>Get a translation equivalent to "The tax rate charged over a tile actively used for agriculture, livestock or forestry.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_BuildingTaxRate_Title">
+            <summary>Get a translation equivalent to "Building Tile Tax Rate".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_BuildingTaxRate_Desc">
+            <summary>Get a translation equivalent to "The tax rate charged over a tile occupied by a constructed building (magical buildings are.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_ExemptMagicalBuildings_Title">
+            <summary>Get a translation equivalent to "Exempt Magical Buildings".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_ExemptMagicalBuildings_Desc">
+            <summary>Get a translation equivalent to "Whether or not magical buildings (i.e., those summoned at the Wizard's Tower) are exempt from property taxes.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_PropertyTaxDay_Title">
+            <summary>Get a translation equivalent to "Due Date".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_PropertyTaxDay_Desc">
+            <summary>Get a translation equivalent to "The day of the season when property taxes are charged.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_PropertyTaxLatenessFine_Title">
+            <summary>Get a translation equivalent to "Lateness Fine".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_PropertyTaxLatenessFine_Desc">
+            <summary>Get a translation equivalent to "A one-time penalty rate charged once over the unpaid amount, when property taxes are not paid on-time.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_AnnualInterest_Title">
+            <summary>Get a translation equivalent to "Annual Intereset".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_AnnualInterest_Desc">
+            <summary>Get a translation equivalent to "The interest rate charged annually over any outstanding debt. Interest is accrued daily at a rate of 1/112 the annual rate.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DefaultArtisanValueCropMultiplier_Title">
+            <summary>Get a translation equivalent to "Default Artisan Value Crop Multiplier".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DefaultArtisanValueCropMultiplier_Desc">
+            <summary>Get a translation equivalent to "The multiplier which is used to estimate the value of artisan products derived from crops.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DefaultArtisanValueProduceMultiplier_Title">
+            <summary>Get a translation equivalent to "Default Artisan Value Produce Multiplier".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.Gmcm_DefaultArtisanValueProduceMultiplier_Desc">
+            <summary>Get a translation equivalent to "The multiplier which is used to estimate the value of artisan products derived from animal produce.".</summary>
+        </member>
+        <member name="M:DaLion.Taxes.I18n.GetByKey(System.String,System.Object)">
+            <summary>Get a translation by its key.</summary>
+            <param name="key">The translation key.</param>
+            <param name="tokens">An object containing token key/value pairs. This can be an anonymous object (like <c>new { value = 42, name = "Cranberries" }</c>), a dictionary, or a class instance.</param>
+            <remarks>You should usually use a strongly-typed method like <see cref="M:DaLion.Taxes.I18n.Schema" /> instead.</remarks>
+        </member>
+        <member name="T:NetEscapades.EnumGenerators.EnumExtensionsAttribute">
+            <summary>
+            Add to enums to indicate that extension methods should be generated for the type
+            </summary>
+        </member>
+        <member name="P:NetEscapades.EnumGenerators.EnumExtensionsAttribute.ExtensionClassNamespace">
+            <summary>
+            The namespace to generate the extension class.
+            If not provided the namespace of the enum will be used
+            </summary>
+        </member>
+        <member name="P:NetEscapades.EnumGenerators.EnumExtensionsAttribute.ExtensionClassName">
+            <summary>
+            The name to use for the extension class.
+            If not provided, the enum name with "Extensions" will be used.
+            For example for an Enum called StatusCodes, the default name
+            will be StatusCodesExtensions
+            </summary>
+        </member>
+    </members>
+</doc>

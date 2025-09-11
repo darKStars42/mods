@@ -1,0 +1,52 @@
+{
+  "Changes": [
+
+    //Crop
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Bean_Seeds":{
+          "Name": "Ancient Bean Seeds",
+          "DisplayName": "{{i18n:Ancient_Bean_Seeds.DisplayName}}",
+          "Description": "{{i18n:Ancient_Bean_Seeds.Description}}",
+          "Type": "Seed",
+          "Category": -74,
+          "Price" : 100,
+          "Texture": "Mods/{{ModId}}/Ancient_Bean",
+          "SpriteIndex": 0,
+          "ContextTags": [
+            "season_spring",
+            "season_summer",
+            "season_fall",
+            "color_purple",
+          ]
+        }
+      }
+    },
+    //Planted Crop
+    {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "{{ModId}}_Ancient_Bean_Seeds": {
+                    "Seasons": [ "spring", "summer", "fall" ],
+                    "DaysInPhase": [ 2, 3, 4, 2, 3],
+                    "RegrowDays": 3,
+                    "HarvestItemId": "{{ModId}}_Ancient_Bean_Seeds",
+                    "Texture": "Mods/{{ModId}}/Ancient_Bean_Planted",
+                    "SpriteIndex": 0,
+                    "ExtraHarvestChance": 0.5,
+                    "HarvestMinStack": 1,
+                    "HarvestMaxStack": 6,
+                    "HarvestMaxIncreasePerFarmingLevel": 0.2
+                }
+            }
+        },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Ancient_Bean, Mods/{{ModId}}/Ancient_Bean_Planted",
+            "FromFile": "assets/Ancient_Bean/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

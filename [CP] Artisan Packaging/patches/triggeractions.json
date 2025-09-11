@@ -1,0 +1,212 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Mail_Boxer": {
+                    "Id": "{{ModId}}_Mail_Boxer",
+                    "Trigger": "DayStarted",
+                    "Condition": "!PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_Boxer, PLAYER_FARMING_LEVEL Current 3",
+                    "HostOnly": false,
+                    "Action": null,
+                    "Actions": [
+                        "RemoveMail Current {{ModId}}_BoxerMail",
+                        "AddMail Current {{ModId}}_BoxerMail Now"
+                    ],
+                    "CustomFields": null,
+                    "MarkActionApplied": true
+                }
+            },
+            "When": {
+                "boxersource": "Skill"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Mail_Packer": {
+                    "Id": "{{ModId}}_Mail_Packer",
+                    "Trigger": "DayStarted",
+                    "Condition": "!PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_Packer, PLAYER_FARMING_LEVEL Current 7",
+                    "HostOnly": false,
+                    "Action": null,
+                    "Actions": [
+                        "RemoveMail Current {{ModId}}_PackerMail",
+                        "AddMail Current {{ModId}}_PackerMail Now"
+                    ],
+                    "CustomFields": null,
+                    "MarkActionApplied": true
+                }
+            },
+            "When": {
+                "packersource": "Skill"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Mail_Canner": {
+                    "Id": "{{ModId}}_Mail_Canner",
+                    "Trigger": "DayStarted",
+                    "Condition": "!PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_Canner, PLAYER_FISHING_LEVEL Current 6",
+                    "HostOnly": false,
+                    "Action": null,
+                    "Actions": [
+                        "RemoveMail Current {{ModId}}_CannerMail",
+                        "AddMail Current {{ModId}}_CannerMail Now"
+                    ],
+                    "CustomFields": null,
+                    "MarkActionApplied": true
+                }
+            },
+            "When": {
+                "cannersource": "Skill"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Mail_Canner": {
+                    "Id": "{{ModId}}_Mail_Canner",
+                    "Trigger": "DayStarted",
+                    "Condition": "!PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_Canner, YEAR 2",
+                    "HostOnly": false,
+                    "Action": null,
+                    "Actions": [
+                        "RemoveMail Current {{ModId}}_CannerMail",
+                        "AddMail Current {{ModId}}_CannerMail Now"
+                    ],
+                    "CustomFields": null,
+                    "MarkActionApplied": true
+                }
+            },
+            "When": {
+                "cannersource": "Time"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Mail_Boxer": {
+                    "Id": "{{ModId}}_Mail_Boxer",
+                    "Trigger": "DayStarted",
+                    "Condition": "!PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_Boxer, Any \"SEASON Summer Fall Winter\" \"YEAR 2\"",
+                    "HostOnly": false,
+                    "Action": null,
+                    "Actions": [
+                        "RemoveMail Current {{ModId}}_BoxerMail",
+                        "AddMail Current {{ModId}}_BoxerMail Now"
+                    ],
+                    "CustomFields": null,
+                    "MarkActionApplied": true
+                }
+            },
+            "When": {
+                "boxersource": "Time"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Mail_Packer": {
+                    "Id": "{{ModId}}_Mail_Packer",
+                    "Trigger": "DayStarted",
+                    "Condition": "!PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_Packer, Any \"SEASON Fall Winter\" \"YEAR 2\"",
+                    "HostOnly": false,
+                    "Action": null,
+                    "Actions": [
+                        "RemoveMail Current {{ModId}}_PackerMail",
+                        "AddMail Current {{ModId}}_PackerMail Now"
+                    ],
+                    "CustomFields": null,
+                    "MarkActionApplied": true
+                }
+            },
+            "When": {
+                "packersource": "Time"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Unlearn_Boxer": {
+                    "Id": "{{ModId}}_Unlearn_Boxer",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_Boxer",
+                    "HostOnly": false,
+                    "Actions": [
+                        "MarkCraftingRecipeKnown Current {{ModId}}_Boxer false",
+                        "MarkActionApplied Current {{ModId}}_Mail_Boxer false"
+                    ],
+                    "MarkActionApplied": false
+                }
+            },
+            "When": {
+                "boxersource": "Disabled"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Unlearn_Packer": {
+                    "Id": "{{ModId}}_Unlearn_Packer",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_Packer",
+                    "HostOnly": false,
+                    "Actions": [
+                        "MarkCraftingRecipeKnown Current {{ModId}}_Packer false",
+                        "MarkActionApplied Current {{ModId}}_Mail_Packer false"
+                    ],
+                    "MarkActionApplied": false
+                }
+            },
+            "When": {
+                "packersource": "Disabled"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Unlearn_Canner": {
+                    "Id": "{{ModId}}_Unlearn_Canner",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_Canner",
+                    "HostOnly": false,
+                    "Actions": [
+                        "MarkCraftingRecipeKnown Current {{ModId}}_Canner false",
+                        "MarkActionApplied Current {{ModId}}_Mail_Canner false"
+                    ],
+                    "MarkActionApplied": false
+                }
+            },
+            "When": {
+                "cannersource": "Disabled"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_MigrateIds": {
+                    "Id": "{{ModId}}_MigrateIds",
+                    "Trigger": "DayStarted",
+                    "HostOnly": true,
+                    "Actions": [
+                        "Pathoschild.ContentPatcher_MigrateIds Items \"(BC)Boxer\" {{ModId}}_Boxer",
+                        "Pathoschild.ContentPatcher_MigrateIds Items \"(BC)Packer\" {{ModId}}_Packer",
+                        "Pathoschild.ContentPatcher_MigrateIds Items \"(BC)Canning_Machine\" {{ModId}}_Canner"
+                    ]
+                }
+            }
+        }
+    ]
+}

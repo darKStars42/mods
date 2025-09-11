@@ -1,0 +1,43 @@
+{
+  "Changes": [
+    { 	// Miranda Parametros
+      "LogName": "Parametros",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Posicionamento/Miranda_Ps.json, Ativos/Personagens/Agenda/Mi_Agenda.json"
+	},
+    { 	//Branco e Incluir
+      "LogName": "Arquivo Branco",
+      "Action": "Load",
+      "Target": "Characters/Schedules/Miranda, Characters/Dialogue/Miranda",
+      "FromFile": "Ativos/Personagens/Vazio.json"
+    },
+	{
+	  "LogName": "Textos, Animados, Eventos",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Textos/Mi_Dialogos.json, Ativos/Personagens/Animados/Animados.json, Ativos/Personagens/Eventos/Mi_Eventos.json"
+    },
+	{	//Festivais
+      "LogName": "Festivais",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Festivais/Mi_Festival.01.json",
+	  "When": {	"HasSeenEvent: anyPlayer|contains=90305264": true,	"HasSeenEvent: anyPlayer|contains=90805264": false }
+    },
+	{	//Dialogos & Reações - Extras Pos Produção 
+      "LogName": "Presentes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Miranda": "{{i18n:Mi.gift.love}}/421 350 196 232 421 613 614 638 815 -80/{{i18n:Mi.gift.like}}/648 348 244 18 418 -75 -27 -79 -7/{{i18n:Mi.gift.dislike}}/459 393 397 226 221 220 245 288 287 286 -81/{{i18n:Mi.gift.hate}}/721 445 442 154 155 215 107 128 182 180 174 176 195 194 201 289 346 928 -4 -20 -12 -5/{{i18n:Mi.gift.neutral}}/223 22 78 206 241 243 395 -26 -6 -7 -2/ "
+      }
+    },
+	{
+	  "LogName": "Extras Comentarios",
+	  "Action": "EditData",
+	  "Target": "Characters/Dialogue/Miranda",
+	  "Entries": {
+	  	"DumpsterDiveComment": "{{i18n:Miranda.DumpsterDive}}",
+		"AcceptGift_(O)StardropTea": "{{i18n:Mi.gift.love}}"
+	  }
+	}
+  ]
+}

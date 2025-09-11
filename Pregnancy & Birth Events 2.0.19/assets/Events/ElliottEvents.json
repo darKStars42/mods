@@ -1,0 +1,57 @@
+{
+	"Changes": [
+{
+			"LogName": "Elliott Pregnancy Event 1",
+			"Action": "EditData",
+			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+ 				"HavingChild": "@{{playerName}}",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+			"Entries":{"64780012/O Elliott": "continue/28 30/farmer 27 30 0 Elliott 29 25 3 Harvey 0 0 0/addConversationTopic FarmerPregnantElliott 13/addConversationTopic FarmerCheckUp 6/addMailReceived Pregnant1_Elliott/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak Elliott \"{{i18n:64780012_1}}$3#$b#{{i18n:64780012_2}}$3\"/pause 500/move farmer 0 0 2/playSound croak/animate farmer false false 350 104 105/pause 1000/emote farmer 28/move farmer 0 0 1/pause 500/speak Elliott \"{{i18n:64780012_3}}$s#$b# {{i18n:64780012_4}}$s\"/viewport -100 100/changeLocation Hospital/viewport 5 5/warp farmer 3 5/warp Elliott 2 5/showFrame Elliott 4/warp Harvey 5 8/move Harvey 0 -3 3 false/speak Harvey \"{{i18n:Pregnancy_Dialogue_1_Farmer}}\"/emote Elliott 8/speak Harvey \"{{i18n:Pregnancy_Dialogue_2_Farmer}}$h\"/speak Elliott \"...$8#$b#...$8#$b#...$8#$b#{{i18n:64780012_5}}$8#$b#{{i18n:64780012_6}}$l#$b#{{i18n:64780012_7}}$h\"/pause 500/emote farmer 32/pause 250/end"},
+		},
+
+
+{			"LogName": "Elliott Birth Event 1", 
+			"Action": "EditData",
+    			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+   		"Entries": {"64780024/e 64780012/O Elliott/n Pregnant1_Elliott/A FarmerPregnantElliott/t 600 700": "sappypiano/-100 -100/farmer 19 12 2 Elliott 20 12 2 Harvey 5 15 2/positionOffset farmer -30 -12/addConversationTopic ElliottBabySleep 14/skippable/pause 500/speak Elliott \"{{i18n:64780024_1}} $s #$b#{{i18n:64780024_2}}$l\"/changeLocation Hospital/showFrame 5/ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak Elliott \"{{i18n:64780024_3}}#$b#{{i18n:64780024_4}}$4\"/faceDirection Elliott 3/pause 500/emote farmer 60/emote Elliott 28/pause 500/speak Elliott \"{{i18n:64780024_5}}$s\"/pause 500/move Elliott 0 1 3/pause 500/speak Elliott \"{{i18n:64780024_6}}$h #$b# {{i18n:64780024_7}}$s #$b# {{i18n:64780024_8}}$l\"/pause 500/move Elliott 0 -1 3/speak Elliott \"{{i18n:64780024_9}} $l #$b# {{i18n:64780024_10}}\"/pause 500/emote farmer 20/pause 500/speak Elliott \"{{i18n:64780024_11}}\"/pause 500/emote farmer 60/pause 500/fade/viewport -100 -100 true/warp arvey 21 12/faceDirection Harvey 3/warp Elliott 20 11/faceDirection Elliott 2/speak Elliott \"{{i18n:64780024_12}}$2#$b#{{i18n:64780024_13}}\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -50/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/showframe 0/positionOffset farmer 0 20/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote Elliott 20/pause 2000/speak Elliott \"{{i18n:Birth_Dialogue_5}}$l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end"},
+		},
+{
+			"LogName": "Elliott Pregnancy Event 2",
+			"Action": "EditData",
+			"Target": "Data/Events/FarmHouse,",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+ 				"HavingChild": "@{{playerName}}",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+		"Entries": {"64780038/e 64780024/O Elliott":"continue/28 30/farmer 27 30 0 Elliott 29 25 3 Harvey 0 0 0/addConversationTopic FarmerPregnantElliott2 13/addMailReceived Pregnant2_Elliott/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak Elliott \"{{i18n:64780038_1}}$h #$b# {{i18n:64780038_2}}#$b# {{i18n:64780038_3}}$s\"/pause 500 /emote farmer 40/pause 500/speak Elliott \"{{i18n:64780038_4}}$l #$b# {{i18n:64780038_5}}\"/pause 500/viewport -100 100/changeLocation Hospital/viewport 5 5/warp Elliott 2 5/warp farmer 3 5/showFrame Elliott 4/warp Harvey 5 8/move Harvey 0 -3 3 false/showFrame Elliott 4/speak Harvey \"{{i18n:Pregnancy_Dialogue_3}} $h\"/emote Elliott 16 true/jump Elliott 4/speak Elliott \"{{i18n:64780038_6}}$h\"/pause 500/ speak Harvey \"{{i18n:Pregnancy_Dialogue_4}}\"/pause 500/quickquestion {{i18n:Birth_Choice_Question}}#{{i18n:Clinic_Birth}} #{{i18n:Home_Birth}} (break)speak Harvey \"{{i18n:Pregnancy_Dialogue_5}} $h #$b# {{i18n:Pregnancy_Dialogue_6}}\"\\addMailReceived ClinicBirthElliott (break)speak Harvey \"{{i18n:Pregnancy_Dialogue_7}}$h #$b# {{i18n:Pregnancy_Dialogue_8}}\"\\addMailReceived HomeBirthElliott/pause 500/speak Elliott \"{{i18n:64780038_7}} $h #$b# {{i18n:64780038_8}}\"/ emote farmer 8/speak Elliott \"{{i18n:64780038_9}}$h\"/emote farmer 12/pause 100/emote Elliott 32/end"},
+		},
+
+{
+			"LogName": "Elliott Birth Event 2 Clinic",
+			"Action": "EditData",
+			"Target": "Data/Events/FarmHouse,",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+		"Entries": {"64780039/e 64780038/O Elliott/n Pregnant2_Elliott/n ClinicBirthElliott/A FarmerPregnantElliott2/t 600 700":"sappypiano/-100 -100/farmer 19 12 2 Elliott 20 12 2 Harvey 5 15 2/positionOffset farmer 0 -12/addConversationTopic ElliottBabySleep2 14/skippable/pause 500/speak Elliott \"{{i18n:64780039_1}}#$b#{{i18n:64780039_2}}$l#$b# {{i18n:64780039_3}}$h\"/changeLocation Hospital/showFrame 5/faceDirection Elliott 3/ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak Elliott \"{{i18n:64780039_4}}#$b# {{i18n:64780039_5}}#$b# {{i18n:64780039_6}}$h\"/pause 500/emote farmer 32/pause 500/speak Elliott \"{{i18n:64780039_7}}$s #$b# {{i18n:64780039_8}}#$b# {{i18n:64780039_9}}#$b# {{i18n:64780039_10}}\"/pause 500/ textAboveHead Elliott \"{{i18n:64780039_11}}\"/pause 1000/speak Elliott \"{{i18n:64780039_12}}#$b# {{i18n:64780039_13}}$l #$b# {{i18n:64780039_14}}#$b# {{i18n:64780039_15}}#$b# {{i18n:64780039_16}}$l\"/pause 500/emote farmer 20/pause 500/speak Elliott \"{{i18n:64780039_17}}#$b# {{i18n:64780039_18}}#$b# {{i18n:64780039_19}}$l \"/pause 500/emote farmer 20/ pause 500/emote farmer 16/pause 500/speak Elliott \"{{i18n:64780039_20}}\"/ pause 500/ emote farmer 12/ pause 500/ textAboveHead Elliott \"{{i18n:Birth_Dialogue_10}}\"/fade/viewport -100 -100 true/warp Harvey 21 12/faceDirection Harvey 3/warp Elliott 20 11/faceDirection Elliott 2/speak Harvey \"{{i18n:Birth_Dialogue_12}}$h\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/showFrame 0/positionOffset farmer 0 20/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -53/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote Elliott 20/pause 2000/speak Elliott \"{{i18n:Birth_Dialogue_6}} $l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end"},
+		},
+
+{
+			"LogName": "Elliott Birth Event 2 Farmhouse",
+			"Action": "EditData",
+			"Target": "Data/Events/FarmHouse,",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+		"Entries": {"64780040/e 64780038/O Elliott/n Pregnant2_Elliott/n HomeBirthElliott/A FarmerPregnantElliott2/t 600 700":"sappypiano/-100 -100/Harvey 35 14 3 farmer 34 14 2 Elliott 33 14 1/addConversationTopic ElliottBabySleep2 14/skippable/pause 500/speak Elliott \"{{i18n:64780039_1}} #$b# {{i18n:64780039_2}} $l #$b# {{i18n:64780040_1}}$h\"/makeInvisible 33 14 3 3/viewport 34 14 clamp true/showFrame Harvey 35/positionOffset Harvey -20 0/showFrame farmer 5/pause 2500/ambientLight 150 150 150/speak Harvey \"{{i18n:Birth_2Dialogue_1}}#$b# {{i18n:Birth_2Dialogue_2}}\"/positionOffset Harvey 20 0/showframe Harvey 34/emote farmer 40/speak Harvey \"{{i18n:Birth_2Dialogue_3}}$h \"/pause 500/speak Harvey \"{{i18n:Birth_2Dialogue_4}}\"/pause 500/emote Elliott 28/pause 1000/textAboveHead Elliott \"{{i18n:64780040_2}}\"/pause 2000/speak Harvey \"{{i18n:Birth_2Dialogue_5}}#$b# {{i18n:Birth_2Dialogue_6}}#$b# {{i18n:Birth_2Dialogue_7}}$h\"/pause 500/emote Elliott 32/pause 1000/emote farmer 16/pause 500/speak Harvey \"{{i18n:Birth_2Dialogue_8}}$h #$b# {{i18n:Birth_2Dialogue_11}}\"/fade/viewport -100 -100 true/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 22 15 33 15 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -53/showFrame Elliott 0/showFrame 0/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/showFrame Harvey 12/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 34 14 clamp true/emote Elliott 32/pause 1500/speak Elliott \"{{i18n:Birth_Dialogue_6}}$l\"/emote farmer 20 true/ emote Harvey 32/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_8}}\"/pause 1000/end"},
+		},
+
+
+
+]
+}

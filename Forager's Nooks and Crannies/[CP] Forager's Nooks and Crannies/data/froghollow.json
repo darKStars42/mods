@@ -1,0 +1,45 @@
+{
+
+"Changes": [
+
+{
+	"LogName":"Map Patch Mountain for Frog Hollow",
+	"Action": "EditMap",
+	"Target": "Maps/Mountain", 
+	"FromFile": "assets/Maps/MountainEdit.tmx",
+	"ToArea": {
+			"X": 26,
+			"Y": 18,
+			"Width": 2,
+			"Height": 3
+			},
+
+	"When": {"FrogHollowToken": "1"}			
+},
+
+{
+	"LogName":"Add Warps to Frog Hollow Map",
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_FrogHollow",
+	"AddWarps": ["28 39 Mountain 27 22"]
+},
+
+{
+	"LogName":"Add Warps to Mountain for Frog Hollow",
+	"Action": "EditMap",
+	"Target": "Maps/Mountain",
+	"MapTiles": [
+		{
+		"Position": {
+			"X": 27,
+			"Y": 20
+		},
+		"Layer": "Buildings",
+		"SetProperties": {"Action": "Warp 28 37 Wildflour.NooksCrannies_FrogHollow"}
+		}
+	],
+	"When":{"FrogHollowToken": "1"}	
+}
+
+	]
+}

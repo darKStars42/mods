@@ -1,0 +1,76 @@
+{
+    "Changes": 
+    [
+        {
+            "LogName": "Book Item Texture",
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Book/AFBook",
+            "FromFile": "Assets/Images/Book/AFBook/AFCookBook.png"
+        },
+
+        {
+            "LogName":"Add book to object data",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries":
+            {
+                "Book_Afri":
+                {
+                    "Name": "Afri-can't miss in the kitchen!",
+                    "DisplayName": "{{i18n:object.BookAF.name}}",
+                    "Description": "{{i18n:object.BookAF.description}}",
+                    "Type": "asdf",
+                    "Category": -102,
+                    "Price": 2500,
+                    "Texture": "Mods/{{ModId}}/Book/AFBook",
+                    "Edibility": -300,
+                    "IsDrink": false,
+                    "Buffs": null,
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromFishingCollection": false,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": false,
+                    "ContextTags": [
+                    "color_green",
+                    "book_item",
+                    "spu_recipe_book",
+                    "Book"
+                    ],
+                    "CustomFields": {
+                        "Spiderbuttons.SpecialPowerUtilities/Books/RecipePrefix": "{{ModId}}_AF_"
+                    }
+                }
+            }
+        },
+
+        {
+            "Action":"EditData",
+            "Target": "Strings/Objects",
+            "Entries":
+            {
+                "Afri_Name": "{{i18n:object.BookAF.name}}",
+                "Afri_Description": "{{i18n:object.BookAF.description}}"
+            }
+        },
+
+        {
+            "LogName":"Add Africa Book to Desert Trader",
+            "Action":"EditData",
+            "Target":"Data/Shops",
+            "TargetField": ["DesertTrade", "Items"],
+            "Entries":
+            {
+                    "{{ModId}}_AFBook":
+                    {
+                      "TradeItemId":"384",
+                      "TradeItemAmount":1,
+                      "ItemId":"Book_Afri"
+                    }
+            }
+        }
+    ]
+}

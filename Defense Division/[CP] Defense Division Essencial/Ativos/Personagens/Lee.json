@@ -1,0 +1,43 @@
+{
+  "Changes": [
+    { 	// Lee Parametros
+      "LogName": "Parametros",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Posicionamento/Lee_Ps.json, Ativos/Personagens/Agenda/Le_Agenda.json"
+	},
+    { 	//Branco e Incluir
+      "LogName": "Arquivo Branco",
+      "Action": "Load",
+      "Target": "Characters/Schedules/Lee, Characters/Dialogue/Lee",
+      "FromFile": "Ativos/Personagens/Vazio.json"
+    },
+	{
+	  "LogName": "Textos, Animados, Eventos",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Textos/Le_Dialogos.json, Ativos/Personagens/Animados/Animados.json, Ativos/Personagens/Eventos/Le_Eventos.json"
+    },
+	{	//Festivais
+      "LogName": "Festivais",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Festivais/Le_Festival.01.json",
+	  "When": {	"HasSeenEvent: anyPlayer|contains=90305264": true,	"HasSeenEvent: anyPlayer|contains=91005264": false,	"HasSeenEvent: anyPlayer|contains=91205264": false }
+    },
+	{	//Reações - Extras Pos Produção 
+      "LogName": "Presentes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Lee": "{{i18n:Le.gift.love}}/PO_DogTreats 206 241 579 580 581 582 583 584 585 820 821 822 823 824 -7 -6/{{i18n:Le.gift.like}}/119 343 -4/{{i18n:Le.gift.dislike}}/682 604 608 607 611 459 393 397 419 350 216 217 215 148 154 155 158 162 196 203 288 287 286 -26 -6 -75 -80 -81 -5/{{i18n:Le.gift.hate}}/721 223 226 348 128 221 220 234 233 243 245 340 346 395 403 430 611 612 -2 -12 -20 -27/{{i18n:Le.gift.neutral}}/-79/ "
+      }
+    },
+	{
+	  "LogName": "Extras Comentarios",
+	  "Action": "EditData",
+	  "Target": "Characters/Dialogue/Lee",
+	  "Entries": {
+	  	"DumpsterDiveComment": "{{i18n:Lee.DumpsterDive}}",
+		"AcceptGift_(O)StardropTea": "{{i18n:Le.gift.love}}"
+	  }
+	}
+  ]
+}

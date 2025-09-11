@@ -1,0 +1,470 @@
+{
+   "Changes": [
+		{
+			"LogName": "Add gift dialogue to gift tastes for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{SecondbornName}}", 0],
+					"Value": "{{i18n:LeahChild.GiftTastes.Love {{SecondbornTokenPass}} }}", //Loved gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{SecondbornName}}", 2],
+					"Value": "{{i18n:LeahChild.GiftTastes.Like {{SecondbornTokenPass}} }}", //Liked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{SecondbornName}}", 8],
+					"Value": "{{i18n:LeahChild.GiftTastes.Neutral {{SecondbornTokenPass}} }}", //Neutral gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{SecondbornName}}", 4],
+					"Value": "{{i18n:LeahChild.GiftTastes.Dislike {{SecondbornTokenPass}} }}", //Disliked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{SecondbornName}}", 6],
+					"Value": "{{i18n:LeahChild.GiftTastes.Hate {{SecondbornTokenPass}} }}", //Hated gift
+					"Delimiter": "",
+				},
+			],
+		},
+		
+		{
+			"LogName": "Fill secondborn's empty schedule dialogue with that of Leah's son.",
+			"Action": "EditData",
+			"Target": "Strings/schedules/{{SecondbornName}}",
+			"Entries": {
+				"Mon.000": "{{i18n:LeahChild.Schedule.Mon.000_plural_{{CoPlu2}} {{SecondbornTokenPass}} }}",
+				"Tue.000": "{{i18n:LeahChild.Schedule.Tue.000 {{SecondbornTokenPass}} }}",
+				"DesertFestival.000": "{{i18n:LeahChild.Schedule.DesertFestival.000 {{SecondbornTokenPass}} }}",
+				"Schoolhouse.000": "{{i18n:LeahChild.Schedule.Schoolhouse.000 {{SecondbornTokenPass}} }}",
+				"Schoolhouse.001": "{{i18n:LeahChild.Schedule.Schoolhouse.001 {{SecondbornTokenPass}} }}",
+				"Schoolhouse.002": "{{i18n:LeahChild.Schedule.Schoolhouse.002 {{SecondbornTokenPass}} }}",
+			},
+		},
+		{
+			"LogName": "Fill secondborn's empty dialogue with that of Leah's son.",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{SecondbornName}}",
+			"Entries": {
+				"AcceptBirthdayGift_Positive": "{{i18n:LeahChild.Dialogue.BirthdayGift_Positive {{SecondbornTokenPass}} }}",
+				"AcceptBirthdayGift_Negative": "{{i18n:LeahChild.Dialogue.BirthdayGift_Negative {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)StardropTea": "{{i18n:LeahChild.Dialogue.Gift_StardropTea {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)MysticTreeSeed": "{{i18n:LeahChild.Dialogue.Gift_MysticTreeSeed {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)891": "{{i18n:LeahChild.Dialogue.Gift_MysticTreeSeed {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)74": "{{i18n:LeahChild.Dialogue.Gift_PrismaticShard {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)196": "{{i18n:LeahChild.Dialogue.Gift_Salad {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)69": "{{i18n:LeahChild.Dialogue.Gift_sapling_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)251": "{{i18n:LeahChild.Dialogue.Gift_sapling_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)628": "{{i18n:LeahChild.Dialogue.Gift_sapling_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)629": "{{i18n:LeahChild.Dialogue.Gift_sapling_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)630": "{{i18n:LeahChild.Dialogue.Gift_sapling_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)631": "{{i18n:LeahChild.Dialogue.Gift_sapling_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)632": "{{i18n:LeahChild.Dialogue.Gift_sapling_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)633": "{{i18n:LeahChild.Dialogue.Gift_sapling_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)835": "{{i18n:LeahChild.Dialogue.Gift_sapling_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_category_gem": "{{i18n:LeahChild.Dialogue.Gift_category_gem {{SecondbornTokenPass}} }}",
+				"AcceptGift_coffee_item": "{{i18n:LeahChild.Dialogue.Gift_coffee_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_tree_seed_item": "{{i18n:LeahChild.Dialogue.Gift_tree_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)805": "{{i18n:LeahChild.Dialogue.Gift_tree_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)MossySeed": "{{i18n:LeahChild.Dialogue.Gift_tree_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)16": "{{i18n:LeahChild.Dialogue.Gift_spicy_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)248": "{{i18n:LeahChild.Dialogue.Gift_spicy_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)260": "{{i18n:LeahChild.Dialogue.Gift_spicy_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)829": "{{i18n:LeahChild.Dialogue.Gift_spicy_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_food_spicy": "{{i18n:LeahChild.Dialogue.Gift_spicy_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_chili_item": "{{i18n:LeahChild.Dialogue.Gift_spicy_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_alcohol_item": "{{i18n:LeahChild.Dialogue.Gift_alcohol_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)212": "{{i18n:LeahChild.Dialogue.Gift_amaranth_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)300": "{{i18n:LeahChild.Dialogue.Gift_amaranth_item {{SecondbornTokenPass}} }}",
+				"Resort_Entering": "{{i18n:LeahChild.Dialogue.Resort_Entering {{SecondbornTokenPass}} }}",
+				"Resort_Leaving": "{{i18n:LeahChild.Dialogue.Resort_Leaving {{SecondbornTokenPass}} }}",
+				"Resort": "{{i18n:LeahChild.Dialogue.Resort {{SecondbornTokenPass}} }}",
+				"GreenRain": "{{i18n:LeahChild.Dialogue.GreenRain {{SecondbornTokenPass}} }}",
+				"Mon": "{{i18n:LeahChild.Dialogue.Mon {{SecondbornTokenPass}} }}",
+				"Tue": "{{i18n:LeahChild.Dialogue.Tue {{SecondbornTokenPass}} }}",
+				"Wed": "{{i18n:LeahChild.Dialogue.Wed {{SecondbornTokenPass}} }}",
+				"Thu": "{{i18n:LeahChild.Dialogue.Thu {{SecondbornTokenPass}} }}",
+				"Fri": "{{i18n:LeahChild.Dialogue.Fri {{SecondbornTokenPass}} }}",
+				"Sat": "{{i18n:LeahChild.Dialogue.Sat {{SecondbornTokenPass}} }}",
+				"Sun": "{{i18n:LeahChild.Dialogue.Sun {{SecondbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:LeahChild.Dialogue.summer_Mon {{SecondbornTokenPass}} }}",
+				"summer_Tue": "{{i18n:LeahChild.Dialogue.summer_Tue {{SecondbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:LeahChild.Dialogue.summer_Wed {{SecondbornTokenPass}} }}",
+				"summer_Thu": "{{i18n:LeahChild.Dialogue.summer_Thu {{SecondbornTokenPass}} }}",
+				"summer_Fri": "{{i18n:LeahChild.Dialogue.summer_Fri {{SecondbornTokenPass}} }}",
+				"summer_Sat": "{{i18n:LeahChild.Dialogue.summer_Sat {{SecondbornTokenPass}} }}",
+				"summer_Sun": "{{i18n:LeahChild.Dialogue.summer_Sun {{SecondbornTokenPass}} }}",
+				"fall_Mon": "{{i18n:LeahChild.Dialogue.fall_Mon {{SecondbornTokenPass}} }}",
+				"fall_Tue": "{{i18n:LeahChild.Dialogue.fall_Tue {{SecondbornTokenPass}} }}",
+				"fall_Wed": "{{i18n:LeahChild.Dialogue.fall_Wed {{SecondbornTokenPass}} }}",
+				"fall_Thu": "{{i18n:LeahChild.Dialogue.fall_Thu {{SecondbornTokenPass}} }}",
+				"fall_Fri": "{{i18n:LeahChild.Dialogue.fall_Fri {{SecondbornTokenPass}} }}",
+				"fall_Sat": "{{i18n:LeahChild.Dialogue.fall_Sat {{SecondbornTokenPass}} }}",
+				"fall_Sun": "{{i18n:LeahChild.Dialogue.fall_Sun {{SecondbornTokenPass}} }}",
+				"winter_Mon": "{{i18n:LeahChild.Dialogue.winter_Mon {{SecondbornTokenPass}} }}",
+				"winter_Tue": "{{i18n:LeahChild.Dialogue.winter_Tue {{SecondbornTokenPass}} }}",
+				"winter_Wed": "{{i18n:LeahChild.Dialogue.winter_Wed {{SecondbornTokenPass}} }}",
+				"winter_Thu": "{{i18n:LeahChild.Dialogue.winter_Thu {{SecondbornTokenPass}} }}",
+				"winter_Fri": "{{i18n:LeahChild.Dialogue.winter_Fri {{SecondbornTokenPass}} }}",
+				"winter_Sat": "{{i18n:LeahChild.Dialogue.winter_Sat {{SecondbornTokenPass}} }}",
+				"winter_Sun": "{{i18n:LeahChild.Dialogue.winter_Sun {{SecondbornTokenPass}} }}",
+			}
+		},
+		{
+            "LogName": "Add rain dialogue for Leah's son as secondborn.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/rainy",
+            "Entries": {
+				"{{SecondbornName}}": "{{i18n:LeahChild.Dialogue.Rain {{SecondbornTokenPass}} }}",
+			}
+		},
+		
+        {
+			"LogName": "Add Egg Festival dialogue for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring13",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.spring13_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.spring13_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Flower Dance dialogue for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.spring24_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.spring24_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Luau dialogue for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer11",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.summer11_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.summer11_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Moonlight Jellies dialogue for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer28",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.summer28_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.summer28_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Fair dialogue for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.fall16_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.fall16_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Spirit's Eve dialogue for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.fall27_y1_plural_{{CoPlu2}} {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.fall27_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Festival of Ice dialogue for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.winter8_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.winter8_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Winter Star dialogue for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.winter25_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.winter25_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+		{
+			"LogName": "Add dialogue for attending movies with other parent for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_3", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:LeahChild.Movie.With_Parent_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie": {
+					"ResponsePoint": null,
+					"Script": "/message \"{{i18n:GeneralChildren.Movie.With_Parent_Script {{SecondbornTokenPass}} }}\"",
+					"Text": null
+				},
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:LeahChild.Movie.With_Parent_After {{SecondbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for spring_movie_0 for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_4", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:LeahChild.Movie.spring_0_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie":  {
+					"ResponsePoint": "sprout_leave",
+					"Script": "/message \"{{i18n:LeahChild.Movie.spring_0_Script {{SecondbornTokenPass}} }}\"",
+					"Text": "{{i18n:LeahChild.Movie.spring_0_During {{SecondbornTokenPass}} }}"
+				},
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:LeahChild.Movie.spring_0_After {{SecondbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for loved movies for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_5", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:LeahChild.Movie.love_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:LeahChild.Movie.love_After {{SecondbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for liked movies for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_6", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:LeahChild.Movie.like_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:LeahChild.Movie.like_After {{SecondbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for disliked movies for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_7", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:LeahChild.Movie.dislike_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:LeahChild.Movie.dislike_After {{SecondbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		//Conditional dialogue (schedules)
+		{
+            "LogName": "Edit schedule dialogue for Leah's son as firstborn to use genericized versions.",
+            "Action": "EditData",
+            "Target": "Strings/schedules/{{SecondbornName}}",
+            "Entries": {
+				"Mon.000": "{{i18n:LeahChild.Schedule.Mon.000.noncanon {{SecondbornTokenPass}} }}",
+				"Schoolhouse.000": "{{i18n:LeahChild.Schedule.Schoolhouse.000.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		{
+            "LogName": "Edit schedule dialogue for Leah's son as firstborn to use single parenting versions.",
+            "Action": "EditData",
+            "Target": "Strings/schedules/{{SecondbornName}}",
+            "Entries": {
+				"Tue.000": "{{i18n:LeahChild.Schedule.Tue.000.single {{SecondbornTokenPass}} }}",
+				"DesertFestival.000": "{{i18n:LeahChild.Schedule.DesertFestival.000.single {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Single": true,
+			},
+		},
+		
+		//Conditional dialogue (regular)
+		{
+            "LogName": "Edit dialogue for Leah's son as firstborn to use genericized versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{SecondbornName}}",
+            "Entries": {
+				"AcceptGift_(O)StardropTea": "{{i18n:LeahChild.Dialogue.Gift_StardropTea.noncanon {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)196": "{{i18n:LeahChild.Dialogue.Gift_Salad.noncanon {{SecondbornTokenPass}} }}",
+				"Thu": "{{i18n:LeahChild.Dialogue.Thu.noncanon {{SecondbornTokenPass}} }}",
+				"summer_Thu": "{{i18n:LeahChild.Dialogue.summer_Thu.noncanon {{SecondbornTokenPass}} }}",
+				"summer_Sat": "{{i18n:LeahChild.Dialogue.summer_Sat.noncanon {{SecondbornTokenPass}} }}",
+				"fall_Wed": "{{i18n:LeahChild.Dialogue.fall_Wed.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		{
+            "LogName": "Edit dialogue for Leah's son as firstborn to use single parenting versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{SecondbornName}}",
+            "Entries": {
+				"AcceptGift_(O)196": "{{i18n:LeahChild.Dialogue.Gift_Salad.single {{SecondbornTokenPass}} }}",
+				"Mon": "{{i18n:LeahChild.Dialogue.Mon.single {{SecondbornTokenPass}} }}",
+				"Wed": "{{i18n:LeahChild.Dialogue.Wed.single {{SecondbornTokenPass}} }}",
+				"summer_Fri": "{{i18n:LeahChild.Dialogue.summer_Fri.single_{{SiblingStatus}} {{SecondbornTokenPass}} }}",
+				"winter_Sun": "{{i18n:LeahChild.Dialogue.winter_Sun.single {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Single": true,
+			},
+		},
+		
+		//Conditional dialogue (festivals)
+        {
+			"LogName": "Edit Flower Dance dialogue for Leah's son as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.spring24_y1.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Spirit's Eve dialogue for Leah's son as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.fall27_y1.noncanon {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.fall27_y2.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Add Festival of Ice dialogue for Leah's son as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": {
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.winter8_y2.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Add Winter Star dialogue for Leah's son as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.winter25_y2.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		
+        {
+			"LogName": "Edit Flower Dance dialogue for Leah's son as firstborn to use single parenting versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:LeahChild.Festivals.spring24_y1.single {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Fair dialogue for Leah's son as firstborn to use single parenting versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.fall16_y2.single {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Single": true,
+			},
+		},
+        {
+			"LogName": "Add Festival of Ice dialogue for Leah's son as firstborn to use single parenting versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": {
+				 "{{SecondbornName}}_y2": "{{i18n:LeahChild.Festivals.winter8_y2.single {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Single": true,
+			},
+		},
+		
+		
+   		{      
+			"LogName": "Include dialogue files which have been modified for translation for Leah's son as secondborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Leah/valid_secondborn_Leah_edit.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+   ]
+}

@@ -1,0 +1,198 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Railroad events",
+            "Action": "EditData",
+            "Target": "Data/Events/Railroad",
+            "Entries": {
+                //Introduction event - time must be between 7:00am and 5:00pm
+                "{{ModId}}_Introduction/Time 700 1700": "playful/-100 -100/farmer 29 55 0 {{Honeyfuggle}} 29 45 2/changeSprite {{Honeyfuggle}} suitcase_{{Suitcase}}/addConversationTopic {{ModId}}_Arrival/skippable
+                /playSound trainWhistle/pause 2000/fade/viewport 29 51/pause 800
+                /speed {{Honeyfuggle}} 5/move {{Honeyfuggle}} 0 6 2 farmer 0 -3 0/ignoreMovementAnimation {{Honeyfuggle}} true/jump {{Honeyfuggle}}/jump farmer/move {{Honeyfuggle}} 0 -1 2
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Introduction.0}}\"/pause 200/emote farmer 32/emote {{Honeyfuggle}} 32
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Introduction.1}}\"/emote farmer 40/pause 50/emote farmer 40
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Introduction.2}}\"/emote farmer 32
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Introduction.3}}\"/pause 1000/emote farmer 40
+                /message \"{{i18n:{{ModId}}_Introduction.4}}\"
+                /quickQuestion #{{i18n:{{ModId}}_Introduction.5}}#{{i18n:{{ModId}}_Introduction.6}}#{{i18n:{{ModId}}_Introduction.7}}(break)emote {{Honeyfuggle}} 28\\speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Introduction.8}}\"(break)emote {{Honeyfuggle}} 56\\speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Introduction.9}}\"(break)emote {{Honeyfuggle}} 60\\speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Introduction.10}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Introduction.11}}\"
+                /move farmer 2 0 3/ignoreMovementAnimation {{Honeyfuggle}} false/move {{Honeyfuggle}} 0 5 2/faceDirection farmer 2/faceDirection {{Honeyfuggle}} 0/emote {{Honeyfuggle}} 56/move {{Honeyfuggle}} 0 8 2
+                /emote farmer 8/message \"{{i18n:{{ModId}}_Introduction.12}}\"/pause 1000/end"
+            }
+        },
+        {
+            "LogName": "Saloon events",
+            "Action": "EditData",
+            "Target": "Data/Events/Saloon",
+            "Entries": {
+                //Two heart event - time must be between 6:00pm and 2:00am
+                "{{ModId}}_2Heart/Friendship {{Honeyfuggle}} 500/Time 1800 2600": "Saloon1/20 20/farmer 14 24 0 Gus 10 18 2 Emily 16 17 0 Shane 21 17 2 {{Honeyfuggle}} 23 20 2 Abigail 25 21 3 Elliott 20 20 1 Pam 22 19 2 Willy 24 19 2/addConversationTopic {{ModId}}_MagicTrick/skippable/animate Shane false true 100 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 21 22 23 24 24 24 24 24 24 24 23 22 21/animate Gus false true 100 18 18 19 19 20 20 19 19
+                /pause 600/jump Abigail 4/textAboveHead Abigail \"{{i18n:{{ModId}}_2Heart.0}}\"/pause 500/textAboveHead Willy \"{{i18n:{{ModId}}_2Heart.1}}\"/pause 1500
+                /move farmer 0 -3 1/move farmer 3 0 1/pause 500
+                /faceDirection Elliott 3/speak Elliott \"{{i18n:{{ModId}}_2Heart.2}}\"
+                /move farmer 4 0 0/faceDirection Elliott 1/pause 300/emote farmer 8
+                /speak Elliott \"{{i18n:{{ModId}}_2Heart.3}}\"/textAboveHead Abigail \"{{i18n:{{ModId}}_2Heart.4}}\"/pause 500
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_2Heart.5}}\"
+                /textAboveHead Pam \"{{i18n:{{ModId}}_2Heart.6}}\"/pause 400/speak Abigail \"{{i18n:{{ModId}}_2Heart.7}}\"
+                /emote {{Honeyfuggle}} 56/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_2Heart.8}}\"
+                /faceDirection farmer 1/jump farmer/pause 1000
+                /move {{Honeyfuggle}} 0 1 3/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_2Heart.9}}\"
+                /stopMusic/pause 2000/playSound coldSpell/pause 400/playSound coldSpell/pause 1000/playSound fairy_heal/pause 1000
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_2Heart.10}}\"
+                /jump Elliott 4/pause 300/jump Abigail 6/textAboveHead Abigail \"{{i18n:{{ModId}}_2Heart.11}}\"/pause 300/jump Pam 4/pause 200/jump Willy 4/pause 1000
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_2Heart.12.{{season}}}}\"
+                /jump farmer/pause 400/emote farmer 16/pause 500
+                /quickQuestion {{i18n:{{ModId}}_2Heart.13}}#{{i18n:{{ModId}}_2Heart.14}}#{{i18n:{{ModId}}_2Heart.15}}(break)speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_2Heart.16}}\"(break)friendship {{Honeyfuggle}} -25\\speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_2Heart.17}}\"
+                /faceDirection {{Honeyfuggle}} 0/playMusic Saloon1/speak Willy \"{{i18n:{{ModId}}_2Heart.18}}\"/pause 200
+                /faceDirection {{Honeyfuggle}} 1/speak Abigail \"{{i18n:{{ModId}}_2Heart.19}}\"/pause 200
+                /faceDirection {{Honeyfuggle}} 3/speak Elliott \"{{i18n:{{ModId}}_2Heart.20}}\"/stopAnimation Gus 0/textAboveHead Gus \"{{i18n:{{ModId}}_2Heart.21}}\"/pause 1000
+                /faceDirection {{Honeyfuggle}} 2/emote {{Honeyfuggle}} 20/pause 500/viewport move 1 -1 2000/pause 1000/end"
+            }
+        },
+        {
+            "LogName": "Tent events",
+            "Action": "EditData",
+            "Target": "Data/Events/{{ModId}}_Tent",
+            "Entries": {
+                //Four heart event - time must be between 6:10am and 1:00pm, has seen two heart event
+                "{{ModId}}_4Heart/Friendship {{Honeyfuggle}} 1000/SawEvent {{ModId}}_2Heart/Time 610 1300": "EarthMine/2 3/farmer -100 -100 2 {{Honeyfuggle}} 3 2 2/showFrame {{Honeyfuggle}} 19/skippable/pause 1000
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_4Heart.0}}\"/pause 1000
+                /emote {{Honeyfuggle}} 12/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_4Heart.1}}\"
+                /emote {{Honeyfuggle}} 40/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_4Heart.2}}\"
+                /playSound treecrack/pause 1000/playSound treethud
+                /showFrame {{Honeyfuggle}} 23/jump {{Honeyfuggle}}/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_4Heart.3}}\"
+                /move {{Honeyfuggle}} 0 4 2/fade/changeLocation Forest/viewport 20 85/warp {{Honeyfuggle}} 19 85/warp farmer 19 81/fade unfade
+                /move {{Honeyfuggle}} -3 0 3/faceDirection {{Honeyfuggle}} 0/pause 250/faceDirection {{Honeyfuggle}} 2/pause 250
+                /move {{Honeyfuggle}} 6 0 1/faceDirection {{Honeyfuggle}} 2/pause 250/faceDirection {{Honeyfuggle}} 0/pause 250
+                /faceDirection {{Honeyfuggle}} 3/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_4Heart.4}}\"
+                /move {{Honeyfuggle}} -3 0 3/move {{Honeyfuggle}} 0 -2 0/warp {{Honeyfuggle}} -100 -100/pause 1000
+                /move farmer -3 0 2/pause 800/emote farmer 8/end",
+
+                //Eight heart event - has seen six heart event
+                "{{ModId}}_8Heart/Friendship {{Honeyfuggle}} 1500/SawEvent {{ModId}}_6Heart": "spirits_eve/2 3/farmer 3 5 0 {{Honeyfuggle}} -100 -100 0/skippable/pause 1000
+                /move farmer 0 -2 1/pause 500/faceDirection farmer 3/pause 500/emote farmer 40/message \"{{i18n:{{ModId}}_8Heart.0}}\"/move farmer 0 1 1/pause 1000
+                /showFrame 35/pause 800/playSound debuffHit/stopAnimation farmer/jump farmer/move farmer -1 0 1/pause 1500
+                /message \"{{i18n:{{ModId}}_8Heart.1}}\"/move farmer 1 0 1
+                /showFrame 35/pause 500/playSound sandyStep/pause 1000/playSound sandyStep/pause 1000/stopAnimation farmer/message \"{{i18n:{{ModId}}_8Heart.2}}\"
+                /globalFade 0.02/viewport -1000 -1000/warp farmer -100 -100/ambientLight 255 255 255 true/changeToTemporaryMap {{ModId}}_Poster/viewport 5 6/pause 2000
+                /message \"{{i18n:{{ModId}}_8Heart.3}}\"/pause 600/message \"{{i18n:{{ModId}}_8Heart.4}}\"/pause 1500
+                /stopMusic/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_8Heart.5}}\"
+                /fade/viewport -1000 -1000/changeLocation {{ModId}}_Tent/warp farmer 3 3 true/faceDirection farmer 2/warp {{Honeyfuggle}} 3 5 true/faceDirection {{Honeyfuggle}} 0/viewport 2 4/fade unfade/pause 500
+                /emote farmer 16/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_8Heart.6}}\"/faceDirection {{Honeyfuggle}} 3/emote {{Honeyfuggle}} 28/pause 100/faceDirection {{Honeyfuggle}} 0/playMusic junimoKart_mushroomMusic
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_8Heart.7}}\"/emote farmer 8
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_8Heart.8}}\"/emote {{Honeyfuggle}} 40
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_8Heart.9}}\"
+                /quickQuestion #{{i18n:{{ModId}}_8Heart.10}}#{{i18n:{{ModId}}_8Heart.11}}#{{i18n:{{ModId}}_8Heart.12}}(break)speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_8Heart.13}}\"(break)speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_8Heart.14}}\"(break)friendship {{Honeyfuggle}} -500\\speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_8Heart.15}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_8Heart.16}}\"
+                /move {{Honeyfuggle}} 0 -1 0/move {{Honeyfuggle}} -1 0 1/move farmer 0 2 0/emote farmer 60/pause 200/faceDirection farmer 2/pause 200/warp farmer -100 -100
+                /move {{Honeyfuggle}} 1 0 1/pause 200/playSound coldSpell/pause 400/playSound coldSpell/pause 300/end"
+            }
+        },
+        {
+            "LogName": "Library events",
+            "Action": "EditData",
+            "Target": "Data/Events/ArchaeologyHouse",
+            "Entries": {
+                //Six heart event - has seen four heart event
+                "{{ModId}}_6Heart/Friendship {{Honeyfuggle}} 2000/SawEvent {{ModId}}_4Heart": "libraryTheme/7 11/farmer 3 14 0 {{Honeyfuggle}} 8 10 0 Gunther 3 8 2 Elliott 10 10 2 Penny 16 9 0/showFrame Elliott 33/skippable/pause 500
+                /playSound doorClose/pause 500/advancedMove Penny true 2 0 4 4500 -2 0 4 6000/advancedMove farmer false 0 -2 5 0 0 -4 1 1000
+                /move {{Honeyfuggle}} -5 0 0/pause 500/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_6Heart.0}}\"
+                /speak Gunther \"{{i18n:{{ModId}}_6Heart.1.{{Random:Neutral,Fem,Masc}}}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_6Heart.2}}\"/faceDirection {{Honeyfuggle}} 1/pause 100/addObject 4 8 Book_Diamonds 1/playSound dwop/pause 500/faceDirection {{Honeyfuggle}} 0
+                /speak Gunther \"{{i18n:{{ModId}}_6Heart.3}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_6Heart.4}}\"
+                /speak Gunther \"{{i18n:{{ModId}}_6Heart.5}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_6Heart.6}}\"/pause 500/emote {{Honeyfuggle}} 40/pause 300/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_6Heart.7}}\"
+                /emote Gunther 28/speak Gunther \"{{i18n:{{ModId}}_6Heart.8}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_6Heart.9}}\"
+                /speak Gunther \"{{i18n:{{ModId}}_6Heart.10}}\"/pause 250
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_6Heart.11}}\"/emote {{Honeyfuggle}} 28/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_6Heart.12}}\"
+                /speak Gunther \"{{i18n:{{ModId}}_6Heart.13}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_6Heart.14}}\"/pause 400/faceDirection farmer 2/emote farmer 40/pause 500/end"
+            }
+        },
+        {
+            "LogName": "Forest events",
+            "Action": "EditData",
+            "Target": "Data/Events/Forest",
+            "Entries": {
+                //Ten heart event - has seen 8 heart event, time must be between 9:00pm and 2:00am, not the first week or last day of any season, and, optionally, has completed the Magic Ink quest
+                "{{ModId}}_10Heart/Friendship {{Honeyfuggle}} 2000/SawEvent {{ModId}}_8Heart/Time 2100 2600/!DayOfMonth 1 2 3 4 5 6 7 28{{Immersive}}": "nightTime/9 40/{{Honeyfuggle}} 6 37 0 farmer 15 41 3 Wizard -100 -100 2/addConversationTopic {{ModId}}_Departure
+                /move farmer -5 0 3/move farmer 0 -2 0
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.0}}\"/emote farmer 16
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.1}}\"/pause 1500/emote farmer 8
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.2{{RazzyGender}}}}\"/emote farmer 28
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.3{{RazzyGender}}}}\"
+                /question fork1 \"{{i18n:{{ModId}}_10Heart.4}}#{{i18n:{{ModId}}_10Heart.5}}#{{i18n:{{ModId}}_10Heart.6}}\"/fork {{ModId}}_GoHome
+                /playMusic {{ModId}}_Heist/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.7{{RazzyGender}}}}\"
+                /move {{Honeyfuggle}} 4 0 0 farmer 0 4 2/move {{Honeyfuggle}} 0 2 2 farmer 2 0 1 true/pause 800/globalFade 0.01/viewport -1000 -1000
+                /changeLocation WizardHouse/warp farmer -100 -100/warp {{Honeyfuggle}} -100 -100/viewport 7 7/faceDirection farmer 0/faceDirection {{Honeyfuggle}} 0/pause 800
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.8{{RazzyGender}}}}\"/jump {{Honeyfuggle}}/warp {{Honeyfuggle}} 3 7/move {{Honeyfuggle}} 0 -1 0/pause 100/move {{Honeyfuggle}} 1 0 2/pause 1000
+                /jump farmer/warp farmer 3 7/move farmer 0 -1 0/pause 500/faceDirection farmer 1/pause 200/faceDirection {{Honeyfuggle}} 3/pause 100
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.9}}\"
+                /move {{Honeyfuggle}} 2 0 0/move {{Honeyfuggle}} 0 -1 0/pause 100/playSound sandyStep/pause 1000/playSound sandyStep/pause 500/move {{Honeyfuggle}} 3 0 0/pause 200/playSound sandyStep/pause 1000/playSound jingle1
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.10}}\"/pause 500/emote {{Honeyfuggle}} 40
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.11}}\"/move {{Honeyfuggle}} -1 0 2/viewport move 0 3 2000/move {{Honeyfuggle}} 0 9 3/emote {{Honeyfuggle}} 56/move farmer 4 0 2/move farmer 0 3 2/faceDirection {{Honeyfuggle}} 0
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.12}}\"/emote farmer 28
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.13}}\"/move {{Honeyfuggle}} -6 0 0 farmer 0 5 3/pause 500
+                /playSound coldSpell/pause 400/playSound coldSpell/pause 2000
+                /showFrame Wizard 16/playSound wand/screenFlash .8/warp Wizard 7 9/textAboveHead Wizard \"{{i18n:{{ModId}}_10Heart.14}}\"/textAboveHead {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.15}}\"/jump {{Honeyfuggle}}/jump farmer/faceDirection {{Honeyfuggle}} 1/faceDirection farmer 0/pause 1000/move farmer 2 0 3 Wizard 0 5 3
+                /playMusic WizardSong/speak Wizard \"{{i18n:{{ModId}}_10Heart.16}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.17{{RazzyGender}}}}\"
+                /speak Wizard \"{{i18n:{{ModId}}_10Heart.18}}\"
+                /emote {{Honeyfuggle}} 28/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.19}}\"
+                /speak Wizard \"{{i18n:{{ModId}}_10Heart.20}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.21}}\"
+                /speak Wizard \"{{i18n:{{ModId}}_10Heart.22}}\"
+                /emote {{Honeyfuggle}} 60/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.23{{RazzyGender}}}}\"
+                /speak Wizard \"{{i18n:{{ModId}}_10Heart.24}}\"
+                /move {{Honeyfuggle}} 3 0 1/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.25}}\"/pause 300
+                /animate Wizard true true 100 19/playSound warrior/pause 1500/playSound wand/screenFlash .8/warp {{Honeyfuggle}} -100 -100
+                /pause 600/stopAnimation Wizard 12/pause 1000/faceDirection Wizard 1/speak Wizard \"{{i18n:{{ModId}}_10Heart.26}}\"
+                /jump farmer/pause 1000/move farmer 0 1 2/move farmer -1 0 3/move farmer 0 9 2 true/faceDirection Wizard 2/pause 1500/globalFade 0.01/viewport -1000 -1000/pause 1000
+                /message \"{{i18n:{{ModId}}_10Heart.27}}\"/pause 1000
+                /end invisible {{Honeyfuggle}}",
+
+                //Fork of ten heart - farmer chooses to go home
+                "{{ModId}}_GoHome": "mail {{ModId}}_Skipped10Heart/playMusic {{ModId}}_Heist/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10HeartFork.0}}\"/move farmer 0 3 2 true/pause 800/globalFade 0.01/viewport -1000 -1000/warp farmer -100 -100/pause 500
+                /changeLocation WizardHouse/warp {{Honeyfuggle}} -100 -100/viewport 7 7/pause 1200
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10HeartFork.1{{RazzyGender}}}}\"/jump {{Honeyfuggle}}/warp {{Honeyfuggle}} 3 7/move {{Honeyfuggle}} 0 -1 0/pause 1000
+                /move {{Honeyfuggle}} 3 0 0/move {{Honeyfuggle}} 0 -1 0/pause 100/playSound sandyStep/pause 1000/playSound sandyStep/pause 500/move {{Honeyfuggle}} 3 0 0/pause 200/playSound sandyStep/pause 1000/playSound jingle1
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10HeartFork.2}}\"/pause 500/emote {{Honeyfuggle}} 40
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10HeartFork.3}}\"/move {{Honeyfuggle}} -1 0 2/viewport move 0 3 2000/move {{Honeyfuggle}} 0 9 3/emote {{Honeyfuggle}} 56/pause 300/move {{Honeyfuggle}} -6 0 0/pause 1000
+                /playSound coldSpell/pause 400/playSound coldSpell/pause 2000
+                /showFrame Wizard 16/playSound wand/screenFlash .8/warp Wizard 7 14/textAboveHead Wizard \"{{i18n:{{ModId}}_10Heart.14}}\"/textAboveHead {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.15}}\"/jump {{Honeyfuggle}}/faceDirection {{Honeyfuggle}} 1/faceDirection Wizard 3/pause 1000
+                /playMusic WizardSong/speak Wizard \"{{i18n:{{ModId}}_10Heart.16}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10HeartFork.4{{RazzyGender}}}}\"
+                /speak Wizard \"{{i18n:{{ModId}}_10Heart.18}}\"
+                /emote {{Honeyfuggle}} 28/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.19}}\"
+                /speak Wizard \"{{i18n:{{ModId}}_10Heart.20}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.21}}\"
+                /speak Wizard \"{{i18n:{{ModId}}_10Heart.22}}\"
+                /emote {{Honeyfuggle}} 60/speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_10Heart.23{{RazzyGender}}}}\"
+                /speak Wizard \"{{i18n:{{ModId}}_10Heart.24}}\"
+                /move {{Honeyfuggle}} 3 0 1/animate Wizard true true 100 19/playSound warrior/pause 1500/playSound wand/screenFlash .8/warp {{Honeyfuggle}} -100 -100
+                /pause 600/stopAnimation Wizard 12/pause 1000/speak Wizard \"{{i18n:{{ModId}}_10HeartFork.5}}\"/pause 1000
+                /end invisible {{Honeyfuggle}}"
+            }
+        },
+        {
+            "LogName": "Town events",
+            "Action": "EditData",
+            "Target": "Data/Events/Town",
+            "Entries": {
+                "{{ModId}}_Return/SawEvent {{ModId}}_10Heart/Time 0600 1700/DayOfMonth 1 2 3 4 5 6 7": "distantBanjo/45 59/farmer 49 49 2 {{Honeyfuggle}} -100 -100 2/skippable
+                /move farmer 0 8 2 true/pause 3000/warp {{Honeyfuggle}} 43 57/playSound doorClose/pause 1000/faceDirection {{Honeyfuggle}} 1
+                /emote {{Honeyfuggle}} 16/speed {{Honeyfuggle}} 5/move {{Honeyfuggle}} 4 0 1/faceDirection farmer 3
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Return.0}}\"/emote farmer 16
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Return.1}}\"/jump farmer 4/pause 1000
+                /quickQuestion #{{i18n:{{ModId}}_Return.2}}#{{i18n:{{ModId}}_Return.3}}(break)speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Return.4}}\"(break)speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Return.5}}\"
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Return.6}}\"/emote farmer 20
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Return.7}}\"/emote farmer 32/pause 500
+                /speak {{Honeyfuggle}} \"{{i18n:{{ModId}}_Return.8}}\"/move {{Honeyfuggle}} -4 0 3 true/pause 1000/end"
+
+            }
+        }
+    ]
+}

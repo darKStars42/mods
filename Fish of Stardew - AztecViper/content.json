@@ -1,0 +1,135 @@
+{
+    "Format": "2.5.3",
+    "ConfigSchema": {
+        // Shops Section
+        "VendingMachineCurrency": {
+            "AllowValues": "gold, trade",
+            "Default": "gold",
+            "Section": "shops"
+        },
+        // Sprites Section
+        "GemSprites": {
+            "AllowValues": "gems, pearls",
+            "Default": "gems",
+            "Section": "sprites"
+        }
+    },
+    "DynamicTokens": [
+        // Gems
+        {
+            "Name": "GemName",
+            "Value": "Gem"
+        },
+        {
+            "Name": "GemName",
+            "Value": "Pearl",
+            "When": {
+                "GemSprites": "pearls"
+            }
+        },
+        // Pendants
+        {
+            "Name": "PendantName",
+            "Value": "Pendant"
+        },
+        {
+            "Name": "PendantName",
+            "Value": "Circlet",
+            "When": {
+                "GemSprites": "pearls"
+            }
+        }
+    ],
+    "Changes": [
+        {
+            "LogName": "Loading Objects JSON...",
+            "Action": "Include",
+            "FromFile": "data/objects.json"
+        },
+        {
+            "LogName": "Loading Light JSON...",
+            "Action": "Include",
+            "FromFile": "data/light.json"
+        },
+        {
+            "LogName": "Loading Scroll JSON...",
+            "Action": "Include",
+            "FromFile": "data/scrolls.json"
+        },
+        {
+            "LogName": "Loading Locations JSON...",
+            "Action": "Include",
+            "FromFile": "data/locations.json"
+        },
+        {
+            "LogName": "Loading Forage JSON...",
+            "Action": "Include",
+            "FromFile": "data/forage.json"
+        },
+        {
+            "LogName": "Loading Fish JSON...",
+            "Action": "Include",
+            "FromFile": "data/fish.json"
+        },
+        {
+            "LogName": "Loading Pond JSON...",
+            "Action": "Include",
+            "FromFile": "data/pond.json"
+        },
+        {
+            "LogName": "Loading Food JSON...",
+            "Action": "Include",
+            "FromFile": "data/food.json"
+        },
+        {
+            "LogName": "Loading Buffs JSON...",
+            "Action": "Include",
+            "FromFile": "data/buffs.json"
+        },
+        {
+            "LogName": "Loading Artifacts JSON...",
+            "Action": "Include",
+            "FromFile": "data/artifacts.json"
+        },
+        {
+            "LogName": "Loading Mail JSON...",
+            "Action": "Include",
+            "FromFile": "data/mail.json"
+        },
+        {
+            "LogName": "Loading Machine JSON...",
+            "Action": "Include",
+            "FromFile": "data/machines.json"
+        },
+        {
+            "LogName": "Loading Totem JSON...",
+            "Action": "Include",
+            "FromFile": "data/totems.json"
+        },
+        {
+            "LogName": "Loading Shop JSON...",
+            "Action": "Include",
+            "FromFile": "data/shops.json"
+        },
+        {
+            "LogName": "Loading Treasure JSON...",
+            "Action": "Include",
+            "FromFile": "data/treasure.json"
+        },
+        {
+            "LogName": "Loading Gift Tastes JSON...",
+            "Action": "Include",
+            "FromFile": "data/gifts.json"
+        },
+        {
+            "LogName": "Loading Quests JSON...",
+            "Action": "Include",
+            "FromFile": "data/quests.json"
+        },
+        {
+            "LogName": "Loading Triggers JSON...",
+            "Action": "Include",
+            "FromFile": "data/triggers.json"
+        }
+    ]
+}

@@ -1,0 +1,178 @@
+{
+    "Format": "2.0.0",
+
+    "DynamicTokens": 
+    [
+        {
+            "Name": "TMPHaramTag",
+            "Value": "food_haram",
+            "When": 
+            {
+                "HasMod |contains=Aimon111.SoyBeanMeats": false
+            }
+        },
+
+        {
+            "Name": "TMPTeryfTag",
+            "Value": "food_tref",
+            "When": 
+            {
+                "HasMod |contains=Aimon111.SoyBeanMeats": false
+            }
+        },
+
+        {
+            "Name": "TMPHaramTag",
+            "Value": "food_halal",
+            "When": 
+            {
+                "HasMod |contains=Aimon111.SoyBeanMeats": true
+            }
+        },
+
+        {
+            "Name": "TMPTeryfTag",
+            "Value": "food_kosher",
+            "When": 
+            {
+                "HasMod |contains=Aimon111.SoyBeanMeats": true
+            }
+        }
+    ],
+   
+    "Changes": 
+    [ 
+        { // Europe Pack
+            "Action": "Include",
+            "FromFile": "Assets/ItemData/Books/EuropeBook/EuropeBook.json, Assets/ItemData/Foods/EuropeanFood/EuropeCookingRecipes.json, Assets/ItemData/Foods/EuropeanFood/EuropeObjects.json, Assets/ItemData/Foods/EuropeanFood/HusbandryOnlyRecipesEU.json",
+
+            
+            "When":
+            {
+                "EuropePack": true
+            }
+        },
+
+        { // AsiaPack
+            "Action": "Include",
+            "FromFile": "Assets/ItemData/Books/AsiaBook/AsiaBook.json, Assets/ItemData/Foods/AsianFood/AsiaCookingRecipes.json, Assets/ItemData/Foods/AsianFood/AsiaObjects.json, Assets/ItemData/Foods/AsianFood/HusbandryOnlyRecipesAS.json",
+
+            
+            "When":
+            {
+                "AsiaPack": true
+            }
+        },
+
+        { // AfricaPack
+            "Action": "Include",
+            "FromFile": "Assets/ItemData/Books/AfricaBook/AfricaBook.json, Assets/ItemData/Foods/AfricaFood/AfricaCookingRecipes.json, Assets/ItemData/Foods/AfricaFood/HusbandryOnlyRecipesAF.json, Assets/ItemData/Foods/AfricaFood/AfricaObjects.json,",
+
+            
+            "When":
+            {
+                "AfricaPack": true
+            }
+        },
+
+        { // LatinPack
+            "Action": "Include",
+            "FromFile": "Assets/ItemData/Books/LatinBook/LatinBook.json, Assets/ItemData/Foods/LatinFood/LatinCookingRecipes.json, Assets/ItemData/Foods/LatinFood/LatinObjects.json, Assets/ItemData/Foods/LatinFood/HusbandryOnlyRecipesL.json",
+
+            
+            "When":
+            {
+                "LatinPack": true
+            }
+        },
+
+        { // NAPack
+            "Action": "Include",
+            "FromFile": "Assets/ItemData/Books/NABook/NABook.json, Assets/ItemData/Foods/NAFood/NACookingRecipes.json, Assets/ItemData/Foods/NAFood/NAObjects.json, Assets/ItemData/Foods/NAFood/HusbandryOnlyRecipesNA.json",
+
+            
+            "When":
+            {
+                "NAPack": true
+            }
+        },
+
+        { // ANZPack
+            "Action": "Include",
+            "FromFile": "Assets/ItemData/Books/ANZBook/ANZBook.json, Assets/ItemData/Foods/ANZFood/ANZCookingRecipes.json, Assets/ItemData/Foods/ANZFood/ANZObjects.json, Assets/ItemData/Foods/ANZFood/HusbandryOnlyRecipesANZ.json",
+
+            
+            "When":
+            {
+                "ANZPack": true
+            }
+        },
+
+        { // Pierre Items
+            "Action":"Include",
+            "FromFile": "Assets/ItemData/Pierre/Pierre.json, Assets/ItemData/Foods/PierreItems/PierreItems.json, Assets/ItemData/Foods/PierreItems/WrappedItemsExtension.json"
+        },
+
+        { // Gus Items
+            "Action":"Include",
+            "FromFile": "Assets/ItemData/Gus/Gus.json, Assets/ItemData/Foods/GusItems/GusItems.json, Assets/ItemData/Foods/GusItems/Corona.json, Assets/ItemData/Foods/GusItems/CoronaExtension.json"
+        },
+
+        { // Willy Items
+            "Action":"Include",
+            "FromFile": "Assets/ItemData/Willy/Willy.json, Assets/ItemData/Foods/WillyItems/WillyItems.json"
+        }
+    ],
+
+    "ConfigSchema": 
+    {
+        "EuropePack": 
+        {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "config.EuropePack.name": "{{i18n:config.EPack.name}}",
+            "config.EuropePack.Description": "{{i18n:config.EPack.Description}}"
+        },
+
+        "AsiaPack": 
+        {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "config.AsiaPack.name": "{{i18n:config.APack.name}}",
+            "config.AsiaPack.Description": "{{i18n:config.APack.Description}}"
+        },
+
+        "AfricaPack": 
+        {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "config.AfricaPack.name": "{{i18n:config.AFPack.name}}",
+            "config.AfricaPack.Description": "{{i18n:config.AFPack.Description}}"
+        },
+
+        "LatinPack": 
+        {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "config.LatinPack.name": "{{i18n:config.LPack.name}}",
+            "config.LatinPack.Description": "{{i18n:config.LPack.Description}}"
+        },
+
+        "NAPack": 
+        {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "config.NAPack.name": "{{i18n:config.NAPack.name}}",
+            "config.NAPack.Description": "{{i18n:config.NAPack.Description}}"
+        },
+
+        "ANZPack": 
+        {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "config.ANZPack.name": "{{i18n:config.ANZPack.name}}",
+            "config.ANZPack.Description": "{{i18n:config.ANZPack.Description}}"
+        }
+    }
+
+}

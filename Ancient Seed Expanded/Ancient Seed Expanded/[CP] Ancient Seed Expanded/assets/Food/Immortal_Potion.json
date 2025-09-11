@@ -1,0 +1,83 @@
+{
+  "Changes": [
+    //Food
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Immortal_Potion":{
+          "Name": "Immortal Potion",
+          "DisplayName": "{{i18n:Immortal_Potion.DisplayName}}",
+          "Description": "{{i18n:Immortal_Potion.Description}}",
+          "Type": "Crafting",
+          "Category": -8,
+          "Price" : 7000,
+          "IsDrink": true,
+          "Edibility": 500,
+          "Texture": "Mods/{{ModId}}/Immortal_Potion",
+          "SpriteIndex": 0,
+          "Buffs": [
+            {
+                  "Id": "Food",
+                  "BuffId": null,
+                  "IconTexture": null,
+                  "IconSpriteIndex": 0,
+                  "Duration": 520,
+                  "IsDebuff": false,
+                  "GlowColor": null,
+                  "CustomAttributes": {
+                  "FarmingLevel": 0.0,
+                  "FishingLevel": 0.0,
+                  "MiningLevel": 0.0,
+                  "LuckLevel": 0.0,
+                  "ForagingLevel": 0.0,
+                  "MaxStamina": 0.0,
+                  "MagneticRadius": 0.0,
+                  "Speed": 0.0,
+                  "Defense": 50.0,
+                  "Attack": 50.0
+                }
+              }
+            ],
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": null,
+          "CustomFields": null
+        },
+
+      }
+    },
+    {
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+                "Immortal Potion": "{{ModId}}_Ancient_Garlic 2 {{ModId}}_Ancient_Melon 2 {{ModId}}_Ancient_Orange 2 {{ModId}}_Ancient_Popberry 2 {{ModId}}_Ancient_Squash 2 {{ModId}}_Purple_Ancient_Fruit 2 {{ModId}}_Wild_Ancient_Berry 2 {{ModId}}_Ancient_Bean_Seeds 2 155 2/25 5/{{ModId}}_Immortal_Potion/null/{{i18n:Immortal_Potion.DisplayName}}",
+            }
+    },
+    {
+          "Action": "EditData",
+          "Target": "Data/Shops",
+          "TargetField": ["Seed_Transformer", "Items"],
+          "Entries": {
+              "{{ModId}}_Immortal_Potion_recipe": {
+                  "Id": "{{ModId}}_Immortal_Potion_recipe",
+                  "ItemId": "{{ModId}}_Immortal_Potion",                    
+                  "Price": 0,
+                  "IsRecipe": true,
+                  "IgnoreShopPriceModifiers": true,
+                  "TradeItemId": "74", 
+                  "TradeItemAmount": 3,
+        },
+      }
+    },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Immortal_Potion",
+            "FromFile": "assets/Food/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

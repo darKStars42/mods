@@ -1,0 +1,141 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+//Strings from Maps
+	{
+	"Action": "EditData",
+	"Target": "strings/StringsFromMaps",
+	"Entries": {
+		"FishmongerShop.1": "{{i18n:Strings.FishmongerShop.1}}",
+		"FishmongerShop.2": "{{i18n:Strings.FishmongerShop.2}}",
+		"FishmongerShop.3": "{{i18n:Strings.FishmongerShop.3}}",
+		"FishmongerShop.4": "{{i18n:Strings.FishmongerShop.4}}",
+		"FishmongerShop.5": "{{i18n:Strings.FishmongerShop.5}}",
+		"FishmongerShop.6": "{{i18n:Strings.FishmongerShop.6}}",
+		"FishmongerShop.7": "{{i18n:Strings.FishmongerShop.7}}",
+		"FridgeGalore": "{{i18n:Strings.FridgeGalore}}",
+		"RadioGaga": "{{i18n:Strings.RadioGaga.{{Random:1++2++3++4++5++6++7++8|inputSeparator=++}}}}",
+            }
+        },
+//Various loads
+	{
+	  "LogName": "Load Fishmonger Inside Map",
+      "Action": "Load",
+      "Target": "VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside", // Maps/InternalNameofMap
+      "FromFile": "assets/Maps/VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside.tmx"
+    },
+	{
+      "LogName": "Fishmonger Inside Events Blank",
+      "Action": "Load",
+      "Target": "data/events/VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside",
+      "FromFile": "assets/blank.json",
+    },
+	{
+        "LogName": "Include all InterModCompat files",
+        "Action": "Include",
+        "FromFile": "Data/NPCData/ConversationTopics.json, Data/NPCData/EventsData.json, Data/NPCData/ConcessionTastes.json, Data/NPCData/MoviesReactions.json",
+    },
+//MAP RELATED THINGS
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Island_S",
+      "FromFile": "assets/Maps/VoidWitchCult.TheFishmonger_Fishmonger_Gi_Boat.tmx",
+      "ToArea": {
+        "X": 22,
+        "Y": 36,
+        "Width": 18,
+        "Height": 9
+      },
+      "PatchMode": "Overlay",
+      "MapProperties": {
+        "Light": "28 41 4"
+      },
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 23,
+            "Y": 43
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Passable": "T"
+          }
+        },
+        {
+          "Position": {
+            "X": 26,
+            "Y": 42
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Warp 4 11 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside"
+          }
+        }
+      ],
+    },
+    {
+      "Action": "EditMap",
+      "Target": "VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside",
+      "AddWarps": [
+		"4 12 IslandSouth 26 43"
+      ],
+    },
+    
+	{
+		"LogName": "Add Custom Locations Data",
+        "Action": "EditData",
+        "Target": "Data/Locations",
+        "Entries": {
+            "VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside": {
+                "CreateOnLoad": {
+                "MapPath": "VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside", //the map you loaded with CP: can also use InternalAssetKey
+                }
+			},
+		},
+	},
+/////////////////////////////
+// add item + crop images //
+///////////////////////////
+    {
+    "Action": "Load",
+    "Target": "Mods/VoidWitchCult.CP.TheFishmongerNPC/vww_fishmonger_crops, Mods/VoidWitchCult.CP.TheFishmongerNPC/vww_fishmonger_giantcrops, Mods/VoidWitchCult.CP.TheFishmongerNPC/vww_fishmonger_objects",
+    "FromFile": "assets/Items/{{TargetWithoutPath}}.png" // assets/Crops.png, assets/Objects.png
+    },
+	{
+    "LogName": "Include Item Data",
+    "Action": "Include",
+    "FromFile": "Data/ItemData/crops.json, Data/ItemData/objects.json, Data/ItemData/CookingRecipes.json, Data/ItemData/Fish.json, Data/ItemData/FishPond.json, Data/ItemData/CraftingRecipes.json, Data/ItemData/BigCraftables.json, Data/ItemData/NPCGiftTastes.json",
+	},
+////////////////
+// Shop Data //
+//////////////
+    {
+      "LogName": "Include Shop Data",
+      "Action": "Include",
+      "FromFile": "Data/ShopData/Shops.json"
+    },
+////////////////////
+// Location Data //
+//////////////////
+    {
+      "LogName": "Include Location Data",
+      "Action": "Include",
+      "FromFile": "Data/Locations.json"
+    },
+////////////////////
+// NPCDisposition /
+//////////////////
+    {
+      "LogName": "Include NPCDisposition Data",
+      "Action": "Include",
+      "FromFile": "Data/NPCData/NPCDispositions.json"
+    },
+////////////
+// Mails //
+//////////
+		{
+			"Action": "Include",
+			"FromFile": "Data/NPCData//Mail.json, Data/NPCData/TriggerActions.json",
+		},
+	]
+}

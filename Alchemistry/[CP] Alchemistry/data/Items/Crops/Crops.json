@@ -1,0 +1,214 @@
+{
+/*----------------------------------------------------
+TIPS FOR CROP SPRITES!
+
+First index in "DaysInPhase" is always the seed in index 0. it skips over sprite index 1 on the next growth day because this is the second sprite for the seed. 
+Index 2 is the day after planting and for how many days it stays on that sprite index, and so on and so forth.
+The harvestable sprite is not included in the "DaysInPhase". The last index is the sprite BEFORE the harvest sprite.
+----------------------------------------------------*/
+
+    "Changes": [
+
+
+        //Load crops
+        {
+            "Action": "Load",
+            "Target": "{{ModId}}/crops",
+            "FromFile": "assets/Items/Crops/crops.png"
+        },
+
+/*----------------------------------------------------
+Crops - Basic
+----------------------------------------------------*/
+
+        {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "{{ModID}}_HemlockSeeds": {
+                    "HarvestItemId": "{{ModID}}_Hemlock",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 0,
+                    "Seasons": [ "spring" ],
+                    //5 day growth. No regrowth.
+                    "DaysInPhase": [ 1, 1, 1, 1, 1 ],
+                    "HarvestMinStack": 2,
+                    "HarvestMaxStack": 4,
+                    "ExtraHarvestChance": 0.1
+                },
+                "{{ModID}}_InkberrySeeds": {
+                    "HarvestItemId": "{{ModID}}_Inkberry",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 1,
+                    "Seasons": [ "spring" ],
+                    //7 day growth. 3 day regrowth.
+                    "DaysInPhase": [ 1, 1, 1, 2, 2 ],
+                    "RegrowDays": 3,
+                    "HarvestMinStack": 1,
+                    "HarvestMaxStack": 1
+                },
+                "{{ModID}}_StarlightHelleboreSeeds": {
+                    "HarvestItemId": "{{ModID}}_StarlightHellebore",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 2,
+                    "Seasons": [ "summer" ],
+                    //12 day growth. 4 day regrowth.
+                    "DaysInPhase": [ 1, 2, 3, 3, 3 ],
+                    "RegrowDays": 4,
+                    "IsRaised": true,
+                    "HarvestMinStack": 2,
+                    "HarvestMaxStack": 3,
+                    "ExtraHarvestChance": 0.03
+                },
+                "{{ModID}}_WerewolfsBaneSeeds": {
+                    "HarvestItemId": "{{ModID}}_WerewolfsBane",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 3,
+                    "Seasons": [ "summer" ],
+                    //6 day growth. No regrowth.
+                    "DaysInPhase": [ 1, 1, 1, 1, 2 ],
+                    "HarvestMinStack": 2,
+                    "HarvestMaxStack": 4,
+                    "ExtraHarvestChance": 0.02
+                },
+                "{{ModID}}_SunsetCastorSeeds": {
+                    "HarvestItemId": "{{ModID}}_SunsetCastor",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 4,
+                    "Seasons": [ "fall" ],
+                    //7 day growth. 5 day regrowth.
+                    "DaysInPhase": [ 1, 1, 1, 2, 2 ],
+                    "RegrowDays": 5,
+                    "HarvestMinStack": 3,
+                    "HarvestMaxStack": 5,
+                    "ExtraHarvestChance": 0.1
+                },
+                "{{ModID}}_BansheesBellSeeds": {
+                    "HarvestItemId": "{{ModID}}_BansheesBell",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 5,
+                    "Seasons": [ "fall" ],
+                    //10 day growth. No regrowth.
+                    "DaysInPhase": [ 1, 1, 1, 1, 3, 3 ]
+                },
+                "{{ModID}}_MistletoeSeeds": {
+                    "HarvestItemId": "{{ModID}}_Mistletoe",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 6,
+                    "Seasons": [ "winter" ],
+                    //10 day growth. 2 day regrowth.
+                    "DaysInPhase": [ 1, 2, 2, 3, 2 ],
+                    "RegrowDays": 2,
+                    "IsRaised": true,
+                    "HarvestMinStack": 1,
+                    "HarvestMaxStack": 3,
+                    "ExtraHarvestChance": 0.03
+                },
+                "{{ModID}}_WinterWailerSeeds": {
+                    "HarvestItemId": "{{ModID}}_WinterWailer",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 7,
+                    "Seasons": [ "winter" ],
+                    //6 day growth. No regrowth.
+                    "DaysInPhase": [ 1, 1, 1, 1, 1, 1 ]
+                },
+/*----------------------------------------------------
+Crops - Rare
+----------------------------------------------------*/
+
+                "{{ModID}}_AddersTongueSeeds": {
+                    "HarvestItemId": "{{ModID}}_AddersTongue",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 8,
+                    "Seasons": [ "spring" ],
+                    //10 day growth. No regrowth.
+                    "DaysInPhase": [ 1, 1, 2, 3, 3 ]
+                },
+                "{{ModID}}_DollsEyesSeeds": {
+                    "HarvestItemId": "{{ModID}}_DollsEyes",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 9,
+                    "Seasons": [ "summer" ],
+                    //6 day growth. 3 day regrowth.
+                    "DaysInPhase": [ 1, 1, 1, 1, 2 ],
+                    "RegrowDays": 5,
+                    "HarvestMinStack": 4,
+                    "HarvestMaxStack": 4,
+                    "ExtraHarvestChance": 0.1
+                },
+                "{{ModID}}_NightsShadeSeeds": {
+                    "HarvestItemId": "{{ModID}}_NightsShade",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 10,
+                    "Seasons": [ "fall" ],
+                    //12 day growth. 4 day regrowth.
+                    "DaysInPhase": [ 1, 2, 3, 3, 3 ],
+                    "RegrowDays": 4
+                },
+                "{{ModID}}_BleedingHeartSeeds": {
+                    "HarvestItemId": "{{ModID}}_BleedingHeart",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 11,
+                    "Seasons": [ "winter" ],
+                    //10 day growth. No regrowth.
+                    "DaysInPhase": [ 1, 1, 2, 2, 2, 2 ]
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Seasonal Mushroom Wild Seeds / Trees - Only if the player has the Forage Crops mod
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "When": { "HasMod": "Kronosta.ForageCrops" },
+            "Entries": {
+                "{{ModID}}_MushroomTreeSpringSeeds": {
+                    "HarvestItemId": "{{ModID}}_MushroomTreeSpringSeeds",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 12,
+                    "Seasons": [ "spring" ],
+                    //7 day growth
+                    "DaysInPhase": [ 1, 5, 1 ],
+                    "CustomFields": {
+                        "Kronosta.ForageCrops/Spawns": "{{ModId}}_WizardsEye {{ModId}}_NightCap {{ModId}}_SunriseGlory {{ModId}}_LostSouls"
+                    }
+                },
+                "{{ModID}}_MushroomTreeSummerSeeds": {
+                    "HarvestItemId": "{{ModID}}_MushroomTreeSummerSeeds",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 13,
+                    "Seasons": [ "summer" ],
+                    //7 day growth
+                    "DaysInPhase": [ 1, 5, 1 ],
+                    "CustomFields": {
+                        "Kronosta.ForageCrops/Spawns": "{{ModId}}_LunarGlowcap {{ModId}}_FalseMorel {{ModId}}_RedSmilers {{ModId}}_BeachedOyster"
+                    }
+                },
+                "{{ModID}}_MushroomTreeFallSeeds": {
+                    "HarvestItemId": "{{ModID}}_MushroomTreeFallSeeds",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 14,
+                    "Seasons": [ "fall" ],
+                    //7 day growth
+                    "DaysInPhase": [ 1, 5, 1 ],
+                    "CustomFields": {
+                        "Kronosta.ForageCrops/Spawns": "{{ModId}}_InkCap {{ModId}}_MeteorCap {{ModId}}_CapOLantern {{ModId}}_HellfireBolete"
+                    }
+                },
+                "{{ModID}}_MushroomTreeWinterSeeds": {
+                    "HarvestItemId": "{{ModID}}_MushroomTreeWinterSeeds",
+                    "Texture": "{{ModID}}/crops",
+                    "SpriteIndex": 15,
+                    "Seasons": [ "winter" ],
+                    //7 day growth
+                    "DaysInPhase": [ 1, 5, 1 ],
+                    "CustomFields": {
+                        "Kronosta.ForageCrops/Spawns": "{{ModId}}_DawnsingerToadstool {{ModId}}_FairieWings"
+                    }
+                }
+            }
+        }
+    ]
+}

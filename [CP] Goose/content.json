@@ -1,0 +1,504 @@
+{
+    "Format": "2.0",
+	"ConfigSchema": 
+	{
+		"MayoSprites": {
+			"AllowValues": "vanilla, mayomakeover",
+			"Default": "vanilla",
+			"Section": "Sprite Options",
+			"Description": "select vanilla or my mayo makeover style for mayonnaise sprites."
+		}
+	},
+    "Changes": [  
+		{
+			"LogName": "Curiosity Lure",
+			"Action": "EditImage",
+			"Target": "Maps/springobjects",
+			"FromFile": "assets/CuriosityLure.png",
+			"ToArea": { "X": 256, "Y": 560, "Width": 16, "Height": 16 }
+		},
+		{
+			"LogName": "Quality Bobbler",
+			"Action": "EditImage",
+			"Target": "Maps/springobjects",
+			"FromFile": "assets/QualityBobbler.png",
+			"ToArea": { "X": 208, "Y": 576, "Width": 16, "Height": 16 }
+		},
+        {
+            "LogName": "Load shopIcon for Goose",
+            "Action": "Load",
+            "Target": "{{ModId}}_animal_shop_goose",
+            "FromFile": "assets/animal_shop_goose.png"
+        },
+        {
+            "LogName": "Load adultSprite for Goose",
+            "Action": "Load",
+            "Target": "{{ModId}}_Goose",
+            "FromFile": "assets/Goose.png"
+        },
+		{
+            "LogName": "Load adultSprite for bGoose",
+            "Action": "Load",
+            "Target": "{{ModId}}_BrownGoose",
+            "FromFile": "assets/BrownGoose.png"
+        },
+        {
+            "LogName": "Load baby Sprite for Goose",
+            "Action": "Load",
+            "Target": "{{ModId}}_BabyGoose",
+            "FromFile": "assets/BabyGoose.png"
+        },
+        {
+            "LogName": "Load adult Sprite for WildGoose",
+            "Action": "Load",
+            "Target": "{{ModId}}_WildGoose",
+            "FromFile": "assets/WildGoose.png"
+        },
+        {
+            "LogName": "Load baby Sprite for WildGoose",
+            "Action": "Load",
+            "Target": "{{ModId}}_BabyWildGoose",
+            "FromFile": "assets/BabyWildGoose.png"
+        },
+        {
+            "LogName": "Load baby Sprite for BrownGoose",
+            "Action": "Load",
+            "Target": "{{ModId}}_BabyBrownGoose",
+            "FromFile": "assets/BabyBrownGoose.png"
+        },
+		{
+            "LogName": "Load egg",
+            "Action": "Load",
+            "Target": "x{{ModId}}_gooseEgg",
+            "FromFile": "assets/Xgoosesegg.png"
+        },
+		{
+            "LogName": "Load surprise egg",
+            "Action": "Load",
+            "Target": "x{{ModId}}_iridiumEgg",
+            "FromFile": "assets/Xiridiumegg.png"
+        },
+		{
+            "LogName": "Load feather",
+            "Action": "Load",
+            "Target": "x{{ModId}}_gooseFeather",
+            "FromFile": "assets/Xgoosesfeather.png"
+        },
+		{
+			"LogName": "Load assets",
+				"Action": "Load",
+				"Target": "Xbirdb.Goose_gooseMayo, Xbirdb.Goose_iridiumMayo,",
+				"FromFile": "assets/{{TargetWithoutPath}}.png",
+				"When": {"MayoSprites": "mayomakeover"}
+		},
+		{
+			"LogName": "Load assets",
+				"Action": "Load",
+				"Target": "Xbirdb.Goose_gooseMayo, Xbirdb.Goose_iridiumMayo,",
+				"FromFile": "assets/vanilla/{{TargetWithoutPath}}.png",
+				"When": {"MayoSprites": "vanilla"}
+		},
+		{
+            "LogName": "Add Entries to Machines",
+            "Action": "Include",
+            "FromFile": "data/machines.json"
+        },
+		{
+            "LogName": "Add Entries to giftastes",
+            "Action": "Include",
+            "FromFile": "data/gifttastes.json"
+        },
+		{
+            "LogName": "Add Entries to mail",
+            "Action": "Include",
+            "FromFile": "data/mail.json"
+        },
+
+		/* the geese*/
+		{
+            "LogName": "Load data for Goose",
+            "Action": "EditData",
+            "Target": "Data/FarmAnimals",
+            "Entries": {
+                "Goose": {
+                    "DisplayName": "{{i18n:Goose_Name}}", 
+                    "House": "Barn",
+                    "Gender": "Female",
+                    "PurchasePrice": 2500,
+					"SellPrice": 3000,
+                    "ShopTexture": "{{ModId}}_animal_shop_goose",
+                    "ShopSourceRect": {
+                        "X": 0,
+                        "Y": 0,
+                        "Width": 32,
+                        "Height": 16
+                    },
+					"ShopDisplayName": "{{i18n:Goose_Name}}",
+					"ShopDescription": "{{i18n:Goose_Desc}}",
+                    "RequiredBuilding": "Deluxe Barn",
+					"AlternatePurchaseTypes": [
+						{
+							"Condition": null,
+							"AnimalIds": [
+								"Goose",
+								"WildGoose",
+								"BrownGoose"
+							]
+						}
+					  ],
+					"UnlockCondition": "PLAYER_HAS_MAIL Current GeeseLetter",
+					"EggItemIds": [
+					  "gooseEgg",
+					  "iridiumEgg"
+					],
+					"IncubatorParentSheetOffset": 1,
+					"BirthText": "{{i18n:Goose_BirthText}}",
+					"DaysToMature": 3,
+					"DaysToProduce": 3,
+					"HarvestType": "DropOvernight",
+					"HarvestTool": null,
+                    "ProduceItemIds": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 250,
+                            "ItemId": "GooseDown"
+                        },
+						{
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 50,
+                            "ItemId": "gooseEgg"
+                        }
+                    ],
+                    "DeluxeProduceItemIds": [
+                        {
+                            "Id": "Default",
+                            "Condition": "null",
+                            "MinimumFriendship": 500,
+                            "ItemId": "iridiumEgg"
+                        }
+                    ],
+					"ProduceOnMature": false,
+					"FriendshipForFasterProduce": -1,
+					"DeluxeProduceMinimumFriendship": 1000,
+					"DeluxeProduceCareDivisor": 4750.0,
+					"DeluxeProduceLuckMultiplier": 1.01,
+					"ProfessionForHappinessBoost": 2,
+					"ProfessionForQualityBoost": 2,
+					"ProfessionForFasterProduce": -1,
+                    "Sound": "{{ModId}}_Sound",
+                     "BabySound": "chick",
+                    "Texture": "{{ModId}}_Goose",
+                    "BabyTexture": "{{ModId}}_BabyGoose",
+					"UseFlippedRightForLeft": true,
+					"UseDoubleUniqueAnimationFrames": false,
+                    "SpriteWidth": 32,
+                    "SpriteHeight": 32,
+					"EmoteOffset": {
+					  "X": 0,
+					  "Y": 20
+					},
+					"SwimOffset": {
+					  "X": 0,
+					  "Y": 160
+					},
+					"Skins": null,
+					"ShadowWhenBabySwims": null,
+					"ShadowWhenBaby": null,
+					"ShadowWhenAdultSwims": null,
+					"ShadowWhenAdult": null,
+					"CanSwim": true,
+					"BabiesFollowAdults": true,
+					"GrassEatAmount": 2,
+					"HappinessDrain": 6,
+                    "ShowInSummitCredits": true,
+					"UpDownPetHitboxTileSize": "0.25, 0.25",
+					"LeftRightPetHitboxTileSize": "0.25, 0.25",
+					"BabyUpDownPetHitboxTileSize": "0.25, 0.25",
+					"BabyLeftRightPetHitboxTileSize": "0.25, 0.25",
+					"CustomFields": {
+						"meatIndex":"Goose"
+					}
+                },
+
+                "WildGoose": {
+                    "DisplayName": "{{i18n:Goose_Name}}",
+                    "House": "Barn",
+                    "Gender": "Female",
+                    "PurchasePrice": -1,
+					"SellPrice": 4500,
+					"UnlockCondition": "PLAYER_HAS_MAIL Current GeeseLetter",
+					"EggItemIds": [
+					  "gooseEgg",
+					  "iridiumEgg"
+					],
+					"IncubationTime": -1,
+					"IncubatorParentSheetOffset": 1,
+					"BirthText": "{{i18n:Goose_BirthText}}",
+					"DaysToMature": 3,
+					"RequiredBuilding": "Deluxe Barn",
+					"CanGetPregnant": false,
+					"DaysToProduce": 3,
+					"HarvestType": "DropOvernight",
+					"HarvestTool": null,
+                    "ProduceItemIds": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 250,
+                            "ItemId": "GooseDown"
+                        },
+						{
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 50,
+                            "ItemId": "gooseEgg"
+                        }
+                    ],
+                    "DeluxeProduceItemIds": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 1000,
+                            "ItemId": "iridiumEgg"
+                        }
+                    ],
+					"ProduceOnMature": false,
+					"FriendshipForFasterProduce": -1,
+					"DeluxeProduceMinimumFriendship": 1000,
+					"DeluxeProduceCareDivisor": 4750.0,
+					"DeluxeProduceLuckMultiplier": 1.01,
+					"ProfessionForHappinessBoost": 2,
+					"ProfessionForQualityBoost": 2,
+					"ProfessionForFasterProduce": -1,
+                    "Sound": "{{ModId}}_Sound",
+                     "BabySound": "chick",
+                    "Texture": "{{ModId}}_WildGoose",
+                    "HarvestedTexture": null,
+                    "BabyTexture": "{{ModId}}_BabyWildGoose",
+					"UseFlippedRightForLeft": true,
+					"UseDoubleUniqueAnimationFrames": false,
+                    "SpriteWidth": 32,
+                    "SpriteHeight": 32,
+					"EmoteOffset": {
+					  "X": 0,
+					  "Y": 20
+					},
+					"SwimOffset": {
+					  "X": 0,
+					  "Y": 160
+					},
+					"Skins": null,
+					"ShadowWhenBabySwims": null,
+					"ShadowWhenBaby": null,
+					"ShadowWhenAdultSwims": null,
+					"ShadowWhenAdult": null,
+					"UpDownPetHitboxTileSize": "0.25, 0.25",
+					"LeftRightPetHitboxTileSize": "0.25, 0.25",
+					"BabyUpDownPetHitboxTileSize": "0.25, 0.25",
+					"BabyLeftRightPetHitboxTileSize": "0.25, 0.25",
+					"CanSwim": true,
+					"BabiesFollowAdults": true,
+					"GrassEatAmount": 2,
+					"HappinessDrain": 8,
+                    "ShowInSummitCredits": true,
+					"CustomFields": {
+						"meatIndex":"Goose"
+					}
+                },
+
+                "BrownGoose": {
+                    "DisplayName": "{{i18n:Goose_Name}}",
+                    "House": "Barn",
+                    "Gender": "Female",
+                    "PurchasePrice": -1,
+					"SellPrice": 7000,
+					"EggItemIds": [
+					  "gooseEgg",
+					  "iridiumEgg"
+					],
+					"IncubationTime": -1,
+					"IncubatorParentSheetOffset": 1,
+					"BirthText": "{{i18n:Goose_BirthText}}",
+					"DaysToMature": 3,
+					"CanGetPregnant": false,
+					"UnlockCondition": "PLAYER_HAS_MAIL Current GeeseLetter",
+					"DaysToProduce": 3,
+					"HarvestType": "DropOvernight",
+					"HarvestTool": null,
+                    "ProduceItemIds": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 250,
+                            "ItemId": "GooseDown"
+                        },
+						{
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 50,
+                            "ItemId": "gooseEgg"
+                        }
+                    ],
+                    "DeluxeProduceItemIds": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 500,
+                            "ItemId": "iridiumEgg"
+                        }
+                    ],
+					"ProduceOnMature": false,
+					"RequiredBuilding": "Deluxe Barn",
+					"FriendshipForFasterProduce": -1,
+					"DeluxeProduceMinimumFriendship": 1000,
+					"DeluxeProduceCareDivisor": 4750.0,
+					"DeluxeProduceLuckMultiplier": 1.01,
+					"ProfessionForHappinessBoost": 2,
+					"ProfessionForQualityBoost": 2,
+					"ProfessionForFasterProduce": -1,
+                    "Sound": "{{ModId}}_Sound",
+                     "BabySound": "chick",
+                    "Texture": "{{ModId}}_BrownGoose",
+                    "BabyTexture": "{{ModId}}_BabyBrownGoose",
+					"UseFlippedRightForLeft": true,
+					"UseDoubleUniqueAnimationFrames": false,
+                    "SpriteWidth": 32,
+                    "SpriteHeight": 32,
+					"EmoteOffset": {
+					  "X": 0,
+					  "Y": 20
+					},
+					"SwimOffset": {
+					  "X": 0,
+					  "Y": 160
+					},
+					"Skins": null,
+					"ShadowWhenBabySwims": null,
+					"ShadowWhenBaby": null,
+					"ShadowWhenAdultSwims": null,
+					"ShadowWhenAdult": null,
+					"CanSwim": true,
+					"UpDownPetHitboxTileSize": "0.25, 0.25",
+					"LeftRightPetHitboxTileSize": "0.25, 0.25",
+					"BabyUpDownPetHitboxTileSize": "0.25, 0.25",
+					"BabyLeftRightPetHitboxTileSize": "0.25, 0.25",
+					"BabiesFollowAdults": true,
+					"GrassEatAmount": 2,
+					"HappinessDrain": 5,
+                    "ShowInSummitCredits": true,
+					"CustomFields": {
+						"meatIndex":"Goose"
+					}
+                }
+            }
+        },
+		
+		/*items*/
+		
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"gooseEgg": {
+					"Name": "gooseEgg",
+					"DisplayName": "{{i18n:GooseEgg_Name}}",
+					"Description": "{{i18n:GooseEgg_Desc}}",
+					"Type": "Basic",
+					"Category": -5,
+					"Price": 150,
+					"Texture": "x{{ModId}}_gooseEgg",
+					"Edibility": 30,
+					"ExcludeFromFishingCollection": true,
+					"ContextTags": [
+					  "color_sand",
+					  "gooseEgg_item"
+					]
+				  },
+				
+			  "iridiumEgg": {
+				"Name": "iridiumEgg",
+				"DisplayName": "{{i18n:IridiumEgg_Name}}",
+				"Description": "{{i18n:IridiumEgg_Desc}}",
+				"Type": "Basic",
+				"Category": -5,
+				"Price": 700,
+				"Texture": "x{{ModId}}_iridiumEgg",
+				"Edibility": -30,
+				"ContextTags": [
+					"gooseEgg_item",
+					"color_purple"
+				]
+			  },
+
+				"GooseDown": {
+				"Name": "GooseDown",
+				"DisplayName": "{{i18n:GooseDown_Name}}",
+				"Description": "{{i18n:GooseDown_Desc}}",
+				"Type": "Basic",
+				"Category": -18,
+				"Price": 300,
+				"Texture": "x{{ModId}}_gooseFeather",
+				"ContextTags": [
+				  "color_white"
+				]
+			  },
+
+			  "GooseMayonnaise": {
+				"Name": "GooseMayonnaise",
+				"DisplayName": "{{i18n:GooseMayonnaise_Name}}",
+				"Description": "{{i18n:GooseMayonnaise_Desc}}",
+				"Type": "Basic",
+				"Texture": "Xbirdb.Goose_gooseMayo",
+				"Category": -26,
+				"Price": 375,
+				"Edibility": 30,
+				"IsDrink": true,
+				"ContextTags": [
+				  "color_white",
+				  "mayo_item",
+				  "use_reverse_name_for_sorting"
+				]
+			  },
+			  "IridiumMayonnaise": {
+				"Name": "IridiumMayonnaise",
+				"DisplayName": "{{i18n:IridiumMayonnaise_Name}}",
+				"Description": "{{i18n:IridiumMayonnaise_Desc}}",
+				"Type": "Basic",
+				"Texture": "Xbirdb.Goose_iridiumMayo",
+				"Category": -26,
+				"Price": 575,
+				"Edibility": -30,
+				"IsDrink": true,
+				"ExcludeFromRandomSale": true,
+				"ContextTags": [
+				  "color_purple",
+				  "mayo_item",
+				  "use_reverse_name_for_sorting"
+				]
+			  }
+			}
+		},
+		            // add sound
+					{
+						"Action": "EditData",
+						"Target": "Data/AudioChanges",
+						"Entries": {
+							"{{ModId}}_Sound": {
+								"ID": "{{ModId}}_Sound",
+								"Category": "Sound",
+								"FilePaths": [ "{{AbsoluteFilePath: assets/goose1.wav}}", "{{AbsoluteFilePath: assets/goose2.wav}}", "{{AbsoluteFilePath: assets/goose3.wav}}", "{{AbsoluteFilePath: assets/goose4.wav}}" ],
+								"StreamedVorbis": false
+							},
+                "chick": {
+                  "ID": "chick",
+                  "Category": "Sound",
+                  "FilePaths": [ "{{AbsoluteFilePath: assets/chick.wav}}" ],
+                  "StreamedVorbis": false
+              }
+						}
+					}
+			  
+    ]
+}

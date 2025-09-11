@@ -1,0 +1,356 @@
+{
+
+    "Changes": [
+
+
+
+//■■■メール関連データ ＆ トリガーアクション■■■
+
+
+
+//★★★メールデータ★★★
+
+  //●魔術師のワープ魔法陣 のメール(ModConfigでON/OFFがあるため)
+      {
+        "Action": "EditData",
+        "Target": "Data/Mail",
+        "Entries": {
+
+            "{{ModId}}_WarpSquare_Mail": "[letterbg 2][textcolor cyan]{{i18n:WarpSquare.Mail_Text}}[#]{{i18n:WarpSquare.Mail_Title}}"
+
+        },
+        "When": {
+            "Enable the warp square": "true"
+        }
+      },
+
+  //●その他のメール
+      {
+        "Action": "EditData",
+        "Target": "Data/Mail",
+        "Entries": {
+
+            "{{ModId}}_CliffCave_Mail": "{{i18n:CliffCave.Mail_Text}}[#]{{i18n:CliffCave.Mail_Title}}",
+            "{{ModId}}_AfforestationArea_Mail": "{{i18n:AfforestationArea.Mail_Text}}[#]{{i18n:AfforestationArea.Mail_Title}}",
+            "{{ModId}}_CliffMinecart_Mail": "{{i18n:CliffMinecart.Mail_Text}}[#]{{i18n:CliffMinecart.Mail_Title}}",
+            "{{ModId}}_AfforestationAreaMinecart_Mail": "{{i18n:AfforestationAreaMinecart.Mail_Text}}[#]{{i18n:AfforestationAreaMinecart.Mail_Title}}",
+
+            "{{ModId}}_PastureAreaEntranceClean_Mail": "{{i18n:PastureAreaEntranceClean.Mail_Text}}[#]{{i18n:PastureAreaEntranceClean.Mail_Title}}",
+            "{{ModId}}_PastureAreaEndConstruction_Mail": "{{i18n:PastureAreaEndConstruction.Mail_Text}}[#]{{i18n:PastureAreaEndConstruction.Mail_Title}}",
+            "{{ModId}}_PastureAreaHouseUpgrade_Mail": "{{i18n:PastureAreaHouseUpgrade.Mail_Text}}[#]{{i18n:PastureAreaHouseUpgrade.Mail_Title}}"
+
+        }
+      },
+
+
+
+//★★★メトリガーアクションデータ★★★
+
+  //●魔術師のワープ魔法陣 のメールのトリガー(ModConfigでON/OFFがあるため)
+      {
+        "Action": "EditData",
+        "Target": "Data/TriggerActions",
+        "Entries": {
+
+            "{{ModId}}_WarpSquare_SendMail": { //魔術師のワープ魔法陣のメール
+                "Id": "{{ModId}}_WarpSquare_SendMail",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_WarpSquare_Mail now"
+                ],
+                "Condition": "DAYS_PLAYED 31,PLAYER_FRIENDSHIP_POINTS Current Wizard 1250"
+                //１年目の夏の３日以降、魔術師のハートが５以上
+            }
+
+        },
+        "When": { 
+            "Enable the warp square": "true"
+        }
+      },
+
+  //●その他のトリガー
+      {
+        "Action": "EditData",
+        "Target": "Data/TriggerActions",
+        "Entries": {
+
+            "{{ModId}}_CliffCave_SendMail": { //崖の洞窟のメール
+                "Id": "{{ModId}}_CliffCave_SendMail",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_CliffCave_Mail now"
+                ],
+                "Condition": "DAYS_PLAYED 31,PLAYER_FRIENDSHIP_POINTS Current Wizard 750,PLAYER_FRIENDSHIP_POINTS Current Demetrius 750,PLAYER_FRIENDSHIP_POINTS Current Willy 750"
+                //１年目の夏の３日以降、魔術師とディメトリウスとウィリーのハートが３以上
+            },
+
+            "{{ModId}}_AfforestationArea_SendMail": { //牧草エリアのメール(スカイジャンプ)
+                "Id": "{{ModId}}_AfforestationArea_SendMail",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_AfforestationArea_Mail now"
+                ],
+                "Condition": "DAYS_PLAYED 31,PLAYER_FRIENDSHIP_POINTS Current Lewis 750"
+                //１年目の夏の３日以降、ルイスのハートが３以上
+            },
+
+            "{{ModId}}_CliffMinecart_SendMail": { //崖のトロッコのメール
+                "Id": "{{ModId}}_CliffMinecart_SendMail",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_CliffMinecart_Mail now"
+                ],
+                "Condition": "DAYS_PLAYED 31,PLAYER_FRIENDSHIP_POINTS Current Lewis 750,PLAYER_FRIENDSHIP_POINTS Current Evelyn 750"
+                //１年目の夏の３日以降、ルイスとエヴリンのハートが３以上
+            },
+
+            "{{ModId}}_AfforestationAreaMinecart_SendMail": { //牧草エリアのトロッコのメール
+                "Id": "{{ModId}}_AfforestationAreaMinecart_SendMail",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_AfforestationAreaMinecart_Mail now"
+                ],
+                "Condition": "DAYS_PLAYED 31,PLAYER_FRIENDSHIP_POINTS Current Lewis 1250,PLAYER_FRIENDSHIP_POINTS Current Clint 1250,PLAYER_FRIENDSHIP_POINTS Current Marnie 750"
+                //１年目の夏の３日以降、ルイスのハートが５以上、クリントとマーニーのハートが３以上
+            },
+
+
+    //◆(エントリ中)牧草エリアの入口清掃関係
+
+        //▲牧草エリアの入口清掃開始のメール(１日目の始まり)
+            "{{ModId}}_PastureAreaEntranceClean_SendMail": {
+                "Id": "{{ModId}}_PastureAreaEntranceClean_SendMail",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PastureAreaEntranceClean_Mail now"
+                ],
+                "Condition": "DAYS_PLAYED 31,PLAYER_FRIENDSHIP_POINTS Current Lewis 1500,PLAYER_HAS_MAIL Current {{ModId}}_AfforestationAreaMinecart_Mail Received"
+                //１年目の夏の３日以降、ルイスのハートが６以上、トロッコ解放済
+            },
+        //▲入口清掃中カウントフラグ(１日目の終わり)
+            "{{ModId}}_PAEC_DayCount1_end": {
+                "Id": "{{ModId}}_PAEC_DayCount1_end",
+                "Trigger": "DayEnding",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAEC_DayCount1_end received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PastureAreaEntranceClean_Mail Received"
+                //牧草エリアの入口清掃開始のメールを読んだ
+            },
+
+        //▲入口清掃中カウントフラグ(２日目。始まりと終わり)
+            "{{ModId}}_PAEC_DayCount2_start": {
+                "Id": "{{ModId}}_PAEC_DayCount2_start",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAEC_DayCount2_start received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAEC_DayCount1_end Received"
+            },
+            "{{ModId}}_PAEC_DayCount2_end": {
+                "Id": "{{ModId}}_PAEC_DayCount2_end",
+                "Trigger": "DayEnding",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAEC_DayCount2_end received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAEC_DayCount2_start Received"
+            },
+
+        //▲入口清掃中カウントフラグ(３日目。始まりと終わり)
+            "{{ModId}}_PAEC_DayCount3_start": {
+                "Id": "{{ModId}}_PAEC_DayCount3_start",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAEC_DayCount3_start received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAEC_DayCount2_end Received"
+            },
+            "{{ModId}}_PAEC_DayCount3_end": {
+                "Id": "{{ModId}}_PAEC_DayCount3_end",
+                "Trigger": "DayEnding",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAEC_DayCount3_end received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAEC_DayCount3_start Received"
+            },
+
+        //▲入口清掃中カウントフラグ(４日目)(これ条件にして清掃終了パッチ)
+            "{{ModId}}_PAEC_DayCount4": {
+                "Id": "{{ModId}}_PAEC_DayCount4",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAEC_DayCount4 received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAEC_DayCount3_end Received"
+            },
+
+
+    //◆(エントリ中)牧草エリアの全体(建物)改装関係
+
+        //▲牧草エリアの全体(建物)改装中カウントフラグ(０日目の終わり)
+            "{{ModId}}_PAUC_DayCount0_end": {
+                "Id": "{{ModId}}_PAUC_DayCount0_end",
+                "Trigger": "DayEnding",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAUC_DayCount0_end received"
+                ],
+                "Condition": "PLAYER_HAS_SEEN_EVENT Current 1208901"
+                //牧草エリアでのルイスとの改装開始のイベント
+                //(ルイスのハートが７以上、ロビン５以上、入口清掃済み)
+            },
+
+        //▲牧草エリアの全体(建物)改装中カウントフラグ(１日目の始まり)
+            "{{ModId}}_PAUC_DayCount1_start": {
+                "Id": "{{ModId}}_PAUC_DayCount1_start",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAUC_DayCount1_start received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAUC_DayCount0_end Received"
+            },
+        //▲牧草エリアの全体(建物)改装中カウントフラグ(１日目の終わり)
+            "{{ModId}}_PAUC_DayCount1_end": {
+                "Id": "{{ModId}}_PAUC_DayCount1_end",
+                "Trigger": "DayEnding",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAUC_DayCount1_end received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAUC_DayCount1_start Received"
+            },
+
+        //▲牧草エリアの全体(建物)改装中カウントフラグ(２日目。始まりと終わり)
+            "{{ModId}}_PAUC_DayCount2_start": {
+                "Id": "{{ModId}}_PAUC_DayCount2_start",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAUC_DayCount2_start received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAUC_DayCount1_end Received"
+            },
+            "{{ModId}}_PAUC_DayCount2_end": {
+                "Id": "{{ModId}}_PAUC_DayCount2_end",
+                "Trigger": "DayEnding",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAUC_DayCount2_end received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAUC_DayCount2_start Received"
+            },
+
+        //▲牧草エリアの全体(建物)改装中カウントフラグ(３日目。始まりと終わり)
+            "{{ModId}}_PAUC_DayCount3_start": {
+                "Id": "{{ModId}}_PAUC_DayCount3_start",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAUC_DayCount3_start received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAUC_DayCount2_end Received"
+            },
+            "{{ModId}}_PAUC_DayCount3_end": {
+                "Id": "{{ModId}}_PAUC_DayCount3_end",
+                "Trigger": "DayEnding",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAUC_DayCount3_end received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAUC_DayCount3_start Received"
+            },
+
+        //▲牧草エリアの全体(建物)改装中カウントフラグ(４日目)(これ条件にして改装終了パッチ)
+            "{{ModId}}_PAUC_DayCount4": {
+                "Id": "{{ModId}}_PAUC_DayCount4",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAUC_DayCount4 received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAUC_DayCount3_end Received"
+            },
+
+        //▲牧草エリアの全体(建物)改装終了のメール
+            "{{ModId}}_PastureAreaEndConstruction_SendMail": {
+                "Id": "{{ModId}}_PastureAreaEndConstruction_SendMail",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PastureAreaEndConstruction_Mail now"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAUC_DayCount4 Received"
+                //改装カウント4受け取りと同時に
+            },
+
+
+
+    //◆(エントリ中)牧草エリアの家のアップグレード関係
+
+        //▲牧草エリアの家のアップグレード開始のメール(１日目の始まり)
+            "{{ModId}}_PastureAreaHouseUpgrade_SendMail": {
+                "Id": "{{ModId}}_PastureAreaHouseUpgrade_SendMail",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PastureAreaHouseUpgrade_Mail now"
+                ],
+                "Condition": "PLAYER_FRIENDSHIP_POINTS Current Lewis 2000,PLAYER_HAS_SEEN_EVENT Current 1208902"
+                //ルイスのハートが８以上、ロビン家でのイベント視聴済
+            },
+
+        //▲家のアップグレードカウントフラグ(１日目の終わり)
+            "{{ModId}}_PAHU_DayCount1_end": {
+                "Id": "{{ModId}}_PAHU_DayCount1_end",
+                "Trigger": "DayEnding",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAHU_DayCount1_end received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PastureAreaHouseUpgrade_Mail Received"
+                //牧草エリアの入口清掃開始のメールを読んだ
+            },
+
+        //▲家のアップグレードカウントフラグ(２日目。始まりと終わり)
+            "{{ModId}}_PAHU_DayCount2_start": {
+                "Id": "{{ModId}}_PAHU_DayCount2_start",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAHU_DayCount2_start received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAHU_DayCount1_end Received"
+            },
+            "{{ModId}}_PAHU_DayCount2_end": {
+                "Id": "{{ModId}}_PAHU_DayCount2_end",
+                "Trigger": "DayEnding",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAHU_DayCount2_end received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAHU_DayCount2_start Received"
+            },
+
+        //▲家のアップグレードカウントフラグ(３日目。始まりと終わり)
+            "{{ModId}}_PAHU_DayCount3_start": {
+                "Id": "{{ModId}}_PAHU_DayCount3_start",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAHU_DayCount3_start received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAHU_DayCount2_end Received"
+            },
+            "{{ModId}}_PAHU_DayCount3_end": {
+                "Id": "{{ModId}}_PAHU_DayCount3_end",
+                "Trigger": "DayEnding",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAHU_DayCount3_end received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAHU_DayCount3_start Received"
+            },
+
+        //▲家のアップグレードカウントフラグ(４日目)(これ条件にして清掃終了パッチ)
+            "{{ModId}}_PAHU_DayCount4": {
+                "Id": "{{ModId}}_PAHU_DayCount4",
+                "Trigger": "DayStarted",
+                "Actions": [
+                    "AddMail Current {{ModId}}_PAHU_DayCount4 received"
+                ],
+                "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_PAHU_DayCount3_end Received"
+            },
+
+        }//▼"Entries"の終了▼
+      }
+
+
+
+    ]//▼▼"Changes"の終了▼▼
+}

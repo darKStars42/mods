@@ -1,0 +1,63 @@
+{
+	"Changes": [
+		// Without SVE
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter8",
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+
+					"Value": "Jonghyuk 75 30 down",
+					"Delimiter": "/"
+				},
+				// Main Event
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Main-Event_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Jonghyuk 64 46 right",
+					"Delimiter": "/"
+				}
+			]
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter8",
+			"When": {
+				"HasSeenEvent": "SpannerIntroConclusion"
+			},
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Spanner 49 26 up",
+					"Delimiter": "/"
+				},
+				// Main Event
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Main-Event_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Spanner 66 46 left",
+					"Delimiter": "/"
+				}
+			]
+		}
+
+	]
+}

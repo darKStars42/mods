@@ -1,0 +1,81 @@
+{
+	"Changes": [
+
+/*----------------------------------------------------
+Alchemistry Giant Crop Sprites
+----------------------------------------------------*/
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/GiantCrops/AddersTongue",
+            "FromFile": "assets/Items/Crops/GiantCrops/AddersTongue.png"
+        },
+        {
+            "Action": "Load",
+            "When": { "DollsEyesGiantSprite": "Default" },
+            "Target": "Mods/{{ModId}}/GiantCrops/DollsEyes",
+            "FromFile": "assets/Items/Crops/GiantCrops/DollsEyes_Default.png"
+        },
+        {
+            "Action": "Load",
+            "When": { "DollsEyesGiantSprite": "Eldritch Horror" },
+            "Target": "Mods/{{ModId}}/GiantCrops/DollsEyes",
+            "FromFile": "assets/Items/Crops/GiantCrops/DollsEyes_Eldritch.png"
+        },
+
+/*----------------------------------------------------
+Alchemistry Giant Crop Data
+----------------------------------------------------*/
+		{
+			"Action": "EditData",
+			"Target": "Data/GiantCrops",
+			"Entries": {
+				"{{ModId}}_GiantAddersTongue": {
+					"FromItemId": "{{ModId}}_AddersTongue",
+					"HarvestItems": [
+						{
+							"Chance": 1.0,
+							"ItemId": "{{ModId}}_AddersTongue",
+							"Quality": -1,
+							"MinStack": 10,
+							"MaxStack": 15
+						}
+					],
+					"Texture": "Mods/{{ModId}}/GiantCrops/AddersTongue",
+					"TexturePosition": {
+							"X": 0,
+							"Y": 0
+						},
+					"TileSize": {
+							"X": 3,
+							"Y": 3
+						},
+                    "Health": 3,
+					"Chance": 0.01
+				},
+                "{{ModId}}_GiantDollsEyes": {
+					"FromItemId": "{{ModId}}_DollsEyes",
+					"HarvestItems": [
+						{
+							"Chance": 1.0,
+							"ItemId": "{{ModId}}_DollsEyes",
+							"Quality": -1,
+							"MinStack": 25,
+							"MaxStack": 35
+						}
+					],
+					"Texture": "Mods/{{ModId}}/GiantCrops/DollsEyes",
+					"TexturePosition": {
+							"X": 0,
+							"Y": 0
+						},
+					"TileSize": {
+							"X": 3,
+							"Y": 3
+						},
+                    "Health": 3,
+					"Chance": 0.01
+				}
+            }
+        }
+    ]
+}

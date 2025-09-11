@@ -1,0 +1,133 @@
+{
+	"Changes": [
+		
+		//Empty Loads
+		{
+			"LogName": "IsaacI Schedule Empty Json",
+			"Action": "Load",
+			"Target": "Characters/schedules/APTIsaacI",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "IsaacI Strings Empty Jsons",
+			"Action": "Load",
+			"Target": "Strings/schedules/APTIsaacI",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "IsaacI Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/APTIsaacI",
+			"FromFile": "data/empty.json"
+		},
+		
+		//Base Visual
+		{
+			"LogName": "IsaacI Sprites",
+			"Action": "Load",
+			"Target": "Characters/APTIsaacI",
+			"FromFile": "assets/sprites/IsaacI/IsaacISprites{{Season}}.png"
+		},
+		{
+			"LogName": "IsaacI Portraits",
+			"Action": "Load",
+			"Target": "Portraits/APTIsaacI",
+			"FromFile": "assets/portraits/IsaacI/IsaacIPortraits.png"
+		},
+		{
+			"LogName": "IsaacI Visual Loads",
+			"Action": "Load",
+			"Target": "Sprites/IsaacI/IsaacISprites, Sprites/IsaacI/IsaacISpritesWinter, Sprites/IsaacI/IsaacISpritesBeach, Sprites/IsaacI/IsaacISpritesMilitary, Portraits/IsaacI/IsaacIPortraits, Portraits/IsaacI/IsaacIPortraitsWinter, Portraits/IsaacI/IsaacIPortraitsBeach, Portraits/IsaacI/IsaacIPortraitsMilitary",
+			"FromFile": "assets/{{Target}}.png"
+		},
+		{
+			"LogName": "IsaacI Disposition",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"APTIsaacI": {
+					"DisplayName": "{{i18n:Displayname.APTIsaacI}}",
+					"Gender": "Male",
+					"Age": "Adult",
+					"Manner": "Polite",
+					"SocialAnxiety": "Outgoing",
+					"Optimism": "Positive",
+					"BirthSeason": "Summer",
+					"BirthDay": "9",
+					"HomeRegion": "Town",
+					"IsDarkSkinned": false,
+				
+					"CanSocialize": true,
+					"CanBeRomanced": false,
+					"CanReceiveGifts": true,
+					"CanGreetNearbyCharacters": true,
+					"CanVisitIsland": true,
+					"Calendar": "HiddenUntilmet",
+					"SocialTab": "HiddenUntilmet",
+					"IntroductionsQuest": false,
+					"EndSlideShow": "MainGroup",
+					"FriendsAndFamily": {
+						"APTAshida": "Wife",
+						"APTMora": "Neice",
+						"APTMarcus": "Friend",
+					},
+				
+					"DumpsterDiveEmote": 12,
+					"DumpsterDiveFriendshipEffect": -25,
+				
+					"FlowerDanceCanDance": null,
+					"WinterStarParticipant": false,
+					"WinterStarGifts": [],
+				
+					"UnlockConditions": "PLAYER_HAS_SEEN_EVENT Any CPFIsaacIIntroEvent",
+					"SpawnIfMissing": true,
+					"Home": [
+						{
+							"Id": "Default",
+							"Condition": null,
+							"Location": "CoalPointFarmhouse",
+							"Tile": { "X": "36", "Y": "9" },
+							"Direction": "right"
+						}
+					],
+					
+					"TextureName": "APTIsaacI",
+					"Appearance": [
+					{
+							"Id": "APTIsaacIDefaultOutfit",
+							"Portrait": "Portraits/IsaacI/IsaacIPortraits",
+							"Sprite": "Sprites/IsaacI/IsaacISprites",
+					},
+					{
+							"Id": "APTIsaacIWinterOutfit",
+							"Season": "Winter",
+							"Portrait": "Portraits/IsaacI/IsaacIPortraitsWinter",
+							"Sprite": "Sprites/IsaacI/IsaacISpritesWinter",
+							"Precedence": -2,
+					},
+					{
+							"Id": "APTIsaacIBeachOutfit",
+							"IsIslandAttire": true,
+							"Portrait": "Portraits/IsaacI/IsaacIPortraitsBeach",
+							"Sprite": "Sprites/IsaacI/IsaacISpritesBeach",
+							"Precedence": -20,
+					},
+					{
+							"Id": "APTIsaacIReturnOutfit",
+                            "Condition": "IS_EVENT CPFIsaacIIntroEvent",
+							"Portrait": "Portraits/IsaacI/IsaacIPortraitsMilitary",
+							"Sprite": "Sprites/IsaacI/IsaacISpritesMilitary",
+							"Precedence": -20,
+					},
+					],
+					"Size": {
+						"X": 16,
+						"Y": 32
+					},
+					"Breather": true,
+					"ShakePortraits": [],
+				},
+			},
+		},
+	]
+}

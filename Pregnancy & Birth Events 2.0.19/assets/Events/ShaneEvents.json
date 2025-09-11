@@ -1,0 +1,55 @@
+{
+	"Changes": [
+
+{
+			"LogName": "Shane Pregnancy Event 1",
+			"Action": "EditData",
+			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HavingChild": "@{{playerName}}",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false},
+		"Entries": {"64780013/O Shane": "continue/28 30/farmer 27 30 0 Shane 29 25 3 Harvey 0 0 0/addConversationTopic FarmerPregnantShane 13/addConversationTopic FarmerCheckUp 6/addMailReceived Pregnant1_Shane/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak Shane \"{{i18n:64780013_1}}$h #$b#{{i18n:64780013_2}}$3#$b# {{i18n:64780013_3}}\"//pause 500 /move farmer 0 0 2/ playSound croak/animate farmer false false 350 104 105/pause 1000/emote farmer 28/move farmer 0 0 1/pause 500/speak Shane \"{{i18n:64780013_4}}$s#$b#{{i18n:64780013_5}}\"/viewport -100 100/changeLocation Hospital/viewport 5 5/warp farmer 3 5/warp Shane 2 5/showFrame Shane 4/warp Harvey 5 8/move Harvey 0 -3 3 false/speak Harvey \"{{i18n:Pregnancy_Dialogue_1_Farmer}}\"/emote Shane 8/speak Harvey \"{{i18n:Pregnancy_Dialogue_2_Farmer}}$h\"/speak Shane \"...$10#$b#...$10#$b#...$l#$b#
+{{i18n:64780013_6}}$h\"/pause 500/emote farmer 32/fade/warp farmer 100 100 0/pause 250/speak Shane \"{{i18n:64780013_7}}#$b#{{i18n:64780013_8}}#$b# {{i18n:64780013_9}}$s\"/emote Shane 28/speak Harvey \"{{i18n:64780013_10}}$h\"/emote Shane 32/end"},
+		},
+{			"LogName": "Shane Birth Event 1", 
+			"Action": "EditData",
+    			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false},
+			"Entries": {"64780025/e 64780013/O Shane/n Pregnant1_Shane/A FarmerPregnantShane/t 600 700": "sappypiano/-100 -100/farmer 19 12 2 Shane 20 12 2 Harvey 5 15 2/positionOffset farmer -30 -12/addConversationTopic ShaneBabySleep 14/skippable/pause 500/speak Shane \"{{i18n:64780025_1}} #$b# {{i18n:64780025_2}}$10\"/changeLocation Hospital/showFrame 5/ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak Shane \"{{i18n:64780025_3}}#$b#{{i18n:64780025_4}}$a \"/faceDirection Shane 3/pause 500/emote farmer 60/emote Shane 28/pause 500/speak Shane \"{{i18n:64780025_5}}\"/pause 500/move Shane 0 1 3/pause 500/speak Shane \"{{i18n:64780025_6}}$s #$b# {{i18n:64780025_7}} #$b# {{i18n:64780025_8}}$s\"/pause 500/move Shane 0 -1 3/speak Shane \"{{i18n:64780025_9}}$l #$b# {{i18n:64780025_10}}\"/pause 500/emote farmer 20/pause 500/speak Shane \"{{i18n:64780025_11}}\"/pause 1000/pause 1000/fade/viewport -100 -100 true/warp Harvey 21 12/showFrame Harvey 12/warp Shane 20 11/showFrame Shane 0/speak Shane \"{{i18n:64780025_12}}$10 #$b#{{i18n:64780025_13}} #$b#{{i18n:64780025_14}} $l\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -50/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/showframe 0/positionOffset farmer 0 20/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote Shane 20/pause 2000/speak Shane \"{{i18n:Birth_Dialogue_5}}$l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end"},
+		},
+
+{
+			"LogName": "Shane Pregnancy Event 2",
+			"Action": "EditData",
+			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",	
+				"AdoptionEvents": "off",	
+ 				"HavingChild": "@{{playerName}}",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false},
+			"Entries": {"64780041/e 64780025/O Shane": "continue/28 30/farmer 27 30 0 Shane 29 25 3 Harvey 0 0 0/addConversationTopic FarmerPregnantShane2 13/addMailReceived Pregnant2_Shane/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak Shane \"{{i18n:64780041_1}} $h #$b# {{i18n:64780041_2}}$s #$b# {{i18n:64780041_3}}\"/pause 500 /emote farmer 40/pause 500/speak Shane \"{{i18n:64780041_4}} $10 #$b#{{i18n:64780041_5}}$l #$b# {{i18n:64780041_6}} $h #$b# {{i18n:64780041_7}}\"/pause 500/viewport -100 100/changeLocation Hospital/viewport 5 5/warp farmer 3 5/warp Shane 2 5/showFrame Shane 4/warp Harvey 5 8/move Harvey 0 -3 3 false/speak Harvey \"{{i18n:Pregnancy_Dialogue_3}}\"/emote Shane 16 true/jump Shane 4/textAboveHead Shane \"{{i18n:64780041_9}}\"/pause 500/ speak Harvey \"{{i18n:Pregnancy_Dialogue_4}}\"/pause 500/quickquestion {{i18n:Birth_Choice_Question}}#{{i18n:Clinic_Birth}} #{{i18n:Home_Birth}} (break)speak Harvey \"{{i18n:Pregnancy_Dialogue_5}}$h #$b# {{i18n:Pregnancy_Dialogue_6}}\"\\addMailReceived ClinicBirthShane (break)speak Harvey \"{{i18n:Pregnancy_Dialogue_7}} $h #$b# {{i18n:Pregnancy_Dialogue_8}}\"\\addMailReceived HomeBirthShane/pause 500/speak Shane \"{{i18n:64780041_8}} $l #$b# {{i18n:64780041_9}} $h\"/ emote farmer 8/speak Shane \"{{i18n:64780041_10}}$h\"/emote farmer 12/pause 100/emote Shane 32/end",},
+		
+},
+
+{			"LogName": "Shane Birth Event 2 Clinic",
+			"Action": "EditData",
+			"Target": "Data/Events/FarmHouse,",
+			"When": {"PlayerGetsPregnant":"true", 
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false},
+			"Entries": {"64780042/e 64780041/O Shane/n Pregnant2_Shane/A FarmerPregnantShane2/n ClinicBirthShane/t 600 700":"sappypiano/-100 -100/farmer 19 12 2 Shane 20 12 2 Harvey 5 15 2/positionOffset farmer -30 -12/addConversationTopic ShaneBabySleep2 14/skippable/pause 500/speak Shane \"{{i18n:64780042_1}}#$b# {{i18n:64780042_2}} $10\"/changeLocation Hospital/showFrame 5/faceDirection Shane 3/ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak Shane \"{{i18n:64780042_3}} #$b# {{i18n:64780042_4}} $2\"/pause 500/emote farmer 60/pause 500/speak Shane \"{{i18n:64780042_5}}#$b# {{i18n:64780042_6}} #$b# {{i18n:64780042_7}} $h \"/emote farmer 32/pause 1000/ textAboveHead Shane \"{{i18n:64780042_8}}\"/pause 1000/speak Shane \"{{i18n:64780042_9}} #$b# {{i18n:64780042_10}} $l #$b# {{i18n:64780042_11}} $h\"/pause 500/emote farmer 20/pause 500/speak Shane \"{{i18n:64780042_12}} #$b# {{i18n:64780042_13}} $l #$b# {{i18n:64780042_14}} $l \"/pause 500/emote farmer 20/ pause 500/emote farmer 16/pause 500/speak Shane \"{{i18n:64780042_15}}\"/ pause 500/ emote farmer 12/ pause 500/ textAboveHead Shane \"{{i18n:64780042_16}}\"/fade/viewport -100 -100 true/warp Harvey 21 12/faceDirection Harvey 3/warp Shane 20 11/faceDirection Shane 2/speak Harvey \"{{i18n:64780042_17}} $h\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/showFrame 0/positionOffset farmer 0 20/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -53/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote Shane 20/pause 2000/speak Shane \"{{i18n:Birth_Dialogue_6}}$l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end",},
+},
+
+{
+			"LogName": "Shane Birth Event 2 Farmhouse",
+			"Action": "EditData",
+			"Target": "Data/Events/FarmHouse,",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false},
+			"Entries": {"64780043/e 64780041/O Shane/n Pregnant2_Shane/A FarmerPregnantShane2/n HomeBirthShane/t 600 700":"sappypiano/-100 -100/Harvey 35 14 3 farmer 34 14 2 Shane 33 14 1/addConversationTopic ShaneBabySleep2 14/skippable/pause 500/speak Shane \"{{i18n:64780043_1}}#$b# {{i18n:64780043_2}}$10 {{i18n:64780043_3}} $10\"/makeInvisible 33 14 3 3/viewport 34 14 clamp true/showFrame Harvey 35/positionOffset Harvey -20 0/showFrame farmer 5/pause 2500/ambientLight 150 150 150/speak Harvey \"{{i18n:Birth_2Dialogue_1}}#$b# {{i18n:Birth_2Dialogue_2}}\"/positionOffset Harvey 20 0/showframe Harvey 34/emote farmer 40/speak Harvey \"{{i18n:Birth_2Dialogue_3}}$h \"/pause 500/speak Harvey \"{{i18n:Birth_2Dialogue_4}}\"/pause 500/emote Shane 28/pause 1000/textAboveHead Shane \"{{i18n:64780043_4}}\"/pause 2000/speak Harvey \"{{i18n:Birth_2Dialogue_5}}#$b# {{i18n:Birth_2Dialogue_6}}#$b# {{i18n:Birth_2Dialogue_7}}$h\"/pause 500/emote Shane 32/pause 1000/emote farmer 16/pause 500/speak Harvey \"{{i18n:Birth_2Dialogue_8}}$h #$b# {{i18n:Birth_2Dialogue_11}}\"/fade/viewport -100 -100 true/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 22 15 33 15 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -53/showFrame Shane 0/showFrame 0/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/showFrame Harvey 12/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 34 14 clamp true/emote Shane 32/pause 1500/speak Shane \"{{i18n:Birth_Dialogue_6}}$l\"/emote farmer 20 true/ emote Harvey 32/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_8}}\"/pause 1000/end"},
+},
+]
+}

@@ -1,0 +1,546 @@
+{
+    "Changes": [
+        {
+            "LogName": "Load Indoor Maps",
+            "Action": "Load",
+            "Target": "Maps/Diner, Maps/DinerApt, Maps/PeaksSheriff, Maps/HotelLobby, Maps/HotelCafe, Maps/HotelRooms, Maps/GasStation, Maps/Bar, Maps/BarSecond, Maps/TrainCar, Maps/EllieWarp, Maps/JointWarp",
+            "FromFile": "Assets/Maps/{{targetWithoutPath}}.tmx"
+        },
+        {
+            "LogName": "Load Outdoor Maps",
+            "Action": "Load",
+            "Target": "Maps/PeaksMap, Maps/PeaksMeadow, Maps/PeaksRail",
+            "FromFile": "Assets/Maps/{{targetWithoutPath}}.tmx"
+        },
+        {
+            "LogName": "Load Hiking Trail Maps",
+            "Action": "Load",
+            "Target": "Maps/HikingTrail",
+            "FromFile": "Assets/Maps/{{targetWithoutPath}}.tmx",
+            "When": {
+                "HikingTrail":true,
+            }
+        },
+        {
+            "LogName": "Add Custom Locations Data",
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+            //Outdoor Maps
+                
+                //Main Town
+                "Custom_Peaks": {
+                    "DisplayName": "{{i18n:Custom_Peaks.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/PeaksMap",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [
+                        {
+							"Id": "(O)136",
+							"ItemId": "(O)136",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)717",
+							"ItemId": "(O)717",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)142",
+							"ItemId": "(O)142",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)795",
+							"ItemId": "(O)795",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)138",
+							"ItemId": "(O)138",
+                            "Condition": "LOCATION_Season Here Summer",
+                        },
+                        {
+							"Id": "(O)139",
+							"ItemId": "(O)139",
+                            "Condition": "LOCATION_Season Here Fall",
+                        },
+                        {
+							"Id": "(O)141",
+							"ItemId": "(O)141",
+                            "Condition": "LOCATION_Season Here Winter",
+                        },
+                        {
+							"Id": "(O)707",
+							"ItemId": "(O)707",
+                            "Condition": "LOCATION_Season Here Winter",
+                        },
+                        {
+							"Id": "(O)137",
+							"ItemId": "(O)137",
+                            "Condition": "LOCATION_Season Here Spring Fall",
+                        },
+                        {
+							"Id": "(O)698",
+							"ItemId": "(O)698",
+                            "Condition": "LOCATION_Season Here Summer Winter",
+                        },
+                        {
+							"Id": "(O)705",
+							"ItemId": "(O)705",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                        {
+							"Id": "(O)140",
+							"ItemId": "(O)140",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                        {
+							"Id": "(O)699",
+							"ItemId": "(O)699",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                    ],
+                    "Forage": [],
+                },
+
+                //Meadow
+                "Custom_PeaksMeadow": {
+                    "DisplayName": "{{i18n:Custom_PeaksMeadow.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/PeaksMeadow",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [
+                        {
+							"Id": "(O)136",
+							"ItemId": "(O)136",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)717",
+							"ItemId": "(O)717",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)142",
+							"ItemId": "(O)142",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)795",
+							"ItemId": "(O)795",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)138",
+							"ItemId": "(O)138",
+                            "Condition": "LOCATION_Season Here Summer",
+                        },
+                        {
+							"Id": "(O)139",
+							"ItemId": "(O)139",
+                            "Condition": "LOCATION_Season Here Fall",
+                        },
+                        {
+							"Id": "(O)141",
+							"ItemId": "(O)141",
+                            "Condition": "LOCATION_Season Here Winter",
+                        },
+                        {
+							"Id": "(O)707",
+							"ItemId": "(O)707",
+                            "Condition": "LOCATION_Season Here Winter",
+                        },
+                        {
+							"Id": "(O)137",
+							"ItemId": "(O)137",
+                            "Condition": "LOCATION_Season Here Spring Fall",
+                        },
+                        {
+							"Id": "(O)698",
+							"ItemId": "(O)698",
+                            "Condition": "LOCATION_Season Here Summer Winter",
+                        },
+                        {
+							"Id": "(O)705",
+							"ItemId": "(O)705",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                        {
+							"Id": "(O)140",
+							"ItemId": "(O)140",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                        {
+							"Id": "(O)699",
+							"ItemId": "(O)699",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                    ],
+                    "Forage": [],
+                },
+
+                //Rail
+                "Custom_PeaksRail": {
+                    "DisplayName": "{{i18n:Custom_PeaksRail.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/PeaksRail",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [
+                        {
+							"Id": "(O)136",
+							"ItemId": "(O)136",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)717",
+							"ItemId": "(O)717",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)142",
+							"ItemId": "(O)142",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)795",
+							"ItemId": "(O)795",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)138",
+							"ItemId": "(O)138",
+                            "Condition": "LOCATION_Season Here Summer",
+                        },
+                        {
+							"Id": "(O)139",
+							"ItemId": "(O)139",
+                            "Condition": "LOCATION_Season Here Fall",
+                        },
+                        {
+							"Id": "(O)141",
+							"ItemId": "(O)141",
+                            "Condition": "LOCATION_Season Here Winter",
+                        },
+                        {
+							"Id": "(O)707",
+							"ItemId": "(O)707",
+                            "Condition": "LOCATION_Season Here Winter",
+                        },
+                        {
+							"Id": "(O)137",
+							"ItemId": "(O)137",
+                            "Condition": "LOCATION_Season Here Spring Fall",
+                        },
+                        {
+							"Id": "(O)698",
+							"ItemId": "(O)698",
+                            "Condition": "LOCATION_Season Here Summer Winter",
+                        },
+                        {
+							"Id": "(O)705",
+							"ItemId": "(O)705",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                        {
+							"Id": "(O)140",
+							"ItemId": "(O)140",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                        {
+							"Id": "(O)699",
+							"ItemId": "(O)699",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                    ],
+                    "Forage": [],
+                },
+
+                //Hiking Trail
+                "Custom_PeaksHikingTrail": {
+                    "DisplayName": "{{i18n:Custom_PeaksHikingTrail.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/HikingTrail",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [
+                        {
+							"Id": "(O)136",
+							"ItemId": "(O)136",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)717",
+							"ItemId": "(O)717",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)142",
+							"ItemId": "(O)142",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)795",
+							"ItemId": "(O)795",
+                            "Condition": "LOCATION_Season Here Spring Summer Fall Winter",
+                        },
+                        {
+							"Id": "(O)138",
+							"ItemId": "(O)138",
+                            "Condition": "LOCATION_Season Here Summer",
+                        },
+                        {
+							"Id": "(O)139",
+							"ItemId": "(O)139",
+                            "Condition": "LOCATION_Season Here Fall",
+                        },
+                        {
+							"Id": "(O)141",
+							"ItemId": "(O)141",
+                            "Condition": "LOCATION_Season Here Winter",
+                        },
+                        {
+							"Id": "(O)707",
+							"ItemId": "(O)707",
+                            "Condition": "LOCATION_Season Here Winter",
+                        },
+                        {
+							"Id": "(O)137",
+							"ItemId": "(O)137",
+                            "Condition": "LOCATION_Season Here Spring Fall",
+                        },
+                        {
+							"Id": "(O)698",
+							"ItemId": "(O)698",
+                            "Condition": "LOCATION_Season Here Summer Winter",
+                        },
+                        {
+							"Id": "(O)705",
+							"ItemId": "(O)705",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                        {
+							"Id": "(O)140",
+							"ItemId": "(O)140",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                        {
+							"Id": "(O)699",
+							"ItemId": "(O)699",
+                            "Condition": "LOCATION_Season Here Fall Winter",
+                        },
+                    ],
+                    "Forage": [],
+                },
+            //Indoor Maps
+                "Custom_PeaksDiner": {
+                    "DisplayName": "{{i18n:Custom_PeaksDiner.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Diner",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksDinerApt": {
+                    "DisplayName": "{{i18n:Custom_PeaksDinerApt.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/DinerApt",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksSheriff": {
+                    "DisplayName": "{{i18n:Custom_PeaksSheriff.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/PeaksSheriff",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksHotelLobby": {
+                    "DisplayName": "{{i18n:Custom_PeaksHotelLobby.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/HotelLobby",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksHotelCafe": {
+                    "DisplayName": "{{i18n:Custom_PeaksHotelCafe.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/HotelCafe",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksHotelRooms": {
+                    "DisplayName": "{{i18n:Custom_PeaksHotelRooms.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/HotelRooms",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksGasStation": {
+                    "DisplayName": "{{i18n:Custom_PeaksGasStation.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/GasStation",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksBar": {
+                    "DisplayName": "{{i18n:Custom_PeaksBar.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Bar",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksBarSecond": {
+                    "DisplayName": "{{i18n:Custom_PeaksBarSecond.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/BarSecond",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksTrainCar": {
+                    "DisplayName": "{{i18n:Custom_PeaksTrainCar.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/TrainCar",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksEllieWarp": {
+                    "DisplayName": "{{i18n:Custom_PeaksEllieWarp.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/EllieWarp",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+                "Custom_PeaksJointWarp": {
+                    "DisplayName": "{{i18n:Custom_PeaksJointWarp.Name}}",
+                    "DefaultArrivalTile": null,
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/JointWarp",
+                        "Type": null,
+                        "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                },
+            }
+        },
+    ]
+}

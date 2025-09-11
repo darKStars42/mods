@@ -1,0 +1,390 @@
+{
+  "Format": "2.4.0",
+
+
+    "ConfigSchema": {
+
+      "Ts_SWEA_EnableThisMod": { 
+        "AllowValues": "true,false",
+        "Default": "true"
+      },
+      "Ts_SWEA_MinecartDisable": { 
+        "AllowValues": "true,false",
+        "Default": "false"
+      },
+      "Ts_SWEA_BuildBridge": { 
+        "AllowValues": "true,false",
+        "Default": "true"
+      },
+      "Ts_SWEA_AdjustTheCave": { 
+        "AllowValues": "true,false",
+        "Default": "false"
+      },
+      "Ts_SWEA_UnlockTheCave": { 
+        "AllowValues": "true,false",
+        "Default": "false"
+      },
+      "Ts_SWEA_UnlockTheWeedArea": { 
+        "AllowValues": "true,false",
+        "Default": "false"
+      },
+      "Ts_SWEA_SpecialFishDeletion": { 
+        "AllowValues": "true,false",
+        "Default": "false"
+      },
+      "Ts_SWEA_HideA3Tent": { 
+        "AllowValues": "true,false",
+        "Default": "false"
+      }
+
+    },//▼"ConfigSchema"の終了▼
+
+
+    "DynamicTokens": [
+
+      {
+        "Name":"NightTime",
+        "Value": "(('{{Season}}' = 'spring' OR '{{Season}}' = 'summer') AND {{Time}} >= 1940 AND {{Time}} <= 2600) OR ('{{Season}}' = 'fall' AND {{Time}} >= 1840 AND {{Time}} <= 2600) OR ('{{Season}}' = 'winter' AND {{Time}} >= 1740 AND {{Time}} <= 2600)"
+      },
+      {
+        "Name":"DayTime_AND_BadWeather",
+        "Value": "((('{{Season}}' = 'spring' OR '{{Season}}' = 'summer') AND {{Time}} >= 600 AND {{Time}} <= 1940) OR ('{{Season}}' = 'fall' AND {{Time}} >= 600 AND {{Time}} <= 1840) OR ('{{Season}}' = 'winter' AND {{Time}} >= 600 AND {{Time}} <= 1740)) AND (('{{Weather: valley}}' = 'Storm') OR ('{{Weather: valley}}' = 'Rain') OR ('{{Weather: valley}}' = 'GreenRain'))"
+      }
+
+    ],//▼"DynamicTokens"の終了▼
+
+
+    "Changes": [
+
+
+//■■■ タイルシートの読み込み ■■■
+      {
+        "Action": "Load",
+        "Target": "Maps/z_SecretWoodsExtraArea",
+        "FromFile": "assets/z_SecretWoodsExtraArea.png"
+      },
+
+
+//■■■ カスタムマップの追加 ■■■
+
+    //●マップデータ
+      {
+        "Action": "Load",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea",
+        "FromFile": "assets/SecretWoodsExtraArea.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea2",
+        "FromFile": "assets/SecretWoodsExtraArea2.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea_Cavern",
+        "FromFile": "assets/SecretWoodsExtraArea_Cavern.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea3",
+        "FromFile": "assets/SecretWoodsExtraArea3.tmx"
+      },
+    //●ロケーションデータ(別json読み込み)
+      {
+        "Action": "Include",
+        "FromFile": "assets/LocationsData.json"
+      },
+
+
+  //★★★ エディット部分 ★★★
+
+    //●秘密の森の編集
+      {//◆エクストラエリアへの入り口を追加(マップパッチ)
+        "Action": "EditMap",
+        "Target": "Maps/Woods",
+        "FromFile": "assets/SecretWoodsExtraArea_WoodsEntrance.tmx",
+        "ToArea": { "X": 46, "Y": 0, "Width": 4, "Height": 5 },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+        }
+      },
+      {//◆エクストラエリアへの入り口を追加(ワープ)
+        "Action": "EditMap",
+        "Target": "Maps/Woods",
+        "AddWarps": [
+                       "47 -1 Custom_Ts.SecretWoodsExtraArea 35 34",
+                       "48 -1 Custom_Ts.SecretWoodsExtraArea 35 34"
+                     ],
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false"
+        }
+      },
+
+    //●エクストラエリアの編集
+      {//◆バス(砂漠)開放と同時に 洞窟の開放
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea",
+        "FromFile": "assets/SecretWoodsExtraArea_OpenCavern.tmx",
+        "ToArea": { "X": 25, "Y": 10, "Width": 2, "Height": 2 },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "HasFlag": "ccVault"
+        }
+      },
+      {//◆温室の解放と同時に エリア2の開放(クリエでModConfig強制解放も含)
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea",
+        "FromFile": "assets/SecretWoodsExtraArea_OpenArea2.tmx",
+        "ToArea": { "X": 41, "Y": 4, "Width": 2, "Height": 3 },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_UnlockTheWeedArea": "false",
+          "HasFlag |contains=ccPantry": "false"
+        }
+      },
+
+    //●条件で(春夏/秋/冬)にタイルを差し替える
+      {//◆洞窟内の日光と奥の光を削除(晴天時の夜)
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea_Cavern",
+        "FromFile": "assets/SecretWoodsExtraArea_Cavern_Night.tmx",
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_AdjustTheCave": "false",
+          "Query: {{NightTime}}": "true",
+          "Weather |contains=Rain, Storm, GreenRain": "false"
+        },
+        "Update": "OnTimeChange"
+      },
+      {//◆洞窟内の日光と奥の光を削除(雨天時終日)
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea_Cavern",
+        "FromFile": "assets/SecretWoodsExtraArea_Cavern_Night.tmx",
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_AdjustTheCave": "false",
+          "Weather": "Rain, Storm, GreenRain"
+        },
+        "Update": "OnTimeChange"
+      },
+
+    //●Mod Configでの設定変更部分
+      {//◆エクストラエリアの編集(橋をかける)
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea",
+        "FromFile": "assets/SecretWoodsExtraArea_Bridge.tmx",
+        "ToArea": { "X": 19, "Y": 23, "Width": 10, "Height": 4 },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_BuildBridge": "true",
+        }
+      },
+      {//◆エクストラエリアの編集(洞窟を強制解放(ロックの削除))
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea",
+        "FromFile": "assets/SecretWoodsExtraArea_OpenCavern.tmx",
+        "ToArea": { "X": 25, "Y": 10, "Width": 2, "Height": 2 },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_UnlockTheCave": "true",
+        }
+      },
+
+    //●Mod Configでの設定変更部分(AdjustTheCaveでの変更項目)
+      {//◆エクストラエリアの洞窟の編集(Mapのプロパティの変更)
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea_Cavern",
+        "MapProperties": {
+          "Outdoors": "T"
+        },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_AdjustTheCave": "true"
+        }
+      },
+      {//◆エクストラエリアの洞窟の編集(デフォルトの変更)
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea_Cavern",
+        "FromFile": "assets/SecretWoodsExtraArea_Cavern_ExDay.tmx",
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_AdjustTheCave": "true"
+        }
+      },
+      {//◆エクストラエリアの洞窟の編集(洞窟内の日光と奥の光を削除(晴天時の夜))
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea_Cavern",
+        "FromFile": "assets/SecretWoodsExtraArea_Cavern_ExNight.tmx",
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_AdjustTheCave": "true",
+          "Query: {{NightTime}}": "true",
+          "Weather |contains=Rain, Storm, GreenRain": "false",
+        },
+        "Update": "OnTimeChange"
+      },
+      {//◆エクストラエリアの洞窟の編集(洞窟内の日光と奥の光を削除(悪天候時の日中)(夜はデフォルトでおｋ？))
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea_Cavern",
+        "FromFile": "assets/SecretWoodsExtraArea_Cavern_ExDay_Bad.tmx",
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_AdjustTheCave": "true",
+          "Query: {{DayTime_AND_BadWeather}}": "true",
+        },
+        "Update": "OnTimeChange"
+      },
+
+    //●Mod Configでの設定変更部分(エリア3のテントの非表示)
+     {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea3",
+        "FromFile": "assets/SecretWoodsExtraArea3_NoTent.tmx",
+        "ToArea": { "X": 33, "Y": 5, "Width": 4, "Height": 6 },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_HideA3Tent": "true"
+        }
+      },
+
+    //●ワールドマップの編集
+      {
+        "Action": "EditData",
+        "Target": "Data/WorldMap",
+        "TargetField": [ "Valley", "MapAreas" ],
+        "Entries": {
+          "Ts.SecretWoodsExtraArea_SecretWoodsExtraArea": {
+            "Id": "Custom_Ts.SecretWoodsExtraArea_ALL",
+            "PixelArea": {
+              "X": 28,
+              "Y": 81,
+              "Width": 19,
+              "Height": 10
+            },
+            "WorldPositions": [
+              {
+                "Id": "Custom_Ts.SecretWoodsExtraArea",
+                "LocationName": "Custom_Ts.SecretWoodsExtraArea",
+                "ScrollText": "{{i18n:Ts_SWEA_MapName_SecretWoodsExtraArea}}"
+              },
+              {
+                "Id": "Custom_Ts.SecretWoodsExtraArea_Cavern",
+                "LocationName": "Custom_Ts.SecretWoodsExtraArea_Cavern",
+                "ScrollText": "{{i18n:Ts_SWEA_MapName_SecretWoodsExtraArea_Cavern}}"
+              },
+              {
+                "Id": "Custom_Ts.SecretWoodsExtraArea2",
+                "LocationName": "Custom_Ts.SecretWoodsExtraArea2",
+                "ScrollText": "{{i18n:Ts_SWEA_MapName_SecretWoodsExtraArea2}}"
+              },
+              {
+                "Id": "Custom_Ts.SecretWoodsExtraArea3",
+                "LocationName": "Custom_Ts.SecretWoodsExtraArea3",
+                "ScrollText": "{{i18n:Ts_SWEA_MapName_SecretWoodsExtraArea3}}"
+              }
+            ]
+          }
+        },
+        "When": { "Ts_SWEA_EnableThisMod": "true" }
+      },
+
+    //●テキストボックス導入 翻訳関係
+      {
+        "Action":"EditData",
+        "Target":"Strings/StringsFromMaps",
+        "Entries":{
+          "Ts_SWEA01":"{{i18n:Ts_SWEA01}}",
+          "Ts_SWEA02":"{{i18n:Ts_SWEA02}}",
+          "Ts_SWEA03":"{{i18n:Ts_SWEA03}}"
+        }
+      },
+
+
+  //★★★ トロッコ関係の編集 ★★★
+
+    //●エクストラエリアの編集
+      {//◆SecretWoodsExtraArea のトロッコ(データ)
+        "Action": "EditData",
+        "Target": "Data/Minecarts",
+        "TargetField": [ "Default", "Destinations" ],
+        "Entries": {
+          "morecarts_SecretWoodsExtraArea": {
+            "Id": "Custom_SecretWoodsExtraArea",
+            "DisplayName": "{{i18n:MpSecretWoodsExtraAreaName}}",
+            "TargetLocation": "Custom_Ts.SecretWoodsExtraArea",
+            "TargetTile": { "X": 4, "Y": 24 },
+            "TargetDirection": "down"
+          }
+        },
+        "When": { 
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_MinecartDisable": "false"
+        }
+      },
+
+    //●ModConfigでのトロッコのマップ非表示
+      {//◆トロッコ部分の表示
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea",
+        "FromFile": "assets/SecretWoodsExtraArea_MpPatch1.tmx",
+        "ToArea": { "X": 0, "Y": 16, "Width": 12, "Height": 16 },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_MinecartDisable": "true"
+        }
+      },
+      {//◆トロッコエリアへの石
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea",
+        "FromFile": "assets/SecretWoodsExtraArea_MpPatch2.tmx",
+        "ToArea": { "X": 15, "Y": 23, "Width": 2, "Height": 3 },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "Ts_SWEA_MinecartDisable": "true"
+        }
+      },
+
+
+//■■■SVEがインストールされている場合の編集■■■
+
+    //●秘密の森の編集
+      {//◆エクストラエリアへの入り口を追加(マップパッチ)
+        "Action": "EditMap",
+        "Target": "Maps/Woods",
+        "FromFile": "assets/SecretWoodsExtraArea_WoodsEntrance_SVE.tmx",
+        "ToArea": { "X": 54, "Y": 0, "Width": 9, "Height": 12 },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "HasMod": "FlashShifter.StardewValleyExpandedCP"
+        }
+      },
+      {//◆エクストラエリアへの入り口を追加(ワープ)
+        "Action": "EditMap",
+        "Target": "Maps/Woods",
+        "AddWarps": [
+          "56 -1 Custom_Ts.SecretWoodsExtraArea 35 31",
+          "57 -1 Custom_Ts.SecretWoodsExtraArea 36 31"
+        ],
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "HasMod": "FlashShifter.StardewValleyExpandedCP"
+        }
+      },
+
+    //●エクストラエリアの編集
+      {//◆秘密の森への戻りワープの変更
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Ts.SecretWoodsExtraArea",
+        "MapProperties": {
+          "Warp": "34 35 Woods 56 0 35 35 Woods 56 0 36 35 Woods 57 0 25 10 Custom_Ts.SecretWoodsExtraArea_Cavern 16 40 26 10 Custom_Ts.SecretWoodsExtraArea_Cavern 17 40 41 -1 Custom_Ts.SecretWoodsExtraArea2 23 27 42 -1 Custom_Ts.SecretWoodsExtraArea2 24 27 46 13 Custom_Ts.SecretWoodsExtraArea3 7 6 46 14 Custom_Ts.SecretWoodsExtraArea3 7 7"
+        },
+        "When": {
+          "Ts_SWEA_EnableThisMod": "true",
+          "HasMod": "FlashShifter.StardewValleyExpandedCP"
+        }
+      }
+
+
+    ]//▼▼"Changes"の終了▼▼
+}

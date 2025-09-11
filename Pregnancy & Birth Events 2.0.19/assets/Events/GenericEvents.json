@@ -1,0 +1,120 @@
+{
+	"Changes": [
+
+
+//ADOPTION EVENTS
+
+{		
+			"LogName": "Generic Adoption Event 1",
+			"Action": "EditData",
+			"Target": "Data/Events/Farmhouse",
+			"When": {"AdoptionEvents": "on",
+				"HavingChild": "@{{playerName}}",
+				"Relationship:{{spouse}}": "Married",},
+			"Entries":{"64780077": "none/28 30/farmer 27 30 0 {{spouse}} 29 25 3 Lewis 0 0 0/addConversationTopic FarmerAdoption1 13/addMailReceived Adoption1/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak {{spouse}} \"{{i18n:64780077_1}} $h #$b# {{i18n:64780077_2}}\"/pause 500/emote {{spouse}} 32/pause 500/speak {{spouse}} \"{{i18n:64780077_3}}$l\"/pause 500/playsound stoneStep/pause 300/playsound stoneStep/pause 300/playsound stoneStep/jump {{spouse}} 4/pause 250/speak {{spouse}} \"{{i18n:64780077_4}} $h\"/pause 500/textAbovehead {{spouse}} \"{{i18n:64780077_5}}\"/pause 750/playsound doorCreak/warp Lewis 27 30/doAction 27 33/pause 250/playsound doorClose/move Lewis 0 -4 1/move farmer 0 0 2/pause 1000/speak Lewis \"{{i18n:64780077_6}} $h #$b# {{i18n:64780077_7}}\"/pause 500/quickQuestion {{i18n:64780077_8}}#{{i18n:64780077_9}} #{{i18n:64780077_10}} #{{i18n:64780077_11}}(break) speak Lewis \"{{i18n:64780077_12}}$s #$b# {{i18n:64780077_13}} #$b# {{i18n:64780077_14}} $3\"(break) speak Lewis \"{{i18n:64780077_15}}$h #$b# {{i18n:64780077_16}}\"(break) speak Lewis \"{{i18n:64780077_17}}$h #$b# {{i18n:64780077_18}} $s\"/speak Lewis \"{{i18n:64780077_19}}\"/quickQuestion {{i18n:64780077_20}}#{{i18n:64780077_21}}#{{spouse}}. #{{i18n:64780077_22}} (break) speak Lewis \"{{i18n:64780077_23}} #$b# {{i18n:64780077_24}}$h\"(break) speak Lewis \"{{i18n:64780077_25}} $h #$b# {{i18n:64780077_26}}\"(break) speak Lewis \"{{i18n:64780077_27}}$3 #$b# {{i18n:64780077_28}}#3 #$b# {{i18n:64780077_29}} $3 #$b# {{i18n:64780077_30}} $s\"/speak Lewis \"{{i18n:64780077_31}} #$b# {{i18n:64780077_32}} $h\"/pause 500/emote farmer 32 true/ emote {{spouse}} 32/pause 500/end"},
+		},
+
+
+///speak {{spouse}} \"No offense taken. $h #$b# I'm so proud of @ and all of their accomplishments. $l #$b# And I'm more than ready to accept my duties as a full-time parent. $h\"
+
+{		
+		"LogName": "Generic Adoption Event 2 -- Baby Dropoff",
+		"Action": "EditData",
+		"Target": "Data/Events/Farmhouse",
+		"When": {"AdoptionEvents": "on",
+			"Relationship:{{spouse}}": "Married",},
+		"Entries": {"64780078/e 64780077/A FarmerAdoption1/n Adoption1/t 600 700":"sappypiano/-100 -100/farmer 34 14 3 {{spouse}} 33 14 2/addConversationTopic BabySleep2 14/skippable/pause 500/speak {{spouse}} \"{{i18n:64780078_1}}$h #$b# {{i18n:64780078_2}} $l\"/makeInvisible 33 14 3 3/addTemporaryActor {{BabyorBaby_Dark}} 22 15 33 15 2 true Character/positionOffset {{BabyorBaby_Dark}} 0 -53/viewport 34 14 clamp true/ambientLight 150 150 150/pause 2500/ speak {{spouse}} \"{{i18n:64780078_3{{Baby1Gender}}}} $l\"/emote farmer 20/pause 1000/speak {{spouse}} \"{{i18n:64780078_4{{Baby1Gender}}}} $h\"/pause 1000/speak {{spouse}} \"{{i18n:64780078_5{{Baby1Gender}}}} $l\"/pause 500/emote farmer 32/faceDirection farmer 2/playsound pickUpItem/warp {{BabyorBaby_Dark}} 34 15/positionOffset {{BabyorBaby_Dark}} -10 -53/pause 2000/textAboveHead {{spouse}} \"{{i18n:64780078_6}}\"/pause 2500/textAboveHead {{spouse}} \"{{i18n:64780078_7}}\"/pause 3000/emote farmer 20/globalfade /viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_8}}\"/pause 1500/end"},
+		},
+
+
+//FARMER PREGNANT///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+{
+		"LogName": "Generic Pregnancy Event 1--Farmer Pregnant",
+		"Action": "EditData",
+		"Target": "Data/Events/Farmhouse",
+		"When": {"PlayerGetsPregnant":"true",
+			"AdoptionEvents": "off",
+			"Relationship:{{spouse}}": "Married",
+			"Query: '{{spouse}}' IN ('Alex', 'Elliott', 'Harvey', 'Sam', 'Sebastian', 'Shane')": false,
+ 			"HavingChild": "@{{playerName}}",},
+		"Entries":{"64780072": "continue/28 30/farmer 27 30 0 {{spouse}} 29 25 3 Harvey 0 0 0/addConversationTopic FarmerPregnant 13/addMailReceived Pregnant1/addConversationTopic FarmerCheckUp 6/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak {{spouse}} \"{{i18n:64780072_1}} #$b# {{i18n:64780072_2}}$s #$b# {{i18n:64780072_3}}\"/pause 500/move farmer 0 0 2/playSound croak/animate farmer false false 350 104 105/pause 1000/emote farmer 28/move farmer 0 0 1/pause 500/speak {{spouse}} \"{{i18n:64780072_4}} $s#$b# {{i18n:64780072_5}} $s\"/viewport -100 100/changeLocation Hospital/viewport 5 5/warp farmer 3 5/warp {{spouse}} 2 5/showFrame {{spouse}} 4/warp Harvey 5 8/move Harvey 0 -3 3 false/speak Harvey \"{{i18n:Pregnancy_Dialogue_1_Farmer}}\"/emote {{spouse}} 8/speak Harvey \"{{i18n:Pregnancy_Dialogue_2_Farmer}}$h\"/speak {{spouse}} \"...#$b#...#$b#...$l#$b#{{i18n:64780072_6}} $h #$b#{{i18n:64780072_7}}$h #$b#{{i18n:64780072_8}} $l\"/pause 500/emote farmer 32/pause 250/end"},
+		},
+
+
+{		"LogName": "Generic Birth Event 1--Farmer Pregnant", 
+		"Action": "EditData",
+    		"Target": "Data/Events/Farmhouse",
+		"When": {"PlayerGetsPregnant":"true",
+			"AdoptionEvents": "off",
+			"Relationship:{{spouse}}": "Married",
+			"Query: '{{spouse}}' IN ('Alex', 'Elliott', 'Harvey', 'Sam', 'Sebastian', 'Shane')": false,},
+   			"Entries": {"64780073/e 64780072/A FarmerPregnant/t 600 700": "sappypiano/-100 -100/farmer 19 12 2 {{spouse}} 20 12 2 Harvey 5 15 2/positionOffset farmer -30 -12/addConversationTopic BabySleep 14/skippable/pause 500/speak {{spouse}} \"{{i18n:64780073_1}} $s #$b#{{i18n:64780073_2}} $l #$b# {{i18n:64780073_3}}\"/changeLocation Hospital/showFrame 5/ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak {{spouse}} \"{{i18n:64780073_4}} #$b# {{i18n:64780073_5}} $s\"/faceDirection {{spouse}} 3/pause 500/emote farmer 60/emote {{spouse}} 28/pause 500/speak {{spouse}} \"{{i18n:64780073_6}} $s\"/pause 500/move {{spouse}} 0 1 3/pause 500/speak {{spouse}} \"{{i18n:64780073_7}} $h #$b# {{i18n:64780073_8}} $s #$b# {{i18n:64780073_9}} $l\"/pause 500/move {{spouse}} 0 -1 3/speak {{spouse}} \"{{i18n:64780073_10}} $l #$b# {{i18n:64780073_11}} $h\"/pause 500/emote farmer 20/pause 500/speak {{spouse}} \"{{i18n:64780073_12}} #$b# {{i18n:64780073_13}}\"/pause 500/emote farmer 60/pause 500/fade/viewport -100 -100 true/warp Harvey 21 12/faceDirection Harvey 3/warp {{spouse}} 20 11/faceDirection {{spouse}} 2/speak {{spouse}} \"{{i18n:64780073_14}}$s #$b#{{i18n:64780073_15}}\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -50/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/showframe 0/positionOffset farmer 0 20/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote {{spouse}} 20/pause 2000/speak {{spouse}} \"{{i18n:Birth_Dialogue_5}}$l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end"},
+		},
+{
+		"LogName": "Generic Pregnancy Event 2--Farmer Pregnant",
+		"Action": "EditData",
+		"Target": "Data/Events/FarmHouse,",
+		"When": {"PlayerGetsPregnant":"true",
+			"AdoptionEvents": "off",
+			"Relationship:{{spouse}}": "Married",
+			"Query: '{{spouse}}' IN ('Elliott', 'Sebastian', 'Shane')": false,
+ 			"HavingChild": "@{{playerName}}",},
+		"Entries": {"64780074/e 64780073":"continue/28 30/farmer 27 30 0 {{spouse}} 29 25 3 Harvey 0 0 0/addConversationTopic FarmerPregnant2 13/addMailReceived FarmerPregnant2/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak {{spouse}} \"{{i18n:64780074_1}} $h #$b# {{i18n:64780074_2}} $s #$b# {{i18n:64780074_3}}#$b# {{i18n:64780074_4}}$l\"/pause 500 /emote farmer 40/pause 500/speak {{spouse}} \"{{i18n:64780074_5}}$h #$b# \"/pause 500/viewport -100 100/changeLocation Hospital/viewport 5 5/warp {{spouse}} 2 5/warp farmer 3 5/showFrame {{spouse}} 4/warp Harvey 5 8/move Harvey 0 -3 3 false/showFrame {{spouse}} 4/speak Harvey \"{{i18n:Pregnancy_Dialogue_3}} $h\"/emote {{spouse}} 16 true/jump {{spouse}} 4/speak {{spouse}} \"{{i18n:64780074_6}}$h\"/pause 500/ speak Harvey \"{{i18n:Pregnancy_Dialogue_4}}\"/pause 500/quickquestion {{i18n:Birth_Choice_Question}}#{{i18n:Clinic_Birth}} #{{i18n:Home_Birth}} (break)speak Harvey \"{{i18n:Pregnancy_Dialogue_5}} $h #$b# {{i18n:Pregnancy_Dialogue_6}}\"\\addMailReceived ClinicBirth{{spouse}} (break)speak Harvey \"{{i18n:Pregnancy_Dialogue_7}}$h #$b# {{i18n:Pregnancy_Dialogue_8}}\"\\addMailReceived HomeBirth{{spouse}}/pause 500/speak {{spouse}} \"{{i18n:64780074_7}}$h\"/ emote farmer 8/speak {{spouse}} \"{{i18n:64780074_8}} $h \"/emote farmer 12/pause 100/emote {{spouse}} 32/end"},
+		},
+
+{
+		"LogName": "Generic Birth Event 2 Clinic--Farmer Pregnant",
+		"Action": "EditData",
+		"Target": "Data/Events/FarmHouse,",
+		"When": {"PlayerGetsPregnant":"true",
+			"AdoptionEvents": "off",
+			"Relationship:{{spouse}}": "Married",
+			"Query: '{{spouse}}' IN ('Elliott', 'Sebastian', 'Shane')": false,},
+		"Entries": {"64780075/e 64780074/n FarmerPregnant2/n ClinicBirth/A FarmerPregnant2/t 600 700":"sappypiano/-100 -100/farmer 19 12 2 {{spouse}} 20 12 2 Harvey 5 15 2/positionOffset farmer 0 -12/addConversationTopic BabySleep2 14/skippable/pause 500/speak {{spouse}} \"{{i18n:64780039_1}}#$b#{{i18n:64780039_2}}$l#$b# {{i18n:64780039_3}}$h\"/changeLocation Hospital/showFrame 5/faceDirection {{spouse}} 3/ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak {{spouse}} \"{{i18n:64780039_4}}#$b# {{i18n:64780039_5}}#$b# {{i18n:64780039_6}}$h\"/pause 500/emote farmer 32/pause 500/speak {{spouse}} \"{{i18n:64780039_7}}$s #$b# {{i18n:64780039_8}}#$b# {{i18n:64780039_9}}#$b# {{i18n:64780039_10}}\"/pause 500/ textAboveHead {{spouse}} \"{{i18n:64780039_11}}\"/pause 1000/speak {{spouse}} \"{{i18n:64780039_12}}#$b# {{i18n:64780039_13}}$l #$b# {{i18n:64780039_14}}#$b# {{i18n:64780039_15}}#$b# {{i18n:64780039_16}}$l\"/pause 500/emote farmer 20/pause 500/speak {{spouse}} \"{{i18n:64780039_17}}#$b# {{i18n:64780039_18}}#$b# {{i18n:64780039_19}}$l \"/pause 500/emote farmer 20/ pause 500/emote farmer 16/pause 500/speak {{spouse}} \"{{i18n:64780039_20}}\"/ pause 500/ emote farmer 12/ pause 500/ textAboveHead {{spouse}} \"{{i18n:Birth_Dialogue_10}}\"/fade/viewport -100 -100 true/warp Harvey 21 12/faceDirection Harvey 3/warp {{spouse}} 20 11/faceDirection {{spouse}} 2/speak Harvey \"{{i18n:Birth_Dialogue_12}}$h\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/showFrame 0/positionOffset farmer 0 20/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -53/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote {{spouse}} 20/pause 2000/speak {{spouse}} \"{{i18n:Birth_Dialogue_6}} $l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end"},
+		},
+
+{
+		"LogName": "Generic Birth Event 2 Farmhouse--Farmer Pregnant",
+		"Action": "EditData",
+		"Target": "Data/Events/FarmHouse,",
+		"When": {"PlayerGetsPregnant":"true",
+			"AdoptionEvents": "off",
+			"Relationship:{{spouse}}": "Married",
+			"Query: '{{spouse}}' IN ('Elliott', 'Sebastian', 'Shane')": false,},
+		"Entries": {"64780076/e 64780074/A FarmerPregnant2/n FarmerPregnant2/n HomeBirth/t 600 700":"sappypiano/-100 -100/Harvey 35 14 3 farmer 34 14 2 {{spouse}} 33 14 1/addConversationTopic BabySleep2 14/skippable/pause 500/speak {{spouse}} \"{{i18n:64780076_1}}#$b# {{i18n:64780076_2}} $l #$b# {{i18n:64780076_3}}$h\"/makeInvisible 33 14 3 3/viewport 34 14 clamp true/showFrame Harvey 35/positionOffset Harvey -20 0/showFrame farmer 5/pause 2500/ambientLight 150 150 150/speak Harvey \"{{i18n:Birth_2Dialogue_1}}#$b# {{i18n:Birth_2Dialogue_2}}\"/positionOffset Harvey 20 0/showframe Harvey 34/emote farmer 40/speak Harvey \"{{i18n:Birth_2Dialogue_3}}$h \"/pause 500/speak Harvey \"{{i18n:Birth_2Dialogue_4}}\"/pause 500/emote {{spouse}} 28/pause 1000/textAboveHead {{spouse}} \"{{i18n:64780076_4}}\"/pause 2000/speak Harvey \"{{i18n:Birth_2Dialogue_5}}#$b# {{i18n:Birth_2Dialogue_6}}#$b# {{i18n:Birth_2Dialogue_7}}$h\"/pause 500/emote {{spouse}} 32/pause 1000/emote farmer 16/pause 500/speak Harvey \"{{i18n:Birth_2Dialogue_8}}$h #$b# {{i18n:Birth_2Dialogue_11}}\"/fade/viewport -100 -100 true/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 22 15 33 15 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -53/showFrame {{spouse}} 0/showFrame 0/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/showFrame Harvey 12/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 34 14 clamp true/emote {{spouse}} 32/pause 1500/speak {{spouse}} \"{{i18n:Birth_Dialogue_6}}$l\"/emote farmer 20 true/ emote Harvey 32/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_8}}\"/pause 1000/end"},
+		},
+
+//SPOUSE PREGNANT///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+{		"LogName": "Generic Pregnancy Event 1--Spouse Pregnant",
+		"Action": "EditData",
+		"Target": "Data/Events/Farmhouse",
+		"When": {"AdoptionEvents": "off",
+			"Relationship:{{spouse}}": "Married",
+ 			 "Pregnant": "{{spouse}}",
+			"PlayerGetsPregnant":"false", 
+			"Query: '{{spouse}}' IN ('Abigail', 'Emily', 'Haley', 'Leah', 'Maru', 'Penny')": false,},
+		"Entries":{"64780082": "continue/28 30/farmer 27 30 0 {{spouse}} 29 25 3 Harvey 0 0 0/addConversationTopic {{spouse}}Pregnant 13/addMailReceived Pregnant1_{{spouse}}/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak {{spouse}} \"{{i18n:64780082_1}}$s\"/pause 1000/emote {{spouse}} 28/pause 500/speak {{spouse}} \"{{i18n:64780082_2}}$s\"/viewport -100 100/changeLocation Hospital/viewport 5 5/warp farmer 2 5/warp {{spouse}} 3 5/showFrame {{spouse}} 4/warp Harvey 5 8/move Harvey 0 -3 3 false/speak Harvey \"{{i18n:Pregnancy_Dialogue_1}}\"/emote farmer 8 true/emote {{spouse}} 8/speak Harvey \"{{i18n:Pregnancy_Dialogue_2}}$h\"/playmusic musicboxsong/emote farmer 16/speak {{spouse}} \"...$6#$b#...$6#$b#...$l#$b# {{i18n:64780082_3}} $l #$b# {{i18n:64780082_4}}$h\"/faceDirection {{spouse}} 3/emote {{spouse}} 20/emote farmer 32/end"},
+		},
+
+
+{		"LogName": "Generic Birth Event 1--Spouse Pregnant",
+		"Action": "EditData",
+		"Target": "Data/Events/Farmhouse",
+		"When": {"PlayerGetsPregnant":"false",
+			"AdoptionEvents": "off",
+			"Relationship:{{spouse}}": "Married",
+			"Query: '{{spouse}}' IN ('Abigail', 'Emily', 'Haley', 'Leah', 'Maru', 'Penny')": false,},
+		"Entries": {"64780083/e 64780082/A {{spouse}}Pregnant/n Pregnant1_{{spouse}}/t 600 700/t 600 700": "sappypiano/-100 -100/{{spouse}} 19 12 2 farmer 20 12 2 Harvey 5 15 2/addConversationTopic {{spouse}}BabySleep 14/faceDirection farmer 3/positionOffset {{spouse}} -25 0/skippable/pause 500/speak {{spouse}} \"{{i18n:64780083_1}} #$b# {{i18n:64780083_2}}$4\"/changeLocation Hospital/showFrame {{spouse}} 0/showFrame farmer 6 true/ ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak {{spouse}} \"{{i18n:64780083_3}} #$b# {{i18n:64780083_4}}$h\"/pause 500/emote farmer 60/pause 500/speak {{spouse}} \"{{i18n:64780083_5}}#$b# {{i18n:64780083_6}}$h\"/pause 500/emote farmer 20/pause 500/speak {{spouse}} \"{{i18n:64780083_7}}$h #$b# {{i18n:64780083_8}} $l #$b#{{i18n:64780083_9}}$h\"/pause 500/emote farmer 20/pause 1000/fade/viewport -100 -100 true/warp Harvey 21 12/faceDirection Harvey 3/warp farmer 20 11/faceDirection {{spouse}} 2/speak Harvey \"{{i18n:Birth_Dialogue_1}}\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_2}}\"/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -65/move farmer 0 0 2/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote farmer 20/pause 2000/speak {{spouse}} \"{{i18n:Birth_Dialogue_5}}$l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end"},
+		}, 
+
+
+
+
+
+
+]
+}

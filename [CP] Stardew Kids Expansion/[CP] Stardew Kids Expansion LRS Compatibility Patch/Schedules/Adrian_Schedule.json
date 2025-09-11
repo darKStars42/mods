@@ -1,0 +1,77 @@
+{
+    "Changes": [
+        // SCHEDULE
+        {
+            "LogName": "Adrian Daily Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/Adrian",
+            "Entries": {
+                "rain": "900 SeedShop 27 29 2/1100 SeedShop 34 9 0/1400 SeedShop 3 6 0/1700 SeedShop 24 14 1/1900 SeedShop 34 9 0/2000 SeedShop 28 28 2 Adrian_Sleep",
+                "Mon": "GOTO Sat",
+                "Tue": "900 ArchaeologyHouse 10 16 0/1400 Town 83 97 1/1620 Town 20 15 2/1740 SeedShop 36 5 2/2000 SeedShop 28 28 2 Adrian_Sleep",
+                "Wed": "GOTO Tue",
+                "Fri": "GOTO Tue",
+                "Sat": "900 SeedShop 34 5 3 /1010 Town 53 72 0/1200 Town 13 12 1/1700 Town 46 57 2/2000 SeedShop 28 28 2 Adrian_Sleep",
+                "Sun": "GOTO Sat",
+                "spring": "900 SeedShop 34 5 3 /1100 SeedShop 34 9 0/1340 SeedShop 3 6 0/1900 SeedShop 34 9 0/2100 SeedShop 28 28 2 Adrian_Sleep",
+                "summer": "900 SeedShop 34 5 3 /1100 SeedShop 34 9 0/1340 SeedShop 3 6 0/1900 SeedShop 34 9 0/2100 SeedShop 28 28 2 Adrian_Sleep",
+                "fall": "900 SeedShop 34 5 3 /1100 SeedShop 34 9 0/1340 SeedShop 3 6 0/1900 SeedShop 34 9 0/2100 SeedShop 28 28 2 Adrian_Sleep",
+                "winter": "900 SeedShop 34 5 3 /1100 SeedShop 34 9 0/1340 SeedShop 3 6 0/1900 SeedShop 34 9 0/2100 SeedShop 28 28 2 Adrian_Sleep",
+                "DesertFestival_3": "a1000 BusStop 26 16 2/1030 Desert 45 38 3/1700 SeedShop 24 14 1 Adrian_PlayToys/2000 SeedShop 28 28 2 Adrian_Sleep",
+                "9":"GOTO season",
+                "23":"GOTO season"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Characters/schedules/Adrian",
+            "Entries": {
+            "DesertFestival_3": "a1000 BusStop 26 16 2/1030 Desert 45 38 3/1700 SeedShop 24 14 1 Adrian_PlayToys/2000 SeedShop 28 28 2 Adrian_Sleep",
+            "Tue": "800 Custom_SchoolHouse 11 8 1 Adrian_Read/1130 Town 15 13 2/a1300 Custom_SchoolHouse 11 8 1 Adrian_Read/1550 Town 24 13 2/1740 SeedShop 24 14 1 Adrian_PlayToys/2000 SeedShop 28 28 2 Adrian_Sleep",
+            "Wed": "GOTO Tue",
+            "Fri": "GOTO Tue",
+            "9":"GOTO season",
+            "23":"GOTO season"
+            },
+            "When": {
+                "LRSeventBool": "true",
+                "Weather |contains=Rain,Storm,GreenRain": "false",
+                "LRSschoolDays |contains={{DayofWeek}}": "true"
+            }
+        },
+        { 
+        "Action": "EditData",
+            "Target": "characters/schedules/Adrian",
+            "Entries": {
+                "rain": "800 Custom_SchoolHouse 23 11 3/a1000 Custom_SchoolHouse 22 11 3 Adrian_Read/1530 Saloon 35 18 0/2000 Saloon 43 5 2 Adrian_Sleep"
+            },
+            "When": {
+                "Weather": "Rain,Storm,GreenRain",
+                "LRSschoolDays |contains={{DayofWeek}}": "true",
+                "LRSeventBool": "true",
+                "LRSnoschool": "false"
+            },
+        },
+        {
+        "Action": "EditData",
+            "Target": "Characters/schedules/Adrian",
+            "Entries": {
+                "Mon": "GOTO Tue",
+                "Thu": "GOTO Tue"
+            },
+            "When": {
+                "LRSeventBool": "true",
+                "LRSfiveDays": "true",
+                "LRSnoSchool": "false",
+                "LRSschoolDays |contains={{DayofWeek}}": "true"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Strings/StringsFromMaps",
+            "Entries": {
+                "Desk.1": "{{i18n:Desk.Adrian}}"
+            }
+        }
+    ]
+}

@@ -1,0 +1,380 @@
+{
+
+  "Changes": [
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_DahliaHouse",
+          "FromFile": "assets/Locations/EchoReef_DahliaHouse.tmx"
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_DahliaCave",
+          "FromFile": "assets/Locations/EchoReef_DahliaCave.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Characters/MrMrRogers.EchoReef_Dahlia",
+        "FromFile": "assets/Sprites/Dahlia.png"
+      },
+      {
+        "Action": "Load",
+        "Target": "Portraits/MrMrRogers.EchoReef_Dahlia",
+        "FromFile": "assets/Portraits/Dahlia.png"
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Locations",
+          "Entries": {
+              "MrMrRogers.EchoReef_DahliaHouse": {
+                  "DisplayName": "{{i18n:DahliaHouse}}",
+                  "DefaultArrivalTile": {
+                    "X": 7,
+                    "Y": 19
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_DahliaHouse",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "DahliaceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              },
+              "MrMrRogers.EchoReef_DahliaCave": {
+                  "DisplayName": "{{i18n:DahliaCave}}",
+                  "DefaultArrivalTile": {
+                    "X": 15,
+                    "Y": 8
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_DahliaCave",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "DahliaceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              }
+          }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_DahliaHouse",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Doors": "6 11 townInterior 120",
+          "Warp": "7 20 MrMrRogers.EchoReef_Graveyard 16 65"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 6,
+              "Y": 11
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Door MrMrRogers.EchoReef_Dahlia"
+            }
+          },
+          {
+            "Position": {
+              "X": 5,
+              "Y": 14
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "OpenShop MrMrRogers.EchoReef_WeaponsShop down 0800 2000 5 13 1 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_DahliaCave",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Warp": "16 8 MrMrRogers.EchoReef_Graveyard 7 68 16 9 MrMrRogers.EchoReef_Graveyard 7 69",
+          "TreatAsOutdoors": "T"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 3,
+              "Y": 8
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 1 5 1"
+            }
+          },
+          {
+            "Position": {
+              "X": 5,
+              "Y": 6
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 1 5 1"
+            }
+          },
+          {
+            "Position": {
+              "X": 8,
+              "Y": 8
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 1 5 1"
+            }
+          },
+          {
+            "Position": {
+              "X": 7,
+              "Y": 10
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 1 5 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Graveyard",
+        "TextOperations": [
+          {
+            "Operation": "Append",
+            "Target": ["MapProperties", "Warp"],
+            "Value": "6 68 MrMrRogers.EchoReef_DahliaCave 15 8 6 69 MrMrRogers.EchoReef_DahliaCave 15 9",
+            "Delimiter": " "
+          }
+        ],
+        "MapTiles": [
+          {
+            "Position": { 
+              "X": 6, 
+              "Y": 68
+            },
+            "Layer": "Buildings",
+            "Remove": true
+            },
+            {
+              "Position": { 
+                "X": 6, 
+                "Y": 69
+              },
+              "Layer": "Buildings",
+              "Remove": true
+              }
+        ],
+        "When": {
+          "Hearts:MrMrRogers.EchoReef_Dahlia": "6"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Graveyard",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 16, 
+              "Y": 64
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "LockedDoorWarp 7 19 MrMrRogers.EchoReef_DahliaHouse 800 2000"
+            }
+          }
+        ]
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Characters",
+          "Entries": {
+            "MrMrRogers.EchoReef_Dahlia": {
+              "DisplayName": "{{i18n:Dahlia}}",
+              "BirthSeason": "Winter",
+              "BirthDay": 18,
+              "HomeRegion": "Other",
+              "Language": "Default",
+              "Gender": "Female",
+              "Age": "Adult",
+              "Manner": "Polite",
+              "SocialAnxiety": "Outgoing",
+              "Optimism": "Neutral",
+              "IsDarkSkinned": false,
+              "CanBeRomanced": false,
+              "Calendar": "HiddenAlways",
+              "SocialTab": "HiddenUntilMet",
+              "CanSocialize": true,
+              "CanReceiveGifts": true,
+              "CanGreetNearbyCharacters": true,
+              "CanCommentOnPurchasedShopItems": true,
+              "CanVisitIsland": false,
+              "IntroductionsQuest": false,
+              "ItemDeliveryQuests": false,
+              "PerfectionScore": false,
+              "EndSlideShow": "MainGroup",
+              "SpouseAdopts": null,
+              "SpouseWantsChildren": true,
+              "SpouseGiftJealousy": false,
+              "SpouseRoom": {},
+              "SpousePatio": {},
+              "SpouseFloors": [],
+              "SpouseWallpapers": [],
+              "DumpsterDiveFriendshipEffect": -25,
+              "DumpsterDiveEmote": 8,
+              "FriendsAndFamily": {},
+              "FlowerDanceCanDance": null,
+              "WinterStarGifts": [],
+              "WinterStarParticipant": false,
+              "UnlockConditions": null,
+              "SpawnIfMissing": true,
+              "Home": [
+                {
+                  "Id": "Default",
+                  "Condition": null,
+                  "Location": "MrMrRogers.EchoReef_DahliaHouse",
+                  "Tile": {
+                    "X": 8,
+                    "Y": 4
+                  },
+                  "Direction": "down"
+                }
+              ],
+              "TextureName": null,
+              "Appearance": [
+                {
+                  "Id": "MrMrRogers.EchoReef_Dahlia",
+                  "Condition": null,
+                  "Season": null,
+                  "Indoors": true,
+                  "Outdoors": true,
+                  "Portrait": "Portraits/MrMrRogers.EchoReef_Dahlia",
+                  "Sprite": "Characters/MrMrRogers.EchoReef_Dahlia",
+                  "IsIslandAttire": false,
+                  "Precedence": 0,
+                  "Weight": 0
+                }
+              ],
+              "MugShotSourceRect": null,
+              "Size": {
+                "X": 16,
+                "Y": 32
+              },
+              "Breather": true,
+              "BreathChestRect": null,
+              "BreathChestPosition": null,
+              "Shadow": null,
+              "EmoteOffset": {
+                "X": 0,
+                "Y": 0
+              },
+              "ShakePortraits": null,
+              "KissSpriteIndex": 28,
+              "KissSpriteFacingRight": true,
+              "FormerCharacterNames": [],
+              "CustomFields": null
+            }
+          }
+      },
+      { 
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Dahlia",
+            "FromFile": "assets/blank.json"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Dahlia",
+          "FromFile": "assets/blank.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MrMrRogers.EchoReef_Dahlia": "{{i18n:DahliaGiftLoveResponse}}//{{i18n:DahliaGiftLikeResponse}}//{{i18n:DahliaGiftDislikeResponse}}//{{i18n:DahliaGiftHateResponse}}//{{i18n:DahliaGiftNeutralResponse}}//"
+            }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Dahlia",
+          "Entries": {
+            "Introduction": "{{i18n:Dahlia_Introduction}}",
+            "AcceptBirthdayGift_Positive": "{{i18n:Dahlia_AcceptBirthdayGift_Positive}}",
+            "AcceptBirthdayGift_Negative": "{{i18n:Dahlia_AcceptBirthdayGift_Negative}}",
+            "AcceptGift_(O)StardropTea": "{{i18n:Dahlia_AcceptGift_(O)StardropTea}}",
+            "DumpsterDiveComment": "{{i18n:Dahlia_DumpsterDiveComment}}",
+            "HitBySlingshot": "{{i18n:Dahlia_HitBySlingshot}}",
+            "Mon": "{{i18n:Dahlia_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Tue": "{{i18n:Dahlia_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Wed": "{{i18n:Dahlia_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Thu": "{{i18n:Dahlia_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Fri": "{{i18n:Dahlia_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sat": "{{i18n:Dahlia_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sun": "{{i18n:Dahlia_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/animationdescriptions",
+          "Entries": {
+            "MrMrRogers.EchoReef_Dahlia_sleep": "19/19/19",
+            "mrmrrogers.echoreef_dahlia_sleep": "19/19/19"
+          } 
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Dahlia",
+          "Entries": {
+            "spring": "600 MrMrRogers.EchoReef_DahliaHouse 8 4 2/800 MrMrRogers.EchoReef_DahliaHouse 5 13 2/2200 MrMrRogers.EchoReef_DahliaHouse 8 4 2 MrMrRogers.EchoReef_Dahlia_sleep"
+          }
+        }
+  ]
+}

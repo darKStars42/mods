@@ -1,0 +1,76 @@
+{
+  "Changes": [
+    /*Seed item*/
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_Ancient_Popberry_Seeds": {
+          "Name": "Ancient Popberry Seeds",
+          "DisplayName": "{{i18n:Ancient_Popberry_Seeds.DisplayName}}",
+          "Description": "{{i18n:Ancient_Popberry_Seeds.Description}}",
+          "Type": "Seeds",
+          "Category": -74,
+          "Price": 35,
+          "Texture": "Mods/{{ModId}}/Ancient_Popberry_Seeds",
+          "SpriteIndex": 0
+        }
+      }
+    }
+    /*Crop*/,
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_Ancient_Popberry": {
+          "Name": "{{ModID}}_Ancient_Popberry",
+          "DisplayName": "{{i18n:Ancient_Popberry.DisplayName}}",
+          "Description": "{{i18n:Ancient_Popberry.Description}}",
+          "Type": "Fruit",
+          "Category": -79,
+          "Price": 550,
+          "IsDrink": false,
+          "Edibility": 12,
+          "Texture": "Mods/{{ModId}}/Ancient_Popberry",
+          "SpriteIndex": 0,
+          "ContextTags": [
+            "season_spring",
+            "season_summer",
+            "season_fall",
+            "color_purple"
+          ]
+        }
+      }
+    }
+    /*Planted Crop*/,
+    {
+      "Action": "EditData",
+      "Target": "Data/Crops",
+      "Entries": {
+        "{{ModId}}_Ancient_Popberry_Seeds": {
+          "Seasons": [
+            "spring",
+            "summer",
+            "fall"
+          ],
+          "DaysInPhase": [
+            2,
+            7,
+            7,
+            7,
+            5
+          ],
+          "RegrowDays": 7,
+          "HarvestItemId": "{{ModId}}_Ancient_Popberry",
+          "Texture": "Mods/{{ModId}}/Ancient_Popberry_Planted",
+          "SpriteIndex": 0
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Ancient_Popberry_Seeds, Mods/{{ModId}}/Ancient_Popberry, Mods/{{ModId}}/Ancient_Popberry_Planted",
+      "FromFile": "assets/Ancient_Popberry/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

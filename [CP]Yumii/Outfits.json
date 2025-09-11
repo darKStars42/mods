@@ -1,0 +1,68 @@
+{
+    "Changes": [
+	
+        { //Load seasonal outfit
+            "LogName": "Load Yumii Seasonal",
+            "Action": "Load",
+            "Target": "Portraits/Yumii_PortSpring, Portraits/Yumii_PortSummer, Portraits/Yumii_PortFall, Portraits/Yumii_PortWinter, Characters/Yumii_spring, Characters/Yumii_summer, Characters/Yumii_fall, Characters/Yumii_winter",
+            "FromFile": "assets/img/{{TargetWithoutPath}}.png"
+        },
+		
+	//Load festival outfit
+       {
+            "LogName": "Yumii Flower",
+            "Action": "Load",
+            "Target": "Portraits/Yumii_PortFlower, Characters/Yumii_flower",
+            "FromFile": "assets/img/{{TargetWithoutPath}}.png"
+        },
+	//Load outfits
+        {
+            "LogName": "Yumii Appearance Data",
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "TargetField": [ "Yumii", "Appearance" ],
+            "Entries": {
+
+                //Regular Outfits
+                "{{ModId}}.YumiiSpring": {
+                    "Id": "{{ModId}}.YumiiSpring",
+                    "Condition": "SEASON spring",
+                    "Sprite": "Characters/Yumii_spring",
+                    "Portrait": "Portraits/Yumii_PortSpring",
+                    "Precedence": -100
+                },
+                "{{ModId}}.YumiiSummer": {
+                    "Id": "{{ModId}}.YumiiSummer",
+                    "Condition": "SEASON Summer",
+                    "Sprite": "Characters/Yumii_summer",
+                    "Portrait": "Portraits/Yumii_PortSummer",
+                    "Precedence": -100
+                },
+                "{{ModId}}.YumiiFall": {
+                    "Id": "{{ModId}}.YumiiFall",
+                    "Condition": "SEASON Fall",
+                    "Sprite": "Characters/Yumii_fall",
+                    "Portrait": "Portraits/Yumii_PortFall",
+                    "Precedence": -100
+                },
+                "{{ModId}}.YumiiWinter": {
+                    "Id": "{{ModId}}.YumiiWinter",
+                    "Condition": "SEASON Winter",
+                    "Sprite": "Characters/Yumii_winter",
+                    "Portrait": "Portraits/Yumii_PortWinter",
+                    "Precedence": -100
+                },
+				
+                //Festivals
+                "{{ModId}}.YumiiFlower": {
+                    "Id": "{{ModId}}.YumiiFlower",
+                    "Condition": "IS_EVENT festival_spring24",
+                    "Sprite": "Characters/Yumii_flower",
+                    "Portrait": "Portraits/Yumii_PortFlower",
+                    "Precedence": -1000
+                },
+
+            }
+        }
+    ]
+}

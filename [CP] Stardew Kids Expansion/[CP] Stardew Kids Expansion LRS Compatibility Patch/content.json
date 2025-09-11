@@ -1,0 +1,98 @@
+{
+    "Format": "2.0.0",
+    "DynamicTokens": [
+        {
+			"Name": "XiddavLRS",
+			"Value": "null"
+		},
+		{
+			"Name": "XiddavLRS",
+			"Value": "Xiddav.LittleRedSchoolHouseLazy",
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouseLazy"
+			}
+		},
+		{
+			"Name": "XiddavLRS",
+			"Value": "Xiddav.LittleRedSchoolHouse",
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse"
+			}
+		},
+		{
+			"Name": "LRSfiveDays",
+			"Value": "false"
+		},
+		{
+			"Name": "LRSfiveDays",
+			"Value": "{{Spiderbuttons.CMCT/Config: Xiddav.LRSHStudentsandTeachers, Five days}}",
+			"When": {
+				"HasMod": "{{XiddavLRS}}"
+			}
+		},
+		{
+			"Name": "LRSeventBool",
+			"Value": "false"
+		},
+		{
+			"Name": "LRSeventBool",
+			"Value": "true",
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouseLazy"
+			}
+		},
+		{
+			"Name": "LRSeventBool",
+			"Value": "true",
+			"When": {
+				"HasSeenEvent": "9695001",
+				"HasMod": "Xiddav.LittleRedSchoolHouse"
+			}
+		},
+		{
+			"Name": "LRSschoolDays",
+			"Value": "Tuesday, Wednesday, Friday"
+		},
+		{
+			"Name": "LRSschoolDays",
+			"Value": "Monday, Tuesday, Wednesday, Thursday, Friday",
+			"When": {
+				"HasMod": "{{XiddavLRS}}",
+				"LRSfiveDays": "true"
+			}
+		},
+		{
+			"Name": "LRSnoSchool",
+			"Value": "false"
+		},
+		{
+			"Name": "LRSnoSchool",
+			"Value": "{{Spiderbuttons.CMCT/Dynamic: [Xiddav.LRSHStudentsandTeachers, noschoolday]}}",
+			"When": {
+				"HasMod": "{{XiddavLRS}}"
+			}
+		}
+    ],
+    "Changes": [
+    {
+        "LogName": "James Schedule Includes",
+        "Action": "Include",
+        "FromFile": "Schedules/James_Schedule.json"
+    },
+    {
+        "LogName": "Adrian Schedule Includes",
+        "Action": "Include",
+        "FromFile": "Schedules/Adrian_Schedule.json"
+    },
+    {
+        "LogName": "Tina Schedule Includes",
+        "Action": "Include",
+        "FromFile": "Schedules/Tina_Schedule.json"
+    },
+    {
+        "LogName": "Vanessa Schedule Includes",
+        "Action": "Include",
+        "FromFile": "Schedules/Vanessa_Schedule.json"
+    }
+    ]
+}

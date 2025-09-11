@@ -1,0 +1,116 @@
+{
+    "Format": "2.0.0",
+
+    "ConfigSchema": {
+        "ClintIdentity": {
+            "AllowValues": "Asexual, Homosexual",
+            "Default": "Asexual",
+            "Section": "Headcanons"
+        },
+        "ElliottPronouns": {
+            "AllowValues": "HeAndSheAndThey, HeAndThey",
+            "Default": "HeAndSheAndThey",
+            "Section": "Headcanons"
+        },
+        "LinusIdentity": {
+            "AllowValues": "GayAndAce, AceOnly",
+            "Default": "GayAndAce",
+            "Section": "Headcanons"
+        },
+        "MarnieIdentity": {
+            "AllowValues": "Bisexual, Lesbian",
+            "Default": "Bisexual",
+            "Section": "Headcanons"
+        },
+        "SamIdentity": {
+            "AllowValues": "TransBi, CisBi",
+            "Default": "TransBi",
+            "Section": "Headcanons"
+        },
+        "SandyIdentity": {
+            "AllowValues": "Lesbian, Bisexual",
+            "Default": "Lesbian",
+            "Section": "Headcanons"
+        },
+        "AlexAndElliott": {
+            "AllowValues": "true, false",
+            "Default": true,
+            "Section": "Ships"
+        },
+        "CarolineAndJodi": {
+            "AllowValues": "true, false",
+            "Default": true,
+            "Section": "Ships"
+        },
+        "MarlonAndGil": {
+            "AllowValues": "true, false",
+            "Default": true,
+            "Section": "Ships"
+        },
+        "MarnieAndPam": {
+            "AllowValues": "true, false",
+            "Default": true,
+            "Section": "Ships"
+        },
+        "SamAndSebastian": {
+            "AllowValues": "true, false",
+            "Default": true,
+            "Section": "Ships"
+        }
+    },
+
+	"DynamicTokens": [
+        {
+            "Name": "PITVRandom",
+            "Value": "{{Random: 1, 2}}"
+        }
+    ],
+
+    "Changes": [
+
+        {
+            "LogName": "PITV Texture Loads",
+            "Action": "Load",
+            "Target": "Mods/sapphicsaph_pitv/ObjectsPITV",
+            "FromFile": "Assets/Textures/{{TargetWithoutPath}}.png"
+        },
+
+        {
+            "LogName": "PITV Map Loads",
+            "Action": "Load",
+            "Target": "Maps/CommunityCenterPride",
+            "FromFile": "Assets/Maps/CommunityCenter_Pride.tmx"
+        },
+
+        {
+            "LogName": "Loads From Blanks",
+            "Action": "Load",
+            "Target": "Strings/schedules/Kent",
+            "FromFile": "Data/blank.json"
+        },
+
+		{
+			"LogName": "PITV Data Includes",
+			"Action": "Include",
+			"FromFile": "Data/Items/GiftTasteData.json, Data/Items/ObjectData.json, Data/Items/RecipesData.json, Data/NPCs/QuestData.json, Data/NPCs/MailData.json, Data/NPCs/EventData.json, Data/NPCs/NPCDialogue.json, Data/Festival/FestivalData.json, Data/Festival/FestivalSchedules.json, Data/Festival/ScheduleStrings.json, Data/Festival/ShopData.json, Data/NPCs/TriggerActions.json"
+		},
+
+        {
+            "LogName": "Include DSV Compatibility",
+            "Action": "Include",
+            "FromFile": "Data/Compat/DSVCompat.json",
+            "When": {
+                "HasMod |contains= DSVTeam.DiverseStardewValley": true
+            }
+        },
+
+        {
+            "LogName": "Include RSV Compatibility",
+            "Action": "Include",
+            "FromFile": "Data/Compat/RSVSchedules.json, Data/Compat/RSVStrings.json",
+            "When": {
+                "HasMod |contains= Rafseazz.RSVCP": true
+            }
+        }
+    ]
+}

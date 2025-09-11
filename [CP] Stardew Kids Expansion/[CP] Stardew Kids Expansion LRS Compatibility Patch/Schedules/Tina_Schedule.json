@@ -1,0 +1,86 @@
+{
+    "Changes": [
+        // SCHEDULE
+        {
+            "LogName": "Tina Daily Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/Tina",
+            "Entries": {
+                //spends all day at home
+                "rain": "600 ScienceHouse 28 19 0 Tina_Sleep/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 ScienceHouse 22 21 1/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+                //Spends the whole day at the Science house and on the mountain
+                "spring": "600 ScienceHouse 28 9 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+                "summer": "600 ScienceHouse 28 9 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+                "fall": "600 ScienceHouse 28 9 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+                "winter": "600 ScienceHouse 28 9 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+                "Mon": "600 ScienceHouse 28 19 0 Tina_Sleep/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+                //Goes to school, spends time in town, and returns home in the evening
+                "Tue": "600 ScienceHouse 28 9 0/800 ScienceHouse 27 11 2/900 ArchaeologyHouse 15 15 0/1400 Town 91 99 2/1620 Town 15 13 2/1740 ScienceHouse 22 18 1/2000 ScienceHouse 27 22 3/2100 ScienceHouse 28 19 0 Tina_Sleep",
+                //Goes to school, spends time in town, and returns home in the evening
+                "Wed": "GOTO Tue",
+                //Repeat Mon
+                "Thu": "GOTO Mon",
+                //Repeat Tueasday
+                "Fri": "GOTO Tue",
+                //She spends all day on the mountain
+                "Sat": "600 ScienceHouse 28 19 0 Tina_Sleep/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+                //She's visiting Jas
+                "Sun": "600 ScienceHouse 28 19 0 Tina_Sleep/630 ScienceHouse 27 11 2/720 Mountain 26 35 2/910 Town 15 13 2/1000 AnimalShop 4 4 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+                "DesertFestival_3": "a1000 BusStop 16 15 1/1030 Desert 45 36 3/1700 ScienceHouse 22 18 1/2000 ScienceHouse 8 6 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+                "9":"GOTO season",
+                "23":"GOTO season"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Characters/schedules/Tina",
+            "Entries": {
+            "DesertFestival_3": "a1000 BusStop 16 15 1/1030 Desert 45 36 3/1700 ScienceHouse 22 18 1/2000 ScienceHouse 8 6 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+            "Tue": "750 Custom_SchoolHouse 23 8 3/1000 Custom_SchoolHouse 22 8 Tina_Sit/1120 Town 17 13 2/a1250 Custom_SchoolHouse 23 8 3/1300 Custom_SchoolHouse 22 8 Tina_Sit/1540 Town 17 16 square_3_3/1740 ScienceHouse 22 18 1/2000 ScienceHouse 8 6 2/2100 ScienceHouse 28 19 0 Tina_Sleep",
+            "Wed": "GOTO Tue",
+            "Fri": "GOTO Tue",
+            "9":"GOTO season",
+            "23":"GOTO season"
+            },
+            "When": {
+                "LRSeventBool": "true",
+                "Weather |contains=Rain,Storm,GreenRain": "false",
+                "LRSschoolDays |contains={{DayofWeek}}": "true"
+            }
+        },
+        { 
+        "Action": "EditData",
+            "Target": "characters/schedules/Tina",
+            "Entries": {
+                "rain": "750 Custom_SchoolHouse 23 8 3/1000 Custom_SchoolHouse 22 8 Tina_Sit/1540 Town 17 16 square_3_3/1740 ScienceHouse 22 18 1/2000 ScienceHouse 8 6 2/2100 ScienceHouse 28 19 0 Tina_Sleep"
+            },
+            "When": {
+                "Weather": "Rain,Storm,GreenRain",
+                "LRSschoolDays |contains={{DayofWeek}}": "true",
+                "LRSeventBool": "true",
+                "LRSnoschool": "false"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Characters/schedules/Tina",
+            "Entries": {
+                "Mon": "GOTO Tue",
+                "Thu": "GOTO Tue"
+            },
+            "When": {
+                "LRSeventBool": "true",
+                "LRSfiveDays": "true",
+                "LRSnoSchool": "false",
+                "LRSschoolDays |contains={{DayofWeek}}": "true"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Strings/StringsFromMaps",
+            "Entries": {
+                "Desk.1": "{{i18n:Desk.Tina}}"
+            }
+        }
+    ]
+}

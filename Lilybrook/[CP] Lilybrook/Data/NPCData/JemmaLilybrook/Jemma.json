@@ -1,0 +1,309 @@
+{
+  "Changes": [
+    {
+      "LogName": "Jemma",
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        "JemmaLilybrook": {
+          "DisplayName": "{{i18n:Name.LilybrookJemma}}",
+          "BirthSeason": "summer",
+          "BirthDay": 27,
+          "HomeRegion": "Other",
+          "Gender": "Female",
+          "Age": "Adult",
+          "Manner": "Polite",
+          "SocialAnxiety": "Shy",
+          "Optimism": "Neutral",
+          "CanBeRomanced": true,
+		  "CanVisitIsland": false,
+		  "SpouseRoom": {
+            "MapAsset": "LilybrookSpouseRooms",
+            "MapSourceRect": {
+              "X": 18,
+              "Y": 0,
+              "Width": 6,
+              "Height": 9
+            }
+          },
+          "SpousePatio": {
+            "MapAsset": "LilybrookSpousePatios",
+            "MapSourceRect": {
+              "X": 12,
+              "Y": 0,
+              "Width": 4,
+              "Height": 4
+            }
+          },
+          "CanReceiveGifts": true,
+          "Calendar": "AlwaysShown",
+          "SocialTab": "UnknownUntilMet",
+          "IntroductionsQuest": true,
+          "ItemDeliveryQuests": true,
+          "EndSlideShow": "MainGroup",
+          "SpawnIfMissing": true,
+          "Home": [
+            {
+              "Id": "Default",
+              "Location": "8BitAlien.Lilybrook_JemmaHouse",
+              "Tile": {
+                "X": 14,
+                "Y": 5
+              },
+              "Direction": "down"
+            }
+          ],
+          "Size": {
+            "X": 16,
+            "Y": 32
+          },
+          "Breather": true
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/ConcessionTastes",
+      "Entries": {
+        "JemmaLilybrook": { 
+          "Name": "JemmaLilybrook", 
+          "LovedTags": [
+            "Personal Pizza",
+            "Star Cookie"
+          ],
+          "LikedTags": [
+            "Sour Slimes"
+          ],
+          "DislikedTags": [
+            "Nachos",
+			"Truffle Popcorn"
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/MoviesReactions",
+      "Entries": {
+        "JemmaLilybrook": {
+          "NPCName": "JemmaLilybrook",
+          "Reactions": [
+		    // Brave Little Sapling
+            {
+              "Tag": "spring_movie_0",
+              "Response": "love",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie":  {
+				  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaDuringBLSMovie}}"
+				 },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaDuringBLSMovie}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaAfterBLSMovie}}"
+                }
+              },
+              "ID": "reaction_0"
+            },
+			//Journey of the Prairie King
+            {
+              "Tag": "summer_movie_0",
+              "Response": "dislike",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": null,
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaDuringJPRMovie}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaAfterJPRMovie}}"
+                }
+              },
+              "ID": "reaction_1"
+            },
+			// Mysterium
+            {
+              "Tag": "fall_movie_0",
+              "Response": "dislike",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": null,
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "{{i18n:JemmaDuringMysteriumMovie}}",
+                  "Text": ""
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaAfterMysteriumMovie}}"
+                }
+              },
+              "ID": "reaction_2"
+            },
+			//The Miracle at Coldstar Ranch
+            {
+              "Tag": "winter_movie_0",
+              "Response": "love",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaBeforeColdstarMovie}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaDuringColdstarMovie}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaAfterColdstarMovie}}"
+                }
+              },
+              "ID": "reaction_3"
+            },
+			//Natural Wonders: Exploring Our Vibrant World
+            {
+              "Tag": "spring_movie_1",
+              "Response": "like",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaBeforeNWMovie}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaDuringNWMovie}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaAfterNWMovie}}"
+                }
+              },
+              "ID": "reaction_4"
+            },
+			//Wumbus
+            {
+              "Tag": "summer_movie_1",
+              "Response": "love",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaBeforeWumbusMovie}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaDuringWumbusMovie}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaAfterWumbusMovie}}"
+                }
+              },
+              "ID": "reaction_5"
+            },
+			//It Howls In The Rain
+            {
+              "Tag": "fall_movie_1",
+              "Response": "like",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaBeforeRainMovie}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaDuringRainMovie}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaAfterRainMovie}}"
+                }
+              },
+              "ID": "reaction_6"
+            },
+			// The Zuzu City Express
+            {
+              "Tag": "winter_movie_1",
+              "Response": "dislike",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaBeforeZuzuMovie}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaDuringZuzuMovie}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:JemmaAfterZuzuMovie}}"
+                }
+              },
+              "ID": "reaction_7"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "LogName": "Blanks",
+      "Action": "Load",
+      "Target": "Characters/Schedules/JemmaLilybrook, Characters/Dialogue/MarriageDialogueJemmaLilybrook, Characters/Dialogue/JemmaLilybrook",
+      "FromFile": "Data/blank.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "Data/NPCData/JemmaLilybrook/Dialogue.json"
+    },
+	{
+      "Action": "Include",
+      "FromFile": "Data/NPCData/MarriageDialogue/MarriageDialogueJemmaLilybrook.json"
+    },
+	{
+      "Action": "Include",
+      "FromFile": "Data/NPCData/JemmaLilybrook/Schedule.json"
+    },
+    {
+      "LogName": "Gift Taste",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "JemmaLilybrook": "{{i18n:JemmaLovedGift}}/221 Lilybrook.Jubilite 226 638 60/{{i18n:JemmaLikedGift}}/-80 634 651 424/{{i18n:JemmaDislikedGift}}/346 348 242 202/{{i18n:JemmaHatedGift}}/198 16 90 213/{{i18n:JemmaNeutralGift}}/-26/"
+      }
+    }
+  ]
+}
+
+
+

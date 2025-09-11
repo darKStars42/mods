@@ -1,0 +1,142 @@
+{
+  "Changes": [
+
+
+/*----------------------------------------------------
+Mail Data
+----------------------------------------------------*/
+
+      { 
+          "LogName":"Add Alchemistry Mail Data (Rasmodia)",
+              "Action": "EditData",
+              "Target": "Data/Mail",
+              "Entries": {
+                  "{{ModId}}_WizardIntroMail": "{{i18n:Alchemistry_Rasmodia_WizardIntroMail.Content}}",
+                  "{{ModId}}_SevinaeIntroMail": "{{i18n:Alchemistry_Rasmodia_SevinaeIntroMail.Content}}",
+                  "{{ModId}}_WizardManaExtractorMail": "{{i18n:Alchemistry_Rasmodia_WizardManaExtractorMail.Content}}",
+                  "{{ModId}}_WizardCauldronMail": "{{i18n:Alchemistry_Rasmodia_WizardCauldronMail.Content}}",
+                  "{{ModId}}_WizardRestabilizerMail": "{{i18n:Alchemistry_Rasmodia_WizardRestabilizerMail.Content}}",
+                  "{{ModId}}_WizardTransmuterMail": "{{i18n:Alchemistry_Rasmodia_WizardTransmuterMail.Content}}",
+                  "{{ModId}}_WizardRuneCarverMail": "{{i18n:Alchemistry_Rasmodia_WizardRuneCarverMail.Content}}",
+                  "{{ModId}}_GuildPotionMail": "{{i18n:Alchemistry_Rasmodia_GuildPotionMail.Content}}",
+                  //Potions
+                  "{{ModId}}_BlessingFromBeyondRecipe": "{{i18n:Alchemistry_Rasmodia_BlessingFromBeyondRecipe.Content}}"
+              }
+      },
+      
+
+/*----------------------------------------------------
+Trigger Mail
+----------------------------------------------------*/
+      {
+          "Action": "EditData",
+          "Target": "Data/TriggerActions",
+          "Entries": {
+              "{{ModId}}_WizardIntroMail": {
+                  "Id": "{{ModId}}_WizardIntroMail",
+                  "Trigger": "DayStarted",
+                  "Condition": "PLAYER_HAS_SEEN_EVENT Current 112, !PLAYER_HAS_SEEN_EVENT Current 22743101",
+                  "Action": "AddMail Current {{ModId}}_WizardIntroMail now"                    
+              },
+              "{{ModId}}_SevinaeIntroMail": {
+                  "Id": "{{ModId}}_SevinaeIntroMail",
+                  "Trigger": "DayStarted",
+                  "Condition": "PLAYER_HAS_SEEN_EVENT Current 22743101, !PLAYER_HAS_SEEN_EVENT Current 22743102",
+                  "Action": "AddMail Current {{ModId}}_SevinaeIntroMail now"                    
+              },
+              "{{ModId}}_WizardManaExtractorMail": {
+                  "Id": "{{ModId}}_WizardManaExtractorMail",
+                  "Trigger": "DayStarted",
+                  "Condition": "PLAYER_HAS_SEEN_EVENT Current 22743101, DAYS_PLAYED 10, PLAYER_FISHING_LEVEL Current 3, !PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_ManaExtractor_Recipe",
+                  "Action": "AddMail Current {{ModId}}_WizardManaExtractorMail now"                    
+              },
+              "{{ModId}}_WizardCauldronMail": {
+                  "Id": "{{ModId}}_WizardCauldronMail",
+                  "Trigger": "DayStarted",
+                  "Condition": "PLAYER_HAS_SEEN_EVENT Current 22743102, PLAYER_HEARTS Current Wizard 2, !PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_ApothecaryCauldron_Recipe",
+                  "Action": "AddMail Current {{ModId}}_WizardCauldronMail now"                    
+              },
+              "{{ModId}}_WizardRestabilizerMail": {
+                  "Id": "{{ModId}}_WizardRestabilizerMail",
+                  "Trigger": "DayStarted",
+                  "Condition": "PLAYER_HAS_SEEN_EVENT Current 100162, PLAYER_HAS_SEEN_EVENT Current 22743104, PLAYER_HEARTS Current Wizard 4, !PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_EssenceRestabilizer_Recipe",
+                  "Action": "AddMail Current {{ModId}}_WizardRestabilizerMail now"                    
+              },
+              "{{ModId}}_WizardTransmuterMail": {
+                  "Id": "{{ModId}}_WizardTransmuterMail",
+                  "Trigger": "DayStarted",
+                  "Condition": "PLAYER_HAS_SEEN_EVENT Current 22743109, PLAYER_HEARTS Current Wizard 6, PLAYER_MINING_LEVEL Current 8, !PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_TransmuterCoil_Recipe",
+                  "Action": "AddMail Current {{ModId}}_WizardTransmuterMail now"                    
+              },
+
+              //Potion Recipes
+              "{{ModId}}_BlessingFromBeyondRecipe": {
+                  "Id": "{{ModId}}_BlessingFromBeyondRecipe",
+                  "Trigger": "DayStarted",
+                  "Condition": "PLAYER_HAS_SEEN_EVENT Current 22743106, PLAYER_HEARTS Current Wizard 7, !PLAYER_HAS_COOKING_RECIPE Current {{ModId}}_BlessingFromBeyond",
+                  "Action": "AddMail Current {{ModId}}_BlessingFromBeyondRecipe now"                    
+              }
+          }
+      },
+      {
+        "Action": "EditData",
+        "Target": "Data/TriggerActions",
+        "When": { "Trinkets": "Runes" },
+        "Entries": {
+            "{{ModId}}_WizardRuneCarverMail": {
+                "Id": "{{ModId}}_WizardRuneCarverMail",
+                "Trigger": "DayStarted",
+                "Condition": "PLAYER_HAS_SEEN_EVENT Current 22743111, PLAYER_HEARTS Current Wizard 6, PLAYER_COMBAT_LEVEL Current 10, !PLAYER_HAS_CRAFTING_RECIPE Current {{ModId}}_RuneCarver_Recipe",
+                "Action": "AddMail Current {{ModId}}_WizardRuneCarverMail now"                    
+            }
+        }
+    },
+      {
+          "Action": "EditData",
+          "Target": "Data/TriggerActions",
+          "When": { "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false },
+          "Entries": {
+              "{{ModId}}_GuildPotionMail": {
+                  "Id": "{{ModId}}_GuildPotionMail",
+                  "Trigger": "DayStarted",
+                  "Condition": "PLAYER_HAS_SEEN_EVENT Current 100162, PLAYER_HAS_SEEN_EVENT Current 22743106, DAYS_PLAYED 29", //figure out how to NOT send this letter if player has already received it //!PLAYER_HAS_MAIL Current Morghoula.AlchemistryMFM_GuildPotionMail Received
+                  "Action": "AddMail Current {{ModId}}_GuildPotionMail now"                    
+              }
+          }
+      },
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+/*----------------------------------------------------
+SVE Compat - Mail
+----------------------------------------------------*/
+
+      { 
+          "LogName":"Add Alchemistry Mail Data (Rasmodia / SVE)",
+              "Action": "EditData",
+              "Target": "Data/Mail",
+              "When": { "HasMod": "FlashShifter.StardewValleyExpandedCP" },
+              "Priority": "Late",
+              "Entries": {
+                  "{{ModId}}_Rasmodia_SVE_GuildPotionMail": "{{i18n:Alchemistry_SVE_GuildPotionMail.Content}}"
+              }
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/TriggerActions",
+          "When": { "HasMod": "FlashShifter.StardewValleyExpandedCP" },
+          "Entries": {
+              "{{ModId}}_SVE_GuildPotionMail": {
+                  "Id": "{{ModId}}_SVE_GuildPotionMail",
+                  "Trigger": "DayStarted",
+                  "Condition": "PLAYER_HAS_SEEN_EVENT Current 100162, PLAYER_HAS_SEEN_EVENT Current 22743106, DAYS_PLAYED 29", //figure out how to NOT send this letter if player has already received it //!PLAYER_HAS_MAIL Current Morghoula.AlchemistryMFM_GuildPotionMail Received
+                  "Action": "AddMail Current {{ModId}}_Rasmodia_SVE_GuildPotionMail now"                    
+              }
+          }
+      }
+  ]
+}

@@ -1,0 +1,1055 @@
+// MACHINES FILE
+{
+	"Changes": [
+	// ADD MACHINES
+		{
+			"Action": "EditData",
+			"Target": "Data/BigCraftables",
+			"Entries": {
+				// PROCESSOR
+				"DomTSVG.PlentifulHarvestCP_Processor": {
+					"Name": "Processor",
+					"Displayname": "{{i18n:processor.name}}",
+					"Description": "{{i18n:processor.desc}}",
+					"Texture": "Mods/DomTSVG.PlentifulHarvestCP/BigCraftables",
+					"SpriteIndex": 0
+				},
+				// BLENDER
+				"DomTSVG.PlentifulHarvestCP_Blender": {
+					"Name": "Blender",
+					"Displayname": "{{i18n:blender.name}}",
+					"Description": "{{i18n:blender.desc}}",
+					"Texture": "Mods/DomTSVG.PlentifulHarvestCP/BigCraftables",
+					"SpriteIndex": 2
+				},
+				// ANTIQUE CHEESE PRESS
+				"DomTSVG.PlentifulHarvestCP_AntiqueCheesePress": {
+					"Name": "Antique Cheese Press",
+					"Displayname": "{{i18n:antiquecheesepress.name}}",
+					"Description": "{{i18n:antiquecheesepress.desc}}",
+					"Texture": "Mods/DomTSVG.PlentifulHarvestCP/BigCraftables",
+					"SpriteIndex": 5
+				},
+				// COMPOSTER
+				"DomTSVG.PlentifulHarvestCP_Composter": {
+					"Name": "Composter",
+					"Displayname": "{{i18n:composter.name}}",
+					"Description": "{{i18n:composter.desc}}",
+					"Texture": "Mods/DomTSVG.PlentifulHarvestCP/BigCraftables",
+					"SpriteIndex": 10
+				},
+			}
+		},
+		
+	// MACHINE RULES
+		
+		// CHEESE PRESS
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)16",
+				"OutputRules"
+			],
+			"Entries": {
+				"DomTSVG.PlentifulHarvestCP_MakeNutCheese": {
+					"Id": "DomTSVG.PlentifulHarvestCP_NutCheese",
+					"Triggers": [
+								{
+									"RequiredItemId":
+										"(O)DomTSVG.PlentifulHarvestCP_NutMilk",
+									"RequiredCount": 1
+								},
+					],
+					"OutputItem": [
+								{
+									"ItemId": "424",
+									"ObjectInternalName": "DomTSVG.PlentifulHarvestCP_NutChese",
+									"ObjectDisplayName": "[LocalizedText Strings/Objects:DomTSVG.PlentifulHarvestCP_NutCheese]",
+									"PreserveId": "DROP_IN",
+									"CopyQuality": false,
+									"StackModifiers": null,
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								}
+							],
+							"MinutesUntilReady": 200,
+							"UseFirstValidOutput": true,
+				}
+			
+			},
+			
+		},
+		
+		// MAYONNAISE MACHINE
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)24",
+				"OutputRules"
+			],
+			"Entries": {
+				"DomTSVG.PlentifulHarvestCP_MakeChocoSpread": {
+					"Id": "DomTSVG.PlentifulHarvestCP_MakeChocoSpread",
+					"Triggers": [
+								{
+									"RequiredItemId":
+										"(O)DomTSVG.PlentifulHarvestCP_ChocolateEgg",
+									"RequiredCount": 1
+								},
+					],
+					"OutputItem": [
+								{
+									"ItemId": "DomTSVG.PlentifulHarvestCP_ChocolateSpread",
+									"ObjectInternalName": "DomTSVG.PlentifulHarvestCP_ChocolateSpread",
+									"CopyQuality": false,
+									"StackModifiers": null,
+									"StackModifierMode": "Stack",
+									"QualityModifiers": [
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Multiply",
+											"Amount": 0,
+											"RandomAmount": null
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"Amount": 2,
+											"RandomAmount": null
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"Amount": 0,
+											"RandomAmount": null
+										},
+									],
+									"QualityModifierMode": "Stack",
+								}
+							],
+							"MinutesUntilReady": 200,
+							"UseFirstValidOutput": true,
+				}
+			
+			},
+			
+		},
+		
+		// OIL MAKER
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)19",
+				"OutputRules"
+			],
+			"Entries": {
+				"DomTSVG.PlentifulHarvestCP_MakePHOil": {
+					"Id": "DomTSVG.PlentifulHarvestCP_MakePHOil",
+					"Triggers": [ 
+								{
+								"RequiredTags": [
+										"ph_oilable"
+									],
+								"RequiredCount": 1
+								},
+					],
+					"OutputItem": [
+								{
+									"ItemId": "247",
+									"CopyQuality": false,
+									"StackModifiers": null,
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								}
+							],
+							"MinutesUntilReady": 360,
+							"UseFirstValidOutput": true,
+				}
+			
+			},
+			
+		},
+		
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				
+			//PROCESSOR                                                                                                                                        =
+				"(BC)DomTSVG.PlentifulHarvestCP_Processor": {
+					"OutputRules": [
+					
+						// COCOA POWDER
+						{
+							"Id": "DomTSVG.PlentifulHarvestCP_MakeCocoaPowder",
+							"Triggers": [
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_UseCacao",
+									"RequiredTags": [
+										"ph_cacao"
+									],
+									"RequiredCount": 1
+								},
+							],
+							"OutputItem": [
+								{
+									"ItemId": "DomTSVG.PlentifulHarvestCP_CocoaPowder",
+									"CopyQuality": true,
+									"StackModifiers": [
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"Amount": 1,
+											"RandomAmount": null
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"Amount": 1,
+											"RandomAmount": null
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"Amount": 2,
+											"RandomAmount": null
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": [
+										{
+											"Id": "RemoveQuality",
+											"Modification": "Multiply",
+											"RandomAmount": [ 0 ],
+										},
+									],
+									"QualityModifierMode": "Stack",
+								}
+							],
+							"MinutesUntilReady": 360,
+							
+						},
+					
+				// NUT BUTTER
+						{
+							"Id": "DomTSVG.PlentifulHarvestCP_MakeNutButter",
+							"Triggers": [
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_UseNut",
+									"RequiredTags": [
+										"ph_nut"
+									],
+									"RequiredCount": 1
+								},
+							],
+							"OutputItem": [
+								{
+									"ItemId": "DomTSVG.PlentifulHarvestCP_NutButter",
+									"ObjectInternalName": "{0} DomTSVG.PlentifulHarvestCP_NutButter",
+									"ObjectDisplayName": "[LocalizedText Strings/Objects:DomTSVG.PlentifulHarvestCP_NutButter %PRESERVED_DISPLAY_NAME]",
+									"PreserveId": "DROP_IN",
+									"CopyQuality": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Id": "AddNut",
+											"Modification": "Add",
+											"Amount": 75,
+											"RandomAmount": null
+										},
+										{
+											"Id": "MultiplyNut",
+											"Modification": "Multiply",
+											"Amount": 2,
+											"RandomAmount": null
+										},
+										],
+									"StackModifiers": [
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"Amount": 1,
+											"RandomAmount": null
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"Amount": 1,
+											"RandomAmount": null
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"Amount": 2,
+											"RandomAmount": null
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": [
+										{
+											"Id": "RemoveQuality",
+											"Modification": "Multiply",
+											"RandomAmount": [ 0 ],
+										},
+									],
+									"QualityModifierMode": "Stack",
+								}
+							],
+							"MinutesUntilReady": 360,
+							
+						},
+						
+						// HAZELNUT SPREAD
+						{
+							"Id": "DomTSVG.PlentifulHarvestCP_MakeHazelnutSpread",
+							"Triggers": [
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_UseHazelnut",
+									"RequiredItemId":
+										"408",
+									"RequiredCount": 1
+								},
+							],
+							"OutputItem": [
+								{
+									"ItemId": "DomTSVG.PlentifulHarvestCP_HazelnutSpread",
+									"ObjectInternalName": "DomTSVG.PlentifulHarvestCP_HazelnutSpread",
+									"ObjectDisplayName": "Hazelnut Spread",
+									"PreserveId": "DROP_IN",
+									"CopyQuality": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Id": "AddNut",
+											"Modification": "Add",
+											"Amount": 75,
+											"RandomAmount": null
+										},
+										{
+											"Id": "MultiplyNut",
+											"Modification": "Multiply",
+											"Amount": 2,
+											"RandomAmount": null
+										},
+										],
+									"StackModifiers": [
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"Amount": 1,
+											"RandomAmount": null
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"Amount": 1,
+											"RandomAmount": null
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"Amount": 2,
+											"RandomAmount": null
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": [
+										{
+											"Id": "RemoveQuality",
+											"Modification": "Multiply",
+											"RandomAmount": [ 0 ],
+										},
+									],
+									"QualityModifierMode": "Stack",
+								}
+							],
+							"MinutesUntilReady": 360,
+							
+						}
+					],
+					// Every 7 seconds (7000 milliseconds) 10 in-game minutes pass and the clock checks happen
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "dirtyHit"
+								},
+								{
+									"Id": "clank",
+									"Delay": 2500,
+								},
+								{
+									"Id": "dirtyHit",
+									"Delay": 3000,
+								},
+							],
+							"Frames": [
+								1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0
+							],
+							"Interval": 500,
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "dirtyHit",
+									"Delay": 2500,
+								},
+								{
+									"Id": "clank",
+									"Delay": 3000,
+								},
+							],
+							"Frames": [
+								1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0
+							],
+							"Interval": 500,
+						}
+					],
+					"WorkingEffectChance": 1,
+					"WobbleWhileWorking": true,
+					"InvalidItemMessage": "{{i18n:processorinvalid.string}}"
+				
+				},
+			
+			//BLENDER                                                                                                                                        =
+				"(BC)DomTSVG.PlentifulHarvestCP_Blender": {
+					"OutputRules": [
+					
+						// NUT MILK
+						{
+							"Id": "DomTSVG.PlentifulHarvestCP_MakeNutMilk",
+							"Triggers": [
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_UsePeanut4Milk",
+									"RequiredItemId": "(O)DomTSVG.PlentifulHarvestCP_Peanut",
+									"RequiredCount": 3
+								},
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_UseNut4Milk",
+									"RequiredTags": [
+										"ph_nut",
+										"!ph_peanut"
+									],
+									"RequiredCount": 1,
+								},
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_UseSoy4Milk",
+									"RequiredItemId": "(O)DomTSVG.PlentifulHarvestCP_Soy",
+									"RequiredCount": 3
+								},
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_UseCoconut4Milk",
+									"RequiredItemId": "88",
+									"RequiredCount": 1
+								},
+							],
+							"OutputItem": [
+								{
+									"ItemId": "DomTSVG.PlentifulHarvestCP_NutMilk",
+									"ObjectInternalName": "{0} DomTSVG.PlentifulHarvestCP_NutMilk",
+									"ObjectDisplayName": "[LocalizedText Strings/Objects:DomTSVG.PlentifulHarvestCP_DFMilk %PRESERVED_DISPLAY_NAME]",
+									"PreserveId": "DROP_IN",
+									"CopyQuality": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Id": "MultiplyNut",
+											"Modification": "Multiply",
+											"Amount": 2.1,
+											"RandomAmount": null
+										},
+										],
+									"StackModifiers": null,
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								}
+							],
+							"MinutesUntilReady": 60, 
+							"InvalidCountMessage": "{{i18n:blendercount.string}}"
+							
+						},
+						
+						// FRUIT SMOOTHIE
+						{
+							"Id": "DomTSVG.PlentifulHarvestCP_MakeFruitSmoothie",
+							"Triggers": [
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_UseFroot",
+									"RequiredTags": [
+										"category_fruits"
+									],
+									"RequiredCount": 1,
+									"Condition": "ITEM_EDIBILITY Input"
+								},
+							],
+							"OutputItem": [
+								{
+									"ItemId": "DomTSVG.PlentifulHarvestCP_FruitSmoothie",
+									"ObjectInternalName": "{0} DomTSVG.PlentifulHarvestCP_FruitSmoothie",
+									"ObjectDisplayName": "[LocalizedText Strings/Objects:DomTSVG.PlentifulHarvestCP_FruitSmoothie %PRESERVED_DISPLAY_NAME]",
+									"PreserveId": "DROP_IN",
+									"CopyColor": true,
+									"CopyQuality": true,
+									"CopyPrice": true,
+									"PriceModifiers": null,
+									"StackModifiers": null,
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								}
+							],
+							"MinutesUntilReady": 60, 
+							
+							
+						},
+						
+						// VEGETABLE SMOOTHIE
+						{
+							"Id": "DomTSVG.PlentifulHarvestCP_MakeVegetableSmoothie",
+							"Triggers": [
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_UseVeg",
+									"RequiredTags": [
+										"category_vegetable",
+										"!ph_soy"
+									],
+									"RequiredCount": 1,
+								},
+							],
+							"OutputItem": [
+								{
+									"ItemId": "DomTSVG.PlentifulHarvestCP_VegetableSmoothie",
+									"ObjectInternalName": "{0} DomTSVG.PlentifulHarvestCP_VegetableSmoothie",
+									"ObjectDisplayName": "[LocalizedText Strings/Objects:DomTSVG.PlentifulHarvestCP_VegetableSmoothie %PRESERVED_DISPLAY_NAME]",
+									"PreserveId": "DROP_IN",
+									"CopyColor": true,
+									"CopyQuality": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Id": "MultiplyVeg",
+											"Modification": "Multiply",
+											"Amount": 1.10,
+											"RandomAmount": null
+										},
+										],
+									"StackModifiers": null,
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								}
+							],
+							"MinutesUntilReady": 60, 
+							
+						},
+						
+					],
+
+					// Every 7 seconds (7000 milliseconds) 10 in-game minutes pass and the clock checks happen
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "moneyDial"
+								},
+							],
+							"Frames": [
+								1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1,
+							],
+							"Interval": 250,
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "moneyDial",
+								},
+							],
+							"Frames": [
+								1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1,
+							],
+							"Interval": 250,
+						}
+					],
+					"WorkingEffectChance": 1,
+					"WobbleWhileWorking": false,
+					"InvalidItemMessage": "{{i18n:blenderinvalid.string}}",
+				},
+				
+				// ANTIQUE CHEESE PRESS                                                                                                                                      =
+				"(BC)DomTSVG.PlentifulHarvestCP_AntiqueCheesePress": {
+					"OutputRules": [
+					
+						// FAUX GOAT CHEESE
+						{
+							"Id": "DomTSVG.PlentifulHarvestCP_MakeFauxGoatCheese",
+							"Triggers": [
+								{
+									"RequiredItemId":
+										"(O)DomTSVG.PlentifulHarvestCP_NutMilk",
+									"RequiredCount": 2
+								},
+							],
+							"OutputItem": [
+								{
+									"ItemId": "426",
+									"ObjectInternalName": "DomTSVG.PlentifulHarvestCP_NutChese",
+									"ObjectDisplayName": "[LocalizedText Strings/Objects:DomTSVG.PlentifulHarvestCP_DFGoatCheese]",
+									"PreserveId": "DROP_IN",
+									"CopyQuality": false,
+									"StackModifiers": null,
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								}
+							],
+							"MinutesUntilReady": 200,
+							"UseFirstValidOutput": true,
+							
+						},
+						
+					],
+
+					// Every 7 seconds (7000 milliseconds) 10 in-game minutes pass and the clock checks happen
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "axe"
+								},
+							],
+							"Frames": [
+								0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1
+							],
+							"Interval": 250,
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "slimeHit",
+								},
+							],
+							"Frames": [
+								0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1
+							],
+							"Interval": 200,
+						}
+					],
+					"WorkingEffectChance": 1,
+					"WobbleWhileWorking": true,
+					"InvalidItemMessage": "{{i18n:antiquecheesepressinvalid.string}}",
+					"InvalidCountMessage": "{{i18n:antiquecheesepresscount.string}}"
+				},
+				
+				//COMPOSTER                                                                                                                                        =
+				"(BC)DomTSVG.PlentifulHarvestCP_Composter": {
+					"OutputRules": [
+					
+						// FERTILIZER
+						{
+							"Id": "DomTSVG.PlentifulHarvestCP_MakeFertilizer",
+							"Triggers": [
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_Fruits",
+									"RequiredTags": [
+										"category_fruits",
+									],
+									"RequiredCount": 1
+								},
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_Veggies",
+									"RequiredTags": [
+										"category_vegetable",
+									],
+									"RequiredCount": 1
+								},
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_Forage",
+									"RequiredTags": [
+										"category_greens",
+									],
+									"RequiredCount": 1
+								},
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_Flower",
+									"RequiredTags": [
+										"category_flowers",
+									],
+									"RequiredCount": 1
+								},
+								{
+									"Id": "DomTSVG.PlentifulHarvestCP_Nuts",
+									"RequiredTags": [
+										"ph_nut",
+									],
+									"RequiredCount": 1
+								},
+							],
+							"OutputItem": [
+								// BASIC FERT
+								{
+									"ItemId": "368",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"StackModifiers": [
+										{
+											"Id": "BasicFertAddition",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 1, 1, 1, 2, 3 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"RandomAmount": [ 1, 2 ],
+											"RandomAmount": null
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								},
+								{
+									"ItemId": "368",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"StackModifiers": [
+										{
+											"Id": "BasicFertAddition",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 1, 1, 1, 2, 3 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"RandomAmount": [ 1, 2 ],
+											"RandomAmount": null
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								},
+								{
+									"ItemId": "368",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"StackModifiers": [
+										{
+											"Id": "BasicFertAddition",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 1, 1, 1, 2, 3 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 2 ],
+											"RandomAmount": null
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								},
+								// RETAIN FERT
+								{
+									"ItemId": "370",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"StackModifiers": [
+										{
+											"Id": "BasicFertAddition",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 1, 1, 1, 2, 3 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 2 ],
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								},
+								{
+									"ItemId": "370",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"StackModifiers": [
+										{
+											"Id": "BasicFertAddition",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 1, 1, 1, 2, 3 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"RandomAmount": [ 1, 2 ],
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								},
+								{
+									"ItemId": "370",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"StackModifiers": [
+										{
+											"Id": "BasicFertAddition",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 1, 1, 1, 2, 3 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 1, 1, 2 ],
+											"RandomAmount": null
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"RandomAmount": [ 1, 2 ],
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								},
+								// QUALITY FERT
+								{
+									"ItemId": "369",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"StackModifiers": [
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 0, 1, 1 ],
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 0, 1, 1, 1, 1, 1, 1, 2 ],
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"RandomAmount": [ 1, 1, 1, 2, 2 ],
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								},
+								// QUALITY RET
+								{
+									"ItemId": "371",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"StackModifiers": [
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 1, 1, 1 ],
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 1, 1, 1, 1, 1, 1, 2, 2 ],
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"RandomAmount": [ 1, 1, 2, 2, 2 ],
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								},
+								// SPEED GRO
+								{
+									"ItemId": "465",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"StackModifiers": [
+										{
+											"Id": "SilverQualityAddition",
+											"Condition": "ITEM_QUALITY input 1",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 0, 1, 1 ],
+										},
+										{
+											"Id": "GoldQualityAddition",
+											"Condition": "ITEM_QUALITY input 2",
+											"Modification": "Add",
+											"RandomAmount": [ 0, 0, 0, 1, 1, 1, 1, 1, 1, 2 ],
+										},
+										{
+											"Id": "IridiumQualityAddition",
+											"Condition": "ITEM_QUALITY input 4",
+											"Modification": "Add",
+											"RandomAmount": [ 1, 1, 1, 2, 2 ],
+										},
+									],
+									"StackModifierMode": "Stack",
+									"QualityModifiers": null,
+									"QualityModifierMode": "Stack",
+								},
+							],
+							"MinutesUntilReady": 600,
+						},
+							
+					
+					],
+					// Every 7 seconds (7000 milliseconds) 10 in-game minutes pass and the clock checks happen
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "dirtyHit"
+								},
+							],
+							"Frames": [ 2 ],
+							"Interval": 7000,
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Frames": [ 2 ],
+							"Interval": 7000,
+						}
+					],
+					"WorkingEffectChance": 1,
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": false,
+					"ShowNextIndexWhenReady": true,
+					"InvalidItemMessage": "{{i18n:composterinvalid.string}}"
+				
+				},
+			}
+		}
+	]
+	
+}

@@ -1,0 +1,74 @@
+{
+  "Changes": [
+    { 	// Isis Parametros
+      "LogName": "Parametros",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Posicionamento/Isis_Ps.json, Ativos/Personagens/Agenda/Is_Agenda.json"
+	},
+    { 	//Branco e Incluir
+      "LogName": "Arquivo Branco",
+      "Action": "Load",
+      "Target": "Characters/Schedules/Isis, Characters/Dialogue/Isis, Characters/Dialogue/MarriageDialogueIsis",
+      "FromFile": "Ativos/Personagens/Vazio.json"
+    },
+	{
+	  "LogName": "Textos, Animados, Eventos",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Textos/Is_Dialogos.json, Ativos/Personagens/Textos/Is_Casada.json, Ativos/Personagens/Animados/Animados.json, Ativos/Personagens/Eventos/Is_Eventos.json"
+    },
+	{	//Festivais
+      "LogName": "Festivais Não Casavel",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Festivais/Is_Festival.01.json",
+	  "When": {	"HasSeenEvent: anyPlayer|contains=90305264": true,	"HasSeenEvent: anyPlayer|contains=90805264": false }
+    },
+	{
+      "LogName": "Festivais Volta ou Casavel",
+      "Action": "Include",
+      "FromFile": "Ativos/Personagens/Festivais/Is_Festival.01.json",
+	  "When": {	"HasSeenEvent: anyPlayer|contains=91205264": true, 	"HasSeenEvent: anyPlayer|contains=91605264": false }
+    },
+	{	//Dialogos & Reações - Extras Pos Produção 
+      "LogName": "Presentes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Isis": "{{i18n:Is.gift.love}}/350 223 243 611 612 201 595 -6/{{i18n:Is.gift.like}}/206 233 241 288 287 395 -2 -7 -27 -79/{{i18n:Is.gift.dislike}}/648 393 397 226 196 346 -75 -81 -12/{{i18n:Is.gift.hate}}/721 154 155 215 128 418 167 -20 -4 459/{{i18n:Is.gift.neutral}}/421 348 245 286 423 -26 -5 -80 395/ "
+      }
+    },
+	{
+	  "LogName": "Extras Comentarios",
+	  "Action": "EditData",
+	  "Target": "Characters/Dialogue/Isis",
+	  "Entries": {
+	  	"DumpsterDiveComment": "{{i18n:Isis.DumpsterDive}}",
+		"AcceptGift_(O)StardropTea": "{{i18n:Is.gift.love}}"
+	  }
+	},
+	{	// Dialogo Pré Casamento
+		"LogName": "Isis Engagement Dialogue",
+		"Action": "EditData",
+		"Target": "Data/EngagementDialogue",
+		"Entries": 
+		{	
+		"Isis0": "{{i18n:Is.PréCas.01}}",
+		"Isis1": "{{i18n:Is.PréCas.02}}"
+		}
+	},
+	{	// Quarto e Patio de Casado
+      "Action": "Load",
+      "Target": "Maps/Casada.Quarto_Isis",
+      "FromFile": "Ativos/Mapas/Casada.Quarto_Isis.tmx"
+    }, 
+	{
+	  "Action": "Load",
+      "Target": "Maps/Casada.Patio_Isis",
+      "FromFile": "Ativos/Mapas/Casada.Patio_Isis.tmx"
+	},
+	{
+	  "Action": "Load",
+      "Target": "Maps/Casada.Patio.Rdx_Isis",
+      "FromFile": "Ativos/Mapas/Casada.Patio.Rdx_Isis.tmx"
+	}
+  ]
+}

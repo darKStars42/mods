@@ -1,0 +1,101 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Format": "2.0.0",
+  "ConfigSchema": {
+    //Traveling Cart
+    "TravelingCart": {
+      "Default": "true",
+      "AllowValues": "true, false",
+      "Section": "TravelingCart"
+    },
+    "TravelingCart_MinimumYear": {
+      "Default": "2",
+      "Section": "TravelingCart"
+    },
+    "TravelingCart_ChanceInStock": {
+      "Default": "0.10",
+      "Section": "TravelingCart"
+    },
+    "TravelingCart_Price": {
+      "Default": "3000",   
+    }
+  },
+
+  "Changes": [
+    {
+      "LogName": "Load textures",
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/FruitTrees, Mods/{{ModId}}/Objects,",
+      "FromFile": "assets/sprites/{{TargetWithoutPath}}.png"
+    },
+    {
+      "LogName": "Pear sapling, tree, and fruit.",
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_PearFruit": {
+          "Name": "{{ModId}}_PearFruit",
+          "Displayname": "{{i18n:objects.pear.name}}",
+          "Description": "{{i18n:objects.pear.description}}",
+          "Type": "Basic",
+          "Category": -79,
+          "Price": 100,
+          "Texture": "Mods/{{ModId}}/Objects",
+          "SpriteIndex": 0,
+          "Edibility": 15,
+          "ContextTags": [
+            "color_yellow_green"
+          ]
+        },
+        "{{ModId}}_PearSapling": {
+          "Name": "{{ModId}}_PearSapling",
+          "Displayname": "{{i18n:fruittrees.pear-sapling.name}}",
+          "Description": "{{i18n:fruittrees.pear-sapling.description}}",
+          "Type": "Basic",
+          "Category": -74,
+          "Price": 1000,
+          "Texture": "Mods/{{ModId}}/Objects",
+          "SpriteIndex": 1,
+          "Edibility": -300
+        }
+      }
+    },
+    {
+      "LogName": "Add pear to fruit trees",
+      "Action": "EditData",
+      "Target": "Data/FruitTrees",
+      "Entries": {
+        "{{ModId}}_PearSapling": {
+          "DisplayName": "Pear",
+          "Seasons": [
+            "Fall"
+          ],
+          "Fruit": [
+            {
+              "ID": "PearFruit",
+              "ItemId": "{{ModId}}_PearFruit"
+            }
+          ],
+          "Texture": "Mods/{{ModId}}/FruitTrees",
+          "TextureSpriteRow": 0
+        }
+      }
+    },
+    {
+      "LogName": "Add pear tree sapling to seed shop",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Traveler", "Items" ],
+      "Entries": {
+        "{{ModId}}_PearSapling": {
+          "Id": "{{ModId}}_PearSapling",
+          "ItemId": "{{ModId}}_PearSapling",
+          "ObjectInternalName": "{{ModId}}_PearSapling",
+"Condition": "{{TravelingCart}}, RANDOM {{TravelingCart_ChanceInStock}}, YEAR {{TravelingCart_MinimumYear}}",
+          "AvailableStock": "{{Random:1, 2}}",
+          "Price": "{{TravelingCart_Price}}"
+        }
+      },
+    }
+  ]
+}

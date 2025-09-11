@@ -1,0 +1,263 @@
+{
+    "Format": "2.3.0",
+
+    "ConfigSchema": {
+        "ForestWarp": {
+			"AllowValues": "Default, Alternate",
+			"Default": "Default",
+			"Section": "Forest Warp"
+		},
+        "PerfectionInclusion": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Section": "Gameplay"
+		},
+        "ForageSpawnRate": {
+            "AllowValues": "default, lower, lowest",
+			"Default": "default",
+			"Section": "Gameplay"
+        },
+        "BombType": {
+			"AllowValues": "Mana Bombs, Vanilla",
+			"Default": "Mana Bombs",
+			"Section": "Gameplay"
+		},
+        "Transmute": {
+			"AllowValues": "Transmuter Coil Exclusive, Vanilla",
+			"Default": "Transmuter Coil Exclusive",
+			"Section": "Gameplay"
+		},
+        "Trinkets": {
+			"AllowValues": "Runes, Vanilla",
+			"Default": "Runes",
+			"Section": "Gameplay"
+		},
+		"MachineColor": {
+			"AllowValues": "Black, Wizard, Bogwyytch (Green), Bogwyytch (Purple)",
+			"Default": "black",
+			"Section": "Aesthetics"
+		},
+        "DollsEyesGiantSprite": {
+			"AllowValues": "Default, Eldritch Horror",
+			"Default": "Default",
+			"Section": "Aesthetics"
+		},
+        "HarveysClinic": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Section": "Aesthetics"
+		}
+    },
+
+    "CustomLocations": [
+        {
+            "Name": "Custom_MagesRest",
+            "FromMapFile": "assets/Maps/CustomMaps/MagesRest.tmx"
+        },
+        {
+            "Name": "Custom_MagesRestEvents",
+            "FromMapFile": "assets/Maps/CustomMaps/MagesRest_Events.tmx"
+        },
+        {
+            "Name": "Custom_SevinaeHouse",
+            "FromMapFile": "assets/Maps/CustomMaps/SevinaeHouse.tmx"
+        }
+      ],
+      
+
+    "Changes": [
+
+/*----------------------------------------------------
+CJB Warp Points
+----------------------------------------------------*/
+        { 
+            "LogName": "Alchemistry - CJB Warp Points",
+            "Action": "EditData",
+            "Target": "Mods/CJBok.CheatsMenu/Warps",
+            "When": { "HasMod": "CJBok.CheatsMenu" },
+            "Entries": {
+                    "{{ModID}}_MagesRest": {
+                        "Id": "{{ModID}}_MagesRest",
+                        "DisplayName": "{{i18n:DisplayName.MagesRest}}",
+                        "Location": "Custom_MagesRest",
+                        "Tile": "32, 50",
+                        "SectionId": "Forest"
+                    },
+                    "{{ModID}}_SevinaeHouse": {
+                        "Id": "{{ModID}}_SevinaeHouse",
+                        "DisplayName": "{{i18n:DisplayName.Sevinaehouse}}",
+                        "Location": "Custom_SevinaeHouse",
+                        "Tile": "7, 13",
+                        "SectionId": "Forest"
+                    }
+                }
+        },
+
+/*----------------------------------------------------
+Includes & load conditions
+----------------------------------------------------*/  
+        {
+            "LogName": "Alchemistry - Apply Base Game Overrides",
+            "Action": "Include",
+            "FromFile": "data/Misc/VanillaOverrides.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Machines",
+            "Action": "Include",
+            "FromFile": "data/Items/Machines/Dehydrator.json, data/Items/Machines/OilMaker.json, data/Items/Machines/PreservesJar.json, data/Items/Machines/MortarPestle.json, data/Items/Machines/TinctureBin.json, data/Items/Machines/ManaExtractor.json, data/Items/Machines/ApothecaryCauldron.json, data/Items/Machines/EssenceRestabilizer.json, data/Items/Machines/TransmuterCoil.json, data/Items/Machines/RuneCarver.json, data/Items/Machines/Furnace.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Crops",
+            "Action": "Include",
+            "FromFile": "data/Items/Crops/Crops.json, data/Items/Crops/Objects.json, data/Items/Crops/GiantCrops.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Forage Data",
+            "Action": "Include",
+            "FromFile": "data/Items/Forage/Objects.json, data/Items/Forage/BushBloom.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Fish",
+            "Action": "Include",
+            "FromFile": "data/Items/Fishing/Fish.json, data/Items/Fishing/FishGoods.json, data/Items/Fishing/FishBehavior.json, data/Items/Fishing/FishPonds.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Crafting Objects",
+            "Action": "Include",
+            "FromFile": "data/Items/Crafting/DehydratedItems.json, data/Items/Crafting/Powders.json, data/Items/Crafting/Tinctures.json, data/Items/Crafting/Ectoplasm.json, data/Items/Crafting/Gems.json, data/Items/Crafting/Misc.json, data/Items/Crafting/Potions.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Recipes",
+            "Action": "Include",
+            "FromFile": "data/Items/Recipes/RecipesMachines.json, data/Items/Recipes/RecipesPotions.json, data/Items/Recipes/RecipesBasic.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Loot Items",
+            "Action": "Include",
+            "FromFile": "data/Items/Loot/MonsterLoot.json, data/Items/Loot/Objects.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Trinkets",
+            "Action": "Include",
+            "FromFile": "data/Items/Trinkets/Trinkets.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Maps",
+            "Action": "Include",
+            "FromFile": "data/Locations/Maps.json"
+        },
+        {
+            "LogName": "Alchemistry - Mage's Rest Event Blank",
+            "Action": "Load",
+            "Target": "Data/Events/Custom_MagesRest",
+            "FromFile": "data/Events/blank.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Event Data",
+            "Action": "Include",
+            "FromFile": "data/Events/Events.json, data/Events/Mail.json, data/Events/Quests.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Event Data (Rasmodia)",
+            "Action": "Include",
+            "When": { "HasMod": "Nom0ri.RomRas" },
+            "FromFile": "data/Events/Events_Rasmodia.json, data/Events/Mail_Rasmodia.json, data/Events/Quests_Rasmodia.json"
+        },
+        {
+            "LogName": "Alchemistry - Shop Info",
+            "Action": "Include",
+            "FromFile": "data/Shops/SevinaeShop.json, data/Shops/Hospital.json, data/Shops/SeedShop.json, data/Shops/Joja.json"
+        },
+        {
+            "LogName": "Alchemistry - Load NPC Data",
+            "Action": "Include",
+            "FromFile": "data/NPCs/Sevinae.json, data/NPCs/GiftTastes.json"
+        },
+        {
+            "LogName": "Alchemistry - Load Custom Categories",
+            "Action": "Include",
+            "FromFile": "data/Misc/CustomCategories.json"
+        },
+
+/*----------------------------------------------------
+Load conditions
+----------------------------------------------------*/  
+
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Machines",
+            "FromFile": "assets/Items/Machines/machines_black.png"
+        },
+
+        //Include NPC blanks
+        {
+            "Action": "Load", 
+            "Priority": "Low",
+            "Target": "Characters/Dialogue/Sevinae",
+            "FromFile": "assets/Characters/blank.json"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/Schedules/Sevinae",
+            "FromFile": "assets/Characters/blank.json"
+        },
+
+/*----------------------------------------------------
+Config Options
+----------------------------------------------------*/ 
+        //Machine recolors
+        {    
+            "LogName": "Change Alchemistry machine color - black",
+            "Action": "EditImage",
+            "Target": "Mods/{{ModId}}/Machines",
+            "FromFile": "assets/Items/Machines/machines_black.png",
+            "PatchMode": "Replace",
+            "When": { "MachineColor": "Black" }
+        },
+        {    
+            "LogName": "Change Alchemistry machine color - wizard",
+            "Action": "EditImage",
+            "Target": "Mods/{{ModId}}/Machines",
+            "FromFile": "assets/Items/Machines/machines_wizard.png",
+            "PatchMode": "Replace",
+            "When": { "MachineColor": "Wizard" }
+        },
+        {    
+            "LogName": "Change Alchemistry machine color - BogWyytch",
+            "Action": "EditImage",
+            "Target": "Mods/{{ModId}}/Machines",
+            "FromFile": "assets/Items/Machines/machines_bogwyytch.png",
+            "PatchMode": "Replace",
+            "When": { "MachineColor": "Bogwyytch (Green)" }
+        },
+        {    
+            "LogName": "Change Alchemistry machine color - BogWyytch Purple",
+            "Action": "EditImage",
+            "Target": "Mods/{{ModId}}/Machines",
+            "FromFile": "assets/Items/Machines/machines_bogwyytch_purple.png",
+            "PatchMode": "Replace",
+            "When": { "MachineColor": "Bogwyytch (Purple)" }
+        },
+
+        //Forage Spawn Rate Files
+        {    
+            "LogName": "Alchemistry Forage Spawn Rate - Default",
+            "Action": "Include",
+            "FromFile": "data/Items/Forage/ForageDefault.json",
+            "When": { "ForageSpawnRate": "default" }
+        },
+        {    
+            "LogName": "Alchemistry Forage Spawn Rate - Lower",
+            "Action": "Include",
+            "FromFile": "data/Items/Forage/ForageLower.json",
+            "When": { "ForageSpawnRate": "lower" }
+        },
+        {    
+            "LogName": "Alchemistry Forage Spawn Rate - Lowest",
+            "Action": "Include",
+            "FromFile": "data/Items/Forage/ForageLowest.json",
+            "When": { "ForageSpawnRate": "lowest" }
+        }
+
+    ]
+}

@@ -1,0 +1,220 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Regular gift tastes",
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "{{Honeyfuggle}}": "{{i18n:love}}/66 68 104 340 221/{{i18n:like}}/124 125 121 108 245/{{i18n:dislike}}/196 609 648/{{i18n:hate}}/110 111 112 105 190 250 264/{{i18n:neutral}}/769 768/"
+                //Love: Amethyst, Topaz, Elvish Jewelry, Honey, Pink Cake
+                //Like: Golden Mask, Golden Relic, Dwarvish Helm, Rare Disc, Sugar
+                //Dislike: Salad, Radish Salad, Coleslaw
+                //Hate: Rusty Spoon, Rusty Spur, Rusty Cog, Chewing Stick, Cauliflower, Kale, Radish
+                //Neutral: Void Essence, Solar Essence
+            }
+        },
+        {
+            "LogName": "Concession tastes",
+            "Action": "EditData",
+            "Target": "Data/ConcessionTastes",
+            "Entries": {
+                "{{Honeyfuggle}}": {
+                    "Name": "{{Honeyfuggle}}",
+                    "LovedTags": [ "Rock Candy" ],
+                    "LikedTags": [ "Sweet" ],
+                    "DislikedTags": [ "Healthy" ]
+                }
+            }
+        },
+        {
+            "LogName": "Movie tastes",
+            "Action": "EditData",
+            "Target": "Data/MoviesReactions",
+            "Entries": {
+                "{{Honeyfuggle}}": {
+                    "NPCName": "{{Honeyfuggle}}",
+                    "Reactions": [
+                        {
+                            //Brave Little Sapling
+                            "Tag": "spring_movie_0",
+                            "Response": "dislike",
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.0}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "/message \"{{i18n:Movies.1}}\"",
+                                    "Text": ""
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.2}}"
+                                },
+                            }
+                        },
+                        {
+                            //Journey of the Prairie King
+                            "Tag": "summer_movie_0",
+                            "Response": "like",
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.3}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "/message \"{{i18n:Movies.4.{{Random:Neutral,Fem,Masc}}}}\"",
+                                    "Text": ""
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.5}}"
+                                },
+                            }
+                        },
+                        {
+                            //Mysterium
+                            "Tag": "fall_movie_0",
+                            "Response": "love",
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.6}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.7}}"
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.8}}"
+                                },
+                            }
+                        },
+                        {
+                            //Miracle at Coldstar Ranch
+                            "Tag": "winter_movie_0",
+                            "Response": "dislike",
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.9}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "/message \"{{i18n:Movies.10.{{Random:Neutral,Fem,Masc}}}}\"",
+                                    "Text": ""
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.11}}"
+                                },
+                            }
+                        },
+                        {
+                            //Natural Wonders: Exploring Our Vibrant World
+                            "Tag": "spring_movie_1",
+                            "Response": "like",
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.12}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.13}}"
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.14}}"
+                                },
+                            }
+                        },
+                        {
+                            //Wumbus
+                            "Tag": "summer_movie_1",
+                            "Response": "love",
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.15}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "/message \"{{i18n:Movies.16}}\"",
+                                    "Text": ""
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.17}}"
+                                },
+                            }
+                        },
+                        {
+                            //It Howls in the Rain
+                            "Tag": "fall_movie_1",
+                            "Response": "like",
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.18}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.19}}"
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.20}}"
+                                },
+                            }
+                        },
+                        {
+                            //Zuzu City Express
+                            "Tag": "winter_movie_1",
+                            "Response": "like",
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.21}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "/message \"{{i18n:Movies.22}}\"",
+                                    "Text": ""
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": "",
+                                    "Text": "{{i18n:Movies.23}}"
+                                },
+                            }
+                        }
+                    ]
+                }
+
+            }
+        }
+    ]
+}

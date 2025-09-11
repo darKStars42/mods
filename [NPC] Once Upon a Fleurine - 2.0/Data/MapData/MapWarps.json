@@ -1,0 +1,101 @@
+{
+    "Changes": [
+        {
+            //Entering & Exiting Fleurine's Tower: Cliff
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "MapTiles": [
+                {
+                    "Position": {
+                        "X": 96,
+                        "Y": 63
+                    },
+                    "Layer": "Buildings",
+                    "SetProperties": {
+                        "Action": "LockedDoorWarp 8 21 totsFleurineInterior 800 2000 totsFleurine 500"
+                    }
+                }
+            ],
+            "When": {
+                "Location": "Cliff"
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "MapTiles": [
+                {
+                    "Position": {
+                        "X": 97,
+                        "Y": 63
+                    },
+                    "Layer": "Buildings",
+                    "SetProperties": {
+                        "Action": "LockedDoorWarp 8 21 totsFleurineInterior 800 2000 totsFleurine 500"
+                    }
+                }
+            ],
+            "When": {
+                "Location": "Cliff"
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Interiors/totsFleurineInterior",
+            "AddWarps": [
+                "8 22 Forest 97 64"
+            ],
+            "When": {
+                "Location": "Cliff"
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Exteriors/totsFleurineRealm",
+            "MapTiles": [
+                {
+                    "Position": {
+                        "X": 14,
+                        "Y": 11
+                    },
+                    "Layer": "Buildings",
+                    "SetProperties": {
+                        "Action": "LockedDoorWarp 8 21 totsFleurineInterior 800 2000 totsFleurine 500"
+                    }
+                }
+            ],
+            "When": {
+                "Location": "Realm"
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Exteriors/totsFleurineRealm",
+            "MapTiles": [
+                {
+                    "Position": {
+                        "X": 15,
+                        "Y": 11
+                    },
+                    "Layer": "Buildings",
+                    "SetProperties": {
+                        "Action": "LockedDoorWarp 8 21 totsFleurineInterior 800 2000 totsFleurine 500"
+                    }
+                }
+            ],
+            "When": {
+                "Location": "Realm"
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Interiors/totsFleurineInterior",
+            "AddWarps": [
+                "8 22 totsFleurineRealm 15 12"
+            ],
+            "When": {
+                "Location": "Realm" 
+            }
+        }
+    ]
+}

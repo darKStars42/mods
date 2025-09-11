@@ -1,0 +1,707 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DaLion.Combat</name>
+    </assembly>
+    <members>
+        <member name="T:DaLion.Combat.CombatApi">
+            <summary>The <see cref="T:DaLion.Combat.CombatMod"/> API implementation.</summary>
+        </member>
+        <member name="M:DaLion.Combat.CombatApi.GetConfig">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Combat.CombatConfig">
+            <summary>Config schema for the Combat mod.</summary>
+        </member>
+        <member name="T:DaLion.Combat.CombatConfig.FaceCursorCondition">
+            <summary>The texture that should be used as the resonance light source.</summary>
+        </member>
+        <member name="F:DaLion.Combat.CombatConfig.FaceCursorCondition.Never">
+            <summary>Never face the mouse cursor when using a tool.</summary>
+        </member>
+        <member name="F:DaLion.Combat.CombatConfig.FaceCursorCondition.WeaponOnly">
+            <summary>Face the mouse cursor when the current tool is a <see cref="T:StardewValley.Tools.MeleeWeapon"/> or <see cref="T:StardewValley.Tools.Slingshot"/>.</summary>
+        </member>
+        <member name="F:DaLion.Combat.CombatConfig.FaceCursorCondition.Always">
+            <summary>Face the mouse cursor when using any tool.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.EnableComboHits">
+            <summary>Gets a value indicating whether to replace vanilla weapon spam with a more strategic combo system.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.ComboHitsPerWeaponType">
+            <summary>Gets the number of hits in each weapon type's combo.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.SwipeHold">
+            <summary>Gets a value indicating whether to keep swiping while the "use tool" key is held.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.HyperbolicMitigationFormula">
+            <summary>Gets a value indicating whether to replace the linear damage mitigation formula with a rational formula that gives more impactful but diminishing returns from the defense stat.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.DefenseImprovesParry">
+            <summary>Gets a value indicating whether defense should improve parry damage.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.CritsIgnoreDefense">
+            <summary>Gets a value indicating whether critical strikes should ignore the target's defense.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.CriticalBackAttacks">
+            <summary>Gets a value indicating whether back attacks gain double crit. chance.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.KnockbackHurts">
+            <summary>Gets a value indicating whether to add collision damage when knocked-back enemies hit a wall or obstacle.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.SlickMoves">
+            <summary>Gets a value indicating whether to allow drifting in the movement direction when swinging weapons.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.FaceMouseCursor">
+            <summary>Gets a value indicating whether face the current cursor position before using a tool.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.VariedEncounters">
+            <summary>Gets a value indicating whether randomizes monster stats to add variability to monster encounters.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.MonsterSpawnChanceMultiplier">
+            <summary>Gets a multiplier which allows increasing the spawn chance of monsters in dungeons.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.MonsterHealthMultiplier">
+            <summary>Gets a multiplier which allows scaling the health of all monsters.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.MonsterDamageMultiplier">
+            <summary>Gets a multiplier which allows scaling the damage dealt by all monsters.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.MonsterDefenseMultiplier">
+            <summary>Gets a multiplier which allows scaling the resistance of all monsters.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.MonsterHealthSummand">
+            <summary>Gets a summand which is added to the resistance of all monsters (before the multiplier).</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.MonsterDamageSummand">
+            <summary>Gets a summand which is added to the resistance of all monsters (before the multiplier).</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatConfig.MonsterDefenseSummand">
+            <summary>Gets a summand which is added to the resistance of all monsters (before the multiplier).</summary>
+        </member>
+        <member name="M:DaLion.Combat.CombatConfigMenu.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.CombatConfigMenu"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Combat.CombatConfigMenu.BuildMenu">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.CombatConfigMenu.ResetConfig">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.CombatConfigMenu.SaveAndApply">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Combat.CombatMod">
+            <summary>The mod entry point.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatMod.Instance">
+            <summary>Gets the static <see cref="T:DaLion.Combat.CombatMod"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatMod.Config">
+            <summary>Gets or sets the <see cref="T:DaLion.Combat.CombatConfig"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatMod.PerScreenState">
+            <summary>Gets the <see cref="T:StardewModdingAPI.Utilities.PerScreen`1"/> <see cref="T:DaLion.Combat.CombatState"/>.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatMod.State">
+            <summary>Gets or sets the <see cref="T:DaLion.Combat.CombatState"/> of the local player.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatMod.EventManager">
+            <summary>Gets the <see cref="T:DaLion.Shared.Events.EventManager"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatMod.Log">
+            <summary>Gets the <see cref="T:DaLion.Shared.Logger"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatMod.ModHelper">
+            <summary>Gets the <see cref="T:StardewModdingAPI.IModHelper"/> API.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatMod.Manifest">
+            <summary>Gets the <see cref="T:StardewModdingAPI.IManifest"/> API.</summary>
+        </member>
+        <member name="P:DaLion.Combat.CombatMod.UniqueId">
+            <summary>Gets the unique ID for this mod.</summary>
+        </member>
+        <member name="M:DaLion.Combat.CombatMod.Entry(StardewModdingAPI.IModHelper)">
+            <summary>The mod entry point, called after the mod is first loaded.</summary>
+            <param name="helper">Provides simplified APIs for writing mods.</param>
+        </member>
+        <member name="M:DaLion.Combat.CombatMod.GetApi">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Combat.CombatState">
+            <summary>The ephemeral runtime state for Tools.</summary>
+        </member>
+        <member name="T:DaLion.Combat.Framework.ComboHitStep">
+            <summary>The hit steps of a <see cref="T:StardewValley.Tools.MeleeWeapon"/> combo.</summary>
+        </member>
+        <member name="F:DaLion.Combat.Framework.ComboHitStep.Idle">
+            <summary>Not currently attacking.</summary>
+        </member>
+        <member name="F:DaLion.Combat.Framework.ComboHitStep.FirstHit">
+            <summary>The first hit of the combo.</summary>
+        </member>
+        <member name="F:DaLion.Combat.Framework.ComboHitStep.SecondHit">
+            <summary>The second hit of the combo.</summary>
+        </member>
+        <member name="F:DaLion.Combat.Framework.ComboHitStep.ThirdHit">
+            <summary>The third hit of the combo.</summary>
+        </member>
+        <member name="F:DaLion.Combat.Framework.ComboHitStep.FourthHit">
+            <summary>The fourth hit of the combo.</summary>
+        </member>
+        <member name="F:DaLion.Combat.Framework.ComboHitStep.Infinite">
+            <summary>The infinity-th hit of the combo.</summary>
+        </member>
+        <member name="T:DaLion.Combat.Framework.Events.CombatGameLaunchedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Events.CombatGameLaunchedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.CombatGameLaunchedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Events.CombatGameLaunchedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.CombatGameLaunchedEvent.OnGameLaunchedImpl(System.Object,StardewModdingAPI.Events.GameLaunchedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.CombatReturnedToTitleEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Events.CombatReturnedToTitleEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.CombatReturnedToTitleEvent.OnReturnedToTitleImpl(System.Object,StardewModdingAPI.Events.ReturnedToTitleEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.ComboButtonPressedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Events.ComboButtonPressedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="P:DaLion.Combat.Framework.Events.ComboButtonPressedEvent.IsEnabled">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.ComboButtonPressedEvent.OnButtonPressedImpl(System.Object,StardewModdingAPI.Events.ButtonPressedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.ComboButtonReleasedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Events.ComboButtonReleasedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.ComboButtonReleasedEvent.OnButtonReleasedImpl(System.Object,StardewModdingAPI.Events.ButtonReleasedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.ComboResetUpdateTickedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Events.ComboResetUpdateTickedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.ComboResetUpdateTickedEvent.OnEnabled">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.ComboResetUpdateTickedEvent.OnUpdateTickedImpl(System.Object,StardewModdingAPI.Events.UpdateTickedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.SlickMovesButtonPressedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Events.SlickMovesButtonPressedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="P:DaLion.Combat.Framework.Events.SlickMovesButtonPressedEvent.IsEnabled">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.SlickMovesButtonPressedEvent.OnButtonPressedImpl(System.Object,StardewModdingAPI.Events.ButtonPressedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.SlickMovesUpdateTickingEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Events.SlickMovesUpdateTickingEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Events.SlickMovesUpdateTickingEvent.OnUpdateTickingImpl(System.Object,StardewModdingAPI.Events.UpdateTickingEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Combat.Framework.Extensions.FarmerExtensions">
+            <summary>Extensions for the <see cref="T:StardewValley.Farmer"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Extensions.FarmerExtensions.GetTotalDefenseModifier(StardewValley.Farmer,StardewValley.Tools.MeleeWeapon)">
+            <summary>Gets the total defense for the <paramref name="farmer"/>.</summary>
+            <param name="farmer">The <see cref="T:StardewValley.Farmer"/>.</param>
+            <param name="weapon">The farmer's currently held <see cref="T:StardewValley.Tools.MeleeWeapon"/>.</param>
+            <returns>The total defense modifier.</returns>
+        </member>
+        <member name="T:DaLion.Combat.Framework.Extensions.MeleeWeaponExtensions">
+            <summary>Extensions for the <see cref="T:StardewValley.Tools.MeleeWeapon"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Extensions.MeleeWeaponExtensions.GetTotalSpeedModifier(StardewValley.Tools.MeleeWeapon,StardewValley.Farmer)">
+            <summary>Gets the total swing speed modifier for the <paramref name="weapon"/>.</summary>
+            <param name="weapon">The <see cref="T:StardewValley.Tools.MeleeWeapon"/>.</param>
+            <param name="user">The <see cref="T:StardewValley.Farmer"/> using the weapon.</param>
+            <returns>The total swing speed modifier, a number between 0 and 1, used for decreasing animation and cooldown times.</returns>
+            <remarks>Smaller is faster.</remarks>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Extensions.MeleeWeaponExtensions.GetSwipeSound(StardewValley.Tools.MeleeWeapon,DaLion.Combat.Framework.ComboHitStep)">
+            <summary>Gets the name of the sound cue that should play when this weapon is swung.</summary>
+            <param name="weapon">The <see cref="T:StardewValley.Tools.MeleeWeapon"/>.</param>
+            <param name="hitStep">The current <see cref="T:DaLion.Combat.Framework.ComboHitStep"/>.</param>
+            <returns>The name of a sound cue to be played.</returns>
+        </member>
+        <member name="T:DaLion.Combat.Framework.Extensions.MonsterExtensions">
+            <summary>Extensions for the <see cref="T:StardewValley.Monsters.Monster"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Extensions.MonsterExtensions.RandomizeStats(StardewValley.Monsters.Monster)">
+            <summary>Randomizes the stats of the <paramref name="monster"/>.</summary>
+            <param name="monster">The <see cref="T:StardewValley.Monsters.Monster"/>.</param>
+        </member>
+        <member name="T:DaLion.Combat.Framework.Extensions.WeaponTypeExtensions">
+            <summary>Extensions for the <see cref="T:DaLion.Shared.Enums.WeaponType"/> enum.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Extensions.WeaponTypeExtensions.GetFinalHitStep(DaLion.Shared.Enums.WeaponType)">
+            <summary>Gets the final combo hit of the <see cref="T:DaLion.Shared.Enums.WeaponType"/>.</summary>
+            <param name="type">The <see cref="T:DaLion.Shared.Enums.WeaponType"/>.</param>
+            <returns>The number of final hit for the <see cref="T:DaLion.Shared.Enums.WeaponType"/>, as <see cref="T:DaLion.Combat.Framework.ComboHitStep"/>.</returns>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.FarmerCanMoveNowPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.FarmerCanMoveNowPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.FarmerCanMoveNowPatcher.FarmerCanMoveNowPostfix(StardewValley.Farmer)">
+            <summary>Reset animation state.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.FarmerForceCanMovePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.FarmerForceCanMovePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.FarmerForceCanMovePatcher.FarmerForceCanMovePostfix(StardewValley.Farmer)">
+            <summary>Reset animation state.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.FarmerShowSwordSwipePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.FarmerShowSwordSwipePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.FarmerShowSwordSwipePatcher.FarmerShowSwordSwipePrefix(StardewValley.Farmer)">
+            <summary>Show combo swipe.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.FarmerSpriteGetAnimationFromIndexPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.FarmerSpriteGetAnimationFromIndexPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.FarmerSpriteGetAnimationFromIndexPatcher.FarmerSpriteGetAnimationFromIndexPrefix(System.Int32,StardewValley.FarmerSprite)">
+            <summary>Do weapon combo.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.FarmerTakeDamagePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.FarmerTakeDamagePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.FarmerTakeDamagePatcher.FarmerTakeDamageTranspiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.Emit.ILGenerator,System.Reflection.MethodBase)">
+            <summary>Overhaul for farmer defense.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.GameLocationDamageMonsterPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.GameLocationDamageMonsterPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.GameLocationDamageMonsterPatcher.GameLocationDamageMonsterTranspiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.Emit.ILGenerator,System.Reflection.MethodBase)">
+            <summary>Record knockback for damage and crit. for defense ignore + back attacks.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MeleeWeaponDrawDuringUsePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.MeleeWeaponDrawDuringUsePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MeleeWeaponDrawDuringUsePatcher.MeleeWeaponDrawDuringUsePrefix(Microsoft.Xna.Framework.Vector2,System.Int32,System.Int32,Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Vector2,StardewValley.Farmer,System.String,System.Int32,System.Boolean)">
+            <summary>Draw during combos + stabby lunge.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MeleeWeaponGetAreaOfEffectPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.MeleeWeaponGetAreaOfEffectPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MeleeWeaponGetAreaOfEffectPatcher.MeleeWeaponGetAreaOfEffectPrefix(StardewValley.Tools.MeleeWeapon,Microsoft.Xna.Framework.Rectangle@,System.Int32,System.Int32,System.Int32,Microsoft.Xna.Framework.Vector2@,Microsoft.Xna.Framework.Vector2@,Microsoft.Xna.Framework.Rectangle)">
+            <summary>Fix combo swipe and Stabbing Sword lunge hitboxes.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MeleeWeaponGetAreaOfEffectPatcher.MeleeWeaponGetAreaOfEffectPostfix(StardewValley.Tools.MeleeWeapon,Microsoft.Xna.Framework.Rectangle@)">
+            <summary>More generous club aoe during combo smash.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MeleeWeaponLeftClickPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.MeleeWeaponLeftClickPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MeleeWeaponLeftClickPatcher.MeleeWeaponLeftClickPrefix(StardewValley.Tools.MeleeWeapon)">
+            <summary>Eliminate dumb vanilla weapon spam.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MeleeWeaponSetFarmerAnimatingPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.MeleeWeaponSetFarmerAnimatingPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MeleeWeaponSetFarmerAnimatingPatcher.MeleeWeaponSetFarmerAnimatingTranspiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.Emit.ILGenerator,System.Reflection.MethodBase)">
+            <summary>Movement speed does not affect swing speed + remove weapon enchantment OnSwing effect (handled in custom logic).</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterHandleParriedPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.MonsterHandleParriedPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterHandleParriedPatcher.MonsterHandleParriedPrefix(System.Object)">
+            <summary>Empowered parry.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterMovePositionPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.MonsterMovePositionPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterMovePositionPatcher.MonsterMovePositionTranspiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.MethodBase)">
+            <summary>Add knockback damage.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterParseMonsterInfoPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.MonsterParseMonsterInfoPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterParseMonsterInfoPatcher.ApplyImpl(HarmonyLib.Harmony)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterParseMonsterInfoPatcher.UnapplyImpl(HarmonyLib.Harmony)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterParseMonsterInfoPatcher.MonsterParseMonsterInfoPostfix(StardewValley.Monsters.Monster)">
+            <summary>Randomize monster stats + apply difficulty sliders.</summary>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterTakeDamagePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Combat.Framework.Patchers.MonsterTakeDamagePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterTakeDamagePatcher.ApplyImpl(HarmonyLib.Harmony)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterTakeDamagePatcher.UnapplyImpl(HarmonyLib.Harmony)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Combat.Framework.Patchers.MonsterTakeDamagePatcher.MonsterTakeDamageTranspiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.Emit.ILGenerator,System.Reflection.MethodBase)">
+            <summary>Crits ignore defense, which, btw, actually does something.</summary>
+        </member>
+        <member name="T:DaLion.Combat.ICombatApi">
+            <summary>The public interface for the Combat mod API.</summary>
+        </member>
+        <member name="M:DaLion.Combat.ICombatApi.GetConfig">
+            <summary>Gets the mod's current config schema.</summary>
+            <returns>The current config instance.</returns>
+        </member>
+        <member name="T:DaLion.Combat.I18n">
+            <summary>Get translations from the mod's <c>i18n</c> folder.</summary>
+            <remarks>This is auto-generated from the <c>i18n/default.json</c> file when the project is compiled.</remarks>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Translations">
+            <summary>The mod's translation helper.</summary>
+        </member>
+        <member name="T:DaLion.Combat.I18n.Keys">
+            <summary>A lookup of available translation keys.</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Schema">
+            <summary>The unique key for a translation equivalent to "https://smapi.io/schemas/i18n.json".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_Sections_Cmbt_Combo">
+            <summary>The unique key for a translation equivalent to "Combo Framework".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_EnableComboHits_Title">
+            <summary>The unique key for a translation equivalent to "Enable Melee Combo Hits".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_EnableComboHits_Desc">
+            <summary>The unique key for a translation equivalent to "Replaces vanilla weapon spam with a more strategic combo system.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_ComboHitsPerWeaponType_DefenseSword_Title">
+            <summary>The unique key for a translation equivalent to "Sword Combo Hits".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_ComboHitsPerWeaponType_DefenseSword_Desc">
+            <summary>The unique key for a translation equivalent to "The max. number of consecutive hits in a Sword combo.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_ComboHitsPerWeaponType_Club_Title">
+            <summary>The unique key for a translation equivalent to "Club Combo Hits".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_ComboHitsPerWeaponType_Club_Desc">
+            <summary>The unique key for a translation equivalent to "The max. number of consecutive hits in a Club combo.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_SwipeHold_Title">
+            <summary>The unique key for a translation equivalent to "Enable Hold-To-Swipe".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_SwipeHold_Desc">
+            <summary>The unique key for a translation equivalent to "Allows performing combos by simply holding the tool button instead of spam-clicking.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_Sections_Cmbt_Stats">
+            <summary>The unique key for a translation equivalent to "Character Stats".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_HyperbolicMitigationFormula_Title">
+            <summary>The unique key for a translation equivalent to "Use Hyperbolic Mitigation Formula".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_HyperbolicMitigationFormula_Desc">
+            <summary>The unique key for a translation equivalent to "Replaces the linear damage mitigation formula with a diminishing curve that gives more impactful but returns from each defense stat. BEFORE: Damage -= Defense; AFTER: Damage *= 10 / (10 + Defense)".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_DefenseImprovesParry_Title">
+            <summary>The unique key for a translation equivalent to "Defense Improves Parry Damage".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_DefenseImprovesParry_Desc">
+            <summary>The unique key for a translation equivalent to "Parry damage (sword special move) is increased by the defense stat.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_CritsIgnoreDefense_Title">
+            <summary>The unique key for a translation equivalent to "Crits. Ignore Defense".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_CritsIgnoreDefense_Desc">
+            <summary>The unique key for a translation equivalent to "Critical strikes ignore the target's defense stat.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_CriticalBackAttacks_Title">
+            <summary>The unique key for a translation equivalent to "Critical Back Attacks".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_CriticalBackAttacks_Desc">
+            <summary>The unique key for a translation equivalent to "Hits to an enemy's backside have double critical strike chance.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_KnockbackHurts_Title">
+            <summary>The unique key for a translation equivalent to "Knockbacks Hurt".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_KnockbackHurts_Desc">
+            <summary>The unique key for a translation equivalent to "Adds collision damage when knocked-back enemies collide with a wall or obstacle.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_Sections_Cmbt_Controls">
+            <summary>The unique key for a translation equivalent to "Controls".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_SlickMoves_Title">
+            <summary>The unique key for a translation equivalent to "Slick Moves".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_SlickMoves_Desc">
+            <summary>The unique key for a translation equivalent to "Drift in the current running direction when attacking.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_FaceMouseCursor_Title">
+            <summary>The unique key for a translation equivalent to "Face Towards Mouse Cursor".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_FaceMouseCursor_Desc">
+            <summary>The unique key for a translation equivalent to "If using mouse and keyboard, turn to face towards the current cursor position when using a tool.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_FaceCursorCondition_Never">
+            <summary>The unique key for a translation equivalent to "Never".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_FaceCursorCondition_WeaponOnly">
+            <summary>The unique key for a translation equivalent to "Weapon Only".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_FaceCursorCondition_Always">
+            <summary>The unique key for a translation equivalent to "All Tools".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_Sections_Cmbt_Enemies">
+            <summary>The unique key for a translation equivalent to "Enemies".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_VariedEncounters_Title">
+            <summary>The unique key for a translation equivalent to "Varied Encounters".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_VariedEncounters_Desc">
+            <summary>The unique key for a translation equivalent to "Randomizes monster stats, subject to Daily Luck bias, adding variability to monster encounters.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterSpawnChanceMultiplier_Title">
+            <summary>The unique key for a translation equivalent to "Spawn Chance Multiplier".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterSpawnChanceMultiplier_Desc">
+            <summary>The unique key for a translation equivalent to "Multiplies the chance to spawn enemies in dungeons.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterHealthMultiplier_Title">
+            <summary>The unique key for a translation equivalent to "Health Multiplier".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterHealthMultiplier_Desc">
+            <summary>The unique key for a translation equivalent to "Multiplies the health of all enemies.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterDamageMultiplier_Title">
+            <summary>The unique key for a translation equivalent to "Damage Multiplier".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterDamageMultiplier_Desc">
+            <summary>The unique key for a translation equivalent to "Multiplies the damage dealt by all enemies.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterDefenseMultiplier_Title">
+            <summary>The unique key for a translation equivalent to "Defense Multiplier".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterDefenseMultiplier_Desc">
+            <summary>The unique key for a translation equivalent to "Multiplies the damage resistance of all enemies.".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterHealthSummand_Title">
+            <summary>The unique key for a translation equivalent to "Added Health".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterHealthSummand_Desc">
+            <summary>The unique key for a translation equivalent to "Adds to the health of all enemies (before multiplier).".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterDamageSummand_Title">
+            <summary>The unique key for a translation equivalent to "Added Damage".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterDamageSummand_Desc">
+            <summary>The unique key for a translation equivalent to "Adds to the damage dealt by all enemies (before multiplier).".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterDefenseSummand_Title">
+            <summary>The unique key for a translation equivalent to "Added Defense".</summary>
+        </member>
+        <member name="F:DaLion.Combat.I18n.Keys.Gmcm_MonsterDefenseSummand_Desc">
+            <summary>The unique key for a translation equivalent to "Adds to the damage resistance of all enemies (before multiplier).".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Init(StardewModdingAPI.ITranslationHelper)">
+            <summary>Construct an instance.</summary>
+            <param name="translations">The mod's translation helper.</param>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Schema">
+            <summary>Get a translation equivalent to "https://smapi.io/schemas/i18n.json".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_Sections_Cmbt_Combo">
+            <summary>Get a translation equivalent to "Combo Framework".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_EnableComboHits_Title">
+            <summary>Get a translation equivalent to "Enable Melee Combo Hits".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_EnableComboHits_Desc">
+            <summary>Get a translation equivalent to "Replaces vanilla weapon spam with a more strategic combo system.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_ComboHitsPerWeaponType_DefenseSword_Title">
+            <summary>Get a translation equivalent to "Sword Combo Hits".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_ComboHitsPerWeaponType_DefenseSword_Desc">
+            <summary>Get a translation equivalent to "The max. number of consecutive hits in a Sword combo.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_ComboHitsPerWeaponType_Club_Title">
+            <summary>Get a translation equivalent to "Club Combo Hits".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_ComboHitsPerWeaponType_Club_Desc">
+            <summary>Get a translation equivalent to "The max. number of consecutive hits in a Club combo.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_SwipeHold_Title">
+            <summary>Get a translation equivalent to "Enable Hold-To-Swipe".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_SwipeHold_Desc">
+            <summary>Get a translation equivalent to "Allows performing combos by simply holding the tool button instead of spam-clicking.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_Sections_Cmbt_Stats">
+            <summary>Get a translation equivalent to "Character Stats".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_HyperbolicMitigationFormula_Title">
+            <summary>Get a translation equivalent to "Use Hyperbolic Mitigation Formula".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_HyperbolicMitigationFormula_Desc">
+            <summary>Get a translation equivalent to "Replaces the linear damage mitigation formula with a diminishing curve that gives more impactful but returns from each defense stat. BEFORE: Damage -= Defense; AFTER: Damage *= 10 / (10 + Defense)".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_DefenseImprovesParry_Title">
+            <summary>Get a translation equivalent to "Defense Improves Parry Damage".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_DefenseImprovesParry_Desc">
+            <summary>Get a translation equivalent to "Parry damage (sword special move) is increased by the defense stat.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_CritsIgnoreDefense_Title">
+            <summary>Get a translation equivalent to "Crits. Ignore Defense".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_CritsIgnoreDefense_Desc">
+            <summary>Get a translation equivalent to "Critical strikes ignore the target's defense stat.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_CriticalBackAttacks_Title">
+            <summary>Get a translation equivalent to "Critical Back Attacks".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_CriticalBackAttacks_Desc">
+            <summary>Get a translation equivalent to "Hits to an enemy's backside have double critical strike chance.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_KnockbackHurts_Title">
+            <summary>Get a translation equivalent to "Knockbacks Hurt".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_KnockbackHurts_Desc">
+            <summary>Get a translation equivalent to "Adds collision damage when knocked-back enemies collide with a wall or obstacle.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_Sections_Cmbt_Controls">
+            <summary>Get a translation equivalent to "Controls".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_SlickMoves_Title">
+            <summary>Get a translation equivalent to "Slick Moves".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_SlickMoves_Desc">
+            <summary>Get a translation equivalent to "Drift in the current running direction when attacking.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_FaceMouseCursor_Title">
+            <summary>Get a translation equivalent to "Face Towards Mouse Cursor".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_FaceMouseCursor_Desc">
+            <summary>Get a translation equivalent to "If using mouse and keyboard, turn to face towards the current cursor position when using a tool.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_FaceCursorCondition_Never">
+            <summary>Get a translation equivalent to "Never".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_FaceCursorCondition_WeaponOnly">
+            <summary>Get a translation equivalent to "Weapon Only".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_FaceCursorCondition_Always">
+            <summary>Get a translation equivalent to "All Tools".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_Sections_Cmbt_Enemies">
+            <summary>Get a translation equivalent to "Enemies".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_VariedEncounters_Title">
+            <summary>Get a translation equivalent to "Varied Encounters".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_VariedEncounters_Desc">
+            <summary>Get a translation equivalent to "Randomizes monster stats, subject to Daily Luck bias, adding variability to monster encounters.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterSpawnChanceMultiplier_Title">
+            <summary>Get a translation equivalent to "Spawn Chance Multiplier".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterSpawnChanceMultiplier_Desc">
+            <summary>Get a translation equivalent to "Multiplies the chance to spawn enemies in dungeons.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterHealthMultiplier_Title">
+            <summary>Get a translation equivalent to "Health Multiplier".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterHealthMultiplier_Desc">
+            <summary>Get a translation equivalent to "Multiplies the health of all enemies.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterDamageMultiplier_Title">
+            <summary>Get a translation equivalent to "Damage Multiplier".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterDamageMultiplier_Desc">
+            <summary>Get a translation equivalent to "Multiplies the damage dealt by all enemies.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterDefenseMultiplier_Title">
+            <summary>Get a translation equivalent to "Defense Multiplier".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterDefenseMultiplier_Desc">
+            <summary>Get a translation equivalent to "Multiplies the damage resistance of all enemies.".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterHealthSummand_Title">
+            <summary>Get a translation equivalent to "Added Health".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterHealthSummand_Desc">
+            <summary>Get a translation equivalent to "Adds to the health of all enemies (before multiplier).".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterDamageSummand_Title">
+            <summary>Get a translation equivalent to "Added Damage".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterDamageSummand_Desc">
+            <summary>Get a translation equivalent to "Adds to the damage dealt by all enemies (before multiplier).".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterDefenseSummand_Title">
+            <summary>Get a translation equivalent to "Added Defense".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.Gmcm_MonsterDefenseSummand_Desc">
+            <summary>Get a translation equivalent to "Adds to the damage resistance of all enemies (before multiplier).".</summary>
+        </member>
+        <member name="M:DaLion.Combat.I18n.GetByKey(System.String,System.Object)">
+            <summary>Get a translation by its key.</summary>
+            <param name="key">The translation key.</param>
+            <param name="tokens">An object containing token key/value pairs. This can be an anonymous object (like <c>new { value = 42, name = "Cranberries" }</c>), a dictionary, or a class instance.</param>
+            <remarks>You should usually use a strongly-typed method like <see cref="M:DaLion.Combat.I18n.Schema" /> instead.</remarks>
+        </member>
+        <member name="T:NetEscapades.EnumGenerators.EnumExtensionsAttribute">
+            <summary>
+            Add to enums to indicate that extension methods should be generated for the type
+            </summary>
+        </member>
+        <member name="P:NetEscapades.EnumGenerators.EnumExtensionsAttribute.ExtensionClassNamespace">
+            <summary>
+            The namespace to generate the extension class.
+            If not provided the namespace of the enum will be used
+            </summary>
+        </member>
+        <member name="P:NetEscapades.EnumGenerators.EnumExtensionsAttribute.ExtensionClassName">
+            <summary>
+            The name to use for the extension class.
+            If not provided, the enum name with "Extensions" will be used.
+            For example for an Enum called StatusCodes, the default name
+            will be StatusCodesExtensions
+            </summary>
+        </member>
+    </members>
+</doc>

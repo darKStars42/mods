@@ -1,0 +1,60 @@
+{
+	"Changes": [
+		// Without SVE
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall16",
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters"
+					],
+					"Value": "Jonghyuk 30 70 down",
+					"Delimiter": "/"
+				}
+			]
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall16",
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters_y2"
+					],
+					"Value": "Jonghyuk 30 72 up",
+					"Delimiter": "/"
+				}
+			]
+		},
+
+		// Spanner At Fair
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall16",
+			"When": {
+				"HasSeenEvent": "SpannerIntroConclusion"
+			},
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Spanner 29 71 right",
+					"Delimiter": "/"
+				}
+			]
+		}
+
+	]
+}

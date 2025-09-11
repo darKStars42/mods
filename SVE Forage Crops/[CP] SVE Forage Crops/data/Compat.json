@@ -1,0 +1,129 @@
+{
+	"Changes": [
+		{
+			"LogName": "Cornucopia Flowers Compatibility",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Priority": "Late",
+			"When": {
+				"CornucopiaCompat": true,
+				"HasMod |contains=Cornucopia.MoreFlowers": true
+			},
+			"Fields": {
+				"ZoeyHoshi.SVEForageCrops_RafflesiaSeeds": {
+					"DisplayName": "{{i18n:SVEForage_RafflesiaSeedsPatch_name}}"
+				}
+			}
+		},
+		{
+			"LogName": "Cornucopia Crops Compatibility",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Priority": "Late",
+			"When": {
+				"CornucopiaCompat": true,
+				"HasMod |contains=Cornucopia.MoreCrops": true
+			},
+			"Fields": {
+				"FlashShifter.StardewValleyExpandedCP_Butternut_Squash": {
+					"DisplayName": "{{i18n:SVEForage_ButternutSquashPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Butternut_Squash_Seed": {
+					"DisplayName": "{{i18n:SVEForage_ButternutSquashSeedsPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Cucumber": {
+					"DisplayName": "{{i18n:SVEForage_CucumberPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Cucumber_Seed": {
+					"DisplayName": "{{i18n:SVEForage_CucumberSeedsPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Nectarine": {
+					"DisplayName": "{{i18n:SVEForage_NectarinePatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Nectarine_Sapling": {
+					"DisplayName": "{{i18n:SVEForage_NectarineSaplingPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Pear": {
+					"DisplayName": "{{i18n:SVEForage_PearPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Pear_Sapling": {
+					"DisplayName": "{{i18n:SVEForage_PearSaplingPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Persimmon": {
+					"DisplayName": "{{i18n:SVEForage_PersimmonPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Persimmon_Sapling": {
+					"DisplayName": "{{i18n:SVEForage_PersimmonSaplingPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Sweet_Potato": {
+					"DisplayName": "{{i18n:SVEForage_SweetPotatoPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Sweet_Potato_Seed": {
+					"DisplayName": "{{i18n:SVEForage_SweetPotatoSeedsPatch_name}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Priority": "Late",
+			"When": {
+				"CornucopiaCompat": true,
+				"HasMod |contains=Cornucopia.MoreCrops": true,
+				"HasMod|contains=Cornucopia.ArtisanMachines": true
+			},
+			"TargetField": [
+				"(BC)15",
+				"OutputRules",
+				"Cornucopia_PickleSpears",
+				"Triggers"
+			],
+			"Entries": {
+				"(O)FlashShifter.StardewValleyExpandedCP_Cucumber": {
+					"RequiredItemId": "(O)FlashShifter.StardewValleyExpandedCP_Cucumber"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Priority": "Late",
+			"When": {
+				"CornucopiaCompat": true,
+				"HasMod |contains=Cornucopia.MoreCrops": true,
+				"HasMod|contains=Cornucopia.ArtisanMachines": true
+			},
+			"TargetField": [
+				"(BC)Cornucopia_Extruder",
+				"OutputRules",
+				"Cornucopia_GlassNoodles",
+				"Triggers"
+			],
+			"Entries": {
+				"(O)FlashShifter.StardewValleyExpandedCP_Sweet_Potato": {
+					"RequiredItemId": "(O)FlashShifter.StardewValleyExpandedCP_Sweet_Potato"
+				}
+			}
+		}
+		/*
+		{
+			"LogName": "Wildflour's Atelier Goods - Forager Compatibility",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Priority": "Late",
+			"When": {
+				"ThistleWAG": true,
+				"HasMod |contains=wildflour.ateliercrops": true
+			},
+			"Fields": {
+				"ZoeyHoshi.SVEForageCrops_ThistleSeeds": {
+					"DisplayName": "{{i18n:SVEForage_ThistleSeedsPatch_name}}"
+				},
+				"FlashShifter.StardewValleyExpandedCP_Thistle": {
+					"DisplayName": "{{i18n:SVEForage_ThistlePatch_name}}"
+				}
+			}
+		}
+	*/
+	]
+}

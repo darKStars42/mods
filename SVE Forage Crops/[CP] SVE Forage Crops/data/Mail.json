@@ -1,0 +1,37 @@
+{
+	"Changes": [
+		{
+			"LogName": "Mushroom Planters Mail Text",
+			"Action": "EditData",
+			"Target": "Data/Mail",
+			"Entries": {
+				"ZoeyHoshi.SVEForageCrops_MarlonGreenMushroom": "{{i18n:Mail_MarlonGreenMushroom}}",
+				"ZoeyHoshi.SVEForageCrops_MarlonMegaPurpleMushroom": "{{i18n:Mail_MarlonPurpleMushroom}}"
+			}
+		},
+		{
+			"LogName": "Green Mushroom Planter Mail",
+			"Action": "EditData",
+			"Target": "Data/Events/Farm",
+			"Entries": {
+				"ZoeyHoshi.SVEForageCrops_MarlonGreenMushroom/G PLAYER_KILLED_MONSTERS Current \"Dust Spirit\" 500/sendmail ZoeyHoshi.SVEForageCrops_MarlonGreenMushroom": "null"
+			},
+			"When": {
+				"EnableGreenMushroom": true,
+				"HasVisitedLocation": "Custom_Highlands"
+			}
+		}, 
+		{
+			"LogName": "Mega Purple Mushroom Planter Mail",
+			"Action": "EditData",
+			"Target": "Data/Events/Farm",
+			"Entries": {
+				"ZoeyHoshi.SVEForageCrops_MarlonMegaPurpleMushroom/e 1337931/sendmail ZoeyHoshi.SVEForageCrops_MarlonMegaPurpleMushroom": "null"
+			},
+			"When": {
+				"EnableMegaPurpleMushroom": true,
+				"HasFlag: anyPlayer|contains=LegendaryTrioSlayed": true
+			}
+		}
+	]
+}

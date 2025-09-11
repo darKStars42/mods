@@ -1,0 +1,571 @@
+{
+   "Changes": [
+        {
+			"LogName": "Trigger action to add mail flag for tracking Penny's daughter as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Add_Petra_Secondborn": {
+                    "Id": "{{ModId}}_Add_Petra_Secondborn",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current {{ModId}}_Petra_Secondborn Received",
+					"MarkActionApplied": false,
+                },
+                "{{ModId}}_Add_GrowingValley_Secondborn_Female": {
+                    "Id": "{{ModId}}_Add_GrowingValley_Secondborn_Female",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current GrowingValley_Secondborn_Female Received",
+					"MarkActionApplied": false,
+                },
+			}
+		},
+		
+   		{      
+			"LogName": "Load Penny's daughter's portraits on secondborn.",
+			"Action": "Load",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Petra_{{SecondbornSkinTone}}.png",
+		},
+   		{      
+			"LogName": "Load Penny's daughter's sprites on secondborn.",
+			"Action": "Load",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/Petra_{{SecondbornSkinTone}}.png",
+		},
+		
+   		{      
+			"LogName": "Load Penny's daughter's portraits on secondborn (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Petra_{{SecondbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+			},
+		},
+   		{      
+			"LogName": "Load Penny's daughter's sprites on secondborn (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/Petra_{{SecondbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+			},
+		},
+		
+   		{      
+			"LogName": "Edit Penny's daughter's portraits to use winter outfit on secondborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Petra_Winter_{{SecondbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"Season": "winter",
+			},
+		},
+   		{      
+			"LogName": "Edit Penny's daughter's sprites to use winter outfit on secondborn.",
+			"Action": "EditImage",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/Petra_Winter_{{SecondbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"Season": "winter",
+			},
+		},
+		
+		{
+			"LogName": "Add gift tastes for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"{{SecondbornName}}": "/254 Powdermelon Raisins 96 97 98 99 101 103 104 106 107 108 111 112 113 114 116 117 118 121 122 124 125 126 127 588 589 ancient_item prehistoric_item//-12 18 398 376 book_item//205 430 432 edible_mushroom DriedMushrooms//alcohol_item coffee_item//-75 110 881/",
+			}
+		},
+		
+		//visits quarry to look for artifacts
+		{
+			"LogName": "Fill secondborn's empty schedule with that of Penny's daughter.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain": "830 Town 104 89 2 \"Strings\\schedules\\{{SecondbornName}}:rain.000\"/1200 ArchaeologyHouse 16 10 1 {{SecondbornName}}_read/1800 bed",
+				"GreenRain": "GOTO spring",
+				"Mon": "830 SeedShop 3 26 3 \"Strings\\schedules\\{{SecondbornName}}:Mon.000\"/1100 SeedShop 6 19 0 \"Strings\\schedules\\{{SecondbornName}}:Mon.001\"/1130 Town 36 89 2/1600 Town 45 78 3 \"Strings\\schedules\\{{SecondbornName}}:Mon.002\"/1810 bed",
+				"Tue": "830 ArchaeologyHouse 18 9 2 \"Strings\\schedules\\{{SecondbornName}}:Tue.000\"/1400 Town 89 100 2/1620 Town 18 91 3/1750 Forest 92 21 3/1830 bed",
+				"Wed": "GOTO Tue",
+				"Thu": "MAIL VisitedQuarryMine/GOTO Thu_normal/830 Mountain 84 9 1/1300 Mountain 112 26 2 square_11_1_2 \"Strings\\schedules\\{{SecondbornName}}:Thu.000\"/1730 bed",
+				"Thu_normal": "830 Mountain 84 9 1/1300 Mountain 80 34 2/1500 Mountain 52 6 2/1730 bed",
+				"Fri": "GOTO Tue",
+				"spring": "830 ArchaeologyHouse 13 9 0/1200 ArchaeologyHouse 29 14 1/1400 ArchaeologyHouse 47 7 3/1800 bed",
+				"DesertFestival_2": "a1000 Desert 39 42 2 \"Strings\\schedules\\{{SecondbornName}}:DesertFestival.000\"/2440 bed",
+			}
+		},
+		{
+			"LogName": "Separate patch to Penny's daughter's schedule as secondborn for rainy work days",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain2": "830 ArchaeologyHouse 16 10 1 {{SecondbornName}}_read \"Strings\\schedules\\{{SecondbornName}}:Tue_rain.000\"/1400 Town 89 100 2/1620 Town 18 91 3 \"Strings\\schedules\\{{SecondbornName}}:Tue_rain.001\"/1750 Forest 92 21 3 \"Strings\\schedules\\{{SecondbornName}}:Tue_rain.001\"/1830 bed",
+			},
+			"When": {
+				"DayOfWeek": "Tuesday, Wednesday, Friday"
+			},
+		},
+		{
+			"LogName": "Edit Penny's daughter's rain schedules as secondborn when not married to Penny.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain": "830 ArchaeologyHouse 16 10 1 {{SecondbornName}}_read/1800 bed",
+				"rain2": "GOTO rain",
+			},
+			"When": {
+				"PlayerCompanion|contains=Penny": false,
+			},
+		},
+		
+		
+		{
+			"LogName": "Add Little Red School House schedule for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"Tue": "a1000 Custom_SchoolHouse 11 6 1 {{SecondbornName}}_read \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.000\"/1130 Town 11 13 2 \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.001\"/a1250 Custom_SchoolHouse 11 6 1 {{SecondbornName}}_read/1550 Town 18 91 3/1750 Forest 92 21 3/1820 bed",
+				"Wed": "GOTO Tue",
+				"Fri": "GOTO Tue",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+			},
+		},
+		{
+			"LogName": "Add Little Red School House schedule for Penny's daughter as secondborn (rain).",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain": "a1000 Custom_SchoolHouse 11 6 1 {{SecondbornName}}_read \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.000\"/1130 Custom_SchoolHouse 11 6 1 {{SecondbornName}}_sit \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.002\"/a1250 Custom_SchoolHouse 11 6 1 {{SecondbornName}}_read/1550 Town 18 91 3/1750 Forest 92 21 3/1820 bed",
+				"rain2": "GOTO rain",
+			},
+			"When": {
+				"DayOfWeek": "Tuesday, Wednesday, Friday",
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+			},
+		},
+		
+		{
+            "LogName": "Add animations for Penny's daughter as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/animationdescriptions",
+            "Entries":
+            {
+                "{{SecondbornName}}_sit": "16/16/16",
+                "{{SecondbornName}}_read": "17/17/17",
+			}
+		},
+		
+		
+		
+        {
+            "LogName": "Add Penny's daughter to Egg Festival as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring13",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 19 63 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 23 67 1",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 25 72 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 35 69 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Penny's daughter to Flower Dance as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring24",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 20 28 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 23 28 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 23 25 1",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "set-up_y2", 5],
+                    "Value": "/positionOffset {{SecondbornName}} -20 -9",
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 23 28 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Penny's daughter to Luau as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer11",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 56 18 1",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 53 24 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 33 17 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 29 4 2",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Penny's daughter to Moonlight Jellies as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer28",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 11 20 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 27 35 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 31 36 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 24 34 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Penny's daughter to Fair as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall16",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 37 69 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 42 78 1",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Penny's daughter to Spirit's Eve as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall27",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 32 73 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 32 72 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Penny's daughter to Festival of Ice as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter8",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 88 33 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 76 29 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 72 25 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 72 42 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Penny's daughter to Winter Star as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter25",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 32 56 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 42 60 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+		
+		
+		{
+			"LogName": "Add movie concession tastes for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/ConcessionTastes",
+			"Entries": {
+				2:{
+					"Name": "{{SecondbornName}}",
+					"LovedTags": [
+					  "Rock Candy",
+					],
+					"LikedTags": [
+					  "Sweet",
+					],
+					"DislikedTags": [
+					  "Fatty",
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Add movie reactions for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+			"Entries": {
+				2:{
+					"NPCName": "{{SecondbornName}}",
+					"Reactions": [
+					  {
+						"Tag": "*",
+						"Response": "love",
+						"Whitelist": [
+						  "{{PlayerCompanion}}",
+						],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": {
+							"ResponsePoint": null,
+							"Script": "Placeholder",
+							"Text": null
+						  },
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_3"
+					  },
+					  {
+						"Tag": "winter_movie_0",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_4"
+					  },
+					  {
+						"Tag": "family",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_0"
+					  },
+					  {
+						"Tag": "horror",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_1"
+					  },
+					  {
+						"Tag": "*",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_2"
+					  },
+					  {
+						"Tag": "love",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_5"
+					  },
+					  {
+						"Tag": "like",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_6"
+					  },
+					  {
+						"Tag": "dislike",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_7"
+					  }
+					]
+				}
+			}
+		},
+		
+   		{      
+			"LogName": "Include dialogue files for Penny's daughter as secondborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Penny/valid_secondborn_Penny.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+   		{      
+			"LogName": "Fallback to English dialogue files if no others are available for Penny's daughter as secondborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Penny/valid_secondborn_Penny.en.json", 
+			"When": {
+				"HasFile:i18n/dialogue_files/Penny/valid_secondborn_Penny.{{Language}}.json": false
+			}
+		},
+		
+   ]
+}

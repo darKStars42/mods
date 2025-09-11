@@ -1,0 +1,175 @@
+{
+  "Format": "2.6.0",
+  "Changes": [
+    {
+      "LogName": "Load map into assets",
+      "Action": "Load",
+      "Target": "Maps/FairyPlace.8BitAlien_FairyPlace",
+      "FromFile": "assets/Maps/FairyPlace.tmx"
+    },
+ {
+      "LogName": "Load map into assets",
+      "Action": "Load",
+      "Target": "Maps/FairyPlace.8BitAlien_FairyPlace2",
+      "FromFile": "assets/Maps/FairyPlace2.tmx"
+    },
+    {
+      "LogName": "Load map into assets",
+      "Action": "EditMap",
+      "Target": "Maps/FairyPlace.8BitAlien_FairyPlace2",
+      "AddWarps": [
+        "27 30 FairyPlace.8BitAlien_FairyPlace 41 0",
+        "27 30 FairyPlace.8BitAlien_FairyPlace 42 0",
+        "28 30 FairyPlace.8BitAlien_FairyPlace 43 0"
+             ],
+      "FromFile": "assets/Maps/FairyPlace2.tmx"
+    },
+{
+		"Action": "EditData",
+		"Target": "Strings/StringsFromMaps",
+		"Entries": {
+			"CustomGladeMessage": "{{i18n:CustomGladeMessage}}",
+		}
+},
+    {
+      "Action": "EditMap",
+      "Target": "Maps/FairyPlace.8BitAlien_FairyPlace",
+    "AddWarps": [
+        "39 44 Backwoods 36 1",
+        "40 44 Backwoods 36 1",
+        "41 44 Backwoods 37 1",
+        "41 -1 FairyPlace.8BitAlien_FairyPlace2 27 29",
+        "42 -1 FairyPlace.8BitAlien_FairyPlace2 27 29",
+        "43 -1 FairyPlace.8BitAlien_FairyPlace2 28 29",
+        "44 -1 FairyPlace.8BitAlien_FairyPlace2 28 29"
+          ],
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 65,
+            "Y": 4
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 7 9 FairyPlace.8BitAlien_FairyCabin 600 2300"
+          }
+        }
+      ]
+    },
+    {
+      "LogName": "Load map into assets",
+      "Action": "Load",
+      "Target": "Maps/FairyPlace.8BitAlien_FairyCabin",
+      "AddWarps": [
+        "7 10 FairyPlace.8BitAlien_FairyPlace 65 5"
+      ],
+      "FromFile": "assets/Maps/FairyCabin.tmx"
+    },
+    {
+      "LogName": "Alice Disposition Data",
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        "AliceLaelia": {
+          "DisplayName": "{{i18n:AliceLaelia}}",
+          "Gender": "Female",
+          "Age": "Adult",
+          "Manner": "Polite",
+          "SocialAnxiety": "Neutral",
+          "Optimism": "Positive",
+          "BirthSeason": "summer",
+          "BirthDay": "16",
+          "HomeRegion": "Town",
+          "CanBeRomanced": false,
+          "CanVisitIsland": false,
+          "EndSlideshow": "MainGroup",
+          "SpouseAdopts": false,
+          "IntroductionsQuest": true,
+          "ItemDeliveryQuests": true,
+          "WinterStarParticipant": false,
+          "Home": [
+            {
+              "Id": "Default",
+              "Location": "FairyPlace.8BitAlien_FairyCabin",
+              "Tile": {
+                "X": 12,
+                "Y": 4
+              },
+              "Direction": "down"
+            }
+          ]
+        }
+      }
+    },
+	{
+      "LogName": "Blanks",
+      "Action": "Load",
+      "Target": "Characters/Schedules/AliceLaelia, Characters/Dialogue/AliceLaelia",
+      "FromFile": "assets/blank.json"
+    },
+    {
+      "LogName": "Load Alice Sprites",
+      "Action": "Load",
+      "Target": "Characters/AliceLaelia",
+      "FromFile": "assets/Alice/Images/AliceSprites.png"
+    },
+	{
+      "Action": "Include",
+      "FromFile": "assets/Alice/AliceDialogue.json"
+    },
+	{
+      "Action": "Include",
+      "FromFile": "Assets/Alice/AliceSchedule.json"
+    },
+    {
+      "LogName": "Load Alice Portraits",
+      "Action": "Load",
+      "Target": "Portraits/AliceLaelia",
+      "FromFile": "assets/Alice/Images/AlicePortraits.png"
+    },
+    {
+      "LogName": "Gift Tastes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "AliceLaelia": "Wow, this is my favourite thing! $1/420 577 221 595/How kind of you! $1/422 402 400/Um, I don't really like this...$2/348 346 305 253/Ew, I hate this...$2/197 766/Thanks.//"
+      }
+    },
+    {
+      "LogName": "Include Location Data",
+      "Action": "Include",
+      "FromFile": "assets/locations.json"
+    },
+    {
+      "LogName": "Alice Movie Theater",
+      "Action": "Include",
+      "FromFile": "assets/movies.json"
+    },
+    {
+      "LogName": "Edit Backwoods",
+      "Action": "EditMap",
+      "Target": "Maps/Backwoods",
+      "AddWarps": [
+        "37 0 FairyPlace.8BitAlien_FairyPlace 40 43",
+        "36 0 FairyPlace.8BitAlien_FairyPlace 40 43"
+      ],
+      "FromFile": "assets/Maps/Backwoods.tmx",
+      "PatchMode": "Replace",
+      "When": {
+        "HasMod|contains=FlashShifter.StardewValleyExpandedCP": false
+      },
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 12,
+        "Height": 11
+      },
+      "ToArea": {
+        "X": 31,
+        "Y": 0,
+        "Width": 12,
+        "Height": 11
+      }
+    }
+  ]
+}

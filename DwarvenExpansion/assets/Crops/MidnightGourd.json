@@ -1,0 +1,145 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "{{ModId}}_Crops_MidnightGourdSeeds": {
+                    "Seasons": [
+                        "fall",
+                        "winter",
+                        "spring"
+                    ],
+                    "DaysInPhase": [
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                    ],
+                    "RegrowDays": 5,
+                    "IsRaised": true,
+                    "IsPaddyCrop": false,
+                    "NeedsWatering": true,
+                    "HarvestItemId": "{{ModId}}_Crops_MidnightGourd",
+                    "HarvestMethod": "Grab",
+                    "HarvestMinStack": 1,
+                    "HarvestMaxStack": 1,
+                    "HarvestMinQuality": 0,
+                    "HarvestMaxQuality": 4,
+                    "HarvestMaxIncreasePerFarmingLevel": 0,
+                    "ExtraHarvestChance": 0,
+                    "Texture": "Mods/DwarvenExpansion/CropsSpritesheet",
+                    "SpriteIndex": 2
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_Crops_MidnightGourdSeeds": {
+                    "Name": "Midnight Gourd Seeds",
+                    "DisplayName": "{{i18n:Crops_MidnightGourd_Seeds.DisplayName}}",
+                    "Description": "{{i18n:Crops_MidnightGourd_Seeds.Description}}",
+                    "Price": 25,
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Edibility": -300,
+                    "Texture": "Mods/DwarvenExpansion/ObjectSpritesheet",
+                    "SpriteIndex": 210,
+                    "ArtifactSpotChances": {
+                        "UndergroundMine": 0.01
+                    },
+                    "ContextTags": [
+                        "color_dark_purple",
+                        "{{ModId}}",
+                        "{{ModId}}_Crop_Seeds"
+                    ]
+                },
+                "{{ModId}}_Crops_MidnightGourd": {
+                    "Name": "Midnight Gourd",
+                    "DisplayName": "{{i18n:Crops_MidnightGourd.DisplayName}}",
+                    "Description": "{{i18n:Crops_MidnightGourd.Description}}",
+                    "Type": "Basic",
+                    "Category": -75,
+                    "Price": 160,
+                    "Texture": "Mods/DwarvenExpansion/ObjectSpritesheet",
+                    "SpriteIndex": 211,
+                    "Edibility": -300,
+                    "IsDrink": false,
+                    "Buffs": null,
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "ExcludeFromFishingCollection": false,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": false,
+                    "ContextTags": [
+                        "{{ModId}}",
+                        "{{ModId}}_Crops",
+                        "color_dark_purple",
+                        "dye_medium",
+                        "season_fall",
+                        "season_winter"
+                    ],
+                    "CustomFields": null
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Dwarf",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_Crops_MidnightGourdSeeds": {
+                    "ID": "{{ModId}}_Crops_MidnightGourdSeeds",
+                    "ItemId": "(O){{ModId}}_Crops_MidnightGourdSeeds",
+                    "Price": "70",
+					"Condition": "SYNCED_RANDOM day midnight_gourd_seeds 0.6 @addDailyLuck"
+                }
+            },
+            "When": {
+                "DayOfWeek": "Tuesday"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "SeedShop",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_Crops_MidnightGourdSeeds": {
+                    "ID": "{{ModId}}_Crops_MidnightGourdSeeds",
+                    "ItemId": "(O){{ModId}}_Crops_MidnightGourdSeeds",
+                    "Price": "140",
+					"Condition": "SYNCED_RANDOM day midnight_gourd_seeds 0.1 @addDailyLuck"
+                }
+            },
+            "When": {
+                "Season": "Fall"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Traveler",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_Crops_MidnightGourdSeeds": {
+                    "ID": "{{ModId}}_Crops_MidnightGourdSeeds",
+                    "ItemId": "(O){{ModId}}_Crops_MidnightGourdSeeds",
+                    "Price": "105",
+					"Condition": "SYNCED_RANDOM day midnight_gourd_seeds 0.3 @addDailyLuck"
+                }
+            }
+        }
+    ]
+}

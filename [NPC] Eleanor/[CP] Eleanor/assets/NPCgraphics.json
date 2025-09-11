@@ -1,0 +1,103 @@
+{
+  /*
+https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide/action-editimage.md // old methods
+https://stardewvalleywiki.com/Modding:NPC_data#Appearance_.26_sprite
+https://stardewmodding.wiki.gg/wiki/Tutorial:_Adding_Seasonal_Outfits_via_Appearances
+*/
+  "Changes": [
+    // Appearance code block = logic of NPC graphics //
+    {
+      "LogName": "Eleanor - NPCgraphics - appearance code block",
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "TargetField": [
+        "{{ModId}}",
+        "Appearance"
+      ],
+      "Entries": {
+          "{{ModId}}_default_ORG": {
+          "Id": "{{ModId}}_default_ORG",
+          "Portrait": "Portraits/{{ModId}}_default_ORG",
+          "Sprite": "Characters/{{ModId}}_default_ORG",
+          "Precedence": 0, // priority
+          "Condition": "{{Outfits |contains=one look only (ORG)}}"
+        },
+        "{{ModId}}_default_NON-ORG": {
+          "Id": "{{ModId}}_default_NON-ORG",
+          "Portrait": "Portraits/{{ModId}}_default",
+          "Sprite": "Characters/{{ModId}}_default",
+          "Precedence": -10, // priority
+          "Condition": "{{Outfits |contains=one look only}}"
+        },
+          "{{ModId}}_spring": {
+          "Id": "{{ModId}}_spring",
+          "Portrait": "Portraits/{{ModId}}_spring",
+          "Sprite": "Characters/{{ModId}}_spring",
+          "Precedence": -12, // priority
+          "Condition": "{{Outfits |contains=seasonal}}",
+          "Season": "spring"
+        },
+        "{{ModId}}_summer": {
+          "Id": "{{ModId}}_summer",
+          "Portrait": "Portraits/{{ModId}}_summer",
+          "Sprite": "Characters/{{ModId}}_summer",
+          "Precedence": -13, // priority
+          "Condition": "{{Outfits |contains=seasonal}}",
+          "Season": "summer"
+        },
+        "{{ModId}}_fall": {
+          "Id": "{{ModId}}_fall",
+          "Portrait": "Portraits/{{ModId}}_fall",
+          "Sprite": "Characters/{{ModId}}_fall",
+          "Precedence": -14, // priority
+          "Condition": "{{Outfits |contains=seasonal}}",
+          "Season": "fall"
+        },
+        "{{ModId}}_winter": {
+          "Id": "{{ModId}}_winter",
+          "Portrait": "Portraits/{{ModId}}_winter",
+          "Sprite": "Characters/{{ModId}}_winter",
+          "Precedence": -15, // priority
+          "Condition": "ANY \"{{Outfits |contains=vanilla}}\" \"{{Outfits |contains=seasonal}}\"",
+          "Season": "winter"
+        },
+
+        "{{ModId}}_festivals": {
+          "Id": "{{ModId}}_festivals",
+          "Portrait": "Portraits/{{ModId}}_default",
+          "Sprite": "Characters/{{ModId}}_default",
+          "Precedence": -30,
+          "Condition": "IS_FESTIVAL_DAY"
+        },
+        "{{ModId}}_marriage": {
+          "Id": "{{ModId}}_marriage",
+          "Portrait": "Portraits/{{ModId}}_default",
+          "Sprite": "Characters/{{ModId}}_default",
+          "Precedence": -40,
+          "Condition": "ANY \"PLAYER_NPC_RELATIONSHIP Current {{ModId}} Engaged\" \"PLAYER_NPC_RELATIONSHIP Current {{ModId}} Married\""
+        },
+        "{{ModId}}_rain": {
+          "Id": "{{ModId}}_rain",
+          "Portrait": "Portraits/{{ModId}}_default",
+          "Sprite": "Characters/{{ModId}}_default",
+          "Precedence": -50,
+          "Condition": "ANY \"WEATHER Here Rain\" \"WEATHER Here Storm\""
+        }
+      }
+    },
+
+    // Load commands //
+    {
+      "LogName": "Eleanor - NPCgraphics - default load command",
+      "Action": "Load",
+      "Target": "Characters/{{ModId}}, Portraits/{{ModId}}",
+      "FromFile": "assets/NPC sprites and portraits/{{TargetPathOnly}}/StrojvedouciDenis.Eleanor_default_ORG.png"
+    },
+    {
+      "LogName": "Eleanor - NPCgraphics - default load command",
+      "Action": "Load",
+      "Target": "Characters/{{ModId}}_default_ORG, Portraits/{{ModId}}_default_ORG, Characters/{{ModId}}_default, Portraits/{{ModId}}_default, Characters/{{ModId}}_spring, Portraits/{{ModId}}_spring, Characters/{{ModId}}_summer, Portraits/{{ModId}}_summer, Characters/{{ModId}}_fall, Portraits/{{ModId}}_fall, Characters/{{ModId}}_winter, Portraits/{{ModId}}_winter",
+      "FromFile": "assets/NPC sprites and portraits/{{TargetPathOnly}}/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "Format": "2.0.0",
+  "ConfigSchema": {
+    "FoxbloomCrop": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Foxbloom.",
+      "Section": "FlowerCrops"
+    }
+
+  },
+
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "CrypticHaze.FoxbloomSeeds/Crops, CrypticHaze.FoxbloomSeeds/Objects",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/crops.json, data/objects.json"
+    }
+  ]
+}
+

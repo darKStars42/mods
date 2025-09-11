@@ -1,0 +1,39 @@
+{
+
+"Changes": [
+
+{
+	"LogName":"Map Patch to Mines for Crystal Cave",
+	"Action": "EditMap",
+	"Target": "Maps/Mine", 
+	"FromFile": "assets/Maps/MineEdit.tmx",
+	"ToArea": {
+			"X": 21,
+			"Y": 4,
+			"Width":4,
+			"Height": 4	
+		},
+	
+	"When": {"CrystalCaveToken": "1"}	
+},
+
+
+{
+	"LogName":"Add Warp to Mines Map for Crystal Cave",
+	"Action": "EditMap",
+	"Target": "Maps/Mine",
+	"AddWarps": ["23 6 Wildflour.NooksCrannies_CrystalCave 27 21"],
+	"When": {"CrystalCaveToken": "1"}	
+},
+
+
+
+{
+	"LogName":"Add Warps to Crystal Cave Map",
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_CrystalCave",
+	"AddWarps": ["27 19 Mine 21 8"]	
+}
+
+	]
+}

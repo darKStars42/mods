@@ -1,0 +1,121 @@
+{
+	"Changes": [
+
+		//---------------------------
+		// Autumn Drop Berry
+		{
+			"LogName": "Add to Custom Bush Framework",
+			"Action": "EditData",
+			"Target": "furyx639.CustomBush/Data",
+			"Entries": {
+				"(O)ZoeyHoshi.RSVForageCrops_AutumnDropBerrySeeds": {
+					"DisplayName": "{{i18n:AutumnDropBerry_name}}",
+					"Description": "{{i18n:AutumnDropBerrySeeds_description}}",
+					"AgeToProduce": 12,
+					"DayToBeginProducing": 0,
+					"Seasons": [ "fall" ],
+					"ItemsProduced": [
+						{
+							"Condition": "DAY_OF_MONTH 4 8 12 16 20 24 28",
+							"ItemId": "(O)Rafseazz.RSVCP_Autumn_Drop_Berry",
+							"Chance": 1.0,
+							"MinStack": 2,
+							"MaxStack": 2,
+							"QualityModifiers": [
+								{
+									"Modification": "Add",
+									"RandomAmount": [ 0, 0, 0, 0, 1, 1, 1, 2, 2, 4 ]
+								}
+							]
+						}
+					],
+					"Texture": "ZoeyHoshi.RSVForageCrops/Bushes",
+					"IndoorTexture": "ZoeyHoshi.RSVForageCrops/Bushes_indoors",
+					"TextureSpriteRow": 0
+				}
+			},
+			"When": {
+				"HasMod": "furyx639.CustomBush",
+				"EnableAutumnDropBerry": true
+			}
+		},
+
+		//---------------------------
+		// Foxbloom
+		{
+			"LogName": "Add to Custom Bush Framework",
+			"Action": "EditData",
+			"Target": "furyx639.CustomBush/Data",
+			"Entries": {
+				"(O)ZoeyHoshi.RSVForageCrops_FoxbloomSeeds": {
+					"DisplayName": "{{i18n:Foxbloom_name}}",
+					"Description": "{{i18n:FoxbloomSeeds_description}}",
+					"AgeToProduce": 30,
+					"DayToBeginProducing": 0,
+					"Seasons": [ "spring", "summer", "fall", "winter" ],
+					"ItemsProduced": [
+						{
+							"Condition": "DAY_OF_MONTH 28",
+							"ItemId": "(O)Rafseazz.RSVCP_Foxbloom",
+							"Chance": 1.0,
+							"MinStack": 1,
+							"MaxStack": 1,
+							"QualityModifiers": [
+								{
+									"Modification": "Add",
+									"RandomAmount": [ 0, 0, 0, 0, 1, 1, 1, 2, 2, 4 ]
+								}
+							]
+						}
+					],
+					"Texture": "ZoeyHoshi.RSVForageCrops/Bushes",
+					"IndoorTexture": "ZoeyHoshi.RSVForageCrops/Bushes_indoors",
+					"TextureSpriteRow": 2
+				}
+			},
+			"When": {
+				"HasMod": "furyx639.CustomBush",
+				"EnableFoxbloom": true
+			}
+		},
+
+		//---------------------------
+		// Sierra Wintergreen
+		{
+			"LogName": "Add to Custom Bush Framework",
+			"Action": "EditData",
+			"Target": "furyx639.CustomBush/Data",
+			"Entries": {
+				"(O)ZoeyHoshi.RSVForageCrops_SierraWintergreenSeeds": {
+					"DisplayName": "{{i18n:SierraWintergreen_name}}",
+					"Description": "{{i18n:SierraWintergreenSeeds_description}}",
+					"AgeToProduce": 13,
+					"DayToBeginProducing": 0,
+					"Seasons": [ "winter" ],
+					"ItemsProduced": [
+						{
+							"Condition": "DAY_OF_MONTH 3 6 9 12 15 18 21 24 27",
+							"ItemId": "(O)Rafseazz.RSVCP_Sierra_Wintergreen",
+							"Chance": 1.0,
+							"MinStack": 1,
+							"MaxStack": 1,
+							"QualityModifiers": [
+								{
+									"Modification": "Add",
+									"RandomAmount": [ 0, 0, 0, 0, 1, 1, 1, 2, 2, 4 ]
+								}
+							]
+						}
+					],
+					"Texture": "ZoeyHoshi.RSVForageCrops/Bushes",
+					"IndoorTexture": "ZoeyHoshi.RSVForageCrops/Bushes_indoors",
+					"TextureSpriteRow": 4
+				}
+			},
+			"When": {
+				"HasMod": "furyx639.CustomBush",
+				"EnableSierraWintergreen": true
+			}
+		}
+	]
+}

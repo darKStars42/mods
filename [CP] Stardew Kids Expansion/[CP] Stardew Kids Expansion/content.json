@@ -1,0 +1,212 @@
+{
+	"Format": "2.0.0",
+	"ConfigSchema": {
+		"EnableAdrian": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"Description": "Enables all content for Adrian, Pierre and Caroline's son and Abigail's little brother."
+		},
+		"EnableDouglas": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"Description": "Enables all content for Douglas, the Wizard's son."
+		},
+		"EnableJames": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"Description": "Enables all content for James, George and Evelyn's grandson and Alex's cousin."
+		},
+		"EnableTina": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"Description": "Enables all content for Tina, Robin & Demetrius's second daughter, Maru's younger sister, and Sebastian's youngest half-sister."
+		},
+		"EnableVanessa": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"Description": "Enables all content for Vanessa, Gus's niece."
+		},
+		"TinaDesign": {
+			"AllowValues": "Original, New",
+			"Default": "Original",
+			"Description": "If Original is selected, Tina will have Burakmese's original design with pale skin and red hair. If New is selected, Tina will have Medisun's new design with darker skin and curly hair."
+		},
+		"IncludeInIntroductions": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"Description": "If True is selected, the children will be counted in the Introductions quest."
+		},
+		"VisitKrobus": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "If True is selected, Douglas will visit Krobus on rainy days. Will not apply if you are roommates with Krobus."
+		},
+		"VisitFestivals": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "If True is selected, the kids will attend festivals. Select False if you have issues with clashing festival positions."
+		},
+		"CCR": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "If you are using the Community Center Reimagined mod released by Lemurkat and have SchoolSchedules set to True, you should select True here as well. Not compatible with the SVE modified community center. Should remain False if you are using Town School."
+		},
+		"RoomsEnabled": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "If you disable it, all the rooms of all the characters in the game will disappear. This setting is experimental. It is strongly, strongly not recommended to turn it off."
+		}
+	},
+	"DynamicTokens": [
+		{
+			"Name": "WizardGender",
+			"Value": "Male"
+		},
+		{
+			"Name": "WizardGender",
+			"Value": "Female",
+			"When": {
+				"HasMod": "Nom0ri.RomRas"
+			}
+		},
+		{
+			"Name": "SVECompat",
+			"Value": ".tmx"
+		},
+		{
+			"Name": "SVECompat",
+			"Value": "_SVE.tbin",
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP"
+			}
+		},
+		{
+			"Name": "SVELUTICompat",
+			"Value": ".tmx"
+		},
+		{
+			"Name": "SVELUTICompat",
+			"Value": "_SVE.tbin",
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP"
+			}
+		},
+		{
+			"Name": "SVELUTICompat",
+			"Value": "_LUTI.tmx",
+			"When": {
+				"HasMod": "uglynt.town.interiors"
+			}
+		},
+		{
+			"Name": "DouglasLUTICompatY",
+			"Value": "9"
+		},
+		{
+			"Name": "DouglasLUTICompatY",
+			"Value": "23",
+			"When": {
+				"HasMod": "uglynt.town.interiors"
+			}
+		},
+		{
+			"Name": "DouglasSVECompatY",
+			"Value": "5"
+		},
+		{
+			"Name": "DouglasSVECompatY",
+			"Value": "13",
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP"
+			}
+		},
+		{
+			"Name": "DouglasSVECompatX",
+			"Value": "12"
+		},
+		{
+			"Name": "DouglasSVECompatX",
+			"Value": "11",
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP"
+			}
+		},
+		{
+			"Name": "DouglasSVECompatDir",
+			"Value": "3"
+		},
+		{
+			"Name": "DouglasSVECompatDir",
+			"Value": "1",
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP"
+			}
+		}
+	],
+	"Changes": [
+		{
+			"LogName": "JPM Tilesheet Load",
+			"Action": "Load",
+			"Target": "Maps/Jpm_Tiles",
+			"FromFile": "Assets/Jpm_Tiles.png"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "Data/Adrian/Adrian_NPCData.json",
+			"When": {
+				"EnableAdrian": "True"
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "Data/Douglas/Douglas_NPCData.json",
+			"When": {
+				"EnableDouglas": "True"
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "Data/James/James_NPCData.json",
+			"When": {
+				"EnableJames": "True"
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "Data/Tina/Tina_NPCData.json",
+			"When": {
+				"EnableTina": "True"
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "Data/Vanessa/Vanessa_NPCData.json",
+			"When": {
+				"EnableVanessa": "True"
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "Data/Events.json"
+		},
+		{
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Penny",
+			"Entries": {
+				"Tue": "{{i18n:SKE.Penny.Daily.Tue}}"
+			}
+			
+		},
+		{
+			"Action": "Include",
+			"FromFile": "Data/James/James_NPCData2.json",
+			"When": {
+			"HasMod": "FlashShifter.StardewValleyExpandedCP"
+		}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "Data/NPCMapLocations.json"
+		}
+	]
+}

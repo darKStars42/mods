@@ -1,0 +1,71 @@
+{
+  "Changes": [
+    {
+      "LogName": "Load Sprite for Moss Pie",
+      "Action": "Load",
+      "Target": "Mods\\{{ModId}}\\moss_pie",
+      "FromFile": "assets/Moss_Pie.png"
+    },
+    {
+      "LogName": "Load Sprite for Moss Log",
+      "Action": "Load",
+      "Target": "Mods\\{{ModId}}\\moss_log",
+      "FromFile": "assets/Moss_Log.png"
+    },
+    {
+      "LogName": "Objects Data",
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_Moss_Log": {
+          "Name": "Moss Log",
+          "DisplayName": "{{i18n:Moss_Log_name}}",
+          "Description": "{{i18n:Moss_Log_description}}",
+          "Type": "Seeds",
+          "Category": -74,
+          "Price": 20,
+          "Texture": "Mods\\{{ModId}}\\moss_log",
+          "Edibility": -300,
+          "IsDrink": false,
+          "ExcludeFromFishingCollection": true,
+          "ExcludeFromShippingCollection": true,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": []
+        },
+        "{{ModId}}_Moss_Pie": {
+          "Name": "Moss Pie",
+          "DisplayName": "{{i18n:Moss_Pie_name}}",
+          "Description": "{{i18n:Moss_Pie_description}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price": 300,
+          "Texture": "Mods\\{{ModId}}\\moss_pie",
+          "SpriteIndex": 0,
+          "Edibility": 56,
+          "IsDrink": false,
+          "ExcludeFromFishingCollection": true,
+          "ExcludeFromShippingCollection": true,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [],
+          "Buffs": [
+            {
+              "Duration": 200,
+              "CustomAttributes": {
+                "FarmingLevel": 0,
+                "FishingLevel": 0,
+                "MiningLevel": 0,
+                "LuckLevel": 1,
+                "ForagingLevel": 4,
+                "MaxStamina": 0,
+                "MagneticRadius": 1,
+                "Speed": 0,
+                "Defense": 0,
+                "Attack": 0
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

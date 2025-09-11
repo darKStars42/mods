@@ -1,0 +1,60 @@
+{
+  "Changes": [
+   {
+      "Action": "EditData",
+      "Target": "Data/SpecialOrders",
+      "Entries": {
+        "maat.BetterThings_CoalTreeSapling": {
+          "Name": "[maat.BetterThings_CoalSapling_Name]",
+          "Requester": "Qi",
+          "Duration": "TwoWeeks",
+          "Repeatable": "true",
+          "RequiredTags": "season_summer",
+          "OrderType": "Qi",
+          "SpecialRule": "",
+          "Text": "[maat.BetterThings_CoalSapling_Text]",
+          "ItemToRemoveOnEnd": null,
+          "MailToRemoveOnEnd": null,
+          "RandomizedElements": null,
+          "Objectives": [
+            {
+              "Type": "Collect",
+              "Text": "[maat.BetterThings_CoalSapling_Objective_0_Text]",
+              "RequiredCount": "250",
+              "Data": {
+                "AcceptedContextTags": "item_coal"
+              }
+            },
+		    {
+			  "Type": "Donate",
+              "Text": "[maat.BetterThings_CoalSapling_Objective_1_Text]",
+              "RequiredCount": "250",
+              "Data": {
+                 "DropBox": "QiChallengeBox",
+                 "DropBoxGameLocation": "QiNutRoom",
+                 "DropBoxIndicatorLocation": "1 3",
+                 "AcceptedContextTags": "item_coal"
+               }
+		     }
+          ],
+          "Rewards": [
+            {
+              "Type": "Gems",
+              "Data": {
+                "Amount": "25"
+              }
+            },
+            {
+              "Type": "Mail",
+              "Data": {
+                "MailReceived": "maat.BetterThings_coalsapling_mail",
+                "NoLetter": "false"
+              }
+            }
+          ]
+        }
+      },
+     "When": { "NewMissions": true, "FruitTree": true }
+    }
+   ]
+}

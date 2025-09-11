@@ -1,0 +1,85 @@
+{
+    "Changes": [
+
+/*----------------------------------------------------
+Add Mana Extractor
+----------------------------------------------------*/        
+        { 
+        "LogName":"Add Machine - Mana Extractor",
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_ManaExtractor": {
+                    "Name": "{{ModId}}_ManaExtractor",
+                    "DisplayName": "{{i18n:Alchemistry_ManaExtractor.name}}",
+                    "Description": "{{i18n:Alchemistry_ManaExtractor.description}}",
+                    "Fragility": 0,
+                    "CanBePlacedOutdoors": true,
+                    "CanBePlacedIndoors": true,
+                    "IsLamp": false,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/Machines",
+                    "SpriteIndex": 15
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": { 
+                "(BC)Morghoula.AlchemistryCP_ManaExtractor": {
+                    "OutputRules": [],
+                    "WorkingEffects":[
+                        {
+                            "Sounds": [
+                                {
+                                    "Id": "bubbles",
+                                    "Delay": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Outputs
+----------------------------------------------------*/ 
+        {
+            "LogName": "Load Mana Extractor Outputs",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC)Morghoula.AlchemistryCP_ManaExtractor", "OutputRules"],
+            "Entries": {
+                    "{{ModID}}_ManaOrb": { 
+                        "Id": "{{ModID}}_ManaOrb",
+                        "Triggers": [
+                            {
+                                "Id": "ItemPlacedInMachine",
+                                "Trigger": "ItemPlacedInMachine",
+                                "RequiredTags": [ "category_fish" ],
+                                "RequiredCount": 1
+                            },
+                            {
+                                "Id": "ItemPlacedInMachine",
+                                "Trigger": "ItemPlacedInMachine",
+                                "RequiredTags": [ "Alchemistry_body_part" ],
+                                "RequiredCount": 1
+                            }
+                        ],
+                        "OutputItem": [
+                        {
+                            "ItemId": "(O)Morghoula.AlchemistryCP_ManaOrb",
+                            "CopyQuality": false,
+                            "CopyPrice": false
+                        }
+                    ],
+                    "MinutesUntilReady": 300,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                }
+            }
+        }
+    ]
+}

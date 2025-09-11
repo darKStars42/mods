@@ -1,0 +1,50 @@
+{
+	"Changes": [
+		{
+			"LogName": "Seaweed Seeds Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "FishShop", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.ForageCrops_SeaweedSeeds": {
+					"Id": "ZoeyHoshi.ForageCrops_SeaweedSeeds",
+					"ItemId": "ZoeyHoshi.ForageCrops_SeaweedSeeds",
+					"Condition": "SEASON spring summer fall",
+					"IgnoreShopPriceModifiers": true
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.ForageCrops_SeaweedSeeds",
+					"AfterID": "(O)219"
+				}
+			],
+			"When": {
+				"SeaweedCrop": true
+			}
+		},
+		{
+			"LogName": "Algae Tank Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "FishShop", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.ForageCrops_AlgaeTank": {
+					"Id": "ZoeyHoshi.ForageCrops_AlgaeTank",
+					"ItemId": "(BC)ForageCrops_AlgaeTank",
+					"TradeItemAmount": 1,
+					"Price": 6500,
+					"IsRecipe": true,
+					"AvailableStockLimit": "Global",
+					"IgnoreShopPriceModifiers": true
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.ForageCrops_AlgaeTank",
+					"AfterID": "(BC)FishSmoker (Recipe)"
+				}
+			]
+		}
+	]
+}

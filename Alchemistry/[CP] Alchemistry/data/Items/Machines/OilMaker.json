@@ -1,0 +1,64 @@
+{
+    "Changes": [
+        {
+            "LogName": "Load Alchemistry Oil Maker Outputs",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC)19", "OutputRules"],
+            "Entries": {
+                "{{ModID}}_OilofNewt": { 
+                    "Id": "{{ModID}}_OilofNewt",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_NewtsTail",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "ItemId": "(O)Morghoula.AlchemistryCP_OilofNewt",
+                            "CopyQuality": false,
+                            "CopyPrice": false
+                        }
+                    ],
+                        "MinutesUntilReady": 360,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_FreshSqueezedLamprey": { 
+                    "Id": "{{ModID}}_FreshSqueezedLamprey",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_Lamprey",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "ItemId": "(O)Morghoula.AlchemistryCP_FreshSqueezedLamprey",
+                            "CopyQuality": false,
+                            "CopyPrice": false
+                        }
+                    ],
+                        "MinutesUntilReady": 360,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                }
+            },
+            //Move entries to provide compatibility with other mods and prevent them from overriding Alchemistry's code
+            "MoveEntries": [
+                {
+                    "Id": "{{ModID}}_FreshSqueezedLamprey",
+                    "ToPosition": "Top"
+                },
+                {
+                    "Id": "{{ModID}}_OilofNewt",
+                    "ToPosition": "Top"
+                }
+            ]
+
+        }
+    ]
+}

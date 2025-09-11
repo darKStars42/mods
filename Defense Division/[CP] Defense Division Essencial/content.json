@@ -1,0 +1,38 @@
+{
+  "Format": "2.5.0",
+  "DynamicTokens": [
+		{
+			"Name": "IsEvenYear",
+			"Value": "{{Query: {{Year}} % 2 = 0}}"
+		}
+    ], 	
+	"Changes": [
+	
+		{	// Incluir Varios
+		"LogName": "Incluir Varios",
+		"Action": "Include",
+		"FromFile": "Ativos/Terreno.json, Ativos/Mapas/Textos/TextoMapa.json, Ativos/Mapas/MiniMapa/MiniMapa.json, Ativos/Personagens/Edward.json, Ativos/Personagens/Isis.json, Ativos/Personagens/Miranda.json, Ativos/Personagens/Lee.json, Ativos/Personagens/Textos/DialogosAgendados.json, Ativos/Personagens/Eventos/DD_Eventos.json, Ativos/Personagens/Textos/TopicosEventos.json, Ativos/Personagens/Temporario/Atores.json, Ativos/Personagens/Textos/Correio.json, Ativos/Personagens/Eventos/Mini_Quest.json, Ativos/Som.json, Ativos/Loja.json, Ativos/Objetos.json, Ativos/Personagens/Eventos/Timer_ Eventos.json"
+		},
+		{ 	// Adds Calls e Extra Agenda
+        "Action": "Include",
+        "FromFile": "Ativos/Personagens/Eventos/Telefone.json, Ativos/Personagens/Agenda/Extra_Agenda.json"
+        },
+		{
+		"LogName": "Outros Mods Sem Script",
+		"Action": "Include",
+		"FromFile": "Ativos/Personagens/Compatibilidades/ReactToDeath.json"
+		},
+		{
+		"LogName": "FarmhouseVisits Mods",
+		"Action": "Include",
+		"FromFile": "Ativos/Personagens/Compatibilidades/FarmhouseVisits.json",
+		"When": { "HasMod |contains=mistyspring.farmhousevisits": true }
+		},
+		{
+		"LogName": "BuffFramework Mods",
+		"Action": "Include",
+		"FromFile": "Ativos/Personagens/Compatibilidades/BuffFramework.json",
+		"When": { "HasMod |contains=aedenthorn.BuffFramework": true, "HasMod |contains=PeacefulEnd.CustomCompanions": true }
+		}
+	]
+}

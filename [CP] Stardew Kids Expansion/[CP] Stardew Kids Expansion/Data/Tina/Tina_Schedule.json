@@ -1,0 +1,55 @@
+{
+    "Changes": [
+        // SCHEDULE
+        {
+            "LogName": "Tina Daily Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/Tina",
+            "Entries": {
+                //Spends the whole day at the Science house and on the mountain
+                "Mon": "600 ScienceHouse 28 19 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0",
+                "spring": "600 ScienceHouse 28 9 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0",
+                "summer": "600 ScienceHouse 28 9 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0",
+                "fall": "600 ScienceHouse 28 9 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0",
+                "winter": "600 ScienceHouse 28 9 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0",
+                //Goes to school, spends time in town, and returns home in the evening
+                "Tue": "600 ScienceHouse 28 9 0/800 ScienceHouse 27 11 2/900 ArchaeologyHouse 15 15 0/1400 Town 91 99 2/1620 Town 15 13 2/1740 ScienceHouse 22 18 1/2000 ScienceHouse 27 22 3/2100 ScienceHouse 28 19 0",
+                //Goes to school, spends time in town, and returns home in the evening
+                "Wed": "GOTO Tue",
+                //Repeat Monday
+                "Thu": "GOTO Mon",
+                //Repeat Tuesday
+                "Fri": "GOTO Tue",
+                //She spends all day on the mountain
+                "Sat": "600 ScienceHouse 28 19 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 Mountain 26 35 2/2100 ScienceHouse 28 19 0",
+                //She's visiting Jas
+                "Sun": "600 ScienceHouse 28 19 0/630 ScienceHouse 27 11 2/720 Mountain 26 35 2/910 Town 15 13 2/1000 AnimalShop 4 4 2/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0",
+                //spends all day at home
+                "rain": "600 ScienceHouse 28 19 0/900 ScienceHouse 27 11 2/1030 ScienceHouse 7 18 2/1500 ScienceHouse 22 21 1/1900 ScienceHouse 29 11 2/2100 ScienceHouse 28 19 0"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Characters/schedules/Tina",
+            "Entries": {
+                "Tue": "800 Custom_SchoolHouse 22 9 0 Tina_Sit/1400 Town 17 13 2/1550 Town 15 14 0/1740 ScienceHouse 22 18 1/2000 ScienceHouse 8 6 2"
+            },
+            "When": {
+                "HasSeenEvent": "9695001",
+                "HasMod": "Xiddav.LittleRedSchoolHouse"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Characters/schedules/Tina",
+            "Entries": {
+                "Tue": "800 CommunityCenter 15 27 0/1130 Town 17 13 2/1550 Town 15 14 0/1740 ScienceHouse 22 18 1/2000 ScienceHouse 8 6 2"
+            },
+            "When": {
+                "CCR": "True",
+                "HasMod": "LemurKat.CommunityCenter.CP",
+                "HasSeenEvent": "191393"
+            }
+        }
+    ]
+}

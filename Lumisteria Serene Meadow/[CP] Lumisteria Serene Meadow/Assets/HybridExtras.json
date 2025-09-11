@@ -1,0 +1,31 @@
+{
+  "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModID}}_DemetriusHybridTrigger": {
+                    "Id": "{{ModID}}_DemetriusHybridTrigger",
+                    "Condition": "SEASON Spring, Year 1 1, DAY_OF_MONTH 14 15 16",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current {{ModID}}_DemetriusHybridMail"
+                },
+                "{{ModID}}_EvelynHybridTrigger": {
+                    "Id": "{{ModID}}_EvelynHybridTrigger",
+                    "Condition": "PLAYER_HEARTS Current Evelyn 2",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current {{ModID}}_EvelynHybridMail"
+                },
+            }
+        },
+		{
+			"Action": "EditData",
+			"Target": "Data/Mail",
+			"Entries": {
+				"{{ModID}}_DemetriusHybridMail": "{{i18n: SereneMeadowDemetriusHybridMail_Translated}}%item id (O){{ModID}}_ForgetMeNotSeeds 3 %%[#]{{i18n: SereneMeadowDemetriusHybridMail_Title_Translated}}",
+				"{{ModID}}_EvelynHybridMail": "{{i18n: SereneMeadowEvelynHybridMail_Translated}}%item id (O){{ModID}}_HollyhockSeeds 2 %%[#]{{i18n: SereneMeadowEvelynHybridMail_Title_Translated}}",
+
+			},
+		},
+  ]
+}

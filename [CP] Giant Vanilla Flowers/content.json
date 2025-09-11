@@ -1,0 +1,157 @@
+{
+  "Format": "2.5.0",
+  "DynamicTokens": [
+    {
+      "Name": "GiantVanillaFlowerChance",
+      "Value": 0.0,
+      "When": {
+        "Giant Flower Chance |contains=very high, high, medium, low, off": "false"
+      }
+    },
+    {
+      "Name": "GiantVanillaFlowerChance",
+      "Value": 0.05,
+      "When": {
+        "Giant Flower Chance": "very high"
+      }
+    },
+    {
+      "Name": "GiantVanillaFlowerChance",
+      "Value": 0.01,
+      "When": {
+        "Giant Flower Chance": "high"
+      }
+    },
+    {
+      "Name": "GiantVanillaFlowerChance",
+      "Value": 0.005,
+      "When": {
+        "Giant Flower Chance": "medium"
+      }
+    },
+    {
+      "Name": "GiantVanillaFlowerChance",
+      "Value": 0.001,
+      "When": {
+        "Giant Flower Chance": "low"
+      }
+    },
+    {
+      "Name": "GiantVanillaFlowerChance",
+      "Value": 0.0,
+      "When": {
+        "Giant Flower Chance": "off"
+      }
+    }
+  ],
+  "ConfigSchema": {
+    "Giant Flower Chance": {
+      "AllowValues": "very high, high, medium, low, off",
+      "Default": "high",
+      "Description": "Chance of getting a giant flower from any vanilla growable flower. Values: 'very high' - 5%, 'high' - 1% (game default), 'medium' - 0.5%, 'low' - 0.1%, 'off' - 0%."
+    },
+    "Sprite Set": {
+      "AllowValues": "Vanilla, Orchid Courage, BBR, Neo, Custom",
+      "Default": "Vanilla",
+      "Description": "Which set of sprites are used for the giant flowers."
+    },
+    "Minimum Drops": {
+      "AllowBlank": false,
+      "Default": 21,
+      "Description": "Minimum amount of flowers (and sunflower seeds) dropped when breaking a giant flower. Default: 21"
+    },
+    "Maximum Drops": {
+      "AllowBlank": false,
+      "Default": 30,
+      "Description": "Maximum amount of flowers (and sunflower seeds) dropped when breaking a giant flower. Default: 30"
+    },
+    "Tulip": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Section": "Flowers"
+    },
+    "Blue Jazz": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Section": "Flowers"
+    },
+    "Summer Spangle": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Section": "Flowers"
+    },
+    "Poppy": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Section": "Flowers"
+    },
+    "Sunflower": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Section": "Flowers"
+    },
+    "Fairy Rose": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Section": "Flowers"
+    }
+  },
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Mods/OrchidCourage.GiantVanillaFlowers/Tulip",
+      "FromFile": "assets/{{Sprite Set}}/{{TargetWithoutPath}}.png",
+      "When": {
+        "Tulip": "true"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/OrchidCourage.GiantVanillaFlowers/Blue Jazz",
+      "FromFile": "assets/{{Sprite Set}}/{{TargetWithoutPath}}.png",
+      "When": {
+        "Blue Jazz": "true"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/OrchidCourage.GiantVanillaFlowers/Summer Spangle",
+      "FromFile": "assets/{{Sprite Set}}/{{TargetWithoutPath}}.png",
+      "When": {
+        "Summer Spangle": "true"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/OrchidCourage.GiantVanillaFlowers/Poppy",
+      "FromFile": "assets/{{Sprite Set}}/{{TargetWithoutPath}}.png",
+      "When": {
+        "Poppy": "true"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/OrchidCourage.GiantVanillaFlowers/Sunflower",
+      "FromFile": "assets/{{Sprite Set}}/{{TargetWithoutPath}}.png",
+      "When": {
+        "Sunflower": "true"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/OrchidCourage.GiantVanillaFlowers/Fairy Rose",
+      "FromFile": "assets/{{Sprite Set}}/{{TargetWithoutPath}}.png",
+      "When": {
+        "Fairy Rose": "true"
+      }
+    },
+    {
+      "LogName": "Giant Vanilla Flowers",
+      "Action": "Include",
+      "FromFile": "flowers.json",
+      "When": {
+        "Giant Flower Chance": "very high, high, medium, low"
+      }
+    }
+  ]
+}

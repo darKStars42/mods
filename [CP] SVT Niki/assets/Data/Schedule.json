@@ -1,0 +1,75 @@
+{
+    "Changes":
+        [
+     
+            {
+                "LogName": "Niki Schedule",
+                "Action": "EditData",
+                "Target": "Characters/schedules/SVTNiki",
+                "Entries": {
+                    "spring": "610 Custom_SVTNiki_NikiCar 0 1 0",
+                    "rain": "610 Custom_SVTNiki_NikiCar 0 1 0",
+                },
+                "When": {
+                    // Before introduced event
+                    "HasSeenEvent:hostPlayer |contains=SVTNiki0Introduction": false,
+                }
+            },
+            {
+                "LogName": "Bus SVTNiki Schedule",
+                "Action": "EditData",
+                "Target": "Characters/schedules/SVTNiki",
+                "When": {
+                    // After introduced event, default
+                    "HasSeenEvent:hostPlayer |contains=SVTNiki0Introduction": true,
+                    "ArrivesbyCar": "false",
+                },
+                "Entries": {
+                    "spring": "1700 Saloon 20 18 3/2000 Town 43 77 2 SVTNiki_sit_down/2400 BusStop 32 11 2",
+                    "Mon": "GOTO Tue",
+                    "spring_Mon": "800 Forest 70 50 2/1300 Forest 70 44 1/1640 Saloon 20 18 3/2000 Town 43 77 2 SVTNiki_sit_down/2400 BusStop 32 11 2",
+                    "summer_8": "800 Town 31 56 2/1300 Town 31 56 3 SVTNiki_notes \"Strings\\schedules\\SVTNiki:000\"/1400 ArchaeologyHouse 2 10 0/1750 BusStop 32 11 2",
+                    "fall_8": "GOTO summer_8",
+                    "winter_8": "GOTO summer_8",
+                    "Tue": "900 AnimalShop 13 16 0 \"Strings\\schedules\\SVTNiki:002\"/1200 Forest 87 17 2/1500 Forest 92 20 1/1900 Beach 46 21 2 \"Strings\\schedules\\SVTNiki:001\"/2400 BusStop 32 11 2", // Marnie isn't there: 2, 9, 16, 23
+                    "Wed": "830 Town 46 57 2/1700 AdventureGuild 4 13 0/2400 BusStop 32 11 2",
+                    "Thu": "830 SeedShop 6 19 0/1200 ArchaeologyHouse 17 5 0/1730 Town 49 21 2/2400 BusStop 32 11 2",
+                    "Fri": "900 AnimalShop 13 16 0/1200 ScienceHouse 7 20 0/1500 Town 61 17 2/1910 Beach 46 21 2 \"Strings\\schedules\\SVTNiki:001\"/2400 BusStop 32 11 2", // Marnie is there: 5, 12, 19, 26
+                    "summer_Fri": "900 AnimalShop 13 16 0/1200 ScienceHouse 7 20 0/1500 Mountain 56 31 3 SVTNiki_notes \"Strings\\schedules\\SVTNiki:000\"/1850 Beach 46 21 2/2400 BusStop 32 11 2", // Maru is there
+                    "winter_16": "GOTO summer_8", // Marnie is at ranch, Lewis is in town
+                    "rain": "1700 Saloon 20 18 3/2000 Saloon 42 17 2 SVTNiki_sit_down/2400 BusStop 32 11 2",
+
+                    "marriage_Mon": "MAIL SVTNikiNoCaffeine/GOTO Caffeine/GOTO noCaffeine",
+                    "marriage_Wed": "1300 AdventureGuild 4 13 0/2000 bed",
+                    "marriage_Thu": "830 SeedShop 6 19 0/1200 ArchaeologyHouse 17 5 0/1800 bed",
+                    "marriage_Fri": "900 AnimalShop 13 16 0/1200 ScienceHouse 7 20 0/1500 Town 61 16 2/1910 Beach 46 21 2\"Strings\\schedules\\SVTNiki:001\"/2230 bed",
+                    "marriage_Sun": "MAIL SVTNikiNoCaffeine/GOTO Caffeine/GOTO noCaffeine",
+                    "Caffeine": "1640 Saloon 20 18 3/1930 Town 43 77 2 SVTNiki_sit_down/2100 bed",
+                    "noCaffeine": "1640 Town 43 77 2 SVTNiki_sit_down/2000 bed",
+                },
+            },
+           {
+                "LogName": "Car Niki Schedule",
+                "Action": "EditData",
+                "Target": "Characters/schedules/SVTNiki",
+                "When": {
+                    "ArrivesbyCar": "true", // includes introduction condition
+                },
+                "Entries": {
+                    "spring": "1700 Saloon 20 18 3/2000 Town 43 77 2 SVTNiki_sit_down/2400 Custom_SVTNiki_NikiCar 0 1 0",
+                    "Mon": "GOTO Tue",
+                    "spring_Mon": "800 Forest 70 50 2/1300 Forest 70 44 1/1640 Saloon 20 18 3/2000 Town 43 77 2 SVTNiki_sit_down/2400 Custom_SVTNiki_NikiCar 0 1 0",
+                    "summer_8": "800 Town 31 56 2/1300 Town 31 56 3 SVTNiki_notes \"Strings\\schedules\\SVTNiki:000\"/1400 ArchaeologyHouse 2 10 0/1750 Custom_SVTNiki_NikiCar 0 1 0",
+                    "fall_8": "GOTO summer_8",
+                    "winter_8": "GOTO summer_8",
+                    "Tue": "900 AnimalShop 13 16 0 \"Strings\\schedules\\SVTNiki:002\"/1200 Forest 87 17 2/1500 Forest 92 20 1/1900 Beach 46 21 2 \"Strings\\schedules\\SVTNiki:001\"/2400 Custom_SVTNiki_NikiCar 0 1 0",
+                    "Wed": "830 Town 46 57 2/1700 AdventureGuild 4 13 0/2400 Custom_SVTNiki_NikiCar 0 1 0",
+                    "Thu": "830 SeedShop 6 19 0/1200 ArchaeologyHouse 17 5 0/1730 Town 49 21 2/2400 Custom_SVTNiki_NikiCar 0 1 0",
+                    "Fri": "900 AnimalShop 13 16 0/1200 ScienceHouse 7 20 0/1500 Town 61 17 2/1910 Beach 46 21 2 \"Strings\\schedules\\SVTNiki:001\"/2400 Custom_SVTNiki_NikiCar 0 1 0",
+                    "summer_Fri": "900 AnimalShop 13 16 0/1200 ScienceHouse 7 20 0/1500 Mountain 56 31 3 SVTNiki_notes \"Strings\\schedules\\SVTNiki:000\"/1850 Beach 46 21 2/2400 Custom_SVTNiki_NikiCar 0 1 0", // Maru is there
+                    "winter_16": "GOTO summer_8", // Marnie is at ranch, Lewis is in town
+                    "rain": "1700 Saloon 20 18 3/2000 Saloon 42 17 2 SVTNiki_sit_down/2400 Custom_SVTNiki_NikiCar 0 1 0",
+                }
+            },
+    ],
+    }

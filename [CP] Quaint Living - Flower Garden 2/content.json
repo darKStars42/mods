@@ -1,0 +1,100 @@
+{
+	"Format":"2.0.1",
+	"ConfigSchema":
+	{
+		"SeasonalVariant": {
+			"AllowValues":"true, false",
+			"Default":"true",
+			"Description":"Automatically makes some multi-season flowers change varieties when the season changes."
+			},
+		"AllSeedsAvailableY2": {
+			"AllowValues":"true, false",
+			"Default":"false",
+			"Description":"Allow seeds that require player to play at least Year 3 available at Year 2."
+			},
+		"AutoLearnRecipes": {
+			"AllowValues":"true, false",
+			"Default":"true",
+			"Description":"Allow recipes to be automatically learned from the start of the game. Turn off if you want the recipes to be sent via letters by NPCs like vanilla recipes behavior."
+			},
+		"ArtisanGoodsRecipes": {
+			"AllowValues":"true, false",
+			"Default":"false",
+			"Description":"Requires Quaint Living - Artisan Goods. Toggling this option on will unlock additional recipes."
+			},
+		},
+	"Changes": [
+	{
+		"LogName":"QL Sprites Load",
+		"Action":"Load",
+		"Target":"Mods/PC.QL.FlowerGarden2/Objects, Mods/PC.QL.FlowerGarden2/Crops, Mods/PC.QL.FlowerGarden2/GiantCrops, Mods/PC.QL.FlowerGarden2/Recipes, Mods/PC.QL.FlowerGarden2/FruitTrees",
+		"FromFile":"assets/{{TargetWithoutPath}}.png"
+		},
+		
+//	SEASONAL PATCH
+	{
+		"LogName":"QL Flower Garden 2 - Seasonal Patch",
+		"Action":"Include",
+		"FromFile":"Data/SeasonalPatch.json",
+		"When": {"SeasonalVariant": true},
+		},
+//SPRING OBJECTS
+	{
+		"LogName":"QL Flower Garden 2 - Seed Object Data",
+		"Action":"Include",
+		"FromFile":"Data/SeedsData.json"
+		},
+	{
+		"LogName":"QL Flower Garden 2 - Flower Object Data",
+		"Action":"Include",
+		"FromFile":"Data/ObjectData.json"
+		},
+//CROP DATA
+	{
+		"LogName":"QL Flower Garden 2 - Crop Data",
+		"Action":"Include",
+		"FromFile":"Data/CropData.json"
+		},
+	{
+		"LogName":"QL Flower Garden 2 - Giant Crops",
+		"Action":"Include",
+		"FromFile":"Data/GiantCrops.json"
+		},
+	{
+		"LogName":"QL Flower Garden 2 - Flower Tree Data",
+		"Action":"Include",
+		"FromFile":"Data/TreeData.json"
+		},
+//GIFT TASTES
+	{
+		"LogName":"QL Flower Garden 2 - Vanilla NPC Gift Tastes",
+		"Action":"Include",
+		"FromFile":"Data/VanillaNPCGiftTastes.json"
+		},
+	{
+		"LogName":"QL Flower Garden 2 - Recipe Gift Tastes",
+		"Action":"Include",
+		"FromFile":"Data/RecipeGiftTastes.json"
+		},
+//SHOP DATA
+	{
+		"LogName":"QL Flower Garden 2 - Shop Data",
+		"Action":"Include",
+		"FromFile":"Data/ShopData.json"
+		},
+//RECIPES
+	{
+		"LogName":"QL Flower Garden 2 - Recipe Data",
+		"Action":"Include",
+		"FromFile":"Data/RecipeData.json",
+		"When": {"AutoLearnRecipes": false},
+		},
+	{
+		"LogName":"QL Flower Garden 2 - Recipe Data",
+		"Action":"Include",
+		"FromFile":"Data/RecipeDataDefault.json",
+		},
+	]
+}
+
+

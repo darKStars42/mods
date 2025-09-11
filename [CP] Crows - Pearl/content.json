@@ -1,0 +1,75 @@
+/*Adds crows as coop animals using CP in 1.6*/
+
+{
+    "Format": "2.0.0",
+    "Changes": [ 
+        
+    {
+        "LogName": "Load assets",
+            "Action": "Load",
+            "Target": "assets/Crow, assets/BabyCrow, assets/CrowIcon",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+
+         {
+            "LogName": "Load Crow",
+            "Action": "EditData",
+            "Target": "Data/FarmAnimals",
+            "Entries": {
+                "Crow": {
+                    "DisplayName": "Crow",
+                    "House": "Coop",
+                    "Gender": "MaleOrFemale",
+                    "PurchasePrice": 600,
+                    "SellPrice" : 300,
+                    "ShopTexture": "assets/CrowIcon",
+                    "ShopSourceRect": {
+                        "X": 0,
+                        "Y": 0,
+                        "Width": 32,
+                        "Height": 16
+                    },
+                    "RequiredBuilding": "Coop",
+                    "ShopDisplayName": "Crow",
+                    "ShopDescription": "Crows like to collect branches for nest building and the occasional shiny object.",
+    
+              
+                    "DaysToMature": 3,
+                    "DaysToProduce": 6,
+                    "ProduceItemIds": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 0,
+                            "ItemId": "169"
+                        }
+                    ],
+                    "DeluxeProduceItemIds": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 200,
+                            "ItemId": "797"
+                        }
+                    ],
+
+                    "HarvestType": "DropOvernight",
+                    "HarvestTool": "null",
+                    "Sound": "crow",
+                    "BabySound": "crow",
+                    "Texture": "assets/Crow",
+                    "BabyTexture": "assets/BabyCrow",
+                    "SpriteWidth": "16",
+                    "SpriteHeight": "16",
+                    "ShowInSummitCredits": false
+                }
+            }
+        },
+        
+
+    
+
+       
+        
+    ]
+}

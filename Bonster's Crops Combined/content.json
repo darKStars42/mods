@@ -1,0 +1,55 @@
+{
+    "Format": "2.0.0",
+	"ConfigSchema": {
+		"Enable Rare Pack": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "(Recommended) Adds a large variety of crops from around the world."
+		},
+		"Enable Rare Trees Pack": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "(Recommended) Adds a large variety of fruit trees from around the world."
+		},
+	},
+	"DynamicTokens": [
+		//crop ExtraHarvestChance values for later testing
+		{
+			"Name": "10Percent",
+			"Value": "0.1"
+		},
+		{
+			"Name": "25Percent",
+			"Value": "0.2"
+		},
+		{
+			"Name": "50Percent",
+			"Value": "0.33"
+		},
+		{
+			"Name": "75Percent",
+			"Value": "0.42"
+		},
+		{
+			"Name": "90Percent",
+			"Value": "0.45"
+		},
+	],
+        // add item + crop images
+		  "Changes": [	
+	  {
+            "Action": "Load",
+            "Target": "BFV.CropsCombined/Crops, BFV.CropsCombined/Objects, BFV.CropsCombined/FruitTrees",
+            "FromFile": "assets/{{TargetWithoutPath}}.png" // assets/Crops.png, assets/Objects.png
+        },	
+		// add subfiles
+		{
+			"Action": "Include",
+			"FromFile": "data/shop_pierre.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "data/crops.json, data/fruittrees.json, data/objects.json, data/recipes.json, data/gifttastes.json"
+		}
+    ]
+}

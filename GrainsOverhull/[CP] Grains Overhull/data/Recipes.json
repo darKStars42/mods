@@ -1,0 +1,42 @@
+{
+    "Changes": [
+        {
+            "Log": "Cooking Recipe Data",
+            "Action": "EditData",
+            "Target": "Data/CookingRecipes",
+            "Entries": {
+                "{{ModId}}_Harvest_Bowl": "271 1 250 1 238 1 280 1/6 9/{{ModId}}_Harvest_Bowl 1/null/{{i18n:HarvestBowl.displayname}}",
+                "{{ModId}}_Blueberry_Oatmeal": "{{ModId}}_Rolled_Oats 2 258 1 724 1 -6 1/6 9/{{ModId}}_Blueberry_Oatmeal 1/null/{{i18n:BlueberryOatmeal.displayname}}",
+                "{{ModId}}_Millet_Porridge": "{{ModId}}_Hulled_Millet 1/6 9/{{ModId}}_Millet_Porridge 1/null/{{i18n:MilletPorridge.displayname}}",
+                "{{ModId}}_Rye_Bread": "246 1 {{ModId}}_Rye_Flour 1/6 9/{{ModId}}_Rye_Bread 1/null/{{i18n:RyeBread.displayname}}",
+                "{{ModId}}_Sorghum_Salad": "{{ModId}}_Sorghum 1 282 1 829 1/6 9/{{ModId}}_Sorghum_Salad 1/null/{{i18n:SorghumSalad.displayname}}"
+            }
+        },
+        {
+            "Log": "Cooking Recipe Data - Cornucopia Compatibility",
+            "Action": "EditData",
+            "When": {
+                "HasMod |contains=Cornucopia.MoreCrops": true
+            },
+            "Target": "Data/CookingRecipes",
+            "Entries": {
+                "{{ModId}}_Trail_Mix": "262 1 Cornucopia_Oats 1 Cornucopia_WholeGrainFlour 1 DriedFruit 1/6 9/{{ModId}}_Trail_Mix 1/null/{{i18n:TrailMix.displayname}}",
+                "{{ModId}}_Galette": "Cornucopia_BuckwheatFlour 1 -5 1 247 1 424 1/6 9/{{ModId}}_Galette 1/null/{{i18n:Galette.displayname}}",
+                "{{ModId}}_Buckwheat_Waffles": "Cornucopia_BuckwheatFlour 1 -5 1 -6 1 724 1/6 9/{{ModId}}_Buckwheat_Waffles 1/null/{{i18n:BuckwheatWaffles.displayname}}"
+            }
+        },
+        {
+            "Log": "Cooking Recipe Data - Cornucopia Compatibility",
+            "Action": "EditData",
+            "When": {
+                "HasMod |contains=Cornucopia.MoreCrops": false
+            },
+            "Target": "Data/CookingRecipes",
+            "Entries": {
+                "{{ModId}}_Trail_Mix": "262 1 {{ModId}}_Oat 1 {{ModId}}_Pearl_Barley 1 DriedFruit 1/6 9/{{ModId}}_Trail_Mix 1/null/{{i18n:TrailMix.displayname}}",
+                "{{ModId}}_Galette": "{{ModId}}_Buckwheat_Flour 1 -5 1 247 1 424 1/6 9/{{ModId}}_Galette 1/null/{{i18n:Galette.displayname}}",
+                "{{ModId}}_Buckwheat_Waffles": "{{ModId}}_Buckwheat_Flour 1 -5 1 -6 1 724 1/6 9/{{ModId}}_Buckwheat_Waffles 1/null/{{i18n:BuckwheatWaffles.displayname}}"
+            }
+        }
+    ]
+} 

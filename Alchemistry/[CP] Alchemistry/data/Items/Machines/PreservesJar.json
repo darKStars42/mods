@@ -1,0 +1,31 @@
+{
+    "Changes": [
+        {
+            "LogName": "Load Alchemistry Preserves Jar Outputs",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC)15", "OutputRules"],
+            "Entries": {
+                "{{ModID}}_CuredMoonlightJelly": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_MoonlightJelly",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "ItemId": "(O)Morghoula.AlchemistryCP_CuredMoonlightJelly",
+                            "CopyQuality": true,
+                            "CopyPrice": false
+                        }
+                    ],
+                        "MinutesUntilReady": 6000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                }
+            }
+        }
+    ]
+}

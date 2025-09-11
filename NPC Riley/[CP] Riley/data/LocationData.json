@@ -1,0 +1,177 @@
+{
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Maps/RileyHouse",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx"
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/RileyHouseEvent",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx"
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/RileySpouseRoom",
+      "FromFile": "assets/Maps/{{TargetWithoutPath}}.tmx"
+    },
+    {
+      "LogName": "RileyHouse",
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "RileyHouse": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/RileyHouse"
+          }
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Town",
+      "FromFile": "assets/Maps/RileyTown1.tmx",
+      "ToArea": {
+        "X": 87,
+        "Y": 60,
+        "Width": 21,
+        "Height": 15
+      },
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false,
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Town",
+      "FromFile": "assets/Maps/RileyTown2.tmx",
+      "ToArea": {
+        "X": 87,
+        "Y": 60,
+        "Width": 21,
+        "Height": 15
+      },
+      "Update": "OnLocationChange, OnTimeChange",
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false,
+        "HasDialogueAnswer": "565608"
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Town",
+      "FromFile": "assets/Maps/RileyTownSVE1.tmx",
+      "ToArea": {
+        "X": 105,
+        "Y": 55,
+        "Width": 14,
+        "Height": 16
+      },
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod: |contains=YenaLoomer.CutCharacters": false
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Town",
+      "FromFile": "assets/Maps/RileyTownSVE2.tmx",
+      "ToArea": {
+        "X": 105,
+        "Y": 55,
+        "Width": 14,
+        "Height": 16
+      },
+      "Update": "OnLocationChange, OnTimeChange",
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod: |contains=YenaLoomer.CutCharacters": false,
+        "HasDialogueAnswer": "565608"
+      }
+    },
+    //Cut Characters Compat
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Town",
+      "FromFile": "assets/Maps/RileyTownSVE1CC.tmx",
+      "ToArea": {
+        "X": 97,
+        "Y": 54,
+        "Width": 9,
+        "Height": 7
+      },
+      "PatchMode": "Replace",
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod: |contains=YenaLoomer.CutCharacters": true
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Town",
+      "FromFile": "assets/Maps/RileyTownSVE2CC.tmx",
+      "ToArea": {
+        "X": 97,
+        "Y": 54,
+        "Width": 9,
+        "Height": 7
+      },
+      "PatchMode": "Replace",
+      "Update": "OnLocationChange, OnTimeChange",
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod: |contains=YenaLoomer.CutCharacters": true,
+        "HasDialogueAnswer": "565608"
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/RileyHouse",
+      "AddWarps": [
+        "6 15 Town 95 70"
+      ],
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/RileyHouse",
+      "AddWarps": [
+        "6 15 Town 111 67"
+      ],
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod: |contains=YenaLoomer.CutCharacters": false
+      }
+    },
+    //Cut Characters Compat
+    {
+      "Action": "EditMap",
+      "Target": "Maps/RileyHouse",
+      "AddWarps": [
+        "6 15 Town 100 60"
+      ],
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "HasMod: |contains=YenaLoomer.CutCharacters": true
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/RileyHouse",
+      "FromFile": "assets/Maps/SleepTile.tmx",
+      "When": {
+        "HasDialogueAnswer": "565608"
+      },
+      "ToArea": {
+        "X": 19,
+        "Y": 4,
+        "Width": 3,
+        "Height": 1
+      },
+      "PatchMode": "Overlay",
+      "Update": "OnLocationChange, OnTimeChange"
+    }
+  ]
+}

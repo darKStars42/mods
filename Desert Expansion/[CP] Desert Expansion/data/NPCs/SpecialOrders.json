@@ -1,0 +1,81 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/SpecialOrders",
+            "Entries": {
+                "Sandy": {
+                    "Name": "[Sandy_Name]",
+                    "Requester": "Sandy",
+                    "Duration": "Month",
+                    "Repeatable": "False",
+                    "RequiredTags": "event_122359101",
+                    "OrderType": "",
+                    "SpecialRule": "",
+                    "Text": "[Sandy_Text]",
+                    "ItemToRemoveOnEnd": null,
+                    "MailToRemoveOnEnd": null,
+                    "RandomizedElements": null,
+                    "Objectives": [
+                        {
+                            "Type": "Donate",
+                            "Text": "[Sandy_Objective_1_Text]",
+                            "RequiredCount": "50",
+                            "Data": {
+                                "DropBox": "SandyBox",
+                                "DropBoxGameLocation": "Desert_LivingRoom",
+                                "DropBoxIndicatorLocation": "25 17",
+                                "AcceptedContextTags": "item_wood"
+                            }
+                        },
+                        {
+                            "Type": "Donate",
+                            "Text": "[Sandy_Objective_2_Text]",
+                            "RequiredCount": "1",
+                            "Data": {
+                                "DropBox": "SandyBox",
+                                "DropBoxGameLocation": "Desert_LivingRoom",
+                                "DropBoxIndicatorLocation": "25 17",
+                                "AcceptedContextTags": "item_gold_bar"
+                            }
+                        }
+                    ],
+                    "Rewards": [
+                        {
+                            "Type": "Money",
+                            "Data": {
+                                "Amount": "1000"
+                            }
+                        },
+                        {
+                            "Type": "Mail",
+                            "Data": {
+                                "MailReceived": "SandyThanks"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Strings/SpecialOrderStrings",
+            "Entries": {
+                "Sandy_Name": "{{i18n:Sandy.SpecialOrder.01}}",
+                "Sandy_Text": "{{i18n:Sandy.SpecialOrder.02}}",
+                "Sandy_Objective_1_Text": "{{i18n:Sandy.SpecialOrder.03}}",
+                "Sandy_Objective_2_Text": "{{i18n:Sandy.SpecialOrder.04}}",
+            }
+        },
+        {
+            "LogName": "Mail",
+            "Action": "EditData",
+            "Target": "data/mail",
+            "Entries": {
+                "SandyThanks": "{{i18n:SandyThanks.Mail.Description}}[#]{{i18n:SandyThanks.Mail.Title}}"
+            }
+        }
+    ]
+}
+
+// Basic/The Mysterious Qi/You've found another note written by 'Mr. Qi'. The request is even more unusual this time./Place 10 beets inside Mayor Lewis' fridge.

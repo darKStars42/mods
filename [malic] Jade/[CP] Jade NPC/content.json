@@ -1,0 +1,416 @@
+// Jade
+{
+	"Format": "2.0.0",
+	"ConfigSchema": {
+		"Portrait-Spring": {
+			"AllowValues": "Default-Academia, Default-Flannel, Default-PinkHoodie, Default-Tanktop, Default-WhiteHoodie, Airyn-Academia, Airyn-Flannel, Airyn-PinkHoodie, Airyn-Tanktop, Airyn-WhiteHoodie, CodeNameRed, EssGee, Original",
+			"Description": "Determines what portrait Jade will use in the spring.",
+			"Default": "Default-WhiteHoodie"
+		},
+		"Portrait-Summer": {
+			"AllowValues": "Default-Academia, Default-Flannel, Default-PinkHoodie, Default-Tanktop, Default-WhiteHoodie, Airyn-Academia, Airyn-Flannel, Airyn-PinkHoodie, Airyn-Tanktop, Airyn-WhiteHoodie, CodeNameRed, EssGee, Original",
+			"Description": "Determines what portrait Jade will use in the summer.",
+			"Default": "Default-Tanktop"
+		},
+		"Portrait-Fall": {
+			"AllowValues": "Default-Academia, Default-Flannel, Default-PinkHoodie, Default-Tanktop, Default-WhiteHoodie, Airyn-Academia, Airyn-Flannel, Airyn-PinkHoodie, Airyn-Tanktop, Airyn-WhiteHoodie, CodeNameRed, EssGee, Original",
+			"Description": "Determines what portrait Jade will use in the fall.",
+			"Default": "Default-Flannel"
+		},
+		"Portrait-Winter": {
+			"AllowValues": "Default-Academia, Default-Flannel, Default-PinkHoodie, Default-Tanktop, Default-WhiteHoodie, Airyn-Academia, Airyn-Flannel, Airyn-PinkHoodie, Airyn-Tanktop, Airyn-WhiteHoodie, CodeNameRed, EssGee, Original",
+			"Description": "Determines what portrait Jade will use in the winter.",
+			"Default": "Default-Academia"
+		},
+		"Portrait-Resort": {
+			"AllowValues": "Default-BlackBra, Airyn-BlackBra",
+			"Description": "Determines what portrait Jade will use in the resort.",
+			"Default": "Default-BlackBra"
+		},
+		"Spritesheet-Spring": {
+			"AllowValues": "Default-Academia, Default-Flannel, Default-PinkHoodie, Default-Tanktop, Default-WhiteHoodie, CodeNameRed, xdx4900",
+			"Description": "Determines what spritesheet Jade will use in the spring.",
+			"Default": "Default-WhiteHoodie"
+		},
+		"Spritesheet-Summer": {
+			"AllowValues": "Default-Academia, Default-Flannel, Default-PinkHoodie, Default-Tanktop, Default-WhiteHoodie, CodeNameRed, xdx4900",
+			"Description": "Determines what spritesheet Jade will use in the summer.",
+			"Default": "Default-Tanktop"
+		},
+		"Spritesheet-Fall": {
+			"AllowValues": "Default-Academia, Default-Flannel, Default-PinkHoodie, Default-Tanktop, Default-WhiteHoodie, CodeNameRed, xdx4900",
+			"Description": "Determines what spritesheet Jade will use in the fall.",
+			"Default": "Default-Flannel"
+		},
+		"Spritesheet-Winter": {
+			"AllowValues": "Default-Academia, Default-Flannel, Default-PinkHoodie, Default-Tanktop, Default-WhiteHoodie, CodeNameRed, xdx4900",
+			"Description": "Determines what spritesheet Jade will use in the winter.",
+			"Default": "Default-Academia"
+		},
+		"Spritesheet-Resort": {
+			"AllowValues": "Default-BlackSwimsuit",
+			"Description": "Determines what spritesheet Jade will use in the resort.",
+			"Default": "Default-BlackSwimsuit"
+		},
+		"jadeSimilarChildren": {
+			"AllowValues": "true, false",
+			"Description": "Replaces toddler sprites with Jade themed sprite.",
+			"Default": "true"
+		},
+		"jadeOverrideHomeLocation": {
+			"AllowValues": "default, nohome, boardinghouse, juliethouse",
+			"Description": "Overrides where Jade lives. Replaces dialogue, rooms, schedules.",
+			"Default": "default"
+		}
+	},
+	"DynamicTokens": [
+		{
+			"Name": "blankFile",
+			"Value": "assets/blank.json"
+		},
+		// spawn check variables
+		{
+			"Name": "JadeSpawnLocation",
+			"Value": "DEFAULT",
+			"When": {
+				"jadeOverrideHomeLocation": "nohome"
+			}
+		},
+		{
+			"Name": "JadeSpawnLocation",
+			"Value": "DEFAULT",
+			"When": {
+				"jadeOverrideHomeLocation": "default",
+				"HasMod |contains=CPBoardingHouse":false,
+				"HasMod |contains=LemurKat.JulietHouse.NPC":false
+			}
+		},
+		{
+			"Name": "JadeSpawnLocation",
+			"Value": "BH",
+			"When": {
+				"jadeOverrideHomeLocation": "boardinghouse"
+			}
+		},
+		{
+			"Name": "JadeSpawnLocation",
+			"Value": "BH",
+			"When": {
+				"jadeOverrideHomeLocation": "default",
+				"HasMod |contains=CPBoardingHouse":true,
+				"HasMod |contains=LemurKat.JulietHouse.NPC":false
+			}
+		},
+		{
+			"Name": "JadeSpawnLocation",
+			"Value": "JJ",
+			"When": {
+				"jadeOverrideHomeLocation": "juliethouse"
+			}
+		},
+		{
+			"Name": "JadeSpawnLocation",
+			"Value": "JJ",
+			"When": {
+				"jadeOverrideHomeLocation": "default",
+				"HasMod |contains=LemurKat.JulietHouse.NPC":true
+			}
+		},
+		// schedule fixes
+		{
+			"Name": "ScheduleSpawnLocation",
+			"Value": "Forest 40 11 2",
+			"When": {
+				"JadeSpawnLocation": "DEFAULT"
+			}
+		},
+		{
+			"Name": "ScheduleSpawnLocation",
+			"Value": "Custom_BoardingHouse_BoardingHouse 44 20 2",
+			"When": {
+				"JadeSpawnLocation": "BH"
+			}
+		},
+		{
+			"Name": "ScheduleSpawnLocation",
+			"Value": "Custom_LK_LodgingHouse 8 4 2",
+			"When": {
+				"JadeSpawnLocation": "JJ"
+			}
+		},
+		{
+			"Name": "ScheduleAfterSpawnLocation",
+			"Value": "Forest 40 11 2",
+			"When": {
+				"JadeSpawnLocation": "DEFAULT"
+			}
+		},
+		{
+			"Name": "ScheduleAfterSpawnLocation",
+			"Value": "Custom_BoardingHouse_BoardingHouse 40 20 jade_groundread",
+			"When": {
+				"JadeSpawnLocation": "BH"
+			}
+		},
+		{
+			"Name": "ScheduleAfterSpawnLocation",
+			"Value": "Custom_LK_LodgingHouse 16 21 1",
+			"When": {
+				"JadeSpawnLocation": "JJ"
+			}
+		},
+		{
+			"Name": "ScheduleBenchSit",
+			"Value": "Town 71 91 2"
+		},
+		{
+			"Name": "ScheduleBenchSit",
+			"Value": "Town 47 33 2",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP":true
+			}
+		},
+		{
+			"Name": "ScheduleAlexDogVisit",
+			"Value": "Town 52 71 0"
+		},
+		{
+			"Name": "ScheduleAlexDogVisit",
+			"Value": "Town 53 69 0",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP":true
+			}
+		},
+		// event strings
+		{
+			"Name": "token.4heart.1.2",
+			"Value": "{{i18n:jasper.4heart.1.2}}",
+			"When": {
+				"HasMod |contains=Lemurkat.NPCJasper":true
+			}
+		},
+		{
+			"Name": "token.4heart.1.2",
+			"Value": "{{i18n:4heart.1.2}}",
+			"When": {
+				"HasMod |contains=Lemurkat.NPCJasper":false
+			}
+		},
+		{
+			"Name": "token.4heart.2.2",
+			"Value": "{{i18n:jasper.4heart.2.2}}",
+			"When": {
+				"HasMod |contains=Lemurkat.NPCJasper":true
+			}
+		},
+		{
+			"Name": "token.4heart.2.2",
+			"Value": "{{i18n:4heart.2.2}}",
+			"When": {
+				"HasMod |contains=Lemurkat.NPCJasper":false
+			}
+		}
+	],
+	"Changes": [
+		{
+			"LogName": "Jade - Character Data",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"Jade": {
+					"DisplayName": "{{i18n:npc-display-name}}",
+					"Language": "Default",
+					"Gender": "Female",
+					"Age": "Adult",
+					"Manner": "Polite",
+					"SocialAnxiety": "Outgoing",
+					"Optimism": "Positive",
+					"BirthSeason": "winter",
+					"BirthDay": 4,
+					"HomeRegion": "Town",
+					"IsDarkSkinned": false,
+					"CanSocialize": true,
+					"CanBeRomanced": true,
+					"CanReceiveGifts": true,
+					"CanCommentOnPurchasedShopItems": true,
+					"CanGreetNearbyCharacters": true,
+					"CanVisitIsland": true,
+					"Calendar": "AlwaysShown",
+					"SocialTab": "UnknownUntilMet",
+					"SpouseAdopts": null,
+					"SpouseWantsChildren": true,
+					"SpouseGiftJealousy": true,
+					"SpouseGiftJealousyFriendshipChange": -30,
+					"SpouseRoom": {
+						"MapAsset": "Malic_Jade_SpouseRoom"
+					},
+					"IntroductionsQuest": true,
+					"ItemDeliveryQuests": true,
+					"PerfectionScore": true,
+					"EndSlideShow": "TrailingGroup",
+					"DumpsterDiveEmote": 28,
+					"FlowerDanceCanDance": true,
+					"WinterStarParticipant": true,
+					"WinterStarGifts": [
+						{
+							"Id": "JadeWinterStarGiftMonsterMusks",
+							"ItemId": "(O)879",
+							"MinStack": 15,
+							"MaxStack": 15
+						},
+						{
+							"Id": "JadeWinterStarGiftSingleItems",
+							"ItemId": "(O)341"
+						}
+					],
+					"Home": [
+						{
+							"Id": "JadeDefaultHome",
+							"Location": "Forest",
+							"Tile": {"X": 40, "Y": 11},
+							"Direction": "down",
+							"Condition": "{{JadeSpawnLocation |contains=DEFAULT}}"
+						},
+						{
+							"Id": "JadeBHHome",
+							"Location": "Custom_BoardingHouse_BoardingHouse",
+							"Tile": {"X": 44, "Y": 20},
+							"Direction": "down",
+							"Condition": "{{JadeSpawnLocation |contains=BH}}"
+						},
+						{
+							"Id": "JadeJJHome",
+							"Location": "Custom_LK_LodgingHouse",
+							"Tile": {"X": 8, "Y": 4},
+							"Direction": "down",
+							"Condition": "{{JadeSpawnLocation |contains=JJ}}"
+						}
+					],
+					"SpawnIfMissing":true,
+					"TextureName": "Jade"
+				}
+			}
+		},
+		{
+			"LogName": "NPCGiftTastes",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"Jade": "{{i18n:gift.love}}/70 104 595 425 577/{{i18n:gift.like}}/-2 -12 -80 -28 -81 684 721 210 211 220 221 223 233 234/{{i18n:gift.dislike}}/-5 -6 -21 -22/{{i18n:gift.hate}}/-4 -14/{{i18n:gift.neutral}}/-7 -27 -26 -25/"
+			}
+		},
+		
+		// Dialogue
+		{
+			"LogName": "Jade - Dialogue",
+			"Action": "Include",
+			"FromFile": "assets/dialogue.json"
+		},
+		
+		// events
+		{
+			"LogName": "Jade - Events",
+			"Action": "Include",
+			"FromFile": "assets/events.json"
+		},
+		
+		// movie theater
+		{
+			"LogName": "Jade - Movies",
+			"Action": "Include",
+			"FromFile": "assets/movietheater.json"
+		},
+		
+		// sprites + portraits
+		{
+			"LogName": "Jade - Sprites and Portraits",
+			"Action": "Include",
+			"FromFile": "assets/sprites-portraits.json"
+		},
+		
+		{ // ANIMATIONS
+			"LogName": "Jade - Animations",
+			"Action": "EditData",
+			"Target": "Data/animationDescriptions",
+			"Entries": {
+				"jade_sit": "32/32 32 32/32",
+				"jade_read": "33/33 33 33/33",
+				"jade_groundread": "34/34 34 34/34"
+			}
+		},
+		
+		{ // Similar Children Female Toddler
+			"Action": "EditImage",
+			"Target": "Characters/Toddler_girl",
+			"FromFile": "assets/img/child/female-toddler.png",
+			"PatchMode": "Replace",
+			"When": {
+				"jadeSimilarChildren": true,
+				"Relationship:Jade": "Married"
+			}
+		},
+		
+		// Schedules (and schedule dialogue)
+		{
+			"LogName": "Jade - Schedule",
+			"Action": "Include",
+			"FromFile": "assets/schedule.json"
+		},
+		
+		// 8 heart event map
+		{
+			"LogName": "Camp Map",
+			"Action": "Load",
+			"Target": "Maps/Jade8HeartMap",
+			"FromFile": "assets/maps/Jade8HeartMap.tmx"
+		},
+		
+		// Festival Positions
+		{
+			"LogName": "Jade - Festival Positions",
+			"Action": "Include",
+			"FromFile": "assets/festivals.json"
+		},
+		
+		// Spouse Room
+		{
+			"Action": "Load",
+			"Target": "Maps/Malic_Jade_SpouseRoom",
+			"FromFile": "assets/maps/JadeSpouseRoom.tmx"
+		},
+		
+		// mod includes
+		{
+            "LogName": "Jade - Juliet PatchFile",
+            "Action": "Include",
+            "FromFile": "assets/mods/juliet.json",
+            "When": {
+				"HasMod |contains=LemurKat.JulietHouse.NPC": true
+			}
+        },
+        {
+            "LogName": "Jade - Boarding PatchFile",
+            "Action": "Include",
+            "FromFile": "assets/mods/boarding.json",
+            "When": {
+				"HasMod |contains=CPBoardingHouse": true
+			}
+        },
+        {
+            "LogName": "Jade - MisterGinger PatchFile",
+            "Action": "Include",
+            "FromFile": "assets/mods/misterginger.json",
+            "When": {
+				"HasMod |contains=LemurKat.Mr.Ginger.NPC": true
+			}
+        },
+        {
+            "LogName": "Jade - Nikolai PatchFile",
+            "Action": "Include",
+            "FromFile": "assets/mods/nikolai.json",
+            "When": {
+				"HasMod |contains=Fellowclown.Nikolai": true
+			}
+        }
+	]
+}

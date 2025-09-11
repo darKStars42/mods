@@ -1,0 +1,56 @@
+{
+   "Changes": [
+		{
+			"Action": "Load",
+			"Target": "Characters/Vincent_GrowthSpurt, Portraits/Vincent_GrowthSpurt, Characters/Vincent_GrowthSpurt_Beach, Portraits/Vincent_GrowthSpurt_Beach, Characters/Vincent_GrowthSpurt_Winter, Portraits/Vincent_GrowthSpurt_Winter",
+			"FromFile": "assets/{{Target}}.png"
+		},
+
+        {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "TargetField": [ 
+				"Vincent", 
+				"Appearance"
+			],
+            "Entries": {
+				2:{
+                "Id": "GrowthSpurt",
+				"Condition": "PLAYER_HAS_CHILDREN Any 1",
+				"Season": null,
+				"Indoors": true,
+				"Outdoors": true,
+				"Portrait": "Portraits/Vincent_GrowthSpurt",
+				"Sprite": "Characters/Vincent_GrowthSpurt",
+				"IsIslandAttire": false,
+				"Precedence": -1000,
+				"Weight": 0
+				},
+				3:{
+                "Id": "GrowthSpurt_Beach",
+				"Condition": "PLAYER_HAS_CHILDREN Any 1",
+				"Season": null,
+				"Indoors": true,
+				"Outdoors": true,
+				"Portrait": "Portraits/Vincent_GrowthSpurt_Beach",
+				"Sprite": "Characters/Vincent_GrowthSpurt_Beach",
+				"IsIslandAttire": true,
+				"Precedence": -1000,
+				"Weight": 0
+				},
+				4:{
+                "Id": "GrowthSpurt_Winter",
+				"Condition": "PLAYER_HAS_CHILDREN Any 1",
+				"Season": "Winter",
+				"Indoors": true,
+				"Outdoors": true,
+				"Portrait": "Portraits/Vincent_GrowthSpurt_Winter",
+				"Sprite": "Characters/Vincent_GrowthSpurt_Winter",
+				"IsIslandAttire": false,
+				"Precedence": -1100,
+				"Weight": 0
+				}
+            },
+        },
+    ]
+}

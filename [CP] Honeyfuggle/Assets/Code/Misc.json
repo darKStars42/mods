@@ -1,0 +1,38 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes":
+    [
+        {
+            "LogName": "Load animations",
+            "Action": "EditData",
+            "Target": "Data/animationDescriptions",
+            "Entries": {
+                "{{ModId}}_sleep": "24/24/24",
+                "{{ModId}}_pillows": "16 17 18/19/18 17 16",
+                "{{ModId}}_dangle": "20/20 20 20 20 21 21 22 22 21 21 20 20 20 20 20 20 20/20"
+            }
+        },
+        {
+            "LogName": "Load music track",
+            "Action": "EditData",
+            "Target": "Data/AudioChanges",
+            "Entries": {
+                "{{ModId}}_Heist": {
+                    "ID": "{{ModId}}_Heist",
+                    "FilePaths": [ "{{AbsoluteFilePath: Assets/music.ogg}}" ],
+                    "Category": "Music",
+                    "StreamedVorbis": true,
+                    "Looped": true
+                }
+            }
+        },
+        {
+            "LogName": "Load mail",
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "{{ModId}}_Skipped10Heart": "{{i18n:{{ModId}}_Skipped10Heart{{RazzyGender}}}}[#]{{i18n:{{ModId}}_Skipped10Heart_Title}}"
+            }
+        }
+    ]
+}

@@ -1,0 +1,233 @@
+{
+
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Characters/MrMrRogers.EchoReef_Rei",
+      "FromFile": "assets/Sprites/{{ReiAppearance}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Portraits/MrMrRogers.EchoReef_Rei",
+      "FromFile": "assets/Portraits/{{ReiAppearance}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        "MrMrRogers.EchoReef_Rei": {
+          "DisplayName": "{{i18n:Rei}}",
+          "BirthSeason": "Spring",
+          "BirthDay": 23,
+          "HomeRegion": "Other",
+          "Language": "Default",
+          "Gender": "Undefined",
+          "Age": "Adult",
+          "Manner": "Neutral",
+          "SocialAnxiety": "Outgoing",
+          "Optimism": "Positive",
+          "IsDarkSkinned": true,
+          "CanBeRomanced": false,
+          "Calendar": "HiddenAlways",
+          "SocialTab": "HiddenUntilMet",
+          "CanSocialize": true,
+          "CanReceiveGifts": true,
+          "CanGreetNearbyCharacters": true,
+          "CanCommentOnPurchasedShopItems": true,
+          "CanVisitIsland": false,
+          "IntroductionsQuest": false,
+          "ItemDeliveryQuests": false,
+          "PerfectionScore": false,
+          "EndSlideShow": "MainGroup",
+          "SpouseAdopts": null,
+          "SpouseWantsChildren": true,
+          "SpouseGiftJealousy": false,
+          "SpouseRoom": {},
+          "SpousePatio": {},
+          "SpouseFloors": [],
+          "SpouseWallpapers": [],
+          "DumpsterDiveFriendshipEffect": -25,
+          "DumpsterDiveEmote": 8,
+          "FriendsAndFamily": {},
+          "FlowerDanceCanDance": null,
+          "WinterStarGifts": [],
+          "WinterStarParticipant": false,
+          "UnlockConditions": null,
+          "SpawnIfMissing": true,
+          "Home": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "Location": "MrMrRogers.EchoReef_KeiHouse",
+              "Tile": {
+                "X": 3,
+                "Y": 5
+              },
+              "Direction": "down"
+            }
+          ],
+          "TextureName": null,
+          "Appearance": [
+            {
+              "Id": "MrMrRogers.EchoReef_Rei",
+              "Condition": null,
+              "Season": null,
+              "Indoors": true,
+              "Outdoors": true,
+              "Portrait": "Portraits/MrMrRogers.EchoReef_Rei",
+              "Sprite": "Characters/MrMrRogers.EchoReef_Rei",
+              "IsIslandAttire": false,
+              "Precedence": 0,
+              "Weight": 0
+            }
+          ],
+          "MugShotSourceRect": null,
+          "Size": {
+            "X": 16,
+            "Y": 32
+          },
+          "Breather": true,
+          "BreathChestRect": null,
+          "BreathChestPosition": null,
+          "Shadow": null,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "ShakePortraits": null,
+          "KissSpriteIndex": 28,
+          "KissSpriteFacingRight": true,
+          "FormerCharacterNames": [],
+          "CustomFields": null
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "MrMrRogers.EchoReef_KeiHouse": {
+          "DisplayName": "{{i18n:KeiReiHouse}}",
+          "DefaultArrivalTile": {
+            "X": 7,
+            "Y": 19
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "CreateOnLoad": {
+            "MapPath": "Maps/MrMrRogers.EchoReef_KeiHouse",
+            "Type": null,
+            "AlwaysActive": false
+          },
+          "FormerLocationNames": [],
+          "CanPlantHere": null,
+          "CanHaveGreenRainSpawns": true,
+          "ArtifactSpots": [],
+          "FishAreas": {},
+          "Fish": [],
+          "Forage": [],
+          "MinDailyWeeds": 2,
+          "MaxDailyWeeds": 5,
+          "FirstDayWeedMultiplier": 15,
+          "MinDailyForageSpawn": 1,
+          "MaxDailyForageSpawn": 4,
+          "MaxSpawnedForageAtOnce": 6,
+          "ChanceForClay": 0.03,
+          "Music": [],
+          "MusicDefault": null,
+          "MusicContext": "Default",
+          "MusicIgnoredInRain": false,
+          "MusicIgnoredInSpring": false,
+          "MusicIgnoredInSummer": false,
+          "MusicIgnoredInFall": false,
+          "MusicIgnoredInFallDebris": false,
+          "MusicIgnoredInWinter": false,
+          "MusicIsTownTheme": false,
+          "CustomFields": null
+        }
+      },
+      "When": {
+        "HasSeenEvent": "MrMrRogers.EchoReef_Kei2HeartEvent"
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/MrMrRogers.EchoReef_KeiHouse",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 5,
+            "Y": 3
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Warp 21 9 MrMrRogers.EchoReef_Beach"
+          }
+        }
+      ],
+      "When": {
+        "query: {{Hearts:MrMrRogers.EchoReef_Rei}} >= 6": true
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Rei",
+      "FromFile": "assets/blank.json"
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/schedules/MrMrRogers.EchoReef_Rei",
+      "FromFile": "assets/blank.json"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Rei",
+      "Entries": {
+        "Introduction": "{{i18n:Rei_Introduction}}",
+        "AcceptBirthdayGift_Positive": "{{i18n:Rei_AcceptBirthdayGift_Positive}}",
+        "AcceptBirthdayGift_Negative": "{{i18n:Rei_AcceptBirthdayGift_Negative}}",
+        "AcceptGift_(O)StardropTea": "{{i18n:Rei_AcceptGift_(O)StardropTea}}",
+        "DumpsterDiveComment": "{{i18n:Rei_DumpsterDiveComment}}",
+        "HitBySlingshot": "{{i18n:Rei_HitBySlingshot}}",
+        "Mon": "{{i18n:Rei_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+        "Tue": "{{i18n:Rei_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+        "Wed": "{{i18n:Rei_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+        "Thu": "{{i18n:Rei_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+        "Fri": "{{i18n:Rei_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+        "Sat": "{{i18n:Rei_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+        "Sun": "{{i18n:Rei_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "MrMrRogers.EchoReef_Rei": "{{i18n:ReiGiftLoveResponse}}//{{i18n:ReiGiftLikeResponse}}//{{i18n:ReiGiftDislikeResponse}}//{{i18n:ReiGiftHateResponse}}//{{i18n:ReiGiftNeutralResponse}}//"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Events/MrMrRogers.EchoReef_KeiHouse",
+      "Entries": {
+        "MrMrRogers.EchoReef_Rei2HeartEvent/": "continue/-100 -100/farmer 7 10 0 MrMrRogers.EchoReef_Kei 6 4 2 MrMrRogers.EchoReef_Rei 5 4 2/skippable/viewport 8 5 true/speak MrMrRogers.EchoReef_Rei \"Hi there.\"/friendship MrMrRogers.EchoReef_Rei {{query: {{Hearts:MrMrRogers.EchoReef_Kei}}*250}}/end"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/animationdescriptions",
+      "Entries": {
+        "MrMrRogers.EchoReef_Rei_sleep": "19/19/19",
+        "mrmrrogers.echoreef_rei_sleep": "19/19/19"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Characters/schedules/MrMrRogers.EchoReef_Rei",
+      "Entries": {
+        "spring": "600 MrMrRogers.EchoReef_KeiHouse 4 5 2/800 MrMrRogers.EchoReef_KeiHouse 3 14 2/2200 MrMrRogers.EchoReef_KeiHouse 4 5 2 MrMrRogers.EchoReef_Rei_sleep"
+      },
+      "When": {
+        "HasSeenEvent": "MrMrRogers.EchoReef_Kei2HeartEvent"
+      }
+    }
+  ]
+}

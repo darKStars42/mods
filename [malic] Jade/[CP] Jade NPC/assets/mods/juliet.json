@@ -1,0 +1,71 @@
+// juliet patchfile
+// other references - DynamicTokens, i18n, dialogue, schedule
+// loads with juliet
+
+{
+	"Changes": [
+		{ // dialogue added if juliet installed
+			"LogName": "Jade - Dialogue - Juliet",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Jade",
+			"Entries": {
+				"Sat": "{{i18n:juliet.Sat}}",
+				"Mon4": "{{i18n:juliet.Mon4}}",
+				"summer_Thu4": "{{i18n:juliet.summer_Thu4}}"
+			}
+		},
+
+		{ // dialogue added only if living with juliet
+			"LogName": "Jade - Dialogue - Juliet In-House",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Jade",
+			"When": {
+				"JadeSpawnLocation": "JJ"
+			},
+			"Entries": {
+				"winter_Mon": "{{i18n:juliet.winter_Mon}}"
+			}
+		},
+		{
+			"LogName": "Jade - Schedule - Juliet w/o ES ClearingHouse",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Jade",
+			"When": {
+				"JadeSpawnLocation": "JJ"
+			},
+			"Entries": { 
+				"Sun": "610 {{ScheduleAfterSpawnLocation}}/800 Custom_LK_LodgingHouse 32 21 0/1000 Custom_LK_ClearingHouse 29 19 jade_groundread/1300 Custom_LK_ClearingHouse 13 24 jade_groundread/1730 Custom_LK_LodgingHouse 16 21 1/1900 Custom_LK_LodgingHouse 4 5 0/2000 Custom_LK_LodgingHouse 7 6 jade_groundread/2200 {{ScheduleSpawnLocation}}"
+			}
+		},
+		{ //overwrites last patch if true
+			"LogName": "Jade - Schedule - Juliet w/ ES CLearingHouse",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Jade",
+			"When": {
+				"JadeSpawnLocation": "JJ",
+				"HasMod |contains=LemurKat.EastScarpe.CP": true,
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+			},
+			"Entries": { 
+				"Sun": "610 {{ScheduleAfterSpawnLocation}}/800 EastScarp_ClearingHouse 17 28 jade_groundread/1230 ArchaeologyHouse 10 11 3/1320 ArchaeologyHouse 17 9 jade_groundread/1730 Custom_LK_LodgingHouse 16 21 1/2000 {{ScheduleAfterSpawnLocation}}/2100 {{ScheduleSpawnLocation}} 1"
+			}
+		},
+		// lodging house room patch (only if living with juliet and not married)
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Custom_LK_LodgingHouse",
+			"FromFile": "assets/maps/LodgingHouseJadeRoom.tmx",
+			"PatchMode": "Replace",
+			"When": {
+				"JadeSpawnLocation": "JJ",
+				"Relationship |contains=Jade, Married": "false"
+			},
+			"ToArea": {
+				"X": 0,
+				"Y": 0,
+				"Width": 11,
+				"Height": 13
+			}
+		}
+	]
+}

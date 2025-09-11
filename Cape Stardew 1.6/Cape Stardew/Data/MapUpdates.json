@@ -1,0 +1,2332 @@
+{
+  "Changes": [
+
+//UnlockRSB///
+ {
+      "LogName": "MapEditComplete",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_RealSecretBase2",
+      "FromFile": "assets/RealSecretBase2Unlocked.tmx",
+      "ToArea": {
+        "X": "0",
+        "Y": "0",
+        "Width": 29,
+        "Height": 25
+      },
+      "PatchMode": "Replace",
+      "When": {
+        "DLX.Bundles/Purchased": "Cape.Secret"
+      },
+"Update": "OnLocationChange",
+    }
+
+    /*paintingpatch//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaUpstairs",
+      "FromFile": "assets/CapeHouse2patch.tmx",
+      "Update": "OnLocationChange",
+      "ToArea": {
+        "X": 2,
+        "Y": 4,
+        "Width": 1,
+        "Height": 2
+      },
+      "PatchMode": "Replace",
+      "When": {
+        "AnetSpringOrdercomplete": true
+      }
+    }
+    /*WarpCapeCavePatch//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_Cape",
+      "FromFile": "assets/CapeCaveWarp.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 11,
+        "Height": 14
+      },
+      "PatchMode": "Overlay",
+      "Update": "OnLocationChange",
+      "When": {
+        "JWarp": "true"
+      }
+    }
+    /*/CapeCaveLitPatch///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_Cape",
+      "FromFile": "assets/CapeCaveLit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 11,
+        "Height": 14
+      },
+      "PatchMode": "Overlay",
+      "Update": "OnLocationChange",
+      "When": {
+        "EssenceComplete": true
+      }
+    }
+    /*///CapeWarper/////*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_Cape",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 4
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "MagicWarp Custom_AreaSecretBossLvl4 20 68"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag": "Jelliwarp"
+      },
+      "Update": "OnLocationChange"
+    }
+    /*/CapeBoatShorePatch///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "FromFile": "assets/CapeStardewBoatShore.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 89,
+        "Height": 116
+      },
+      "PatchMode": "Replace",
+      "Update": "OnLocationChange",
+      "When": {
+        "SomeoneUnlockedBoat": true
+      }
+    }
+    /*//DarkCaveUnlockPatch///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_DarkCave3",
+      "FromFile": "assets/DarkCave3Unlock.tbin",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 11,
+        "Height": 6
+      },
+      "ToArea": {
+        "X": 14,
+        "Y": 6,
+        "Width": 11,
+        "Height": 6
+      },
+      "PatchMode": "ReplaceByLayer",
+      "Update": "OnLocationChange",
+      "When": {
+        "SecretCaveKeyUnlocked": true
+      }
+    }
+    /*ellebuildingfix//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "FromFile": "assets/CapeStardewElle.tmx",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 11,
+        "Height": 16
+      },
+      "ToArea": {
+        "X": 29,
+        "Y": 1,
+        "Width": 11,
+        "Height": 16
+      },
+      "PatchMode": "Replace",
+      "Update": "OnLocationChange",
+      "When": {
+        "HasMod |contains=Elle.TownBuildings": true
+      }
+    }
+    /*/YrisBuildingsfix//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "FromFile": "assets/CapeStardewYris.tmx",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 11,
+        "Height": 16
+      },
+      "ToArea": {
+        "X": 29,
+        "Y": 1,
+        "Width": 11,
+        "Height": 16
+      },
+      "PatchMode": "Replace",
+      "Update": "OnLocationChange",
+      "When": {
+        "HasMod |contains=yri.ProjectYellogTownOverhaul": true,
+        "HasMod |contains=yri.YPY.RoofRecolor": true
+      }
+    }
+    /*/campfire///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "When": {
+        "HasFlag |contains=evefireInv": true
+      },
+      "FromFile": "assets/CapeStardewScene.tmx",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 29,
+        "Height": 33
+      },
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 29,
+        "Height": 33
+      },
+      "PatchMode": "Overlay",
+      "Update": "OnLocationChange"
+    }
+    /*BalconyPatch//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaUpstairs",
+      "FromFile": "assets/upstairsBalconyentry.tmx",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 3,
+        "Height": 5
+      },
+      "ToArea": {
+        "X": 23,
+        "Y": 14,
+        "Width": 3,
+        "Height": 5
+      },
+      "PatchMode": "Replace",
+      "Update": "OnLocationChange",
+      "When": {
+        "HasMod |contains=yri.ProjectYellogTownOverhaul": true,
+        "HasMod |contains=yri.YPY.RoofRecolor": true
+      }
+    }
+    /*balconyentry//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaUpstairs",
+      "FromFile": "assets/upstairsBalconyentry.tmx",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 3,
+        "Height": 5
+      },
+      "ToArea": {
+        "X": 4,
+        "Y": 14,
+        "Width": 3,
+        "Height": 5
+      },
+      "PatchMode": "Replace",
+      "Update": "OnLocationChange",
+      "When": {
+        "HasMod |contains=Elle.TownBuildings": true
+      }
+    }
+    /*///ForestMAPPATCHES////*/
+    /*/expanded//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "FromFile": "assets/ForestExpandedEntrance.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 96,
+        "Width": 15,
+        "Height": 24
+      },
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+        "ExpandedForestPatch": "on"
+      },
+"Priority": "Late + 10"
+    }
+    /*VanillaForestEntrancePatch///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "FromFile": "assets/CindersapForestEntryAnnetta.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 74,
+        "Width": 48,
+        "Height": 46
+      },
+      "When": {
+        "VanillaForestPatch": "on",
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false,
+        "HasMod |contains=DaisyNiko.SVR3": false
+      },
+"Priority": "Late + 10"
+    }
+    /*ReimaginedForest///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "FromFile": "assets/ReimaginedCape.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 83,
+        "Width": 40,
+        "Height": 37
+      },
+      "When": {
+        "HasMod |contains=DaisyNiko.SVR3": true,
+        "ReimaginedForestPatch": "on"
+      },
+"Priority": "Late + 10"
+    }
+    /*//AnnettaDinner/////*/,
+
+///SpringHomeEarly//
+ {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaHouse",
+      "FromFile": "assets/CapeHouseDinner.tbin",
+      "ToArea": {
+        "X": 8,
+        "Y": 12,
+        "Width": 5,
+        "Height": 5
+      },
+      "PatchMode": "ReplaceByLayer",
+      "When": {
+        "Time": "{{Range: 2030, 2130}}",
+        "Season |contains=spring": true,
+	"Day |contains=5,12,19,26": false
+      },
+      "Update": "OnTimeChange"
+    },
+///springhomelateFriday//
+ {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaHouse",
+      "FromFile": "assets/CapeHouseDinner.tbin",
+      "ToArea": {
+        "X": 8,
+        "Y": 12,
+        "Width": 5,
+        "Height": 5
+      },
+      "PatchMode": "ReplaceByLayer",
+      "When": {
+        "Time": "{{Range: 2330, 2410}}",
+        "Season |contains=spring": true,
+	"Day |contains=5,12,19,26": true
+      },
+      "Update": "OnTimeChange"
+    },
+
+//SaturdaySummerHomeLate//
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaHouse",
+      "FromFile": "assets/SummerCapeHouseDinner.tbin",
+      "ToArea": {
+        "X": 8,
+        "Y": 12,
+        "Width": 5,
+        "Height": 5
+      },
+      "PatchMode": "ReplaceByLayer",
+      "When": {
+        "Time": "{{Range: 2330, 2410}}",
+        "Season |contains=summer": true,
+	"Day |contains=6,13,20,27": true///SaturdaySummerhomelate//
+      },
+      "Update": "OnTimeChange"
+    },
+
+///Summerhomeearly///
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaHouse",
+      "FromFile": "assets/SummerCapeHouseDinner.tbin",
+      "ToArea": {
+        "X": 8,
+        "Y": 12,
+        "Width": 5,
+        "Height": 5
+      },
+      "PatchMode": "ReplaceByLayer",
+      "When": {
+        "Time": "{{Range: 2030, 2130}}",
+        "Season |contains=summer": true,
+        "Day |contains=6,13,20,27": false//NotTheWeekend//
+      },
+      "Update": "OnTimeChange"
+    },
+//FallWinterFridayHomeLate//
+{
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaHouse",
+      "FromFile": "assets/CapeHouseDinner.tbin",
+      "ToArea": {
+        "X": 8,
+        "Y": 12,
+        "Width": 5,
+        "Height": 5
+      },
+      "PatchMode": "ReplaceByLayer",
+      "When": {
+        "Time": "{{Range: 2330, 2410}}",
+        "Season |contains=winter,fall": true,
+	"Day |contains=5,12,19,26": true
+      },
+      "Update": "OnTimeChange"
+    },
+///winterfallhomeearly//
+{
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaHouse",
+      "FromFile": "assets/CapeHouseDinner.tbin",
+      "ToArea": {
+        "X": 8,
+        "Y": 12,
+        "Width": 5,
+        "Height": 5
+      },
+      "PatchMode": "ReplaceByLayer",
+      "When": {
+        "Time": "{{Range: 2030, 2130}}",
+        "Season |contains=winter,fall": true,
+	"Day |contains=5,12,19,26": false
+      },
+      "Update": "OnTimeChange"
+    }
+    /*RowBoat///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach",
+      "FromFile": "assets/Boat.tbin",
+      "ToArea": {
+        "X": 8,
+        "Y": 36,
+        "Width": 7,
+        "Height": 10
+      },
+      "When": {
+        "HasMod |contains=DaisyNiko.SVR3": false,
+        "SomeoneUnlockedBoat": true,
+        "BoatDockedAtBeach": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach",
+      "FromFile": "assets/BoatReimagined.tbin",
+      "ToArea": {
+        "X": 8,
+        "Y": 36,
+        "Width": 7,
+        "Height": 10
+      },
+      "When": {
+        "HasMod |contains=DaisyNiko.SVR3": true,
+        "SomeoneUnlockedBoat": true,
+        "BoatDockedAtBeach": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach-NightMarket",
+      "FromFile": "assets/Boat-NightMarket.tbin",
+      "ToArea": {
+        "X": 10,
+        "Y": 40,
+        "Width": 5,
+        "Height": 3
+      },
+      "When": {
+        "SomeoneUnlockedBoat": true,
+        "BoatDockedAtBeach": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach-Luau",
+      "FromFile": "assets/Boat-Events.tbin",
+      "ToArea": {
+        "X": 10,
+        "Y": 40,
+        "Width": 5,
+        "Height": 3
+      },
+      "When": {
+        "SomeoneUnlockedBoat": true,
+        "BoatDockedAtBeach": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach-Jellies",
+      "FromFile": "assets/Boat-Events.tbin",
+      "ToArea": {
+        "X": 10,
+        "Y": 40,
+        "Width": 5,
+        "Height": 3
+      },
+      "When": {
+        "SomeoneUnlockedBoat": true,
+        "BoatDockedAtBeach": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "MapProperties",
+            "Warp"
+          ],
+          "Value": "6 111 Custom_AnnettaForest 18 2",
+          "Delimiter": " "
+        }
+      ]
+    }
+    
+    /*/CapeStardewBeachPlankPatchRecolorAlt//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "FromFile": "assets/CapeStardewBeachPlank.tmx",
+      "ToArea": {
+        "X": 17,
+        "Y": 26,
+        "Width": 30,
+        "Height": 15
+      },
+      "When": {
+        "HasMod |contains=grapeponta.VibrantPastoralRecolor": false,
+        "HasMod |contains=Lita.StarblueValley": false,
+        "HasMod |contains=DaisyNiko.EarthyRecolour": false
+      }
+    }
+    /*/AnnettaFireplacePatch///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaHouse",
+      "FromFile": "assets/AnnettaFireplace.tmx",
+      "ToArea": {
+        "X": 20,
+        "Y": 13,
+        "Width": 2,
+        "Height": 3
+      },
+      "When": {
+        "Season": "Winter",
+        "Time": "{{Range: 1930, 2600}}",
+        "Day |contains=5,12,19,26": false
+      },
+      "Update": "OnTimeChange"
+    }
+    /*/rainfireplace///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaHouse",
+      "FromFile": "assets/AnnettaFireplace.tmx",
+      "ToArea": {
+        "X": 20,
+        "Y": 13,
+        "Width": 2,
+        "Height": 3
+      },
+      "When": {
+        "Weather": "Rain,Storm,Wind,Snow",
+        "Time": "{{Range: 1030, 2600}}"
+      },
+      "Update": "OnTimeChange"
+    }
+   
+    /*BackupWarpsCapeStardew//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 6,
+            "Y": 4
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Warp 5 10 Custom_AbandonedHauntedHouse"
+          }
+        }
+      ]
+    }
+    /*BackupWarpsAnnettaMainDoor//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 36,
+            "Y": 13
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 25 24 Custom_AnnettaHouse 900 2100 Annetta 750"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_DarkCave3",
+      "Update": "OnLocationChange",
+      "When": {
+        "SecretCaveKeyUnlocked": true
+      },
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 18,
+            "Y": 9
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_AreaSecretBossLvl2 17 22"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_DarkCave3",
+      "Update": "OnLocationChange",
+      "When": {
+        "SecretCaveKeyUnlocked": true
+      },
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 19,
+            "Y": 9
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_AreaSecretBossLvl2 17 23"
+          }
+        }
+      ]
+    }
+    /*MainwarpsCapeStardewSeaCape//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "MapProperties",
+            "Warp"
+          ],
+          "Value": "44 29 Custom_Cape 5 10 45 29 Custom_Cape 6 10 61 17 Custom_SeaCape 4 25",
+          "Delimiter": " "
+        }
+      ]
+    }
+   
+    /*yrisUpstairsPatch///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaUpstairs",
+      "When": {
+        "HasMod |contains=yri.ProjectYellogTownOverhaul": true
+      },
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 23,
+            "Y": 17
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_CapeStardew 35 10"
+          }
+        }
+      ]
+    }
+    /*elleUPstairsPatch//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaUpstairs",
+      "When": {
+        "HasMod |contains=Elle.TownBuildings": true
+      },
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 5,
+            "Y": 17
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_CapeStardew 32 9"
+          }
+        }
+      ]
+    }
+    
+    /*CapeBusStationedPatch//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStop",
+      "FromFile": "assets/BusStationed.tbin",
+      "ToArea": {
+        "X": 25,
+        "Y": 20,
+        "Width": 8,
+        "Height": 4
+      },
+      "Patchmode": "Replace",
+      "When": {
+        "Time": "{{Range: 1000, 1700}}",
+        "HasFlag |contains=ccVault,jojaVault": true, /*/BusStopUnlocked/*/
+        "LocationName": "Custom_CapeBusStop"
+      },
+      "Update": "OnLocationChange,OnTimeChange",
+      "BusAtCape": "on"
+    }
+    /*BoatDockedWarpOut//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 44,
+            "Y": 56
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Beach 12 39 guildMember"
+          }
+        }
+      ],
+      "When": {
+        "BoatDockedAtBeach": true,
+	"HasSeenEvent": "14635104",
+      }
+    }
+    /*/EssencelitMapPatches///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_DarkCave3",
+      "FromFile": "assets/DarkCave3Lit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 36,
+        "Height": 41
+      },
+      "PatchMode": "Overlay",
+      "When": {
+        "EssenceComplete": true
+      }
+    }
+    /*essencelitMapPatches//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AreaSecretBossLvl3",
+      "FromFile": "assets/AreaSecretBossLvl3Lit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 38,
+        "Height": 2
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AreaSecretTrapRoom",
+      "FromFile": "assets/AreaSecretTrapRoomLit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 74,
+        "Height": 7
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_DarkCave",
+      "FromFile": "assets/DarkCaveLit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 20,
+        "Height": 60
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_DarkCave2",
+      "FromFile": "assets/DarkCave2Lit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 89,
+        "Height": 41
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SecretBase",
+      "FromFile": "assets/CapeSecretBaseLit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 26,
+        "Height": 39
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AreaSecretBossLvl2",
+      "FromFile": "assets/AreaSecretBossLvl2Lit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 38,
+        "Height": 25
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeSecretBaseDropArea",
+      "FromFile": "assets/CapeSecretBaseDropAreaLit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 25,
+        "Height": 28
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeCaving",
+      "FromFile": "assets/CapeCavingArea1Lit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 29,
+        "Height": 24
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeCavingArea2",
+      "FromFile": "assets/CapeCavingArea2Lit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 29,
+        "Height": 24
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SecretBaseRoom",
+      "FromFile": "assets/CapeSecretBaseRoomLit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 47,
+        "Height": 43
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SecretBase2",
+      "FromFile": "assets/CapeSecretBase2ndAreaLit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 50,
+        "Height": 39
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AreaSecretBoss",
+      "FromFile": "assets/AreaSecretBossLit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 54,
+        "Height": 25
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_UnlockSecretBase",
+      "FromFile": "assets/UnlockSecretBaseLit.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 31,
+        "Height": 20
+      },
+      "When": {
+        "EssenceComplete": true
+      },
+      "Update": "OnLocationChange"
+    }
+    /*JelliShopUnlock//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SeaCavernDepths2",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 28,
+            "Y": 16
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "OpenShop jellishop none 0600 1700 28 15 1 1"
+          }
+        }
+      ],
+      "When": {
+        "HasSeenEvent": "146353398"
+      },
+      "Update": "OnLocationChange"
+    }
+    /*CapeMineCartForestPatch//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeMineCart",
+      "FromFile": "assets/CapeMineCartOn.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 35,
+        "Height": 25
+      },
+      "When": {
+        "HasFlag": "ccBoilerRoom"
+      },
+      "Update": "OnLocationChange"
+    }
+    /*whirlpoolpatch//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "FromFile": "assets/Capewhirlpoolforest.tmx",
+      "ToArea": {
+        "X": 51,
+        "Y": 116,
+        "Width": 3,
+        "Height": 3
+      },
+"Priority": "Late + 10"
+    }
+    /*warps//*/
+    /*swimmingbackup//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 52,
+            "Y": 117,
+            "Width": 2,
+            "Height": 2
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_AnnettaForest 49 1"
+          }
+        }
+      ]
+    }
+    /*whirlpoolbeach//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach-NightMarket",
+      "FromFile": "assets/Capewhirlpoolbeach.tmx",
+      "ToArea": {
+        "X": 1,
+        "Y": 47,
+        "Width": 3,
+        "Height": 3
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach-Luau",
+      "FromFile": "assets/Capewhirlpoolbeach.tmx",
+      "ToArea": {
+        "X": 1,
+        "Y": 47,
+        "Width": 3,
+        "Height": 3
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach-Jellies",
+      "FromFile": "assets/Capewhirlpoolbeach.tmx",
+      "ToArea": {
+        "X": 1,
+        "Y": 47,
+        "Width": 3,
+        "Height": 3
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach",
+      "FromFile": "assets/Capewhirlpoolbeach.tmx",
+      "ToArea": {
+        "X": 1,
+        "Y": 47,
+        "Width": 3,
+        "Height": 3
+      }
+    }
+    /*/BeachWarpOuttoCapeStardew//  */,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 48,
+            "Width": 2,
+            "Height": 2
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_CapeStardew 85 3"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach-NightMarket",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 48,
+            "Width": 2,
+            "Height": 2
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_CapeStardew 85 3"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach-Luau",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 48,
+            "Width": 2,
+            "Height": 2
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_CapeStardew 85 3"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Beach-Jellies",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 2,
+            "Y": 48,
+            "Width": 2,
+            "Height": 2
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_CapeStardew 85 3"
+          }
+        }
+      ]
+    }
+    /*/hiddenMushroomCavewarp///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SecretBase",
+"Update": "OnLocationChange",
+      "When": {
+        "SecretBaseMultiplayer": "true",
+      },
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 18,
+            "Y": 2
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_UnlockSecretBase 13 17"
+          }
+        }
+      ]
+    }
+    /*/mapeditSecretBase//*/,
+    {
+      "LogName": "MapEditComplete",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SecretBase",
+      "FromFile": "assets/CapeSecretBasePersistent.tmx",
+      "ToArea": {
+        "X": "12",
+        "Y": "0",
+        "Width": 14,
+        "Height": 13
+      },
+      "PatchMode": "Replace",
+      "When": {
+        "SecretBaseMultiplayer": "true",
+      },
+"Update": "OnLocationChange",
+    }
+
+ /*/mapeditDarkCavePatch//*/,
+    {
+      "LogName": "MapEditCompleteDarkCave2Patch",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_DarkCave2",
+      "FromFile": "assets/DarkCave2Patch.tmx",
+      "ToArea": {
+        "X": "72",
+        "Y": "34",
+        "Width": 5,
+        "Height": 5
+      },
+      "PatchMode": "Replace",
+      "When": {
+        "HasFlag": "SecretroomWarpUnlocked"
+      },
+"Update": "OnLocationChange",
+"Priority": "Late + 10",
+    }
+ /*/mapeditCapeCavingPatch//*/,
+    {
+      "LogName": "MapEditCompleteCapeCaving",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeCaving",
+      "FromFile": "assets/CapeCavingWallPatch.tmx",
+      "ToArea": {
+        "X": "20",
+        "Y": "4",
+        "Width": 6,
+        "Height": 5
+      },
+      "PatchMode": "Replace",
+      "When": {
+        "SecretWallExploded": "true",
+      },
+"Update": "OnLocationChange",
+"Priority": "Late + 10",
+    }
+
+    /*/CapeStardewSeaGrottoUnlock//*/,
+    {
+      "LogName": "CapeShortcut",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "FromFile": "assets/Caperockpatch.tmx",
+      "ToArea": {
+        "X": 9,
+        "Y": 103,
+        "Width": 6,
+        "Height": 6
+      },
+     "When":{
+            "DLX.Bundles/Purchased":"Cape.IslandDebris",
+         },
+
+      "PatchMode": "Replace"
+    }
+    /*MapSwitches//*/,
+    {
+      "LogName": "CapeBusStopBuildable",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStop",
+      "FromFile": "assets/CapeBusStopBuildable.tmx",
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 69,
+        "Height": 45
+      },
+      "When": {
+        "DLX.Bundles/Purchased": "Cape.CapeForestFarm"
+      },
+      "PatchMode": "Replace"
+    },
+    {
+      "LogName": "CapeBusStopwind",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStop2",
+      "FromFile": "assets/CapeBusStop2patch.tmx",
+      "ToArea": {
+        "X": 24,
+        "Y": 0,
+        "Width": 7,
+        "Height": 4
+      },
+      "When": {
+        "HasCookingRecipe": "Rosy Harmony Tea"
+      },
+      "PatchMode": "Replace",
+      "Update": "OnLocationChange"
+    }
+    /*MapTilePropetySilverPetalEvent//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeMineForest",
+      "When": {
+        "Query: {{DailyLuck}} > 0": true
+      },
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 25,
+            "Y": 4,
+            "Width": 1,
+            "Height": 1
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "PlayEvent dreamy.kickitspot_RingEv1 false true Message MineCaveCart"
+          }
+        }
+      ]
+    }
+    /*MineCartFallbackMessage//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeMineForest",
+      "When": {
+        "Query: {{DailyLuck}} < 0": true
+      },
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 25,
+            "Y": 4,
+            "Width": 1,
+            "Height": 1
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Message MineCaveCart"
+          }
+        }
+      ]
+    }
+
+////////////*/AnnettaForestWalkWarpExit/////*///////////////////////////////////////////
+
+    /*Monday//Wednesday//Thursday/Sunday/Spring/Summer/Fall/Winter/UnlockTrue/*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaForest",
+      "TextOperations": [
+        {
+          "Operation": "RemoveDelimited",
+          "Target": [
+            "MapProperties",
+            "NPCWarp"
+          ],
+          "Search": "18 0 Forest 6 109",
+          "Delimiter": " ",
+          
+        }
+      ],
+      "When": {
+        "Season": "Spring,Summer,Fall,Winter",
+        "Day |contains=1,3,4,7,8,10,11,14,15,17,18,21,22,24,25,28": true,
+        "HasFlag |contains=ccVault,jojaVault": true, /*/BusStopOpen/*/
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_AnnettaForest",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "MapProperties",
+            "NPCWarp"
+          ],
+          "Value": "0 28 Custom_CapeBusStop 49 29",
+          "Delimiter": " ",
+         
+        }
+      ],
+      "When": {
+        "Season": "Spring,Summer,Fall,Winter",
+        "Day |contains=1,3,4,7,8,10,11,14,15,17,18,21,22,24,25,28": true,
+        "HasFlag |contains=ccVault,jojaVault": true, /*/BusStopUnlocked/*/
+      }
+    },
+    
+
+
+    /*/open///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStop",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 24
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "MinecartTransport CapeBusStop"
+          }
+        }
+      ],
+      "When": {
+        "Time": "{{Range: 1000, 1700}}",
+        "HasFlag |contains=ccVault,jojaVault": true, /*/BusStopUnlocked/*/
+      },
+      "Update": "OnLocationChange,OnTimeChange"
+    }
+    /*/closedmorning///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStop",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 24
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Message BusStopclosed.1"
+          }
+        }
+      ],
+      "When": {
+        "Time": "{{Range: 0600, 1000}}",
+        "HasFlag |contains=ccVault,jojaVault": true, /*/BusStopUnlocked/*/
+      },
+      "Update": "OnLocationChange,OnTimeChange"
+    }
+    /*/closednight//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStop",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 24
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Message BusStopclosed.3"
+          }
+        }
+      ],
+      "When": {
+        "Time": "{{Range: 1700, 2600}}",
+        "HasFlag |contains=ccVault,jojaVault": true, /*/BusStopUnlocked/*/
+      },
+      "Update": "OnLocationChange,OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStop",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 24
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Message BusStopclosed.2"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag |contains=ccVault,jojaVault": false, /*/BusStopClosed/*/
+      },
+      "Update": "OnLocationChange"
+    },
+
+/*//TimerBusStop///*/
+    /*/open///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStopBuildable",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 24
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "MinecartTransport CapeBusStop"
+          }
+        }
+      ],
+      "When": {
+        "Time": "{{Range: 1000, 1700}}",
+        "HasFlag |contains=ccVault,jojaVault": true, /*/BusStopUnlocked/*/
+      },
+      "Update": "OnLocationChange,OnTimeChange"
+    }
+    /*/closedmorning///*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStopBuildable",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 24
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Message BusStopclosed.1"
+          }
+        }
+      ],
+      "When": {
+        "Time": "{{Range: 0600, 1000}}",
+        "HasFlag |contains=ccVault,jojaVault": true, /*/BusStopUnlocked/*/
+      },
+      "Update": "OnLocationChange,OnTimeChange"
+    }
+    /*/closednight//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStopBuildable",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 24
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Message BusStopclosed.3"
+          }
+        }
+      ],
+      "When": {
+        "Time": "{{Range: 1700, 2600}}",
+        "HasFlag |contains=ccVault,jojaVault": true, /*/BusStopUnlocked/*/
+      },
+      "Update": "OnLocationChange,OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStopBuildable",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 29,
+            "Y": 24
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "Message BusStopclosed.2"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag |contains=ccVault,jojaVault": false, /*/BusStopClosed/*/
+      },
+      "Update": "OnLocationChange"
+    },
+ /*CapeStardewNPCWarpOut//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeStardew",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "MapProperties",
+            "NPCWarp"
+          ],
+          "Value": "35 14 Custom_AnnettaHouse 25 24 50 0 Custom_AnnettaForest 8 37",
+          "Delimiter": " "
+        }
+      ]
+    },
+/*/newAnnettabusNPCWarpOut//*/,
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStop",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "MapProperties",
+            "NPCWarp"
+          ],
+          "Value": "29 25 BusStop 19 11 51 29 Custom_AnnettaForest 2 28",
+          "Delimiter": " "
+        }
+      ],
+      "When": {
+        "HasFlag |contains=ccVault,jojaVault": true, /*/BusStopUnlocked/*/
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeBusStop",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "MapProperties",
+            "NPCWarp"
+          ],
+          "Value": "51 29 Custom_AnnettaForest 2 28",
+          "Delimiter": " "
+        }
+      ],
+      "When": {
+        "HasFlag |contains=ccVault,jojaVault": false, /*/BusStopClosed/*/
+      }
+    },
+//Hospitalswimsuitchangebackup//
+{
+      "Action": "EditMap",
+      "Target": "Maps/Hospital",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 22,
+            "Y": 10
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "ChangeOutOfSwimsuit"
+          }
+        }
+      ]
+    },
+{
+      "Action": "EditMap",
+      "Target": "Maps/IslandSouth",
+      "MapTiles": [
+        { 
+          "Position": {
+            "X": 13,
+            "Y": 32
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "ChangeOutOfSwimsuit"
+          }
+        },
+ {
+          "Position": {
+            "X": 13,
+            "Y": 33
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "ChangeOutOfSwimsuit"
+          }
+        },
+{
+          "Position": {
+            "X": 13,
+            "Y": 34
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "ChangeOutOfSwimsuit"
+          },
+
+        },
+{
+          "Position": {
+            "X": 14,
+            "Y": 32
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "ChangeOutOfSwimsuit"
+          }
+        },
+{
+          "Position": {
+            "X": 14,
+            "Y": 33
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "ChangeOutOfSwimsuit"
+          }
+        },
+{
+          "Position": {
+            "X": 14,
+            "Y": 34
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "ChangeOutOfSwimsuit"
+          }
+        },
+{
+          "Position": {
+            "X": 12,
+            "Y": 32
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "ChangeOutOfSwimsuit"
+          }
+        },
+{
+          "Position": {
+            "X": 12,
+            "Y": 33
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "ChangeOutOfSwimsuit"
+          }
+        },
+{
+          "Position": {
+            "X": 12,
+            "Y": 34
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "ChangeOutOfSwimsuit"
+          }
+        }
+      ]
+    },
+{
+      "Action": "EditData",
+      "Target": "Strings/StringsFromMaps",
+      "TextOperations": [
+        {
+          "Operation": "RemoveDelimited",
+          "Target": [
+            "Entries",
+            "Annettahouse.30"
+          ],
+          "Search": "{{i18n:Strings.Annettahouse.30}}",
+          "Delimiter": " "
+        }
+      ],
+"When": {
+"Season": "Summer",
+}
+    },
+{
+      "Action": "EditData",
+      "Target": "Strings/StringsFromMaps",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Annettahouse.30"
+          ],
+          "Value": "{{i18n:Strings.Annettahouse.alt}}",
+          "Delimiter": " "
+        }
+      ],
+"When": {
+"Season": "Summer",
+}
+    },
+
+
+///museumexpansionforcapestardew//
+
+    {
+      "LogName": "Cape Stardew Museum Expansion",
+      "Action": "EditMap",
+      "Target": "Maps/ArchaeologyHouse",
+      "FromFile": "assets/CapeStardewMuseumRoom.tbin",
+      "ToArea": {
+        "X": 27,
+        "Y": 18,
+        "Width": 17,
+        "Height": 16
+      },
+      "When": {
+        "HasMod|contains=Solariaze.Geology": false,
+        "HasMod|contains=Wolf.Gun": false,
+	"HasMod|contains=Lumisteria.MtVapius": false,
+	"MuseumCompatConfig": "ExtraMuseumRoomVer2",
+      },
+      
+    },
+    {
+      "LogName": "Cape Stardew Museum Expansion - Geology Compatibility",
+      "Action": "EditMap",
+      "Target": "Maps/ArchaeologyHouse",
+      "FromFile": "assets/CapeStardewMuseumRoom.tbin",
+      "PatchMode": "Replace",
+      "ToArea": {
+        "X": 27,
+        "Y": 18,
+        "Width": 17,
+        "Height": 16
+      },
+      "When": {
+        "HasMod|contains=Solariaze.Geology": true,
+	"HasMod|contains=Lumisteria.MtVapius": false,
+	"MuseumCompatConfig": "ExtraMuseumRoomVer2",
+      },
+      "Priority": "Early"
+    },
+    {
+      "LogName": "Cape Stardew Museum Expansion - MGR Compatibility",
+      "Action": "EditMap",
+      "Target": "Maps/ArchaeologyHouse",
+      "FromFile": "assets/CapeStardewMuseumRoom.tbin",
+      "PatchMode": "Replace",
+      "ToArea": {
+        "X": 27,
+        "Y": 18,
+        "Width": 17,
+        "Height": 16
+      },
+      "When": {
+        "HasMod|contains=Wolf.Gun": true,
+"HasMod|contains=Lumisteria.MtVapius": false,
+"MuseumCompatConfig": "ExtraMuseumRoomVer2",
+      },
+      "Priority": "Early"
+    },
+    {
+      "LogName": "Cape Stardew Museum Expansion - Geology + MGR Compatibility",
+      "Action": "EditMap",
+      "Target": "Maps/ArchaeologyHouse",
+      "FromFile": "assets/CapeStardewMuseumRoom.tbin",
+      "PatchMode": "Replace",
+      "ToArea": {
+        "X": 27,
+        "Y": 18,
+        "Width": 17,
+        "Height": 16
+      },
+      "When": {
+        "HasMod|contains=Solariaze.Geology": true,
+        "HasMod|contains=Wolf.Gun": true,
+"HasMod|contains=Lumisteria.MtVapius": false,
+"MuseumCompatConfig": "ExtraMuseumRoomVer2",
+      },
+      "Priority": "Early"
+    },
+
+//MuseumPatchVMV//
+		{
+			"LogName": "Museum AdditionVMV",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "ReplaceByLayer",
+			"FromFile": "assets/VMVCapeStardewMuseumRoom_MapPatch.tbin",
+			"ToArea": {
+				"X": 39,
+				"Y": 2,
+				"Width": 9,
+				"Height": 3
+			},
+
+ "When": {
+        "HasMod|contains=Lumisteria.MtVapius": true,
+	"HasMod|contains=Lemurkat.NPCJasper": false,
+	"MuseumCompatConfig": "VMVMuseumPatch"
+      },
+      "Priority": "Early"
+		},
+
+//VMVplusJaspers///
+	{
+			"LogName": "Museum AdditionVMVJasper",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "ReplaceByLayer",
+			"FromFile": "assets/JaspersCapeStardewMuseumRoom_MapPatch.tbin",
+			"ToArea": {
+				"X": 43,
+				"Y": 2,
+				"Width": 5,
+				"Height": 3
+			},
+
+ "When": {
+        "HasMod|contains=Lumisteria.MtVapius": true,
+"HasMod|contains=Lemurkat.NPCJasper": true,
+"MuseumCompatConfig": "JasperNPCMuseumPatch"
+      },
+      "Priority": "Early"
+		},
+
+
+  
+{
+			"LogName": "Museum AdditionVM2",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "Overlay",
+			"FromFile": "assets/VMVCapeStardewMuseumRoom_MapPatch2.tbin",
+			"ToArea": {
+				"X": 25,
+				"Y": 15,
+				"Width": 2,
+				"Height": 2
+			},
+
+ "When": {
+        "HasMod|contains=Lumisteria.MtVapius": true,
+"MuseumCompatConfig": "JasperNPCMuseumPatch"
+      },
+      "Priority": "Early"
+		},
+
+{
+			"LogName": "Museum AdditionVM3",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "Replace",
+			"FromFile": "assets/VMVCapeStardewMuseumRoom_MapPatch3.tbin",
+			"ToArea": {
+				"X": 25,
+				"Y": 17,
+				"Width": 2,
+				"Height": 2
+			},
+
+ "When": {
+        "HasMod|contains=Lumisteria.MtVapius": true,
+"MuseumCompatConfig": "JasperNPCMuseumPatch"
+      },
+      "Priority": "Early"
+		},
+
+
+//ExtraMuseumRoom///
+	{
+			"LogName": "Museum ExtraRoom",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "Overlay",
+			"FromFile": "assets/ExtraRoomCapeStardewMuseumRoom_MapPatch.tbin",
+			"ToArea": {
+				"X": 16,
+				"Y": 18,
+				"Width": 9,
+				"Height": 16
+			},
+
+ "When": {
+       "ExtraMuseumRoom|contains=ExtraMuseumRoom": true,
+      },
+      "Priority": "Early"
+		},
+
+{
+			"LogName": "Museum ExtraRoom",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "ReplaceByLayer",
+			"FromFile": "assets/ExtraRoomCapeStardewMuseumRoom_MapPatch2.tbin",
+			"ToArea": {
+				"X": 18,
+				"Y": 18,
+				"Width": 3,
+				"Height": 2
+			},
+
+ "When": {
+        "ExtraMuseumRoom|contains=ExtraMuseumRoom": true,
+      },
+      "Priority": "Late"
+		},
+
+
+
+///GlassCases///
+
+{
+      "LogName": "Cape Stardew Museum Expansion",
+      "Action": "EditMap",
+      "Target": "Maps/ArchaeologyHouse",
+      "FromFile": "assets/CapeStardewMuseumRoomGlass.tmx",
+      "ToArea": {
+        "X": 27,
+        "Y": 18,
+        "Width": 17,
+        "Height": 16
+      },
+      "When": {
+        "HasMod|contains=Solariaze.Geology": false,
+        "HasMod|contains=Wolf.Gun": false,
+	"HasMod|contains=Lumisteria.MtVapius": false,
+	"MuseumCompatConfig": "ExtraMuseumRoomGlassVer2",
+      },
+      
+    },
+    {
+      "LogName": "Cape Stardew Museum Expansion - Geology Compatibility",
+      "Action": "EditMap",
+      "Target": "Maps/ArchaeologyHouse",
+      "FromFile": "assets/CapeStardewMuseumRoomGlass.tmx",
+      "PatchMode": "Replace",
+      "ToArea": {
+        "X": 27,
+        "Y": 18,
+        "Width": 17,
+        "Height": 16
+      },
+      "When": {
+        "HasMod|contains=Solariaze.Geology": true,
+	"HasMod|contains=Lumisteria.MtVapius": false,
+	"MuseumCompatConfig": "ExtraMuseumRoomGlassVer2",
+      },
+      "Priority": "Early"
+    },
+    {
+      "LogName": "Cape Stardew Museum Expansion - MGR Compatibility",
+      "Action": "EditMap",
+      "Target": "Maps/ArchaeologyHouse",
+      "FromFile": "assets/CapeStardewMuseumRoomGlass.tmx",
+      "PatchMode": "Replace",
+      "ToArea": {
+        "X": 27,
+        "Y": 18,
+        "Width": 17,
+        "Height": 16
+      },
+      "When": {
+        "HasMod|contains=Wolf.Gun": true,
+"HasMod|contains=Lumisteria.MtVapius": false,
+"MuseumCompatConfig": "ExtraMuseumRoomGlassVer2",
+      },
+      "Priority": "Early"
+    },
+    {
+      "LogName": "Cape Stardew Museum Expansion - Geology + MGR Compatibility",
+      "Action": "EditMap",
+      "Target": "Maps/ArchaeologyHouse",
+      "FromFile": "assets/CapeStardewMuseumRoomGlass.tmx",
+      "PatchMode": "Replace",
+      "ToArea": {
+        "X": 27,
+        "Y": 18,
+        "Width": 17,
+        "Height": 16
+      },
+      "When": {
+        "HasMod|contains=Solariaze.Geology": true,
+        "HasMod|contains=Wolf.Gun": true,
+"HasMod|contains=Lumisteria.MtVapius": false,
+"MuseumCompatConfig": "ExtraMuseumRoomGlassVer2",
+      },
+      "Priority": "Early"
+    },
+
+//MuseumPatchVMV//
+		{
+			"LogName": "Museum AdditionVMV",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "ReplaceByLayer",
+			"FromFile": "assets/VMVCapeStardewMuseumRoomGlass_MapPatch.tmx",
+			"ToArea": {
+				"X": 39,
+				"Y": 2,
+				"Width": 9,
+				"Height": 3
+			},
+
+ "When": {
+        "HasMod|contains=Lumisteria.MtVapius": true,
+	"HasMod|contains=Lemurkat.NPCJasper": false,
+	"MuseumCompatConfig": "VMVMuseumPatchGlass"
+      },
+      "Priority": "Early"
+		},
+
+//VMVplusJaspers///
+	{
+			"LogName": "Museum AdditionVMVJasper",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "ReplaceByLayer",
+			"FromFile": "assets/JaspersCapeStardewMuseumRoomGlass_MapPatch.tmx",
+			"ToArea": {
+				"X": 43,
+				"Y": 2,
+				"Width": 5,
+				"Height": 3
+			},
+
+ "When": {
+        "HasMod|contains=Lumisteria.MtVapius": true,
+"HasMod|contains=Lemurkat.NPCJasper": true,
+"MuseumCompatConfig": "JasperNPCMuseumPatchGlass"
+      },
+      "Priority": "Early"
+		},
+
+
+  
+{
+			"LogName": "Museum AdditionVM2",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "Overlay",
+			"FromFile": "assets/VMVCapeStardewMuseumRoomGlass_MapPatch2.tmx",
+			"ToArea": {
+				"X": 25,
+				"Y": 15,
+				"Width": 2,
+				"Height": 2
+			},
+
+ "When": {
+        "HasMod|contains=Lumisteria.MtVapius": true,
+"MuseumCompatConfig": "JasperNPCMuseumPatchGlass"
+      },
+      "Priority": "Early"
+		},
+
+{
+			"LogName": "Museum AdditionVM3",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "Replace",
+			"FromFile": "assets/VMVCapeStardewMuseumRoomGlass_MapPatch3.tmx",
+			"ToArea": {
+				"X": 25,
+				"Y": 17,
+				"Width": 2,
+				"Height": 2
+			},
+
+ "When": {
+        "HasMod|contains=Lumisteria.MtVapius": true,
+"MuseumCompatConfig": "JasperNPCMuseumPatchGlass"
+      },
+      "Priority": "Early"
+		},
+
+
+//ExtraMuseumRoomGlass///
+	{
+			"LogName": "Museum ExtraRoom",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "Overlay",
+			"FromFile": "assets/ExtraRoomCapeStardewMuseumRoomGlass_MapPatch.tmx",
+			"ToArea": {
+				"X": 16,
+				"Y": 18,
+				"Width": 9,
+				"Height": 16
+			},
+
+ "When": {
+       "ExtraMuseumRoom|contains=ExtraMuseumRoomGlass": true,
+      },
+      "Priority": "Early"
+		},
+
+{
+			"LogName": "Museum ExtraRoom",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"PatchMode": "ReplaceByLayer",
+			"FromFile": "assets/ExtraRoomCapeStardewMuseumRoom_MapPatch2.tbin",
+			"ToArea": {
+				"X": 18,
+				"Y": 18,
+				"Width": 3,
+				"Height": 2
+			},
+
+ "When": {
+        "ExtraMuseumRoom|contains=ExtraMuseumRoomGlass": true,
+      },
+      "Priority": "Late"
+		},
+
+
+
+
+
+
+
+///jellinote///
+
+{
+			"LogName": "JelliNote",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_SeaCavernDepths2",
+			"PatchMode": "Replace",
+			"FromFile": "assets/SeaCavernDepths2note.tmx",
+			"ToArea": {
+				"X": 27,
+				"Y": 13,
+				"Width": 3,
+				"Height": 3
+			},
+
+ "When": {
+         "Hearts:Jelli": "3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13",
+"HasFlag": "PretStneDeliverd",
+"HasSeenEvent |contains=SeaGrotto_JelliFlashback2": "false",
+      },
+      "Priority": "Late + 10",
+	"Update": "OnLocationChange",
+		},
+
+
+{
+			"LogName": "Trap Room secret room Patch",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_AreaSecretTrapRoom",
+			"PatchMode": "Replace",
+			"FromFile": "assets/AreaSecretTrapRoomWarpUnlock.tmx",
+			"ToArea": {
+				"X": 46,
+				"Y": 2,
+				"Width": 3,
+				"Height": 3
+			},
+
+ "When": {
+        "HasFlag": "SecretroomWarpUnlocked"
+      },
+      "Priority": "Late + 10",
+	"Update": "OnLocationChange",
+		},
+
+{
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeCavingSecretroom",
+"Update": "OnLocationChange",
+"Priority": "Early + 10",
+	"When": {
+  "HasSeenEvent": "14635.capecaving",
+},
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 7,
+            "Y": 16,
+            
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_CapeCaving 22 9"
+          }
+        }
+      ]
+    },
+
+{
+      "Action": "EditMap",
+      "Target": "Maps/Custom_CapeCavingSecretroom",
+"Update": "OnLocationChange",
+"Priority": "Early + 10",
+	"When": {
+ "HasSeenEvent": "14635.capecaving",
+},
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 8,
+            "Y": 16,
+            
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "TouchAction": "Warp Custom_CapeCaving 22 9"
+          }
+        }
+      ]
+    },
+
+
+
+
+{
+			"LogName": "Secretroomwarpunlock",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_CapeCavingSecretroom",
+			"PatchMode": "Replace",
+			"FromFile": "assets/CapeCavingSecretroomWarps.tmx",
+			"ToArea": {
+				"X": 0,
+				"Y": 0,
+				"Width": 15,
+				"Height": 9
+			},
+
+ "When": {
+          "HasFlag": "SecretroomWarpUnlocked"
+
+      },
+      "Priority": "Late + 10",
+	"Update": "OnLocationChange",
+		},
+
+{
+			"LogName": "Secretroomwarpunlock",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_AreaSecretBossLvl4",
+			"PatchMode": "Replace",
+			"FromFile": "assets/AreaSecretBossLvl4Warp.tmx",
+			"ToArea": {
+				"X": 4,
+				"Y": 2,
+				"Width": 2,
+				"Height": 3
+			},
+
+  "When": {
+        "HasFlag": "SecretroomWarpUnlocked"
+      },
+      "Priority": "Late + 10",
+	"Update": "OnLocationChange",
+		},
+
+
+
+
+
+
+
+{
+			"LogName": "SecretroomwarpLadderunlock",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_CapeCavingSecretroom",
+			"PatchMode": "Replace",
+			"FromFile": "assets/CapeCavingSecretroomWarpsLadderUnlock.tmx",
+			"ToArea": {
+				"X": 7,
+				"Y": 2,
+				"Width": 1,
+				"Height": 1
+			},
+
+  "When": {
+        "HasFlag": "greenRainBundleUsed"
+      },
+      "Priority": "Late + 10",
+	"Update": "OnLocationChange",
+		},
+  ]
+}

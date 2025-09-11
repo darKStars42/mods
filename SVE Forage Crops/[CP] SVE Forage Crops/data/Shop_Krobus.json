@@ -1,0 +1,31 @@
+{
+	"Changes": [
+
+		//-------------------------------
+		//      Swamp Flower
+		{
+			"LogName": "Krobus's Shop - Swamp Flower",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "ShadowShop", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.SVEForageCrops_SwampFlowerSeeds": {
+					"Id": "ZoeyHoshi.SVEForageCrops_SwampFlowerSeeds",
+					"ItemId": "ZoeyHoshi.SVEForageCrops_SwampFlowerSeeds",
+					"IgnoreShopPriceModifiers": true,
+					"Condition": "!SEASON winter"
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.SVEForageCrops_SwampFlowerSeeds",
+					"BeforeId": "(BC)34"
+				}
+			],
+			"When": {
+				"EnableSwampFlower": true,
+				"HasVisitedLocation": "Custom_ForbiddenMaze"
+			}
+		}
+	]
+}

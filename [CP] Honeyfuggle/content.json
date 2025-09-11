@@ -1,0 +1,334 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Format": "2.7.0",
+    "ConfigSchema": {
+        "SeasonalOutfits": {
+            "AllowValues": "full, vanilla",
+            "Default": "full"
+        },
+        "ImmersiveMode": {
+            "AllowValues": "true, false",
+            "Default": "true"
+        },
+        "Perfection": {
+            "AllowValues": "true, false",
+            "Default": "true"
+        },
+    },
+
+    "DynamicTokens": [
+        {
+            "Name": "Honeyfuggle",
+            "Value": "{{ModId}}_Honeyfuggle"
+        },
+
+        //Immersive mode tokens - for 10 heart event
+        {
+            "Name": "Immersive",
+            "Value": "",
+            "When": {
+                "ImmersiveMode": "false"
+            }
+        },
+        {
+            "Name": "Immersive",
+            "Value": "/SawEvent 418172", //Magic Ink quest finale event
+            "When": {
+                "ImmersiveMode": "true"
+            }
+        },
+
+        //Suitcase tokens - for seasonal outfits
+        {
+            "Name": "Suitcase",
+            "Value": "fall",
+            "When": {
+                "SeasonalOutfits": "vanilla"
+            }
+        },
+        {
+            "Name": "Suitcase",
+            "Value": "winter",
+            "When": {
+                "SeasonalOutfits": "vanilla",
+                "Season": "winter"
+            }
+        },
+        {
+            "Name": "Suitcase",
+            "Value": "{{season}}",
+            "When": {
+                "SeasonalOutfits": "full"
+            }
+        },
+
+        //Map patch/dialogue tokens
+        {
+            "Name": "HoneyfuggleInValley",
+            "Value": false
+        },
+        {
+            "Name": "HoneyfuggleInValley",
+            "Value": true,
+            "When": {
+                "HasSeenEvent": "{{ModId}}_Introduction",
+                "HasSeenEvent| contains={{ModId}}_10Heart": false
+            }
+        },
+        {
+            "Name": "HoneyfuggleInValley",
+            "Value": true,
+            "When": {
+                "HasSeenEvent": "{{ModId}}_10Heart",
+                "Day": "{{Range: 1, 7}}"
+            }
+        },
+
+        //Mask tokens
+        {
+            "Name": "MaskOn",
+            "Value": true
+        },
+        {
+            "Name": "MaskOn",
+            "Value": false,
+            "When": {
+                "HasSeenEvent": "{{ModId}}_10Heart",
+                "HoneyfuggleInValley": true,
+                "Random:1,2,3,4,5,6,7": "1"
+            }
+        },
+
+        //Identity tokens
+        {
+            "Name": "IdentityKnown",
+            "Value": false
+        },
+        {
+            "Name": "IdentityKnown",
+            "Value": true,
+            "When": {
+                "HasSeenEvent": "{{ModId}}_8Heart"
+            }
+        },
+
+        //Schedule randomization tokens
+        //Alone time days
+        {
+            "Name": "ForestChill",
+            "Value": "900 Forest 50 94 1/1200 Forest 49 78 2 square_4_3_2/1430 Forest 80 69 2 square_6_3_2/1800 Forest 103 23 0/2100 {{ModId}}_Tent 1 4 3 {{ModId}}_sleep"
+        },
+        {
+            "Name": "MountainChill",
+            "Value": "830 Mountain 25 20 3/1200 Mountain 61 11 3/1600 Railroad 35 41 3/2000 {{ModId}}_Tent 1 4 3 {{ModId}}_sleep"
+        },
+        {
+            "Name": "BeachChill",
+            "Value": "MAIL beachBridgeFixed/GOTO Mon_noBridge/900 Beach 18 15 2 square_5_2_2/1200 Beach 75 20 3/1500 Beach 76 7 0 \"Strings\\schedules\\{{Honeyfuggle}}:{{ModId}}_Beach\"/1900 Beach 90 40 2 {{ModId}}_dangle/2000 {{ModId}}_Tent 1 4 3 {{ModId}}_sleep"
+        },
+        {
+            "Name": "LibraryChill",
+            "Value": "900 ArchaeologyHouse 15 5 0 square_2_0_0/1200 ArchaeologyHouse 14 18 0/1430 ArchaeologyHouse 21 17 3/1740 {{ModId}}_Tent 3 2 3 {{ModId}}_pillows/2400 {{ModId}}_Tent 1 4 3 {{ModId}}_sleep"
+        },
+        {
+            "Name": "TentChill",
+            "Value": "1100 {{ModId}}_Tent 3 2 3 {{ModId}}_pillows/1700 {{ModId}}_Tent 4 3 0/1900 {{ModId}}_Tent 3 2 3 {{ModId}}_pillows/2400 {{ModId}}_Tent 1 4 3 {{ModId}}_sleep"
+        },
+        {
+            "Name": "MondaySch",
+            "Value": "{{Random: {{ForestChill}},{{MountainChill}},{{BeachChill}},{{LibraryChill}},{{TentChill}}}}"
+        },
+
+        //Socializing days
+        {
+            "Name": "MarnieSocial",
+            "Value": "900 AnimalShop 11 16 0/1430 Forest 92 20 1/1800 Forest 22 86 3/2100 {{ModId}}_Tent 3 2 3 {{ModId}}_pillows/2400 {{ModId}}_Tent 1 4 3 {{ModId}}_sleep"
+        },
+        {
+            "Name": "GuntherSocial",
+            "Value": "900 ArchaeologyHouse 5 10 0\"Strings\\schedules\\{{Honeyfuggle}}:{{ModId}}_Gunther\"/1600 ArchaeologyHouse 14 18 0/1730 Forest 22 86 3/2100 {{ModId}}_Tent 3 2 3 {{ModId}}_pillows/2400 {{ModId}}_Tent 1 4 3 {{ModId}}_sleep"
+        },
+        {
+            "Name": "WizardSocial",
+            "Value": "a1000 Forest 7 35 3 \"Strings\\schedules\\{{Honeyfuggle}}:{{ModId}}_Wizard\"/1500 Forest 10 35 2/1800 Forest 22 86 3/2100 {{ModId}}_Tent 3 2 3 {{ModId}}_pillows/2400 {{ModId}}_Tent 1 4 3 {{ModId}}_sleep"
+        },
+        {
+            "Name": "MarlonSocial",
+            "Value": "a1430 AdventureGuild 7 12 3/1700 Mountain 61 11 2/2000 {{ModId}}_Tent 1 4 3 {{ModId}}_sleep"
+        },
+        {
+            "Name": "FridaySch",
+            "Value": "{{Random:{{MarnieSocial}},{{GuntherSocial}}}}",
+        },
+        {
+            "Name": "SaturdaySch",
+            "Value": "{{Random:{{WizardSocial}},{{MarlonSocial}}}}",
+        },
+        {
+            "Name": "SaturdaySch",
+            "Value": "{{Random:{{MarlonSocial}},{{MarnieSocial}},{{GuntherSocial}}}}",
+            "When": {
+                "HasSeenEvent":"{{ModId}}_10Heart"
+            }
+        },
+
+        //Mod compatibility tokens
+        //Recolors
+        {
+            "Name": "Recolor",
+            "Value": "Vanilla"
+        },
+        {
+            "Name": "Recolor",
+            "Value": "Earthy",
+            "When": {
+                "HasMod": "DaisyNiko.EarthyRecolour"
+            }
+        },
+        {
+            "Name": "Recolor",
+            "Value": "VPR",
+            "When": {
+                "HasMod": "grapeponta.VibrantPastoralRecolor"
+            }
+        },
+
+        //Rasmodia
+        {
+            "Name": "RazzyGender",
+            "Value": ""
+        },
+        {
+            "Name": "RazzyGender",
+            "Value": ".Rasmodia",
+            "When": {
+                "HasMod": "Nom0ri.RomRas"
+            }
+        },
+
+        //Solstice Winter Star
+        {
+            "Name": "Solstice",
+            "Value": ""
+        },
+        {
+            "Name": "Solstice",
+            "Value": ".Solstice",
+            "When": {
+                "HasMod": "Airyn.CPSolsticeWinterStar"
+            }
+        },
+
+        //Less Corrupt Lewis
+        {
+            "Name": "LewisStatue",
+            "Value": ""
+        },
+        {
+            "Name": "LewisStatue",
+            "Value": ".Marnie",
+            "When": {
+                "HasMod": "Airyn.NoLewisStatue"
+            }
+        },
+        {
+            "Name": "LewisStatue",
+            "Value": ".Lenny",
+            "When": {
+                "HasMod": "Airyn.LennysPrank"
+            }
+        }
+    ],
+
+    "Changes": [
+        {
+   		    "LogName": "Blank JSON",
+        	"Action": "Load",
+        	"Target": "Characters/Dialogue/{{Honeyfuggle}}, Characters/schedules/{{Honeyfuggle}}, Strings/schedules/{{Honeyfuggle}}, Data/Events/{{ModId}}_Tent",
+        	"FromFile": "Assets/Code/blank.json"
+   	    },
+        {
+            "LogName": "Blank JSON - Wizard",
+            "Action": "Load",
+            "Target": "Strings/Schedules/Wizard, Characters/Schedules/Wizard",
+            "FromFile": "Assets/Code/blank.json",
+            "Priority": "Low"
+        },
+
+        //Image loading
+        {
+            "LogName": "Load portrait assets",
+            "Action": "Load",
+            "Target": "Portraits/{{Honeyfuggle}}, Portraits/{{Honeyfuggle}}_spring, Portraits/{{Honeyfuggle}}_summer, Portraits/{{Honeyfuggle}}_winter, Portraits/{{Honeyfuggle}}_Flower, Portraits/{{Honeyfuggle}}_Jellies, Portraits/{{Honeyfuggle}}_Fair, Portraits/{{Honeyfuggle}}_SpiritsEve, Portraits/{{Honeyfuggle}}_beach",
+            "FromFile": "Assets/{{Target}}.png"
+        },
+        {
+            "LogName": "Load sprite assets",
+            "Action": "Load",
+            "Target": "Characters/{{Honeyfuggle}}, Characters/{{Honeyfuggle}}_spring, Characters/{{Honeyfuggle}}_summer, Characters/{{Honeyfuggle}}_winter, Characters/{{Honeyfuggle}}_Flower, Characters/{{Honeyfuggle}}_Jellies, Characters/{{Honeyfuggle}}_Fair, Characters/{{Honeyfuggle}}_SpiritsEve, Characters/{{Honeyfuggle}}_beach, Characters/{{Honeyfuggle}}_suitcase_spring, Characters/{{Honeyfuggle}}_suitcase_summer, Characters/{{Honeyfuggle}}_suitcase_fall, Characters/{{Honeyfuggle}}_suitcase_winter",
+            "FromFile": "Assets/{{Target}}.png"
+        },
+        {
+            "LogName": "Mask overlay - portraits",
+            "Action": "EditImage",
+            "Target": "Portraits/{{Honeyfuggle}}, Portraits/{{Honeyfuggle}}_spring, Portraits/{{Honeyfuggle}}_summer, Portraits/{{Honeyfuggle}}_winter, Portraits/{{Honeyfuggle}}_Flower, Portraits/{{Honeyfuggle}}_Jellies, Portraits/{{Honeyfuggle}}_Fair, Portraits/{{Honeyfuggle}}_beach",
+            "FromFile": "Assets/Portraits/mask.png",
+            "PatchMode": "Overlay",
+            "When": {
+                "MaskOn": true
+            }
+        },
+        {
+            "LogName": "Mask overlay - sprites",
+            "Action": "EditImage",
+            "Target": " Characters/{{Honeyfuggle}}, Characters/{{Honeyfuggle}}_spring, Characters/{{Honeyfuggle}}_summer, Characters/{{Honeyfuggle}}_winter, Characters/{{Honeyfuggle}}_Flower, Characters/{{Honeyfuggle}}_Jellies, Characters/{{Honeyfuggle}}_Fair, Characters/{{Honeyfuggle}}_beach",
+            "FromFile": "Assets/Characters/mask.png",
+            "PatchMode": "Overlay",
+            "When": {
+                "MaskOn": true
+            }
+        },
+
+        //Includes
+        {
+            "LogName": "Load character data file",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Disposition.json",
+        },
+        {
+            "LogName": "Load dialogue file",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Dialogue.json" //Includes Honeyfuggle dialogue, vanilla NPC CTs, and Lasting CT compat
+        },
+        {
+            "LogName": "Load schedule file",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Schedule.json" //Includes Honeyfuggle schedules and Wizard schedule
+        },
+        {
+            "LogName": "Load gift taste file",
+            "Action": "Include",
+            "FromFile": "Assets/Code/GiftTastes.json" //Includes gift, concession, and movie tastes
+        },
+        {
+            "LogName": "Load map data file",
+            "Action": "Include",
+            "FromFile": "Assets/Code/MapData.json" //Includes maps, warps, 8 heart event CG, and BETAS terrain clearing
+        },
+        {
+            "LogName": "Load event file",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Events.json"
+        },
+        {
+            "LogName": "Load festival file",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Festivals.json"
+        },
+        {
+            "LogName": "Load misc code file",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Misc.json" //Includes animations, music, and mail
+        }
+    ]
+}

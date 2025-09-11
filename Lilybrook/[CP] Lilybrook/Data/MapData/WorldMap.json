@@ -1,0 +1,360 @@
+{
+  "Changes": [
+  {
+      "Action": "Load",
+      "Target": "Mods/8BitAlien.Lilybrook/LBIcon",
+      "FromFile": "Assets/Images/WorldMaps/LBIcon.png"
+    },
+    {
+        "Action": "EditData",
+        "Target": "Mods/shekurika.Worldmaps/WorldMapData",
+        "Entries": {
+            "8BitAlien.Lilybrook": {
+                "Texture": "Mods\\8BitAlien.Lilybrook\\LBIcon",
+                "SpriteIndex": 0,
+                "Location": "8BitAlien.Lilybrook_Lilybrook",
+            }
+        }
+    },
+  {
+      "LogName": "Load World Map",
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/LilybrookMap/LilybrookMap",
+      "FromFile": "Assets/Images/WorldMaps/LilybrookMap.png"
+    },
+    {
+      "LogName": "Load World Map",
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/LilybrookMap/spring_LilybrookMap",
+      "FromFile": "Assets/Images/WorldMaps/spring_LilybrookMap.png"
+    },
+	{
+      "LogName": "Load World Map",
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/LilybrookMap/summer_LilybrookMap",
+      "FromFile": "Assets/Images/WorldMaps/summer_LilybrookMap.png"
+    },
+	{
+      "LogName": "Load World Map",
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/LilybrookMap/fall_LilybrookMap",
+      "FromFile": "Assets/Images/WorldMaps/fall_LilybrookMap.png"
+    },
+	{
+      "LogName": "Load World Map",
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/LilybrookMap/winter_LilybrookMap",
+      "FromFile": "Assets/Images/WorldMaps/winter_LilybrookMap.png"
+    },
+    {
+      "LogName": "Load World Map (EarthyRecolour)",
+      "Action": "EditImage",
+      "PatchMode": "Replace",
+      "Target": "Mods/{{ModId}}/LilybrookMap/spring_LilybrookMap",
+      "FromFile": "Assets/Images/WorldMaps/Recolour/spring_LilybrookMapEarthy.png",
+      "When": {
+        "HasMod": "DaisyNiko.EarthyRecolour"
+      }
+    },
+	{
+      "LogName": "Load World Map (EarthyRecolour)",
+      "Action": "EditImage",
+      "PatchMode": "Replace",
+      "Target": "Mods/{{ModId}}/LilybrookMap/summer_LilybrookMap",
+      "FromFile": "Assets/Images/WorldMaps/Recolour/summer_LilybrookMapEarthy.png",
+      "When": {
+        "HasMod": "DaisyNiko.EarthyRecolour"
+      }
+    },
+	{
+      "LogName": "Load World Map (EarthyRecolour)",
+      "Action": "EditImage",
+      "PatchMode": "Replace",
+      "Target": "Mods/{{ModId}}/LilybrookMap/fall_LilybrookMap",
+      "FromFile": "Assets/Images/WorldMaps/Recolour/fall_LilybrookMapEarthy.png",
+      "When": {
+        "HasMod": "DaisyNiko.EarthyRecolour"
+      }
+    },
+	{
+      "LogName": "Load World Map (EarthyRecolour)",
+      "Action": "EditImage",
+      "PatchMode": "Replace",
+      "Target": "Mods/{{ModId}}/LilybrookMap/winter_LilybrookMap",
+      "FromFile": "Assets/Images/WorldMaps/Recolour/winter_LilybrookMapEarthy.png",
+      "When": {
+        "HasMod": "DaisyNiko.EarthyRecolour"
+      }
+    },
+    {
+      "LogName": "Add World Map",
+      "Action": "EditData",
+      "Target": "Data/WorldMap",
+      "Entries": {
+        "8BitAlien.Lilybrook": {
+          "BaseTexture": [
+            {
+              "Id": "Default",
+              "Texture": "Mods/{{ModId}}/LilybrookMap/{{Season}}_LilybrookMap"
+            }
+          ],
+          "MapAreas": [
+            {
+              "Id": "Lilybrook",
+              "PixelArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 133,
+                "Height": 118
+              },
+              "ScrollText": "Lilybrook",
+              "Tooltips": [
+                {
+                  "Id": "ArchieHouse",
+                  "PixelArea": { "X": 28, "Y": 16, "Width": 7, "Height": 8 },
+				  "RightNeighbor": "Lilybrook/JemmaHouse",
+				  "DownNeighbor": "Lilybrook/JagHouse",
+                  "Text": "{{i18n:WorldMap.Lilybrook.ArchieHouse}}"
+                },
+				{
+                  "Id": "Lilybrook",
+                  "PixelArea": { "X": 28, "Y": 13, "Width": 88, "Height": 105 }
+                },
+                {
+                  "Id": "PetraHaroldHouse",
+                  "PixelArea": { "X": 64, "Y": 28, "Width": 6, "Height": 7 },
+				  "DownNeighbor": "Lilybrook/JagDiner",
+				  "LeftNeighbor": "Lilybrook/ArchieHouse",
+				  "RightNeighbor": "Lilybrook/TracyHouse",
+                  "Text": "{{i18n:WorldMap.Lilybrook.PetraHaroldHouse}}"
+                },
+                {
+                  "Id": "ClothesShop",
+                  "PixelArea": { "X": 87, "Y": 66, "Width": 9, "Height": 12 },
+				  "DownNeighbor": "Lilybrook/CoffeeShop",
+				  "UpNeighbor": "Lilybrook/JagDiner",
+                  "Text": "{{i18n:WorldMap.Lilybrook.ClothesShop}}"
+                },
+                {
+                  "Id": "JemmaHouse",
+                  "PixelArea": { "X": 67, "Y": 16, "Width": 7, "Height": 8 },
+				  "DownNeighbor": "Lilybrook/PetraHaroldHouse",
+				  "RightNeighbor": "Lilybrook/TracyHouse",
+                  "Text": "{{i18n:WorldMap.Lilybrook.JemmaHouse}}"
+                },
+                {
+                  "Id": "TracyHouse",
+                  "PixelArea": { "X": 106, "Y": 12, "Width": 7, "Height": 8 },
+				  "DownNeighbor": "Lilybrook/LBCommunityCenter",
+				  "LeftNeighbor": "Lilybrook/JemmaHouse",
+                  "Text": "{{i18n:WorldMap.Lilybrook.TracyHouse}}"
+                },
+                {
+                  "Id": "JagDiner",
+                  "PixelArea": { "X": 72, "Y": 41, "Width": 11, "Height": 8 },
+				  "RightNeighbor": "Lilybrook/LBCommunityCenter",
+				  "LeftNeighbor": "Lilybrook/JagHouse",
+				  "DownNeighbor": "Lilybrook/ClothesShop",
+                  "Text": "{{i18n:WorldMap.Lilybrook.JagDiner}}"
+                },
+                {
+                  "Id": "JagHouse",
+                  "PixelArea": { "X": 46, "Y": 47, "Width": 7, "Height": 10 },
+				  "DownNeighbor": "Lilybrook/BillyShop",
+				  "RightNeighbor": "Lilybrook/JagDiner",
+                  "Text": "{{i18n:WorldMap.Lilybrook.JagHouse}}"
+                },
+                {
+                  "Id": "BillyShop",
+                  "PixelArea": { "X": 52, "Y": 60, "Width": 7, "Height": 8 },
+				  "DownNeighbor": "Lilybrook/OakleyFrankieHouse",
+				  "RightNeighbor": "Lilybrook/ClothesShop",
+                  "Text": "{{i18n:WorldMap.Lilybrook.BillyShop}}"
+                },
+                {
+                  "Id": "OakleyFrankieHouse",
+                  "PixelArea": { "X": 50, "Y": 76, "Width": 9, "Height": 12 },
+				  "RightNeighbor": "Lilybrook/ClothesShop",
+                  "Text": "{{i18n:WorldMap.Lilybrook.OakleyFrankieHouse}}"
+                },
+                {
+                  "Id": "LBCommunityCenter",
+                  "PixelArea": { "X": 104, "Y": 45, "Width": 11, "Height": 9 },
+				  "DownNeighbor": "Lilybrook/CoffeeShop",
+				  "UpNeighbor": "Lilybrook/TracyHouse",
+                  "Text": "{{i18n:WorldMap.Lilybrook.LBCommunityCenter}}"
+                },
+                {
+                  "Id": "CoffeeShop",
+                  "PixelArea": { "X": 106, "Y": 80, "Width": 9, "Height": 12 },
+				  "LeftNeighbor": "Lilybrook/OakleyFrankieHouse",
+                  "Text": "{{i18n:WorldMap.Lilybrook.CoffeeShop}}"
+                },
+                {
+                  "Id": "LBZoo",
+                  "PixelArea": { "X": 128, "Y": 57, "Width": 5, "Height": 8 },
+                  "Text": "{{i18n:WorldMap.Lilybrook.LBZoo}}"
+                },
+                {
+                  "Id": "LBGrove",
+                  "PixelArea": { "X": 0, "Y": 82, "Width": 7, "Height": 12 },
+                  "Text": "{{i18n:WorldMap.Lilybrook.LBGrove}}"
+                },
+                {
+                  "Id": "LBRoad",
+                  "PixelArea": { "X": 77, "Y": 0, "Width": 7, "Height": 5 },
+                  "Text": "{{i18n:WorldMap.Lilybrook.LBRoad}}"
+                },
+                {
+                  "Id": "LBBeach",
+                  "PixelArea": { "X": 103, "Y": 113, "Width": 6, "Height": 5 },
+                  "Text": "{{i18n:WorldMap.Lilybrook.LBBeach}}"
+                }
+              ],
+              "WorldPositions": [
+            {
+                  "Id": "8BitAlien.Lilybrook_Lilybrook",
+                  "LocationName": "8BitAlien.Lilybrook_Lilybrook",
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_ArchieHouse",
+                  "LocationName": "8BitAlien.Lilybrook_ArchieHouse",
+                  "MapPixelArea": { "X": 28, "Y": 16, "Width": 7, "Height": 8 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_ArchieHouse",
+                  "LocationName": "8BitAlien.Lilybrook_ArchieHouse",
+                  "MapPixelArea": { "X": 28, "Y": 16, "Width": 7, "Height": 8 }
+                },
+				{
+                  "Id": "LBTopLeft",
+                  "LocationName": "8BitAlien.Lilybrook_Lilybrook",
+				  "TileArea": { "X": 6, "Y": 11, "Width": 36, "Height": 14 },
+				  "MapPixelArea": { "X": 27, "Y": 20, "Width": 29, "Height": 21 }
+                },
+				{
+                  "Id": "LBTopRight",
+                  "LocationName": "8BitAlien.Lilybrook_Lilybrook",
+				  "TileArea": { "X": 42, "Y": 4, "Width": 73, "Height": 34 },
+				  "MapPixelArea": { "X": 56, "Y": 6, "Width": 61, "Height": 35 }
+                },
+				{
+                  "Id": "LBMiddleLeft",
+                  "LocationName": "8BitAlien.Lilybrook_Lilybrook",
+				  "TileArea": { "X": 6, "Y": 25, "Width": 36, "Height": 48 },
+				  "MapPixelArea": { "X": 31, "Y": 41, "Width": 25, "Height": 46}
+                },
+                {
+                  "Id": "LBMiddleDiner",
+                  "LocationName": "8BitAlien.Lilybrook_Lilybrook",
+				  "TileArea": { "X": 42, "Y": 38, "Width": 40, "Height": 27 },
+				  "MapPixelArea": { "X": 56, "Y": 41, "Width": 40, "Height": 29}
+                },
+				{
+                  "Id": "LBBottomMiddle",
+                  "LocationName": "8BitAlien.Lilybrook_Lilybrook",
+				  "TileArea": { "X": 42, "Y": 65, "Width": 40, "Height": 35 },
+				  "MapPixelArea": { "X": 56, "Y": 70, "Width": 40, "Height": 48}
+                },
+				{
+                  "Id": "LBBottomRight1",
+                  "LocationName": "8BitAlien.Lilybrook_Lilybrook",
+				  "TileArea": { "X": 82, "Y": 38, "Width": 33, "Height": 36 },
+				  "MapPixelArea": { "X": 96, "Y": 41, "Width": 21, "Height": 41}
+                },
+				{
+                  "Id": "LBBottomRight2",
+                  "LocationName": "8BitAlien.Lilybrook_Lilybrook",
+				  "TileArea": { "X": 81, "Y": 74, "Width": 35, "Height": 26 },
+				  "MapPixelArea": { "X": 96, "Y": 82, "Width": 21, "Height": 36}
+                },
+				{
+                  "Id": "LBBottomLeft",
+                  "LocationName": "8BitAlien.Lilybrook_Lilybrook",
+				  "TileArea": { "X": 3, "Y": 73, "Width": 39, "Height": 27 },
+				  "MapPixelArea": { "X": 5, "Y": 87, "Width": 51, "Height": 31}
+                },
+				{
+                  "Id": "HazelTree",
+                  "LocationName": "8BitAlien.Lilybrook_HazelsTree",
+				  "MapPixelArea": { "X": 100, "Y": 86, "Width": 6, "Height": 6 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_PetraHaroldHouse",
+                  "LocationName": "8BitAlien.Lilybrook_PetraHaroldHouse",
+                  "MapPixelArea": { "X": 64, "Y": 28, "Width": 6, "Height": 7 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_ClothesShop",
+                  "LocationName": "8BitAlien.Lilybrook_ClothesShop",
+                  "MapPixelArea": { "X": 87, "Y": 66, "Width": 9, "Height": 12 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_JemmaHouse",
+                  "LocationName": "8BitAlien.Lilybrook_JemmaHouse",
+                  "MapPixelArea": { "X": 67, "Y": 16, "Width": 7, "Height": 8 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_TracyHouse",
+                  "LocationName": "8BitAlien.Lilybrook_TracyHouse",
+                  "MapPixelArea": { "X": 106, "Y": 12, "Width": 7, "Height": 8 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_JagDiner",
+                  "LocationName": "8BitAlien.Lilybrook_JagDiner",
+                  "MapPixelArea": { "X": 72, "Y": 41, "Width": 11, "Height": 8 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_JagHouse",
+                  "LocationName": "8BitAlien.Lilybrook_JagHouse",
+                  "MapPixelArea": { "X": 46, "Y": 47, "Width": 7, "Height": 10 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_BillyShop",
+                  "LocationName": "8BitAlien.Lilybrook_BillyShop",
+                  "MapPixelArea": { "X": 52, "Y": 60, "Width": 7, "Height": 8 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_OakleyFrankieHouse",
+                  "LocationName": "8BitAlien.Lilybrook_OakleyFrankieHouse",
+                  "MapPixelArea": { "X": 50, "Y": 76, "Width": 9, "Height": 12 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_LilybrookCommunityCenter",
+                  "LocationName": "8BitAlien.Lilybrook_LilybrookCommunityCenter",
+                  "MapPixelArea": { "X": 104, "Y": 45, "Width": 11, "Height": 9 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_CoffeeShop",
+                  "LocationName": "8BitAlien.Lilybrook_CoffeeShop",
+                  "MapPixelArea": { "X": 106, "Y": 80, "Width": 9, "Height": 12 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_Zoo",
+                  "LocationName": "8BitAlien.Lilybrook_Zoo",
+                  "MapPixelArea": { "X": 128, "Y": 57, "Width": 5, "Height": 8 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_LilybrookGrove",
+                  "LocationName": "8BitAlien.Lilybrook_LilybrookGrove",
+                  "MapPixelArea": { "X": 0, "Y": 82, "Width": 7, "Height": 12 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_LilybrookRoad",
+                  "LocationName": "8BitAlien.Lilybrook_LilybrookRoad",
+                  "MapPixelArea": { "X": 77, "Y": 0, "Width": 7, "Height": 5 }
+                },
+                {
+                  "Id": "8BitAlien.Lilybrook_LilybrookBeach",
+                  "LocationName": "8BitAlien.Lilybrook_LilybrookBeach",
+                  "MapPixelArea": { "X": 103, "Y": 113, "Width": 6, "Height": 5 }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
+

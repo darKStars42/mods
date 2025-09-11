@@ -1,0 +1,84 @@
+{
+"Changes": [
+	 {
+"LogName": "Mail",
+"Action": "EditData",
+"Target": "data/mail",
+"Entries": {
+"{{ModID}}_ArcanianAnimals.Mail": "{{i18n:FC.ArcanianAnimals.Mail}} %item id (O){{ModID}}_AnimalBook %%[#]{{i18n:FC.ArcanianAnimals.Mail.Title}}",
+"{{ModID}}_ArcanianAnimalsRing.Mail": "{{i18n:FC.ArcanianAnimalsRing.Mail}} %item id (O){{ModID}}_ArahsRing %%[#]{{i18n:FC.ArcanianAnimalsRing.Mail.Title}}",
+"{{ModID}}_ArcanianAnimalsResend.Mail": "{{i18n:FC.ArcanianAnimalsResend.Mail}} %item id (O){{ModID}}_AnimalBook %%[#]{{i18n:FC.ArcanianAnimalsResend.Mail.Title}}",
+
+
+}
+},
+{
+"LogName": "ArcanianAnimals",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_ArcanianAnimals.Trigger":{
+"Id": "{{ModID}}_ArcanianAnimals.Trigger",
+"MarkActionApplied": true,
+"Trigger": "LocationChanged",
+"Condition": "IS_COMMUNITY_CENTER_COMPLETE",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_ArcanianAnimals.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+{
+"LogName": "ArcanianAnimals",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_ArcanianAnimals.Trigger":{
+"Id": "{{ModID}}_ArcanianAnimals.Trigger",
+"MarkActionApplied": true,
+"Trigger": "LocationChanged",
+"Condition": "IS_JOJA_MART_COMPLETE",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_ArcanianAnimals.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+{
+"LogName": "ArcanianAnimals",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_ArcanianAnimalsResend.Trigger":{
+"Id": "{{ModID}}_ArcanianAnimalsResend.Trigger",
+"MarkActionApplied": true,
+"Trigger": "LocationChanged",
+"Condition": "PLAYER_HAS_MAIL Current {{ModID}}_ArcanianAnimals.Mail Received,!PLAYER_HAS_ITEM Current {{ModID}}_AnimalBook",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_ArcanianAnimalsResend.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+{
+"LogName": "ArcanianAnimals",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_ArcanianAnimalsRing.Trigger":{
+"Id": "{{ModID}}_ArcanianAnimalsRing.Trigger",
+"MarkActionApplied": true,
+"Trigger": "LocationChanged",
+"Condition": "selph.ExtraAnimalConfig_ANIMAL_COUNT Fellowclown.TW_Movoraptor 0 3",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_ArcanianAnimalsRing.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+]
+}

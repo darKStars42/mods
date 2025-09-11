@@ -1,0 +1,98 @@
+{
+  "Changes": [
+{
+  "LogName": "NPC Gift Tastes",
+  "Action": "EditData",
+  "Target": "Data/NPCGiftTastes",
+  "Entries": {
+   "Morrigan": "{{i18n:gift.Morrigan.001}}//{{i18n:gift.Morrigan.002}}//{{i18n:gift.Morrigan.003}}//{{i18n:gift.Morrigan.004}}//{{i18n:gift.Morrigan.005}}/ 228 "
+  	}
+	},
+    {
+      "LogName": "NPC Sprite",
+      "Action": "Load",
+      "Target": "Characters/Morrigan",
+      "FromFile": "assets/Characters/Sprites/Morrigan/spritesheet.png"
+    },
+
+{
+  "LogName": "NPC Sprite 2",
+  "Action": "Load",
+  "Target": "Characters/Morrigan_Alternate",
+  "FromFile": "assets/Characters/Sprites/Morrigan/Morrigan_Alternate.png"
+},
+
+///NPCPortraitconfig///
+
+{
+  "LogName": "Morrigan Alternate Portrait",
+  "Action": "Load",
+  "Target": "Portraits/Morrigan_Alternate",
+  "FromFile": "assets/Characters/Portraits/Morrigan/Morrigan_Alternate.png"
+},
+
+ {
+      "LogName": "NPC Portrait",
+      "Action": "Load",
+      "Target": "Portraits/Morrigan",
+      "FromFile": "assets/Characters/Portraits/Morrigan/portrait2.png"
+    },
+
+/////////
+    {
+      "LogName": "Schedule",
+      "Action": "Load",
+      "Target": "Characters/schedules/Morrigan",
+"When":{
+"HasFlag": "spawnMorrigan",
+},
+      "FromFile": "Data/CharacterData/Schedules/Morrigan/schedule.json"
+    },
+    {
+      "LogName": "Animation Frames",
+      "Action": "Include",
+      "FromFile": "Data/CharacterData/anim/Morrigan/Animations.json"
+    },
+    {
+      "LogName": "Festival Data",
+      "Action": "Include",
+      "FromFile": "Data/CharacterData/Festivals/Morrigan/SirenFestivals.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "Data/Events/Morrigan/SirenEvents.json"
+    },
+
+  
+
+    
+   
+    ///NPCMAPLOCATIONScompat//
+    {
+    "Action": "EditData",
+    "Target": "Mods/Bouhm.NPCMapLocations/NPCs",
+    "Entries": {
+        "Morrigan": {
+            "MarkerCropOffset": 3
+        },
+    }
+},
+
+
+
+    
+         {
+		"LogName": "Include Morrigan Dialogue Load",
+      "Action": "Include",
+      "FromFile": "Data/CharacterData/Dialogue/Morrigan/Dialogue.json"
+    },
+    
+     {
+		"LogName": "Include Morrigan ScheduleDialogue",
+      "Action": "Include",
+      "FromFile": "Data/CharacterData/Schedules/Morrigan/scheduleDialogue.json"
+    },
+    
+
+    ]
+    }

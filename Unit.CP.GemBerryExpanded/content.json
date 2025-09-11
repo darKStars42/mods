@@ -1,0 +1,335 @@
+{
+	"$schema": "https://smapi.io/schemas/content-patcher.json",
+	"Format": "2.3.0",
+
+	"Changes": [
+	{
+        "Action": "Load",
+        "LogName": "Adding all the Gem Berry crops and Updating Fall Gem Berry",
+        "Target": "Mods/Unit.CP.GemBerryExpanded/CropRegrowth",
+        "FromFile": "assets/SweetGemGrow.png"
+    },
+	{
+				"Action": "EditData",
+				"Target": "Data/Crops", //Regrowth Period
+				"Fields": {
+					"347": {
+						"RegrowDays": "28",
+						"Texture": "Mods/Unit.CP.GemBerryExpanded/CropRegrowth",
+						"Description": "{{i18n:Regrowth.Description}}",
+						"SpriteIndex":0
+						
+					}, //Rare Seed
+				},
+		    },
+				{
+					"Action": "EditData",
+					"Target": "Data/Objects",
+					"Fields": {
+						"417": {
+							"Price": "2600",
+							"Description": "{{i18n:Sweet Gem Berry.Description}}",
+							"Category": -79
+						}, //Sweet Gem Berry
+					},
+				},
+{
+			"Action": "Load",
+			"LogName": "Loading Fall Gem Seeds",
+			"Target": "Mods/Unit.CP.GemBerryExpanded/FallGemSeeds",
+			"FromFile": "assets/FallGemSeeds.png"
+		},
+				{
+					"Action": "EditData",
+					"Target": "Data/Objects",
+					"Fields": {
+							"347": {
+								"DisplayName": "Fall Gem Seed",
+                                                                "Texture": "Mods/Unit.CP.GemBerryExpanded/FallGemSeeds",
+								"SpriteIndex": 0,
+								"Description": "{{i18n:Rare Seed.Description}}"
+							}
+						},
+					},
+					{
+						"Action": "Load",
+						"LogName": "Loading Winter Gem Berries",
+						"Target": "Mods/Unit.CP.GemBerryExpanded/WinterGem",
+						"FromFile": "assets/WinterGem.png"
+					},
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"GemBerryExpanded_WinterGemBerry": {
+					"Name": "GemBerryExpanded_WinterGemBerry",
+					"Type": "Fruit",
+					"Category": -79,
+					"DisplayName": "{{i18n:WinterGemBerry}}",
+					"Description": "{{i18n:WinterGemBerry_description}}",
+					"Texture": "Mods/Unit.CP.GemBerryExpanded/WinterGem",
+					"Price": 80,
+					"Edibility": 15,
+					"ContextTags": [
+						
+						"color_blue",
+						"season_winter",
+						"modid_GemBerryExpanded",
+						"Gem_Berry"
+					]
+				},
+			},
+		},
+		{
+			"Action": "Load",
+			"LogName": "Loading Winter Gem Seeds",
+			"Target": "Mods/Unit.CP.GemBerryExpanded/WinterGemSeeds",
+			"FromFile": "assets/WinterGemSeeds.png"
+		},
+{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"GemBerryExpanded_WinterGemSeeds": {
+					"Name": "GemBerryExpanded_WinterGemSeeds",
+					"Type": "Seed",
+					"Category": -74,
+					"DisplayName": "{{i18n:WinterGemSeeds_name}}",
+					"Description": "{{i18n:WinterGemSeeds_description}}",
+					"Texture": "Mods/Unit.CP.GemBerryExpanded/WinterGemSeeds",
+					"Price": 10,
+					"ContextTags": [
+						"GemBerryExpanded_crop_seed",
+						"GemBerryExpanded_season_Winter",
+						"GemBerryExpanded_shop_none",
+				]
+				},
+			},
+		},
+		{
+			"Action": "Load",
+			"LogName": "Loading Spring Gem Berries",
+			"Target": "Mods/Unit.CP.GemBerryExpanded/SpringGem",
+			"FromFile": "assets/SpringGem.png"
+		},
+{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"GemBerryExpanded_SpringGemBerry": {
+					"Name": "GemBerryExpanded_SpringGemBerry",
+					"Type": "Fruit",
+					"Category": -79,
+					"SpriteIndex": 0,
+					"DisplayName": "{{i18n:SpringGemBerry}}",
+					"Description": "{{i18n:SpringGemBerry_description}}",
+					"Texture": "Mods/Unit.CP.GemBerryExpanded/SpringGem",
+					"Price": 140,
+					"Edibility": 10,
+					"ContextTags": [
+						
+						"color_green",
+						"season_spring",
+						"modid_GemBerryExpanded",
+						"Gem_Berry"
+					]
+				},
+			},
+		},
+		{
+			"Action": "Load",
+			"LogName": "Loading Spring Gem Seeds",
+			"Target": "Mods/Unit.CP.GemBerryExpanded/SpringGemSeeds",
+			"FromFile": "assets/SpringGemSeeds.png"
+		},
+{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"GemBerryExpanded_SpringGemSeeds": {
+					"Name": "GemBerryExpanded_SpringGemSeeds",
+					"Type": "Seed",
+					"Category": -74,
+					"SpriteIndex": 0,
+					"DisplayName": "{{i18n:SpringGemSeeds_name}}",
+					"Description": "{{i18n:SpringGemSeeds_description}}",
+					"Texture": "Mods/Unit.CP.GemBerryExpanded/SpringGemSeeds",
+					"Price": 10,
+					"ContextTags": [
+						"GemBerryExpanded_crop_seed",
+						"GemBerryExpanded_season_spring",
+						"GemBerryExpanded_shop_none",
+				]
+				},
+			},
+		},
+		{
+			"Action": "Load",
+			"LogName": "Loading Summer Gem Berries",
+			"Target": "Mods/Unit.CP.GemBerryExpanded/SummerGem",
+			"FromFile": "assets/SummerGem.png"
+		},
+{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"GemBerryExpanded_SummerGemBerry": {
+					"Name": "GemBerryExpanded_SummerGemBerry",
+					"Type": "Fruit",
+					"Category": -79,
+					"SpriteIndex": 0,
+					"DisplayName": "{{i18n:SummerGemBerry}}",
+					"Description": "{{i18n:SummerGemBerry_description}}",
+					"Texture": "Mods/Unit.CP.GemBerryExpanded/SummerGem",
+					"Price": 500,
+					"Edibility": 30,
+					"ContextTags": [
+						
+						"color_yellow",
+						"season_summer",
+						"modid_GemBerryExpanded",
+						"Gem_Berry"
+					]
+				},
+			},
+		},
+		{
+			"Action": "Load",
+			"LogName": "Loading Summer Gem Seeds",
+			"Target": "Mods/Unit.CP.GemBerryExpanded/SummerGemSeeds",
+			"FromFile": "assets/SummerGemSeeds.png"
+		},
+{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"GemBerryExpanded_SummerGemSeeds": {
+					"Name": "GemBerryExpanded_SummerGemSeeds",
+					"Type": "Seed",
+					"Category": -74,
+					"SpriteIndex": 0,
+					"DisplayName": "{{i18n:SummerGemSeeds_name}}",
+					"Description": "{{i18n:SummerGemSeeds_description}}",
+					"Texture": "Mods/Unit.CP.GemBerryExpanded/SummerGemSeeds",
+					"Price": 10,
+					"ContextTags": [
+						"GemBerryExpanded_crop_seed",
+						"GemBerryExpanded_season_summer",
+						"GemBerryExpanded_shop_none",
+				]
+				},
+			},
+		},
+		{
+			"Action": "Load",
+			"LogName": "Loading Winter Gem Data",
+			"Target": "Mods/Unit.CP.GemBerryExpanded/WinterGemBerry",
+			"FromFile": "assets/WinterGemBerry.png"
+		},
+{
+			"Action": "EditData",
+			"Target": "Data/Crops",
+			"Entries": {
+				"GemBerryExpanded_WinterGemSeeds": {
+					"Seasons": [ "Winter" ],
+					"DaysInPhase": [ 1, 1, 1, 1, 3],
+					"HarvestItemId": "GemBerryExpanded_WinterGemBerry",
+					"Texture": "Mods/Unit.CP.GemBerryExpanded/WinterGemBerry",
+					"SpriteIndex": 0,
+					"RegrowDays": 6,
+				},
+			},
+		},
+		{
+			"Action": "Load",
+			"LogName": "Loading Spring Gem Data",
+			"Target": "Mods/Unit.CP.GemBerryExpanded/SpringGemBerry",
+			"FromFile": "assets/SpringGemBerry.png"
+		},
+{
+			"Action": "EditData",
+			"Target": "Data/Crops",
+			"Entries": {
+				"GemBerryExpanded_SpringGemSeeds": {
+					"Seasons": [ "Spring" ],
+					"DaysInPhase": [ 1, 1, 1, 1, 4 ],
+					"HarvestItemId": "GemBerryExpanded_SpringGemBerry",
+					"Texture": "Mods/Unit.CP.GemBerryExpanded/SpringGemBerry",
+					"SpriteIndex": 0,
+					"RegrowDays": 5,
+				},
+			},
+		},
+		{
+			"Action": "Load",
+			"LogName": "Loading Summer Gem Data",
+			"Target": "Mods/Unit.CP.GemBerryExpanded/SummerGemBerry",
+			"FromFile": "assets/SummerGemBerry.png"
+		},
+{
+			"Action": "EditData",
+			"Target": "Data/Crops",
+			"Entries": {
+				"GemBerryExpanded_SummerGemSeeds": {
+					"Seasons": [ "Summer" ],
+					"DaysInPhase": [ 1, 1, 1, 2, 6 ],
+					"HarvestItemId": "GemBerryExpanded_SummerGemBerry",
+					"Texture": "Mods/Unit.CP.GemBerryExpanded/SummerGemBerry",
+					"SpriteIndex": 0,
+					"RegrowDays": 10,
+				},
+			},
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/mail",
+            "Entries": {
+                "{{ModId}}_WinterGemBerryDelivery.Mail": "{{i18n:WinterGemBerryDelivery.Mail_Text}}%item id (O)GemBerryExpanded_WinterGemSeeds 1 %%[#]{{i18n:WinterGemBerryDelivery.Mail_Title}}",
+				"{{ModId}}_SpringGemBerryDelivery.Mail": "{{i18n:SpringGemBerryDelivery.Mail_Text}}%item id (O)GemBerryExpanded_SpringGemSeeds 1 %%[#]{{i18n:SpringGemBerryDelivery.Mail_Title}}",
+				"{{ModId}}_SummerGemBerryDelivery.Mail": "{{i18n:SummerGemBerryDelivery.Mail_Text}}%item id (O)GemBerryExpanded_SummerGemSeeds 1 %%[#]{{i18n:SummerGemBerryDelivery.Mail_Title}}"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+            "{{ModId}}_WinterGemBerryDelivery.Mail": {
+                    "Id": "{{ModId}}_WinterGemBerryDelivery.Mail",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_SHIPPED_BASIC_ITEM Current 417 1 999",
+                    "Action": "AddMail Current {{ModId}}_WinterGemBerryDelivery.Mail now"
+                    
+                }
+            }
+        },
+		{
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+            "{{ModId}}_SpringGemBerryDelivery.Mail": {
+                    "Id": "{{ModId}}_SpringGemBerryDelivery.Mail",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_SHIPPED_BASIC_ITEM Current (O)GemBerryExpanded_WinterGemBerry 1 999",
+                    "Action": "AddMail Current {{ModId}}_SpringGemBerryDelivery.Mail now"
+                    
+                }
+            }
+        },
+		{
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+            "{{ModId}}_SummerGemBerryDelivery.Mail": {
+                    "Id": "{{ModId}}_SummerGemBerryDelivery.Mail",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_SHIPPED_BASIC_ITEM Current (O)GemBerryExpanded_SpringGemBerry 1 999",
+                    "Action": "AddMail Current {{ModId}}_SummerGemBerryDelivery.Mail now"
+                    
+                }
+            }
+        },
+				]
+
+
+				}
+			

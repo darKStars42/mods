@@ -1,0 +1,171 @@
+{
+    "Changes": [
+
+/*----------------------------------------------------
+Add RuneCarver
+----------------------------------------------------*/        
+        { 
+        "LogName":"Add Machine - Rune Carver",
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "When": { "Trinkets": "Runes" },
+            "Entries": {
+                "{{ModId}}_RuneCarver": {
+                    "Name": "{{ModId}}_RuneCarver",
+                    "DisplayName": "{{i18n:Alchemistry_RuneCarver.name}}",
+                    "Description": "{{i18n:Alchemistry_RuneCarver.description}}",
+                    "Fragility": 0,
+                    "CanBePlacedOutdoors": true,
+                    "CanBePlacedIndoors": true,
+                    "IsLamp": true,
+                    "ContextTags": [
+                        "light_source"
+                      ],
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/Machines",
+                    "SpriteIndex": 9
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": { 
+                "(BC)Morghoula.AlchemistryCP_RuneCarver": {
+                    "OutputRules": [],
+                    "ShowNextIndexWhileWorking": false,
+                    "ShowNextIndexWhenReady": false,
+                    "WobbleWhileWorking": false,
+                    "WorkingEffects":[
+                        {
+                            /*"Sounds": [
+                                {
+                                "Id": "thunder_small",
+                                "Delay": 0
+                                }
+                            ],*/
+                            "Frames": [1,2,3,4,5],
+                            "Interval": 200
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Load Rune Carver Outputs",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC)Morghoula.AlchemistryCP_RuneCarver", "OutputRules"],
+            "Entries": {
+                    "{{ModID}}_FireRune": { 
+                        "Id": "{{ModID}}_FireRune",
+                        "Triggers": [
+                            {
+                                "Id": "ItemPlacedInMachine",
+                                "Trigger": "ItemPlacedInMachine",
+                                "RequiredItemId": "(O)Morghoula.AlchemistryCP_MagmaRuby",
+                                "RequiredCount": 5
+                            }
+                        ],
+                        "UseFirstValidOutput": true,
+                        "OutputItem": [
+                            {
+                                "CustomData": {
+                                    "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_ArcaneEye",
+                                    "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                    "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Eye of the Arcane."
+                                },
+                                    "ItemId": "(TR)IridiumSpur",
+                                    "CopyQuality": false,
+                                    "CopyPrice": false
+                                }
+                        ],
+                            "MinutesUntilReady": 4320,
+                            "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                            "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_IceRune": { 
+                    "Id": "{{ModID}}_IceRune",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_MoonlitTear",
+                            "RequiredCount": 5
+                        }
+                    ],
+                    "UseFirstValidOutput": true,
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_ArcaneEye",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Eye of the Arcane."
+                            },
+                                "ItemId": "(TR)IceRod",
+                                "CopyQuality": false,
+                                "CopyPrice": false
+                            }
+                    ],
+                        "MinutesUntilReady": 4320,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_EarthRune": { 
+                "Id": "{{ModID}}_EarthRune",
+                "Triggers": [
+                    {
+                        "Id": "ItemPlacedInMachine",
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_NaturesEmerald",
+                        "RequiredCount": 5
+                    }
+                ],
+                "UseFirstValidOutput": true,
+                "OutputItem": [
+                    {
+                        "CustomData": {
+                            "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_ArcaneEye",
+                            "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                            "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Eye of the Arcane."
+                        },
+                            "ItemId": "(TR)BasiliskPaw",
+                            "CopyQuality": false,
+                            "CopyPrice": false
+                        }
+                ],
+                    "MinutesUntilReady": 4320,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_ArcaneRune": { 
+                "Id": "{{ModID}}_ArcaneRune",
+                "Triggers": [
+                    {
+                        "Id": "ItemPlacedInMachine",
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_MagiWand",
+                        "RequiredCount": 5
+                    }
+                ],
+                "UseFirstValidOutput": true,
+                "OutputItem": [
+                    {
+                        "CustomData": {
+                            "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_ArcaneEye",
+                            "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                            "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Eye of the Arcane."
+                        },
+                            "ItemId": "(TR)FairyBox",
+                            "CopyQuality": false,
+                            "CopyPrice": false
+                        }
+                ],
+                    "MinutesUntilReady": 4320,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            }
+            }
+        }
+    ]
+}

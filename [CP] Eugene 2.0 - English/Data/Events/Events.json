@@ -1,0 +1,133 @@
+{
+    "Changes": [
+
+        //0H: Introduction
+        //Condition: Enter Eugene's house
+        {
+            "LogName": "Eugene First Meeting Event",
+            "Action": "EditData",
+            "Target": "Data/Events/Custom_NPCEugene_House",
+            "Entries": {
+                "80001/j 0/t 600 2600": "night_market/7 13/farmer -100 -100 0 Eugene 7 13 3/skippable/pause 1000/emote Eugene 40/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.0}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.1}}\"/pause 1000/playSound doorClose/warp farmer 7 18/pause 500/faceDirection Eugene 2/showFrame Eugene 19/pause 300/jump Eugene/pause 1500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.2}}\"/faceDirection Eugene 1/faceDirection Eugene 3/faceDirection Eugene 2/pause 1300/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.3}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.4}}\"/pause 1000/showFrame Eugene 18/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.5}}\"/pause 500/emote farmer 40/pause 500/showFrame Eugene 0/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.6}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.7}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.8}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.9}}\"/pause 700/emote farmer 40/pause 1000/end dialogue Eugene \"{{i18n:Events.Eugene.HeartEvent.0H.10}}\""
+            }
+        },
+
+        //2H: Muffin
+        //Condition: Enter Eugene's room while he's there
+        {
+            "LogName": "Eugene 2 Heart Event",
+            "Action": "EditData",
+            "Target": "Data/Events/Custom_NPCEugene_Room",
+            "Entries": {
+                "80002/f Eugene 500/p Eugene": "breezy/8 14/farmer 8 16 0 Eugene 12 13 0/skippable/pause 500/move farmer 0 -3 0/move farmer 3 0 1/pause 500/showFrame Eugene 12/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.0}}\"/pause 500/emote farmer 8/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.1}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.2}}\"/showFrame Eugene 8/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.3}}\"/pause 2500/playSound crystal/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.4}}\"/pause 500/showFrame Eugene 20/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.5}}\"/showFrame Eugene 21/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.6}}\"/showFrame Eugene 12/pause 600/farmerEat 651/pause 2000/emote farmer 16/pause 500/faceDirection farmer 1/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.7}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.8}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.9}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.10}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.11}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.12}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.13}}\"/pause 500/emote Eugene 32/end dialogue Eugene \"{{i18n:Events.Eugene.HeartEvent.2H.14}}\""
+            }
+        },
+
+        //4H: Graveyard
+        //Condition: Enter Town between 7pm and 12am on a weekend
+        {
+            "LogName": "Eugene 4 Heart Event",
+            "Action": "EditData",
+            "Target": "Data/Events/Town",
+            "Entries": {
+                "80004/f Eugene 1000/t 1900 2400/d Mon Tue Wed Thu Fri": "echos/43 87/farmer 43 92 0 Eugene 43 85 3/skippable/addLantern 735 43 86 2/pause 1500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.0}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.1}}\"/pause 400/move farmer 0 -5 0/pause 400/faceDirection Eugene 2/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.2}}\"/pause 600/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.3}}\"/pause 1000/showFrame Eugene 12/pause 400/emote Eugene 40/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.4}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.5}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.6}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.7}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.8}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.9}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.10}}\"/pause 800/showFrame Eugene 0/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.11}}\"/globalFade/viewport -1000 -1000/end"
+            }
+        },
+        {
+            "LogName": "Eugene 4 Heart Event - Overgrown Valley Compat",
+            "Action": "EditData",
+            "Target": "Data/Events/Town",
+            "Entries": {
+                "80004/f Eugene 1000/t 1900 2400/d Mon Tue Wed Thu Fri": "echos/43 87/farmer 42 93 0 Eugene 42 86 0/skippable/addLantern 735 43 86 2/pause 1500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.0}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.1}}\"/pause 400/move farmer 0 -5 0/pause 400/faceDirection Eugene 2/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.2}}\"/pause 600/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.3}}\"/pause 1000/showFrame Eugene 12/pause 400/emote Eugene 40/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.4}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.5}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.6}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.7}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.8}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.9}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.10}}\"/pause 800/showFrame Eugene 0/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.4H.11}}\"/globalFade/viewport -1000 -1000/end"
+            },
+            "When": { "HasMod": "mushlune.overgrown" }
+        },
+
+        //6H: Junimo
+        //Condition: Enter Eugene's house
+        {
+            "LogName": "Eugene 6 Heart Event",
+            "Action": "EditData",
+            "Target": "Data/Events/Custom_NPCEugene_House",
+            "Entries": {
+                "80003/f Eugene 1500/p Eugene": "night_market/32 11/farmer -100 -100 2 Eugene 31 11 1 Junimo 32 11 3/skippable/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.0}}\"/pause 200/jump Junimo 6/playSound junimoMeep1/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.1}}\"/pause 300/jump Junimo 6/playSound junimoMeep1/pause 400/jump Junimo 6/playSound junimoMeep1/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.2}}\"/pause 300/jump Junimo 6/playSound junimoMeep1/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.3}}\"/pause 300/jump Junimo 6/playSound junimoMeep1/pause 400/jump Junimo 6/playSound junimoMeep1/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.4}}\"/pause 500/playSound doorClose/pause 300/showFrame Eugene 12/emote Eugene 16/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.5}}\"/pause 300/playSound junimoMeep1/pause 500/warp Junimo -300 -300/playSound wand/pause 500/warp farmer 18 11/move farmer 11 0 1/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.6}}\"/pause 500/emote farmer 40/pause 500/warp Junimo 30 10/playSound wand/jump Junimo/pause 400/jump Eugene/pause 700/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.7}}\"/pause 300/jump Junimo/playSound junimoMeep1/pause 1000/emote farmer 32/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.8}}\"/pause 400/faceDirection Junimo 1/jump Junimo 7/playSound junimoMeep1/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.9}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.10}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.11}}\"/pause 500/jump Junimo/playSound junimoMeep1/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.12}}\"/pause 500/emote Eugene 40/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.13}}\"/pause 400/emote farmer 8/pause 600/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.6H.14}}\"/jump Junimo/playSound junimoMeep1/jump Junimo/playSound junimoMeep1/pause 800/end"
+            }
+        },
+
+        //8H: Wizard
+        //Condition: Enter Eugene's room while he's there after seeing the 4 Heart Event
+        {
+            "LogName": "Eugene 8 Heart Event",
+            "Action": "EditData",
+            "Target": "Data/Events/Custom_NPCEugene_Room",
+            "Entries": {
+                "80005/f Eugene 2000/p Eugene/e 80004": "desolate/7 6/farmer -100 -100 0 Eugene 5 5 1 Wizard 9 5 3/skippable/pause 500/emote Wizard 12/pause 1000/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H.0}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.1}}\"/pause 800/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H.2}}\"/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H.3}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.4}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.5}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.6}}\"/pause 500/showFrame Eugene 0/pause 300/showFrame Eugene 18/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.7}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.8}}\"/pause 800/emote Wizard 40/pause 800/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H.9}}\"/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H{{GNMT}}.10 |SubjectivePronoun={{Random:{{Lowercase:{{Hana.GNMTokens/SubjectivePronoun}}}}}}}}\"/showFrame Eugene 4/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.11}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.12}}\"/pause 500/emote Wizard 16/pause 800/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H.13}}\"/pause 1000/showFrame Eugene 18/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.14}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H{{GNMT}}.15 |ObjectivePronoun={{Random:{{Lowercase:{{Hana.GNMTokens/ObjectivePronoun}}}}}}}}\"/pause 1500/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H.16}}\"/pause 800/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H.17}}\"/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H{{GNMT}}{{GNMTSingularToken}}.18 |SubjectivePronoun={{Random:{{Lowercase:{{Hana.GNMTokens/SubjectivePronoun}}}}}}}}\"/pause 500/emote Eugene 40/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.19}}\"/pause 500/showFrame Eugene 4/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H{{RomRas}}.20}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.21}}\"/warp farmer 5 15/move farmer 0 -6 0/pause 400/showFrame Eugene 0/showFrame Eugene 19/jump Eugene/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.22}}\"/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H{{GNMT}}{{GNMTSingularToken}}.23 |SubjectivePronoun={{Random:{{Hana.GNMTokens/SubjectivePronoun}}}}}}\"/pause 300/showFrame Eugene 0/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.24}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.25}}\"/pause 800/showFrame Eugene 18/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.26}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H{{RomRas}}.27}}\"/pause 500/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H.28}}\"/pause 500/faceDirection Wizard 1/pause 800/speak Wizard \"{{i18n:Events.Eugene.HeartEvent.8H.29}}\"/pause 500/warp Wizard -3000 -3000/playSound wand/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.30}}\"/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.31}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.32}}\"/pause 800/emote farmer 40/globalFade/viewport -1000 -1000/end dialogue Eugene \"{{i18n:Events.Eugene.HeartEvent.8H.33}}\" Wizard \"{{i18n:Events.Eugene.HeartEvent.8H.34}}\""
+            }
+        },
+        //10H pt1: Visit
+        //Condition: Enter the Farm between 6am and 10am on a clear day after seeing the 8 Heart Event
+        {
+            "LogName": "Eugene 10 Heart Event Part 1",
+            "Action": "EditData",
+            "Target": "Data/Events/Farm",
+            "Entries": {
+                "800061/f Eugene 2500/t 600 1000/e 80005/w sunny": "continue/64 14/farmer 64 15 2 Eugene 64 16 0/skippable/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H1.0}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H1.1}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H1.2}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H1.3}}\"/pause 500/showFrame Eugene 0/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H1.4}}\"/end"
+            }
+        },
+
+        //10H pt2: Magic
+        //Condition: Enter the Forest between 7pm and 1:40am after seeing Part 1
+        {
+            "LogName": "Eugene 10 Heart Event Part 2",
+            "Action": "EditData",
+            "Target": "Data/Events/Forest",
+            "Entries": {
+                "80006/f Eugene 2500/t 1900 2540/e 800061/w sunny": "echos/74 80/farmer 75 80 3 Eugene 74 80 1/skippable/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.0}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2{{RomRas}}.1}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.2}}\"/pause 500/emote farmer 8/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.3}}\"/pause 1000/showFrame Eugene 24/pause 750/showFrame Eugene 25/pause 750/showFrame Eugene 24/pause 750/showFrame Eugene 25/pause 1000/showFrame Eugene 26/playSound treethud/pause 1000/showFrame Eugene 27/playSound treethud/pause 1000/showFrame Eugene 29/playSound treethud/pause 1000/showFrame Eugene 30/playSound treethud/pause 1500/jump farmer/pause 500/emote farmer 16/pause 500/showFrame Eugene 31/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.4}}\"/pause 500/emote farmer 40/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.5}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.6}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.7}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.8}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.9}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.10}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.11}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2{{RomRas}}.12}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2{{RomRas}}.13}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.14}}\"/pause 400/emote farmer 16/pause 400/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.15}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.16}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2{{RomRas}}.17}}\"/pause 1000/showFrame Eugene 0/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.18}}\"/pause 1000/showFrame Eugene 4/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.19}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.20}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.21}}\"/pause 1000/globalFade/viewport -1000 -1000/end dialogue Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.22}}\""
+            }
+        },
+        {
+            "LogName": "Eugene 10 Heart Event Part 2 - SVE Compat",
+            "Action": "EditData",
+            "Target": "Data/Events/Forest",
+            "Entries": {
+                "80006/f Eugene 2500/t 1900 2540/e 800061/w sunny": "echos/32 60/farmer 33 60 3 Eugene 32 60 1/skippable/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.0}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2{{RomRas}}.1}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.2}}\"/pause 500/emote farmer 8/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.3}}\"/pause 1000/showFrame Eugene 24/pause 750/showFrame Eugene 25/pause 750/showFrame Eugene 24/pause 750/showFrame Eugene 25/pause 1000/showFrame Eugene 26/playSound treethud/pause 1000/showFrame Eugene 27/playSound treethud/pause 1000/showFrame Eugene 29/playSound treethud/pause 1000/showFrame Eugene 30/playSound treethud/pause 1500/jump farmer/pause 500/emote farmer 16/pause 500/showFrame Eugene 31/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.4}}\"/pause 500/emote farmer 40/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.5}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.6}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.7}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.8}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.9}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.10}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.11}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2{{RomRas}}.12}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2{{RomRas}}.13}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.14}}\"/pause 400/emote farmer 16/pause 400/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.15}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.16}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2{{RomRas}}.17}}\"/pause 1000/showFrame Eugene 0/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.18}}\"/pause 1000/showFrame Eugene 4/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.19}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.20}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.21}}\"/pause 1000/globalFade/viewport -1000 -1000/end dialogue Eugene \"{{i18n:Events.Eugene.HeartEvent.10H2.22}}\""
+            },
+            "When": { "HasMod": "FlashShifter.StardewValleyExpandedCP" }
+        },
+
+        //14H pt1: Preparations
+        //Condition: Enter the Farm between 9pm and 2am on a clear weekday
+        {
+            "LogName": "Eugene 14 Heart Event Part 1",
+            "Action": "EditData",
+            "Target": "Data/Events/Farm",
+            "Entries": {
+                "8000140/f Eugene 3500/t 2100 2600/d Sat Sun/w sunny": "continue/-10000 -1000/farmer -100 -100 2 Eugene -100 -100 2/warp Eugene -100 -100/warp farmer -100 -100/faceDirection Eugene 0/viewport 64 15 clamp true/skippable/warp Eugene 64 19/move Eugene 0 -3 0/pause 500/showFrame Eugene 18/pause 300/textAboveHead Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.0}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.1}}\"/pause 1000/warp farmer 64 15/playSound doorClose/faceDirection farmer 2/pause 500/faceDirection Eugene 0/pause 300/jump Eugene 6/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.2}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.3}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.4}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.5}}\"/pause 500/emote farmer 8/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.6}}\"/pause 300/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.7}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.8}}\"/pause 300/emote Eugene 40/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.9}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.10}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H1.11}}\"/pause 800/globalFade/viewport -1000 -1000/pause 1000/end"
+            }
+        },
+
+        //14H pt2: Ready
+        //Condition: Enter the Farm between 6am and 12pm on a clear weekend after seeing Part 1
+        {
+            "LogName": "Eugene 14 Heart Event Part 2",
+            "Action": "EditData",
+            "Target": "Data/Events/Farm",
+            "Entries": {
+                "8000141/t 600 1200/d Mon Tue Wed Thu Fri/e 8000140/w sunny": "continue/-10000 -1000/farmer -100 -100 2 Eugene -100 -100 2/warp Eugene -100 -100/warp farmer -100 -100/faceDirection Eugene 2/viewport 64 15 clamp true/skippable/pause 2000/playSound doorClose/warp farmer 64 15/pause 500/move farmer 0 2 2/playSound doorClose/warp Eugene 64 15/pause 300/faceDirection farmer 1 true/pause 100/faceDirection farmer 0/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H2.0}}\"/move farmer 0 -1 0/pause 500/emote farmer 8/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H2.1}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H2.2}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H2.3}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H2.4}}\"/pause 1000/end dialogue Eugene \"{{i18n:Events.Eugene.HeartEvent.14H2.5}}\""
+            }
+        },
+
+        //14H pt3: Garden
+        //Condition: Enter Eugene's house on a weekend after seeing Part 1 and Part 2
+        {
+            "LogName": "Eugene 14 Heart Event Part 3",
+            "Action": "EditData",
+            "Target": "Data/Events/Custom_NPCEugene_House",
+            "Entries": {
+                "8000142/d Mon Tue Wed Thu Fri/e 8000141": "SunRoom/10 8/farmer 10 9 0 Eugene -100 -100 2/skippable/move farmer 0 -4 0/pause 1000/playSound woodyStep/pause 400/playSound woodyStep/pause 400/playSound woodyStep/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.0}}\"/pause 700/warp farmer -100 -100/playSound doorClose/globalFade/viewport -1000 -1000/changeLocation Custom_NPCEugene_PinkGarden/warp Eugene 7 12/warp farmer 7 19/viewport 14 13 true/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.1}}\"/pause 500/move farmer 0 -2 0/faceDirection farmer 1/pause 500/faceDirection farmer 3/pause 500/faceDirection farmer 0/pause 700/emote farmer 40/pause 1500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.2}}\"/pause 500/faceDirection Eugene 1/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.3}}\"/pause 300/emote farmer 16/faceDirection Eugene 2/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.4}}\"/pause 1500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.5}}\"/pause 800/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.6}}\"/move Eugene 7 0 3/move farmer 2 0 0/move farmer 0 -5 1/move farmer 4 0 2/faceDirection Eugene 2/pause 1500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.7}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.8}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.9}}\"/pause 700/emote Eugene 40/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.10}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.11}}\"/pause 300/faceDirection farmer 1/pause 300/emote farmer 8/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.12}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.13}}\"/pause 500/faceDirection Eugene 3/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.14}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.15}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.16}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.17}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.18}}\"/pause 1000/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.19}}\"/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.20}}\"/pause 500/emote farmer 20/pause 500/speak Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.21}}\"/pause 500/emote Eugene 20/pause 1000/globalFade/viewport -1000 -1000/pause 1000/end dialogue Eugene \"{{i18n:Events.Eugene.HeartEvent.14H3.22}}\""
+            }
+        }
+
+    ]
+
+}

@@ -1,0 +1,557 @@
+{
+  "Format": "2.7.1",
+  "ConfigSchema": {
+    "Flower Vines": {
+      "AllowValues": "Blue, Cream, Lilac, Orange, Pink, Purple, None",
+      "Default": "Cream",
+      "Description": "Flower choices for indoor vines. Select 'None' if you would like to switch off flower vines on the main floor beams"
+    },
+    "Flower Vines - Bedroom": {
+      "AllowValues": "Blue, Cream, Lilac, Orange, Pink, Purple, None",
+      "Default": "Cream",
+      "Description": "Flower choices for indoor vines. Select 'None' if you would like to switch off flower vines on the bedroom beams"
+    },
+    "Windows": {
+      "AllowValues": "Black, White",
+      "Default": "Black",
+      "Description": "Window frame choices for the main floor of Miner's Retreat."
+    },
+    "Windows - Bedroom": {
+      "AllowValues": "Black, White",
+      "Default": "Black",
+      "Description": "Window frame choices for the bedroom of Miner's Retreat."
+    },
+    "Kitchen": {
+      "AllowValues": "Black, Cream, Dove, Sage, White",
+      "Default": "Black",
+      "Description": "Kitchen choices. Place a mini-fridge in the same map to link its contents to the kitchen cooking menu."
+    },
+    "Conservatory Diggable Area": {
+      "AllowValues": "Enabled, Disabled",
+      "Default": "Enabled",
+      "Description": "Set to 'Enabled' to be able to grow crops in the conservatory. Set to 'Disabled if you wish to use the area for something else. NOTE: Trees cannot be planted here."
+    },
+    "Parrot": {
+      "AllowValues": "Purple, Silver, Prismatic, Void, None",
+      "Default": "Prismatic",
+      "Description": "Choice of animated parrot for the conservatory. Set to 'None' if you'd prefer not to have a parrot."
+    }
+  },
+  "CustomLocations": [
+    {
+      "Name": "Azathii.MinersRetreat_QuarryOreCave",
+      "FromMapFile": "assets/QuarryOreCave.tmx"
+    },
+    {
+      "Name": "Azathii.MinersRetreat_QuarryHouse",
+      "FromMapFile": "assets/QuarryHouse.tmx"
+    },
+    {
+      "Name": "Azathii.MinersRetreat_QuarryHouseBasement",
+      "FromMapFile": "assets/QuarryHouseBasement.tmx"
+    },
+    {
+      "Name": "Azathii.MinersRetreat_QuarryHouseBedroom",
+      "FromMapFile": "assets/QuarryHouseBedroom.tmx"
+    }
+  ],
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Maps/Azathii_Cave, Maps/Azathii_QHEdits, Maps/Azathii_QuarryHouse, Maps/indoor_daisyextras",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Mountain",
+      "FromFile": "assets/QuarryOreCaveEntrance.tmx",
+      "ToArea": {
+        "X": 113,
+        "Y": 7,
+        "Width": 3,
+        "Height": 5
+      },
+      "When": {
+        "HasMod |contains=Aimon111.MoreLivelyQuarryOverhaul": false
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Mountain",
+      "FromFile": "assets/QuarryOreCaveEntPatch1.tmx",
+      "ToArea": {
+        "X": 118,
+        "Y": 9,
+        "Width": 3,
+        "Height": 5
+      },
+      "When": {
+        "HasMod |contains=Aimon111.MoreLivelyQuarryOverhaul": true,
+        "HasMod |contains=Raffadax.RCP": false
+      },
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Mountain",
+      "FromFile": "assets/QuarryOreCaveEntPatch2.tmx",
+      "ToArea": {
+        "X": 127,
+        "Y": 7,
+        "Width": 4,
+        "Height": 5
+      },
+      "When": {
+        "HasMod |contains=Aimon111.MoreLivelyQuarryOverhaul": true,
+        "HasMod |contains=Raffadax.RCP": true
+      },
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryOreCave",
+      "MapProperties": {
+        "Warp": "8 49 Mountain 119 12"
+      },
+      "When": {
+        "HasMod |contains=Aimon111.MoreLivelyQuarryOverhaul": true,
+        "HasMod |contains=Raffadax.RCP": false
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryOreCave",
+      "MapProperties": {
+        "Warp": "8 49 Mountain 129 10"
+      },
+      "When": {
+        "HasMod |contains=Aimon111.MoreLivelyQuarryOverhaul": true,
+        "HasMod |contains=Raffadax.RCP": true
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Mine",
+      "FromFile": "assets/ElevatorPatch.tmx",
+      "Patchmode": "Overlay",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/LocationContexts",
+      "Entries": {
+        "AzathiiQuarryCave": {
+          "WeatherConditions": [
+            {
+              "Id": "AzathiiCaveIndoors",
+              "Weather": "Default"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "{{ModId}}_QuarryOreCave": {
+          "DisplayName": "Azathii.MinersRetreat_QuarryOreCave",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_QuarryOreCave"
+          },
+          "Music": [
+            {
+              "Track": "Cavern",
+              "Looped": "True"
+            }
+          ],
+          "Fish": [
+            {
+              "ID": "MinersRetreat_Trash",
+              "ItemId": "(O)168",
+              "Chance": 0.4
+            },
+            {
+              "ID": "MinersRetreat_Ghostfish",
+              "ItemId": "(O)156",
+              "Chance": 0.3
+            },
+            {
+              "ID": "MinersRetreat_Stonefish",
+              "ItemId": "(O)158",
+              "Chance": 0.2
+            },
+            {
+              "ID": "MinersRetreat_CaveJelly",
+              "ItemId": "(O)CaveJelly",
+              "Chance": 0.1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "{{ModId}}_QuarryHouse": {
+          "DisplayName": "Azathii.MinersRetreat_QuarryHouse",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_QuarryHouse",
+            "Type": "StardewValley.Locations.DecoratableLocation"
+          },
+          "Music": [
+            {
+              "Track": "Crystal Bells",
+              "Looped": "True"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "{{ModId}}_QuarryHouseBedroom": {
+          "DisplayName": "Azathii.MinersRetreat_QuarryHouseBedroom",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_QuarryHouseBedroom",
+            "Type": "StardewValley.Locations.DecoratableLocation"
+          },
+          "Music": [
+            {
+              "Track": "Crystal Bells",
+              "Looped": "True"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "{{ModId}}_QuarryHouseBasement": {
+          "DisplayName": "Azathii.MinersRetreat_QuarryHouseBasement",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_QuarryHouseBasement"
+          },
+          "Music": [
+            {
+              "Track": "Secret Gnomes",
+              "Looped": "True"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Minecarts",
+      "TargetField": [
+        "Default",
+        "Destinations"
+      ],
+      "Entries": {
+        "{{ModId}}_QuarryHouseBasement": {
+          "Id": "Azathii.MinersRetreat_QuarryHouseBasement_minecart",
+          "DisplayName": "{{i18n:msg.cave2}}",
+          "Condition": "PLAYER_HAS_MAIL Host ccCraftsRoom",
+	  "TargetLocation": "{{ModId}}_QuarryHouseBasement",
+          "TargetTile": {
+            "X": 17,
+            "Y": 8
+          },
+          "TargetDirection": "down"
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Strings/StringsFromMaps",
+      "Entries": {
+        "msg.cave1": "{{i18n:msg.cave1}}"
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouse",
+      "FromFile": "assets/AddDirt.tmx",
+      "ToArea": {
+        "X": 13,
+        "Y": 5,
+        "Width": 12,
+        "Height": 8
+      },
+      "When": {
+        "Conservatory Diggable Area": "Enabled"
+      },
+      "Patchmode": "Overlay"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouse",
+      "FromFile": "assets/WindowsDay_{{Windows}}.tmx",
+      "ToArea": {
+        "X": 14,
+        "Y": 1,
+        "Width": 21,
+        "Height": 33
+      },
+      "When": {
+        "Time": "{{Range: 0600, 1859}}",
+        "Windows": "{{Windows}}",
+        "Season": "Spring, Summer"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouse",
+      "FromFile": "assets/WindowsNight_{{Windows}}.tmx",
+      "ToArea": {
+        "X": 14,
+        "Y": 1,
+        "Width": 21,
+        "Height": 33
+      },
+      "When": {
+        "Time": "{{Range: 1900, 2600}}",
+        "Windows": "{{Windows}}",
+        "Season": "Spring, Summer"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouse",
+      "FromFile": "assets/WindowsDay_{{Windows}}.tmx",
+      "ToArea": {
+        "X": 14,
+        "Y": 1,
+        "Width": 21,
+        "Height": 33
+      },
+      "When": {
+        "Time": "{{Range: 0600, 1759}}",
+        "Windows": "{{Windows}}",
+        "Season": "Fall"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouse",
+      "FromFile": "assets/WindowsNight_{{Windows}}.tmx",
+      "ToArea": {
+        "X": 14,
+        "Y": 1,
+        "Width": 21,
+        "Height": 33
+      },
+      "When": {
+        "Time": "{{Range: 1800, 2600}}",
+        "Windows": "{{Windows}}",
+        "Season": "Fall"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouse",
+      "FromFile": "assets/WindowsDay_{{Windows}}.tmx",
+      "ToArea": {
+        "X": 14,
+        "Y": 1,
+        "Width": 21,
+        "Height": 33
+      },
+      "When": {
+        "Time": "{{Range: 0600, 1559}}",
+        "Windows": "{{Windows}}",
+        "Season": "Winter"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouse",
+      "FromFile": "assets/WindowsNight_{{Windows}}.tmx",
+      "ToArea": {
+        "X": 14,
+        "Y": 1,
+        "Width": 21,
+        "Height": 33
+      },
+      "When": {
+        "Time": "{{Range: 1600, 2600}}",
+        "Windows": "{{Windows}}",
+        "Season": "Winter"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouseBedroom",
+      "FromFile": "assets/WindowsBedroomDay_{{Windows - Bedroom}}.tmx",
+      "ToArea": {
+        "X": 7,
+        "Y": 2,
+        "Width": 6,
+        "Height": 3
+      },
+      "When": {
+        "Time": "{{Range: 0600, 1859}}",
+        "Windows - Bedroom": "{{Windows - Bedroom}}",
+        "Season": "Spring, Summer"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouseBedroom",
+      "FromFile": "assets/WindowsBedroomNight_{{Windows - Bedroom}}.tmx",
+      "ToArea": {
+        "X": 7,
+        "Y": 2,
+        "Width": 6,
+        "Height": 3
+      },
+      "When": {
+        "Time": "{{Range: 1900, 2600}}",
+        "Windows - Bedroom": "{{Windows - Bedroom}}",
+        "Season": "Spring, Summer"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouseBedroom",
+      "FromFile": "assets/WindowsBedroomDay_{{Windows - Bedroom}}.tmx",
+      "ToArea": {
+        "X": 7,
+        "Y": 2,
+        "Width": 6,
+        "Height": 3
+      },
+      "When": {
+        "Time": "{{Range: 0600, 1759}}",
+        "Windows - Bedroom": "{{Windows - Bedroom}}",
+        "Season": "Fall"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouseBedroom",
+      "FromFile": "assets/WindowsBedroomNight_{{Windows - Bedroom}}.tmx",
+      "ToArea": {
+        "X": 7,
+        "Y": 2,
+        "Width": 6,
+        "Height": 3
+      },
+      "When": {
+        "Time": "{{Range: 1800, 2600}}",
+        "Windows - Bedroom": "{{Windows - Bedroom}}",
+        "Season": "Fall"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouseBedroom",
+      "FromFile": "assets/WindowsBedroomDay_{{Windows - Bedroom}}.tmx",
+      "ToArea": {
+        "X": 7,
+        "Y": 2,
+        "Width": 6,
+        "Height": 3
+      },
+      "When": {
+        "Time": "{{Range: 0600, 1559}}",
+        "Windows - Bedroom": "{{Windows - Bedroom}}",
+        "Season": "Winter"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouseBedroom",
+      "FromFile": "assets/WindowsBedroomNight_{{Windows - Bedroom}}.tmx",
+      "ToArea": {
+        "X": 7,
+        "Y": 2,
+        "Width": 6,
+        "Height": 3
+      },
+      "When": {
+        "Time": "{{Range: 1600, 2600}}",
+        "Windows - Bedroom": "{{Windows - Bedroom}}",
+        "Season": "Winter"
+      },
+      "Patchmode": "Overlay",
+      "Update": "OnTimeChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouse",
+      "FromFile": "assets/Vines_{{Flower Vines}}.tmx",
+      "When": {
+        "Flower Vines": "{{Flower Vines}}"
+      },
+      "Patchmode": "Overlay"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouseBedroom",
+      "FromFile": "assets/VinesBedroom_{{Flower Vines - Bedroom}}.tmx",
+      "When": {
+        "Flower Vines - Bedroom": "{{Flower Vines - Bedroom}}"
+      },
+      "Patchmode": "Overlay"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouse",
+      "FromFile": "assets/Bird_{{Parrot}}.tmx",
+      "ToArea": {
+        "X": 25,
+        "Y": 3,
+        "Width": 2,
+        "Height": 3
+      },
+      "When": {
+        "Parrot": "{{Parrot}}"
+      },
+      "Patchmode": "Overlay"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_QuarryHouse",
+      "FromFile": "assets/Kitchen_{{Kitchen}}.tmx",
+      "ToArea": {
+        "X": 1,
+        "Y": 12,
+        "Width": 6,
+        "Height": 7
+      },
+      "When": {
+        "Kitchen": "{{Kitchen}}"
+      },
+      "Patchmode": "Overlay"
+    }
+  ]
+}

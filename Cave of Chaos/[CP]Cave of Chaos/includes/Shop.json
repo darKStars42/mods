@@ -1,0 +1,95 @@
+{
+    "Changes": [
+         //Portraits
+         {
+             "Action": "Load",
+             "Priority": "Low",
+             "Target": "Portraits/COC_Shop",
+             "FromFile": "assets/COC_Shop.png"
+         },
+         //Portraits
+         //Shop
+         {
+             "Action": "EditData",
+             "Target": "Data/Shops",
+             "Entries": {
+                "{{ModId}}.Shop": {
+                   "Currency": 0,
+                   "StackSizeVisibility": null,
+                   "OpenSound": "dwop",
+                   "PurchaseSound": "purchaseClick",
+                   "PurchaseRepeatSound": "purchaseRepeat",
+                   "PriceModifiers": null,
+                   "PriceModifierMode": "Stack",
+                   "Owners": [
+                      {
+                         "Condition": null,
+                         "Portrait": "COC_Shop",
+                         "Dialogues": [
+                            {
+                               "Id": "Default",
+                               "Condition": null,
+                               "Dialogue": null,
+                               "RandomDialogue": [
+                                  "{{i18n:COC.Shop.1}}"
+                               ]
+                            }
+                         ],
+                         "RandomizeDialogueOnOpen": true,
+                         "Id": "COC_Shop",
+                      }
+                   ],
+                   "VisualTheme": null,
+                   "Items": [
+                       //Item
+                       {
+                          "Id": "{{ModId}}.Bomb",
+                          "ItemId": "(O)287",
+                          "Price": 650,
+                          "AvailableStock": 10,
+                          "AvailableStockLimit": "Player"
+                       },
+                       //Item
+                       //Item
+                       {
+                          "Id": "{{ModId}}.Mega_Bomb",
+                          "ItemId": "(O)288",
+                          "Price": 3500,
+                          "AvailableStock": 10,
+                          "AvailableStockLimit": "Player"
+                       },
+                       //Item
+                       //Item
+                       {
+                          "Id": "{{ModId}}.Warpt_Farm",
+                          "ItemId": "(O)688",
+                          "Price": 2500,
+                          "AvailableStock": 1,
+                          "AvailableStockLimit": "Player"
+                       },
+                       //Item
+                       //Item
+                       {
+                          "Id": "{{ModId}}.Energy_Tonic",
+                          "ItemId": "(O)349",
+                          "Price": 1500,
+                          "AvailableStock": 3,
+                          "AvailableStockLimit": "Player"
+                       },
+                       //Item
+                       //Item
+                       {
+                          "Id": "{{ModId}}.Life_Elixir",
+                          "ItemId": "(O)773",
+                          "Price": 2500,
+                          "AvailableStock": 3,
+                          "AvailableStockLimit": "Player"
+                       }
+                       //Item
+                   ]
+                }
+             }
+         }
+         //Shop
+    ]
+}

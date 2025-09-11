@@ -1,0 +1,287 @@
+{
+  "Format": "2.0.0",
+
+  "Changes": [
+
+    // changes pickles value to make pickling cucumbers profitable
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Fields": {
+        "342": {
+          "1": "170"
+        }
+      }
+    },
+    // adds cucumber starter
+
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "Dragonsir.FarmableCucumbers_CucumberStarter": {
+          "Name": "Dragonsir.FarmableCucumbers_CucumberStarter", // best practice to match the ID, since it's sometimes used as an alternate ID (e.g. in Data/CraftingRecipes)
+          "Displayname": "Cucumber Starter",
+          "Description": "Plant these in summer. Takes 11 days to mature, but keeps producing after that.",
+          "Type": "Seeds",
+          "Category": -74,
+          "Price": 30,
+          "Texture": "Mods/Dragonsir.FarmableCucumbers/seeds",
+          "SpriteIndex": 0
+        }
+      }
+    },
+    // adds gift tastes to npcs
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [ "Entries", "Universal_Dislike" ],
+          "Value": "Dragonsir.FarmableCucumbers_CucumberStarter",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [ "Entries", "Universal_Like" ],
+          "Value": "Dragonsir.FarmableCucumbers_Cucumber",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [ "Entries", "Universal_Like" ],
+          "Value": "Dragonsir.FarmableCucumbers_Salad",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [
+            "Fields",
+            "Pierre",
+            1
+          ],
+          "Value": "Dragonsir.FarmableCucumbers_Cucumber, Dragonsir.FarmableCucumbers_Salad",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [
+            "Fields",
+            "Alex",
+            1
+          ],
+          "Value": "Dragonsir.FarmableCucumbers_Cucumber",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [
+            "Fields",
+            "Abigail",
+            5
+          ],
+          "Value": "Dragonsir.FarmableCucumbers_Cucumber, Dragonsir.FarmableCucumbers_Salad",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [
+            "Fields",
+            "Haley",
+            5
+          ],
+          "Value": "Dragonsir.FarmableCucumbers_Cucumber, Dragonsir.FarmableCucumbers_Salad",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [
+            "Fields",
+            "Jas",
+            5
+          ],
+          "Value": "Dragonsir.FarmableCucumbers_Cucumber",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [
+            "Fields",
+            "Vincent",
+            7
+          ],
+          "Value": "Dragonsir.FarmableCucumbers_Cucumber, Dragonsir.FarmableCucumbers_Salad",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [
+            "Fields",
+            "Jas",
+            7
+          ],
+          "Value": "Dragonsir.FarmableCucumbers_Salad",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [
+            "Fields",
+            "Maru",
+            5
+          ],
+          "Value": "Dragonsir.FarmableCucumbers_Cucumber",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [
+            "Fields",
+            "Sam",
+            5
+          ],
+          "Value": "Dragonsir.FarmableCucumbers_Cucumber, Dragonsir.FarmableCucumbers_Salad",
+          "Delimiter": " "
+        },
+        {
+          "Operation": "Append",
+          "Target": [
+            "Fields",
+            "Wizard",
+            5
+          ],
+          "Value": "Dragonsir.FarmableCucumbers_Cucumber, Dragonsir.FarmableCucumbers_Salad",
+          "Delimiter": " "
+        }
+      ]
+    },
+    // add cucumber item
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "Dragonsir.FarmableCucumbers_Cucumber": {
+          "Name": "Dragonsir.FarmableCucumbers_Cucumber", // best practice to match the ID, since it's sometimes used as an alternate ID (e.g. in Data/CraftingRecipes)
+          "Displayname": "Cucumber",
+          "Description": "A refreshing summer vegetable. Perfect for pickling.",
+          "Type": "Vegetable",
+          "Category": -75,
+          "Price": 60,
+
+          "Texture": "Mods/Dragonsir.FarmableCucumbers/cucumber",
+          "SpriteIndex": 0,
+          "Edibility": 20,
+          "IsDrink": false,
+          "ContextTags": [
+            "season_summer",
+            "color_green",
+            "category_vegetable",
+            "crop_year_1"
+          ]
+        }
+      }
+    },
+    // add cucumber salad
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "Dragonsir.FarmableCucumbers_Salad": {
+          "Name": "Dragonsir.FarmableCucumbers_Salad", // best practice to match the ID, since it's sometimes used as an alternate ID (e.g. in Data/CraftingRecipes)
+          "Displayname": "Cucumber Salad",
+          "Description": "A simple salad that's perfect for a warm summer day.",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price": 300,
+          "Texture": "Mods/Dragonsir.FarmableCucumbers/salad",
+          "SpriteIndex": 0,
+          "Edibility": 48,
+          "Buffs": null,
+          "IsDrink": false,
+          "ContextTags": [
+            "color_lime",
+            "category_cooking"
+          ]
+        }
+      }
+    },
+    // add recipe for cucumber salad
+    {
+      "LogName": "Recipes",
+      "Action": "EditData",
+      "Target": "Data/CookingRecipes",
+      "Entries": {
+
+        "Dragonsir.FarmableCucumbers_Salad": "Dragonsir.FarmableCucumbers_Cucumber 1 419 1 245 1/10 10/Dragonsir.FarmableCucumbers_Salad/none/Cucumber Salad"
+
+      }
+    },
+    // makes recipe available to buy from saloon
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Saloon", "Items" ],
+      "Entries": {
+        "Dragonsir.FarmableCucumbers_Salad": {
+          "Id": "Dragonsir.FarmableCucumbers_Salad",
+          "ItemId": "Dragonsir.FarmableCucumbers_Salad",
+          "Price": 300,
+          "IsRecipe": true
+        }
+      },
+      "MoveEntries": [
+        {
+          "Id": "Dragonsir.FarmableCucumbers_Salad",
+          "BeforeId": "(O)253 (Recipe)"
+        }
+        ]
+    },
+    // add cucumber crop
+    {
+      "Action": "EditData",
+      "Target": "Data/Crops",
+      "Entries": {
+        "Dragonsir.FarmableCucumbers_CucumberStarter": {
+          "Seasons": [ "summer" ],
+          "DaysInPhase": [ 1, 2, 3, 3, 2 ], // grows in 11 days with five growing sprites
+          "RegrowDays": 3, //regrows every 3 days
+          "IsRaised": true, // on trellis
+          "HarvestItemId": "Dragonsir.FarmableCucumbers_Cucumber",
+          "HarvestMinStack": 1,
+          "HarvestMaxStack": 3,
+          "HarvestMaxIncreasePerFarmingLevel": 0.2,
+          "Texture": "Mods/Dragonsir.FarmableCucumbers/Crops",
+          "SpriteIndex": 0
+        }
+      }
+    },
+    //adds cucumber starter to pierre's
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "SeedShop", "Items" ],
+      "Entries": {
+        "Dragonsir.FarmableCucumbers": {
+          "Id": "Dragonsir.FarmableCucumbers_CucumberStarter",
+          "ItemId": "(O)Dragonsir.FarmableCucumbers_CucumberStarter",
+          "Price": 30,
+          "Condition": "SEASON summer"
+        }
+      },
+      "MoveEntries": [
+        {
+          "Id": "Dragonsir.FarmableCucumbers_CucumberStarter",
+          "BeforeId": "GrassStarter"
+        }
+      ]
+    },
+    // add items + crop images
+    {
+      "Action": "Load",
+      "Target": "Mods/Dragonsir.FarmableCucumbers/Crops, Mods/Dragonsir.FarmableCucumbers/cucumber, Mods/Dragonsir.FarmableCucumbers/seeds, Mods/Dragonsir.FarmableCucumbers/Salad",
+      "FromFile": "assets/{{TargetWithoutPath}}.png" // assets/Crops.png, assets/cucumber.png, assets/seeds.png
+    }
+  ]
+}
+     

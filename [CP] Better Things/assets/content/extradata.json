@@ -1,0 +1,538 @@
+{
+	"Changes": [
+		// FESTIVAL OF THE MUNDANE - 2.0.0
+		{
+		  "Action": "EditData", 
+		  "Target": "Data/PassiveFestivals",
+		  "Entries": {
+			"maat.BetterThings_SewerSpirits": {
+			  "DisplayName": "{{i18n:FestivalOfTheMundane_Name}}",
+			  "Condition": "PLAYER_HAS_SEEN_EVENT ANY 691039", // Dwarf's 1 heart event.
+			  "ShowOnCalendar": true,
+			  "Season": "Winter",
+			  "StartDay": 18,
+			  "EndDay": 18,
+			  "StartTime": 710,
+			  "StartMessage": "{{i18n:FestivalOfTheMundane_StartMessage}}", 
+			  "OnlyShowMessageOnFirstDay": true,
+			  "MapReplacements": { "Sewer": "Custom_FestivalOfTheMundane" },
+			  "DailySetupMethod": null,
+			  "CleanupMethod": null,
+			  "CustomFields": {}
+		     }
+		  },
+		  "When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+		},
+		{
+		  "Action": "EditData",
+		  "Target": "Data/Shops",
+		  "Entries": {
+			"FestivalOfTheMundane_Hats": {
+			  "Owners": [
+                 {
+                      "Name": "None",
+					  "Portrait": null,
+					  "Condition": "SEASON_DAY winter 18, TIME 710 2400",
+                      "Dialogues": [
+                        {
+                           "Id": "maat.BetterThings_HatVendor_Default",
+                           "Dialogue": "{{i18n:hatvendor.message0}}"
+                        },
+                        {
+                           "Id": "maat.BetterThings_HatVendor_Alt1",
+                           "Dialogue": "{{i18n:hatvendor.message1}}"
+                        },
+                        {
+                           "Id": "maat.BetterThings_HatVendor_Alt2",
+                           "Dialogue": "{{i18n:hatvendor.message2}}"
+                        }
+                     ],
+					 "RandomizeDialogueOnOpen": true,
+					 "ClosedMessage": null
+                 },
+				 {
+                           "Condition": "!SEASON_DAY winter 18, TIME 600",
+                           "Portrait": null,
+                           "Dialogues": null,
+                           "RandomizeDialogueOnOpen": true,
+                           "ClosedMessage": "{{i18n:closedmessage.FestivalOfTheMundane_Hats}}",
+                           "Id": "FestivalOfTheMundane_Closed",
+                           "Name": "None"
+                 },
+              ],
+			  "Items": [
+                        {
+                           "Id": "maat.BetterThings_BlueCowboyHat",
+                           "ItemId": "(H)37",
+                           "Price": 5000
+                        },
+                        {
+                           "Id": "maat.BetterThings_RedCowboyHat",
+                           "ItemId": "(H)38",
+                           "Price": 5000
+                        },
+                        {
+                           "Id": "maat.BetterThings_PandaHat",
+                           "ItemId": "(H)36",
+                           "Price": 10000
+                        },
+                        {
+                           "Id": "maat.BetterThings_ImposingMask_Hat",
+                           "ItemId": "maat.BetterThings_ImposingMask_Hat",
+                           "Price": 750
+                        },
+						{
+                           "Id": "maat.BetterThings_ShadyBowedMask_Hat",
+                           "ItemId": "maat.BetterThings_ShadyBowedMask_Hat",
+                           "Price": 750
+                        },
+                        {
+                           "Id": "maat.BetterThings_ShadyMask_Hat",
+                           "ItemId": "maat.BetterThings_ShadyMask_Hat",
+                           "Price": 750
+                        },
+                        {
+                           "Id": "maat.BetterThings_ShamanicMask_Hat",
+                           "ItemId": "maat.BetterThings_ShamanicMask_Hat",
+                           "Price": 750
+                        },
+                        {
+                           "Id": "maat.BetterThings_StrangeBunHat_Hat",
+                           "ItemId": "maat.BetterThings_StrangeBunHat_Hat",
+                           "Price": 500
+                        },
+						{
+                           "Id": "maat.BetterThings_DinosaurBoot_Buy",
+                           "ItemId": "(B)maat.BetterThings_Dinosaur_Boot",
+                           "Price": 1500
+                        },
+						{
+                           "Id": "maat.BetterThings_RedDinosaurBoot_Buy",
+                           "ItemId": "(B)maat.BetterThings_Dinosaur_Red_Boot",
+                           "Price": 1500
+                        },
+						{
+                           "Id": "maat.BetterThings_DinosaurPants_Buy",
+                           "ItemId": "(P)5",
+                           "Price": 1500
+                        },
+						{
+                           "Id": "maat.BetterThings_DinosaurShirt_Buy",
+                           "ItemId": "(S){{ModId}}_DinosaurShirt",
+                           "Price": 1500
+                        },
+						{
+                           "Id": "maat.BetterThings_DinosaurAltShirt_Buy",
+                           "ItemId": "(S){{ModId}}_DinosaurAltShirt",
+                           "Price": 1500
+                        },
+						{
+                           "Id": "maat.BetterThings_DinosaurHat_Buy",
+                           "ItemId": "(H)43",
+                           "Price": 1500
+                        }
+                    ]
+                }
+            },
+			"When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+        },
+		{
+		  "Action": "EditData",
+		  "Target": "Strings/StringsFromMaps",
+		  "Entries": {
+			  "ShadowBrute_Bouncer": "{{i18n:ShadowBrute_Bouncer_{{Random:{{Range:0,6}}}}}}",
+			  "Shadow_Vincent": "{{i18n:Shadow_Vincent_{{Random:{{Range:0,4}}}}}}",
+			  "Shadow_Penny": "{{i18n:Shadow_Penny_{{Random:{{Range:0,2}}}}}}",
+			  "Shadow_Jas": "{{i18n:Shadow_Jas_{{Random:{{Range:0,2}}}}}}",
+			  "Shadow_Haley": "{{i18n:Shadow_Haley_{{Random:{{Range:0,3}}}}}}",
+			  "Shadow_Harvey": "{{i18n:Shadow_Harvey_{{Random:{{Range:0,1}}}}}}",
+			  "Shadow_Elliott": "{{i18n:Shadow_Elliott_{{Random:{{Range:0,4}}}}}}",
+			  "ShadowBrute_Dance": "{{i18n:ShadowBrute_Dance_{{Random:{{Range:0,2}}}}}}",
+			  "Shadow_Maru": "{{i18n:Shadow_Maru_{{Random:{{Range:0,2}}}}}}",
+			  "Shadow_Abigail": "{{i18n:Shadow_Abigail_{{Random:{{Range:0,3}}}}}}",
+			  "Shadow_Emily": "{{i18n:Shadow_Emily_{{Random:{{Range:0,2}}}}}}",
+			  "ShadowBrute_MummyDance": "{{i18n:Shadow_Vincent_{{Random:{{Range:0,2}}}}}}",
+			  "ShadowGirl_MummyDance": "{{i18n:ShadowGirl_MummyDance_{{Random:{{Range:0,1}}}}}}",
+			  "ShadowBrute_Squat": "{{i18n:ShadowBrute_Squat_{{Random:{{Range:0,3}}}}}}",
+			  "Shadow_Shane": "{{i18n:Shadow_Shane_{{Random:{{Range:0,18}}}}}}",
+			  "Shadow_Sam": "{{i18n:Shadow_Sam_{{Random:{{Range:0,1}}}}}}",
+			  "Shadow_Alex": "{{i18n:Shadow_Alex_{{Random:{{Range:0,1}}}}}}",
+			  "Shadow_Leah": "{{i18n:Shadow_Leah_{{Random:{{Range:0,2}}}}}}",
+			  "Shadow_Sebastian": "{{i18n:Shadow_Sebastian_{{Random:{{Range:0,1}}}}}}",
+			  "ShadowBrute_Jelly": "{{i18n:ShadowBrute_Jelly_{{Random:{{Range:0,3}}}}}}",
+			  "ShadowGirl_Tube": "{{i18n:ShadowGirl_Tube_{{Random:{{Range:0,1}}}}}}",
+			  "ShadowBrute_Swimmer_1": "{{i18n:ShadowBrute_Swimmer_1_{{Random:{{Range:0,2}}}}}}",
+			  "ShadowBrute_Swimmer_2": "{{i18n:ShadowBrute_Swimmer_2_{{Random:{{Range:0,1}}}}}}",
+			  "ShadowBrute_Swimmer_3": "{{i18n:ShadowBrute_Swimmer_3_{{Random:{{Range:0,1}}}}}}",
+			  "BigShadow": "{{i18n:BigShadow_{{Random:{{Range:0,12}}}}}}",
+			  "Snack_1": "{{i18n:Snack_1_0}}",
+			  "Snack_2": "{{i18n:Snack_2_0}}",
+			  "Festival_AncientDoll": "{{i18n:Festival_AncientDoll_0}}",
+        	},
+			"When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+		},
+		{
+			"LogName": "Krobus Appearance",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"TargetField": [ "Krobus", "Appearance" ],
+			"Entries": {
+              "{{ModId}}_KrobusFestivalDay": {
+			    "Id": "{{ModId}}_KrobusFestivalDay",
+                "Condition": "LOCATION_NAME Target Custom_FestivalOfTheMundane, IS_PASSIVE_FESTIVAL_TODAY maat.BetterThings_SewerSpirits",
+				"Sprite": "Characters/Krobus_Trenchcoat",
+				"Portrait": "Portraits/Krobus_Trenchcoat",
+				"Precedence": -1001
+	           }
+			},
+			"When": { "FestivalOfTheMundane": true, "Season": "Winter", "HasSeenEvent": "691039" }
+		},
+		{
+			"LogName": "Krobus/Wizard Schedule Load",
+			"Action": "Load", "Priority": "Low",
+			"Target": "Characters/schedules/Krobus, Characters/schedules/Wizard",
+			"FromFile": "assets/npcs/Blank.json",
+			"When": { "FestivalOfTheMundane": true }
+		},
+		/*{
+			"LogName": "Krobus Schedule Married",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Krobus",
+			"Entries": {
+			  "marriage_winter_18": "0 Custom_FestivalOfTheMundane 31 16 2 \"Strings\\schedules\\Krobus:krobus-married-dialogue-festival\"",
+			},
+			"When": { "FestivalOfTheMundane": true, "Hearts:Krobus": "{{Range: 1, 14}}", "HasSeenEvent": "691039" }
+		},
+		{
+			"LogName": "Krobus Schedule Test",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Krobus",
+			"Entries": {
+			  "winter_18": "0 Custom_FestivalOfTheMundane 31 16 2 \"Strings\\schedules\\Krobus:krobus-dialogue-festival-unknown\"",
+			},
+			"When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+		},*/
+		{
+			"LogName": "Wizard Schedule",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Wizard",
+			"Entries": {
+			  "winter_18": "0 Custom_FestivalOfTheMundane 7 22 2",
+			},
+			"When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+		},
+		{
+		  "LogName": "Wizard Dialogue",
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/Wizard",
+          "Entries": {
+              "Custom_FestivalOfTheMundane": "{{i18n:wizard-dialogue-festival}}"
+            },
+          "When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+               "Custom_FestivalOfTheMundane": {
+                 "DefaultArrivalTile": { "X": 31, "Y": 17 },
+                 "ExcludeFromNpcPathfinding": false,
+                 "Music": [
+				 {
+                       "Id": "{{ModId}}_Custom_FestivalOfTheMundaneMusic",
+                       "Track": "Saloon1",
+                       "Condition": "SEASON_DAY winter 18, TIME 710"
+				 },
+				],
+                 "MusicDefault": "Upper_Ambient",
+                 "MusicContext": "Default",
+                 "MusicIgnoredInRain": false,
+                 "MusicIgnoredInSpring": false,
+                 "MusicIgnoredInSummer": false,
+                 "MusicIgnoredInFall": false,
+                 "MusicIgnoredInFallDebris": false,
+                 "MusicIgnoredInWinter": false,
+                 "MusicIsTownTheme": false,
+                 "CreateOnLoad": {
+                       "AlwaysActive": false,
+                       "MapPath": "Maps\\Custom_FestivalOfTheMundane"
+                    }
+                }
+			 },
+			 "When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+	  },
+	  {
+		  "Action": "EditMap",
+		  "Target": "Maps/Town",
+               "TextOperations": [
+			   {
+                 "Operation": "Append",
+                 "Target": [ "MapProperties", "NPCWarp" ],
+                 "Value": "34 96 Custom_FestivalOfTheMundane 16 11",
+                 "Delimiter": " "
+			   }
+           ],
+		   "When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+	  },
+	  {
+		  "LogName": "Festival Exit",
+		  "Action": "EditMap",
+		  "Target": "Maps/Custom_FestivalOfTheMundane",
+		  "MapTiles": [
+			{
+              "Position": { "X": "16", "Y": "10" },
+              "Layer": "Buildings",
+              "SetProperties": { "Action": "Warp 35 97 Town" }
+			}
+		  ],
+		  "When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+	  },
+	  {
+		  "Action": "EditMap",
+		  "Target": "Maps/Sewer",
+               "TextOperations": [
+			   {
+                 "Operation": "Append",
+                 "Target": [ "MapProperties", "NPCWarp" ],
+                 "Value": "16 11 Custom_FestivalOfTheMundane 16 12",
+                 "Delimiter": " "
+			   }
+           ],
+		   "When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+	  },
+	  {
+		  "Action": "EditMap",
+		  "Target": "Maps/Custom_FestivalOfTheMundane",
+               "TextOperations": [
+			   {
+                 "Operation": "Append",
+                 "Target": [ "MapProperties", "NPCWarp" ],
+                 "Value": "16 11 Sewer 16 12",
+                 "Delimiter": " "
+			   }
+           ],
+		   "When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+	  },
+	  {
+		  "Action": "EditMap",
+		  "Target": "Maps/Custom_FestivalOfTheMundane",
+               "TextOperations": [
+			   {
+                 "Operation": "Append",
+                 "Target": [ "MapProperties", "NPCWarp" ],
+                 "Value": "16 11 Custom_FestivalOfTheMundane 16 12",
+                 "Delimiter": " "
+			   }
+           ],
+		   "When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+		},
+		{
+		  "LogName": "Krobus Dialogue 1",
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/Krobus",
+          "Entries": {
+              "Custom_FestivalOfTheMundane": "{{i18n:krobus-dialogue-festival-unknown}}"
+            },
+          "When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+		},
+		{
+		  "LogName": "Krobus Dialogue 2",
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/Krobus",
+          "Entries": {
+              "Custom_FestivalOfTheMundane": "{{i18n:krobus-dialogue-festival-known}}"
+            },
+          "When": { "FestivalOfTheMundane": true, "Hearts:Krobus": "{{Range: 1, 10}}", "HasSeenEvent": "691039" }
+		},
+		{
+		  "Action": "EditData",
+		  "Target": "Data/Mail",
+		  "Entries": {
+              "{{ModId}}_wizard_mail_FestivalOfTheMundane": "[letterbg 2]{{i18n:wizard-letter-festival}}[#]{{i18n:wizard.festival.mail.title}}"
+            },
+			"When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+		},
+		{
+		  "Action": "EditData",
+		  "Target": "Data/TriggerActions",
+		  "Entries": {
+              "{{ModId}}_send_wizard_FestivalOfTheMundane_mail": {
+              "Id": "{{ModId}}_send_wizard_FestivalOfTheMundane_mail",
+              "Trigger": "DayStarted",
+              "Condition": "SEASON_DAY winter 18",
+              "Actions": [ "AddMail Current {{ModId}}_wizard_mail_FestivalOfTheMundane now", "MarkActionApplied Current {{ModId}}_remove_mail_FestivalOfTheMundane false" ]
+             },
+              "{{ModId}}_remove_mail_FestivalOfTheMundane": {
+              "Id": "{{ModId}}_remove_mail_FestivalOfTheMundane",
+              "Trigger": "DayStarted",
+              "Condition": "SEASON_DAY winter 17",
+              "Actions": [ "RemoveMail {{ModId}}_wizard_mail_FestivalOfTheMundane", "MarkActionApplied Current {{ModId}}_send_wizard_FestivalOfTheMundane_mail false" ]
+             }
+	       },
+            "When": { "FestivalOfTheMundane": true, "HasSeenEvent": "691039" }
+		},
+
+		// MAPS CHANGES - 2.0.0
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+               "maat.BetterThings_Shed3": {
+                 "CreateOnLoad": {
+                       "AlwaysActive": false,
+                       "MapPath": "Maps\\maat.BetterThings_Shed3"
+                    },
+					"MusicContext": "Default"
+                }
+			 },
+			 "When": { "NewCustomBigShed3": true }
+		},
+		{
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+               "maat.BetterThings_IslandFarmCellar": {
+                 "CreateOnLoad": {
+                       "AlwaysActive": false,
+                       "MapPath": "Maps\\maat.BetterThings_IslandFarmCellar"
+                    },
+					"MusicContext": "Default"
+                }
+			 },
+			 "When": { "IslandFarmCellar": true }
+		},
+		{
+            "Action": "EditMap",
+            "Target": "Maps/Custom_AgathaSecretRoom",
+            "FromFile": "assets/structures/lightbeams.tmx",
+            "FromArea": { "X": 0, "Y": 22, "Width": 19, "Height": 10 },
+            "ToArea": { "X": 1, "Y": 1, "Width": 19, "Height": 10 },
+            "PatchMode": "Overlay",
+              "When": { "Weather": "Sun, Wind, Snow", "Time": "{{Range: 0600, 1900}}" },
+		    	"Update": "OnTimeChange"
+		},
+		{
+            "Action": "EditMap",
+            "Target": "Maps/Custom_AgathaSecretRoom",
+            "FromFile": "assets/structures/lightbeams.tmx",
+            "FromArea": { "X": 17, "Y": 0, "Width": 8, "Height": 5 },
+            "ToArea": { "X": 3, "Y": 1, "Width": 8, "Height": 5 },
+            "PatchMode": "Overlay",
+              "When": { "Weather": "Rain, Storm" },
+		    	"Update": "OnTimeChange"
+		},
+		{
+            "Action": "EditMap",
+            "Target": "Maps/Custom_AgathaSecretRoom",
+            "FromFile": "assets/structures/lightbeams.tmx",
+            "FromArea": { "X": 17, "Y": 5, "Width": 8, "Height": 5 },
+            "ToArea": { "X": 11, "Y": 1, "Width": 8, "Height": 5 },
+            "PatchMode": "Overlay",
+	   		  "When": { "Weather": "Rain, Storm" },
+		    	"Update": "OnTimeChange"
+		},
+		{
+            "Action": "EditMap",
+            "Target": "Maps/Custom_AgathaSecretRoom",
+            "FromFile": "assets/structures/lightbeams.tmx",
+            "FromArea": { "X": 17, "Y": 0, "Width": 8, "Height": 5 },
+            "ToArea": { "X": 3, "Y": 1, "Width": 8, "Height": 5 },
+            "PatchMode": "Overlay",
+	   		  "When": { "Time": "{{Range: 2000, 2400}}" },
+		    	"Update": "OnTimeChange"
+		},
+		{
+            "Action": "EditMap",
+            "Target": "Maps/Custom_AgathaSecretRoom",
+            "FromFile": "assets/structures/lightbeams.tmx",
+            "FromArea": { "X": 17, "Y": 5, "Width": 8, "Height": 5 },
+            "ToArea": { "X": 11, "Y": 1, "Width": 8, "Height": 5 },
+            "PatchMode": "Overlay",
+	   		  "When": { "Time": "{{Range: 2000, 2500}}" },
+		    	"Update": "OnTimeChange"
+		},
+	   
+		// OVergrown Mailbox (Textures by Medinaquirin) - 2.0.0
+		// VILLAGERS
+		{
+          "Action": "EditImage",
+          "Target": "Maps/{{season}}_outdoorsTileSheet",
+          "FromFile": "assets/structures/{{season}}_mailbox.png",
+		  "ToArea": { "X": 80, "Y": 1232, "Width": 16, "Height": 32 },
+		  "When": { "OvergrownMailbox": true }
+		},
+		{
+          "Action": "EditImage",
+          "Target": "Maps/winter_outdoorsTileSheet",
+          "FromFile": "assets/structures/starblue/winter_mailbox.png",
+          "ToArea": { "X": 80, "Y": 1232, "Width": 16, "Height": 32 },
+          "When": { "OvergrownMailbox": true, "HasMod": "Lita.StarblueValley" }
+		},
+		// FARMER
+		{
+          "Action": "EditImage",
+          "Target": "Buildings/Mailbox",
+          "FromFile": "assets/structures/{{season}}_mailbox.png",
+		  "When": { "OvergrownMailbox": true }
+		},
+		{
+          "Action": "EditImage",
+          "Target": "Buildings/Mailbox",
+          "FromFile": "assets/structures/starblue/winter_mailbox.png",
+		  "When": { "OvergrownMailbox": true, "HasMod": "Lita.StarblueValley" }
+		},
+
+		// COMPATIBILITY - 2.0.0
+		// CJB Cheats Menu
+		{
+		  "Action": "EditData",
+		  "Target": "Mods/CJBok.CheatsMenu/WarpSections",
+		  "Entries": {
+              "{{ModId}}_Locations": {
+                  "Id": "{{ModId}}_Locations",
+                  "DisplayName": "{{i18n:locations.cjb.section}}"
+                }
+            },
+			"When": { "HasMod": "CJBok.CheatsMenu" }
+		},
+		{
+		  "Action": "EditData",
+		  "Target": "Mods/CJBok.CheatsMenu/Warps",
+		  "Entries": {
+              "{{ModId}}_AgathaHouse_Entry": {
+                  "Id": "{{ModId}}_AgathaHouse_Entry",
+                  "SectionId": "{{ModId}}_Locations",
+                  "DisplayName": "{{i18n:agatha_house_entry.cjb}}",
+                  "Location": "Forest",
+                  "Tile": "11, 9"
+                }
+            },
+            "When": { "HasMod": "CJBok.CheatsMenu", "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": false }
+		},
+		{
+		  "Action": "EditData",
+		  "Target": "Mods/CJBok.CheatsMenu/Warps",
+		  "Entries": {
+              "{{ModId}}_AgathaHouse_Entry": {
+                  "Id": "{{ModId}}_AgathaHouse_Entry",
+                  "SectionId": "{{ModId}}_Locations",
+                  "DisplayName": "{{i18n:agatha_house_entry.cjb}}",
+                  "Location": "Forest",
+                  "Tile": "11, 71"
+                }
+            },
+            "When": { "HasMod": "CJBok.CheatsMenu", "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true }
+		},
+		// NPC Map Locations
+		{
+		  "Action": "EditData",
+		  "Target": "Mods/Bouhm.NPCMapLocations/NPCs",
+		  "Entries": {
+              "Agatha": {
+                  "MarkerCropOffset": 3
+                }
+            },
+			"When": { "HasMod": "Bouhm.NPCMapLocations" }
+		}
+	]
+}

@@ -1,0 +1,118 @@
+{
+	"Format": "2.6.0",
+	//If you're looking in here, you're probably a mod author. I've tried to keep my mod clean and concise to make picking it apart as easy as possible, but as this is my first attempt at doing this there are bound to be mistakes, inefficient decisions, and missing pieces. So take what you see inside my mod with a grain of salt. If you have any questions just ping me in discord in #making-mods or something. Good luck with whatever it is you're doing!
+
+	"CustomLocations": [
+		//Adds custom locations 
+		{
+			"Name": "Custom_Sydney_House",
+			"FromMapFile": "assets/maps/Custom_Sydney_House.tmx"
+		},
+
+		{
+			"Name": "Custom_S2H_map_SVE_Compat",
+			"FromMapFile": "assets/maps/Custom_S2H_map_SVE_Compat.tmx"
+		},
+
+		{
+			"Name": "Custom_S2H_Map",
+			"FromMapFile": "assets/maps/Custom_S2H_Map.tmx"
+		}
+	],
+
+	"Changes": [
+		//Loading empty jsons to edit for custom events at custom locations
+		{
+			"Action": "Load",
+			"Target": "Data/Events/Custom_S2H_map_SVE_Compat",
+			"FromFile": "Data/events/S2H_Events.json"
+		},
+
+		{
+			"Action": "Load",
+			"Target": "Data/Events/Custom_S2H_Map",
+			"FromFile": "Data/events/S2H_Events.json"
+		},
+
+		{
+			"Action": "Load",
+			"Target": "Data/Events/Custom_Sydney_House",
+			"FromFile": "Data/events/CSH_Events.json"
+		},
+
+		//Loading Custom Tilesheets
+		{
+			"LogName": "Custom Tilesheets Load",
+			"Action": "Load",
+			"Target": "Maps/Z_Sydney_House_Fall, Maps/Z_Sydney_House, Maps/Z_Sydney_House_winter, Maps/Z_Sydney_House_Fall_ERC, Maps/Z_Sydney_House_ERC, Maps/Z_Sydney_House_winter_ERC",
+			"FromFile": "assets/TileSheets/{{TargetWithoutPath}}.png"
+		},
+
+		//MapData Inclusion		
+		{
+			"LogName": "Map Data Inclusion",
+			"Action": "Include",
+			"FromFile": "Data/MapData/MapData_JSON.json",
+			"Update": "OnLocationChange, OnTimeChange"
+		},
+
+		{
+			"LogName": "Map Properties Inclusion",
+			"Action": "Include",
+			"FromFile": "Data/MapData/MapProperties_JSON.json"
+		},
+
+		//Earthy Recolour Compatibility Inclusions
+		{
+			"LogName": "Seasonal Changes Inclusion",
+			"Action": "Include",
+			"FromFile": "Data/MapData/Seasonal_Changes.json",
+			"When": {
+				"HasMod |contains=DaisyNiko.EarthyRecolour": "false"
+			}
+		},
+
+		{
+			"LogName": "Seasonal Changes Inclusion ERC",
+			"Action": "Include",
+			"FromFile": "Data/Compatibility/Seasonal_Changes_ERC.json",
+			"When": {
+				"HasMod |contains=DaisyNiko.EarthyRecolour": "true"
+			}
+		},
+
+		//NPC Manifestation Inclusion
+		{
+			"LogName": "NPC Inclusion",
+			"Action": "Include",
+			"FromFile": "Data/CharacterData/Sydney_Data.json"
+		},
+
+		//NPC Festival Data Inclusion
+		{
+			"LogName": "Festival Data Inclusion",
+			"Action": "Include",
+			"FromFile": "Data/events/FestivalData_Sydney.json"
+		},
+
+		//Heart Event Inclusion
+		{
+			"LogName": "Heart Event Data Inclusion",
+			"Action": "Include",
+			"FromFile": "Data/events/heart_event_data.json"
+		},
+
+		//Custom Gift Reaction Inclusion
+		{
+			"LogName": "Custom Gift Reaction Inclusion",
+			"Action": "Include",
+			"FromFile": "Data/CharacterData/Dialogue/GiftDialogue.json"
+		},
+		//Mail Inclusion
+		{
+			"LogName": "Mail Inclusion",
+			"Action": "Include",
+			"FromFile": "Data/Mail/Mail.json"
+		}
+	]
+}

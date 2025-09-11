@@ -1,0 +1,47 @@
+{
+  "Format": "2.8.0",
+  "Changes": [
+    { "LogName": "Include aquariumdata",       "Action": "Include", "FromFile": "data/aquariumdata.json" },
+    { "LogName": "Include fish",               "Action": "Include", "FromFile": "data/fish.json" },
+    { "LogName": "Include fishponddata",       "Action": "Include", "FromFile": "data/fishponddata.json" },
+    { "LogName": "Include furniture",          "Action": "Include", "FromFile": "data/furniture.json" },
+    { "LogName": "Include furnitureactions",   "Action": "Include", "FromFile": "data/furnitureactions.json" },
+    { "LogName": "Include locations",          "Action": "Include", "FromFile": "data/locations.json" },
+    { "LogName": "Include mail",               "Action": "Include", "FromFile": "data/mail.json" },
+    { "LogName": "Include maps",               "Action": "Include", "FromFile": "data/maps.json" },
+    { "LogName": "Include npc gift tastes",    "Action": "Include", "FromFile": "data/npcgifttastes.json" },
+    { "LogName": "Include objects",            "Action": "Include", "FromFile": "data/objects.json" },
+    { "LogName": "Include shops",              "Action": "Include", "FromFile": "data/shops.json" },
+    { "LogName": "Include triggeractions",     "Action": "Include", "FromFile": "data/triggeractions.json" },
+    { "LogName": "Include strings/furniture",  "Action": "Include", "FromFile": "strings/furniture.json" },
+    { "LogName": "Include strings/ui",         "Action": "Include", "FromFile": "strings/ui.json" },
+    { "LogName": "Include lostitemsshop",      "Action": "Include", "FromFile": "data/lostitemsshop.json" },
+
+    {
+      "LogName": "Include dialogue changes because vanilla tank blocked",
+      "Action": "Include",
+      "FromFile": "data/dialogues.json",
+      "When": {
+        "HasMod": "camiska.FrogTankFrogEgg",
+        "Query: ( ( '{{HasMod |contains=shaklin.SebastianFrogTankSwitch}}' = 'true' AND '{{camiska.FrogTankFrogEgg/SebSwitchBlocksFrogTank}}' = 'true' ) OR ( '{{HasMod |contains=EvhanCorinthi.SRR}}' = 'true' AND '{{camiska.FrogTankFrogEgg/SRRHideSanctuary}}' = 'true' ) OR ( '{{camiska.FrogTankFrogEgg/EnableSebMapTanks}}' = 'false' ) OR ( '{{camiska.FrogTankFrogEgg/HideVanillaSebTank}}' = 'true' ) )": true
+      }
+    },
+    {
+      "LogName": "Include event changes because vanilla tank blocked",
+      "Action": "Include",
+      "FromFile": "data/events.json",
+      "When": {
+        "HasMod": "camiska.FrogTankFrogEgg",
+        "Query: ( ( '{{HasMod |contains=shaklin.SebastianFrogTankSwitch}}' = 'true' AND '{{camiska.FrogTankFrogEgg/SebSwitchBlocksFrogTank}}' = 'true' ) OR ( '{{HasMod |contains=EvhanCorinthi.SRR}}' = 'true' AND '{{camiska.FrogTankFrogEgg/SRRHideSanctuary}}' = 'true' ) OR ( '{{camiska.FrogTankFrogEgg/EnableSebMapTanks}}' = 'false' ) OR ( '{{camiska.FrogTankFrogEgg/HideVanillaSebTank}}' = 'true' ) )": true
+      }
+    },
+
+    { "Action": "Load", "Target": "Mods/{{ModId}}/AquariumTadpole",     "FromFile": "assets/AquariumTadpole.png" },
+    { "Action": "Load", "Target": "Mods/{{ModId}}/Tadpole",              "FromFile": "assets/Tadpole.png" },
+    { "Action": "Load", "Target": "Mods/{{ModId}}/FrogTank",             "FromFile": "assets/FrogTank.png" },
+    { "Action": "Load", "Target": "Mods/{{ModId}}/GoldenBall",           "FromFile": "assets/GoldenBall.png" },
+    { "Action": "Load", "Target": "Mods/{{ModId}}/StrangeFrogDoll",      "FromFile": "assets/StrangeFrogDoll.png" },
+    { "Action": "Load", "Target": "Mods/{{ModId}}/LilypadSailor",        "FromFile": "assets/LilypadSailor.png" },
+    { "Action": "Load", "Target": "Mods/{{ModId}}/SebFurniture_FrogTank","FromFile": "assets/SebFurnitureFrogTank.png" }
+  ]
+}

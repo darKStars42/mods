@@ -1,0 +1,60 @@
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring13",
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Jonghyuk 62 66 left",
+					"Delimiter": "/"
+				},
+				// Main Event
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"MainEvent_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Jonghyuk 62 65 right",
+					"Delimiter": "/"
+				}
+			]
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring13",
+			"When": {
+				"HasSeenEvent": "SpannerIntroConclusion"
+			},
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Spanner 64 66 up",
+					"Delimiter": "/"
+				},
+				// Main Event
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"MainEvent_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Spanner 64 66 up",
+					"Delimiter": "/"
+				}
+			]
+		}
+	]
+}

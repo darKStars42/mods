@@ -1,0 +1,35 @@
+{
+    "Changes": [
+        {
+            "LogName": "Book Texture",
+            "Action": "Load",
+            "Target": "SushiProject/Book",
+            "FromFile": "Assets/Items/TSP_Book.png"
+        },
+        {
+            "LogName": "Add Sushi Recipe Book as item",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_TheGospelofSushi": {
+                    "Name": "The Gospel of Sushi",
+                    "DisplayName": "{{i18n:sushi.book.title}}",
+                    "Description": "{{i18n:sushi.book.description}}",
+                    "Type": "asdf",
+                    "Category": -102,
+                    "Price": 5000,
+                    "Texture": "SushiProject/Book",
+                    "ContextTags": [
+                        "{{ModId}}_book",
+                        "book_item",
+                        "spu_recipe_book"
+                    ],
+                    "CustomFields": {
+                        "Spiderbuttons.SpecialPowerUtilities/Books/RecipePrefix": "{{ModId}}_",
+                        "Spiderbuttons.SpecialPowerUtilities/Books/Color": "#31851f"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,585 @@
+{
+   "Changes": [
+        {
+			"LogName": "Trigger action to add mail flag for tracking Elliott's son as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Add_Elias_Secondborn": {
+                    "Id": "{{ModId}}_Add_Elias_Secondborn",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current {{ModId}}_Elias_Secondborn Received",
+					"MarkActionApplied": false,
+                },
+                "{{ModId}}_Add_GrowingValley_Secondborn_Male": {
+                    "Id": "{{ModId}}_Add_GrowingValley_Secondborn_Male",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current GrowingValley_Secondborn_Male Received",
+					"MarkActionApplied": false,
+                },
+			}
+		},
+		
+   		{      
+			"LogName": "Load Elliott's son's default portraits on secondborn.",
+			"Action": "Load",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Elias_{{SecondbornSkinTone}}.png",
+			"When": {
+				"EliasPromoEnabled": false
+			},
+		},
+   		{      
+			"LogName": "Load Elliott's son's alternate portraits on secondborn.",
+			"Action": "Load",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Elias_promo_{{SecondbornSkinTone}}.png",
+			"When": {
+				"EliasPromoEnabled": true
+			},
+		},
+   		{      
+			"LogName": "Load Elliott's son's sprites on secondborn.",
+			"Action": "Load",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/Elias_{{SecondbornSkinTone}}.png",
+		},
+		
+		
+   		{      
+			"LogName": "Load Elliott's son's default portraits on secondborn (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Elias_{{SecondbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+				"EliasPromoEnabled": false
+			},
+		},
+   		{      
+			"LogName": "Load Elliott's son's alternate portraits on secondborn (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Elias_promo_{{SecondbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+				"EliasPromoEnabled": true
+			},
+		},
+   		{      
+			"LogName": "Load Elliott's son's sprites on secondborn (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/Elias_{{SecondbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+			},
+		},
+		
+   		{      
+			"LogName": "Edit Elliott's son's default portraits to use winter outfit on secondborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Elias_Winter_{{SecondbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"EliasPromoEnabled": false,
+				"Season": "winter",
+			},
+		},
+   		{      
+			"LogName": "Edit Elliott's son's alternate portraits to use winter outfit on secondborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Elias_Winter_promo_{{SecondbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"EliasPromoEnabled": true,
+				"Season": "winter",
+			},
+		},
+   		{      
+			"LogName": "Edit Elliott's son's sprites to use winter outfit on secondborn.",
+			"Action": "EditImage",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/Elias_Winter_{{SecondbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"Season": "winter",
+			},
+		},
+		
+		
+		{
+			"LogName": "Add gift tastes for Elliott's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"{{SecondbornName}}": "/637 710 721 fish_crab_pot Book_Crabbing//category_fish 142 forage_item_beach//197 206 215 424 426 cheese_item//248 649 772 729 alcohol_item//18 152 153 157 RiverJelly CaveJelly SeaJelly 614 coffee_item/",
+			}
+		},
+		{
+			"LogName": "Fill secondborn's empty schedule with that of Elliott's son.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain": "800 FishShop 6 6 0/1400 FishShop 9 5 0/1700 bed",
+				"GreenRain": "GOTO rain",
+				"Mon": "820 Beach 47 11 2 \"Strings\\schedules\\{{SecondbornName}}:Mon.000\"/1700 bed",
+				"Thu": "820 Beach 47 11 2/1200 ArchaeologyHouse 10 10 3/1700 bed",
+				"Sat": "800 Forest 90 40 2 \"Strings\\schedules\\{{SecondbornName}}:Sat.000\"/1400 Town 60 100 2 \"Strings\\schedules\\{{SecondbornName}}:Sat.000\"/1900 bed",
+				"SquidFest": "730 FishShop 6 6 0/1200 Beach 26 36 2 \"Strings\\schedules\\{{SecondbornName}}:SquidFest.000\"/1800 bed",
+				"winter": "GOTO rain",
+				"fall": "830 Town 88 24 1 square_1_5_1/1500 Town 91 5 1/1800 bed",
+				"TroutDerby": "730 FishShop 6 6 0/1000 Forest 90 40 2 \"Strings\\schedules\\{{SecondbornName}}:TroutDerby.000\"/1800 bed",
+				"summer": "MAIL beachBridgeFixed/GOTO summer_noBridge/830 Beach 71 24 2 square_9_1_2/1400 Beach 84 39 2 square_3_3/1800 bed",
+				"summer_noBridge": "830 Beach 56 16 1 square_1_5_1/1800 bed",
+				"spring": "830 Beach 13 32 1 square_1_5_1/1500 Forest 33 25 2/1800 bed",
+				"DesertFestival_1": "820 Desert 9 39 2 \"Strings\\schedules\\{{SecondbornName}}:DesertFestival.000\"/2430 bed",
+			}
+		},
+		
+		{
+			"LogName": "Add Little Red School House schedule for Elliott's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"Tue": "a1000 Custom_SchoolHouse 1 6 1 {{SecondbornName}}_read \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.000\"/1130 Town 69 51 1 \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.001\"/1300 Custom_SchoolHouse 1 6 1 {{SecondbornName}}_read/1550 Beach 13 32 1 square_1_5_1/1850 bed",
+				"Wed": "GOTO Tue",
+				"Fri": "GOTO Tue",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+			},
+		},
+		{
+			"LogName": "Add Little Red School House schedule for Elliott's son as secondborn (rain).",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain": "a1000 Custom_SchoolHouse 1 6 1 {{SecondbornName}}_read \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.000\"/1130 Custom_SchoolHouse 7 5 0 \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.002\"/a1250 Custom_SchoolHouse 1 6 1 {{SecondbornName}}_read/1550 FishShop 9 5 0/1730 bed",
+			},
+			"When": {
+				"DayOfWeek": "Tuesday, Wednesday, Friday",
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+			},
+		},
+		
+		{
+            "LogName": "Add animations for Elliott's son as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/animationdescriptions",
+            "Entries":
+            {
+                "{{SecondbornName}}_sit": "16/16/16",
+                "{{SecondbornName}}_read": "17/17/17",
+			}
+		},
+		
+		
+        {
+            "LogName": "Add Elliott's son to Egg Festival as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring13",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 25 69 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 31 57 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 34 63 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 33 72 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Elliott's son to Flower Dance as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring24",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 20 41 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 11 20 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 6 23 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 19 21 2",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Elliott's son to Luau as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer11",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 45 12 1",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 37 20 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 27 9 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "set-up_y2", 5],
+                    "Value": "/positionOffset {{SecondbornName}} 0 -13",
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 26 18 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Elliott's son to Moonlight Jellies as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer28",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 43 36 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 27 35 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 50 24 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 24 34 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Elliott's son to Fair as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall16",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 46 59 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 37 69 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Elliott's son to Spirit's Eve as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall27",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 36 70 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 14 62 1",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Elliott's son to Festival of Ice as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter8",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 64 12 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 74 42 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 85 40 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 63 34 1",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Elliott's son to Winter Star as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter25",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 23 74 1",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 30 60 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+		{
+			"LogName": "Add movie concession tastes for Elliott's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/ConcessionTastes",
+			"Entries": {
+				2:{
+					"Name": "{{SecondbornName}}",
+					"LovedTags": [
+					  "Truffle Popcorn",
+					  "Salmon Burger"
+					],
+					"LikedTags": [
+					  "Salty"
+					],
+					"DislikedTags": [
+					  "Cold",
+					  "Sour",
+					  "Jasmine Tea",
+					  "Jawbreaker"
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Add movie reactions for Elliott's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+			"Entries": {
+				2:{
+					"NPCName": "{{SecondbornName}}",
+					"Reactions": [
+					  {
+						"Tag": "*",
+						"Response": "love",
+						"Whitelist": [
+						  "{{PlayerCompanion}}",
+						],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": {
+							"ResponsePoint": null,
+							"Script": "Placeholder",
+							"Text": null
+						  },
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_3"
+					  },
+					  {
+						"Tag": "spring_movie_0",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_4"
+					  },
+					  {
+						"Tag": "family",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_0"
+					  },
+					  {
+						"Tag": "horror",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_1"
+					  },
+					  {
+						"Tag": "*",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_2"
+					  },
+					  {
+						"Tag": "love",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_5"
+					  },
+					  {
+						"Tag": "like",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_6"
+					  },
+					  {
+						"Tag": "dislike",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_7"
+					  }
+					]
+				}
+			}
+		},
+		
+   		{      
+			"LogName": "Include dialogue files for Elliott's son as secondborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Elliott/valid_secondborn_Elliott.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+   		{      
+			"LogName": "Fallback to English dialogue files if no others are available for Elliott's son as secondborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Elliott/valid_secondborn_Elliott.en.json", 
+			"When": {
+				"HasFile:i18n/dialogue_files/Elliott/valid_secondborn_Elliott.{{Language}}.json": false
+			}
+		},
+   ]
+}

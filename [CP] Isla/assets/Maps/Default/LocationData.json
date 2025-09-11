@@ -1,0 +1,364 @@
+{
+	"Changes":[
+	
+	//Maps, now in Changes!
+	
+	{
+		"LogName": "Load Isla's Island",
+		"Action": "Load",
+		"Target": "Maps/PaperNautilus_Isla_UnderwaterCoveExterior",
+		"FromFile": "assets/{{Recolor}}/UnderwaterCove_Exterior.tmx",
+    },
+	
+	{
+		"LogName": "Load Isla's Room",
+		"Action": "Load",
+		"Target": "Maps/PaperNautilus_Isla_UnderwaterCove",
+		"FromFile": "assets/{{Recolor}}/UnderwaterCove.tmx",
+    },
+		
+	{
+		//Add Boat to Island
+		"LogName": "Boat to Isla's Island",
+		"Action": "EditMap",
+		"Target": "Maps/Beach",
+		"FromFile": "assets/{{Recolor}}/CovePathLK.tmx",
+		"ToArea": {
+			"X": 80,"Y": 38,
+			"Width": 2,"Height": 4
+		},
+		"MapProperties": {
+			"NPCWarp": "83 39 Isla_UnderwaterCove_Exterior 42 9",
+		},
+	},
+	
+	
+	//Location Data, but a tad more verbose
+	
+	{
+            "LogName": "Isla Location Data",
+			"Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+				
+				"Isla_UnderwaterCove": {
+                    "DisplayName": "{{i18n:Isla.UnderwaterCove.Name}}",
+                    "DefaultArrivalTile": {
+                        "X": 7,
+                        "Y": 7
+                    },
+                    "CreateOnLoad": {
+                        "AlwaysActive": true,
+                        "MapPath": "Maps\\PaperNautilus_Isla_UnderwaterCove"
+                    },
+                    "FormerLocationNames": [
+                        "Custom_UnderwaterCove"
+                    ],
+                    "CustomFields": {}
+				},
+			
+				"Isla_UnderwaterCove_Exterior": {
+                    "DisplayName": "{{IslandName}}", //Since the player is above water and this is player-facing, name is changed to nonspecific.
+                    "DefaultArrivalTile": {
+                        "X": 41,
+                        "Y": 10
+                    },
+                    "CreateOnLoad": {
+                        "AlwaysActive": true,
+                        "MapPath": "Maps\\PaperNautilus_Isla_UnderwaterCoveExterior"
+                    },
+					"ArtifactSpots": [
+                        {
+                            "Chance": 0.08,
+                            "Id": "PaperNautilus_GoldOre",
+                            "ItemId": "(O)384",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.09,
+                            "Id": "PaperNautilus_Trilobite",
+                            "ItemId": "(O)589",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.15,
+                            "Id": "PaperNautilus_LostBook",
+                            "ItemId": "(O)102",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.25,
+                            "Id": "PaperNautilus_Stone",
+                            "ItemId": "(O)390",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 1,
+                            "Id": "PaperNautilus_Clay",
+                            "ItemId": "(O)330",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        }
+                    ],
+					"Fish": [
+                        {
+                            "Condition": "SEASON Summer",
+                            "Id": "PaperNautilus_Pufferfish",
+                            "ItemId": "(O)128",
+                        },
+						{
+                            "Condition": "SEASON Spring Fall",
+                            "Id": "PaperNautilus_Anchovy",
+                            "ItemId": "(O)129",
+                        },
+						{
+                            "Condition": "SEASON Summer Winter",
+                            "Id": "PaperNautilus_Tuna",
+                            "ItemId": "(O)130",
+                        },
+						{
+                            "Condition": "!SEASON Summer",
+                            "Id": "PaperNautilus_Sardine",
+                            "ItemId": "(O)131",
+                        },
+						{
+                            "Condition": "SEASON Summer Winter",
+                            "Id": "PaperNautilus_RedMullet",
+                            "ItemId": "(O)146",
+                        },
+						{
+                            "Condition": "SEASON Spring Winter",
+                            "Id": "PaperNautilus_Herring",
+                            "ItemId": "(O)147",
+                        },
+						{
+                            "Condition": "SEASON Spring Fall",
+                            "Id": "PaperNautilus_Eel",
+                            "ItemId": "(O)148",
+                        },
+						{
+                            "Condition": "SEASON Summer",
+                            "Id": "PaperNautilus_Octopus",
+                            "ItemId": "(O)149",
+                        },
+						{
+                            "Condition": "!SEASON Spring",
+                            "Id": "PaperNautilus_RedSnapper",
+                            "ItemId": "(O)150",
+                        },
+						{
+                            "Condition": "SEASON Winter",
+                            "Id": "PaperNautilus_Squid",
+                            "ItemId": "(O)151",
+                        },
+						{
+                            "Season": null,
+                            "Id": "PaperNautilus_Seaweed",
+                            "ItemId": "(O)152",
+                        },
+						{
+                            "Condition": "SEASON Fall Winter",
+                            "Id": "PaperNautilus_SeaCucumber",
+                            "ItemId": "(O)154",
+                        },
+						{
+                            "Condition": "SEASON Summer Fall",
+                            "Id": "PaperNautilus_SuperCucumber",
+                            "ItemId": "(O)155",
+                        },
+						{
+                            "Condition": "SEASON Spring Summer",
+                            "Id": "PaperNautilus_Flounder",
+                            "ItemId": "(O)267",
+                        },
+						{
+                            "Condition": "SEASON Summer Fall",
+                            "Id": "PaperNautilus_Tilapia",
+                            "ItemId": "(O)701",
+                        },
+						{
+                            "Condition": "SEASON Fall Winter",
+                            "Id": "PaperNautilus_Albacore",
+                            "ItemId": "(O)705",
+                        },
+						{
+                            "Condition": "!SEASON Fall",
+                            "Id": "PaperNautilus_Halibut",
+                            "ItemId": "(O)708",
+                        },
+                    ],
+					"Forage": [
+                        //Non-Winter Forage
+						{
+                            "Chance": 0.9,
+                            "Condition": "SEASON Spring Summer Fall",
+                            "Id": "PaperNautilus_Clam",
+                            "ItemId": "(O)372",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+						{
+                            "Chance": 0.1,
+                            "Condition": "SEASON Spring Summer Fall",
+                            "Id": "PaperNautilus_Cockle",
+                            "ItemId": "(O)718",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+						{
+                            "Chance": 0.3,
+                            "Condition": "SEASON Spring Summer Fall",
+                            "Id": "PaperNautilus_Mussel",
+                            "ItemId": "(O)719",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+						{
+                            "Chance": 0.3,
+                            "Condition": "SEASON Spring Summer Fall",
+                            "Id": "PaperNautilus_Oyster",
+                            "ItemId": "(O)723",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+						
+						//Summer Exclusive Forage
+						{
+                            "Chance": 0.5,
+                            "Condition": "SEASON Summer",
+                            "Id": "PaperNautilus_RainbowShell",
+                            "ItemId": "(O)394",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+						
+						//Winter Chances
+						{
+                            "Chance": 0.4,
+                            "Condition": "SEASON Winter",
+                            "Id": "PaperNautilus_Clam",
+                            "ItemId": "(O)372",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+						{
+                            "Chance": 0.1,
+                            "Condition": "SEASON Winter",
+                            "Id": "PaperNautilus_Cockle",
+                            "ItemId": "(O)718",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+						{
+                            "Chance": 0.3,
+                            "Condition": "SEASON Winter",
+                            "Id": "PaperNautilus_Mussel",
+                            "ItemId": "(O)719",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+						{
+                            "Chance": 0.3,
+                            "Condition": "SEASON Winter",
+                            "Id": "PaperNautilus_Oyster",
+                            "ItemId": "(O)723",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+						{
+                            "Chance": 0.8,
+                            "Condition": "SEASON Winter",
+                            "Id": "PaperNautilus_NautilusShell",
+                            "ItemId": "(O)392",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                    ],
+                    "FormerLocationNames": [
+                        "Custom_UnderwaterCove_Exterior"
+                    ],
+                    "CustomFields": {}
+				},
+				
+				
+			},
+		},
+		
+		//Extra Map Data
+		
+		{
+			"LogName": "Isla Weekend Warp Removal",
+			"Action": "EditMap",
+			"Target": "Maps/Isla_UnderwaterCove_Exterior",
+			"MapTiles": [
+				{
+					"Position": { "X": 42, "Y": 4 },
+					"Layer": "Buildings",
+					"SetProperties": {
+						"Action": "Message WeekendTroupe",
+					},
+				},
+			],
+			"When": { 
+				"DayofWeek": "Friday, Saturday, Sunday",
+			}
+		},
+			  
+		{
+			"LogName": "Map String Data",
+			"Action": "EditData",
+			"Target": "strings/StringsFromMaps",
+			"Entries": {
+				"UnderwaterCove.001": "You see new melodies, lyrics, and harmonies, written in Isla's beautiful handwriting.",
+				"UnderwaterCove.002": "This is a reference book of classic arias. It appears to be very old.",
+				"UnderwaterCove.003": "The walls of Isla's cove are covered in algae.",
+				"UnderwaterCove.004": "This appears to be a replica of a Saxifrageian viking ship.",
+				"UnderwaterCove.005": "This antique vessel is beautifully crafted and inlaid with gold. You suspect it may be of Gotoran craftsmanship.",
+				"UnderwaterCove.006": "All of the furniture in Isla's chamber appears to be quite worn-looking. You suspect she may have collected it from various sunken ships.",
+				"UnderwaterCove.007": "Is this blanket woven from sea silk?",
+				"UnderwaterCove.008": "This carpet appears to be woven from dried seaweed.",
+				"BeachsideRoom.001": "You see titles from all of Isla's favourite authors. You are incredibly proud to see that many of them are Ferngillian.",
+				"BeachsideRoom.002": "You see that Isla has been working very hard on her latest collection of poems. You beam with pride.",
+				"BeachsideRoom.003": "You recognise this chair from Isla's cove! You marvel at how far you two have come.",
+				"BeachsideRoom.004": "It's wonderful to be able to come stand by the water, and relax for awhile.",
+				"WeekendTroupe": "On the cave entrance is a note in Isla's handwriting:^^'I'm off with my troupe for the weekend! I will return on Monday, so feel free to visit then.'",
+			},
+		},
+		
+		{
+			"LogName": "Mermaid Beach Event Map",
+			"Action": "Load", 
+			"Target": "Maps/MermaidBeachEvent", 
+			"FromFile": "assets/{{Recolor}}/MermaidBeachEvent.tmx",   
+		},
+	],
+}

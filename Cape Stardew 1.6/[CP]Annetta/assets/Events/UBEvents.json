@@ -1,0 +1,37 @@
+{
+  "Changes": [
+
+ {
+      "Action": "EditData",
+      "Target": "Data/Events/Custom_CapeStardew",
+      "When": {
+      "DLX.Bundles/Purchased": "Cape.Cabin",
+      "HasMod": "DLX.Bundles",
+       
+      },
+      "Update": "OnDayStart",
+      "Entries": {
+        "1463510020/t 1000 1900/f Annetta 250/p Annetta": "sweet/-1000 -1000/farmer 50 2 2 Annetta 7 8 0/skippable/fade unfade/viewport 16 6 true/pause 1000/move Annetta 0 -3 0/pause 500/emote Annetta 20 true/pause 400/speak Annetta \"{{i18n:annetta.cabinreaction.001}}\"/pause 500/showFrame Annetta 41/speak Annetta \"{{i18n:annetta.cabinreaction.002}}\"/pause 500/faceDirection Annetta 1 true/speak Annetta \"{{i18n:annetta.cabinreaction.003}}\"/faceDirection Annetta 2 true/move Annetta 0 8 2/pause 400/friendship Annetta 250/globalFade/viewport -1000 -1000/end",
+
+      },
+    },
+    
+     {
+      "Action": "EditData",
+      "Target": "Data/Events/Custom_AbandonedHauntedHouse",
+      "When": {
+        "DLX.Bundles/Purchased": "Cape.Cabin",
+        "HasMod": "DLX.Bundles",
+      },
+      "Entries": {
+        "1463510029/f Annetta 1000/t 1700 2500/e 1463510020": "nightTime/4 6/farmer 4 4 0 Annetta -1000 -1000 3/skippable/pause 2200/playSound knockonCabin/emote farmer 16/message \"{{i18n:annetta.cabin.event.001}}\"/pause 500/faceDirection farmer 1 true/faceDirection farmer 2 true/question fork1 \"{{i18n:annetta.cabin.event.1question}}#{{i18n:annetta.cabin.event.answer1}}#{{i18n:annetta.cabin.event.answer2}}\"/pause 400/fork ignorAnett/switchEvent answerDoor",
+"ignorAnett": "pause 400/move farmer 2 0 1/animate farmer true true 50 4 5/pause 1200/animate farmer true true 50 4 5/pause 1000/globalfade/viewport -200 -100/pause 200/mail anetVisit/end",
+        "answerDoor": "move farmer 0 2 2/move farmer 1 0 2/move farmer 0 4 2/pause 100/warp farmer -74 -10 True/playSound doorOpen/pause 400/globalFade/viewport -2000 -700/warp farmer -70 -900 True/warp Annetta -500 -900 True/changeLocation Custom_CapeStardew/fade/viewport 16 7/warp farmer 6 5 True/warp Annetta 7 5 True/faceDirection Annetta 3/pause 600/speak Annetta \"{{i18n:annetta.cabin.event.greeting}}\"/pause 400/question fork0 \"{{i18n:annetta.cabin.event.002}}#{{i18n:annetta.cabin.event.002.answers.open_door}}#{{i18n:annetta.cabin.event.002.answers.no_help}}\"/fork goInside/pause 500/faceDirection Annetta 1 true/pause 200/faceDirection Annetta 0/pause 500/emote Annetta 28/pause 500/faceDirection Annetta 2/move Annetta 0 2 2/globalfade/viewport -1000 -1000/end",
+        "emainCabin": "resetVariable/playMusic playful/viewport 4 6 true/warp farmer 4 9 True/warp Annetta 5 9 True/fade/faceDirection Annetta 1/pause 500/faceDirection Annetta 0 true/emote Annetta 32/pause 500/speak Annetta \"{{i18n:annetta.cabin.event.003}}\"/pause 1000/pause 800/speak Annetta \"{{i18n:annetta.cabin.event.004}}\"/faceDirection farmer 2 true/pause 800/faceDirection Annetta 3/pause 800/faceDirection farmer 1 true/speak Annetta \"{{i18n:annetta.cabin.event.ot}}\"/question fork0 \"{{i18n:annetta.cabin.event.005}}#{{i18n:annetta.cabin.event.005.answers.start_campfire}}#{{i18n:annetta.cabin.event.005.answers.unsure}}\"/fork initiateCF/pause 300/switchEvent altBranch",
+        "busyF2": "pause 1000/stopMusic/pause 1000/emote Annetta 12/speak Annetta \"{{i18n:annetta.cabin.event.023}}#$b#{{i18n:annetta.cabin.event.024}}\"/pause 500/faceDirection Annetta 1 true/pause 100/faceDirection Annetta 0/pause 500/pause 500/faceDirection Annetta 2/move Annetta 0 2 2/playSound doorClose/end dialogue Annetta \"{{i18n:annetta.cabin.event.023}}\"",
+      }
+    }
+    
+    
+    ]
+    }

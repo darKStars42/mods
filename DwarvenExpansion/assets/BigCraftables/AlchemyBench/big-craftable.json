@@ -1,0 +1,495 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_AlchemyBench": {
+                    "Name": "Dwarven Alchemy Bench",
+                    "DisplayName": "{{i18n:AlchemyBench.DisplayName}}",
+                    "Description": "{{i18n:AlchemyBench.Description}}",
+                    "Price": 0,
+                    "Fragility": 0,
+                    "CanBePlacedIndoors": true,
+                    "CanBePlacedOutdoors": true,
+                    "IsLamp": false,
+                    "Texture": "Mods/DwarvenExpansion/BigCraftablesSpritesheet",
+                    "SpriteIndex": 4
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+                "Dwarven Alchemy Bench": "709 10 428 2 338 5/Home/{{ModId}}_AlchemyBench/true/Mining 9/"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Add_Potion_Letter": {
+                    "Id": "{{ModId}}_Add_Potion_Letter",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_BASE_MINING_LEVEL Current 9",
+                    "Actions": [
+                        "AddMail Current {{ModId}}_DwarfPotions now"
+                    ]
+                },
+                "{{ModId}}_Add_Potion_Recipes": {
+                    "Id": "{{ModId}}_Add_Potion_Recipes",
+                    "Trigger": "DayStarted LocationChanged DayEnding",
+                    "Condition": "PLAYER_STAT Current {{ModId}}_Book_PotionRecipes 1",
+                    "Actions": [
+                        "MarkCookingRecipeKnown Current One_Perfect_Day true",
+                        "MarkCookingRecipeKnown Current Shadowed_Elixir true",
+                        "MarkCookingRecipeKnown Current Distilled_Sunlight true",
+                        "MarkCookingRecipeKnown Current Farmers_Draught true",
+                        "MarkCookingRecipeKnown Current Miners_Drink true",
+                        "MarkCookingRecipeKnown Current Fishermans_Brew true",
+                        "MarkCookingRecipeKnown Current Woodmans_Tonic true",
+                        "MarkCookingRecipeKnown Current Swordsmans_Elixir true",
+                        "MarkCookingRecipeKnown Current Ogre_Kings_Draft true",
+                        "MarkCookingRecipeKnown Current Envigorating_Concotion true",
+                        "MarkCookingRecipeKnown Current Healing_Draught true",
+                        "MarkCookingRecipeKnown Current Repellent_Potion true"
+                    ]
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Powers",
+            "Entries": {
+                "{{ModId}}_Book_PotionRecipes": {
+                    "DisplayName": "{{i18n:Power_Ancient_Alchemy.DisplayName}}",
+                    "Description": "{{i18n:Power_Ancient_Alchemy.Description}}",
+                    "TexturePath": "Mods\\DwarvenExpansion\\ObjectSpritesheet",
+                    "TexturePosition": {
+                        "X": 0,
+                        "Y": 32
+                    },
+                    "UnlockedCondition": "PLAYER_STAT Current {{ModId}}_Book_PotionRecipes 1"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "LogName": "Add potion recipes",
+            "Target": "Data/CookingRecipes",
+            "Entries": {
+                "One_Perfect_Day": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_PrismaticDust 1 {{ModId}}_Reagent_Reduction_SolarEssence 3 {{ModId}}_Reagent_Powder_DragonTooth 3/25 2/{{ModId}}_Potions_OnePerfectDay/none",
+                "Shadowed_Elixir": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_JadeDust 1 {{ModId}}_Reagent_Reduction_VoidEssence 5 {{ModId}}_Reagent_Powder_Batwing 3/25 2/{{ModId}}_Potions_ShadowedElixir/none",
+                "Distilled_Sunlight": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_DiamondDust 1 {{ModId}}_Reagent_Reduction_SolarEssence 10 {{ModId}}_Reagent_Powder_RedMushroom 2/25 2/{{ModId}}_Potions_DistilledSunlight/none",
+                "Farmers_Draught": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_AmethystDust 1 {{ModId}}_Reagent_Powder_Seeds 5 {{ModId}}_Reagent_Reduction_WhiteAlgea 3/25 2/{{ModId}}_Potions_FarmersDraught/none",
+                "Miners_Drink": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_GoldDust 2 {{ModId}}_Reagent_Reduction_CaveJelly 1 {{ModId}}_Reagent_Powder_Coal 3/25 2/{{ModId}}_Potions_MinersDrink/none",
+                "Fishermans_Brew": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_AquamarineDust 1 {{ModId}}_Reagent_Reduction_SquidInk 2 {{ModId}}_Reagent_Powder_Stonefish 2/25 2/{{ModId}}_Potions_FishermansBrew/none",
+                "Woodmans_Tonic": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_TopazDust 1 {{ModId}}_Reagent_Reduction_Sap 5 {{ModId}}_Reagent_Powder_RedMushroom 3/25 2/{{ModId}}_Potions_WoodmansTonic/none",
+                "Swordsmans_Elixir": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_IronDust 25 {{ModId}}_Reagent_Reduction_Slime 5 {{ModId}}_Reagent_Powder_Batwing 5/25 2/{{ModId}}_Potions_SwordsmansElixir/none",
+                "Ogre_Kings_Draft": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_CopperDust 50 {{ModId}}_Reagent_Reduction_CaveJelly 2 {{ModId}}_Reagent_Powder_Stonefish 3/25 2/{{ModId}}_Potions_OgreKingsDraft/none",
+                "Envigorating_Concotion": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_EmeraldDust 1 {{ModId}}_Reagent_Reduction_WhiteAlgea 2 {{ModId}}_Reagent_Powder_Coal 3/25 2/351/none/{{i18n:AlchemyBench.Output.Envigorating_Concoction.ObjectDisplayName}}",
+                "Healing_Draught": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_RubyDust 1 {{ModId}}_Reagent_Reduction_CaveJelly 1 {{ModId}}_Reagent_Powder_RedMushroom 2/25 2/773/none/{{i18n:AlchemyBench.Output.Healing_Draught.ObjectDisplayName}}",
+                "Repellent_Potion": "{{ModId}}_Drinks_DwarvenSpirits 1 {{ModId}}_MineralDust_IridiumDust 1 {{ModId}}_Reagent_Reduction_Slime 25 {{ModId}}_Reagent_Powder_CinderShard 1/25 2/772/none/{{i18n:AlchemyBench.Output.Repellent_Potion.ObjectDisplayName}}"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Dwarf",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_AlchemyBench": {
+                    "ID": "{{ModId}}_AlchemyBench",
+                    "ItemId": "(BC){{ModId}}_AlchemyBench",
+                    "Condition": "PLAYER_MINING_LEVEL Current 9",
+                    "Price": "4000",
+                    "AvailableStock": 5,
+                    "AvailableStockLimit": "Player"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_AlchemyBench": {
+                    "OutputRules": [
+                        {
+                            "Id": "Reagent_Powder_Batwing",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Powder_Batwing",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)767",
+                                    "RequiredCount": 5
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Powder_Batwing",
+                                    "ItemId": "{{ModId}}_Reagent_Powder_Batwing",
+                                    "ObjectColor": "45 45 45 255",
+                                    "Quality": "0",
+                                    "MinStack": "25",
+                                    "MaxStack": "25"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Powder_Batwing.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Powder_Coal",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Powder_Coal",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)382",
+                                    "RequiredCount": 5
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Powder_Coal",
+                                    "ItemId": "{{ModId}}_Reagent_Powder_Coal",
+                                    "ObjectColor": "169 169 169 255",
+                                    "Quality": "0",
+                                    "MinStack": "25",
+                                    "MaxStack": "25"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Powder_Coal.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Powder_RedMushroom",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Powder_RedMushroom",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)420",
+                                    "RequiredCount": 3
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Powder_RedMushroom",
+                                    "ItemId": "{{ModId}}_Reagent_Powder_RedMushroom",
+                                    "ObjectColor": "220 0 0 255",
+                                    "Quality": "0",
+                                    "MinStack": "15",
+                                    "MaxStack": "15"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Powder_RedMushroom.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Powder_DragonTooth",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Powder_DragonTooth",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)852",
+                                    "RequiredCount": 1
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Powder_DragonTooth",
+                                    "ItemId": "{{ModId}}_Reagent_Powder_DragonTooth",
+                                    "ObjectColor": "105 15 255 255",
+                                    "Quality": "0",
+                                    "MinStack": "10",
+                                    "MaxStack": "10"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Powder_DragonTooth.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Powder_CinderShard",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Powder_CinderShard",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)848",
+                                    "RequiredCount": 1
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Powder_CinderShard",
+                                    "ItemId": "{{ModId}}_Reagent_Powder_CinderShard",
+                                    "ObjectColor": "255 128 0 255",
+                                    "Quality": "0",
+                                    "MinStack": "10",
+                                    "MaxStack": "10"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Powder_CinderShard.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Powder_Seeds",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Powder_Seeds",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredTags": [
+                                        "category_seeds"
+                                    ],
+                                    "RequiredCount": 5
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Powder_Seeds",
+                                    "ItemId": "{{ModId}}_Reagent_Powder_Seeds",
+                                    "ObjectColor": "10 143 0 255",
+                                    "Quality": "0",
+                                    "MinStack": "25",
+                                    "MaxStack": "25"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Powder_Seeds.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Powder_Stonefish",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Powder_Stonefish",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)158",
+                                    "RequiredCount": 1
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Powder_Stonefish",
+                                    "ItemId": "{{ModId}}_Reagent_Powder_Stonefish",
+                                    "ObjectColor": "130 73 37 255",
+                                    "Quality": "0",
+                                    "MinStack": "10",
+                                    "MaxStack": "10"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Powder_Stonefish.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Reduction_Slime",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Reduction_Slime",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)766",
+                                    "RequiredCount": 10
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Reduction_Slime",
+                                    "ItemId": "{{ModId}}_Reagent_Reduction_Slime",
+                                    "ObjectColor": "128 128 128 255",
+                                    "Quality": "0",
+                                    "MinStack": "50",
+                                    "MaxStack": "50"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Reduction_Slime.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Reduction_SolarEssence",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Reduction_SolarEssence",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)768",
+                                    "RequiredCount": 3
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Reduction_SolarEssence",
+                                    "ItemId": "{{ModId}}_Reagent_Reduction_SolarEssence",
+                                    "ObjectColor": "255 215 0 255",
+                                    "Quality": "0",
+                                    "MinStack": "15",
+                                    "MaxStack": "15"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Reduction_SolarEssence.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Reduction_VoidEssence",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Reduction_VoidEssence",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)769",
+                                    "RequiredCount": 3
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Reduction_VoidEssence",
+                                    "ItemId": "{{ModId}}_Reagent_Reduction_VoidEssence",
+                                    "ObjectColor": "115 41 181 255",
+                                    "Quality": "0",
+                                    "MinStack": "15",
+                                    "MaxStack": "15"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Reduction_VoidEssence.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Reduction_SquidInk",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Reduction_SquidInk",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)814",
+                                    "RequiredCount": 2
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Reduction_SquidInk",
+                                    "ItemId": "{{ModId}}_Reagent_Reduction_SquidInk",
+                                    "ObjectColor": "0 0 139 255",
+                                    "Quality": "0",
+                                    "MinStack": "20",
+                                    "MaxStack": "20"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Reduction_SquidInk.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Reduction_CaveJelly",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Reduction_CaveJelly",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)CaveJelly",
+                                    "RequiredCount": 1
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Reduction_CaveJelly",
+                                    "ItemId": "{{ModId}}_Reagent_Reduction_CaveJelly",
+                                    "ObjectColor": "255 128 0 255",
+                                    "Quality": "0",
+                                    "MinStack": "10",
+                                    "MaxStack": "10"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Reduction_CaveJelly.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Reduction_Sap",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Reduction_Sap",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)92",
+                                    "RequiredCount": 5
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Reduction_Sap",
+                                    "ItemId": "{{ModId}}_Reagent_Reduction_Sap",
+                                    "ObjectColor": "255 230 0 255",
+                                    "Quality": "0",
+                                    "MinStack": "10",
+                                    "MaxStack": "10"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Reduction_Sap.InvalidCountMessage}}"
+                        },
+                        {
+                            "Id": "Reagent_Reduction_WhiteAlgea",
+                            "Triggers": [
+                                {
+                                    "Id": "Reagent_Reduction_WhiteAlgea",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)157",
+                                    "RequiredCount": 3
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "Reagent_Reduction_WhiteAlgea",
+                                    "ItemId": "{{ModId}}_Reagent_Reduction_WhiteAlgea",
+                                    "ObjectColor": "255 255 255 255",
+                                    "Quality": "0",
+                                    "MinStack": "15",
+                                    "MaxStack": "15"
+                                }
+                            ],
+                            "UseFirstValidOutput": true,
+                            "MinutesUntilReady": "180",
+                            "InvalidCountMessage": "{{i18n:Reagent_Reduction_WhiteAlgea.InvalidCountMessage}}"
+                        }
+                    ],
+                    "LoadEffects": [
+                        {
+                            "Sounds": [
+                                {
+                                    "Id": "bubbles",
+                                    "Delay": 0
+                                },
+                                {
+                                    "Id": "bubbles",
+                                    "Delay": 30
+                                }
+                            ],
+                            "Frames": [
+                                1
+                            ]
+                        }
+                    ],
+                    "WorkingEffects": [
+                        {
+                            "Sounds": [
+                                {
+                                    "Id": "bubbles",
+                                    "Delay": 60
+                                }
+                            ],
+                            "Frames": [
+                                1
+                            ]
+                        }
+                    ],
+                    "WorkingEffectChance": 1,
+                    "WobbleWhileWorking": true
+                }
+            }
+        }
+    ]
+}

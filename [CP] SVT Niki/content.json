@@ -1,0 +1,396 @@
+{
+	"Format": "2.4.2",
+
+	"ConfigSchema": {
+		"AlwaysByBus": {
+			"AllowValues": "true, false",
+			"Default": "false",
+		},
+		"CarAppearanceConfig": {
+			"AllowValues": "Movie, Custom",
+			"Default": "Movie",
+		},
+		"IgnoreShaneEvent": {
+			"AllowValues": "true, false",
+			"Default": "false",
+		},
+		"EggFestival": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Section": "Festivals",
+		},
+		"FlowerDance": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Section": "Festivals",
+		},
+	},
+
+    "DynamicTokens": [
+		{
+			"Name": "DoNotIgnoreShaneEvent",
+			"Value": "/k 3910975",
+			"When": 
+			{
+				"IgnoreShaneEvent": false
+			}
+		},
+		{
+			"Name": "DoNotIgnoreShaneEvent",
+			"Value": "",
+			"When":
+			{
+				"IgnoreShaneEvent": true
+			}
+		},
+		{
+			"Name": "CarAppearance",
+			"Value": "moviecar",
+			"When": 
+			{
+				"CarAppearanceConfig": "Movie"
+			}
+		},
+		{
+			"Name": "CarAppearance",
+			"Value": "custom",
+			"When":
+			{
+				"CarAppearanceConfig": "Custom"
+			}
+		},
+		{
+			"Name": "ArrivesbyCar",
+			"Value": "false", // Arrives by bus
+			"When":
+			{
+				"AlwaysByBus": "true"
+			}
+		},
+		{
+			"Name": "ArrivesbyCar",
+			"Value": "false",
+			"When":
+			{
+				"HasFlag:hostPlayer |contains=ccVault": true,
+			}
+		},
+		{
+			"Name": "ArrivesbyCar",
+			"Value": "true",
+			"When":
+			{
+				"HasSeenEvent:hostPlayer |contains=SVTNiki0Introduction": true,
+				"Relationship:SVTNiki": "Unmet, Friendly, Dating, Engaged, Divorced",
+				"HasFlag:hostPlayer |contains=ccVault": false,
+				"AlwaysByBus": "false",
+				"HasMod |contains=Yoshimax.MarryMorris, ch20youk.TSCCP": false, // Compatibility for Marry Morris, The Stray Catfe
+			}
+		},
+		
+		// used in gift rejection dialogue
+		{
+			"Name": "Dating",
+			"Value": "",
+			"When":
+			{
+				"Relationship:SVTNiki": "Unmet, Friendly",
+			}
+		},
+		{
+			"Name": "Dating",
+			"Value": ".Dating",
+			"When":
+			{
+				"Relationship:SVTNiki": "Dating, Engaged, Married",
+			}
+		},
+		{
+			"Name": "Marriage",
+			"Value": "",
+			"When":
+			{
+				"Relationship:SVTNiki": "Unmet, Friendly, Dating, Engaged",
+			}
+		},
+		{
+			"Name": "Marriage",
+			"Value": ".Marriage",
+			"When":
+			{
+				"Relationship:SVTNiki": "Married",
+			}
+		},
+		// Festival NPC Location change by year
+		{
+			"Name": "FestivalYear",
+			"Value": "", 
+		},
+		{
+			"Name": "FestivalYear",
+			"Value": "_y2", 
+			"When":
+			{
+				"Query: {{Year}} % 2 = 0": true,
+			}
+		},
+
+	],
+
+	"CustomLocations": [
+		{
+		  "Name": "Custom_SVTNiki_NikiCar",
+		  "FromMapFile": "assets/Maps/NikiCar.tmx",
+		},
+	  ],
+
+	"Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "Custom_SVTNiki_NikiCar": {
+                    "CreateOnLoad": {
+                        "AlwaysActive": false,
+                        "MapPath": "Maps\\Custom_SVTNiki_NikiCar"
+                    }
+                },
+			}
+		},
+		{
+			"LogName": "Warp outside Bus",
+			"Action": "EditMap",
+			"When": {
+				"ArrivesbyCar": "false",
+			},
+			"Target": "Maps/Custom_SVTNiki_NikiCar",
+			"AddWarps": [
+			  "0 2 BusStop 22 9",
+			]
+		},
+		{
+			"LogName": "Niki Car Exterior appears",
+			"Action": "EditMap",
+			"When": {
+				"ArrivesbyCar": "true",
+			},
+			"Target": "Maps/BusStop",
+			"PatchMode": "Replace",
+			"FromFile": "assets/Maps/BusStop_NikiCar_{{CarAppearance}}.tmx",
+			"FromArea": {
+			  "X": 22,
+			  "Y": 0,
+			  "Width": 6,
+			  "Height": 6
+			},
+			"ToArea": {
+			  "X": 22,
+			  "Y": 0,
+			  "Width": 6,
+			  "Height": 6
+			},
+		},
+		{
+			"LogName": "Niki can get inside car",
+            "Action": "EditMap",
+			"When": {
+				"ArrivesbyCar": "true",
+			},
+			"Target": "Maps/BusStop",
+			"MapProperties": {
+						"NPCWarp": "27 3 Custom_SVTNiki_NikiCar 0 1"
+					},
+        },
+		{
+			"LogName": "Warp outside Niki Car",
+			"Action": "EditMap",
+			"When": {
+				"ArrivesbyCar": "true",
+			},
+			"Target": "Maps/Custom_SVTNiki_NikiCar",
+			"AddWarps": [
+			  "0 2 BusStop 28 3",
+			]
+		},
+		{
+			"LogName": "Blank JSON load",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/SVTNiki, Characters/schedules/SVTNiki, Strings/schedules/SVTNiki, Characters/Dialogue/MarriageDialogueSVTNiki",
+        	"FromFile": "assets/Data/Blank.json",
+		},
+		{
+			"LogName": "Niki exists",
+			"Action": "Include",
+			"FromFile": "assets/Data/NPCDisposition.json",
+		},
+		{
+        	"LogName": "Portraits",
+        	"Action": "Load",
+        	"Target": "Portraits/SVTNiki",
+        	"FromFile": "assets/Portraits/Niki.png",
+   		},
+		{
+        	"LogName": "Sprites",
+        	"Action": "Load",
+        	"Target": "Characters/SVTNiki",
+        	"FromFile": "assets/Characters/NikiSprites.png",
+   		},
+		{
+        	"LogName": "Object Image",
+        	"Action": "Load",
+        	"Target": "Mods/{{ModId}}/Objects",
+        	"FromFile": "assets/img/pillsObject.png",
+   		},
+		{
+        	"LogName": "Objects Data Include",
+        	"Action": "Include",
+        	"FromFile": "assets/Data/Objects.json",
+   		},
+		{
+        	"LogName": "Niki Dialogue Include",
+   		 	"Action": "Include",
+   		 	"FromFile": "assets/Data/Dialogue.json"
+    	},
+		{
+        	"LogName": "Niki Journalist Dialogue Include",
+   		 	"Action": "Include",
+   		 	"FromFile": "assets/Data/Dialogue_Journalist.json",
+			"When": {
+				"HasSeenEvent:hostPlayer |contains=SVTNiki10LastInterview": false,
+			}
+    	},
+		{
+        	"LogName": "Niki Quit Dialogue Include",
+   		 	"Action": "Include",
+   		 	"FromFile": "assets/Data/Dialogue_Quit.json",
+			"When": {
+				"HasSeenEvent:hostPlayer |contains=SVTNiki10LastInterview": true,
+			}
+    	},
+		{
+        	"LogName": "Niki Marriage Dialogue Include",
+   		 	"Action": "Include",
+   		 	"FromFile": "assets/Data/Dialogue_Marriage.json",
+    	},
+/*		{
+        	"LogName": "Niki No Caffeine Dialogue Include",
+   		 	"Action": "Include",
+   		 	"FromFile": "assets/Data/Dialogue_NoCaffeine.json",
+			"When": {
+				"HasSeenEvent:hostPlayer |contains=SVTNiki14Caffeine": true,
+			}
+    	}, */
+		{
+			"LogName": "Strings from Maps",
+			"Action": "Include",
+			"FromFile": "assets/Data/StringsFromMaps.json"
+		},
+		{
+			"LogName": "Niki 8 heart event map Load",
+			"Action": "Load",
+			"Target": "Maps/Forest_SVTNikiHorseride",
+			"FromFile": "assets/Maps/Forest_NikiHorseride.tmx"
+		},
+		{
+			"LogName": "Niki 8 heart event map Load",
+			"Action": "Load",
+			"Target": "Maps/Forest_SVTNikiHorseride2",
+			"FromFile": "assets/Maps/Forest_NikiHorseride2.tmx"
+		},
+
+		{
+			"LogName": "Other NPCs Dialogue Changes Include (Marnie)",
+			"Action": "Include",
+			"FromFile": "assets/Data/OtherNPCsDialogue.json"
+		},
+		{
+			"LogName": "Niki Animations Include",
+			"Action": "Include",
+			"FromFile": "assets/Data/animationDescriptions.json"
+		},
+		{
+        	"LogName": "Niki Schedule Include",
+			"Action": "Include",
+			"FromFile": "assets/Data/Schedule.json"
+    	},
+		{
+        	"LogName": "Niki Schedule Dialogue Include",
+			"Action": "Include",
+			"FromFile": "assets/Data/ScheduleDialogue.json"
+    	},
+		{
+        	"LogName": "Non-vegan food Context Tags Include",
+			"Action": "Include",
+			"FromFile": "assets/Data/ContextTags.json"
+    	},
+    	{
+   			"LogName": "Niki Gift Tastes Include",
+   			"Action": "Include",
+   			"FromFile": "assets/Data/gifttastes.json"
+   	 	},
+		{
+        	"LogName": "Niki Mail Include",
+        	"Action": "Include",
+        	"FromFile": "assets/Data/mail.json",
+   		},
+		{
+        	"LogName": "Niki Quests Include",
+        	"Action": "Include",
+        	"FromFile": "assets/Data/Quests.json",
+   		},
+		{
+        	"LogName": "Niki Events Include",
+        	"Action": "Include",
+        	"FromFile": "assets/Data/Events.json",
+   		},
+		{
+			"LogName": "Niki TriggerActions Include ",
+        	"Action": "Include",
+        	"FromFile": "assets/Data/TriggerActions.json",
+		},
+		{
+			"LogName": "Niki Festival Include",
+			"Action": "Include",
+			"FromFile": "assets/Data/Festivals.json"
+		},
+		{
+			"LogName": "Movie Concessions and Reactions Include",
+			"Action": "Include",
+			"FromFile": "assets/Data/Movies.json"
+		},
+		// Compatibility
+		{
+			"LogName": "SVE Compatibility Include",
+			"Action": "Include",
+			"FromFile": "assets/Data/Compat/SVE.json",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+			},
+		},
+		{
+			"LogName": "ES Compatibility Include",
+			"Action": "Include",
+			"FromFile": "assets/Data/Compat/ES.json",
+			"When": {
+				"HasMod |contains=LemurKat.EastScarpe.CP": true,
+			},
+		},
+		{
+			"LogName": "RSV Compatibility Include",
+			"Action": "Include",
+			"FromFile": "assets/Data/Compat/RSV.json",
+			"When": {
+				"HasMod |contains=Rafseazz.RSVCP": true,
+			},
+		},
+		{
+			"LogName": "ARV Compatibility Include",
+			"Action": "Include",
+			"FromFile": "assets/Data/Compat/ARV.json",
+			"When": {
+				"HasMod |contains=Himetarts.ARV.CP": true,
+			},
+		},
+
+	]
+	}

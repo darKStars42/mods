@@ -1,0 +1,302 @@
+{
+	"Changes":
+		[
+		
+		{
+         "Action": "Load", "Priority": "Low",
+         "Target": "{{ModId}}/AquariumFish",
+         "FromFile": "Assets/TileSheets/AA_AquariumFish.png"
+      },
+				
+	{			
+			"Action": "EditData",
+			"Target": "Data/Fish",
+			"Entries": {
+				"{{ModId}}.SmokeyGillcarp": "Smokey Gillcarp/25/floater/8/18/1000 1600/spring summer fall winter/both/690 .4 685 .1/1/.45/.1/0/true",
+				"{{ModId}}.RoyalGoby": "Royal Goby/95/floater/5/15/600 2400/spring summer fall winter/rainy/690 .1/4/.05/.1/8/false",
+				"{{ModId}}.LeafyAnabas": "Leafy Anabas/50/mixed/32/80/600 1200/spring summer fall winter/both/690 .4 685 .1/1/.4/.2/0/false",
+				"{{ModId}}.MidnightAyu": "Midnight Ayu/30/mixed/2/6/2000 2600/spring summer fall winter/both/690 .4 685 .1/1/.25/.3/0/true"
+			},
+		},
+		{
+			"LogName": "Aquarium data",
+			"Action": "EditData",
+			"Target": "Data/AquariumFish",
+			"Entries": { "{{ModId}}.SmokeyGillcarp": "0/fish/////{{ModId}}\\AquariumFish",
+				"{{ModId}}.RoyalGoby": "1/fish/////{{ModId}}\\AquariumFish",
+				"{{ModId}}.LeafyAnabas": "2/fish/////{{ModId}}\\AquariumFish",
+				"{{ModId}}.MidnightAyu": "3/fish/////{{ModId}}\\AquariumFish" }
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"Beach",
+				"Fish" 
+			],
+			"Entries": {
+				"{{ModId}}.beach": { 
+					"Chance": 1.0, 
+					"Id": "{{ModId}}.beach", 
+					"Season": "summer",
+					"ItemId": "{{ModId}}.LeafyAnabas",
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Locations",	
+			"TargetField": [
+				"Mountain",
+				"Fish" 
+			],
+			"Entries": {
+				"{{ModId}}.mountain": { 
+					"Chance": 1.0, 	
+					"Id": "{{ModId}}.mountain", 
+					"Season": "spring",
+					"ItemId": "{{ModId}}.MidnightAyu",
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"UndergroundMine",
+				"Fish" 
+			],
+			"Entries": {
+				"{{ModId}}.mine": { 
+					"Chance": 0.8, 
+					"Id": "{{ModId}}.mine", 
+					"ItemId": "{{ModId}}.SmokeyGillcarp",
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"Forest",
+				"Fish" 
+			],
+			"Entries": {
+				"{{ModId}}.forest": { 
+					"Chance": 0.6, 
+					"Id": "{{ModId}}.forest", 
+					"Season": "fall",
+					"ItemId": "{{ModId}}.RoyalGoby",
+					"BobberPosition": {
+  "X": 51,
+  "Y": 100,
+  "Width": 15,
+  "Height": 255
+},
+"CatchLimit": 1,
+"IsBossFish": "true",
+				}
+			}
+		},
+
+
+ {  
+         "Action": "EditData",
+         "Target": "Data/FishPondData",
+         "Entries": {
+            "{{ModId}}.RoyalGoby": {
+               "ID": "{{ModId}}.RoyalGoby",
+               "RequiredTags": [
+                  "item_RoyalGoby",
+               ],
+               "SpawnTime": -1,
+			   "WaterColor": [
+      {
+        "Id": "{{ModId}}.RoyalGoby",
+        "Color": "204 102 0",
+        "MinPopulation": 1,
+		        "MinUnlockedPopulationGate": 0,
+        "Condition": null
+      }
+    ],
+               "ProducedItems": [
+                  {
+                     "RequiredPopulation": 0,
+                     "Chance": 0.5,
+                     "ItemID": 812,
+                     "MinQuantity": 1,
+                     "MaxQuantity": 3
+                  }
+               ],
+               "PopulationGates": null,
+			   "MaxPopulation": 1
+            },
+			 "{{ModId}}.SmokeyGillcarp": {
+               "ID": "{{ModId}}.SmokeyGillcarp",
+               "RequiredTags": [
+                  "item_SmokeyGillcarp",
+               ],
+               "SpawnTime": 3,
+"WaterColor": [
+      {
+        "Id": "{{ModId}}.SmokeyGillcarp",
+        "Color": "192 192 192",
+        "MinPopulation": 1,
+		        "MinUnlockedPopulationGate": 0,
+        "Condition": null
+      }
+    ],
+               "ProducedItems": [
+                  {
+                     "RequiredPopulation": 10,
+                     "Chance": 0.4,
+                     "ItemID": 72,
+                     "MinQuantity": 1,
+                     "MaxQuantity": 5
+                  },
+				  {
+                     "RequiredPopulation": 6,
+                     "Chance": 0.75,
+                     "ItemID": 80,
+                     "MinQuantity": 1,
+                     "MaxQuantity": 4
+                  },
+                  {
+                     "RequiredPopulation": 0,
+                     "Chance": 0.75,
+                     "ItemID": 812,
+                     "MinQuantity": 1,
+                     "MaxQuantity": 2
+                  },
+               ],
+               "PopulationGates": { 
+						"3": [
+							"66 2" 
+						],
+						"5": [
+							"84 3", 
+							"86 3",
+						],
+						"7": [
+							"64 2"
+						],
+					},
+			   "MaxPopulation": 10
+            },
+			
+			"{{ModId}}.MidnightAyu": {
+               "ID": "{{ModId}}.MidnightAyu",
+               "RequiredTags": [
+                  "item_MidnightAyu",
+               ],
+               "SpawnTime": 3,
+"WaterColor": [
+      {
+        "Id": "{{ModId}}.MidnightAyu",
+        "Color": "0 0 102",
+        "MinPopulation": 1,
+		        "MinUnlockedPopulationGate": 0,
+        "Condition": null
+      }
+    ],
+               "ProducedItems": [
+                  {
+                     "RequiredPopulation": 10,
+                     "Chance": 0.1,
+                     "ItemID": 74,
+                     "MinQuantity": 1,
+                     "MaxQuantity": 1
+                  },
+				  {
+                     "RequiredPopulation": 4,
+                     "Chance": 0.75,
+                     "ItemID": 287,
+                     "MinQuantity": 1,
+                     "MaxQuantity": 5
+                  },
+                  {
+                     "RequiredPopulation": 0,
+                     "Chance": 0.75,
+                     "ItemID": 812,
+                     "MinQuantity": 1,
+                     "MaxQuantity": 2
+                  },
+               ],
+               "PopulationGates": { 
+						"3": [
+							"93 5" 
+						],
+						"5": [
+							"308 2", 
+							"305 2",
+						],
+						"7": [
+							"382 10"
+						],
+					},
+			   "MaxPopulation": 10
+            },
+			
+				"{{ModId}}.LeafyAnabas": {
+               "ID": "{{ModId}}.LeafyAnabas",
+               "RequiredTags": [
+                  "item_LeafyAnabas",
+               ],
+               "SpawnTime": 3,
+"WaterColor": [
+      {
+        "Id": "{{ModId}}.LeafyAnabas",
+        "Color": "76 153 0",
+        "MinPopulation": 1,
+		        "MinUnlockedPopulationGate": 0,
+        "Condition": null
+      }
+    ],
+               "ProducedItems": [
+                  {
+                     "RequiredPopulation": 10,
+                     "Chance": 0.3,
+                     "ItemID": 114,
+                     "MinQuantity": 1,
+                     "MaxQuantity": 2
+                  },
+				  {
+                     "RequiredPopulation": 4,
+                     "Chance": 0.75,
+                     "ItemID": 259,
+                     "MinQuantity": 1,
+                     "MaxQuantity": 5
+                  },
+                  {
+                     "RequiredPopulation": 0,
+                     "Chance": 0.75,
+                     "ItemID": 812,
+                     "MinQuantity": 1,
+                     "MaxQuantity": 2
+                  },
+               ],
+			   
+			   
+			   
+               "PopulationGates": { 
+						"3": [
+							"771 10" 
+						],
+						"5": [
+							"770 5", 
+						],
+						"7": [
+							"Moss 15"
+						],
+					},
+			   "MaxPopulation": 10
+            },
+			
+			
+         },
+      },
+	  
+	  
+
+]
+}

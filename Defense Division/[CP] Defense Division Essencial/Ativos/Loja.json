@@ -1,0 +1,564 @@
+{
+  "Changes": [
+  
+		//==========================================
+		//  Gambiarra Para Funcionar a Moda Antiga  
+		//==========================================
+	{
+	"Action": "EditMap",
+	"Target": "Maps/Casa.Interior",
+	"When": { "HasSeenEvent: anyPlayer|contains=91805264": false },
+	"MapTiles": [
+		{
+		"Position": { "X": 15, "Y": 9 },
+		"Layer": "Buildings",
+		"SetProperties": { "Action": "OpenShop Kiyuga.DD_Edward.Shop none 600 2600 15 8 2 2" }
+		},
+		{
+		"Position": { "X": 16, "Y": 9 },
+		"Layer": "Buildings",
+		"SetProperties": { "Action": "OpenShop Kiyuga.DD_Edward.Shop none 600 2600 15 8 2 2" }
+		}
+	  ]
+	},
+	{ 
+    "Logname": "Loja do Edward",
+    "Action": "EditData",
+    "Target": "Data/Shops",
+    "Entries": {
+		
+		//-----------------------------------
+		//      	 Loja Edward             
+		//-----------------------------------
+		
+    "Kiyuga.DD_Edward.Shop": { "Owners": [ 
+		{
+			"Name": "None",
+            "Id": "Closed",
+            "Dialogues": null,
+            "ClosedMessage": "{{i18n:DD.Loja.01.A}}"
+        },
+        {
+            "Name": "Edward",
+            "Dialogues": [ {
+                "Id": "Kiyuga.DD_Edward.Shop",
+                "Dialogue": "{{i18n:DD.Loja.01.B}}"
+                }
+            ]
+        }
+    ],
+
+    "Items": [
+	{	//Chapéus
+		"AvoidRepeat": true,
+        "Price": 0,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(H)Kiyuga.DD_Chapéu.Papel"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 250",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 450,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(H)Kiyuga.DD_Chapeu.Aluminio"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 500, SEASON Summer",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 750,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(H)Kiyuga.DD_Cabeça.Cavalo"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 750, SEASON Winter",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 1225,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(H)Kiyuga.DD_Mascara.Terror"
+    },
+	{	//Aneis
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 250",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 2500,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.Caveira"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 250",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 2500,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.Esqueleto"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 250",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 2500,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.FantasmaP"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 250",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 2500,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.Golem"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 250",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 2500,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.Inseto"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 250",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 2500,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.Metal"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 250",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 2500,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.Múmia"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 500",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 1000,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.Chikita"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 500",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 5000,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.FantasmaG"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 500",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 5000,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.Rex"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 500",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 5000,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(O)Kiyuga.DD_Anel.Urso"
+    },
+	{	//Armas
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 610,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(W)Kiyuga.DD_Coxa.Plastico"
+    },
+	{
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 3110,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(W)Kiyuga.DD_Galinha.Borracha"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 250",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 1250,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(W)Kiyuga.DD_Garrafa.Quebrada"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 250",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 1835,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(W)Kiyuga.DD_Revolver"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 500",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 4300,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(W)Kiyuga.DD_Pedaço.Tábua"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 500",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 885,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(W)Kiyuga.DD_Chinelo"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 500",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 1000,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(W)Kiyuga.DD_Carteira.Trabalho"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 750",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 6666,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(W)Kiyuga.DD_Graveto"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 750",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 1500,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(W)Kiyuga.DD_Bota.Velha"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 750",
+        "AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 2800,
+        "AvailableStockLimit": "Global",
+		"ItemId": "(W)Kiyuga.DD_Lapis"
+    },
+	{	//Itens Basicos
+        "AvailableStock": 6,
+		"AvoidRepeat": true,
+        "Price": 40,
+        "AvailableStockLimit": "Global",
+		"ItemId": "93"
+    },
+	{
+        "AvailableStock": 18,
+		"AvoidRepeat": true,
+        "Price": 112,
+        "AvailableStockLimit": "Global",
+		"ItemId": "441"
+    },
+	{
+        "AvailableStock": 10,
+		"AvoidRepeat": true,
+        "Price": 75,
+        "AvailableStockLimit": "Global",
+		"ItemId": "286"
+    },
+	{
+        "AvailableStock": 5,
+		"AvoidRepeat": true,
+        "Price": 125,
+        "AvailableStockLimit": "Global",
+		"ItemId": "287"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 500",
+        "AvailableStock": 12,
+		"AvoidRepeat": true,
+        "Price": 418,
+        "AvailableStockLimit": "Global",
+		"ItemId": "288"
+    },
+	{
+        "AvailableStock": 22,
+		"AvoidRepeat": true,
+        "Price": 38,
+        "AvailableStockLimit": "Global",
+		"ItemId": "92"
+    },
+	{
+        "AvailableStock": 7,
+		"AvoidRepeat": true,
+        "Price": 100,
+        "AvailableStockLimit": "Global",
+		"ItemId": "78"
+    },
+	{
+        "AvailableStock": 8,
+		"AvoidRepeat": true,
+        "Price": 44,
+        "AvailableStockLimit": "Global",
+		"ItemId": "403"
+    },
+	{
+        "AvailableStock": 5,
+		"AvoidRepeat": true,
+        "Price": 60,
+        "AvailableStockLimit": "Global",
+		"ItemId": "684"
+    },
+		{
+        "AvailableStock": 8,
+		"AvoidRepeat": true,
+        "Price": 54,
+        "AvailableStockLimit": "Global",
+		"ItemId": "766"
+    },
+	{
+        "AvailableStock": 16,
+		"AvoidRepeat": true,
+        "Price": 214,
+        "AvailableStockLimit": "Global",
+		"ItemId": "768"
+    },
+		{
+        "AvailableStock": 9,
+		"AvoidRepeat": true,
+        "Price": 269,
+        "AvailableStockLimit": "Global",
+		"ItemId": "769"
+    },
+	{
+        "AvailableStock": 4,
+		"AvoidRepeat": true,
+        "Price": 75,
+        "AvailableStockLimit": "Global",
+		"ItemId": "767"
+    },
+	{
+        "AvailableStock": 13,
+		"AvoidRepeat": true,
+        "Price": 89,
+        "AvailableStockLimit": "Global",
+		"ItemId": "535"
+    },
+	{
+        "AvailableStock": 22,
+		"AvoidRepeat": true,
+        "Price": 136,
+        "AvailableStockLimit": "Global",
+		"ItemId": "382"
+    },
+	{
+        "AvailableStock": 12,
+		"AvoidRepeat": true,
+        "Price": 82,
+        "AvailableStockLimit": "Global",
+		"ItemId": "378"
+    },
+	{
+        "AvailableStock": 14,
+		"AvoidRepeat": true,
+        "Price": 162,
+        "AvailableStockLimit": "Global",
+		"ItemId": "380"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 500",
+        "AvailableStock": 12,
+		"AvoidRepeat": true,
+        "Price": 376,
+        "AvailableStockLimit": "Global",
+		"ItemId": "386"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 750",
+        "AvailableStock": 1,
+		"AvoidRepeat": true,
+        "Price": 985,
+        "AvailableStockLimit": "Global",
+		"ItemId": "688"
+    },
+	{
+		"Condition": "PLAYER_FRIENDSHIP_POINTS Current Edward 750",
+        "AvailableStock": 1,
+		"AvoidRepeat": true,
+        "Price": 996,
+        "AvailableStockLimit": "Global",
+		"ItemId": "689"
+    }
+    ]
+	},
+		//-----------------------------------
+		//      	 Loja Isis               
+		//-----------------------------------
+		
+        "Kiyuga.DD_Isis.Shop": { "Owners": [ 
+		{
+			"Name": "None",
+            "Id": "Closed",
+            "Dialogues": null,
+            "ClosedMessage": "{{i18n:DD.Loja.02.A}}"
+        },
+        {
+            "Name": "None",
+            "Dialogues": [ {
+                "Id": "Kiyuga.DD_Isis.Shop",
+                "Dialogue": "{{i18n:DD.Loja.02.B}}"
+                }
+            ]
+        }
+    ],
+	"Items": [	//Itens Basicos
+	{
+        "AvailableStock": 2,
+		"AvoidRepeat": true,
+        "Price": 0,
+        "AvailableStockLimit": "Global",
+		"ItemId": "395"
+    },
+	{
+        "Condition": "SEASON Fall",
+		"AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 0,
+        "AvailableStockLimit": "Global",
+		"ItemId": "253"
+    },
+	{
+        "Condition": "SEASON Winter",
+		"AvailableStock": 1,
+		"AvoidRepeat": false,
+        "Price": 0,
+        "AvailableStockLimit": "Global",
+		"ItemId": "253"
+    }
+	]
+	},
+		//-----------------------------------
+		//      	 Loja Miranda            
+		//-----------------------------------
+		
+        "Kiyuga.DD_Miranda.Shop": { "Owners": [ 
+		{
+			"Name": "None",
+            "Id": "Closed",
+            "Dialogues": null,
+            "ClosedMessage": "{{i18n:DD.Loja.03.A}}"
+        },
+        {
+            "Name": "None",
+            "Dialogues": [ {
+                "Id": "Kiyuga.DD_Miranda.Shop",
+                "Dialogue": "{{i18n:DD.Loja.03.B}}"
+                }
+            ]
+        }
+    ],
+	"Items": [	//Itens Basicos
+	{
+        "Condition": "SEASON Spring",
+		"AvailableStock": 3,
+		"AvoidRepeat": true,
+        "Price": 0,
+        "AvailableStockLimit": "Global",
+		"RandomItemId": [ "18", "22", "591", "597" ]
+    },
+	{
+        "Condition": "SEASON Spring",
+		"AvailableStock": 1,
+		"AvoidRepeat": true,
+        "Price": 0,
+        "AvailableStockLimit": "Global",
+		"RandomItemId": [ "591", "597", "22", "18" ]
+    },
+	{
+        "Condition": "SEASON Summer",
+		"AvailableStock": 3,
+		"AvoidRepeat": true,
+        "Price": 0,
+        "AvailableStockLimit": "Global",
+		"RandomItemId": [ "376", "593", "421", "402", "259", ]
+    },
+	{
+        "Condition": "SEASON Summer",
+		"AvailableStock": 1,
+		"AvoidRepeat": true,
+        "Price": 0,
+        "AvailableStockLimit": "Global",
+		"RandomItemId": [ "259", "421", "76", "593", "402", ]
+    },
+	{
+        "Condition": "SEASON Fall",
+		"AvailableStock": 4,
+		"AvoidRepeat": true,
+        "Price": 0,
+        "AvailableStockLimit": "Global",
+		"RandomItemId": [ "421", "595" ]
+    }
+	]
+    },
+		//-----------------------------------
+		//      	 Loja Adega              
+		//-----------------------------------
+		
+        "Kiyuga.DD_Adega.Shop": { "Owners": [ 
+		{
+			"Name": "None",
+            "Id": "Closed",
+            "Dialogues": null,
+            "ClosedMessage": "{{i18n:DD.Loja.04.A}}"
+        },
+        {
+            "Name": "None",
+            "Dialogues": [ {
+                "Id": "Kiyuga.DD_Adega.Shop",
+                "Dialogue": "{{i18n:DD.Loja.04.B}}"
+                }
+            ]
+        }
+    ],
+	"Items": [	//Itens Basicos
+	{
+        "AvailableStock": 10,
+		"AvoidRepeat": true,
+        "Price": 330,
+        "AvailableStockLimit": "Global",
+		"ItemId": "346"
+    },
+	{
+        "AvailableStock": 15,
+		"AvoidRepeat": true,
+        "Price": 450,
+        "AvailableStockLimit": "Global",
+		"ItemId": "348"
+    },
+	{
+        "AvailableStock": 24,
+		"AvoidRepeat": true,
+        "Price": 250,
+        "AvailableStockLimit": "Global",
+		"ItemId": "350"
+    },
+	{
+        "AvailableStock": 12,
+		"AvoidRepeat": true,
+        "Price": 400,
+        "AvailableStockLimit": "Global",
+		"ItemId": "303"
+    },
+	{
+        "AvailableStock": 8,
+		"AvoidRepeat": true,
+        "Price": 375,
+        "AvailableStockLimit": "Global",
+		"ItemId": "459"
+    }
+	]
+	}
+   }
+  }
+ ]
+}

@@ -1,0 +1,263 @@
+{
+	"Format": "2.0.0",
+	"ConfigSchema": {
+		"Portrait-Spring": {
+			"AllowValues": "Default-Pauline",
+			"Description": "Determines what portrait Pauline will use in the spring.",
+			"Default": "Default-Pauline"
+		},
+		"Portrait-Summer": {
+			"AllowValues": "Default-Pauline",
+			"Description": "Determines what portrait Pauline will use in the summer.",
+			"Default": "Default-Pauline"
+		},
+		"Portrait-Fall": {
+			"AllowValues": "Default-Pauline",
+			"Description": "Determines what portrait Pauline will use in the fall.",
+			"Default": "Default-Pauline"
+		},
+		"Portrait-Winter": {
+			"AllowValues": "Default-WinterPauline",
+			"Description": "Determines what portrait Pauline will use in the winter.",
+			"Default": "Default-WinterPauline"
+		},
+		"Portrait-Resort": {
+			"AllowValues": "Default-BlackSwimsuit",
+			"Description": "Determines what portrait Pauline will use in the resort.",
+			"Default": "Default-BlackSwimsuit"
+		},
+		"Spritesheet-Spring": {
+			"AllowValues": "Default-Sprite",
+			"Description": "Determines what spritesheet Pauline will use in the spring.",
+			"Default": "Default-Sprite"
+		},
+		"Spritesheet-Summer": {
+			"AllowValues": "Default-Sprite",
+			"Description": "Determines what spritesheet Pauline will use in the summer.",
+			"Default": "Default-Sprite"
+		},
+		"Spritesheet-Fall": {
+			"AllowValues": "Default-Sprite",
+			"Description": "Determines what spritesheet Pauline will use in the fall.",
+			"Default": "Default-Sprite"
+		},
+		"Spritesheet-Winter": {
+			"AllowValues": "Default-SpriteW",
+			"Description": "Determines what spritesheet Pauline will use in the winter.",
+			"Default": "Default-SpriteW"
+		},
+		"Spritesheet-Resort": {
+			"AllowValues": "Default-SpriteB",
+			"Description": "Determines what spritesheet Pauline will use in the resort.",
+			"Default": "Default-SpriteB"
+		}
+	},
+	"Changes": [
+		{
+			"LogName": "NPC Data",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"Pauline": {
+					"DisplayName": "Pauline",
+					"Gender": "Female",
+					"Age": "Adult",
+					"Manner": "Polite",
+					"SocialAnxiety": "Outgoing",
+					"Optimism": "Positive",
+					"BirthSeason": "spring",
+					"BirthDay": "28",
+					"HomeRegion": "Town",
+					"CanBeRomanced": true,
+					"CanVisitIsland": true,
+					"CanSocialize": true,
+					"SocialTab": "UnknownUntilMet",
+					"IsDarkSkinned": false,
+					"DumpsterDiveEmote": 8,
+					"DumpsterDiveFriendshipEffect": -25,
+					"CanGreetNearbyCharacters": true,
+					"SpouseWantsChildren": true,
+					"SpouseAdopts": null,
+					"IntroductionsQuest": true,
+					"PerfectionScore": true,
+					"SpouseGiftJealousy": true,
+					"SpouseGiftJealousyFriendshipChange": -30,
+					"WinterStarParticipant": true,
+					"SpouseRoom": {
+						"MapAsset": "Pauline_SpouseRoom"
+					},
+					"SpousePatio": {
+						"MapAsset": "Pauline_SpousePatios",
+						"SpriteAnimationFrames": [
+							[
+								16,
+								500
+							],
+							[
+								17,
+								800
+							],
+							[
+								18,
+								500
+							],
+							[
+								19,
+								800
+							]
+						]
+					},
+					"WinterStarGifts": [
+						{
+							"Id": "PaulineWinterStarGift1",
+							"ItemId": "(F)724"
+						},
+						{
+							"Id": "PaulineWinterStarGift2",
+							"ItemId": "(F)2514"
+						}
+					],
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "LeahHouse",
+							"Tile": {
+								"X": 8,
+								"Y": 5
+							},
+							"Direction": "up"
+						}
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Pauline - Resort Dialogue",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Pauline",
+			"Entries": {
+				"Resort_Shore": "The sound of the waves is so calming...$1#$b#I could get lost in the rhythm of the ocean.$1",
+				"Resort_Umbrella": "This shade is perfect! A break from the sun while still enjoying the view.$1",
+				"Resort_Chair": "Ah, this chair is so comfortable! I could nap here for hours.$1",
+				"Resort_Wander": "There’s so much to explore here! Every corner has a little piece of paradise.$1",
+				"Resort_Bar": "I wonder if they have any fruity mocktails? Something refreshing would be nice!$1",
+				"Resort": "This place is paradise!$1#$b#I feel like I could spend all day relaxing here...$1",
+				"Resort_Entering": "I can't believe I’m heading to Ginger Island!$1#$b#I’ve heard the views are breathtaking.$1",
+				"Resort_Leaving": "It was a great day, but it's time to get back to work...$2#$b#Hopefully, I can visit again soon.$1",
+				"Resort_bar": "I’m not much of a drinker, but maybe just one won’t hurt...$2"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Target": "Characters/Toddler",
+			"FromFile": "assets/Image/BabyBoy.png",
+			"When": {
+				"Relationship:Pauline": "Married"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Target": "Characters/Toddler_girl",
+			"FromFile": "assets/Image/BabyGirl.png",
+			"When": {
+				"Relationship:Pauline": "Married"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Maps/Pauline_SpouseRoom",
+			"FromFile": "assets/Maps/PaulineSpouseRoom.tmx"
+		},
+		{
+			"Action": "Load",
+			"Target": "Maps/Pauline_SpousePatios",
+			"FromFile": "assets/Maps/PaulineSpousePatios.tmx"
+		},
+		{
+			"LogName": "NPC Gift Tastes",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"Pauline": "Wow! Thank you @. I love this!$1/22 395 254 834 72 216 237 720/How nice of you to give me this. Thanks!$0/211 223 222 234 728 730 -79 -81/Just so you know, I don't like this at all.$3/-2 -7 72 406 256 -12 190 272 307/You know, you're quite lazy for asking other people to throw away your garbage!$5/342 168 170 171 172/Hey, thanks!/424 426 306 307 308 428 446 78 725 726 768 769 224 -4 142 721 -74/"
+			}
+		},
+		{
+			"LogName": "Pauline - Movies",
+			"Action": "Include",
+			"FromFile": "assets/data/Theater.json"
+		},
+		{
+			"LogName": "Animations",
+			"Action": "EditData",
+			"Target": "Data/animationdescriptions",
+			"Entries": {
+				"pauline_writes": "16/16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 17 17 17 17 17 17 17 17 17 17 17 17 17 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 19 19 19 19 19 19 19 19 19 19 18 18 18 18 18 18 18 18 18 18 18 18 18 18 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17/19",
+				"pauline_sleep": "32/32 33 33 33 32 32 33/32",
+				"pauline_phone": "34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34/35 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34/34",
+				"pauline_drink": "16/16 17 17 18 18 19 19 18 18 17 17 18 18 19 19 18 18 17 17/16"
+			}
+		},
+		{
+			"LogName": "Schedule Dialogue Strings",
+			"Action": "Load",
+			"Target": "Strings/schedules/Pauline",
+			"FromFile": "assets/Schedule/ScheduleDialogueStrings.json"
+		},
+		{
+			"LogName": "Pauline's Schedule",
+			"Action": "Load",
+			"Target": "Characters/schedules/Pauline",
+			"FromFile": "assets/Schedule/Schedule.json"
+		},
+		{
+			"LogName": "Pauline's Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/Pauline",
+			"FromFile": "assets/Dialogue/Dialogue.json"
+		},
+		{
+			"LogName": "Marriage Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/MarriageDialoguePauline",
+			"FromFile": "assets/Dialogue/MarriageDialogue.json"
+		},
+		{
+			"LogName": "Engagement Dialogue",
+			"Action": "EditData",
+			"Target": "Data/EngagementDialogue",
+			"Entries": {
+				"Pauline0": "I can’t believe this is happening!$4#$b#I’ve always dreamed of a day like this, but I never imagined it would be with someone who means so much to me...$4#$b#Yes! A thousand times, yes!$4",
+				"Pauline1": "I used to think I knew what happiness was, but being here with you, I realize it’s so much more.$4#$b#I’d be honored to spend the rest of my life by your side... Yes, I’ll marry you.$4"
+			}
+		},
+		{
+			"LogName": "Wedding Vows Fix",
+			"Action": "EditData",
+			"Target": "strings/StringsFromCSFiles",
+			"Entries": {
+				"Utility.cs.5371": "@... Pauline... #$b# As the mayor of Pelican Town, and regional bearer of the matrimonial seal, I now pronounce you husband and wife!$h",
+				"Utility.cs.5377": "@... Pauline... #$b# As the mayor of Pelican Town, and regional bearer of the matrimonial seal, I now pronounce you wife and..., well, wife!$h",
+				"Utility.cs.5367": "When @ first arrived in Pelican Town, no one knew if he'd fit in with our community...#$b#But from this day forward, @ is going to be as much a part of this town as any of us!$h#$b#It is my great honor on this day {0} of {1}, to unite @ and Pauline in the bonds of marriage.",
+				"Utility.cs.5369": "When @ first arrived in Pelican Town, no one knew if she'd fit in with our community...#$b#But from this day forward, @ is going to be as much a part of this town as any of us!$h#$b#It is my great honor on this day {0} of {1}, to unite @ and Pauline in the bonds of marriage.",
+			},
+			"Conditions": {
+				"Relationship:Pauline": "Engaged, Married"
+			}
+		},
+		{
+			"LogName": "Pauline - Sprites and Portraits",
+			"Action": "Include",
+			"FromFile": "assets/sprites-portraits.json"
+		},
+		{
+			"LogName": "Festival Include",
+			"Action": "Include",
+			"FromFile": "assets/data/FestivalData.json"
+		},
+		{
+			"LogName": "Heart Events",
+			"Action": "Include",
+			"FromFile": "assets/data/events.json"
+		}
+	]
+}

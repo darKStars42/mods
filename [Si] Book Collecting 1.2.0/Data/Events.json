@@ -1,0 +1,154 @@
+{
+
+	"Changes": [
+
+	// Book fair mail //////////////////////////////////////////////////////////
+
+	{
+		"Action": "EditData",
+		"Target": "Data/TriggerActions",
+		"Entries": {
+			"{{ModId}}_FairSendBook": {
+				"Id": "{{ModId}}_FairSendBook",
+				"MarkActionApplied": true,
+				"Trigger": "DayEnding",
+				"Condition": "PLAYER_STAT Current bc_hasbooks 15, SEASON Spring, DAY_OF_MONTH 7",
+				"Actions": [
+					"AddMail All {{ModId}}_BookFairMail tomorrow",
+					"AddMail All {{ModId}}_StartBookFair",
+				]
+			}
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Data/mail",
+		"Entries": {
+			"{{ModId}}_BookFairMail": "{{i18n:Si.BC.BFMailContent}}[#]{{i18n:Si.BC.BFName}}",
+		},
+	},
+
+	// Parent mails //////////////////////////////////////////////////////////
+
+	// Dad
+
+	{
+		"Action": "EditData",
+		"Target": "Data/TriggerActions",
+		"Entries": {
+			"{{ModId}}_DadSendBook": {
+				"Id": "{{ModId}}_DadSendBook",
+				"MarkActionApplied": true,
+				"Trigger": "DayEnding",
+				"Condition": "PLAYER_STAT Current bc_hasbooks 5",
+				"Actions": [
+					"AddMail Current {{ModId}}_DadBookMail tomorrow",
+				]
+			}
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Data/mail",
+		"Entries": {
+			"{{ModId}}_DadBookMail": "{{i18n:Si.BC.DadMailContent}}%action Additem (O){{ModId}}_HomeownerBookNote%% %action AddMail Current {{ModId}}_HasHomeownerBook%%[#]{{i18n:Si.BC.DadMailName}}",
+		},
+	},
+
+	// Mom
+
+	{
+		"Action": "EditData",
+		"Target": "Data/TriggerActions",
+		"Entries": {
+			"{{ModId}}_MomSendBook": {
+				"Id": "{{ModId}}_MomSendBook",
+				"MarkActionApplied": true,
+				"Trigger": "DayEnding",
+				"Condition": "PLAYER_STAT Current bc_hasbooks 20",
+				"Actions": [
+					"AddMail Current {{ModId}}_MomBookMail tomorrow",
+				]
+			}
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Data/mail",
+		"Entries": {
+			"{{ModId}}_MomBookMail": "{{i18n:Si.BC.MomMailContent}}%action Additem (O){{ModId}}_CareBookNote%% %action AddMail Current {{ModId}}_HasCareBook%%[#]{{i18n:Si.BC.MomMailName}}",
+		},
+	},
+
+	// Elliot Event //////////////////////////////////////////////////////////
+
+	{
+		"Action": "EditData",
+		"Target": "Data/Events/Farm", // e 39 Elliott book choice event
+		"Entries": {
+			"{{ModId}}_BookType/e 39/f Elliott 500": "none/-1000 -1000/farmer -100 -100 2/fork 958699 {{ModId}}_TowerEvent/fork 958700 {{ModId}}_StationEvent/action AddMail Current {{ModId}}_PlanetFlag received/end",
+			"{{ModId}}_TowerEvent": "action AddMail Current {{ModId}}_TowerFlag received/end",
+			"{{ModId}}_StationEvent": "action AddMail Current {{ModId}}_StationFlag received/end",
+			}
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Data/TriggerActions",
+		"Entries": {
+			"{{ModId}}_ElliotSendBook": {
+				"Id": "{{ModId}}_ElliotSendBook",
+				"MarkActionApplied": true,
+				"Trigger": "DayEnding",
+				"Condition": "PLAYER_HAS_SEEN_EVENT Current 1848481, PLAYER_HAS_SEEN_EVENT Current {{ModId}}_BookType",
+				"Actions": [
+					"AddMail Current {{ModId}}_ElliotBookMail tomorrow",
+				]
+			}
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Data/mail",
+		"Entries": {
+			"{{ModId}}_ElliotBookMail": "{{i18n:Si.BC.ElliottMailContent}}%action Additem (O){{ModId}}_ElliotTowerBookNote%% %action AddMail Current {{ModId}}_HasElliotTowerBook%%[#]{{i18n:Si.BC.ElliottMailName}}",
+		},
+		"When": {
+				"HasFlag: |contains={{ModId}}_TowerFlag": true,
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Data/mail",
+		"Entries": {
+			"{{ModId}}_ElliotBookMail": "{{i18n:Si.BC.ElliottMailContent}}%action Additem (O){{ModId}}_ElliotStationBookNote%% %action AddMail Current {{ModId}}_HasElliotStationBook%%[#]{{i18n:Si.BC.ElliottMailName}}",
+		},
+		"When": {
+				"HasFlag: |contains={{ModId}}_StationFlag": true,
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Data/mail",
+		"Entries": {
+			"{{ModId}}_ElliotBookMail": "{{i18n:Si.BC.ElliottMailContent}}%action Additem (O){{ModId}}_ElliotPlanetBookNote%% %action AddMail Current {{ModId}}_HasElliotPlanetBook%%[#]{{i18n:Si.BC.ElliottMailName}}",
+		},
+		"When": {
+				"HasFlag: |contains={{ModId}}_PlanetFlag": true,
+		},
+	},
+
+	// Bottle Note Quest //////////////////////////////////////////////////////////
+
+	// End //////////////////////////////////////////////////////////
+
+	]
+
+
+}

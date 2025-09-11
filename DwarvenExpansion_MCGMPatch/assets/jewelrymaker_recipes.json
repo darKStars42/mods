@@ -1,0 +1,46 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Strings/Objects",
+            "Entries": {
+                "{{ModId}}_Jewelry_Earings_Jeweled_Display_Name": "{{i18n:Earings.Output.ObjectDisplayName}}"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": [
+                "(BC)mytigio.dwarven_expansion_JewelryMaker",
+                "OutputRules",
+                "Jewelry",
+                "OutputItem"
+            ],
+            "Entries": {
+                "Jewelry_E_Jeweled": {
+                    "Id": "Jewelry_E_Jeweled",
+                    "ItemId": "{{ModId}}_Jewelry_Earings_Jeweled",
+                    "CopyPrice": true,
+                    "CopyQuality": true,
+                    "CopyColor": true,
+                    "ObjectInternalName": "{0} Earings",
+                    "ObjectDisplayName": "[LocalizedText Strings/Objects:{{ModId}}_Jewelry_Earings_Jeweled_Display_Name %PRESERVED_DISPLAY_NAME]",
+                    "PreserveId": "DROP_IN",
+                    "Condition": "ITEM_ID Input (O)Alexandrite (O)Ammolite (O)BlueZircon (O)BrownZircon (O)Clinohumite (O)BlueCoral (O)BrownCoral (O)GreenCoral (O)PurpleCoral (O)Cymophane (O)FireAgate (O)Fluorite (O)LavaCrystal (O)MossAgate (O)Andesine (O)Aventurine (O)LavenderQuartz (O)RutilatedQuartz (O)RedZircon (O)PurpleSapphire (O)VioletSapphire (O)StarGarnet (O)GoldTopaz (O)SkyBlueTopaz (O)YellowTopaz (O)YellowZircon (O)Zircon",
+                    "PriceModifiers": [
+                        {
+                            "ID": "increase_base_for_gold_bar",
+                            "Modification": "Add",
+                            "Amount": 250
+                        },
+                        {
+                            "ID": "multiply",
+                            "Modification": "Multiply",
+                            "Amount": 3.00
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

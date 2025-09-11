@@ -1,0 +1,55 @@
+{
+  "Changes": [
+
+ //Items//
+    
+    //seacrystalflask//
+    {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "dreamy.kickitspot_SeaCrystalFlask": {
+                    "Name": "Sea Crystal Flask",
+                    "DisplayName": "{{i18n:Sea-Crystal-Flask_Translated}}",
+                    "Description": "{{i18n:Sea-Crystal-Flask-Description_Translated}}",
+                    "Type": "Basic",
+                    "Category": 0,
+                    "Price": 4000,
+                    "CanTrash": false,
+                    "CanSell": true,
+                    
+                    "Texture": "Mods/CapeStardew/Objects/Sea Crystal Flask",
+                    "SpriteIndex": 0,
+                    "IsDrink": false,
+                    "ContextTags": [
+                        "color_blue",
+                        "Seafaring",
+                        "Antique",
+                        "magic_flask",
+                    ],
+         
+                }
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Mods/CapeStardew/Objects/Sea Crystal Flask",
+            "FromFile": "Objects/{{TargetWithoutPath}}/object.png"
+        },
+        
+          {
+			"Action": "EditData",
+			"Target": "spacechase0.SpaceCore/ObjectExtensionData",
+			"Entries": {
+				"{{ModId}}_SeaCrystalFlask": { // The object ID//
+					"UseForTriggerAction": true,
+				}
+			},
+			"When": {
+				"HasMod": "spacechase0.SpaceCore",
+			}
+		},
+        
+        
+        ]
+        }

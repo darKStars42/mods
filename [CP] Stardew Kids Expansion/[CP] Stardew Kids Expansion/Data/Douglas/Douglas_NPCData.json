@@ -1,0 +1,135 @@
+{
+	"Changes": [
+		{
+			"LogName": "NPC Manifestation",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"Douglas": {
+					"DisplayName": "{{i18n: SKE.Douglas}}",
+					"Gender": "Male",
+					"Age": "Child",
+					"BirthSeason": "Winter",
+					"BirthDay": 7,
+					"HomeRegion": "Other",
+					"Manner": "Polite",
+					"SocialAnxiety": "Outgoing",
+					"Optimism": "Neutral",
+					"CanBeRomanced": false,
+					"LoveInterest": null,
+					"IntroductionsQuest": "{{IncludeInIntroductions}}",
+					"CanVisitIsland": false,
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "WizardHouse",
+							"Tile": {
+								"X": 16,
+								"Y": "{{DouglasLUTICompatY}}"
+							},
+							"Direction": "Down"
+						}
+					],
+					"Breather": false,
+					"Appearance": [
+						{
+							"Id": "Douglas.Spring",
+							"Season": "Spring",
+							"Portrait": "Portraits/Douglas_Spring",
+							"Sprite": "Characters/Douglas_Spring"
+						},
+						{
+							"Id": "Douglas.Summer",
+							"Season": "Summer",
+							"Portrait": "Portraits/Douglas_Summer",
+							"Sprite": "Characters/Douglas_Summer"
+						},
+						{
+							"Id": "Douglas.Fall",
+							"Season": "Fall",
+							"Portrait": "Portraits/Douglas_Fall",
+							"Sprite": "Characters/Douglas_Fall"
+						},
+						{
+							"Id": "Douglas.Winter",
+							"Season": "Winter",
+							"Portrait": "Portraits/Douglas_Winter",
+							"Sprite": "Characters/Douglas_Winter"
+						}
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Douglas Base Art Loads",
+			"Action": "Load",
+			"Target": "Portraits/Douglas, Characters/Douglas",
+			"FromFile": "Assets/Douglas/{{Target}}_Spring.png"
+		},
+		{
+			"LogName": "Douglas Seasonal Art Loads",
+			"Action": "Load",
+			"Target": "Portraits/Douglas_Spring, Characters/Douglas_Spring, Portraits/Douglas_Summer, Characters/Douglas_Summer, Portraits/Douglas_Fall, Characters/Douglas_Fall, Portraits/Douglas_Winter, Characters/Douglas_Winter",
+			"FromFile": "assets/Douglas/{{Target}}.png"
+		},
+		{
+			"LogName": "Douglas Dialogue & Schedule Blank",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/Douglas, Characters/schedules/Douglas",
+			"FromFile": "Data/blank.json"
+		},
+		{
+			"LogName": "Douglas Dialogue & Schedule Includes",
+			"Action": "Include",
+			"FromFile": "Data/Douglas/Douglas_Dialogue.json, Data/Douglas/Douglas_Schedule.json"
+		},
+		{
+			"LogName": "Douglas Festival Includes",
+			"Action": "Include",
+			"FromFile": "Data/Douglas/Douglas_Festivals.json",
+			"When": {
+				"VisitFestivals": "True"
+			}
+		},
+		{
+			"LogName": "Douglas Gift Tastes",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"Douglas": "{{i18n: SKE.Douglas.love}}/119 575 308 746 769 795/{{i18n: SKE.Douglas.like}}/680 799 798 767 305 420 422 682 156/{{i18n: SKE.Douglas.dislike}}/18 22 402 418 421 595 597/{{i18n: SKE.Douglas.hate}}/221 524 346/{{i18n: SKE.Douglas.neutral}}/424 426 306 307 308 428 446 78 725 726 768 769 -4 142 721 681 688 689 690 -74 309 310 311/"
+			}
+		},
+		{
+			"LogName": "Douglas Room",
+			"Action": "EditMap",
+			"Target": "Maps/WizardHouse",
+			"FromFile": "Assets/Douglas/DouglasRoom{{SVECompat}}",
+			"ToArea": {
+				"X": 13,
+				"Y": 5,
+				"Width": 8,
+				"Height": 11
+			},
+			"When": {
+				"HasMod |contains= uglynt.town.interiors": false,
+				"RoomsEnabled": "true"
+			}
+		},
+		{
+			"LogName": "Douglas Room",
+			"Action": "EditMap",
+			"Target": "Maps/WizardHouse",
+			"FromFile": "Assets/Douglas/DouglasRoom_LUTI.tmx",
+			"ToArea": {
+				"X": 14,
+				"Y": 18,
+				"Width": 7,
+				"Height": 7
+			},
+			"When": {
+				"HasMod": "uglynt.town.interiors",
+				"RoomsEnabled": "true"
+			}
+		}
+	]
+}

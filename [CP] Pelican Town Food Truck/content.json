@@ -1,0 +1,118 @@
+{
+  "Format": "2.5.0",
+  "ConfigSchema": {
+  "Recolour": {
+       "AllowValues": "Vanilla, Earthy, VPR",
+       "Default": "Earthy"
+    }
+},
+  "Changes": [
+   {
+      "Action": "Load",
+      "Target": "Maps/{{ModId}}_shopTiles",
+      "FromFile": "assets/tilesheets/shop_{{Recolour}}.png",
+ },
+ {
+      "LogName": "Edit Town",
+      "Action": "EditMap",
+      "Target": "Maps/Town",
+      "FromFile": "assets/Maps/Town.tmx",
+      "PatchMode": "Replace",
+      "When": {
+        "HasMod|contains=FlashShifter.StardewValleyExpandedCP": false,
+        "DayOfWeek": "Monday, Thursday"
+  },
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 7,
+        "Height": 4
+      },
+      "ToArea": {
+        "X": 8,
+        "Y": 68,
+        "Width": 7,
+        "Height": 4
+      }
+    },
+    {
+      "LogName": "Edit Town for SVE",
+      "Action": "EditMap",
+      "Target": "Maps/Town",
+      "FromFile": "assets/Maps/Town_SVE.tmx",
+      "PatchMode": "Replace",
+      "When": {
+        "HasMod|contains=FlashShifter.StardewValleyExpandedCP": true,
+        "DayOfWeek": "Monday, Thursday"
+      },
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 7,
+        "Height": 4
+      },
+      "ToArea": {
+        "X": 8,
+        "Y": 67,
+        "Width": 7,
+        "Height": 4
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_FirstLoadMail": {
+          "Id": "{{ModId}}_FirstLoadMail",
+          "Trigger": "DayStarted",
+          "Actions": [
+            "AddMail Current {{ModId}}_FirstLoadMail Now"
+          ]
+        }
+      }
+    },
+    {
+      "LogName": "Food Truck Mail",
+      "Action": "EditData",
+      "Target": "Data/Mail",
+      "Entries": {
+        "{{ModId}}_FirstLoadMail": "{{i18n:FoodTruck.FirstMail}}"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Portraits/Elm",
+      "FromFile": "assets/ElmPortraits.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "Entries": {
+        "{{ModId}}_FoodTruck": {
+          "Owners": [
+            {
+              "Id": "AnyOrNone",
+              "Name": "AnyOrNone",
+              "Portrait": "Portraits/Elm",
+              "Dialogues": [
+                {
+                  "Id": "{{ModId}}_Default",
+                  "Dialogue": "{{i18n:FoodTruck.Dialogue01}}"
+                }
+              ]
+            }
+          ],
+          "Items": [
+            {
+              "Id": "RandomCooking",
+              "ItemId": "RANDOM_ITEMS (O)",
+              "PerItemCondition": "ITEM_CATEGORY Target -7",
+              "MaxItems": 8,
+              "AvailableStock": 4
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

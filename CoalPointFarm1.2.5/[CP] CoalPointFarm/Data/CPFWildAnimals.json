@@ -1,0 +1,75 @@
+{
+	"Changes": [
+		
+		//Map Changers
+		//Duck Pond Ducks, Squirrels
+	{
+		"LogName": "Coal Point farm Ducks Squirrels",
+		"Action": "EditMap",
+		"Target": "Maps/CoalPointFarm",
+		"MapTiles": [
+		//Ducks
+            {
+               "Position": {
+					"X": "14",
+					"Y": "22"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2}} SmolHooman.WildAnimalsCC.DuckDrake_WA"
+               },
+            },
+            {
+               "Position": {
+					"X": "13",
+					"Y": "23"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2}} SmolHooman.WildAnimalsCC.Duckling_WA"
+               },
+            },
+		//Squirrels
+            {
+               "Position": {
+					"X": "11",
+					"Y": "51"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 1, 2, 3}} SmolHooman.WildAnimalsCC.Squirrel_WA"
+               },
+            },
+         ],
+		"When": {
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Rain, Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	//Coal Point Farm Deer
+	{
+		"LogName": "Coal Point farm Deer",
+		"Action": "EditMap",
+		"Target": "Maps/CoalPointFarm",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "34",
+					"Y": "9"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 2, 3}} SmolHooman.WildAnimalsCC.{{Random: DeerDoe_WA, DeerDoe_WA, DeerDoe_Friendly_WA}}"
+               },
+            },
+         ],
+		"When": {
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Rain, Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	]
+}

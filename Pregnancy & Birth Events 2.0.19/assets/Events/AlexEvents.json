@@ -1,0 +1,23 @@
+{
+	"Changes": [
+
+		{	"LogName": "Alex Pregnancy Event 1",
+			"Action": "EditData",
+			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+ 				"HavingChild": "@{{playerName}}",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+			"Entries": {"64780015/O Alex": "continue/28 30/farmer 27 30 0 Alex 29 25 3 Harvey 0 0 0/skippable/addConversationTopic FarmerPregnantAlex 13/addConversationTopic FarmerCheckUp 6/addMailReceived Pregnant1_Alex/Skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak Alex \"{{i18n:64780015_1}}#$b# {{i18n:64780015_2}}\"/pause 500/playSound croak/animate farmer false false 350 104 105/pause 1000/emote farmer 28/pause 500/speak Alex \"{{i18n:64780015_3}} $s#$b# {{i18n:64780015_4}}$s\"/viewport -100 100/changeLocation Hospital/viewport 5 5/warp farmer 3 5/warp Alex 2 5/showFrame Alex 4/warp Harvey 5 8/move Harvey 0 -3 3 false/speak Harvey \"{{i18n:Pregnancy_Dialogue_1_Farmer}}\"/emote Alex 8/speak Harvey \"{{i18n:Pregnancy_Dialogue_2_Farmer}} $h\"/speak Alex \"...$7#$b#...$7#$b#...$l#$b# {{i18n:64780015_5}} #$b# {{i18n:64780015_6}} $l\"/pause 500/emote farmer 20/end"},
+		}, 
+		{	"LogName": "Alex Birth Event 1", 
+			"Action": "EditData",
+    			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+			"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+   			"Entries": {"64780027/e 64780015/O Alex/n Pregnant1_Alex/A FarmerPregnantAlex/t 600 700": "sappypiano/-100 -100/farmer 19 12 2 Alex 20 12 2 Harvey 5 15 2/addConversationTopic AlexBabySleep 14/skippable/pause 500/speak Alex \" {{i18n:64780027_1}} $s #$b# {{i18n:64780027_2}}$7\"/changeLocation Hospital/showFrame 5/ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak Alex \"{{i18n:64780027_3}}#$b#{{i18n:64780027_4}} $4\"/faceDirection Alex 3/pause 500/emote farmer 60/emote Alex 28/pause 500/speak Alex \"{{i18n:64780027_5}} $s\"/pause 500/move Alex 0 1 3/pause 500/speak Alex \"{{i18n:64780027_6}}#$b# {{i18n:64780027_7}} $1\"/pause 500/move Alex 0 -1 3/speak Alex \"{{i18n:64780027_8}}#$b# {{i18n:64780027_9}} $4\"/pause 500/emote farmer 20/pause 500/speak Alex \"{{i18n:64780027_10}} $h\"/pause 500/emote farmer 60/pause 500/speak Alex \"{{i18n:64780027_11}} #$b# {{i18n:64780027_12}}\"/pause 1000/fade/viewport -100 -100 true/warp Harvey 21 12/faceDirection Harvey 3/warp Alex 20 11/faceDirection Alex 2/speak Alex \"{{i18n:64780027_13}}$8 #$b#{{i18n:64780027_14}}$l\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -50/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote Alex 20/pause 2000/speak Alex \"{{i18n:Birth_Dialogue_5}}$l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end"},
+		},
+				
+]
+}

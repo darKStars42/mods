@@ -1,0 +1,88 @@
+{
+    "Format": "2.0.0",
+	
+	"ConfigSchema": {
+		
+		"Machine Appearance": {
+            "AllowValues": "Default, Vanilla Style",
+            "Default": "Default",
+            "AllowBlank": false
+        },
+		
+		"Enable Artifact Items": { 
+            "AllowValues": "true, false",
+            "Default": "true",
+			"AllowBlank": false
+        },
+		
+		"Enable Kohakutou": { 
+            "AllowValues": "true, false",
+            "Default": "true",
+			"AllowBlank": false
+        },
+		
+		"Enable SVE Items": { 
+            "AllowValues": "true, false",
+            "Default": "true",
+			"AllowBlank": false
+        },
+		
+	},
+	
+    "Changes": [
+	
+		//Include Objects
+		{
+            "Action": "Include",
+            "FromFile": "code/objects_tree.json",
+        },
+		{
+            "Action": "Include",
+            "FromFile": "code/objects_artifact.json",
+			"When":{"Enable Artifact Items": true}
+        },
+		{
+            "Action": "Include",
+            "FromFile": "code/objects_kohakutou.json",
+			"When":{"Enable Kohakutou": true}
+        },
+		{
+            "Action": "Include",
+            "FromFile": "code/objects_SVE.json",
+			"When":{
+				"Enable SVE Items": true,
+				"HasMod:|contains= FlashShifter.StardewValleyExpandedCP": true
+			}
+        },
+		
+		//Include BigCraftables
+		{
+            "Action": "Include",
+            "FromFile": "code/bigcraftables.json",
+        },
+		
+		//Include Producer Rules
+		{
+            "Action": "Include",
+            "FromFile": "code/machine_tree.json",
+        },
+		{
+            "Action": "Include",
+            "FromFile": "code/machine_artifact.json",
+			"When":{"Enable Artifact Items": true}
+        },
+		{
+            "Action": "Include",
+            "FromFile": "code/machine_kohakutou.json",
+			"When":{"Enable Kohakutou": true}
+        },
+		{
+            "Action": "Include",
+            "FromFile": "code/machine_SVE.json",
+			"When":{
+				"Enable SVE Items": true,
+				"HasMod:|contains= FlashShifter.StardewValleyExpandedCP": true
+			}
+        },
+    ]
+}

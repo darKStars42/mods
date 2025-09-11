@@ -1,0 +1,185 @@
+{
+  "Changes": [
+	{
+		"Action": "EditData",
+		"Target": "Data/Mail",
+		"Entries": {
+			"maat.BetterThings_blossom_mail": "[letterbg 2]{{i18n:blossom.sapling.mail}}%item object maat.BetterThings_BlossomSapling 1 %%[#]{{i18n:blossom.sapling.title}}",
+			"maat.BetterThings_blossomcoin_mail": "[letterbg 1]{{i18n:blossom.coin.mail}}%item object maat.BetterThings_BlossomCoin 20 %%[#]{{i18n:blossom.coin.title}}",
+			"maat.BetterThings_golden_mail": "[letterbg 1]{{i18n:coconut.golden.mail}}%item object maat.BetterThings_GoldenCoconutSapling 1 %%[#]{{i18n:golden.title}}",
+			"maat.BetterThings_wizard_mail_spring_1": "[letterbg 2]{{i18n:blossomfruit.wizard.spring1.text}}%item object maat.BetterThings_BlossomFruit 15 %%[#]{{i18n:blossomfruit.wizard.spring1.title}}",
+			"maat.BetterThings_abigail_mission_mail": "[letterbg 1]{{i18n:abigail.mission.mail}}%item quest 6000%%[#]{{i18n:abigail.mission.mail.title}}",
+			"maat.BetterThings_wizard_mission_mail": "[letterbg 2]{{i18n:wizard.mission.mail}}%item quest 6001%%[#]{{i18n:wizard.mission.mail.title}}",
+			"maat.BetterThings_leah_mission_mail": "[letterbg 1]{{i18n:leah.mission.mail}}%item quest 6002%%[#]{{i18n:leah.mission.mail.title}}",
+			"maat.BetterThings_haley_especial_mission_mail": "[letterbg 1]{{i18n:haley.especial.mission.mail}}%item quest 6003%%[#]{{i18n:haley.especial.mission.mail.title}}",
+			"maat.BetterThings_penny_mission_mail": "[letterbg 1]{{i18n:penny.mission.mail}}%item quest 6004%%[#]{{i18n:penny.mission.mail.title}}",
+			"maat.BetterThings_coalsapling_mail": "[letterbg 2]{{i18n:mr.qi.mission.mail}}%item object maat.BetterThings_CoalSapling 1 %%[#]{{i18n:mr.qi.mission.title}}"
+		},
+		"When": { "NewMissions": true }
+	},
+	{
+		"LogName": "Mail - DeluxeCoop and DeluxeBarn",
+		"Action": "EditData",
+		"Target": "Data/Mail",
+		"Entries": {
+			"maat.BetterThings_BuildDeluxeCoop_mail": "[letterbg 1]{{i18n:robin.deluxe.coop.mail}}[#]{{i18n:robin.deluxe.coop.mail.title}}",
+			"maat.BetterThings_BuildDeluxeBarn_mail": "[letterbg 1]{{i18n:robin.deluxe.barn.mail}}%item bigobject BigChest %%[#]{{i18n:robin.deluxe.barn.mail.title}}"
+		},
+		"When": { "BuildingsItems": true }
+	},
+	{
+	  "Action": "EditData",
+      "Target": "Data/Mail",
+      "Entries": {
+         "{{ModId}}_dinosaur_mail": "[letterbg 1]{{i18n:dinosaur.mail.text}}%item object maat.BetterThings_BlossomCoin 8 %%[#]{{i18n:dinosaur.mail.title}}"
+        }
+    },
+	{
+	  "Action": "EditData",
+      "Target": "Data/Mail",
+      "Entries": {
+          "{{ModId}}_ostrich_mail": "[letterbg 1]{{i18n:ostrich.mail.text}}%item object maat.BetterThings_BlossomFruit 8 %%[#]{{i18n:ostrich.mail.title}}"
+         }
+    },
+	{
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_send_dino_mail": {
+            "Id": "{{ModId}}_send_dino_mail",
+            "Trigger": "DayStarted",
+            "Condition": "MUSEUM_DONATIONS 30",
+            "Action": "AddMail Current {{ModId}}_dinosaur_mail tomorrow"
+          }
+       },
+            "When": { "BuyableDinosaurs": "true" }
+	},
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_send_ostrich_mail": {
+            "Id": "{{ModId}}_send_ostrich_mail",
+            "Trigger": "DayStarted",
+            "Condition": "PLAYER_HAS_CRAFTING_RECIPE Current Ostrich Incubator",
+            "Action": "AddMail Current {{ModId}}_ostrich_mail tomorrow"
+          }
+       },
+            "When": { "BuyableOstriches": "true" }
+    },
+	{
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_send_wizard_spring_mail": {
+            "Id": "{{ModId}}_send_wizard_spring_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY spring 1",
+            "Actions": [ "AddMail Current maat.BetterThings_wizard_mail_spring_1 now", "MarkActionApplied Current {{ModId}}_remove_mail_spring_1 false" ]
+          },
+        "{{ModId}}_remove_mail_spring_1": {
+            "Id": "{{ModId}}_remove_mail_spring_1",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY winter 28",
+            "Actions": [ "RemoveMail Current maat.BetterThings_wizard_mail_spring_1", "MarkActionApplied Current {{ModId}}_send_wizard_spring_mail false" ]
+         }
+	  },
+            "When": { "Hearts:Wizard": "3, 4, 5, 6, 7, 8, 9, 10" }
+	},
+	{
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_send_abigail_mail": {
+            "Id": "{{ModId}}_send_abigail_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY summer 1",
+            "Actions": [ "AddMail Current maat.BetterThings_abigail_mission_mail now", "MarkActionApplied Current {{ModId}}_remove_abigail_mail false" ]
+          },
+        "{{ModId}}_remove_abigail_mail": {
+            "Id": "{{ModId}}_remove_abigail_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY spring 28",
+            "Actions": [ "RemoveMail Current maat.BetterThings_abigail_mission_mail", "RemoveQuest 6000", "MarkActionApplied Current {{ModId}}_send_abigail_mail false" ]
+         }
+	  },
+            "When": { "Hearts:Abigail": "3, 4, 5, 6, 7, 8, 9, 10", "NewMissions": true }
+    },
+	{
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_send_wizard_mail": {
+            "Id": "{{ModId}}_send_wizard_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY fall 1",
+            "Actions": [ "AddMail Current maat.BetterThings_wizard_mission_mail now", "MarkActionApplied Current {{ModId}}_remove_wizard_mail false" ]
+          },
+        "{{ModId}}_remove_wizard_mail": {
+            "Id": "{{ModId}}_remove_wizard_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY summer 28",
+            "Actions": [ "RemoveMail Current maat.BetterThings_wizard_mission_mail", "RemoveQuest 6001", "MarkActionApplied Current {{ModId}}_send_wizard_mail false" ]
+          }
+	   },
+            "When": { "Hearts:Wizard": "3, 4, 5, 6, 7, 8, 9, 10", "NewMissions": true }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_send_leah_mail": {
+            "Id": "{{ModId}}_send_leah_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY spring 20",
+            "Actions": [ "AddMail Current maat.BetterThings_leah_mission_mail now", "MarkActionApplied Current {{ModId}}_remove_leah_mail false" ]
+          },
+        "{{ModId}}_remove_leah_mail": {
+            "Id": "{{ModId}}_remove_leah_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY spring 19",
+            "Actions": [ "RemoveMail Current maat.BetterThings_leah_mission_mail", "RemoveQuest 6002", "MarkActionApplied Current {{ModId}}_send_leah_mail false" ]
+          }
+	   },
+            "When": { "Hearts:Leah": "5, 6, 7, 8, 9, 10", "NewMissions": true }
+	},
+	{
+       "Action": "EditData",
+       "Target": "Data/TriggerActions",
+       "Entries": {
+        "{{ModId}}_send_haley_especial_mail": {
+            "Id": "{{ModId}}_send_haley_especial_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY fall 9",
+            "Actions": [ "AddMail Current maat.BetterThings_haley_especial_mission_mail now", "MarkActionApplied Current {{ModId}}_remove_haley_especial_mail false" ]
+          },
+        "{{ModId}}_remove_haley_especial_mail": {
+            "Id": "{{ModId}}_remove_haley_especial_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY fall 8",
+            "Actions": [ "RemoveMail Current maat.BetterThings_haley_especial_mission_mail", "RemoveQuest 6003", "MarkActionApplied Current {{ModId}}_send_haley_especial_mail false" ]
+          }
+	   },
+            "When": { "Hearts:Haley": "10", "NewMissions": true }
+	},
+	{
+       "Action": "EditData",
+       "Target": "Data/TriggerActions",
+       "Entries": {
+        "{{ModId}}_send_penny_mail": {
+            "Id": "{{ModId}}_send_penny_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY fall 25",
+            "Actions": [ "AddMail Current maat.BetterThings_penny_mission_mail now", "MarkActionApplied Current {{ModId}}_remove_penny_mail false" ]
+          },
+        "{{ModId}}_remove_penny_mail": {
+            "Id": "{{ModId}}_remove_penny_mail",
+            "Trigger": "DayStarted",
+            "Condition": "SEASON_DAY fall 24",
+            "Actions": [ "RemoveMail Current maat.BetterThings_penny_mission_mail", "RemoveQuest 6004", "MarkActionApplied Current {{ModId}}_send_penny_mail false" ]
+          }
+	   },
+            "When": { "Hearts:Penny": "6, 7, 8, 9, 10", "NewMissions": true }
+	}
+  ]
+}

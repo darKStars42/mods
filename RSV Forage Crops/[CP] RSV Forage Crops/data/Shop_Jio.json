@@ -1,0 +1,68 @@
+{
+	"Changes": [
+
+		//--------------------------------------
+		//   Mountain Mistbloom
+		{
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"Priority": "Late",
+			"TargetField": [
+				"RSVJioShop",
+				"Items"
+			],
+			"Entries": {
+				"ZoeyHoshi.RSVForageCrops_MountainMistbloomSeeds": {
+					"Id": "ZoeyHoshi.RSVForageCrops_MountainMistbloomSeeds",
+					"ItemId": "ZoeyHoshi.RSVForageCrops_MountainMistbloomSeeds",
+					"IgnoreShopPriceModifiers": true,
+					"AvailableStock": 5,
+					"TradeItemId": "(O)Rafseazz.RSVCP_Spiritual_Essence",
+					"TradeItemAmount": 5,
+					"Condition": "PLAYER_SPECIAL_ORDER_COMPLETE Current RSV.UntimedSpecialOrder.DaiaQuest, WEATHER Here Rain"
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.RSVForageCrops_MountainMistbloomSeeds",
+					"AfterId": "Rafseazz.RSVCP.CultShopItem1"
+				}
+			],
+			"When": {
+				"EnableMountainMistbloom": true
+			}
+		},
+
+		//--------------------------------------
+		//   Foxbloom
+		{
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"Priority": "Late",
+			"TargetField": [
+				"RSVJioShop",
+				"Items"
+			],
+			"Entries": {
+				"ZoeyHoshi.RSVForageCrops_FoxbloomSeeds": {
+					"Id": "ZoeyHoshi.RSVForageCrops_FoxbloomSeeds",
+					"ItemId": "ZoeyHoshi.RSVForageCrops_FoxbloomSeeds",
+					"IgnoreShopPriceModifiers": true,
+					"AvailableStock": 1,
+					"TradeItemId": "(O)Rafseazz.RSVCP_Spiritual_Essence",
+					"TradeItemAmount": 500,
+					"Condition": "PLAYER_HAS_MAIL Current MythFlowerLetter, DAY_OF_WEEK Sunday, WEATHER Here Sun"
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.RSVForageCrops_FoxbloomSeeds",
+					"AfterId": "Rafseazz.RSVCP.CultShopItem6"
+				}
+			],
+			"When": {
+				"EnableFoxbloom": true
+			}
+		}
+	]
+}

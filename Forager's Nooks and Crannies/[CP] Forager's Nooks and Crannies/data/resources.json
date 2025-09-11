@@ -1,0 +1,864 @@
+{
+    "Changes": [
+
+        {
+            "Action": "Load",
+            "Target": "Mods/Wildflour.NooksCrannies/assets/Resources",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+
+        {
+            "LogName": "Add Nooks Crannies Resources",
+            "Action": "EditData",
+            "Target": "Mods/mistyspring.ItemExtensions/Resources",
+            "Entries": {
+                "Wildflour.NooksCrannies_WildMushStump": {
+                    "DisplayName":"{{i18n:WildMushStump}}",
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "SpriteIndex": 6,
+                    "Width": 3,
+                    "Height": 4,
+                    "Health": 8,
+                    "Sound": "axe",
+                    "BreakingSound": "treethud",
+                    "Debris": "stump #CBC3E3",
+                    "ItemDropped": "(O)709",
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Moss",
+                            "Chance": 0.8
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Wheatberry_Mushroom",
+                            "Chance": 0.5,
+                            "Condition":"SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Milk_Mushroom",
+                            "Chance": 0.5,
+                            "Condition":"SEASON fall, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Honey_Fungus",
+                            "Chance": 0.5,
+                            "Condition":"SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Lumisteria.MtVapius_WoodgoatMushroom",
+                            "Chance": 0.4,
+                            "HasMod": "Lumisteria.MtVapius"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Stout_Funnel",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Bubblegum_Funnel",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON spring"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Candy_Button",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Lunar_Poof",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Midas_Cap",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Rustgill",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        },
+                        {
+                            "ItemId": "(O)281",
+                            "Chance": 0.4
+                        }
+                       
+                    ],
+                    "Tool": "Axe",
+                    "MinToolLevel": 1,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ContextTags": [
+                        "color_dark_brown"
+                    ]
+                },
+                "Wildflour.NooksCrannies_WildMushLog": {
+                    "DisplayName":"{{i18n:WildMushLog}}",
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "SpriteIndex": 25,
+                    "Width": 3,
+                    "Height": 3,
+                    "Health": 8,
+                    "Sound": "axe",
+                    "BreakingSound": "treethud",
+                    "Debris": "wood #CBC3E3",
+                    "ItemDropped": "(O)709",
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Moss",
+                            "Chance": 0.8
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Meringue_Mushroom",
+                            "Chance": 0.6,
+                            "Condition":"SEASON fall, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                       
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Chicken_Woods",
+                            "Chance": 0.6,
+                            "Condition":"SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Baby_Bluegill",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON winter"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Blushing_TopHat",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON summer"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Coral_Fungus",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON summer"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Frilly_Gilly",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON spring"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Mottled_Fieldcap",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Queen_Bolete",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON summer"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Stout_Funnel",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        },
+                        {
+                            "ItemId": "(O)257",
+                            "Chance": 0.4,
+                            "Condition":""
+                        },
+                        {
+                            "ItemId": "(O)404",
+                            "Chance": 0.4,
+                            "Condition":""
+                        }
+                    ],
+                    "Tool": "Axe",
+                    "MinToolLevel": 2,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ContextTags": [
+                        "color_dark_brown"
+                    ]
+                },
+                "Wildflour.NooksCrannies_HerbStump": {
+                    "DisplayName":"{{i18n:HerbStump}}",
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "SpriteIndex": 4,
+                    "Width": 2,
+                    "Height": 2,
+                    "Health": 6, 
+                    "Sound": "axe", 
+                    "BreakingSound": "treethud",
+                    "Debris": "stump #CBC3E3",
+                    "ItemDropped": "(O)709",
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Moss",
+                            "Chance": 0.8
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Basil",
+                            "Chance": 0.7,
+                            "Condition":"SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Cinnamon",
+                            "Chance": 0.5,
+                            "Condition":"SEASON winter, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Cilantro",
+                            "Chance": 0.7,
+                            "Condition":"SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Gentian_Root",
+                            "Chance": 0.6,
+                            "Condition":"CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Mint",
+                            "Chance": 0.6,
+                            "Condition":"CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Rosemary",
+                            "Chance": 0.4,
+                            "Condition":"SEASON fall, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Sage",
+                            "Chance": 0.4,
+                            "Condition":"SEASON fall, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Thyme",
+                            "Chance": 0.6,
+                            "Condition":"SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Wormwood",
+                            "Chance": 0.5,
+                            "Condition":"SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Valerian",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Mugwort",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS"
+                        }
+                    ],
+                    "Tool": "Axe",
+                    "MinToolLevel": 1,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ContextTags": [
+                        "color_brown"
+                    ]
+                },
+                "Wildflour.NooksCrannies_OvergrownFruitStump": {
+                    "DisplayName":"{{i18n:OvergrownFruitStump}}",
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "SpriteIndex": 0,
+                    "Width": 2,
+                    "Height": 2,
+                    "Health": 6, 
+                    "Sound": "axe", 
+                    "BreakingSound": "treethud",
+                    "Debris": "stump #CBC3E3",
+                    "ItemDropped": "(O)709",
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Moss",
+                            "Chance": 0.8
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Wild_Raspberry",
+                            "Chance": 0.7,
+                            "Condition": "CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Wild_Strawberry",
+                            "Chance": 0.7,
+                            "Condition": "CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)400",
+                            "Chance": 0.6,
+                            "Condition": "CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Lemon",
+                            "Chance": 0.5,
+                            "Condition": "SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Lime",
+                            "Chance": 0.5,
+                            "Condition": "SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Apple",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON spring"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Pomegranate",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON spring"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Peach",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON winter"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Orange",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON winter"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Cherry",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Apricot",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        }
+                    ],
+                    "Tool": "Axe",
+                    "MinToolLevel": 1,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ContextTags": [
+                        "color_brown"
+                    ]
+                },
+                "Wildflour.NooksCrannies_FlowerStump": {
+                    "DisplayName":"{{i18n:FlowerStump}}",
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "SpriteIndex": 32,
+                    "Width": 2,
+                    "Height": 2,
+                    "Health": 6, 
+                    "Sound": "axe", 
+                    "BreakingSound": "treethud",
+                    "Debris": "stump #CBC3E3",
+                    "ItemDropped": "(O)709",
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Lumisteria.MtVapius_BlueMorningGlory",
+                            "Chance": 0.5,
+                            "HasMod": "Lumisteria.MtVapius"
+                        },
+                        {
+                            "ItemId": "(O)Lumisteria.MtVapius_PinkMorningGlory",
+                            "Chance": 0.5,
+                            "HasMod": "Lumisteria.MtVapius"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Cherry_Blossoms",
+                            "Chance": 0.5,
+                            "Condition":"SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Jasmine",
+                            "Chance": 0.4,
+                            "Condition":"SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Lavender",
+                            "Chance": 0.5,
+                            "Condition":"SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Vanilla",
+                            "Chance": 0.5,
+                            "Condition":"SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)376",
+                            "Chance": 0.4
+                        },
+                        {
+                            "ItemId": "(O)421",
+                            "Chance": 0.4
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Avalune",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON spring"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Arctic_Fox",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON winter"
+                        }
+                    ],
+                    "Tool": "Axe",
+                    "MinToolLevel": 1,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ContextTags": [
+                        "color_brown"
+                    ]
+                },
+                "Wildflour.NooksCrannies_MagicDeadStump": {
+                    "DisplayName":"{{i18n:MagicDeadStump}}",
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "SpriteIndex": 2,
+                    "Width": 2,
+                    "Height": 2,
+                    "Health": 6, 
+                    "Sound": "axe",
+                    "BreakingSound": "treethud",
+                    "Debris": "stump #CBC3E3",
+                    "ItemDropped": "(O)709",
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Moss",
+                            "Chance": 0.8
+                        },
+                        {
+                            "ItemId": "(O)420",
+                            "Chance": 0.8
+                        },
+                        {
+                            "ItemId": "(O)851",
+                            "Chance": 0.7
+                        },
+                        {
+                            "ItemId": "(O)767",
+                            "Chance": 0.7
+                        },
+                        {
+                            "ItemId": "(O)881",
+                            "Chance": 0.6
+                        },
+                        {
+                            "ItemId": "(O)413",
+                            "Chance": 0.5
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Ghostly_Parasol",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON winter"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Indigo_Cap",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON spring"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Lilac_Funnel",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Limey_Bonnet",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON summer"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Midnight_Milkcap",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON winter"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Rosey_Elfcup",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON summer"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Seafoam_Waxcap",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON summer"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Sparkling_Agaric",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Shrumbus",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        }
+                    ],
+                    "Tool": "Axe",
+                    "MinToolLevel": 1, 
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ContextTags": [
+                        "color_dark_brown"
+                    ]
+                },
+                "Wildflour.NooksCrannies_MagicOvergrownStump": {
+                    "DisplayName":"{{i18n:MagicOvergrownStump}}",
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "SpriteIndex": 36,
+                    "Width": 2,
+                    "Height": 2,
+                    "Health": 6, 
+                    "Sound": "axe",
+                    "BreakingSound": "treethud",
+                    "Debris": "stump #CBC3E3",
+                    "ItemDropped": "(O)709",
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Moss",
+                            "Chance": 0.8
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Almond",
+                            "Chance": 0.5,
+                            "Condition": "SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Anise",
+                            "Chance": 0.7,
+                            "Condition": "SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Pistachio",
+                            "Chance": 0.6,
+                            "Condition": "SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Walnut",
+                            "Chance": 0.5,
+                            "Condition": "SEASON fall, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)414",
+                            "Chance": 0.5
+                        },
+                        {
+                            "ItemId": "(O)268",
+                            "Chance": 0.3
+                        },
+                        {
+                            "ItemId": "(O)454",
+                            "Chance": 0.3
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.SASS_Sparkling_Agaric",
+                            "Chance": 0.4,
+                            "HasMod": "Wildflour.SASS",
+                            "Condition":"SEASON fall"
+                        }
+                    ],
+                    "Tool": "Axe",
+                    "MinToolLevel": 1,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ContextTags": [
+                        "color_brown"
+                    ]
+                },
+                "Wildflour.NooksCrannies_MagicBloomingStump": {
+                    "DisplayName":"{{i18n:MagicBloomingStump}}",
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "SpriteIndex": 34,
+                    "Width": 2,
+                    "Height": 2,
+                    "Health": 6, 
+                    "Sound": "axe", 
+                    "BreakingSound": "treethud",
+                    "Debris": "stump #CBC3E3",
+                    "ItemDropped": "(O)709",
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Moss",
+                            "Chance": 0.8
+                        },
+                        {
+                            "ItemId": "(O)595",
+                            "Chance": 0.5
+                        },
+                        {
+                            "ItemId": "(O)Lumisteria.MtVapius_CasalotierFlower",
+                            "Chance": 0.3,
+                            "HasMod": "Lumisteria.MtVapius"
+                        },
+                        {
+                            "ItemId": "(O)MixedFlowerSeeds",
+                            "Chance": 0.6
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Chamomile",
+                            "Chance": 0.8,
+                            "Condition":"SEASON spring summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Lavender",
+                            "Chance": 0.8,
+                            "Condition":"SEASON spring summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Mallow",
+                            "Chance": 0.8,
+                            "Condition":"SEASON summer,CAULDRON_CONFIG_VALUE WildFood True"
+                        }
+                    ],
+                    "Tool": "Axe",
+                    "MinToolLevel": 1,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ContextTags": [
+                        "color_brown"
+                    ]
+                },
+                "Wildflour.NooksCrannies_Flower_Seed_Node": {
+                    "SpriteIndex": 28,
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "Health": 1, 
+                    "Sound": null,
+                    "BreakingSound": "cut",
+                    "ItemDropped": "(O)771", 
+                    "Tool": "AnyExceptWateringCan",
+                    "MinToolLevel": 0,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Jasmine_Seeds",
+                            "Chance": 0.4,
+                            "Condition":"SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Lavender_Seeds",
+                            "Chance": 0.6,
+                            "Condition":"CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Chamomile_Seeds",
+                            "Chance": 0.8,
+                            "Condition":"SEASON spring summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Mallow_Seeds",
+                            "Chance": 0.7,
+                            "Condition":"SEASON spring summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Vanilla_Seeds",
+                            "Chance": 0.5,
+                            "Condition":"SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Flower_Seeds",
+                            "Chance": 0.7,
+                            "Condition": "CAULDRON_CONFIG_VALUE MixedSeeds True"
+                        },
+                        {
+                            "ItemId": "Lumisteria.SereneMeadow_CornflowerSeeds",
+                            "HasMod": "Lumisteria.SereneMeadow",
+                            "Chance": 0.4
+                        },
+                        {
+                            "ItemId": "Lumisteria.SereneMeadow_CalendulaSeeds",
+                            "HasMod": "Lumisteria.SereneMeadow",
+                            "Chance": 0.4
+                        },
+                        {
+                            "ItemId": "(O)431",
+                            "Chance": 0.4
+                        },
+                        {
+                            "ItemId": "(O)455",
+                            "Chance": 0.4
+                        }
+                    ],
+                    "Debris": "weeds blue"
+                },
+                "Wildflour.NooksCrannies_Herb_Seed_Node": {
+                    "SpriteIndex": 14,
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "Health": 1, 
+                    "Sound": null,
+                    "BreakingSound": "cut",
+                    "ItemDropped": "(O)771", 
+                    "Tool": "AnyExceptWateringCan",
+                    "MinToolLevel": 0,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)476",
+                            "Chance": 0.5
+                        },
+                        {
+                            "ItemId": "(O)299",
+                            "Chance": 0.5
+                        },
+                        {
+                            "ItemId": "(O)499",
+                            "Chance": 0.3
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Basil_Seeds",
+                            "Chance": 0.4,
+                            "Condition": "SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Cilantro_Seeds",
+                            "Chance": 0.4,
+                            "Condition": "SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Rosemary_Seeds",
+                            "Chance": 0.5,
+                            "Condition": "SEASON fall, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Sage_Seeds",
+                            "Chance": 0.5,
+                            "Condition": "SEASON fall, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Mint_Seeds",
+                            "Chance": 0.7,
+                            "Condition": "SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Herb_Seeds",
+                            "Chance": 0.7,
+                            "Condition": "CAULDRON_CONFIG_VALUE MixedSeeds True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Thyme_Seeds",
+                            "Chance": 0.5,
+                            "Condition": "SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Wormwood_Seeds",
+                            "Chance": 0.4,
+                            "Condition": "SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        }
+                    ],
+                    "Debris": "weeds blue"
+                },
+                "Wildflour.NooksCrannies_Berry_Node": {
+                    "SpriteIndex": 15,
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "Health": 2, 
+                    "Sound": "axe",
+                    "BreakingSound": null,
+                    "ItemDropped": "(O)388",
+                    "Tool": "Axe",
+                    "MinToolLevel": 0,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Wild_Raspberry_Seeds",
+                            "Chance": 0.6,
+                            "Condition": "SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Wild_Strawberry_Seeds",
+                            "Chance": 0.6,
+                            "Condition": "SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Fruit_Seeds",
+                            "Chance": 0.7,
+                            "Condition": "CAULDRON_CONFIG_VALUE MixedSeeds True"
+                        },
+                        {
+                            "ItemId": "(O)638",
+                            "Chance": 0.5
+                        },
+                        {
+                            "ItemId": "(O)613",
+                            "Chance": 0.5
+                        }
+                    ],
+                    "Debris": "wood green"
+                },
+                "Wildflour.NooksCrannies_Mush_Node": {
+                    "SpriteIndex": 31,
+                    "Texture": "Mods/Wildflour.NooksCrannies/Assets/Resources",
+                    "Health": 2, 
+                    "Sound": "axe",
+                    "BreakingSound": null,
+                    "ItemDropped": "(O)388",
+                    "Tool": "Axe",
+                    "MinToolLevel": 0,
+                    "MinDrops": 1,
+                    "MaxDrops": 2,
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Chicken_Woods_Seeds",
+                            "Chance": 0.5,
+                            "Condition": "SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Honey_Fungus_Seeds",
+                            "Chance": 0.5,
+                            "Condition": "SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Meringue_Mushroom_Seeds",
+                            "Chance": 0.5,
+                            "Condition": "SEASON fall, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Milk_Mushroom_Seeds",
+                            "Chance": 0.5,
+                            "Condition": "SEASON summer, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)Wildflour.AtelierGoods_Wheatberry_Mushroom_Seeds",
+                            "Chance": 0.5,
+                            "Condition": "SEASON spring, CAULDRON_CONFIG_VALUE WildFood True"
+                        },
+                        {
+                            "ItemId": "(O)891",
+                            "Chance": 0.8
+                        },
+                        {
+                            "ItemId": "(O)MysticTreeSeed",
+                            "Chance": 0.2
+                        },
+                        {
+                            "ItemId": "(O)MossySeed",
+                            "Chance": 0.8
+                        }
+                    ],
+                    "Debris": "wood green"
+                }
+            }
+        }
+    ]
+}

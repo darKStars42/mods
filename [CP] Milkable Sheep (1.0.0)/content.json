@@ -1,0 +1,114 @@
+{
+    "Format": "2.0.0",
+    "ConfigSchema": {
+            "Milk appearance": {
+		    "AllowValues": "Vanilla, Vanilla Tweaks (Saturated), Vanilla Tweaks (Desaturated), Cometkins' Better Retextures, Fancy Artisan Goods (White), Fancy Artisan Goods (Suffolk), BadMoonBase Bottles and Cans, Peachy Objects",
+		    "Default": "Vanilla",
+		    "Description": "Toggles between alternate milk sprites to match existing retexture packs.",
+		    "Section": "<<< THX FOR DLING!!! <<<"
+		},
+            "Immersive text changes": {
+		    "AllowValues": "true, false",
+		    "Default": "true",
+		    "Description": "Toggles on/off whether to replace relevant text strings to reflect changes in sheep produce.",
+		    "Section": "<<< THX FOR DLING!!! <<<"
+		},
+        },
+    "Changes": [
+        {
+		"Logname": "Load textures",
+		"Action": "Load",
+		"Target": "{{ModID}}/Objects",
+		"FromFile": "assets/objects.png",
+		"When": {
+			"Milk appearance": "Vanilla",
+		  }
+	},
+        {
+		"Logname": "Load textures",
+		"Action": "Load",
+		"Target": "{{ModID}}/Objects",
+		"FromFile": "assets/objects-ck.png",
+		"When": {
+			"Milk appearance": "Cometkins' Better Retextures",
+		  }
+	},
+        {
+		"Logname": "Load textures",
+		"Action": "Load",
+		"Target": "{{ModID}}/Objects",
+		"FromFile": "assets/objects-fancy-white.png",
+		"When": {
+			"Milk appearance": "Fancy Artisan Goods (White)",
+		  }
+	},
+        {
+		"Logname": "Load textures",
+		"Action": "Load",
+		"Target": "{{ModID}}/Objects",
+		"FromFile": "assets/objects-fancy-suffolk.png",
+		"When": {
+			"Milk appearance": "Fancy Artisan Goods (Suffolk)",
+		  }
+	},
+        {
+		"Logname": "Load textures",
+		"Action": "Load",
+		"Target": "{{ModID}}/Objects",
+		"FromFile": "assets/objects-bnc.png",
+		"When": {
+			"Milk appearance": "BadMoonBase Bottles and Cans",
+		  }
+	},
+        {
+		"Logname": "Load textures",
+		"Action": "Load",
+		"Target": "{{ModID}}/Objects",
+		"FromFile": "assets/objects-vt-sat.png",
+		"When": {
+			"Milk appearance": "Vanilla Tweaks (Saturated)",
+		  }
+	},
+        {
+		"Logname": "Load textures",
+		"Action": "Load",
+		"Target": "{{ModID}}/Objects",
+		"FromFile": "assets/objects-vt-desat.png",
+		"When": {
+			"Milk appearance": "Vanilla Tweaks (Desaturated)",
+		  }
+	},
+        {
+		"Logname": "Load textures",
+		"Action": "Load",
+		"Target": "{{ModID}}/Objects",
+		"FromFile": "assets/objects-peachy.png",
+		"When": {
+			"Milk appearance": "Peachy Objects",
+		  }
+	},
+	{
+		"LogName": "Load produce",
+		"Action": "Include",
+		"FromFile": "data/produce.json"
+        },
+	{
+		"LogName": "Load ageing",
+		"Action": "Include",
+		"FromFile": "data/cask.json"
+        },
+	{
+		"LogName": "Load gift tastes",
+		"Action": "Include",
+		"FromFile": "data/giftTastes.json",
+	},
+	{
+		"LogName": "Load text tweaks",
+		"Action": "Include",
+		"FromFile": "data/textchanges.json",
+		"When": {
+			"Immersive text changes": true,
+		  }
+	},
+    ]
+}

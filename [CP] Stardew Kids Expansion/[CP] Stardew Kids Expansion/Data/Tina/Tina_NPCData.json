@@ -1,0 +1,142 @@
+{
+	"Changes": [
+		{
+			"LogName": "NPC Manifestation",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"Tina": {
+					"DisplayName": "{{i18n: SKE.Tina}}",
+					"Gender": "Female",
+					"Age": "Child",
+					"BirthSeason": "Fall",
+					"BirthDay": 14,
+					"HomeRegion": "Other",
+					"Manner": "Polite",
+					"SocialAnxiety": "Outgoing",
+					"Optimism": "Neutral",
+					"CanBeRomanced": false,
+					"LoveInterest": null,
+					"IntroductionsQuest": "{{IncludeInIntroductions}}",
+					"CanVisitIsland": "!DAY_OF_WEEK Tuesday Wednesday Friday",
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "ScienceHouse",
+							"Tile": {
+								"X": 28,
+								"Y": 19
+							},
+							"Direction": "Down"
+						}
+					],
+					"Breather": false,
+					"Appearance": [
+						{
+							"Id": "Tina.Spring",
+							"Season": "Spring",
+							"Portrait": "Portraits/Tina_Spring",
+							"Sprite": "Characters/Tina_Spring"
+						},
+						{
+							"Id": "Tina.Summer",
+							"Season": "Summer",
+							"Portrait": "Portraits/Tina_Summer",
+							"Sprite": "Characters/Tina_Summer"
+						},
+						{
+							"Id": "Tina.Fall",
+							"Season": "Fall",
+							"Portrait": "Portraits/Tina_Fall",
+							"Sprite": "Characters/Tina_Fall"
+						},
+						{
+							"Id": "Tina.WinterIndoor",
+							"Season": "Winter",
+							"Outdoors": false,
+							"Portrait": "Portraits/Tina_Winter_Inside",
+							"Sprite": "Characters/Tina_Winter_Inside"
+						},
+						{
+							"Id": "Tina.WinterOutdoor",
+							"Season": "Winter",
+							"Indoors": false,
+							"Portrait": "Portraits/Tina_Winter_Outside",
+							"Sprite": "Characters/Tina_Winter_Outside"
+						},
+						{
+							"Id": "Tina.Beach",
+							"IsIslandAttire": true,
+							"Portrait": "Portraits/Tina_Summer",
+							"Sprite": "Characters/Tina_Summer"
+						}
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Tina Base Art Loads",
+			"Action": "Load",
+			"Target": "Portraits/Tina, Characters/Tina",
+			"FromFile": "Assets/Tina/{{Target}}_spring_original.png"
+		},
+		{
+			"LogName": "Tina Seasonal Art Loads",
+			"Action": "Load",
+			"Target": "Portraits/Tina_Spring, Characters/Tina_Spring, Portraits/Tina_Summer, Characters/Tina_Summer, Portraits/Tina_Fall, Characters/Tina_Fall, Portraits/Tina_Winter_Inside, Characters/Tina_Winter_Inside, Portraits/Tina_Winter_Outside, Characters/Tina_Winter_Outside",
+			"FromFile": "assets/Tina/{{Target}}_{{TinaDesign}}.png"
+		},
+		{
+			"LogName": "Tina Dialogue & Schedule Blank",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/Tina, Characters/schedules/Tina",
+			"FromFile": "Data/blank.json"
+		},
+		{
+			"LogName": "Tina Dialogue & Schedule Includes",
+			"Action": "Include",
+			"FromFile": "Data/Tina/Tina_Dialogue.json, Data/Tina/Tina_Schedule.json"
+		},
+		{
+			"LogName": "Tina Festival Includes",
+			"Action": "Include",
+			"FromFile": "Data/Tina/Tina_Festivals.json",
+			"When": {
+				"VisitFestivals": "True"
+			}
+		},
+		{
+			"LogName": "NPC Gift Tastes",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"Tina": "{{i18n: SKE.Tina.love}}/220 223 224/{{i18n: SKE.Tina.like}}/276/{{i18n: SKE.Tina.dislike}}/209/{{i18n: SKE.Tina.hate}}/211 233 346/{{i18n: SKE.Tina.neutral}}/229/"
+			}
+		},
+		{
+			"LogName": "Animations",
+			"Action": "EditData",
+			"Target": "Data/animationDescriptions",
+			"Entries": {
+				"Tina_Sit": "22/22/22",
+				"Tina_Sleep": "23/23/23",
+				"Tina_Jump": "24/24/24"
+			}
+		},
+		{
+			"LogName": "Tina Room",
+			"Action": "EditMap",
+			"Target": "Maps/ScienceHouse",
+			"FromFile": "Assets/Tina/TinaRoom{{SVELUTICompat}}",
+			"ToArea": {
+				"X": 25,
+				"Y": 14,
+				"Width": 7,
+				"Height": 11
+			},
+			"When": {
+				"RoomsEnabled": "true"
+			} 
+		}
+	]
+}

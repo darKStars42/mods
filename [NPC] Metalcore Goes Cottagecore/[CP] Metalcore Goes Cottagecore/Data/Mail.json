@@ -1,0 +1,63 @@
+{
+    "Changes": [
+        {
+            "LogName": "Custom Letters",
+            "Action": "Load",
+            "Target": "Mods/Squeaks.MGC.CP/LetterBackgrounds",
+            "FromFile": "Assets/Images/MGC_stationary.png"
+        },
+        {
+            "LogName": "Rin Stationary - MEEP",
+            "Action": "Load",
+            "Target": "Mods/Squeaks.MGC.CP/RinStationary",
+            "FromFile": "Assets/Images/DarienStationary.png"
+        },
+        {
+            "LogName": "Dolly Stationary - MEEP",
+            "Action": "Load",
+            "Target": "Mods/Squeaks.MGC.CP/DollyStationary",
+            "FromFile": "Assets/Images/DollyStationary.png"
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Squeaks.MGC.CP_CCHouse",
+            "MapTiles": [
+                {
+                    "Position": {
+                        "X": 1,
+                        "Y": 14
+                    },
+                    "Layer": "Buildings",
+                    "SetProperties": {
+                        "Action": "MEEP_Letter {{FamilyMail}}",
+                        "MEEP_Letter_Type": "Mods/Squeaks.MGC.CP/RinStationary"
+                    }
+                }
+            ]
+        },
+        {
+            "LogName": "Cambria Greenhouse Unlock",
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "CambriaGreenhouse": "{{i18n:Mail.Cambria.Greenhouse}}[letterbg Mods/Squeaks.MGC.CP/LetterBackgrounds 0][textcolor black][#]{{i18n:Mail.Cambria.Greenhouse.Title}}"
+            }
+        },
+        {
+            "Logname": "Cambria Special Order",
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "CambriaElderLily": "{{i18n:Mail.Cambria.ElderLily}}%item id (O)Squeaks.MGC.CP_ElderLilySeeds 8 %%[letterbg Mods/Squeaks.MGC.CP/LetterBackgrounds 0][textcolor black][#]{{i18n:Mail.Cambria.ElderLily.Title}}"
+            }
+        },
+        {
+            "LogName": "Gabe Misdelivered Mail",
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "GabeLetter": "{{i18n:Mail.Gabriel.Misdelivered}}%item quest MGC.WrongLetter true %%[#]{{i18n:Mail.Gabriel.Misdelivered.Title}}"
+            }
+        }
+    ]
+}

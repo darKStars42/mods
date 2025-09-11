@@ -1,0 +1,36 @@
+{
+
+   "Changes": [
+
+//★★★Stardew Valley Reimagined 3★★★
+
+
+  //●裏庭の編集(水没洞窟への入り口の追加)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "ModSupport/Flooded_Cave_Backwoods_SVR3.tmx",
+        "ToArea": { "X": 10, "Y": 4, "Width": 7, "Height": 7 },
+       },
+
+  //●裏庭の編集(地下室増築後、入り口前の岩撤去パッチ)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "ModSupport/Flooded_Cave_Backwoods_Open_SVR3.tmx",
+        "ToArea": { "X": 10, "Y": 4, "Width": 7, "Height": 7 },
+        "When": {
+                  "FarmhouseUpgrade": 3,
+                },
+      },
+
+  //●水没洞窟の編集(洞窟から裏庭へのワープ書き換え)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "MapProperties": { "Warp": "31 78 Backwoods 13 7" },
+      },
+
+
+              ] //▼"Changes"の終了▼
+}

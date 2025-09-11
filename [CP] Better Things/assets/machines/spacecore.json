@@ -1,0 +1,97 @@
+{
+	"Changes": [
+	    // FIREFLIES
+	  {
+        "LogName": "Load Fireflies A",
+        "Action": "Load",
+        "Target": "Mods/{{ModId}}/fireflies_A",
+        "FromFile": "assets/objects/fireflies_A.png"
+	  },
+	  {
+        "LogName": "Load FireFlies B",
+        "Action": "Load",
+        "Target": "Mods/{{ModId}}/fireflies_B",
+        "FromFile": "assets/objects/fireflies_B.png"
+	  },
+	  {
+        "LogName": "FireFlies A",
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+          "{{ModId}}_Fireflies_A": {
+          "Name": "{{ModId}}_Fireflies_A",
+          "DisplayName": "{{i18n:machine.fireflies_a.name}}",
+		  "Description": "{{i18n:machine.fireflies_a.description}}",
+          "Price": 3200,
+          "Fragility": 0,
+          "CanBePlacedIndoors": true,
+          "CanBePlacedOutdoors": true,
+          "IsLamp": true,
+          "Texture": "Mods/{{ModId}}/fireflies_A",
+          "SpriteIndex": 0,
+		  "ContextTags": null,
+          "CustomFields": null
+          }
+        },
+		"When": { "HasMod |contains=spacechase0.SpaceCore": true }
+      },
+	  {
+        "LogName": "FireFlies B",
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+          "{{ModId}}_Fireflies_B": {
+          "Name": "{{ModId}}_Fireflies_B",
+          "DisplayName": "{{i18n:machine.fireflies_b.name}}",
+		  "Description": "{{i18n:machine.fireflies_b.description}}",
+          "Price": 3200,
+          "Fragility": 0,
+          "CanBePlacedIndoors": true,
+          "CanBePlacedOutdoors": true,
+          "IsLamp": true,
+          "Texture": "Mods/{{ModId}}/fireflies_B",
+          "SpriteIndex": 0,
+		  "ContextTags": null,
+          "CustomFields": null
+          }
+        },
+		"When": { "HasMod |contains=spacechase0.SpaceCore": true }
+      },
+      {
+        "LogName": "Fireflies A animation",
+        "Action": "EditData",
+        "Target": "spacechase0.SpaceCore/TextureOverrides",
+        "Entries": {
+          "{{ModId}}_fireflies_A": {
+          "TargetTexture": "Mods/{{ModId}}/fireflies_A",
+          "TargetRect": {
+                "X": 0,
+                "Y": 0,
+                "Width": 16,
+                "Height": 32
+                },
+                "SourceTexture": "{{InternalAssetKey: assets/objects/fireflies_A.png}}:0..7@8"
+              }
+            },
+			"When": { "HasMod |contains=spacechase0.SpaceCore": true }
+      },
+      {
+        "LogName": "Fireflies B animation",
+        "Action": "EditData",
+        "Target": "spacechase0.SpaceCore/TextureOverrides",
+        "Entries": {
+          "{{ModId}}_fireflies_B": {
+          "TargetTexture": "Mods/{{ModId}}/fireflies_B",
+          "TargetRect": {
+                "X": 0,
+                "Y": 0,
+                "Width": 16,
+                "Height": 32
+                },
+                "SourceTexture": "{{InternalAssetKey: assets/objects/fireflies_B.png}}:0..7@8"
+              }
+            },
+			"When": { "HasMod |contains=spacechase0.SpaceCore": true }
+      }
+   ]
+}

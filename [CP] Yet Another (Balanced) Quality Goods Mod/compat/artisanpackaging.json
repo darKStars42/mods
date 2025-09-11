@@ -1,0 +1,250 @@
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)jabbic.CPArtisanPackaging_Boxer",
+				"OutputRules",
+				"Default",
+				"OutputItem",
+				"jabbic.CPArtisanPackagingBox"
+			],
+			"Entries": {
+				"CopyQuality": true,
+				"CopyColor": true,
+                "CopyPrice": true,
+				"PreserveId": "DROP_IN",
+				"PriceModifierMode": "Stack",
+				"PriceModifiers": [
+					{
+						"Id": "Box_Multiply_Crops_By_Stack_Tiller",
+						"Condition": "PLAYER_HAS_PROFESSION Target 1, !ITEM_CONTEXT_TAG Input category_syrup, !ITEM_CONTEXT_TAG Input category_greens, !ITEM_CONTEXT_TAG Input forage_item, !ITEM_ID Input 433",
+						"Modification": "Multiply",
+						"Amount": "17.6"
+					},
+					{
+						"Id": "Box_Multiply_Crops_By_Stack_NonTiller",
+						"Condition": "!PLAYER_HAS_PROFESSION Target 1, !ITEM_CONTEXT_TAG Input category_syrup, !ITEM_CONTEXT_TAG Input category_greens, !ITEM_CONTEXT_TAG Input forage_item, !ITEM_ID Input 433",
+						"Modification": "Multiply",
+						"Amount": "16"
+					},
+					{
+						"Id": "Box_Multiply_Syrup_By_Stack_Tapper",
+						"Condition": "PLAYER_HAS_PROFESSION Target 15, ITEM_CONTEXT_TAG Input category_syrup",
+						"Modification": "Multiply",
+						"Amount": "20"
+					},
+					{
+						"Id": "Box_Multiply_Syrup_By_Stack_Tapper",
+						"Condition": "PLAYER_HAS_PROFESSION Target 15, ITEM_CONTEXT_TAG Input category_syrup",
+						"Modification": "Multiply",
+						"Amount": "20"
+					},
+					{
+						"Id": "Box_Multiply_Syrup_By_Stack_NonTapper",
+						"Condition": "!PLAYER_HAS_PROFESSION Target 15, ITEM_CONTEXT_TAG Input category_syrup",
+						"Modification": "Multiply",
+						"Amount": "16"
+					},
+					{
+						"Id": "Box_Multiply_Coffe_By_Stack",
+						"Condition": "ANY \"ITEM_CONTEXT_TAG Input category_greens\" \"ITEM_CONTEXT_TAG Input forage_item\" \"ITEM_ID Target 433\"",
+						"Modification": "Multiply",
+						"Amount": "16"
+					},
+					{
+						"Id": "6480.qualitygoods",
+						"Modification": "Multiply",
+						"Amount": "{{Profit Scaling}}"
+					},
+					{
+						"Id": "Box_Add",
+						"Modification": "Add",
+						"Amount": 1000,
+						"RandomAmount": null
+					}
+				]
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)jabbic.CPArtisanPackaging_Packer",
+				"OutputRules",
+				"Default",
+				"OutputItem",
+				"jabbic.CPArtisanPackagingCrateDefault"
+			],
+			"Entries": {
+				"CopyQuality": true,
+				"CopyColor": true,
+                "CopyPrice": true,
+				"PreserveId": "DROP_IN",
+				"PriceModifierMode": "Stack",
+				"PriceModifiers": [
+					{
+						"Id": "Crate_Multiply_Goods_By_Stack",
+						"Condition": null,
+						"Modification": "Multiply",
+						"Amount": "11"
+					},
+					{
+						"Id": "Crate_Multiply_Boxes_By_Stack",
+						"Condition": "ITEM_ID Input jabbic.CPArtisanPackaging_Box",
+						"Modification": "Multiply",
+						"Amount": "4.4"
+					},
+					{
+						"Id": "Crate_Multiply_Cans_By_Stack",
+						"Condition": "ITEM_ID Input jabbic.CPArtisanPackaging_CannedFish",
+						"Modification": "Multiply",
+						"Amount": "4.4"
+					},
+					{
+						"Id": "6480.qualitygoods",
+						"Modification": "Multiply",
+						"Amount": "{{Profit Scaling}}"
+					}
+				]
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)jabbic.CPArtisanPackaging_Packer",
+				"OutputRules",
+				"Boxes",
+				"OutputItem",
+				"jabbic.CPArtisanPackagingCrateofBoxes"
+			],
+			"Entries": {
+				"CopyQuality": true,
+				"CopyColor": true,
+                "CopyPrice": true,
+				"PreserveId": "DROP_IN",
+				"PriceModifierMode": "Stack",
+				"PriceModifiers": [
+					{
+						"Id": "Crate_Multiply_Goods_By_Stack",
+						"Condition": null,
+						"Modification": "Multiply",
+						"Amount": "4.4"
+					},
+					{
+						"Id": "6480.qualitygoods",
+						"Modification": "Multiply",
+						"Amount": "{{Profit Scaling}}"
+					}
+				]
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)jabbic.CPArtisanPackaging_Packer",
+				"OutputRules",
+				"Cans",
+				"OutputItem",
+				"jabbic.CPArtisanPackagingCrateofCans"
+			],
+			"Entries": {
+				"CopyQuality": true,
+				"CopyColor": true,
+                "CopyPrice": true,
+				"PreserveId": "DROP_IN",
+				"PriceModifierMode": "Stack",
+				"PriceModifiers": [
+					{
+						"Id": "Crate_Multiply_Goods_By_Stack",
+						"Condition": null,
+						"Modification": "Multiply",
+						"Amount": "11"
+					},
+					{
+						"Id": "6480.qualitygoods",
+						"Modification": "Multiply",
+						"Amount": "{{Profit Scaling}}"
+					}
+				]
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)jabbic.CPArtisanPackaging_Canner",
+				"OutputRules",
+				"Default",
+				"OutputItem",
+				"jabbic.CPArtisanPackagingCanDefault"
+			],
+			"Entries": {
+				"CopyQuality": true,
+				"CopyColor": true,
+                "CopyPrice": true,
+				"PreserveId": "DROP_IN",
+				"PriceModifierMode": "Stack",
+				"PriceModifiers": [
+					{
+						"Id": "Can_Double_Fish_Price_Fisher",
+						"Condition": "PLAYER_HAS_PROFESSION Target 6",
+						"Modification": "Multiply",
+						"Amount": "2.5"
+					},
+					{
+						"Id": "Can_Double_Fish_Price_Angler",
+						"Condition": "PLAYER_HAS_PROFESSION Target 8",
+						"Modification": "Multiply",
+						"Amount": "1.2"
+					},
+					{
+						"Id": "Can_Double_Fish_Price_No_Profession",
+						"Condition": "!PLAYER_HAS_PROFESSION Target 6",
+						"Modification": "Multiply",
+						"Amount": "2"
+					},
+					{
+						"Id": "6480.qualitygoods",
+						"Modification": "Multiply",
+						"Amount": "{{Profit Scaling}}"
+					}
+				]
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)jabbic.CPArtisanPackaging_Canner",
+				"OutputRules",
+				"Crustaceans",
+				"OutputItem",
+				"jabbic.CPArtisanPackagingCanCrustaceans"
+			],
+			"Entries": {
+				"CopyQuality": true,
+				"CopyColor": true,
+                "CopyPrice": true,
+				"PreserveId": "DROP_IN",
+				"PriceModifierMode": "Stack",
+				"PriceModifiers": [
+					{
+						"Id": "Can_Multiply_Fish_Price",
+						"Condition": null,
+						"Modification": "Multiply",
+						"Amount": "2"
+					},
+					{
+						"Id": "6480.qualitygoods",
+						"Modification": "Multiply",
+						"Amount": "{{Profit Scaling}}"
+					}
+				]
+			}
+		},
+	]
+}

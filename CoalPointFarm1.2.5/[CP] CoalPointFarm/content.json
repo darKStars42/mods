@@ -1,0 +1,1349 @@
+//Content for [CP] Coal Point Farm
+{
+	"Format": "2.0.2",
+	//Config
+	"ConfigSchema": {
+		"CPFNPCPerfection":{
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Count NPCs from Coal Point Farm in perfection",
+			"Section": "Perfection",
+		},
+		"JojaLoading":{
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Loads events in Jojamart. No 2 mods can load events, so if another mod loads them, turn this off.",
+			"Section": "Compatibility",
+		},
+		"DesertLoading":{
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Loads events in the Desert. No 2 mods can load events, so if another mod loads them, turn this off.",
+			"Section": "Compatibility",
+		},
+		"CPFMapEdits":{
+			"AllowValues": "Automatic, Vanilla, Bluegrass, Earthy, VPR, Off",
+			"Default": "Automatic",
+			"Description": "Loads the world map edit showing Coal Point Farm. I've worked to ensure compatibility with as many mods as I can, but if your map looks wierd because of Coal Point Farm's patch, you can turn this off.",
+			"Section": "Compatibility",
+		},
+		"VPRFall": {
+			"AllowValues": "Orange, Green",
+			"Default": "Orange",
+			"Description": "Loads separate world map edits depending on the type of VPR used. Ignore if not using VPR.",
+			"Section": "Compatibility",
+		},
+		"EnableIsaacI": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Loads in a new NPC named Isaac I to bring a satisfying conclusion to Ashida's arc. Content is similar to the amount Jodi has. Can be turned on/off mid-save.",
+			"Section": "Experimental",
+		}
+	},
+	//Dynamic Tokens
+	"DynamicTokens": [
+		//Clothing Detection
+		{
+			"Name": "CPFIndoorsOutdoors",
+			"Value": "Indoors",
+		},
+		{
+			"Name": "CPFIndoorsOutdoors",
+			"Value": "Outdoors",
+			"When": {
+				"IsOutdoors": "true",
+			},
+		},
+		{
+			"Name": "CPFPregnant",
+			"Value": "",
+		},
+		{
+			"Name": "CPFPregnant",
+			"Value": "Pregnant",
+			"When": {
+				"Season": " summer, fall",
+				"HasSeenEvent |contains=145857": false,
+			},
+		},
+		
+		//Babysitting Values
+			//Ashida
+			//Church Update
+		{
+			"Name": "CPFAshidaBabyDaysCondition",
+			"Value": "Monday, Tuesday, Wednesday, Thursday, Sunday",
+		},
+		{
+			"Name": "CPFAshidaBabyDaysCondition",
+			"Value": "Monday, Tuesday, Wednesday, Thursday",
+			"When": {
+				"HasSeenEvent": "145868",
+			},
+		},
+		{
+			"Name": "CPFAshidaBabyDaysQuery",
+			"Value": "Monday Tuesday Wednesday Thursday Sunday",
+		},
+		{
+			"Name": "CPFAshidaBabyDaysQuery",
+			"Value": "Monday Tuesday Wednesday Thursday",
+			"When": {
+				"HasSeenEvent": "145868",
+			},
+		},
+		//Schedules 
+		{
+			"Name": "AshidaBinocularSpotMountain",
+			"Value": "{{Random: 35 14 2++22 23 2++60 22 2|inputSeparator=++}}",
+		},
+		{
+			"Name": "AshidaBinocularSpotEastScarp",
+			"Value": "{{Random: 36 27 2++67 21 2++75 120 2++35 98 2|inputSeparator=++}}",
+		},
+			//Isaac I Schedule madness - Mountain
+		{
+			"Name": "IsaacIFollowSpotMountain",
+			"Value": "34 14 2",
+			"When": {
+				"AshidaBinocularSpotMountain": "35 14 2"
+			}
+		},
+		{
+			"Name": "IsaacIFollowSpotMountain",
+			"Value": "22 21 3",
+			"When": {
+				"AshidaBinocularSpotMountain": "22 23 2"
+			}
+		},
+		{
+			"Name": "IsaacIFollowSpotMountain",
+			"Value": "56 21 3",
+			"When": {
+				"AshidaBinocularSpotMountain": "60 22 2"
+			}
+		},
+			//Isaac I Schedule madness - ES
+		{
+			"Name": "IsaacIFollowSpotEastScarp",
+			"Value": "35 26 2",
+			"When": {
+				"AshidaBinocularSpotEastScarp": "36 27 2"
+			}
+		},
+		{
+			"Name": "IsaacIFollowSpotEastScarp",
+			"Value": "68 26 2",
+			"When": {
+				"AshidaBinocularSpotEastScarp": "67 21 2"
+			}
+		},
+		{
+			"Name": "IsaacIFollowSpotEastScarp",
+			"Value": "73 118 2",
+			"When": {
+				"AshidaBinocularSpotEastScarp": "75 120 2"
+			}
+		},
+		{
+			"Name": "IsaacIFollowSpotEastScarp",
+			"Value": "35 99 1",
+			"When": {
+				"AshidaBinocularSpotEastScarp": "35 98 2"
+			}
+		},
+		{
+			"Name": "MarcusAndDusty",
+			"Value": "50 69 1",
+		},
+		{
+			"Name": "MarcusAndDusty",
+			"Value": "52 69 0",
+			"When": {"HasMod": "FlashShifter.StardewValleyExpandedCP"},
+		},
+		{
+			"Name": "MoraOnAWednesday",
+			"Value": "{{Random: 900 Town 101 102 3 MoraFarmingLeft/1500 Custom_ShearwaterBridge 26 19 0 MoraStoneSkipBack/1800 APTMMHouse 9 7 2 MoraPhone++900 EastScarp_Village 26 62 2 MoraStoneSkipFront/1709 APTMMHouse 9 7 2 MoraPhone|inputSeparator=++}}",
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP",
+				"HasMod": "Lemurkat.EastScarpe.CP",
+			},
+		},
+		
+		//Dialogue
+		
+		{
+			"Name": "MoraDialogueMood",
+			"Value": "",
+		},
+		{
+			"Name": "MoraDialogueMood",
+			"Value": "Fight",
+			"When": {
+				"HasSeenEvent": "145864",
+				"HasSeenEvent | contains=145870": false
+			},
+		},
+		
+		//Festival Positions
+		//Flower Festival
+		{
+			"Name": "MoraFlowerFestivalPosition",
+			"Value": "17 20 2"
+		},
+		{
+			"Name": "MoraFlowerFestivalPosition",
+			"Value": "19 20 2",
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP",
+				"HasMod": "Fernandtea.NewNPCWilford"
+			}
+		},
+		{
+			"Name": "MoraFlowerFestivalPosition",
+			"Value": "20 21 2",
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP",
+				"HasMod": "Fernandtea.NewNPCWilford",
+				"HasMod": "LemurKat.Mr.Ginger.NPC",
+			}
+		},
+		//Fall Fair
+		{
+			"Name": "MarcusFallFestivalPosition",
+			"Value": "63 65 2",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": false
+			},
+		},
+		{
+			"Name": "MarcusFallFestivalPosition",
+			"Value": "52 33 2",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": true
+			},
+		},
+		{
+			"Name": "MoraFallFestivalPosition",
+			"Value": "62 65 2",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": false
+			},
+		},
+		{
+			"Name": "MoraFallFestivalPosition",
+			"Value": "52 35 2",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": true
+			},
+		},
+		{
+			"Name": "AshidaFallFestivalPosition",
+			"Value": "33 57 1",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": false
+			},
+		},
+		{
+			"Name": "AshidaFallFestivalPosition",
+			"Value": "49 66 2",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": true
+			},
+		},
+		{
+			"Name": "AshidaFallFestivalPosition2",
+			"Value": "33 57 1",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": false
+			},
+		},
+		{
+			"Name": "AshidaFallFestivalPosition2",
+			"Value": "49 67 2",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": true
+			},
+		},
+		{
+			"Name": "AshidaFallFestivalDialogue",
+			"Value": "{{i18n:AshidaFallFestivalDialogue1}}",
+		},
+		{
+			"Name": "AshidaFallFestivalDialogue",
+			"Value": "{{i18n:AshidaFallFestivalDialogue2}}",
+			"When": {
+				"HasSeenEvent": "145857",
+			},
+		},
+		//Spirit's Eve
+		{
+			"Name": "MarcusSpiritsPosition",
+			"Value": "13 16 2",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": false
+			},
+		},
+		{
+			"Name": "MarcusSpiritsPosition",
+			"Value": "37 31 2",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": true
+			},
+		},
+		{
+			"Name": "MoraSpiritsPosition",
+			"Value": "9 16 2",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": false
+			},
+		},
+		{
+			"Name": "MoraSpiritsPosition",
+			"Value": "53 28 1",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": true
+			},
+		},
+		//Winter Star Compat
+		{
+			"Name": "CPFWinterStarSuffix",
+			"Value": ""
+		},
+		{
+			"Name": "CPFWinterStarSuffix",
+			"Value": "2",
+			"When": {
+                "Year |contains=1": "false"
+			},
+		},
+		{
+			"Name": "CPFWinterStarSuffix",
+			"Value": "SVE",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": true,
+			},
+		},
+		{
+			"Name": "CPFWinterStarSuffix",
+			"Value": "2SVE",
+			"When": {
+				"HasMod | contains=FlashShifter.StardewValleyExpandedCP": true,
+                "Year |contains=1": "false"
+			},
+		},
+		//Strings for Coal Point Farm
+		{
+			"Name": "AshidaIcedTeaStatus",
+			"Value": "{{i18n:Strings.AshidaIcedTeaStatus.0}}",
+			"When": {
+				"season| contains=winter": false
+			},
+		},
+		{
+			"Name": "AshidaIcedTeaStatus",
+			"Value": "{{i18n:Strings.AshidaIcedTeaStatus.1}}",
+			"When": {
+				"season| contains=winter": true
+			},
+		},
+		{
+			"Name": "IsaacCribMessage",
+			"Value": "{{i18n:Strings.IsaacCribMessage.0}}",
+		},
+		{
+			"Name": "IsaacCribMessage",
+			"Value": "{{i18n:Strings.IsaacCribMessage.1}}",
+			"When": {
+				"HasSeenEvent": "145857",
+			},
+		},
+		//Backwoods Compat Patch
+		{
+			"Name": "CPFBackwoodsPatch",
+			"Value": "CoalPointFix"
+		},
+		{
+			"Name": "CPFBackwoodsPatch",
+			"Value": "MumpsCPFPatch",
+			"When": {
+				"HasMod": "inviisiiblelee.Mumps",
+				"HasMod |contains=Wally32.FairyBakery.CP": false
+			}
+		},
+		{
+			"Name": "CPFBackwoodsPatch",
+			"Value": "FairyBakeryCPFPatch",
+			"When": {
+				"HasMod": "Wally32.FairyBakery.CP",
+				"HasMod |contains=inviisiiblelee.Mumps": false
+			}
+		},
+		{
+			"Name": "CPFBackwoodsPatch",
+			"Value": "FairyBakeryCPFPatch",
+			"When": {
+				"HasMod": "Wally32.FairyBakery.CP",
+				"HasMod": "inviisiiblelee.Mumps"
+			}
+		},
+		
+		//Earthy Recolor Patch
+		{
+			"Name": "CPFRecolorToken",
+			"Value": ""
+		},
+		{
+			"Name": "CPFRecolorToken",
+			"Value": "Earthy",
+			"When": {
+				"CPFMapEdits": "Automatic",
+				"HasMod": "DaisyNiko.EarthyRecolour",
+			}
+		},
+		{
+			"Name": "CPFRecolorToken",
+			"Value": "Earthy",
+			"When": {
+				"CPFMapEdits": "Earthy",
+			}
+		},
+		{
+			"Name": "CPFRecolorToken",
+			"Value": "Earthy",
+			"When": {
+				"CPFMapEdits": "Automatic",
+				"HasMod": "DNER.SVEmapfix",
+			}
+		},
+		{
+			"Name": "CPFRecolorToken",
+			"Value": "Bluegrass",
+			"When": {
+				"CPFMapEdits": "Automatic",
+				"HasMod": "colling.bluegrass",
+			}
+		},
+		{
+			"Name": "CPFRecolorToken",
+			"Value": "Bluegrass",
+			"When": {
+				"CPFMapEdits": "Bluegrass",
+			}
+		},
+		{
+			"Name": "CPFRecolorToken",
+			"Value": "VPR",
+			"When": {
+				"CPFMapEdits": "Automatic",
+				"HasMod": "grapeponta.VibrantPastoralRecolor",
+			}
+		},
+		{
+			"Name": "CPFRecolorToken",
+			"Value": "VPR",
+			"When": {
+				"CPFMapEdits": "VPR",
+			}
+		},
+		//WTTTDR Redux Edits
+		{
+			"Name": "WTTDR",
+			"Value": "",
+		},
+		{
+			"Name": "WTTDR",
+			"Value": "WTTDR",
+			"When": {
+				"HasMod: |contains=Tarniyar.CP.WalkToDesert": true,
+				"HasMod: |contains=ReMapping.Vlgor": true
+			}
+		},
+		//Mora Marcus 2 Heart Setup
+		{
+			"Name": "APTBlondie",
+			"Value": "Elliott",
+		},
+		{
+			"Name": "APTBlondie",
+			"Value": "Thompson",
+			"When": {"HasMod": "AndrewJC.APelicanTown"},
+		},
+			//SVE Split; Vanilla
+		{
+			"Name": "MoraMarcus2Heart",
+			"Value": "continue/24 41/APTMora 24 39 2 APTMarcus 25 39 2 {{APTBlondie}} 20 54 0 Haley 20 52 0 farmer 23 34 2/skippable/positionOffset APTMora 16 20/positionOffset APTMarcus 16 16/move farmer 0 5 2 true/pause 1000/textAboveHead APTMarcus \"{{i18n:145853Vanilla.0}}\"/emote farmer 8/pause 1000/speak APTMora \"{{i18n:145853Vanilla.1}}\"/speak APTMarcus \"{{i18n:145853Vanilla.2}}\"/speak APTMora \"{{i18n:145853Vanilla.3}}\"/move Haley 0 -15 1 true/emote APTMarcus 28/pause 2000/jump APTMora 7/pause 500/faceDirection APTMora 3/speak APTMora \"{{i18n:145853Vanilla.4}}\"/pause 1000/jump APTMora 7/pause 550/jump APTMora 7/textAboveHead APTMora \"{{i18n:145853Vanilla.5}}\"/emote Haley 8/pause 1000/move Haley 4 0 2 true/faceDirection farmer 0/faceDirection APTMora 0/faceDirection APTMarcus 0/speak APTMora \"{{i18n:145853Vanilla.6}}\"/emote Haley 20/animate Haley false false 250 0 4 8 12 16 17 18 19 19 19 18 17 16 0/textAboveHead APTMarcus \"{{i18n:145853Vanilla.7}}\"/pause 500/emote Haley 32/faceDirection APTMarcus 2/move Haley -6 0 3 true/faceDirection APTMora 2/faceDirection farmer 2/emote APTMarcus 12/pause 750/speak APTMarcus \"{{i18n:145853Vanilla.8}}\"/playSound coin/animate Haley true true 250 33 33 33 33 33 33 33 33 33 33 32 25 25 32 32 33/speak APTMora \"{{i18n:145853Vanilla.9}}\"/speak APTMarcus \"{{i18n:145853Vanilla.10}}\"/advancedMove {{APTBlondie}} false 0 -12/pause 1250/speak APTMora \"{{i18n:145853Vanilla.11}}\"/pause 1000/speak APTMarcus \"{{i18n:145853Vanilla.12}}\"/speak APTMora \"{{i18n:145853Vanilla.13}}\"/textAboveHead APTMora \"{{i18n:145853Vanilla.14}}\"/emote {{APTBlondie}} 8/emote Haley 12/jump Haley/speed Haley 3/move Haley 0 2 1 true/speak {{APTBlondie}} \"{{i18n:145853Vanilla.15}}\"/speed Haley 3/move Haley 2 0 1 true/advancedMove {{APTBlondie}} false 0 20/textAboveHead {{APTBlondie}} \"{{i18n:145853Vanilla.16}}\"/faceDirection APTMora 3/faceDirection farmer 3/speak Haley \"{{i18n:145853Vanilla.17}}\"/speed APTMarcus 5/move farmer 0 -1 3 true/advancedMove APTMarcus false 20 0/textAboveHead APTMarcus \"{{i18n:145853Vanilla.18}}\"/question fork0 \"{{i18n:145853Vanilla.19}}\"/fork farmerStaysMora/",
+		},
+		{
+				//SVE
+			"Name": "MoraMarcus2Heart",
+			"Value": "continue/24 41/APTMora 25 39 2 APTMarcus 26 39 2 {{APTBlondie}} 20 54 0 Haley 21 52 0 farmer 24 34 2/skippable/positionOffset APTMora 16 16/positionOffset APTMarcus 16 16/move farmer 0 5 2 true/pause 1000/textAboveHead APTMarcus \"{{i18n:145853SVE.0}}\"/emote farmer 8/pause 1000/speak APTMora \"{{i18n:145853SVE.1}}\"/speak APTMarcus \"{{i18n:145853SVE.2}}\"/speak APTMora \"{{i18n:145853SVE.3}}\"/move Haley 0 -15 1 true/emote APTMarcus 28/pause 2000/jump APTMora 7/pause 500/faceDirection APTMora 3/speak APTMora \"{{i18n:145853SVE.4}}\"/pause 1000/jump APTMora 7/pause 550/jump APTMora 7/textAboveHead APTMora \"{{i18n:145853SVE.5}}\"/emote Haley 8/pause 1000/move Haley 4 0 2 true/faceDirection farmer 0/faceDirection APTMora 0/faceDirection APTMarcus 0/speak APTMora \"{{i18n:145853SVE.6}}\"/emote Haley 20/animate Haley false false 250 0 4 8 12 16 17 18 19 19 19 18 17 16 0/textAboveHead APTMarcus \"{{i18n:145853SVE.7}}\"/pause 500/emote Haley 32/faceDirection APTMarcus 2/move Haley -5 0 3 true/faceDirection APTMora 2/faceDirection farmer 2/emote APTMarcus 12/pause 750/speak APTMarcus \"{{i18n:145853SVE.8}}\"/playSound coin/animate Haley true true 250 33 33 33 33 33 33 33 33 33 33 32 25 25 32 32 33/speak APTMora \"{{i18n:145853SVE.9}}\"/speak APTMarcus \"{{i18n:145853SVE.10}}\"/advancedMove {{APTBlondie}} false 0 -12/pause 1250/speak APTMora \"{{i18n:145853SVE.11}}\"/pause 1000/speak APTMarcus \"{{i18n:145853SVE.12}}\"/speak APTMora \"{{i18n:145853SVE.13}}\"/textAboveHead APTMora \"{{i18n:145853SVE.14}}\"/emote {{APTBlondie}} 8/emote Haley 12/jump Haley/speed Haley 3/move Haley 0 2 1 true/speak {{APTBlondie}} \"{{i18n:145853SVE.15}}\"/speed Haley 3/move Haley 2 0 1 true/advancedMove {{APTBlondie}} false 0 20/textAboveHead {{APTBlondie}} \"{{i18n:145853SVE.16}}\"/faceDirection APTMora 3/faceDirection farmer 3/speak Haley \"{{i18n:145853SVE.17}}\"/speed APTMarcus 5/move farmer 0 -1 3 true/advancedMove APTMarcus false 20 0/textAboveHead APTMarcus \"{{i18n:145853SVE.18}}\"/question fork0 \"{{i18n:145853SVE.19}}\"/fork farmerStaysMora/",
+			"When": {"HasMod": "FlashShifter.StardewValleyExpandedCP"},
+		},
+		//Ashida 2 Heart Cameos
+		{
+			"Name": "CPFCitizen",
+			"Value": "Robin",
+		},
+		{
+			"Name": "CPFCitizen",
+			"Value": "Kenzie",
+			"When": {"HasMod": "AndrewJC.APelicanTown"},
+		},
+		{
+			"Name": "CPFCitizens",
+			"Value": "warp Lewis 9 6/warp Marnie 7 6",
+		},
+		{
+			"Name": "CPFCitizens",
+			"Value": "warp Kenzie 8 5/warp Lewis 9 6/warp Marnie 7 6",
+			"When": {"HasMod": "AndrewJC.APelicanTown"},
+		},
+		{
+			"Name": "CPFKenzieJumping",
+			"Value": "jump Robin 8",
+		},
+		{
+			"Name": "CPFKenzieJumping",
+			"Value": "jump Kenzie 8/pause 500/jump Kenzie 8/pause 500/jump Kenzie 8/textAboveHead Kenzie \"{{i18n:145852Cameo.0}}\"/pause 250/faceDirection Kenzie 0/pause 250/warp Kenzie 50 -50",
+			"When": {"HasMod": "AndrewJC.APelicanTown"},
+		},
+		
+		//Birth Activity
+		
+		//Birth Event
+		{
+			"Name": "AyeishaMovement3",
+			"Value": "pause 1",
+		},
+		{
+			"Name": "AyeishaMovement3",
+			"Value": "speak APTMora \"{{i18n:145857Cameo.1}}\"/speak Ayeisha \"{{i18n:145857Cameo.0}}\"/speed Ayeisha 6/advancedMove Ayeisha false 0 3 20 0",
+			"When": {"HasMod": "TheLimeyDragon.Ayeisha"},
+		},
+		
+		//Ashida Placement
+			//Standard
+		{
+			"Name": "AshidaStartingLocation",
+			"Value": "CoalPointFarmhouse",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+		},
+		{
+			"Name": "AshidaStartingPositionX",
+			"Value": "37",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+		},
+		{
+			"Name": "AshidaStartingPositionY",
+			"Value": "9",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+		},
+			//Birth
+		{
+			"Name": "AshidaStartingLocation",
+			"Value": "Hospital",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": true,
+			},
+		},
+		{
+			"Name": "AshidaStartingPositionX",
+			"Value": "20",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": true,
+			},
+		},
+		{
+			"Name": "AshidaStartingPositionY",
+			"Value": "4",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": true,
+			},
+		},
+		//Isaac II Placement
+			//Standard
+		{
+			"Name": "IsaacIIStartingLocation",
+			"Value": "CoalPointFarmhouse",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+		},
+		{
+			"Name": "IsaacIIStartingPositionX",
+			"Value": "25",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+		},
+		{
+			"Name": "IsaacIIStartingPositionY",
+			"Value": "7",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+		},
+			//Birth
+		{
+			"Name": "IsaacIIStartingLocation",
+			"Value": "Hospital",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": true,
+			},
+		},
+		{
+			"Name": "IsaacIIStartingPositionX",
+			"Value": "18",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": true,
+			},
+		},
+		{
+			"Name": "IsaacIIStartingPositionY",
+			"Value": "5",
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": true,
+			},
+		},
+		
+		//Mora Exhaustian Part 2 Tokens
+		
+		{
+			"Name": "MoraStress2Setup",
+			"Value": "Pierre 4 17 2 APTMora 100 -100 0 Harvey 12 23 0",
+		},
+		{
+			"Name": "MoraStress2Setup",
+			"Value": "{{MoraStress2Setup}} Thompson 12 28 3",
+			"When": {
+				"HasMod": "AndrewJC.APelicanTown",
+				"HasFlag |contains= IsCommunityCenterComplete": true
+			},
+		},
+		{
+			"Name": "MoraStress2Setup",
+			"Value": "{{MoraStress2Setup}} Sterling 5 22 3",
+			"When": {
+				"HasMod": "Himetarts.ARV.CP",
+			},
+		},
+		
+		{
+			"Name": "MoraStressSterlingAnimation1",
+			"Value": "pause 1"
+		},
+		{
+			"Name": "MoraStressSterlingAnimation1",
+			"Value": "animate Sterling false true 125 32 33 34 34 34 34 34 34 34 35 36 36 36 36 36 37 37 37 37 37 38 36 35 34 34 34 34 34 34 35 36 36 36 36 36 37 37 37 37 37 38 36 35 36 38 39 40 41 42 34 34 34 34 34 35 36 36 36 36 36 37 37 37 37 37 38 36 35 36 38 39 40 41 42 34 34 34 34 34 34 35 36 36 36 36 36 38 36 35 36 38 39 40 41 42 34 33 32",
+			"When": {
+				"HasMod": "Himetarts.ARV.CP",
+			},
+		},
+		{
+			"Name": "MoraStressSterlingAnimation2",
+			"Value": "emote farmer 8"
+		},
+		{
+			"Name": "MoraStressSterlingAnimation2",
+			"Value": "stopAnimation Sterling/animate Sterling true true 125 37",
+			"When": {
+				"HasMod": "Himetarts.ARV.CP",
+			},
+		},
+		
+		//Mora 8 Heart Tokens
+		{
+			"Name": "Mora8HeartSwimmingCompat",
+			"Value": "warp farmer 11 14/swimming farmer/faceDirection farmer 3/warp APTMora 100 -100/warp APTMoraSwimSuit 4 12/advancedMove APTMoraSwimSuit false 2 0 2 100/viewport 15 16/globalFadeToClear/pause 1000/jump APTMoraSwimSuit 8/speak APTMoraSwimSuit \"{{i18n:145870Vanilla.0}}\"/pause 300/warp APTMoraSwimSuit 6 14/pause 1/swimming APTMoraSwimSuit/playSound waterSlosh/pause 250/emote APTMoraSwimSuit 20/shake APTMoraSwimSuit 500/pause 500/speak APTMoraSwimSuit \"{{i18n:145870Vanilla.1}}\"/emote farmer 32/advancedMove APTMoraSwimSuit false 3 0 1 100/question fork2 \"{{i18n:145870Vanilla.2}}\"/fork MoraDesertRomance/speak APTMoraSwimSuit \"{{i18n:145870Vanilla.3}}\"/advancedMove APTMoraSwimSuit false 1 0 1 100/speak APTMoraSwimSuit \"{{i18n:145870Vanilla.4}}\"/advancedMove APTMoraSwimSuit false 0 3 2 100/pause 160/advancedMove farmer false 0 3 2 100/pause 2000/emote APTMoraSwimSuit 32/viewport move 0 1 3000/pause 2500"
+		},
+		{
+			"Name": "Mora8HeartSwimmingCompat",
+			"Value": "warp farmer 12 13/swimming farmer/faceDirection farmer 3/warp APTMora 100 -100/warp APTMoraSwimSuit 6 11/advancedMove APTMoraSwimSuit false 2 0 2 100/viewport 15 16/globalFadeToClear/pause 1000/jump APTMoraSwimSuit 8/speak APTMoraSwimSuit \"{{i18n:145870SVE.0}}\"/pause 300/warp APTMoraSwimSuit 8 13/pause 1/swimming APTMoraSwimSuit/playSound waterSlosh/pause 250/emote APTMoraSwimSuit 20/shake APTMoraSwimSuit 500/pause 500/speak APTMoraSwimSuit \"{{i18n:145870SVE.1}}\"/emote farmer 32/advancedMove APTMoraSwimSuit false 2 0 1 100/question fork2 \"{{i18n:145870SVE.2}}\"/fork MoraDesertRomance/speak APTMoraSwimSuit \"{{i18n:145870SVE.3}}\"/advancedMove farmer false -1 0 3 100/speak APTMoraSwimSuit \"{{i18n:145870SVE.4}}\"/advancedMove APTMoraSwimSuit false 0 2 2 100/pause 160/advancedMove farmer false 0 2 2 100/pause 2000/emote APTMoraSwimSuit 32/viewport move 0 1 3000/pause 2500",
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP",
+			},
+		},
+		{
+			"Name": "MoraLocationQuestionFork",
+			"Value": "pause 1"
+		},
+		{
+			"Name": "MoraLocationQuestionFork",
+			"Value": "question fork0 \"{{i18n:145870Vapius.0}}\"/fork MoraMountVapius",
+			"When": {
+				"HasMod": "Lumisteria.MtVapius",
+			},
+		},
+		
+		//Isaac I Return
+		{
+			"Name": "IsaacIReturnBeef",
+			"Value": "{{i18n:CPFIsaacIIntroEvent.1}}",
+		},
+		{
+			"Name": "IsaacIReturnBeef",
+			"Value": "{{i18n:CPFIsaacIIntroEvent.1.1}}",
+			"When": {
+				"HasSeenEvent": "145864",
+				"HasSeenEvent | contains=145870": false
+			},
+		},
+		//Marcus 7 Heart COnditional
+		{
+			"Name": "AshidaMarcusIsaacIMention1",
+			"Value": "{{i18n:145866.1}}"
+		},
+		{
+			"Name": "AshidaMarcusIsaacIMention1",
+			"Value": "{{i18n:IsaacI145866.1}}",
+			"When": {
+				"HasSeenEvent": "CPFIsaacIIntroEvent",
+				"EnableIsaacI": true
+			}
+		},
+		{
+			"Name": "AshidaMarcusIsaacIMention2",
+			"Value": "{{i18n:145866.2}}"
+		},
+		{
+			"Name": "AshidaMarcusIsaacIMention2",
+			"Value": "{{i18n:IsaacI145866.2}}",
+			"When": {
+				"HasSeenEvent": "CPFIsaacIIntroEvent",
+				"EnableIsaacI": true
+			}
+		},
+		{
+			"Name": "AshidaMarcusIsaacIMention3",
+			"Value": "{{i18n:145866.3}}"
+		},
+		{
+			"Name": "AshidaMarcusIsaacIMention3",
+			"Value": "{{i18n:IsaacI145866.3}}",
+			"When": {
+				"HasSeenEvent": "CPFIsaacIIntroEvent",
+				"EnableIsaacI": true
+			}
+		},
+		{
+			"Name": "AshidaMarcusIsaacIMention3",
+			"Value": "{{i18n:145866.4}}"
+		},
+		{
+			"Name": "AshidaMarcusIsaacIMention3",
+			"Value": "{{i18n:IsaacI145866.4}}",
+			"When": {
+				"HasSeenEvent": "CPFIsaacIIntroEvent",
+				"EnableIsaacI": true
+			}
+		},
+		{
+			"Name": "AshidaIsaacIChurchMention",
+			"Value": ""
+		},
+		{
+			"Name": "AshidaIsaacIChurchMention",
+			"Value": "/speak APTIsaacI \"{{i18n:145865.27}}\"/speak APTAshida \"{{i18n:145865.28}}\"",
+			"When": {
+				"HasSeenEvent": "CPFIsaacIIntroEvent",
+				"EnableIsaacI": true
+			}
+		},
+		{
+			"Name": "MoraOrIsaac",
+			"Value": "APTMora"
+		},
+		{
+			"Name": "MoraOrIsaac",
+			"Value": "APTIsaacI",
+			"When": {
+				"HasSeenEvent": "CPFIsaacIIntroEvent",
+				"EnableIsaacI": true
+			}
+		},
+		{
+			"Name": "MoraOrIsaacWalk",
+			"Value": "advancedMove APTMora false -1 0 0 1 -10 0 0 -6 -6 0 0 -2 -6 0 0 7 -8 0 4 100"
+		},
+		{
+			"Name": "MoraOrIsaacWalk",
+			"Value": "advancedMove APTIsaacI false 1 0 0 -2 -4 0 0 3 -13 0 0 -9 -6 0 0 5 -8 0 4 100",
+			"When": {
+				"HasSeenEvent": "CPFIsaacIIntroEvent",
+				"EnableIsaacI": true
+			}
+		},
+	],
+	
+	"Changes": [
+	//LOCATIONS
+		//COAL POINT FARM PATH
+		{
+			"LogName": "Coal Point Farm Path",
+			"Action": "EditMap",
+			"Target": "Maps/Backwoods",
+			"FromFile": "assets/maps/{{CPFBackwoodsPatch}}.tmx",
+			"ToArea": {
+				"X": 0, "Y": 10, "Width": 13, "Height": 17
+			},
+		},
+		//Coal Point Farm Trees
+		{
+			"LogName": "Coal Point Farm Trees Vanilla",
+			"Action": "EditMap",
+			"Target": "Maps/CoalPointFarm",
+			"FromFile": "assets/maps/CoalPointFarmTreeOverlayVanilla.tmx",
+			"ToArea": {
+				"X": 0, "Y": 0, "Width": 41, "Height": 61
+			},
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+			},
+			"PatchMode": "Overlay",
+		},
+		{
+			"LogName": "Coal Point Farm Trees SVE",
+			"Action": "EditMap",
+			"Target": "Maps/CoalPointFarm",
+			"FromFile": "assets/maps/CoalPointFarmTreeOverlaySVE.tmx",
+			"ToArea": {
+				"X": 0, "Y": 0, "Width": 41, "Height": 61
+			},
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+			},
+			"PatchMode": "Overlay",
+		},
+		//Fence Alter for Mora and Marcus Event(s)
+		{
+			"LogName": "Mora and Marcus Talking Fence",
+			"Action": "EditMap",
+			"Target": "Maps/Town",
+			"FromFile": "assets/maps/MMTalkingFence.tmx",
+			"ToArea": {
+				"X": 23, "Y": 39, "Width": 3, "Height": 3
+			},
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+			}
+		},
+		//Ice Cream Alter for Mora and Marcus Event(s)
+		{
+			"LogName": "Mora and Marcus Ice Cream",
+			"Action": "EditMap",
+			"Target": "Maps/Town",
+			"FromFile": "assets/maps/MMIceCream.tmx",
+			"ToArea": {
+				"X": 85, "Y": 90, "Width": 1, "Height": 2
+			},
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+			}
+		},
+		//Winter Star Map Edit
+		{
+			"LogName": "Coal Point Farm Winter Star Edit",
+			"Action": "EditMap",
+			"Target": "Maps/Town-Christmas, Maps/Town-Christmas2",
+			"FromFile": "assets/maps/CPFWinterStar{{CPFWinterStarSuffix}}.tmx",
+			"ToArea": {
+				"X": 21, "Y": 74, "Width": 6, "Height": 6
+			},
+			"PatchMode": "Replace"
+		},
+		//RSV Lift Patch
+		{
+			"LogName": "RSV Lift CPF Patch",
+			"Action": "EditMap",
+			"Target": "Maps/CoalPointFarm",
+			"FromFile": "assets/maps/RidgesideLiftCPFPatch.tmx",
+			"ToArea": {
+				"X": 20, "Y": 0, "Width": 21, "Height": 21
+			},
+			"When": {
+				"HasMod": "Rafseazz.RidgesideVillage",
+				"Rafseazz.RidgesideVillage/PoleAtBackwoods": true
+			},
+			"PatchMode": "Overlay",
+		},
+		{
+			"LogName": "RSV Lift CPF Patch",
+			"Action": "EditMap",
+			"Target": "Maps/Backwoods",
+			"FromFile": "assets/maps/RidgesideBackwoodsCPFPatch.tmx",
+			"ToArea": {
+				"X": 11, "Y": 10, "Width": 2, "Height": 2
+			},
+			"When": {
+				"HasMod": "Rafseazz.RidgesideVillage",
+				"Rafseazz.RidgesideVillage/PoleAtBackwoods": true
+			},
+			"PatchMode": "Overlay",
+		},
+		//Lumisteria Outdoors Patch
+		{
+			"LogName": "Lumisteria Outdoors Patch",
+			"Action": "EditMap",
+			"Target": "Maps/CoalPointFarm",
+			"FromFile": "assets/maps/CoalPointFarmLumisteria.tmx",
+			"ToArea": {
+				"X": 0, "Y": 0, "Width": 41, "Height": 61
+			},
+			"When": {
+				"HasMod": "Lumisteria.TtilesheetsOutdoor",
+			},
+			"PatchMode": "Overlay",
+		},
+		//Lumisteria Indoors Patch
+		{
+			"LogName": "Lumisteria Farmhouse Patch",
+			"Action": "EditMap",
+			"Target": "Maps/CoalPointFarmhouse",
+			"FromFile": "assets/maps/CoalPointFHouseLumisteria.tmx",
+			"ToArea": {
+				"X": 0, "Y": 0, "Width": 40, "Height": 35
+			},
+			"When": {
+				"HasMod": "Lumisteria.LumiTilesheetsIndoor",
+			},
+			"PatchMode": "Overlay",
+		},
+		{
+			"LogName": "Lumisteria Mora Marcus House Patch",
+			"Action": "EditMap",
+			"Target": "Maps/APTMMHouse",
+			"FromFile": "assets/maps/MMHouseLumisteria.tmx",
+			"ToArea": {
+				"X": 0, "Y": 0, "Width": 32, "Height": 19
+			},
+			"When": {
+				"HasMod": "Lumisteria.LumiTilesheetsIndoor",
+			},
+			"PatchMode": "Overlay",
+		},
+		//Lumisteria Light Patches
+			//Farmhouse Lights
+		{
+			"LogName": "CPF Farmhouse Light Tiles",
+			"Action": "EditMap",
+			"Target": "Maps/CoalPointFarmhouse",
+			"MapProperties": {
+				"DayTiles": "Front 24 3 1224 Front 33 6 225 Front 34 6 225 Front 33 7 257 Front 34 7 257 Front 37 6 255 Buildings 37 7 257 Buildings 6 23 255 Front 7 23 255 Front 8 23 255 Buildings 6 2 257 Buildings 7 24 257 Buildings 8 24 257",
+				"NightTiles": "Front 24 3 1252 Front 33 6 1222 Front 34 6 1222 Front 33 7 1254 Front 34 7 1254 Front 37 6 1222 Buildings 37 7 1254 Front 6 23 1222 Front 7 23 1222 Front 8 23 1222 Buildings 6 24 1254 Buildings 7 24 1254 Buildings 8 24 1254",
+			},
+			"When": {
+				"HasMod |contains=Lumisteria.LumiTilesheetsIndoor": false
+			},
+		},
+		{
+			"LogName": "CPF Farmhouse Light Tiles Lumisteria",
+			"Action": "EditMap",
+			"Target": "Maps/CoalPointFarmhouse",
+			"MapProperties": {
+				"DayTiles": "Front 33 6 225 Front 34 6 225 Front 33 7 257 Front 34 7 257 Front 37 6 255 Buildings 37 7 257 Front 6 23 23 Front 7 23 23 Front 8 23 23 Buildings 6 2 48 Buildings 7 24 48 Buildings 8 24 48",
+				"NightTiles": "Front 33 6 1222 Front 34 6 1222 Front 33 7 1254 Front 34 7 1254 Front 37 6 1222 Buildings 37 7 1254 Front 6 23 24 Front 7 23 24 Front 8 23 24 Buildings 6 24 49 Buildings 7 24 49 Buildings 8 24 49",
+			},
+			"When": {
+				"HasMod |contains=Lumisteria.LumiTilesheetsIndoor": true
+			},
+		},
+			//Mora Marcus Lights
+		{
+			"LogName": "CPF Mora Marcus Light Tiles",
+			"Action": "EditMap",
+			"Target": "Maps/APTMMHouse",
+			"MapProperties": {
+				"DayTiles": "Front 3 1 256 Front 3 2 288 Front 15 6 256 Front 16 6 256 Front 17 6 256 Front 15 7 288 Front 16 7 288 Front 17 7 288 Front 25 1 256 Front 25 2 288 Front 29 1 256 Front 30 1 256 Front 29 2 288 Front 30 2 288",
+				"NightTiles": "Front 3 1 1253 Front 3 2 1285 Front 15 6 1253 Front 16 6 1253 Front 17 6 1253 Front 15 7 1285 Front 16 7 1285 Front 17 7 1285 Front 25 1 1253 Front 25 2 1285 Front 29 1 1253 Front 30 1 1253 Front 29 2 1285 Front 30 2 1285",
+			},
+			"When": {
+				"HasMod |contains=Lumisteria.LumiTilesheetsIndoor": false
+			},
+		},
+		{
+			"LogName": "CPF Farmhouse Light Tiles Lumisteria",
+			"Action": "EditMap",
+			"Target": "Maps/APTMMHouse",
+			"MapProperties": {
+				"DayTiles": "Front 3 1 2364 Front 3 2 2389 Front 15 6 256 Front 16 6 256 Front 17 6 256 Front 15 7 288 Front 16 7 288 Front 17 7 288 Front 25 1 256 Front 25 2 288 Front 29 1 256 Front 30 1 256 Front 29 2 288 Front 30 2 288",
+				"NightTiles": "Front 3 1 2366 Front 3 2 2391 Buildings 2 2 2390 Buildings 3 2 2391 Front 15 6 1253 Front 16 6 1253 Front 17 6 1253 Front 15 7 1285 Front 16 7 1285 Front 17 7 1285 Front 25 1 1253 Front 25 2 1285 Front 29 1 1253 Front 30 1 1253 Front 29 2 1285 Front 30 2 1285",
+			},
+			"When": {
+				"HasMod |contains=Lumisteria.LumiTilesheetsIndoor": true
+			},
+		},
+			//Mora Spouse Room Lights
+		{
+			"LogName": "CPF Mora Marcus Light Tiles",
+			"Action": "EditMap",
+			"Target": "Maps/APTMMHouse",
+			"MapProperties": {
+				"DayTiles": "Front 1 0 256 Front 1 1 288",
+				"NightTiles": "Front 1 0 1253 Front 1 1 1285",
+			}, /*
+			"When": {
+				"HasMod |contains=Lumisteria.LumiTilesheetsIndoor": false
+			}, */
+		},
+		//Stardew Realty Patch
+		{
+			"LogName": "Stardew Realty CPF Patch",
+			"Action": "EditMap",
+			"Target": "Maps/Backwoods",
+			"FromFile": "assets/maps/StardewRealtyCPFPatch.tmx",
+			"ToArea": {
+				"X": 0, "Y": 25, "Width": 13, "Height": 2
+			},
+			"When": {
+				"HasMod |contains=prism99.advize.stardewrealty": true
+			},
+			"PatchMode": "Replace",
+		},
+		
+		//WARPS
+		//Coal Point Warp
+		{
+			"LogName": "Backwoods to CP Farm Vanilla",
+			"Action": "EditMap",
+			"Target": "Maps/Backwoods",
+			"MapTiles": [
+				{
+					"Position": { "X": 0, "Y": 17},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp CoalPointFarm 39 49",
+					},
+				},
+				{
+					"Position": { "X": 0, "Y": 18},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp CoalPointFarm 39 49",
+					},
+				},
+				{
+					"Position": { "X": 0, "Y": 19},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp CoalPointFarm 39 49",
+					},
+				},
+				{
+					"Position": { "X": 0, "Y": 20},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp CoalPointFarm 39 49",
+					},
+				},
+				{
+					"Position": { "X": 0, "Y": 21},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp CoalPointFarm 39 49",
+					},
+				},
+			],
+			"When": {
+				"HasMod | contains=inviisiiblelee.Mumps": false,
+			}
+		},
+		{
+			"LogName": "Backwoods to CP Farm MUMPS",
+			"Action": "EditMap",
+			"Target": "Maps/Backwoods",
+			"MapTiles": [
+				{
+					"Position": { "X": 0, "Y": 17},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp CoalPointFarm 39 49",
+					},
+				},
+				{
+					"Position": { "X": 0, "Y": 18},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp CoalPointFarm 39 49",
+					},
+				},
+				{
+					"Position": { "X": 0, "Y": 19},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp CoalPointFarm 39 49",
+					},
+				},
+			],
+			"When": {
+				"HasMod | contains=inviisiiblelee.Mumps": true,
+			}
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Backwoods",
+			"AddWarps": [
+				"-1 21 Custom_MumpsMap 63 66",
+				"-1 22 Custom_MumpsMap 63 67",
+				"-1 23 Custom_MumpsMap 63 68"
+			],
+			"When": {
+				"HasMod | contains=inviisiiblelee.Mumps": true,
+			}
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Custom_MumpsMap",
+			"AddWarps": [
+				"63 66 Backwoods 0 21",
+			],
+			"When": {
+				"HasMod | contains=inviisiiblelee.Mumps": true,
+			}
+		},
+		{
+			"LogName": "CP Farm to Backwoods",
+			"Action": "EditMap",
+			"Target": "Maps/CoalPointFarm",
+			"MapTiles": [
+				{
+					"Position": { "X": 40, "Y": 48},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp Backwoods 1 19",
+					},
+				},
+				{
+					"Position": { "X": 40, "Y": 49},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp Backwoods 1 19",
+					},
+				},
+				{
+					"Position": { "X": 40, "Y": 50},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp Backwoods 1 19",
+					},
+				},
+				{
+					"Position": { "X": 40, "Y": 51},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp Backwoods 1 19",
+					},
+				},
+				{
+					"Position": { "X": 40, "Y": 52},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "Warp Backwoods 1 19",
+					},
+				},
+			],
+		},
+		
+		//NPC to Coal Point warp
+		{
+			"LogName": "Mountain to CP Farm",
+			"Action": "EditMap",
+			"Target": "Maps/Mountain",
+			"MapProperties": {
+				"NPCWarp": "3 9 CoalPointFarm 40 49",
+			},
+		},
+		
+	//FILES
+		{
+			"LogName": "Inclusions",
+			"Action": "Include",
+			"FromFile": "Data/Animations.json, Data/EventDataMMA.json, Data/scheduleMora.json, Data/scheduleMarcus.json, Data/scheduleAshida.json, Data/CPFFestivals.json, Data/CPFStrings.json, Data/CPFMovieTastes.json, Data/InfoMora.json, Data/InfoMarcus.json, Data/InfoAshida.json, Data/InfoIsaacII.json, Data/CropCycles.json, Data/CPFFish.json, Data/CPFObjects.json, Data/CPFLocations.json, Data/CPFWorldMap.json, Data/CPFQuests.json, Data/CPFSpousePortraits.json, assets/dialogue/dialogueAshida.json, assets/dialogue/dialogueIsaacII.json, assets/dialogue/dialogueMarcus.json, assets/dialogue/dialogueMora{{MoraDialogueMood}}.json, assets/dialogue/marriagedialogueMora.json, assets/dialogue/marriagedialogueMarcus.json",
+		},
+		{
+			"LogName": "Including Isaac II's Schedules",
+			"Action": "Include",
+			"FromFile": "Data/scheduleIsaacII.json",
+			"When": {
+				"HasSeenEvent": "145857",
+			}
+		},
+		{
+			"LogName": "Including Isaac I's Event",
+			"Action": "Include",
+			"FromFile": "Data/InfoIsaacI.json, Data/EventDataIsaacI.json",
+			"When": {
+				"EnableIsaacI": true,
+			}
+		},
+		{
+			"LogName": "Including Isaac I's Content",
+			"Action": "Include",
+			"FromFile": " assets/dialogue/dialogueIsaacI.json, Data/scheduleIsaacI.json",
+			"When": {
+				"HasSeenEvent": "CPFIsaacIIntroEvent",
+				"EnableIsaacI": true
+			}
+		},
+		{
+			"LogName": "Including Map Locations",
+			"Action": "Include",
+			"FromFile": "Data/CPFNPCLocations.json",
+			"When": {
+				"HasMod": "Yagisan.NPCMapLocationsForNPCs",
+			}
+		},
+		{
+			"LogName": "Including Wild Animal Locations",
+			"Action": "Include",
+			"FromFile": "Data/CPFWildAnimals.json",
+			"When": {
+				"HasMod": "SmolHooman.WildAnimalsSVE, SmolHooman.WildAnimals",
+			}
+		},
+	
+	//Characters
+		{
+			"LogName": "Coal Point Farm Gifts",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"APTMora": "{{i18n:MoraGiftLove}}/158 253 346/{{i18n:MoraGiftLike}}/395 303/{{i18n:MoraGiftDislike}}/715 716 717 718 719 720 721 722 723/{{i18n:MoraGiftHate}}/271 116 152/{{i18n:MoraGiftNeutral}}/-1/ ",
+				"APTMarcus": "{{i18n:MarcusGiftLove}}/349 351 220 221 259/{{i18n:MarcusGiftLike}}/649 194 195 403 346/{{i18n:MarcusGiftDislike}}/-2 -12/{{i18n:MarcusGiftHate}}/609 196 241 606 244//{{i18n:MarcusGiftNeutral}}/-1 ",
+				"APTAshida": "{{i18n:AshidaGiftLove}}/340 90 268 /{{i18n:AshidaGiftLike}}/745 88 403 204 726 252 284/{{i18n:AshidaGiftDislike}}/348 346 303 732 727 730 731 733 211/{{i18n:AshidaGiftHate}}/728 -4 724//{{i18n:AshidaGiftNeutral}}/-1 ",
+				"APTIsaacI": "{{i18n:IsaacIGiftLove}}/907 88 268 /{{i18n:IsaacIGiftLike}}/745 90 204 726 404 422 257 346/{{i18n:IsaacIGiftDislike}}/241 403 773/{{i18n:IsaacIGiftHate}}/-4//{{i18n:IsaacIGiftNeutral}}/-1 ",
+			}
+		},
+		
+		//ALL OTHER CHARACTER FILES ARE LOADED IN DATA/INFO[NPCNAME].json
+		
+		//Temporary Actors
+		//THANK YOU TO SmolHooman and Plurffle for open asset permissions on https://www.nexusmods.com/stardewvalley/mods/9063, if you're reading this and don't have this mod installed, do yourself a favor and install ;)
+        {
+            "Action": "Load",
+            "Target": "Characters/SHDeer",
+            "FromFile": "assets/sprites/Temp/SHDeerSprites.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/CPFPig1",
+            "FromFile": "assets/sprites/Temp/Pig.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/CPFPig2",
+            "FromFile": "assets/sprites/Temp/Pig.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/CPFPig3",
+            "FromFile": "assets/sprites/Temp/Pig.png"
+        },
+		{
+			"Action": "Load",
+			"Target": "Characters/APTMarcusSack",
+			"FromFile": "assets/sprites/Temp/APTMarcusSack.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk1",
+			"FromFile": "assets/sprites/Temp/allwalk1.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk2",
+			"FromFile": "assets/sprites/Temp/allwalk1.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk3",
+			"FromFile": "assets/sprites/Temp/allwalk1.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk4",
+			"FromFile": "assets/sprites/Temp/allwalk1.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk5",
+			"FromFile": "assets/sprites/Temp/allwalk1.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk6",
+			"FromFile": "assets/sprites/Temp/allwalk1.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk21",
+			"FromFile": "assets/sprites/Temp/allwalk2.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk22",
+			"FromFile": "assets/sprites/Temp/allwalk2.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk23",
+			"FromFile": "assets/sprites/Temp/allwalk2.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk24",
+			"FromFile": "assets/sprites/Temp/allwalk2.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk25",
+			"FromFile": "assets/sprites/Temp/allwalk2.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/APTAshidaWalk26",
+			"FromFile": "assets/sprites/Temp/allwalk2.png"
+		},
+        {
+            "Action": "Load",
+            "Target": "Portraits/APTSpencer",
+            "FromFile": "assets/portraits/Spencer/SpencerPortraits.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/APTSpencer",
+            "FromFile": "assets/sprites/Marcus/MarcusSpritesFall.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/APTAshidaStandIn",
+            "FromFile": "assets/sprites/Ashida/AshidaSprites{{Season}}.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/APTAshidaStandIn",
+            "FromFile": "assets/portraits/Ashida/AshidaPortraits{{Season}}.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/APTMoraSwimSuit",
+            "FromFile": "assets/sprites/Mora/MoraSpritesBeach.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/APTMoraSwimSuit",
+            "FromFile": "assets/portraits/Mora/MoraPortraitsBeach.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/CPFIsaacIAshidaKiss",
+            "FromFile": "assets/sprites/Temp/IsaacIAshidaKiss.png"
+        },
+	]
+}

@@ -1,0 +1,125 @@
+{
+    "Changes": [
+        {
+            "LogName":"Add Irn Bruu to object data",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries":
+            {
+                "{{ModId}}_IrnBruu":
+                {
+                    "Name": "{{ModId}}_IrnBruu",
+                    "DisplayName": "{{i18n:object.IrnBruu.name}}",
+                    "Description": "{{i18n:object.IrnBruu.description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 25,
+                    "Texture": "Mods/{{ModId}}/GusItems",
+                    "SpriteIndex": 0,
+                    "Edibility": 5,
+                    "IsDrink": true,
+                    "Buffs": [
+                    {
+                        "Id": "Drink",
+                        "BuffId": null,
+                        "IconTexture": null,
+                        "IconSpriteIndex": 0,
+                        "Duration": 30,
+                        "IsDebuff": false,
+                        "GlowColor": null,
+                        "CustomAttributes": {
+                        "FarmingLevel": 0.0,
+                        "FishingLevel": 0.0,
+                        "MiningLevel": 0.0,
+                        "LuckLevel": 0.0,
+                        "ForagingLevel": 0.0,
+                        "MaxStamina": 0.0,
+                        "MagneticRadius": 0.0,
+                        "Speed": 1.0,
+                        "Defense": 0.0,
+                        "Attack": 0.0
+                        },
+                        "CustomFields": null
+                    }
+                ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromFishingCollection": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": false,
+                    "ContextTags": [
+                    "color_orange",
+                    "drink_item"
+                    ],
+                    "CustomFields": null
+                }
+            }
+        },
+
+        {
+            "Action":"EditData",
+            "Target": "Strings/Objects",
+            "Entries":
+            {
+                "IrnBruu_Name": "{{i18n:object.IrnBruu.name}}",
+                "IrnBruu_Description": "{{i18n:object.IrnBruu.description}}"
+            }
+        },
+
+        {
+            "LogName":"Add Corona Box to object data",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries":
+            {
+                "{{ModId}}_CoronaBox":
+                {
+                    "Name": "{{ModId}}_CoronaBox",
+                    "DisplayName": "{{i18n:object.CoronaBox.name}}",
+                    "Description": "{{i18n:object.CoronaBox.description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 25,
+                    "Texture": "Mods/{{ModId}}/GusItems",
+                    "SpriteIndex": 1,
+                    "Edibility": 5,
+                    "IsDrink": false,
+                    "Buffs": null,
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromFishingCollection": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": false,
+                    "ContextTags": [
+                    "color_yellow",
+                    "drink_item"
+                    ],
+                    "CustomFields": null
+                }
+            }
+        },
+
+        {
+            "Action":"EditData",
+            "Target": "Strings/Objects",
+            "Entries":
+            {
+                "CoronaBox_Name": "{{i18n:object.CoronaBox.name}}",
+                "CoronaBox_Description": "{{i18n:object.CoronaBox.description}}"
+            }
+          },
+
+        {
+            "LogName": "Gus Items texture",
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/GusItems",
+            "FromFile": "Assets/Images/Food/GusItems.png"
+        }
+    ]
+}

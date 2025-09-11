@@ -1,0 +1,126 @@
+{
+	"Changes": [
+		//NPC DISPOSITIONS
+		{
+			"LogName": "NPC Dispositions",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				// The Fishmonger
+				"TheFishmonger": {
+					"DisplayName": "{{i18n:NPCD.Name.Constance}}",
+					"BirthSeason": "summer",
+					"BirthDay": 26,
+					"HomeRegion": "Town",
+					"Gender": "Female",
+					"Manner": "Neutral",
+					"SocialAnxiety": "Neutral",
+					"Optimism": "Neutral",
+					"CanBeRomanced": false,
+					"Calendar": "AlwaysShown",
+					"SocialTab": "HiddenUntilMet",
+					"Calendar": "HiddenUntilMet",
+					"DumpsterDiveFriendshipEffect": "0",
+					"IntroductionsQuest": false,
+					"ExcludeFromPerfectionScore": false,
+					"EndSlideShow": "MainGroup",
+					"FriendsAndFamily": {
+						"Willy": "big bro",
+					},
+					"SpawnIfMissing": true,
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside",
+							"Tile": {
+								"X": 5,
+								"Y": 6
+							},
+							"Direction": "down"
+						}
+					],
+					"Size": {
+						"X": 16,
+						"Y": 32
+					},
+					"Breather": true,
+					"Appearance": [
+						{
+							"Id": "Default",
+							"Portrait": "Portraits/TheFishmonger",
+							"Sprite": "Characters/TheFishmonger"
+						}
+					]
+				},
+			},
+		},
+		//NPC GIFT TASTES
+		{
+			"LogName": "NPC Gift Tastes",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"TheFishmonger": "{{i18n:NPC.Gifttastes.Love}}/155 162 204 397 565 202 614 815/{{i18n:NPC.Gifttastes.Like}}/82 116 138 259 394 550 148/{{i18n:NPC.Gifttastes.Dislike}}/203 772 766 589/{{i18n:NPC.Gifttastes.Hate}}/168 308 283 589/{{i18n:NPC.Gifttastes.Neutral}}/154 447 459 128 305 444"
+			}
+		},
+		//Animations
+		{
+			"LogName": "Animation Descriptions",
+			"Action": "EditData",
+			"Target": "Data/animationDescriptions",
+			"Entries": {
+				"TheFishmonger_drinking": "24 24 24 24 24/25 25 25 25 25 25 26 26 26 26 26 26 25 25 25 25 25/24",
+				//"TheFishmonger_fish": "8/8 8 9 9 10 10 11 11/8",
+				"TheFishmonger_fish": "16/16 16 17 17 18 18 19 19/16"
+			}
+		},
+		//Images
+		{
+			"LogName": "Constance Portraits",
+			"Action": "Load",
+			"Target": "Portraits/TheFishmonger",
+			"FromFile": "assets/Image/Fishmonger_portrait.png"
+		},
+		{
+			"LogName": "Constance Sprites",
+			"Action": "Load",
+			"Target": "Characters/TheFishmonger",
+			"FromFile": "assets/Image/Fishmonger_spritesheet.png"
+		},
+		//Dialogue
+		{
+			"LogName": "Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/TheFishmonger",
+			"FromFile": "assets/Dialogue/BlankDialogue.json"
+		},
+		//Include dialogue for token.
+		{
+			"Action": "Include",
+			"FromFile": "assets/Dialogue/ConstanceDialogue.json"
+		},
+		//Shedule
+		{
+			"LogName": "Schedule",
+			"Action": "Load",
+			"Target": "Characters/schedules/TheFishmonger",
+			"FromFile": "assets/Schedule/ConstanceSchedule.json"
+		},
+		{
+			"LogName": "Shedule Dialogue",
+			"Action": "Load",
+			"Target": "Strings/schedules/TheFishmonger",
+			"FromFile": "assets/Dialogue/BlankDialogue.json"
+		},
+		//Include dialogue for token.
+		{
+			"Action": "Include",
+			"FromFile": "assets/Schedule/ConstanceScheduleDialogue.json"
+		},
+		{
+			"LogName": "Include all InterModCompat files",
+			"Action": "Include",
+			"FromFile": "Data/NPCData/ConversationTopics.json, Data/NPCData/EventsData.json, Data/NPCData/ConcessionTastes.json, Data/NPCData/MoviesReactions.json",
+		},
+	]
+}

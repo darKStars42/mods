@@ -1,0 +1,223 @@
+{
+  "Format": "2.0",
+
+
+
+    "ConfigSchema": {
+
+        "Enable this mod": {
+            "AllowValues": "true,false",
+            "Default": "true"
+        },
+        "Pasture Area House": {
+            "AllowValues": "Stone,Plank,Log,Neighbor,Rustic,Beach,Trailer",
+            "Default": "Rustic"
+        },
+        "Enable the road to the dam": {
+            "AllowValues": "true,false",
+            "Default": "true"
+        },
+        "Enable the warp square": {
+            "AllowValues": "true,false",
+            "Default": "true"
+        },
+        "Enable the water discharge stop": {
+            "AllowValues": "true,false",
+            "Default": "false"
+        },
+        "Link DesertAfforestationArea": {
+            "AllowValues": "true,false",
+            "Default": "true"
+        },
+        "Stardew Valley Reimagined 3 ver": {
+            "AllowValues": "true,false",
+            "Default": "false"
+        },
+        "Free to Build": {
+            "AllowValues": "true,false",
+            "Default": "false"
+        }
+
+    },//▼"ConfigSchema"の終了▼
+
+
+
+/*////////////////////////////////////////
+    "DynamicTokens": [
+
+        {
+          "Name": "xxxxxxxxxx",
+          "Value": "xxxxxxxxxx"
+        },
+
+    ],//▼"DynamicTokens"の終了▼
+*////////////////////////////////////////
+
+
+
+    "CustomLocations": [
+
+        {
+          "Name": "Custom_Dam", //ダム
+          "FromMapFile": "assets/tmx/NewLocations/Dam.tmx"
+        },
+        {
+          "Name": "Custom_Dam_Road", //ダムロード
+          "FromMapFile": "assets/tmx/NewLocations/Dam_Road.tmx"
+        },
+        {
+          "Name": "Custom_Dam_Cliff", //ダムの崖
+          "FromMapFile": "assets/tmx/NewLocations/Dam_Cliff.tmx"
+        },
+        {
+          "Name": "Custom_Dam_Cliff_Add", //ダムの崖 追加エリア
+          "FromMapFile": "assets/tmx/NewLocations/Dam_Cliff_Add.tmx"
+        },
+        {
+            "Name": "Custom_Dam_Cliff_Add_Mine", //ダム 崖 追加エリアの洞窟
+            "FromMapFile": "assets/tmx/NewLocations/Dam_Cliff_Add_Mine.tmx"
+        },
+        {
+          "Name": "Custom_Dam_AfforestationArea", //ダム 植林地エリア
+          "FromMapFile": "assets/tmx/NewLocations/Dam_AfforestationArea.tmx"
+        },
+        {
+          "Name": "Custom_Dam_Mine", //ダム 洞窟(石切り から 植林地)
+          "FromMapFile": "assets/tmx/NewLocations/Dam_Mine.tmx"
+        },
+        {
+          "Name": "Custom_Dam_PastureArea", //ダム 牧草エリア
+          "FromMapFile": "assets/tmx/NewLocations/Dam_PastureArea.tmx"
+        },
+        {
+          "Name": "Custom_Dam_PastureArea_Mine", //ダム 牧草エリア 洞窟
+          "FromMapFile": "assets/tmx/NewLocations/Dam_PastureArea_Mine.tmx"
+        },
+        {
+          "Name": "Custom_Dam_PastureArea_Farmhouse", //牧草エリア ファームハウス
+          "FromMapFile": "assets/tmx/NewLocations/Dam_PastureArea_Farmhouse.tmx"
+        },
+        {
+          "Name": "Custom_Dam_RestArea", //休憩エリア(投棄農場の右)
+          "FromMapFile": "assets/tmx/NewLocations/Dam_RestArea.tmx"
+        }
+
+    ],//▼"CustomLocations"の終了▼
+
+
+
+    "Changes": [
+
+
+
+//■■■タイルシートの読み込み(季節での上書きも)■■■
+      {
+        "Action": "Load",
+        "Target": "
+                   Maps/spring_Dam_Cliff_Add_Mine,
+                   Maps/spring_Dam_Cliff_Morning,
+                   Maps/spring_Dam_Cliff_Noon,
+                   Maps/spring_Dam_Cliff_Noon_Rain,
+                   Maps/spring_Dam_RestArea,
+                   Maps/summer_Dam_Cliff_Add_Mine,
+                   Maps/summer_Dam_Cliff_Morning,
+                   Maps/summer_Dam_Cliff_Noon,
+                   Maps/summer_Dam_Cliff_Noon_Rain,
+                   Maps/summer_Dam_RestArea,
+                   Maps/fall_Dam_Cliff_Add_Mine,
+                   Maps/fall_Dam_Cliff_Morning,
+                   Maps/fall_Dam_Cliff_Noon,
+                   Maps/fall_Dam_Cliff_Noon_Rain,
+                   Maps/fall_Dam_RestArea,
+                   Maps/winter_Dam_Cliff_Add_Mine,
+                   Maps/winter_Dam_Cliff_Morning,
+                   Maps/winter_Dam_Cliff_Noon,
+                   Maps/winter_Dam_Cliff_Noon_Rain,
+                   Maps/winter_Dam_RestArea,
+                   Maps/z_Dam,
+                   Maps/z_Dam_Cliff_Add_Cloud,
+                   Maps/z_Dam_PastureArea_Farmhouse
+                  ",
+        "FromFile": "assets/png/{{TargetWithoutPath}}.png"
+      },
+
+
+
+//■■■別json読み込み■■■
+
+  //●カスタムマップのロケーションデータ(順度優先)
+      {
+        "Action": "Include",
+        "FromFile": "assets/json/00_LocationsData.json"
+      },
+
+  //●共通項目とバニラの編集
+      {
+        "Action": "Include",
+        "FromFile": "assets/json/10_Vanilla_Common.json",
+        "When": { "Enable this mod": "true" }
+      },
+
+  //●牧草地エリア(投棄された農場)の復興
+      {
+        "Action": "Include",
+        "FromFile": "assets/json/11_PastureArea_Reconstruction.json",
+        "When": { "Enable this mod": "true" }
+      },
+
+  //●他Modとの互換性編集(Stardew Valley Expanded)
+      {
+        "Action": "Include",
+        "FromFile": "assets/json/20_Mod_StardewValleyExpanded.json",
+        "When": {
+            "Enable this mod": "true",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "true"
+        }
+      },
+
+  //●他Modとの互換性編集(Stardew Valley Reimagined 3)
+      {
+        "Action": "Include",
+        "FromFile": "assets/json/21_Mod_StardewValleyReimagined3.json",
+        "When": { 
+            "Enable this mod": "true",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "false",
+            "Stardew Valley Reimagined 3 ver": "true"
+        }
+      },
+
+  //●他Modとの互換性編集(Desert AfforestationArea)
+      {
+        "Action": "Include",
+        "FromFile": "assets/json/22_Mod_DesertAfforestationArea.json",
+        "When": { 
+            "Enable this mod": "true",
+            "HasMod: |contains=Tikamin557.DesertAfforestationArea": "true",
+            "Link DesertAfforestationArea": "true"
+        }
+      },
+
+  //●オベリスク関連
+      {
+        "Action": "Include",
+        "FromFile": "assets/json/97_ObeliskData.json",
+        "When": { "Enable this mod": "true" }
+      },
+  //●メール関連データ(トリガーアクション含)
+      {
+        "Action": "Include",
+        "FromFile": "assets/json/98_Mail_TriggerActionsData.json",
+        "When": { "Enable this mod": "true" }
+      },
+
+  //●その他の編集(椅子データ、テキストボックス翻訳関係)
+      {
+        "Action": "Include",
+        "FromFile": "assets/json/99_OtherEdits.json",
+        "When": { "Enable this mod": "true" }
+      }
+
+
+
+    ]//▼▼"Changes"の終了▼▼
+}

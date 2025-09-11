@@ -1,0 +1,64 @@
+{
+    "Changes": [
+        // add gift tastes
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "Haley", 1],
+                    "Value": "{{ModId}}_donkeycream",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "Sandy", 1],
+                    "Value": "{{ModId}}_donkeycream",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "Gus", 1],
+                    "Value": "{{ModId}}_donkeycheese",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Universal_Dislike"],
+                    "Value": "{{ModId}}_donkeymilk", 
+                    "Delimiter": " "
+                }
+            ]
+        },
+        {
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/Haley",
+        
+            "Entries": {
+        
+              "AcceptGift_(O){{ModId}}_donkeycream": "{{i18n:DonkHaley}}"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/Sandy",
+        
+            "Entries": {
+        
+              "AcceptGift_(O){{ModId}}_donkeycream": "{{i18n:DonkSandy}}"
+            }
+        },
+        
+        {
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/Gus",
+        
+            "Entries": {
+        
+              "AcceptGift_(O){{ModId}}_donkeycheese": "{{i18n:DonkGus}}"
+            }
+        }
+
+    ]
+}

@@ -1,0 +1,189 @@
+{
+    "Changes": [
+        {
+            "LogName": "Adds Kee-Doo the Furby at island",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_CapeStardew",
+            "MapTiles": [
+                {
+                    "Position": { "X": 14, "Y": 86 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn 1 SmolHooman.WildAnimalsCC.KeeDooTheFurby_WA"
+                    }
+                }
+            ],
+            "When": {
+                "AllowWildAnimals": "on",
+                "Weather": "Sun,Wind"
+            },
+            "Update": "OnLocationChange"
+        },
+        {
+            "LogName": "Adds Kee-Doo the Furby in the Cape tunnel",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_TunnelCape",
+            "MapTiles": [
+                {
+                    "Position": { "X": 13, "Y": 3 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn 1 SmolHooman.WildAnimalsCC.KeeDooTheFurby_WA"
+                    }
+                }
+            ],
+            "When": {
+                "AllowWildAnimals": "on",
+                "Weather": "Rain,Storm,Wind,Snow"
+            },
+            "Update": "OnLocationChange"
+        },
+        {
+            "LogName": "Adds wild junimos in Custom_CapeBusStop2",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_CapeBusStop2",
+            "MapTiles": [
+                {
+                    "Position": { "X": 1, "Y": 2 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1, 2, 3}} SmolHooman.WildAnimalsCC.{{Random: Junimo_WA, Junimo_WA, JunimoMushroom_WA, JuniMallow_WA}}"
+                    }
+                }
+            ],
+            "When": {
+                "Time": "{{range: 2000, 2600}}",
+                "Weather": "Rain,Storm",
+                "AllowWildAnimals": "on"
+            },
+            "Update": "OnLocationChange,OnTimeChange"
+        },
+        {
+            "LogName": "Adds wild bear sighting in Custom_CapeBusStop2 during the day",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_CapeBusStop2",
+            "MapTiles": [
+                {
+                    "Position": { "X": 3, "Y": 13 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn {{Random: 0, 1}} SmolHooman.WildAnimalsCC.Bear_WA"
+                    }
+                }
+            ],
+            "When": {
+                "Time": "{{Range: 0600, 1300}}",
+                "AllowWildAnimals": "on",
+                "Weather": "Sun, Wind"
+            },
+            "Update": "OnLocationChange,OnTimeChange"
+        },
+        {
+            "LogName": "Adds wild rabbits in Custom_CapeBusStop2 during the day",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_CapeBusStop2",
+            "MapTiles": [
+                {
+                    "Position": { "X": 27, "Y": 17 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn {{Random: 0, 1, 2, 3}} SmolHooman.WildAnimalsCC.{{Random: Rabbit_WA, Rabbit_Timid_WA, RabbitSpring_WA}}"
+                    }
+                }
+            ],
+            "When": {
+                "Time": "{{Range: 0600, 1800}}",
+                "AllowWildAnimals": "on"
+            },
+            "Update": "OnLocationChange,OnTimeChange"
+        },
+        {
+            "LogName": "Adds wild frog in Custom_CapeStardew",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_CapeStardew",
+            "MapTiles": [
+                {
+                    "Position": { "X": 1, "Y": 61 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn {{Random: 1, 2, 3}} SmolHooman.WildAnimalsCC.{{Random: FrogBrown_WA, FrogGreen_WA, FrogYellow_WA}}"
+                    }
+                },
+                {
+                    "Position": { "X": 1, "Y": 65 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn {{Random: 1, 2, 3}} SmolHooman.WildAnimalsCC.{{Random: FrogBrown_WA, FrogGreen_WA, FrogYellow_WA}}"
+                    }
+                }
+            ],
+            "When": {
+                "AllowWildAnimals": "on",
+                "Time": "{{Range: 1800, 2600}}"
+            },
+            "Update": "OnLocationChange,OnTimeChange"
+        },
+        {
+            "LogName": "Adds wild gembirds in Custom_CapeStardew",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_CapeStardew",
+            "MapTiles": [
+                {
+                    "Position": { "X": 25, "Y": 55 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn {{Random: 0, 0, 1, 2}} SmolHooman.WildAnimalsCC.GemBird_WA"
+                    }
+                },
+                {
+                    "Position": { "X": 72, "Y": 83 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn {{Random: 0, 0, 1, 2}} SmolHooman.WildAnimalsCC.GemBird_WA"
+                    }
+                },
+                {
+                    "Position": { "X": 43, "Y": 66 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn {{Random: 0, 0, 1, 2}} SmolHooman.WildAnimalsCC.GemBird_WA"
+                    }
+                }
+            ],
+            "When": {
+                "AllowWildAnimals": "on",
+                "Time": "{{Range: 0600, 1800}}",
+                "Weather": "Rain, Wind"
+            },
+            "Update": "OnLocationChange,OnTimeChange"
+        },
+        {
+            "LogName": "Adds wild pelicans and seagulls in CapeStardew",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_CapeStardew",
+            "MapTiles": [
+                {
+                    "Position": { "X": 41, "Y": 55 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn {{Random: 0, 1, 2}} SmolHooman.WildAnimalsCC.{{Random: Seagull_WA, Pelican_WA, PelicanPouch_WA}}"
+                    }
+                },
+                {
+                    "Position": { "X": 40, "Y": 54 },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "CustomCompanions": "Spawn {{Random: 0, 1, 2}} SmolHooman.WildAnimalsCC.{{Random: Seagull_WA, Pelican_WA, PelicanPouch_WA}}"
+                    }
+                }
+            ],
+            "When": {
+                "AllowWildAnimals": "on",
+                "Weather": "Rain, Sun, Wind",
+                "Time": "{{Range: 0600, 1800}}",
+                "Season": "Spring, Summer, Fall"
+            },
+            "Update": "OnLocationChange,OnTimeChange"
+        }
+    ]
+}

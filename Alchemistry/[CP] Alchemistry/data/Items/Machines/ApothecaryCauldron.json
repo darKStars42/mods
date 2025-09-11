@@ -1,0 +1,90 @@
+{
+
+  "Changes": [
+
+/*----------------------------------------------------
+Add Apothecary Cauldron
+----------------------------------------------------*/        
+	{ 
+		"LogName":"Add Machine - Apothecary Cauldron",
+			"Action": "EditData",
+			"Target": "Data/BigCraftables",
+			"Entries": {
+				"{{ModId}}_ApothecaryCauldron": {
+					"Name": "{{ModId}}_ApothecaryCauldron",
+					"DisplayName": "{{i18n:Alchemistry_ApothecaryCauldron.name}}",
+					"Description": "{{i18n:Alchemistry_ApothecaryCauldron.description}}",
+					"Fragility": 0,
+					"CanBePlacedOutdoors": true,
+					"CanBePlacedIndoors": true,
+					"Price": 0,
+					"Texture": "Mods/{{ModId}}/Machines",
+					"SpriteIndex": 1,
+					"CustomFields": { "leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu TRUE FALSE {{ModId}}_ApothecaryCauldron" }
+				}
+			}
+		},
+
+/*----------------------------------------------------
+Outputs
+----------------------------------------------------*/
+	{
+		"Action": "EditData",
+		"Target": "Mods/leclair.bettercrafting/CraftingStations",
+		"Entries": {
+			"{{ModId}}_ApothecaryCauldron": {
+				"Id": "{{ModId}}_ApothecaryCauldron",
+				"DisplayName": "{{i18n:Alchemistry_ApothecaryCauldron.name}}",
+				"IsCooking": true,
+				"AreRecipesExclusive": true,
+				"Recipes": 
+					[
+						//Basic ingredients
+						"{{ModId}}_Glycerin_Recipe",
+
+						//Potions
+						"{{ModID}}_BarkskinElixir",
+						"{{ModID}}_IronbarkElixir",
+						"{{ModID}}_LesserWylderBrew",
+						"{{ModID}}_GreaterWylderBrew",
+						"{{ModID}}_TearofDreamer",
+						"{{ModID}}_Polaritea",
+						"{{ModID}}_Fatalitea",
+						"{{ModId}}_Immunitea",
+						"{{ModID}}_BlessingFromBeyond",
+						"{{ModID}}_BeguilingBubbles"
+					],
+					"Categories": [
+						{
+							"Id": "basic",
+							"Name": "Basic Ingredients",
+							"Icon": { "Type": "Item", "RecipeName": "{{ModId}}_Glycerin" },
+							"Recipes": 
+								[
+									"{{ModId}}_Glycerin_Recipe"	
+								]
+						},
+						{
+							"Id": "potions",
+							"Name": "Potions (Consumables)",
+							"Icon": { "Type": "Item", "RecipeName": "{{ModId}}_BarkskinElixir" },
+							"Recipes": 
+								[
+									"{{ModID}}_BarkskinElixir",
+									"{{ModID}}_IronbarkElixir",
+									"{{ModID}}_LesserWylderBrew",
+									"{{ModID}}_GreaterWylderBrew",
+									"{{ModID}}_TearofDreamer",
+									"{{ModID}}_Polaritea",
+									"{{ModID}}_Fatalitea",
+									"{{ModId}}_Immunitea",
+									"{{ModID}}_BlessingFromBeyond",
+									"{{ModID}}_BeguilingBubbles"
+								]
+						}
+					]
+				}
+			}
+		}
+	]
+}

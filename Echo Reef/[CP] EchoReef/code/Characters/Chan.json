@@ -1,0 +1,376 @@
+{
+
+  "Changes": [
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_ChanHouse",
+          "FromFile": "assets/Locations/EchoReef_ChanHouse.tmx"
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_ChanReef",
+          "FromFile": "assets/Locations/EchoReef_ChanReef.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Characters/MrMrRogers.EchoReef_Chan",
+        "FromFile": "assets/Sprites/Chan.png"
+      },
+      {
+        "Action": "Load",
+        "Target": "Portraits/MrMrRogers.EchoReef_Chan",
+        "FromFile": "assets/Portraits/Chan.png"
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Locations",
+          "Entries": {
+              "MrMrRogers.EchoReef_ChanHouse": {
+                  "DisplayName": "{{i18n:ChanHouse}}",
+                  "DefaultArrivalTile": {
+                    "X": 4,
+                    "Y": 16
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_ChanHouse",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              },
+              "MrMrRogers.EchoReef_ChanReef": {
+                  "DisplayName": "{{i18n:ChanReef}}",
+                  "DefaultArrivalTile": {
+                    "X": 10,
+                    "Y": 0
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_ChanReef",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              }
+          }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_ChanHouse",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Doors": "4 11 townInterior 120",
+          "Warp": "4 17 MrMrRogers.EchoReef_Beach 35 66",
+          "WindowLight": "3 1 6 3 2 6 5 1 6 5 2 6"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 4,
+              "Y": 11
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Door MrMrRogers.EchoReef_Chan"
+            }
+          },
+          {
+            "Position": {
+              "X": 4,
+              "Y": 14
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "OpenShop MrMrRogers.EchoReef_PetFishShop down 0800 1700 4 13 1 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_ChanReef",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Outdoors": "T",
+          "Warp": "8 -1 MrMrRogers.EchoReef_Beach 25 83 9 -1 MrMrRogers.EchoReef_Beach 26 83 10 -1 MrMrRogers.EchoReef_Beach 27 83 11 -1 MrMrRogers.EchoReef_Beach 28 83"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Beach",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 35, 
+              "Y": 65
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "LockedDoorWarp 4 16 MrMrRogers.EchoReef_ChanHouse 800 2000"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Beach",
+        "TextOperations": [
+          {
+            "Operation": "Append",
+            "Target": ["MapProperties", "Warp"],
+            "Value": "25 84 MrMrRogers.EchoReef_ChanReef 8 0 26 84 MrMrRogers.EchoReef_ChanReef 9 0 27 84 MrMrRogers.EchoReef_ChanReef 10 0 28 84 MrMrRogers.EchoReef_ChanReef 11 0",
+            "Delimiter": " "
+          }
+        ],
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 26, 
+              "Y": 69
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Passable": "T"
+            }
+          },
+          {
+            "Position": { 
+              "X": 27, 
+              "Y": 69
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Passable": "T"
+            }
+          },
+          {
+            "Position": { 
+              "X": 26, 
+              "Y": 69
+            },
+            "Layer": "Back",
+            "SetProperties": {
+              "TouchAction": "PoolEntrance"
+            }
+          },
+          {
+            "Position": { 
+              "X": 27, 
+              "Y": 69
+            },
+            "Layer": "Back",
+            "SetProperties": {
+              "TouchAction": "PoolEntrance"
+            }
+          }
+        ],
+        "When": {
+          "Hearts:MrMrRogers.EchoReef_Chan": "6"
+        }
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Characters",
+          "Entries": {
+            "MrMrRogers.EchoReef_Chan": {
+              "DisplayName": "{{i18n:Chan}}",
+              "BirthSeason": "Summer",
+              "BirthDay": 3,
+              "HomeRegion": "Other",
+              "Language": "Default",
+              "Gender": "Male",
+              "Age": "Adult",
+              "Manner": "Polite",
+              "SocialAnxiety": "Outgoing",
+              "Optimism": "Neutral",
+              "IsDarkSkinned": false,
+              "CanBeRomanced": false,
+              "Calendar": "HiddenAlways",
+              "SocialTab": "HiddenUntilMet",
+              "CanSocialize": true,
+              "CanReceiveGifts": true,
+              "CanGreetNearbyCharacters": true,
+              "CanCommentOnPurchasedShopItems": true,
+              "CanVisitIsland": false,
+              "IntroductionsQuest": false,
+              "ItemDeliveryQuests": false,
+              "PerfectionScore": false,
+              "EndSlideShow": "MainGroup",
+              "SpouseAdopts": null,
+              "SpouseWantsChildren": true,
+              "SpouseGiftJealousy": false,
+              "SpouseRoom": {},
+              "SpousePatio": {},
+              "SpouseFloors": [],
+              "SpouseWallpapers": [],
+              "DumpsterDiveFriendshipEffect": -25,
+              "DumpsterDiveEmote": 8,
+              "FriendsAndFamily": {},
+              "FlowerDanceCanDance": null,
+              "WinterStarGifts": [],
+              "WinterStarParticipant": false,
+              "UnlockConditions": null,
+              "SpawnIfMissing": true,
+              "Home": [
+                {
+                  "Id": "Default",
+                  "Condition": null,
+                  "Location": "MrMrRogers.EchoReef_ChanHouse",
+                  "Tile": {
+                    "X": 2,
+                    "Y": 6
+                  },
+                  "Direction": "down"
+                }
+              ],
+              "TextureName": null,
+              "Appearance": [
+                {
+                  "Id": "MrMrRogers.EchoReef_Chan",
+                  "Condition": null,
+                  "Season": null,
+                  "Indoors": true,
+                  "Outdoors": true,
+                  "Portrait": "Portraits/MrMrRogers.EchoReef_Chan",
+                  "Sprite": "Characters/MrMrRogers.EchoReef_Chan",
+                  "IsIslandAttire": false,
+                  "Precedence": 0,
+                  "Weight": 0
+                }
+              ],
+              "MugShotSourceRect": null,
+              "Size": {
+                "X": 16,
+                "Y": 32
+              },
+              "Breather": true,
+              "BreathChestRect": null,
+              "BreathChestPosition": null,
+              "Shadow": null,
+              "EmoteOffset": {
+                "X": 0,
+                "Y": 0
+              },
+              "ShakePortraits": null,
+              "KissSpriteIndex": 28,
+              "KissSpriteFacingRight": true,
+              "FormerCharacterNames": [],
+              "CustomFields": null
+            }
+          }
+      },
+      { 
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Chan",
+            "FromFile": "assets/blank.json"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Chan",
+          "FromFile": "assets/blank.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MrMrRogers.EchoReef_Chan": "{{i18n:ChanGiftLoveResponse}}//{{i18n:ChanGiftLikeResponse}}//{{i18n:ChanGiftDislikeResponse}}//{{i18n:ChanGiftHateResponse}}//{{i18n:ChanGiftNeutralResponse}}//"
+            }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Chan",
+          "Entries": {
+            "Introduction": "{{i18n:Chan_Introduction}}",
+            "AcceptBirthdayGift_Positive": "{{i18n:Chan_AcceptBirthdayGift_Positive}}",
+            "AcceptBirthdayGift_Negative": "{{i18n:Chan_AcceptBirthdayGift_Negative}}",
+            "AcceptGift_(O)StardropTea": "{{i18n:Chan_AcceptGift_(O)StardropTea}}",
+            "DumpsterDiveComment": "{{i18n:Chan_DumpsterDiveComment}}",
+            "HitBySlingshot": "{{i18n:Chan_HitBySlingshot}}",
+            "Mon": "{{i18n:Chan_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Tue": "{{i18n:Chan_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Wed": "{{i18n:Chan_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Thu": "{{i18n:Chan_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Fri": "{{i18n:Chan_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sat": "{{i18n:Chan_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sun": "{{i18n:Chan_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/animationdescriptions",
+          "Entries": {
+            "MrMrRogers.EchoReef_Chan_sleep": "19/19/19",
+            "mrmrrogers.echoreef_chan_sleep": "19/19/19"
+          } 
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Chan",
+          "Entries": {
+            "spring": "700 MrMrRogers.EchoReef_ChanHouse 7 5 0/800 MrMrRogers.EchoReef_ChanHouse 4 13 2/1700 MrMrRogers.EchoReef_Beach 26 68 2/2200 MrMrRogers.EchoReef_ChanHouse 2 6 2 MrMrRogers.EchoReef_Chan_sleep",
+            "Sun": "700 MrMrRogers.EchoReef_ChanHouse 7 5 0/800 MrMrRogers.EchoReef_Town 32 45 0/1200 MrMrRogers.EchoReef_Town 37 84 2/1900 MrMrRogers.EchoReef_FelicityHouse 26 17 3/2400 MrMrRogers.EchoReef_ChanHouse 2 6 2 MrMrRogers.EchoReef_Chan_sleep",
+            "7": "700 MrMrRogers.EchoReef_ChanHouse 7 5 0/800 MrMrRogers.EchoReef_Town 32 46 2/1800 MrMrRogers.EchoReef_FelicityHouse 26 17 3/2400 MrMrRogers.EchoReef_ChanHouse 2 6 2 MrMrRogers.EchoReef_Chan_sleep"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Chan",
+          "Entries": {
+            "Sun": "700 MrMrRogers.EchoReef_ChanHouse 7 5 0/800 MrMrRogers.EchoReef_Town 32 45 0/1200 MrMrRogers.EchoReef_Town 37 84 2/1900 MrMrRogers.EchoReef_Beach 26 68 2/2200 MrMrRogers.EchoReef_ChanHouse 2 6 2 MrMrRogers.EchoReef_Chan_sleep",
+            "7": "700 MrMrRogers.EchoReef_ChanHouse 7 5 0/800 MrMrRogers.EchoReef_Town 32 46 2/1800 MrMrRogers.EchoReef_Beach 26 68 2/2200 MrMrRogers.EchoReef_ChanHouse 2 6 2 MrMrRogers.EchoReef_Chan_sleep"
+          },
+          "When": {
+            "Felicity": false
+          }
+        }
+  ]
+}

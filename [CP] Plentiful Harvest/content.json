@@ -1,0 +1,718 @@
+{ //CONTENT PATCHER CONTENT (AND SHOPS)
+  "Format": "2.5.0",
+  
+  // CONFIG
+  
+  "ConfigSchema": {
+		"Seed Shop Location": {
+			"AllowValues": "Default, Back Corner, Storefront",
+			"Default": "Default",
+			"Description": "The location of the seed box in Pierre's shop, in case there's any conflict with other mods. Use \"Add Seeds to Pierre's\" as a last resort if this doesn't work.",
+			"Section": "Shop",
+		},
+		"Add Seeds/Saplings to Pierre's": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			"Description": "Adds the Plentiful Harvest Items to Pierre's stock. Useful as a fallback, or if you want Plentiful Harvest's seeds to be affected by Pierre's Missing Stocklist.",
+			"Section": "Shop",
+		},
+		"Remove PH Seed Box": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			"Description": "Removes the Plentiful Harvest seed box from Pierre's store entirely. Useful as a fallback but !!WARNING!! SHOULD NOT BE USED if \"Add Seeds to Pierre's\" is not checked. Additionally, the Key to the Town will no longer allow access to the PH Seed Box after Pierre's closes.",
+			"Section": "Shop",
+		},
+	},
+  
+  "Changes": [
+  // INCLUDE FROM VARIOUS FILES
+      {
+		"Action": "Include",
+		"FromFile": "files/phcrops.json, files/phobjects.json, files/phmachines.json, files/phrecipes.json, files/phstrings.json, files/phgifttastes.json" // FILE NAMES HERE
+	  },
+	  
+	  {
+		  "Action": "Load",
+		  "Target": "Mods/DomTSVG.PlentifulHarvestCP/Crops",
+		  "FromFile": "assets/crops.png",
+	  },
+	  {
+		  "Action": "Load",
+		  "Target": "Mods/DomTSVG.PlentifulHarvestCP/Objects",
+		  "FromFile": "assets/objects.png",
+	  },
+	  {
+		  "Action": "Load",
+		  "Target": "Mods/DomTSVG.PlentifulHarvestCP/FruitTrees",
+		  "FromFile": "assets/fruittrees.png",
+	  },
+	  {
+		  "Action": "Load",
+		  "Target": "Mods/DomTSVG.PlentifulHarvestCP/BigCraftables",
+		  "FromFile": "assets/bigcraftables.png",
+	  },
+	  {
+		  "Action": "Load",
+		  "Target": "Mods/DomTSVG.PlentifulHarvestCP/Cocoabo",
+		  "FromFile": "assets/cocoabo.png",
+	  },
+	  {
+		  "Action": "Load",
+		  "Target": "Mods/DomTSVG.PlentifulHarvestCP/BabyCocoabo",
+		  "FromFile": "assets/cocoabobaby.png",
+	  },
+	  
+	  // SEED SHOP MAP CHANGE
+      {
+         "Action": "EditMap",
+         "Target": "Maps/SeedShop",
+		 "When": {
+			"Seed Shop Location": "Default",
+			"Remove PH Seed Box": "false",
+		},
+         "FromFile": "assets/SeedShopFix.tmx",
+         "ToArea": { "X": 17, "Y": 27, "Width": 1, "Height": 2 },
+		 "PatchMode": "Overlay",
+      },
+	  {
+         "Action": "EditMap",
+         "Target": "Maps/SeedShop",
+		 "When": {
+			"Seed Shop Location": "Back Corner",
+			"Remove PH Seed Box": "false",
+		},
+         "FromFile": "assets/SeedShopFix.tmx",
+         "ToArea": { "X": 20, "Y": 27, "Width": 1, "Height": 2 },
+		 "PatchMode": "Overlay",
+      },
+	  {
+         "Action": "EditMap",
+         "Target": "Maps/SeedShop",
+		 "When": {
+			"Seed Shop Location": "Storefront",
+			"Remove PH Seed Box": "false",
+		},
+         "FromFile": "assets/SeedShopFix.tmx",
+         "ToArea": { "X": 5, "Y": 26, "Width": 1, "Height": 2 },
+		 "PatchMode": "Overlay",
+      },
+	  // FROSTFRUIT SAPLING DROP
+	  {
+		"Action": "EditData",
+		"Target": "Data/Monsters",
+		"TextOperations": [
+			{
+				"Operation": "Append",
+				"Target": [ "Fields", "Frost Jelly", "6" ],
+				"Value": "(O)DomTSVG.PlentifulHarvestCP_FrostfruitSapling 0.01",
+				"Delimiter": " "
+			} ]
+	  },
+	  // COCOABO
+	  {
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"Entries": {
+			"DomTSVG.PlentifulHarvestCP_Cocoabo": {
+					"DisplayName": "Cocoabo",
+					"House": "Coop",
+					"Gender": "female",
+					"EggItemIds": [ 
+						"DomTSVG.PlentifulHarvestCP_ChocolateEgg", 
+						],
+					"IncubationTime": 10080,
+					"IncubationParentSheetOffset": 1,
+					"BirthText": "A new chick hatched. It smells like... Chocolate...?",
+					"DaysToMature": 3,
+					"ProduceItemIds": [ 
+						{
+							"Id": "ChocolateEgg",
+							"Condition": null,
+							"MinimumFriendship": 0,
+							"ItemId": "DomTSVG.PlentifulHarvestCP_ChocolateEgg"
+						} 
+					],
+					"DaysToProduce": 3,
+					"ProduceOnMature": false,
+					"FriendshipForFasterProduce": 400,
+					"HarvestType": "DropOvernight",
+					"CanEatGoldenCrackers": true,
+					"Sound": "cluck",
+					"BabySound": "cluck",
+					"Texture": "Mods/DomTSVG.PlentifulHarvestCP/Cocoabo",
+					"BabyTexture": "Mods/DomTSVG.PlentifulHarvestCP/BabyCocoabo",
+					"UseFlippedRightForLeft": false,
+					"SpriteWidth": 16,
+					"SpriteHeight": 16,
+					"EmoteOffset": {
+						"X": 0,
+						"Y": -16
+					},
+					"SleepFrame": 16,
+					"UseDoubleUniqueAnimationFrames": true,
+					//"ShadowWhenBaby": {
+						//"Visible": true,
+						//"Offset": 0,
+						//"Scale": 3,
+					//},
+					//"ShadowWhenAdult": {
+					//	"Visible": true,
+					//	"Offset": 0,
+					//	"Scale": 4,
+					//},
+					"ProfessionForFasterProduce": -1,
+					"ProfessionForHappinessBoost": 2,
+					"ProfessionForQualityBoost": 2,
+					"CanSwim": false,
+					"BabiesFollowAdults": false,
+					"GrassEatAmount": 3,
+					"HappinessDrain": 5,
+					"SellPrice": 900,
+					"ShowInSummitCredits": true,
+			},
+		},
+	  },
+	  // SHOP CHANGES AND ADDITIONS
+	  {
+		"Action": "EditData",
+		"Target": "Data/Shops",
+		"Entries": {
+			// PH SHOP ADDITION
+			"DomTSVG.PlentifulHarvestCP_Shop": {
+				"Owners": [
+					{
+						"Name": "AnyOrNone",
+						"ID": "DomTSVG.PlentifulHarvestCP_ShopDialogue",
+						"Portrait": "",
+						"Dialogues": [
+							{
+								"ID": "DomTSVG.PlentifulHarvestCP_Default",
+								"Dialogue": "{{i18n:phshopdia.string}}",
+							}
+						],
+					}
+				],
+				
+				"Items": [
+				// SPRING YEAR 1
+					{ 
+						"ID": "DomTSVG.PlentifulHarvestCP_CassavaShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_CassavaSeeds",
+						"Price": 25,
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_LentilShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_LentilSeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_AsparagusShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_AsparagusSeeds",
+						"Price": 45,
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_WatermelonShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_WatermelonSeeds",
+						"Price": 95,
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_FieldPeaShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_FieldPeaSeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_RaspberryShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_RaspberrySeeds",
+					},
+					// SPRING YEAR 2
+					
+					// SUMMER YEAR 1
+					
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_OnionShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_OnionSeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_BasilShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_BasilSeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_CurrantShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_CurrantSeeds",
+						"Price": 45,
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_DragonFruitShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_DragonFruitSeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_CucumberShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_CucumberStarter",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_BellPepperShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_BellPepperSeeds",
+						"Price": 45,
+					},
+					// SUMMER YEAR 2
+					
+					
+					// FALL YEAR 1
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_PeanutShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_PeanutSeeds",
+						"Price": 75,
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_SoyShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_SoySeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_QuinceShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_QuinceSeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_HuckleberryShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_HuckleberrySeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_ButternutSquashShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ButternutSquashSeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_SweetPotatoShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_SweetPotatoSeeds",
+					},
+					// FALL YEAR 2
+					
+					// WINTER YEAR !
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_ParsleyShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ParsleySeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_ArugulaShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ArugulaSeeds",
+						"Price": 35,
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_ChardShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ChardSeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_LettuceShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_LettuceSeeds",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_ElderberryShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ElderberryStarter",
+						"Price": 35,
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_SilverGourdShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_SilverGourdSeeds",
+					},
+					// WINTER YEAR 2
+					
+					// SAPLINGS
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_WalnutShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_WalnutSapling",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_KumquatShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_KumquatSapling",
+					},
+					
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_AlmondShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_AlmondSapling",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_GuavaShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_GuavaSapling",
+					},
+					
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_ChestnutShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ChestnutSapling",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_PearShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_PearSapling",
+					},
+					
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_PistachioShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_PistachioSapling",
+					},
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_PersimmonShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_PersimmonSapling",
+					},
+					
+					// SECRET
+					{
+						"ID": "DomTSVG.PlentifulHarvestCP_CacaoShop",
+						"Condition": "PLAYER_FRIENDSHIP_POINTS Current Pierre 1750",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_CacaoSapling",
+					},
+				],
+			},
+		},
+	},
+	// ADD TO PIERRE'S =====================================================================================================================================
+	{
+		"Action": "EditData",
+		"Target": "Data/Shops",
+		"TargetField": ["SeedShop", "Items"],
+		"When": {
+				"Add Seeds/Saplings to Pierre's": "true",
+		},
+		"Entries": {
+			// SPRING YEAR 1
+					"DomTSVG.PlentifulHarvestCP_CassavaShop": { 
+						"ID": "DomTSVG.PlentifulHarvestCP_CassavaShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_CassavaSeeds",
+						"Price": 25,
+					},
+					"DomTSVG.PlentifulHarvestCP_LentilShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_LentilShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_LentilSeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_AsparagusShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_AsparagusShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_AsparagusSeeds",
+						"Price": 45,
+					},
+					"DomTSVG.PlentifulHarvestCP_WatermelonShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_WatermelonShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_WatermelonSeeds",
+						"Price": 95,
+					},
+					"DomTSVG.PlentifulHarvestCP_FieldPeaShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_FieldPeaShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_FieldPeaSeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_RaspberryShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_RaspberryShop",
+						"Condition": "SEASON Spring",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_RaspberrySeeds",
+					},
+					// SPRING YEAR 2
+					
+					// SUMMER YEAR 1
+					
+					"DomTSVG.PlentifulHarvestCP_OnionShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_OnionShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_OnionSeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_BasilShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_BasilShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_BasilSeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_CurrantShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_CurrantShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_CurrantSeeds",
+						"Price": 45,
+					},
+					"DomTSVG.PlentifulHarvestCP_DragonFruitShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_DragonFruitShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_DragonFruitSeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_CucumberShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_CucumberShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_CucumberStarter",
+					},
+					"DomTSVG.PlentifulHarvestCP_BellPepperShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_BellPepperShop",
+						"Condition": "SEASON Summer",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_BellPepperSeeds",
+						"Price": 45,
+					},
+					// SUMMER YEAR 2
+					
+					
+					// FALL YEAR 1
+					"DomTSVG.PlentifulHarvestCP_PeanutShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_PeanutShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_PeanutSeeds",
+						"Price": 75,
+					},
+					"DomTSVG.PlentifulHarvestCP_SoyShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_SoyShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_SoySeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_QuinceShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_QuinceShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_QuinceSeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_HuckleberryShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_HuckleberryShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_HuckleberrySeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_ButternutSquashShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_ButternutSquashShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ButternutSquashSeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_SweetPotatoShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_SweetPotatoShop",
+						"Condition": "SEASON Fall",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_SweetPotatoSeeds",
+					},
+					// FALL YEAR 2
+					
+					// WINTER YEAR !
+					"DomTSVG.PlentifulHarvestCP_ParsleyShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_ParsleyShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ParsleySeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_ArugulaShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_ArugulaShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ArugulaSeeds",
+						"Price": 35,
+					},
+					"DomTSVG.PlentifulHarvestCP_ChardShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_ChardShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ChardSeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_LettuceShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_LettuceShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_LettuceSeeds",
+					},
+					"DomTSVG.PlentifulHarvestCP_ElderberryShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_ElderberryShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ElderberryStarter",
+						"Price": 35,
+					},
+					"DomTSVG.PlentifulHarvestCP_SilverGourdShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_SilverGourdShop",
+						"Condition": "SEASON Winter",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_SilverGourdSeeds",
+					},
+					// WINTER YEAR 2
+					
+					// SAPLINGS
+					"DomTSVG.PlentifulHarvestCP_WalnutShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_WalnutShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_WalnutSapling",
+					},
+					"DomTSVG.PlentifulHarvestCP_KumquatShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_KumquatShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_KumquatSapling",
+					},
+					"DomTSVG.PlentifulHarvestCP_AlmondShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_AlmondShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_AlmondSapling",
+					},
+					"DomTSVG.PlentifulHarvestCP_GuavaShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_GuavaShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_GuavaSapling",
+					},
+					"DomTSVG.PlentifulHarvestCP_ChestnutShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_ChestnutShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_ChestnutSapling",
+					},
+					"DomTSVG.PlentifulHarvestCP_PearShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_PearShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_PearSapling",
+					},
+					"DomTSVG.PlentifulHarvestCP_PistachioShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_PistachioShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_PistachioSapling",
+					},
+					"DomTSVG.PlentifulHarvestCP_PersimmonShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_PersimmonShop",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_PersimmonSapling",
+					},
+					
+					// SECRET
+					"DomTSVG.PlentifulHarvestCP_CacaoShop": {
+						"ID": "DomTSVG.PlentifulHarvestCP_CacaoShop",
+						"Condition": "PLAYER_FRIENDSHIP_POINTS Current Pierre 1750",
+						"ItemID": "DomTSVG.PlentifulHarvestCP_CacaoSapling",
+					},
+		},
+		"MoveEntries": [
+			// START SEEDS
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_CassavaShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_LentilShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_AsparagusShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_WatermelonShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_FieldPeaShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_RaspberryShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_OnionShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_BasilShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_CurrantShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_DragonFruitShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_CucumberShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_BellPepperShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_PeanutShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_SoyShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_QuinceShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_HuckleberryShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_ButternutSquashShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_SweetPotatoShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_ParsleyShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_ArugulaShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_ChardShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_LettuceShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_ElderberryShop",
+				"BeforeID": "GrassStarter",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_SilverGourdShop",
+				"BeforeID": "GrassStarter",
+			},
+			// START TREES
+			
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_CacaoShop",
+				"AfterID": "(O)633",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_PersimmonShop",
+				"AfterID": "(O)633",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_PistachioShop",
+				"AfterID": "(O)633",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_PearShop",
+				"AfterID": "(O)633",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_ChestnutShop",
+				"AfterID": "(O)633",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_GuavaShop",
+				"AfterID": "(O)633",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_AlmondShop",
+				"AfterID": "(O)633",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_KumquatShop",
+				"AfterID": "(O)633",
+			},
+			{
+				"Id": "DomTSVG.PlentifulHarvestCP_WalnutShop",
+				"AfterID": "(O)633",
+			},
+		],
+	},
+
+   ]
+}

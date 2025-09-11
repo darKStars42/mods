@@ -1,0 +1,720 @@
+{
+	"$schema": "https://smapi.io/schemas/content-patcher.json",
+	"Format": "2.0.0",
+	"Changes": [
+		//tilesheets for box
+		{
+			"Action": "Load",
+			"Target": "Maps/shekurika_MagicalCrops_box",
+			"FromFile": "assets/.shekurika_MagicalCrops_box.png"
+		},
+		{
+			"Action": "EditImage",
+			"Target": "Maps/shekurika_MagicalCrops_box",
+			"FromFile": "assets/.shekurika_MagicalCrops_box2.png",
+			"When": {
+				"HasFlag": "KingParsnipLetter"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Target": "Maps/shekurika_MagicalCrops_box",
+			"FromFile": "assets/.shekurika_MagicalCrops_box3.png",
+			"When": {
+				"HasFlag": "SlimePlantLetter"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Target": "Maps/shekurika_MagicalCrops_box",
+			"FromFile": "assets/.shekurika_MagicalCrops_box4.png",
+			"When": {
+				"HasFlag": "BalancedPlantLetter"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Mods/shekurika.MagicalCrops.CP/Objects/Objects",
+			"FromFile": "assets/Objects.png",
+		},
+		{
+			"Action": "Load",
+			"Target": "Mods/shekurika.MagicalCrops.CP/Objects/Crops",
+			"FromFile": "assets/Crops.png",
+		},
+		{
+			"Action": "Load",
+			"Target": "Mods/shekurika.MagicalCrops.CP/Objects/BigCraftables",
+			"FromFile": "assets/BigCraftables.png",
+		},
+		//events and stuff
+		{
+			"Action": "Include",
+			"FromFile": "content_SVE.json",
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP"
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "content_nonSVE.json",
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+			}
+		},
+		//Objects
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"Balanced_Fruit": {
+					"Name": "Balanced_Fruit",
+					"DisplayName": "{{i18n:objects.Balanced_Fruit.name}}",
+					"Description": "{{i18n:objects.Balanced_Fruit.description}}",
+					"Category": -79,
+					"Price": 280,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 0,
+					"Edibility": 100,
+				},
+				"Blink_Fruit": {
+					"Name": "Blink_Fruit",
+					"DisplayName": "{{i18n:objects.Blink_Fruit.name}}",
+					"Description": "{{i18n:objects.Blink_Fruit.description}}",
+					"Category": -79,
+					"Price": 1300,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 1,
+					"Edibility": 500,
+				},
+				"Cake_Poop": {
+					"Name": "Cake_Poop",
+					"DisplayName": "{{i18n:objects.Cake_Poop.name}}",
+					"Description": "{{i18n:objects.Cake_Poop.description}}",
+					"Category": -26,
+					"Price": 2100,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 2,
+					"Edibility": 100,
+				},
+				"Casino_Coins": {
+					"Name": "Casino_Coins",
+					"DisplayName": "{{i18n:objects.Casino_Coins.name}}",
+					"Description": "{{i18n:objects.Casino_Coins.description}}",
+					"Category": -26,
+					"Price": 150,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 3,
+					"Edibility": -300,
+				},
+				"Invisible_Fruit": {
+					"Name": "Invisible_Fruit",
+					"DisplayName": "{{i18n:objects.Invisible_Fruit.name}}",
+					"Description": "{{i18n:objects.Invisible_Fruit.description}}",
+					"Category": -79,
+					"Price": 225,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 4,
+					"Edibility": 10,
+				},
+				"King_Parsnip": {
+					"Name": "King_Parsnip",
+					"DisplayName": "{{i18n:objects.King_Parsnip.name}}",
+					"Description": "{{i18n:objects.King_Parsnip.description}}",
+					"Category": -75,
+					"Price": 150,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 5,
+					"Edibility": 50,
+				},
+				"Slimy_Fruit": {
+					"Name": "Slimy_Fruit",
+					"DisplayName": "{{i18n:objects.Slimy_Fruit.name}}",
+					"Description": "{{i18n:objects.Slimy_Fruit.description}}",
+					"Category": -79,
+					"IsPaddyCrop": true,
+					"Price": 90,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 6,
+					"Edibility": 5,
+				},
+				"Sunset_Drop": {
+					"Name": "Sunset_Drop",
+					"DisplayName": "{{i18n:objects.Sunset_Drop.name}}",
+					"Description": "{{i18n:objects.Sunset_Drop.description}}",
+					"Category": -79,
+					"Price": 120,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 7,
+					"Edibility": 80,
+				},
+				//Seeds
+				"Balanced_Seeds": {
+					"Name": "Balanced_Seeds",
+					"DisplayName": "{{i18n:objects.Balanced_Seeds.name}}",
+					"Description": "{{i18n:objects.Balanced_Seeds.description}}",
+					"Category": -74,
+					"Type": "Seeds",
+					"Price": 120,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 24,
+					"Edibility": -300,
+				},
+				"Blink_Seeds": {
+					"Name": "Blink_Seeds",
+					"DisplayName": "{{i18n:objects.Blink_Seeds.name}}",
+					"Description": "{{i18n:objects.Blink_Seeds.description}}",
+					"Category": -74,
+					"Type": "Seeds",
+					"Price": 120,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 25,
+					"Edibility": -300,
+				},
+				"Cake_Plant_Seeds": {
+					"Name": "Cake_Plant_Seeds",
+					"DisplayName": "{{i18n:objects.Cake_Plant_Seeds.name}}",
+					"Description": "{{i18n:objects.Cake_Plant_Seeds.description}}",
+					"Category": -74,
+					"Type": "Seeds",
+					"Price": 120,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 26,
+					"Edibility": -300,
+				},
+				"Invisible_Seeds": {
+					"Name": "Invisible_Seeds",
+					"DisplayName": "{{i18n:objects.Invisible_Seeds.name}}",
+					"Description": "{{i18n:objects.Invisible_Seeds.description}}",
+					"Category": -74,
+					"Type": "Seeds",
+					"Price": 120,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 28,
+					"Edibility": -300,
+				},
+				"King_Parsnip_Seeds": {
+					"Name": "King_Parsnip_Seeds",
+					"DisplayName": "{{i18n:objects.King_Parsnip_Seeds.name}}",
+					"Description": "{{i18n:objects.King_Parsnip_Seeds.description}}",
+					"Category": -74,
+					"Type": "Seeds",
+					"Price": 120,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 29,
+					"Edibility": -300,
+				},
+				"Dice_Seeds": {
+					"Name": "Dice_Seeds",
+					"DisplayName": "{{i18n:objects.Dice_Seeds.name}}",
+					"Description": "{{i18n:objects.Dice_Seeds.description}}",
+					"Category": -74,
+					"Type": "Seeds",
+					"Price": 120,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 27,
+					"Edibility": -300,
+				},
+				"Slimy_Seeds": {
+					"Name": "Slimy_Seeds",
+					"DisplayName": "{{i18n:objects.Slimy_Seeds.name}}",
+					"Description": "{{i18n:objects.Slimy_Seeds.description}}",
+					"Category": -74,
+					"Type": "Seeds",
+					"Price": 120,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 30,
+					"Edibility": -300,
+				},
+				"Sunset_Seeds": {
+					"Name": "Sunset_Seeds",
+					"DisplayName": "{{i18n:objects.Sunset_Seeds.name}}",
+					"Description": "{{i18n:objects.Sunset_Seeds.description}}",
+					"Category": -74,
+					"Type": "Seeds",
+					"Price": 120,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Objects",
+					"SpriteIndex": 31,
+					"Edibility": -300,
+				},
+			}
+		},
+		//Crops
+		{
+			"Action": "EditData",
+			"Target": "Data/Crops",
+			"Entries": {
+				"Balanced_Seeds": {
+					"Seasons": [
+						"winter"
+					],
+					"DaysInPhase": [
+						1,
+						4,
+						4,
+						4,
+						3
+					],
+					"HarvestItemId": "Balanced_Fruit",
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Crops",
+					"SpriteIndex": 0,
+					"PlantableLocationRules": [
+						{
+							"Id": "no_pots",
+							"PlantedIn": "GardenPot",
+							"Result": "Deny",
+						},
+						{
+							"Id": "only_farm",
+							"Condition": "!LOCATION_NAME here Farm, !LOCATION_NAME here Greenhouse, !LOCATION_NAME here Custom_GrandpasShedGreenhouse",
+							"Result": "Deny",
+						},
+						{
+							"Id": "allow",
+							"Result": "Default",
+						}
+					]
+				},
+				"Blink_Seeds": {
+					"Seasons": [
+						"spring",
+						"summer",
+						"fall",
+						"winter"
+					],
+					"DaysInPhase": [
+						1,
+						4,
+						4,
+						4,
+						3
+					],
+					"HarvestItemId": "Blink_Fruit",
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Crops",
+					"SpriteIndex": 1,
+					"RegrowDays": 2,
+					"PlantableLocationRules": [
+						{
+							"Id": "no_pots",
+							"PlantedIn": "GardenPot",
+							"Result": "Deny",
+						},
+						{
+							"Id": "only_farm",
+							"Condition": "!LOCATION_NAME here Farm, !LOCATION_NAME here Greenhouse, !LOCATION_NAME here Custom_GrandpasShedGreenhouse",
+							"Result": "Deny",
+						},
+						{
+							"Id": "allow",
+							"Result": "Default",
+						}
+					]
+				},
+				"Cake_Plant_Seeds": {
+					"Seasons": [
+						"spring"
+					],
+					"DaysInPhase": [
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					"HarvestItemId": "Cake_Poop",
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Crops",
+					"SpriteIndex": 2,
+					"PlantableLocationRules": [
+						{
+							"Id": "no_pots",
+							"PlantedIn": "GardenPot",
+							"Result": "Deny",
+						},
+						{
+							"Id": "only_farm",
+							"Condition": "!LOCATION_NAME here Farm, !LOCATION_NAME here Greenhouse, !LOCATION_NAME here Custom_GrandpasShedGreenhouse",
+							"Result": "Deny",
+						},
+						{
+							"Id": "allow",
+							"Result": "Default",
+						}
+					]
+				},
+				"Invisible_Seeds": {
+					"Seasons": [
+						"summer"
+					],
+					"DaysInPhase": [
+						1,
+						2,
+						3,
+						2,
+						1
+					],
+					"HarvestItemId": "Invisible_Fruit",
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Crops",
+					"SpriteIndex": 3,
+					"PlantableLocationRules": [
+						{
+							"Id": "no_pots",
+							"PlantedIn": "GardenPot",
+							"Result": "Deny",
+						},
+						{
+							"Id": "only_farm",
+							"Condition": "!LOCATION_NAME here Farm, !LOCATION_NAME here Greenhouse, !LOCATION_NAME here Custom_GrandpasShedGreenhouse",
+							"Result": "Deny",
+						},
+						{
+							"Id": "allow",
+							"Result": "Default",
+						}
+					]
+				},
+				"King_Parsnip_Seeds": {
+					"Seasons": [
+						"spring"
+					],
+					"DaysInPhase": [
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					"HarvestItemId": "King_Parsnip",
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Crops",
+					"SpriteIndex": 4,
+					"PlantableLocationRules": [
+						{
+							"Id": "no_pots",
+							"PlantedIn": "GardenPot",
+							"Result": "Deny",
+						},
+						{
+							"Id": "only_farm",
+							"Condition": "!LOCATION_NAME here Farm, !LOCATION_NAME here Greenhouse, !LOCATION_NAME here Custom_GrandpasShedGreenhouse",
+							"Result": "Deny",
+						},
+						{
+							"Id": "allow",
+							"Result": "Default",
+						}
+					]
+				},
+				"Dice_Seeds": {
+					"Seasons": [
+						"summer"
+					],
+					"DaysInPhase": [
+						6,
+						6,
+						6,
+						6,
+						6
+					],
+					"HarvestItemId": "Casino_Coins",
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Crops",
+					"SpriteIndex": 5,
+					"PlantableLocationRules": [
+						{
+							"Id": "no_pots",
+							"PlantedIn": "GardenPot",
+							"Result": "Deny",
+						},
+						{
+							"Id": "only_farm",
+							"Condition": "!LOCATION_NAME here Farm, !LOCATION_NAME here Greenhouse, !LOCATION_NAME here Custom_GrandpasShedGreenhouse",
+							"Result": "Deny",
+						},
+						{
+							"Id": "allow",
+							"Result": "Default",
+						}
+					]
+				},
+				"Slimy_Seeds": {
+					"Seasons": [
+						"spring",
+						"summer",
+						"fall",
+						"winter"
+					],
+					"DaysInPhase": [
+						1,
+						2,
+						2,
+						2
+					],
+					"HarvestItemId": "Slimy_Fruit",
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Crops",
+					"SpriteIndex": 6,
+					"PlantableLocationRules": [
+						{
+							"Id": "no_pots",
+							"PlantedIn": "GardenPot",
+							"Result": "Deny",
+						},
+						{
+							"Id": "only_farm",
+							"Condition": "!LOCATION_NAME here Farm, !LOCATION_NAME here Greenhouse, !LOCATION_NAME here Custom_GrandpasShedGreenhouse",
+							"Result": "Deny",
+						},
+						{
+							"Id": "allow",
+							"Result": "Default",
+						}
+					]
+				},
+				"Sunset_Seeds": {
+					"Seasons": [
+						"fall"
+					],
+					"DaysInPhase": [
+						1,
+						2,
+						2,
+						2
+					],
+					"HarvestItemId": "Sunset_Drop",
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\Crops",
+					"SpriteIndex": 7,
+					"PlantableLocationRules": [
+						{
+							"Id": "no_pots",
+							"PlantedIn": "GardenPot",
+							"Result": "Deny",
+						},
+						{
+							"Id": "only_farm",
+							"Condition": "!LOCATION_NAME here Farm, !LOCATION_NAME here Greenhouse, !LOCATION_NAME here Custom_GrandpasShedGreenhouse",
+							"Result": "Deny",
+						},
+						{
+							"Id": "allow",
+							"Result": "Default",
+						}
+					]
+				},
+			}
+		},
+		//BigCraftables
+		{
+			"Action": "EditData",
+			"Target": "Data/BigCraftables",
+			"Entries": {
+				"Chocolate_Cake_Decoration": {
+					"Name": "Chocolate_Cake_Decoration",
+					"DisplayName": "{{i18n:bigCraftables.Chocolate_Cake_Decoration.name}}",
+					"Description": "{{i18n:bigCraftables.Chocolate_Cake_Decoration.description}}",
+					"Price": 200,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\BigCraftables",
+					"SpriteIndex": 0,
+				},
+				"Pink_Cake_Decoration": {
+					"Name": "Pink_Cake_Decoration",
+					"DisplayName": "{{i18n:bigCraftables.Pink_Cake_Decoration.name}}",
+					"Description": "{{i18n:bigCraftables.Pink_Cake_Decoration.description}}",
+					"Price": 480,
+					"Texture": "Mods\\shekurika.MagicalCrops.CP\\Objects\\BigCraftables",
+					"SpriteIndex": 1,
+				}
+			}
+		},
+		//Recipes
+		{
+			"Action": "EditData",
+			"Target": "Data/CraftingRecipes",
+			"Entries": {
+				"Chocolate_Cake_Decoration": "220 1/unused_field/Chocolate_Cake_Decoration 1/true/null/{{i18n:recipes.Chocolate_Cake_Decoration.name}}",
+				"Pink_Cake_Decoration": "221 1/unused_field/Pink_Cake_Decoration 1/true/null/{{i18n:recipes.Pink_Cake_Decoration.name}}"
+			}
+		},
+		//Shop
+		{
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"Entries": {
+				"shekurika.MagicalCrops.CP_WizardSeedShop": {
+					"Owners": [
+						{
+							"Name": "AnyOrNone",
+							"Dialogues": [
+								{
+									"Id": "openingQuote",
+									"Portrait": "", //no portrait
+									"Dialogue": "{{i18n:shop.openingQuote}}"
+								}
+							]
+						}
+					],
+					"Items": [
+						{
+							"Id": "King_Parsnip_Seeds",
+							"Condition": "PLAYER_HAS_SEEN_EVENT ANY 87620001",
+							"ItemId": "(O)King_Parsnip_Seeds",
+							"TradeItemId": "(O)24",
+							"TradeItemAmount": 3,
+						},
+						{
+							"Id": "Balanced_Seeds",
+							"Condition": "PLAYER_HAS_MAIL ANY BalancedPlantLetter",
+							"ItemId": "(O)Balanced_Seeds",
+							"Price": 40,
+						},
+						{
+							"Id": "Cake_Plant_Seeds",
+							"Condition": "PLAYER_HAS_SEEN_EVENT ANY 87620004",
+							"ItemId": "(O)Cake_Plant_Seeds",
+							"Price": 30,
+						},
+						{
+							"Id": "Dice_Seeds",
+							"Condition": "PLAYER_HAS_MAIL ANY LuckyRollLetter",
+							"ItemId": "(O)Dice_Seeds",
+							"Price": 20,
+						},
+						{
+							"Id": "Slimy_Seeds",
+							"Condition": "PLAYER_HAS_MAIL ANY SlimePlantLetter",
+							"ItemId": "(O)Slimy_Seeds",
+							"Price": 35,
+						},
+						{
+							"Id": "Sunset_Seeds",
+							"Condition": "PLAYER_HAS_MAIL ANY SunSetPlantLetter",
+							"ItemId": "(O)Sunset_Seeds",
+							"Price": 30,
+						},
+						{
+							"Id": "Blink_Seeds",
+							"Condition": "PLAYER_HAS_SEEN_EVENT ANY 87620002",
+							"ItemId": "(O)Blink_Seeds",
+							"TradeItemId": "(O)454",
+							"TradeItemAmount": 1,
+						},
+						{
+							"Id": "Invisible_Seeds",
+							"Condition": "PLAYER_HAS_MAIL ANY InvisiblePlant1Letter",
+							"ItemId": "(O)Invisible_Seeds",
+							"Price": 70,
+						},
+					]
+				}
+			}
+		},
+		//Mail
+		{
+			"Action": "EditData",
+			"Target": "Data/Mail",
+			"Entries": {
+				"KingParsnipLetter": "{{i18n:KingParsnipBody}}[letterbg 2][textcolor cyan][#]{{i18n:KingParsnipTitle}}",
+				"AncientSeedsLetter": "{{i18n:AncientSeedsBody}} %item quest 8762002 false %%[letterbg 2][textcolor cyan][#]{{i18n:AncientSeedsTitle}}",
+				"LuckyRollLetter": "{{i18n:LuckyRollBody}}%item id (O)Dice_Seeds 6 %%[#]{{i18n:LuckyRollTitle}}",
+				"SlimePlantLetter": "{{i18n:SlimePlantBody}}%item id (O)Slimy_Seeds 5 %%[#]{{i18n:SlimePlantTitle}}",
+				"SunSetPlantLetter": "{{i18n:SunsetPlantBody}}%item id (O)Sunset_Seeds 5 %%[letterbg 2][textcolor cyan][#]{{i18n:SunSetPlantTitle}}",
+				"BalancedPlantLetter": "{{i18n:BalancedPlantBody}}%item quest 8762007 false %% %item id (O)Balanced_Seeds 5 %%[letterbg 2][textcolor cyan][#]{{i18n:BalancedPlantTitle}}",
+				"CakePlantLetter": "{{i18n:CakePlantBody}}[#]{{i18n:CakePlantTitle}}",
+				"InvisiblePlant1Letter": "{{i18n:InvisiblePlant1Body}}%item quest 8762010 false %% %item id (O)Invisible_Seeds 5 %%[letterbg 2][textcolor cyan][#]{{i18n:InvisiblePlant1Title}}",
+				"InvisiblePlant2Letter": "{{i18n:InvisiblePlant2Body}}%item quest 8762011 true %%[letterbg 2][textcolor cyan][#]{{i18n:InvisiblePlant2Title}}",
+				"AQFFinished": "{{i18n:AQFFinishedBody}}%item id (O)74 1 %%[letterbg 2][textcolor cyan][#]{{i18n:AQFFinishedTitle}}",
+				"EvelynCakeHelp": "{{i18n:EvelynCakeHelpBody}}%item id (BC)Pink_Cake_Decoration 5 %%[#]{{i18n:EvelynCakeHelpTitle}}",
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/TriggerActions",
+			"Entries": {
+				"{{ModId}}_send_KingParsnipLetter": {
+					"Id": "{{ModId}}_send_KingParsnipLetter",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_STAT Current daysPlayed 16, SEASON Spring", //Spring 17 Year 1
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current KingParsnipLetter ## AddMail Current KingParsnipLetter"
+					]
+				},
+				"{{ModId}}_send_AncientSeedsLetter": {
+					"Id": "{{ModId}}_send_AncientSeedsLetter",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_HAS_CRAFTING_RECIPE Current Ancient Seeds",
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current AncientSeedsLetter ## AddMail Current AncientSeedsLetter"
+					]
+				},
+				"{{ModId}}_send_LuckyRollLetter": {
+					"Id": "{{ModId}}_send_LuckyRollLetter",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_STAT Current daysPlayed 31, SEASON Summer", //Summer 3 Year 1
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current LuckyRollLetter ## AddMail Current LuckyRollLetter"
+					]
+				},
+				"{{ModId}}_send_SlimePlantLetter": {
+					"Id": "{{ModId}}_send_SlimePlantLetter",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_STAT Current daysPlayed 59, SEASON Fall", //Fall 4 Year 1
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current SlimePlantLetter ## AddMail Current SlimePlantLetter"
+					]
+				},
+				"{{ModId}}_send_SunSetPlantLetter": {
+					"Id": "{{ModId}}_send_SunSetPlantLetter",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_STAT Current daysPlayed 65, SEASON Fall", //Fall 10 Year 1
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current SunSetPlantLetter ## AddMail Current SunSetPlantLetter"
+					]
+				},
+				"{{ModId}}_send_BalancedPlantLetter": {
+					"Id": "{{ModId}}_send_BalancedPlantLetter",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_STAT Current daysPlayed 89, SEASON Winter", //Winter 6 Year 1
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current BalancedPlantLetter ## AddMail Current BalancedPlantLetter"
+					]
+				},
+				"{{ModId}}_send_CakePlantLetter": {
+					"Id": "{{ModId}}_send_CakePlantLetter",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_STAT Current daysPlayed 121, SEASON Spring", //Spring 10 Year 2
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current CakePlantLetter ## AddMail Current CakePlantLetter"
+					]
+				},
+				"{{ModId}}_send_InvisiblePlant1Letter": {
+					"Id": "{{ModId}}_send_InvisiblePlant1Letter",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_STAT Current daysPlayed 141, SEASON Spring", //Summer 2 Year 2
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current InvisiblePlant1Letter ## AddMail Current InvisiblePlant1Letter"
+					]
+				},
+				"{{ModId}}_send_InvisiblePlant2Letter": {
+					"Id": "{{ModId}}_send_InvisiblePlant2Letter",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_HAS_MAIL Current InvisibleSeedsGiven",
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current InvisiblePlant2Letter ## AddMail Current InvisiblePlant2Letter"
+					]
+				},
+				"{{ModId}}_send_AQFFinished": {
+					"Id": "{{ModId}}_send_AQFFinished",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_HAS_SEEN_EVENT Current 87620003",
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current AQFFinished ## AddMail Current AQFFinished"
+					]
+				},
+				"{{ModId}}_send_EvelynCakeHelp": {
+					"Id": "{{ModId}}_send_EvelynCakeHelp",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_HAS_SEEN_EVENT Current 87620004",
+					"Actions": [
+						"If !PLAYER_HAS_MAIL Current EvelynCakeHelp ## AddMail Current EvelynCakeHelp"
+					]
+				}
+			}
+		}
+	],
+}

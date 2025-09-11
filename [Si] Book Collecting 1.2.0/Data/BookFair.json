@@ -1,0 +1,522 @@
+{
+
+	"Changes": [
+
+	// Book Fair Entry //////////////////////////////////////////////////////////
+
+	{
+		"Action": "EditData",
+		"Target": "Data/PassiveFestivals",
+		"Entries": {
+			"{{ModId}}_BookFair": {
+				"DisplayName": "{{i18n:Si.BC.BFName}}",
+				"Condition": "",
+				"ShowOnCalendar": true,
+				"Season": "Spring",
+				"StartDay": 9,
+				"EndDay": 9,
+				"StartTime": 800,
+				"StartMessage": "{{i18n:Si.BC.BFStart}}",
+				"OnlyShowMessageOnFirstDay": true,
+				"MapReplacements": null,
+				"DailySetupMethod": null,
+				"CleanupMethod": null,
+				"CustomFields": null
+			},
+		},
+	},
+
+	// Map Patch //////////////////////////////////////////////////////////
+
+	{
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"FromFile": "Data/Assets/BookFair.tmx",
+		"ToArea": { "X": 51, "Y": 21, "Width": 19, "Height": 12 },
+		"PatchMode": "Overlay",
+		"When": {
+				"Season": "spring",
+				"Day": 9,
+			},
+	},
+
+	// Set Weather //////////////////////////////////////////////////////////
+
+	{
+		"Action": "EditData",
+		"Target": "Data/LocationContexts",
+		"TargetField": [ "Default", "WeatherConditions" ],
+		"Entries": {
+			"{{ModId}}_FairWeather": {
+				"Id": "{{ModId}}_FairWeather",
+				"Condition": "PLAYER_STAT Current bc_hasbooks 15, SEASON Spring, DAY_OF_MONTH 9",
+				"Weather": "Sun",
+			},
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Data/LocationContexts",
+		"Fields": {
+			"Default": {
+				"AllowRainTotem": false,
+			},
+		},
+		"When": {
+				"Season": "spring",
+				"Day": 8,
+		}
+	},
+
+	// Shop Actions //////////////////////////////////////////////////////////
+	// Power books (65 23, 66 23), fiction books (64 26, 64 27), guides (59 23, 59 24), magazines/travel/guild (68 27), self help/recipes/random (61 30), science (59 27, 59 28), snacks (51 32)
+
+	{
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"When": {
+				"Season": "spring",
+				"Day": 9,
+			},
+		"MapTiles": [
+			{
+				"Position": { "X": 65, "Y": 23 },
+				"Layer": "Buildings",
+				"SetProperties": {
+					"Action": "OpenShop {{ModId}}_PowerShop none 600 2600 65 23 1 1"
+				}
+			},
+			{
+				"Position": { "X": 66, "Y": 23 },
+				"Layer": "Buildings",
+				"SetProperties": {
+					"Action": "OpenShop {{ModId}}_PowerShop none 600 2600 66 23 1 1",
+				}
+			},
+			{
+				"Position": { "X": 57, "Y": 23 },
+				"Layer": "Buildings",
+				"SetProperties": {
+					"Action": "OpenShop {{ModId}}_NonfictionShop none 600 2600 57 23 1 1"
+				}
+			},
+			{
+				"Position": { "X": 57, "Y": 24 },
+				"Layer": "Buildings",
+				"SetProperties": {
+					"Action": "OpenShop {{ModId}}_NonfictionShop none 600 2600 57 24 1 1"
+				}
+			},
+			{
+				"Position": { "X": 59, "Y": 28 },
+				"Layer": "Buildings",
+				"SetProperties": {
+					"Action": "OpenShop {{ModId}}_ScienceShop none 600 2600 59 28 1 1"
+				}
+			},
+			{
+				"Position": { "X": 68, "Y": 28 },
+				"Layer": "Buildings",
+				"SetProperties": {
+					"Action": "OpenShop {{ModId}}_MagShop none 600 2600 68 27 1 1"
+				}
+			},
+			{
+				"Position": { "X": 61, "Y": 31 },
+				"Layer": "Buildings",
+				"SetProperties": {
+					"Action": "OpenShop {{ModId}}_RecipeShop none 600 2600 61 30 1 1"
+				}
+			},
+			{
+				"Position": { "X": 64, "Y": 27 },
+				"Layer": "Buildings",
+				"SetProperties": {
+					"Action": "OpenShop {{ModId}}_FictionShop none 600 2600 64 27 1 1"
+				}
+			},
+			{
+				"Position": { "X": 51, "Y": 32 },
+				"Layer": "Buildings",
+				"SetProperties": {
+					"Action": "OpenShop {{ModId}}_SnackShop none 600 2600 51 32 1 1"
+				}
+			},
+		],
+	},
+
+	// Shops //////////////////////////////////////////////////////////
+
+	{
+		"Action": "EditData",
+		"Target": "Data/Shops",
+		"Entries": {
+			"{{ModId}}_PowerShop": {
+				"Id": "{{ModId}}_PowerShop",
+				"Owners": [
+					{
+						"Id": "{{ModId}}_Open",
+						"Name": "AnyOrNone",
+						"Dialogues": [],
+						"Condition": "TIME 800 1700",
+					},
+					{
+						"Id": "{{ModId}}_Closed1",
+						"Name": "None",
+						"Condition": "TIME 600 800",
+						"ClosedMessage": "{{i18n:Si.BC.BFNotBegun}}",
+					},
+					{
+						"Id": "{{ModId}}_Closed2",
+						"Name": "None",
+						"Condition": "TIME 1700 2600",
+						"ClosedMessage": "{{i18n:Si.BC.BFEnded}}",
+					},
+				],
+				"Items": [
+					{
+						"Id": "{{ModId}}_PowerShop_PowerBooks",
+						"ItemId": "RANDOM_ITEMS (O)",
+                		"MaxItems": "{{PowerShopBooks}}",
+						"AvailableStock": 1,
+                		"PerItemCondition": "ANY \"ITEM_CONTEXT_TAG Target book_item\" \"ITEM_CONTEXT_TAG Target unread_book\"",
+					},
+				],
+			},
+			"{{ModId}}_NonfictionShop": {
+				"Id": "{{ModId}}_NonfictionShop",
+				"Owners": [
+					{
+						"Id": "{{ModId}}_Open",
+						"Name": "AnyOrNone",
+						"Dialogues": [],
+						"Condition": "TIME 800 1700",
+					},
+					{
+						"Id": "{{ModId}}_Closed1",
+						"Name": "None",
+						"Condition": "TIME 600 800",
+						"ClosedMessage": "{{i18n:Si.BC.BFNotBegun}}",
+					},
+					{
+						"Id": "{{ModId}}_Closed2",
+						"Name": "None",
+						"Condition": "TIME 1700 2600",
+						"ClosedMessage": "{{i18n:Si.BC.BFEnded}}",
+					},
+				],
+				"Items": [
+					{
+						"Id": "{{ModId}}_NonfictionShop_NonfictionBooks",
+						"ItemId": "RANDOM_ITEMS (O)",
+                		"MaxItems": "{{NonfictionShopBooks}}",
+						"AvailableStock": 1,
+                		"PerItemCondition": "ANY \"ITEM_CONTEXT_TAG Target business_book read_book\" \"ITEM_CONTEXT_TAG Target guide_book read_book\" \"ITEM_CONTEXT_TAG Target nonfiction_book read_book\" \"ITEM_CONTEXT_TAG Target sold_book read_book\" \"ITEM_CONTEXT_TAG Target read_book\"",
+					},
+				],
+			},
+			"{{ModId}}_ScienceShop": {
+				"Id": "{{ModId}}_ScienceShop",
+				"Owners": [
+					{
+						"Id": "{{ModId}}_Open",
+						"Name": "AnyOrNone",
+						"Dialogues": [],
+						"Condition": "TIME 800 1700",
+					},
+					{
+						"Id": "{{ModId}}_Closed1",
+						"Name": "None",
+						"Condition": "TIME 600 800",
+						"ClosedMessage": "{{i18n:Si.BC.BFNotBegun}}",
+					},
+					{
+						"Id": "{{ModId}}_Closed2",
+						"Name": "None",
+						"Condition": "TIME 1700 2600",
+						"ClosedMessage": "{{i18n:Si.BC.BFEnded}}",
+					},
+				],
+				"Items": [
+					{
+						"Id": "{{ModId}}_ScienceShop_ScienceBooks",
+						"ItemId": "RANDOM_ITEMS (O)",
+                		"MaxItems": "{{ScienceShopBooks}}",
+						"AvailableStock": 1,
+                		"PerItemCondition": "ANY \"ITEM_CONTEXT_TAG Target space_book read_book\" \"ITEM_CONTEXT_TAG Target nature_book read_book\" \"ITEM_CONTEXT_TAG Target fish_book read_book\" \"ITEM_CONTEXT_TAG Target medical_book read_book\" \"ITEM_CONTEXT_TAG Target animal_book read_book\" \"ITEM_CONTEXT_TAG Target science_book read_book\"",
+					},
+				],
+			},
+			"{{ModId}}_MagShop": {
+				"Id": "{{ModId}}_MagShop",
+				"Owners": [
+					{
+						"Id": "{{ModId}}_Open",
+						"Name": "AnyOrNone",
+						"Dialogues": [],
+						"Condition": "TIME 800 1700",
+					},
+					{
+						"Id": "{{ModId}}_Closed1",
+						"Name": "None",
+						"Condition": "TIME 600 800",
+						"ClosedMessage": "{{i18n:Si.BC.BFNotBegun}}",
+					},
+					{
+						"Id": "{{ModId}}_Closed2",
+						"Name": "None",
+						"Condition": "TIME 1700 2600",
+						"ClosedMessage": "{{i18n:Si.BC.BFEnded}}",
+					},
+				],
+				"Items": [
+					{
+						"Id": "{{ModId}}_MagShop_MagBooks",
+						"ItemId": "RANDOM_ITEMS (O)",
+                		"MaxItems": "{{MagShopBooks}}",
+						"AvailableStock": 1,
+                		"PerItemCondition": "ANY \"ITEM_CONTEXT_TAG Target photo_book read_book\" \"ITEM_CONTEXT_TAG Target travel_book read_book\" \"ITEM_CONTEXT_TAG Target sport_book read_book\" \"ITEM_CONTEXT_TAG Target culture_book read_book\" \"ITEM_CONTEXT_TAG Target history_book read_book\" \"ITEM_CONTEXT_TAG Target fashion_book read_book\" \"ITEM_CONTEXT_TAG Target magazine_book read_book\"",
+					},
+				],
+			},
+			"{{ModId}}_RecipeShop": {
+				"Id": "{{ModId}}_RecipeShop",
+				"Owners": [
+					{
+						"Id": "{{ModId}}_Open",
+						"Name": "AnyOrNone",
+						"Dialogues": [],
+						"Condition": "TIME 800 1700",
+					},
+					{
+						"Id": "{{ModId}}_Closed1",
+						"Name": "None",
+						"Condition": "TIME 600 800",
+						"ClosedMessage": "{{i18n:Si.BC.BFNotBegun}}",
+					},
+					{
+						"Id": "{{ModId}}_Closed2",
+						"Name": "None",
+						"Condition": "TIME 1700 2600",
+						"ClosedMessage": "{{i18n:Si.BC.BFEnded}}",
+					},
+				],
+				"Items": [
+					{
+						"Id": "{{ModId}}_RecipeShop_RecipeBooks",
+						"ItemId": "RANDOM_ITEMS (O)",
+                		"MaxItems": "{{RecipeShopBooks}}",
+						"AvailableStock": 1,
+                		"PerItemCondition": "ANY \"ITEM_CONTEXT_TAG Target recipe_book read_book\" \"ITEM_CONTEXT_TAG Target selfhelp_book read_book\" \"ITEM_CONTEXT_TAG Target relationship_book read_book\" \"ITEM_CONTEXT_TAG Target kid_book read_book\" \"ITEM_CONTEXT_TAG Target music_book read_book\" \"ITEM_CONTEXT_TAG Target art_book read_book\" \"ITEM_CONTEXT_TAG Target poem_book read_book\" \"ITEM_CONTEXT_TAG Target activity_book read_book\" \"ITEM_CONTEXT_TAG Target craft_book read_book\"",
+					},
+				],
+			},
+			"{{ModId}}_FictionShop": {
+				"Id": "{{ModId}}_FictionShop",
+				"Owners": [
+					{
+						"Id": "{{ModId}}_Open",
+						"Name": "AnyOrNone",
+						"Dialogues": [],
+						"Condition": "TIME 800 1700",
+					},
+					{
+						"Id": "{{ModId}}_Closed1",
+						"Name": "None",
+						"Condition": "TIME 600 800",
+						"ClosedMessage": "{{i18n:Si.BC.BFNotBegun}}",
+					},
+					{
+						"Id": "{{ModId}}_Closed2",
+						"Name": "None",
+						"Condition": "TIME 1700 2600",
+						"ClosedMessage": "{{i18n:Si.BC.BFEnded}}",
+					},
+				],
+				"Items": [
+					{
+						"Id": "{{ModId}}_FictionShop_FictionBooks",
+						"ItemId": "RANDOM_ITEMS (O)",
+                		"MaxItems": "{{FictionShopBooks}}",
+						"AvailableStock": 1,
+                		"PerItemCondition": "ANY \"ITEM_CONTEXT_TAG Target fiction_book read_book\" \"ITEM_CONTEXT_TAG Target dnd_book read_book\" \"ITEM_CONTEXT_TAG Target guild_book read_book\" \"ITEM_CONTEXT_TAG Target magic_book read_book\" \"ITEM_CONTEXT_TAG Target graphicnovel_book read_book\" \"ITEM_CONTEXT_TAG Target comic_book read_book\" \"ITEM_CONTEXT_TAG Target humor_book read_book\"",
+					},
+				],
+			},
+		},
+	},
+
+	// Snack Shop
+
+	{
+		"Action": "EditData",
+		"Target": "Data/Shops",
+		"Entries": {
+			"{{ModId}}_SnackShop": {
+				"Id": "{{ModId}}_SnackShop",
+				"Owners": [
+					{
+						"Id": "{{ModId}}_Open",
+						"Name": "AnyOrNone",
+						"Dialogues": [],
+						"Condition": "TIME 800 1700",
+					},
+					{
+						"Id": "{{ModId}}_Closed1",
+						"Name": "None",
+						"Condition": "TIME 600 800",
+						"ClosedMessage": "{{i18n:Si.BC.BFNotBegun}}",
+					},
+					{
+						"Id": "{{ModId}}_Closed2",
+						"Name": "None",
+						"Condition": "TIME 1700 2600",
+						"ClosedMessage": "{{i18n:Si.BC.BFEnded}}",
+					},
+				],
+				"Items": [
+					{
+						"Id": "{{ModId}}_SnackShop_PinkCake",
+						"ItemId": "(O)221",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_RhubarbPie",
+						"ItemId": "(O)222",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_Cookie",
+						"ItemId": "(O)223",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_Apple",
+						"ItemId": "(O)613",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_Melon",
+						"ItemId": "(O)254",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_FruitSalad",
+						"ItemId": "(O)610",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_BlueberryTart",
+						"ItemId": "(O)234",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_IceCream",
+						"ItemId": "(O)233",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_GingerAle",
+						"ItemId": "(O)903",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_Coffee",
+						"ItemId": "(O)395",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_GreenTea",
+						"ItemId": "(O)614",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+					{
+						"Id": "{{ModId}}_SnackShop_Espresso",
+						"ItemId": "(O)253",
+                		"AvailableStock": 1,
+						"AvailableStockLimit": "Player",
+					},
+				],
+			},
+		},
+	},	
+
+	// Schedules //////////////////////////////////////////////////////////
+
+	{
+		"Action": "EditData",
+		"Target": "Characters/schedules/Penny",
+		"Entries": {
+			"spring_9": "710 Trailer 6 5 0/740 Town 53 24 1/1110 Town 68 30 0/1320 Town 60 33 0/1620 Town 17 90 3 penny_wave_left/1750 Forest 92 20 3 penny_wave_left/1830 Trailer 4 9 1 penny_sleep",
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Characters/schedules/Jas",
+		"Entries": {
+			"spring_9": "730 Town 55 25 0/1220 Town 58 31 1/1340 Town 62 27 1/1620 Town 16 91 0/1750 AnimalShop 1 7 3 jas_sleep",
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Characters/schedules/Vincent",
+		"Entries": {
+			"spring_9": "750 Town 56 25 0/1250 Town 57 28 1/1530 Town 54 30 3/1620 Town 15 90 1/1740 SamHouse 4 8 0/2000 SamHouse 8 22 3 vincent_sleep",
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Characters/schedules/Leo",
+		"Entries": {
+			"spring_9": "0 LeoTreeHouse 2 2 0/740 Town 62 33 0/1330 Town 60 23 3/1540 Town 57 28 1/1620 Mountain 30 9 3 \"Strings\\schedules\\Leo:dinner\"/2000 LeoTreeHouse 2 5 3/2200 LeoTreeHouse 5 4 1 leo_sleep",
+		},
+		"When": {
+				"HasSeenEvent:hostPlayer |contains=6497428": true,
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Characters/schedules/Elliott",
+		"Entries": {
+			"spring_9": "620 Town 70 28 3/1410 Town 53 23 3/1550 ElliottHouse 7 7 2/2000 ElliottHouse 1 5 0/2400 ElliottHouse 13 4 1 elliott_sleep",
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Characters/schedules/Leah",
+		"Entries": {
+			"spring_9": "620 LeahHouse 3 7 3 leah_sculpt/640 Town 64 23 1/1410 Town 52 23 1/1550 LeahHouse 8 5 0/2200 LeahHouse 13 10 2/2400 LeahHouse 2 4 3 leah_sleep",
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Characters/schedules/Lewis",
+		"Entries": {
+			"spring_9": "750 ManorHouse 8 5 0/810 Town 62 88 0/940 Town 65 86 3 lewis_garden/1020 Town 61 21 2/1540 ManorHouse 7 5 0 square_5_1_0/2100 ManorHouse 3 6 0/2200 ManorHouse 22 4 1 lewis_sleep",
+		},
+	},
+
+	// End //////////////////////////////////////////////////////////
+
+	]
+
+
+}

@@ -1,0 +1,71 @@
+{
+	"Changes": [
+		//************************************
+		// Grampleton Orange Chicken Recipe
+		{
+			"LogName": "Grampleton Orange Chicken Recipe Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "Saloon", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.FancyGrubAdditions_GrampletonOrangeChicken": {
+					"Id": "ZoeyHoshi.FancyGrubAdditions_GrampletonOrangeChicken",
+					"ItemId": "(O)FlashShifter.StardewValleyExpandedCP_Grampleton_Orange_Chicken",
+					"Price": 850,
+					"Condition": "PLAYER_HAS_SEEN_EVENT Any 8185293", //Sophia's 6 Heart
+					"AvailableStockLimit": "Player",
+					"IsRecipe": true
+				}
+			},
+			"When": {
+				"EnableGrampletonOrangeChicken": true
+			}
+		},
+
+		//************************************
+		//   Void Mayo Sandwich Recipe
+		{
+			"LogName": "Void Mayo Sandwich Recipe Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "ShadowShop", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.FancyGrubAdditions_VoidMayoSandwich": {
+					"Id": "ZoeyHoshi.FancyGrubAdditions_VoidMayoSandwich",
+					"ItemId": "(O)FlashShifter.StardewValleyExpandedCP_Void_Mayo_Sandwich",
+					"Price": 300,
+					"Condition": "PLAYER_HAS_SEEN_EVENT Any SVE.Henchman.2heart, DAY_OF_WEEK Saturday",
+					"AvailableStockLimit": "Player",
+					"IsRecipe": true
+				}
+			},
+			"When": {
+				"EnableVoidMayoSandwich": true,
+				"HasMod|contains=Aimon111.WitchSwampOverhaulCP": false
+			}
+		},
+
+		//************************************
+		//   Void Mayo Sandwich Recipe
+		{
+			"LogName": "Void Mayo Sandwich Recipe Shop - Distant Lands",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "ShadowShop", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.FancyGrubAdditions_VoidMayoSandwich": {
+					"Id": "ZoeyHoshi.FancyGrubAdditions_VoidMayoSandwich",
+					"ItemId": "(O)FlashShifter.StardewValleyExpandedCP_Void_Mayo_Sandwich",
+					"Price": 300,
+					"Condition": "DAY_OF_WEEK Saturday",
+					"AvailableStockLimit": "Player",
+					"IsRecipe": true
+				}
+			},
+			"When": {
+				"EnableVoidMayoSandwich": true,
+				"HasMod|contains=Aimon111.WitchSwampOverhaulCP": true
+			}
+		}
+	]
+}

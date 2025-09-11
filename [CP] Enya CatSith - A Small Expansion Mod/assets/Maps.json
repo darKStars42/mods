@@ -1,0 +1,220 @@
+{
+    "Changes": [
+//Enya Maps 
+        {
+            "Action": "EditImage",
+            "Target": "Maps/spring_daisyextras",
+            "FromFile": "Assets/TileSheets/EnyaPlace_spring.png",
+            "FromArea": { "X": 0, "Y": 0, "Width": 192, "Height": 274 },
+            "ToArea": { "X": 0, "Y": 686, "Width": 192, "Height": 274 }
+        },
+        {
+            "Action": "EditImage",
+            "Target": "Maps/summer_daisyextras",
+            "FromFile": "Assets/TileSheets/EnyaPlace_summer.png",
+            "FromArea": { "X": 0, "Y": 0, "Width": 192, "Height": 274 },
+            "ToArea": { "X": 0, "Y": 686, "Width": 192, "Height": 274 }
+        },
+        {
+            "Action": "EditImage",
+            "Target": "Maps/fall_daisyextras",
+            "FromFile": "Assets/TileSheets/EnyaPlace_fall.png",
+            "FromArea": { "X": 0, "Y": 0, "Width": 192, "Height": 274 },
+            "ToArea": { "X": 0, "Y": 686, "Width": 192, "Height": 274 }
+        },
+        {
+            "Action": "EditImage",
+            "Target": "Maps/winter_daisyextras",
+            "FromFile": "Assets/TileSheets/EnyaPlace_winter.png",
+            "FromArea": { "X": 0, "Y": 0, "Width": 192, "Height": 274 },
+            "ToArea": { "X": 0, "Y": 686, "Width": 192, "Height": 274 }
+        },
+        {
+            "Action": "EditImage",
+            "Target": "Maps/hime_romanticfurniture",
+            "FromFile": "Assets/TileSheets/HecateGor.png",
+            "FromArea": { "X": 0, "Y": 0, "Width": 257, "Height": 224 },
+            "ToArea": { "X": 400, "Y": 288, "Width": 257, "Height": 224 }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Enya_Place",
+            "MapProperties": {
+                "Light": "20 1 4 21 1 4 20 2 4 21 2 4 12 3 4 19 27 4 22 27 4 22 10 4"
+            }
+        },
+//STRINGS        
+        {
+            "Action": "EditData",
+            "Target": "Strings/StringsFromMaps",
+            "Entries": {
+                "Enya.1": "{{i18n:MapStrings.EnyaPlace.1}}",
+                "Enya.2": "{{i18n:MapStrings.EnyaPlace.2}}",
+                "Enya.3": "{{i18n:MapStrings.EnyaPlace.3}}",
+                "Enya.4": "{{i18n:MapStrings.EnyaPlace.4}}",
+                "Enya.5": "{{i18n:MapStrings.EnyaPlace.5}}",
+                "Enya.6": "{{i18n:MapStrings.EnyaPlace.6}}",
+                "Enya.7": "{{i18n:MapStrings.EnyaPlace.7}}",
+                "MaidenNone": "{{i18n:MapStrings.Hecate.0}}",
+                "Clue.1": "{{i18n:MapStrings.Clue.1}}",
+                "Clue.2": "{{i18n:MapStrings.Clue.2}}",
+                "Clue.3": "{{i18n:MapStrings.Clue.3}}"
+            }
+        },
+//MAP EDITS AND PATCHES   
+        {
+			"Action": "Load",
+			"Target": "Maps/latteholn_Enya_SpouseRoom",
+			"FromFile": "assets/Maps/latteholn_Enya_SpouseRoom.tmx"
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Enya_House",
+            "AddWarps": [
+                "15 21 Custom_Enya_Place 20 6",
+                "16 21 Custom_Enya_Place 21 6"
+            ]
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Enya_Place",
+            "AddWarps": [
+                "8 -1 Forest 34 7",
+                "9 -1 Forest 34 7"                
+            ]
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Covenstead",
+            "AddWarps": [
+                "3 14 Custom_Covenstead 4 23",
+                "4 14 Custom_Covenstead 4 23",
+                "5 14 Custom_Covenstead 4 23"
+            ]
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "AddWarps": [
+                "34 6 Custom_Enya_Place 9 0",
+                "34 6 Custom_Enya_Place 8 0"                
+            ]
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Town",
+            "MapProperties": {
+                "NPCWarp": "49 31 Custom_Covenstead 24 3"
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Covenstead",
+            "MapProperties": {
+                "NPCWarp": "24 3 Town 50 31"
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "FromFile": "Assets/Maps/RabbitHole.tmx",
+            "ToArea": { "X": 34, "Y": 6, "Width": 2, "Height": 1 }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Saloon",
+            "FromFile": "Assets/Maps/SaloonStage.tmx",
+            "ToArea": { "X": 25, "Y": 13, "Width": 4, "Height": 6 },
+			"Update": "OnTimeChange, OnLocationChange",
+	        "When": {
+		    	"HasSeenEvent: anyPlayer |contains=34356111": "true"
+	        }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Covenstead",
+            "FromFile": "Assets/Maps/HecateWarp.tmx",
+            "ToArea": { "X": 6, "Y": 20, "Width": 4, "Height": 8 },
+			"Update": "OnTimeChange, OnLocationChange",
+	        "When": {
+		    	"HasSeenEvent: anyPlayer |contains=34356006": "true"
+	        }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_HecateGor",
+            "FromFile": "Assets/Maps/HecateGorTeleport.tmx",
+            "ToArea": { "X": 0, "Y": 7, "Width": 5, "Height": 11 },
+			"Update": "OnTimeChange, OnLocationChange",
+	        "When": {
+		    	"HasSeenEvent: anyPlayer |contains=34356021": "true"
+	        }
+        },        
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_HecateGor",
+            "FromFile": "Assets/Maps/OverlayHecate.tmx",
+            "ToArea": { "X": 11, "Y": 11, "Width": 5, "Height": 3 },
+            "Update": "OnLocationChange, OnTimeChange",
+			"PatchMode": "Overlay",					
+	        "When": {
+		    	"HasSeenEvent: anyPlayer |contains=34356014": "true"
+	        }
+        },      
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_HecateGor",
+            "FromFile": "Assets/Maps/OverlayHecate_1.tmx",
+            "ToArea": { "X": 11, "Y": 11, "Width": 5, "Height": 3 },
+            "Update": "OnLocationChange, OnTimeChange",
+			"PatchMode": "Overlay",					
+	        "When": {
+		    	"HasSeenEvent: anyPlayer |contains=34356016": "true"
+	        }
+        },        
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_HecateGor",
+            "FromFile": "Assets/Maps/OverlayHecate_2.tmx",
+            "ToArea": { "X": 11, "Y": 11, "Width": 5, "Height": 3 },
+            "Update": "OnLocationChange, OnTimeChange",
+			"PatchMode": "Overlay",					
+	        "When": {
+		    	"HasSeenEvent: anyPlayer |contains=34356021": "true"
+	        }
+        },   
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_HecateGor",
+            "FromFile": "Assets/Maps/OverlayHecate_3.tmx",
+            "ToArea": { "X": 11, "Y": 11, "Width": 5, "Height": 3 },
+            "Update": "OnLocationChange, OnTimeChange",
+			"PatchMode": "Overlay",					
+	        "When": {
+		    	"HasSeenEvent: anyPlayer |contains=34356030": "true"
+	        }
+        },                      
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_HecateGor",
+            "FromFile": "Assets/Maps/HecateGorTeleport.tmx",
+            "ToArea": { "X": 0, "Y": 7,  "Width": 5, "Height": 11 },
+            "Update": "OnLocationChange, OnTimeChange",
+			"PatchMode": "Replace",					
+	        "When": {
+		    	"HasSeenEvent: anyPlayer |contains=34356021": "true"
+	        }
+        },                        
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Town",
+            "FromFile": "Assets/Maps/GarbageCan.tmx",
+            "Update": "OnLocationChange, OnTimeChange",            
+            "ToArea": { "X": 49, "Y": 31, "Width": 1, "Height": 2 },
+            "PatchMode": "Overlay",
+            "When": {
+		    	"HasSeenEvent: anyPlayer |contains=34356004": "true"
+	        }
+        }
+    ]
+}

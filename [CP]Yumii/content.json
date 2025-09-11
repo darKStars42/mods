@@ -1,0 +1,198 @@
+{
+  "Format": "2.0.0",
+  "CustomLocations": [
+		{
+			"Name": "Custom_YumiiHouse",
+			"FromMapFile": "Maps/Custom_YumiiHouse/Custom_YumiiHouse.tmx"
+		}
+		],
+		
+
+  "Changes": [
+    {
+      "LogName": "NPC Manifestation",
+      "Action": "Include",
+      "FromFile": "assets/data/dispos.json"
+    },
+    {
+      "LogName": "NPC Gift Tastes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Yumii": "How did you know I love this? Thank you!/400 72 595 608/Aww, this is nice. Thank you!/18 340 410 154/Umm... I don't really like this,/188 16 78 -81 -12 -5 -4/Why would you even give this to me?/-20 446/Oh, thank you./-26 -79 -80 -75 -27 -7 -6 -2 "
+      }
+	},		
+    {
+      "LogName": "NPC Sprite",
+      "Action": "Load",
+      "Target": "Characters/Yumii",
+      "FromFile": "assets/img/Yumii.png"
+    },
+    {
+      "LogName": "NPC Portrait",
+      "Action": "Load",
+      "Target": "Portraits/Yumii",
+      "FromFile": "assets/img/Yumii_Port.png"
+    },
+	//Load outfits
+	    {
+      "LogName": "Outfits",
+      "Action": "Include",
+      "FromFile": "Outfits.json"
+    },
+    {
+      "LogName": "Schedule",
+      "Action": "Load",
+      "Target": "Characters/schedules/Yumii",
+      "FromFile": "assets/schedules/schedule.json"
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Yumii",
+      "FromFile": "assets/dialogue/Dialogue.json"
+    },
+    {
+      "LogName": "Animation Frames",
+      "Action": "Include",
+      "FromFile": "assets/anim/Animations.json"
+    },
+    {
+      "LogName": "Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/Yumii",
+      "FromFile": "assets/schedules/scheduleDialogue.json"
+    },
+    {
+      "LogName": "Marriage Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/MarriageDialogueYumii",
+      "FromFile": "assets/dialogue/MarriageDialogue.json"
+    },
+    {
+      "LogName": "Engagement Dialogue",
+      "Action": "EditData",
+      "Target": "Data/EngagementDialogue",
+      "Entries": {
+        "Yumii0": "I'm a bit nervous.. I can't believe it's happening.$4",
+        "Yumii1": "I'm going to wear the prettiest wedding dress you'll ever see!$h"
+      }
+    },
+{
+		"LogName": "Spouse room",
+	    "Action": "Load",
+	    "Target": "Maps/yumii_Yumii_SpouseRoom",
+		"FromFile": "Maps/yumii_Yumii_SpouseRoom/YumiiSpouseRoom.tmx"
+	},
+{
+        "LogName": "Spouse patio",
+        "Target": "Maps/yumii_Yumii_SpousePatio",
+        "Action": "Load",
+        "FromFile": "Maps/yumii_Yumii_SpousePatio/YumiiPatio.tmx"
+    },
+	{
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"FromFile": "Maps/Custom_YumiiHouse/Forest.tmx",
+		"ToArea": {
+			"X": 54,
+			"Y": 31,
+			"Width": 11,
+			"Height": 9
+		},
+	},
+		 {
+      "LogName": "Yumii Events",
+      "Action": "Include",
+      "FromFile": "assets/Events/EventData.json"
+    },
+    {
+      "LogName": "Festivals",
+      "Action": "Include",
+      "FromFile": "assets/Festivals/spring13.json, assets/Festivals/spring24.json, assets/Festivals/summer11.json"
+    },
+    {
+      "LogName": "Festival Dialogue",
+      "Action": "Include",
+      "FromFile": "assets/Festivals/Dialogue/spring13.json, assets/Festivals/Dialogue/spring24.json, assets/Festivals/Dialogue/summer11.json"
+    },
+	
+	
+	// Custom Mails	
+	// Yumii 1 Heart
+{
+    "LogName": "Mail sends",
+    "Action": "EditData",
+    "Target": "Data/Mail",
+    "Entries": {
+        "{{ModId}}_Yumii": "Dear @, ^I was trying to bake a pie for myself, but I've accidentally made a bit too much so I'm sharing some with you! I hope you like it. ^For the taste... I think it's okay! Haha...    ^   -Yumii %item object 608 1 %%[#]A Gift From Yumii",
+    }
+},
+{
+    "LogName": "Trigger Actions: Base",
+    "Action": "EditData",
+    "Target": "Data/TriggerActions",
+    "Entries": {
+        "{{ModId}}_Yumii": {
+            "Id": "{{ModId}}_Yumii",
+            "Trigger": "DayStarted",
+            "Condition": "PLAYER_FRIENDSHIP_POINTS Current Yumii 100",
+            "Actions": [
+                "AddMail Current {{ModId}}_Yumii now"
+            ]
+        }
+    }
+},
+
+	//Yumii 4 Heart
+	//Pre Event
+{
+    "LogName": "Mail sends",
+    "Action": "EditData",
+    "Target": "Data/Mail",
+    "Entries": {
+        "{{ModId}}_Yumii4": "Dear @, ^If you have a diamond to spare, could you give one to me? I need one in order to make this potion I've been working on recently. ^Don't worry, I have something for you in return, of course! ^I'd appreciate it if you bring it to me whenever I'm at home, thank you so much.    ^   -Yumii[#]Yumii's Favor",
+    }
+},
+{
+    "LogName": "Trigger Actions: Base",
+    "Action": "EditData",
+    "Target": "Data/TriggerActions",
+    "Entries": {
+        "{{ModId}}_Yumii4": {
+            "Id": "{{ModId}}_Yumii4",
+            "Trigger": "DayStarted",
+            "Condition": "PLAYER_FRIENDSHIP_POINTS Current Yumii 1000",
+            "Actions": [
+                "AddMail Current {{ModId}}_Yumii4 now"
+            ]
+        }
+    }
+},
+	//Post Event
+	{
+    "LogName": "Mail sends",
+    "Action": "EditData",
+    "Target": "Data/Mail",
+    "Entries": {
+        "{{ModId}}_Yumii4Post": "Dear @, ^Thanks for helping me out the other day! I keep on getting these instead of diamonds when I went to get some for myself. I don't need them but maybe you do.   ^   -Yumii %item object 386 5 %%[#]Yumii's Favor Gift",
+    }
+},
+{
+    "LogName": "Trigger Actions: Base",
+    "Action": "EditData",
+    "Target": "Data/TriggerActions",
+    "Entries": {
+        "{{ModId}}_Yumii4Post": {
+            "Id": "{{ModId}}_Yumii4Post",
+            "Trigger": "DayStarted",
+            "Condition": "PLAYER_HAS_SEEN_EVENT Current 13452000",
+            "Actions": [
+                "AddMail Current {{ModId}}_Yumii4Post now"
+            ]
+        }
+    }
+}
+
+]
+}

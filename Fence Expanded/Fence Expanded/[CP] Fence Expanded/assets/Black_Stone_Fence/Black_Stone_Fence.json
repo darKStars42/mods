@@ -1,0 +1,66 @@
+{
+  "Changes": [
+    {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+              "{{ModId}}_Black_Stone_Fence": {
+              "Name": "Black Stone Fence",
+              "DisplayName": "{{i18n:Black_Stone_Fence.DisplayName}}",
+              "Description": "{{i18n:Black_Stone_Fence.Description}}",
+              "Type": "Crafting",
+              "Category": -8,
+              "Price": 0,
+              "Texture": "Mods/{{ModId}}/Black_Stone_Fence_Object",
+              "Edibility": -300,
+              "IsDrink": false,
+              "Buffs": null,
+              "GeodeDropsDefaultItems": false,
+              "GeodeDrops": null,
+              "ArtifactSpotChances": null,
+              "CanBeGivenAsGift": true,
+              "CanBeTrashed": true,
+              "ExcludeFromFishingCollection": false,
+              "ExcludeFromShippingCollection": false,
+              "ExcludeFromRandomSale": false,
+              "ContextTags": null,
+              "CustomFields": null,
+            }
+        }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Fences ",
+      "Entries":{
+        "{{ModId}}_Black_Stone_Fence":{
+          "Health": 80,
+          "RepairHealthAdjustmentMinimum": -5.0,
+          "RepairHealthAdjustmentMaximum": 6.0,
+          "Texture": "Mods/{{ModId}}/Black_Stone_Fence",
+          "PlacementSound": "stoneStep",
+          "RemovalSound": "hammer",
+          "RemovalToolIds": [],
+          "RemovalToolTypes": [
+            "StardewValley.Tools.Pickaxe"
+          ],
+          "RemovalDebrisType": 14,
+          "HeldObjectDrawOffset": "0, -16",
+          "LeftEndHeldObjectDrawX": 0.0,
+          "RightEndHeldObjectDrawX": -1.0,
+        }
+      }
+    },
+     {
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+                "Black Stone Fence": "390 4/Yield/{{ModId}}_Black_Stone_Fence/false/null"
+            }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Black_Stone_Fence, Mods/{{ModId}}/Black_Stone_Fence_Object",
+      "FromFile": "assets/Black_Stone_Fence/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

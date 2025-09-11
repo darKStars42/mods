@@ -1,0 +1,142 @@
+{
+  "Changes": [
+	{	//Base das Artes
+      "Action": "Load",
+      "Target": "Characters/Edward",
+      "FromFile": "Ativos/Personagens/Artes/Edward/Comum/Ed.Bo_Spring_Sun.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Portraits/Edward",
+      "FromFile": "Ativos/Personagens/Artes/Edward/Comum/Ed.Re_Spring_Sun.png"
+    },
+	{	//Artes
+      "Action": "Load",
+      "Target": "Characters/Ed.Bo_Summer_Sun, Characters/Ed.Bo_Fall_Sun, Characters/Ed.Bo_Winter_Sun, Characters/Ed.Bo_Spring_Rain, Characters/Ed.Bo_Summer_Rain, Characters/Ed.Bo_Fall_Rain, Characters/Ed.Bo_Winter_Snow, Portraits/Ed.Re_Summer_Sun, Portraits/Ed.Re_Fall_Sun, Portraits/Ed.Re_Winter_Sun, Portraits/Ed.Re_Spring_Rain, Portraits/Ed.Re_Summer_Rain, Portraits/Ed.Re_Fall_Rain, Portraits/Ed.Re_Winter_Snow",
+      "FromFile": "Ativos/Personagens/Artes/Edward/Comum/{{TargetWithoutPath}}.png"
+    },
+	{
+      "Action": "Load",
+      "Target": "Portraits/Ed.ReV2_Spring_Sun, Portraits/Ed.ReV2_Summer_Sun, Portraits/Ed.ReV2_Fall_Sun, Portraits/Ed.ReV2_Winter_Sun, Portraits/Ed.ReV2_Spring_Rain, Portraits/Ed.ReV2_Summer_Rain, Portraits/Ed.ReV2_Fall_Rain, Portraits/Ed.ReV2_Winter_Snow",
+      "FromFile": "Ativos/Personagens/Artes/Edward/Comum.V2/{{TargetWithoutPath}}.png"
+    },
+	{
+      "Action": "Load",
+      "Target": "Characters/Ed.Bo_Spring, Characters/Ed.Bo_Summer, Characters/Ed.Bo_Fall, Characters/Ed.Bo_Winter, Characters/Ed.Bo_Job.Spring, Characters/Ed.Bo_Job.Summer, Characters/Ed.Bo_Job.Fall, Characters/Ed.Bo_Job.Winter, Characters/Ed.Bo, Portraits/Ed.Re_Job.Spring, Portraits/Ed.Re_Job.Summer, Portraits/Ed.Re_Job.Fall, Portraits/Ed.Re_Job.Winter, Portraits/Ed.Re",
+      "FromFile": "Ativos/Personagens/Artes/Edward/Casual/{{TargetWithoutPath}}.png"
+    },
+	{	//Festival Artes
+      "Action": "Load",
+      "Target": "Characters/Ed.Boneco_EggFest, Portraits/Ed.Retrato_EggFest, Characters/Ed.Boneco_FlowerDance, Portraits/Ed.Retrato_FlowerDance, Characters/Ed.Boneco_Luau, Portraits/Ed.Retrato_Luau, Characters/Ed.Boneco_DanceMoonlight, Portraits/Ed.Retrato_DanceMoonlight, Characters/Ed.Boneco_Fair, Portraits/Ed.Retrato_Fair, Characters/Ed.Boneco_SpiritsEve, Portraits/Ed.Retrato_SpiritsEve, Characters/Ed.BonecoV2_SpiritsEve, Portraits/Ed.RetratoV2_SpiritsEve, Characters/Ed.Boneco_IceFest, Portraits/Ed.Retrato_IceFest, Characters/Ed.Boneco_WinterStart, Portraits/Ed.Retrato_WinterStart",
+      "FromFile": "Ativos/Personagens/Artes/Edward/Festival/{{TargetWithoutPath}}.png"
+    },
+	{	// Edward
+        "Action": "EditData",
+        "Target": "Data/Characters",
+		"Update": "OnDayStart",
+        "Entries": {
+			"Edward": { "DisplayName": "{{i18n:Edward.Display.Name}}", "Age": "adult", "Manner": "neutral", "SocialAnxiety": "neutral", "Optimism": "Positive", "Gender": "male", "CanBeRomanced": false, "LoveInterest": "null", "ExcludeFromPerfectionScore": true, "BirthSeason": "fall", "BirthDay": 22, "Calendar": "HiddenAlways", "WinterStarParticipant": "false", "CanVisitIsland": "false",
+            "Home": [ { "Id": "Ilha", "Location": "Ilha", "Tile": { "X": 5, "Y": 5 }, "Direction": "Down" } ], "SpouseRoom": { "MapAsset": "Casado.Quarto_Edward" }, "SpousePatio": { "MapAsset": "Casado.Patio.Rdx_Edward" },
+			"Appearance": [ 
+					//Praia
+					{ "IsIslandAttire": true, "Sprite": "Characters/Ed.Bo", "Portrait": "Portraits/Ed.Re", "Outdoors": true, "Indoors": false, "Precedence": -30, "Weight": 1 },
+					
+					//Casual
+					{ "Season": "Spring", "Sprite": "Characters/Ed.Bo_Spring", "Portrait": "Portraits/Edward", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+					{ "Season": "Summer", "Sprite": "Characters/Ed.Bo_Summer", "Portrait": "Portraits/Ed.Re_Summer_Sun", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+					{ "Season": "Fall", "Sprite": "Characters/Ed.Bo_Fall", "Portrait": "Portraits/Ed.Re_Fall_Sun", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+					{ "Season": "Winter", "Sprite": "Characters/Ed.Bo_Winter", "Portrait": "Portraits/Ed.Re_Winter_Sun", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+
+					//Casual V2
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Spring", "Sprite": "Characters/Ed.Bo_Spring", "Portrait": "Portraits/Ed.ReV2_Spring_Sun", "Indoors": true, "Outdoors": false, "Precedence": -10 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Summer", "Sprite": "Characters/Ed.Bo_Summer", "Portrait": "Portraits/Ed.ReV2_Summer_Sun", "Indoors": true, "Outdoors": false, "Precedence": -10 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Fall", "Sprite": "Characters/Ed.Bo_Fall", "Portrait": "Portraits/Ed.ReV2_Fall_Sun", "Indoors": true, "Outdoors": false, "Precedence": -10 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Winter", "Sprite": "Characters/Ed.Bo_Winter", "Portrait": "Portraits/Ed.ReV2_Winter_Sun", "Indoors": true, "Outdoors": false, "Precedence": -10 },
+				
+					//Comum
+					{ "Season": "Spring", "Sprite": "Characters/Edward", "Portrait": "Portraits/Edward", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+					{ "Season": "Summer", "Sprite": "Characters/Ed.Bo_Summer_Sun", "Portrait": "Portraits/Ed.Re_Summer_Sun", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+					{ "Season": "Fall", "Sprite": "Characters/Ed.Bo_Fall_Sun", "Portrait": "Portraits/Ed.Re_Fall_Sun", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+					{ "Season": "Winter", "Sprite": "Characters/Ed.Bo_Winter_Sun", "Portrait": "Portraits/Ed.Re_Winter_Sun", "Indoors": false, "Outdoors": true, "Precedence": 0 },				
+
+					//Comum V2
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Spring", "Sprite": "Characters/Edward", "Portrait": "Portraits/Ed.ReV2_Spring_Sun", "Outdoors": true, "Indoors": false, "Precedence": -20 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Summer", "Sprite": "Characters/Ed.Bo_Summer_Sun", "Portrait": "Portraits/Ed.ReV2_Summer_Sun", "Outdoors": true, "Indoors": false, "Precedence": -20 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Fall", "Sprite": "Characters/Ed.Bo_Fall_Sun", "Portrait": "Portraits/Ed.ReV2_Fall_Sun", "Outdoors": true, "Indoors": false, "Precedence": -20 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Winter", "Sprite": "Characters/Ed.Bo_Winter_Sun", "Portrait": "Portraits/Ed.ReV2_Winter_Sun", "Outdoors": true, "Indoors": false, "Precedence": -20 },
+
+					//Chuva
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Spring", "Sprite": "Characters/Ed.Bo_Spring_Rain", "Portrait": "Portraits/Ed.Re_Spring_Rain", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Summer", "Sprite": "Characters/Ed.Bo_Summer_Rain", "Portrait": "Portraits/Ed.Re_Summer_Rain", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Fall", "Sprite": "Characters/Ed.Bo_Fall_Rain", "Portrait": "Portraits/Ed.Re_Fall_Rain", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Winter", "Sprite": "Characters/Ed.Bo_Winter_Snow", "Portrait": "Portraits/Ed.Re_Winter_Snow", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					
+					//Chuva V2
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\", PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Spring", "Sprite": "Characters/Ed.Bo_Spring_Rain", "Portrait": "Portraits/Ed.ReV2_Spring_Rain", "Outdoors": true, "Indoors": false, "Precedence": -20, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\", PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Summer", "Sprite": "Characters/Ed.Bo_Summer_Rain", "Portrait": "Portraits/Ed.ReV2_Summer_Rain", "Outdoors": true, "Indoors": false, "Precedence": -20, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\", PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Fall", "Sprite": "Characters/Ed.Bo_Fall_Rain", "Portrait": "Portraits/Ed.ReV2_Fall_Rain", "Outdoors": true, "Indoors": false, "Precedence": -20, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\", PLAYER_HAS_SEEN_EVENT Any 58614004, !PLAYER_HAS_DIALOGUE_ANSWER Current 869908 false, !PLAYER_HAS_DIALOGUE_ANSWER Current 959909 false", "Season": "Winter", "Sprite": "Characters/Ed.Bo_Winter_Snow", "Portrait": "Portraits/Ed.ReV2_Winter_Snow", "Outdoors": true, "Indoors": false, "Precedence": -20, "Weight": 1 },
+
+					//Pesca
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614009\", Any \"DAY_OF_MONTH 6\" \"DAY_OF_MONTH 13\" \"DAY_OF_MONTH 20\" \"DAY_OF_MONTH 27\"", "Season": "Spring", "Sprite": "Characters/Ed.Bo_Job.Spring", "Portrait": "Portraits/Ed.Re_Job.Spring", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614009\", Any \"DAY_OF_MONTH 3\" \"DAY_OF_MONTH 10\" \"DAY_OF_MONTH 17\" \"DAY_OF_MONTH 20\" \"DAY_OF_MONTH 21\" \"DAY_OF_MONTH 24\"", "Season": "Summer", "Sprite": "Characters/Ed.Bo_Job.ummer", "Portrait": "Portraits/Ed.Re_Job.Summer", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614009\", Any \"DAY_OF_MONTH 7\" \"DAY_OF_MONTH 14\" \"DAY_OF_MONTH 21\" \"DAY_OF_MONTH 28\"", "Season": "Fall", "Sprite": "Characters/Ed.Bo_Job.Fall", "Portrait": "Portraits/Ed.Re_Job.Fall", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614009\", Any \"DAY_OF_MONTH 7\" \"DAY_OF_MONTH 12\" \"DAY_OF_MONTH 13\"  \"DAY_OF_MONTH 14\" \"DAY_OF_MONTH 21\" \"DAY_OF_MONTH 28\"", "Season": "Winter", "Sprite": "Characters/Ed.Bo_Job.Winter", "Portrait": "Portraits/Ed.Re_Job.Winter", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					
+					//Festival
+					{ "Condition": "EVENT_ID festival_spring13", "Sprite": "Characters/Ed.Boneco_EggFest", "Portrait": "Portraits/Ed.Retrato_EggFest", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_spring24", "Sprite": "Characters/Ed.Boneco_FlowerDance", "Portrait": "Portraits/Ed.Retrato_FlowerDance", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_summer11", "Sprite": "Characters/Ed.Boneco_Luau", "Portrait": "Portraits/Ed.Retrato_Luau", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_summer28", "Sprite": "Characters/Ed.Boneco_DanceMoonlight", "Portrait": "Portraits/Ed.Retrato_DanceMoonlight", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_fall16", "Sprite": "Characters/Ed.Boneco_Fair", "Portrait": "Portraits/Ed.Retrato_Fair", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "LOCATION_NAME Target EastScarp_VillageInn_SpiritEve", "Sprite": "Characters/Ed.Boneco_SpiritsEve", "Portrait": "Portraits/Ed.Retrato_SpiritsEve", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "LOCATION_NAME Target EastScarp_VillageInn_SpiritEve, {{Query: {{Year}} % 2 = 1 }}", "Sprite": "Characters/Ed.BonecoV2_SpiritsEve", "Portrait": "Portraits/Ed.RetratoV2_SpiritsEve", "Precedence": -40, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_fall27", "Sprite": "Characters/Ed.Boneco_SpiritsEve", "Portrait": "Portraits/Ed.Retrato_SpiritsEve", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_fall27, {{Query: {{Year}} % 2 = 1 }}", "Sprite": "Characters/Ed.BonecoV2_SpiritsEve", "Portrait": "Portraits/Ed.RetratoV2_SpiritsEve", "Precedence": -40, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_winter8", "Sprite": "Characters/Ed.Boneco_IceFest", "Portrait": "Portraits/Ed.Retrato_IceFest", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_winter25", "Sprite": "Characters/Ed.Boneco_WinterStart", "Portrait": "Portraits/Ed.Retrato_WinterStart", "Precedence": -30, "Weight": 1 }
+				]
+			}
+        }
+    },
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Update": "OnDayStart",
+        "Fields": { "Edward": { "Calendar": "HiddenUntilMet", "WinterStarParticipant": "true", "CanVisitIsland": "true", "Home": [ { "Id": "Casa.Superior", "Location": "Casa.Superior", "Tile": { "X": 5, "Y": 6 }, "Direction": "Down" } ] } },
+        "When": { "HasSeenEvent: anyPlayer|contains=90105264": "true", "HasSeenEvent: anyPlayer|contains=58614300": "false" }
+    },
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Update": "OnLocationChange",
+        "Fields": { "Edward": { "CanBeRomanced": true, "FlowerDanceCanDance": true } },
+        "When": { "HasDialogueAnswer": "759907", "HasSeenEvent |contains=58614300": "false" }
+    },
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Update": "OnLocationChange",
+        "Fields": { "Edward": { "Home": [ { "Id": "Ilha", "Location": "Ilha", "Tile": { "X": 5, "Y": 5 }, "Direction": "Down" } ] } },
+        "When": { "HasSeenEvent: anyPlayer|contains=91105264": "true" }
+    },
+	{	// Patio Para Diversas Fazendas
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Fields": { "Edward": { "SpousePatio": { "MapAsset": "Casado.Patio_Edward" } } },
+        "When": { "FarmType": "Standard" }
+    },
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Fields": { "Edward": { "SpousePatio": { "MapAsset": "Casado.Patio_Edward" } } },
+        "When": { "FarmType": "Wilderness" }
+    },
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Fields": { "Edward": { "SpousePatio": { "MapAsset": "Casado.Patio_Edward" } } },
+        "When": { "FarmType": "Four Corners" }
+    }	
+  ]
+}

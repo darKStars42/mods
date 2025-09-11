@@ -1,0 +1,40 @@
+{
+    "Changes": [
+
+        {
+            "LogName": "Pride Season Festival Map",
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "sapphicsaph_pitv.CommunityCenterPride": {
+                    "DisplayName": "Pride Festival",
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/CommunityCenterPride"
+                    }
+                }
+            }
+        },
+
+        {
+            "LogName": "Pride Season Festival",
+            "Action": "EditData",
+            "Target": "Data/PassiveFestivals",
+            "Entries": {
+                "sapphicsaph_pitv.PrideFestival": {
+                    "DisplayName": "Pride Season Festival",
+                    "Season": "Summer",
+                    "StartDay": "15",
+                    "EndDay": "17",
+                    "StartTime": "900",
+                    "StartMessage": "{{i18n:PITV.FestivalData.StartMessage}}",
+                    "MapReplacements": {
+                        "CommunityCenter": "sapphicsaph_pitv.CommunityCenterPride"
+                    }
+                }
+            },
+            "When": {
+                "IsCommunityCenterComplete": true
+            }
+        }
+    ]
+}

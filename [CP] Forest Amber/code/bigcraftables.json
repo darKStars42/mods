@@ -1,0 +1,44 @@
+{
+	"Changes": [
+		
+		//Load Images
+        {
+            "Action": "Load",
+            "Target": "Mods/miru.forestamber/BigCraftables",
+            "FromFile": "assets/BigCraftables1.png"
+        },
+		
+		{
+            "Action": "EditImage",
+            "Target": "Mods/miru.forestamber/BigCraftables",
+            "FromFile": "assets/BigCraftables2.png",
+			"PatchMode":"Replace",
+			"When": {"Machine Appearance": "Vanilla Style"}
+        },
+		
+		//Add BigCraftables
+        {
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "miru.forestamber_ResinCraftingBench": {
+                    "Name": "miru.forestamber_ResinCraftingBench",
+                    "DisplayName": "{{i18n:ResinCraftingBench.name}}",
+                    "Description": "{{i18n:ResinCraftingBench.description}}",
+                    "Price": 500,
+                    "Texture": "Mods/miru.forestamber/BigCraftables",
+                }
+            }
+        },
+		
+		//Machine CraftingRecipes
+        {
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+                "miru.forestamber_ResinCraftingBench": "92 50 388 10 86 5/Home/miru.forestamber_ResinCraftingBench/true/s Foraging 7/{{i18n:ResinCraftingBench.name}}"
+            }
+        },
+
+	]
+}

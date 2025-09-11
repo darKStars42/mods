@@ -1,0 +1,443 @@
+{
+    "Changes": [
+
+        //Load icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/ObjectsFish",
+            "FromFile": "assets/Items/Fishing/fish.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/AquariumFish",
+            "FromFile": "assets/Items/Fishing/AquariumFish.png"
+        },
+
+/*----------------------------------------------------
+Fish Objects
+----------------------------------------------------*/
+
+        {
+            "LogName":"Add Alchemistry Fish (Objects)",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModID}}_Newt": {
+                    "Name": "{{ModID}}_Newt",
+                    "DisplayName": "{{i18n:Alchemistry_Newt.name}}",
+                    "Description": "{{i18n:Alchemistry_Newt.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsFish",
+                    "SpriteIndex": 0,
+                    "Type": "Fish",
+                    "ExcludeFromFishingCollection": false,
+                    "Category": -4,
+                    "Price": 150,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "color_jade",
+                        "item_newt",
+                        "fish_lake",
+                        "fish_swamp",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModID}}_Lamprey": {
+                    "Name": "{{ModID}}_Lamprey",
+                    "DisplayName": "{{i18n:Alchemistry_Lamprey.name}}",
+                    "Description": "{{i18n:Alchemistry_Lamprey.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsFish",
+                    "SpriteIndex": 10,
+                    "Type": "Fish",
+                    "ExcludeFromFishingCollection": false,
+                    "Category": -4,
+                    "Price": 225,
+                    "Edibility": 42,
+                    "ContextTags": [
+                        "color_brown",
+                        "item_lamprey",
+                        "fish_river",
+                        "fish_swamp",
+                        "season_spring",
+                        "season_fall"
+                    ]
+                },
+                "{{ModID}}_VampireAnemone": {
+                    "Name": "{{ModID}}_VampireAnemone",
+                    "DisplayName": "{{i18n:Alchemistry_VampireAnemone.name}}",
+                    "Description": "{{i18n:Alchemistry_VampireAnemone.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsFish",
+                    "SpriteIndex": 20,
+                    "Type": "Fish",
+                    "ExcludeFromFishingCollection": false,
+                    "Category": -4,
+                    "Price": 200,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "color_black",
+                        "item_vampire_anemone",
+                        "fish_ocean",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall",
+                        "season_winter"
+                    ]
+                },
+                "{{ModID}}_MoonlightJellyfish": {
+                    "Name": "{{ModID}}_MoonlightJellyfish",
+                    "DisplayName": "{{i18n:Alchemistry_MoonlightJellyfish.name}}",
+                    "Description": "{{i18n:Alchemistry_MoonlightJellyfish.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsFish",
+                    "SpriteIndex": 21,
+                    "Type": "Fish",
+                    "ExcludeFromFishingCollection": false,
+                    "Category": -4,
+                    "Price": 250,
+                    "Edibility": -100,
+                    "ContextTags": [
+                        "color_blue",
+                        "item_moonlight_jellyfish",
+                        "fish_ocean",
+                        "season_summer"
+                    ]
+                },
+                "{{ModID}}_ZombieFish": {
+                    "Name": "{{ModID}}_ZombieFish",
+                    "DisplayName": "{{i18n:Alchemistry_ZombieFish.name}}",
+                    "Description": "{{i18n:Alchemistry_ZombieFish.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsFish",
+                    "SpriteIndex": 30,
+                    "Type": "Fish",
+                    "ExcludeFromFishingCollection": false,
+                    "Category": -4,
+                    "Price": 100,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "color_white",
+                        "item_bone_fish",
+                        "fish_lake",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall",
+                        "season_winter"
+                    ]
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Fish Objects - Perfection Tracker Disabled
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Newt" ],
+            "Entries": {    
+                "ExcludeFromFishingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Lamprey" ],
+            "Entries": {
+                "ExcludeFromFishingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_VampireAnemone" ],
+            "Entries": {
+                "ExcludeFromFishingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MoonlightJellyfish" ],
+            "Entries": {
+                "ExcludeFromFishingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ZombieFish" ],
+            "Entries": {
+                "ExcludeFromFishingCollection": true
+            }
+        },
+
+/*----------------------------------------------------
+Aquarium Data
+----------------------------------------------------*/
+        {
+            "LogName":"Add Alchemistry Aquarium Data",
+            "Action": "EditData",
+            "Target": "Data/AquariumFish",
+            "Entries": {
+               "{{ModID}}_Newt": "0/front_crawl/////Mods\\Morghoula.AlchemistryCP\\AquariumFish",
+               "{{ModID}}_Lamprey": "1/eel/////Mods\\Morghoula.AlchemistryCP\\AquariumFish",
+               "{{ModID}}_VampireAnemone": "2/front_crawl/////Mods\\Morghoula.AlchemistryCP\\AquariumFish",
+               "{{ModID}}_MoonlightJellyfish": "3/float/////Mods\\Morghoula.AlchemistryCP\\AquariumFish",
+               "{{ModID}}_ZombieFish": "4/fish/////Mods\\Morghoula.AlchemistryCP\\AquariumFish"
+            }
+         },
+
+
+/*----------------------------------------------------
+Fish - Cindersap Forest
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Forest", "Fish" ],
+            "Entries": {
+                "{{ModID}}_Newt": {
+                    "Id": "{{ModID}}_Newt",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Newt",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall"
+                },
+                "{{ModID}}_Lamprey": {
+                    "Id": "{{ModID}}_Lamprey",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Lamprey",
+                    "Condition": "LOCATION_Season Here Spring Fall"
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Fish - Mage's Rest
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Custom_MagesRest", "Fish" ],
+            "Entries": {
+                "{{ModID}}_ZombieFish": {
+                    "Id": "{{ModID}}_ZombieFish",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_ZombieFish",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall Winter"
+                },
+                "{{ModID}}_Newt": {
+                    "Id": "{{ModID}}_Newt",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Newt",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall"
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Fish - Mountains
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Mountain", "Fish" ],
+            "Entries": {
+                "{{ModID}}_Newt": {
+                    "Id": "{{ModID}}_Newt",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Newt",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall"
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Fish - Witch Swamp
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "WitchSwamp", "Fish" ],
+            "Entries": {
+                "{{ModID}}_Lamprey": {
+                    "Id": "{{ModID}}_Lamprey",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Lamprey",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall Winter"
+                },
+                "{{ModID}}_Newt": {
+                    "Id": "{{ModID}}_Newt",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Newt",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall"
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Fish - Town
+----------------------------------------------------*/
+{
+    "Action": "EditData",
+    "Target": "Data/Locations",
+    "TargetField": [ "Town", "Fish" ],
+    "Entries": {
+        "{{ModID}}_Lamprey": {
+            "Id": "{{ModID}}_Lamprey",
+            "ItemId": "(O)Morghoula.AlchemistryCP_Lamprey",
+            "Condition": "LOCATION_Season Here Spring Fall"
+        }
+    }
+},
+/*----------------------------------------------------
+Fish - Beach
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Beach", "Fish" ],
+            "Entries": {
+                "{{ModID}}_MoonlightJellyfish": {
+                    "Id": "{{ModID}}_MoonlightJellyfish",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_MoonlightJellyfish",
+                    "Condition": "LOCATION_Season Here Summer"
+                },
+                "{{ModID}}_VampireAnemone": {
+                    "Id": "{{ModID}}_VampireAnemone",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_VampireAnemone",
+                    "Condition": "LOCATION_Season Here Spring Summer"
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Fish - Ginger Island
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "IslandWest", "Fish" ],
+            "Entries": {
+                "{{ModID}}_VampireAnemone": {
+                    "Id": "{{ModID}}_VampireAnemone",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_VampireAnemone",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall Winter"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "IslandSouth", "Fish" ],
+            "Entries": {
+                "{{ModID}}_VampireAnemone": {
+                    "Id": "{{ModID}}_VampireAnemone",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_VampireAnemone",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall Winter"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "IslandSouthEast", "Fish" ],
+            "Entries": {
+                "{{ModID}}_VampireAnemone": {
+                    "Id": "{{ModID}}_VampireAnemone",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_VampireAnemone",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall Winter"
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Fish - Farms
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Farm_Standard", "Fish"] ,
+            "Entries": {
+                "{{ModID}}_Newt": {
+                    "Id": "{{ModID}}_Newt",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Newt",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Farm_Forest", "Fish"] ,
+            "Entries": {
+                "{{ModID}}_Newt": {
+                    "Id": "{{ModID}}_Newt",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Newt",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Farm_Hilltop", "Fish"] ,
+            "Entries": {
+                "{{ModID}}_Newt": {
+                    "Id": "{{ModID}}_Newt",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Newt",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Farm_Riverland", "Fish"] ,
+            "Entries": {
+                "{{ModID}}_Newt": {
+                    "Id": "{{ModID}}_Newt",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Newt",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall"
+                },
+                "{{ModID}}_Lamprey": {
+                    "Id": "{{ModID}}_Lamprey",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Lamprey",
+                    "Condition": "LOCATION_Season Here Spring Fall"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Farm_Wilderness", "Fish"] ,
+            "Entries": {
+                "{{ModID}}_Newt": {
+                    "Id": "{{ModID}}_Newt",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Newt",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Farm_FourCorners", "Fish"] ,
+            "Entries": {
+                "{{ModID}}_Newt": {
+                    "Id": "{{ModID}}_Newt",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_Newt",
+                    "Condition": "LOCATION_Season Here Spring Summer Fall"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "TargetField": [ "Farm_Beach", "Fish" ],
+            "Entries": {
+                "{{ModID}}_VampireAnemone": {
+                    "Id": "{{ModID}}_VampireAnemone",
+                    "ItemId": "(O)Morghoula.AlchemistryCP_VampireAnemone",
+                    "Condition": "LOCATION_Season Here Spring Summer"
+                }
+            }
+        }
+    ]
+}

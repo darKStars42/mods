@@ -1,0 +1,107 @@
+{
+  "Changes": [
+    //NPC Dispositions
+
+    {
+      "LogName": "NPC Dispositions",
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        // Jonghyuk0
+        "Jonghyuk": {
+          "DisplayName": "{{i18n:Name.Jonghyuk}}",
+          "BirthSeason": "summer",
+          "BirthDay": 5,
+          "HomeRegion": "Town",
+          "Gender": "Male",
+          "Manner": "Rude",
+          "SocialAnxiety": "Outgoing",
+          "Optimism": "Positive",
+          "CanBeRomanced": true,
+          "Calendar": "AlwaysShown",
+          "SocialTab": "UnknownUntilMet",
+          "ExcludeFromIntroductionsQuest": false,
+          "ExcludeFromPerfectionScore": false,
+          "EndSlideShow": "MainGroup",
+
+          "FriendsAndFamily": {
+            "Spanner": ""
+          },
+          "SpawnIfMissing": true,
+          "Home": [
+            {
+              "Id": "Default",
+              "Location": "Custom_SBV_JonghyukHouse",
+              "Tile": {
+                "X": 22,
+                "Y": 8
+              },
+              "Direction": "left"
+            }
+          ],
+          "Size": {
+            "X": 16,
+            "Y": 32
+          },
+          "Breather": true,
+          "ShakePortraits": [ 7 ]
+        },
+        //Spanner
+        "Spanner": {
+
+          "DisplayName": "{{jhTrueName}}",
+          "BirthSeason": "spring",
+          "BirthDay": 28,
+          "HomeRegion": "Other",
+          "Gender": "Male",
+          "Manner": "Polite",
+          "SocialAnxiety": "Outgoing",
+          "CanVisitIsland": false,
+          "Optimism": "Positive",
+          "CanBeRomanced": false,
+          "Calendar": "HiddenUntilMet",
+          "SocialTab": "UnknownUntilMet",
+          "IntroductionsQuest": false,
+          "WinterStarParticipant": false,
+          "ExcludeFromPerfectionScore": false,
+          "EndSlideShow": "MainGroup",
+          "FriendsAndFamily": {
+            "Jonghyuk": "",
+            "AminaSBV": ""
+          },
+          "SpawnIfMissing": true,
+          "UnlockConditions": "PLAYER_HAS_SEEN_EVENT Any InvisibleBusTriggerJ",
+          "Home": [
+            {
+              "Id": "Unlocked",
+              "Location": "Custom_SBV_SerenityInn2ndFloor",
+              "Tile": {
+                  "X": 6,
+                  "Y": 26
+              },
+              "Direction": "right",
+              "Condition": "PLAYER_HAS_SEEN_EVENT Any SpannerIntroConclusion"
+          },
+          {
+            "Id": "NotUnlocked",
+            "Location": "Custom_SBV_SunberryWarpRoom",
+            "Tile": {
+                "X": 6,
+                "Y": 26
+            },
+            "Direction": "right"
+        }
+          ],
+          "Size": {
+            "X": 16,
+            "Y": 32
+          },
+          "Breather": true,
+          "ShakePortraits": [ 9 ]
+        }
+
+      }
+    }
+
+  ]
+}

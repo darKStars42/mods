@@ -1,0 +1,517 @@
+{
+
+	"Format": "2.0.0",
+
+	// Config //////////////////////////////////////////////////////////
+	// Dark mode option disabled till I can figure out how to flow textcolor to other mods
+
+	// "ConfigSchema":{
+
+	// 	"DarkMode": {
+	// 		"AllowValues": "true, false",
+	// 		"Default": "false",
+	// 		"Description": "When enabled, book interiors will have dark grey pages and yellow letters when being read."
+	// 	},
+	// },
+
+	// Content //////////////////////////////////////////////////////////
+	// Dark mode option disabled till I can figure out how to flow textcolor to other mods
+
+	"DynamicTokens": [
+
+		// {
+		// 	"Name": "TextColor",
+		// 	"Value": "rgb(235, 164, 52)",
+		// 	"When": {
+		// 		"DarkMode": true,
+		// 	},
+		// },
+
+		{
+			"Name": "TextColor",
+			"Value": "rgb(12, 12, 80)",
+			// "When": {
+			// 	"DarkMode": false,
+			// },
+		},
+
+		// Shop Book Amounts
+
+		{
+			"Name": "BooksellerBooks",
+			"Value": "2",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock0": false,
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "BooksellerBooks",
+			"Value": "3",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock0": true,
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "BooksellerBooks",
+			"Value": "4",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "BooksellerBooks",
+			"Value": "5",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+		{
+			"Name": "TravellerBooks",
+			"Value": "1",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "TravellerBooks",
+			"Value": "2",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+		
+		{
+			"Name": "TravellerBooks",
+			"Value": "2",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+		{
+			"Name": "PierreBooks",
+			"Value": "1",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "PierreBooks",
+			"Value": "1",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "PierreBooks",
+			"Value": "2",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+		{
+			"Name": "GuildBooks",
+			"Value": "1",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "GuildBooks",
+			"Value": "1",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "GuildBooks",
+			"Value": "2",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+		{
+			"Name": "OceanBooks",
+			"Value": "1",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "OceanBooks",
+			"Value": "1",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "OceanBooks",
+			"Value": "2",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+		// Book Fair Book Amounts
+
+		{
+			"Name": "PowerShopBooks",
+			"Value": "5",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "PowerShopBooks",
+			"Value": "8",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "PowerShopBooks",
+			"Value": "12",
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+		{
+			"Name": "NonfictionShopBooks",
+			"Value": 4,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "NonfictionShopBooks",
+			"Value": 8,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "NonfictionShopBooks",
+			"Value": 12,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+		{
+			"Name": "ScienceShopBooks",
+			"Value": 3,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "ScienceShopBooks",
+			"Value": 7,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "ScienceShopBooks",
+			"Value": 10,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+		{
+			"Name": "MagShopBooks",
+			"Value": 4,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "MagShopBooks",
+			"Value": 7,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "MagShopBooks",
+			"Value": 10,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+		{
+			"Name": "RecipeShopBooks",
+			"Value": 5,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "RecipeShopBooks",
+			"Value": 9,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "RecipeShopBooks",
+			"Value": 12,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+		{
+			"Name": "FictionShopBooks",
+			"Value": 4,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": false,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "FictionShopBooks",
+			"Value": 8,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": false,
+			},
+		},
+
+		{
+			"Name": "FictionShopBooks",
+			"Value": 12,
+			"When": {
+				"HasFlag: |contains={{ModId}}_BookStock1": true,
+				"HasFlag: |contains={{ModId}}_BookStock2": true,
+			},
+		},
+
+	],
+
+	// Content //////////////////////////////////////////////////////////
+
+	"Changes": [
+
+	// Note Texture //////////////////////////////////////////////////////////
+	// Load the open book texture image
+	// Dark mode option disabled till I can figure out how to flow textcolor to other mods
+
+	{
+		"Target": "Mods/{{ModId}}/blankbook",
+		"Action": "Load",
+		"FromFile": "Data/Assets/blankbook.png",
+		// "When": {
+		// 		"DarkMode": false,
+		// 	},
+	},
+
+	// {
+	// 	"Target": "Mods/{{ModId}}/blankbook",
+	// 	"Action": "Load",
+	// 	"FromFile": "Data/Assets/darkbook.png",
+	// 	"When": {
+	// 			"DarkMode": true,
+	// 		},
+	// },
+
+	// Stock Limit Triggers //////////////////////////////////////////////////////////
+	// Set flags based on how many books the player has read
+
+	{
+		"Action": "EditData",
+		"Target": "Data/TriggerActions",
+		"Entries": {
+			"{{ModId}}_StockLimit0": {
+				"Id": "{{ModId}}_StockLimit0",
+				"MarkActionApplied": true,
+				"Trigger": "DayEnding",
+				"Condition": "PLAYER_STAT Current bc_hasbooks 10",
+				"Actions": [
+					"AddMail All {{ModId}}_BookStock0",
+				]
+			}
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Data/TriggerActions",
+		"Entries": {
+			"{{ModId}}_StockLimit1": {
+				"Id": "{{ModId}}_StockLimit1",
+				"MarkActionApplied": true,
+				"Trigger": "DayEnding",
+				"Condition": "PLAYER_STAT Current bc_hasbooks 35",
+				"Actions": [
+					"AddMail All {{ModId}}_BookStock1",
+				]
+			}
+		},
+	},
+
+	{
+		"Action": "EditData",
+		"Target": "Data/TriggerActions",
+		"Entries": {
+			"{{ModId}}_StockLimit2": {
+				"Id": "{{ModId}}_StockLimit2",
+				"MarkActionApplied": true,
+				"Trigger": "DayEnding",
+				"Condition": "PLAYER_STAT Current bc_hasbooks 60",
+				"Actions": [
+					"AddMail All {{ModId}}_BookStock2",
+				]
+			}
+		},
+	},
+
+	// Includes //////////////////////////////////////////////////////////
+
+	{
+		// Book items
+		"Action": "Include",
+		"FromFile": "Data/Objects.json",
+		"When": {
+				"HasWalletItem |contains=MagnifyingGlass": true,
+				"HasWalletItem |contains=BearsKnowledge": true, // Used to ensure the player has read at least one vanilla secret note before collecting books.
+		},
+	},
+
+	{
+		// Turns books into secret notes
+		"Action": "Include",
+		"FromFile": "Data/SecretNotes.json",
+		"When": {
+				"HasWalletItem |contains=MagnifyingGlass": true,
+				"HasWalletItem |contains=BearsKnowledge": true,
+		},
+	},
+
+	{
+		// Book locations and trigger actions
+		"Action": "Include",
+		"FromFile": "Data/MapEntries.json",
+		"When": {
+				"HasWalletItem |contains=MagnifyingGlass": true,
+				"HasWalletItem |contains=BearsKnowledge": true,
+		},
+	},
+
+	{
+		// Events for certain books
+		"Action": "Include",
+		"FromFile": "Data/Events.json",
+		"When": {
+				"HasWalletItem |contains=MagnifyingGlass": true,
+				"HasWalletItem |contains=BearsKnowledge": true,
+		},
+	},
+
+	{
+		// Gift tastes for books
+		"Action": "Include",
+		"FromFile": "Data/GiftTastes.json",
+		"When": {
+				"HasWalletItem |contains=MagnifyingGlass": true,
+				"HasWalletItem |contains=BearsKnowledge": true,
+		},
+	},
+
+	{
+		// NPC gift responses for books, as well as book fair location dialogue
+		"Action": "Include",
+		"FromFile": "Data/GiftResponses.json",
+		"When": {
+				"HasWalletItem |contains=MagnifyingGlass": true,
+				"HasWalletItem |contains=BearsKnowledge": true,
+		},
+	},
+
+	{
+		// Bookseller and vanilla shop entries
+		"Action": "Include",
+		"FromFile": "Data/Shops.json",
+		"When": {
+				"HasWalletItem |contains=MagnifyingGlass": true,
+				"HasWalletItem |contains=BearsKnowledge": true,
+		},
+	},
+
+	{
+		// Book Fair
+		"Action": "Include",
+		"FromFile": "Data/BookFair.json",
+		"When": {
+			"HasWalletItem |contains=MagnifyingGlass": true,
+			"HasWalletItem |contains=BearsKnowledge": true,
+			"HasFlag: |contains={{ModId}}_StartBookFair": true, // Flag is set in Events.json in the Data folder.
+		},
+	},
+	
+	// End //////////////////////////////////////////////////////////
+
+	]
+
+
+}

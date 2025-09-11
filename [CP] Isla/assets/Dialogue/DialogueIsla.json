@@ -1,0 +1,180 @@
+{
+	"Changes": [
+		{
+			"LogName": "Isla Dialogue",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Isla}}",
+			"Entries": {
+				//Unique Dialogue
+				"Introduction": "{{i18n:Isla.Introduction}}",
+				"FlowerDance_Decline": "{{i18n:Isla.DanceReject}}",
+				"divorced": "{{i18n:Isla.Divorced}}",
+				"breakUp": "{{i18n:Isla.BreakUp}}",
+				"dumped_Girls": "{{i18n:Isla.dumpedGirls}}",
+				"secondChance_Girls": "{{i18n:Isla.secondChance}}",
+				"SpouseStardrop": "{{i18n:Isla.Stardrop}}",
+				"AcceptBouquet": "{{i18n:Isla.Bouquet}}",
+				"AcceptGift_(O)StardropTea": "{{i18n:Isla.StardropTea}}",
+				
+				//A/B dialogues are randomized, to preserve all dialogues.
+				"RejectBouquet": "{{i18n:Isla.RejectBouquet.{{Random:1,2}} }}", //rejectNPCA/B, randomized
+				"RejectBouquet_VeryLowHearts": "{{i18n:Isla.RejectBouquetVeryLow.{{Random:1,2}} }}", //reject two heart A/B, randomized
+				"RejectBouquet_LowHearts": "{{i18n:Isla.RejectBouquetLow.{{Random:1,2}} }}", //reject four heart A/B, randomized
+				
+				"RejectMermaidPendant_Under10Hearts": "{{i18n:Isla.RejectPendant.{{Random:1,2}} }}", //refusalknownA/B, randomized
+				"RejectMermaidPendant_Under10Hearts_AskedAgain": "{{i18n:Isla.BotherPendant.{{Random:1,2}} }}", //refusalbotherA/B, randomized
+				"RejectMermaidPendant_PlayerWithSomeoneElse": "$query PLAYER_NPC_RELATIONSHIP current any engaged#{{i18n:Isla.PlayerEngaged.{{Random:1,2}} }}|{{i18n:Isla.PlayerMarried.{{Random:1,2}} }}",	
+				
+				//Thematically, these don't match what the keys in UCR state they're used for (rejectNPCA/B, and these work the same for datables) so these are commented out. If necessary, they can be restored, but they would be patched
+					//to the same area as  rejectNPCA/B were (RejectBouquet default).
+				//"refusal_no_heartsA": "It's beautiful!$1",
+				//"refusal_no_heartsB": "How lovely!$1",
+
+				//General Dialogue
+
+				"Mon": "{{i18n:Isla.Mon}}",
+				"Mon2": "{{i18n:Isla.Mon2}}",
+				"Mon4": "{{i18n:Isla.Mon4}}",
+				"Mon6": "{{i18n:Isla.Mon6}}",
+				"Mon8": "{{i18n:Isla.Mon8}}",
+				"Mon10": "{{i18n:Isla.Mon10}}",
+				"Tue": "{{i18n:Isla.Tue}}",
+				"Tue2": "{{i18n:Isla.Tue2}}",
+				"Tue4": "{{i18n:Isla.Tue4}}",
+				"Tue6": "{{i18n:Isla.Tue6}}",
+				"Tue8": "{{i18n:Isla.Tue8}}",
+				"Tue10": "{{i18n:Isla.Tue10}}",
+				"Wed": "{{i18n:Isla.Wed}}",
+				"Wed2": "{{i18n:Isla.Wed2}}", 
+				"Wed4": "{{i18n:Isla.Wed4}}",
+				"Wed6": "{{i18n:Isla.Wed6}}", 
+				"Wed8": "{{i18n:Isla.Wed8}}",
+				"Wed10": "{{i18n:Isla.Wed10}}",
+				"Thu": "{{i18n:Isla.Thu}}",
+				"Thu2": "{{i18n:Isla.Thu2}}",
+				"Thu4": "{{i18n:Isla.Thu4}}",
+				"Thu6": "{{i18n:Isla.Thu6}}",
+				"Thu8": "{{i18n:Isla.Thu8}}",
+				"Thu10": "{{i18n:Isla.Thu10}}",
+				"Fri": "{{i18n:Isla.Fri}}",
+				"Sat": "{{i18n:Isla.Sat}}",
+				"Sun": "{{i18n:Isla.Sun}}",
+
+				//Spring Dialogue
+
+				"spring_1": "{{i18n:Isla.spring1}}",
+				"spring_Mon": "{{i18n:Isla.springMon}}",
+				"spring_Mon4": "{{i18n:Isla.springMon4}}",
+				"spring_Mon6": "{{i18n:Isla.springMon6}}",
+				"spring_Mon8": "{{i18n:Isla.springMon8}}",  
+				"spring_Tue": "{{i18n:Isla.springTue}}",
+				"spring_Tue2": "{{i18n:Isla.springTue2}}",
+				"spring_Tue4": "{{i18n:Isla.springTue4}}",
+				"spring_Tue8": "{{i18n:Isla.springTue8}}",
+				"spring_Wed": "{{i18n:Isla.springWed}}",
+				"spring_Wed6": "{{i18n:Isla.springWed6}}",
+				"spring_Wed8": "{{i18n:Isla.springWed8}}", 
+				"spring_Thu": "{{i18n:Isla.springThu}}", 
+				"spring_Thu2": "{{i18n:Isla.springThu2}}", 
+				"spring_Thu10": "{{i18n:Isla.springThu10}}",
+
+				//Summer Dialogue
+				"summer_1": "{{i18n:Isla.summer1}}",
+				"summer_Mon": "{{i18n:Isla.summerMon}}",
+				"summer_Mon2": "{{i18n:Isla.summerMon2}}", 
+				"summer_Tue": "{{i18n:Isla.summerTue}}", 
+				"summer_Tue2": "{{i18n:Isla.summerTue2}}",
+				"summer_Tue6": "{{i18n:Isla.summerTue6}}",
+				"summer_Tue8": "{{i18n:Isla.summerTue8}}", 
+				"summer_Tue10": "{{i18n:Isla.summerTue10}}",
+				"summer_Wed2": "{{i18n:Isla.summerWed2}}",
+				"summer_Wed4": "{{i18n:Isla.summerWed4}}",
+				"summer_Wed6": "{{i18n:Isla.summerWed6}}",
+				"summer_Wed8": "{{i18n:Isla.summerWed8}}",
+				"summer_Thu": "{{i18n:Isla.summerThu}}",
+				"summer_Thu4": "{{i18n:Isla.summerThu4}}", 
+				"summer_Thu8": "{{i18n:Isla.summerThu8}}",
+				"summer_Thu10": "{{i18n:Isla.summerThu10}}", 
+					
+				//Fall Dialogue
+				"fall_1": "{{i18n:Isla.fall1}}",
+				"fall_Mon": "{{i18n:Isla.fallMon}}",
+				"fall_Mon4": "{{i18n:Isla.fallMon4}}",
+				"fall_Mon6": "{{i18n:Isla.fallMon6}}", 
+				"fall_Tue2": "{{i18n:Isla.fallTue}}",
+				"fall_Tue6": "{{i18n:Isla.fallTue6}}",
+				"fall_Tue10": "{{i18n:Isla.fallTue10}}", 
+				"fall_Wed2": "{{i18n:Isla.fallWed2}}", 
+				"fall_Wed4": "{{i18n:Isla.fallWed4}}",
+				"fall_Wed6": "{{i18n:Isla.fallWed6}}", 
+				"fall_Thu6": "{{i18n:Isla.fallThu6}}", 
+				"fall_Thu8": "{{i18n:Isla.fallThu8}}",
+				"fall_Thu10": "{{i18n:Isla.fallThu10}}",         
+
+				//Winter Dialogue
+				"winter_1": "{{i18n:Isla.winter1}}",
+				"winter_Mon": "{{i18n:Isla.winterMon}}",
+				"winter_Mon2": "{{i18n:Isla.winterMon2}}",
+				"winter_Mon4" : "{{i18n:Isla.winterMon4}}", 
+				"winter_Mon6": "{{i18n:Isla.winterMon6}}", 
+				"winter_Tue2": "{{i18n:Isla.winterTue2}}",
+				"winter_Tue6": "{{i18n:Isla.winterTue6}}",
+				"winter_Wed6": "{{i18n:Isla.winterWed6}}",
+				"winter_Wed8": "{{i18n:Isla.winterWed8}}",
+				"winter_Thu4": "{{i18n:Isla.winterThu4}}",
+				"winter_Thu6": "{{i18n:Isla.winterThu6}}",
+				"winter_Thu8": "{{i18n:Isla.winterThu8}}",
+				"winter_11": "{{i18n:Isla.winter11}}",
+				"winter_28": "{{i18n:Isla.winter28}}",
+			},
+		},
+		
+		{
+			"LogName": "Pendant Acceptance Dialogue",
+			"Action": "EditData",
+			"Target": "Strings/StringsFromCSFiles",
+			"Entries": {
+				"{{Isla}}_Engaged": "{{i18n:Isla.PendantGiven}}",
+			},
+		},
+		
+		{
+
+			"LogName": "Engagement Dialogue",
+			"Action": "EditData",
+			"Target": "Data/EngagementDialogue",
+			"Entries": {
+				"{{Isla}}0": "{{i18n:Isla.EngagementDialogue}}",
+				"{{Isla}}1": "{{i18n:Isla.EngagementDialogue.2}}"
+			},
+		},
+		
+		//This is a simpler patch with an event script to use the proper Utility keys without relying on if the NPC is engaged on day start. Can add her troupe members as attendees with relevant data in event script if desired.
+		{
+			"LogName": "Isla's Wedding",
+            "Action": "EditData",
+            "Target": "Data/Weddings",
+			"TargetField": [ "EventScript" ],
+			"Entries": {
+				"{{Isla}}": "sweet/-1000 -100/farmer 27 63 2 [SpouseFarmerText [EscapedText] [EscapedText spouse 28 63 2]] Lewis 27 64 2 otherFarmers 29 69 0[SetupContextualWeddingAttendees]/changeLocation Town/[SpouseFarmerText [EscapedText faceDirection [SpouseActor] 2/warp [SpouseActor] 28 63] [EscapedText showFrame spouse 36]]/specificTemporarySprite wedding/viewport 27 64 true/pause 4000/speak Lewis \"{{i18n:Isla.Wedding.Male}}^{{i18n:Isla.Wedding.Female}}#$b#{{i18n:Isla.Wedding.Lewis}}\"/faceDirection farmer 1/[SpouseFarmerText [EscapedText faceDirection [SpouseActor] 3] [EscapedText showFrame spouse 37]]/pause 500/faceDirection Lewis 0/pause 2000/speak Lewis \"[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5370]\"/move Lewis 0 1 0/playMusic none/pause 1000/showFrame Lewis 20/speak Lewis \"{{i18n:Isla.Wedding.PlayerName}}#$b#{{i18n:Isla.Wedding.Husband}}^{{i18n:Isla.Wedding.Wife}}\"/pause 500/speak Lewis \"[LocalizedText Strings\\\\StringsFromCSFiles:Utility.cs.5379]\"/pause 1000/showFrame 101/[SpouseFarmerText [EscapedText showFrame [SpouseActor] 101 true] [EscapedText showFrame spouse 38]]/specificTemporarySprite heart 28 62/playSound dwop/pause 2000/specificTemporarySprite wed/faceDirection farmer 2/[SpouseFarmerText [EscapedText faceDirection [SpouseActor] 2] [EscapedText showFrame spouse 36]]/[ContextualWeddingCelebrations]move Lewis 0 3 3 true/pause 4000/faceDirection farmer 1/[SpouseFarmerText [EscapedText showFrame [SpouseActor] 3 true] [EscapedText showFrame spouse 37]]/globalFade/viewport -1000 -1000/pause 1000/message \"[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5381]\"/pause 500/message \"[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5383]\"/pause 4000/waitForOtherPlayers weddingEnd[FarmerUniqueId]/end wedding"
+			},
+		},
+		
+		//Old Wedding Patch kept for posterity - the dialogue should be in the wedding script above via translations, but if something's going wrong, use this again.
+		
+		/*{
+			"LogName": "Marriage Ceremony Dialogue",
+			"Action": "EditData",
+			"Target": "strings/StringsFromCSFiles",
+			"Entries": {
+				"Utility.cs.5367": "When @ first arrived in Pelican Town, no one knew if he'd fit in with our community...#$b#But from this day forward, @ is going to be as much a part of this town as any of us!$h#$b#It is my great honor on this day {0} of {1}, to unite @ and Isla in the bonds of marriage. Let us celebrate that on this day, {0} of {1}, two different beings from two very different places are united in the bonds of marriage.",
+				"Utility.cs.5369": "When @ first arrived in Pelican Town, no one knew if she'd fit in with our community...#$b#But from this day forward, @ is going to be as much a part of this town as any of us!$h#$b#Let us celebrate that on this day, {0} of {1}, two different beings from two very different places are united in the bonds of marriage.",
+				"Utility.cs.5371": "@... Isla... #$b# As the mayor of Pelican Town, and regional bearer of the matrimonial seal, I now pronounce you husband and wife!$h",
+				"Utility.cs.5377": "@... Isla... #$b# As the mayor of Pelican Town, and regional bearer of the matrimonial seal, I now pronounce you wife and..., well, wife!$h",
+			},
+			"When": {
+				"Relationship:{{Isla}}": "Engaged"
+			}
+		},*/
+	],
+}

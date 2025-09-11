@@ -1,0 +1,135 @@
+{
+  "Changes": [
+    {
+        "Action": "EditData",
+        "Target": "Data/TriggerActions",
+        "Entries": {
+          "Mail_SVTNiki_SVTNews_DDay": {
+            "Id": "Mail_SVTNiki_SVTNews_DDay",
+            "Trigger": "DayEnding",
+            "Condition": "PLAYER_MONEY_EARNED Current 31000, PLAYER_HAS_SEEN_EVENT Current SVTNiki0FirstInterview, !PLAYER_HAS_SEEN_EVENT Current SVTNiki10LastInterview",
+            "HostOnly": false,
+            "Actions": [
+              "AddMail Current SVTNikiSVTNews Now",
+              "AddMail Current SVTNikiSVT Now",
+            ],
+            "MarkActionApplied": true
+          },
+// Change conditions for "I read a local article" mail from mom and dad
+"Mail_Mom_32K": {
+  "Id": "Mail_Mom_32K",
+  "Trigger": "DayEnding",
+  "Condition": "PLAYER_MONEY_EARNED Current 32000, PLAYER_GENDER Current Male, PLAYER_HAS_MAIL Current SVTNikiSVTNews Received",
+  "HostOnly": false,
+  "Action": "AddMail Current mom3",
+  "Actions": null,
+  "CustomFields": null,
+  "MarkActionApplied": true
+},
+"Mail_Dad_32K": {
+  "Id": "Mail_Dad_32K",
+  "Trigger": "DayEnding",
+  "Condition": "PLAYER_MONEY_EARNED Current 32000, PLAYER_GENDER Current Female, PLAYER_HAS_MAIL Current SVTNikiSVTNews Received",
+  "HostOnly": false,
+  "Action": "AddMail Current dad3",
+  "Actions": null,
+  "CustomFields": null,
+  "MarkActionApplied": true
+},
+          "Mail_SVTNiki_Offer": {
+            "Id": "Mail_SVTNiki_Offer",
+            "Trigger": "DayEnding",
+            "Condition": "PLAYER_FRIENDSHIP_POINTS Current SVTNiki 1250", // 5 hearts
+            "HostOnly": false,
+            "Action": "AddMail Current SVTNikiOfferBeforeVisit",
+            "MarkActionApplied": true
+          },
+
+          // 10 heart event
+          "Mail_SVTNiki_Interview": {
+            "Id": "Mail_SVTNiki_Interview",
+            "Trigger": "DayEnding",
+            "Condition": "PLAYER_FRIENDSHIP_POINTS Current SVTNiki 2500, DAY_OF_WEEK Monday", // 10 hearts, only on Monday
+            "HostOnly": false,
+            "Actions": [
+              "AddMail Current SVTNikiFinalInterview",
+              "AddConversationTopic SVTNikiThisSaturday 5",
+            ],
+            "MarkActionApplied": true
+          },
+
+            "Mail_SVTNiki_FinalNews_0": {
+              "Id": "Mail_SVTNiki_FinalNews_0",
+              "Trigger": "DayEnding",
+              "Condition": "PLAYER_HAS_SEEN_EVENT Current SVTNiki10LastInterview, !PLAYER_HAS_MAIL Current NewsOption1 Received, !PLAYER_HAS_MAIL Current NewsOption2 Received, !PLAYER_HAS_MAIL Current NewsOption3 Received",
+              "HostOnly": false,
+              "Action": "AddMail Current SVTNikiFinal0",
+              "MarkActionApplied": true
+            },
+            "Mail_SVTNiki_FinalNews_1": {
+              "Id": "Mail_SVTNiki_FinalNews_1",
+              "Trigger": "DayEnding",
+              "Condition": "PLAYER_HAS_SEEN_EVENT Current SVTNiki10LastInterview, PLAYER_HAS_MAIL Current NewsOption1 Received",
+              "HostOnly": false,
+              "Actions": [
+                "AddMail Current SVTNikiFinalNewsOption1",
+                "AddMail Current SVTNikiFinal"
+              ],
+              "MarkActionApplied": true
+            },
+            "Mail_SVTNiki_FinalNews_2": {
+              "Id": "Mail_SVTNiki_FinalNews_2",
+              "Trigger": "DayEnding",
+              "Condition": "PLAYER_HAS_SEEN_EVENT Current SVTNiki10LastInterview, PLAYER_HAS_MAIL Current NewsOption2 Received",
+              "HostOnly": false,
+              "Actions": [
+                "AddMail Current SVTNikiFinalNewsOption2",
+                "AddMail Current SVTNikiFinal"
+              ],
+              "MarkActionApplied": true
+            },
+            "Mail_SVTNiki_FinalNews_3": {
+              "Id": "Mail_SVTNiki_FinalNews_3",
+              "Trigger": "DayEnding",
+              "Condition": "PLAYER_HAS_SEEN_EVENT Current SVTNiki10LastInterview, PLAYER_HAS_MAIL Current NewsOption3 Received",
+              "HostOnly": false,
+              "Actions": [
+                "AddMail Current SVTNikiFinalNewsOption3",
+                "AddMail Current SVTNikiFinal"
+              ],
+              "MarkActionApplied": true
+            },
+
+            // conversation topic
+          "CT_SVTNiki_Demetrius": {
+            "Id": "CT_SVTNiki_Demetrius",
+            "Trigger": "DayEnding",
+            "Condition": "PLAYER_HAS_SEEN_EVENT Current 6",
+            "HostOnly": false,
+            "Action": "AddConversationTopic DemetriusTalk 5",
+            "MarkActionApplied": true
+          },
+        },
+        },
+    {
+        "Action": "EditData",
+        "Target": "Data/TriggerActions",
+        "When": {
+          "IsCommunityCenterComplete": true
+        },
+        "Entries": {
+          "Mail_SVTNiki_CommunityCenter": {
+            "Id": "Mail_SVTNiki_CommunityCenter",
+            "Trigger": "DayStarted",
+            "Condition": "PLAYER_HAS_SEEN_EVENT Current SVTNiki0FirstInterview, !PLAYER_HAS_SEEN_EVENT Current SVTNiki10LastInterview",
+            "HostOnly": false,
+            "Actions": [
+              "AddMail Current SVTNikiccCompleteNews now",
+              "AddMail Current SVTNikiccComplete now"
+            ],
+            "MarkActionApplied": true
+          },
+        },
+    },
+  ]
+}

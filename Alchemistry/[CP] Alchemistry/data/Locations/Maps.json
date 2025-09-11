@@ -1,0 +1,303 @@
+{
+
+    "Changes": [
+
+/*----------------------------------------------------
+Harvey's Clinic
+----------------------------------------------------*/
+      {
+        "LogName": "Changes to Harvey's clinic",
+        "Action": "EditMap",
+        "Priority": "Late",
+        "PatchMode": "Replace",
+        "Update": "OnLocationChange", 
+        "Target": "Maps/Hospital",
+        "FromFile": "assets/Maps/MapPatches/Hospital.tmx",
+        "When": { "HarveysClinic": "true" }
+      },
+
+/*----------------------------------------------------
+Museum - Map Patches (Vanilla)
+----------------------------------------------------*/
+    {
+      "LogName": "Modify vanilla museum to allow for Alchemistry gem donations",
+      "Action": "EditMap",
+      "Priority": "Late",
+      "PatchMode": "Replace",
+      "Update": "OnLocationChange", 
+      "Target": "Maps/ArchaeologyHouse",
+      "FromFile": "assets/Maps/MapPatches/MuseumPatch_1.tmx",
+      "ToArea": { "X": 48, "Y": 0, "Width": 3, "Height": 10 },
+      "When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false,  "HasMod: |contains=RaffieJohn.ExtraSpace": false }
+    },
+
+/*----------------------------------------------------
+Museum - Map Patches (SVE)
+----------------------------------------------------*/
+  {
+    "LogName": "Modify SVE museum to allow for Alchemistry gem donations",
+    "Action": "EditMap",
+    "Priority": "Late",
+    "PatchMode": "Replace",
+    "Update": "OnLocationChange", 
+    "Target": "Maps/ArchaeologyHouse",
+    "FromFile": "assets/Maps/MapPatches/MuseumPatch_SVE_1.tmx",
+    "When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true, "HasMod: |contains=RaffieJohn.ExtraSpace": false },
+    "ToArea": { "X": 24, "Y": 9, "Width": 3, "Height": 5 }
+  },
+  {
+    "Action": "EditMap",
+    "Priority": "Late",
+    "PatchMode": "Replace",
+    "Update": "OnLocationChange", 
+    "Target": "Maps/ArchaeologyHouse",
+    "FromFile": "assets/Maps/MapPatches/MuseumPatch_SVE_2.tmx",
+    "When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true, "HasMod: |contains=RaffieJohn.ExtraSpace": false },
+    "ToArea": { "X": 28, "Y": 12, "Width": 9, "Height": 6 }
+  },
+
+
+/*----------------------------------------------------
+Forest - Entrance to Mage's Rest (DEFAULT)
+----------------------------------------------------*/
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Forest",
+        "FromFile": "assets/Maps/MapPatches/MagesRest_Entrance_Covered.tmx",
+        "ToArea": { "X": 0, "Y": 0, "Width": 10, "Height": 9 },
+        "When": { "ForestWarp": "Default" },
+        "Update": "OnLocationChange"
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Forest",
+        "FromFile": "assets/Maps/MapPatches/MagesRest_Entrance_Uncovered.tmx",
+        "When": { "HasReadLetter": "{{ModId}}_SevinaeIntroMail", "ForestWarp": "Default" },
+        "ToArea": { "X": 0, "Y": 0, "Width": 10, "Height": 9 },
+        "Update": "OnLocationChange"
+      },
+      //Add compatibility for those who started their saves using MFM
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Forest",
+        "FromFile": "assets/Maps/MapPatches/MagesRest_Entrance_Uncovered.tmx",
+        "When": { "HasSeenEvent": "22743102", "ForestWarp": "Default" }, 
+        "ToArea": { "X": 0, "Y": 0, "Width": 10, "Height": 9 },
+        "Update": "OnLocationChange"
+      },
+      {
+        "LogName":"Add Warps to the Forest to access Mage's Rest",
+        "Action": "EditMap",
+        "Target": "Maps/Forest",
+        "When": { "ForestWarp": "Default" },
+        "AddWarps": 
+          [ 
+            "3 3 Custom_MagesRest 32 53",
+            "4 3 Custom_MagesRest 32 53",
+            "5 3 Custom_MagesRest 32 53" 
+          ]
+      },
+      {
+        "LogName":"Add Warps to Mage's Rest to access the Forest",
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRest",
+        "When": { "ForestWarp": "Default" },
+        "AddWarps": 
+          [ 
+            "30 54 Forest 4 6", 
+            "31 54 Forest 4 6",
+            "32 54 Forest 4 6", 
+            "33 54 Forest 4 6"
+          ]
+      },
+
+/*----------------------------------------------------
+Forest - Entrance to Mage's Rest (Lunna Astray, Lost in the Woods, and Ranger Taro Compatibility)
+----------------------------------------------------*/
+
+    {
+      "Action": "EditMap",
+      "Priority": "Late - 10",
+      "Target": "Maps/Forest",
+      "FromFile": "assets/Maps/MapPatches/MagesRest_Entrance_Covered_COMPAT.tmx",
+      "ToArea": { "X": 15, "Y": 3, "Width": 6, "Height": 8 },
+      "When": { "ForestWarp": "Alternate" },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Priority": "Late - 10",
+      "Target": "Maps/Forest",
+      "FromFile": "assets/Maps/MapPatches/MagesRest_Entrance_Uncovered_COMPAT.tmx",
+      "ToArea": { "X": 15, "Y": 3, "Width": 6, "Height": 8 },
+      "When": { "HasReadLetter": "{{ModId}}_SevinaeIntroMail", "ForestWarp": "Alternate" },
+      "Update": "OnLocationChange"
+    },
+    //Add compatibility for those who started their saves using MFM
+    {
+      "Action": "EditMap",
+      "Priority": "Late - 10",
+      "Target": "Maps/Forest",
+      "FromFile": "assets/Maps/MapPatches/MagesRest_Entrance_Uncovered_COMPAT.tmx",
+      "When": { "HasSeenEvent": "22743102", "ForestWarp": "Alternate" },
+      "ToArea": { "X": 15, "Y": 3, "Width": 6, "Height": 8 },
+      "Update": "OnLocationChange"
+    },
+    //Compatibility Warps
+    {
+      "LogName":"Add compatibility Warps to the Forest to access Mage's Rest",
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "When": { "ForestWarp": "Alternate" },
+      "AddWarps": 
+        [ 
+          "18 7 Custom_MagesRest 32 53",
+          "19 7 Custom_MagesRest 32 53",
+          "20 7 Custom_MagesRest 32 53"
+        ]
+    },
+    {
+      "LogName":"Add compatibility Warps to Mage's Rest to access the Forest",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_MagesRest",
+      "When": { "ForestWarp": "Alternate" },
+      "AddWarps": 
+        [ 
+          "30 54 Forest 19 8",
+          "31 54 Forest 19 8",
+          "32 54 Forest 19 8",
+          "33 54 Forest 19 8"
+        ]
+    },
+
+/*----------------------------------------------------
+Mage's Rest - Strings
+----------------------------------------------------*/
+      {
+        "LogName": "Mage's Rest Strings",
+        "Action": "EditData",
+        "Target": "Strings/StringsFromMaps",
+        "Entries": {
+          "{{ModID}}_Tombstones": "{{i18n:MagesRest.tombstone.1}}",
+          "{{ModID}}_GraveyardInfo": "{{i18n:MagesRest.GraveyardInfo}}"
+        }
+      },
+
+/*----------------------------------------------------
+Mage's Rest - Map Patches
+----------------------------------------------------*/
+  //Fog and lights overlay
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRest",
+        "FromFile": "assets/Maps/CustomMaps/Overlay.tbin",
+        "ToArea": { "X": 0, "Y": 0, "Width": 60, "Height": 55 }
+      },
+  //MUSHROOMS
+      //Vanilla
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRest",
+        "FromFile": "assets/Maps/CustomMaps/Mushrooms_Vanilla.tbin",
+        "ToArea": { "X": 0, "Y": 0, "Width": 60, "Height": 55 }
+      },
+      //Simple Foliage
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRest",
+        "FromFile": "assets/Maps/CustomMaps/Mushrooms_SF.tbin",
+        "When": { "HasMod": "Az.Foliage" },
+        "ToArea": { "X": 0, "Y": 0, "Width": 60, "Height": 55 }
+      },
+      //BogWyytch
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRest",
+        "FromFile": "assets/Maps/CustomMaps/Mushrooms_Bog.tbin",
+        "When": { "HasMod": "Bogs.WitchyFoliage" },
+        "ToArea": { "X": 0, "Y": 0, "Width": 60, "Height": 55 }
+      }, 
+      
+  //Crop sprites (seasonal)
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRest",
+        "FromFile": "assets/Maps/CustomMaps/Crops_Summer.tbin",
+        "When": { "Season": "summer" },
+        "ToArea": { "X": 34, "Y": 12, "Width": 8, "Height": 6 }
+      },
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRest",
+        "FromFile": "assets/Maps/CustomMaps/Crops_Fall.tbin",
+        "When": { "Season": "fall" },
+        "ToArea": { "X": 34, "Y": 12, "Width": 8, "Height": 6 }
+      },
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRest",
+        "FromFile": "assets/Maps/CustomMaps/Crops_Winter.tbin",
+        "When": { "Season": "winter" },
+        "ToArea": { "X": 34, "Y": 12, "Width": 8, "Height": 6 }
+      },
+
+/*----------------------------------------------------
+Mage's Rest (Events version) - Map Patches
+----------------------------------------------------*/
+      //Fog and lights overlay
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRestEvents",
+        "FromFile": "assets/Maps/CustomMaps/Overlay.tbin",
+        "ToArea": { "X": 0, "Y": 0, "Width": 60, "Height": 55 }
+      },
+    //MUSHROOMS
+      //Vanilla
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRestEvents",
+        "FromFile": "assets/Maps/CustomMaps/Mushrooms_Vanilla.tbin",
+        "ToArea": { "X": 0, "Y": 0, "Width": 60, "Height": 55 }
+      },
+      //Simple Foliage
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRestEvents",
+        "FromFile": "assets/Maps/CustomMaps/Mushrooms_SF.tbin",
+        "When": { "HasMod": "Az.Foliage" },
+        "ToArea": { "X": 0, "Y": 0, "Width": 60, "Height": 55 }
+      },
+      //BogWyytch
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRestEvents",
+        "FromFile": "assets/Maps/CustomMaps/Mushrooms_Bog.tbin",
+        "When": { "HasMod": "Bogs.WitchyFoliage" },
+        "ToArea": { "X": 0, "Y": 0, "Width": 60, "Height": 55 }
+      }, 
+      
+    //Crop sprites (seasonal)
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRestEvents",
+        "FromFile": "assets/Maps/CustomMaps/Crops_Summer.tbin",
+        "When": { "Season": "summer" },
+        "ToArea": { "X": 34, "Y": 12, "Width": 8, "Height": 6 }
+      },
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRestEvents",
+        "FromFile": "assets/Maps/CustomMaps/Crops_Fall.tbin",
+        "When": { "Season": "fall" },
+        "ToArea": { "X": 34, "Y": 12, "Width": 8, "Height": 6 }
+      },
+      {    
+        "Action": "EditMap",
+        "Target": "Maps/Custom_MagesRestEvents",
+        "FromFile": "assets/Maps/CustomMaps/Crops_Winter.tbin",
+        "When": { "Season": "winter" },
+        "ToArea": { "X": 34, "Y": 12, "Width": 8, "Height": 6 }
+      }
+
+  ]
+}

@@ -1,0 +1,85 @@
+{
+
+    "Changes": [
+
+
+
+//■■■オベリスク関連■■■
+
+
+
+//★★★タイルシートの読み込み★★★
+     {
+       "Action": "Load",
+       "Target": "Buildings/{{ModId}}_DamObelisk",
+       "FromFile": "assets/png/DamObelisk.png",
+     },
+
+
+
+//★★★ビルドデータ追加★★★
+      {
+        "Action": "EditData",
+        "Target": "Data/Buildings",
+        "Entries": {
+
+            "{{ModId}}_DamObelisk": {
+                "Name": "{{i18n:DamObelisk_Name}}",
+                "Description": "{{i18n:DamObelisk_Description}}",
+                "Texture": "Buildings\\{{ModId}}_DamObelisk",
+                "Size": { "X": 3, "Y": 2 },
+                "SourceRect": { "X": 0, "Y": 0, "Width": 48, "Height": 128 },
+                "DefaultAction": "ObeliskWarp Custom_Dam 78 52 false",
+                "BuildCost": 250000,
+                "BuildDays": 0,
+                "Builder": "Wizard",
+                "MagicalConstruction": true, //魔法建設
+                "BuildMaterials": [
+                    {
+                      "Id": "(O)495",
+                      "ItemId": "(O)495", //春の種
+                      "Amount": 100
+                    },
+                    {
+                      "Id": "(O)496",
+                      "ItemId": "(O)496", //夏の種
+                      "Amount": 100
+                    },
+                    {
+                      "Id": "(O)497",
+                      "ItemId": "(O)497", //秋の種
+                      "Amount": 100
+                    }
+                ],
+                "DrawShadow": true, //影
+                "FadeWhenBehind": true, //後ろで透過
+                "AllowsFlooringUnderneath": true //床タイル上建設
+            }
+
+        }//▼"Entries"の終了▼
+      },
+
+
+
+//★★★ModConfigでの建物データの変更★★★
+
+  //●建築費用と素材無し
+      {
+        "Action": "EditData",
+        "Target": "Data/Buildings",
+        "TargetField": [
+            "{{ModId}}_DamObelisk"
+        ],
+        "Entries": {
+            "BuildCost": "0",
+            "BuildMaterials": []
+        },
+        "When": {
+            "Free to Build": "true"
+        }
+      }
+
+
+
+    ] //▼"Changes"の終了▼
+}

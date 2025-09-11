@@ -1,0 +1,107 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+
+        //General
+        {
+            "LogName": "Load tent map file",
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}_Tent",
+            "FromFile": "Assets/Maps/Custom_Honeyfuggle_Tent.tmx"
+        },
+        {
+            "LogName": "Load tent location",
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "{{ModId}}_Tent": {
+                    "DisplayName": "{{i18n:{{ModId}}.TentDisplayName}}",
+                    "DefaultArrivalTile": { "X": 3 , "Y": 5 },
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/{{ModId}}_Tent"
+                    }
+                }
+            }
+        },
+        {
+            "LogName": "Load tent in forest",
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "FromFile": "Assets/Maps/Camp.tmx",
+            "ToArea": { "X": 18, "Y": 80, "Width": 4, "Height": 7 },
+            "PatchMode": "Overlay",
+            "When": {
+                "HoneyfuggleInValley": true
+            },
+            "Update": "OnLocationChange"
+        },
+        {
+            "LogName": "Map strings",
+            "Action": "EditData",
+            "Target": "strings/StringsFromMaps",
+            "Entries": {
+                "{{ModId}}.Chest": "{{i18n:Chest}}",
+                "{{ModId}}.Pictures": "{{i18n:Pictures}}",
+                "{{ModId}}.Ticket": "{{i18n:Ticket}}"
+            }
+        },
+
+        //Eight heart event CG
+        {
+            "LogName": "CG for 8 heart event",
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}_Poster",
+            "FromFile": "Assets/Maps/Poster.tmx"
+        },
+
+        //Warps
+        {
+            "LogName": "Forest warp",
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "AddWarps": [ "19 83 {{ModId}}_Tent 3 5" ],
+            "When": {
+                "HoneyfuggleInValley": true
+            },
+            "Update": "OnLocationChange"
+        },
+        {
+            "LogName": "Tent warp",
+            "Action": "EditMap",
+            "Target": "Maps/{{ModId}}_Tent",
+            "AddWarps": [ "3 6 Forest 19 84" ]
+        },
+
+        //Load tilesheets for recolor compat
+        {
+			"LogName": "Load exterior tilesheets",
+            "Action": "Load",
+            "Target": "Maps/summer_zhoneyfuggleoutdoor, Maps/spring_zhoneyfuggleoutdoor, Maps/fall_zhoneyfuggleoutdoor, Maps/winter_zhoneyfuggleoutdoor",
+            "FromFile": "Assets/Maps/{{Recolor}}/{{TargetWithoutPath}}.png"
+		},
+		{
+            "LogName": "Load interior tilesheet",
+            "Action": "Load",
+            "Target": "Maps/zhoneyfuggleinterior",
+            "FromFile": "Assets/Maps/{{Recolor}}/{{TargetWithoutPath}}.png"			
+		},
+
+        //For compatibility with Overgrown Valley, SVE, etc.
+        {
+            "LogName": "Clear terrain features around tent",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_ClearTerrain": {
+                    "Id": "{{ModId}}_ClearTerrain",
+                    "Trigger": "DayStarted",
+                    "Actions": [
+                        "Spiderbuttons.BETAS_ClearTerrainFeatures Forest All 15 82 22 87",
+                    ],
+                    "Condition": "PLAYER_HAS_SEEN_EVENT Any {{ModId}}_Introduction",
+                    "MarkActionApplied": false
+                }
+            }
+        }
+    ]
+}

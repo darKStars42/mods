@@ -1,0 +1,20 @@
+{
+   "Changes": [
+   		{      
+			"LogName": "Load Sebastian's daughter as secondborn when secondborn internal gender is female.",
+			"Action": "Include",
+			"FromFile": "ChildFiles/Sebastian/valid_secondborn_Sebastian.json", 
+			"When": {
+				"SecondbornGenderInternal": "Female"
+			}
+		},
+   		{      
+			"LogName": "Load default secondborn when secondborn internal gender is not female.",
+			"Action": "Include",
+			"FromFile": "ChildFiles/Farmer_Default/default_secondborn.json", 
+			"When": {
+				"SecondbornGenderInternal|contains=Female": false
+			}
+		},
+   ]
+}

@@ -1,0 +1,354 @@
+{
+
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "Maps/MrMrRogers.EchoReef_ElodieHouse",
+            "FromFile": "assets/Locations/EchoReef_ElodieHouse.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/MrMrRogers.EchoReef_LeviathanRed",
+            "FromFile": "assets/Locations/EchoReef_LeviathanRed.tmx"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/MrMrRogers.EchoReef_Elodie",
+          "FromFile": "assets/Sprites/Elodie.png"
+        },
+        {
+          "Action": "Load",
+          "Target": "Portraits/MrMrRogers.EchoReef_Elodie",
+          "FromFile": "assets/Portraits/Elodie.png"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "MrMrRogers.EchoReef_ElodieHouse": {
+                    "DisplayName": "{{i18n:ElodieHouse}}",
+                    "DefaultArrivalTile": {
+                      "X": 4,
+                      "Y": 7
+                    },
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                      "MapPath": "Maps/MrMrRogers.EchoReef_ElodieHouse",
+                      "Type": null,
+                      "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "CanPlantHere": null,
+                    "CanHaveGreenRainSpawns": true,
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                    "MinDailyWeeds": 2,
+                    "MaxDailyWeeds": 5,
+                    "FirstDayWeedMultiplier": 15,
+                    "MinDailyForageSpawn": 1,
+                    "MaxDailyForageSpawn": 4,
+                    "MaxSpawnedForageAtOnce": 6,
+                    "ChanceForClay": 0.03,
+                    "Music": [],
+                    "MusicDefault": null,
+                    "MusicContext": "Default",
+                    "MusicIgnoredInRain": false,
+                    "MusicIgnoredInSpring": false,
+                    "MusicIgnoredInSummer": false,
+                    "MusicIgnoredInFall": false,
+                    "MusicIgnoredInFallDebris": false,
+                    "MusicIgnoredInWinter": false,
+                    "MusicIsTownTheme": false,
+                    "CustomFields": null
+                },
+                "MrMrRogers.EchoReef_LeviathanRed": {
+                    "DisplayName": "{{i18n:LeviathanRed}}",
+                    "DefaultArrivalTile": {
+                      "X": 15,
+                      "Y": 33
+                    },
+                    "ExcludeFromNpcPathfinding": false,
+                    "CreateOnLoad": {
+                      "MapPath": "Maps/MrMrRogers.EchoReef_LeviathanRed",
+                      "Type": null,
+                      "AlwaysActive": false
+                    },
+                    "FormerLocationNames": [],
+                    "CanPlantHere": null,
+                    "CanHaveGreenRainSpawns": true,
+                    "ArtifactSpots": [],
+                    "FishAreas": {},
+                    "Fish": [],
+                    "Forage": [],
+                    "MinDailyWeeds": 2,
+                    "MaxDailyWeeds": 5,
+                    "FirstDayWeedMultiplier": 15,
+                    "MinDailyForageSpawn": 1,
+                    "MaxDailyForageSpawn": 4,
+                    "MaxSpawnedForageAtOnce": 6,
+                    "ChanceForClay": 0.03,
+                    "Music": [],
+                    "MusicDefault": null,
+                    "MusicContext": "Default",
+                    "MusicIgnoredInRain": false,
+                    "MusicIgnoredInSpring": false,
+                    "MusicIgnoredInSummer": false,
+                    "MusicIgnoredInFall": false,
+                    "MusicIgnoredInFallDebris": false,
+                    "MusicIgnoredInWinter": false,
+                    "MusicIsTownTheme": false,
+                    "CustomFields": null
+                }
+            }
+        },
+        {
+          "Action": "EditMap",
+          "Target": "Maps/MrMrRogers.EchoReef_ElodieHouse",
+          "MapProperties": {
+            "LocationContext": "EchoReef",
+            "Warp": "4 8 MrMrRogers.EchoReef_LeviathanRed 23 6",
+            "WindowLight": "3 1 6 3 2 6"
+          }
+        },
+        {
+          "Action": "EditMap",
+          "Target": "Maps/MrMrRogers.EchoReef_LeviathanRed",
+          "MapProperties": {
+            "LocationContext": "EchoReef",
+            "Doors": "2 9 townInterior 120 23 9 townInterior 120",
+            "Warp": "15 34 MrMrRogers.EchoReef_Beach 78 13 23 5 MrMrRogers.EchoReef_ElodieHouse 4 7"
+          },
+          "MapTiles": [
+            {
+              "Position": {
+                "X": 2,
+                "Y": 9
+              },
+              "Layer": "Buildings",
+              "SetProperties": {
+                "Action": "Door"
+              }
+            },
+            {
+              "Position": {
+                "X": 23,
+                "Y": 9
+              },
+              "Layer": "Buildings",
+              "SetProperties": {
+                "Action": "Door MrMrRogers.EchoReef_Elodie"
+              }
+            },
+            {
+              "Position": {
+                "X": 17,
+                "Y": 30
+              },
+              "Layer": "Buildings",
+              "SetProperties": {
+                "Action": "OpenShop MrMrRogers.EchoReef_LeviathanRed down 0800 2000 17 29 1 1"
+              }
+            }
+          ]
+        },
+        {
+          "Action": "EditMap",
+          "Target": "Maps/MrMrRogers.EchoReef_LeviathanRed",
+          "MapTiles": [
+            {
+              "Position": {
+                "X": 1,
+                "Y": 3
+              },
+              "Layer": "Buildings",
+              "SetProperties": {
+                "Action": "Warp 77 7 MrMrRogers.EchoReef_Beach"
+              }
+            }
+          ],
+          "When": {
+            "Hearts:MrMrRogers.EchoReef_Elodie": "6"
+          }
+        },
+        {
+          "Action": "EditMap",
+          "Target": "Maps/MrMrRogers.EchoReef_Beach",
+          "MapTiles":[
+            {
+              "Position": { 
+                "X": 78, 
+                "Y": 12
+              },
+              "Layer": "Buildings",
+              "SetProperties": {
+                "Action": "LockedDoorWarp 15 33 MrMrRogers.EchoReef_LeviathanRed 800 2000"
+              }
+            },
+            {
+              "Position": { 
+                "X": 79, 
+                "Y": 12
+              },
+              "Layer": "Buildings",
+              "SetProperties": {
+                "Action": "LockedDoorWarp 16 33 MrMrRogers.EchoReef_ElodieHouse 800 2000"
+              }
+            },
+            {
+              "Position": {
+                "X": 77,
+                "Y": 8
+              },
+              "Layer": "Buildings",
+              "SetProperties": {
+                "Action": "Warp 1 4 MrMrRogers.EchoReef_LeviathanRed"
+              }
+            }
+          ]
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+              "MrMrRogers.EchoReef_Elodie": {
+                "DisplayName": "{{i18n:Elodie}}",
+                "BirthSeason": "Winter",
+                "BirthDay": 19,
+                "HomeRegion": "Other",
+                "Language": "Default",
+                "Gender": "Female",
+                "Age": "Adult",
+                "Manner": "Neutral",
+                "SocialAnxiety": "Shy",
+                "Optimism": "Negative",
+                "IsDarkSkinned": false,
+                "CanBeRomanced": false,
+                "Calendar": "HiddenAlways",
+                "SocialTab": "HiddenUntilMet",
+                "CanSocialize": true,
+                "CanReceiveGifts": true,
+                "CanGreetNearbyCharacters": true,
+                "CanCommentOnPurchasedShopItems": true,
+                "CanVisitIsland": false,
+                "IntroductionsQuest": false,
+                "ItemDeliveryQuests": false,
+                "PerfectionScore": false,
+                "EndSlideShow": "MainGroup",
+                "SpouseAdopts": null,
+                "SpouseWantsChildren": true,
+                "SpouseGiftJealousy": false,
+                "SpouseRoom": {},
+                "SpousePatio": {},
+                "SpouseFloors": [],
+                "SpouseWallpapers": [],
+                "DumpsterDiveFriendshipEffect": -25,
+                "DumpsterDiveEmote": 8,
+                "FriendsAndFamily": {},
+                "FlowerDanceCanDance": null,
+                "WinterStarGifts": [],
+                "WinterStarParticipant": false,
+                "UnlockConditions": null,
+                "SpawnIfMissing": true,
+                "Home": [
+                  {
+                    "Id": "Default",
+                    "Condition": null,
+                    "Location": "MrMrRogers.EchoReef_ElodieHouse",
+                    "Tile": {
+                      "X": 2,
+                      "Y": 4
+                    },
+                    "Direction": "down"
+                  }
+                ],
+                "TextureName": null,
+                "Appearance": [
+                  {
+                    "Id": "MrMrRogers.EchoReef_Elodie",
+                    "Condition": null,
+                    "Season": null,
+                    "Indoors": true,
+                    "Outdoors": true,
+                    "Portrait": "Portraits/MrMrRogers.EchoReef_Elodie",
+                    "Sprite": "Characters/MrMrRogers.EchoReef_Elodie",
+                    "IsIslandAttire": false,
+                    "Precedence": 0,
+                    "Weight": 0
+                  }
+                ],
+                "MugShotSourceRect": null,
+                "Size": {
+                  "X": 16,
+                  "Y": 32
+                },
+                "Breather": true,
+                "BreathChestRect": null,
+                "BreathChestPosition": null,
+                "Shadow": null,
+                "EmoteOffset": {
+                  "X": 0,
+                  "Y": 0
+                },
+                "ShakePortraits": null,
+                "KissSpriteIndex": 28,
+                "KissSpriteFacingRight": true,
+                "FormerCharacterNames": [],
+                "CustomFields": null
+              }
+            }
+        },
+        { 
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Elodie",
+            "FromFile": "assets/blank.json"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Elodie",
+          "FromFile": "assets/blank.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MrMrRogers.EchoReef_Elodie": "{{i18n:ElodieGiftLoveResponse}}//{{i18n:ElodieGiftLikeResponse}}//{{i18n:ElodieGiftDislikeResponse}}//{{i18n:ElodieGiftHateResponse}}//{{i18n:ElodieGiftNeutralResponse}}//"
+            }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Elodie",
+          "Entries": {
+            "Introduction": "{{i18n:Elodie_Introduction}}",
+            "AcceptBirthdayGift_Positive": "{{i18n:Elodie_AcceptBirthdayGift_Positive}}",
+            "AcceptBirthdayGift_Negative": "{{i18n:Elodie_AcceptBirthdayGift_Negative}}",
+            "AcceptGift_(O)StardropTea": "{{i18n:Elodie_AcceptGift_(O)StardropTea}}",
+            "DumpsterDiveComment": "{{i18n:Elodie_DumpsterDiveComment}}",
+            "HitBySlingshot": "{{i18n:Elodie_HitBySlingshot}}",
+            "Mon": "{{i18n:Elodie_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Tue": "{{i18n:Elodie_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Wed": "{{i18n:Elodie_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Thu": "{{i18n:Elodie_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Fri": "{{i18n:Elodie_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sat": "{{i18n:Elodie_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sun": "{{i18n:Elodie_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/animationdescriptions",
+          "Entries": {
+            "MrMrRogers.EchoReef_Elodie_sleep": "19/19/19",
+            "mrmrrogers.echoreef_elodie_sleep": "19/19/19"
+          } 
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Elodie",
+          "Entries": {
+            "spring": "600 MrMrRogers.EchoReef_ElodieHouse 2 4 2/800 MrMrRogers.EchoReef_LeviathanRed 17 29 2/2200 MrMrRogers.EchoReef_ElodieHouse 2 4 2 MrMrRogers.EchoReef_Elodie_sleep"
+          }
+        }
+    ]
+}

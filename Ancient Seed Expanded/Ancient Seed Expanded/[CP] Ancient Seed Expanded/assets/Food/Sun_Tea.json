@@ -1,0 +1,83 @@
+{
+  "Changes": [
+    //Food
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Sun_Tea":{
+          "Name": "Sun Tea",
+          "DisplayName": "{{i18n:Sun_Tea.DisplayName}}",
+          "Description": "{{i18n:Sun_Tea.Description}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price" : 1200,
+          "IsDrink": true,
+          "Edibility": 67,
+          "Texture": "Mods/{{ModId}}/Sun_Tea",
+          "SpriteIndex": 0,
+          "Buffs": [
+            {
+                  "Id": "Food",
+                  "BuffId": null,
+                  "IconTexture": null,
+                  "IconSpriteIndex": 0,
+                  "Duration": 400,
+                  "IsDebuff": false,
+                  "GlowColor": null,
+                  "CustomAttributes": {
+                  "FarmingLevel": 2.0,
+                  "FishingLevel": 0.0,
+                  "MiningLevel": 0.0,
+                  "LuckLevel": 0.0,
+                  "ForagingLevel": 2.0,
+                  "MaxStamina": 0.0,
+                  "MagneticRadius": 0.0,
+                  "Speed": 0.0,
+                  "Defense": 0.0,
+                  "Attack": 0.0
+                }
+              }
+            ],
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "Zexu2K_Tea"
+          ],
+        }
+      }
+    },
+        {
+            "Action": "EditData",
+            "Target": "Data/CookingRecipes",
+            "Entries": {
+                "Sun Tea": "815 1 {{ModId}}_Ancient_Sun_Berry/25 5/{{ModId}}_Sun_Tea/null/{{i18n:Sun_Tea.DisplayName}}",
+            }
+    },
+    {
+          "Action": "EditData",
+          "Target": "Data/Shops",
+          "TargetField": ["Seed_Transformer", "Items"],
+          "Entries": {
+              "{{ModId}}_Sun_Tea_recipe": {
+                  "Id": "{{ModId}}_Sun_Tea_recipe",
+                  "ItemId": "{{ModId}}_Sun_Tea",                    
+                  "Price": 0,
+                  "IsRecipe": true,
+                  "IgnoreShopPriceModifiers": true,
+                  "TradeItemId": "74", 
+                  "TradeItemAmount": 1,
+        },
+      }
+    },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Sun_Tea",
+            "FromFile": "assets/Food/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

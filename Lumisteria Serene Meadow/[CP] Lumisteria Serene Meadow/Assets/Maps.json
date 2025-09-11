@@ -1,0 +1,233 @@
+{
+  "Changes": [
+    {
+      "LogName": "Map patch Forest",
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "FromFile": "assets/LumisteriaSereneMeadowForestPatch.tmx",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 3,
+        "Height": 4
+      },
+      "ToArea": {
+        "X": 93,
+        "Y": 63,
+        "Width": 3,
+        "Height": 4
+      },
+				"When": {
+			"ForestPatch": "true",
+				}
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "AddWarps": [
+        "95 64 Lumisteria.SereneMeadow_ForestMeadow 23 16",
+        "95 65 Lumisteria.SereneMeadow_ForestMeadow 23 16",
+        "95 66 Lumisteria.SereneMeadow_ForestMeadow 23 16"
+      ],
+				"When": {
+			"ForestPatch": "true",
+				}
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "Lumisteria.SereneMeadow_ForestMeadow": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/Lumisteria.SereneMeadow_ForestMeadow"
+          },
+          "DisplayName": "{{i18n: SereneMeadowForestMeadow}}",
+          "ExcludeFromNpcPathfinding": false,
+          "ArtifactSpots": [
+            {
+              "Chance": 0.02,
+              "ApplyGenerousEnchantment": true,
+              "OneDebrisPerDrop": true,
+			  "ContinueOnDrop": true,
+              "Precedence": -100,
+              "Id": "Lumisteria.SereneMeadow_Seeds",
+              "ItemId": "RANDOM_ITEMS (O)",
+              "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_ID_PREFIX Target Lumisteria.SereneMeadow_, !ITEM_CONTEXT_TAG Target hybrid_seed_item",
+              "MaxItems": 1,
+            },
+            {
+              "Chance": 0.4,
+              "ApplyGenerousEnchantment": true,
+              "OneDebrisPerDrop": true,
+              "Precedence": -100,
+              "Id": "Lumisteria.SereneMeadow_Seeds",
+              "ItemId": "RANDOM_ITEMS (O)",
+              "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_ID_PREFIX Target Lumisteria.SereneMeadow_, !ITEM_CONTEXT_TAG Target hybrid_seed_item",
+              "MaxItems": 1,
+            },
+            {
+              "Chance": 1,
+              "ApplyGenerousEnchantment": true,
+              "OneDebrisPerDrop": true,
+              "Precedence": -100,
+              "ContinueOnDrop": true,
+              "Id": "Lumisteria.SereneMeadow_Artifact",
+              "ItemId": "RANDOM_ARTIFACT_FOR_DIG_SPOT",
+              "MinStack": 1,
+              "MaxStack": 1,
+            },
+          ],
+          "FishAreas": {
+            "Default": {
+              "CrabPotFishTypes": [
+                "freshwater"
+              ],
+              "CrabPotJunkChance": 0.3
+            }
+          },
+          "Fish": [
+            {
+              "Chance": 1,
+              "Precedence": 0,
+              "Id": "Lumisteria.SereneMeadow_ForestFishes",
+              "ItemId": "LOCATION_FISH Forest BOBBER_X BOBBER_Y WATER_DEPTH",
+            },
+          ],
+          "Forage": [ //Forest Meadow
+            {
+              "Chance": 0.05,
+              "Season": "spring",
+              "Condition": "{{HasMod |contains=mistyspring.ItemExtensions}}",
+              "Id": "ItemExtension.Clump_Lumisteria.SereneMeadow_Forage_Tier1StumpClump_Spring",
+              "ItemId": "mistyspring.ItemExtensions_RANDOM_CLUMPS",
+              "PerItemCondition": "ITEM_ID_PREFIX Target {{ModId}}, ITEM_CONTEXT_TAG Target lumisteria.stumpclump_tier_1, ITEM_CONTEXT_TAG Target season_spring",
+              "MaxItems": 1,
+            },
+            {
+              "Chance": 0.05,
+              "Season": "summer",
+              "Condition": "{{HasMod |contains=mistyspring.ItemExtensions}}",
+              "Id": "ItemExtension.Clump_Lumisteria.SereneMeadow_Forage_Tier1StumpClump_Summer",
+              "ItemId": "mistyspring.ItemExtensions_RANDOM_CLUMPS",
+              "PerItemCondition": "ITEM_ID_PREFIX Target {{ModId}}, ITEM_CONTEXT_TAG Target lumisteria.stumpclump_tier_1, ITEM_CONTEXT_TAG Target season_summer",
+              "MaxItems": 1,
+            },
+            {
+              "Chance": 0.6,
+              "Season": "spring",
+              "Id": "Lumisteria.SereneMeadow_Flowers",
+              "ItemId": "RANDOM_ITEMS (O)",
+              "PerItemCondition": "ITEM_CATEGORY Target -80, ITEM_ID_PREFIX Target Lumisteria.SereneMeadow_, ITEM_CONTEXT_TAG Target season_spring, !ITEM_CONTEXT_TAG Target hybrid_item",
+              "MaxItems": 1,
+            },
+            {
+              "Chance": 0.6,
+              "Season": "summer",
+              "Id": "Lumisteria.SereneMeadow_Flowers",
+              "ItemId": "RANDOM_ITEMS (O)",
+              "PerItemCondition": "ITEM_CATEGORY Target -80, ITEM_ID_PREFIX Target Lumisteria.SereneMeadow_, ITEM_CONTEXT_TAG Target season_summer, !ITEM_CONTEXT_TAG Target hybrid_item",
+              "MaxItems": 1,
+            },
+            {
+              "Chance": 0.6,
+              "Season": "fall",
+              "Id": "Lumisteria.SereneMeadow_Flowers",
+              "ItemId": "RANDOM_ITEMS (O)",
+              "PerItemCondition": "ITEM_CATEGORY Target -80, ITEM_ID_PREFIX Target Lumisteria.SereneMeadow_, ITEM_CONTEXT_TAG Target season_fall, !ITEM_CONTEXT_TAG Target hybrid_item",
+              "MaxItems": 1,
+            },
+            {
+              "Chance": 0.6,
+              "Season": "winter",
+              "Id": "Lumisteria.SereneMeadow_Flowers",
+              "ItemId": "RANDOM_ITEMS (O)",
+              "PerItemCondition": "ITEM_CATEGORY Target -80, ITEM_ID_PREFIX Target Lumisteria.SereneMeadow_, ITEM_CONTEXT_TAG Target season_winter, !ITEM_CONTEXT_TAG Target hybrid_item",
+              "MaxItems": 1,
+            },
+            {
+              "Chance": 0.4,
+              "Id": "Fern",
+              "Condition": "LOCATION_SEASON Here spring fall",
+              "ItemId": "(O)259",
+            },
+            {
+              "Chance": 0.6,
+              "Season": "summer",
+              "Id": "RandomMushroomRain",
+              "Condition": "WEATHER Here rain",
+              "RandomItemId": [
+                "(O)404",
+                "(O)281",
+                "(O)257",
+              ],
+            },
+            {
+              "Chance": 0.4,
+              "Season": "fall",
+              "Id": "SpiceBerry",
+              "ItemId": "(O)396",
+              "MinStack": -1,
+              "MaxStack": 2,
+            },
+            {
+              "Chance": 0.6,
+              "Season": "fall",
+              "Id": "RandomMushroom",
+              "RandomItemId": [
+                "(O)404",
+                "(O)420",
+              ],
+            },
+            {
+              "Chance": 0.6,
+              "Season": "summer",
+              "Id": "RandomFlowerOrPlum",
+              "RandomItemId": [
+                "(O)402",
+                "(O)376"
+              ],
+            },
+            {
+              "Chance": 0.9,
+              "Season": "winter",
+              "Id": "Crocus",
+              "ItemId": "(O)418",
+            },
+            {
+              "Chance": 0.9,
+              "Season": "winter",
+              "Id": "Crystal Fruit",
+              "ItemId": "(O)414",
+            },
+            {
+              "Chance": 0.5,
+              "Season": "winter",
+              "Id": "Holly",
+              "ItemId": "(O)283",
+            }
+          ],
+          "MinDailyForageSpawn": 2,
+          "MaxDailyForageSpawn": 5,
+          "MaxSpawnedForageAtOnce": 14,
+        },
+      },
+    },
+    /* add map*/
+    {
+      "LogName": "Load Forest Meadow Map",
+      "Action": "Load",
+      "Target": "Maps/Lumisteria.SereneMeadow_ForestMeadow",
+      "FromFile": "assets/LumisteriaSereneMeadowForestMeadow.tmx"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Lumisteria.SereneMeadow_ForestMeadow",
+      "AddWarps": [
+        "22 16 Forest 94 65",
+      ],
+				"When": {
+			"ForestPatch": "true",
+				}
+    },
+  ]
+}

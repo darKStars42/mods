@@ -1,0 +1,66 @@
+{
+  "Changes": [
+    //Seed item
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Garlic_Seeds":{
+          "Name": "Ancient Garlic Seeds",
+          "DisplayName": "{{i18n:Ancient_Garlic_Seeds.DisplayName}}",
+          "Description": "{{i18n:Ancient_Garlic_Seeds.Description}}",
+          "Type": "Seeds",
+          "Category": -74,
+          "Price" : 35,
+          "Texture": "Mods/{{ModId}}/Ancient_Garlic_Seed",
+          "SpriteIndex": 0
+        }
+      }
+    },
+    //Crop
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Garlic":{
+          "Name": "{{ModID}}_Ancient_Garlic",
+          "DisplayName": "{{i18n:Ancient_Garlic.DisplayName}}",
+          "Description": "{{i18n:Ancient_Garlic.Description}}",
+          "Type": "Vegetable",
+          "Category": -75,
+          "Price" : 550,
+          "IsDrink": false,
+          "Edibility": -20,
+          "Texture": "Mods/{{ModId}}/Ancient_Garlic",
+          "SpriteIndex": 0,
+          "ContextTags": [
+            "season_spring",
+            "season_summer",
+            "season_fall",
+            "color_pink"
+          ]
+        }
+      }
+    },
+    //Planted Crop
+    {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "{{ModId}}_Ancient_Garlic_Seeds": {
+                    "Seasons": [ "spring", "summer", "fall" ],
+                    "DaysInPhase": [ 2, 7, 7, 7, 5],
+                    "RegrowDays": 7,
+                    "HarvestItemId": "{{ModId}}_Ancient_Garlic",
+                    "Texture": "Mods/{{ModId}}/Ancient_Garlic_Planted",
+                    "SpriteIndex": 0
+                }
+            }
+        },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Ancient_Garlic_Seed, Mods/{{ModId}}/Ancient_Garlic, Mods/{{ModId}}/Ancient_Garlic_Planted",
+            "FromFile": "assets/Ancient_Garlic/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+    "Changes": [
+
+/*----------------------------------------------------
+Add Transmuter Coil
+----------------------------------------------------*/        
+        { 
+        "LogName":"Add Machine - TransmuterCoil",
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_TransmuterCoil": {
+                    "Name": "{{ModId}}_TransmuterCoil",
+                    "DisplayName": "{{i18n:Alchemistry_TransmuterCoil.name}}",
+                    "Description": "{{i18n:Alchemistry_TransmuterCoil.description}}",
+                    "Fragility": 0,
+                    "CanBePlacedOutdoors": true,
+                    "CanBePlacedIndoors": true,
+                    "IsLamp": true,
+                    "ContextTags": [
+                        "light_source"
+                      ],
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/Machines",
+                    "SpriteIndex": 3
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Outputs
+----------------------------------------------------*/ 
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": { 
+                "(BC)Morghoula.AlchemistryCP_TransmuterCoil": {
+                    "OutputRules": [],
+                    "ShowNextIndexWhileWorking": false,
+                    "ShowNextIndexWhenReady": false,
+                    "WorkingEffects":[
+                        {
+                            "Sounds": [
+                                {
+                                "Id": "thunder_small",
+                                "Delay": 0
+                                }
+                            ],
+                            "Frames": [1,2,3,4,5],
+                            "Interval": 300
+                            
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Load Transmuter Coil Outputs",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC)Morghoula.AlchemistryCP_TransmuterCoil", "OutputRules"],
+            "Entries": {
+                //Add base game transmute recipes
+                "{{ModID}}_CopperToIron": { 
+                    "Id": "{{ModID}}_CopperToIron",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)334", //copper bar
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "UseFirstValidOutput": true,
+                    "OutputItem": [
+                        {
+                            "ItemId": "(O)335",
+                            "CopyQuality": false,
+                            "CopyPrice": false
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+                "{{ModID}}_IronToGold": { 
+                    "Id": "{{ModID}}_IronToGold",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)335", //iron bar
+                            "RequiredCount": 2
+                        }
+                    ],
+                    "UseFirstValidOutput": true,
+                    "OutputItem": [
+                        {
+                            "ItemId": "(O)336",
+                            "CopyQuality": false,
+                            "CopyPrice": false
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+
+
+
+
+                //Alchemistry items
+                "{{ModID}}_MagmaRuby": { 
+                    "Id": "{{ModID}}_MagmaRuby",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)64", //ruby
+                            "RequiredCount": 5
+                        }
+                    ],
+                    "UseFirstValidOutput": true,
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)787", //battery
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)82", //fire quartz
+                                "selph.ExtraMachineConfig.RequirementCount.2": "10",
+                                "selph.ExtraMachineConfig.RequirementId.3": "(O)Morghoula.AlchemistryCP_MysticEctoplasm",
+                                "selph.ExtraMachineConfig.RequirementCount.3": "5",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Battery, 10 Fire Quartz, and 5 Mystic Ectoplasm."
+                            },
+                                "ItemId": "(O)Morghoula.AlchemistryCP_MagmaRuby",
+                                "CopyQuality": false,
+                                "CopyPrice": false
+                            }
+                    ],
+                        "MinutesUntilReady": 1440,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_MoonlitTear": { 
+                    "Id": "{{ModID}}_MoonlitTear",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)72", //diamond
+                            "RequiredCount": 5
+                        }
+                    ],
+                    "UseFirstValidOutput": true,
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)787", //battery
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_ManaOrb",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "3",
+                                "selph.ExtraMachineConfig.RequirementId.3": "(O)Morghoula.AlchemistryCP_AquaticEctoplasm",
+                                "selph.ExtraMachineConfig.RequirementCount.3": "5",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Battery, 3 Mana Orb, and 5 Aquatic Ectoplasm."
+                            },
+                                "ItemId": "(O)Morghoula.AlchemistryCP_MoonlitTear",
+                                "CopyQuality": false,
+                                "CopyPrice": false
+                            }
+                    ],
+                        "MinutesUntilReady": 1440,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_NaturesEmerald": { 
+                "Id": "{{ModID}}_NaturesEmerald",
+                "Triggers": [
+                    {
+                        "Id": "ItemPlacedInMachine",
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)60", //emerald
+                        "RequiredCount": 5
+                    }
+                ],
+                "UseFirstValidOutput": true,
+                "OutputItem": [
+                    {
+                        "CustomData": {
+                            "selph.ExtraMachineConfig.RequirementId.1": "(O)787", //battery
+                            "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                            "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_IridiumCrabClaw",
+                            "selph.ExtraMachineConfig.RequirementCount.2": "2",
+                            "selph.ExtraMachineConfig.RequirementId.3": "(O)Morghoula.AlchemistryCP_WildEctoplasm",
+                            "selph.ExtraMachineConfig.RequirementCount.3": "5",
+                            "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Battery, 2 Iridium Crab Claw, and 5 Wild Ectoplasm."
+                        },
+                            "ItemId": "(O)Morghoula.AlchemistryCP_NaturesEmerald",
+                            "CopyQuality": false,
+                            "CopyPrice": false
+                        }
+                ],
+                    "MinutesUntilReady": 1440,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+        },
+        "{{ModID}}_MagiWand": { 
+            "Id": "{{ModID}}_MagiWand",
+            "Triggers": [
+                {
+                    "Id": "ItemPlacedInMachine",
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "(O)66", //amethyst
+                    "RequiredCount": 5
+                }
+            ],
+            "UseFirstValidOutput": true,
+            "OutputItem": [
+                {
+                    "CustomData": {
+                        "selph.ExtraMachineConfig.RequirementId.1": "(O)787", //battery
+                        "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                        "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_RottingBrain",
+                        "selph.ExtraMachineConfig.RequirementCount.2": "2",
+                        "selph.ExtraMachineConfig.RequirementId.3": "(O)Morghoula.AlchemistryCP_MysticEctoplasm",
+                        "selph.ExtraMachineConfig.RequirementCount.3": "5",
+                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Battery, 2 Rotting Brain, and 5 Mystic Ectoplasm."
+                    },
+                        "ItemId": "(O)Morghoula.AlchemistryCP_MagiWand",
+                        "CopyQuality": false,
+                        "CopyPrice": false
+                    }
+            ],
+                "MinutesUntilReady": 1440,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+        },
+        "{{ModID}}_ArcaneEye": { 
+            "Id": "{{ModID}}_ArcaneEye",
+            "Triggers": [
+                {
+                    "Id": "ItemPlacedInMachine",
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "(O)Morghoula.AlchemistryCP_ShadowEye",
+                    "RequiredCount": 1
+                }
+            ],
+            "UseFirstValidOutput": true,
+            "OutputItem": [
+                {
+                    "CustomData": {
+                        "selph.ExtraMachineConfig.RequirementId.1": "(O)787", //battery
+                        "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                        "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_MagmaRuby",
+                        "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                        "selph.ExtraMachineConfig.RequirementId.3": "(O)Morghoula.AlchemistryCP_MoonlitTear",
+                        "selph.ExtraMachineConfig.RequirementCount.3": "1",
+                        "selph.ExtraMachineConfig.RequirementId.4": "(O)Morghoula.AlchemistryCP_NaturesEmerald",
+                        "selph.ExtraMachineConfig.RequirementCount.4": "1",
+                        "selph.ExtraMachineConfig.RequirementId.5": "(O)Morghoula.AlchemistryCP_MagiWand",
+                        "selph.ExtraMachineConfig.RequirementCount.5": "1",
+                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Battery, 1 Magma Ruby, 1 Moonlit Tear, 1 Nature's Emerald, and 1 Magi Wand."
+                    },
+                        "ItemId": "(O)Morghoula.AlchemistryCP_ArcaneEye",
+                        "CopyQuality": false,
+                        "CopyPrice": false
+                    }
+            ],
+                "MinutesUntilReady": 4320,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+        }
+            }
+        }
+    ]
+}

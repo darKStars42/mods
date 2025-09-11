@@ -1,0 +1,78 @@
+{
+
+    "Changes": [
+
+
+
+//■■■Desert AfforestationArea■■■
+
+
+
+//★★★休憩エリア のトラックから 砂漠の植林エリア へ移動出来る様に★★★
+
+    //●休憩エリア のトラックのアクションを変更(Dam)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_RestArea",
+        "FromFile": "assets/tmx/MapPatches/(DAA)_DamRestArea_Truck.tmx",
+        "ToArea": { "X": 45, "Y": 1, "Width": 4, "Height": 6 }
+      },
+
+    //●休憩エリア のトラックのトロッコデータ(Dam)
+      {
+        "Action": "EditData",
+        "Target": "Data/Minecarts",
+        "Entries": {
+            "Ts_DamRest-DAA": {
+                "UnlockCondition": null,
+                "LockedMessage": null,
+                "ChooseDestinationMessage": "{{i18n:ChooseDestinationMessage}}",
+                "BuyTicketMessage": null,
+                "Destinations": [
+                    {
+                      "Id": "Desert_AfforestationArea",
+                      "DisplayName": "{{i18n:ResponseRide}}",
+                      "Condition": null,
+                      "TargetLocation": "Custom_Desert_AfforestationArea",
+                      "TargetTile": { "X": 4, "Y": 36 },
+                      "TargetDirection": "Right",
+                    },
+                    /*{  ///////////////////後で使うかもなので一応///////
+                      "Id": "Dam_RestArea",
+                      "DisplayName": "{{i18n:ResponseRide}}",
+                      "Condition": null,
+                      "TargetLocation": "Custom_Dam_RestArea",
+                      "TargetTile": { "X": 44, "Y": 4 },
+                      "TargetDirection": "Right",
+                    }*///////////////////////////////////////////////////
+                ]
+            }
+        }
+      },
+
+    //●休憩エリア に居る時にトロッコキャンセルテキスト変更(トラックの移動キャンセルテキスト)
+      {
+        "Action":"EditData",
+        "Target":"Strings/Locations",
+        "Entries":{
+            "MineCart_Destination_Cancel": "{{i18n:MineCart_Destination_Cancel}}",
+        },
+        "When": {
+            "LocationName": "Custom_Dam_RestArea",
+            "Language": "{{Language}}",
+        },
+        "Update": "OnLocationChange"
+      },
+
+    //●植林エリア のマップを編集
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Desert_AfforestationArea",
+        "FromFile": "assets/tmx/MapPatches/(DAA)_Desert_AfforestationArea_Patch.tmx",
+        "ToArea": { "X": 0, "Y": 28, "Width": 5, "Height": 14 }
+      },
+
+
+
+    ] //▼"Changes"の終了▼
+}

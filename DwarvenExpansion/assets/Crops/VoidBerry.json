@@ -1,0 +1,243 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "{{ModId}}_Crops_VoidBerrySeeds": {
+                    "Seasons": [
+                        "spring",
+                        "summer",
+                        "fall"
+                    ],
+                    "DaysInPhase": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ],
+                    "RegrowDays": 4,
+                    "IsRaised": false,
+                    "IsPaddyCrop": false,
+                    "NeedsWatering": true,
+                    "HarvestItemId": "{{ModId}}_Crops_VoidBerry",
+                    "HarvestMethod": "Grab",
+                    "HarvestMinStack": 2,
+                    "HarvestMaxStack": 3,
+                    "HarvestMinQuality": 0,
+                    "HarvestMaxQuality": 4,
+                    "HarvestMaxIncreasePerFarmingLevel": 0.2,
+                    "ExtraHarvestChance": 0.1,
+                    "Texture": "Mods/DwarvenExpansion/CropsSpritesheet",
+                    "SpriteIndex": 3
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_Crops_VoidBerrySeeds": {
+                    "Name": "Void Berry Seeds",
+                    "DisplayName": "{{i18n:Crops_VoidBerry_Seeds.DisplayName}}",
+                    "Description": "{{i18n:Crops_VoidBerry_Seeds.Description}}",
+                    "Price": 5,
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Edibility": -300,
+                    "Texture": "Mods/DwarvenExpansion/ObjectSpritesheet",
+                    "SpriteIndex": 212,
+                    "ArtifactSpotChances": {
+                        "UndergroundMine": 0.02
+                    },
+                    "ContextTags": [
+                        "color_dark_purple",
+                        "{{ModId}}",
+                        "{{ModId}}_Crop_Seeds"
+                    ]
+                },
+                "{{ModId}}_Crops_VoidBerry": {
+                    "Name": "Void Berry",
+                    "DisplayName": "{{i18n:Crops_VoidBerry.DisplayName}}",
+                    "Description": "{{i18n:Crops_VoidBerry.Description}}",
+                    "Type": "Basic",
+                    "Category": -79,
+                    "Price": 35,
+                    "Texture": "Mods/DwarvenExpansion/ObjectSpritesheet",
+                    "SpriteIndex": 213,
+                    "Edibility": 5,
+                    "IsDrink": false,
+                    "Buffs": null,
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "ExcludeFromFishingCollection": false,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": false,
+                    "ContextTags": [
+                        "{{ModId}}",
+                        "{{ModId}}_Crops",
+                        "{{ModId}}_non_wine_fruit",
+                        "color_dark_purple",
+                        "dye_strong",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ],
+                    "CustomFields": null
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Strings/Objects",
+            "Entries": {
+                "{{ModId}}_Cider_Display_Name": "{{i18n:Keg.Output.Cider.ObjectDisplayName}}"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": [
+                "(BC)12",
+                "OutputRules",
+                "Default_Wine",
+                "Triggers",
+                "ItemPlacedInMachine_Fruit",
+                "RequiredTags"
+            ],
+            "Entries": {
+                "#-1":"!{{ModId}}_non_wine_fruit"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": [
+                "(BC)12",
+                "OutputRules"
+            ],
+            "Entries": {
+                "{{ModId}}_Drinks_Cider": {
+                    "Id": "{{ModId}}_Drinks_Cider",
+                    "Triggers": [
+                        {
+                            "Id": "{{ModId}}_Crops_VoidBerry",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O){{ModId}}_Crops_VoidBerry",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_Drinks_Cider",
+                            "ItemId": "{{ModId}}_Drinks_Cider",
+                            "ObjectDisplayName": "[LocalizedText Strings/Objects:{{ModId}}_Cider_Display_Name %PRESERVED_DISPLAY_NAME Cider]",
+                            "ObjectInternalName": "{0} Cider",
+                            "Quality": "0",
+                            "CopyPrice": true,
+                            "CopyColor": true,
+                            "PreserveId": "DROP_IN",
+                            "PriceModifiers": [
+                                {
+                                    "ID": "multiply",
+                                    "Modification": "Multiply",
+                                    "Amount": 3
+                                }
+                            ],
+                            "QualityModifiers": []
+                        }
+                    ],
+                    "UseFirstValidOutput": true,
+                    "MinutesUntilReady": 20
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": [
+                "(BC)163",
+                "OutputRules"
+            ],
+            "Entries": {
+                "{{ModId}}_Drinks_Cider": {
+                    "Id": "{{ModId}}_Drinks_Cider",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O){{ModId}}_Drinks_Cider",
+                            "RequiredTags": null,
+                            "RequiredCount": 1,
+                            "Condition": null
+                        }
+                    ],
+                    "UseFirstValidOutput": false,
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "AgingMultiplier": "1"
+                            },
+                            "OutputMethod": "StardewValley.Objects.Cask, Stardew Valley: OutputCask"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Dwarf",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_Crops_VoidBerrySeeds": {
+                    "ID": "{{ModId}}_Crops_VoidBerrySeeds",
+                    "ItemId": "(O){{ModId}}_Crops_VoidBerrySeeds",
+                    "Price": "15"
+                }
+            },
+            "When": {
+                "DayOfWeek": "Thursday"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "SeedShop",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_Crops_VoidBerrySeeds": {
+                    "ID": "{{ModId}}_Crops_VoidBerrySeeds",
+                    "ItemId": "(O){{ModId}}_Crops_VoidBerrySeeds",
+                    "Price": "45",
+                    "Condition": "SYNCED_RANDOM day void_berry_seeds 0.2 @addDailyLuck"
+                }
+            },
+            "When": {
+                "Season": "Spring"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Traveler",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_Crops_VoidBerrySeeds": {
+                    "ID": "{{ModId}}_Crops_VoidBerrySeeds",
+                    "ItemId": "(O){{ModId}}_Crops_VoidBerrySeeds",
+                    "Price": "30",
+                    "Condition": "SYNCED_RANDOM day void_berry_seeds 0.5 @addDailyLuck"
+                }
+            }
+        }
+    ]
+}

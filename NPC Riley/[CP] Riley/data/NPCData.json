@@ -1,0 +1,102 @@
+{
+  "Changes": [
+    {
+      "LogName": "Riley NPC Manifestation",
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        "Riley": {
+          "DisplayName": "{{i18n:DisplayName}}",
+          "Gender": "female",
+          "Age": "Adult",
+          "Manner": "Neutral",
+          "SocialAnxiety": "Outgoing",
+          "Optimism": "Positive",
+          "BirthSeason": "Summer",
+          "BirthDay": 7,
+          "HomeRegion": "Town",
+          "CanBeRomanced": true,
+          "SpouseAdopts": false,
+          "ExcludeFromPerfectionScore": false,
+          "SpawnIfMissing": true,
+          "SpouseRoom": {
+            "MapAsset": "RileySpouseRoom",
+            "MapSourceRect": {
+              "X": 0,
+              "Y": 0,
+              "Width": 6,
+              "Height": 9
+            }
+          },
+          "Home": [
+            {
+              "ID": "Default",
+              "Location": "RileyHouse",
+              "Tile": {
+                "X": 19,
+                "Y": 4
+              },
+              "Direction": "Right"
+            }
+          ]
+        }
+      },
+      "When": {
+        "Pregnancy or Adoption": "Pregnancy"
+      }
+    },
+    {
+      "LogName":"Riley - SpouseAdopts",
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        "Riley": {
+          "DisplayName": "{{i18n:DisplayName}}",
+          "Gender": "female",
+          "Age": "Adult",
+          "Manner": "Neutral",
+          "SocialAnxiety": "Outgoing",
+          "Optimism": "Positive",
+          "BirthSeason": "Summer",
+          "BirthDay": 7,
+          "HomeRegion": "Town",
+          "CanBeRomanced": true,
+          "SpouseAdopts": true,
+          "ExcludeFromPerfectionScore": false,
+          "SpawnIfMissing": true,
+          "SpouseRoom": {
+            "MapAsset": "RileySpouseRoom",
+            "MapSourceRect": {
+              "X": 0,
+              "Y": 0,
+              "Width": 6,
+              "Height": 9
+            }
+          },
+          "Home": [
+            {
+              "ID": "Default",
+              "Location": "RileyHouse",
+              "Tile": {
+                "X": 19,
+                "Y": 4
+              },
+              "Direction": "Right"
+            }
+          ]
+        }
+      },
+      "When": {
+        "Pregnancy or Adoption": "Adoption"
+      }
+    },
+    {
+      "LogName": "NPC Gift Tastes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Riley": "{{i18n:Riley.love}}/60 64 104 109 220 272 283 348 563 565 638/{{i18n:Riley.like}}/192 254 268 296 394 400 551 559 567 577 578 768/{{i18n:Riley.dislike}}/225 226/{{i18n:Riley.hate}}/126 127 372 445 447 718 719 722 723/{{i18n:Riley.neutral}}/80/ "
+      }
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+{
+	"Changes":[
+	
+		{
+			"LogName": "Isla Disposition",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"{{Isla}}": {
+					"DisplayName": "{{i18n:Isla.Name}}",
+					"BirthSeason": "Winter",
+					"BirthDay": 18,
+					"HomeRegion": "Other",
+					"Gender": "Female",
+					"Age": "Adult",
+					"Manner": "Polite",
+					"SocialAnxiety": "Shy",
+					"Optimism": "Neutral",
+					"CanBeRomanced": true,
+					"CanVisitIsland": false, //Bar from Island without Island Sprites - if Island Sprites are made, can swap this to true
+					"SocialTab": "HiddenUntilMet", //Following current behavior, Isla is not shown until her second intro event is fired.
+					"SpouseRoom": {
+						"MapAsset": "PaperNautilus_Isla_SpouseRoom",
+					},
+					/* //Leaving this here for posterity - Isla does not currently have a spouse patio, but should be fairly easy to add with the relevant assets. The actual values within will need changing, though.
+					"SpousePatio": { //Remove above line and next asterisk-slash to uncomment this out.
+						"MapAsset": null,
+						"MapSourceRect": {
+							"X": 0,
+							"Y": 0,
+							"Width": 4,
+							"Height": 4
+						},
+						"SpriteAnimationFrames": [
+							[
+								32,
+								500
+							],
+							[
+								33,
+								500
+							],
+							[
+								34,
+								500
+							],
+							[
+								35,
+								500
+							]
+						],
+						"SpriteAnimationPixelOffset": {
+						"X": 0,
+						"Y": 0
+						}
+					},*/
+					"TextureName": "Isla", //Specifying the default. 
+					"Appearance": [
+						{
+							"Id": "PaperNautilus.SummerIsla",
+							"Condition": "SEASON Summer",
+							"Portrait": "Portraits/Isla_Summer",
+							"Sprite": "Characters/Isla_Summer",
+							"IsIslandAttire": false,
+							"Precedence": -100,
+							"Weight": 0
+						},
+						{
+							"Id": "PaperNautilus.FallIsla",
+							"Condition": "SEASON Fall",
+							"Portrait": "Portraits/Isla_Fall",
+							"Sprite": "Characters/Isla_Fall",
+							"IsIslandAttire": false,
+							"Precedence": -100,
+							"Weight": 0
+						},
+						{
+							"Id": "PaperNautilus.WinterIndoorsIsla",
+							"Condition": "SEASON Winter",
+							"Indoors": true,
+							"Outdoors": false,
+							"Portrait": "Portraits/Isla_Winter_Indoor",
+							"Sprite": "Characters/Isla_Winter_Indoor",
+							"IsIslandAttire": false,
+							"Precedence": -100,
+							"Weight": 0
+						},
+						{
+							"Id": "PaperNautilus.WinterOutdoorsIsla",
+							"Condition": "SEASON Winter",
+							"Indoors": false,
+							"Outdoors": true,
+							"Portrait": "Portraits/Isla_Winter_Outdoor",
+							"Sprite": "Characters/Isla_Winter_Outdoor",
+							"IsIslandAttire": false,
+							"Precedence": -100,
+							"Weight": 0
+						},
+						{
+							"Id": "PaperNautilus.SpiritsEveIsla",
+							"Condition": "EVENT_ID festival_fall27",
+							"Portrait": "Portraits/Isla_SpiritsEve",
+							"Sprite": "Characters/Isla_SpiritsEve",
+							"IsIslandAttire": false,
+							"Precedence": -1000, //Apply over Fall outfit
+							"Weight": 0
+						},
+					],
+					"HiddenProfileEmoteDuration": -1,
+					"HiddenProfileEmoteStartFrame": 24,
+					"HiddenProfileEmoteFrameCount": 3,
+					"HiddenProfileEmoteFrameDuration": 800.0, //Hidden gift log emote will be Isla reading.
+					"EndSlideshow": "TrailingGroup", //Isla will now appear in the Perfection slideshow
+					"Home": [
+						{
+							"Id": "IslaCave",
+							"Location": "Isla_UnderwaterCove",
+							"Tile": {
+								"X": 2,
+								"Y": 6
+							},
+							"Direction": "Left"
+						}
+					],
+					"FormerCharacterNames": [ "Isla" ], //Saves with "Isla" will be migrated
+				},
+			}
+		},
+		
+		//Other NPC Data
+		
+		//Gift Tastes
+		
+		{
+			"LogName": "Isla Gift Tastes",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"{{Isla}}": "{{i18n:Isla.GiftTaste.Love}}/797 265 560 242/{{i18n:Isla.GiftTaste.Like}}/212 228 392 394 597 456 457 595 728 727 730 422/{{i18n:Isla.GiftTaste.Dislike}}/535 536 537 749 771 184 176 16 20/{{i18n:Isla.GiftTaste.Hate}}/729 199 207 205 346 348 330 766 167 168 170 171 172/{{i18n:Isla.GiftTaste.Neutral}}/393 668 414/",
+			}
+		},
+		
+			
+		//Portrait and Sprite Loads
+
+		{
+
+			"LogName": "Base NPC Sprite",
+			"Action": "Load",
+			"Target": "Characters/Isla",
+			"FromFile": "assets/Image/{{SpritePath}}/Isla/Isla_Spring.png",
+
+		},
+		{
+			"LogName": "Base NPC Portrait",
+			"Action": "Load",
+			"Target": "Portraits/Isla",
+			"FromFile": "assets/Image/{{PortraitPath}}/Isla/Isla_Spring.png",
+
+		},
+		
+		{
+			"LogName": "Isla Sprite Appearances",
+			"Action": "Load",
+			"Target": "Characters/Isla_Summer, Characters/Isla_Fall, Characters/Isla_Winter_Indoor, Characters/Isla_Winter_Outdoor, Characters/Isla_SpiritsEve",
+			"FromFile": "assets/Image/{{SpritePath}}/Isla/{{TargetWithoutPath}}.png",
+		},
+		
+		{
+			"LogName": "Isla Portrait Appearances",
+			"Action": "Load",
+			"Target": "Portraits/Isla_Summer, Portraits/Isla_Fall, Portraits/Isla_Winter_Indoor, Portraits/Isla_Winter_Outdoor, Portraits/Isla_SpiritsEve",
+			"FromFile": "assets/Image/{{PortraitPath}}/Isla/{{TargetWithoutPath}}.png",
+		},
+		
+		//Spouse Room Patch
+	
+		{
+			"LogName": "Add Isla's Spouse Room to the Data",
+			"Action": "EditData",
+			"Target": "Data/SpouseRooms",
+			"Entries": {
+				"Isla": "PaperNautilus_Isla_SpouseRoom/0"
+			}
+		},
+		
+		{
+			"LogName": "Load Isla's Spouse Room",
+			"Action": "Load",
+			"Target": "Maps/PaperNautilus_Isla_SpouseRoom",
+			"FromFile": "assets/{{Recolor}}/IslaSpouseRoom.tmx"
+		},
+		
+		//Animations
+		{
+			"LogName": "Isla Animations",
+			"Action": "EditData",
+			"Target": "Data/animationdescriptions",
+			"Entries": {
+				"Isla_Reading": "22 22 22 23 23 23 23 23 24 24 24 24 24 24 24 25/25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25/25 24 24 23 23 22 22",
+				"Isla_Sorting": "29/29 29 29 30 30 30 30 31 31 31 31 30 30 30 30 29 29 29/29",
+				"Isla_Drinking": "32/32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 33 33 33 33 33 33 33 33 34 34 34 34 34 34 34 34 35 35 35 35 35 35 35 34 34 34 34 34 34 34 34 33 33 33 33 33 32 32 32 32 32 32 32 32 32/32",
+				"Isla_Sleep": "39/39/39",
+				"papernautilus_isla_sleep": "39/39/39", //Marriage sleep animation
+			}
+		},
+		
+		//Movie Data
+		
+		{   
+			"LogName": "Isla Movie Invitation",
+			"Action": "EditData",
+			"Target": "Strings/Characters",
+			"Entries": { 
+				"MovieInvite_Spouse_{{Isla}}": "{{i18n:Isla.MovieInvite.Spouse}}",
+			}
+		},
+
+		{
+			"LogName": "Isla Concessions Tastes",
+			"Action": "EditData",
+			"Target": "Data/ConcessionTastes",
+			"Entries": {
+				"{{Isla}}": {
+					"LovedTags": [
+					  "Healthy"
+					],
+					"LikedTags": [
+					  "Star Cookies",
+					  "Kale Smoothie",
+					  "Stardrop Sorbet",
+					  "Jasmine Tea"
+					],
+					"DislikedTags": [
+					  "Fatty",
+					  "Joja",
+					  "Sweet"
+					]
+				}
+			},
+		},
+
+		{
+			"LogName": "Movie Tastes",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+			"Entries": {
+				"{{Isla}}": {
+					"NPCName": "{{Isla}}",
+					"Reactions": [
+						{
+							"Tag": "seen_love",
+							"Response": "like",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.SeenLovedMovie.Text}}"
+								},
+								"DuringMovie": null,
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.LovedMovie.After}}"
+								}
+							},
+							"ID": "reaction_0"
+						},
+						{
+							"Tag": "seen_like",
+							"Response": "like",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.SeenLikedMovie.Text}}"
+								},
+								"DuringMovie": null,
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.LikedMovie.After}}"
+								}
+							},
+							"ID": "reaction_1"
+						},
+						{
+							"Tag": "seen_dislike",
+							"Response": "like",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.SeenDislikedMovie.Text}}"
+								},
+								"DuringMovie": null,
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.DislikedMovie.After}}"
+								}
+							},
+							"ID": "reaction_2"
+						},
+						{
+							"Tag": "spring_movie_0",
+							"Response": "love",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Sapling.Lobby}}"
+								},
+									"DuringMovie": {
+									"ResponsePoint": "sprout_leave",
+									"Script": "/shake {{Isla}} 1000/pause 1000/message \"{{i18n:Isla.Sapling.Message}}\"",
+									"Text": "{{i18n:Isla.Sapling.Reaction}}"
+								},
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Sapling.End}}"
+								}
+							},
+							"ID": "reaction_3"
+						},
+						{
+							"Tag": "romance",
+							"Response": "love",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Romance.Lobby}}"
+								},
+								"DuringMovie": {
+									"ResponsePoint": null,
+									"Script": "/message \"{{i18n:Isla.Romance.Message}}\"",
+									"Text": "{{i18n:Isla.Romance.Reaction}}"
+								},
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Romance.End}}"
+								}
+							},
+							"ID": "reaction_4"
+						},
+						{
+							"Tag": "comedy",
+							"Response": "like",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Comedy.Lobby}}"
+								},
+								"DuringMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Comedy.Reaction}}"
+								},
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Comedy.End}}"
+								},
+							},
+							"ID": "reaction_5"
+						},
+						{
+							"Tag": "horror",
+							"Response": "dislike",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Horror.Lobby}}"
+								},
+								"DuringMovie": {
+									"ResponsePoint": null,
+									"Script": "/shake {{Isla}} 3000",
+									"Text": "{{i18n:Isla.Horror.Reaction}}"
+								},
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Horror.End}}"
+								}
+							},
+							"ID": "reaction_6"
+						},
+						{
+							"Tag": "*",
+							"Response": "love",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Original.Lobby}}"
+								},
+								"DuringMovie": {
+									"ResponsePoint": null,
+									"Script": "/message \"{{i18n:Isla.Original.Reaction}}\"",
+									"Text": ""
+								},
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.Original.End}}"
+								}
+							},
+							"ID": "reaction_7"
+						},
+						{
+							"Tag": "like",
+							"Response": "like",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.LikedMovie.Before}}"
+								},
+								"DuringMovie": null,
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.LikedMovie.After}}"
+								}
+							},
+							"ID": "reaction_8"
+						},
+						{
+							"Tag": "love",
+							"Response": "like",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.LovedMovie.Before}}"
+								},
+								"DuringMovie": null,
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.LovedMovie.After}}"
+								}
+							},
+							"ID": "reaction_9"
+						},
+						{
+							"Tag": "dislike",
+							"Response": "like",
+							"Whitelist": [],
+							"SpecialResponses": {
+								"BeforeMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.DislikedMovie.Before}}"
+								},
+								"DuringMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.DislikedMovie.During}}"
+								},
+								"AfterMovie": {
+									"ResponsePoint": null,
+									"Script": "",
+									"Text": "{{i18n:Isla.DislikedMovie.After}}"
+								}
+							},
+							"ID": "reaction_10"
+						},
+					]
+				}
+			}
+		}
+	],
+}

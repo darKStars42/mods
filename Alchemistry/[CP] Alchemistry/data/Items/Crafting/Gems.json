@@ -1,0 +1,158 @@
+{
+    "Changes": [
+
+        //Load icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/ObjectsGems",
+            "FromFile": "assets/Items/Crafting/gems.png"
+        },
+
+/*----------------------------------------------------
+Gems
+----------------------------------------------------*/
+
+        {
+            "LogName":"Add Alchemistry Ingredients - Gems",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModID}}_MagmaRuby": {
+                    "Name": "{{ModID}}_MagmaRuby",
+                    "DisplayName": "{{i18n:Alchemistry_MagmaRuby.name}}",
+                    "Description": "{{i18n:Alchemistry_MagmaRuby.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsGems",
+                    "SpriteIndex": 0,
+                    "Type": "Minerals",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -2,
+                    "Price": 800,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_DarkRed",
+                        "crystalarium_banned"
+                    ]
+                },
+                "{{ModID}}_MoonlitTear": {
+                    "Name": "{{ModID}}_MoonlitTear",
+                    "DisplayName": "{{i18n:Alchemistry_MoonlitTear.name}}",
+                    "Description": "{{i18n:Alchemistry_MoonlitTear.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsGems",
+                    "SpriteIndex": 1,
+                    "Type": "Minerals",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -2,
+                    "Price": 800,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_Aqua",
+                        "crystalarium_banned"
+                    ]
+                },
+                "{{ModID}}_NaturesEmerald": {
+                    "Name": "{{ModID}}_NaturesEmerald",
+                    "DisplayName": "{{i18n:Alchemistry_NaturesEmerald.name}}",
+                    "Description": "{{i18n:Alchemistry_NaturesEmerald.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsGems",
+                    "SpriteIndex": 2,
+                    "Type": "Minerals",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -2,
+                    "Price": 800,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_YellowGreen",
+                        "crystalarium_banned"
+                    ]
+                },
+                "{{ModID}}_MagiWand": {
+                    "Name": "{{ModID}}_MagiWand",
+                    "DisplayName": "{{i18n:Alchemistry_MagiWand.name}}",
+                    "Description": "{{i18n:Alchemistry_MagiWand.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsGems",
+                    "SpriteIndex": 3,
+                    "Type": "Minerals",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -2,
+                    "Price": 800,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_DarkViolet",
+                        "crystalarium_banned"
+                    ]
+                },
+                "{{ModID}}_ArcaneEye": {
+                    "Name": "{{ModID}}_ArcaneEye",
+                    "DisplayName": "{{i18n:Alchemistry_ArcaneEye.name}}",
+                    "Description": "{{i18n:Alchemistry_ArcaneEye.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsGems",
+                    "SpriteIndex": 10,
+                    "Type": "Minerals",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -2,
+                    "Price": 3000,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_prismatic",
+                        "crystalarium_banned"
+                    ]
+                }
+            }
+        },
+
+
+/*----------------------------------------------------
+Perfection Tracker Disabled
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MagmaRuby" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MoonlitTear" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_NaturesEmerald" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MagiWand" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ArcaneEye" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        }
+    ]
+}

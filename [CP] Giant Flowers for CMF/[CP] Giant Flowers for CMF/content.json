@@ -1,0 +1,29 @@
+{
+	"Format": "2.0.0",
+    "ConfigSchema": {
+        "Allow Multi Yield": {
+            "AllowValues": "true, false",
+            "Default": true,
+			"Description": "Check the box to allow multi yield crops to grow giant crops. The giant crops WILL DESTROY a 3x3 square of crops under them, but you'll get double the items from them."
+        }
+    },
+    "Changes":
+	[
+		{
+            "Action":"Load",
+            "Target":"Mods/Canimia.GiantFlowersforCMF/GiantCrops",
+            "FromFile":"assets/GiantCrops.png"
+        },
+		{
+            "Action": "Include",
+            "FromFile": "assets/Normal.json",
+        },
+		{
+            "Action": "Include",
+            "FromFile": "assets/MultiYield.json",
+            "When": {
+                "Allow Multi Yield": true
+            }
+		}
+	]
+}

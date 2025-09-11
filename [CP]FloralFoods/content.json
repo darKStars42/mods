@@ -1,0 +1,247 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Objects",
+      "FromFile": "assets/Objects.png"
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_CactusBlossomSmoothie": {
+          "Name": "{{ModId}}_CactusBlossomSmoothie",
+          "DisplayName": "{{i18n:CactusBlossomSmoothie_Name}}",
+          "Description": "{{i18n:CactusBlossomSmoothie_Desc}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price": 240,
+          "Edibility": 75,
+          "Texture": "Mods/{{ModId}}/Objects",
+          "SpriteIndex": 0
+        },
+
+        "{{ModId}}_StuffedArtichoke": {
+          "Name": "{{ModId}}_StuffedArtichoke",
+          "DisplayName": "{{i18n:StuffedArtichoke_Name}}",
+          "Description": "{{i18n:StuffedArtichoke_Desc}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price": 250,
+          "Edibility": 100,
+          "Texture": "Mods/{{ModId}}/Objects",
+          "SpriteIndex": 1
+        },
+
+        "{{ModId}}_TurkishDelight": {
+          "Name": "{{ModId}}_TurkishDelight",
+          "DisplayName": "{{i18n:TurkishDelight_Name}}",
+          "Description": "{{i18n:TurkishDelight_Desc}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price": 550,
+          "Edibility": 120,
+          "Texture": "Mods/{{ModId}}/Objects",
+          "SpriteIndex": 2
+        },
+
+        "{{ModId}}_PoppyseedBagel": {
+          "Name": "{{ModId}}_PoppyseedBagel",
+          "DisplayName": "{{i18n:PoppyseedBagel_Name}}",
+          "Description": "{{i18n:PoppyseedBagel_Desc}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price": 300,
+          "Edibility": 80,
+          "Texture": "Mods/{{ModId}}/Objects",
+          "SpriteIndex": 3
+        },
+
+        "{{ModId}}_DandelionTea": {
+          "Name": "{{ModId}}_DandelionTea",
+          "DisplayName": "{{i18n:DandelionTea_Name}}",
+          "Description": "{{i18n:DandelionTea_Desc}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price": 60,
+          "Edibility": 20,
+          "IsDrink": true,
+          "Texture": "Mods/{{ModId}}/Objects",
+          "SpriteIndex": 4
+        }
+
+      }
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/Quests",
+      "Entries": {
+        "{{ModId}}_Quest": "ItemDelivery/{{i18n:Quest_Title}}/{{i18n:Quest_Description}}/{{i18n:Quest_Hint}}/Emily {{ModId}}_CactusBlossomSmoothie 1/-1/0/-1/true/$1 FloralFoodsQuestComplete#{{i18n:Quest_Reaction}}"
+      }
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/Mail",
+      "Entries": {
+        "{{ModId}}_Letter1": "{{i18n:Letter1_Text}} %item cookingRecipe {{ModId}}_CactusBlossomSmoothie %% %item quest {{ModId}}_Quest true %% [#]{{i18n:Letter1_Name}}",
+        "{{ModId}}_Letter2": "{{i18n:Letter2_Text}} [#]{{i18n:Letter2_Name}}"
+      }
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Saloon", "Items" ],
+      "Entries": {
+        "{{ModId}}_StuffedArtichoke": {
+          "ItemId": "(O){{ModId}}_StuffedArtichoke",
+          "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_Letter2 Received",
+          "Price": 200,
+          "IsRecipe": true
+        },
+        "{{ModId}}_TurkishDelight": {
+          "ItemId": "(O){{ModId}}_TurkishDelight",
+          "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_Letter2 Received",
+          "Price": 200,
+          "IsRecipe": true
+        },
+        "{{ModId}}_PoppyseedBagel": {
+          "ItemId": "(O){{ModId}}_PoppyseedBagel",
+          "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_Letter2 Received",
+          "Price": 200,
+          "IsRecipe": true
+        },
+        "{{ModId}}_DandelionTea": {
+          "ItemId": "(O){{ModId}}_DandelionTea",
+          "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_Letter2 Received",
+          "Price": 200,
+          "IsRecipe": true
+        }
+      }
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/CookingRecipes",
+      "Entries": {
+        "{{ModId}}_CactusBlossomSmoothie": "90 1 -6 1 245 1/10 10/{{ModId}}_CactusBlossomSmoothie/none",
+        "{{ModId}}_StuffedArtichoke": "274 1 216 1 248 1 424 1/10 10/{{ModId}}_StuffedArtichoke/none",
+        "{{ModId}}_TurkishDelight": "595 1 245 1 270 1 637 1/10 10/{{ModId}}_TurkishDelight/none",
+        "{{ModId}}_PoppyseedBagel": "376 1 246 1 245 1 247 1/10 10/{{ModId}}_PoppyseedBagel",
+        "{{ModId}}_DandelionTea": "22 1/10 10/{{ModId}}_DandelionTea"
+      }
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Caroline", 1 ],
+          "Value": "{{ModId}}_TurkishDelight",
+          "Delimiter": " "
+        },
+
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Elliott", 1 ],
+          "Value": "{{ModId}}_StuffedArtichoke",
+          "Delimiter": " "
+        },
+
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Emily", 1 ],
+          "Value": "{{ModId}}_CactusBlossomSmoothie",
+          "Delimiter": " "
+        },
+
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Harvey", 1 ],
+          "Value": "{{ModId}}_DandelionTea",
+          "Delimiter": " "
+        },
+
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Jas", 1 ],
+          "Value": "{{ModId}}_TurkishDelight",
+          "Delimiter": " "
+        },
+
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Leah", 1 ],
+          "Value": "{{ModId}}_PoppyseedBagel",
+          "Delimiter": " "
+        },
+
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Marnie", 1 ],
+          "Value": "{{ModId}}_DandelionTea",
+          "Delimiter": " "
+        },
+
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Maru", 1 ],
+          "Value": "{{ModId}}_StuffedArtichoke",
+          "Delimiter": " "
+        },
+
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Penny", 1 ],
+          "Value": "{{ModId}}_PoppyseedBagel",
+          "Delimiter": " "
+        },
+
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Sandy", 1 ],
+          "Value": "{{ModId}}_CactusBlossomSmoothie",
+          "Delimiter": " "
+        },
+
+        {
+          "Operation": "Append",
+          "Target": [ "Fields", "Leo", 5 ], //Leo dislikes most cooked dishes
+          "Value": "{{ModId}}_CactusBlossomSmoothie {{ModId}}_StuffedArtichoke {{ModId}}_TurkishDelight {{ModId}}_PoppyseedBagel {{ModId}}_DandelionTea",
+          "Delimiter": " "
+        }
+
+      ]
+    },
+
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_VisitedSandy": {
+          "Id": "{{ModId}}_VisitedSandy",
+          "Trigger": "DayStarted",
+          "Condition": "PLAYER_HAS_SEEN_EVENT Current 67",
+          "Actions": [
+            "AddMail Current {{ModId}}_Letter1"
+          ]
+        },
+        "{{ModId}}_QuestComplete": {
+          "Id": "{{ModId}}_QuestComplete",
+          "Trigger": "DayStarted",
+          "Condition": "PLAYER_HAS_MAIL Current FloralFoodsQuestComplete",
+          "Actions": [
+            "AddMail Current {{ModId}}_Letter2"
+          ]
+        }
+      }
+    }
+  ]
+}

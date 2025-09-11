@@ -1,0 +1,498 @@
+{
+
+  "Changes": [
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_MiraHouse",
+          "FromFile": "assets/Locations/EchoReef_MiraHouse.tmx"
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_MiraWinter",
+          "FromFile": "assets/Locations/EchoReef_MiraWinter.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Characters/MrMrRogers.EchoReef_Mira",
+        "FromFile": "assets/Sprites/Mira.png"
+      },
+      {
+        "Action": "Load",
+        "Target": "Portraits/MrMrRogers.EchoReef_Mira",
+        "FromFile": "assets/Portraits/Mira.png"
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Locations",
+          "Entries": {
+              "MrMrRogers.EchoReef_MiraHouse": {
+                  "DisplayName": "{{i18n:MiraHouse}}",
+                  "DefaultArrivalTile": {
+                    "X": 5,
+                    "Y": 18
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_MiraHouse",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              },
+              "MrMrRogers.EchoReef_MiraWinter": {
+                  "DisplayName": "{{i18n:MiraWinter}}",
+                  "DefaultArrivalTile": {
+                    "X": 10,
+                    "Y": 12
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_MiraWinter",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              }
+          }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_MiraHouse",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Doors": "12 16 townInterior 120",
+          "Warp": "5 19 MrMrRogers.EchoReef_Town 54 34",
+          "WindowLight": "4 1 6 4 2 6 9 1 6 9 2 6"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 12,
+              "Y": 16
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Door MrMrRogers.EchoReef_Mira"
+            }
+          },
+          {
+            "Position": {
+              "X": 5,
+              "Y": 15
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "OpenShop MrMrRogers.EchoReef_FurnitureShop down 0800 2000 5 14 1 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_MiraWinter",
+        "MapProperties": {
+          "LocationContext": "EchoReefWinter",
+          "Warp": "10 14 MrMrRogers.EchoReef_Town 60 27",
+          "TreatAsOutdoors": "T"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 4,
+              "Y": 6
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 2 5 1"
+            }
+          },
+          {
+            "Position": {
+              "X": 3,
+              "Y": 9
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 2 5 1"
+            }
+          },
+          {
+            "Position": {
+              "X": 13,
+              "Y": 6
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 2 5 1"
+            }
+          },
+          {
+            "Position": {
+              "X": 16,
+              "Y": 9
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 2 5 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Town",
+        "TextOperations": [
+          {
+            "Operation": "Append",
+            "Target": ["MapProperties", "Warp"],
+            "Value": "60 25 MrMrRogers.EchoReef_MiraWinter 10 13",
+            "Delimiter": " "
+          }
+        ],
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 59,
+              "Y": 24
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "483"
+          },
+          {
+            "Position": {
+              "X": 60,
+              "Y": 24
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "484"
+          },
+          {
+            "Position": {
+              "X": 61,
+              "Y": 24
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "485"
+          },
+          {
+            "Position": {
+              "X": 59,
+              "Y": 25
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "508"
+          },
+          {
+            "Position": {
+              "X": 60,
+              "Y": 25
+            },
+            "Layer": "Buildings",
+            "Remove": true
+          },
+          {
+            "Position": {
+              "X": 61,
+              "Y": 25
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "510"
+          },
+          {
+            "Position": {
+              "X": 59,
+              "Y": 26
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "533"
+          },
+          {
+            "Position": {
+              "X": 60,
+              "Y": 26
+            },
+            "Layer": "Buildings",
+            "Remove": true
+          },
+          {
+            "Position": {
+              "X": 61,
+              "Y": 26
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "535"
+          },
+          {
+            "Position": {
+              "X": 59,
+              "Y": 26
+            },
+            "Layer": "Back",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "480"
+          },
+          {
+            "Position": {
+              "X": 60,
+              "Y": 26
+            },
+            "Layer": "Back",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "534"
+          },
+          {
+            "Position": {
+              "X": 61,
+              "Y": 26
+            },
+            "Layer": "Back",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "482"
+          },
+          {
+            "Position": {
+              "X": 59,
+              "Y": 27
+            },
+            "Layer": "Back",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "580"
+          },
+          {
+            "Position": {
+              "X": 60,
+              "Y": 27
+            },
+            "Layer": "Back",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "506"
+          },
+          {
+            "Position": {
+              "X": 61,
+              "Y": 27
+            },
+            "Layer": "Back",
+            "SetTilesheet": "spring_outdoorsTileSheet",
+            "SetIndex": "582"
+          }
+        ],
+        "When": {
+          "Hearts:MrMrRogers.EchoReef_Mira": "6"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Town",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 54, 
+              "Y": 33
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "LockedDoorWarp 5 18 MrMrRogers.EchoReef_MiraHouse 800 2000"
+            }
+          }
+        ]
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Characters",
+          "Entries": {
+            "MrMrRogers.EchoReef_Mira": {
+              "DisplayName": "{{i18n:Mira}}",
+              "BirthSeason": "Fall",
+              "BirthDay": 14,
+              "HomeRegion": "Other",
+              "Language": "Default",
+              "Gender": "Female",
+              "Age": "Adult",
+              "Manner": "Polite",
+              "SocialAnxiety": "Shy",
+              "Optimism": "Neutral",
+              "IsDarkSkinned": false,
+              "CanBeRomanced": false,
+              "Calendar": "HiddenAlways",
+              "SocialTab": "HiddenUntilMet",
+              "CanSocialize": true,
+              "CanReceiveGifts": true,
+              "CanGreetNearbyCharacters": true,
+              "CanCommentOnPurchasedShopItems": true,
+              "CanVisitIsland": false,
+              "IntroductionsQuest": false,
+              "ItemDeliveryQuests": false,
+              "PerfectionScore": false,
+              "EndSlideShow": "MainGroup",
+              "SpouseAdopts": null,
+              "SpouseWantsChildren": true,
+              "SpouseGiftJealousy": false,
+              "SpouseRoom": {},
+              "SpousePatio": {},
+              "SpouseFloors": [],
+              "SpouseWallpapers": [],
+              "DumpsterDiveFriendshipEffect": -25,
+              "DumpsterDiveEmote": 8,
+              "FriendsAndFamily": {},
+              "FlowerDanceCanDance": null,
+              "WinterStarGifts": [],
+              "WinterStarParticipant": false,
+              "UnlockConditions": null,
+              "SpawnIfMissing": true,
+              "Home": [
+                {
+                  "Id": "Default",
+                  "Condition": null,
+                  "Location": "MrMrRogers.EchoReef_MiraHouse",
+                  "Tile": {
+                    "X": 2,
+                    "Y": 4
+                  },
+                  "Direction": "down"
+                }
+              ],
+              "TextureName": null,
+              "Appearance": [
+                {
+                  "Id": "MrMrRogers.EchoReef_Mira",
+                  "Condition": null,
+                  "Season": null,
+                  "Indoors": true,
+                  "Outdoors": true,
+                  "Portrait": "Portraits/MrMrRogers.EchoReef_Mira",
+                  "Sprite": "Characters/MrMrRogers.EchoReef_Mira",
+                  "IsIslandAttire": false,
+                  "Precedence": 0,
+                  "Weight": 0
+                }
+              ],
+              "MugShotSourceRect": null,
+              "Size": {
+                "X": 16,
+                "Y": 32
+              },
+              "Breather": true,
+              "BreathChestRect": null,
+              "BreathChestPosition": null,
+              "Shadow": null,
+              "EmoteOffset": {
+                "X": 0,
+                "Y": 0
+              },
+              "ShakePortraits": null,
+              "KissSpriteIndex": 28,
+              "KissSpriteFacingRight": true,
+              "FormerCharacterNames": [],
+              "CustomFields": null
+            }
+          }
+      },
+      { 
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Mira",
+            "FromFile": "assets/blank.json"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Mira",
+          "FromFile": "assets/blank.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MrMrRogers.EchoReef_Mira": "{{i18n:MiraGiftLoveResponse}}//{{i18n:MiraGiftLikeResponse}}//{{i18n:MiraGiftDislikeResponse}}//{{i18n:MiraGiftHateResponse}}//{{i18n:MiraGiftNeutralResponse}}//"
+            }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Mira",
+          "Entries": {
+            "Introduction": "{{i18n:Mira_Introduction}}",
+            "AcceptBirthdayGift_Positive": "{{i18n:Mira_AcceptBirthdayGift_Positive}}",
+            "AcceptBirthdayGift_Negative": "{{i18n:Mira_AcceptBirthdayGift_Negative}}",
+            "AcceptGift_(O)StardropTea": "{{i18n:Mira_AcceptGift_(O)StardropTea}}",
+            "DumpsterDiveComment": "{{i18n:Mira_DumpsterDiveComment}}",
+            "HitBySlingshot": "{{i18n:Mira_HitBySlingshot}}",
+            "Mon": "{{i18n:Mira_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Tue": "{{i18n:Mira_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Wed": "{{i18n:Mira_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Thu": "{{i18n:Mira_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Fri": "{{i18n:Mira_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sat": "{{i18n:Mira_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sun": "{{i18n:Mira_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/animationdescriptions",
+          "Entries": {
+            "MrMrRogers.EchoReef_Mira_sleep": "19/19/19",
+            "mrmrrogers.echoreef_mira_sleep": "19/19/19"
+          } 
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Mira",
+          "Entries": {
+            "spring": "600 MrMrRogers.EchoReef_MiraHouse 2 4 2/800 MrMrRogers.EchoReef_MiraHouse 5 14 2/2200 MrMrRogers.EchoReef_MiraHouse 2 4 2 MrMrRogers.EchoReef_Mira_sleep"
+          }
+        }
+  ]
+}

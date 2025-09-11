@@ -1,0 +1,350 @@
+{
+	"Changes": [
+		
+		//Empty Loads
+		{
+			"LogName": "Marcus Schedule Empty Json",
+			"Action": "Load",
+			"Target": "Characters/schedules/APTMarcus",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Marcus Strings Empty Jsons",
+			"Action": "Load",
+			"Target": "Strings/schedules/APTMarcus",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Marcus Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/APTMarcus",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Marcus Marriage Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/MarriageDialogueAPTMarcus",
+			"FromFile": "Data/empty.json",
+		},
+		
+		//Full Loads
+		{
+			"LogName": "Marcus Base Sprites",
+			"Action": "Load",
+			"Target": "Characters/APTMarcus",
+			"FromFile": "assets/sprites/Marcus/MarcusSprites{{Season}}.png"
+		},
+		{
+			"LogName": "Marcus Base Portraits",
+			"Action": "Load",
+			"Target": "Portraits/APTMarcus",
+			"FromFile": "assets/portraits/Marcus/MarcusPortraitsSpring.png"
+		},
+		{
+			"LogName": "MarcusVisualLoads",
+			"Action": "Load",
+			"Target": "Portraits/Marcus/MarcusPortraitsSpring, Sprites/Marcus/MarcusSpritesSpring, Sprites/Marcus/MarcusSpritesSpringBaby, Portraits/Marcus/MarcusPortraitsSummer, Sprites/Marcus/MarcusSpritesSummer, Sprites/Marcus/MarcusSpritesSummerBabyIndoors, Sprites/Marcus/MarcusSpritesSummerBabyOutdoors, Portraits/Marcus/MarcusPortraitsFall, Sprites/Marcus/MarcusSpritesFallBaby, Sprites/Marcus/MarcusSpritesFall, Portraits/Marcus/MarcusPortraitsWinterIndoors, Sprites/Marcus/MarcusSpritesWinterIndoors, Sprites/Marcus/MarcusSpritesWinterIndoorsBaby, Portraits/Marcus/MarcusPortraitsWinterOutdoors, Sprites/Marcus/MarcusSpritesWinterOutdoors, Sprites/Marcus/MarcusSpritesWinterOutdoorsBaby, Portraits/Marcus/MarcusPortraitsSpirits, Sprites/Marcus/MarcusSpritesSpirits, Portraits/Marcus/MarcusPortraitsBeach, Sprites/Marcus/MarcusSpritesBeach, Portraits/Marcus/MarcusPortraitsFlower, Sprites/Marcus/MarcusSpritesFlower",
+			"FromFile": "assets/{{Target}}.png"
+		},
+		//Baby, Hat Overlays
+		{
+			"LogName": "Marcus Spencer Hat Overlay Sprite",
+			"Action": "EditImage",
+			"Target": "Sprites/Marcus/MarcusSpritesSpring, Sprites/Marcus/MarcusSpritesSpringBaby, Sprites/Marcus/MarcusSpritesSummer, Sprites/Marcus/MarcusSpritesSummerBaby, Sprites/Marcus/MarcusSpritesFallBaby, Sprites/Marcus/MarcusSpritesFall, Sprites/Marcus/MarcusSpritesBeach",
+			"FromFile": "assets/sprites/Marcus/MarcusSpritesHat.png",
+			"When": {
+				"HasSeenEvent": "145862",
+				"Query: {{DailyLuck}} > 0.05": true,
+				"IsOutdoors": "true",
+				"LocationName |contains=DesertFestival": false,
+			},
+			"PatchMode": "Overlay",
+			"Update": "OnLocationChange",
+		},
+		{
+			"LogName": "Marcus Portraits Baby Overlay",
+			"Action": "EditImage",
+			"Target": "Portraits/Marcus/MarcusPortraitsSpring, Portraits/Marcus/MarcusPortraitsSummer, Portraits/Marcus/MarcusPortraitsFall, Portraits/Marcus/MarcusPortraitsWinterIndoors, Portraits/Marcus/MarcusPortraitsWinterOutdoors, Portraits/Marcus/MarcusPortraitsBeach",
+			"FromFile": "assets/portraits/Marcus/MarcusBabyOverlay{{Season}}.png",
+			"When": {
+				"DayOfWeek": "Sunday",
+				"HasSeenEvent": "145868",
+				"Time": "{{Range: 910, 2000}}",
+			},
+			"PatchMode": "Overlay",
+			"Update": "OnLocationChange",
+		},
+		{
+			"LogName": "Marcus Portraits Baby Sunglasses Overlay",
+			"Action": "EditImage",
+			"Target": "Portraits/Marcus/MarcusPortraitsSummer",
+			"FromFile": "assets/portraits/Marcus/MarcusBabyOverlaySunglasses.png",
+			"When": {
+				"DayOfWeek": "Sunday",
+				"HasSeenEvent": "145868",
+				"Time": "{{Range: 910, 2000}}",
+				"Season": "Summer",
+				"isOutdoors": true
+			},
+			"PatchMode": "Overlay",
+			"Update": "OnLocationChange",
+		},
+		{
+			"LogName": "Marcus Spencer Hat Overlay Portrait",
+			"Action": "EditImage",
+			"Target": "Portraits/Marcus/MarcusPortraitsSpring, Portraits/Marcus/MarcusPortraitsSummer, Portraits/Marcus/MarcusPortraitsFall, Portraits/Marcus/MarcusPortraitsBeach",
+			"FromFile": "assets/portraits/Marcus/MarcusPortraitsHat.png",
+			"When": {
+				"HasSeenEvent": "145862",
+				"Query: {{DailyLuck}} > 0.05": true,
+				"IsOutdoors": "true",
+				"LocationName |contains=DesertFestival": false,
+			},
+			"PatchMode": "Overlay",
+			"Update": "OnLocationChange",
+		},
+		
+		//Marcus Schedule is included in //FILES because of its variability
+		
+		{
+			"LogName": "Marcus Disposition",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"APTMarcus": {
+					"DisplayName": "{{i18n:Displayname.APTMarcus}}",
+					"Gender": "Male",
+					"Age": "Teen",
+					"Manner": "Rude",
+					"SocialAnxiety": "Outgoing",
+					"Optimism": "Neutral",
+					"BirthSeason": "Summer",
+					"BirthDay": "22",
+					"HomeRegion": "Town",
+					"IsDarkSkinned": true,
+				
+					"CanSocialize": true,
+					"CanBeRomanced": false,
+					"CanReceiveGifts": true,
+					"CanCommentOnPurchasedShopItems": true,
+					"CanGreetNearbyCharacters": true,
+					"CanVisitIsland": true,
+					"Calendar": "AlwaysShown",
+					"SocialTab": "UnknownUntilMet",
+					"SpouseAdopts": null,
+					"SpouseWantsChildren": true,
+					"SpouseGetsJealousOfGifts": true,
+					"SpouseRoom": {
+						"MapAsset": "APTMarcusSpouseRoom"
+					},
+					"SpousePatio": {
+						"MapAsset": "CPFSpousePatios",
+						"MapSourceRect": {
+							"X": 4,
+							"Y": 0,
+							"Width": 4,
+							"Height": 4,
+						}
+					},
+					"IntroductionsQuest": true,
+					"ItemDeliveryQuests": true,
+					"PerfectionScore": "{{CPFNPCPerfection}}",
+					"EndSlideShow": "MainGroup",
+					"FriendsAndFamily": {
+						"APTMora": "Best Friend",
+						"APTIsaacII": "Nephew",
+						"APTAshida": "Boss",
+						"APTIsaacI": "Boss",
+					},
+				
+					"DumpsterDiveEmote": 12,
+					"DumpsterDiveFriendshipEffect": -25,
+				
+					"FlowerDanceCanDance": null,
+					"WinterStarParticipant": true,
+					"WinterStarGifts": [],
+				
+					"UnlockConditions": true,
+					"SpawnIfMissing": true,
+					"Home": [
+						{
+							"Id": "Default",
+							"Condition": null,
+							"Location": "APTMMHouse",
+							"Tile": {
+								"X": 29,
+								"Y": 11
+							},
+							"Direction": "right"
+						}
+					],
+					
+					"TextureName": "APTMarcus",
+					"Appearance": [
+						{
+							"Id": "APTMarcusSpringOutfit",
+							"Season": "Spring",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsSpring",
+							"Sprite": "Sprites/Marcus/MarcusSpritesSpring",
+						},
+						{
+							"Id": "APTMarcusSpringOutfitBaby",
+							"Season": "Spring",
+							"Condition": "DAY_OF_WEEK Sunday, PLAYER_HAS_SEEN_EVENT Any 145868, TIME 910 2000",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsSpring",
+							"Sprite": "Sprites/Marcus/MarcusSpritesSpringBaby",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMarcusSummerOutfit",
+							"Season": "Summer",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsSummer",
+							"Sprite": "Sprites/Marcus/MarcusSpritesSummer",
+						},
+						{
+							"Id": "APTMarcusSummerOutfitBabyIndoors",
+							"Season": "Summer",
+							"Indoors": true,
+							"Condition": "DAY_OF_WEEK Sunday, PLAYER_HAS_SEEN_EVENT Any 145868, TIME 910 2000",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsSummer",
+							"Sprite": "Sprites/Marcus/MarcusSpritesSummerBabyIndoors",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMarcusSummerOutfitBabyOutdoors",
+							"Season": "Summer",
+							"Indoors": false,
+							"Condition": "DAY_OF_WEEK Sunday, PLAYER_HAS_SEEN_EVENT Any 145868, TIME 910 2000",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsSummer",
+							"Sprite": "Sprites/Marcus/MarcusSpritesSummerBabyOutdoors",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMarcusLuauOutfit",
+                            "Condition": "EVENT_ID festival_summer11",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsBeach",
+							"Sprite": "Sprites/Marcus/MarcusSpritesBeach",
+							"Precedence": -20,
+						},
+						{
+							"Id": "APTMarcusFallOutfit",
+							"Season": "Fall",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsFall",
+							"Sprite": "Sprites/Marcus/MarcusSpritesFall",
+						},
+						{
+							"Id": "APTMarcusFallOutfitBaby",
+							"Season": "Fall",
+							"Condition": "DAY_OF_WEEK Sunday, PLAYER_HAS_SEEN_EVENT Any 145868, TIME 910 2000",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsFall",
+							"Sprite": "Sprites/Marcus/MarcusSpritesFallBaby",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMarcusWinterOutfitIndoors",
+							"Season": "Winter",
+							"Indoors": true,
+							"Portrait": "Portraits/Marcus/MarcusPortraitsWinterIndoors",
+							"Sprite": "Sprites/Marcus/MarcusSpritesWinterIndoors",
+						},
+						{
+							"Id": "APTMarcusWinterOutfitBabyIndoors",
+							"Season": "Winter",
+							"Indoors": true,
+							"Condition": "DAY_OF_WEEK Sunday, PLAYER_HAS_SEEN_EVENT Any 145868, TIME 910 2000",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsWinterIndoors",
+							"Sprite": "Sprites/Marcus/MarcusSpritesWinterIndoorsBaby",
+							"Precedence": -17,
+						},
+						{
+							"Id": "APTMarcusWinterOutfitOutdoors",
+							"Season": "Winter",
+							"Indoors": false,
+							"Portrait": "Portraits/Marcus/MarcusPortraitsWinterOutdoors",
+							"Sprite": "Sprites/Marcus/MarcusSpritesWinterOutdoors",
+							"Precedence": -16,
+						},
+						{
+							"Id": "APTMarcusWinterOutfitBabyOutdoors",
+							"Season": "Winter",
+							"Indoors": false,
+							"Condition": "DAY_OF_WEEK Sunday, PLAYER_HAS_SEEN_EVENT Any 145868, TIME 910 2000",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsWinterOutdoors",
+							"Sprite": "Sprites/Marcus/MarcusSpritesWinterOutdoorsBaby",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMarcusFlowerOutfit",
+                            "Condition": "EVENT_ID festival_spring24",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsFlower",
+							"Sprite": "Sprites/Marcus/MarcusSpritesFlower",
+							"Precedence": -19,
+						},
+						{
+							"Id": "APTMarcusSpiritsOutfit",
+                            "Condition": "SEASON_DAY fall 27",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsSpirits",
+							"Sprite": "Sprites/Marcus/MarcusSpritesSpirits",
+							"Precedence": -19,
+						},
+						{
+							"Id": "APTMarcusIslandOutfit",
+							"IsIslandAttire": true,
+							"Portrait": "Portraits/Marcus/MarcusPortraitsBeach",
+							"Sprite": "Sprites/Marcus/MarcusSpritesBeach",
+							"Precedence": -10,
+						},
+						{
+							"Id": "APTMarcusDesertFestOutfit",
+							"Condition": "IS_PASSIVE_FESTIVAL_TODAY DesertFestival, LOCATION_NAME Target DesertFestival",
+							"Portrait": "Portraits/Marcus/MarcusPortraitsBeach",
+							"Sprite": "Sprites/Marcus/MarcusSpritesBeach",
+							"Precedence": -19,
+						},
+					],
+					"Size": {
+						"X": 16,
+						"Y": 32
+					},
+					"Breather": true,
+					"ShakePortraits": [
+						3, 8
+					],
+					"KissSpriteIndex": 28,
+					"KissSpriteFacingDirection": "right",
+					
+					"HiddenProfileEmoteSound": null,
+					"HiddenProfileEmoteDuration": -1,
+					"HiddenProfileEmoteStartFrame": 0,
+					"HiddenProfileEmoteFrameCount": 4,
+					"HiddenProfileEmoteFrameDuration": 125,
+				},
+			},
+		},
+		
+			//Datability
+		{
+			"LogName": "Marcus Engagement",
+			"Action": "EditData",
+			"Target": "Data/EngagementDialogue",
+			"Entries": {
+				"Marcus0": "It's finally happening! Oh my god, man.$1",
+				"Marcus1": "I talked to Ashida about hostin' a function back at her place after thr wedding.$1#$b#She said never, but maybe *you* could talk some sense into her too, since she seems to respect you more.$11"
+			}
+		},
+				//Makes him datable after 8-heart
+		{
+            "LogName": "Marcus Datability",
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Fields": {
+                "APTMarcus": {
+                    "CanBeRomanced": true,
+                }
+            },
+            "When": {
+                "HasFlag": "Marcus_isDatable",
+            }
+        },
+	]
+}

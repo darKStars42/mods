@@ -1,0 +1,229 @@
+{ 
+	"Changes":
+	[	
+		{	// Tarefas Diarias Vanilla
+			"LogName":"Edward Agendamentos",
+			"Action":"EditData",
+			"Target":"Characters/Schedules/Edward",
+			"When": { "HasSeenEvent: anyPlayer|contains=90205264": true, "HasSeenEvent: anyPlayer|contains=90805264": false },
+			"Update": "OnDayStart",
+			"Entries":
+			{
+			"rain": "610 Casa.Superior 8 7 0 Ed.Musi \"Strings\\schedules\\Edward:E.Chuva.00\"/900 Casa.Interior 9 8 1 Ed.Se.Es.Com /1130 JojaMart 9 15 1 Ed.Compra /1500 JojaMart 11 25 3 Ed.Compra /1530 Saloon 9 20 1 Ed.Comer /1900 Casa.Interior 9 19 3 Ed.Ler.Sen.Es \"Strings\\schedules\\Edward:E.Chuva.01\"/2330 Casa.Superior 4 6 0 edward_sleep",
+			"rain2": "610 Casa.Superior 8 7 0 Ed.Musi \"Strings\\schedules\\Edward:E.Chuva.00\"/930 Casa.Interior 9 8 1 Ed.Se.Es.Com /1200 Casa.Interior 15 8 2 Ed.Jornal /1530 Saloon 9 20 1 Ed.Comer /1900 Casa.Interior 9 19 3 Ed.Ler.Sen.Es \"Strings\\schedules\\Edward:E.Chuva.01\"/2330 Casa.Superior 4 6 0 edward_sleep",
+			"GreenRain": "GOTO rain2",
+			
+			"spring": "610 Casa.Superior 16 7 2 Ed.Lendo \"Strings\\schedules\\Edward:E.Basico.00\"/700 Casa.Interior 9 8 1 Ed.Se.Es.Com \"Strings\\schedules\\Edward:E.Basico.02\"/800 Town 33 57 2 Ed.Coçar /1000 Forest 99 22 0 Ed.Costa.Para /1330 Town 104 89 2 Ed.Pisca \"Strings\\schedules\\Edward:E.Basico.03\"/1730 Town 46 32 3 Ed.Celu \"Strings\\schedules\\Edward:E.DiasNor.00\"/2000 Town 24 54 2 Ed.Fumar \"Strings\\schedules\\Edward:E.Basico.05\"/2200 Casa.Superior 4 6 0 edward_sleep",
+			"spring_Tue": "GOTO spring",
+			"spring_Wed": "GOTO spring",
+			"spring_Thu": "610 Casa.Interior 20 12 2 Ed.Jornal /730 Casa.Interior 20 12 3 /800 Forest 71 41 2 Ed.Moeda /1000 Forest 71 41 2 Ed.Bravo /1100 Forest 71 41 2 Ed.Treina \"Strings\\schedules\\Edward:E.Treino.00\"/1200 Forest 71 41 2 Ed.Bravo \"Strings\\schedules\\Edward:E.Treino.01\"/1400 Forest 71 43 2 Ed.Coçar /1430 Saloon 15 20 1 Ed.Beber /2100 Casa.Superior 4 6 0 edward_sleep",
+			"spring_Fri": "GOTO spring_Thu",
+			"spring_Sat": "610 Casa.Superior 4 6 0 Ed.Dorme \"Strings\\schedules\\Edward:E.Dorme.00\"/800 Casa.Interior 9 8 1 Ed.Se.Es.Com /1000 SeedShop 12 27 3 Ed.Compra/1130 SeedShop 4 19 0 /1200 AdventureGuild 4 13 0 /1700 Casa.Interior 15 8 2 Ed.Moeda \"Strings\\schedules\\Edward:E.Loja.00\"/2130 Casa.Interior 15 8 2 Ed.Lendo \"Strings\\schedules\\Edward:E.Basico.04\"/2230 Casa.Superior 4 6 0 edward_sleep",
+			"spring_Sun": "GOTO spring_Sat",
+			
+			"summer": "GOTO spring",
+			"summer_Tue": "GOTO spring",
+			"summer_Wed": "GOTO spring",
+			"summer_Thu": "GOTO spring_Thu",
+			"summer_Fri": "GOTO spring_Thu",
+			"summer_Sat": "GOTO spring_Sat",
+			"summer_Sun": "GOTO spring_Sat",
+			
+			"fall": "610 Casa.Superior 15 11 3 Ed.Celu \"Strings\\schedules\\Edward:E.DiasFri.00\"/700 Casa.Interior 9 8 1 Ed.Se.Es.Com /800 BusStop 25 11 2 Ed.Coçar /1130 Railroad 35 41 0 Ed.Moeda /1630 Town 46 32 2 Ed.Bravo \"Strings\\schedules\\Edward:E.Basico.06\"/2000 Casa.Superior 4 6 0 edward_sleep",
+			"fall_Tue": "GOTO fall",
+			"fall_Wed": "GOTO fall",
+			"fall_Thu": "610 Casa.Interior 20 12 2 Ed.Jornal /730 Casa.Interior 20 12 3 /800 Forest 71 41 2 Ed.Coçar /1000 Forest 71 41 2 Ed.Bravo /1100 Forest 71 41 2 Ed.Treina \"Strings\\schedules\\Edward:E.Treino.00\"/1200 Forest 71 41 2 Ed.Bravo \"Strings\\schedules\\Edward:E.Treino.01\"/1400 Forest 71 43 2 Ed.Pisca /1430 Town 5 52 0 Ed.Se.Frente/1900 Casa.Superior 10 7 3 Ed.Lendo \"Strings\\schedules\\Edward:E.Basico.01\"/2200 Casa.Superior 4 6 0 edward_sleep",
+			"fall_Fri": "GOTO fall_Thu",
+			"fall_Sat": "610 Casa.Superior 4 6 0 Ed.Dorme \"Strings\\schedules\\Edward:E.Dorme.00\"/800 Casa.Interior 9 8 1 Ed.Se.Es.Com /1000 SeedShop 4 19 0 /1300 Beach 16 24 2 Ed.Fumar /1730 Casa.Interior 15 8 2 Ed.Moeda \"Strings\\schedules\\Edward:E.Loja.00\"/2230 Casa.Superior 4 6 0 edward_sleep",
+			"fall_Sun": "GOTO fall_Sat",
+			
+			"winter": "GOTO fall",
+			"winter_Tue": "GOTO fall",
+			"winter_Wed": "GOTO fall",
+			"winter_Thu": "GOTO fall_Thu",
+			"winter_Fri": "GOTO fall_Thu",
+			"winter_Sat": "GOTO fall_Sat",
+			"winter_Sun": "GOTO fall_Sat",
+			
+			"winter_15": "610 Casa.Superior 15 11 3 Ed.Celu \"Strings\\schedules\\Edward:E.DiasFri.00\"/700 Casa.Interior 9 8 1 Ed.Se.Es.Com /800 BusStop 25 11 2 Ed.Coçar /1130 Railroad 35 41 0 Ed.Moeda /1630 Beach 24 34 3 Ed.Compra \"Strings\\schedules\\Edward:E.MercNot.00\"/2200 Casa.Superior 4 6 0 edward_sleep",
+			"winter_16": "GOTO winter_15",
+			"winter_17": "GOTO winter_15"
+			}
+		},
+		{	// Tarefas Diarias Ayeisha
+			"LogName": "Edward Agendamentos Ayeisha",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "HasSeenEvent: anyPlayer|contains=90205264": true, "HasSeenEvent: anyPlayer|contains=90805264": false, "HasMod |contains=TheLimeyDragon.Ayeisha": true },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_Thu": "610 Casa.Interior 20 12 2 Ed.Jornal /730 Casa.Interior 20 12 3 /800 Forest 71 41 2 Ed.Moeda /1000 Forest 71 41 2 Ed.Bravo /1100 Forest 71 41 2 Ed.Treina \"Strings\\schedules\\Edward:E.Treino.00\"/1200 Forest 71 41 2 Ed.Bravo \"Strings\\schedules\\Edward:E.Treino.01\"/1400 Forest 71 43 2 Ed.Coçar /1430 Saloon 19 20 1 Ed.Beber /2100 Casa.Superior 4 6 0 edward_sleep",
+			}
+		},
+		{	// Tarefas Diarias East Scarpe
+			"LogName": "Edward Agendamentos East Scarpe",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "HasSeenEvent: anyPlayer|contains=90205264": true, "HasMod |contains=LemurKat.EastScarpe.CP": true, "HasSeenEvent: anyPlayer|contains=90805264": false },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"summer": "610 Casa.Superior 16 7 0 Ed.Lendo \"Strings\\schedules\\Edward:E.Basico.00\"/700 Casa.Interior 9 8 1 Ed.Se.Es.Com \"Strings\\schedules\\Edward:E.Basico.02\"/800 Town 33 57 2 Ed.Coçar /1000 EastScarp_VillageInn 45 33 1 Ed.Comer \"Strings\\schedules\\Edward:E.Eastscarp.Mod.00\"/1430 EastScarp_Village 54 40 2 Ed.Se.Frente /1700 Town 24 54 2 Ed.Fumar \"Strings\\schedules\\Edward:E.Basico.05\"/2200 Casa.Superior 4 6 0 edward_sleep",
+			"summer_Tue": "GOTO summer",
+			"summer_Wed": "GOTO summer"
+			}
+		},
+		{	// Tarefas Diarias Ridgeside
+			"LogName": "Edward Agendamentos Ridgeside",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "HasSeenEvent: anyPlayer|contains=90205264": true, "HasMod |contains=Rafseazz.RSVCP": true, "HasSeenEvent: anyPlayer|contains=90805264": false },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"winter": "610 Casa.Superior 15 11 3 Ed.Celu \"Strings\\schedules\\Edward:E.DiasFri.00\"/700 Casa.Interior 9 8 1 Ed.Se.Es.Com /800 Custom_Ridgeside_Ridge 18 32 2 Ed.Fumar 18 32 2 /1330 Custom_Ridgeside_RidgesideVillage 61 37 0 Ed.Bravo \"Strings\\schedules\\Edward:E.Ridgside.Mod.00\"/1630 Custom_Ridgeside_RidgesideVillage 94 85 0 Ed.Se.Frente /1930 Casa.Superior 4 6 0 edward_sleep",
+			"winter_Tue": "GOTO winter",
+			"winter_Wed": "GOTO winter"
+			}
+		},
+		{	// Tarefas Dinamicas 01
+			"LogName": "Edward Tarefas Dinamicas 01",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "HasSeenEvent: anyPlayer|contains=58614004": true, "HasSeenEvent: anyPlayer|contains=90805264": false, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_27": "610 Casa.Superior 4 6 0 Ed.Dorme \"Strings\\schedules\\Edward:E.Dorme.00\"/800 Casa.Interior 9 8 1 Ed.Se.Es.Com /1000 SeedShop 12 27 3 Ed.Compra/1130 SeedShop 4 19 0 /1200 Casa.Superior 9 10 1 Ed.Beber /1700 Casa.Superior 8 7 2 Ed.Jornal /1830 Casa.Interior 15 8 2 Ed.Moeda \"Strings\\schedules\\Edward:E.Loja.00\"/2130 Casa.Interior 15 8 2 Ed.Lendo /2230 Casa.Superior 4 6 0 edward_sleep",	
+			"summer_6": "GOTO spring_27",
+			"fall_6": "610 Casa.Superior 4 6 0 Ed.Dorme \"Strings\\schedules\\Edward:E.Dorme.00\"/800 Casa.Interior 9 8 1 Ed.Se.Es.Com /1000 SeedShop 4 19 0 /1200 Casa.Superior 9 10 1 Ed.Beber /1700 Casa.Superior 8 7 2 Ed.Jornal /1830 Casa.Interior 15 8 2 Ed.Moeda \"Strings\\schedules\\Edward:E.Loja.00\"/2230 Casa.Superior 4 6 0 edward_sleep",
+			"winter_27": "GOTO fall_6"
+			}
+		},
+		{	// Tarefas Dinamicas 02
+			"LogName": "Edward Treino Dinamicos 02",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "HasSeenEvent: anyPlayer|contains=61743005": true, "HasSeenEvent: anyPlayer|contains=61743007": false },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_Thu": "610 Casa.Interior 20 12 2 Ed.Jornal /730 Casa.Interior 20 12 3 /800 Forest 71 41 2 Ed.Moeda /1000 Forest 71 41 2 Ed.Bravo /1100 Forest 71 41 2 clint_hammer \"Strings\\schedules\\Edward:E.Treino.00\"/1200 Forest 71 41 2 Ed.Bravo \"Strings\\schedules\\Edward:E.Treino.01\"/1400 Forest 71 43 2 Ed.Coçar /1430 Saloon 15 20 1 Ed.Beber /2100 Casa.Superior 4 6 0 edward_sleep",
+			"fall_Thu": "610 Casa.Interior 20 12 2 Ed.Jornal /730 Casa.Interior 20 12 3 /800 Forest 71 41 2 Ed.Coçar /1000 Forest 71 41 2 Ed.Bravo /1100 Forest 71 41 2 clint_hammer \"Strings\\schedules\\Edward:E.Treino.00\"/1200 Forest 71 41 2 Ed.Bravo \"Strings\\schedules\\Edward:E.Treino.01\"/1400 Forest 71 43 2 Ed.Pisca /1430 Town 5 52 0 Ed.Se.Frente/1900 Casa.Superior 10 7 3 Ed.Lendo \"Strings\\schedules\\Edward:E.Basico.01\"/2200 Casa.Superior 4 6 0 edward_sleep"
+			}
+		},
+		{	// Tarefas Diarias Aposentado
+			"LogName": "Edward Agendamentos Aposentado",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "HasSeenEvent: anyPlayer|contains=90805264": true, "HasSeenEvent: anyPlayer|contains=58614000": false, "HasSeenEvent: anyPlayer|contains=91105264": false },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"rain": "610 Casa.Superior 8 7 0 Ed.Musi /930 Casa.Interior 9 8 1 Ed.Se.Es.Com /1200 Casa.Interior 15 8 2 Ed.Jornal /1530 Saloon 9 20 1 Ed.Comer /2200 Casa.Superior 4 6 0 edward_sleep",	
+				
+			"spring": "610 Casa.Superior 4 6 0 Ed.Dorme \"Strings\\schedules\\Edward:E.Dorme.00\"/800 Casa.Interior 9 8 1 Ed.Se.Es.Com /1030 Forest 99 22 0 Ed.Costa.Para /1230 Beach 42 34 0 Ed.Se.Frente /1800 Saloon 22 19 1 Ed.Beber.B /2200 Casa.Superior 4 6 0 edward_sleep",
+			"summer": "GOTO spring",
+			"fall": "GOTO spring",
+			"winter": "GOTO spring"
+			}
+		},
+		{	// Tarefas Casado 01
+			"LogName": "Edward Agendamentos Casado 01",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "Season |contains=Spring, Summer": true, "Weather |contains=rain, storm": false },	
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"marriage_Fri": "800 SeedShop 12 27 3 Ed.Compra/1200 SeedShop 4 19 0 /1230 Mountain 49 27 3 Ed.Beira /1700 Town 46 32 2 Ed.Coçar \"Strings\\schedules\\Edward:E.DiasNor.03\"/2100 bed",
+			"marriage_8": "1000 Hospital 7 17 3 Ed.Celu \"Strings\\schedules\\Edward:E.DiasFri.02\"/1200 AdventureGuild 9 12 0 Ed.Jornal /1830 bed",
+
+			"marriage_DesertFestival_1": "900 Desert 27 42 2 Ed.Moeda \"Strings\\schedules\\Edward:E.DeseFes.00\"/2000 bed",
+			"marriage_DesertFestival_2": "900 Desert 11 7 2 Ed.Coçar \"Strings\\schedules\\Edward:E.DeseFes.01\"/2520 bed"
+			}
+		},
+		{	// Tarefas Casado 02
+			"LogName": "Edward Agendamentos Casado 02",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "Season |contains=Winter, Fall": true, "Weather |contains=rain, storm": false },	
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"marriage_Fri": "1000 Forest 99 22 0 Ed.Costa.Para /1330 Forest 71 43 2 Ed.Treina \"Strings\\schedules\\Edward:E.Treino.00\"/1600 Saloon 22 19 3 Ed.Beber.B \"Strings\\schedules\\Edward:E.DiasFri.03\"/2000 bed",
+			"marriage_winter_16": "1330 Saloon 13 20 0 Ed.Senta.Es.A \"Strings\\schedules\\Edward:E.DiasFri.02\"/1630 Beach 24 34 3 Ed.Compra \"Strings\\schedules\\Edward:E.MercNot.00\"/2130 bed"
+			}
+		},
+		{	// Tarefas Casado 03
+			"LogName": "Edward Agendamentos Casado 03",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "Weather |contains=rain, storm": false, "HasSeenEvent: anyPlayer|contains=58614009": "true" },	
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"marriage_summer_20": "830 Forest 83 40 0 dick_fish  \"Strings\\schedules\\Edward:E.PesComp.00\"/1900 bed",
+			"marriage_summer_21": "830 Forest 83 40 0 dick_fish  \"Strings\\schedules\\Edward:E.PesComp.02\"/1900 bed",
+			"marriage_winter_12": "900 Beach 46 25 0 dick_fish  \"Strings\\schedules\\Edward:E.PesComp.01\"/1930 bed",
+			"marriage_winter_13": "900 Beach 46 25 0 dick_fish  \"Strings\\schedules\\Edward:E.PesComp.02\"/1930 bed"
+			}
+		},
+		{	// Tarefas Casado 04
+			"LogName": "Edward Agendamentos Casado 04",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "Season |contains=Spring": true, "Weather |contains=rain, storm": false, "HasSeenEvent: anyPlayer|contains=58614009": "true" },	
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"marriage_Sat": "830 Forest 90 40 0 dick_fish  \"Strings\\schedules\\Edward:E.Pesca.00\"/1400 WizardHouse 6 18 1 /1620 Saloon 24 34 3 Ed.Senta.Di.A /2130 bed"
+			}
+		},
+		{	// Tarefas Casado 05
+			"LogName": "Edward Agendamentos Casado 05",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "Season |contains=Summer": true, "Weather |contains=rain, storm": false, "HasSeenEvent: anyPlayer|contains=58614009": "true" },	
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"marriage_Wed": "1200 Town 41 102 0 Town  \"Strings\\schedules\\Edward:E.Pesca.01\"/1800 home"
+			}
+		},
+		{	// Tarefas Casado 06
+			"LogName": "Edward Agendamentos Casado 06",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "Season |contains=Fall": true, "Weather |contains=rain, storm": false, "HasSeenEvent: anyPlayer|contains=58614009": "true" },	
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"marriage_Sun": "1000 Mountain 64 14 0 dick_fish  \"Strings\\schedules\\Edward:E.Pesca.02\"/1500 AdventureGuild 11 13 1 /1800 bed"
+			}
+		},
+		{	// Tarefas Casado 06
+			"LogName": "Edward Agendamentos Casado 06",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "Season |contains=Winter": true, "Weather |contains=rain, storm": false, "HasSeenEvent: anyPlayer|contains=58614009": "true" },	
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"marriage_Sun": "1130 Forest 28 26 0 dick_fish  \"Strings\\schedules\\Edward:E.Pesca.03\"/1700 home"
+			}
+		},
+		{	// Tarefas Casado Festival East Scarpe
+			"LogName": "Edward Agendamentos Casado Festival East Scarpe",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Edward",
+			"When": { "HasMod |contains=LemurKat.EastScarpe.CP": true, "HasSeenEvent: anyPlayer|contains=58614009": "true" },	
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"marriage_fall_27": "930 EastScarp_VillageInn 44 33 0 \"Strings\\schedules\\Edward:E.EasFs.00\"/1430 EastScarp_VillageInn 30 29 2 \"Strings\\schedules\\Edward:E.EasFs.01\"/1630 EastScarp_VillageInn 17 19 1 \"Strings\\schedules\\Edward:E.EasFs.02\"/1830 EastScarp_VillageInn 43 22 0 \"Strings\\schedules\\Edward:E.EasFs.03\"/2000 bed"
+			}
+		}
+	]
+}

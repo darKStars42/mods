@@ -1,0 +1,153 @@
+{
+    "Changes": [  
+{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+      		"TargetField": ["(BC)HeavyFurnace", "OutputRules"],
+		"Entries": {
+        "{{ModId}}_rose_quartz": {"Id": "{{ModId}}_rose_quartz",
+        "Triggers": [
+          {
+            "Id": "ItemPlacedInMachine",
+            "Trigger": "ItemPlacedInMachine",
+            "RequiredItemId": "{{ModId}}_rose_quartz",
+            "RequiredTags": null,
+            "RequiredCount": 5,
+            "Condition": null
+          }
+        ],
+        "UseFirstValidOutput": false,
+        "OutputItem": [
+          {
+            "CustomData": null,
+            "OutputMethod": null,
+            "CopyColor": false,
+            "CopyPrice": false,
+            "CopyQuality": false,
+            "PreserveType": null,
+            "PreserveId": null,
+            "IncrementMachineParentSheetIndex": 0,
+            "PriceModifiers": null,
+            "PriceModifierMode": "Stack",
+            "Condition": null,
+            "Id": "(O)338",
+            "ItemId": "(O)338",
+            "RandomItemId": null,
+            "MaxItems": null,
+            "MinStack": 5,
+            "MaxStack": 6,
+            "Quality": -1,
+            "ObjectInternalName": null,
+            "ObjectDisplayName": null,
+            "ObjectColor": null,
+            "ToolUpgradeLevel": -1,
+            "IsRecipe": false,
+            "StackModifiers": null,
+            "StackModifierMode": "Stack",
+            "QualityModifiers": null,
+            "QualityModifierMode": "Stack",
+            "ModData": null,
+            "PerItemCondition": null
+          }
+        ],
+        "MinutesUntilReady": 90,
+        "DaysUntilReady": -1,
+        "InvalidCountMessage": null,
+        "RecalculateOnCollect": false
+      }
+    },
+    },
+{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+      		"TargetField": ["(BC)13", "OutputRules"],
+		"Entries": {
+        "{{ModId}}_rose_quartz": {"Id": "{{ModId}}_rose_quartz",
+        "Triggers": [
+          {
+            "Id": "ItemPlacedInMachine",
+            "Trigger": "ItemPlacedInMachine",
+            "RequiredItemId": "{{ModId}}_rose_quartz",
+            "RequiredTags": null,
+            "RequiredCount": 1,
+            "Condition": null
+          }
+        ],
+        "UseFirstValidOutput": false,
+        "OutputItem": [
+          {
+            "CustomData": null,
+            "OutputMethod": null,
+            "CopyColor": false,
+            "CopyPrice": false,
+            "CopyQuality": false,
+            "PreserveType": null,
+            "PreserveId": null,
+            "IncrementMachineParentSheetIndex": 0,
+            "PriceModifiers": null,
+            "PriceModifierMode": "Stack",
+            "Condition": null,
+            "Id": "(O)338",
+            "ItemId": "(O)338",
+            "RandomItemId": null,
+            "MaxItems": null,
+            "MinStack": -1,
+            "MaxStack": -1,
+            "Quality": -1,
+            "ObjectInternalName": null,
+            "ObjectDisplayName": null,
+            "ObjectColor": null,
+            "ToolUpgradeLevel": -1,
+            "IsRecipe": false,
+            "StackModifiers": null,
+            "StackModifierMode": "Stack",
+            "QualityModifiers": null,
+            "QualityModifierMode": "Stack",
+            "ModData": null,
+            "PerItemCondition": null
+          }
+        ],
+        "MinutesUntilReady": 90,
+        "DaysUntilReady": -1,
+        "InvalidCountMessage": null,
+        "RecalculateOnCollect": false
+      }
+    },
+    },
+        {
+            "LogName": "TimeChange",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": [
+                "(BC)21",
+                "ReadyTimeModifiers"
+            ],
+            "Entries": {
+                "{{ModId}}_sapphire": {
+                    "Id": "{{ModId}}_sapphire",
+                    "Condition": "ITEM_ID Target (O){{ModId}}_sapphire",
+                    "Modification": "Set",
+                    "Amount": 2800.0,
+                },
+                "{{ModId}}_rose_quartz": {
+                    "Id": "{{ModId}}_rose_quartz",
+                    "Condition": "ITEM_ID Target (O){{ModId}}_rose_quartz",
+                    "Modification": "Set",
+                    "Amount": 800.0,
+                },
+                "{{ModId}}_peridot": {
+                    "Id": "{{ModId}}_peridot",
+                    "Condition": "ITEM_ID Target (O){{ModId}}_peridot",
+                    "Modification": "Set",
+                    "Amount": 2900.0,
+                },
+                "{{ModId}}_blue_goldstone": {
+                    "Id": "{{ModId}}_blue_goldstone",
+                    "Condition": "ITEM_ID Target (O){{ModId}}_blue_goldstone",
+                    "Modification": "Set",
+                    "Amount": 1800.0,
+                },
+            },
+        },
+   ],
+}

@@ -1,0 +1,56 @@
+{
+   "Changes": [
+		{
+			"Action": "Load",
+			"Target": "Characters/Leo_GrowthSpurt, Portraits/Leo_GrowthSpurt, Characters/Leo_GrowthSpurt_Beach, Portraits/Leo_GrowthSpurt_Beach, Characters/Leo_GrowthSpurt_Winter, Portraits/Leo_GrowthSpurt_Winter",
+			"FromFile": "assets/{{Target}}.png"
+		},
+
+        {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "TargetField": [ 
+				"Leo", 
+				"Appearance"
+			],
+            "Entries": {
+				2:{
+                "Id": "GrowthSpurt",
+				"Condition": "PLAYER_HAS_MAIL Host leoMoved,!PLAYER_HAS_MAIL Host leoMoved%&NL&%,PLAYER_HAS_CHILDREN Any 1",
+				"Season": null,
+				"Indoors": true,
+				"Outdoors": true,
+				"Portrait": "Portraits/Leo_GrowthSpurt",
+				"Sprite": "Characters/Leo_GrowthSpurt",
+				"IsIslandAttire": false,
+				"Precedence": -1000,
+				"Weight": 0
+				},
+				3:{
+                "Id": "GrowthSpurt_Beach",
+				"Condition": "PLAYER_HAS_MAIL Host leoMoved,!PLAYER_HAS_MAIL Host leoMoved%&NL&%, PLAYER_HAS_CHILDREN Any 1",
+				"Season": null,
+				"Indoors": true,
+				"Outdoors": true,
+				"Portrait": "Portraits/Leo_GrowthSpurt_Beach",
+				"Sprite": "Characters/Leo_GrowthSpurt_Beach",
+				"IsIslandAttire": true,
+				"Precedence": -1000,
+				"Weight": 0
+				},
+				4:{
+                "Id": "GrowthSpurt_Winter",
+				"Condition": "PLAYER_HAS_MAIL Host leoMoved,!PLAYER_HAS_MAIL Host leoMoved%&NL&%, PLAYER_HAS_CHILDREN Any 1",
+				"Season": "Winter",
+				"Indoors": true,
+				"Outdoors": true,
+				"Portrait": "Portraits/Leo_GrowthSpurt_Winter",
+				"Sprite": "Characters/Leo_GrowthSpurt_Winter",
+				"IsIslandAttire": false,
+				"Precedence": -1100,
+				"Weight": 0
+				}
+            },
+        },
+    ]
+}

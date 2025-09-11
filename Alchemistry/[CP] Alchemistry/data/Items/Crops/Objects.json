@@ -1,0 +1,836 @@
+{
+    "Changes": [
+
+
+        //Load crop seeds and icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/ObjectsCrops",
+            "FromFile": "assets/Items/Crops/objects.png"
+        },
+
+/*----------------------------------------------------
+Crop seed data
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_HemlockSeeds": {
+                    "Name": "{{ModID}}_HemlockSeeds",
+                    "Displayname": "{{i18n:Alchemistry_HemlockSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_HemlockSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 0
+                },
+                "{{ModId}}_InkberrySeeds": {
+                    "Name": "{{ModID}}_InkberrySeeds",
+                    "Displayname": "{{i18n:Alchemistry_InkberrySeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_InkberrySeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 2
+                },
+                "{{ModId}}_StarlightHelleboreSeeds": {
+                    "Name": "{{ModID}}_StarlightHelleboreSeeds",
+                    "Displayname": "{{i18n:Alchemistry_StarlightHelleboreSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_StarlightHelleboreSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 150,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 4
+                },
+                "{{ModId}}_WerewolfsBaneSeeds": {
+                    "Name": "{{ModID}}_WerewolfsBaneSeeds",
+                    "Displayname": "{{i18n:Alchemistry_WerewolfsBaneSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_WerewolfsBaneSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 6
+                },
+                "{{ModId}}_SunsetCastorSeeds": {
+                    "Name": "{{ModID}}_SunsetCastorSeeds",
+                    "Displayname": "{{i18n:Alchemistry_SunsetCastorSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_SunsetCastorSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 8
+                },
+                "{{ModId}}_BansheesBellSeeds": {
+                    "Name": "{{ModID}}_BansheesBellSeeds",
+                    "Displayname": "{{i18n:Alchemistry_BansheesBellSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_BansheesBellSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 10
+                },
+                "{{ModId}}_MistletoeSeeds": {
+                    "Name": "{{ModID}}_MistletoeSeeds",
+                    "Displayname": "{{i18n:Alchemistry_MistletoeSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_MistletoeSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 12
+                },
+                "{{ModId}}_WinterWailerSeeds": {
+                    "Name": "{{ModID}}_WinterWailerSeeds",
+                    "Displayname": "{{i18n:Alchemistry_WinterWailerSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_WinterWailerSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 14
+                },
+                "{{ModId}}_AddersTongueSeeds": {
+                    "Name": "{{ModID}}_AddersTongueSeeds",
+                    "Displayname": "{{i18n:Alchemistry_AddersTongueSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_AddersTongueSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 16
+                },
+                "{{ModId}}_DollsEyesSeeds": {
+                    "Name": "{{ModID}}_DollsEyesSeeds",
+                    "Displayname": "{{i18n:Alchemistry_DollsEyesSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_DollsEyesSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 18
+                },
+                "{{ModId}}_NightsShadeSeeds": {
+                    "Name": "{{ModID}}_NightsShadeSeeds",
+                    "Displayname": "{{i18n:Alchemistry_NightsShadeSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_NightsShadeSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 20
+                },
+                "{{ModId}}_BleedingHeartSeeds": {
+                    "Name": "{{ModID}}_BleedingHeartSeeds",
+                    "Displayname": "{{i18n:Alchemistry_BleedingHeartSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_BleedingHeartSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 22
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Crop produce data - Perfection Tracker Enabled
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_Hemlock": {
+                    "Name": "{{ModID}}_Hemlock",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 1,
+                    "Displayname": "{{i18n:Alchemistry_Hemlock.name}}",
+                    "Description": "{{i18n:Alchemistry_Hemlock.description}}",
+                    "Type": "Basic",
+                    "Category": -80, //flower
+                    "Price": 70,
+                    "Edibility": -50,
+                    "IsDrink": false,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_HemlockDebuff",
+                            "BuffId": 25,
+                            "IsDebuff": true,
+                            "GlowColor": "Green",
+                            "Duration": 60,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 25,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -3.0
+                                }
+                            
+                        }
+                    ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_flower_item",
+                      "color_gray",
+                      "crop_item",
+                      "season_spring"
+                    ]
+                },
+                "{{ModId}}_Inkberry": {
+                    "Name": "{{ModID}}_Inkberry",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 3,
+                    "Displayname": "{{i18n:Alchemistry_Inkberry.name}}",
+                    "Description": "{{i18n:Alchemistry_Inkberry.description}}",
+                    "Type": "Basic",
+                    "Category": -79, //fruit
+                    "Price": 65,
+                    "Edibility": -150,
+                    "IsDrink": false,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_InkberryDebuff",
+                            "BuffId": 25,
+                            "IsDebuff": true,
+                            "GlowColor": "Green",
+                            "Duration": 60,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 25,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -7.0,
+                                "Defense": -1.0
+                                }
+                            
+                        }
+                    ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_fruit_item",
+                      "color_purple",
+                      "crop_item",
+                      "season_spring"
+                    ]
+                },
+                "{{ModId}}_StarlightHellebore": {
+                    "Name": "{{ModID}}_StarlightHellebore",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 5,
+                    "Displayname": "{{i18n:Alchemistry_StarlightHellebore.name}}",
+                    "Description": "{{i18n:Alchemistry_StarlightHellebore.description}}",
+                    "Type": "Basic",
+                    "Category": -80, //flower
+                    "Price": 75,
+                    "Edibility": -40,
+                    "IsDrink": false,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModID}}_StarlightHelleboreDebuff",
+                            "BuffId": 26,
+                            "IsDebuff": true,
+                            "GlowColor": "Purple",
+                            "Duration": 200,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 26,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -5.0,
+                                "Defense": -2.0
+                                }
+                            
+                        }
+                    ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_flower_item",
+                      "color_aquamarine",
+                      "crop_item",
+                      "season_summer"
+                    ]
+                },
+                "{{ModId}}_WerewolfsBane": {
+                    "Name": "{{ModID}}_WerewolfsBane",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 7,
+                    "Displayname": "{{i18n:Alchemistry_WerewolfsBane.name}}",
+                    "Description": "{{i18n:Alchemistry_WerewolfsBane.description}}",
+                    "Type": "Basic",
+                    "Category": -80, //flower
+                    "Price": 45,
+                    "Edibility": -75,
+                    "IsDrink": false,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModID}}_WerewolfsBaneDebuff",
+                            "BuffId": 25,
+                            "IsDebuff": true,
+                            "GlowColor": "Purple",
+                            "Duration": 60,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 25,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -3.0,
+                                "Defense": -2.0
+                                }
+                            
+                        }
+                    ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_flower_item",
+                      "color_poppyseed",
+                      "crop_item",
+                      "season_summer"
+                    ]
+                },
+                "{{ModId}}_SunsetCastor": {
+                    "Name": "{{ModID}}_SunsetCastor",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 9,
+                    "Displayname": "{{i18n:Alchemistry_SunsetCastor.name}}",
+                    "Description": "{{i18n:Alchemistry_SunsetCastor.description}}",
+                    "Type": "Basic",
+                    "Category": -80, //flower
+                    "Price": 90,
+                    "Edibility": -299,
+                    "IsDrink": false,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModID}}_SunsetCastorDebuff",
+                            "BuffId": 26,
+                            "IsDebuff": true,
+                            "GlowColor": "Red",
+                            "Duration": 400,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 26,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes":
+                                {
+                                "Speed": -5.0,
+                                "Defense": -5.0
+                                }
+                        }
+                    ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_flower_item",
+                      "color_pale_violet_red",
+                      "crop_item",
+                      "season_fall"
+                    ]
+                },
+                "{{ModId}}_BansheesBell": {
+                    "Name": "{{ModID}}_BansheesBell",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 11,
+                    "Displayname": "{{i18n:Alchemistry_BansheesBell.name}}",
+                    "Description": "{{i18n:Alchemistry_BansheesBell.description}}",
+                    "Type": "Basic",
+                    "Category": -80, //flower
+                    "Price": 295,
+                    "Edibility": -10,
+                    "IsDrink": false,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModID}}_BansheesBellDebuff",
+                            "BuffId": 17,
+                            "IsDebuff": true,
+                            "GlowColor": "Blue",
+                            "Duration": 120,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 18,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -3.0,
+                                "Defense": 1.0,
+                                "Attack": 1.0
+                                }
+                            
+                        }
+                    ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_flower_item",
+                      "color_white",
+                      "crop_item",
+                      "season_fall"
+                    ]
+                },
+                "{{ModId}}_Mistletoe": {
+                    "Name": "{{ModID}}_Mistletoe",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 13,
+                    "Displayname": "{{i18n:Alchemistry_Mistletoe.name}}",
+                    "Description": "{{i18n:Alchemistry_Mistletoe.description}}",
+                    "Type": "Basic",
+                    "Category": -79, //fruit
+                    "Price": 65,
+                    "Edibility": -10,
+                    "IsDrink": false,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModID}}_MistletoeDebuff",
+                            "BuffId": 25,
+                            "IsDebuff": true,
+                            "GlowColor": "Green",
+                            "Duration": 60,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 25,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -3.0,
+                                "Defense": -1.0
+                                }
+                            
+                        }
+                    ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_fruit_item",
+                      "color_white",
+                      "crop_item",
+                      "season_winter"
+                    ]
+                },
+                "{{ModId}}_WinterWailer": {
+                    "Name": "{{ModID}}_WinterWailer",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 15,
+                    "Displayname": "{{i18n:Alchemistry_WinterWailer.name}}",
+                    "Description": "{{i18n:Alchemistry_WinterWailer.description}}",
+                    "Type": "Basic",
+                    "Category": -75, //vegetable
+                    "Price": 60,
+                    "Edibility": -50,
+                    "IsDrink": false,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModID}}_WinterWailerDebuff",
+                            "BuffId": 17,
+                            "IsDebuff": true,
+                            "GlowColor": "Blue",
+                            "Duration": 120,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 18,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -7.0,
+                                "Defense": -1.0
+                                }
+                            
+                        }
+                    ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_vegetable_item",
+                      "color_light_cyan",
+                      "crop_item",
+                      "season_winter"
+                    ]
+                },
+                "{{ModId}}_AddersTongue": {
+                    "Name": "{{ModID}}_AddersTongue",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 17,
+                    "Displayname": "{{i18n:Alchemistry_AddersTongue.name}}",
+                    "Description": "{{i18n:Alchemistry_AddersTongue.description}}",
+                    "Type": "Basic",
+                    "Category": -75, //vegetable
+                    "Price": 700,
+                    "Edibility": -10,
+                    "IsDrink": false,
+                    "Buffs": null,
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_vegetable_item",
+                      "color_sea_green",
+                      "crop_item",
+                      "season_spring"
+                    ]
+                },
+                "{{ModId}}_DollsEyes": {
+                    "Name": "{{ModID}}_DollsEyes",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 19,
+                    "Displayname": "{{i18n:Alchemistry_DollsEyes.name}}",
+                    "Description": "{{i18n:Alchemistry_DollsEyes.description}}",
+                    "Type": "Basic",
+                    "Category": -79, //fruit
+                    "Price": 90,
+                    "Edibility": -150,
+                    "IsDrink": false,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModID}}_DollsEyesDebuff",
+                            "BuffId": 25,
+                            "IsDebuff": true,
+                            "GlowColor": "Green",
+                            "Duration": 60,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 25,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -3.0,
+                                "Defense": -3.0
+                                }
+                            
+                        }
+                    ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_fruit_item",
+                      "color_sand",
+                      "crop_item",
+                      "season_summer"
+                    ]
+                },
+                "{{ModId}}_NightsShade": {
+                    "Name": "{{ModID}}_NightsShade",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 21,
+                    "Displayname": "{{i18n:Alchemistry_NightsShade.name}}",
+                    "Description": "{{i18n:Alchemistry_NightsShade.description}}",
+                    "Type": "Basic",
+                    "Category": -80, //flower
+                    "Price": 390,
+                    "Edibility": -150,
+                    "IsDrink": false,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModID}}_NightsShadeDebuff",
+                            "BuffId": 26,
+                            "IsDebuff": true,
+                            "GlowColor": "Purple",
+                            "Duration": 300,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 26,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -5.0,
+                                "Defense": -5.0
+                                }
+                            
+                        }
+                    ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_flower_item",
+                      "color_poppyseed",
+                      "crop_item",
+                      "season_fall"
+                    ]
+                },
+                "{{ModId}}_BleedingHeart": {
+                    "Name": "{{ModID}}_BleedingHeart",
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 23,
+                    "Displayname": "{{i18n:Alchemistry_BleedingHeart.name}}",
+                    "Description": "{{i18n:Alchemistry_BleedingHeart.description}}",
+                    "Type": "Basic",
+                    "Category": -79, //fruit
+                    "Price": 750,
+                    "Edibility": -10,
+                    "IsDrink": false,
+                    "Buffs": null,
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                      "!seedmaker_banned",
+                      "Alchemistry_fruit_item",
+                      "color_dark_red",
+                      "crop_item",
+                      "season_winter"
+                    ]
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Crop produce data - Perfection Tracker Disabled
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Hemlock" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Inkberry" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_StarlightHellebore" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_WerewolfsBane" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SunsetCastor" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BansheesBell" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Mistletoe" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_WinterWailer" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_AddersTongue" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_DollsEyes" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_NightsShade" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BleedingHeart" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+
+/*----------------------------------------------------
+Mushroom Tree Seeds - for the Forage Crops mod
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "When": { "HasMod": "Kronosta.ForageCrops" },
+            "Entries": {
+                "{{ModId}}_MushroomTreeSpringSeeds": {
+                    "Name": "{{ModID}}_MushroomTreeSpringSeeds",
+                    "Displayname": "{{i18n:Alchemistry_MushroomTreeSpringSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_MushroomTreeSpringSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 60,
+                    "ContextTags": [
+                        "seedmaker_banned"
+                    ]
+                },
+                "{{ModId}}_MushroomTreeSummerSeeds": {
+                    "Name": "{{ModID}}_MushroomTreeSummerSeeds",
+                    "Displayname": "{{i18n:Alchemistry_MushroomTreeSummerSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_MushroomTreeSummerSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 61,
+                    "ContextTags": [
+                        "seedmaker_banned"
+                    ]
+                },
+                "{{ModId}}_MushroomTreeFallSeeds": {
+                    "Name": "{{ModID}}_MushroomTreeFallSeeds",
+                    "Displayname": "{{i18n:Alchemistry_MushroomTreeFallSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_MushroomTreeFallSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 62,
+                    "ContextTags": [
+                        "seedmaker_banned"
+                    ]
+                },
+                "{{ModId}}_MushroomTreeWinterSeeds": {
+                    "Name": "{{ModID}}_MushroomTreeWinterSeeds",
+                    "Displayname": "{{i18n:Alchemistry_MushroomTreeWinterSeeds.name}}",
+                    "Description": "{{i18n:Alchemistry_MushroomTreeWinterSeeds.description}}",
+                    "Type": "Seeds",
+                    "Category": -74,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/ObjectsCrops",
+                    "SpriteIndex": 63,
+                    "ContextTags": [
+                        "seedmaker_banned"
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,150 @@
+{
+    "Changes": [
+
+/*----------------------------------------------------
+Add Essense Restabilizer
+----------------------------------------------------*/        
+        { 
+        "LogName":"Add Machine - Essense Restabilizer",
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_EssenceRestabilizer": {
+                    "Name": "{{ModId}}_EssenceRestabilizer",
+                    "DisplayName": "{{i18n:Alchemistry_EssenceRestabilizer.name}}",
+                    "Description": "{{i18n:Alchemistry_EssenceRestabilizer.description}}",
+                    "Fragility": 0,
+                    "CanBePlacedOutdoors": true,
+                    "CanBePlacedIndoors": true,
+                    "Price": 0,
+                    "Texture": "Mods/{{ModId}}/Machines",
+                    "SpriteIndex": 2
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Outputs
+----------------------------------------------------*/ 
+        {
+            "LogName": "Load Machine - Essence Restabilizer",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": { 
+                "(BC)Morghoula.AlchemistryCP_EssenceRestabilizer": {
+                    "OutputRules": [],
+                    "ShowNextIndexWhileWorking": false,
+                    "ShowNextIndexWhenReady": false,
+                    "WorkingEffects":[
+                        {
+                            "Sounds": [
+                                {
+                                    "Id": "bubbles",
+                                    "Delay": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Load Essence Restabilizer Outputs",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC)Morghoula.AlchemistryCP_EssenceRestabilizer", "OutputRules"],
+            "Entries": {
+                "{{ModID}}_WildEctoplasm": { 
+                    "Id": "{{ModID}}_WildEctoplasm",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredTags": ["Alchemistry_body_part"],
+                            "RequiredCount": 5
+                        }
+                    ],
+                    "UseFirstValidOutput": true,
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Moss",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "3",
+                                "selph.ExtraMachineConfig.RequirementId.2": "Morghoula.AlchemistryCP_ManaOrb",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "3",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 3 Moss and 3 Mana Orbs."
+                            },
+                                "ItemId": "(O)Morghoula.AlchemistryCP_WildEctoplasm",
+                                "CopyQuality": true,
+                                "CopyPrice": false
+                            }
+                    ],
+                        "MinutesUntilReady": 2880,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_MysticEctoplasm": { 
+                    "Id": "{{ModID}}_MysticEctoplasm",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_TrappedSoul",
+                            "RequiredCount": 5
+                        }
+                    ],
+                    "UseFirstValidOutput": true,
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)766", //slime
+                                "selph.ExtraMachineConfig.RequirementCount.1": "5",
+                                "selph.ExtraMachineConfig.RequirementId.2": "Morghoula.AlchemistryCP_ManaOrb",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "3",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 10 Slime and 3 Mana Orbs."
+                            },
+                                "ItemId": "(O)Morghoula.AlchemistryCP_MysticEctoplasm",
+                                "CopyQuality": true,
+                                "CopyPrice": false
+                            }
+                    ],
+                        "MinutesUntilReady": 2880,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_AquaticEctoplasm": { 
+                    "Id": "{{ModID}}_AquaticEctoplasm",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": null,
+                            "RequiredTags": [
+                            "category_fish"
+                            ],
+                            "RequiredCount": 5
+                        }
+                    ],
+                    "UseFirstValidOutput": true,
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementTags.1": "fishing_jelly", //any type of fishing jelly
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "Morghoula.AlchemistryCP_ManaOrb",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "3",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 of any River, Sea, or Cave Jelly and 3 Mana Orbs."
+                            },
+                                "ItemId": "(O)Morghoula.AlchemistryCP_AquaticEctoplasm",
+                                "CopyQuality": true,
+                                "CopyPrice": false
+                            }
+                    ],
+                        "MinutesUntilReady": 2880,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                    }
+            }
+        }
+    ]
+}

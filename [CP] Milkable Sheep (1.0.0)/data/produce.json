@@ -1,0 +1,168 @@
+{
+	"Changes": [
+	{
+		"Logname": "Modify sheep produce!!",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"Fields": {
+			"Sheep": {
+				"DaysToProduce": 1,
+				"HarvestType": "HarvestWithTool",
+				"HarvestTool": "Milk Pail",
+				"ProduceItemIds": [
+					{
+						"Id": "Default",
+						"Condition": null,
+						"MinimumFriendship": 0,
+						"ItemId": "440",
+					},
+					{
+						"Id": "Sheep's Milk",
+						"Condition": null,
+						"MinimumFriendship": 100,
+						"ItemId": "{{ModID}}_SheepMilk"
+					}
+				],
+				"DeluxeProduceItemIds": [
+					{
+						"Id": "Default",
+						"Condition": null,
+						"MinimumFriendship": 0,
+						"ItemId": "440",
+					},
+					{
+						"Id": "Large Sheep's Milk",
+						"Condition": null,
+						"MinimumFriendship": 200,
+						"ItemId": "{{ModID}}_LargeSheepMilk"
+					}
+				]
+			}
+		},
+		"Priority": "Late",
+	},
+	{
+		"LogName": "Tool collection config...",
+		"Action": "EditData",
+		"Target": "selph.ExtraAnimalConfig/AnimalExtensionData",
+		"Entries": {
+			"Sheep": {
+                "AnimalProduceExtensionData": {
+			    "(O){{ModID}}_SheepMilk": {
+			        "HarvestTool": "Milk Pail",
+			        "ProduceTexture": "Animals\\ShearedSheep",
+					},
+			    "(O){{ModID}}_LargeSheepMilk": {
+			        "HarvestTool": "Milk Pail",
+			        "ProduceTexture": "Animals\\ShearedSheep",
+					},
+			    "(O)440": {
+			        "HarvestTool": "Shears",
+			        "ProduceTexture": "Animals\\Sheep",
+					},
+		             },
+           		 },
+        	},
+	},
+	{
+		"LogName": "Sheep dairy yeaaaaggg!!!",
+		"Action": "EditData",
+		"Target": "Data/Objects",
+		"Entries": {
+			"{{ModID}}_SheepMilk": {
+				"Name": "{{ModID}}_SheepMilk",
+				"Type": "Basic",
+				"Category": -6,
+				"SpriteIndex": 0,
+				"DisplayName": "{{i18n:MS.SheepMilk.N}}",
+				"Description": "{{i18n:MS.SheepMilk.D}}",
+				"Texture": "{{ModID}}/Objects",
+				"Price": 250,
+				"Edibility": 27,
+				"IsDrink": true,
+				"ContextTags": [
+					"milk_item",
+					"color_white"
+				]
+			},
+			"{{ModID}}_LargeSheepMilk": {
+				"Name": "{{ModID}}_LargeSheepMilk",
+				"Type": "Basic", 
+				"Category": -6, 
+				"SpriteIndex": 1,
+				"DisplayName": "{{i18n:MS.SheepMilkLr.N}}",
+				"Description": "{{i18n:MS.SheepMilkLr.D}}",
+				"Texture": "{{ModID}}/Objects",
+				"Price": 390,
+				"Edibility": 37,
+				"IsDrink": true,
+				"ContextTags": [
+					"milk_item",
+					"color_white"
+				]
+			},
+			"{{ModID}}_SheepCheese": {
+				"Name": "{{ModID}}_SheepCheese",
+				"Type": "Basic", 
+				"Category": -26, 
+				"SpriteIndex": 2,
+				"DisplayName": "{{i18n:MS.SheepCheese.N}}", 
+				"Description": "{{i18n:MS.SheepCheese.D}}", 
+				"Texture": "{{ModID}}/Objects",
+				"Price": 500,
+				"Edibility": 50,
+				"ContextTags": [
+					"cheese_item",
+					"color_yellow"
+				]
+			}
+		}
+	},
+	{
+		"LogName": "Press That Cheese!",
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [
+			"(BC)16",
+			"OutputRules"
+		],
+		"Entries": {
+			"{{ModID}}_SheepMilk": {
+				"Id": "{{ModID}}_SheepMilk",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModID}}_SheepMilk",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+					{
+						"Id": "(O){{ModID}}_SheepCheese",
+						"ItemId": "(O){{ModID}}_SheepCheese"
+					}
+				],
+				"MinutesUntilReady": 200
+			},
+			"{{ModID}}_LargeSheepMilk": {
+				"Id": "{{ModID}}_LargeSheepMilk",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModID}}_LargeSheepMilk",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+					{
+						"Id": "(O){{ModID}}_SheepCheese",
+						"ItemId": "(O){{ModID}}_SheepCheese",
+						"Quality": 2
+					}
+				],
+				"MinutesUntilReady": 300
+			}
+		},
+	}
+    ]
+}	

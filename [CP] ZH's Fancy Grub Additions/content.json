@@ -1,0 +1,198 @@
+{
+  "Format": "2.7.0",
+  "ConfigSchema": {
+    //************************************
+    //         Config
+    //************************************
+
+    "EnableBaseGameAddons": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable the Base Game add-on recipes",
+      "Section": "RecipeSections"
+    },
+
+    "EnableCookedMeat": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable the Cooked Meat recipes",
+      "Section": "RecipeSections"
+    },
+
+    "EnableSVEAddons": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds cooking recipes for items in Stardew Valley Expanded without any recipes",
+      "Section": "RecipeSections"
+    },
+
+    //************************************
+    //     Base Game Recipes
+    //----------------------
+
+    "EnableMagicRockCandy": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable a cooking recipe to make Magic Rock Candy",
+      "Section": "BaseGameAddons"
+    },
+
+    "EnablePinaColada": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable a cooking recipe to make Piña Colada",
+      "Section": "BaseGameAddons"
+    },
+
+    //************************************
+    //     Cooked Meat Recipes
+    //----------------------
+
+    "CookedMeatRecipeType": {
+      "AllowValues": "AHM, RCFM",
+      "AllowBlank": true,
+      "Default": "AHM",
+      "Description": "Choose whether you use Animal Husbandry Mod's Meat or Cruelty Free Meat's Meat for this bundle's recipes (Ignore this if you don't use these mods)",
+      "Section": "CookedMeat"
+    },
+
+    "EnableBeefSteak": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable Beef Steak, a new cooking recipe",
+      "Section": "CookedMeat"
+    },
+
+    "EnableChickenDrumstick": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable Chicken Drumstick, a new cooking recipe",
+      "Section": "CookedMeat"
+    },
+
+    "EnableChickenWing": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable Chicken Wing, a new cooking recipe",
+      "Section": "CookedMeat"
+    },
+
+    "EnableMuttonChop": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable Mutton Chop, a new cooking recipe",
+      "Section": "CookedMeat"
+    },
+
+    "EnableOstrichDrumstick": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable Ostrich Drumstick, a new cooking recipe",
+      "Section": "CookedMeat"
+    },
+
+    "EnablePorkChop": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable Pork Chop, a new cooking recipe",
+      "Section": "CookedMeat"
+    },
+
+    "EnableRabbitLeg": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable Rabbit Leg, a new cooking recipe",
+      "Section": "CookedMeat"
+    },
+
+    "EnableRoastChicken": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable Roast Chicken, a new cooking recipe",
+      "Section": "CookedMeat"
+    },
+
+    "BookStyle": {
+      "AllowValues": "Vanilla, ZH",
+      "AllowBlank": true,
+      "Default": "Vanilla",
+      "Description": "Select the texture for recipe book from Vanilla style to ZH style",
+      "Section": "CookedMeat"
+    },
+
+    //************************************
+    //    SVE Recipes
+    //----------------------
+
+    "EnableGrampletonOrangeChicken": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable a cooking recipe to make Grampleton Orange Chicken",
+      "Section": "SVEAddons"
+    },
+
+    "GrampletonOrangeChickenMeat": {
+      "AllowValues": "AHM, RCFM",
+      "AllowBlank": true,
+      "Default": "AHM",
+      "Description": "Choose whether you use Animal Husbandry Mod's chicken or Cruelty Free Meat's chicken for Grampleton Orange Chicken's recipe (Ignore this if you don't use these mods)",
+      "Section": "SVEAddons"
+    },
+
+    "EnableVoidMayoSandwich": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable a cooking recipe to make Void Mayo Sandwich",
+      "Section": "SVEAddons"
+    }
+  },
+
+  "Changes": [
+    {
+      "LogName": "Base Game Recipe Data",
+      "Action": "Include",
+      "FromFile": "Data/ObjectsChanges.json, Data/Recipes.json, Data/Shops.json",
+      "When": {
+        "EnableBaseGameAddons": true
+      }
+    },
+    {
+      "LogName": "Cooked Meat Recipe Data",
+      "Action": "Include",
+      "FromFile": "Data/AMHBooks.json, Data/AMHObjects.json, Data/AMHRecipes.json, Data/AMHShops.json",
+      "When": {
+        "EnableCookedMeat": true,
+        "HasMod": "DIGUS.ANIMALHUSBANDRYMOD, Roseloves109.RosasCruelfreeMeat"
+      }
+    },
+    {
+      "LogName": "Cooked Meat Textures",
+      "Action": "Load",
+      "Target": "ZoeyHoshi.FancyGrubAdditions/AHMObjects",
+      "FromFile": "Assets/{{TargetWithoutPath}}.png",
+      "When": {
+        "EnableCookedMeat": true,
+        "HasMod": "DIGUS.ANIMALHUSBANDRYMOD, Roseloves109.RosasCruelfreeMeat"
+      }
+    },
+    {
+      "LogName": "Cooked Meat Book Textures",
+      "Action": "Load",
+      "Target": "ZoeyHoshi.FancyGrubAdditions/AHMBook",
+      "FromFile": "Assets/AHMBook_{{BookStyle}}.png",
+      "When": {
+        "EnableCookedMeat": true,
+        "HasMod": "DIGUS.ANIMALHUSBANDRYMOD, Roseloves109.RosasCruelfreeMeat"
+      }
+    },
+    {
+      "LogName": "SVE Recipe Data",
+      "Action": "Include",
+      "FromFile": "Data/SVEObjectsChanges.json, Data/SVERecipes.json, Data/SVEShops.json",
+      "When": {
+        "EnableSVEAddons": true,
+        "HasMod": "FlashShifter.StardewValleyExpandedCP"
+      }
+    }
+  ]
+}

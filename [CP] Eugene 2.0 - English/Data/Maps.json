@@ -1,0 +1,252 @@
+{
+    "Changes": [
+
+        //Add Tilesheets
+        {
+            "LogName": "Load Eugene's Tilesheets",
+            "Action": "Load",
+            "Target": "Maps/EugeneHouse_Interior, Maps/pink_EugeneGarden, Maps/spring_EugeneGarden, Maps/summer_EugeneGarden, Maps/fall_EugeneGarden, Maps/winter_EugeneGarden",
+            "FromFile": "Assets/Maps/Tilesheets/{{TargetWithoutPath}}{{SF}}.png"
+        },
+
+        //Add Maps
+        {
+            "LogName": "Load Eugene's House",
+            "Action": "Load",
+            "Target": "Maps/Custom_NPCEugene_House",
+            "FromFile": "Assets/Maps/EugeneHouse.tmx"
+        },
+        {
+            "LogName": "Load Eugene's Room",
+            "Action": "Load",
+            "Target": "Maps/Custom_NPCEugene_Room",
+            "FromFile": "Assets/Maps/EugeneRoom.tmx"
+        },
+        {
+            "LogName": "Load Eugene's Pink Garden",
+            "Action": "Load",
+            "Target": "Maps/Custom_NPCEugene_PinkGarden",
+            "FromFile": "Assets/Maps/PinkGarden.tmx"
+        },
+
+        //Add Locations
+        {
+            "LogName": "Eugene's Added Locations",
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "Custom_NPCEugene_House": {
+                    "CreateOnLoad": { "MapPath": "Maps/Custom_NPCEugene_House" }
+                },
+                "Custom_NPCEugene_Room": {
+                    "CreateOnLoad": { "MapPath": "Maps/Custom_NPCEugene_Room" }
+                },
+                "Custom_NPCEugene_PinkGarden": {
+                    "CreateOnLoad": { "MapPath": "Maps/Custom_NPCEugene_PinkGarden" }
+                }
+            }
+        },
+
+        //Map Edits
+        {
+            "LogName": "Eugene - Edit Forest Map",
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "FromFile": "Assets/Maps/ForestGarden.tmx",
+            "FromArea": { "X": 0, "Y": 0, "Width": 21, "Height": 26 },
+            "ToArea": { "X": 64, "Y": 56, "Width": 21, "Height": 26 },
+            "PatchMode": "Replace",
+            "When": { "HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false" }
+        },
+        {
+            "LogName": "Eugene - Edit Forest Lights",
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "MapProperties": { "Light": "73 68 4 73 69 4 73 76 4 73 77 4" },
+            "When": { "HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false" }
+        },
+        {
+            "LogName": "Eugene's House Warps",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_NPCEugene_House",
+            "AddWarps": [
+                "7 20 Forest 69 67",
+                "8 20 Forest 70 67"
+            ],
+            "When": { "HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false" }
+        },
+        {
+            "LogName": "Eugene's House Lights",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_NPCEugene_House",
+            "MapProperties": { "Light": "37 11 4" }
+        },
+        {
+            "LogName": "Eugene's Pink Garden Opens",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_NPCEugene_House",
+            "FromFile": "Assets/Maps/HiddenGardenOpen.tmx",
+            "FromArea": { "X": 0, "Y": 0, "Width": 3, "Height": 2 },
+            "ToArea": { "X": 9, "Y": 3, "Width": 3, "Height": 2 },
+            "PatchMode": "Replace",
+            "When": { "HasSeenEvent": "8000142" }
+        },
+        {
+            "LogName": "Eugene's Pink Garden Warps",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_NPCEugene_PinkGarden",
+            "AddWarps": [
+                "6 21 Custom_NPCEugene_House 10 5",
+                "7 21 Custom_NPCEugene_House 10 5"
+            ]
+        },
+
+        //Map Interactions
+        {
+            "LogName": "Eugene's Maps' Strings",
+            "Action": "EditData",
+            "Target": "Strings/StringsFromMaps",
+            "Entries": {
+                "EugeneHouse.1": "{{i18n:Strings.Eugene.EugeneHouse.1}}",
+                "EugeneHouse.2": "{{i18n:Strings.Eugene.EugeneHouse.2}}",
+                "EugeneHouse.3": "{{i18n:Strings.Eugene.EugeneHouse.3}}",
+                "EugeneHouse.4": "{{i18n:Strings.Eugene.EugeneHouse.4}}",
+                "EugeneHouse.5": "{{i18n:Strings.Eugene.EugeneHouse.5}}",
+                "EugeneHouse.6": "{{i18n:Strings.Eugene.EugeneHouse.6}}",
+                "EugeneHouse.7": "{{i18n:Strings.Eugene.EugeneHouse.7}}",
+                "EugeneHouse.8": "{{i18n:Strings.Eugene.EugeneHouse.8}}",
+                "EugeneHouse.9": "{{i18n:Strings.Eugene.EugeneHouse.9}}",
+                "EugeneHouse.10": "{{i18n:Strings.Eugene.EugeneHouse.10}}",
+                "EugeneHouse.11": "{{i18n:Strings.Eugene.EugeneHouse.11}}",
+                "EugeneHouse.12": "{{i18n:Strings.Eugene.EugeneHouse.12}}",
+                "EugeneHouse.13": "{{i18n:Strings.Eugene.EugeneHouse.13}}",
+                "EugeneHouse.14": "{{i18n:Strings.Eugene.EugeneHouse.14}}",
+                "EugeneHouse.15": "{{i18n:Strings.Eugene.EugeneHouse.15}}",
+                "EugeneHouse.16": "{{i18n:Strings.Eugene.EugeneHouse.16}}",
+                "EugeneHouse.17": "{{i18n:Strings.Eugene.EugeneHouse.17}}",
+                "EugeneHouse.18": "{{i18n:Strings.Eugene.EugeneHouse.18}}",
+                "EugeneHouse.19": "{{i18n:Strings.Eugene.EugeneHouse.19}}.",
+                "EugeneHouse.20": "{{i18n:Strings.Eugene.EugeneHouse.20}}",
+                "EugeneHouse.21": "{{i18n:Strings.Eugene.EugeneHouse.21}}",
+                "EugeneHouse.22": "{{i18n:Strings.Eugene.EugeneHouse.22}}",
+                "EugeneHouse.23": "{{i18n:Strings.Eugene.EugeneHouse.23}}",
+                "EugeneHouse.24": "{{i18n:Strings.Eugene.EugeneHouse.24}}",
+                "EugeneEvent.1": "{{i18n:Strings.Eugene.EugeneEvent.1}}",
+                "EugeneEvent.2": "{{i18n:Strings.Eugene.EugeneEvent.2}}",
+                "EugeneEvent.3": "{{i18n:Strings.Eugene.EugeneEvent.3}}",
+                "EugeneEvent.4": "{{i18n:Strings.Eugene.EugeneEvent.4}}"
+            }
+        },
+
+        //Sitting
+        {
+            "LogName": "Sitting in Eugene's benches and chair",
+            "Action": "EditData",
+            "Target": "Data/ChairTiles",
+            "Entries": {
+                "spring_EugeneGarden/2/15": "5/1/down/bench/-1/-1/true",
+                "spring_EugeneGarden/1/16": "1/1/right/bench/-1/-1/true",
+                "EugeneHouse_Interior/5/7": "1/1/left/bench/-1/-1/false",
+                "EugeneHouse_Interior/1/9": "3/1/down/bench/-1/-1/false",
+                "EugeneHouse_Interior/2/35": "1/1/left/chair/-1/-1/false"
+            }
+        },
+
+        //WorldMap
+        {
+            "LogName": "Add Eugene's House to the World Map",
+            "Action": "EditImage",
+            "PatchMode": "Overlay",
+            "Target": "LooseSprites/map, LooseSprites/map_summer, LooseSprites/map_fall, LooseSprites/map_winter",
+            "FromFile": "Assets/WorldMap/{{Recolor}}/{{TargetWithoutPath}}{{SVE}}.png",
+            "Priority": "Late"
+        },
+        {
+            "LogName": "Add Eugene's House to the World Map's Tooltip",
+            "Action": "EditData",
+            "Target": "Data/WorldMap",
+            "TargetField": [ "Valley", "MapAreas" ],
+            "Entries": {
+				"EugeneHouse": {
+                  	"Id": "EugeneHouse",
+                    "PixelArea": { "X": 90, "Y": 126, "Width": 10, "Height": 15 },
+                  	"Tooltips": [{
+                        "Id": "EugeneHouse_Exterior",
+                        "Text": "{{i18n:Strings.Eugene.WorldMap.EugeneHouse}}",
+                        "KnownCondition": "PLAYER_HAS_MET Current Eugene"
+                    }],
+					"WorldPositions": [{
+                      	"Id": "EugeneHouse_Interior",
+                        "ScrollText": "{{i18n:Strings.Eugene.WorldMap.EugeneHouse}}",
+                      	"LocationNames": [
+                            "Custom_NPCEugene_House",
+                            "Maps/Custom_NPCEugene_Room",
+                            "Custom_NPCEugene_PinkGarden"
+                        ]
+                    }]
+               	}
+			},
+            "When": { "HasMod |contains=FlashShifter.StardewValleyExpandedCP": "false" }
+        },
+
+        //SVE Compat
+        //SVE Map Edits
+        {
+            "LogName": "Eugene - Edit SVE Forest Map",
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "FromFile": "assets/maps/ForestGarden_SVE.tmx",
+            "FromArea": { "X": 0, "Y": 0, "Width": 21, "Height": 26 },
+            "ToArea": { "X": 22, "Y": 36, "Width": 21, "Height": 26 },
+            "PatchMode": "Replace",
+            "When": { "HasMod": "FlashShifter.StardewValleyExpandedCP" }
+        },
+        {
+            "LogName": "Eugene - Edit SVE Forest Lights",
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "MapProperties": { "Light": "31 48 4 31 49 4 31 56 4 31 57 4" },
+            "When": { "HasMod": "FlashShifter.StardewValleyExpandedCP" }
+        },
+        {
+            "LogName": "Eugene's SVE House Warps",
+            "Action": "EditMap",
+            "Target": "Maps/Custom_NPCEugene_House",
+            "AddWarps": [
+                "7 20 Forest 27 47",
+                "8 20 Forest 28 47"
+            ],
+            "When": { "HasMod": "FlashShifter.StardewValleyExpandedCP" }
+        },
+
+        //SVE WorldMap
+        {
+            "LogName": "Add Eugene's House to SVE's World Map's Tooltip",
+            "Action": "EditData",
+            "Target": "Data/WorldMap",
+            "TargetField": [ "Valley", "MapAreas" ],
+            "Entries": {
+				"EugeneHouse": {
+                  	"Id": "EugeneHouse",
+                    "PixelArea": { "X": 61, "Y": 114, "Width": 10, "Height": 15 },
+                  	"Tooltips": [{
+                        "Id": "EugeneHouse_Exterior",
+                        "Text": "{{i18n:Strings.Eugene.WorldMap.EugeneHouse}}",
+                        "KnownCondition": "PLAYER_HAS_MET Current Eugene"
+                    }],
+					"WorldPositions": [{
+                      	"Id": "EugeneHouse_Interior",
+                        "ScrollText": "{{i18n:Strings.Eugene.WorldMap.EugeneHouse}}",
+                      	"LocationNames": [
+                            "Custom_NPCEugene_House",
+                            "Maps/Custom_NPCEugene_Room",
+                            "Custom_NPCEugene_PinkGarden"
+                        ]
+                    }]
+               	}
+			},
+            "When": { "HasMod": "FlashShifter.StardewValleyExpandedCP" }
+        }
+
+    ]
+}

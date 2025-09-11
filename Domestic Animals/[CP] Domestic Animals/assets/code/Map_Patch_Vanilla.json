@@ -1,0 +1,1263 @@
+{
+//	"Format": "2.0.0",
+
+	"Changes": [
+	// Abigail's Guineapig; David
+	{
+		"LogName": "Adds David (1) in Abigail's room",
+		"Action": "EditMap",
+		"Target": "Maps/SeedShop",
+		"MapTiles": [
+            {
+               "Position": { "X": 6, "Y": 6 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.DavidTheGuineapig_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Time": "{{Range: 0600, 1800}}",
+			"Relationship:Abigail": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"Hearts:Abigail": "{{Range: 0, 4}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds David (2) in Abigail's room",
+		"Action": "EditMap",
+		"Target": "Maps/SeedShop",
+		"MapTiles": [
+            {
+               "Position": { "X": 6, "Y": 6 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.{{Random: DavidTheGuineapig_DA, DavidTheGuineapig_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Time": "{{Range: 0600, 1800}}",
+			"Relationship:Abigail": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"Hearts:Abigail": "{{Range: 5, 14}}",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	// Alex' Dog; Dusty
+	{
+		"LogName": "Adds Alex's dog (1) in town (non-adoptable)",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": { "X": 62, "Y": 66 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.DustyTheDog_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow adoptable pets": "false",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1500}}",
+			"Weather": "Sun, Wind",
+			"Hearts:Alex": "{{Range: 0, 4}}",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Alex's dog (2) in town (non-adoptable)",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": { "X": 62, "Y": 66 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.{{Random: DustyTheDog_DA, DustyTheDog_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow adoptable pets": "false",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1500}}",
+			"Weather": "Sun, Wind",
+			"Hearts:Alex": "{{Range: 5, 14}}",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Alex's dog in his home 1 (non-adoptable)",
+		"Action": "EditMap",
+		"Target": "Maps/JoshHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 18, "Y": 18 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.DustyTheDog_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow adoptable pets": "false",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Season": "Spring, Summer, Fall",
+			"Weather": "Rain, Storm, GreenRain, Kana.WeatherWonders_Mist, Kana.WeatherWonders_Deluge, Kana.WeatherWonders_Drizzle, Kana.WeatherWonders_DryLightning, Kana.WeatherWonders_Hailstorm, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_MuddyRain, Kana.WeatherWonders_RainSnowMix, Kana.WeatherWonders_Wind, Kana.WeatherWonders_Snow",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Alex's dog in his home 2 (non-adoptable)",
+		"Action": "EditMap",
+		"Target": "Maps/JoshHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 18, "Y": 18 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.DustyTheDog_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow adoptable pets": "false",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Season": "Winter",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Alex's dog (1) in town (adoptable)",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": { "X": 62, "Y": 66 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.DustyTheDog_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow adoptable pets": "true",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1500}}",
+			"Weather": "Sun, Wind",
+			"Hearts:Alex": "{{Range: 0, 4}}",
+			"Relationship:Alex": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Alex's dog (2) in town (adoptable)",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": { "X": 62, "Y": 66 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.{{Random: DustyTheDog_DA, DustyTheDog_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow adoptable pets": "true",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1500}}",
+			"Weather": "Sun, Wind",
+			"Hearts:Alex": "{{Range: 5, 14}}",
+			"Relationship:Alex": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Alex's dog in his home 1 (adoptable)",
+		"Action": "EditMap",
+		"Target": "Maps/JoshHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 18, "Y": 18 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.DustyTheDog_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow adoptable pets": "true",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Season": "Spring, Summer, Fall",
+			"Weather": "Rain, Storm, GreenRain, Kana.WeatherWonders_Mist, Kana.WeatherWonders_Deluge, Kana.WeatherWonders_Drizzle, Kana.WeatherWonders_DryLightning, Kana.WeatherWonders_Hailstorm, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_MuddyRain, Kana.WeatherWonders_RainSnowMix, Kana.WeatherWonders_Wind, Kana.WeatherWonders_Snow",
+			"Relationship:Alex": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Alex's dog in his home 2 (adoptable)",
+		"Action": "EditMap",
+		"Target": "Maps/JoshHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 18, "Y": 18 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.DustyTheDog_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow adoptable pets": "true",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Season": "Winter",
+			"Relationship:Alex": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+			},
+		"Update": "OnLocationChange"
+	},
+
+	// Emily's Parrot
+	{
+		"LogName": "Adds Emily's parrot friend in her house",
+		"Action": "EditMap",
+		"Target": "Maps/HaleyHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 13, "Y": 5 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.EmilysParrot_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Emily's parrot": true,
+			"HasSeenEvent": "463391",
+			"Time": "{{Range: 0600, 1800}}",
+			"Relationship:Emily": "Unmet, Friendly, Dating, Engaged, Divorced",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	// Shadow pups
+	{
+		"LogName": "Adds shadow pups in the sewers (1)",
+		"Action": "EditMap",
+		"Target": "Maps/Sewer",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 16, 19, 13 |key=sewers coordinate}}",
+					"Y": "{{Random: 16, 21, 12 |key=sewers coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1, 2, 3}} SmolHooman.DomesticAnimalsCC.{{Random: ShadowPup_Timid_DA, ShadowPup_Timid_DA, ShadowPup_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Shadowpets": true,
+			"Hearts:Krobus": "{{Range: 0, 3}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds shadow pups in the sewers (2)",
+		"Action": "EditMap",
+		"Target": "Maps/Sewer",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 16, 19, 13 |key=sewers coordinate}}",
+					"Y": "{{Random: 16, 21, 12 |key=sewers coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1, 2, 3}} SmolHooman.DomesticAnimalsCC.{{Random: ShadowPup_DA, ShadowPup_DA, ShadowPup_Timid_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Shadowpets": true,
+			"Hearts:Krobus": "{{Range: 4, 6}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds shadow pups in the sewers (3)",
+		"Action": "EditMap",
+		"Target": "Maps/Sewer",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 16, 19, 13 |key=sewers coordinate}}",
+					"Y": "{{Random: 16, 21, 12 |key=sewers coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1, 2, 3}} SmolHooman.DomesticAnimalsCC.{{Random: ShadowPup_DA, ShadowPup_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Shadowpets": true,
+			"Hearts:Krobus": "{{Range: 7, 14}}",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	// Leah's Bunnies; Clover and Primrose
+	{
+		"LogName": "Adds Clover the bunny in Leah's house (1)",
+		"Action": "EditMap",
+		"Target": "Maps/LeahHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 10, "Y": 7 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.CloverTheBunny_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Leah's rabbits": true,
+			"Relationship:Leah": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"Hearts:Leah": "{{Range: 0, 5}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Clover the bunny in Leah's house (2)",
+		"Action": "EditMap",
+		"Target": "Maps/LeahHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 10, "Y": 7 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.{{Random: CloverTheBunny_DA, CloverTheBunny_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Leah's rabbits": true,
+			"Relationship:Leah": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"Hearts:Leah": "{{Range: 6, 14}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Primrose the bunny in Leah's house (1)",
+		"Action": "EditMap",
+		"Target": "Maps/LeahHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 12, "Y": 8 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.PrimroseTheBunny_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Leah's rabbits": true,
+			"Relationship:Leah": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"Hearts:Leah": "{{Range: 0, 2}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Primrose the bunny in Leah's house (2)",
+		"Action": "EditMap",
+		"Target": "Maps/LeahHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 12, "Y": 8 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.{{Random: PrimroseTheBunny_DA, PrimroseTheBunny_DA, PrimroseTheBunny_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Leah's rabbits": true,
+			"Relationship:Leah": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"Hearts:Leah": "{{Range: 3, 14}}",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	// Marnie's Farm Animals
+	{
+		"LogName": "Adds a rooster in Marnie's barn (disallow loose animals)",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"MapTiles": [
+            {
+               "Position": { "X": 101, "Y": 18 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.MarniesRooster_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",	
+			"Allow wandering farm birds": "false",
+			"Load Animals |contains= Marnie's rooster": true,
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds a rooster in Marnie's barn (allow loose animals)",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 101, 101, 101, 101, 89, 98 |key=barn chickens running loose coordinate}}",
+					"Y": "{{Random: 18, 18, 18, 18, 19, 24 |key=barn chickens running loose coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.MarniesRooster_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",	
+			"Allow wandering farm birds": "true",
+			"Load Animals |contains= Marnie's rooster": true,
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	{
+		"LogName": "Adds Marnie's animals in her barn (disallow loose animals)",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"MapTiles": [
+            {
+               "Position": { "X": 107, "Y": 18 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 1, 2, 3}} SmolHooman.DomesticAnimalsCC.MarniesChicken_DA"
+               },
+            },
+            {
+               "Position": { "X": 101, "Y": 17 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1, 2}} SmolHooman.DomesticAnimalsCC.MarniesBabyGoat_DA"
+               },
+            },
+            {
+               "Position": { "X": 100, "Y": 19 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1}} SmolHooman.DomesticAnimalsCC.MarniesBabySheep_DA"
+               },
+            },
+            {
+               "Position": { "X": 107, "Y": 17 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1}} SmolHooman.DomesticAnimalsCC.MarniesBabyPig_DA"
+               },
+            },
+            {
+               "Position": { "X": 99, "Y": 19 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2}} SmolHooman.DomesticAnimalsCC.MarniesDuck_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",	
+			"Load Animals |contains= Marnie's farm animals": true,
+			"Allow wandering farm birds": "false",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Marnie's animals in her barn (allow loose animals)",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"MapTiles": [
+            {
+               "Position": { "X": 101, "Y": 17 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1, 2}} SmolHooman.DomesticAnimalsCC.MarniesBabyGoat_DA"
+               },
+            },
+            {
+               "Position": { "X": 100, "Y": 19 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1}} SmolHooman.DomesticAnimalsCC.MarniesBabySheep_DA"
+               },
+            },
+            {
+               "Position": { "X": 107, "Y": 17 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1}} SmolHooman.DomesticAnimalsCC.MarniesBabyPig_DA"
+               },
+            },
+            {
+               "Position": {
+					"X": "{{Random: 107, 107, 107, 107, 98, 89 |key=barn chickens running loose coordinate}}",
+					"Y": "{{Random: 18, 18, 18, 18, 24, 19 |key=barn chickens running loose coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 1, 1, 2, 3 |key=barn chickens}} SmolHooman.DomesticAnimalsCC.MarniesChicken_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",	
+			"Load Animals |contains= Marnie's farm animals": true,
+			"Allow wandering farm birds": "true",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Marnie's chicks in her barn (allow loose animals)",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 107, 107, 107, 107, 98, 89 |key=barn chickens running loose coordinate}}",
+					"Y": "{{Random: 17, 17, 17, 17, 25, 18 |key=barn chickens running loose coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 3, 3, 3 |key=barn chickens}} SmolHooman.DomesticAnimalsCC.MarniesChick_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",	
+			"Load Animals |contains= Marnie's farm animals": true,
+			"Allow wandering farm birds": "true",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Marnie's ducks in her barn (allow loose animals)",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 99, 99, 99, 99, 113, 99 |key=barn ducks running loose coordinate}}",
+					"Y": "{{Random: 19, 19, 19, 19, 25, 35 |key=barn ducks running loose coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2, 1, 2 |key=barn ducks}} SmolHooman.DomesticAnimalsCC.MarniesDuck_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",	
+			"Load Animals |contains= Marnie's farm animals": true,
+			"Allow wandering farm birds": "true",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind, Rain",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Marnie's ducklings in her barn (allow loose animals)",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 99, 99, 99, 99, 113, 99 |key=barn ducks running loose coordinate}}",
+					"Y": "{{Random: 19, 19, 19, 19, 24, 36 |key=barn ducks running loose coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 3, 3 |key=barn ducks}} SmolHooman.DomesticAnimalsCC.MarniesChick_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",	
+			"Load Animals |contains= Marnie's farm animals": true,
+			"Allow wandering farm birds": "true",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Rain",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	{
+		"LogName": "Adds Shane's blue chicken in Marnie's barn",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"MapTiles": [
+            {
+               "Position": { "X": 100, "Y": 18 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1}} SmolHooman.DomesticAnimalsCC.ShanesBlueChicken_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Marnie's farm animals": true,
+			"HasSeenEvent": "3900074",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	// Shane's Chicken; Charlie
+	{
+		"LogName": "Adds Charlie the chicken in Marnie's shop",
+		"Action": "EditMap",
+		"Target": "Maps/AnimalShop",
+		"MapTiles": [
+            {
+               "Position": { "X": 29, "Y": 16 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1}} SmolHooman.DomesticAnimalsCC.CharlieTheChicken_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Shane's chicken": true,
+			"Time": "{{Range: 0600, 1800}}",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	// Stray Animals
+	{
+		"LogName": "Adds some stray dogs in the town (1)",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 60, 65, 29 |key=town strays dogs 1 coordinate}}",
+					"Y": "{{Random: 69, 72, 66 |key=town strays dogs 1 coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayDog1_DA, StrayDog2_DA, StrayDog1_Friendly_DA, StrayDog2_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray dogs": true,
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds some stray dogs in the town (2)",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 60, 65, 29 |key=town strays dogs 2 coordinate}}",
+					"Y": "{{Random: 68, 71, 67 |key=town strays dogs 2 coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayDog3_DA, StrayDog4_DA, StrayDog3_Friendly_DA, StrayDog4_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray dogs": true,
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds some stray dogs in the saloon (1)",
+		"Action": "EditMap",
+		"Target": "Maps/Saloon",
+		"MapTiles": [
+            {
+               "Position": { "X": 23, "Y": 20 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayDog1_DA, StrayDog2_DA, StrayDog3_DA, StrayDog4_DA, StrayDog1_Friendly_DA, StrayDog2_Friendly_DA, StrayDog3_Friendly_DA, StrayDog4_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray dogs": true,
+			"Season": "Spring, Summer, Fall",
+			"Weather": "Rain, Storm, GreenRain, Kana.WeatherWonders_Mist, Kana.WeatherWonders_Deluge, Kana.WeatherWonders_Drizzle, Kana.WeatherWonders_DryLightning, Kana.WeatherWonders_Hailstorm, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_MuddyRain, Kana.WeatherWonders_RainSnowMix, Kana.WeatherWonders_Wind, Kana.WeatherWonders_Snow",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds some stray dogs in the saloon (2)",
+		"Action": "EditMap",
+		"Target": "Maps/Saloon",
+		"MapTiles": [
+            {
+               "Position": { "X": 23, "Y": 20 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayDog1_DA, StrayDog2_DA, StrayDog3_DA, StrayDog4_DA, StrayDog1_Friendly_DA, StrayDog2_Friendly_DA, StrayDog3_Friendly_DA, StrayDog4_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray dogs": true,
+			"Season": "Winter",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	{
+		"LogName": "Adds a stray cat (1) in the town",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 43, 49, 26 |key=town strays cats coordinate}}",
+					"Y": "{{Random: 59, 53, 55 |key=town strays cats coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayCat1_DA, StrayCat1_DA, StrayCat1_Mean_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Weather": "Sun, Wind",
+			"Hearts:Abigail": "{{Range: 0, 3}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds a stray cat (2) in the town",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 43, 49, 26 |key=town strays cats coordinate}}",
+					"Y": "{{Random: 59, 53, 55 |key=town strays cats coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1}} SmolHooman.DomesticAnimalsCC.StrayCat1_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Weather": "Sun, Wind",
+			"Hearts:Abigail": "{{Range: 4, 6}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds a stray cat (3) in the town",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 43, 49, 26 |key=town strays cats coordinate}}",
+					"Y": "{{Random: 59, 53, 55 |key=town strays cats coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayCat1_DA, StrayCat1_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Weather": "Sun, Wind",
+			"Hearts:Abigail": "{{Range: 7, 14}}",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	{
+		"LogName": "Adds a white stray cat (1) in the town",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 45, 37, 44 |key=town strays cats coordinate}}",
+					"Y": "{{Random: 34, 59, 81 |key=town strays cats coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayCat2_Timid_DA, StrayCat2_Mean_DA, StrayCat2_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Weather": "Sun, Wind",
+			"Time": "{{Range: 1800, 2600}}",
+			"Hearts:Caroline": "{{Range: 0, 3}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds a white stray cat (2) in the town",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 45, 37, 44 |key=town strays cats coordinate}}",
+					"Y": "{{Random: 34, 59, 81 |key=town strays cats coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayCat2_DA, StrayCat2_DA, StrayCat2_Mean_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Weather": "Sun, Wind",
+			"Time": "{{Range: 1800, 2600}}",
+			"Hearts:Caroline": "{{Range: 4, 6}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds a white stray cat (3) in the town",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 45, 37, 44 |key=town strays cats coordinate}}",
+					"Y": "{{Random: 34, 59, 81 |key=town strays cats coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayCat2_DA, StrayCat2_DA, StrayCat2_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Weather": "Sun, Wind",
+			"Time": "{{Range: 1800, 2600}}",
+			"Hearts:Caroline": "{{Range: 7, 14}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds a white stray cat (1) in the saloon",
+		"Action": "EditMap",
+		"Target": "Maps/Saloon",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 5, 33, 7 |key=town strays cats coordinate}}",
+					"Y": "{{Random: 17, 19, 6 |key=town strays cats coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayCat2_Mean_DA, StrayCat2_Mean_DA, StrayCat2_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Weather": "Sun",
+			"Season": "Winter",
+			"Time": "{{Range: 1800, 2600}}",
+			"Hearts:Caroline": "{{Range: 0, 3}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds a white stray cat (2) in the saloon",
+		"Action": "EditMap",
+		"Target": "Maps/Saloon",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 5, 33, 7 |key=town strays cats coordinate}}",
+					"Y": "{{Random: 17, 19, 6 |key=town strays cats coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayCat2_Mean_DA, StrayCat2_DA, StrayCat2_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Weather": "Sun",
+			"Season": "Winter",
+			"Time": "{{Range: 1800, 2600}}",
+			"Hearts:Caroline": "{{Range: 4, 6}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds a white stray cat (3) in the saloon",
+		"Action": "EditMap",
+		"Target": "Maps/Saloon",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 5, 33, 7 |key=town strays cats coordinate}}",
+					"Y": "{{Random: 17, 19, 6 |key=town strays cats coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayCat2_DA, StrayCat2_DA, StrayCat2_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Weather": "Sun",
+			"Season": "Winter",
+			"Time": "{{Range: 1800, 2600}}",
+			"Hearts:Caroline": "{{Range: 7, 14}}",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	{
+		"LogName": "Adds a tortie stray cat in the town",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 51, 46, 8 |key=town strays kittens coordinate}}",
+					"Y": "{{Random: 23, 73, 71 |key=town strays kittens coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1}} SmolHooman.DomesticAnimalsCC.{{Random: StrayCat3_Timid_DA, StrayCat3_Timid_DA, StrayCat3_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			"Year": "1",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds a tortie stray cat and her kittens in the town",
+		"Action": "EditMap",
+		"Target": "Maps/Town",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 51, 46, 8 |key=town strays kittens coordinate}}",
+					"Y": "{{Random: 23, 73, 71 |key=town strays kittens coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1 |key=town mama and her kittens}} SmolHooman.DomesticAnimalsCC.{{Random: StrayCat3_DA, StrayCat3_DA, StrayCat3_Friendly_DA}}"
+               },
+            },
+            {
+               "Position": {
+					"X": "{{Random: 50, 48, 9 |key=town strays kittens coordinate}}",
+					"Y": "{{Random: 24, 73, 72 |key=town strays kittens coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1 |key=town mama and her kittens}} SmolHooman.DomesticAnimalsCC.StrayKitten1_DA"
+               },
+            },
+            {
+               "Position": {
+					"X": "{{Random: 51, 49, 10 |key=town strays kittens coordinate}}",
+					"Y": "{{Random: 24, 73, 72 |key=town strays kittens coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1 |key=town mama and her kittens}} SmolHooman.DomesticAnimalsCC.StrayKitten2_DA"
+               },
+            },
+            {
+               "Position": {
+					"X": "{{Random: 52, 50, 11 |key=town strays kittens coordinate}}",
+					"Y": "{{Random: 24, 73, 72 |key=town strays kittens coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1 |key=town mama and her kittens}} SmolHooman.DomesticAnimalsCC.StrayKitten3_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Stray cats": true,
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			"Year |contains=1": "false",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	// Willy's Cat; Gill
+	{
+		"LogName": "Adds Willy's cat in his shop (1)",
+		"Action": "EditMap",
+		"Target": "Maps/FishShop",
+		"MapTiles": [
+            {
+               "Position": { "X": 9, "Y": 6 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.GillTheCat_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Willy's cat": true,
+			"Time": "{{Range: 1200, 2600}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Willy's cat in his shop (2)",
+		"Action": "EditMap",
+		"Target": "Maps/FishShop",
+		"MapTiles": [
+            {
+               "Position": { "X": 9, "Y": 6 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.GillTheCat_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Willy's cat": true,
+			"Weather": "Snow, Storm, Rain",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Willy's cat on the beach",
+		"Action": "EditMap",
+		"Target": "Maps/Beach",
+		"MapTiles": [
+            {
+               "Position": { "X": 26, "Y": 23 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn 1 SmolHooman.DomesticAnimalsCC.GillTheCat_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Willy's cat": true,
+			"Time": "{{Range: 0600, 1200}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+
+	// Witch's slimes
+	{
+		"LogName": "Adds cat slimes in the witch's swamp",
+		"Action": "EditMap",
+		"Target": "Maps/WitchSwamp",
+		"MapTiles": [
+            {
+               "Position": { "X": 22, "Y": 22 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 1, 0 , 2 , 0, 0 |key=cat slimes}} SmolHooman.DomesticAnimalsCC.{{Random: WitchsSlimeCat_DA, WitchsSlimeCat_Mean_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Witch's slimes": true,
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds cat slimes in the witch's hut",
+		"Action": "EditMap",
+		"Target": "Maps/WitchHut",
+		"MapTiles": [
+            {
+               "Position": { "X": 7, "Y": 12 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 0, 2, 0 |key=cat slimes}} SmolHooman.DomesticAnimalsCC.{{Random: WitchsSlimeCat_DA, WitchsSlimeCat_Mean_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Witch's slimes": true,
+			},
+		"Update": "OnLocationChange"
+	},
+
+	// Wizard's Dragon; Kaida
+	{
+		"LogName": "Adds Kaida the dragon in the wizard's tower (1)",
+		"Action": "EditMap",
+		"Target": "Maps/WizardHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 6, "Y": 17 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1}} SmolHooman.DomesticAnimalsCC.KaidaTheDragon_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Wizard's dragon": true,
+			"Weather": "Sun, Snow, Storm",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Kaida the dragon in the wizard's tower (2)",
+		"Action": "EditMap",
+		"Target": "Maps/WizardHouse",
+		"MapTiles": [
+            {
+               "Position": { "X": 6, "Y": 17 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1 |key=dragon}} SmolHooman.DomesticAnimalsCC.KaidaTheDragon_DA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Wizard's dragon": true,
+			"Time": "{{Range: 1500, 2600}}",
+			"Weather": "Wind, Rain",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Adds Kaida the dragon in the forest",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"MapTiles": [
+            {
+               "Position": { "X": 6, "Y": 36 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1 |key=dragon}} SmolHooman.DomesticAnimalsCC.{{Random: KaidaTheDragon_DA, KaidaTheDragon_DA, KaidaTheDragon_Timid_DA, KaidaTheDragon_Friendly_DA}}"
+               },
+            },
+         ],
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Wizard's dragon": true,
+			"Time": "{{Range: 0600, 1500}}",
+			"Weather": "Wind, Rain",
+			},
+		"Update": "OnLocationChange"
+	}
+	],
+}

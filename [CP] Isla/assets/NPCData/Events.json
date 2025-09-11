@@ -1,0 +1,106 @@
+{
+	"Changes":[
+	
+		{
+			//"A Mysterious Visitor (Part I)"
+			"LogName": "A Mysterious Visitor (Part I)",
+			"Action": "EditData",
+			"Target": "Data/Events/Mountain",
+			"Entries": {
+				"8205019/!DayOfWeek Fri Sat Sun/G WORLD_STATE_ID beachBridgeFixed": "none/-500 -500/farmer 1 13 1/addTemporaryActor Kelpie 16 32 5 13 2 false/viewport 10 13 true/pause 2000/emote Kelpie 16/speed Kelpie 5/move Kelpie 0 6 2/warp Kelpie -30 -30/emote farmer 8/pause 500/globalFade/viewport -1000 -1000/pause 500/message \"{{i18n:Isla.FirstSight}}\"/pause 500/globalFade/viewport -1000 -1000/end",
+			},
+		},
+		
+		{
+			//"A Mysterious Visitor (Part II)"
+			"LogName": "A Mysterious Visitor (Part II)",
+			"Action": "EditData",
+			"Target": "Data/Events/Beach",
+			"Entries": {
+				"8205020/SawEvent 8205019/!DayOfWeek Fri Sat Sun": "desolate/-500 -500/farmer 52 16 2 {{Isla}} -300 -300 0/addTemporaryActor Kelpie 16 32 52 22 0 false/viewport 52 20 true/pause 1000/emote Kelpie 16/pause 800/animate Kelpie false false 16 16 16 16 16 17 17 17 17 17 18 18 18 18 18 19 19 19 19 19 19 20 21 21 21 21 21 22/stopAnimation Kelpie/warp Kelpie -300 -300 false/warp {{Isla}} 52 22 false/emote farmer 16/speak {{Isla}} \"{{i18n:Isla.Intro.1}}\"/question fork1 \"#{{i18n:Isla.Intro.2}}#{{i18n:Isla.Intro.3}}\"/fork SayNothing/friendship {{Isla}} 50/move farmer 0 4 2/speak {{Isla}} \"{{i18n:Isla.Intro.4}}\"/pause 500/speak {{Isla}} \"{{i18n:Isla.Intro.5}}\"/pause 500/speak {{Isla}} \"{{i18n:Isla.Intro.6}}\"/pause 200/globalFade/viewport -1000 -1000/end",
+
+				"SayNothing": "pause 500/emote {{Isla}} 40/pause 1000/speak {{Isla}} \"{{i18n:Isla.QuietIntro.7}}\"/pause 200/globalFade/viewport -1000 -1000/end",
+			},
+		},
+		
+		{
+			//An Impasse (2 Heart Event)
+			"LogName": "An Impasse (2 Heart Event)",
+			"Action": "EditData",
+			"Target": "Data/Events/Beach",
+			"Entries": {
+				"8205021/Friendship {{Isla}} 500/!DayOfWeek Fri Sat Sun/SawEvent 8205020/Time 900 1700/Weather sunny": "desolate/-500 -500/farmer 87 40 2 {{Isla}} 86 40 2/showframe {{Isla}} 21/skippable/viewport 86 42 true/pause 1000/faceDirection farmer 3/showFrame {{Isla}} 18/speak {{Isla}} \"{{i18n:Isla.2H.1}}\"/pause 500/showframe {{Isla}} 17/faceDirection farmer 2/pause 500/emote farmer 8/pause 500/speak {{Isla}} \"{{i18n:Isla.2H.2}}\"/pause 500/speak {{Isla}} \"{{i18n:Isla.2H.3}}\"/pause 200/emote {{Isla}} 40/pause 200/speak {{Isla}} \"{{i18n:Isla.2H.4}}\"/pause 200/emote {{Isla}} 40/pause 200/speak {{Isla}} \"{{i18n:Isla.2H.5}}\"/pause 500/emote {{Isla}} 28/speak {{Isla}} \"{{i18n:Isla.2H.6}}\"/emote {{Isla}} 60/pause 500/speak {{Isla}} \"{{i18n:Isla.2H.7}}\"/question fork1 \"#{{i18n:Isla.2H.8}}#{{i18n:Isla.2H.9}}\"/fork Arrogant/emote {{Isla}} 56/pause 200/speak {{Isla}} \"{{i18n:Isla.2H.10}}\"/emote {{Isla}} 20/pause 200/globalFade/viewport -1000 -1000/end dialogue {{Isla}} \"{{i18n:Isla.2H.11}}\"", 
+
+				"Arrogant": "pause 200/speak {{Isla}} \"{{i18n:Isla.2Sure.12}}\"/pause 200/emote {{Isla}} 60/friendship {{Isla}} -100/pause 200/globalFade/viewport -1000 -1000/end", 
+
+				}
+		},
+
+		{
+			//A Discovery (4 Heart Event)
+			"LogName": "A Discovery (4 Heart Event)",
+			"Action": "EditData",
+			"Target": "Data/Events/Beach",
+			"Entries": {
+				"8205022/Friendship {{Isla}} 1000/!DayOfWeek Fri Sat Sun/SawEvent 8205021/Time 900 1700/Weather sunny":"desolate/-500 -500/farmer 70 12 0 {{Isla}} 70 6 2/showFrame {{Isla}} 25/skippable/viewport 70 9 true/pause 1000/showFrame {{Isla}} 24/speak {{Isla}} \"{{i18n:Isla.4H.1}}\"/pause 200/move farmer 0 -5 0/pause 200/speak {{Isla}} \"{{i18n:Isla.4H.2}}\"/pause 200/speak {{Isla}} \"{{i18n:Isla.4H.3}}\"/pause 200/emote {{Isla}} 40/pause 200/speak {{Isla}} \"{{i18n:Isla.4H.4}}\"/question fork1 \"#{{i18n:Isla.4H.5}}#{{i18n:Isla.4H.6}}\"/fork NotNow/friendship {{Isla}} 50/emote {{Isla}} 20/speak {{Isla}} \"{{i18n:Isla.4H.7}}\"/pause 200/showFrame {{Isla}} 25/pause 200/speak {{Isla}} \"{{i18n:Isla.4H.8}}\"/globalFade/viewport -100 -100/pause 200/viewport 70 9 true/pause 1000/speak {{Isla}} \"{{i18n:Isla.4H.9}}\"/pause 200/showFrame {{Isla}} 24/speak {{Isla}} \"{{i18n:Isla.4H.10}}\"/pause 200/emote {{Isla}} 16/speak {{Isla}} \"{{i18n:Isla.4H.11}}\"/pause 200/showFrame {{Isla}} 0/speak {{Isla}} \"{{i18n:Isla.4H.12}}\"/emote farmer 20/pause 200/speak {{Isla}} \"{{i18n:Isla.4H.13}}\"/pause 1000/globalFade/viewport -1000 -1000/end dialogue {{Isla}} \"{{i18n:Isla.4H.14}}\"", 
+
+				"NotNow": "friendship {{Isla}} -100/emote {{Isla}} 28/pause 200/speak {{Isla}} \"{{i18n:Isla.4H.NotNow}}\"/pause 200/globalFade/viewport -1000 -1000/end", 
+			},
+		},
+
+		{
+			//A Seed (6 Heart Event)
+			"LogName": "A Seed (6 Heart Event)",
+			"Action": "EditData",
+			"Target": "Data/Events/Beach",
+			"Entries": {
+				"8205023/Friendship {{Isla}} 1500/!DayOfWeek Fri Sat Sun/SawEvent 8205022/Time 900 1700/Weather sunny": "desolate/-500 -500/{{Isla}} 90 5 2 farmer 82 7 1/showFrame {{Isla}} 20/skippable/viewport 90 8 true/pause 1000/speak {{Isla}} \"{{i18n:Isla.6H.1}}\"/pause 200/showFrame {{Isla}} 17/pause 200/move farmer 8 0 1/faceDirection farmer 0/pause 200/showFrame {{Isla}} 25/speak {{Isla}} \"{{i18n:Isla.6H.2}}\"/showFrame {{Isla}} 24/pause 500/speak {{Isla}} \"{{i18n:Isla.6H.3}}\"/showFrame {{Isla}} 27/speak {{Isla}} \"{{i18n:Isla.6H.4}}\"/emote {{Isla}} 20/pause 500/showFrame {{Isla}} 24/speak {{Isla}} \"{{i18n:Isla.6H.5}}\"/pause 200/emote {{Isla}} 40/pause 200/speak {{Isla}} \"{{i18n:Isla.6H.6}}\"/pause 200/emote farmer 20/pause 200/speak {{Isla}} \"{{i18n:Isla.6H.7}}\"/emote farmer 8/pause 200/speak {{Isla}} \"{{i18n:Isla.6H.8}}\"/friendship {{Isla}} 50/pause 200/globalFade/viewport -1000 -1000/end",
+			},
+		},
+		
+		{
+			//An Idea (8 Heart Event Pt. I)
+			"LogName": "An Idea (8 Heart Event Pt. I)",
+			"Action": "EditData",
+			"Target": "Data/Events/Beach",
+			"Entries": {
+				"8205024/Friendship {{Isla}} 2000/!DayOfWeek Fri Sat Sun/SawEvent 8205023/Time 900 1700/Weather sunny": "desolate/-500 -500/farmer 70 12 0 {{Isla}} 70 6 2/showFrame {{Isla}} 25/skippable/viewport 70 9 true/pause 1000/showFrame {{Isla}} 24/speak {{Isla}} \"{{i18n:Isla.8H.Intro.1}}\"/pause 200/move farmer 0 -4 0/pause 200/speak {{Isla}} \"{{i18n:Isla.8H.Intro.2}}\"/pause 500/question fork1 \"#{{i18n:Isla.8H.Intro.3}}#{{i18n:Isla.8H.Intro.4}}\"/fork Silent/friendship {{Isla}} 50/emote {{Isla}} 20/speak {{Isla}} \"{{i18n:Isla.8H.Intro.5}}\"/pause 200/globalFade/viewport -1000 -1000/end",
+
+				"Silent": "pause 500/speak {{Isla}} \"{{i18n:Isla.8H.Intro.SilentIntro.6}}\"/pause 200/globalFade/viewport -1000 -1000/end",
+			},
+		},
+
+		{
+			//A Pelican Townian Salon (8 Heart Event Pt. II)
+			"LogName": "A Pelican Townian Salon (8 Heart Event Pt. II)",
+			"Action": "EditData",
+			"Target": "Data/Events/SeedShop",
+			"Entries": {
+				"8205025/Friendship {{Isla}} 2000/DayOfWeek Mon/SawEvent 8205024/Time 1900 2200": "50s/-500 -500/farmer 25 16 2 {{Isla}} 24 16 2 Penny 26 18 1 Sam 27 18 3 Abigail 22 20 2 Sebastian 21 21 1 Maru 23 21 3 Alex 25 21 1 Emily 27 21 3 Haley 26 20 2 Leah 22 18 1 Elliott 23 18 3/skippable/viewport 26 19 true/skippable/pause 2000/speak {{Isla}} \"{{i18n:Isla.8H.1}}\"/faceDirection Penny 0/faceDirection Sam 0/faceDirection Abigail 0/textAboveHead Abigail \"{{i18n:Isla.8H.2}}\"/faceDirection Sebastian 0/faceDirection Maru 0/faceDirection Elliott 0/faceDirection Leah 0/faceDirection Emily 0/textAboveHead Emily \"{{i18n:Isla.8H.3}}\"/faceDirection Haley 0/faceDirection Alex 0/pause 200/speak {{Isla}} \"{{i18n:Isla.8H.4}}\"/pause 500/speak {{Isla}} \"{{i18n:Isla.8H.5}}\"/pause 500/speak {{Isla}} \"{{i18n:Isla.8H.6}}\"/pause 200/speak {{Isla}} \"{{i18n:Isla.8H.7}}\"/globalFade/viewport -100 -100/warp Abigail 24 16 false/faceDirection Abigail 2/warp farmer 24 23/faceDirection farmer 0/warp {{Isla}} 25 23/faceDirection {{Isla}} 0/pause 100/viewport 26 19 true/pause 1000/speak Abigail \"{{i18n:Isla.8H.8}}\"/pause 100/speak Abigail \"{{i18n:Isla.8H.9}}\"/globalFade/viewport -100 -100/warp Abigail 22 20/faceDirection Abigail 0/warp Emily 24 16 false/faceDirection Emily 2/pause 100/viewport 26 19 true/pause 1000/speak Emily \"{{i18n:Isla.8H.10}}\"/pause 200/speak Emily \"{{i18n:Isla.8H.11}}\"/globalFade/viewport -100 -100/warp Emily 27 21 false/faceDirection Emily 0/warp Elliott 24 16 false/faceDirection Elliott 2/pause 100/viewport 26 19 true/pause 1000/speak Elliott \"{{i18n:Isla.8H.12}}\"/pause 200/speak Elliott \"{{i18n:Isla.8H.13}}\"/globalFade/viewport -100 -100/warp Elliott 23 18 false/faceDirection Elliott 0/warp Penny 24 16 false/faceDirection Penny 2/pause 100/viewport 26 19 true/pause 1000/speak Penny \"{{i18n:Isla.8H.14}}\"/pause 200/speak Penny \"{{i18n:Isla.8H.15}}\"/globalFade/viewport -100 -100/warp Penny 26 18/faceDirection Penny 0/warp {{Isla}} 24 16/faceDirection {{Isla}} 2/warp farmer 25 16/faceDirection farmer 2/positionOffset farmer 4 0/pause 200/viewport 26 19 true/pause 1000/speak {{Isla}} \"{{i18n:Isla.8H.16}}\"/globalFade/viewport -100 -100/pause 100/warp Penny -1001 -1001/warp Sam -1001 -1001/warp Abigail -1001 -1001 /warp Sebastian -1001 -1001/warp Maru -1001 -1001/warp Alex -1001 -1001/warp Emily -1001 -1001/warp Haley -1001 -1001/warp Leah -1000 -1000/warp Elliott -1000 -1000/warp {{Isla}} 24 20/faceDirection {{Isla}} 2/warp farmer 24 21/faceDirection farmer 0/viewport 26 19 true/pause 1000/speak {{Isla}} \"{{i18n:Isla.8H.17}}\"/emote {{Isla}} 20/friendship {{Isla}} 50/pause 200/globalFade/viewport -301 -301/end dialogue {{Isla}} \"{{i18n:Isla.8H.End}}\"/end", 
+			},
+		},
+
+		{
+			//A Confession (10 Heart Event)
+			"LogName": "A Confession (10 Heart Event)",
+			"Action": "EditData",
+			"Target": "Data/Events/Beach",
+			"Entries": {
+				"8205026/Friendship {{Isla}} 2500/DayOfWeek Fri Sat Sun/SawEvent 8205025/Time 2200 2300/Weather sunny/LocalMail IslaLetter": "ocean/-500 -500/farmer 53 17 2 {{Isla}} 52 22 2/addLantern 735 50 23 2/skippable/viewport 56 24 true/pause 1000/faceDirection {{Isla}} 0/speak {{Isla}}  \"{{i18n:Isla.10H.1}}\"/emote {{Isla}} 56/move farmer 0 5 3/pause 500/faceDirection {{Isla}} 1/speak {{Isla}} \"{{i18n:Isla.10H.2}}\"/pause 1000/speak {{Isla}} \"{{i18n:Isla.10H.3}}\"/pause 200/faceDirection {{Isla}} 2/faceDirection farmer 2/pause 500/speak {{Isla}} \"{{i18n:Isla.10H.4}}\"/emote {{Isla}} 40/pause 1000/speak {{Isla}} \"{{i18n:Isla.10H.5}}\"/pause 200/faceDirection {{Isla}} 1/faceDirection farmer 3/speak {{Isla}} \"{{i18n:Isla.10H.6}}\"/question fork1 \"#{{i18n:Isla.10H.7}}#{{i18n:Isla.10H.8}}\"/fork Rejection/emote {{Isla}} 20/speak {{Isla}} \"{{i18n:Isla.10H.9}}\"/emote {{Isla}} 20/pause 200/faceDirection {{Isla}} 2/faceDirection farmer 2/speak {{Isla}} \"{{i18n:Isla.10H.10}}\"/pause 500/faceDirection {{Isla}} 2/pause 200/speak {{Isla}} \"{{i18n:Isla.10H.11}}\"/pause 200/globalFade/viewport -1000 -1000/message \"{{i18n:Isla.10H.12}}\"/pause 500/end newDay", 
+
+				"Rejection": "friendship {{Isla}} -1000/emote {{Isla}} 60/speak {{Isla}} \"{{i18n:Isla.10H.WhyDidYouGiveHerABouquet}}\"/pause 200/globalFade/viewport -1000 -1000/end newDay", 
+			},
+		},
+
+		{
+
+			//A Reunion (14 Heart Event)
+			"LogName": "A Reunion (14 Heart Event)",
+			"Action": "EditData",
+			"Target": "Data/Events/Beach",
+			"Entries": {
+				"8205027/Friendship {{Isla}} 3500/Time 2200 2300/Weather sunny/Season spring summer/SawEvent 8205026/LocalMail IslaInvitation": "night_market/-500 -500/farmer 20 12 3 {{Isla}} 20 13 3/addTemporaryActor Soraya 16 32 9 12 1/addTemporaryActor Marika 16 32 11 10 2/addTemporaryActor Elysa 16 32 11 14 0/changeToTemporaryMap MermaidBeachEvent/skippable/viewport 14 12 true/pause 1000/textAboveHead Soraya \"{{i18n:Isla.14H.1}}\"/faceDirection Marika 1/faceDirection Elysa 1/textAboveHead Marika \"{{i18n:Isla.14H.2}}\"/textAboveHead Elysa \"{{i18n:Isla.14H.3}}\"/emote {{Isla}} 20/emote farmer 20/pause 200/move {{Isla}} -5 0 3/move farmer -5 0 3/speak Soraya \"{{i18n:Isla.14H.4}}\"/emote Soraya 20/emote Marika 20/emote Elysa 20/pause 500/speak Soraya \"{{i18n:Isla.14H.5}}\"/emote {{Isla}} 20/pause 500/globalFade/viewport -1000 -1000/warp {{Isla}} 13 10/showFrame {{Isla}} 17/warp farmer 13 14/faceDirection farmer 0/showFrame farmer 62/faceDirection Marika 2/viewport 14 12 true/pause 1000/speak Elysa \"{{i18n:Isla.14H.6}}\"/faceDirection Elysa 0/speak Elysa \"{{i18n:Isla.14H.7}}\"/emote Elysa 56/speak Elysa \"{{i18n:Isla.14H.8}}\"/pause 500/speak {{Isla}} \"{{i18n:Isla.14H.9}}\"/emote Elysa 20/speak Elysa \"{{i18n:Isla.14H.10}}\"/pause 500/globalFade/viewport -1000 -1000/message \"{{i18n:Isla.14H.11}}\"/pause 200/end newDay",
+			},
+		},
+	],
+}

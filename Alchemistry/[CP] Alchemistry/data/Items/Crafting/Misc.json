@@ -1,0 +1,104 @@
+{
+    "Changes": [
+
+        //Load icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/ObjectsMisc",
+            "FromFile": "assets/Items/Crafting/misc.png"
+        },
+
+/*----------------------------------------------------
+Mana Orb
+----------------------------------------------------*/
+
+        {
+            "LogName":"Add Alchemistry Ingredients - Mana Orb",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModID}}_ManaOrb": {
+                    "Name": "{{ModID}}_ManaOrb",
+                    "DisplayName": "{{i18n:Alchemistry_ManaOrb.name}}",
+                    "Description": "{{i18n:Alchemistry_ManaOrb.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMisc",
+                    "SpriteIndex": 0,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 100,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_DarkRed"
+                    ]
+                },
+
+
+/*----------------------------------------------------
+Potion and Tincture Ingredients
+----------------------------------------------------*/
+                "{{ModID}}_EmptyFlask": {
+                    "Name": "{{ModID}}_EmptyFlask",
+                    "DisplayName": "{{i18n:Alchemistry_EmptyFlask.name}}",
+                    "Description": "{{i18n:Alchemistry_EmptyFlask.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMisc",
+                    "SpriteIndex": 20,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -25,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item"                    
+                    ]
+                },
+                "{{ModID}}_Glycerin": {
+                    "Name": "{{ModID}}_Glycerin",
+                    "DisplayName": "{{i18n:Alchemistry_Glycerin.name}}",
+                    "Description": "{{i18n:Alchemistry_Glycerin.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMisc",
+                    "SpriteIndex": 21,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -25,
+                    "Price": 150,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item"                    
+                    ]
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Perfection Tracker Disabled
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ManaOrb" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_EmptyFlask" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Glycerin" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        }
+    ]
+}

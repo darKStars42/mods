@@ -1,0 +1,72 @@
+{
+    "Changes": [
+        {
+            "LogName":"Add Corona to object data",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries":
+            {
+                "{{ModId}}_Corona":
+                {
+                    "Name": "{{ModId}}_Corona",
+                    "DisplayName": "{{i18n:object.Corona.name}}",
+                    "Description": "{{i18n:object.Corona.description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 25,
+                    "Texture": "Mods/{{ModId}}/Corona",
+                    "SpriteIndex": 0,
+                    "Edibility": 5,
+                    "IsDrink": true,
+                    "Buffs": [
+                    {
+                        "Id": "Drink",
+                        "BuffId": null,
+                        "IconTexture": null,
+                        "IconSpriteIndex": 0,
+                        "Duration": 30,
+                        "IsDebuff": false,
+                        "GlowColor": null,
+                        "CustomAttributes": {
+                        "FarmingLevel": 0.0,
+                        "FishingLevel": 0.0,
+                        "MiningLevel": 0.0,
+                        "LuckLevel": 0.0,
+                        "ForagingLevel": 0.0,
+                        "MaxStamina": 0.0,
+                        "MagneticRadius": 0.0,
+                        "Speed": 0.0,
+                        "Defense": 0.0,
+                        "Attack": 0.0
+                        },
+                        "CustomFields": null
+                    }
+                ],
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromFishingCollection": true,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": false,
+                    "ContextTags": [
+                    "color_yellow",
+                    "drink_item",
+                    "TMP_Corona",
+                    "{{TMPHaramTag}}",
+                    "{{TMPTeryfTag}}"
+                    ],
+                    "CustomFields": null
+                }
+            }
+        },
+
+        {
+            "LogName": "Corona texture",
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Corona",
+            "FromFile": "Assets/Images/Food/Corona.png"
+        }
+    ]
+}

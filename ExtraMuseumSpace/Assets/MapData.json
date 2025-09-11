@@ -1,0 +1,71 @@
+{
+    "Changes":[
+        {
+			"LogName": "Museum Addition",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"FromFile": "assets/Maps/RaffieJohn.ArchHouseExpand.tbin",
+			"ToArea": {
+				"X": 49,
+				"Y": 0,
+				"Width": 50,
+				"Height": 20
+			},
+			"When": {
+				"HasMod|contains=Solariaze.Geology": false,
+				"HasMod|contains=Wolf.Gun": false
+			  }
+		},
+		{
+			"LogName": "Museum Addition - Geology",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"FromFile": "assets/Maps/RaffieJohn.ArchHouseExpand_GeologyPatch.tbin",
+			"PatchMode": "Replace",
+			"ToArea": {
+				"X": 48,
+				"Y": 0,
+				"Width": 58,
+				"Height": 20
+			},
+			"When": {
+				"HasMod|contains=Solariaze.Geology": true
+			  },
+			  "Priority": "Early"
+		},
+		{
+			"LogName": "Museum Addition - MGR",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"FromFile": "assets/Maps/RaffieJohn.ArchHouseExpand_MakeGuntherRealPatch.tbin",
+			"PatchMode": "Replace",
+			"ToArea": {
+				"X": 53,
+				"Y": 18,
+				"Width": 57,
+				"Height": 23
+			},
+			"When": {
+				"HasMod|contains=Wolf.Gun": true
+			  },
+			  "Priority": "Early"
+		},
+		{
+			"LogName": "Museum Addition - MGR",
+			"Action": "EditMap",
+			"Target": "Maps/ArchaeologyHouse",
+			"FromFile": "assets/Maps/RaffieJohn.ArchHouseExpand_MakeGuntherRealPatch_Patch.tbin",
+			"PatchMode": "ReplaceByLayer",
+			"ToArea": {
+				"X": 53,
+				"Y": 18,
+				"Width": 4,
+				"Height": 3
+			},
+			"When": {
+				"HasMod|contains=Wolf.Gun": true
+			  },
+			  "Priority": "Late"
+		}
+    ]
+}

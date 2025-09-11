@@ -1,0 +1,46 @@
+{
+  "Changes": [
+    {
+      "LogName": "Lilybrook Zoo Opening Bundle",
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+      "Entries": {
+        "8BitAlien.Lilybrook_ZooOpeningBundle": {
+          "Location": "8BitAlien.Lilybrook_Lilybrook",
+          "BundleName": "{{i18n:Lilybrook.ZooBundle}}",
+          "BundleIconAsset": "Mods/8BitAlien.Lilybrook/ZooOpeningBundle",
+          "JunimoNoteTexture": "Mods/8BitAlien.Lilybrook/BundleBackgroundImage",
+          "BundleCompletedMail": "{{i18n:ZooOpeningMail}}",
+		  "BundleCompletedActions": [
+  "AddMail Current {{ModId}}_ZooOpeningMail"],
+          "EditMap": "Maps/8BitAlien.Lilybrook_LilybrookPatch",
+          "EditMapPosition": "109, 51",
+          "ShopPosition": "114, 55",
+          "ShopType": "CCBundle",
+          "DrawQuestionMark": false,
+		  "ShopEvent": "None",
+          "Price": {
+            "(O)Lilybrook.Sapphire": 5,
+            "(O)Lilybrook.Elvarite": 5,
+            "(O)Lilybrook.Lettuce:gold": 5,
+            "(O)Lilybrook.Plumpet:gold": 5,
+            "(O)388": 900,
+            "(O)390": 900
+          }
+        }
+      }
+    },
+    {
+      "LogName": "Lilybrook Village Map Patch",
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookPatch",
+      "FromFile": "Assets/Maps/LilybrookPatch.tmx"
+    },
+    {
+      "LogName": "Load Bundle Assets",
+      "Action": "Load",
+      "Target": "Mods/8BitAlien.Lilybrook/ZooOpeningBundle, Mods/8BitAlien.Lilybrook/BundleBackgroundImage",
+      "FromFile": "Assets/Images/Bundles/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

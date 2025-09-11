@@ -1,0 +1,77 @@
+{
+  "Changes": [
+    {
+      "LogName": "Mail Letters",
+      "Action": "EditData",
+      "Target": "Data/mail",
+      "Entries": {
+	  //Cooking
+        "TracyLilybrookCooking": "{{i18n:TomatoSoup.Recipe.Text}} %item cookingRecipe %%[#]{{i18n:TomatoSoup.Recipe.Title}}",
+		"RubyLilybrookCooking": "{{i18n:CandyCane.Recipe.Text}} %item cookingRecipe %%[#]{{i18n:CandyCane.Recipe.Title}}",
+		"JemmaLilybrookCooking": "{{i18n:Milkshake.Recipe.Text}} %item cookingRecipe %%[#]{{i18n:Milkshake.Recipe.Title}}",
+		"JagLilybrookCooking": "{{i18n:EnchantingPizza.Recipe.Text}} %item cookingRecipe %%[#]{{i18n:EnchantingPizza.Recipe.Title}}",
+		"CaspianLilybrookCooking": "{{i18n:OnionRings.Recipe.Text}} %item cookingRecipe %%[#]{{i18n:OnionRings.Recipe.Title}}",
+		"KellyLilybrookCooking": "{{i18n:Donut.Recipe.Text}} %item cookingRecipe %%[#]{{i18n:Donut.Recipe.Title}}",
+		
+		//Quests
+		"Lilybrook_FrankieRequestMail": "{{i18n:FrankieRequestMail}}",
+		"Lilybrook_OakleyRequestMail": "{{i18n:OakleyRequestMail}}",
+		"Lilybrook_ArchieRequestMail": "{{i18n:ArchieRequestMail}}",
+		"Lilybrook_RubyRequestMail": "{{i18n:RubyRequestMail}}",
+		"Lilybrook_CaspianRequestMail": "{{i18n:CaspianRequestMail}}",
+		"Lilybrook_KellyRequestMail": "{{i18n:KellyRequestMail}}",
+		"Lilybrook_FrankieJKMail": "{{i18n:FrankieJKMail}}",
+		
+		"{{ModId}}_PetraHaroldFarmhouse": "{{i18n:PetraHaroldFarmhouse}}",
+		"{{ModId}}_Anya10HeartsMail": "{{i18n:Anya10HeartsMail}}",
+		"{{ModId}}_Alden10HeartsMail": "{{i18n:Alden10HeartsMail}}",
+		
+		//Misc
+		"{{ModId}}_FrankiePonies": "{{i18n:FrankiePonies}}",
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_PetraHaroldFarmhouse": {
+          "Id": "{{ModId}}_PetraHaroldFarmhouse",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HEARTS Current PetraLilybrook 6, PLAYER_HEARTS Current HaroldLilybrook 6",
+          "Actions": [
+            "AddMail Current {{ModId}}_PetraHaroldFarmhouse"
+          ]
+        }
+      }
+    },
+	{
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_FrankiePonies": {
+          "Id": "{{ModId}}_FrankiePonies",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HAS_SEEN_EVENT Current 8BitAlien.Lilybrook_Frankie4Hearts",
+          "Actions": [
+            "AddMail Current {{ModId}}_FrankiePonies"
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_Anya10HeartsMail": {
+          "Id": "{{ModId}}_Anya10HeartsMail",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HEARTS Current AnyaLilybrook 10",
+          "Actions": [
+            "AddMail Current {{ModId}}_Anya10HeartsMail"
+          ]
+        }
+      }
+    }
+  ]
+}
+

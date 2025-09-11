@@ -1,0 +1,61 @@
+{
+	"Changes": [
+		//Vanilla Schedule
+		{
+			"LogName": "Ashida's Basegame Schdule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTIsaacII",
+			"Entries": {
+				"spring": "610 CoalPointFarmhouse 25 7 2 IsaacIIBed \"Strings\\schedules\\APTIsaacII:CoalPointFarmhouse.000\"/800 CoalPointFarmhouse 18 33 0 IsaacIIInvisible \"Strings\\schedules\\APTIsaacII:CoalPointFarmhouse.001\"/1800 CoalPointFarmhouse 8 27 2/2000 CoalPointFarmhouse 25 7 2 IsaacIIBed",
+				"Tue": "GOTO spring",
+				"Wed": "GOTO spring",
+				"Thu": "GOTO spring",
+				"Fri": "610 CoalPointFarmhouse 25 7 2 IsaacIIBed \"Strings\\schedules\\APTIsaacII:CoalPointFarmhouse.000\"/850 CoalPointFarmhouse 18 33 0 IsaacIIInvisible \"Strings\\schedules\\APTIsaacII:CoalPointFarmhouse.001\"/2000 CoalPointFarmhouse 25 7 2 IsaacIIBed",
+				"Sat": "GOTO Fri",
+				"Sun": "GOTO spring",
+				"winter": "610 CoalPointFarmhouse 25 7 2 IsaacIIBed \"Strings\\schedules\\APTIsaacII:CoalPointFarmhouse.000\"/800 CoalPointFarmhouse 18 33 0 IsaacIIInvisible \"Strings\\schedules\\APTIsaacII:CoalPointFarmhouse.001\"/2000 CoalPointFarmhouse 25 7 2 IsaacIIBed",
+			},
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+		},
+		
+		//Hospital
+		{
+			"LogName": "Ashida Hospital Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTIsaacII",
+			"Entries": {
+				"spring": "610 Hospital 18 5 2 IsaacIIBed",
+			},
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": true,
+			},
+		},
+		//Marcus
+		{
+			"LogName": "Isaac II Marcus Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTIsaacII",
+			"Entries": {
+				"Sun": "610 CoalPointFarmhouse 25 7 2 IsaacIIBed \"Strings\\schedules\\APTIsaacII:CoalPointFarmhouse.000\"/850 CoalPointFarmhouse 18 33 0 IsaacIIInvisible \"Strings\\schedules\\APTIsaacII:CoalPointFarmhouse.001\"/2000 CoalPointFarmhouse 25 7 2 IsaacIIBed",
+			},
+			"When": {
+                "HasSeenEvent": "145868",
+			},
+		},
+		
+		//STRINGS
+		{
+			"LogName": "Adding Ashida's Strings",
+			"Action": "EditData",
+			"Target": "Strings/schedules/APTIsaacII",
+			"Entries": {
+				"CoalPointFarmhouse.000": "{{i18n:IsaacIISchedule.CoalPointFarmhouse.000}}",
+				"CoalPointFarmhouse.001": "{{i18n:IsaacIISchedule.CoalPointFarmhouse.001}}",
+
+
+			},
+		},
+	],
+}

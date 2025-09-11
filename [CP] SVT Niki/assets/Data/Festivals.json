@@ -1,0 +1,408 @@
+{
+
+"Changes": 
+    [
+		{	
+			"LogName": "Egg Festival",
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring13",
+			"TextOperations":
+   			[
+   				//SetUp
+				{
+   				    "Operation": "Append",
+   				    "Target": ["Entries", "Set-Up_additionalCharacters"],
+   				    "Value": "SVTNiki 35 65 left",
+   				    "Delimiter": "/"
+				},
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "set-up", 5],
+                    "Value": "/animate SVTNiki false true 100 16 16 16 16 16 16 16 16 16 16 18 19 18 19 16 17 19 18 19 ",
+				},
+				
+   				//MainEvent - during the actual hunt
+				{
+   				    "Operation": "Append",
+   				    "Target": ["Entries", "MainEvent_additionalCharacters"],
+   				    "Value": "SVTNiki 37 67 left",
+   				    "Delimiter": "/"
+				},
+			],
+		},
+		{
+			"LogName": "Egg Festival - Dialogue",
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring13",
+			"Entries": 
+			{ "SVTNiki": "{{i18n:SVTNiki.EggFestival}}",
+			},
+		},
+		{	
+			"LogName": "Flower Dance",
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring24",
+			"TextOperations":
+   			[
+   				//SetUp
+				{
+   				    "Operation": "Append",
+   				    "Target": ["Entries", "Set-Up_additionalCharacters"],
+   				    "Value": "SVTNiki 25 29 left",
+   				    "Delimiter": "/"
+				},
+			//MainEvent - during the actual dance
+				{
+				"Operation": "Append",
+				"Target": ["Entries", "MainEvent_additionalCharacters"],
+				"Value": "SVTNiki 25 29 left",
+				"Delimiter": "/"
+			},
+			],
+		},
+		{	
+			"LogName": "Flower Dance - Dialogue",
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring24",
+			"Entries": 
+			{ "SVTNiki": "{{i18n:SVTNiki.FlowerDance}}",
+			},
+		},
+/*
+		{	
+			"LogName": "Luau",
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer11",
+			"TextOperations":
+   			[
+   				//SetUp
+				{
+   				    "Operation": "Append",
+   				    "Target": ["Entries", "Set-Up_additionalCharacters"],
+   				    "Value": "SVTNiki 38 19 up",
+   				    "Delimiter": "/"
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "MainEvent_additionalCharacters"],
+					"Value": "SVTNiki 38 19 up",
+					"Delimiter": "/"
+				},
+			],
+		},
+		{	
+			"LogName": "Luau - dialogue",
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer11",
+			"Entries": 
+			{ "SVTNiki":"{{i18n:SVTNiki.Luau}}",
+			},
+		},
+		// Pelican Town Potluck changes the Luau to a Potluck, so you may want a variant of dialogue.
+		//{	
+		
+		//"LogName": "Luau - dialogue - Potluck compat",
+		//"Action": "EditData",
+		//"Target": "Data/Festivals/summer11",
+		//"When": { "HasMod: |contains=LenneDalben.PelicanTownPotluck": true},
+		//"Entries": 
+		//{ "SVTNiki": "",
+		//},
+		//},
+		{	
+			"LogName": "Dance of the Moonlight Jellies",
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer28",
+			"TextOperations":
+			[
+				//SetUp
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "SVTNiki 82 38 left",
+					"Delimiter": "/"
+				},
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "set-up", 5],
+                    "Value": "/animate SVTNiki false true 100 16 16 16 16 16 16 16 16 16 16 18 19 18 19 16 17 19 18 19 ", 
+                    "When": {} // JOURNALIST ONLY <- 이거 여기에 넣으면 안되고 Action 밑에 넣어야 할 듯 (분리해서)
+				},
+				//MainEvent - during the boat launch. Most characters don't move, but not all of them will be visible.
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "MainEvent_additionalCharacters"],
+					"Value": "SVTNiki 82 38 left",
+					"Delimiter": "/"
+				},
+			],
+		},
+		{	
+			"LogName": "Dance of the Moonlight Jellies - Dialogue",
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer28",
+			"Entries": 
+			{ "SVTNiki": "",
+			},
+		},
+		{	
+			"LogName": "Stardew Valley Fair",
+			"Action": "EditData",
+			"When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false},
+			"Target": "Data/Festivals/fall16",
+			"TextOperations":
+			[
+				//SetUp (non-SVE) - I don't believe there is a "main event" one for this"
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "SVTNiki 43 60 left",
+					"Delimiter": "/"
+				},
+			],
+		},
+
+        // add animation for journalist. amke sure to have both 'true'and 'false' defined.
+
+		//SetUp (SVE) - SVE changes the fair a lot, so you may want different positions.
+		{	
+			"LogName": "Stardew Valley Fair - SVE compat",
+			"Action": "EditData",
+			"When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true},
+			"Target": "Data/Festivals/fall16",
+			"TextOperations":
+			[
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "SVTNiki 43 60 left",
+					"Delimiter": "/"
+				},
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "set-up", 5],
+                    "Value": "/animate SVTNiki false true 100 16 16 16 16 16 16 16 16 16 16 18 19 18 19 16 17 19 18 19 ", 
+                    "When": {} // JOURNALIST ONLY
+				},
+			],
+		},
+		{	
+			"LogName": "Stardew Valley Fair",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall16",
+			"Entries": 
+			{ "SVTNiki": "",
+			},
+		},
+		{	
+			"LogName": "Spirit's Eve",
+			"Action": "EditData",
+			"When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false},
+			"Target": "Data/Festivals/fall27",
+			"TextOperations":
+			[
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "SVTNiki 31 68 left",
+					"Delimiter": "/"
+				},
+			],
+            //animation
+		},			
+		{	
+			"LogName": "Spirit's Eve - SVE compat",
+			"Action": "EditData",
+			"When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true},
+			"Target": "Data/Festivals/fall27",
+			"TextOperations":
+			[
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "SVTNiki 31 68 left",
+					"Delimiter": "/"
+				},
+			],
+            // animation
+		},
+        {	
+			"LogName": "Spirit's Eve - SVE y2 compat",
+			"Action": "EditData",
+			"When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true},
+			"Target": "Data/Festivals/fall27",
+			"TextOperations":
+			[
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+					"Value": "SVTNiki 36 68 left",
+					"Delimiter": "/"
+				},
+			],
+            // animation
+		},
+		{	
+			"LogName": "Spirit's Eve - dialogue",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall27",
+			"Entries": 
+			{ "SVTNiki": "",
+			},
+		},
+		{	
+			"LogName": "Festival of Ice",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter8",
+			"When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false},
+			"TextOperations":
+			[
+				//SetUp
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "SVTNiki 90 28 left",
+					"Delimiter": "/"
+				},
+				//MainEvent - during the actual contest
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "MainEvent_additionalCharacters"],
+					"Value": "SVTNiki 90 28 left",
+					"Delimiter": "/"
+				},
+			],
+		},
+		{	
+			"LogName": "Festival of Ice - SVE compat",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter8",
+			"When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true},
+			"TextOperations":
+			[
+				//SetUp - SVE completely redoes this map too, so depending on where you are you may need compat for this.
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "SVTNiki 84 32 left",
+					"Delimiter": "/"
+				},
+				//MainEvent - during the actual contest
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "MainEvent_additionalCharacters"],
+					"Value": "SVTNiki 84 32 left",
+					"Delimiter": "/"
+				},
+			],
+		},
+		{	
+			"LogName": "Festival of Ice - Dialogue",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter8",
+			"Entries": 
+			{ "SVTNiki": "", },
+		},
+		{	
+			"LogName": "Feast of the Winter Star",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter25",
+			"TextOperations":
+			[
+				//SetUp - I think there is a MainEvent, but only during the actual gift-giving cutscene.
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "SVTNiki 29 56 down",
+					"Delimiter": "/"
+				},
+			], // no animation
+		},
+		{	
+			"LogName": "Feast of the Winter Star - Dialogue",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter25",
+			"Entries": 
+			{ "SVTNiki": "",
+			},
+		},
+		//Solstice Winter Star changes the Feast of the Winter Star to a less Christmas-y version with food instead of gifts, so you may want a dialogue variant.
+		//{	
+		//"LogName": "Feast of the Winter Star Solstice Compat",
+		//"Action": "EditData",
+		//"Target": "Data/Festivals/winter25",
+		//"When": { "HasMod: |contains=Airyn.CPSolsticeWinterStar": true},
+		//"Entries": 
+		//{ "SVTNiki": "", },
+		//},
+		//},
+*/
+
+/*		{	
+			//Ridgeside has two exclusive festivals and plenty of room!
+			"LogName": "Ridgeside Gathering",
+			"Action": "EditData",
+			"When": { "HasMod":"Rafseazz.RSVCP" },
+			"Target": "Data/Festivals/Fall20",
+			"TextOperations":
+			[
+				//SetUp
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "SVTNiki 78 51 up",
+					"Delimiter": "/"
+				},
+				//MainEvent - a concert on stage. Pretty crowded, so you may want to remove this.
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "MainEvent_additionalCharacters"],
+					"Value": "SVTNiki 79 51 up",
+					"Delimiter": "/"
+				},
+			],
+		},
+		{	
+			"LogName": "Ridgeside Gathering - Dialogue",
+			"Action": "EditData",
+			"When": { "HasMod":"Rafseazz.RSVCP" },
+			"Target": "Data/Festivals/fall20",
+			"Entries": 
+			{ "SVTNiki": "",
+			},
+		},
+		{	
+			"LogName": "Ember of Resolutions",
+			"Action": "EditData",
+			"When": { "HasMod":"Rafseazz.RSVCP" },
+			"Target": "Data/Festivals/winter28",
+			"TextOperations":
+			[
+				//SetUp
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "SVTNiki 38 34 down",
+					"Delimiter": "/"
+				},
+				//MainEvent - during the bonfire lighting. Characters do move around but it's not packed in.
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "MainEvent_additionalCharacters"],
+					"Value": "SVTNiki 39 34 down",
+					"Delimiter": "/"
+				},
+			],
+		},
+		{	
+			"LogName": "Ember of Resolutions - Dialogue",
+			"Action": "EditData",
+			"When": { "HasMod":"Rafseazz.RSVCP" },
+			"Target": "Data/Festivals/winter28",
+			"Entries": 
+			{ "SVTNiki": "",
+			},
+		},
+*/
+	]
+}

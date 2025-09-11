@@ -1,0 +1,372 @@
+{
+
+  "Changes": [
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_RubyHouse",
+          "FromFile": "assets/Locations/EchoReef_RubyHouse.tmx"
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_RubyCave",
+          "FromFile": "assets/Locations/EchoReef_RubyCave.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Characters/MrMrRogers.EchoReef_Ruby",
+        "FromFile": "assets/Sprites/Ruby.png"
+      },
+      {
+        "Action": "Load",
+        "Target": "Portraits/MrMrRogers.EchoReef_Ruby",
+        "FromFile": "assets/Portraits/Ruby.png"
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Locations",
+          "Entries": {
+              "MrMrRogers.EchoReef_RubyHouse": {
+                  "DisplayName": "{{i18n:RubyHouse}}",
+                  "DefaultArrivalTile": {
+                    "X": 4,
+                    "Y": 15
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_RubyHouse",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              },
+              "MrMrRogers.EchoReef_RubyCave": {
+                  "DisplayName": "{{i18n:RubyCave}}",
+                  "DefaultArrivalTile": {
+                    "X": 14,
+                    "Y": 11
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_RubyCave",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              }
+          }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_RubyHouse",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Doors": "4 9 townInterior 120",
+          "Warp": "4 16 MrMrRogers.EchoReef_Mines 45 42",
+          "WindowLight": "2 1 6 6 1 6 2 2 6 6 2 6 11 1 6 11 2 6 15 1 6 15 2 6"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 4,
+              "Y": 9
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Door MrMrRogers.EchoReef_Ruby"
+            }
+          },
+          {
+            "Position": {
+              "X": 4,
+              "Y": 12
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "OpenShop MrMrRogers.EchoReef_GemShop down 0800 2000 4 11 1 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Rubycave",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Light": "6 5 1 8 5 1 3 6 1 15 6 1 3 7 1 9 7 1 10 7 1 13 7 1 2 8 1 17 8 1 2 10 1 17 10 1 8 12 1 12 12 1 2 13 1 4 13 1"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 15,
+              "Y": 11
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Warp 48 39 MrMrRogers.EchoReef_Mines"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Mines",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 45, 
+              "Y": 41
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "LockedDoorWarp 4 15 MrMrRogers.EchoReef_RubyHouse 800 2000"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Mines",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 48, 
+              "Y": 38
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "mine_quarryshaft",
+            "SetIndex": "115"
+          },
+          {
+            "Position": { 
+              "X": 48, 
+              "Y": 37
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "mine_quarryshaft",
+            "SetIndex": "99"
+          },
+          {
+            "Position": { 
+              "X": 48, 
+              "Y": 36
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "mine_quarryshaft",
+            "SetIndex": "83"
+          },
+          {
+            "Position": { 
+              "X": 48, 
+              "Y": 35
+            },
+            "Layer": "Buildings",
+            "SetTilesheet": "mine_quarryshaft",
+            "SetIndex": "67"
+          },
+          {
+            "Position": { 
+              "X": 48, 
+              "Y": 38
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Warp 14 11 MrMrRogers.EchoReef_RubyCave"
+            }
+          }
+        ],
+        "When": {
+          "Hearts:MrMrRogers.EchoReef_Ruby": "6"
+        }
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Characters",
+          "Entries": {
+            "MrMrRogers.EchoReef_Ruby": {
+              "DisplayName": "{{i18n:Ruby}}",
+              "BirthSeason": "Fall",
+              "BirthDay": 26,
+              "HomeRegion": "Other",
+              "Language": "Default",
+              "Gender": "Female",
+              "Age": "Adult",
+              "Manner": "Polite",
+              "SocialAnxiety": "Outgoing",
+              "Optimism": "Positive",
+              "IsDarkSkinned": false,
+              "CanBeRomanced": false,
+              "Calendar": "HiddenAlways",
+              "SocialTab": "HiddenUntilMet",
+              "CanSocialize": true,
+              "CanReceiveGifts": true,
+              "CanGreetNearbyCharacters": true,
+              "CanCommentOnPurchasedShopItems": true,
+              "CanVisitIsland": false,
+              "IntroductionsQuest": false,
+              "ItemDeliveryQuests": false,
+              "PerfectionScore": false,
+              "EndSlideShow": "MainGroup",
+              "SpouseAdopts": null,
+              "SpouseWantsChildren": true,
+              "SpouseGiftJealousy": false,
+              "SpouseRoom": {},
+              "SpousePatio": {},
+              "SpouseFloors": [],
+              "SpouseWallpapers": [],
+              "DumpsterDiveFriendshipEffect": -25,
+              "DumpsterDiveEmote": 8,
+              "FriendsAndFamily": {},
+              "FlowerDanceCanDance": null,
+              "WinterStarGifts": [],
+              "WinterStarParticipant": false,
+              "UnlockConditions": null,
+              "SpawnIfMissing": true,
+              "Home": [
+                {
+                  "Id": "Default",
+                  "Condition": null,
+                  "Location": "MrMrRogers.EchoReef_RubyHouse",
+                  "Tile": {
+                    "X": 2,
+                    "Y": 4
+                  },
+                  "Direction": "down"
+                }
+              ],
+              "TextureName": null,
+              "Appearance": [
+                {
+                  "Id": "MrMrRogers.EchoReef_Ruby",
+                  "Condition": null,
+                  "Season": null,
+                  "Indoors": true,
+                  "Outdoors": true,
+                  "Portrait": "Portraits/MrMrRogers.EchoReef_Ruby",
+                  "Sprite": "Characters/MrMrRogers.EchoReef_Ruby",
+                  "IsIslandAttire": false,
+                  "Precedence": 0,
+                  "Weight": 0
+                }
+              ],
+              "MugShotSourceRect": null,
+              "Size": {
+                "X": 16,
+                "Y": 32
+              },
+              "Breather": true,
+              "BreathChestRect": null,
+              "BreathChestPosition": null,
+              "Shadow": null,
+              "EmoteOffset": {
+                "X": 0,
+                "Y": 0
+              },
+              "ShakePortraits": null,
+              "KissSpriteIndex": 28,
+              "KissSpriteFacingRight": true,
+              "FormerCharacterNames": [],
+              "CustomFields": null
+            }
+          }
+      },
+      { 
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Ruby",
+            "FromFile": "assets/blank.json"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Ruby",
+          "FromFile": "assets/blank.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MrMrRogers.EchoReef_Ruby": "{{i18n:RubyGiftLoveResponse}}//{{i18n:RubyGiftLikeResponse}}//{{i18n:RubyGiftDislikeResponse}}//{{i18n:RubyGiftHateResponse}}//{{i18n:RubyGiftNeutralResponse}}//"
+            }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Ruby",
+          "Entries": {
+            "Introduction": "{{i18n:Ruby_Introduction}}",
+            "AcceptBirthdayGift_Positive": "{{i18n:Ruby_AcceptBirthdayGift_Positive}}",
+            "AcceptBirthdayGift_Negative": "{{i18n:Ruby_AcceptBirthdayGift_Negative}}",
+            "AcceptGift_(O)StardropTea": "{{i18n:Ruby_AcceptGift_(O)StardropTea}}",
+            "DumpsterDiveComment": "{{i18n:Ruby_DumpsterDiveComment}}",
+            "HitBySlingshot": "{{i18n:Ruby_HitBySlingshot}}",
+            "Mon": "{{i18n:Ruby_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Tue": "{{i18n:Ruby_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Wed": "{{i18n:Ruby_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Thu": "{{i18n:Ruby_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Fri": "{{i18n:Ruby_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sat": "{{i18n:Ruby_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sun": "{{i18n:Ruby_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/animationdescriptions",
+          "Entries": {
+            "MrMrRogers.EchoReef_Ruby_sleep": "19/19/19",
+            "mrmrrogers.echoreef_ruby_sleep": "19/19/19"
+          } 
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Ruby",
+          "Entries": {
+            "spring": "600 MrMrRogers.EchoReef_RubyHouse 2 4 2/800 MrMrRogers.EchoReef_RubyHouse 4 11 2/2200 MrMrRogers.EchoReef_RubyHouse 2 4 2 MrMrRogers.EchoReef_Ruby_sleep"
+          }
+        }
+  ]
+}

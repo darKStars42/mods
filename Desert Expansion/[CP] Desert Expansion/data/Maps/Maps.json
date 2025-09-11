@@ -1,0 +1,349 @@
+{
+    "Changes": [
+        // Adds Warps
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Desert_LivingRoom",
+            "FromFile": "assets/Maps/Indoors/LivingRoom.tmx",
+            "AddWarps": [
+                "4 3 SandyHouse 14 6"
+            ],
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Desert_River",
+            "FromFile": "assets/Maps/Outdoors/DesertRiver.tmx",
+            "AddWarps": [
+                "-1 16 Desert 49 54",
+                "-1 17 Desert 49 54"
+            ],
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Desert",
+            "AddWarps": [
+                "50 54 Desert_River 0 16"
+            ],
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/SandyHouse",
+            "AddWarps": [
+                "14 8 Desert_LivingRoom 4 5"
+            ],
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+            }
+        },
+        // ****** END! ******
+
+        // ToArea Patch
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Desert_LivingRoom",
+            "FromFile": "assets/Maps/Patch/DoorFixed.tmx",
+            "ToArea": {
+                "X": 25,
+                "Y": 12,
+                "Width": 1,
+                "Height": 2
+            },
+            "When": {
+                "HasFlag": "SandyThanks"
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/SandyHouse",
+            "FromFile": "assets/Maps/Patch/SandyHousePatch.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 20,
+                "Height": 10
+            },
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Desert",
+            "FromFile": "assets/Maps/Outdoors/DesertWalkSecret.tmx",
+            "ToArea": {
+                "X": 48,
+                "Y": 49,
+                "Width": 2,
+                "Height": 7
+            },
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Club",
+            "FromFile": "assets/Maps/Patch/ClubPatch.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 34,
+                "Height": 14
+            },
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Desert",
+            "FromFile": "assets/Maps/Patch/DesertPatch.tmx",
+            "ToArea": {
+                "X": 25,
+                "Y": 47,
+                "Width": 15,
+                "Height": 12
+            },
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Desert",
+            "FromFile": "assets/Maps/Patch/DesertGeologistsPatch.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 50,
+                "Height": 37
+            },
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false,
+                "DayOfWeek": "Monday, Friday"
+            }
+        },
+        // ****** END! ******
+
+        // Adds Maps
+
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "Desert_LivingRoom": {
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Desert_LivingRoom"
+                    },
+                    "Music": [
+                        {
+                            "Id": "distantBanjo_deafult",
+                            "Track": "distantBanjo"
+                        }
+                    ]
+                }
+            } 
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "Desert_RoomBruno": {
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Desert_RoomBruno"
+                    }
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "Desert_River": {
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Desert_River"
+                    },
+                    "Fish": [
+                        {
+                            "ItemId": "{{ModID}}_ChiclanaFish"
+                        },
+                        {
+                            "ItemId": "{{ModID}}_Pupfish"
+                        },
+                        {
+                            "ItemId": "153"
+                        },
+                        {
+                            "ItemId": "165"
+                        },
+                        {
+                            "ItemId": "164"
+                        },
+                        {
+                            "ItemId": "167"
+                        },
+                        {
+                            "ItemId": "168"
+                        },
+                        {
+                            "ItemId": "171"
+                        },
+                        {
+                            "ItemId": "170"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "Desert_RoomLaila": {
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Desert_RoomLaila"
+                    }
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "Desert_RoomFarmer": {
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Desert_RoomFarmer"
+                    }
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "Desert_SandyBasement": {
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Desert_SandyBasement"
+                    },
+                    "Music": [
+                        {
+                            "Id": "Upper_Ambient_deafult",
+                            "Track": "Upper_Ambient"
+                        }
+                    ]
+                }
+            } 
+        },
+        // ****** END! ******
+
+        // Load Maps
+        {
+            "Action": "Load",
+            "Target": "Maps/Desert_RoomLaila",
+            "FromFile": "assets/Maps/Indoors/RoomLaila.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/Desert_RoomFarmer",
+            "FromFile": "assets/Maps/Indoors/RoomFarmer.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/Desert_RoomBruno",
+            "FromFile": "assets/Maps/Indoors/RoomBruno.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/Desert_River",
+            "FromFile": "assets/Maps/Outdoors/DesertRiver.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/Desert_LivingRoom",
+            "FromFile": "assets/Maps/Indoors/LivingRoom.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/Desert_SandyBasement",
+            "FromFile": "assets/Maps/Indoors/SandyBasement.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/LailaSpousePatio",
+            "FromFile": "assets/Maps/SpousesRoom/LailaSpousePatio.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/LailaSpouseRoom",
+            "FromFile": "assets/Maps/SpousesRoom/LailaSpouseRoom.tmx"
+        },
+        // ****** END! ******
+
+
+        // Add Spouse Rooms And Spouse Patios
+        {
+            "Action": "EditData",
+            "Target": "Data/SpousePatios",
+            "Entries": {
+                "Laila": "LailaSpousePatio/0"
+            }
+        },
+        
+        {
+            "Action": "EditData",
+            "Target": "Data/SpouseRoom",
+            "Entries": {
+                "Laila": "LailaSpouseRoom/0"
+            }
+        },
+        // ****** END! ******
+
+        // Strings From Maps
+        {
+            "Action": "EditData",
+            "Target": "Strings/StringsFromMaps",
+            "Entries": {
+                "DesertGeologist.1": "{{i18n:DesertGeologist.1}}",
+                "DesertGeologist.2": "{{i18n:DesertGeologist.2}}",
+                "DesertGeologist.3": "{{i18n:DesertGeologist.3}}",
+                "DesertGeologist.4": "{{i18n:DesertGeologist.4}}",
+                "LivingRoom.1": "{{i18n:LivingRoom.1}}",
+                "LivingRoom.2": "{{i18n:LivingRoom.2}}", 
+                "LivingRoom.3": "{{i18n:LivingRoom.3}}",
+                "LivingRoom.4": "{{i18n:LivingRoom.4}}",
+                "LivingRoom.5": "{{i18n:LivingRoom.5}}",
+                "LivingRoom.6": "{{i18n:LivingRoom.6}}",
+                "LivingRoom.7": "{{i18n:LivingRoom.7}}",
+                "LivingRoom.8": "{{i18n:LivingRoom.8}}",
+                "LivingRoom.9": "{{i18n:LivingRoom.9}}",
+                "RoomLaila.1": "{{i18n:RoomLaila.1}}",
+                "RoomLaila.2": "{{i18n:RoomLaila.2}}",
+                "RoomLaila.3": "{{i18n:RoomLaila.3}}",
+                "RoomLaila.4": "{{i18n:RoomLaila.4}}",
+                "RoomLaila.5": "{{i18n:RoomLaila.5}}",
+                "RoomLaila.6": "{{i18n:RoomLaila.6}}",
+                "RoomLaila.7": "{{i18n:RoomLaila.7}}",
+                "RoomBruno.1": "{{i18n:RoomBruno.1}}",
+                "RoomBruno.2": "{{i18n:RoomBruno.2}}",
+                "RoomBruno.3": "{{i18n:RoomBruno.3}}",
+                "RoomBruno.4": "{{i18n:RoomBruno.4}}",
+                "ClubIntegrants.1": "{{i18n:ClubIntegrants.1}}",
+                "ClubIntegrants.2": "{{i18n:ClubIntegrants.2}}",
+                "ClubIntegrants.3": "{{i18n:ClubIntegrants.3}}",
+                "ClubIntegrants.4": "{{i18n:ClubIntegrants.4}}",
+                "ClubIntegrants.5": "{{i18n:ClubIntegrants.5}}",
+                "ClubIntegrants.6": "{{i18n:ClubIntegrants.6}}",
+                "ClubIntegrants.7": "{{i18n:ClubIntegrants.7}}"
+            }   
+        }
+    ]
+}

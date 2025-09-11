@@ -1,0 +1,335 @@
+{
+
+  "Changes": [
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_MayaHouse",
+          "FromFile": "assets/Locations/EchoReef_MayaHouse.tmx"
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_MayaAquarium",
+          "FromFile": "assets/Locations/EchoReef_MayaAquarium.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Characters/MrMrRogers.EchoReef_Maya",
+        "FromFile": "assets/Sprites/Maya.png"
+      },
+      {
+        "Action": "Load",
+        "Target": "Portraits/MrMrRogers.EchoReef_Maya",
+        "FromFile": "assets/Portraits/Maya.png"
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Locations",
+          "Entries": {
+              "MrMrRogers.EchoReef_MayaHouse": {
+                  "DisplayName": "{{i18n:MayaHouse}}",
+                  "DefaultArrivalTile": {
+                    "X": 7,
+                    "Y": 18
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_MayaHouse",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              },
+              "MrMrRogers.EchoReef_MayaAquarium": {
+                  "DisplayName": "{{i18n:MayaAquarium}}",
+                  "DefaultArrivalTile": {
+                    "X": 35,
+                    "Y": 28
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_MayaAquarium",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              }
+          }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_MayaHouse",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Doors": "5 11 townInterior 120",
+          "Warp": "7 19 MrMrRogers.EchoReef_Beach 47 49",
+          "WindowLight": "5 1 6 5 2 6 8 1 6 8 2 6"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 5,
+              "Y": 11
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Door MrMrRogers.EchoReef_Maya"
+            }
+          },
+          {
+            "Position": {
+              "X": 2,
+              "Y": 14
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "OpenShop MrMrRogers.EchoReef_FishingChallenges down 0800 2000 2 13 1 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_MayaAquarium",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Warp": "35 29 MrMrRogers.EchoReef_Beach 32 29 36 29 MrMrRogers.EchoReef_Beach 33 29",
+          "WindowLight": "6 1 6 6 2 6 9 1 6 9 2 6 14 1 6 14 2 6 17 1 6 17 2 6 22 1 6 22 2 6 25 1 6 25 2 6 30 1 6 30 2 6 33 1 6 33 2 6 38 1 6 38 2 6 41 1 6 41 2 6 46 1 6 46 2 6 49 1 6 49 2 6 54 1 6 54 2 6 57 1 6 57 2 6 62 1 6 62 2 6 65 1 6 65 2 6"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Beach",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 47, 
+              "Y": 48
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "LockedDoorWarp 7 18 MrMrRogers.EchoReef_MayaHouse 800 2000"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Beach",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 32, 
+              "Y": 28
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Warp 35 28 MrMrRogers.EchoReef_MayaAquarium"
+            }
+          },
+          {
+            "Position": { 
+              "X": 33, 
+              "Y": 28
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Warp 36 28 MrMrRogers.EchoReef_MayaAquarium"
+            }
+          }
+        ],
+        "When": {
+          "Hearts:MrMrRogers.EchoReef_Maya": "6"
+        }
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Characters",
+          "Entries": {
+            "MrMrRogers.EchoReef_Maya": {
+              "DisplayName": "{{i18n:Maya}}",
+              "BirthSeason": "Winter",
+              "BirthDay": 2,
+              "HomeRegion": "Other",
+              "Language": "Default",
+              "Gender": "Female",
+              "Age": "Adult",
+              "Manner": "Rude",
+              "SocialAnxiety": "Outgoing",
+              "Optimism": "Positive",
+              "IsDarkSkinned": false,
+              "CanBeRomanced": false,
+              "Calendar": "HiddenAlways",
+              "SocialTab": "HiddenUntilMet",
+              "CanSocialize": true,
+              "CanReceiveGifts": true,
+              "CanGreetNearbyCharacters": true,
+              "CanCommentOnPurchasedShopItems": true,
+              "CanVisitIsland": false,
+              "IntroductionsQuest": false,
+              "ItemDeliveryQuests": false,
+              "PerfectionScore": false,
+              "EndSlideShow": "MainGroup",
+              "SpouseAdopts": null,
+              "SpouseWantsChildren": true,
+              "SpouseGiftJealousy": false,
+              "SpouseRoom": {},
+              "SpousePatio": {},
+              "SpouseFloors": [],
+              "SpouseWallpapers": [],
+              "DumpsterDiveFriendshipEffect": -25,
+              "DumpsterDiveEmote": 8,
+              "FriendsAndFamily": {},
+              "FlowerDanceCanDance": null,
+              "WinterStarGifts": [],
+              "WinterStarParticipant": false,
+              "UnlockConditions": null,
+              "SpawnIfMissing": true,
+              "Home": [
+                {
+                  "Id": "Default",
+                  "Condition": null,
+                  "Location": "MrMrRogers.EchoReef_MayaHouse",
+                  "Tile": {
+                    "X": 8,
+                    "Y": 4
+                  },
+                  "Direction": "down"
+                }
+              ],
+              "TextureName": null,
+              "Appearance": [
+                {
+                  "Id": "MrMrRogers.EchoReef_Maya",
+                  "Condition": null,
+                  "Season": null,
+                  "Indoors": true,
+                  "Outdoors": true,
+                  "Portrait": "Portraits/MrMrRogers.EchoReef_Maya",
+                  "Sprite": "Characters/MrMrRogers.EchoReef_Maya",
+                  "IsIslandAttire": false,
+                  "Precedence": 0,
+                  "Weight": 0
+                }
+              ],
+              "MugShotSourceRect": null,
+              "Size": {
+                "X": 16,
+                "Y": 32
+              },
+              "Breather": true,
+              "BreathChestRect": null,
+              "BreathChestPosition": null,
+              "Shadow": null,
+              "EmoteOffset": {
+                "X": 0,
+                "Y": 0
+              },
+              "ShakePortraits": null,
+              "KissSpriteIndex": 28,
+              "KissSpriteFacingRight": true,
+              "FormerCharacterNames": [],
+              "CustomFields": null
+            }
+          }
+      },
+      { 
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Maya",
+            "FromFile": "assets/blank.json"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Maya",
+          "FromFile": "assets/blank.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MrMrRogers.EchoReef_Maya": "{{i18n:MayaGiftLoveResponse}}//{{i18n:MayaGiftLikeResponse}}//{{i18n:MayaGiftDislikeResponse}}//{{i18n:MayaGiftHateResponse}}//{{i18n:MayaGiftNeutralResponse}}//"
+            }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Maya",
+          "Entries": {
+            "Introduction": "{{i18n:Maya_Introduction}}",
+            "AcceptBirthdayGift_Positive": "{{i18n:Maya_AcceptBirthdayGift_Positive}}",
+            "AcceptBirthdayGift_Negative": "{{i18n:Maya_AcceptBirthdayGift_Negative}}",
+            "AcceptGift_(O)StardropTea": "{{i18n:Maya_AcceptGift_(O)StardropTea}}",
+            "DumpsterDiveComment": "{{i18n:Maya_DumpsterDiveComment}}",
+            "HitBySlingshot": "{{i18n:Maya_HitBySlingshot}}",
+            "Mon": "{{i18n:Maya_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Tue": "{{i18n:Maya_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Wed": "{{i18n:Maya_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Thu": "{{i18n:Maya_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Fri": "{{i18n:Maya_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sat": "{{i18n:Maya_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sun": "{{i18n:Maya_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/animationdescriptions",
+          "Entries": {
+            "MrMrRogers.EchoReef_Maya_sleep": "19/19/19",
+            "mrmrrogers.echoreef_maya_sleep": "19/19/19"
+          } 
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Maya",
+          "Entries": {
+            "spring": "600 MrMrRogers.EchoReef_MayaHouse 8 4 2/1200 MrMrRogers.EchoReef_MayaHouse 2 13 0/2200 MrMrRogers.EchoReef_MayaHouse 8 4 2 MrMrRogers.EchoReef_Maya_sleep"
+          }
+        }
+  ]
+}

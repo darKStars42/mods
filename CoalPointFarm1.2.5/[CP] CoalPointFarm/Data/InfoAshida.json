@@ -1,0 +1,262 @@
+{
+	"Changes": [
+		
+		//Empty Loads
+		{
+			"LogName": "Ashida Schedule Empty Json",
+			"Action": "Load",
+			"Target": "Characters/schedules/APTAshida",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Ashida Strings Empty Jsons",
+			"Action": "Load",
+			"Target": "Strings/schedules/APTAshida",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Ashida Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/APTAshida",
+			"FromFile": "data/empty.json"
+		},
+		
+		//Full Loads
+		{
+			"LogName": "Ashida Base Sprites",
+			"Action": "Load",
+			"Target": "Characters/APTAshida",
+			"FromFile": "assets/sprites/Ashida/AshidaSprites{{Season}}.png"
+		},
+		{
+			"LogName": "Ashida Base Portraits",
+			"Action": "Load",
+			"Target": "Portraits/APTAshida",
+			"FromFile": "assets/portraits/Ashida/AshidaPortraitsSpring.png"
+		},
+		{
+			"LogName": "AshidaPortraitLoads",
+			"Action": "Load",
+			"Target": "Portraits/Ashida/AshidaPortraitsSpring, Sprites/Ashida/AshidaSpritesSpring, Sprites/Ashida/AshidaSpritesSpringBaby, Portraits/Ashida/AshidaPortraitsSummer, Sprites/Ashida/AshidaSpritesSummer, Sprites/Ashida/AshidaSpritesSummerBabyIndoors, Sprites/Ashida/AshidaSpritesSummerBabyOutdoors, Sprites/Ashida/AshidaSpritesSummerpregnant, Portraits/Ashida/AshidaPortraitsFall, Sprites/Ashida/AshidaSpritesFall, Sprites/Ashida/AshidaSpritesFallBaby, Sprites/Ashida/AshidaSpritesFallpregnant, Portraits/Ashida/AshidaPortraitsWinter, Sprites/Ashida/AshidaSpritesWinter, Sprites/Ashida/AshidaSpritesWinterBaby, Portraits/Ashida/AshidaPortraitsSpirits, Sprites/Ashida/AshidaSpritesSpirits, Portraits/Ashida/AshidaPortraitsFlower, Sprites/Ashida/AshidaSpritesFlower, Sprites/Ashida/AshidaSpritesFlowerBaby",
+			"FromFile": "assets/{{Target}}.png"
+		},
+		//Baby overlay
+		{
+			"LogName": "Ashida Portraits Baby Overlay",
+			"Action": "EditImage",
+			"Target": "Portraits/Ashida/AshidaPortraitsSpring, Portraits/Ashida/AshidaPortraitsSummer, Portraits/Ashida/AshidaPortraitsFall, Portraits/Ashida/AshidaPortraitsWinter, Portraits/Ashida/AshidaPortraitsFlower",
+			"FromFile": "assets/portraits/Ashida/AshidaBabyOverlay{{Season}}.png",
+			"When": {
+				"DayOfWeek": "{{CPFAshidaBabyDaysCondition}}",
+				"HasSeenEvent": "145857",
+				"Time": "{{Range: 0820, 1830}}",
+			},
+			"PatchMode": "Overlay",
+			"Update": "OnTimeChange",
+		},
+		{
+			"LogName": "Ashida Portraits Baby Sunglasses Overlay",
+			"Action": "EditImage",
+			"Target": "Portraits/Ashida/AshidaPortraitsSummer",
+			"FromFile": "assets/portraits/Ashida/AshidaBabyOverlaySunglasses.png",
+			"When": {
+				"DayOfWeek": "{{CPFAshidaBabyDaysCondition}}",
+				"HasSeenEvent": "145857",
+				"Time": "{{Range: 0820, 1830}}",
+				"Season": "Summer",
+				"isOutdoors": true
+			},
+			"PatchMode": "Overlay",
+			"Update": "OnTimeChange",
+		},
+		
+		{
+			"LogName": "Ashida Disposition",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"APTAshida": {
+					"DisplayName": "{{i18n:Displayname.APTAshida}}",
+					"Gender": "Female",
+					"Age": "Adult",
+					"Manner": "Polite",
+					"SocialAnxiety": "Shy",
+					"Optimism": "Neutral",
+					"BirthSeason": "Winter",
+					"BirthDay": "13",
+					"HomeRegion": "Town",
+					"IsDarkSkinned": false,
+				
+					"CanSocialize": true,
+					"CanBeRomanced": false,
+					"CanReceiveGifts": true,
+					"CanCommentOnPurchasedShopItems": true,
+					"CanGreetNearbyCharacters": true,
+					"CanVisitIsland": true,
+					"Calendar": "AlwaysShown",
+					"SocialTab": "UnknownUntilMet",
+					"SpouseAdopts": null,
+					"SpouseWantsChildren": true,
+					"SpouseGetsJealousOfGifts": true,
+					"IntroductionsQuest": true,
+					"ItemDeliveryQuests": true,
+					"PerfectionScore": "{{CPFNPCPerfection}}",
+					"EndSlideShow": "MainGroup",
+					"FriendsAndFamily": {
+						"APTMora": "Niece",
+						"APTIsaacII": "Son",
+						"APTMarcus": "Employee",
+					},
+				
+					"DumpsterDiveEmote": 12,
+					"DumpsterDiveFriendshipEffect": -25,
+				
+					"FlowerDanceCanDance": null,
+					"WinterStarParticipant": true,
+					"WinterStarGifts": [],
+				
+					"UnlockConditions": true,
+					"SpawnIfMissing": true,
+					"Home": [
+						{
+							"Id": "Default",
+							"Condition": null,
+							"Location": "{{AshidaStartingLocation}}",
+							"Tile": { "X": "{{AshidaStartingPositionX}}", "Y": "{{AshidaStartingPositionY}}" },
+							"Direction": "right"
+						}
+					],
+					
+					"TextureName": "APTAshida",
+					"Appearance": [
+						{
+							"Id": "APTAshidaSpringOutfit",
+							"Season": "Spring",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsSpring",
+							"Sprite": "Sprites/Ashida/AshidaSpritesSpring",
+						},
+						{
+							"Id": "APTAshidaSpringOutfitBaby",
+							"Season": "Spring",
+							"Condition": "DAY_OF_WEEK {{CPFAshidaBabyDaysQuery}}, PLAYER_HAS_SEEN_EVENT Any 145857, TIME 0820 1830",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsSpring",
+							"Sprite": "Sprites/Ashida/AshidaSpritesSpringBaby",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTAshidaSummerOutfit",
+							"Season": "Summer",
+							"Condition": "PLAYER_HAS_SEEN_EVENT Any 145857",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsSummer",
+							"Sprite": "Sprites/Ashida/AshidaSpritesSummer",
+						},
+						{
+							"Id": "APTAshidaSummerOutfitBabyIndoors",
+							"Season": "Summer",
+							"Indoors": true,
+							"Condition": "DAY_OF_WEEK {{CPFAshidaBabyDaysQuery}}, PLAYER_HAS_SEEN_EVENT Any 145857, TIME 0820 1830",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsSummer",
+							"Sprite": "Sprites/Ashida/AshidaSpritesSummerBabyOutdoors",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTAshidaSummerOutfitBabyOutdoors",
+							"Season": "Summer",
+							"Indoors": false,
+							"Condition": "DAY_OF_WEEK {{CPFAshidaBabyDaysQuery}}, PLAYER_HAS_SEEN_EVENT Any 145857, TIME 0820 1830",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsSummer",
+							"Sprite": "Sprites/Ashida/AshidaSpritesSummerBabyOutdoors",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTAshidaSummerOutfitPregnant",
+							"Season": "Summer",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsSummer",
+							"Sprite": "Sprites/Ashida/AshidaSpritesSummerpregnant",
+						},
+						{
+							"Id": "APTAshidaFallOutfit",
+							"Season": "Fall",
+							"Condition": "PLAYER_HAS_SEEN_EVENT Any 145857",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsFall",
+							"Sprite": "Sprites/Ashida/AshidaSpritesFall",
+						},
+						{
+							"Id": "APTAshidaFallOutfitBaby",
+							"Season": "Fall",
+							"Condition": "DAY_OF_WEEK {{CPFAshidaBabyDaysQuery}}, PLAYER_HAS_SEEN_EVENT Any 145857, TIME 0820 1830",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsFall",
+							"Sprite": "Sprites/Ashida/AshidaSpritesFallBaby",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTAshidaFallOutfitPregnant",
+							"Season": "Fall",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsFall",
+							"Sprite": "Sprites/Ashida/AshidaSpritesFallpregnant",
+						},
+						{
+							"Id": "APTAshidaWinterOutfit",
+							"Season": "Winter",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsWinter",
+							"Sprite": "Sprites/Ashida/AshidaSpritesWinter",
+							"Precedence": -15,
+						},
+						{
+							"Id": "APTAshidaWinterOutfitBaby",
+							"Season": "Winter",
+							"Condition": "DAY_OF_WEEK {{CPFAshidaBabyDaysQuery}}, PLAYER_HAS_SEEN_EVENT Any 145857, TIME 0800 1830",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsWinter",
+							"Sprite": "Sprites/Ashida/AshidaSpritesWinterBaby",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTAshidaSpiritsOutfit",
+                            "Condition": "SEASON_DAY fall 27",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsSpirits",
+							"Sprite": "Sprites/Ashida/AshidaSpritesSpirits",
+							"Precedence": -20,
+						},
+						{
+							"Id": "APTAshidaFlowerOutfit",
+                            "Condition": "EVENT_ID festival_spring24",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsFlower",
+							"Sprite": "Sprites/Ashida/AshidaSpritesFlower",
+							"Precedence": -19,
+						},
+						{
+							"Id": "APTAshidaFlowerOutfitBaby",
+                            "Condition": "EVENT_ID festival_spring24, PLAYER_HAS_SEEN_EVENT Any 145857",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsFlower",
+							"Sprite": "Sprites/Ashida/AshidaSpritesFlowerBaby",
+							"Precedence": -20,
+						},
+						{
+							"Id": "APTAshidaIsaacIReturn",
+                            "Condition": "IS_EVENT CPFIsaacIIntroEvent",
+							"Portrait": "Portraits/Ashida/AshidaPortraitsSpring",
+							"Sprite": "Sprites/Ashida/AshidaSpritesSpring",
+							"Precedence": -20,
+						},
+					],
+					"Size": {
+						"X": 16,
+						"Y": 32
+					},
+					"Breather": true,
+					"ShakePortraits": [
+						3, 8, 11, 13, 14
+					],
+					"KissSpriteIndex": 28,
+					"KissSpriteFacingDirection": "right",
+					
+					"HiddenProfileEmoteSound": null,
+					"HiddenProfileEmoteDuration": -1,
+					"HiddenProfileEmoteStartFrame": 16,
+					"HiddenProfileEmoteFrameCount": 4,
+					"HiddenProfileEmoteFrameDuration": 250,
+				},
+			},
+		},
+	]
+}

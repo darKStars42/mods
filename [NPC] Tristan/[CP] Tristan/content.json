@@ -1,0 +1,838 @@
+{
+    "Format": "2.0",
+    "DynamicTokens": [
+        {
+            "Name": "RivalHearts",
+            "Value": true
+        },
+        {
+            "Name": "RivalHearts",
+            "Value": false,
+            "When": {
+                "Spouse": "Shane, MisterGinger"
+            }
+        },
+        {
+            "Name": "RivalHearts",
+            "Value": false,
+            "When": {
+                "Relationship:Shane": "married, dating, engaged"
+            }
+        },
+        {
+            "Name": "RivalHearts",
+            "Value": false,
+            "When": {
+                "Relationship:MisterGinger": "married, dating, engaged"
+            }
+        }
+    ],
+    "ConfigSchema": {
+        "TristanVariant": {
+            "AllowValues": "light, dark, auburn",
+            "Default": "auburn",
+            "AllowBlank": false
+        }
+    },
+    "Changes": [
+        //L O A D S   L O C A T I O N S and D A T A **************************************************************
+        { //Playhouse Map
+            "Action": "Load",
+            "Target": "Maps/EastScarp_Playhouse",
+            "FromFile": "assets/Maps/Playhouse2.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/Lemurkat_FairyPool",
+            "FromFile": "assets/Maps/FairyPool.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/Lemurkat_SecretCave",
+            "FromFile": "assets/Maps/SecretCave.tmx"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                //Template for NEW Location
+                "Lemurkat_FairyPool": {
+                    "DisplayName": "{{i18n:EastScarp.Locations.FairyPool}}",
+                    "DefaultArrivalTile": {
+                        "X": 32,
+                        "Y": 25
+                    },
+                    "CreateOnLoad": {
+                        "MapPath": "Maps\\Lemurkat_FairyPool"
+                    },
+                    "ArtifactSpots": [
+                        {
+                            "Chance": 0.25,
+                            "Id": "(O)390",
+                            "ItemId": "(O)390",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1
+                        }
+                    ],
+                    "FishAreas": {},
+                    "Fish": [
+                        {
+                            "Id": "(O)734",
+                            "ItemId": "(O)734"
+                        },
+                        {
+                            "Id": "(O)142",
+                            "ItemId": "(O)142"
+                        },
+                        {
+                            "Id": "(O)143",
+                            "ItemId": "(O)143"
+                        },
+                        {
+                            "Id": "EastScarp_Fairy_Betta",
+                            "ItemId": "(O)EastScarp_Fairy_Betta",
+                            "Condition": "LOCATION_Season Here spring summer fall"
+                        },
+                    ],
+                    "Forage": [
+                        {
+                            "Chance": 0.5,
+                            "Season": "Spring",
+                            "Condition": null,
+                            "Id": "(O)257",
+                            "ItemId": "(O)257",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.25,
+                            "Season": "Spring",
+                            "Condition": null,
+                            "Id": "(O)404",
+                            "ItemId": "(O)404",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.5,
+                            "Season": "Spring",
+                            "Condition": null,
+                            "Id": "(O)16",
+                            "ItemId": "(O)16",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.9,
+                            "Season": "Summer",
+                            "Condition": null,
+                            "Id": "(O)259",
+                            "ItemId": "(O)259",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.25,
+                            "Season": "Summer",
+                            "Condition": null,
+                            "Id": "(O)420",
+                            "ItemId": "(O)420",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.5,
+                            "Season": "Fall",
+                            "Condition": null,
+                            "Id": "(O)281",
+                            "ItemId": "(O)281",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.4,
+                            "Season": "Fall",
+                            "Condition": null,
+                            "Id": "(O)404",
+                            "ItemId": "(O)404",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.2,
+                            "Season": "Fall",
+                            "Condition": null,
+                            "Id": "(O)420",
+                            "ItemId": "(O)420",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        },
+                        {
+                            "Chance": 0.5,
+                            "Season": "Winter",
+                            "Condition": null,
+                            "Id": "(O)283",
+                            "ItemId": "(O)283",
+                            "RandomItemId": null,
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                        }
+                    ],
+                    "MinDailyWeeds": 2,
+                    "MaxDailyWeeds": 5,
+                    "FirstDayWeedMultiplier": 15,
+                    "MinDailyForageSpawn": 1,
+                    "MaxDailyForageSpawn": 4,
+                    "MaxSpawnedForageAtOnce": 8,
+                    "ChanceForClay": 0.03,
+                    "Music": [],
+                    "MusicDefault": null,
+                    "MusicContext": "Default",
+                    "MusicIgnoredInRain": false,
+                    "MusicIgnoredInSpring": false,
+                    "MusicIgnoredInSummer": false,
+                    "MusicIgnoredInFall": false,
+                    "MusicIgnoredInFallDebris": false,
+                    "MusicIgnoredInWinter": false,
+                    "MusicIsTownTheme": false,
+                    "CustomFields": {}
+                },
+                "Lemurkat_SecretCave": {
+                    "DisplayName": "{{i18n:EastScarp.Locations.SecretCave}}",
+                    "DefaultArrivalTile": {
+                        "X": 8,
+                        "Y": 15
+                    },
+                    "CreateOnLoad": {
+                        "MapPath": "Maps\\Lemurkat_SecretCave"
+                    },
+                    "ArtifactSpots": [
+                        {
+                            "Chance": 0.25,
+                            "Id": "(O)390",
+                            "ItemId": "(O)390",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1
+                        }
+                    ],
+                    "FishAreas": {},
+                    "Fish": [
+                        {
+                            "Id": "(O)153",
+                            "ItemId": "(O)153"
+                        },
+                        {
+                            "Id": "(O)795",
+                            "ItemId": "(O)795"
+                        }
+                    ]
+                },
+                "EastScarp_Playhouse": {
+                    "DisplayName": "{{i18n:EastScarp.Locations.PlayHouse}}",
+                    "DefaultArrivalTile": {
+                        "X": 3,
+                        "Y": 7
+                    },
+                    "CreateOnLoad": {
+                        "MapPath": "Maps\\EastScarp_Playhouse"
+                    },
+                    "CustomFields": {}
+                },
+            }
+        },
+        // Patches etc
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Woods",
+            "FromFile": "assets/Maps/Woods-Patch.tmx",
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+            },
+            "ToArea": {
+                "X": 0,
+                "Y": 5,
+                "Width": 4,
+                "Height": 13
+            },
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "MapProperties",
+                        "Warp"
+                    ],
+                    "Value": "0 11 Lemurkat_FairyPool 39 25 0 12 Lemurkat_FairyPool 39 26",
+                    "Delimiter": " "
+                }
+            ]
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Woods",
+            "FromFile": "assets/Maps/SVE_WoodsPatch.tmx",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            },
+            "ToArea": {
+                "X": 4,
+                "Y": 39,
+                "Width": 5,
+                "Height": 4
+            },
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "MapProperties",
+                        "Warp"
+                    ],
+                    "Value": "5 41 Lemurkat_FairyPool 39 25",
+                    "Delimiter": " "
+                }
+            ]
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Lemurkat_FairyPool",
+            "MapProperties": {
+                "Warp": "40 25 Woods 7 41 40 26 Woods 7 41 40 27 Woods 7 41 17 16 Lemurkat_SecretCave 8 16"
+            },
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/Lemurkat_Tristan_SpouseRoom",
+            "FromFile": "assets/Maps/SpouseRoomTristan.tmx",
+        },
+        //Strings in cave
+        {
+            "Action": "EditData",
+            "Target": "Strings/StringsFromMaps",
+            "Entries": {
+                "FairyPool.001": "{{i18n:Strings.FairyPool.001}}",
+                "TristanMemorial.001": "{{i18n:Strings.TristanMemorial.001}}",
+                "SecretCave.001": "{{i18n:Strings.SecretCave.001}}",
+                "SecretCave.002": "{{i18n:Strings.SecretCave.002}}",
+                "SecretCave.003": "{{i18n:Strings.SecretCave.003}}",
+                "SecretCave.004": "{{i18n:Strings.SecretCave.004}}",
+                "SecretCave.005": "{{i18n:Strings.SecretCave.005}}",
+                "SecretCave.006": "{{i18n:Strings.SecretCave.006}}",
+                "SecretCave.007": "{{i18n:Strings.SecretCave.007}}",
+                "WizardHouseTristan.1": "{{i18n:Strings.WizardHouseTristan.1}}",
+                "TristanHouse.1": "{{i18n:Strings.TristanHouse.1}}",
+                "TristanHouse.2": "{{i18n:Strings.TristanHouse.2}}",
+                "TristanHouse.3": "{{i18n:Strings.TristanHouse.3}}",
+                "TristanHouse.4": "{{i18n:Strings.TristanHouse.4}}",
+                "TristanHouse.5": "{{i18n:Strings.TristanHouse.5}}",
+                "TristanHouse.6": "{{i18n:Strings.TristanHouse.6}}",
+                   }
+        },
+        {
+            "LogName": "FairyPool Events",
+            "Action": "Load",
+            "Target": "Data/Events/Lemurkat_FairyPool",
+            "FromFile": "assets/Data/FairyPool.json"
+        },
+        {
+            "LogName": "Secret Cave Events",
+            "Action": "Load",
+            "Target": "Data/Events/Lemurkat_SecretCave",
+            "FromFile": "assets/Data/SecretCave.json"
+        },
+        {
+            "LogName": "Patches that damned table",
+            "Action": "EditMap",
+            "Target": "Maps/WizardHouse",
+            "FromFile": "assets/Maps/KarmyllaTable.tmx",
+            "ToArea": {
+                "X": 5,
+                "Y": 6,
+                "Width": 1,
+                "Height": 1
+            },
+            "When": {
+                "HasMod |contains=Karmylla.ImmersiveMaps": true,
+                "HasMod |contains=Wolf.RomRas": false
+            }
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/WizardHouse",
+            "FromFile": "assets/Maps/TristanBook.tmx",
+            "ToArea": {
+                "X": 12,
+                "Y": 15,
+                "Width": 1,
+                "Height": 1
+            },
+            "When": {
+                "HasSeenEvent": "5295006",
+                "HasSeenEvent |contains=5295000": false
+            }
+        },
+        {
+            "LogName": "Question Dialogue",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/MisterGinger",
+            "Entries": {
+                "BreakSpell_Yes1": "{{i18n:Dialogue.BreakSpell_Yes1}}",
+                "BreakSpell_Yes2": "{{i18n:Dialogue.BreakSpell_Yes2}}",
+                "BreakSpell_No": "{{i18n:Dialogue.BreakSpell_No}}",
+                
+            }
+        },
+        //Temp Actors 
+        {
+            "Action": "Load",
+            "Target": "Characters/Tristan",
+            "FromFile": "assets/Characters/{{TristanVariant}}/MisterGinger_TrissSwim.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Tristan",
+            "FromFile": "assets/Portraits/{{TristanVariant}}/Tristan_swim.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/MonaCute",
+            "FromFile": "assets/TempActors/Cute_Mona.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/TristanCute",
+            "FromFile": "assets/TempActors/cute_Tristan_{{TristanVariant}}.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/GingerCute",
+            "FromFile": "assets/TempActors/Cute_Ginger.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/WitchCute",
+            "FromFile": "assets/TempActors/Cute_Witch2.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/JasCute",
+            "FromFile": "assets/TempActors/Cute_Jas.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/MarnShane",
+            "FromFile": "assets/TempActors/Cute_MarnShane.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/MarnCute",
+            "FromFile": "assets/TempActors/Cute_Marnie.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/MtFire",
+            "FromFile": "assets/TempActors/fire.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/MtEvermore",
+            "FromFile": "assets/Maps/{{season}}_MtEvermore.tmx",
+            "When": {
+                "Season": "summer, spring, fall"
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/MtCabin",
+            "FromFile": "assets/Maps/MtCabin.tmx"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Events.json"
+        },
+        /*  Event IDs:
+    50706128/50706129: Picnic invite and picnic
+    5295000:    transformation scene:
+    5295001:    follow-up
+    5295002:	Shane and Tristan confrontation
+    5295003:    Mr Ginger tells his story
+    5295004:	Shane and Tristan RH1
+    5295005:    Evelyn
+    5295006:    Wizard
+    5295007:    Witch 1
+    5295008:    Witch 2
+    5295009:    Sends letter for Willy invite
+    5295010:    Willy
+    5295011/5295012: Invite to Mt Evermore/Hike
+    5295020:    Shane and Mr Ginger (In MisterGinger mod)
+    5295013:    Shane and Tristan RH - Tristan has concussion
+    5295014:    Shane and Tristan - Shane asks farmer for advice 
+    5295015:    Shane and Tristan RH (Date invititation)
+    5295016:    Tristan for if you are married to Shane
+*/
+        {
+            "Action": "Include",
+            "FromFile": "assets/Conversation.json"
+        },
+        //Tristan Restored
+        {
+            "LogName": "NPC Manifestation",
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "When": {
+                "HasSeenEvent:hostPlayer": "5295000"
+            },
+            "TargetField": [
+                "MisterGinger"
+            ],
+            "Entries": {
+                "DisplayName": "{{i18n:NPCD.Name.Tristan}}",
+                "CanBeRomanced": true,
+                "LoveInterest": null,
+                "SpouseRoom": {
+                    "MapAsset": "Lemurkat_Tristan_SpouseRoom",
+                    "MapSourceRect": {
+                        "X": 0,
+                        "Y": 0,
+                        "Width": 6,
+                        "Height": 9
+                    }
+                },
+                "FriendsAndFamily": {
+                    "Jas": "{{i18n:NPCD.Family.Jas}}",
+                },
+                "WinterStarGifts": [
+                    {
+                        "Condition": null,
+                        "Id": "Wool",
+                        "ItemId": "(O)440"
+                    }
+                ],
+                "HiddenProfileEmoteDuration": -1,
+                "HiddenProfileEmoteStartFrame": 20,
+                "HiddenProfileEmoteFrameCount": 2,
+                "HiddenProfileEmoteFrameDuration": 500.0,
+                "Home": [
+                    {
+                        "Id": "Shane on Farm",
+                        "Condition": "PLAYER_NPC_RELATIONSHIP Any Shane Married",
+                        "Location": "AnimalShop",
+                        "Tile": {
+                            "X": 27,
+                            "Y": 4
+                        },
+                        "Direction": "Down",
+                    },
+                    {
+                        "Id": "Default",
+                        "Location": "EastScarp_House1",
+                        "Tile": {
+                            "X": 23,
+                            "Y": 4
+                        },
+                        "Direction": "Down"
+                    }
+                ],
+                "MugShotSourceRect": null,
+                "Breather": true
+            }
+        },
+   
+        {
+            "LogName": "NPC Gift Tastes",
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MisterGinger": "{{i18n:gift.love.tristan}}/202 212 198 227 267 424 426 715 440/{{i18n:gift.like.tristan}}/-4 195 209 228 444 732/{{i18n:gift.dislike.tristan}}/684 685/{{i18n:gift.hate.tristan}}/-26/{{i18n:gift.neutral.tristan}}//"
+            },
+            "When": {
+                "HasSeenEvent:hostPlayer": "5295000"
+            }
+        },
+        //If Mr Ginger Uninstalled:
+        {
+            "LogName": "Loads the char if Mr Ginger uninstalled",
+            "Action": "Include",
+            "FromFile": "assets/NoMrG.json",
+            "When": {
+                "HasSeenEvent:hostPlayer": "5295000",
+                "HasMod |contains=LemurKat.Mr.Ginger.NPC": false
+            }
+        },
+        //Edits Dialogue
+        {
+            "LogName": "Dialogues",
+            "Action": "Include",
+            "FromFile": "assets/Dialogue.json",
+            "When": {
+                "HasSeenEvent:hostPlayer": "5295000"
+            }
+        },
+        {
+            "LogName": "Edits sprites",
+            "Action": "EditImage",
+            "Target": "Characters/MisterGinger",
+            "FromFile": "assets/Characters/{{TristanVariant}}/Tristan_{{season}}.png",
+            "When": {
+                "HasSeenEvent:hostPlayer": "5295000",
+                // "HasMod |contains=LemurKat.Mr.Ginger.NPC": true
+            }
+        },
+        {
+            "LogName": "Edits portraits",
+            "Action": "EditImage",
+            "Target": "Portraits/MisterGinger",
+            "FromFile": "assets/Portraits/{{TristanVariant}}/Tristan_{{season}}.png",
+            "When": {
+                "HasSeenEvent:hostPlayer": "5295000",
+                // "HasMod |contains=LemurKat.Mr.Ginger.NPC": true
+            }
+        },
+        {
+            "LogName": "Edits portraits",
+            "Action": "EditImage",
+            "Target": "Portraits/MisterGinger",
+            "FromFile": "assets/Portraits/Overlays/SpiritsEve.png",
+            "Update": "OnLocationChange",
+            "PatchMode": "Overlay",
+            "When": {
+                "DayEvent": "spirit's eve",
+                "LocationName": "EastScarp_VillageInn"
+            }
+        },
+        {
+            "LogName": "Edits sprites",
+            "Action": "EditImage",
+            "Target": "Characters/MisterGinger",
+            "PatchMode": "Overlay",
+            "Update": "OnLocationChange",
+            "FromFile": "assets/Characters/Overlays/SpiritsEve.png",
+            "When": {
+                "DayEvent": "spirit's eve",
+                "LocationName": "EastScarp_VillageInn"
+            }
+        },
+        {
+            "LogName": "Animations",
+            "Action": "EditData",
+            "Target": "Data/animationDescriptions",
+            "Entries": {
+                "misterginger_knit": "0/16 16 16 16 16 17 17 17 17/0",
+                "misterginger_sleep": "18/18/18"
+            }
+        },
+        {
+            "LogName": "Rainy Day Dialogue Tristan",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/rainy",
+            "Entries": {
+                "MisterGinger": "{{i18n:dialogue.tristan.rainy}}"
+            },
+            "When": {
+                "HasSeenEvent": "5295000"
+            }
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/EastScarpe.json",
+            "When": {
+                "HasSeenEvent": "5295000",
+                "Relationship:Shane |contains=married": false
+            }
+        },
+        // makes changes if farmer married to Shane, in which case:
+        {
+            "LogName": "If Shane is spouse",
+            "Action": "Include",
+            "FromFile": "assets/AnimalShop.json",
+            "When": {
+                "HasSeenEvent": "5295000",
+                "Relationship:Shane": "married"
+            }
+        },
+        //Festivals
+        {
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring13",
+            "Entries": {
+                "MisterGinger": "{{i18n:dialogue.festivals.spring13}}"
+            },
+            "When": {
+                "HasSeenEvent": "5295000"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter25",
+            "Entries": {
+                "MisterGinger": "{{i18n:dialogue.festivals.winter25}}"
+            },
+            "When": {
+                "HasSeenEvent": "5295000"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter8",
+            "Entries": {
+                "MisterGinger": "{{i18n:dialogue.festivals.winter8}}",
+                "MisterGinger_y2": "{{i18n:dialogue.festivals.winter8.y2}}"
+            },
+            "When": {
+                "HasSeenEvent": "5295000"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall27",
+            "Entries": {
+                "MisterGinger": "{{i18n:dialogue.festivals.fall27}}"
+            },
+            "When": {
+                "HasSeenEvent": "5295000"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall27",
+            "Entries": {
+                "MisterGinger": "{{i18n:dialogue.festivals.fall27.marmar}}"
+            },
+            "When": {
+                "HasSeenEvent |contains=5295000": true,
+                "HasSeenEvent |contains=50706110": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer11",
+            "Entries": {
+                "MisterGinger": "{{i18n:dialogue.festivals.summer11}}"
+            },
+            "When": {
+                "HasSeenEvent": "5295000"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer28",
+            "Entries": {
+                "MisterGinger_Spouse": "{{i18n:dialogue.festivals.summer28}}"
+            },
+            "When": {
+                "HasSeenEvent": "5295000"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring24",
+            "Entries": {
+                "MisterGinger": "{{i18n:dialogue.festivals.spring24}}"
+            },
+            "When": {
+                "HasSeenEvent": "5295000"
+            }
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/RivalHearts.json",
+            "When": {
+                "RivalHearts": true,
+                "HasSeenEvent": "5295000"
+            }
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/FarmHand.json",
+            "When": {
+                "HasSeenEvent:hostPlayer": "5295003",
+                "IsMainPlayer": false
+            }
+        },
+        {
+            "LogName": "SecretNotes",
+            "Action": "EditData",
+            "Target": "Data/SecretNotes",
+            "Entries": {
+                "753": "{{i18n:secretnotes.753}}",
+                "754": "{{i18n:secretnotes.754}}"
+            }
+        },
+        //Marriage
+        {
+            "LogName": "Engagement Dialogue",
+            "Action": "EditData",
+            "Target": "Data/EngagementDialogue",
+            "Entries": {
+                "MisterGinger0": "{{i18n:engagementdialogue.tristan.0}}",
+                "MisterGinger1": "{{i18n:engagementdialogue.tristan.1}}"
+            },
+            "When": {
+                "HasSeenEvent": "5295000"
+            }
+        },
+        {
+            "LogName": "Edits Tristan schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/MisterGinger",
+            "Entries": {
+                "marriage_Fri:": "900 Forest 21 29 2/1300 Town 86 103 2/1620 Town 18 94 0/1750 AnimalShop 7 16 2/2430 bed",
+                "marriage_Mon": "0800 Forest 41 10 2/1510 AnimalShop 14 16 0/1530 AnimalShop 16 13 2 misterginger_knit/2000 bed",
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Mods/shekurika.EventLookup/blocklist",
+            "When": {
+                "HasSeenEvent |contains=5295000": false
+            },
+            "Entries": {
+                "5295011": "T",
+                "5295012": "T"
+            }
+        },
+        {
+            //Add events to the blocklist so they won't show up
+            //in the "Available Events" menu
+            //left-hand side is the event id, right side doesnt matter
+            "Action": "EditData",
+            "Target": "Mods/shekurika.EventLookup/blocklist",
+            "When": {
+                "HasSeenEvent |contains=5295000": false
+            },
+            "Entries": {
+                "5295012": "T",
+            }
+        },
+        {
+            //Add "displayname" to locations
+            "Action": "EditData",
+            "Target": "Mods/shekurika.EventLookup/locationnames",
+            "Entries": {
+                "EastScarp__Playhouse": "{{i18n:EastScarp.Locations.PlayHouse}}",
+                "Lemurkat_FairyPool": "{{i18n:EastScarp.Locations.FairyPool}}",
+                "Lemurkat_SecretCave": "{{i18n:EastScarp.Locations.SecretCave}}"
+            }
+        }
+    ]
+}

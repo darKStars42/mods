@@ -1,0 +1,59 @@
+{
+  "Changes": [
+   {
+      "Action": "EditData",
+      "Target": "Data/SpecialOrders",
+      "Entries": {
+        "maat.BetterThings_BlossomTreeSapling": {
+          "Name": "[maat.BetterThings_Name]",
+          "Requester": "Wizard",
+          "Duration": "TwoWeeks",
+          "Repeatable": "true",
+          "RequiredTags": "island",
+          "OrderType": "",
+          "SpecialRule": "",
+          "Text": "[Maat.BetterThings_Text]",
+          "ItemToRemoveOnEnd": null,
+          "MailToRemoveOnEnd": null,
+          "RandomizedElements": null,
+          "Objectives": [
+            {
+              "Type": "Collect",
+              "Text": "[maat.BetterThings_Objective_0_Text]",
+              "RequiredCount": "10",
+              "Data": {
+                "AcceptedContextTags": "item_blossom_coin"
+              }
+            },
+            {
+              "Type": "Deliver",
+              "Text": "[maat.BetterThings_Objective_1_Text]",
+              "RequiredCount": "10",
+              "Data": {
+                "AcceptedContextTags": "item_blossom_coin",
+                "Message": "{{i18n:blossom.sapling.dialoguegift}}",
+                "TargetName": "Wizard"
+              }
+            }
+          ],
+          "Rewards": [
+            {
+              "Type": "Money",
+              "Data": {
+                "Amount": "50000"
+              }
+            },
+            {
+              "Type": "Mail",
+              "Data": {
+                "MailReceived": "maat.BetterThings_blossom_mail",
+                "NoLetter": "false"
+              }
+            }
+          ]
+        }
+      },
+     "When": { "NewMissions": true, "FruitTree": true }
+    }
+   ]
+}

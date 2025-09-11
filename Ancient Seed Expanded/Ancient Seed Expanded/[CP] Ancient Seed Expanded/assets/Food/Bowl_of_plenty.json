@@ -1,0 +1,82 @@
+{
+  "Changes": [
+    //Food
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Bowl_of_plenty":{
+          "Name": "Bowl of plenty",
+          "DisplayName": "{{i18n:Bowl_of_plenty.DisplayName}}",
+          "Description": "{{i18n:Bowl_of_plenty.Description}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price" : 1800,
+          "IsDrink": false,
+          "Edibility": 137,
+          "Texture": "Mods/{{ModId}}/Bowl_of_plenty",
+          "SpriteIndex": 0,
+          "Buffs": [
+            {
+                  "Id": "Food",
+                  "BuffId": null,
+                  "IconTexture": null,
+                  "IconSpriteIndex": 0,
+                  "Duration": 370,
+                  "IsDebuff": false,
+                  "GlowColor": null,
+                  "CustomAttributes": {
+                  "FarmingLevel": 0.0,
+                  "FishingLevel": 0.0,
+                  "MiningLevel": 2.0,
+                  "LuckLevel": 1.0,
+                  "ForagingLevel": 0.0,
+                  "MaxStamina": 50.0,
+                  "MagneticRadius": 0.0,
+                  "Speed": 1.0,
+                  "Defense": 2.0,
+                  "Attack": 0.0
+                }
+              }
+            ],
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": null,
+          "CustomFields": null
+        }
+      }
+    },
+        {
+            "Action": "EditData",
+            "Target": "Data/CookingRecipes",
+            "Entries": {
+                "Bowl of plenty": "{{ModId}}_Purple_Ancient_Fruit 1 {{ModId}}_Ancient_Melon 1 {{ModId}}_Wild_Ancient_Berry 1/25 5/{{ModId}}_Bowl_of_plenty/null/{{i18n:Bowl_of_plenty.DisplayName}}",
+            }
+    },
+    {
+          "Action": "EditData",
+          "Target": "Data/Shops",
+          "TargetField": ["Seed_Transformer", "Items"],
+          "Entries": {
+              "{{ModId}}_Bowl_of_plenty_recipe": {
+                  "Id": "{{ModId}}_Bowl_of_plenty_recipe",
+                  "ItemId": "{{ModId}}_Bowl_of_plenty",                    
+                  "Price": 0,
+                  "IsRecipe": true,
+                  "IgnoreShopPriceModifiers": true,
+                  "TradeItemId": "74", 
+                  "TradeItemAmount": 1,
+        },
+      }
+    },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Bowl_of_plenty",
+            "FromFile": "assets/Food/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

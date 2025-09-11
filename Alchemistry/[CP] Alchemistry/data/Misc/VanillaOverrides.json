@@ -1,0 +1,296 @@
+{
+    "Changes": [
+      
+
+/*----------------------------------------------------
+Change dehydrator
+----------------------------------------------------*/
+        //Crafting requirements and recipe source
+        {
+            "LogName": "Modify dehydrator recipe source and crafting requirements",
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+              "Dehydrator": "388 150 334 5 86 5/Home/Dehydrator/true/Foraging 1/"
+          }
+        },
+
+        //Exclude Alchemistry items from certain recipes
+        {
+          "LogName": "Exclude Alchemistry fruit from dehydrator",
+          "Action": "EditData",
+          "Target": "Data/Machines",
+          "TargetField": [ "(BC)Dehydrator", "OutputRules", "DriedFruit" ],
+          "Entries": {
+              "Triggers": [
+                  {
+                    "Id": "ItemPlacedInMachine",
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": null,
+                    "RequiredTags": [
+                      "category_fruits",
+                      "!Alchemistry_fruit_item"
+                    ],
+                    "RequiredCount": 5,
+                    "Condition": null
+                  }
+              ]
+            }
+        },
+        {
+          "LogName": "Exclude Alchemistry mushrooms from dehydrator",
+          "Action": "EditData",
+          "Target": "Data/Machines",
+          "TargetField": [ "(BC)Dehydrator", "OutputRules", "DriedFruit" ],
+          "Entries": {
+              "Triggers": [
+                  {
+                    "Id": "ItemPlacedInMachine",
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": null,
+                    "RequiredTags": [
+                      "category_fruits",
+                      "!Alchemistry_fruit_item",
+                      "!Alchemistry_mushroom_item",
+                      "!Alchemistry_edible_mushroom"
+                    ],
+                    "RequiredCount": 5,
+                    "Condition": null
+                  }
+              ]
+            }
+        },
+
+/*----------------------------------------------------
+Cornucopia Compatibility - Disable alternative dehydrator recipe
+----------------------------------------------------*/ 
+        {
+          "Action": "EditData",
+          "Target": "Data/CraftingRecipes",
+          "Priority": "Late",
+          "When": { "HasMod": "Cornucopia.ArtisanMachines" },
+          "Entries": {
+              "Cornucopia_Dehydrator": null
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/Mail",
+          "Priority": "Late",
+          "When": { "HasMod": "Cornucopia.ArtisanMachines" },
+          "Entries": {
+            "Cornucopia.ArtisanMachines_PierreDehydratorAlternate": null
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/TriggerActions",
+          "Priority": "Late",
+          "When": { "HasMod": "Cornucopia.ArtisanMachines" },
+          "Entries": {
+            "Cornucopia.ArtisanMachines_SendPierreDehydratorAlternate": {
+              "Id": "Cornucopia.ArtisanMachines_SendPierreDehydratorAlternate",
+              "Trigger": "DayEnding",
+              "Condition": "PLAYER_HAS_CRAFTING_RECIPE Current Dehydrator",
+              "Action": "RemoveMail Current Cornucopia.ArtisanMachines_PierreDehydratorAlternate tomorrow"
+            }
+          }
+        },
+
+/*----------------------------------------------------
+Change Oil Maker crafting requirements
+----------------------------------------------------*/
+      {
+          "LogName": "Modify Oil Maker source",
+          "Action": "EditData",
+          "Target": "Data/CraftingRecipes",
+          "Entries": {
+            "Oil Maker": "388 100 338 5 334 5/Home/19/true/Fishing 2/"
+        }
+      },
+
+/*----------------------------------------------------
+Eliminate the ability to Transmute from the crafting menu
+----------------------------------------------------*/
+        {
+          "LogName": "Remove default transmute recipes",
+          "Action": "EditData",
+          "Target": "Data/CraftingRecipes",
+          "When": { "Transmute": "Transmuter Coil Exclusive" },
+          "Entries": {
+            //"Transmute (Fe)": "null/Home/335/false/Mining 4/{{i18n:Alchemistry_TransmuteError.name}}",
+            //"Transmute (Au)": "null/Home/336/false/Mining 7/{{i18n:Alchemistry_TransmuteError.name}}"
+            "Transmute (Fe)": null,
+            "Transmute (Au)": null
+          }
+        },
+        //If user changes to Vanilla, re-apply the recipes to their crafting menu
+        {
+          "LogName": "Remove default transmute recipes",
+          "Action": "EditData",
+          "Target": "Data/CraftingRecipes",
+          "When": { "Transmute": "Vanilla" },
+          "Entries": {
+            "Transmute (Fe)": "334 3/Home/335/false/Mining 4/[LocalizedText Strings\\Objects:CraftingRecipe_IronBar]",
+            "Transmute (Au)": "335 2/Home/336/false/Mining 7/[LocalizedText Strings\\Objects:CraftingRecipe_GoldBar]"
+          }
+        },
+
+/*----------------------------------------------------
+Change bombs into Mana Bombs when config option is enabled
+----------------------------------------------------*/
+        //Crafting requirements
+        {
+          "LogName": "Modify bomb crafting requirements",
+          "Action": "EditData",
+          "Target": "Data/CraftingRecipes",
+          "When": { "BombType": "Mana Bombs" },
+          "Entries": {
+            "Cherry Bomb": "378 3 Morghoula.AlchemistryCP_EmptyFlask 1 Morghoula.AlchemistryCP_ManaOrb 1/Field/286/false/Mining 1/",
+            "Bomb": "380 3 Morghoula.AlchemistryCP_EmptyFlask 1 Morghoula.AlchemistryCP_ManaOrb 1/Field/287/false/Mining 6/",
+            "Mega Bomb": "384 3 Morghoula.AlchemistryCP_EmptyFlask 1 Morghoula.AlchemistryCP_ManaOrb 1/Field/288/false/Mining 8/"
+          }
+        },
+        //Load icons
+        {
+          "Action": "EditImage",
+          "Target": "Maps/springobjects",
+          "When": { "BombType": "Mana Bombs" },
+          "FromFile": "assets/Items/Crafting/bomb_small.png",
+          "ToArea": { "X": 352, "Y": 176, "Width": 16, "Height": 16},
+          "FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16}
+        },
+        {
+          "Action": "EditImage",
+          "Target": "Maps/springobjects",
+          "When": { "BombType": "Mana Bombs" },
+          "FromFile": "assets/Items/Crafting/bomb_large.png",
+          "ToArea": { "X": 368, "Y": 176, "Width": 16, "Height": 16},
+          "FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16}
+        },
+        {
+          "Action": "EditImage",
+          "Target": "Maps/springobjects",
+          "When": { "BombType": "Mana Bombs" },
+          "FromFile": "assets/Items/Crafting/bomb_mega.png",
+          "ToArea": { "X": 0, "Y": 192, "Width": 16, "Height": 16},
+          "FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16}
+        },
+
+        //Change object names and context tags
+        {
+          "LogName":"Cherry Bomb -> Small Mana Bomb",
+          "Action": "EditData",
+          "Target": "Data/Objects",
+          "When": { "BombType": "Mana Bombs" },
+          "TargetField": [ "286" ],
+          "Entries": {
+            "Name": "{{i18n:Alchemistry_SmallManaBomb.name}}",
+            "DisplayName": "{{i18n:Alchemistry_SmallManaBomb.name}}",
+            "Description": "{{i18n:Alchemistry_Bomb.description}}"
+            }
+        },
+        {
+          "LogName": "Add context tags to Small Mana Bomb",
+          "Action": "EditData",
+          "Target": "Data/Objects",
+          "When": { "BombType": "Mana Bombs" },
+          "TargetField": [ "286", "ContextTags" ],
+          "Entries": {
+              "#-1": "item_cherry_bomb"
+          }
+        },
+        {
+          "LogName":"Bomb -> Large Mana Bomb",
+          "Action": "EditData",
+          "Target": "Data/Objects",
+          "When": { "BombType": "Mana Bombs" },
+          "TargetField": [ "287" ],
+          "Entries": {
+            "Name": "{{i18n:Alchemistry_LargeManaBomb.name}}",
+            "DisplayName": "{{i18n:Alchemistry_LargeManaBomb.name}}",
+            "Description": "{{i18n:Alchemistry_Bomb.description}}"
+            }
+        },
+        {
+          "LogName": "Add context tags to Large Mana Bomb",
+          "Action": "EditData",
+          "Target": "Data/Objects",
+          "When": { "BombType": "Mana Bombs" },
+          "TargetField": [ "287", "ContextTags" ],
+          "Entries": {
+              "#-1": "item_bomb"
+          }
+        },
+        {
+          "LogName":"Bomb -> Large Mana Bomb",
+          "Action": "EditData",
+          "Target": "Data/Objects",
+          "When": { "BombType": "Mana Bombs" },
+          "TargetField": [ "288" ],
+          "Entries": {
+            "Name": "{{i18n:Alchemistry_MegaManaBomb.name}}",
+            "DisplayName": "{{i18n:Alchemistry_MegaManaBomb.name}}",
+            "Description": "{{i18n:Alchemistry_Bomb.description}}"
+            }
+        },
+        {
+          "LogName": "Add context tags to Large Mana Bomb",
+          "Action": "EditData",
+          "Target": "Data/Objects",
+          "When": { "BombType": "Mana Bombs" },
+          "TargetField": [ "288", "ContextTags" ],
+          "Entries": {
+              "#-1": "item_mega_bomb"
+          }
+        },
+
+        
+/*----------------------------------------------------
+Add context tags to vanilla items for crafting purposes
+----------------------------------------------------*/
+        {
+          "LogName": "Add context tags to River Jelly",
+          "Action": "EditData",
+          "Target": "Data/Objects",
+          "TargetField": [ "RiverJelly", "ContextTags" ],
+          "Entries": {
+              "#-1": "fishing_jelly"
+            }
+        },
+        {
+          "LogName": "Add context tags to Sea Jelly",
+          "Action": "EditData",
+          "Target": "Data/Objects",
+          "TargetField": [ "SeaJelly", "ContextTags" ],
+          "Entries": {
+              "#-1": "fishing_jelly"
+          }
+        },
+        {
+          "LogName": "Add context tags to Cave Jelly",
+          "Action": "EditData",
+          "Target": "Data/Objects",
+          "TargetField": [ "CaveJelly", "ContextTags" ],
+          "Entries": {
+              "#-1": "fishing_jelly"
+          }
+        },
+
+
+/*----------------------------------------------------
+Change Squid Ink Ravioli Buff Name
+----------------------------------------------------*/
+        {
+          "LogName": "Change Squid Ink Ravioli Buff Name",
+          "Action": "EditData",
+          "Priority": "Late",
+          "Target": "Data/Buffs",
+          "TargetField": [ "28" ],
+          "Entries": {
+              "DisplayName": "{{i18n:Alchemistry_SquidInkRavioliOverride.name}}"
+            }
+        }
+
+    ]
+}

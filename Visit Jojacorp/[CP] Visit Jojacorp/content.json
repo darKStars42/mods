@@ -1,0 +1,86 @@
+{
+    "Format": "1.23.0",
+    "CustomLocations": [
+        // these are the new maps
+{
+         "name": "Custom_Jojacorp_Town",
+         "FromMapFile": "maps/Custom_Jojacorp_Town.tbin"
+      },
+{
+         "name": "Custom_Jojacorp_Lobby",
+         "FromMapFile": "maps/Custom_Jojacorp_Lobby.tbin"
+      },
+{
+         "name": "Custom_Jojacorp_Hall",
+         "FromMapFile": "maps/Custom_Jojacorp_Hall.tbin"
+      },
+{
+         "name": "Custom_Jojacorp_Office",
+         "FromMapFile": "maps/Custom_Jojacorp_Office.tbin"
+      },
+{
+         "name": "Custom_Jojacorp_Room",
+         "FromMapFile": "maps/Custom_Jojacorp_Room.tbin"
+      },
+ ],   
+ "Changes": [
+//Add tile properties
+        {
+            "Action": "EditMap",
+            "Target": "maps/Custom_Jojacorp_Lobby",
+            "MapTiles": [
+                {
+                    "Position": { "X": 5, "Y": 5 },
+                    "Layer": "Buildings",
+                    "SetProperties": {
+                        "Action": "Dialogue No one is there."
+                    }
+                },
+
+            ]
+        },
+
+// make tiles sittable
+{
+      "Action": "EditData",
+      "Target": "Data/ChairTiles",
+      "Entries": {
+         "zzzInteriors_free_16x16/7/78": "1/1/left/custom 0 -.5 0/-1/-1/true",
+    },
+  },
+// allows you to pick up mushroom box, grandfather clock, etc
+{
+      "Action": "EditData",
+      "Target": "Data/BigCraftablesInformation",
+      "Fields": {
+         "128": {
+              7: 0
+             },
+         "66": {
+              7: 0
+             },
+         "67": {
+              7: 0
+             },
+         "68": {
+              7: 0
+             },
+         "69": {
+              7: 0
+             },
+         "70": {
+              7: 0
+             },
+    },
+  },
+// adds crafting recipe
+{
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+         "Mushroom Box": "748 1 168 5 167 20 388 20/Home/128/true/null",
+    },
+  },
+
+]
+}

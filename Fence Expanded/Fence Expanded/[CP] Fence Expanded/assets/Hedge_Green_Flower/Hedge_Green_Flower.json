@@ -1,0 +1,112 @@
+{
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_Hedge_Green_Flower": {
+          "Name": "Hedge_Green_Flower",
+          "DisplayName": "{{i18n:Hedge_Green_Flower.DisplayName}}",
+          "Description": "{{i18n:Hedge_Green_Flower.Description}}",
+          "Type": "Crafting",
+          "Category": -8,
+          "Price": 2,
+          "Texture": "Mods/{{ModId}}/Hedge_Green_Flower_Object",
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "CanBeGivenAsGift": true,
+          "CanBeTrashed": true,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": null,
+          "CustomFields": null
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Fences",
+      "Entries": {
+        "{{ModId}}_Hedge_Green_Flower": {
+          "Health": 80,
+          "RepairHealthAdjustmentMinimum": -5.0,
+          "RepairHealthAdjustmentMaximum": 6.0,
+          "Texture": "Mods/{{ModId}}/Hedge_Green_Flower",  // Domyślna tekstura, która zostanie zastąpiona w zależności od sezonu
+          "PlacementSound": "axe",
+          "RemovalSound": "axchop",
+          "RemovalToolIds": [],
+          "RemovalToolTypes": [
+            "StardewValley.Tools.Axe"
+          ],
+          "RemovalDebrisType": 12,
+          "HeldObjectDrawOffset": "0, -20",
+          "LeftEndHeldObjectDrawX": -1.0,
+          "RightEndHeldObjectDrawX": 0.0
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Hedge_Green_Flower": "390 2 297 2/Yield/{{ModId}}_Hedge_Green_Flower/false/null"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Carpenter", "Items" ],
+      "Entries": {
+        "{{ModId}}_Hedge_Green_Flower": {
+          "Id": "{{ModId}}_Hedge_Green_Flower",
+          "ItemId": "{{ModId}}_Hedge_Green_Flower",
+          "Price": "2000",
+          "Isrecipe": true,
+          "Condition": "YEAR 2"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Hedge_Green_Flower",
+      "FromFile": "assets/Hedge_Green_Flower/Hedge_Green_Flower_Spring.png",
+      "When": {
+        "Season": "spring"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Hedge_Green_Flower",
+      "FromFile": "assets/Hedge_Green_Flower/Hedge_Green_Flower_Summer.png",
+      "When": {
+        "Season": "summer"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Hedge_Green_Flower",
+      "FromFile": "assets/Hedge_Green_Flower/Hedge_Green_Flower_Fall.png",
+      "When": {
+        "Season": "fall"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Hedge_Green_Flower",
+      "FromFile": "assets/Hedge_Green_Flower/Hedge_Green_Flower_Winter.png",
+      "When": {
+        "Season": "winter"
+      }
+    },
+     {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Hedge_Green_Flower_Object",
+      "FromFile": "assets/Hedge_Green_Flower/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

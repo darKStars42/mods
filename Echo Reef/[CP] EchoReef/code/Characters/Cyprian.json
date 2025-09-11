@@ -1,0 +1,380 @@
+{
+
+  "Changes": [
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_CyprianHouse",
+          "FromFile": "assets/Locations/EchoReef_CyprianHouse.tmx"
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_CyprianTunnels",
+          "FromFile": "assets/Locations/EchoReef_CyprianTunnels.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Characters/MrMrRogers.EchoReef_Cyprian",
+        "FromFile": "assets/Sprites/Cyprian.png"
+      },
+      {
+        "Action": "Load",
+        "Target": "Portraits/MrMrRogers.EchoReef_Cyprian",
+        "FromFile": "assets/Portraits/Cyprian.png"
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Locations",
+          "Entries": {
+              "MrMrRogers.EchoReef_CyprianHouse": {
+                  "DisplayName": "{{i18n:CyprianHouse}}",
+                  "DefaultArrivalTile": {
+                    "X": 5,
+                    "Y": 38
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_CyprianHouse",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "CyprianceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              },
+              "MrMrRogers.EchoReef_CyprianTunnels": {
+                  "DisplayName": "{{i18n:CyprianTunnels}}",
+                  "DefaultArrivalTile": {
+                    "X": 2,
+                    "Y": 199
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_CyprianTunnels",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "CyprianceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              }
+          }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_CyprianHouse",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Doors": "5 32 townInterior 120",
+          "Warp": "5 39 MrMrRogers.EchoReef_Graveyard 18 27",
+          "WindowLight": "4 2 6 4 3 6 9 2 6 9 3 6 17 2 6 17 3 6 22 2 6 22 3 6"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 5,
+              "Y": 32
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Door MrMrRogers.EchoReef_Cyprian"
+            }
+          },
+          {
+            "Position": {
+              "X": 8,
+              "Y": 35
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "OpenShop MrMrRogers.EchoReef_MonsterPartsShop down 0800 2000 8 34 1 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_CyprianTunnels",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Warp": "2 200 MrMrRogers.EchoReef_Graveyard 13 14 1 22 MrMrRogers.EchoReef_CyprianTunnels 1 183 2 22 MrMrRogers.EchoReef_CyprianTunnels 2 183 3 22 MrMrRogers.EchoReef_CyprianTunnels 3 183"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Graveyard",
+        "TextOperations": [
+          {
+            "Operation": "Append",
+            "Target": ["MapProperties", "Warp"],
+            "Value": "13 13 MrMrRogers.EchoReef_yprianTunnels 2 199",
+            "Delimiter": " "
+          }
+        ],
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 18, 
+              "Y": 26
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "LockedDoorWarp 5 38 MrMrRogers.EchoReef_CyprianHouse 800 2000"
+            }
+          },
+          {
+            "Position": { 
+              "X": 13, 
+              "Y": 15
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "NPCPassable": "T"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Graveyard",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 12, 
+              "Y": 15
+            },
+            "Layer": "Buildings",
+            "Remove": true
+          },
+          {
+            "Position": { 
+              "X": 13, 
+              "Y": 15
+            },
+            "Layer": "Buildings",
+            "Remove": true
+          },
+          {
+            "Position": { 
+              "X": 14, 
+              "Y": 15
+            },
+            "Layer": "Buildings",
+            "Remove": true
+          },
+          {
+            "Position": { 
+              "X": 12, 
+              "Y": 14
+            },
+            "Layer": "Front",
+            "Remove": true
+          },
+          {
+            "Position": { 
+              "X": 13, 
+              "Y": 14
+            },
+            "Layer": "Front",
+            "Remove": true
+          },
+          {
+            "Position": { 
+              "X": 14, 
+              "Y": 14
+            },
+            "Layer": "Front",
+            "Remove": true
+          }
+        ],
+        "When": {
+          "Hearts:MrMrRogers.EchoReef_Cyprian": "6"
+        }
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Characters",
+          "Entries": {
+            "MrMrRogers.EchoReef_Cyprian": {
+              "DisplayName": "{{i18n:Cyprian}}",
+              "BirthSeason": "Spring",
+              "BirthDay": 5,
+              "HomeRegion": "Other",
+              "Language": "Default",
+              "Gender": "Male",
+              "Age": "Adult",
+              "Manner": "Rude",
+              "SocialAnxiety": "Neutral",
+              "Optimism": "Negative",
+              "IsDarkSkinned": false,
+              "CanBeRomanced": false,
+              "Calendar": "HiddenAlways",
+              "SocialTab": "HiddenUntilMet",
+              "CanSocialize": true,
+              "CanReceiveGifts": true,
+              "CanGreetNearbyCharacters": true,
+              "CanCommentOnPurchasedShopItems": true,
+              "CanVisitIsland": false,
+              "IntroductionsQuest": false,
+              "ItemDeliveryQuests": false,
+              "PerfectionScore": false,
+              "EndSlideShow": "MainGroup",
+              "SpouseAdopts": null,
+              "SpouseWantsChildren": true,
+              "SpouseGiftJealousy": false,
+              "SpouseRoom": {},
+              "SpousePatio": {},
+              "SpouseFloors": [],
+              "SpouseWallpapers": [],
+              "DumpsterDiveFriendshipEffect": 0,
+              "DumpsterDiveEmote": 8,
+              "FriendsAndFamily": {},
+              "FlowerDanceCanDance": null,
+              "WinterStarGifts": [],
+              "WinterStarParticipant": false,
+              "UnlockConditions": null,
+              "SpawnIfMissing": true,
+              "Home": [
+                {
+                  "Id": "Default",
+                  "Condition": null,
+                  "Location": "MrMrRogers.EchoReef_CyprianHouse",
+                  "Tile": {
+                    "X": 21,
+                    "Y": 5
+                  },
+                  "Direction": "down"
+                }
+              ],
+              "TextureName": null,
+              "Appearance": [
+                {
+                  "Id": "MrMrRogers.EchoReef_Cyprian",
+                  "Condition": null,
+                  "Season": null,
+                  "Indoors": true,
+                  "Outdoors": true,
+                  "Portrait": "Portraits/MrMrRogers.EchoReef_Cyprian",
+                  "Sprite": "Characters/MrMrRogers.EchoReef_Cyprian",
+                  "IsIslandAttire": false,
+                  "Precedence": 0,
+                  "Weight": 0
+                }
+              ],
+              "MugShotSourceRect": null,
+              "Size": {
+                "X": 16,
+                "Y": 32
+              },
+              "Breather": true,
+              "BreathChestRect": null,
+              "BreathChestPosition": null,
+              "Shadow": null,
+              "EmoteOffset": {
+                "X": 0,
+                "Y": 0
+              },
+              "ShakePortraits": null,
+              "KissSpriteIndex": 28,
+              "KissSpriteFacingRight": true,
+              "FormerCharacterNames": [],
+              "CustomFields": null
+            }
+          }
+      },
+      { 
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Cyprian",
+            "FromFile": "assets/blank.json"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Cyprian",
+          "FromFile": "assets/blank.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MrMrRogers.EchoReef_": "{{i18n:CyprianGiftLoveResponse}}//{{i18n:CyprianGiftLikeResponse}}//{{i18n:CyprianGiftDislikeResponse}}//{{i18n:CyprianGiftHateResponse}}//{{i18n:CyprianGiftNeutralResponse}}//"
+            }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Cyprian",
+          "Entries": {
+            "Introduction": "{{i18n:Cyprian_Introduction}}",
+            "AcceptBirthdayGift_Positive": "{{i18n:Cyprian_AcceptBirthdayGift_Positive}}",
+            "AcceptBirthdayGift_Negative": "{{i18n:Cyprian_AcceptBirthdayGift_Negative}}",
+            "AcceptGift_(O)StardropTea": "{{i18n:Cyprian_AcceptGift_(O)StardropTea}}",
+            "DumpsterDiveComment": "{{i18n:Cyprian_DumpsterDiveComment}}",
+            "HitBySlingshot": "{{i18n:Cyprian_HitBySlingshot}}",
+            "Mon": "{{i18n:Cyprian_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Tue": "{{i18n:Cyprian_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Wed": "{{i18n:Cyprian_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Thu": "{{i18n:Cyprian_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Fri": "{{i18n:Cyprian_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sat": "{{i18n:Cyprian_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sun": "{{i18n:Cyprian_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/animationdescriptions",
+          "Entries": {
+            "MrMrRogers.EchoReef_Cyprian_sleep": "19/19/19",
+            "mrmrrogers.echoreef_cyprian_sleep": "19/19/19"
+          } 
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Cyprian",
+          "Entries": {
+            "spring": "600 MrMrRogers.EchoReef_CyprianHouse 21 5 2/800 MrMrRogers.EchoReef_CyprianHouse 8 34 2/2200 MrMrRogers.EchoReef_CyprianHouse 21 5 2 MrMrRogers.EchoReef_Cyprian_sleep"
+          }
+        }
+  ]
+}

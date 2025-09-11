@@ -1,0 +1,25 @@
+{ 
+	"Changes": [
+
+		{
+			"LogName": "Sam Pregnancy Event 1",
+			"Action": "EditData",
+			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+ 				"HavingChild": "@{{playerName}}",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+			"Entries":{"64780014/O Sam": "continue/28 30/farmer 27 30 0 Sam 29 25 3 Harvey 0 0 0/addConversationTopic FarmerPregnantSam 13/addConversationTopic FarmerCheckUp 6/addMailReceived Pregnant1_Sam/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak Sam \"{{i18n:64780014_1}}#$b# {{i18n:64780014_2}}\"/pause 500/playSound croak/animate farmer false false 350 104 105/pause 1000/emote farmer 28/pause 500/speak Sam \"{{i18n:64780014_3}}$s#$b# {{i18n:64780014_4}}$s\"/viewport -100 100/changeLocation Hospital/viewport 5 5/warp farmer 3 5/warp Sam 2 5/showFrame Sam 4/warp Harvey 5 8/move Harvey 0 -3 3 false/speak Harvey \"{{i18n:Pregnancy_Dialogue_1_farmer}}\"/emote Sam 8/speak Harvey \"{{i18n:Pregnancy_Dialogue_2_farmer}}$h\"/speak Sam \"...$8#$b#...$8#$b#...$l#$b#...{{i18n:64780014_5}}$h\"/emote farmer 32/pause 250/end"},
+		},
+
+	{		"LogName": "Sam Birth Event 1", 
+			"Action": "EditData",
+    			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+   			"Entries": {"64780026/e 64780014/O Sam/n Pregnant1_Sam/A FarmerPregnantSam/t 600 700": "sappypiano/-100 -100/farmer 19 12 2 Sam 20 12 2 Harvey 5 15 2/addConversationTopic SamBabySleep 14/skippable/pause 500/speak Sam \"{{i18n:64780026_1}}$s #$b# {{i18n:64780026_2}}$10\"/changeLocation Hospital/showFrame 5/ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak Sam \"{{i18n:64780026_3}}#$b#{{i18n:64780026_4}}$4\"/faceDirection Sam 3/pause 500/emote farmer 60/emote Sam 28/pause 500/speak Sam \"{{i18n:64780026_5}} $s\"/pause 500/move Sam 0 1 3/pause 500/speak Sam \"{{i18n:64780026_6}} #$b# {{i18n:64780026_7}}$1\"/pause 500/move Sam 0 -1 3/speak Sam \"{{i18n:64780026_8}} #$b# {{i18n:64780026_9}} \"/pause 500/emote farmer 20/pause 500/speak Sam \"{{i18n:64780026_10}} #$b#{{i18n:64780026_11}}$h\"/pause 500/emote farmer 60/pause 500/speak Sam \"{{i18n:64780026_12}}#$b# {{i18n:64780026_13}}\"/pause 1000/fade/viewport -100 -100 true/warp Harvey 21 12/faceDirection Harvey 3/warp Sam 20 11/faceDirection Sam 2/speak Sam \"{{i18n:64780026_14}}$8#$b#{{i18n:64780026_15}}$l\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -50/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote Sam 20/pause 2000/speak Sam \"{{i18n:Birth_Dialogue_5}}$l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end"},
+		},
+
+] 
+}

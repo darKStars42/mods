@@ -1,0 +1,396 @@
+{
+
+  "Changes": [
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_RaviHouse",
+          "FromFile": "assets/Locations/EchoReef_RaviHouse.tmx"
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_RaviPlanet",
+          "FromFile": "assets/Locations/EchoReef_RaviPlanet.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Characters/MrMrRogers.EchoReef_Ravi",
+        "FromFile": "assets/Sprites/Ravi.png"
+      },
+      {
+        "Action": "Load",
+        "Target": "Portraits/MrMrRogers.EchoReef_Ravi",
+        "FromFile": "assets/Portraits/Ravi.png"
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Locations",
+          "Entries": {
+              "MrMrRogers.EchoReef_RaviHouse": {
+                  "DisplayName": "{{i18n:RaviHouse}}",
+                  "DefaultArrivalTile": {
+                    "X": 20,
+                    "Y": 10
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_RaviHouse",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              },
+              "MrMrRogers.EchoReef_RaviPlanet": {
+                  "DisplayName": "{{i18n:RaviPlanet}}",
+                  "DefaultArrivalTile": {
+                    "X": 30,
+                    "Y": 30
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_RaviPlanet",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              }
+          }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_RaviHouse",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Doors": "15 8 townInterior 120",
+          "Warp": "20 11 MrMrRogers.EchoReef_Beach 19 57",
+          "WindowLight": "4 1 6 9 1 6 17 1 6 19 1 6 21 1 6"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 15,
+              "Y": 8
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Door MrMrRogers.EchoReef_Ravi"
+            }
+          },
+          {
+            "Position": {
+              "X": 22,
+              "Y": 6
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "OpenShop MrMrRogers.EchoReef_Therapist 0800 2000"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_RaviHouse",
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 6,
+              "Y": 3
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Warp 17 54 MrMrRogers.EchoReef_Beach"
+            }
+          }
+        ],
+        "When": {
+          "Hearts:MrMrRogers.EchoReef_Ravi": "6"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_RaviPlanet",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "TreatAsOutdoors": "T"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 31,
+              "Y": 30
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Warp 17 54 MrMrRogers.EchoReef_Beach"
+            }
+          },
+          {
+            "Position": {
+              "X": 26,
+              "Y": 27
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 13 5 1"
+            }
+          },
+          {
+            "Position": {
+              "X": 29,
+              "Y": 27
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 13 5 1"
+            }
+          },
+          {
+            "Position": {
+              "X": 28,
+              "Y": 29
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 13 5 1"
+            }
+          },
+          {
+            "Position": {
+              "X": 26,
+              "Y": 31
+            },
+            "Layer": "Paths",
+            "SetProperties": {
+              "SpawnTree": "wild 13 5 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Beach",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 19, 
+              "Y": 56
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "LockedDoorWarp 20 10 MrMrRogers.EchoReef_RaviHouse 800 2000"
+            }
+          },
+          {
+            "Position": { 
+              "X": 16, 
+              "Y": 54
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Warp 6 4 MrMrRogers.EchoReef_RaviHouse"
+            }
+          },
+          {
+            "Position": { 
+              "X": 18, 
+              "Y": 54
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Warp 30 30 MrMrRogers.EchoReef_RaviPlanet"
+            }
+          }
+        ]
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Characters",
+          "Entries": {
+            "MrMrRogers.EchoReef_Ravi": {
+              "DisplayName": "{{i18n:Ravi}}",
+              "BirthSeason": "Fall",
+              "BirthDay": 1,
+              "HomeRegion": "Other",
+              "Language": "Default",
+              "Gender": "Male",
+              "Age": "Adult",
+              "Manner": "Neutral",
+              "SocialAnxiety": "Shy",
+              "Optimism": "Negative",
+              "IsDarkSkinned": false,
+              "CanBeRomanced": false,
+              "Calendar": "HiddenAlways",
+              "SocialTab": "HiddenUntilMet",
+              "CanSocialize": true,
+              "CanReceiveGifts": true,
+              "CanGreetNearbyCharacters": true,
+              "CanCommentOnPurchasedShopItems": true,
+              "CanVisitIsland": false,
+              "IntroductionsQuest": false,
+              "ItemDeliveryQuests": false,
+              "PerfectionScore": false,
+              "EndSlideShow": "MainGroup",
+              "SpouseAdopts": null,
+              "SpouseWantsChildren": true,
+              "SpouseGiftJealousy": false,
+              "SpouseRoom": {},
+              "SpousePatio": {},
+              "SpouseFloors": [],
+              "SpouseWallpapers": [],
+              "DumpsterDiveFriendshipEffect": -25,
+              "DumpsterDiveEmote": 8,
+              "FriendsAndFamily": {},
+              "FlowerDanceCanDance": null,
+              "WinterStarGifts": [],
+              "WinterStarParticipant": false,
+              "UnlockConditions": null,
+              "SpawnIfMissing": true,
+              "Home": [
+                {
+                  "Id": "Default",
+                  "Condition": null,
+                  "Location": "MrMrRogers.EchoReef_RaviHouse",
+                  "Tile": {
+                    "X": 4,
+                    "Y": 4
+                  },
+                  "Direction": "down"
+                }
+              ],
+              "TextureName": null,
+              "Appearance": [
+                {
+                  "Id": "MrMrRogers.EchoReef_Ravi",
+                  "Condition": null,
+                  "Season": null,
+                  "Indoors": true,
+                  "Outdoors": true,
+                  "Portrait": "Portraits/MrMrRogers.EchoReef_Ravi",
+                  "Sprite": "Characters/MrMrRogers.EchoReef_Ravi",
+                  "IsIslandAttire": false,
+                  "Precedence": 0,
+                  "Weight": 0
+                }
+              ],
+              "MugShotSourceRect": null,
+              "Size": {
+                "X": 16,
+                "Y": 32
+              },
+              "Breather": true,
+              "BreathChestRect": null,
+              "BreathChestPosition": null,
+              "Shadow": null,
+              "EmoteOffset": {
+                "X": 0,
+                "Y": 0
+              },
+              "ShakePortraits": null,
+              "KissSpriteIndex": 28,
+              "KissSpriteFacingRight": true,
+              "FormerCharacterNames": [],
+              "CustomFields": null
+            }
+          }
+      },
+      { 
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Ravi",
+            "FromFile": "assets/blank.json"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Ravi",
+          "FromFile": "assets/blank.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MrMrRogers.EchoReef_Ravi": "{{i18n:RaviGiftLoveResponse}}//{{i18n:RaviGiftLikeResponse}}//{{i18n:RaviGiftDislikeResponse}}//{{i18n:RaviGiftHateResponse}}//{{i18n:RaviGiftNeutralResponse}}//"
+            }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Ravi",
+          "Entries": {
+            "Introduction": "{{i18n:Ravi_Introduction}}",
+            "AcceptBirthdayGift_Positive": "{{i18n:Ravi_AcceptBirthdayGift_Positive}}",
+            "AcceptBirthdayGift_Negative": "{{i18n:Ravi_AcceptBirthdayGift_Negative}}",
+            "AcceptGift_(O)StardropTea": "{{i18n:Ravi_AcceptGift_(O)StardropTea}}",
+            "DumpsterDiveComment": "{{i18n:Ravi_DumpsterDiveComment}}",
+            "HitBySlingshot": "{{i18n:Ravi_HitBySlingshot}}",
+            "Mon": "{{i18n:Ravi_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Tue": "{{i18n:Ravi_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Wed": "{{i18n:Ravi_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Thu": "{{i18n:Ravi_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Fri": "{{i18n:Ravi_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sat": "{{i18n:Ravi_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sun": "{{i18n:Ravi_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/animationdescriptions",
+          "Entries": {
+            "MrMrRogers.EchoReef_Ravi_sleep": "19/19/19",
+            "mrmrrogers.echoreef_ravi_sleep": "19/19/19"
+          } 
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Ravi",
+          "Entries": {
+            "spring": "600 MrMrRogers.EchoReef_RaviHouse 4 4 2/800 MrMrRogers.EchoReef_RaviHouse 17 4 2/2200 MrMrRogers.EchoReef_RaviHouse 4 4 2 MrMrRogers.EchoReef_Ravi_sleep"
+          }
+        }
+  ]
+}

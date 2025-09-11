@@ -1,0 +1,687 @@
+{
+	"Format": "2.0.0",
+	
+	"ConfigSchema":
+	{
+		"BalancedFish":
+		{
+			"AllowValues": "true, false",
+			"Default": "false",
+			"AllowBlank": false,
+			"Description": "Adjusts fish from their original Animal Crossing-esque pricing, if you want something more in line with vanilla."
+		},
+	},
+	
+	"DynamicTokens": [
+		
+		{
+			"Name": "BassPrice",
+			"Value": "200", 
+		},
+		{
+			"Name": "BassPrice",
+			"Value": "75",
+			"When":
+			{
+				"BalancedFish": true,
+			}
+		},
+		
+		{
+			"Name": "GrouperPrice",
+			"Value": "300", 
+		},
+		{
+			"Name": "GrouperPrice",
+			"Value": "100",
+			"When":
+			{
+				"BalancedFish": true,
+			}
+		},
+		
+		{
+			"Name": "MaomaoPrice",
+			"Value": "400", 
+		},
+		
+		{
+			"Name": "MaomaoPrice",
+			"Value": "150",
+			"When":
+			{
+				"BalancedFish": true,
+			}
+		},
+		
+		{
+			"Name": "CodPrice",
+			"Value": "400", 
+		},
+		
+		{
+			"Name": "CodPrice",
+			"Value": "150",
+			"When":
+			{
+				"BalancedFish": true,
+			}
+		},
+		
+		{
+			"Name": "PerchPrice",
+			"Value": "300", 
+		},
+		
+		{
+			"Name": "PerchPrice",
+			"Value": "100",
+			"When":
+			{
+				"BalancedFish": true,
+			}
+		},
+	],
+	
+	"Changes": [
+		
+		//adds fish-specific item data
+		{			
+			"Action": "EditData",
+			"Target": "Data/Fish",
+			"Entries": {
+				"tiakall.bass.SeaBass": "Sea Bass/25/mixed/32/45/600 2600/spring summer fall winter/both/690 .4 685 .1/1/.50/.1/0",
+				"tiakall.bass.DuskyGrouper": "Dusky Grouper/30/mixed/36/60/600 2600/spring summer fall winter/both/690 .4 685 .1/1/.45/.1/0",
+				"tiakall.bass.PinkMaomao": "Pink Maomao/30/mixed/4/8/600 2600/spring summer fall winter/both/690 .4 685 .1/1/.45/.1/0",
+				"tiakall.bass.PotatoCod": "Potato Cod/30/mixed/32/80/600 2600/spring summer fall winter/both/690 .4 685 .1/1/.45/.1/0",
+				"tiakall.bass.RedbandedPerch": "Redbanded Perch/30/mixed/4/8/600 2600/spring summer fall winter/both/690 .4 685 .1/1/.45/.1/0"
+			},
+		},
+		
+		// adds sprites
+		{
+			"LogName": "Aquarium fish load",
+			"Action": "Load",
+			"Target": "Mods/tiakall.seabass/AquariumFish, Mods/tiakall.seabass/SeaBass, Mods/tiakall.seabass/DuskyGrouper, Mods/tiakall.seabass/PinkMaomao, Mods/tiakall.seabass/PotatoCod, Mods/tiakall.seabass/RedbandedPerch",
+			"FromFile": "assets/{{TargetWithoutPath}}.png"
+		},
+		
+		//adds aquarium data
+		{
+			"LogName": "Aquarium data",
+			"Action": "EditData",
+			"Target": "Data/AquariumFish",
+			"Entries": { "tiakall.bass.SeaBass": "0/fish/////Mods\\tiakall.seabass\\AquariumFish",
+				"tiakall.bass.DuskyGrouper": "1/fish/////Mods\\tiakall.seabass\\AquariumFish",
+				"tiakall.bass.PinkMaomao": "2/fish/////Mods\\tiakall.seabass\\AquariumFish",
+				"tiakall.bass.PotatoCod": "3/fish/////Mods\\tiakall.seabass\\AquariumFish",
+			"tiakall.bass.RedbandedPerch": "4/fish/////Mods\\tiakall.seabass\\AquariumFish" }
+		},
+		
+		//adds fish as items
+        {
+            "LogName": "Fish as items",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "tiakall.bass.SeaBass": {
+                    "Name": "Sea Bass",
+                    "DisplayName": "Sea Bass",
+                    "Description": "I caught a sea bass! It's more like a sea PLUS.",
+                    "Edibility": "10",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": "{{BassPrice}}",
+                    "Texture": "Mods\\tiakall.seabass\\SeaBass",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+						"ocean_fish",
+                        "color_green",
+						"fish_talk_bass",
+						"fish_has_roe"
+					]
+				},
+				
+				"tiakall.bass.DuskyGrouper": {
+                    "Name": "Dusky Grouper",
+                    "DisplayName": "Dusky Grouper",
+                    "Description": "I caught a dusky grouper! Hmm, only looks like one to me....",
+                    "Edibility": "55",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": "{{GrouperPrice}}",
+                    "Texture": "Mods\\tiakall.seabass\\DuskyGrouper",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+						"ocean_fish",
+                        "color_red",
+						"fish_talk_grouper",
+						"fish_has_roe"
+					]
+				},
+				
+				"tiakall.bass.PinkMaomao": {
+                    "Name": "Pink Maomao",
+                    "DisplayName": "Pink Maomao",
+                    "Description": "I caught a pink maomao! It's in my pocket nownow!",
+                    "Edibility": "30",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": "{{MaomaoPrice}}",
+                    "Texture": "Mods\\tiakall.seabass\\PinkMaomao",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+						"ocean_fish",
+                        "color_pink",
+						"fish_talk_maomao",
+						"fish_has_roe"
+					]
+				},
+				
+				"tiakall.bass.PotatoCod": {
+                    "Name": "Potato Cod",
+                    "DisplayName": "Potato Cod",
+                    "Description": "I caught a potato cod! Now all I need is a butterfish.",
+                    "Edibility": "75",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": "{{CodPrice}}",
+                    "Texture": "Mods\\tiakall.seabass\\PotatoCod",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+						"ocean_fish",
+                        "color_white",
+						"color_purple",
+						"fish_talk_cod",
+						"fish_has_roe"
+					]
+				},
+				
+				"tiakall.bass.RedbandedPerch": {
+                    "Name": "Redbanded Perch",
+                    "DisplayName": "Redbanded Perch",
+                    "Description": "I caught a redbanded perch! How many parrots can I fit on it?",
+                    "Edibility": "30",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": "{{PerchPrice}}",
+                    "Texture": "Mods\\tiakall.seabass\\RedbandedPerch",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+						"ocean_fish",
+                        "color_red",
+						"fish_talk_perch",
+						"fish_has_roe"
+					]
+				},
+				
+			},
+		},
+		
+		//adds fish to Beach
+		{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"Beach",
+				"Fish"
+			],
+			"Entries": {
+				"tiakall.seabass.beach": {
+					"Chance": 1.0,
+					"Id": "tiakall.seabass.beach",
+					"ItemId": null,
+					"RandomItemId": [
+						"tiakall.bass.SeaBass",
+						"tiakall.bass.RedbandedPerch",
+						"tiakall.bass.DuskyGrouper",
+					],
+				}
+			}
+		},
+		
+		//adds fish to GI West
+		{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"IslandWest",
+				"Fish"
+			],
+			"Entries": {
+				"tiakall.seabass.islandwest": {
+					"Chance": 1.0,
+					"Id": "tiakall.seabass.islandwest",
+					"ItemId": null,
+					"RandomItemId": [
+						"tiakall.bass.PotatoCod",
+						"tiakall.bass.PinkMaomao",
+					],
+				}
+			}
+		},
+		
+		//adds fish to GI South
+		{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"IslandSouth",
+				"Fish"
+			],
+			"Entries": {
+				"tiakall.seabass.islandsouth": {
+					"Chance": 1.0,
+					"Id": "tiakall.seabass.islandsouth",
+					"ItemId": null,
+					"RandomItemId": [
+						"tiakall.bass.PotatoCod",
+						"tiakall.bass.PinkMaomao",
+					],
+				}
+			}
+		},
+		
+		
+		//adds fish to GI Southeast
+		{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"IslandSouthEast",
+				"Fish"
+			],
+			"Entries": {
+				"tiakall.seabass.islandsoutheast": {
+					"Chance": 1.0,
+					"Id": "tiakall.seabass.islandsoutheast",
+					"ItemId": null,
+					"RandomItemId": [
+						"tiakall.bass.PotatoCod",
+						"tiakall.bass.PinkMaomao",
+					],
+				}
+			}
+		},
+		
+		{
+			"Action": "EditData",
+			"Target": "Strings/UI",
+			"Entries": {
+				//"PondQuery_StatusOk0_bass": "They SEAm well.",
+				//"PondQuery_StatusOk1_bass": "WATER you looking at?",
+				//"PondQuery_StatusOk2_bass": "The fish WAVE to you.",
+				//"PondQuery_StatusOk3_bass": "CURRENTly we're doing fine!",
+				"PondQuery_StatusRequestPending_bass0": "Can you KELP us out with {1} {0}?",
+				"PondQuery_StatusRequestPending_bass1": "Want to FISH us up {1} {0}?",
+				"PondQuery_StatusRequestPending_bass2": "CURRENTly we're in need of {1} {0}.",
+				"PondQuery_StatusRequestComplete_bass0": "You're a sea PLUS plus!",
+				"PondQuery_StatusRequestComplete_bass1": "This should TIDE us over!",
+				"PondQuery_StatusRequestComplete_bass2": "This SEAms good!",
+				//"PondQuery_StatusOk0_grouper": "I'm just hanging around this town corner o/~",
+				//"PondQuery_StatusOk1_grouper": "We're rolling in the deeeeeeep o/~",
+				//"PondQuery_StatusOk2_grouper": "Near, far, whereeeeeever we are o/~",
+				//"PondQuery_StatusOk3_grouper": "We'll be singing, when we're swimming o/~",
+				"PondQuery_StatusRequestPending_grouper0": "Rah rah, ah ah ah... want your {1} {0} o/~",
+				"PondQuery_StatusRequestPending1_grouper1": "Believe me when I say, say, I want {1} {0}. o/~",
+				"PondQuery_StatusRequestPending1_grouper2": "All I want, all I need, we all really need {1} {0} o/~",
+				"PondQuery_StatusRequestComplete_grouper0": "One more time, we're gonna celebrate! o/~",
+				"PondQuery_StatusRequestComplete_grouper1": "Sweet dreams are made of these! o/~",
+				"PondQuery_StatusRequestComplete_grouper2": "Wow! I feel good! o/~",
+				//"PondQuery_StatusOk0_maomao": "This place is so wowwow!",
+				//"PondQuery_StatusOk1_maomao": "If we were catfish, we'd meowmeow.",
+				//"PondQuery_StatusOk2_maomao": "Nothing here we disallowow!",
+				//"PondQuery_StatusOk3_maomao": "Hello, ciaociao!",
+				"PondQuery_StatusRequestPending_maomao0": "We could use {1} {0} for chowchow.",
+				"PondQuery_StatusRequestPending_maomao1": "How about {1} {0} for some powpow?",
+				"PondQuery_StatusRequestPending_maomao2": "Could you allowow us some {1} {0}?",
+				"PondQuery_StatusRequestComplete_maomao0": "No sweat off your browbrow!",
+				"PondQuery_StatusRequestComplete_maomao1": "We've been endowdowed!",
+				"PondQuery_StatusRequestComplete_maomao1": "This is so wowwow!",
+				//"PondQuery_StatusOk0_perch": "We're just here, no puns.",
+				//"PondQuery_StatusOk1_perch": "Having an ordinary one.",
+				//"PondQuery_StatusOk2_perch": "What, were you expecting a joke?",
+				//"PondQuery_StatusOk3_perch": "We're fish. In a pond.",
+				"PondQuery_StatusRequestPending_perch0": "No joke, but we'd like {1} {0}",
+				"PondQuery_StatusRequestPending_perch1": "We'd like {1} {0}, if you'd oblige.",
+				"PondQuery_StatusRequestPending_perch2": "Can we have {1} {0}? ...What, were you expecting a pun?",
+				"PondQuery_StatusRequestComplete_perch0": "Thanks a lot, no joke.",
+				"PondQuery_StatusRequestComplete_perch1": "Thanks. No punchline, just thanks.",
+				"PondQuery_StatusRequestComplete_perch2": "This is nice and ordinary and not a joke at all, thanks.",
+ 				//"PondQuery_StatusOk0_cod": "We're just tottin' around.",
+				//"PondQuery_StatusOk1_cod": "Our eyes are on you.",
+				//"PondQuery_StatusOk2_cod": "Just frying around.",
+				//"PondQuery_StatusOk3_cod": "Hashing out some stuff, nbd.",
+				"PondQuery_StatusRequestPending_cod0": "Could you latke have us {1} {0}?",
+				"PondQuery_StatusRequestPending_cod1": "We're kinda mashed in here... (1) (0) would help.",
+				"PondQuery_StatusRequestPending_cod2": "We've got our eyes on {1} {0}.",
+				"PondQuery_StatusRequestComplete_cod0": "Baked to perfection!",
+				"PondQuery_StatusRequestComplete_cod1": "You're a real spud!",
+				"PondQuery_StatusRequestComplete_cod2": "Thanks for hashing this out!",
+			}
+		},
+		
+		//Fish ponds
+		{
+			"LogName": "Fish Pond Data",
+			"Action": "EditData",
+			"Target": "Data/FishPondData",
+			"Entries": {
+				"id_(o)tiakall.bass.SeaBass": {
+					"Id": "id_(o)tiakall.bass.SeaBass",
+					"RequiredTags": [
+						"id_(o)tiakall.bass.SeaBass"
+					],
+					"Precedence": 0,
+					"SpawnTime": 3,
+					"ProducedItems": [
+						{
+							"RequiredPopulation": 10,
+							"Chance": 0.4,
+							"ItemID": "FLAVORED_ITEM Wine (O)tiakall.bass.SeaBass", //committed to further fish crimes
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 10,
+							"Chance": 1.0,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 5
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.6,
+							"ItemID": "FLAVORED_ITEM Honey (O)tiakall.bass.SeaBass",  //FISH HONEY IS A GO
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.5,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 3
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.2,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						}
+					],
+					"PopulationGates": {
+						"3": [
+							"(O)684 5"
+						],
+						"5": [
+							"(O)136 3",
+							"(O)137 3",
+						],
+						"7": [
+							"(O)586"
+						],
+					},
+				},
+				
+				"id_(o)tiakall.bass.RedbandedPerch": {
+					"Id": "id_(o)tiakall.bass.RedbandedPerch",
+					"RequiredTags": [
+						"id_(o)tiakall.bass.RedbandedPerch"
+					],
+					"Precedence": 0,
+					"SpawnTime": 3,
+					"ProducedItems": [
+						{
+							"RequiredPopulation": 10,
+							"Chance": 0.4,
+							"ItemID": "FLAVORED_ITEM Wine (O)tiakall.bass.RedbandedPerch", //committing to further fish crimes 
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 10,
+							"Chance": 1.0,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 5
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.6,
+							"ItemID": "FLAVORED_ITEM Honey (O)tiakall.bass.RedbandedPerch",  //FISH HONEY IS A GO
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.5,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 3
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.2,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						}
+					],
+					"PopulationGates": {
+						"3": [
+							"(O)684 5"
+						],
+						"5": [
+							"(O)136 3",
+							"(O)137 3",
+						],
+						"7": [
+							"(O)586"
+						],
+					},
+				},
+				
+				"id_(o)tiakall.bass.DuskyGrouper": {
+					"Id": "id_(o)tiakall.bass.DuskyGrouper",
+					"RequiredTags": [
+						"id_(o)tiakall.bass.DuskyGrouper"
+					],
+					"Precedence": 0,
+					"SpawnTime": 3,
+					"ProducedItems": [
+						{
+							"RequiredPopulation": 10,
+							"Chance": 0.4,
+							"ItemID": "FLAVORED_ITEM Wine (O)tiakall.bass.DuskyGrouper", //committing to further fish crimes
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 10,
+							"Chance": 1.0,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 5
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.6,
+							"ItemID": "FLAVORED_ITEM Honey (O)tiakall.bass.DuskyGrouper",  //FISH HONEY IS A GO
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.5,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 3
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.2,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						}
+					],
+					"PopulationGates": {
+						"3": [
+							"(O)684 5"
+						],
+						"5": [
+							"(O)136 3",
+							"(O)137 3",
+						],
+						"7": [
+							"(O)586"
+						],
+					},
+				},
+				
+				"id_(o)tiakall.bass.PotatoCod": {
+					"Id": "id_(o)tiakall.bass.PotatoCod",
+					"RequiredTags": [
+						"id_(o)tiakall.bass.PotatoCod"
+					],
+					"Precedence": 0,
+					"SpawnTime": 3,
+					"ProducedItems": [
+						{
+							"RequiredPopulation": 10,
+							"Chance": 0.4,
+							"ItemID": "FLAVORED_ITEM Wine (O)tiakall.bass.PotatoCod", //committing to further fish crimes
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 10,
+							"Chance": 1.0,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 5
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.6,
+							"ItemID": "FLAVORED_ITEM Honey (O)tiakall.bass.PotatoCod",  //FISH WINE IS A GO
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.5,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 3
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.2,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						}
+					],
+					"PopulationGates": {
+						"3": [
+							"(O)684 5"
+						],
+						"5": [
+							"(O)136 3",
+							"(O)137 3",
+						],
+						"7": [
+							"(O)586"
+						],
+					},
+				},
+				
+				"id_(o)tiakall.bass.PinkMaomao": {
+					"Id": "id_(o)tiakall.bass.PinkMaomao",
+					"RequiredTags": [
+						"id_(o)tiakall.bass.PinkMaomao"
+					],
+					"Precedence": 0,
+					"SpawnTime": 3,
+					"ProducedItems": [
+						{
+							"RequiredPopulation": 10,
+							"Chance": 0.4,
+							"ItemID": "FLAVORED_ITEM Wine (O)tiakall.bass.PinkMaomao", //committing to further fish crimes
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 10,
+							"Chance": 1.0,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 5
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.6,
+							"ItemID": "FLAVORED_ITEM Honey (O)tiakall.bass.PinkMaomao",  //FISH HONEY IS A GO
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.5,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 3
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.2,
+							"ItemID": "812", //roe
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						}
+					],
+					"PopulationGates": {
+						"3": [
+							"(O)684 5"
+						],
+						"5": [
+							"(O)136 3",
+							"(O)137 3",
+						],
+						"7": [
+							"(O)586"
+						],
+					}
+				},
+			},
+		},
+		
+		//animated bass sprite - no CP-A for 1.6 yet
+		/* { 
+		
+		"Action": "EditImage",
+		"Target": "LooseSprites/AquariumFish",
+		"FromFile": "assets/feeshaqua.png",
+		"ToArea": { "X": 120, "Y": 240, "Width": 120, "Height": 48 }
+		},
+		{
+			"LogName": "Animated Sea Bass",
+			"Action": "EditImage",
+			"Target": "{{spacechase0.JsonAssets/ObjectSpriteTilesheet:Sea Bass}}",
+			"FromFile": "Assets/sea_bass.png",
+			"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+			"ToArea":{ "X": "{{spacechase0.JsonAssets/ObjectSpriteX:Sea Bass}}", "Y": "{{spacechase0.JsonAssets/ObjectSpriteY:Sea Bass}}", "Width": 16, "Height": 16 },
+			"AnimationFrameTime": 20,
+			"AnimationFrameCount": 4,
+			"When":
+			{
+				"HasMod|contains=spacechase0.ContentPatcherAnimations": true,
+				"HasMod|contains=spacechase0.JsonAssets": true,
+				"Animated Sprite": "true"
+			},
+		} */
+						]
+					}															

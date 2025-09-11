@@ -1,0 +1,228 @@
+{
+	"Format": "2.0",
+	
+	"ConfigSchema": {
+		"DiverseArt": {
+			"AllowValues": "default, diverse",
+			"Default": "default",
+			"Description": "Choose whether to use Isla's original portraits and sprites or Isla's diverse portraits and sprites. Extra characters will match the option chosen.",
+        },
+		"ChildrenSprites": {
+			"AllowValues": "default, isla",
+			"Default": "default",
+			"Description": "Choose whether to use the default child sprite or sprites to make the children look like Isla.",
+        },
+		"MapRecolor": {
+			"AllowValues": "automatic, default, starblue",
+			"Default": "automatic",
+			"Description": "Choose recolor for Isla's maps. Automatic will choose the default unless Starblue Valley is installed, in which case it will choose the Starblue maps.",
+        },
+    },
+	
+	"DynamicTokens": [
+
+		//Namespace Isla's Name
+		{
+			"Name": "Isla",
+			"Value": "PaperNautilus_Isla",
+		},
+		
+		//Island Name Replacement
+		
+		{
+			"Name": "IslandName",
+			"Value": "{{i18n:Isla.UnderwaterCoveExterior.Name.Unmet}}",
+		},
+		
+		{
+			"Name": "IslandName",
+			"Value": "{{i18n:Isla.UnderwaterCoveExterior.Name}}",
+			"When":{
+				"HasSeenEvent": "8205020"
+			},
+		},
+
+		//Diverse Isla Compatibility
+		
+		{
+			"Name": "PortraitPath",
+			"Value": "Portraits",
+		},
+		
+		{
+			"Name": "SpritePath",
+			"Value": "Sprites",
+		},
+		
+		{
+			"Name": "PortraitPath",
+			"Value": "DiversePortraits",
+			"When": {
+				"DiverseArt": "diverse",
+			}
+		},
+		
+		{
+			"Name": "SpritePath",
+			"Value": "DiverseSprites",
+			"When": {
+				"DiverseArt": "diverse",
+			}
+		},
+		
+		//Starblue Compatibility
+		
+			//Default
+		{
+			"Name": "Recolor",
+			"Value": "Maps/Default"
+		},
+		
+			//Apply Starblue recolor if installed and MapRecolor left on automatic
+		{
+			"Name": "Recolor",
+			"Value": "Maps/Starblue",
+			"When": {
+				"HasMod": "Lita.StarblueValley",
+				"MapRecolor": "automatic",
+			},
+		},
+		
+			//Allow the option of using Starblue anyway without Starblue itself present
+		{
+			"Name": "Recolor",
+			"Value": "Maps/Starblue",
+			"When": {
+				"MapRecolor": "starblue",
+			},
+		},
+		
+		//SVE Festival Compatibility Token
+		
+		{
+			"Name": "YearToken",
+			"Value": "Odd",
+		},
+		
+		{
+			"Name": "YearToken",
+			"Value": "Even",
+			"When": {
+				"Query: {{Year}} % 2 = 0": true,
+			},
+		},
+		
+		{
+			"Name": "YearToken",
+			"Value": "SVEYear1",
+			"When": {
+				"Query: {{Year}} % 4 = 1": true,
+				"HasMod": "FlashShifter.StardewValleyExpandedCP",
+			},
+		},
+		
+		{
+			"Name": "YearToken",
+			"Value": "SVEYear3",
+			"When": {
+				"Query: {{Year}} % 4 = 3": true,
+				"HasMod": "FlashShifter.StardewValleyExpandedCP",
+			},
+		},
+		
+	],
+
+	"Changes": [	
+
+		//Load of Blank File for editing schedules/dialogue
+		{
+			"LogName": "Load Schedules, Schedule Strings, and all Dialogues",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/{{Isla}}, Characters/Dialogue/MarriageDialogue{{Isla}}, Characters/schedules/{{Isla}}, Strings/schedules/{{Isla}}",
+			"FromFile": "assets/blank.json"
+		},
+
+		//Map Data
+		{
+			"LogName": "Isla Map Data",
+			"Action": "Include",
+			"FromFile": "assets/Maps/Default/LocationData.json", //does not need altering, location data will be loaded regardless from this file
+		},
+
+		//Isla NPC Data (Disposition, Spouse Room, etc.)
+		{
+			"LogName": "Isla NPC Data",
+			"Action": "Include",
+			"FromFile": "assets/NPCData/Isla.json",
+		},
+
+		{
+			"LogName": "Extra Character Data",
+			"Action": "Include",
+			"FromFile": "assets/NPCData/ExtraCharacters.json",
+		},
+		
+		//Isla Children Data (formerly a separate mod)
+		
+		{
+			"LogName": "Children Sprites",
+			"Action": "Include",
+			"FromFile": "assets/NPCData/Children.json",
+			"When": {
+				"ChildrenSprites": "isla",
+			},
+		},
+
+		//Mail Data (formerly MFM)
+		{
+			"LogName": "Isla Mail Data",
+			"Action": "Include",
+			"FromFile": "assets/NPCData/Mail.json",
+		},
+
+		//Schedule Data
+		{
+			"LogName": "Isla Schedule Data",
+			"Action": "Include",
+			"FromFile": "assets/Schedules/Schedule.json",
+		},
+
+		{
+			"LogName": "Isla Schedule Dialogue",
+			"Action": "Include",
+			"FromFile": "assets/Schedules/ScheduleDialogue.json"
+		},
+
+
+		//Festival Data Include
+		{
+			"LogName": "Festival Data",
+			"Action": "Include",
+			"FromFile": "assets/Festivals/Festivals.json",
+			"When": {
+				"HasSeenEvent |contains=8205020": true,
+			}
+		},
+
+		//Dialogue Includes
+		{
+			"LogName": "Isla Regular Dialogue",
+			"Action": "Include",
+			"FromFile": "assets/Dialogue/DialogueIsla.json"
+		},
+
+
+		{
+			"LogName": "Isla Marriage Dialogue",
+			"Action": "Include",
+			"FromFile": "assets/Dialogue/MarriageDialogueIsla.json"
+		},
+
+		//Events
+		{
+			"LogName": "Events",
+			"Action": "Include",
+			"FromFile": "assets/NPCData/Events.json"
+		},
+	],
+}

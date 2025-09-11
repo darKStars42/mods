@@ -1,0 +1,20 @@
+{
+   "Changes": [
+   		{      
+			"LogName": "Load Leah's son as firstborn when firstborn internal gender is male.",
+			"Action": "Include",
+			"FromFile": "ChildFiles/Leah/valid_firstborn_Leah.json", 
+			"When": {
+				"FirstbornGenderInternal": "Male"
+			}
+		},
+   		{      
+			"LogName": "Load default firstborn when firstborn internal gender is not male.",
+			"Action": "Include",
+			"FromFile": "ChildFiles/Farmer_Default/default_firstborn.json", 
+			"When": {
+				"FirstbornGenderInternal|contains=Male": false
+			}
+		},
+   ]
+}

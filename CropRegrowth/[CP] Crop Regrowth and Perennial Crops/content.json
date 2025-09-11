@@ -1,0 +1,264 @@
+{
+    "Format": "2.0.0",
+    "ConfigSchema":
+    {
+        "ReArtichoke":
+        {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Enable regrowth for Artichoke"
+        },
+        "ReRhubarb":
+        {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Enable regrowth for Rhubarb"
+        },
+        "ReKale":
+        {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Enable regrowth for Kale"
+        },
+        "ReAmaranth":
+        {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Enable regrowth for Amaranth"
+        },
+        "ReStarfruit":
+        {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Enable regrowth for Starfruit"
+        },
+        "ReRice":
+        {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Enable regrowth for Rice shoots"
+        },
+        "ReWheat":
+        {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Enable regrowth for Wheat"
+        },
+        "ReBeet":
+        {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Enable regrowth for Beet"
+        }
+    },
+    "Changes": [
+         {
+        "Action": "Load",
+        "LogName": "Adding all the regrowable crops as an XNB",
+        "Target": "Mods/Strobe.CP.MoreCropsRegrow/CropRegrowth",
+        "FromFile": "assets/CropRegrowth.png"
+    },
+    {
+        "Action": "EditData",
+        "LogName": "Rhubarb Conditional",
+        "Target": "Data/crops",
+        "Fields":
+        {
+            "478":
+            { //Rhubarb
+                "RegrowDays": "11"
+            }
+        },
+        "When":
+        {
+            "ReRhubarb": true
+        }
+    },
+    {
+        "Action": "EditData",
+        "LogName": "Amaranth Conditional",
+        "Target": "Data/crops",
+        "Fields":
+        {
+            "299":
+            { //Amaranth
+                "RegrowDays": "6"
+            }
+        },
+        "When":
+        {
+            "ReAmaranth": true
+        }
+    },
+    {
+        "Action": "EditData",
+        "LogName": "Artichoke Conditional",
+        "Target": "Data/crops",
+        "Fields":
+        {
+            "489":
+            { //Artichoke
+                "RegrowDays": "6"
+            }
+        },
+        "When":
+        {
+            "ReArtichoke": true
+        }
+    },
+    {
+        "Action": "EditData",
+        "LogName": "Kale Conditional",
+        "Target": "Data/crops",
+        "Fields":
+        {
+            "477":
+            { //Kale
+                "RegrowDays": "5"
+            }
+        },
+        "When":
+        {
+            "ReKale": true
+        }
+    },
+    {
+        "Action": "EditData",
+        "LogName": "Rice Conditional",
+        "Target": "Data/crops",
+        "Fields":
+        {
+            "273":
+            { //RiceShoot
+                "RegrowDays": "5"
+            }
+        },
+        "When":
+        {
+            "ReRice": true
+        }
+    },
+    {
+        "Action": "EditData",
+        "LogName": "Artichoke Conditional",
+        "Target": "Data/crops",
+        "Fields":
+        {
+            "486":
+            { //Starfruit
+                "RegrowDays": "12"
+            }
+        },
+        "When":
+        {
+            "ReStarfruit": true
+        }
+    },
+    {
+        "Action": "EditData",
+        "LogName": "Wheat Conditional",
+        "Target": "Data/crops",
+        "Fields":
+        {
+            "483":
+            { //Wheat
+                "RegrowDays": "2"
+            }
+        },
+        "When":
+        {
+            "ReWheat": true
+        }
+    },
+    {
+        "Action": "EditData",
+        "LogName": "Beet Conditional",
+        "Target": "Data/crops",
+        "Fields":
+        {
+            "494":
+            { //Beet
+                "RegrowDays": "5"
+            }
+        },
+        "When":
+        {
+            "ReBeet": true
+        }
+    },
+    {
+        "Action": "EditData",
+        "LogName": "Modifying crop growing seasons and max harvest and max harvest chance",
+        "Target": "Data/Crops",
+        "Fields":
+        {
+            "273":
+            { //Rice shoot
+                "Seasons": ["Spring", "Summer"],
+                "Texture": "Mods/Strobe.CP.MoreCropsRegrow/CropRegrowth"
+            },
+            "299":
+            { //Amaranth
+                "Seasons": ["Summer", "Fall"],
+                "Texture": "Mods/Strobe.CP.MoreCropsRegrow/CropRegrowth"
+            },
+            "302":
+            { //Hops
+                "Seasons": ["Spring", "Summer", "Fall"],
+            },
+            "474":
+            { //Cauliflower
+                "Seasons": ["Spring", "Fall", "Winter"]
+            },
+            "477":
+            { //Kale
+                "Seasons": ["Spring", "Fall", "Winter"],
+                "Texture": "Mods/Strobe.CP.MoreCropsRegrow/CropRegrowth"
+            },
+            "478":
+            { //Rhubarb
+                "Seasons": ["Spring", "Winter"],
+                "Texture": "Mods/Strobe.CP.MoreCropsRegrow/CropRegrowth"
+            },
+            "483":
+            { //Wheat
+                "Seasons": ["Spring", "Summer", "Fall"],
+                "HarvestMaxStack": 2,
+                "ExtraHarvestChance": 0.1,
+                "Texture": "Mods/Strobe.CP.MoreCropsRegrow/CropRegrowth"
+            },
+            "487":
+            { //Corn
+                "HarvestMaxStack": 2,
+                "ExtraHarvestChance": 0.05
+            },
+            "491":
+            { //Bok choy
+                "Seasons": ["Summer", "Fall"]
+            },
+            "494":
+            { //Beet
+                "Seasons": ["Summer", "Fall"],
+                "Texture": "Mods/Strobe.CP.MoreCropsRegrow/CropRegrowth"
+            },
+        }
+    },
+    {
+        "Action": "EditData",
+        "LogName": "Modifying seed descriptions to reflect the changed growing seasons",
+        "Target": "Strings/Objects",
+        "Entries":
+        {
+            "RiceShoot_Description": "Plant these in the spring or summer. Takes 8 days to mature. Grows faster if planted near a body of water. Harvest with the scythe.", //Rice shoots
+            "AmaranthSeeds_Description": "Plant these in the summer or fall. Takes 7 days to grow. Harvest with the scythe.", //Amaranth
+            "HopsStarter_Description": "Plant these in the spring, summer or fall. Takes 11 days to grow, but keeps producing after that. Grows on a trellis.", //Hops
+            "CauliflowerSeeds_Description": "Plant these in the spring, fall or winter. Takes 12 days to produce a large cauliflower.", //Cauliflower
+            "KaleSeeds_Description": "Plant these in the spring, fall or winter. Takes 6 days to mature. Harvest with the scythe.", //Kale
+            "RhubarbSeeds_Description": "Plant these in the spring or winter. Takes 13 days to mature.", //Rhubarb
+            "WheatSeeds_Description": "Plant these in the spring, summer or fall. Takes 4 days to mature. Harvest with the scythe.", //Wheat
+            "BokChoySeeds_Description": "Plant in the summer or fall. Takes 4 days to mature.", //Bok Choy
+            "BeetSeeds_Description": "Plant these in the summer or fall. Takes 6 days to mature." //Beet
+        }
+    },
+    ]
+}

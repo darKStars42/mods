@@ -1,0 +1,66 @@
+{
+    "Changes": [
+
+        //Spouse Portrait
+        {
+            "LogName": "Load Eugene's Spouse Portrait",
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/EugenePortrait",
+            "FromFile": "Assets/{{TargetWithoutPath}}.png"
+        },
+        {
+            "LogName": "Add Eugene's Spouse Portrait",
+            "Action": "EditData",
+            "Target": "Data/Furniture",
+            "Entries": {
+                "EugenePortrait": "EugenePortrait/painting/2 2/2 2/1/999/-1/{{i18n:Furniture.Eugene.SpousePortrait}}/0/Mods\\{{ModId}}\\EugenePortrait/true/SpousePortrait"
+            }
+        },
+        {
+            "LogName": "Add Eugene's Spouse Portrait",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [ "Traveler", "Items" ],
+            "Entries": {
+                "EugenePortrait": {
+                    "ActionsOnPurchase": null,
+                    "CustomFields": null,
+                    "TradeItemId": null,
+                    "TradeItemAmount": 1,
+                    "Price": 30000,
+                    "ApplyProfitMargins": null,
+                    "AvailableStock": 1,
+                    "AvailableStockLimit": "Player",
+                    "AvoidRepeat": false,
+                    "UseObjectDataPrice": false,
+                    "IgnoreShopPriceModifiers": false,
+                    "PriceModifiers": null,
+                    "PriceModifierMode": "Stack",
+                    "AvailableStockModifiers": null,
+                    "AvailableStockModifierMode": "Stack",
+                    "Condition": "PLAYER_HEARTS Current Eugene 14",
+                    "Id": "EugenePortrait",
+                    "ItemId": "EugenePortrait",
+                    "RandomItemId": null,
+                    "MaxItems": null,
+                    "MinStack": -1,
+                    "MaxStack": -1,
+                    "Quality": -1,
+                    "ObjectInternalName": null,
+                    "ObjectDisplayName": null,
+                    "ObjectColor": null,
+                    "ToolUpgradeLevel": -1,
+                    "IsRecipe": false,
+                    "StackModifiers": null,
+                    "StackModifierMode": "Stack",
+                    "QualityModifiers": null,
+                    "QualityModifierMode": "Stack",
+                    "ModData": null,
+                    "PerItemCondition": null
+                }
+            }
+        }
+
+    ]
+
+}

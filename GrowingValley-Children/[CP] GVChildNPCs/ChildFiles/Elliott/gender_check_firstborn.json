@@ -1,0 +1,20 @@
+{
+   "Changes": [
+   		{      
+			"LogName": "Load Elliott's son as firstborn when firstborn internal gender is male.",
+			"Action": "Include",
+			"FromFile": "ChildFiles/Elliott/valid_firstborn_Elliott.json", 
+			"When": {
+				"FirstbornGenderInternal": "Male"
+			}
+		},
+   		{      
+			"LogName": "Load default firstborn when firstborn is internal gender not male.",
+			"Action": "Include",
+			"FromFile": "ChildFiles/Farmer_Default/default_firstborn.json", 
+			"When": {
+				"FirstbornGenderInternal|contains=Male": false
+			}
+		},
+   ]
+}

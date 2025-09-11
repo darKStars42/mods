@@ -1,0 +1,783 @@
+{
+  "Format": "2.5.0",
+
+  "ConfigSchema": {
+
+    "NoProfanity":{
+      "AllowValues": "true, false",
+      "Default": "true",
+      "AllowBlank": true,
+      "Description": "Disables Jonghyuk's use of vulgar language."
+    }
+
+  },
+
+  
+
+  "CustomLocations": [
+
+    // Interior Maps
+
+    {
+      "Name": "Custom_SBV_JonghyukHouse",
+      "FromMapFile": "Assets/Maps/JonghyukHouse.tmx"
+    },
+
+    {
+      "Name": "Custom_SBV_MinesPool",
+      "FromMapFile": "assets/Maps/tempMaps/Custom_JonghyukCave.tmx"
+
+    }
+
+
+  ],
+
+  "Changes": [
+
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SBV_JonghyukHouse",
+      "MapProperties": {
+        "LocationContext": "Custom_SBV_SunberryVillage"
+      },
+  },
+
+  {
+    "Action": "EditData",
+    "Target": "Data/Locations",
+    "Entries": {
+      "Custom_SBV_JonghyukHouse": {
+        "CreateOnLoad": { "MapPath": "Maps/Custom_SBV_JonghyukHouse" },
+                  "DisplayName": "{{i18n:Sunberry.Locations.Custom_SBV_JonghyukHouse}}",
+                  "ExcludeFromNpcPathfinding": false,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": []
+      },
+      "Custom_SBV_MinesPool": {
+                  "CreateOnLoad": { "MapPath": "Maps/Custom_SBV_MinesPool" },
+                  "DisplayName": "{{i18n:Sunberry.Locations.Custom_SBV_Custom_SBV_MinesPool}}",
+                  "ExcludeFromNpcPathfinding": false,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": []
+              },
+
+    }
+  },
+
+  /*
+  {
+    "Action": "EditData",
+    "Target": "Data/Locations",
+    "Entries": {
+      "Custom_SBV_JonghyukHouse": {
+        "DisplayName": "{{Sunberry.Locations.Custom_SBV_JonghyukHouse}}"
+      }
+    },
+},
+*/
+  
+
+    {
+      "LogName": "Seasonal Sprites and Portraits",
+      "Action": "Load",
+      "Target": "Characters/Jonghyuk, Portraits/Jonghyuk,",
+      "FromFile": "Assets/{{Target}}/{{season}}/{{Random:1, 2, 3, 4 |key=jonghyuk-outfit}}.png" //      "FromFile": "Assets/{{Target}}/{{TargetWithoutPath}}_{{season}}.png"
+    },
+
+    
+    {
+      "LogName": "Jonghyuk Hoodie",
+      "Action": "Load",
+      "Target": "Portraits/Jonghyuk_Hoodie",
+      "FromFile": "Assets/Portraits/Jonghyuk/Jonghyuk_Hoodie.png"
+  },
+
+  {
+    "LogName": "Jonghyuk Hoodie",
+    "Action": "Load",
+    "Target": "Characters/Jonghyuk_Hoodie",
+    "FromFile": "Assets/Characters/Jonghyuk/Jonghyuk_Hoodie.png"
+},
+
+{
+  "LogName": "Jonghyuk Dance Shoes (W)",
+  "Action": "Load",
+  "Target": "Characters/Jonghyuk_White",
+  "FromFile": "Assets/Characters/Jonghyuk/Jonghyuk_White.png"
+},
+
+{
+  "LogName": "Jonghyuk Dance Shoes (B)",
+  "Action": "Load",
+  "Target": "Characters/Jonghyuk_Black",
+  "FromFile": "Assets/Characters/Jonghyuk/Jonghyuk_Black.png"
+},
+
+    {
+      "LogName": "Raymond Sprites y0",
+      "Action": "Load",
+      "Target": "Characters/Spanner",
+      "FromFile": "Assets/Characters/Raymond/y0/Raymond.png",
+      "When": {
+        "HasSeenEvent: anyPlayer |contains=63071091": false,
+        "HasSeenEvent: anyPlayer |contains=63071092": false
+      }
+    },
+
+
+    {
+      "LogName": "Raymond Sprites y1",
+      "Action": "Load",
+      "Target": "Characters/Spanner",
+      "FromFile": "Assets/Characters/Raymond/y1/Raymond.png",
+      "When": {
+        "HasSeenEvent: anyPlayer |contains=63071091": true,
+        "HasSeenEvent: anyPlayer |contains=63071092": false
+      }
+    },
+
+    {
+      "LogName": "Raymond Sprites y2",
+      "Action": "Load",
+      "Target": "Characters/Spanner",
+      "FromFile": "Assets/Characters/Raymond/y2/Raymond.png",
+      "When": {
+        "HasSeenEvent: anyPlayer |contains=63071091": true,
+        "HasSeenEvent: anyPlayer |contains=63071092": true
+      }
+    },
+
+
+    {
+      "LogName": "Raymond Portraits",
+      "Action": "Load",
+      "Target": "Portraits/Spanner",
+      "FromFile": "Assets/Portraits/Raymond/Raymond.png"
+    },
+
+    // Outfit Changes
+    {
+      "LogName": "Include Outfit Changes",
+      "Action": "Include",
+      "FromFile": "Data/DynamicChanges/OutfitChanges.json"
+    },
+
+
+    // Portrait Shake
+    {
+      "Action": "EditData",
+      "Target": "SunberryTeam.SBV/PortraitsToShake",
+      "Entries": {
+        "Jonghyuk": {
+          "IndexList": [ 7 ]
+        }
+      }
+    },
+
+
+    {
+      "Action": "EditData",
+      "Target": "KediDili.KNU/UtilityData", // Target this asset
+      "Entries": {
+        "Jonghyuk": { //Keys under here has to be one of the listed below. Anything else is ignored by the mod. Omit the keys for said feature if you will not use the feature. Nullifying would cause errors!
+
+          "datableNotMarriable": "Cannot marry until a certain event has been seen." //Makes the NPC deny the mermaid pendant
+
+        }
+      }
+    },
+    
+            /*********
+            ** Adds Jonghyuk's Event Portraits and Sprites
+            *********/          
+          {
+              "Action": "Load",
+              "Target": "Portraits/Jonghyuk_Pool",
+              "FromFile": "Assets/Portraits/Jonghyuk/Jonghyuk_Black_Shirt.png"
+          },
+
+          {
+            "Action": "Load",
+            "Target": "Characters/Jonghyuk_Pool",
+            "FromFile": "Assets/Characters/Jonghyuk/Jonghyuk_Black_Shirt.png"
+          },
+
+                    {
+              "Action": "Load",
+              "Target": "Portraits/Jonghyuk_Apron",
+              "FromFile": "Assets/Portraits/Jonghyuk/Jonghyuk_Apron.png"
+          },
+
+          {
+            "Action": "Load",
+            "Target": "Characters/Jonghyuk_Apron",
+            "FromFile": "Assets/Characters/Jonghyuk/Jonghyuk_Apron.png"
+          },
+
+
+          {
+            "Action": "Load",
+            "Target": "Portraits/Jonghyuk_Athletic",
+            "FromFile": "Assets/Portraits/Jonghyuk/Jonghyuk_Athletic.png"
+        },
+
+        {
+          "Action": "Load",
+          "Target": "Characters/Jonghyuk_Athletic",
+          "FromFile": "Assets/Characters/Jonghyuk/Jonghyuk_Athletic.png"
+        },
+
+          {
+            "Action": "Load",
+            "Target": "Portraits/Jonghyuk_Base",
+            "FromFile": "Assets/Portraits/Jonghyuk/Jonghyuk_Base.png"
+          },
+
+
+    //Blanks
+
+    {
+      "LogName": "Dialogue Blanks",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Jonghyuk, Characters/Dialogue/MarriageDialogueJonghyuk, Characters/Dialogue/Spanner",
+      "FromFile": "Data/Dialogue/blank.json"
+    },
+
+    {
+      "LogName": "Schedule Dialogue Blanks",
+      "Action": "Load",
+      "Target": "Strings/schedules/Jonghyuk, Strings/schedules/Spanner",
+      "FromFile": "Data/Dialogue/blank.json"
+    },
+
+    {
+      "LogName": "Schedule Blanks",
+      "Action": "Load",
+      "Target": "Characters/schedules/Jonghyuk, Characters/schedules/Spanner",
+      "FromFile": "Data/Dialogue/blank.json"
+    },
+
+
+    {
+      "Action": "Load", //Load up event for interior
+      "Target": "Data/Events/Custom_SBV_JonghyukHouse, Data/Events/Custom_SBV_MinesPool",
+      "FromFile": "Data/Dialogue/blank.json"
+    },
+
+    {
+			"LogName": "Include Music",
+			"Action": "Include",
+			"FromFile": "Data/Music.json",
+		},
+
+    // Map Data Includes
+
+    {
+      "LogName": "Include Map Data",
+      "Action": "Include",
+      "FromFile": "Data/MapData/MapPatches.json, Data/MapData/MapStrings.json, Data/MapData/ChairTiles.json, Data/MapData/MapWarps.json"
+    },
+
+    // NPC Data Includes
+    {
+      "LogName": "Include NPC Data",
+      "Action": "Include",
+      "FromFile": "Data/NPCData/Animations.json, Data/NPCData/Dispositions.json, Data/NPCData/GiftTasteData.json, Data/NPCData/ConversationTopics.json, Data/NPCData/Mail.json, Data/NPCData/MovieData.json"
+    },
+
+    // Dialogue + Schedule Includes
+    {
+      "LogName": "Includes Dialogue and Schedule",
+      "Action": "Include",
+      "FromFile": "Data/Dialogue/JonghyukDialogue.json, Data/Schedules/JonghyukSchedule.json, Data/Dialogue/RaymondDialogue.json, Data/Schedules/RaymondSchedule.json"
+    },
+
+//Festival attempt
+    {
+      "LogName": "Include Festival Stuff",
+      "Action": "Include",
+      "FromFile": "Data/Festivals/FestivalDialogue.json, Data/Festivals/locations/EggFestival.json, Data/Festivals/locations/FlowerDance.json, Data/Festivals/locations/Luau.json, Data/Festivals/locations/MoonlightJellies.json, Data/Festivals/locations/SVFair.json, Data/Festivals/locations/SpiritEve.json, Data/Festivals/locations/IceFestival.json, Data/Festivals/locations/WinterStar.json, Data/Festivals/locations/GatheringFestival.json, Data/Festivals/locations/EmberOfResolutions.json"
+    },
+
+
+    {
+      "LogName": "Include jhLantern",
+      "Action": "Include",
+      "FromFile": "Data/Festivals/WaterLantern.json",
+      "When": {
+        "HasFlag: anyPlayer |contains= jhLanternFestivalTrigger": true,
+        "HasFlag: anyPlayer |contains= jhFestivalDone": false,
+/*        "HasFlag: anyPlayer |contains= Jonghyuk8HCheck": true, */
+        //Jonghyuk8HCheck
+      } 
+    },
+
+
+    // Event Data Includes
+    {
+      "LogName": "Include Event Data",
+      "Action": "Include",
+      "FromFile": "Data/Events/EventData.json"
+    },
+
+
+    {
+      "LogName": "Include Event Data",
+      "Action": "Include",
+      "FromFile": "Data/Events/ARVCollaborationEvents.json",
+      "When": {
+        "HasMod": "Himetarts.ARV.CP"
+      }
+    },
+      // Trigger Actions
+       {
+        "LogName": "Include Trigger Actions",
+        "Action": "Include",
+        "FromFile": "Data/TriggerActions/Mail.json"
+      },
+
+    
+
+    /// Event Actors (Spoilers)
+
+    {
+      "Action": "Include",
+      "FromFile": "assets/EventFiles/tempActors.json"
+    },
+
+    {
+      "LogName": "SpaceCore Particles for Events", //Casey is so cool. Thanks TenebrousNova for showing me how to use this Spacecore feature.
+      "Action": "Load",
+      "Target": "Jonghyuk/Particles",
+      "FromFile": "Assets/EventFiles/Sprites/Particles.png"
+    },
+
+    /*********
+	** Temp Maps 
+	*********/
+
+    {
+      "Action": "Load",
+      "Target": "Maps/Custom_BusStop",
+      "FromFile": "assets/Maps/tempMaps/Custom_BusStop_{{season}}.tmx"
+
+    },
+
+    {
+      "Action": "Load",
+      "Target": "Maps/Custom_SunberrySealedRoom",
+      "FromFile": "assets/Maps/tempMaps/Custom_SunberrySealedRoom.tmx"
+    },
+
+    {
+      "Action": "Load",
+      "Target": "Maps/Custom_SunberrySealedRoomFall",
+      "FromFile": "assets/Maps/tempMaps/Custom_SunberrySealedRoomFall.tmx"
+    },
+
+
+    {
+      "Action": "Load",
+      "Target": "Maps/BattleMoveSpanner, Maps/BattleRaccoonAttackNeutral, Maps/BattleRaccoonAttackPounce, Maps/BattleRaccoonAttackPounceMiss, Maps/BattleRaccoonAttackSwipes1, Maps/BattleRaccoonAttackSwipes3, Maps/BattleRaccoonAttackSwipesMiss, Maps/BattleRaccoonChooseFainted, Maps/BattleRaccoonChooseFinalAttack, Maps/BattleRaccoonChooseHPFull, Maps/BattleRaccoonChooseHPPounce, Maps/BattleRaccoonChooseHPSwipes, Maps/BattleRaccoonDamaged, Maps/BattleRaccoonDamagedSwipes1, Maps/BattleRaccoonDamagedSwipes2, Maps/BattleRaccoonDamagedSwipes3, Maps/BattleRaccoonHPChange, Maps/BattleRaccoonJoin, Maps/BattleStart, Maps/BattleRaccoonKnife, Maps/BattleRaccoonSpiderMiss",
+      "FromFile": "Assets/Maps/tempMaps/RaymondMaps/{{TargetWithoutPath}}.tmx"
+    },
+
+    {
+      "Action": "Load",
+      "Target": "Maps/Custom_SpannerMoon",
+      "FromFile": "Assets/Maps/tempMaps/RaymondMaps/SpannerMoon.tmx"
+    },
+
+    {
+      "Action": "Load",
+      "Target": "Maps/Custom_jhBoatRide",
+      "FromFile": "Assets/Maps/tempMaps/jhBoatRide.tmx"
+    },
+
+    {
+      "Action": "Load",
+      "Target": "Maps/Custom_LanternFestival",
+      "FromFile": "Assets/Maps/LanternFestival.tmx"
+
+    },
+
+    //CGs
+    {
+      "Action": "Load",
+      "Target": "Maps/Fool_Card",
+      "FromFile": "Assets/Maps/tempMaps/Jonghyuk_Cards_1.tmx"
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/World_Card",
+      "FromFile": "Assets/Maps/tempMaps/Jonghyuk_Cards_2.tmx"
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/Temperance_Card",
+      "FromFile": "Assets/Maps/tempMaps/Jonghyuk_Cards_3.tmx"
+    },
+
+    {
+      "Action": "Load",
+      "Target": "Maps/Dragon_Tattoos_Pool",
+      "FromFile": "Assets/Maps/tempMaps/Dragon_Tattoos_Pool.tmx"
+    },
+
+    {
+      "Action": "Load",
+      "Target": "Characters/RaymondFall",
+      "FromFile": "Assets/Maps/tempMaps/RaymondMaps/z_RaymondFall.png"
+    },
+    
+    {
+      "LogName": "Jonghyuk's Dropbox",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SBV_JonghyukHouse", 
+      "MapTiles": [
+        {
+          "Position": { "X": 24, "Y": 10}, 
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "DropBox jhDropbox"
+          }
+        }
+      ]
+    },
+
+
+
+    		//// Special Order 1 - Lantern Festival ////
+		{
+			"Action": "EditData",
+			"Target": "Data/SpecialOrders",
+			"Entries": {
+				"jhLanternFestival": {
+					"Name": "[Jonghyuk.SpecialOrders.LanternFestival_Name]",
+					"Requester": "Jonghyuk",
+					"Duration": "Month",
+					"Repeatable": "False",
+					"RequiredTags": "PLAYER_HAS_SEEN_EVENT Current jhGather",
+					"OrderType": "",
+					"SpecialRule": "",
+					"Text": "[Jonghyuk.SpecialOrders.LanternFestival_Text]",
+					"ItemToRemoveOnEnd": null,
+					"MailToRemoveOnEnd": null,
+					"RandomizedElements": null,
+					"Objectives": [
+						{
+							"Type": "Donate",
+							"Text": "[Jonghyuk.SpecialOrders.LanternFestival_Objective_0_Text]",
+							"RequiredCount": "10", // How many are needed
+							"Data": {
+								"AcceptedContextTags": "item_cloth",
+                "DropBox": "jhDropbox",
+								"DropBoxGameLocation": "Custom_SBV_JonghyukHouse",
+								"DropBoxIndicatorLocation": "24 10", // X and Y coordinates of the dropbox
+							}
+						},
+            
+						{
+							"Type": "Donate",
+							"Text": "[Jonghyuk.SpecialOrders.LanternFestival_Objective_1_Text]",
+							"RequiredCount": "40",
+							"Data": {
+								"AcceptedContextTags": "item_hardwood",
+                "DropBox": "jhDropbox",
+								"DropBoxGameLocation": "Custom_SBV_JonghyukHouse",
+								"DropBoxIndicatorLocation": "24 10", // X and Y coordinates of the dropbox
+							}
+						},
+						{
+							"Type": "Donate",
+							"Text": "[Jonghyuk.SpecialOrders.LanternFestival_Objective_2_Text]",
+							"RequiredCount": "{{LanternFestivalWAGCandleQuantityToken}}",
+							"Data": {
+								"DropBox": "jhDropbox",
+								"DropBoxGameLocation": "Custom_SBV_JonghyukHouse",
+								"DropBoxIndicatorLocation": "24 10", // X and Y coordinates of the dropbox
+                "AcceptedContextTags": "{{LanternFestivalWAGCandleToken}}"
+							}
+						},
+
+
+					],
+					"Rewards": [ // Can either be friendship, money or mail
+					{
+						"Type": "Mail",
+						"Data": {
+							"MailReceived": "jhLanternFestivalTrigger" // a mail flag you want triggered when this is done
+						}
+					},
+					],
+					"CustomFields": {
+                        "SunberryTeam.SBVSMAPI/InfiniteDuration": "true"
+                    }
+				},
+			},
+		},
+		{
+			"Action": "EditData",
+			"Target": "Strings/SpecialOrderStrings",
+			"Entries": {
+				"Jonghyuk.SpecialOrders.LanternFestival_Name": "{{i18n:Jonghyuk.SpecialOrders.LanternFestival.Name}}",
+				"Jonghyuk.SpecialOrders.LanternFestival_Text": "{{i18n:Jonghyuk.SpecialOrders.LanternFestival.Text}}",
+				"Jonghyuk.SpecialOrders.LanternFestival_Objective_0_Text": "{{i18n:Jonghyuk.SpecialOrders.LanternFestival.Objective0Text}}",
+				"Jonghyuk.SpecialOrders.LanternFestival_Objective_1_Text": "{{i18n:Jonghyuk.SpecialOrders.LanternFestival.Objective1Text}}",
+				"Jonghyuk.SpecialOrders.LanternFestival_Objective_2_Text": "{{i18n:Jonghyuk.SpecialOrders.LanternFestival.Objective2Text{{LanternFestivalWAGToken}}}}",
+
+			}
+		}
+
+  ],
+
+
+
+
+
+  "DynamicTokens": [
+
+    {
+			"Name": "FestivalYear",
+			"Value": "", 
+		},
+		
+		{
+			"Name": "FestivalYear",
+			"Value": "_y2", 
+			"When":
+			{
+				"Query: {{Year}} % 2 = 0": true,
+			}
+		},
+
+    {
+      "Name": "jhNameSterling",
+      "Value": "changeName jhSterling Sterling",
+      "When": {
+        "HasMod |contains= Himetarts.ARV.CP": false
+      }
+    },
+
+    {
+      "Name": "jhNameSterling",
+      "Value": "pause 1",
+      "When": {
+        "HasMod |contains= Himetarts.ARV.CP": true
+      }
+    },
+
+    //Scheduling dynamic tokens
+    //Schedule - Apprenticing under Wren
+    {
+      "Name": "SaloonSch",
+      "Value": "610 Custom_SBV_SerenityInn2ndFloor 6 26 2/700 Saloon 17 18 1/1700 Saloon 33 18 0/1900 Custom_SBV_SerenityInn2ndFloor 6 26 2 &&" //included by default
+    },
+
+    {
+      "Name": "PTSch", //Jodi/Emily
+      "Value": "610 Custom_SBV_SerenityInn2ndFloor 6 26 2/700 SamHouse 2 5 1/1200 HaleyHouse 22 18 3/1400 Custom_SBV_WrenHouse 9 5 3 square_7_3/2300 Custom_SBV_SerenityInn2ndFloor 6 26 2 &&" //included by default
+    },
+    //square_7_7
+    {
+      "Name": "JojaCCSch", //JojaMart/Community Center
+      "Value": "610 Custom_SBV_SerenityInn2ndFloor 6 26 2/700 JojaMart 18 7 2 square_9_3/1300 Custom_SBV_DialaCafe 27 16 1/2300 Custom_SBV_WrenHouse2 6 11 0 WrenSong_zonked &&" //defaults to Jojamart
+    },
+
+    {
+      "Name": "JojaCCSch",
+      "Value": "610 Custom_SBV_SerenityInn2ndFloor 6 26 2/700 CommunityCenter 6 5 1 square_9_3/1200 CommunityCenter 36 9 2 square_9_9/1600 Custom_SBV_WrenHouse 9 6 3 square_7_7/2300 Custom_SBV_SerenityInn2ndFloor 6 26 2 &&", //after CC is complete 
+      "When": {
+        "HasSeenEvent |contains= 191393": true
+      }
+    },
+
+    {
+      "Name": "RobinSch", //included by default
+      "Value": "610 Custom_SBV_SerenityInn2ndFloor 6 26 2/700 ScienceHouse 3 20 0 square_7_3/1500 ScienceHouse 19 20 1 square_7_5/1800 Custom_SBV_SerenityInn2ndFloor 6 26 2 &&" //included by default
+    },
+    {
+      "Name": "MarnieSch", //included by default
+      "Value": "610 Custom_SBV_SerenityInn2ndFloor 6 26 2/700 AnimalShop 30 16 2 square_5_5/1600 Custom_SBV_WrenHouse 9 4 3 square_7_5/2300 Custom_SBV_SerenityInn2ndFloor 6 26 2 &&" //included by default
+    },
+    //Sunberry stops
+    {
+      "Name": "CatCafeSch",
+      "Value": "610 Custom_SBV_SerenityInn2ndFloor 6 26 2/800 Custom_SBV_DialaCafe 20 11 2 square_9_9/1200 Custom_SBV_DDHouse 20 17 2 square_5_1/1600 Custom_SBV_DialaCafe 27 16 1/2200 Custom_SBV_SerenityInn2ndFloor 6 26 2 &&" //included by default
+    },
+    {
+      "Name": "MarketSch",
+      "Value": "610 Custom_SBV_SerenityInn2ndFloor 6 26 2/800 Custom_SBV_AriMarket 8 23 1 square_9_9/1300 Custom_SBV_MiyoungHouse 5 9 0 square_7_7/1700 Custom_SBV_WrenHouse 9 6 3 square_7_7/2300 Custom_SBV_SerenityInn2ndFloor 6 26 2 &&" //included by default
+    },
+
+    {
+      "Name": "SmithySch",
+      "Value": "610 Custom_SBV_SerenityInn2ndFloor 6 26 2/800 Custom_SBV_SunberryMountain 16 26 2 square_9_9/1700 Custom_SBV_WrenHouse 9 6 3 square_7_7/2300 Custom_SBV_SerenityInn2ndFloor 6 26 2 &&" //included by default
+    },
+
+    //All together now! For Spanner!
+
+    {
+      "Name": "Pool",
+      "Value": "{{SaloonSch}}{{PTSch}}{{JojaCCSch}}{{RobinSch}}{{MarnieSch}}{{CatCafeSch}}{{MarketSch}}{{SmithySch}}", //base schedules only for Spanner shadowing
+      "When": { "DayOfWeek |contains= Monday, Wednesday": true }
+    },
+
+    {
+      "Name": "JonghyukSaturday",
+      "Value": "{{Random: 1630 Custom_SBV_SunberryVillage 61 79 2 jh_cook \"Strings\\schedules\\Jonghyuk:grill.000\", 1630 Custom_SBV_SunberryVillage 64 83 3|key= DaoJonghyukSaturdayHangout}}"
+    },
+
+    {
+      "Name": "JonghyukSaturdayFallWinter",
+      "Value": "{{Random: 1630 Custom_SBV_SunberryVillage 61 79 2 jh_cook, 1630 Custom_SBV_SunberryVillage 64 83 3|key= DaoJonghyukSaturdayHangout}}"
+    },
+
+    {
+      "Name": "JonghyukSaturday",
+      "Value": "{{Random: 1630 Custom_SBV_SunberryVillage 64 83 3, 1630 Custom_SBV_SunberryVillage 61 79 2 jh_cook \"Strings\\schedules\\Jonghyuk:grill.000\", 1630 Custom_SBV_SunberryVillage 64 83 3|key= DaoJonghyukSaturdayHangout}}",
+      "When": {
+        "HasMod |contains= Airyn.Dao.CP": true
+      }
+    },
+
+    {
+      "Name": "jhPrismStars",
+      "Value": "specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope/specificTemporarySprite maruTelescope"
+    },
+
+        // {{jhSterlingSpawn}}
+
+        {
+          "Name": "jhSterlingSpawn",
+          "Value": "addTemporaryActor jhSterling 16 32 -999 -999 2 false character/warp jhSterling 63 88 true"
+        },
+    
+        {
+          "Name": "jhSterlingSpawn",
+          "Value": "pause 1",
+          "When": {
+            "HasMod": "Himetarts.ARV.CP"
+          }
+        },
+
+        // {{jhSterlingHangout}}
+        
+    {
+      "Name": "jhSterlingHangout",
+      "Value": "jhSterling"
+    },
+
+    {
+      "Name": "jhSterlingHangout",
+      "Value": "Sterling?",
+      "When": {
+        "HasMod": "Himetarts.ARV.CP"
+      }
+    },
+
+
+    {
+      "Name": "jhTrueName",
+      "Value": "{{i18n:Name.Spanner}}",
+   },
+
+  {
+    "Name": "jhTrueName",
+    "Value": "{{i18n:Name.jhRay}}",
+    "When": {
+      "HasFlag": "jhTrueName" // Spanner 8H
+    }
+},
+
+    // Randomized Dialogue Token Test
+
+    {
+      "Name": "SpannerDialogueToken",
+      "Value": "0"
+  },
+  {
+      "Name": "SpannerDialogueToken",
+      "Value": "{{Random: 0, 2}}",
+      "When":
+      {
+          "Hearts:Spanner": "{{Range: 2, 3}}"
+      }
+  },
+  {
+      "Name": "SpannerDialogueToken",
+      "Value": "{{Random: 0, 2, 4}}",
+      "When":
+      {
+          "Hearts:Spanner": "{{Range: 4, 5}}"
+      }
+  },
+  {
+      "Name": "SpannerDialogueToken",
+      "Value": "{{Random: 0, 2, 4, 6}}",
+      "When":
+      {
+          "Hearts:Spanner": "{{Range: 6, 7}}"
+      }
+  },
+  {
+      "Name": "SpannerDialogueToken",
+      "Value": "{{Random: 0, 2, 4, 6, 8}}",
+      "When":
+      {
+          "Hearts:Spanner": "{{Range: 8, 10}}"
+      }
+  },
+  {
+      "Name": "SpannerSeasonalDialogueToken",
+      "Value": "{{Random:Dialogue.{{Season}},Dialogue.{{DayOfWeek}},Dialogue.{{DayOfWeek}}}}"
+  },
+
+  // Lantern Festival WAG compatibility
+  {
+    "Name": "LanternFestivalWAGToken",
+    "Value": ""
+  },
+  {
+      "Name": "LanternFestivalWAGToken",
+      "Value": ".WAG",
+      "When":
+      {
+          "HasMod": "Atelier.Cauldron",
+          "Atelier.Cauldron/ConfigValue:Candles": true
+      }
+  },
+  {
+    "Name": "LanternFestivalWAGCandleToken",
+    "Value": "item_torch"
+  },
+  {
+      "Name": "LanternFestivalWAGCandleToken",
+      "Value": "wildflour_candle_item",
+      "When":
+      {
+          "LanternFestivalWAGToken": ".WAG"
+      }
+  },
+  {
+    "Name": "LanternFestivalWAGCandleQuantityToken",
+    "Value": "60"
+  },
+  {
+      "Name": "LanternFestivalWAGCandleQuantityToken",
+      "Value": "30",
+      "When":
+      {
+          "LanternFestivalWAGToken": ".WAG"
+      }
+  },
+
+
+
+  ]
+
+}

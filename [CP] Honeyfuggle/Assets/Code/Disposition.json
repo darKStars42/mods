@@ -1,0 +1,103 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+                "{{Honeyfuggle}}": {
+                    "DisplayName": "{{i18n:{{ModId}}.DisplayName}}",
+                    "Gender": "Undefined",
+                    "Age": "Adult",
+                    "Manner": "Neutral",
+                    "SocialAnxiety": "Outgoing",
+                    "Optimism": "Neutral",
+                    "BirthSeason": "winter",
+                    "BirthDay": "2",
+                    "HomeRegion": "Other",
+                    "Home": [
+                        {
+                            "ID": "Default",
+                            "Location": "{{ModId}}_Tent",
+                            "Tile": { "X": 1, "Y": 4 },
+                            "Direction": "left"
+                        }
+                     ],
+                    "Appearance": [
+                        //Seasonal
+                        {
+                            "Id": "{{ModId}}_spring",
+                            "Portrait": "Portraits/{{Honeyfuggle}}_spring",
+                            "Sprite": "Characters/{{Honeyfuggle}}_spring",
+                            "Season": "spring",
+                            "Condition": "{{SeasonalOutfits|contains=full}}",
+                            "Precedence": 200,
+                            "Weight": 1
+                        },
+                        {
+                            "Id": "{{ModId}}_summer",
+                            "Portrait": "Portraits/{{Honeyfuggle}}_summer",
+                            "Sprite": "Characters/{{Honeyfuggle}}_summer",
+                            "Season": "summer",
+                            "Condition": "{{SeasonalOutfits|contains=full}}",
+                            "Precedence": 200,
+                            "Weight": 1
+                        },
+                        {
+                            "Id": "{{ModId}}_winter",
+                            "Portrait": "Portraits/{{Honeyfuggle}}_winter",
+                            "Sprite": "Characters/{{Honeyfuggle}}_winter",
+                            "Season": "winter",
+                            "Precedence": 200,
+                            "Weight": 1
+                        },
+
+                        //Festivals
+                        {
+                            "Id": "{{ModId}}_Flower",
+                            "Portrait": "Portraits/{{Honeyfuggle}}_Flower",
+                            "Sprite": "Characters/{{Honeyfuggle}}_Flower",
+                            "Condition": "IS_EVENT festival_spring24, {{SeasonalOutfits|contains=full}}",
+                            "Precendence": 100,
+                            "Weight": 1
+                        },
+                        {
+                            "Id": "{{ModId}}_Jellies",
+                            "Portrait": "Portraits/{{Honeyfuggle}}_Jellies",
+                            "Sprite": "Characters/{{Honeyfuggle}}_Jellies",
+                            "Condition": "IS_EVENT festival_summer28, {{SeasonalOutfits|contains=full}}",
+                            "Precendence": 100,
+                            "Weight": 1
+                        },
+                        {
+                            "Id": "{{ModId}}_Fair",
+                            "Portrait": "Portraits/{{Honeyfuggle}}_Fair",
+                            "Sprite": "Characters/{{Honeyfuggle}}_Fair",
+                            "Condition": "IS_EVENT festival_fall16, {{SeasonalOutfits|contains=full}}",
+                            "Precendence": 100,
+                            "Weight": 1
+                        },
+                        {
+                            "Id": "{{ModId}}_SpiritsEve",
+                            "Portrait": "Portraits/{{Honeyfuggle}}_SpiritsEve",
+                            "Sprite": "Characters/{{Honeyfuggle}}_SpiritsEve",
+                            "Condition": "IS_EVENT festival_fall27, {{SeasonalOutfits|contains=full}}",
+                            "Precendence": 100,
+                            "Weight": 1
+                        }
+                    ],
+                    "CanBeRomanced": false,
+                    "IntroductionsQuest": false,
+                    "Calendar": "HiddenUntilMet",
+                    "SocialTab": "HiddenUntilMet",
+                    "CanVisitIsland": "PLAYER_HAS_SEEN_EVENT Any {{ModId}}_Introduction",
+                    "ItemDeliveryQuests": "PLAYER_HAS_SEEN_EVENT Any {{ModId}}_Introduction",
+                    "PerfectionScore": "{{Perfection}}",
+                    "EndSlideShow": "TrailingGroup",
+                    "DumpsterDiveEmote": 12,
+                    "DumpsterDiveFriendshipEffect": 0
+                }
+            }
+        }
+    ]
+}

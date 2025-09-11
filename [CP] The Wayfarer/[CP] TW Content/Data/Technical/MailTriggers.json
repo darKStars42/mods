@@ -1,0 +1,168 @@
+{
+"Changes": [
+	 {
+"LogName": "Mail",
+"Action": "EditData",
+"Target": "data/mail",
+"Entries": {
+"{{ModID}}_StoneRelic.Mail": "{{i18n:FC.StoneRelic.Mail}} %item quest {{ModID}}_StoneRelic.Quest true %%[#]{{i18n:FC.StoneRelic.Mail.Title}}",
+"{{ModID}}_CoinQuest.Mail": "{{i18n:FC.CoinQuest.Mail}} %item quest {{ModID}}_CoinQuest.Quest true %%[#]{{i18n:FC.CoinQuest.Mail.Title}}",
+"{{ModID}}_LyellCourtShip.Mail": "{{i18n:FC.LyellCourtShip.Mail}}[#]{{i18n:FC.LyellCourtShip.Mail.Title}}",
+"{{ModID}}_ElizabethsRing.Mail": "{{i18n:FC.ElizabethsRing.Mail}} %item id {{ModID}}_ElizabethsRing 1 %%[#]{{i18n:FC.ElizabethsRing.Mail.Title}}",
+"{{ModID}}_Apology.Mail": "{{i18n:FC.Apology.Mail}}[#]{{i18n:FC.Apology.Mail.Title}}",
+"{{ModID}}_Invite.Mail": "{{i18n:FC.Invite.Mail}}[#]{{i18n:FC.Invite.Mail.Title}}",
+"{{ModID}}_RecipeBook.Mail": "{{i18n:FC.RecipeBook.Mail}} %item id {{ModID}}_LyellsRecipeBookLearn 1 %%[#]{{i18n:FC.RecipeBook.Mail.Title}}",
+"{{ModID}}_AuulasBook.Mail": "{{i18n:FC.AuulasBook.Mail}} %item quest {{ModID}}_AuulasBook.Quest true %%[#]{{i18n:FC.AuulasBook.Mail.Title}}",
+}
+},
+{
+"LogName": "Invite Mail",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_AuulasBook.Trigger":{
+"Id": "{{ModID}}_AuulasBook.Trigger",
+"MarkActionApplied": true,
+"Trigger": "DayStarted",
+"Condition": "PLAYER_HAS_SEEN_EVENT Current {{ModID}}_HomeLand,PLAYER_VISITED_LOCATION Current QiNutRoom",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_AuulasBook.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+{
+"LogName": "Invite Mail",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_Invite.Trigger":{
+"Id": "{{ModID}}_Invite.Trigger",
+"MarkActionApplied": true,
+"Trigger": "DayStarted",
+"Condition": "PLAYER_HAS_SEEN_EVENT Current {{ModID}}_RomanticStart,PLAYER_FRIENDSHIP_POINTS Current FC.Lyell 1750",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_Invite.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+{
+"LogName": "Apology Mail",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_Apology.Trigger":{
+"Id": "{{ModID}}_Apology.Trigger",
+"MarkActionApplied": true,
+"Trigger": "DayStarted",
+"Condition": "PLAYER_HAS_SEEN_EVENT Current {{ModID}}_PassedOut",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_Apology.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+ {
+"LogName": "Trigger Action - Gaggle Shroom",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_GaggleShroomEat": {
+"Id": "{{ModID}}_GaggleShroomEat",
+"Trigger": "spacechase0.SpaceCore_OnItemEaten",
+"Action": "spacechase0.SpaceCore_PlayEvent {{ModID}}_GaggleShrooms",
+"MarkActionApplied": false,
+"Condition": "ITEM_ID Input (O){{ModID}}_GaggleShrooms"
+}
+}
+},
+{
+"LogName": "ElizabethsRing Mail",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_ElizabethsRing.Trigger":{
+"Id": "{{ModID}}_ElizabethsRing.Trigger",
+"MarkActionApplied": true,
+"Trigger": "DayStarted",
+"Condition": "PLAYER_FRIENDSHIP_POINTS Current FC.Lyell 1000,SEASON Winter",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_ElizabethsRing.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+{
+"LogName": "Lyell's Intro Mail",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_LyellIntro.Trigger":{
+"Id": "{{ModID}}_LyellIntro.Trigger",
+"MarkActionApplied": true,
+"Trigger": "DayStarted",
+"Condition": "PLAYER_HAS_SEEN_EVENT Current {{ModID}}_LyellIntro",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_LyellIntro.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+ {
+"LogName": "StoneRelic",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_StoneRelic.Trigger":{
+"Id": "{{ModID}}_StoneRelic.Trigger",
+"Trigger": "DayStarted",
+"Condition": "PLAYER_FRIENDSHIP_POINTS Current FC.Lyell 1500,SEASON Winter",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_StoneRelic.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+{
+"LogName": "CoinQuest Mail",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_CoinQuest.Trigger":{
+"Id": "{{ModID}}_CoinQuest.Trigger",
+"MarkActionApplied": true,
+"Trigger": "LocationChanged",
+"Condition": "PLAYER_FRIENDSHIP_POINTS Current FC.Lyell 500",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_CoinQuest.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+{
+"LogName": "RecipeBook Mail",
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_RecipeBook.Trigger":{
+"Id": "{{ModID}}_RecipeBook.Trigger",
+"MarkActionApplied": true,
+"Trigger": "LocationChanged",
+"Condition": "PLAYER_FRIENDSHIP_POINTS Current FC.Lyell 1000",
+"HostOnly": false,
+"Action": "AddMail Current {{ModID}}_RecipeBook.Mail",
+"Actions": null,
+"CustomFields": {}
+}
+}
+},
+]
+}

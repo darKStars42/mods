@@ -1,0 +1,835 @@
+{
+  "Format": "2.7.3",
+  "ConfigSchema": {
+    "Secret Woods Lighting": {
+      "AllowValues": "Enabled, Disabled",
+      "Default": "Enabled",
+      "Description": "Changes the lighting of outdoor areas of The Forgotten Woods to be similar to the Secret Woods (You must exit and re-enter the area for this to take effect)."
+    }
+  },
+  "CustomLocations": [
+    {
+      "Name": "Azathii.ForgottenWoods_ForgottenFarm",
+      "FromMapFile": "assets/ForgottenFarm.tmx"
+    },
+    {
+      "Name": "Azathii.ForgottenWoods_ForgottenPicnic",
+      "FromMapFile": "assets/ForgottenPicnic.tmx"
+    },
+    {
+      "Name": "Azathii.ForgottenWoods_ForgottenFarmhouse",
+      "FromMapFile": "assets/ForgottenFarmhouse.tmx"
+    },
+    {
+      "Name": "Azathii.ForgottenWoods_ForgottenHill",
+      "FromMapFile": "assets/ForgottenHill.tmx"
+    },
+    {
+      "Name": "Azathii.ForgottenWoods_ForgottenCrypt",
+      "FromMapFile": "assets/ForgottenCrypt.tmx"
+    },
+    {
+      "Name": "Azathii.ForgottenWoods_ForgottenPeak",
+      "FromMapFile": "assets/ForgottenPeak.tmx"
+    },
+    {
+      "Name": "Azathii.ForgottenWoods_ForgottenShrine",
+      "FromMapFile": "assets/ForgottenShrine.tmx"
+    },
+    {
+      "Name": "Azathii.ForgottenWoods_ForgottenTreehouse",
+      "FromMapFile": "assets/ForgottenTreehouse.tmx"
+    },
+    {
+      "Name": "Azathii.ForgottenWoods_ForgottenTreehouse2",
+      "FromMapFile": "assets/ForgottenTreehouse2.tmx"
+    },
+    {
+      "Name": "Azathii.ForgottenWoods_ForgottenExit",
+      "FromMapFile": "assets/ForgottenExit.tmx"
+    }
+  ],
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Maps/Azathii_ForgottenWoods, Maps/indoor_daisyextras",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Woods",
+      "FromFile": "assets/ForgottenPathSVE.tmx",
+      "ToArea": {
+        "X": 62,
+        "Y": 45,
+        "Width": 7,
+        "Height": 5
+      },
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenFarm",
+      "MapProperties": {
+        "Warp": "0 17 Woods 65 48 0 18 Woods 65 48 70 44 Azathii.ForgottenWoods_ForgottenHill 1 99 70 45 Azathii.ForgottenWoods_ForgottenHill 1 99 70 46 Azathii.ForgottenWoods_ForgottenHill 1 99"
+      },
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Woods",
+      "FromFile": "assets/ForgottenPathVAN.tmx",
+      "ToArea": {
+        "X": 52,
+        "Y": 23,
+        "Width": 8,
+        "Height": 6
+      },
+      "When": {
+        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "{{ModId}}_ForgottenFarm": {
+          "DisplayName": "Azathii.ForgottenWoods_ForgottenFarm",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ForgottenFarm"
+          },
+          "Music": [
+            {
+              "Track": "woodsTheme",
+              "Looped": true
+            }
+          ],
+          "ArtifactSpots": [
+            {
+              "ID": "ForgottenFarm_Resource",
+              "RandomItemId": [
+                "(O)330",
+                "(O)388",
+                "(O)390",
+                "(O)378"
+              ],
+              "Chance": 0.75,
+              "MinStack": 1,
+              "MaxStack": 3
+            },
+            {
+              "ID": "ForgottenFarm_Artifact",
+              "RandomItemId": [
+                "(O)100",
+                "(O)101",
+                "(O)120"
+              ],
+              "Chance": 0.15
+            },
+            {
+              "ID": "ForgottenFarm_Treasure",
+              "ItemId": "(O)275",
+              "Chance": 0.05
+            }
+          ],
+          "Fish": [
+            {
+              "ID": "ForgottenFarm_Catfish",
+              "ItemId": "(O)143"
+            },
+            {
+              "ID": "ForgottenFarm_Carp",
+              "ItemId": "(O)142"
+            },
+            {
+              "ID": "ForgottenFarm_Woodskip",
+              "ItemId": "(O)734"
+            }
+          ]
+        },
+        "{{ModId}}_ForgottenPicnic": {
+          "DisplayName": "Azathii.ForgottenWoods_ForgottenPicnic",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ForgottenPicnic"
+          },
+          "Music": [
+            {
+              "Track": "woodsTheme",
+              "Looped": true
+            }
+          ]
+        },
+        "{{ModId}}_ForgottenFarmhouse": {
+          "DisplayName": "Azathii.ForgottenWoods_ForgottenFarmhouse",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ForgottenFarmhouse"
+          },
+          "Music": [
+            {
+              "Track": "Lava_Ambient",
+              "Looped": true
+            }
+          ]
+        },
+        "{{ModId}}_ForgottenHill": {
+          "DisplayName": "Azathii.ForgottenWoods_ForgottenHill",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ForgottenHill"
+          },
+          "Music": [
+            {
+              "Track": "woodsTheme",
+              "Looped": true
+            }
+          ],
+          "ArtifactSpots": [
+            {
+              "ID": "ForgottenHill_Resource",
+              "RandomItemId": [
+                "(O)330",
+                "(O)388",
+                "(O)390",
+                "(O)378"
+              ],
+              "Chance": 0.75,
+              "MinStack": 1,
+              "MaxStack": 3
+            },
+            {
+              "ID": "ForgottenHill_Artifact",
+              "RandomItemId": [
+                "(O)580",
+                "(O)581",
+                "(O)582"
+              ],
+              "Chance": 0.35
+            },
+            {
+              "ID": "ForgottenHill_Treasure",
+              "ItemId": "(O)275",
+              "Chance": 0.1
+            }
+          ],
+          "Fish": [
+            {
+              "ID": "ForgottenHill_Catfish",
+              "ItemId": "(O)143"
+            },
+            {
+              "ID": "ForgottenHill_Carp",
+              "ItemId": "(O)142"
+            },
+            {
+              "ID": "ForgottenHill_Woodskip",
+              "ItemId": "(O)734"
+            }
+          ]
+        },
+        "{{ModId}}_ForgottenCrypt": {
+          "DisplayName": "Azathii.ForgottenWoods_ForgottenCrypt",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ForgottenCrypt"
+          },
+          "Music": [
+            {
+              "Track": "spirits_eve",
+              "Looped": true
+            }
+          ]
+        },
+        "{{ModId}}_ForgottenPeak": {
+          "DisplayName": "Azathii.ForgottenWoods_ForgottenPeak",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ForgottenPeak"
+          },
+          "Music": [
+            {
+              "Track": "kindadumbautumn",
+              "Looped": true
+            }
+          ],
+          "ArtifactSpots": [
+            {
+              "ID": "ForgottenPeak_Resource",
+              "RandomItemId": [
+                "(O)330",
+                "(O)388",
+                "(O)390",
+                "(O)378"
+              ],
+              "Chance": 0.75,
+              "MinStack": 1,
+              "MaxStack": 3
+            },
+            {
+              "ID": "ForgottenPeak_Artifact",
+              "RandomItemId": [
+                "(O)580",
+                "(O)581",
+                "(O)582"
+              ],
+              "Chance": 0.35
+            },
+            {
+              "ID": "ForgottenPeak_Treasure",
+              "ItemId": "(O)275",
+              "Chance": 0.1
+            }
+          ],
+          "Fish": [
+            {
+              "ID": "ForgottenPeak_Catfish",
+              "ItemId": "(O)143"
+            },
+            {
+              "ID": "ForgottenPeak_Carp",
+              "ItemId": "(O)142"
+            },
+            {
+              "ID": "ForgottenPeak_Woodskip",
+              "ItemId": "(O)734"
+            }
+          ]
+        },
+        "{{ModId}}_ForgottenShrine": {
+          "DisplayName": "Azathii.ForgottenWoods_ForgottenShrine",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ForgottenShrine"
+          },
+          "Music": [
+            {
+              "Track": "night_market",
+              "Looped": true
+            }
+          ]
+        },
+        "{{ModId}}_ForgottenExit": {
+          "DisplayName": "Azathii.ForgottenWoods_ForgottenExit",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ForgottenExit"
+          },
+          "Music": [
+            {
+              "Track": "night_market",
+              "Looped": true
+            }
+          ]
+        },
+        "{{ModId}}_ForgottenTreehouse": {
+          "DisplayName": "Azathii.ForgottenWoods_ForgottenTreehouse",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ForgottenTreehouse"
+          },
+          "Music": [
+            {
+              "Track": "sad_kid",
+              "Looped": true
+            }
+          ]
+        },
+        "{{ModId}}_ForgottenTreehouse2": {
+          "DisplayName": "Azathii.ForgottenWoods_ForgottenTreehouse2",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModId}}_ForgottenTreehouse2"
+          },
+          "Music": [
+            {
+              "Track": "sad_kid",
+              "Looped": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Strings/StringsFromMaps",
+      "Entries": {
+        "msg.farm0": "{{i18n:msg.farm0}}",
+        "msg.farm1": "{{i18n:msg.farm1}}",
+        "msg.farm2": "{{i18n:msg.farm2}}",
+        "msg.farm3": "{{i18n:msg.farm3}}",
+        "msg.picnic0": "{{i18n:msg.picnic0}}",
+        "msg.picnic1": "{{i18n:msg.picnic1}}",
+        "msg.picnic2": "{{i18n:msg.picnic2}}",
+        "msg.picnic3": "{{i18n:msg.picnic3}}",
+        "msg.picnic6": "{{i18n:msg.picnic6}}",
+        "msg.farmhouse0": "{{i18n:msg.farmhouse0}}",
+        "msg.farmhouse1": "{{i18n:msg.farmhouse1}}",
+        "msg.farmhouse2": "{{i18n:msg.farmhouse2}}",
+        "msg.farmhouse3": "{{i18n:msg.farmhouse3}}",
+        "msg.farmhouse4": "{{i18n:msg.farmhouse4}}",
+        "msg.farmhouse6": "{{i18n:msg.farmhouse6}}",
+        "msg.hill0": "{{i18n:msg.hill0}}",
+        "msg.hill1": "{{i18n:msg.hill1}}",
+        "msg.hill2": "{{i18n:msg.hill2}}",
+        "msg.hill3": "{{i18n:msg.hill3}}",
+        "msg.hill4": "{{i18n:msg.hill4}}",
+        "msg.hill5": "{{i18n:msg.hill5}}",
+        "msg.hill6": "{{i18n:msg.hill6}}",
+        "msg.hill7": "{{i18n:msg.hill7}}",
+        "msg.hill8": "{{i18n:msg.hill8}}",
+        "msg.hill9": "{{i18n:msg.hill9}}",
+        "msg.hill10": "{{i18n:msg.hill10}}",
+        "msg.hill11": "{{i18n:msg.hill11}}",
+        "msg.hill12": "{{i18n:msg.hill12}}",
+        "msg.hill13": "{{i18n:msg.hill13}}",
+        "msg.hill14": "{{i18n:msg.hill14}}",
+        "msg.hill15": "{{i18n:msg.hill15}}",
+        "msg.hill16": "{{i18n:msg.hill16}}",
+        "msg.hill17": "{{i18n:msg.hill17}}",
+        "msg.hill18": "{{i18n:msg.hill18}}",
+        "msg.hill19": "{{i18n:msg.hill19}}",
+        "msg.hill20": "{{i18n:msg.hill20}}",
+        "msg.hill21": "{{i18n:msg.hill21}}",
+        "msg.hill22": "{{i18n:msg.hill22}}",
+        "msg.hill23": "{{i18n:msg.hill23}}",
+        "msg.hill24": "{{i18n:msg.hill24}}",
+        "msg.hill25": "{{i18n:msg.hill25}}",
+        "msg.crypt0": "{{i18n:msg.crypt0}}",
+        "msg.shrine0": "{{i18n:msg.shrine0}}",
+        "msg.shrine1": "{{i18n:msg.shrine1}}",
+        "msg.treehouse0": "{{i18n:msg.treehouse0}}",
+        "msg.treehouse1": "{{i18n:msg.treehouse1}}",
+        "msg.treehouse2": "{{i18n:msg.treehouse2}}",
+        "msg.treehouse3": "{{i18n:msg.treehouse3}}",
+        "msg.exit0": "{{i18n:msg.exit0}}",
+        "msg.DMT0": "{{i18n:msg.DMT0}}",
+        "msg.DMT1": "{{i18n:msg.DMT1}}",
+        "msg.DMT2": "{{i18n:msg.DMT2}}",
+        "msg.DMT3": "{{i18n:msg.DMT3}}",
+        "msg.DMT4": "{{i18n:msg.DMT4}}",
+        "msg.DMT5": "{{i18n:msg.DMT5}}",
+        "msg.DMT6": "{{i18n:msg.DMT6}}",
+        "msg.DMT7": "{{i18n:msg.DMT7}}",
+        "msg.DMT8": "{{i18n:msg.DMT8}}",
+        "msg.DMT9": "{{i18n:msg.DMT9}}",
+        "msg.DMT10": "{{i18n:msg.DMT10}}"
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenFarm",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 55,
+            "Y": 21
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/give_Once_Action": "797",
+            "DMT/message_Once_Action": "{{i18n:msg.DMT0}}",
+            "DMT/sound_Once_Action": "secret1",
+            "DMT/buff_Once_Action": "13",
+            "DMT/mail_Once_Action": "Azathii.ForgottenWoods/FarmTreasure"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag|contains=Azathii.ForgottenWoods/FarmTreasure": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenFarm",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 55,
+            "Y": 21
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/message_Once_Action": "{{i18n:msg.DMT6}}"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag|contains=Azathii.ForgottenWoods/FarmTreasure": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenPicnic",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 7
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/give_Once_Action": "801",
+            "DMT/message_Once_Action": "{{i18n:msg.DMT1}}",
+            "DMT/music_Once_Action": "desolate",
+            "DMT/emote_Once_Action": "28",
+            "DMT/mail_Once_Action": "Azathii.ForgottenWoods/PicnicTreasure"
+          }
+        },
+        {
+          "Position": {
+            "X": 11,
+            "Y": 16
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/emote_Once_On": "16"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag|contains=Azathii.ForgottenWoods/PicnicTreasure": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenPicnic",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 10,
+            "Y": 7
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/message_Once_Action": "{{i18n:msg.DMT7}}"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag|contains=Azathii.ForgottenWoods/PicnicTreasure": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenHill",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 42,
+            "Y": 53
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/give_Once_Action": "(W)49",
+            "DMT/message_Once_Action": "{{i18n:msg.DMT2}}",
+            "DMT/sound_Once_Action": "secret1",
+            "DMT/buff_Once_Action": "20",
+            "DMT/mail_Once_Action": "Azathii.ForgottenWoods/HillTreasure"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag|contains=Azathii.ForgottenWoods/HillTreasure": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenHill",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 42,
+            "Y": 53
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/message_Once_Action": "{{i18n:msg.DMT8}}"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag|contains=Azathii.ForgottenWoods/HillTreasure": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenHill",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 42,
+            "Y": 103
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/message_Action": "{{i18n:msg.hill1}}",
+            "DMT/give_Action": "(O)CarrotSeeds,1",
+            "DMT/sound_Action": "getNewSpecialItem"
+          }
+        },
+        {
+          "Position": {
+            "X": 13,
+            "Y": 63
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/message_Action": "{{i18n:msg.hill2}}",
+            "DMT/give_Action": "(O)SummerSquashSeeds,1",
+            "DMT/sound_Action": "getNewSpecialItem"
+          }
+        },
+        {
+          "Position": {
+            "X": 22,
+            "Y": 44
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/message_Action": "{{i18n:msg.hill3}}",
+            "DMT/give_Action": "(O)BroccoliSeeds,1",
+            "DMT/sound_Action": "getNewSpecialItem"
+          }
+        },
+        {
+          "Position": {
+            "X": 81,
+            "Y": 27
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/message_Action": "{{i18n:msg.hill4}}",
+            "DMT/give_Action": "(O)PowdermelonSeeds,1",
+            "DMT/buff_Action": "19",
+            "DMT/sound_Action": "coldSpell"
+          }
+        },
+        {
+          "Position": {
+            "X": 54,
+            "Y": 47
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/music_On": "woodsTheme"
+          }
+        },
+        {
+          "Position": {
+            "X": 54,
+            "Y": 48
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/music_On": "woodsTheme"
+          }
+        },
+        {
+          "Position": {
+            "X": 75,
+            "Y": 63
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/music_On": "woodsTheme"
+          }
+        },
+        {
+          "Position": {
+            "X": 67,
+            "Y": 40
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/music_On": "woodsTheme"
+          }
+        },
+        {
+          "Position": {
+            "X": 55,
+            "Y": 47
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/music_On": "spirits_eve"
+          }
+        },
+        {
+          "Position": {
+            "X": 55,
+            "Y": 48
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/music_On": "spirits_eve"
+          }
+        },
+        {
+          "Position": {
+            "X": 75,
+            "Y": 62
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/music_On": "spirits_eve"
+          }
+        },
+        {
+          "Position": {
+            "X": 67,
+            "Y": 41
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/music_On": "spirits_eve"
+          }
+        },
+        {
+          "Position": {
+            "X": 75,
+            "Y": 44
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/music_On": "spirits_eve"
+          }
+        },
+        {
+          "Position": {
+            "X": 75,
+            "Y": 45
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/music_On": "spirits_eve"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenPeak",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 12,
+            "Y": 13
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/give_Once_Action": "872,10",
+            "DMT/message_Once_Action": "{{i18n:msg.DMT3}}",
+            "DMT/sound_Once_Action": "secret1",
+            "DMT/mail_Once_Action": "Azathii.ForgottenWoods/PeakTreasure"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag|contains=Azathii.ForgottenWoods/PeakTreasure": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenPeak",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 12,
+            "Y": 13
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/message_Action": "{{i18n:msg.DMT9}}"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag|contains=Azathii.ForgottenWoods/PeakTreasure": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenShrine",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 26,
+            "Y": 23
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/give_Once_Action": "(BC)117",
+            "DMT/message_Once_Action": "{{i18n:msg.DMT4}}",
+            "DMT/sound_Once_Action": "secret1",
+            "DMT/mail_Once_Action": "Azathii.ForgottenWoods/ShrineTreasure"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag|contains=Azathii.ForgottenWoods/ShrineTreasure": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenShrine",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 26,
+            "Y": 23
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/message_Action": "{{i18n:msg.DMT10}}"
+          }
+        }
+      ],
+      "When": {
+        "HasFlag|contains=Azathii.ForgottenWoods/ShrineTreasure": true
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenTreehouse",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 8,
+            "Y": 9
+          },
+          "Layer": "Back",
+          "SetProperties": {
+            "DMT/health_Action": "175",
+            "DMT/stamina_Action": "588",
+            "DMT/message_Action": "{{i18n:msg.DMT5}}",
+            "DMT/sound_Action": "healSound",
+            "DMT/emote": "20"
+          }
+        }
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenFarm, Maps/{{ModId}}_ForgottenPicnic, Maps/{{ModId}}_ForgottenHill, Maps/{{ModId}}_ForgottenShrine, Maps/{{ModId}}_ForgottenExit",
+      "MapProperties": {
+        "mushymato.MMAP_WoodsLighting": "T T false"
+      },
+      "When": {
+        "Secret Woods Lighting": "Enabled"
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/{{ModId}}_ForgottenPicnic, Maps/{{ModId}}_ForgottenPeak",
+      "MapProperties": {
+        "mushymato.MMAP_LightRays": "T"
+      }
+    }
+  ]
+}

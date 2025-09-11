@@ -1,0 +1,470 @@
+{
+   "Changes": [
+		{
+			"LogName": "Add gift dialogue to gift tastes for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 0],
+					"Value": "{{i18n:ElliottChild.GiftTastes.Love {{FirstbornTokenPass}} }}", //Loved gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 2],
+					"Value": "{{i18n:ElliottChild.GiftTastes.Like {{FirstbornTokenPass}} }}", //Liked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 8],
+					"Value": "{{i18n:ElliottChild.GiftTastes.Neutral {{FirstbornTokenPass}} }}", //Neutral gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 4],
+					"Value": "{{i18n:ElliottChild.GiftTastes.Dislike {{FirstbornTokenPass}} }}", //Disliked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 6],
+					"Value": "{{i18n:ElliottChild.GiftTastes.Hate {{FirstbornTokenPass}} }}", //Hated gift
+					"Delimiter": "",
+				},
+			],
+		},
+		
+		{
+			"LogName": "Fill firstborn's empty schedule dialogue with that of Elliott's son.",
+			"Action": "EditData",
+			"Target": "Strings/schedules/{{FirstbornName}}",
+			"Entries": {
+				"Mon.000": "{{i18n:ElliottChild.Schedule.Mon.000 {{FirstbornTokenPass}} }}",
+				"Sat.000": "{{i18n:ElliottChild.Schedule.Sat.000 {{FirstbornTokenPass}} }}",
+				"SquidFest.000": "{{i18n:ElliottChild.Schedule.SquidFest.000 {{FirstbornTokenPass}} }}",
+				"TroutDerby.000": "{{i18n:ElliottChild.Schedule.TroutDerby.000 {{FirstbornTokenPass}} }}",
+				"DesertFestival.000": "{{i18n:ElliottChild.Schedule.DesertFestival.000 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.000": "{{i18n:ElliottChild.Schedule.Schoolhouse.000 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.001": "{{i18n:ElliottChild.Schedule.Schoolhouse.001 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.002": "{{i18n:ElliottChild.Schedule.Schoolhouse.002 {{FirstbornTokenPass}} }}",
+			},
+		},
+		{
+			"LogName": "Fill firstborn's empty dialogue with that of Elliott's son.",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{FirstbornName}}",
+			"Entries": {
+				"AcceptBirthdayGift_Positive": "{{i18n:ElliottChild.Dialogue.BirthdayGift_Positive {{FirstbornTokenPass}} }}",
+				"AcceptBirthdayGift_Negative": "{{i18n:ElliottChild.Dialogue.BirthdayGift_Negative {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)StardropTea": "{{i18n:ElliottChild.Dialogue.Gift_StardropTea {{FirstbornTokenPass}} }}",
+				"AcceptGift_fish_crab_pot": "{{i18n:ElliottChild.Dialogue.Gift_fish_crab_pot {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)717": "{{i18n:ElliottChild.Dialogue.Gift_Crab {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)710": "{{i18n:ElliottChild.Dialogue.Gift_CrabPot {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)Book_Crabbing": "{{i18n:ElliottChild.Dialogue.Gift_Book_Crabbing {{FirstbornTokenPass}} }}",
+				"AcceptGift_category_fish": "{{i18n:ElliottChild.Dialogue.Gift_category_fish {{FirstbornTokenPass}} }}",
+				"AcceptGift_coffee_item": "{{i18n:ElliottChild.Dialogue.Gift_coffee_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)197": "{{i18n:ElliottChild.Dialogue.Gift_cheese_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)206": "{{i18n:ElliottChild.Dialogue.Gift_cheese_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)215": "{{i18n:ElliottChild.Dialogue.Gift_cheese_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)424": "{{i18n:ElliottChild.Dialogue.Gift_cheese_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)426": "{{i18n:ElliottChild.Dialogue.Gift_cheese_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_cheese_item": "{{i18n:ElliottChild.Dialogue.Gift_cheese_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_alcohol_item": "{{i18n:ElliottChild.Dialogue.Gift_alcohol_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)248": "{{i18n:ElliottChild.Dialogue.Gift_garlic_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)649": "{{i18n:ElliottChild.Dialogue.Gift_garlic_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)772": "{{i18n:ElliottChild.Dialogue.Gift_garlic_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)729": "{{i18n:ElliottChild.Dialogue.Gift_garlic_item {{FirstbornTokenPass}} }}",
+				"Resort_Entering": "{{i18n:ElliottChild.Dialogue.Resort_Entering {{FirstbornTokenPass}} }}",
+				"Resort_Leaving": "{{i18n:ElliottChild.Dialogue.Resort_Leaving {{FirstbornTokenPass}} }}",
+				"Resort": "{{i18n:ElliottChild.Dialogue.Resort {{FirstbornTokenPass}} }}",
+				"GreenRain": "{{i18n:ElliottChild.Dialogue.GreenRain {{FirstbornTokenPass}} }}",
+				"Mon": "{{i18n:ElliottChild.Dialogue.Mon {{FirstbornTokenPass}} }}",
+				"Tue": "{{i18n:ElliottChild.Dialogue.Tue {{FirstbornTokenPass}} }}",
+				"Wed": "{{i18n:ElliottChild.Dialogue.Wed_plural_{{CoPlu1}} {{FirstbornTokenPass}} }}",
+				"Thu": "{{i18n:ElliottChild.Dialogue.Thu {{FirstbornTokenPass}} }}",
+				"Fri": "{{i18n:ElliottChild.Dialogue.Fri {{FirstbornTokenPass}} }}",
+				"Sat": "{{i18n:ElliottChild.Dialogue.Sat {{FirstbornTokenPass}} }}",
+				"Sun": "{{i18n:ElliottChild.Dialogue.Sun {{FirstbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:ElliottChild.Dialogue.summer_Mon {{FirstbornTokenPass}} }}",
+				"summer_Tue": "{{i18n:ElliottChild.Dialogue.summer_Tue {{FirstbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:ElliottChild.Dialogue.summer_Wed {{FirstbornTokenPass}} }}",
+				"summer_Thu": "{{i18n:ElliottChild.Dialogue.summer_Thu {{FirstbornTokenPass}} }}",
+				"summer_Fri": "{{i18n:ElliottChild.Dialogue.summer_Fri {{FirstbornTokenPass}} }}",
+				"summer_Sat": "{{i18n:ElliottChild.Dialogue.summer_Sat {{FirstbornTokenPass}} }}",
+				"summer_Sun": "{{i18n:ElliottChild.Dialogue.summer_Sun {{FirstbornTokenPass}} }}",
+				"fall_Mon": "{{i18n:ElliottChild.Dialogue.fall_Mon {{FirstbornTokenPass}} }}",
+				"fall_Tue": "{{i18n:ElliottChild.Dialogue.fall_Tue {{FirstbornTokenPass}} }}",
+				"fall_Wed": "{{i18n:ElliottChild.Dialogue.fall_Wed {{FirstbornTokenPass}} }}",
+				"fall_Thu": "{{i18n:ElliottChild.Dialogue.fall_Thu {{FirstbornTokenPass}} }}",
+				"fall_Fri": "{{i18n:ElliottChild.Dialogue.fall_Fri {{FirstbornTokenPass}} }}",
+				"fall_Sat": "{{i18n:ElliottChild.Dialogue.fall_Sat {{FirstbornTokenPass}} }}",
+				"fall_Sun": "{{i18n:ElliottChild.Dialogue.fall_Sun {{FirstbornTokenPass}} }}",
+				"winter_Mon": "{{i18n:ElliottChild.Dialogue.winter_Mon {{FirstbornTokenPass}} }}",
+				"winter_Tue": "{{i18n:ElliottChild.Dialogue.winter_Tue {{FirstbornTokenPass}} }}",
+				"winter_Wed": "{{i18n:ElliottChild.Dialogue.winter_Wed {{FirstbornTokenPass}} }}",
+				"winter_Thu": "{{i18n:ElliottChild.Dialogue.winter_Thu {{FirstbornTokenPass}} }}",
+				"winter_Fri": "{{i18n:ElliottChild.Dialogue.winter_Fri {{FirstbornTokenPass}} }}",
+				"winter_Sat": "{{i18n:ElliottChild.Dialogue.winter_Sat {{FirstbornTokenPass}} }}",
+				"winter_Sun": "{{i18n:ElliottChild.Dialogue.winter_Sun {{FirstbornTokenPass}} }}",
+			}
+		},
+		{
+            "LogName": "Add rain dialogue for Elliott's son as firstborn.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/rainy",
+            "Entries": {
+				"{{FirstbornName}}": "{{i18n:ElliottChild.Dialogue.Rain {{FirstbornTokenPass}} }}",
+			}
+		},
+		
+        {
+			"LogName": "Add Egg Festival dialogue for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring13",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:ElliottChild.Festivals.spring13_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.spring13_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Flower Dance dialogue for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:ElliottChild.Festivals.spring24_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.spring24_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Luau dialogue for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer11",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:ElliottChild.Festivals.summer11_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.summer11_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Moonlight Jellies dialogue for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer28",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:ElliottChild.Festivals.summer28_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.summer28_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Fair dialogue for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:ElliottChild.Festivals.fall16_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.fall16_y2_plural_{{CoPlu1}} {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Spirit's Eve dialogue for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:ElliottChild.Festivals.fall27_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.fall27_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Festival of Ice dialogue for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:ElliottChild.Festivals.winter8_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.winter8_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Winter Star dialogue for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:ElliottChild.Festivals.winter25_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.winter25_y2_plural_{{CoPlu1}} {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+		{
+			"LogName": "Add dialogue for attending movies with other parent for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_3", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.With_Parent_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": {
+					"ResponsePoint": null,
+					"Script": "/message \"{{i18n:GeneralChildren.Movie.With_Parent_Script {{FirstbornTokenPass}} }}\"",
+					"Text": null
+				},
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.With_Parent_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for spring_movie_0 for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_4", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.spring_0_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.spring_0_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for loved movies for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_5", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.love_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.love_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for liked movies for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_6", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.like_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.like_After {{FirstbornTokenPass}} }}"
+				}
+			},
+			"When": {
+				"FirstbornDialogue|contains=Canonical": true,
+			},
+		},
+		
+		{
+			"LogName": "Add dialogue for disliked movies for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_7", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.dislike_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.dislike_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Edit Little Red School House map string for Growing Valley; Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "Strings/StringsFromMaps",
+            "Entries": {
+				"Desk.18": "{{i18n:Schoolhouse.Desk18.ElliottChild {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+			},
+		},
+		
+		//Conditional dialogue (schedules)
+		{
+            "LogName": "Edit schedule dialogue for Elliott's son as firstborn to use genericized versions.",
+            "Action": "EditData",
+            "Target": "Strings/schedules/{{FirstbornName}}",
+            "Entries": {
+				"Mon.000": "{{i18n:ElliottChild.Schedule.Mon.000.noncanon {{FirstbornTokenPass}} }}",
+				"Sat.000": "{{i18n:ElliottChild.Schedule.Sat.000.noncanon {{FirstbornTokenPass}} }}",
+				"DesertFestival.000": "{{i18n:ElliottChild.Schedule.DesertFestival.000.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		
+		
+		//Conditional dialogue (regular)
+		{
+            "LogName": "Edit dialogue for Elliott's son as firstborn to use genericized versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"AcceptGift_category_fish": "{{i18n:ElliottChild.Dialogue.Gift_category_fish.noncanon {{FirstbornTokenPass}} }}",
+				"Mon": "{{i18n:ElliottChild.Dialogue.Mon.noncanon {{FirstbornTokenPass}} }}",
+				"Wed": "{{i18n:ElliottChild.Dialogue.Wed.noncanon {{FirstbornTokenPass}} }}",
+				"Sat": "{{i18n:ElliottChild.Dialogue.Sat.noncanon {{FirstbornTokenPass}} }}",
+				"Sun": "{{i18n:ElliottChild.Dialogue.Sun.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:ElliottChild.Dialogue.summer_Mon.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Tue": "{{i18n:ElliottChild.Dialogue.summer_Tue.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:ElliottChild.Dialogue.summer_Wed.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Thu": "{{i18n:ElliottChild.Dialogue.summer_Thu.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Sat": "{{i18n:ElliottChild.Dialogue.summer_Sat.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Mon": "{{i18n:ElliottChild.Dialogue.fall_Mon.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Tue": "{{i18n:ElliottChild.Dialogue.fall_Tue.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Thu": "{{i18n:ElliottChild.Dialogue.fall_Thu.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Sat": "{{i18n:ElliottChild.Dialogue.fall_Sat.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Sun": "{{i18n:ElliottChild.Dialogue.fall_Sun.noncanon {{FirstbornTokenPass}} }}",
+				"winter_Mon": "{{i18n:ElliottChild.Dialogue.winter_Mon.noncanon {{FirstbornTokenPass}} }}",
+				"winter_Fri": "{{i18n:ElliottChild.Dialogue.winter_Fri.noncanon {{FirstbornTokenPass}} }}",
+				"winter_Sat": "{{i18n:ElliottChild.Dialogue.winter_Sat.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		{
+            "LogName": "Edit rain dialogue for Elliott's son as firstborn to use genericized version.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/rainy",
+            "Entries": {
+				"{{FirstbornName}}": "{{i18n:ElliottChild.Dialogue.Rain.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		{
+            "LogName": "Edit dialogue for Elliott's son as firstborn to use single parenting versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"winter_Wed": "{{i18n:ElliottChild.Dialogue.winter_Wed.single {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Single": true,
+			},
+		},
+		
+		//Conditional dialogue (festivals)
+        {
+			"LogName": "Edit Flower Dance dialogue for Elliott's son as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.spring24_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Fair dialogue for Elliott's son as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.fall16_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Spirit's Eve dialogue for Elliott's son as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.fall27_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Winter Star dialogue for Elliott's son as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{FirstbornName}}_y2": "{{i18n:ElliottChild.Festivals.winter25_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		
+		//Conditional dialogue (movies)
+		{
+			"LogName": "Add dialogue for liked movies for Elliott's son as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_6", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.like_Before.single {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:ElliottChild.Movie.like_After {{FirstbornTokenPass}} }}"
+				}
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		
+   		{      
+			"LogName": "Include dialogue files which have been modified for translation for Elliott's son as firstborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Elliott/valid_firstborn_Elliott_edit.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+   ]
+}

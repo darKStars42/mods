@@ -1,0 +1,66 @@
+{
+  "Changes": [
+    //Seed item
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Squash_Seeds":{
+          "Name": "Ancient Squash Seeds",
+          "DisplayName": "{{i18n:Ancient_Squash_Seeds.DisplayName}}",
+          "Description": "{{i18n:Ancient_Squash_Seeds.Description}}",
+          "Type": "Seeds",
+          "Category": -74,
+          "Price" : 35,
+          "Texture": "Mods/{{ModId}}/Ancient_Squash_Seeds",
+          "SpriteIndex": 0
+        }
+      }
+    },
+    //Crop
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Squash":{
+          "Name": "{{ModID}}_Ancient_Squash",
+          "DisplayName": "{{i18n:Ancient_Squash.DisplayName}}",
+          "Description": "{{i18n:Ancient_Squash.Description}}",
+          "Type": "Vegetable",
+          "Category": -75,
+          "Price" : 550,
+          "IsDrink": false,
+          "Edibility": 12,
+          "Texture": "Mods/{{ModId}}/Ancient_Squash",
+          "SpriteIndex": 0,
+          "ContextTags": [
+            "season_spring",
+            "season_summer",
+            "season_fall",
+            "color_red"
+          ]
+        }
+      }
+    },
+    //Planted Crop
+    {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "{{ModId}}_Ancient_Squash_Seeds": {
+                    "Seasons": [ "spring", "summer", "fall" ],
+                    "DaysInPhase": [ 2, 7, 7, 7, 5],
+                    "RegrowDays": 7,
+                    "HarvestItemId": "{{ModId}}_Ancient_Squash",
+                    "Texture": "Mods/{{ModId}}/Ancient_Squash_Planted",
+                    "SpriteIndex": 0
+                }
+            }
+        },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Ancient_Squash_Seeds, Mods/{{ModId}}/Ancient_Squash, Mods/{{ModId}}/Ancient_Squash_Planted",
+            "FromFile": "assets/Ancient_Squash/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

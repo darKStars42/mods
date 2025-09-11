@@ -1,0 +1,1083 @@
+{
+   "Changes": [
+   
+        {
+			"LogName": "Trigger action to add mail flag for tracking loaded default firstborn.",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Add_Default_Firstborn": {
+                    "Id": "{{ModId}}_Add_Default_Firstborn",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Host {{ModId}}_Default_Firstborn Received",
+					"MarkActionApplied": false,
+                },
+                "{{ModId}}_Add_GrowingValley_Firstborn_{{FirstbornGender}}": {
+                    "Id": "{{ModId}}_Add_GrowingValley_Firstborn_{{FirstbornGender}}",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current GrowingValley_Firstborn_{{FirstbornGender}} Received",
+					"MarkActionApplied": false,
+                },
+			}
+		},
+   
+		/////////////
+		//PORTRAITS//
+		/////////////
+		{      
+			"LogName": "Load a singular custom file as generic firstborn portraits.",
+			"Action": "Load",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "Custom_Portraits_Sprites/FirstChildPortraits_{{FirstbornGender}}_{{FirstbornSkinTone}}.png",
+			"When": {
+				"FirstbornCustomPortraitsValid": true,
+			},
+		},
+		{      
+			"LogName": "Load a singular custom file as generic firstborn portraits (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "Custom_Portraits_Sprites/FirstChildPortraits_{{FirstbornGender}}_{{FirstbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+				"FirstbornCustomPortraitsValid": true,
+			},
+		},
+		
+		//PORTRAIT BASE LOAD//
+		{      
+			"LogName": "Load generic firstborn base portraits (pale/dark).",
+			"Action": "Load",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/{{FirstbornSkinTone}}/Base.png",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"ChildSkinTone": "Pale_Dark",
+			},
+		},
+		{      
+			"LogName": "Load generic firstborn base portraits (dark/darker, dark).",
+			"Action": "Load",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/dark/Base.png",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		{      
+			"LogName": "Load generic firstborn base portraits (dark/darker, darker).",
+			"Action": "Load",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/darker/Base.png",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		
+		{      
+			"LogName": "Load generic firstborn base portraits (pale/dark) (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/{{FirstbornSkinTone}}/Base.png",
+			"When": {
+				"Language|contains=en": false,
+				"FirstbornCustomPortraitsValid": false,
+				"ChildSkinTone": "Pale_Dark",
+			},
+		},
+		{      
+			"LogName": "Load generic firstborn base portraits (dark/darker, dark) (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/dark/Base.png",
+			"When": {
+				"Language|contains=en": false,
+				"FirstbornCustomPortraitsValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		{      
+			"LogName": "Load generic firstborn base portraits (dark/darker, darker) (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/darker/Base.png",
+			"When": {
+				"Language|contains=en": false,
+				"FirstbornCustomPortraitsValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		
+		//PORTRAIT HAIR SHADING LOAD//
+		{      
+			"LogName": "Use firstborn hair shading in portraits (pale/dark).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/{{FirstbornSkinTone}}/{{FirstbornHairType}}_Shading_{{FirstbornShading}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornHairType|contains=Fluffy": false,
+				"ChildSkinTone": "Pale_Dark",
+			},
+		},
+		{      
+			"LogName": "Use firstborn hair shading in portraits (dark/darker, dark).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/dark/{{FirstbornHairType}}_Shading_{{FirstbornShading}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornHairType|contains=Fluffy": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		{      
+			"LogName": "Use firstborn hair shading in portraits (dark/darker, darker).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/darker/{{FirstbornHairType}}_Shading_{{FirstbornShading}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornHairType|contains=Fluffy": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		
+		{      
+			"LogName": "Use firstborn hair shading in portraits (pale/dark, hair with different bangs for longer/shorter verions).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/{{FirstbornSkinTone}}/{{FirstbornHairType}}_{{FirstbornHairLength}}_Shading_{{FirstbornShading}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornHairType|contains=Fluffy": true,
+				"ChildSkinTone": "Pale_Dark",
+			},
+		},
+		{      
+			"LogName": "Use firstborn hair shading in portraits (dark/darker, dark, hair with different bangs for longer/shorter verions).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/dark/{{FirstbornHairType}}_{{FirstbornHairLength}}_Shading_{{FirstbornShading}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornHairType|contains=Fluffy": true,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		{      
+			"LogName": "Use firstborn hair shading in portraits (dark/darker, darker, hair with different bangs for longer/shorter verions).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/darker/{{FirstbornHairType}}_{{FirstbornHairLength}}_Shading_{{FirstbornShading}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornHairType|contains=Fluffy": true,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		
+		//PORTRAIT HAIR STYLE LOAD//
+		{
+			"LogName": "Use customized firstborn hairstyle in portraits.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/hair/{{FirstbornHairBatch}}/{{FirstbornHairColour}}.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairPortraitIndexX}}", "Y": "{{FirstbornHairPortraitIndexY}}", "Width": 128, "Height": 256 },
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"HasFile:{{FromFile}}": true,
+			},
+		},
+		{
+			"LogName": "Use customized firstborn hairstyle in portraits (custom recolours).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "Custom_Portraits_Sprites/Hair_Portraits_{{FirstbornHairColour}}.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairPortraitIndexX}}", "Y": "{{FirstbornHairPortraitIndexY}}", "Width": 128, "Height": 256 },
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"HasFile:{{FromFile}}": true,
+				"FirstbornHairColour|contains=1_Custom, 2_Custom": true,
+			},
+		},
+		
+		//PORTRAIT DEFAULT HAIR COLOURS LOAD//
+		{
+			"LogName": "Default to black firstborn hair for portraits when no matching colour file is found (darker).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/hair/{{FirstbornHairBatch}}/Black.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairPortraitIndexX}}", "Y": "{{FirstbornHairPortraitIndexY}}", "Width": 128, "Height": 256 },
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornCustomHairPortraitsValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		{      
+			"LogName": "Default to brown firstborn hair for portraits when no matching colour file is found (dark/darker, dark).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/hair/{{FirstbornHairBatch}}/Brown.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairPortraitIndexX}}", "Y": "{{FirstbornHairPortraitIndexY}}", "Width": 128, "Height": 256 },
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornCustomHairPortraitsValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		{      
+			"LogName": "Default to brown firstborn hair for portraits when no matching colour file is found (pale/dark, dark).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/hair/{{FirstbornHairBatch}}/Brown.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairPortraitIndexX}}", "Y": "{{FirstbornHairPortraitIndexY}}", "Width": 128, "Height": 256 },
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornCustomHairPortraitsValid": false,
+				"ChildSkinTone": "Pale_Dark",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		{      
+			"LogName": "Default to auburn firstborn hair for portraits when no matching colour file is found (pale).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/hair/{{FirstbornHairBatch}}/Auburn.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairPortraitIndexX}}", "Y": "{{FirstbornHairPortraitIndexY}}", "Width": 128, "Height": 256 },
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornCustomHairPortraitsValid": false,
+				"ChildSkinTone": "Pale_Dark",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		
+		//PORTRAIT EYE COLOUR LOAD//
+		{      
+			"LogName": "Use customized firstborn eye colour in portraits.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/eyes/{{FirstbornEyeColourSet}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornEyeColourSet|contains=Default, 1_Custom, 2_Custom": false,
+			},
+		},
+		{      
+			"LogName": "Use customized firstborn eye colour in portraits (custom recolours).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "Custom_Portraits_Sprites/Eyes_Portraits_{{FirstbornEyeColourSet}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"FirstbornEyeColourSet|contains=1_Custom, 2_Custom": true,
+				"HasFile:{{FromFile}}": true,
+			},
+		},
+		
+		//PORTRAIT CLOTHING LOAD//
+		{
+			"LogName": "Use firstborn clothing shading in portraits (pale/dark).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/clothing/{{FirstbornClothingTypeSet}}/Shading_{{FirstbornSkinTone}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"ChildSkinTone": "Pale_Dark",
+			},
+		},
+		{
+			"LogName": "Use firstborn clothing shading in portraits (dark/darker, dark).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/clothing/{{FirstbornClothingTypeSet}}/Shading_dark.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		{
+			"LogName": "Use firstborn clothing shading in portraits (dark/darker, darker).",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/clothing/{{FirstbornClothingTypeSet}}/Shading_darker.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		{
+			"LogName": "Use firstborn clothing in portraits.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/clothing/{{FirstbornClothingTypeSet}}/{{FirstbornClothingColourSet}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"HasFile:{{FromFile}}": true,
+			},
+		},
+		{
+			"LogName": "Default to red clothing for firstborn portraits when no matching colour file is found.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Farmer_Default/clothing/{{FirstbornClothingTypeSet}}/Red.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomPortraitsValid": false,
+				"HasFile:assets/Portraits/Farmer_Default/clothing/{{FirstbornClothingTypeSet}}/{{FirstbornClothingColourSet}}.png": false,
+			},
+		},
+		
+		///////////
+		//SPRITES//
+		///////////
+		{      
+			"LogName": "Load a singular custom file as generic firstborn sprites.",
+			"Action": "Load",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "Custom_Portraits_Sprites/FirstChildSprites_{{FirstbornGender}}_{{FirstbornSkinTone}}.png",
+			"When": {
+				"FirstbornCustomSpritesValid": true,
+			},
+		},
+		
+		{      
+			"LogName": "Load a singular custom file as generic firstborn sprites (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "Custom_Portraits_Sprites/FirstChildSprites_{{FirstbornGender}}_{{FirstbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+				"FirstbornCustomSpritesValid": true,
+			},
+		},
+		
+		//SPRITE BASE LOAD//
+		{      
+			"LogName": "Load generic firstborn base sprites (pale/dark).",
+			"Action": "Load",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/{{FirstbornSkinTone}}/Base.png",
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"ChildSkinTone": "Pale_Dark",
+			},
+		},
+		{      
+			"LogName": "Load generic firstborn base sprites (dark/darker, dark).",
+			"Action": "Load",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/dark/Base.png",
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		{      
+			"LogName": "Load generic firstborn base sprites (dark/darker, darker).",
+			"Action": "Load",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/darker/Base.png",
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		
+		{      
+			"LogName": "Load generic firstborn base sprites (pale/dark) (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/{{FirstbornSkinTone}}/Base.png",
+			"When": {
+				"Language|contains=en": false,
+				"FirstbornCustomSpritesValid": false,
+				"ChildSkinTone": "Pale_Dark",
+			},
+		},
+		{      
+			"LogName": "Load generic firstborn base sprites (dark/darker, dark) (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/dark/Base.png",
+			"When": {
+				"Language|contains=en": false,
+				"FirstbornCustomSpritesValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		{      
+			"LogName": "Load generic firstborn base sprites (dark/darker, darker) (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/darker/Base.png",
+			"When": {
+				"Language|contains=en": false,
+				"FirstbornCustomSpritesValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		
+		//SPRITE HAIR SHADING LOAD//
+		{      
+			"LogName": "Use firstborn hair shading in sprites (pale/dark).",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/{{FirstbornSkinTone}}/{{FirstbornSpriteShading}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"ChildSkinTone": "Pale_Dark",
+			},
+		},
+		{      
+			"LogName": "Use firstborn hair shading in sprites (dark/darker, dark).",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/dark/{{FirstbornSpriteShading}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		{      
+			"LogName": "Use firstborn hair shading in sprites (dark/darker, darker).",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/darker/{{FirstbornSpriteShading}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		
+		//SPRITE CLOTHING LOAD//
+		{
+			"LogName": "Use firstborn clothing in sprites.",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/clothing/{{FirstbornClothingTypeSet}}/{{FirstbornClothingColourSet}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"HasFile:{{FromFile}}": true,
+			},
+		},
+		{
+			"LogName": "Default to red clothing for firstborn sprites when no matching colour file is found.",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/clothing/{{FirstbornClothingTypeSet}}/Red.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"HasFile:assets/Characters/Farmer_Default/clothing/{{FirstbornClothingTypeSet}}/{{FirstbornClothingColourSet}}.png": false,
+			},
+		},
+		
+		//SPRITE HAIR STYLE LOAD//
+		{      
+			"LogName": "Use customized firstborn hairstyle in sprites.",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/hair/{{FirstbornHairBatch}}/{{FirstbornHairColour}}.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairSpriteIndexX}}", "Y": "{{FirstbornHairSpriteIndexY}}", "Width": 64, "Height": 224 },
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"HasFile:{{FromFile}}": true,
+			},
+		},
+		{
+			"LogName": "Use customized firstborn hairstyle in sprites (custom recolours).",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "Custom_Portraits_Sprites/Hair_Sprites_{{FirstbornHairColour}}.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairSpriteIndexX}}", "Y": "{{FirstbornHairSpriteIndexY}}", "Width": 64, "Height": 224 },
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"HasFile:{{FromFile}}": true,
+				"FirstbornHairColour|contains=1_Custom, 2_Custom": true,
+			},
+		},
+		
+		//SPRITE DEFAULT HAIR COLOURS LOAD//
+		{      
+			"LogName": "Default to black firstborn hair for sprites when no matching colour file is found (darker).",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/hair/{{FirstbornHairBatch}}/Black.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairSpriteIndexX}}", "Y": "{{FirstbornHairSpriteIndexY}}", "Width": 64, "Height": 224 },
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"FirstbornCustomHairSpritesValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		{      
+			"LogName": "Default to brown firstborn hair for sprites when no matching colour file is found (dark/darker, dark).",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/hair/{{FirstbornHairBatch}}/Brown.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairSpriteIndexX}}", "Y": "{{FirstbornHairSpriteIndexY}}", "Width": 64, "Height": 224 },
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"FirstbornCustomHairSpritesValid": false,
+				"ChildSkinTone": "Dark_Darker",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		{      
+			"LogName": "Default to brown firstborn hair for sprites when no matching colour file is found (pale/dark, dark).",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/hair/{{FirstbornHairBatch}}/Brown.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairSpriteIndexX}}", "Y": "{{FirstbornHairSpriteIndexY}}", "Width": 64, "Height": 224 },
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"FirstbornCustomHairSpritesValid": false,
+				"ChildSkinTone": "Pale_Dark",
+				"FirstbornSkinTone": "dark",
+			},
+		},
+		{      
+			"LogName": "Default to auburn firstborn hair for sprites when no matching colour file is found (pale).",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/hair/{{FirstbornHairBatch}}/Auburn.png",
+			"PatchMode": "Overlay",
+			"FromArea": { "X": "{{FirstbornHairSpriteIndexX}}", "Y": "{{FirstbornHairSpriteIndexY}}", "Width": 64, "Height": 224 },
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"FirstbornCustomHairSpritesValid": false,
+				"ChildSkinTone": "Pale_Dark",
+				"FirstbornSkinTone": "pale",
+			},
+		},
+		
+		//SPRITE EYE COLOUR LOAD//
+		{      
+			"LogName": "Use customized firstborn eye colour in sprites.",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Farmer_Default/eyes/{{FirstbornEyeColourSet}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"FirstbornEyeColourSet|contains=Default, 1_Custom, 2_Custom": false,
+			},
+		},
+		{      
+			"LogName": "Use customized firstborn eye colour in sprites (custom recolours).",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "Custom_Portraits_Sprites/Eyes_Sprites_{{FirstbornEyeColourSet}}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"FirstbornCustomSpritesValid": false,
+				"FirstbornEyeColourSet|contains=1_Custom, 2_Custom": true,
+				"HasFile:{{FromFile}}": true,
+			},
+		},
+		
+		
+		
+		////////
+		//DATA//
+		////////
+		
+		{
+			"LogName": "Add gift tastes for firstborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"{{FirstbornName}}": "/393 394 402 233 221//18//coffee_item//alcohol_item//-75/",
+			}
+		},
+		
+		{
+			"LogName": "Fill firstborn's empty schedule.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{FirstbornName}}",
+			"Entries": {
+				"rain": "800 SeedShop 16 19 3/1200 SeedShop 21 13 1/1400 SeedShop 24 15 2/1700 bed",
+				"spring": "800 Town 16 13 2 square_1_5/1900 bed",
+				"summer": "800 Town 16 13 2 square_1_5/1200 Beach 22 17 2 square_5_7/1900 bed",
+				"fall": "800 Town 16 13 2 square_1_5/1300 Town 106 27 2/1730 bed",
+				"winter": "800 Town 16 13 2 square_1_5/1300 SeedShop 24 15 2/1700 bed",
+				"winter_Tue": "800 Town 16 13 2 square_1_5/1300 SeedShop 24 15 2 \"Strings\\schedules\\{{FirstbornName}}:winter_Tue.000\"/1600 SeedShop 27 13 2/1700 bed",
+				"Sat": "800 Town 16 13 2 square_1_5/1200 Town 22 26 1 square_3_7/1730 bed",
+				"DesertFestival_1": "900 Desert 43 44 3 \"Strings\\schedules\\{{FirstbornName}}:DesertFestival.000\"/2520 bed",
+			}
+		},
+		
+		{
+			"LogName": "Add Little Red School House schedule for firstborn.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{FirstbornName}}",
+			"Entries": {
+				"Tue": "a1000 Custom_SchoolHouse 8 16 1 {{FirstbornName}}_read \"Strings\\schedules\\{{FirstbornName}}:Schoolhouse.000\"/1130 Town 22 26 1 square_3_7 \"Strings\\schedules\\{{FirstbornName}}:Schoolhouse.001\"/a1250 Custom_SchoolHouse 8 16 1 {{FirstbornName}}_read/1550 Town 106 27 2/1820 bed",
+				"Wed": "GOTO Tue",
+				"Fri": "GOTO Tue",
+				"winter_Tue": "GOTO Tue",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+			},
+		},
+		{
+			"LogName": "Add Little Red School House schedule for firstborn (rain).",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{FirstbornName}}",
+			"Entries": {
+				"rain": "a1000 Custom_SchoolHouse 8 16 1 {{FirstbornName}}_read \"Strings\\schedules\\{{FirstbornName}}:Schoolhouse.000\"/1130 Custom_SchoolHouse 8 16 1 {{FirstbornName}}_sit \"Strings\\schedules\\{{FirstbornName}}:Schoolhouse.002\"/a1250 Custom_SchoolHouse 8 16 1 {{FirstbornName}}_read/1550 SeedShop 24 15 2/1730 bed",
+			},
+			"When": {
+				"DayOfWeek": "Tuesday, Wednesday, Friday",
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+			},
+		},
+		
+		{
+            "LogName": "Add animations for firstborn.",
+            "Action": "EditData",
+            "Target": "Data/animationdescriptions",
+            "Entries":
+            {
+                "{{FirstbornName}}_sit": "16/16/16",
+                "{{FirstbornName}}_read": "17/17/17",
+			}
+		},
+		
+        {
+            "LogName": "Add firstborn to Egg Festival.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring13",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 31 78 1",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 35 69 1",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 28 66 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 29 62 2",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add firstborn to Flower Dance.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring24",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 5 31 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 24 22 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 20 41 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 24 22 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add firstborn to Luau.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer11",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 30 4 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 41 17 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 37 21 1",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 30 16 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add firstborn to Moonlight Jellies.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer28",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 39 33 1",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 26 36 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 22 20 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 24 33 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add firstborn to Fair.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall16",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 67 70 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 12 67 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add firstborn to Spirit's Eve.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall27",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 14 52 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 5 64 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add firstborn to Festival of Ice.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter8",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 61 25 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 69 43 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 67 39 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 68 25 2",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add firstborn to Winter Star.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter25",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 36 78 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 21 62 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+		{
+			"LogName": "Add movie concession tastes for firstborn.",
+			"Action": "EditData",
+			"Target": "Data/ConcessionTastes",
+			"Entries": {
+				2:{
+					"Name": "{{FirstbornName}}",
+					"LovedTags": [
+					  "Sweet",
+					],
+					"LikedTags": [
+					  "Candy",
+					  "Salty",
+					],
+					"DislikedTags": [
+					  "Gourmet",
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Add movie reactions for firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+			"Entries": {
+				2:{
+					"NPCName": "{{FirstbornName}}",
+					"Reactions": [
+					  {
+						"Tag": "*",
+						"Response": "love",
+						"Whitelist": [
+						  "{{PlayerCompanion}}",
+						],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": {
+							"ResponsePoint": null,
+							"Script": "Placeholder",
+							"Text": null
+						  },
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_3"
+					  },
+					  {
+						"Tag": "family",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_0"
+					  },
+					  {
+						"Tag": "horror",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_1"
+					  },
+					  {
+						"Tag": "*",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_2"
+					  },
+					  {
+						"Tag": "love",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_4"
+					  },
+					  {
+						"Tag": "like",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_5"
+					  },
+					  {
+						"Tag": "dislike",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_6"
+					  }
+					]
+				}
+			}
+		},
+		
+   		{      
+			"LogName": "Include dialogue files for default firstborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Farmer_Default/default_firstborn.{{LocaleCode}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+   		{      
+			"LogName": "Fallback to English dialogue files if no others are available for default firstborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Farmer_Default/default_firstborn.en.json", 
+			"When": {
+				"HasFile:i18n/dialogue_files/Farmer_Default/default_firstborn.{{LocaleCode}}.json": false
+			}
+		},
+		
+   ]
+}

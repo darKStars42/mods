@@ -1,0 +1,124 @@
+{
+  "Changes": [
+
+    //-------------------------------
+    //      Rafflesia
+    {
+      "LogName": "Raccoon's Shop - Rafflesia",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Raccoon", "Items" ],
+      "Entries": {
+        "ZoeyHoshi.SVEForageCrops_RafflesiaSeeds": {
+          "Id": "ZoeyHoshi.SVEForageCrops_RafflesiaSeeds",
+          "ItemId": "ZoeyHoshi.SVEForageCrops_RafflesiaSeeds",
+          "TradeItemId": "(O)456",
+          "TradeItemAmount": 2,
+          "Price": -1,
+          "IgnoreShopPriceModifiers": true,
+          "Condition": "WORLD_STATE_FIELD TimesFedRaccoons 4"
+        }
+      },
+      "MoveEntries": [
+        {
+          "Id": "ZoeyHoshi.SVEForageCrops_RafflesiaSeeds",
+          "AfterId": "(O)PowdermelonSeeds"
+        }
+      ],
+      "When": {
+        "EnableRafflesia": true
+      }
+    },
+
+    //-------------------------------
+    //      Bearberry
+    {
+      "LogName": "Raccoon's Shop - Bearberry",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Raccoon", "Items" ],
+      "Entries": {
+        "ZoeyHoshi.SVEForageCrops_BearberrySeeds": {
+          "Id": "ZoeyHoshi.SVEForageCrops_BearberrySeeds",
+          "ItemId": "ZoeyHoshi.SVEForageCrops_BearberrySeeds",
+          "TradeItemId": "(O)Powdermelon",
+          "TradeItemAmount": 5,
+          "Price": -1,
+          "IgnoreShopPriceModifiers": true,
+          "Condition": "WORLD_STATE_FIELD TimesFedRaccoons 3"
+        }
+      },
+      "MoveEntries": [
+        {
+          "Id": "ZoeyHoshi.SVEForageCrops_BearberrySeeds",
+          "AfterId": "(O)770"
+        }
+      ],
+      "When": {
+        "EnableBearberry": true,
+        "HasMod": "furyx639.CustomBush"
+      }
+    },
+
+    //-------------------------------
+    //      Dewdrop
+    {
+      "LogName": "Raccoon's Shop - Dewdrop",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Raccoon", "Items" ],
+      "Entries": {
+        "ZoeyHoshi.SVEForageCrops_DewdropBerrySeeds": {
+          "Id": "ZoeyHoshi.SVEForageCrops_DewdropBerrySeeds",
+          "ItemId": "ZoeyHoshi.SVEForageCrops_DewdropBerrySeeds",
+          "TradeItemId": "(O)GoldenMysteryBox",
+          "TradeItemAmount": 3,
+          "Price": -1,
+          "IgnoreShopPriceModifiers": true,
+          "Condition": "WORLD_STATE_FIELD TimesFedRaccoons 6"
+        }
+      },
+      "MoveEntries": [
+        {
+          "Id": "ZoeyHoshi.SVEForageCrops_DewdropBerrySeeds",
+          "AfterId": "(O)770"
+        }
+      ],
+      "When": {
+        "EnableDewdropBerry": true,
+        "HasMod": "furyx639.CustomBush",
+        "HasVisitedLocation": "Custom_EnchantedGrove"
+      }
+    },
+
+    //-------------------------------
+    //      Four Leaf Clover
+    {
+      "LogName": "Raccoon's Shop - Four Leaf Clover",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Raccoon", "Items" ],
+      "Entries": {
+        "ZoeyHoshi.SVEForageCrops_FourLeafCloverSeeds": {
+          "Id": "ZoeyHoshi.SVEForageCrops_FourLeafCloverSeeds",
+          "ItemId": "ZoeyHoshi.SVEForageCrops_FourLeafCloverSeeds",
+          "TradeItemId": "(O)446",
+          "TradeItemAmount": 1,
+          "Price": -1,
+          "IgnoreShopPriceModifiers": true,
+          "Condition": "WORLD_STATE_FIELD TimesFedRaccoons 2"
+        }
+      },
+      "MoveEntries": [
+        {
+          "Id": "ZoeyHoshi.SVEForageCrops_FourLeafCloverSeeds",
+          "AfterId": "(O)770"
+        }
+      ],
+      "When": {
+        "Enable4LeafClover": true,
+        "HasMod": "furyx639.CustomBush"
+      }
+    }
+  ]
+}

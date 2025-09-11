@@ -1,0 +1,66 @@
+{
+  "Changes": [
+    {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+              "{{ModId}}_Mossy_Stone_Fance": {
+              "Name": "Mossy Stone Fance",
+              "DisplayName": "{{i18n:Mossy_Stone_Fance.DisplayName}}",
+              "Description": "{{i18n:Mossy_Stone_Fance.Description}}",
+              "Type": "Crafting",
+              "Category": -8,
+              "Price": 0,
+              "Texture": "Mods/{{ModId}}/Mossy_Stone_Fence_Object",
+              "Edibility": -300,
+              "IsDrink": false,
+              "Buffs": null,
+              "GeodeDropsDefaultItems": false,
+              "GeodeDrops": null,
+              "ArtifactSpotChances": null,
+              "CanBeGivenAsGift": true,
+              "CanBeTrashed": true,
+              "ExcludeFromFishingCollection": false,
+              "ExcludeFromShippingCollection": false,
+              "ExcludeFromRandomSale": false,
+              "ContextTags": null,
+              "CustomFields": null,
+            }
+        }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Fences ",
+      "Entries":{
+        "{{ModId}}_Mossy_Stone_Fance":{
+          "Health": 80,
+          "RepairHealthAdjustmentMinimum": -5.0,
+          "RepairHealthAdjustmentMaximum": 6.0,
+          "Texture": "Mods/{{ModId}}/Mossy_Stone_Fence",
+          "PlacementSound": "stoneStep",
+          "RemovalSound": "hammer",
+          "RemovalToolIds": [],
+          "RemovalToolTypes": [
+            "StardewValley.Tools.Pickaxe"
+          ],
+          "RemovalDebrisType": 14,
+          "HeldObjectDrawOffset": "0, -16",
+          "LeftEndHeldObjectDrawX": 0.0,
+          "RightEndHeldObjectDrawX": -1.0,
+        }
+      }
+    },
+     {
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+                "Mossy Stone Fance": "390 2 Moss 1/Yield/{{ModId}}_Mossy_Stone_Fance/false/null"
+            }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Mossy_Stone_Fence, Mods/{{ModId}}/Mossy_Stone_Fence_Object",
+      "FromFile": "assets/Mossy_Stone_Fence/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

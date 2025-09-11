@@ -1,0 +1,83 @@
+{
+	"Changes": [
+		{
+			//---------------------------
+			//   Red Mushroom Planter
+			//---------------------------
+
+			"LogName": "Red Mushroom Planter Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "Dwarf", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.ForageCrops_RedMushroomSeeds": {
+					"Id": "ZoeyHoshi.ForageCrops_RedMushroomSeeds",
+					"ItemId": "ZoeyHoshi.ForageCrops_RedMushroomSeeds",
+					"IgnoreShopPriceModifiers": true
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.ForageCrops_RedMushroomSeeds",
+					"BeforeId": "(O)773"
+				}
+			],
+			"When": {
+				"RedMushroomPlanter": true
+			}
+		},
+		{
+			//---------------------------
+			// Purple Mushroom Planter
+			//---------------------------
+
+			"LogName": "Purple Mushroom Planter Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "Dwarf", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.ForageCrops_PurpleMushroomSeeds": {
+					"Id": "ZoeyHoshi.ForageCrops_PurpleMushroomSeeds",
+					"ItemId": "ZoeyHoshi.ForageCrops_PurpleMushroomSeeds",
+					"IgnoreShopPriceModifiers": true
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.ForageCrops_PurpleMushroomSeeds",
+					"BeforeId": "(O)773"
+				}
+			],
+			"When": {
+				"PurpleMushroomPlanter": true
+			}
+		},
+		{
+			//---------------------------
+			//     Winter Root Seeds
+			//---------------------------
+
+			"LogName": "Winter Root Seeds Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "Dwarf", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.ForageCrops_WinterRootSeeds": {
+					"Id": "ZoeyHoshi.ForageCrops_WinterRootSeeds",
+					"ItemId": "ZoeyHoshi.ForageCrops_WinterRootSeeds",
+					"Condition": "SEASON winter",
+					"IgnoreShopPriceModifiers": true
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.ForageCrops_WinterRootSeeds",
+					"BeforeId": "(O)773"
+				}
+			],
+			"When": {
+				"WinterRootCrop": true
+			}
+		}
+	]
+}

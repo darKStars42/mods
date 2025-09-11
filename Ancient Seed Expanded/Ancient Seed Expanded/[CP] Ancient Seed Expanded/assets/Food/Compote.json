@@ -1,0 +1,83 @@
+{
+  "Changes": [
+    //Food
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Orange_Compote":{
+          "Name": "Ancient Orange Compote",
+          "DisplayName": "{{i18n:Ancient_Orange_Compote.DisplayName}}",
+          "Description": "{{i18n:Ancient_Orange_Compote.Description}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price" : 1200,
+          "IsDrink": true,
+          "Edibility": 67,
+          "Texture": "Mods/{{ModId}}/Compote",
+          "SpriteIndex": 0,
+          "Buffs": [
+            {
+                  "Id": "Food",
+                  "BuffId": null,
+                  "IconTexture": null,
+                  "IconSpriteIndex": 0,
+                  "Duration": 0,
+                  "IsDebuff": false,
+                  "GlowColor": null,
+                  "CustomAttributes": {
+                  "FarmingLevel": 0.0,
+                  "FishingLevel": 0.0,
+                  "MiningLevel": 0.0,
+                  "LuckLevel": 0.0,
+                  "ForagingLevel": 2.0,
+                  "MaxStamina": 0.0,
+                  "MagneticRadius": 0.0,
+                  "Speed": 0.0,
+                  "Defense": 0.0,
+                  "Attack": 0.0
+                }
+              }
+            ],
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "Zexu2K_Compote"
+          ],
+        }
+      }
+    },
+        {
+            "Action": "EditData",
+            "Target": "Data/CookingRecipes",
+            "Entries": {
+                "Ancient Orange Compote": "{{ModId}}_Ancient_Orange 2 245 1/25 5/{{ModId}}_Ancient_Orange_Compote/null/{{i18n:Ancient_Orange_Compote.DisplayName}}",
+            }
+    },
+    {
+          "Action": "EditData",
+          "Target": "Data/Shops",
+          "TargetField": ["Seed_Transformer", "Items"],
+          "Entries": {
+              "{{ModId}}_Ancient_Orange_Compote_recipe": {
+                  "Id": "{{ModId}}_Ancient_Orange_Compote_recipe",
+                  "ItemId": "{{ModId}}_Ancient_Orange_Compote",                    
+                  "Price": 0,
+                  "IsRecipe": true,
+                  "IgnoreShopPriceModifiers": true,
+                  "TradeItemId": "74", 
+                  "TradeItemAmount": 1,
+        },
+      }
+    },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Compote",
+            "FromFile": "assets/Food/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

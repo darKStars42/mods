@@ -1,0 +1,181 @@
+{
+    "Format": "2.6.0",
+    "ConfigSchema": {
+        "Color Scheme": {
+            "AllowValues": "Vanilla, Desaturated",
+            "Default": "Vanilla",
+            "Description": "Picks the color scheme the stall uses."
+        },
+        "Sushi Letter Frequency": {
+            "AllowValues": "Once, Weekly, Monthly",
+            "Description": "How often should our vendor send you a reminder the stall is open (Sent on Tuesdays)",
+            "Default": "Once",
+        },
+        "Frog": {
+            "AllowValues": "True, False",
+            "Description": "Enables the CHANCE the the regular vendor is replaced by a frog.",
+            "Default": "True",
+            "Section": "Shop"
+        },
+        "Item Price Modifier": {
+            "AllowValues": "1, 2",
+            "Description": "Makes items (NOT recipes) sold by the shop be divided. Defaults to 2 as that sells them as their original price (shops doubles the price by default).",
+            "Default": "2",
+            "Section": "Shop"
+        },
+        "Recipe Price Modifier": {
+            "AllowValues": "1, 2",
+            "Description": "Makes recipes (NOT items) sold by the shop be divided. Defaults to 2 as that sells them as their original price (shops doubles the price by default).",
+            "Default": "2",
+            "Section": "Shop"
+        },
+        "Dish Edibility": {
+            "AllowValues": "Original, Balanced",
+            "Description": "Original is the same as any earlier version of the mod, and can be seen as unbalanced depending on your play style. Balanced is overall lower values, based on the edibility for the Maki Roll to be more vanilla fitting. ",
+            "Default": "Original",
+            "Section": "Items"
+        },
+    },
+    "DynamicTokens": [
+        {
+            // Set the frequency of the sushi letter 
+            "Name": "SushiCondition",
+            "Value": "DAY_OF_WEEK Tuesday"
+        },
+        {
+            "Name": "SushiCondition",
+            "Value": "DAY_OF_MONTH 2",
+            "When": {
+                "Sushi Letter Frequency": "Monthly"
+            }
+        },
+        {
+            // Determines whenever the shop is open (Approved by Kailey) ♡
+            "Name": "ShopStatus",
+            "Value": "Open"
+        },
+        {
+            "Name": "ShopStatus",
+            "Value": "Closed",
+            "When": {
+                "Time": "2010"
+            }
+        },
+        {
+            // Letter content that change the letter if it's repeatable (ignored if the letter isn't)
+            "Name": "LetterContent",
+            "Value": "{{i18n:sushi_stall.mail.content_repeat}}"
+        },
+        {
+            "Name": "LetterContent",
+            "Value": "{{i18n:sushi_stall.mail.content_first}} %item id (O){{ModId}}_Aji 1%%",
+            "When": {
+                "Day": "2",
+                "Season": "Spring",
+                "Year": "1"
+            }
+        },
+        {
+            // Soy Sauce added by the mod is replace when Cornucopia - Artisan Machines is installed, for simplifying purposes 
+            "Name": "SoySauce",
+            "Value": "{{ModId}}_Soy_Sauce"
+        },
+        {
+            "Name": "SoySauce",
+            "Value": "Cornucopia_SoySauce",
+            "When": {
+                "HasMod": "Cornucopia.ArtisanMachines"
+            }
+        },
+        {
+            // Frog Vendor Mayhap
+            "Name": "Vendor",
+            "Value": "Generic"
+        },
+        {
+            "Name": "Vendor",
+            "Value": "Frog",
+            "When": {
+                "Random: {{Range: 1, 20}}": 1,
+                "Frog": true
+            }
+        }
+    ],
+    "Changes": [
+        {
+            // Adds the new sushi stall tilesheets as maps.
+            "LogName": "Load Stall Tilesheets",
+            "Action": "Load",
+            "Target": "Maps/spring_SushiStall, Maps/summer_SushiStall, Maps/fall_SushiStall, Maps/winter_SushiStall, Maps/spring_SushiStall, Maps/SushiStall_OpenGeneric, Maps/SushiStall_OpenFrog",
+            "FromFile": "Assets/Tilesheets/{{Color Scheme}}/{{TargetWithoutPath}}.png"
+        },
+        {
+            // Edits the tilesheets for the sushi shop when it's open
+            "LogName": "Sushi Open/Closed edit",
+            "Action": "EditImage",
+            "Target": "Maps/{{season}}_SushiStall",
+            "FromFile": "Assets/Tilesheets/{{Color Scheme}}/SushiStall_Open{{Vendor}}.png",
+            "PatchMode": "Overlay",
+            "Update": "OnTimeChange",
+            "When": {
+                "ShopStatus": "Open"
+            }
+        },
+        {
+            // Adds the stall to the forest! 
+            // Note because it's an outdoors map and all the tilesheets have seasonal names (spring_, summer_ etc) the seasonal variants will change automatically. which is very cool 10/10
+            "LogName": "Adds the stall to the forest",
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "PatchMode": "Overlay",
+            "FromFile": "assets/Maps/Bea_SushiStall.tmx",
+            "FromArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 4,
+                "Height": 5
+            },
+            "ToArea": {
+                "X": 48,
+                "Y": 69,
+                "Width": 4,
+                "Height": 5
+            },
+            "When": {
+                "DayOfWeek": "Tuesday, Saturday"
+            },
+            "Priority": "Late"
+        },
+        {
+            // clear the map so stuff doesn't grow inside and around the stall
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Clear_That_Terrain!": {
+                    "Id": "{{ModId}}_Cleaner",
+                    "Trigger": "DayStarted",
+                    "Actions": [
+                        "Spiderbuttons.BETAS_ClearTerrainFeatures Forest !Grass 46 70 54 75",
+                        "Spiderbuttons.BETAS_ClearTerrainFeatures Forest Grass 47 71 52 74"
+                    ],
+                }
+            }
+        },
+        {
+            // Lets the game load additional (not in content.json) content files 
+            "LogName": "Object Item Data",
+            "Action": "Include",
+            "FromFile": "Data/Objects_{{Dish Edibility}}.json, Data/CookingRecipes.json, Data/NPCGiftTastes.json"
+        },
+        {
+            "LogName": "Include Shop Data",
+            "Action": "Include",
+            "FromFile": "Data/Shops.json"
+        },
+        {
+            "LogName": "Include Mail & Book Data",
+            "Action": "Include",
+            "FromFile": "Data/Mail.json, Data/Book.json"
+        }
+    ]
+}

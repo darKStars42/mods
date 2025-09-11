@@ -1,0 +1,120 @@
+{	"Changes": 
+	[
+		{	//Timer (A) Iniciais (Chegada)
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"Entries": 	{
+			"90005264": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.A.00 4/end",
+			"90105264/!UpcomingFestival 4/e 90005264/A Time.A.00": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.A.01 0/end",
+			"90205264/e 90105264/A Time.A.01": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.A.02 0/end",
+			"90305264/e 90205264/A Time.A.02": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.A.03 162/end"  // Para Ficarem Mais ou Menos Tempo, Ajuste Esse Valor. (Edward, Isis, Miranda e Lee)
+			}
+		},
+		{	//Gatilho (B) Desenvolvimento (1)
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"Entries": 	{
+			"90505264/d Mon Tue Wed Sat Sun/f Edward 1000 Isis 500 Miranda 500 Jas 750/k 99805264/w sunny": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic DD.Evento.G5 1/end",
+			"90605264/d Sat Sun/f Edward 1000 Isis 1000 Miranda 1000 Lee 1000/k 99805264/w sunny": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic DD.Evento.G6 1/end",
+			"90705264/e 58614005/f Edward 2000/k 99805264": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic DD.Evento.G7 1/mail EdCarta03/end"
+			}
+		},
+		{	//Timer (C) Primeiro Adeus
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"Entries": 	{
+			"99805264/!UpcomingFestival 4/e 90305264/A Time.A.03": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.C.01 0/end",
+			"90805264/e 99805264/A Time.C.01": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.C.02 1/end",
+			"90815264/e 90805264/A Time.C.02": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.C.03 0/end",
+			"90905264/e 90815264/A Time.C.03": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.C.04 54/end" // Para Ficarem Mais ou Menos Tempo, Ajuste Esse Valor. (Edward e Lee)
+			}
+		},
+		{	//Gatilho (D) Desenvolvimento (2)
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"Entries": 	{
+				"91005264/D Edward": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic DD.Evento.G10 15/end",
+				"91105264/O Edward": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.D.01 22/end",
+				"81105264/e 91105264": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic DD.Evento.G11 25/end"
+			}
+		},
+		{	//Timer (E) Segundo Adeus
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"When": { "HasSeenEvent: anyPlayer|contains=91005264": false }, // Multiplayer Fix
+        "Entries": {
+				"58614300/!UpcomingFestival 4/e 90905264/o Edward/k 91005264/k 58614409/A Time.C.04": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.E.01 0/end",
+				"58614000/e 58614300/A Time.E.01": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.E.02 0/end",
+				"58614100/e 58614000/A Time.E.02": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.E.03 1/end",
+				"58614200/e 58614100/A Time.E.03": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.E.04 78/end"
+			}
+		},
+		{	//Timer (F) Retorno
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"Entries": 	{
+				"91205264/!UpcomingFestival 4/e 58614200/k 91005264/A Time.E.04": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.F.01 0/end",
+				"91305264/e 91205264/A Time.F.01": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.F.02 1/end",
+				"91335264/e 91305264/k 61743011/A Time.F.02": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.F.03 57/end" // Para Ficarem Mais ou Menos Tempo, Ajuste Esse Valor. (Isis)
+			}
+		},
+		{	//Gatilho (G) Desenvolvimento (3)
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"Entries": 	{
+				"91505264/D Isis": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic DD.Evento.G15 15/end",
+				"91705264/O Isis": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.G.01 22/end",
+				"81705264/e 91705264": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic DD.Evento.G17 25/end"
+			}
+		},
+		{	//Timer (H) Terceiro Adeus
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"When": { "HasSeenEvent: anyPlayer|contains=91505264": false }, // Multiplayer Fix
+		"Entries": {
+				"37918100/!UpcomingFestival 4/e 91335264/o Isis/k 91505264/k 37918310/A Time.F.03": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.H.01 0/end",
+				"37918200/e 37918100/A Time.H.01": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.H.02 1/end",  
+				"37918000/e 37918200/A Time.H.02": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.H.03 22/end"
+			}
+		},
+		{	//Gatilho (I1) Desenvolvimento Adega (5) (Edward) Dev
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"When": { "HasSeenEvent: anyPlayer|contains=91005264": true },
+		"Entries": 	{
+				"91805264/!UpcomingFestival 4/e 91105264/C/w sunny/A Time.D.01": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.I.01 0/end",
+				"91905264/e 91805264/C/w sunny/A Time.I.01": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.I.02 0/end",
+				"92005264/e 91905264/C/A Time.I.02": "none/1 1/farmer 1 1 1/viewport -999 -999 true/A Time.I.03 86/end"
+			}
+		},
+		{	//Gatilho (I2) Desenvolvimento Adega (5) (Isis) Dev
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"When": { "HasSeenEvent: anyPlayer|contains=91505264": true },
+		"Entries": 	{
+				"91805264/!UpcomingFestival 4/e 91705264/C/w sunny/A Time.G.01": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.I.01 0/end",
+				"91905264/e 91805264/C/w sunny/A Time.I.01": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.I.02 0/end",
+				"92005264/e 91905264/C/A Time.I.02": "none/1 1/farmer 1 1 1/viewport -999 -999 true/A Time.I.03 86/end"
+			}
+		},
+		{	//Gatilho (I3) Desenvolvimento Adega (5) (No Relationship)
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"When": { "HasSeenEvent: anyPlayer|contains=91005264": false, "HasSeenEvent: anyPlayer|contains=91505264": false },
+		"Entries": 	{
+				"91805264/!UpcomingFestival 4/e 37918000/C/w sunny/A Time.H.03": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.I.01 0/end",
+				"91905264/e 91805264/C/w sunny/A Time.I.01": "none/1 1/farmer 1 1 1/viewport -999 -999 true/addConversationTopic Time.I.02 0/end",
+				"92005264/e 91905264/C/A Time.I.02": "none/1 1/farmer 1 1 1/viewport -999 -999 true/A Time.I.03 86/end"
+			}
+		},
+		{	//Gatilho (J) Desenvolvimento
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"Entries": 	{
+				"92105264/!UpcomingFestival 4/e 92005264/A Time.I.03/e 91005264": "none/1 1/farmer 1 1 1/viewport -999 -999 true/end",
+				"92205264/e 92005264/A Time.I.03/e 91505264": "none/1 1/farmer 1 1 1/viewport -999 -999 true/end",
+				"92305264/e 92005264/A Time.I.03/e 37918000": "none/1 1/farmer 1 1 1/viewport -999 -999 true/end"
+			}
+		}
+	]
+}

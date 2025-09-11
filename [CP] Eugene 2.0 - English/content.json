@@ -1,0 +1,128 @@
+{
+    "Format": "2.7.0",
+
+    "ConfigSchema": {
+
+        "Portrait Style": {
+            "AllowValues": "Auto, Original, Nyapu",
+            "Default": "Auto",
+            "Description": "Choose which portraits you'd like to use: 'Original' are Leroy's original portraits, 'Nyapu' are Nyapu's adorable portraits, and 'Auto' will choose between them depending on installed portrait mods.",
+            "Section": "Visuals"
+        }
+
+    },
+
+    "DynamicTokens": [
+        //Dynamic Tokens for compatibility how I love you
+        //For loading assets
+        {
+            "Name": "PortraitStyle",
+            "Value": "Original"
+        },
+        {
+            "Name": "PortraitStyle",
+            "Value": "Nyapu",
+            "When": { "Portrait Style": "Auto", "HasMod": "Nyapu.Portraits" }
+        },
+        {
+            "Name": "PortraitStyle",
+            "Value": "Nyapu",
+            "When": { "Portrait Style": "Nyapu" }
+        },
+        {
+            "Name": "SVE",
+            "Value": ""
+        },
+        {
+            "Name": "SVE",
+            "Value": "_SVE",
+            "When": { "HasMod": "FlashShifter.StardewValleyExpandedCP" }
+        },
+        {
+            "Name": "SF",
+            "Value": ""
+        },
+        {
+            "Name": "SF",
+            "Value": "_SF",
+            "When": { "HasMod": "Az.Foliage" }
+        },
+        //For i18n keys
+        {
+            "Name": "RomRas",
+            "Value": ""
+        },
+        {
+            "Name": "RomRas",
+            "Value": ".Rasmodia",
+            "When": { "HasMod": "Nom0ri.RomRas" }
+        },
+        {
+            "Name": "GNMT",
+            "Value": ""
+        },
+        {
+            "Name": "GNMT",
+            "Value": ".GN",
+            "When": { "HasMod": "Hana.GNMTokens" }
+        },
+        {
+            "Name": "GNMTSingularToken",
+            "Value": ""
+        },
+        {
+            "Name": "GNMTSingularToken",
+            "Value": ".Singular",
+            "When": { "HasMod": "Hana.GNMTokens", "Hana.GNMTokens/Singular": true }
+        },
+        {
+            "Name": "GNMTSingularToken",
+            "Value": ".Plural",
+            "When": { "HasMod": "Hana.GNMTokens", "Hana.GNMTokens/Singular": false }
+        },
+        //For the World Map recolor
+        {
+            "Name": "Recolor",
+            "Value": "Vanilla"
+        },
+        {
+            "Name": "Recolor",
+            "Value": "VPR",
+            "When": { "HasMod": "grapeponta.VibrantPastoralRecolor" }
+        },
+        {
+            "Name": "Recolor",
+            "Value": "Earthy",
+            "When": { "HasMod": "DaisyNiko.EarthyRecolour" }
+        },
+        {
+            "Name": "Recolor",
+            "Value": "Starblue",
+            "When": { "HasMod": "Lita.StarblueValleyUnofficial" }
+        },
+        {
+            "Name": "Recolor",
+            "Value": "Retro",
+            "When": { "HasMod": "Yris.RetroRecolor-1.6-Community-Patch" }
+        }
+    ],
+
+    "Changes": [
+
+        //Blank Base
+        {
+            "LogName": "Load Blank JSON",
+            "Action": "Load",
+            "Target": "Data/Events/Custom_NPCEugene_House, Data/Events/Custom_NPCEugene_Room, Characters/Dialogue/Eugene, Characters/Dialogue/MarriageDialogueEugene, Characters/schedules/Eugene, Strings/schedules/Eugene",
+            "FromFile": "Data/blank.json"
+        },
+
+        //Include...
+        {
+            "LogName": "Include Eugene's Data",
+            "Action": "Include",
+            "FromFile": "Data/NPCData.json, Data/Maps.json, Data/Festivals.json, Data/Movies.json, Data/Mail.json, Data/Furniture.json, Data/Dialogue/EugeneDialogue.json, Data/Dialogue/WizardDialogue.json, Data/Schedules/ScheduleDialogue.json, Data/Schedules/Schedule.json, Data/Events/Events.json"
+        }
+
+    ]
+}

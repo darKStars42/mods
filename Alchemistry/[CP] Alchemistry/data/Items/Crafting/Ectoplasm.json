@@ -1,0 +1,100 @@
+{
+    "Changes": [
+
+        //Load icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/ObjectsEctoplasm",
+            "FromFile": "assets/Items/Crafting/ectoplasm.png"
+        },
+
+/*----------------------------------------------------
+Ectoplasm
+----------------------------------------------------*/
+
+        {
+            "LogName":"Add Alchemistry Ingredients - Ectoplasm",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModID}}_WildEctoplasm": {
+                    "Name": "{{ModID}}_WildEctoplasm",
+                    "DisplayName": "{{i18n:Alchemistry_WildEctoplasm.name}}",
+                    "Description": "{{i18n:Alchemistry_WildEctoplasm.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsEctoplasm",
+                    "SpriteIndex": 0,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 500,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "Alchemistry_reagent"
+                    ]
+                },
+                "{{ModID}}_MysticEctoplasm": {
+                    "Name": "{{ModID}}_MysticEctoplasm",
+                    "DisplayName": "{{i18n:Alchemistry_MysticEctoplasm.name}}",
+                    "Description": "{{i18n:Alchemistry_MysticEctoplasm.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsEctoplasm",
+                    "SpriteIndex": 1,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 700,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "Alchemistry_reagent"
+                    ]
+                },
+                "{{ModID}}_AquaticEctoplasm": {
+                    "Name": "{{ModID}}_AquaticEctoplasm",
+                    "DisplayName": "{{i18n:Alchemistry_AquaticEctoplasm.name}}",
+                    "Description": "{{i18n:Alchemistry_AquaticEctoplasm.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsEctoplasm",
+                    "SpriteIndex": 2,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 500,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "Alchemistry_reagent"
+                    ]
+                }
+            }
+        },
+
+
+/*----------------------------------------------------
+Perfection Tracker Disabled
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_WildEctoplasm" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MysticEctoplasm" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_AquaticEctoplasm" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        }
+    ]
+}

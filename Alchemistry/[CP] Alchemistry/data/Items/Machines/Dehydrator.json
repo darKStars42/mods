@@ -1,0 +1,991 @@
+{
+	"Changes": [
+
+		{
+            "LogName": "Add Alchemistry Machine Outputs - Dehydrator",
+			"Action": "EditData",
+            "Priority": "Late",
+			"Target": "Data/Machines",
+            "TargetField": ["(BC)Dehydrator", "OutputRules"],
+			"Entries": {
+
+/*----------------------------------------------------
+Crops
+----------------------------------------------------*/
+            "{{ModID}}_DriedHemlock": {
+                "Id": "{{ModID}}_DriedHemlock",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_Hemlock",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedHemlock",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedHemlock",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 240,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedInkberry": {
+                "Id": "{{ModID}}_DriedInkberry",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_Inkberry",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedInkberry",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedInkberry",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 240,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedStarlightHellebore": {
+                "Id": "{{ModID}}_DriedStarlightHellebore",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_StarlightHellebore",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedStarlightHellebore",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedStarlightHellebore",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 240,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedWerewolfsBane": {
+                "Id": "{{ModID}}_DriedWerewolfsBane",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_WerewolfsBane",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedWerewolfsBane",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedWerewolfsBane",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 240,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedBansheesBell": {
+                "Id": "{{ModID}}_DriedBansheesBell",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_BansheesBell",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedBansheesBell",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedBansheesBell",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 240,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedSunsetCastor": {
+                "Id": "{{ModID}}_DriedSunsetCastor",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_SunsetCastor",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedSunsetCastor",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedSunsetCastor",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 240,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedMistletoe": {
+                "Id": "{{ModID}}_DriedMistletoe",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_Mistletoe",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedMistletoe",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedMistletoe",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 240,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedWinterWailer": {
+                "Id": "{{ModID}}_DriedWinterWailer",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_WinterWailer",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedWinterWailer",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedWinterWailer",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 240,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedAddersTongue": {
+                "Id": "{{ModID}}_DriedAddersTongue",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_AddersTongue",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedAddersTongue",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedAddersTongue",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 1440,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedDollsEyes": {
+                "Id": "{{ModID}}_DriedDollsEyes",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_DollsEyes",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedDollsEyes",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedDollsEyes",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 1440,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedNightsShade": {
+                "Id": "{{ModID}}_DriedNightsShade",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_NightsShade",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedNightsShade",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedNightsShade",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 1440,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+            "{{ModID}}_DriedBleedingHeart": {
+                "Id": "{{ModID}}_DriedBleedingHeart",
+                "Triggers": [
+                    {
+                        "Trigger": "ItemPlacedInMachine",
+                        "RequiredItemId": "(O)Morghoula.AlchemistryCP_BleedingHeart",
+                        "RequiredCount": 3
+                    }
+                ],
+                "OutputItem": [
+                    {
+                        "Id": "{{ModID}}_DriedBleedingHeart",
+                        "ItemId": "(O)Morghoula.AlchemistryCP_DriedBleedingHeart",
+                        "PreserveId": "DROP_IN",
+                        "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                    }
+                ],
+                "MinutesUntilReady": 1440,
+                "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+            },
+             
+
+/*----------------------------------------------------
+Mushrooms
+----------------------------------------------------*/
+                "{{ModID}}_DriedDawnsingerToadstool": {
+                    "Id": "{{ModID}}_DriedDawnsingerToadstool",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DawnsingerToadstool",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedDawnsingerToadstool",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedDawnsingerToadstool",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedLunarGlowcap": {
+                    "Id": "{{ModID}}_DriedLunarGlowcap",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_LunarGlowcap",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedLunarGlowcap",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedLunarGlowcap",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedInkCap": {
+                    "Id": "{{ModID}}_DriedInkCap",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_InkCap",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedInkCap",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedInkCap",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedLostSouls": {
+                    "Id": "{{ModID}}_DriedLostSouls",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_LostSouls",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedLostSouls",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedLostSouls",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedMeteorCap": {
+                    "Id": "{{ModID}}_DriedMeteorCap",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_MeteorCap",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedMeteorCap",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedMeteorCap",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedFalseMorel": {
+                    "Id": "{{ModID}}_DriedFalseMorel",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_FalseMorel",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedFalseMorel",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedFalseMorel",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                            "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedWizardsEye": {
+                    "Id": "{{ModID}}_DriedWizardsEye",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_WizardsEye",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedWizardsEye",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedWizardsEye",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedFairieWings": {
+                    "Id": "{{ModID}}_DriedFairieWings",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_FairieWings",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedFairieWings",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedFairieWings",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedRedSmilers": {
+                    "Id": "{{ModID}}_DriedRedSmilers",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_RedSmilers",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedRedSmilers",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedRedSmilers",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedNightCap": {
+                    "Id": "{{ModID}}_DriedNightCap",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_NightCap",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedNightCap",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedNightCap",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedSunriseGlory": {
+                    "Id": "{{ModID}}_DriedSunriseGlory",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_SunriseGlory",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedSunriseGlory",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedSunriseGlory",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedCapOLantern": {
+                    "Id": "{{ModID}}_DriedCapOLantern",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_CapOLantern",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedCapOLantern",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedCapOLantern",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedHellfireBolete": {
+                    "Id": "{{ModID}}_DriedHellfireBolete",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_HellfireBolete",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedHellfireBolete",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedHellfireBolete",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedSwampLighter": {
+                    "Id": "{{ModID}}_DriedSwampLighter",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_SwampLighter",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedSwampLighter",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedSwampLighter",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DriedBeachedOyster": {
+                    "Id": "{{ModID}}_DriedBeachedOyster",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_BeachedOyster",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedBeachedOyster",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedBeachedOyster",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+
+/*----------------------------------------------------
+Forage - Misc
+----------------------------------------------------*/
+                "{{ModID}}_DriedDragonRoot": {
+                    "Id": "{{ModID}}_DriedDragonRoot",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DragonRoot",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedDragonRoot",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedDragonRoot",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+
+/*----------------------------------------------------
+Moon Berries
+----------------------------------------------------*/
+                "{{ModID}}_DriedMoonBerry": {
+                    "Id": "{{ModID}}_DriedMoonBerry",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_MoonBerry",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DriedDragonRoot",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DriedMoonBerry",
+                            "PreserveId": "DROP_IN",
+                            "CopyQuality": true,
+                        "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 1.5
+                                    }
+                                ]
+                        }
+                    ],
+                    "MinutesUntilReady": 240,
+                    "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                    "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                }
+            },
+            //Move entries to provide compatibility with other mods and prevent them from overriding Alchemistry's code
+            "MoveEntries": [
+				{
+					"Id": "{{ModID}}_DriedHemlock",
+					"ToPosition": "Top"
+				},
+				{
+					"Id": "{{ModID}}_DriedInkberry",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedStarlightHellebore",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedWerewolfsBane",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedBansheesBell",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedSunsetCastor",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedMistletoe",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedWinterWailer",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedAddersTongue",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedDollsEyes",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedNightsShade",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedBleedingHeart",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedDawnsingerToadstool",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedLunarGlowcap",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedInkCap",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedLostSouls",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedMeteorCap",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedFalseMorel",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedWizardsEye",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedFairieWings",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedRedSmilers",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedNightCap",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedSunriseGlory",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedCapOLantern",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedHellfireBolete",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedSwampLighter",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedBeachedOyster",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedDragonRoot",
+					"ToPosition": "Top"
+				},
+                {
+					"Id": "{{ModID}}_DriedMoonBerry",
+					"ToPosition": "Top"
+				}
+			]
+        }
+    ]
+}

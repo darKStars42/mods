@@ -1,0 +1,131 @@
+{
+    "Changes": [
+        {
+            "LogName": "Add ore",
+            "Action": "EditData",
+            "Target": "Mods/mistyspring.ItemExtensions/Resources",
+            "Entries": {
+                "Timsanity_TimoSapphireNode": {
+					"Name": "Timsanity_TimoSapphireNode",
+					"DisplayName": "{{i18n:TimoSapphire_name}}",
+					"Description": "{{i18n:TimoSapphire_description}}",
+                    "SpriteIndex": 0, //index in sprite sheet
+                    "Texture": "Mods/Timsanity.FloralMegamixRedux/Timsanity_TimoSapphireNode", //sprite sheet path 
+                    "Health": 5, //every hit reduces (UpgradeLevel + 1) x 0.75 . e.g iridium reduces 4 HP
+                    "Sound": "hammer", //sound made when hitting ore
+                    "BreakingSound": "stoneCrack", //sound made when breaking ore
+                    "ItemDropped": "Timsanity_TimoSapphire", //item dropped. doesn't have to be custom- it can be an existing item (and it accepts all item types (e.g big craftables, shirts, etc))
+                    "Tool": "Pickaxe", //tool that damages resource. can be "Any"(tools and weapons), "Tool"(any tool), "Weapon"(any weapon), or a specific type. You can also use "AnyExceptType" (e.g, AnyExceptAxe)
+                    "MinToolLevel": 1, //minimum upgrade. e.g: if less than copper, it'll give a "needs upgrade" message
+                    "MinDrops": 1, //minimum of item to drop
+                    "MaxDrops": 2, //maximum of item to drop
+                    "ExtraItems": [ //optional: extra items to drop
+                        {
+                            "ItemId": "(O)382", //drops coal
+                            "Chance": 0.4 //40%
+                        },
+                    ],
+                    "Debris": "stone purple", //debris type and color (that last one is optional)
+                    "MineSpawns": [ //You can spawn ores in the mines, and specify difficulty or conditions.
+                        {
+                            "Floors": "41/-999", // from 1 to infinite. (-999 means no limit) 
+                            "SpawnFrequency": 0.009, //10% to spawn
+                            "Type": "All" //on any difficulty
+                        }
+                        //see the full template for other examples
+                    ]
+                },
+				"Timsanity_FullMoonJewelNode": {
+					"Name": "Timsanity_FullMoonJewelNode",
+					"DisplayName": "{{i18n:FullMoonJewel_name}}",
+					"Description": "{{i18n:FullMoonJewel_description}}",
+                    "SpriteIndex": 0, //index in sprite sheet
+                    "Texture": "Mods/Timsanity.FloralMegamixRedux/Timsanity_FullMoonJewelNode", //sprite sheet path 
+                    "Health": 8, //every hit reduces (UpgradeLevel + 1) x 0.75 . e.g iridium reduces 4 HP
+                    "Sound": "hammer", //sound made when hitting ore
+                    "BreakingSound": "stoneCrack", //sound made when breaking ore
+                    "ItemDropped": "Timsanity_FullMoonJewel", //item dropped. doesn't have to be custom- it can be an existing item (and it accepts all item types (e.g big craftables, shirts, etc))
+                    "Tool": "Pickaxe", //tool that damages resource. can be "Any"(tools and weapons), "Tool"(any tool), "Weapon"(any weapon), or a specific type. You can also use "AnyExceptType" (e.g, AnyExceptAxe)
+                    "MinToolLevel": 1, //minimum upgrade. e.g: if less than copper, it'll give a "needs upgrade" message
+                    "MinDrops": 1, //minimum of item to drop
+                    "MaxDrops": 2, //maximum of item to drop
+                    "ExtraItems": [ //optional: extra items to drop
+                        {
+                            "ItemId": "(O)382", //drops coal
+                            "Chance": 0.4 //40%
+                        },
+                    ],
+                    "Debris": "stone purple", //debris type and color (that last one is optional)
+                    "MineSpawns": [ //You can spawn ores in the mines, and specify difficulty or conditions.
+                        {
+                            "Floors": "41/-999", // from 1 to infinite. (-999 means no limit) 
+                            "SpawnFrequency": 0.008, //10% to spawn
+                            "Type": "All" //on any difficulty
+                        }
+                        //see the full template for other examples
+                    ]
+                },
+				"Timsanity_GlisteningRaindropNode": {
+					"Name": "Timsanity_GlisteningRaindropNode",
+					"DisplayName": "{{i18n:GlisteningRaindropl_name}}",
+					"Description": "{{i18n:GlisteningRaindrop_description}}",
+                    "SpriteIndex": 0, //index in sprite sheet
+                    "Texture": "Mods/Timsanity.FloralMegamixRedux/Timsanity_GlisteningRaindropNode", //sprite sheet path 
+                    "Health": 10, //every hit reduces (UpgradeLevel + 1) x 0.75 . e.g iridium reduces 4 HP
+                    "Sound": "hammer", //sound made when hitting ore
+                    "BreakingSound": "stoneCrack", //sound made when breaking ore
+                    "ItemDropped": "Timsanity_GlisteningRaindrop", //item dropped. doesn't have to be custom- it can be an existing item (and it accepts all item types (e.g big craftables, shirts, etc))
+                    "Tool": "Pickaxe", //tool that damages resource. can be "Any"(tools and weapons), "Tool"(any tool), "Weapon"(any weapon), or a specific type. You can also use "AnyExceptType" (e.g, AnyExceptAxe)
+                    "MinToolLevel": 1, //minimum upgrade. e.g: if less than copper, it'll give a "needs upgrade" message
+                    "MinDrops": 1, //minimum of item to drop
+                    "MaxDrops": 2, //maximum of item to drop
+                    "ExtraItems": [ //optional: extra items to drop
+                        {
+                            "ItemId": "(O)382", //drops coal
+                            "Chance": 0.3 //40%
+                        },
+                    ],
+                    "Debris": "stone purple", //debris type and color (that last one is optional)
+                    "MineSpawns": [ //You can spawn ores in the mines, and specify difficulty or conditions.
+                        {
+                            "Floors": "41/-999", // from 1 to infinite. (-999 means no limit) 
+                            "SpawnFrequency": 0.006, //10% to spawn
+                            "Type": "All" //on any difficulty
+                        }
+                        //see the full template for other examples
+                    ]
+                },
+				"Timsanity_TimoAncientCrystalNode": {
+					"Name": "Timsanity_TimoAncientCrystalNode",
+					"DisplayName": "{{i18n:TimoAncientCrystal_name}}",
+					"Description": "{{i18n:TimoAncientCrystal_description}}",
+                    "SpriteIndex": 0, //index in sprite sheet
+                    "Texture": "Mods/Timsanity.FloralMegamixRedux/Timsanity_TimoAncientCrystalNode", //sprite sheet path 
+                    "Health": 15, //every hit reduces (UpgradeLevel + 1) x 0.75 . e.g iridium reduces 4 HP
+                    "Sound": "hammer", //sound made when hitting ore
+                    "BreakingSound": "stoneCrack", //sound made when breaking ore
+                    "ItemDropped": "Timsanity_TimoAncientCrystal", //item dropped. doesn't have to be custom- it can be an existing item (and it accepts all item types (e.g big craftables, shirts, etc))
+                    "Tool": "Pickaxe", //tool that damages resource. can be "Any"(tools and weapons), "Tool"(any tool), "Weapon"(any weapon), or a specific type. You can also use "AnyExceptType" (e.g, AnyExceptAxe)
+                    "MinToolLevel": 1, //minimum upgrade. e.g: if less than copper, it'll give a "needs upgrade" message
+                    "MinDrops": 1, //minimum of item to drop
+                    "MaxDrops": 2, //maximum of item to drop
+                    "ExtraItems": [ //optional: extra items to drop
+                        {
+                            "ItemId": "Timsanity_TimoAncientCoin", //drops coal
+                            "Chance": 0.4 //40%
+                        },
+                    ],
+                    "Debris": "stone purple", //debris type and color (that last one is optional)
+                    "MineSpawns": [ //You can spawn ores in the mines, and specify difficulty or conditions.
+                        {
+                            "Floors": "41/-999", // from 1 to infinite. (-999 means no limit) 
+                            "SpawnFrequency": 0.001, //10% to spawn
+                            "Type": "All" //on any difficulty
+                        }
+                        //see the full template for other examples
+                    ]
+                }
+            }
+        }
+    ]
+}

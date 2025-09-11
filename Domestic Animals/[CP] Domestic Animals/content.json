@@ -1,0 +1,755 @@
+{
+	"Format": "2.0.0",
+
+	"ConfigSchema": {
+        "Allow Domestic Animals": {
+            "AllowValues": "true, false",
+            "Default": "true"
+		},
+        "Allow wandering farm birds": {
+            "AllowValues": "true, false",
+            "Default": "true",
+			"Description": "Marnie's chickens and ducks will sometimes wander outside of her barn if this setting is enabled."
+		},
+        "Allow adoptable pets": {
+            "AllowValues": "true, false",
+            "Default": "true",
+			"Description": "Lets you adopt the pets that come with bachelors/bachelorettes after getting married. You adopt them at Marnie's for a small fee."
+		},
+        "Adoptable pets adoption fee": {
+            "AllowValues": "",
+            "Default": "500",
+		},
+        "Edit Abigail's guineapig bedding": {
+            "AllowValues": "cage, petbed",
+            "Default": "petbed",
+			"Description": "Choose between a cage or a pet bed as the bedding for Abigail's guineapig."
+		},
+        "Edit Dusty's dog house": {
+            "AllowValues": "true, false",
+            "Default": "true",
+			"Description": "Edits Dusty's box house into a proper dog house if this setting is enabled."
+		},
+        "Enable spawn at day start": {
+            "AllowValues": "true, false",
+            "Default": "false",
+			"Description": "Allows the animals to spawn in the game immediately when the day starts instead of having them spawn only when the player enters the map they're in. This is useful for multiplayer, but may cause performance issues. Feel free to disable if it's singleplayer or struggling with longer loading/low framerates."
+		},
+
+// INDIVIDUAL ANIMAL TOGGLES
+		"Load Animals": {
+			"AllowValues": "Abigail's guineapig, Alex's dog, Emily's parrot, Leah's rabbits, Marnie's farm animals, Marnie's rooster, Shadowpets, Shane's chicken, Stray cats, Stray dogs, Willy's cat, Witch's slimes, Wizard's dragon",
+			"AllowMultiple": true,
+			"AllowBlank": true,
+			"Default": "Abigail's guineapig, Alex's dog, Emily's parrot, Leah's rabbits, Marnie's farm animals, Marnie's rooster, Shadowpets, Shane's chicken, Stray cats, Stray dogs, Willy's cat, Witch's slimes, Wizard's dragon",
+			"Section": "Individual Animal Toggles"
+		},
+	},
+
+	"Changes": [
+	{
+		"Action": "Include",
+		"FromFile": "assets/code/Map_Patch_Vanilla.json"
+	},
+	{
+		"Action": "Include",
+		"FromFile": "assets/code/Inspection_Dialogue.json"
+	},
+	{
+		"Action": "Load",
+		"Target": "Characters/Dialogue/DustyTheDog_DA, Characters/Dialogue/DustyTheDog_Friendly_DA, Characters/Dialogue/KaidaTheDragon_DA, Characters/Dialogue/KaidaTheDragon_Friendly_DA, Characters/Dialogue/KaidaTheDragon_Timid_DA, Characters/Dialogue/MarniesBabyGoat_DA, Characters/Dialogue/MarniesBabyPig_DA, Characters/Dialogue/MarniesChick_DA, Characters/Dialogue/MarniesChicken_DA, Characters/Dialogue/MarniesDuck_DA, Characters/Dialogue/MarniesRooster_DA",
+		"FromFile": "assets/code/Dialogue.json",
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow Domestic Animals": "true",
+		}
+	},
+	{
+		"Action": "Load",
+		"Target": "Characters/Dialogue/StrayCat1_DA, Characters/Dialogue/StrayCat1_Friendly_DA, Characters/Dialogue/StrayCat1_Mean_DA, Characters/Dialogue/StrayCat2_DA, Characters/Dialogue/StrayCat2_Friendly_DA, Characters/Dialogue/StrayCat2_Mean_DA, Characters/Dialogue/StrayCat2_Timid_DA, Characters/Dialogue/StrayDog1_DA, Characters/Dialogue/StrayDog1_Friendly_DA, Characters/Dialogue/StrayDog2_DA, Characters/Dialogue/StrayDog2_Friendly_DA, Characters/Dialogue/StrayDog3_DA, Characters/Dialogue/StrayDog3_Friendly_DA, Characters/Dialogue/StrayDog4_DA, Characters/Dialogue/StrayDog4_Friendly_DA",
+		"FromFile": "assets/code/Dialogue.json",
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow Domestic Animals": "true",
+		}
+	},
+	{
+		"Action": "Load",
+		"Target": "Characters/Dialogue/StrayCat3_DA, Characters/Dialogue/StrayCat3_Friendly_DA, Characters/Dialogue/StrayCat3_Timid_DA, Characters/Dialogue/StrayKitten1_DA, Characters/Dialogue/StrayKitten2_DA, Characters/Dialogue/StrayKitten3_DA",
+		"FromFile": "assets/code/Dialogue.json",
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow Domestic Animals": "true",
+		}
+	},
+
+	{
+		"LogName": "Enable spawn at day start (1)",
+		"Action": "EditData",
+		"Target": "{{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.CharlieTheChicken_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.CloverTheBunny_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.CloverTheBunny_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.DavidTheGuineapig_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.DavidTheGuineapig_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.DustyTheDog_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.DustyTheDog_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.EmilysParrot_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.GillTheCat_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.KaidaTheDragon_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.KaidaTheDragon_Friendly_DA}}",
+		"Entries": {
+			"Companion": {
+				"EnableSpawnAtDayStart": true,
+			}
+		},
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Enable spawn at day start": "true",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Enable spawn at day start (2)",
+		"Action": "EditData",
+		"Target": "{{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.MarniesBabyGoat_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.MarniesBabyPig_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.MarniesBabySheep_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.MarniesChick_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.MarniesChicken_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.MarniesDuck_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.MarniesRooster_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.PrimroseTheBunny_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.PrimroseTheBunny_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.ShadowPup_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.ShadowPup_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.ShanesBlueChicken_DA}}",
+		"Entries": {
+			"Companion": {
+				"EnableSpawnAtDayStart": true,
+			}
+		},
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Enable spawn at day start": "true",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Enable spawn at day start (3)",
+		"Action": "EditData",
+		"Target": "{{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayCat1_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayCat1_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayCat2_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayCat2_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayDog1_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayDog1_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayDog2_Da}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayDog2_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayDog3_Da}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayDog3_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayDog4_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayDog4_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.WitchsSlimeCat_DA}}",
+		"Entries": {
+			"Companion": {
+				"EnableSpawnAtDayStart": true,
+			}
+		},
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Enable spawn at day start": "true",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Enable spawn at day start (4)",
+		"Action": "EditData",
+		"Target": "{{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayCat1_Mean_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayCat2_Mean_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayCat2_Timid_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.WitchsSlimeCat_Mean_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.ShadowPup_Timid_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.KaidaTheDragon_Timid_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayCat3_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayCat3_Friendly_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayCat3_Timid_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayKitten1_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayKitten2_DA}}, {{PeacefulEnd.CustomCompanions/Companions:SmolHooman.DomesticAnimalsCC.StrayKitten3_DA}}",
+		"Entries": {
+			"Companion": {
+				"EnableSpawnAtDayStart": true,
+			}
+		},
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Enable spawn at day start": "true",
+			},
+		"Update": "OnLocationChange"
+	},
+
+// 	DAVID THE GUINEAPIG
+	{
+		"Logname": "David's Enclosure 1 (pet bed)",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/townInterior",
+		"FromFile": "assets/images/David'sPetBed_Empty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 64, "Height": 16 },
+		"ToArea": { "X": 17, "Y": 272, "Width": 64, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Edit Abigail's guineapig bedding": "petbed",
+			"Time": "{{Range: 0600, 1800}}",
+			"LocationName": "SeedShop",
+			"Relationship:Abigail": "Unmet, Friendly, Dating, Engaged, Divorced",
+		}
+	},
+	{
+		"Logname": "David's Enclosure 2  (pet bed)",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/townInterior",
+		"FromFile": "assets/images/David'sPetBed_Empty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 64, "Height": 16 },
+		"ToArea": { "X": 17, "Y": 272, "Width": 64, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Edit Abigail's guineapig bedding": "petbed",
+			"LocationName": "SeedShop",
+			"Relationship:Abigail": "Married",
+		}
+	},
+	{
+		"Logname": "David's Enclosure 3  (pet bed)",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/townInterior",
+		"FromFile": "assets/images/David'sPetBed.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 64, "Height": 16 },
+		"ToArea": { "X": 17, "Y": 272, "Width": 64, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Edit Abigail's guineapig bedding": "petbed",
+			"Time": "{{Range: 1800, 2600}}",
+			"LocationName": "SeedShop",
+			"Relationship:Abigail": "Unmet, Friendly, Dating, Engaged, Divorced",
+		}
+	},
+	{
+		"Logname": "David's Enclosure (non adoptable) 4 (pet bed)",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/townInterior",
+		"FromFile": "assets/images/David'sPetBed.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 64, "Height": 16 },
+		"ToArea": { "X": 17, "Y": 272, "Width": 64, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "false",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Edit Abigail's guineapig bedding": "petbed",
+			"LocationName": "FarmHouse",
+		}
+	},
+	{
+		"Logname": "David's Enclosure (adoptable) 5 (pet bed)",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/townInterior",
+		"FromFile": "assets/images/David'sPetBed_Empty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 64, "Height": 16 },
+		"ToArea": { "X": 17, "Y": 272, "Width": 64, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Edit Abigail's guineapig bedding": "petbed",
+			"LocationName": "FarmHouse",
+		}
+	},
+	{
+		"Logname": "David's Enclosure 1 (pet cage)",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/townInterior",
+		"FromFile": "assets/images/David'sCage_Empty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 64, "Height": 16 },
+		"ToArea": { "X": 17, "Y": 272, "Width": 64, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Edit Abigail's guineapig bedding": "cage",
+			"Time": "{{Range: 0600, 1800}}",
+			"LocationName": "SeedShop",
+			"Relationship:Abigail": "Unmet, Friendly, Dating, Engaged, Divorced",
+		}
+	},
+	{
+		"Logname": "David's Enclosure 2 (pet cage)",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/townInterior",
+		"FromFile": "assets/images/David'sCage_Empty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 64, "Height": 16 },
+		"ToArea": { "X": 17, "Y": 272, "Width": 64, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Edit Abigail's guineapig bedding": "cage",
+			"LocationName": "SeedShop",
+			"Relationship:Abigail": "Married",
+		}
+	},
+	{
+		"Logname": "David's Enclosure 3 (pet cage)",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/townInterior",
+		"FromFile": "assets/images/David'sCage.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 64, "Height": 16 },
+		"ToArea": { "X": 17, "Y": 272, "Width": 64, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Edit Abigail's guineapig bedding": "cage",
+			"Time": "{{Range: 1800, 2600}}",
+			"LocationName": "SeedShop",
+			"Relationship:Abigail": "Unmet, Friendly, Dating, Engaged, Divorced",
+		}
+	},
+	{
+		"Logname": "David's Enclosure (non adoptable) 4 (pet cage)",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/townInterior",
+		"FromFile": "assets/images/David'sCage.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 64, "Height": 16 },
+		"ToArea": { "X": 17, "Y": 272, "Width": 64, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "false",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Edit Abigail's guineapig bedding": "cage",
+			"LocationName": "FarmHouse",
+		}
+	},
+	{
+		"Logname": "David's Enclosure (adoptable) 5 (pet cage)",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/townInterior",
+		"FromFile": "assets/images/David'sCage_Empty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 64, "Height": 16 },
+		"ToArea": { "X": 17, "Y": 272, "Width": 64, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Edit Abigail's guineapig bedding": "cage",
+			"LocationName": "FarmHouse",
+		}
+	},
+
+//	DUSTY THE DOG
+	{
+		"Logname": "Dusty House (non adoptable) 1 A",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouseEmpty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 32 },
+		"ToArea": { "X": 208, "Y": 0, "Width": 16, "Height": 32 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "false",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1500}}",
+			"Weather": "Sun, Wind",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (non adoptable) 1 B",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouseEmpty_2.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+		"ToArea": { "X": 192, "Y": 0, "Width": 16, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "false",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1500}}",
+			"Weather": "Sun, Wind",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (non adoptable) 2 A",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouse.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 32 },
+		"ToArea": { "X": 208, "Y": 0, "Width": 16, "Height": 32 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "false",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 1510, 2600}}",
+			"Weather": "Sun, Wind",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (non adoptable) 2 B",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouse_2.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+		"ToArea": { "X": 192, "Y": 0, "Width": 16, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "false",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 1510, 2600}}",
+			"Weather": "Sun, Wind",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (non adoptable) 3 A",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouseEmpty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 32 },
+		"ToArea": { "X": 208, "Y": 0, "Width": 16, "Height": 32 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "false",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Weather": "Rain, Storm, GreenRain, Kana.WeatherWonders_Mist, Kana.WeatherWonders_Deluge, Kana.WeatherWonders_Drizzle, Kana.WeatherWonders_DryLightning, Kana.WeatherWonders_Hailstorm, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_MuddyRain, Kana.WeatherWonders_RainSnowMix, Kana.WeatherWonders_Wind, Kana.WeatherWonders_Snow",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (non adoptable) 3 B",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouseEmpty_2.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+		"ToArea": { "X": 192, "Y": 0, "Width": 16, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "false",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Weather": "Rain, Storm, GreenRain, Kana.WeatherWonders_Mist, Kana.WeatherWonders_Deluge, Kana.WeatherWonders_Drizzle, Kana.WeatherWonders_DryLightning, Kana.WeatherWonders_Hailstorm, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_MuddyRain, Kana.WeatherWonders_RainSnowMix, Kana.WeatherWonders_Wind, Kana.WeatherWonders_Snow",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (winter) A",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/winter_town",
+		"FromFile": "assets/images/DogHouseWinter.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 32 },
+		"ToArea": { "X": 208, "Y": 0, "Width": 16, "Height": 32 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Winter",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (winter) 1 A",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/winter_town",
+		"FromFile": "assets/images/DogHouseWinter_2.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+		"ToArea": { "X": 192, "Y": 0, "Width": 16, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Winter",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (adoptable) 1 A",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouseEmpty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 32 },
+		"ToArea": { "X": 208, "Y": 0, "Width": 16, "Height": 32 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1500}}",
+			"Weather": "Sun, Wind",
+			"Relationship:Alex": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (adoptable) 1 B",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouseEmpty_2.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+		"ToArea": { "X": 192, "Y": 0, "Width": 16, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 0600, 1500}}",
+			"Weather": "Sun, Wind",
+			"Relationship:Alex": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (adoptable) 2 A",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouse.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 32 },
+		"ToArea": { "X": 208, "Y": 0, "Width": 16, "Height": 32 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 1510, 2600}}",
+			"Weather": "Sun, Wind",
+			"Relationship:Alex": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (adoptable) 2 B",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouse_2.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+		"ToArea": { "X": 192, "Y": 0, "Width": 16, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Time": "{{Range: 1510, 2600}}",
+			"Weather": "Sun, Wind",
+			"Relationship:Alex": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (adoptable) 3 A",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouseEmpty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 32 },
+		"ToArea": { "X": 208, "Y": 0, "Width": 16, "Height": 32 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Weather": "Rain, Storm, GreenRain, Kana.WeatherWonders_Mist, Kana.WeatherWonders_Deluge, Kana.WeatherWonders_Drizzle, Kana.WeatherWonders_DryLightning, Kana.WeatherWonders_Hailstorm, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_MuddyRain, Kana.WeatherWonders_RainSnowMix, Kana.WeatherWonders_Wind, Kana.WeatherWonders_Snow",
+			"Relationship:Alex": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (adoptable) 3 B",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouseEmpty_2.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+		"ToArea": { "X": 192, "Y": 0, "Width": 16, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Season": "Spring, Summer, Fall",
+			"Weather": "Rain, Storm, GreenRain, Kana.WeatherWonders_Mist, Kana.WeatherWonders_Deluge, Kana.WeatherWonders_Drizzle, Kana.WeatherWonders_DryLightning, Kana.WeatherWonders_Hailstorm, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_Heatwave, Kana.WeatherWonders_MuddyRain, Kana.WeatherWonders_RainSnowMix, Kana.WeatherWonders_Wind, Kana.WeatherWonders_Snow",
+			"Relationship:Alex": "Unmet, Friendly, Dating, Engaged, Divorced",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (adoptable) 4 A",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouseEmpty.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 32 },
+		"ToArea": { "X": 208, "Y": 0, "Width": 16, "Height": 32 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Relationship:Alex": "Married",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+	{
+		"Logname": "Dusty House (adoptable) 4 B",
+		"Action": "EditImage",
+        "Priority": "Late",
+		"Target": "Maps/fall_town, Maps/spring_town, Maps/summer_town",
+		"FromFile": "assets/images/DogHouseEmpty_2.png",
+		"FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+		"ToArea": { "X": 192, "Y": 0, "Width": 16, "Height": 16 },
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Edit Dusty's dog house": "true",
+			"Relationship:Alex": "Married",
+			"HasMod |contains=CF.CP.DustyOverhaul, CF.CP.DustyOverhaulSVE, Endwyr.DustyNPC, FlashShifter.StardewValleyExpandedCP, skuldomg.freeDusty": false,
+		}
+	},
+// EMILY'S PARROT FRIEND
+	{
+		"Logname": "Parrot Friend Perch",
+        "Priority": "Late",
+		"Action": "EditImage",
+		"Target": "LooseSprites/Cursors",
+		"FromFile": "assets/images/ParrotPerch_Empty.png",
+		"FromArea": { "X": 51, "Y": 7, "Width": 113, "Height": 17 }, 
+		"ToArea": { "X": 51, "Y": 148, "Width": 113, "Height": 17 },
+		"When": {
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Emily's parrot": true,
+			"HasSeenEvent": "463391",
+			"Time": "{{Range: 0600, 1800}}",
+			"Relationship:Emily": "Unmet, Friendly, Dating, Engaged, Divorced",
+		},
+	},
+	{
+		"Logname": "Parrot Friend Perch (adoptable)",
+        "Priority": "Late",
+		"Action": "EditImage",
+		"Target": "LooseSprites/Cursors",
+		"FromFile": "assets/images/ParrotPerch_Empty.png",
+		"FromArea": { "X": 51, "Y": 7, "Width": 113, "Height": 17 }, 
+		"ToArea": { "X": 51, "Y": 148, "Width": 113, "Height": 17 },
+		"When": {
+			"Allow adoptable pets": "true",
+			"Load Animals |contains= Emily's parrot": true,
+			"Allow Domestic Animals": "true",
+			"Relationship:Emily": "Married",
+		},
+	},
+
+// 	PETS DATA
+	{
+		"Action": "Include",
+		"FromFile": "assets/code/Pet_DavidTheGuineaPig.json",
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Abigail's guineapig": true,
+			"Relationship:Abigail": "Married",
+		}
+	},
+	{
+		"Action": "Include",
+		"FromFile": "assets/code/Pet_DustyTheDog.json",
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Alex's dog": true,
+			"Relationship:Alex": "Married",
+		}
+	},
+	{
+		"Action": "Include",
+		"FromFile": "assets/code/Pet_LeahBunnies.json",
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Leah's rabbits": true,
+			"Relationship:Leah": "Married",
+		}
+	},
+	{
+		"Action": "Include",
+		"FromFile": "assets/code/Pet_ParrotFriend.json",
+		"Update": "OnLocationChange",
+		"When": {
+			"Allow adoptable pets": "true",
+			"Allow Domestic Animals": "true",
+			"Load Animals |contains= Emily's parrot": true,
+			"Relationship:Emily": "Married",
+		}
+	},
+    {
+      "LogName": "Load images",
+      "Action": "Load",
+      "Target": "Mods\\SmolHooman.DomesticAnimals\\DavidGuineapig, Mods\\SmolHooman.DomesticAnimals\\DavidGuineapig_icon, Mods\\SmolHooman.DomesticAnimals\\DustyDog, Mods\\SmolHooman.DomesticAnimals\\DustyDog_icon, Mods\\SmolHooman.DomesticAnimals\\LeahsRabbits, Mods\\SmolHooman.DomesticAnimals\\LeahsRabbits_icon, Mods\\SmolHooman.DomesticAnimals\\LeahsRabbits1, Mods\\SmolHooman.DomesticAnimals\\LeahsRabbits1_icon, Mods\\SmolHooman.DomesticAnimals\\ParrotFriend, Mods\\SmolHooman.DomesticAnimals\\ParrotFriend_icon",
+      "FromFile": "assets/images/pets/{{TargetWithoutPath}}.png"
+    },
+
+// AUDIO
+	{
+      "Action": "EditData",
+      "Target": "Data/AudioChanges",
+      "Entries": {
+		"Cat_DA_Sound": {
+		"ID": "Cat_DA_Sound",
+		"Category": "Sound",
+		"FilePaths": [ "{{AbsoluteFilePath: assets/audio/cat1.wav}}", "{{AbsoluteFilePath: assets/audio/cat2.wav}}", "{{AbsoluteFilePath: assets/audio/cat3.wav}}" ],
+		"StreamedVorbis": false
+		}
+      }
+	},
+	{
+      "Action": "EditData",
+      "Target": "Data/AudioChanges",
+      "Entries": {
+		"CatAngry_DA_Sound": {
+		"ID": "CatAngry_DA_Sound",
+		"Category": "Sound",
+		"FilePaths": [ "{{AbsoluteFilePath: assets/audio/catgrowl1.wav}}", "{{AbsoluteFilePath: assets/audio/catgrowl2.wav}}", "{{AbsoluteFilePath: assets/audio/catgrowl3.wav}}", "{{AbsoluteFilePath: assets/audio/cathiss1.wav}}" ],
+		"StreamedVorbis": false
+		}
+      }
+	},
+	{
+      "Action": "EditData",
+      "Target": "Data/AudioChanges",
+      "Entries": {
+		"GuineaPig_DA_Sound": {
+		"ID": "GuineaPig_DA_Sound",
+		"Category": "Sound",
+		"FilePaths": [ "{{AbsoluteFilePath: assets/audio/guineapig1.wav}}", "{{AbsoluteFilePath: assets/audio/guineapig2.wav}}", "{{AbsoluteFilePath: assets/audio/guineapig3.wav}}", "{{AbsoluteFilePath: assets/audio/guineapig4.wav}}" ],
+		"StreamedVorbis": false
+		}
+      }
+	},
+	{
+      "Action": "EditData",
+      "Target": "Data/AudioChanges",
+      "Entries": {
+		"Kitten_DA_Sound": {
+		"ID": "Kitten_DA_Sound",
+		"Category": "Sound",
+		"FilePaths": [ "{{AbsoluteFilePath: assets/audio/kitten1.wav}}", "{{AbsoluteFilePath: assets/audio/kitten2.wav}}", "{{AbsoluteFilePath: assets/audio/kitten3.wav}}" ],
+		"StreamedVorbis": false
+		}
+      }
+	},
+	]
+}

@@ -1,0 +1,689 @@
+//Content for [CP] A Pelican Town
+{
+	"Format": "1.29.0",
+	//Config
+	"ConfigSchema": {
+		"APTLewisPosters": {
+			"AllowValues": "AllowPosters, NoPosters",
+			"Default": "NoPosters",
+		},
+		"APTWBPTFence": {
+			"AllowValues": "Fence, NoFence",
+			"Default": "Fence",
+			"Description": "To have a fence overlay with Way Back Pelican Installed (Does nothing without it. Select 'NoFence' if using another recolor.)",
+		},
+		"ThompsonAppearance": {
+			"AllowValues": "Old, New",
+			"Default": "New",
+			"Description": "To use the old portraits of Thompson (For use with portrait mods) or new portraits (With dynamic hair)",
+		},
+		"KenzieAppearance": {
+			"AllowValues": "Old, New",
+			"Default": "New",
+			"Description": "To use the old or new portraits of Kenzie ",
+		},
+	},
+	//Dynamic Tokens
+	"DynamicTokens": [
+		//Thompson Appearance
+		{
+			"Name": "APTBuzzcutvalue",
+			"Value": 0,
+			"When": { "Query: {{Day}} < 8": true, }
+		},
+		{
+			"Name": "APTBuzzcutvalue",
+			"Value": 1,
+			"When": { "Query: {{Day}} < 8": false, }
+		},
+		{
+			"Name": "APTHerrvalue",
+			"Value": 0,
+			"When": { "Query: {{Day}} < 8": true }
+		},
+		{
+			"Name": "APTHerrvalue",
+			"Value": 1,
+			"When": { "Query: {{Day}} > 7 AND {{Day}} < 15": true }
+		},
+		{
+			"Name": "APTHerrvalue",
+			"Value": 2,
+			"When": { "Query: {{Day}} > 14 AND {{Day}} < 22": true }
+		},
+		{
+			"Name": "APTHerrvalue",
+			"Value": 3,
+			"When": { "Query: {{Day}} > 21": true }
+		},
+		//Scheduling
+		{
+			"Name": "ThompsonEndofDay",
+			"Value": "15 11 1",
+			"When": { "Query: {{DailyLuck}} < 0": true, },
+		},
+		{
+			"Name": "ThompsonEndofDay",
+			"Value": "14 4 2 ThompsonDancingVideo \"Strings\\schedules\\Thompson:Custom_ThompsonRoom.000\"",
+			"When": { "Query: {{DailyLuck}} < 0": false, },
+		},
+		//Cameos
+		//Thompson 8 Heart Event
+		{
+			"Name": "Thompson8hcameo1",
+			"Value": "Willy",
+			
+		},
+		{
+			"Name": "Thompson8hcameo1",
+			"Value": "Jaemin",
+			"When": {"HasMod": "baguettemagiqu7.NPCParkJaemin"},
+			
+		},
+		{
+			"Name": "Thompson8hcameo2",
+			"Value": "Clint",
+			
+		},
+		{
+			"Name": "Thompson8hcameo2",
+			"Value": "Lucikiel",
+			"When": {"HasMod": "Arknir.Lucikiel"},
+			
+		},
+		//Thompson 6 Heart Event
+		{
+			"Name": "Thompson6HeartCameo1",
+			"Value": "Leah",
+		},
+		{
+			"Name": "Thompson6HeartCameo1",
+			"Value": "Sorren",
+			"When": {"HasMod": "annachibi.SorrenNPC"},
+		},
+		{
+			"Name": "Thompson6HeartCameo2",
+			"Value": "Gus",
+		},
+		{
+			"Name": "Thompson6HeartCameo2",
+			"Value": "Andy",
+			"When": {"HasMod": "FlashShifter.StardewValleyExpandedCP"},
+		},
+		{
+			"Name": "Thompson6HeartCameo3",
+			"Value": "Penny",
+		},
+		{
+			"Name": "Thompson6HeartCameo3",
+			"Value": "Jasper",
+			"When": {"HasMod": "Lemurkat.NPCJasper"},
+		},
+		{
+			"Name": "Thompson6HeartCameo4",
+			"Value": "Shane",
+		},
+		{
+			"Name": "Thompson6HeartCameo4",
+			"Value": "Isis",
+			"When": {"HasMod": "DD.DefenseDivision"},
+		},
+		{
+			"Name": "Thompson6HeartCameo5",
+			"Value": "Jas",
+		},
+		{
+			"Name": "Thompson6HeartCameo5",
+			"Value": "Miranda",
+			"When": {"HasMod": "DD.DefenseDivision"},
+		},
+		{
+			"Name": "Thompson6HeartSetup",
+			"Value": "farmer 49 81 3 Thompson 32 78 1 Evelyn 36 78 3 {{Thompson6HeartCameo1}} 28 65 2 {{Thompson6HeartCameo2}} 29 65 2 {{Thompson6HeartCameo3}} 29 90 3 {{Thompson6HeartCameo4}} 29 90 0 {{Thompson6HeartCameo5}} 28 90 0 Caroline 26 72 3 Jodi 24 72 1 Abigail 47 91 2",
+		},
+		//Kenzie 4 Heart Event
+		{
+			"Name": "Kenzie4HCameo1",
+			"Value": "Shane",
+		},
+		{
+			"Name": "Kenzie4HCameo2",
+			"Value": "Marnie",
+		},
+		{
+			"Name": "Kenzie4HCameo1",
+			"Value": "Sterling",
+			"When": {
+				"HasMod": "Himetarts.ARV.CP",
+			},
+		},
+		{
+			"Name": "Kenzie4HCameo2",
+			"Value": "Henry",
+			"When": {"HasMod | contains=Himetarts.ARV.CP": true },
+		},
+		
+		//THOMPSON ELI CROSSOVER
+		//Conversation at the start of the event
+		{
+			"Name": "EliThompsonIntroNPC",
+			"Value": "Emily",
+			"When": {"HasMod | contains=LemurKat.JulietHouse.NPC": false },
+			"When": {"HasMod | contains=AndrewJC.CoalPointFarm": false },
+		},
+		{
+			"Name": "EliThompsonGuestNPC",
+			"Value": "Haley",
+			"When": {"HasMod | contains=LemurKat.JulietHouse.NPC": false },
+			"When": {"HasMod | contains=AndrewJC.CoalPointFarm": false },
+		},
+		{
+			"Name": "EliThompsonGuestNPCMention",
+			"Value": "{{i18n:event-14585663.11}}",
+			"When": {"HasMod | contains=LemurKat.JulietHouse.NPC": false },
+			"When": {"HasMod | contains=AndrewJC.CoalPointFarm": false },
+		},
+		{
+			"Name": "EliThompsonIntroNPC",
+			"Value": "Juliet",
+			"When": {"HasMod | contains=LemurKat.JulietHouse.NPC": true },
+		},
+		{
+			"Name": "EliThompsonGuestNPC",
+			"Value": "Rosa",
+			"When": {"HasMod | contains=LemurKat.JulietHouse.NPC": true },
+		},
+		{
+			"Name": "EliThompsonGuestNPCMention",
+			"Value": "{{i18n:event-14585663.12}}",
+			"When": {"HasMod | contains=LemurKat.JulietHouse.NPC": true },
+		},
+		{
+			"Name": "EliThompsonIntroNPC",
+			"Value": "APTMora",
+			"When": {"HasMod | contains=LemurKat.JulietHouse.NPC": false },
+			"When": {"HasMod | contains=AndrewJC.CoalPointFarm": true },
+		},
+		{
+			"Name": "EliThompsonGuestNPC",
+			"Value": "APTMarcus",
+			"When": {"HasMod | contains=LemurKat.JulietHouse.NPC": false },
+			"When": {"HasMod | contains=AndrewJC.CoalPointFarm": true },
+		},
+		{
+			"Name": "EliThompsonGuestNPCMention",
+			"Value": "{{i18n:event-14585663.13}}",
+			"When": {"HasMod | contains=LemurKat.JulietHouse.NPC": false },
+			"When": {"HasMod | contains=AndrewJC.CoalPointFarm": true },
+		},
+		//Thompson Aideen Crossover
+		{
+			"Name": "ThompsonAideenFlowerType",
+			"Value": "591",
+			"When": {
+				"Season": "spring",
+			},
+		},
+		{
+			"Name": "ThompsonAideenFlowerType",
+			"Value": "593",
+			"When": {
+				"Season": "summer",
+			},
+		},
+		{
+			"Name": "ThompsonAideenFlowerType",
+			"Value": "595",
+			"When": {
+				"Season": "fall",
+			},
+		},
+		{
+			"Name": "ThompsonAideenFlowerType",
+			"Value": "418",
+			"When": {
+				"Season": "winter",
+			},
+		},
+		
+		//Day/Night Tiles
+			//Thompson
+		{
+			"Name": "ThompsonDayTiles",
+			"Value": "Front 2 1 225 Front 2 2 257 Front 3 1 225 Front 3 2 257",
+		},
+		{
+			"Name": "ThompsonDayTiles",
+			"Value": "Front 2 1 1156 Front 2 2 1181 Front 3 1 1157 Front 3 2 1182",
+			"When": {
+				"HasMod": "Lumisteria.LumiTilesheetsIndoor",
+			},
+		},
+		{
+			"Name": "ThompsonNightTiles",
+			"Value": "Front 2 1 1222 Front 2 2 1254 Front 3 1 1222 Front 3 2 1254",
+		},
+		{
+			"Name": "ThompsonNightTiles",
+			"Value": "Front 2 1 1158 Front 2 2 1183 Front 3 1 1159 Front 3 2 1184",
+			"When": {
+				"HasMod": "Lumisteria.LumiTilesheetsIndoor",
+			},
+		},
+			//Kenzie
+		{
+			"Name": "KenzieDayTiles",
+			"Value": "Front 10 1 225 Front 10 2 257 Front 11 1 225 Front 12 2 257 Front 15 1 225 Front 15 2 257 Front 16 1 225 Front 16 2 257 Front 20 1 225 Front 20 2 257 Front 21 1 225 Front 21 2 257",
+		},
+		{
+			"Name": "KenzieDayTiles",
+			"Value": "Front 10 1 2438 Front 11 1 2439 Front 10 2 2463 Front 11 2 2464 Front 15 1 2438 Front 16 1 2439 Front 15 2 2463 Front 16 2 2464 Front 20 1 2438 Front 21 1 2439 Front 20 2 2463 Front 21 2 2464",
+			"When": {
+				"HasMod": "Lumisteria.LumiTilesheetsIndoor",
+			},
+		},
+		{
+			"Name": "KenzieNightTiles",
+			"Value": "Front 10 1 1222 Front 10 2 1254 Front 11 1 1222 Front 11 2 1254 Front 15 1 1222 Front 15 2 1254 Front 16 1 1222 Front 16 2 1254 Front 20 1 1222 Front 20 2 1254 Front 21 1 1222 Front 21 2 1254",
+		},
+		{
+			"Name": "KenzieNightTiles",
+			"Value": "Front 10 1 2440 Front 11 1 2441 Front 10 2 2465 Front 11 2 2466 Front 15 1 2440 Front 16 1 2441 Front 15 2 2465 Front 16 2 2466 Front 20 1 2440 Front 21 1 2441 Front 20 2 2465 Front 21 2 2466",
+			"When": {
+				"HasMod": "Lumisteria.LumiTilesheetsIndoor",
+			},
+		},
+		
+		//Recolor compat
+		{
+			"Name": "APTRecolorMode",
+			"Value": "Vanilla",
+			"When": { 
+				"HasMod |contains=colling.towninterior": false
+			},
+		},
+		{
+			"Name": "APTRecolorMode",
+			"Value": "Elegant",
+			"When": { 
+				"HasMod |contains=colling.towninterior": true
+			},
+		},
+		
+		//Way Back Pelican Town Compat
+		{
+			"Name": "APTWBPTWarp",
+			"Value": "Warp Town 42 52"
+		},
+		{
+			"Name": "APTWBPTWarp",
+			"Value": "Warp Town 38 53",
+			"When": {
+				"HasMod": "Gweniaczek.WayBackPT"
+			}
+		},
+		
+		//Aspen Compat
+		
+		{
+			"Name": "APTAspenCompat",
+			"Value": "",
+		},
+		{
+			"Name": "APTAspenCompat",
+			"Value": "Aspen",
+			"When": { 
+				"HasMod": "FlashShifter.StardewValleyExpandedCP",
+				"HasMod": "invatorzen.AspenCP",
+                "DaysPlayed |contains={{Range:0, 22}}": "true",
+			},
+		},
+	],
+	//LOCATIONS
+	"CustomLocations": [
+		
+		//Thompson
+		{
+			"LogName": "Thompson Room",
+			"Name": "Custom_ThompsonRoom",
+			"FromMapFile": "assets/maps/ThompsonRoom.tmx"
+		},
+		//Kenzie
+		{
+			"LogName": "Kenzie Room",
+			"Name": "Custom_KenzieRoom",
+			"FromMapFile": "assets/maps/KenzieRoom.tmx"
+		},
+	],
+	
+	"Changes": [
+	//LOCATIONS
+		//Thompson Stairs
+		{
+			"LogName": "Thompson Stairs to Room Vanilla",
+			"Action": "EditMap",
+			"Target": "Maps/SeedShop",
+            "FromFile": "assets/maps/PierreFix.tmx",
+            "ToArea": { 
+				"X": 11, "Y": 30, "Width": 4, "Height": 2
+			},
+			"When": {
+				"HasMod | contains=pinguimbozo.PCMCCJCP": false
+			}
+		},
+		{
+			"LogName": "Thompson Stairs to Room MQR",
+			"Action": "EditMap",
+			"Target": "Maps/SeedShop",
+            "FromFile": "assets/maps/PierreFixMQR.tmx",
+            "ToArea": { 
+				"X": 11, "Y": 30, "Width": 4, "Height": 2
+			},
+			"When": {
+				"HasMod | contains=pinguimbozo.PCMCCJCP": true
+			}
+		},
+		{
+			"LogName": "Thompson Stairs to Room LT",
+			"Action": "EditMap",
+			"Target": "Maps/SeedShop",
+            "FromFile": "assets/maps/PierreFixLT.tmx",
+            "ToArea": { 
+				"X": 11, "Y": 30, "Width": 4, "Height": 2
+			},
+			"When": {
+				"HasFlag": "LivelyMail.showCornerShop"
+			}
+		},
+		//Thompson Balcony
+		{
+			"LogName": "Thompson Balcony Tiles",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_ThompsonRoom",
+			"MapTiles": [
+				{
+					"Position": { "X": 12, "Y": 16},
+					"Layer": "Back",
+					"SetProperties": {
+						"TouchAction": "{{APTWBPTWarp}}",
+					},
+				},
+			],
+		},
+		{
+			"LogName": "Thompson Balcony",
+			"Action": "EditMap",
+			"Target": "Maps/Town",
+            "FromFile": "assets/maps/ThompsonBalcony.tmx",
+            "ToArea": { 
+				"X": 41, "Y": 51, "Width": "3", "Height": 3
+			},
+			"When": {
+				"HasMod |contains=heyseth.pierrebalcony": false,
+				"HasMod |contains=Gweniaczek.WayBackPT": false
+			},
+		},
+		{
+			"LogName": "Thompson Balcony WayBack Pelican Town",
+			"Action": "EditMap",
+			"Target": "Maps/Town",
+            "FromFile": "assets/maps/ThompsonBalconyWBPT{{APTWBPTFence}}.tmx",
+            "ToArea": { 
+				"X": 36, "Y": 52, "Width": 6, "Height": 3
+			},
+			"When": {
+				"HasMod |contains=heyseth.pierrebalcony": false,
+				"HasMod |contains=Gweniaczek.WayBackPT": true
+			},
+		},
+		//Thompson Stage
+		{
+			"LogName": "Thompson Stage VAN",
+			"Action": "EditMap",
+			"Target": "Maps/Saloon",
+            "FromFile": "assets/maps/GusFixVN.tmx",
+            "ToArea": { 
+				"X": 27, "Y": 13, "Width": 3, "Height": 7
+			},
+			"When": { 
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+			},
+		},
+		//SVE Fix Thompson Stage
+		{
+			"LogName": "Thompson Stage SVE",
+			"Action": "EditMap",
+			"Target": "Maps/Saloon",
+            "FromFile": "assets/maps/GusFixSVE{{APTAspenCompat}}.tmx",
+            "ToArea": { 
+				"X": 26, "Y": 13, "Width": 4, "Height": 7
+			},
+			"When": { 
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+			},
+			"PatchMode": "Replace",
+		},
+		//Thompson Spouse Areas
+        {
+			"LogName": "Thompson Spouse Room Load",
+            "Action": "Load",
+            "Target": "Maps/ThompsonSpouseRoom",
+            "FromFile": "assets/maps/ThompsonSpouseRoom.tmx"
+        },
+        {
+			"LogName": "Thompson Spouse Patio Load",
+            "Action": "Load",
+            "Target": "Maps/ThompsonSpouseArea",
+            "FromFile": "assets/maps/ThompsonSpouseArea.tmx"
+        },
+		//Thompson Lumisteria Edit
+		{
+			"LogName": "Lumisteria Thompson Room Patch",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_ThompsonRoom",
+			"FromFile": "assets/maps/ThompsonRoomLumisteria.tmx",
+			"ToArea": {
+				"X": 0, "Y": 0, "Width": 22, "Height": 18
+			},
+			"When": {
+				"HasMod": "Lumisteria.LumiTilesheetsIndoor",
+			},
+			"PatchMode": "Overlay",
+		},
+		//Thompson Lights
+		{
+			"LogName": "Thompson Light Tiles",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_ThompsonRoom",
+			"MapProperties": {
+				"DayTiles": "{{ThompsonDayTiles}}",
+				"NightTiles": "{{ThompsonNightTiles}}",
+			},
+		},
+		//Kenzie Stairs
+		{
+			"LogName": "Kenzie Stairs to Room",
+			"Action": "EditMap",
+			"Target": "Maps/ManorHouse",
+            "FromFile": "assets/maps/LewisFix.tmx",
+            "ToArea": {
+				"X": 9, "Y": 10, "Width": 5, "Height": 2
+			},
+		},
+		//Lewis VOTE Posters
+		{
+			"LogName": "Lewis Poster on ManorHouse",
+			"Action": "EditMap",
+			"Target": "Maps/Town",
+			"FromFile": "assets/maps/VotePoster.tmx",
+			"ToArea": {
+				"X": 61, "Y": 82, "Width": 1, "Height": 2
+			},
+			"When": {
+				"Season": "fall",
+				"APTLewisPosters": "AllowPosters",
+			},
+		},
+		{
+			"LogName": "Lewis Poster on Marnie",
+			"Action": "EditMap",
+			"Target": "Maps/Forest",
+			"FromFile": "assets/maps/VotePoster.tmx",
+			"ToArea": {
+				"X": 87, "Y": 13, "Width": 1, "Height": 2
+			},
+			"When": {
+				"Season": "fall",
+				"APTLewisPosters": "AllowPosters",
+			},
+		},
+		//Kenzie Lumisteria Edit
+		{
+			"LogName": "Lumisteria Kenzie Room Patch",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_KenzieRoom",
+			"FromFile": "assets/maps/KenzieRoomLumisteria.tmx",
+			"ToArea": {
+				"X": 0, "Y": 0, "Width": 25, "Height": 14
+			},
+			"When": {
+				"HasMod": "Lumisteria.LumiTilesheetsIndoor",
+			},
+			"PatchMode": "Overlay",
+		},
+		//Kenzie Lights
+		{
+			"LogName": "Kenzie Light Tiles",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_KenzieRoom",
+			"MapProperties": {
+				"DayTiles": "{{KenzieDayTiles}}",
+				"NightTiles": "{{KenzieNightTiles}}",
+			},
+		},
+		
+		//Thompson Warp
+		{
+			"LogName": "Thompson Shop to Room",
+			"Action": "EditMap",
+			"Target": "Maps/SeedShop",
+			"AddWarps": [
+				"12 32 Custom_ThompsonRoom 19 15",
+				"13 32 Custom_ThompsonRoom 20 15",
+			],
+		},
+		//Kenzie Warp
+		{
+			"LogName": "Kenzie Manor to Room",
+			"Action": "EditMap",
+			"Target": "Maps/ManorHouse",
+			"AddWarps": [
+				"10 12 Custom_KenzieRoom 12 10",
+				"11 12 Custom_KenzieRoom 13 10",
+				"12 12 Custom_KenzieRoom 14 10",
+			],
+		},
+		
+		//Temporary Maps
+        {
+            "LogName": "Kenzie and Daniel's Room",
+			"Action": "Load",
+            "Target": "Maps/Custom_KenzieDanielRoom",
+            "FromFile": "assets/maps/KenzieDanielRoom.tmx",
+        },
+		{
+			"LogName": "Thompson City",
+			"Action": "Load",
+            "Target": "Maps/Custom_ThompsonCity",
+			"FromFile": "assets/maps/ThompsonCity.tmx",
+		},
+		//Kenzie Blackmail Interactable
+        {
+            "Action": "Load",
+            "Target": "Mods/JelloTinBox.APelicanTown/DanielBlackmail",
+            "FromFile": "assets/portraits/Kenzie{{KenzieAppearance}}/DanielBlackmail.png"
+        },
+		{
+			"LogName": "Kenzie Blackmail",
+			"Action": "EditMap",
+            "Target": "Maps/Forest",
+            "MapTiles": [
+                {
+                    "Position": {
+                        "X": 100,
+                        "Y": 100
+                    },
+                    "Layer": "Back",
+                    "SetProperties": {
+                        "MEEP_CloseupInteraction_Image": "Mods/JelloTinBox.APelicanTown/DanielBlackmail",
+                        "MEEP_CloseupInteraction_Text": "{{i18n:MEEPInteractable.Kenzie}}"
+                    },
+                },
+			],
+		},
+		//Recolor Compat
+		{
+			"LogName": "Vanilla Tiles",
+			"Action": "Load",
+			"Target": "maps/z_APTTileset",
+			"FromFile": "assets/maps/{{APTRecolorMode}}/{{TargetWithoutPath}}.png",
+		},
+		
+	//FILES
+		{
+			"LogName": "Inclusions",
+			"Action": "Include",
+			"FromFile": "Data/Animations.json, Data/EventDataKT.json, Data/scheduleKenzie.json, Data/APTFestivals.json, Data/APTStrings.json, Data/MovieTastes.json, Data/scheduleThompson.json, Data/ConversationTopics.json, Data/InfoKenzie.json, Data/InfoThompson.json, assets/dialogue/dialogueKenzie.json, assets/dialogue/dialogueThompson.json, assets/dialogue/marriagedialoguethompson.json, Data/APTFurniture.json",
+		},
+	
+	//Characters
+	//Most is found in data/Info([Character]
+		
+		{
+			"LogName": "Gifts",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"Thompson": "{{i18n:gift.love.Thompson}}/608 402 90 421 72 204 555 733/{{i18n:gift.like.Thompson}}/-80 -81 428 814 75 300 250 500 104 167/{{i18n:gift.neutral.Thompson}}/-26/{{i18n:gift.dislike.Thompson}}$2/-6/{{i18n:gift.hate.Thompson}}/-4/ ",
+				"Kenzie": "{{i18n:gift.love.Kenzie}}/253 395 614 595 84 230/{{i18n:gift.like.Kenzie}}/-5 -79 422/{{i18n:gift.neutral.Kenzie}}/-2 330 167 403 422/{{i18n:gift.dislike.Kenzie}}/-12 444/{{i18n:gift.hate.Kenzie}}/-4 227/ "
+			}
+		},
+		
+		//Temporary Actors
+        {
+            "Action": "Load",
+            "Target": "Characters/APTDaniel",
+            "FromFile": "assets/sprites/temp/DanielSprites.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/APTDaniel",
+            "FromFile": "assets/portraits/Kenzie{{KenzieAppearance}}/APTDanielPortraits.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/DanielSecretService1",
+            "FromFile": "assets/sprites/temp/SecretServiceSprites.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/DanielSecretService2",
+            "FromFile": "assets/sprites/temp/SecretServiceSprites.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/ThompsonFan1",
+            "FromFile": "assets/sprites/temp/FanSprites1.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/ThompsonFan2",
+            "FromFile": "assets/sprites/temp/FanSprites2.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/ThompsonAideenFlower",
+            "FromFile": "assets/sprites/temp/ThompsonAideenFlower{{Season}}.png"
+        },
+	]
+}

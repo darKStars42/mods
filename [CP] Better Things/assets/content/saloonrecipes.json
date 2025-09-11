@@ -1,0 +1,3734 @@
+{
+    "Changes": [
+	  /*{
+        "Action": "EditMap",
+        "Target": "Maps/Saloon",
+        "MapTiles": [
+           {
+              "Position": { "X": 8, "Y": 19 },
+              "Layer": "Buildings",
+              "SetProperties": { "Action": "OpenShop SaloonRecipes" }
+            },
+			{
+				"Position": { "X": 8, "Y": 18 },
+				"Layer": "Front",
+				"SetIndex": "675"
+			}
+         ],
+		 "When": { "NewStore": true }
+        },*/
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "Entries": {
+                "SaloonRecipes": {
+					"Currency": 0,
+					"OpenSound": "newArtifact",
+                    "Owners": [
+                        {
+                            "Name": "Agatha",
+				            "Portrait": null,
+							"Condition": "!DAY_OF_WEEK Wednesday, TIME 2200 2400",
+                            "Dialogues": [
+								{
+                                    "Id": "maat.BetterThings_Rainy",
+						            "Condition": "WEATHER here Rain",
+                                    "Dialogue": "{{i18n:saloonrecipes.1}}"
+                                },
+								{
+						            "Id": "maat.BetterThings_Storm",
+									"Condition": "WEATHER here Storm",
+                                    "Dialogue": "{{i18n:saloonrecipes.3}}"
+                                },
+								{
+						            "Id": "maat.BetterThings_Wind",
+									"Condition": "WEATHER here Wind",
+                                    "Dialogue": "{{i18n:saloonrecipes.4}}"
+                                },
+								{
+						            "Id": "maat.BetterThings_Festival",
+									"Condition": "WEATHER here Festival",
+                                    "Dialogue": "{{i18n:saloonrecipes.6}}"
+                                },
+								{
+						            "Id": "maat.BetterThings_Snow",
+									"Condition": "WEATHER here Snow",
+                                    "Dialogue": "{{i18n:saloonrecipes.7}}"
+                                },
+								{
+						            "Id": "maat.BetterThings_Default_Dialogues",
+                                    "RandomDialogue": [
+							        "{{i18n:saloonrecipes.2}}",
+									"{{i18n:saloonrecipes.5}}",
+							        "{{i18n:saloonrecipes.8}}",
+							        "{{i18n:saloonrecipes.9}}",
+                                    "{{i18n:saloonrecipes.10}}",
+                                    "{{i18n:saloonrecipes.11}}",
+                                    "{{i18n:saloonrecipes.12}}",
+                                    "[LocalizedText Strings\\StringsFromCSFiles:ShopMenu.cs.11512 [EscapedText [SuggestedItem]]]"
+									]
+								}
+                            ],
+							"RandomizeDialogueOnOpen": true,
+							"ClosedMessage": null
+								},
+								{
+						            "Condition": "!DAY_OF_WEEK Wednesday, TIME 600",
+						            "Portrait": null,
+						            "Dialogues": null,
+						            "RandomizeDialogueOnOpen": true,
+						            "ClosedMessage": "{{i18n:closedmessage.agathastore1}}",
+						            "Id": "Closed",
+						            "Name": "Agatha"
+								},
+								{
+						            "Condition": "DAY_OF_WEEK Wednesday, TIME 600",
+						            "Portrait": null,
+						            "Dialogues": null,
+						            "RandomizeDialogueOnOpen": true,
+						            "ClosedMessage": "{{i18n:closedmessage.agathastore2}}",
+						            "Id": "Closed2",
+						            "Name": "Agatha"
+								}
+                           ],
+						   "CustomFields": null,
+						   "SalableItemTags": [
+						     "category_egg",
+						     "category_cooking",
+						     "category_meat",
+						     "category_vegetable",
+						     "category_fruits",
+						     "category_ingredients",
+						     "category_greens"
+						    ],
+						   "Items": [
+			   		      {
+                            "Id": "Blossom Coin",
+                            "ItemId": "maat.BetterThings_BlossomCoin",
+                            "Price": 0,
+							"TradeItemId": "{{ModId}}_BlossomFruit",
+                            "TradeItemAmount": 3
+			   		      },
+			   		      {
+                            "Id": "Oil Of Garlic",
+                            "ItemId": "(O)772",
+                            "AvailableStock": 5,
+                            "AvailableStockLimit": "Player"
+			   		      },
+			   		      {
+                            "Id": "Life Elixir",
+                            "ItemId": "(O)773",
+                            "AvailableStock": 5,
+                            "AvailableStockLimit": "Player"
+			   		      },
+			   		      {
+                            "Id": "BlossomPotion",
+                            "ItemId": "{{ModId}}_BlossomPotion",
+                            "Price": 85000,
+                            "TradeItemId": "maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 25,
+                            "AvailableStock": 5,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON spring"
+			   		      },
+			   		      {
+                            "Id": "Miners Treat",
+                            "ItemId": "(O)243",
+                            "AvailableStock": 2,
+                            "AvailableStockLimit": "Player"
+			   		      },
+			   		      {
+                            "Id": "Field Snack",
+                            "ItemId": "403",
+                            "Price": 100,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player"
+			   		      },
+			   		      {
+                            "Id": "Goat Cheese",
+                            "ItemId": "426",
+                            "Price": 1500,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player"
+			   		      },
+			   		      {
+                            "Id": "Truffle",
+                            "ItemId": "430",
+                            "Price": 3000,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player"
+			   		      },
+			   		      {
+                            "Id": "CoffeeDonut",
+                            "ItemId": "maat.BetterThings_Coffee_Donut",
+                            "Price": 10000,
+                            "TradeItemId": "maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 1,
+                            "AvailableStock": 3,
+                            "AvailableStockLimit": "Player"
+			   		      },
+                        {
+                            "Id": "Laurel Wreath Crown",
+                            "ItemId": "(H)LaurelWreathCrown",
+                            "Price": 6000,
+                            "Condition": "SEASON spring"
+                        },
+                        {
+                            "Id": "Party Hat",
+                            "ItemId": "(H)59",
+                            "Price": 3000,
+                            "Condition": "SEASON spring"
+                        },
+                        {
+                            "Id": "Leprechaun Hat",
+                            "ItemId": "(H)LeprechuanHat",
+                            "Price": 25000,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Global",
+                            "Condition": "SEASON_DAY spring 17"
+                        },
+                        {
+                            "Id": "Leprechaun Shoes",
+                            "ItemId": "(B)806",
+                            "Price": 50000,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Global",
+                            "Condition": "SEASON_DAY spring 17"
+                        },
+                        {
+                            "Id": "Living Hat",
+                            "ItemId": "(H)40",
+                            "Price": 25000,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Global",
+                            "Condition": "SEASON_DAY spring 28"
+                        },
+                        {
+                            "Id": "Green Belted Shirt",
+                            "ItemId": "(S)1011",
+                            "Price": 1000,
+                            "Condition": "SEASON spring"
+                        },
+                        {
+                            "Id": "Lime Green Striped Shirt",
+                            "ItemId": "(S)1012",
+                            "Price": 1000,
+                            "Condition": "SEASON spring"
+                        },
+                        {
+                            "Id": "Grass Skirt",
+                            "ItemId": "(P)6",
+                            "Price": 7000,
+                            "Condition": "SEASON spring"
+                        },
+                        {
+                            "Id": "Rubber Boots",
+                            "ItemId": "(B)505",
+                            "Price": 7000,
+                            "Condition": "SEASON spring"
+                        },
+                        {
+                            "Id": "Work Boots",
+                            "ItemId": "(B)507",
+                            "Price": 7100,
+                            "Condition": "SEASON spring"
+                        },
+                        {
+                            "Id": "Cinderclown Shoes",
+                            "ItemId": "(B)853",
+                            "Price": 120000,
+                            "Condition": "SEASON_DAY fall 28"
+                        },
+                        {
+                            "Id": "Space Boots",
+                            "ItemId": "(B)514",
+                            "Price": 9000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Mermaid Boots",
+                            "ItemId": "(B)854",
+                            "Price": 12000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Dinosaur Pants",
+                            "ItemId": "(P)5",
+                            "Price": 15000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Prismatic Genie Pants",
+                            "ItemId": "(P)999",
+                            "Price": 50000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Skull Shirt",
+                            "ItemId": "(S)1004",
+                            "Price": 5000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Carp Shirt",
+                            "ItemId": "(S)1250",
+                            "Price": 2500,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Wumbus Shirt",
+                            "ItemId": "(S)1135",
+                            "Price": 10000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Red Striped Shirt",
+                            "ItemId": "(S)1013",
+                            "Price": 2200,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Shirt 5",
+                            "ItemId": "(S)1053",
+                            "Price": 1000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Shirt 6",
+                            "ItemId": "(S)1089",
+                            "Price": 4000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Shirt 7",
+                            "ItemId": "(S)1101",
+                            "Price": 3000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Skeleton Shirt",
+                            "ItemId": "(S)1014",
+                            "Price": 11000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Goblin Mask",
+                            "ItemId": "(H)9",
+                            "Price": 12000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Skeleton Mask",
+                            "ItemId": "(H)8",
+                            "Price": 11000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Chicken Mask",
+                            "ItemId": "(H)10",
+                            "Price": 7000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Eye Patch",
+                            "ItemId": "(H)24",
+                            "Price": 3000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Santa Hat",
+                            "ItemId": "(H)25",
+                            "Price": 40000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Wearable Dwarf Helm",
+                            "ItemId": "(H)46",
+                            "Price": 9999,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Totem Mask",
+                            "ItemId": "(H)44",
+                            "Price": 10000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Knight's Helmet",
+                            "ItemId": "(H)50",
+                            "Price": 12000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Squire's Helmet",
+                            "ItemId": "(H)51",
+                            "Price": 12000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Blobfish Mask",
+                            "ItemId": "(H)56",
+                            "Price": 15000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Arcane Hat",
+                            "ItemId": "(H)60",
+                            "Price": 90000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Flat Topped Hat",
+                            "ItemId": "(H)63",
+                            "Price": 60000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Chef Hat",
+                            "ItemId": "(H)61",
+                            "Price": 20000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Pirate Hat",
+                            "ItemId": "(H)62",
+                            "Price": 10000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Golden Mask",
+                            "ItemId": "(H)67",
+                            "Price": 100000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Witch Hat",
+                            "ItemId": "(H)70",
+                            "Price": 22000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Tiger Hat",
+                            "ItemId": "(H)91",
+                            "Price": 19000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Mr. Qi's Hat",
+                            "ItemId": "(H)82",
+                            "Price": 250000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Deluxe Pirate Hat",
+                            "ItemId": "(H)76",
+                            "Price": 50000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Frog Hat",
+                            "ItemId": "(H)78",
+                            "Price": 4000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Qi Mask",
+                            "ItemId": "(H)86",
+                            "Price": 300000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Star Helmet",
+                            "ItemId": "(H)87",
+                            "Price": 1200,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "???",
+                            "ItemId": "(H)92",
+                            "Price": 900000,
+                            "Condition": "SEASON_DAY fall 7"
+                        },
+                        {
+                            "Id": "Warrior Helmet",
+                            "ItemId": "(H)93",
+                            "Price": 5000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Mummy Mask",
+                            "ItemId": "(H)MummyMask",
+                            "Price": 100000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Squid Hat",
+                            "ItemId": "(H)SquidHat",
+                            "Price": 1000000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Junimo Hat",
+                            "ItemId": "(H)JunimoHat",
+                            "Price": 9600,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Space Helmet",
+                            "ItemId": "(H)SpaceHelmet",
+                            "Price": 9500,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Bluebird Mask",
+                            "ItemId": "(H)80",
+                            "Price": 9000,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Panda Hat",
+                            "ItemId": "(H)36",
+                            "Price": 9100,
+                            "Condition": "SEASON fall"
+                        },
+                        {
+                            "Id": "Luau Skirt",
+                            "ItemId": "(P)7",
+                            "Price": 7100,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Sunglasses",
+                            "ItemId": "(H)88",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Goggles",
+                            "ItemId": "(H)89",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Joja Cap",
+                            "ItemId": "(H)JojaCap",
+                            "Price": 50,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Sports Cap",
+                            "ItemId": "(H)SportsCap",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Dark Ballcap",
+                            "ItemId": "(H)DarkBallcap",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Pageboy Cap",
+                            "ItemId": "(H)PageboyCap",
+                            "Price": 4000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Blue Ribbon",
+                            "ItemId": "(H)BlueRibbon",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Small Cap",
+                            "ItemId": "(H)79",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Spotted Headscarf",
+                            "ItemId": "(H)52",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Logo Cap",
+                            "ItemId": "(H)45",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Cool Cap",
+                            "ItemId": "(H)20",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Good Ol' Cap",
+                            "ItemId": "(H)18",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Trucker Hat",
+                            "ItemId": "(H)16",
+                            "Price": 5000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Plain Shirt (F)",
+                            "ItemId": "(S)1041",
+                            "Price": 3000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Shirt",
+                            "ItemId": "(S)1043",
+                            "Price": 3000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "80's Shirt (M)",
+                            "ItemId": "(S)1152",
+                            "Price": 4000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Fake Muscles Shirt",
+                            "ItemId": "(S)1153",
+                            "Price": 10000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Kelp Shirt",
+                            "ItemId": "(S)1168",
+                            "Price": 20000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Sneakers",
+                            "ItemId": "(B)504",
+                            "Price": 1000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Leather Boots",
+                            "ItemId": "(B)506",
+                            "Price": 20000,
+                            "Condition": "SEASON summer"
+                        },
+                        {
+                            "Id": "Crystal Shoes",
+                            "ItemId": "(B)878",
+                            "Price": 200000,
+                            "Condition": "SEASON winter"
+                        },
+                        {
+                            "Id": "Thermal Boots",
+                            "ItemId": "(B)510",
+                            "Price": 2000,
+                            "Condition": "SEASON winter"
+                        },
+                        {
+                            "Id": "Tundra Boots",
+                            "ItemId": "(B)509",
+                            "Price": 200000,
+                            "Condition": "SEASON winter"
+                        },
+                        {
+                            "Id": "Shirt 2",
+                            "ItemId": "(S)1044",
+                            "Price": 3000,
+                            "Condition": "SEASON winter"
+                        },
+                        {
+                            "Id": "Shirt 3",
+                            "ItemId": "(S)1115",
+                            "Price": 4000,
+                            "Condition": "SEASON winter"
+                        },
+                        {
+                            "Id": "Shirt 4",
+                            "ItemId": "(S)1118",
+                            "Price": 2000,
+                            "Condition": "SEASON winter"
+                        },
+                        {
+                            "Id": "Earmuffs",
+                            "ItemId": "(H)11",
+                            "Price": 200000,
+                            "Condition": "SEASON winter"
+                        },
+                        {
+                            "Id": "Santa Hat 2",
+                            "ItemId": "(H)25",
+                            "Price": 4000,
+                            "Condition": "SEASON winter"
+                        },
+                        {
+                            "Id": "Infinity Crown",
+                            "ItemId": "(H)InfinityCrown",
+                            "Price": 100000,
+                            "Condition": "SEASON winter"
+                        },
+                        {
+                            "Id": "White Bow",
+                            "ItemId": "(H)WhiteBow",
+                            "Price": 5000,
+                            "Condition": "SEASON winter"
+                        },
+                        {
+                            "Id": "Radioactive Goggles",
+                            "ItemId": "(H)84",
+                            "Price": 50000,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON_DAY winter 28"
+                        },
+                        {
+                            "Id": "Golden Helmet",
+                            "ItemId": "(H)75",
+                            "Price": 55000,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON_DAY winter 28"
+                        },
+			   		      {
+                            "Id": "Wooden Sword",
+                            "ItemId": "maat.BetterThings_Wooden_Sword",
+                            "Price": 16000,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON spring"
+			   		      },
+			   		      {
+                            "Id": "Prismarine Sword",
+                            "ItemId": "maat.BetterThings_Prismarine_Sword",
+                            "Price": 24000,
+							"TradeItemId": "(O)62",
+							"TradeItemAmount": 3,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON spring"
+			   		      },
+			   		      {
+                            "Id": "Iron Sword",
+                            "ItemId": "maat.BetterThings_Iron_Sword",
+                            "Price": 32000,
+							"TradeItemId": "(O)335",
+							"TradeItemAmount": 3,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON summer"
+			   		      },
+			   		      {
+                            "Id": "Golden Sword",
+                            "ItemId": "maat.BetterThings_Golden_Sword",
+                            "Price": 64000,
+							"TradeItemId": "(O)336",
+							"TradeItemAmount": 3,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON fall"
+			   		      },
+			   		      {
+                            "Id": "Emerald Sword",
+                            "ItemId": "maat.BetterThings_Emerald_Sword",
+                            "Price": 82000,
+							"TradeItemId": "(O)60",
+                            "TradeItemAmount": 3,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON fall"
+			   		      },
+			   		      {
+                            "Id": "Amethyst Sword",
+                            "ItemId": "maat.BetterThings_Amethyst_Sword",
+                            "Price": 87000,
+							"TradeItemId": "(O)66",
+                            "TradeItemAmount": 3,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON winter"
+			   		      },
+			   		      {
+                            "Id": "Ruby Sword",
+                            "ItemId": "maat.BetterThings_Ruby_Sword",
+                            "Price": 92000,
+							"TradeItemId": "(O)64",
+                            "TradeItemAmount": 3,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON summer"
+			   		      },
+			   		      {
+                            "Id": "Blossom Sword",
+                            "ItemId": "maat.BetterThings_Blossom_Sword",
+                            "Price": 96000,
+							"TradeItemId": "maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 25,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON spring"
+			   		      },
+			   		      {
+                            "Id": "Diamond Sword",
+                            "ItemId": "maat.BetterThings_Diamond_Sword",
+                            "Price": 128000,
+							"TradeItemId": "(O)72",
+                            "TradeItemAmount": 3,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON winter"
+			   		      },
+			   		      {
+                            "Id": "Netherite Sword",
+                            "ItemId": "maat.BetterThings_Netherite_Sword",
+                            "Price": 158000,
+							"TradeItemId": "maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 25,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON summer"
+			   		      },
+			   		      {
+                            "Id": "Wooden Dagger",
+                            "ItemId": "maat.BetterThings_Wooden_Dagger",
+                            "Price": 12000,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON spring"
+			   		      },
+			   		      {
+                            "Id": "Prismarine Dagger",
+                            "ItemId": "maat.BetterThings_Prismarine_Dagger",
+                            "Price": 20000,
+							"TradeItemId": "(O)62",
+							"TradeItemAmount": 2,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON spring"
+			   		      },
+			   		      {
+                            "Id": "Iron Dagger",
+                            "ItemId": "maat.BetterThings_Iron_Dagger",
+                            "Price": 24000,
+							"TradeItemId": "(O)335",
+							"TradeItemAmount": 2,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON summer"
+			   		      },
+			   		      {
+                            "Id": "Golden Dagger",
+                            "ItemId": "maat.BetterThings_Golden_Dagger",
+                            "Price": 48000,
+							"TradeItemId": "(O)336",
+							"TradeItemAmount": 2,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON fall"
+			   		      },
+			   		      {
+                            "Id": "Emerald Dagger",
+                            "ItemId": "maat.BetterThings_Emerald_Dagger",
+                            "Price": 50000,
+							"TradeItemId": "(O)60",
+                            "TradeItemAmount": 2,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON fall"
+			   		      },
+			   		      {
+                            "Id": "Amethyst Dagger",
+                            "ItemId": "maat.BetterThings_Amethyst_Dagger",
+                            "Price": 53000,
+							"TradeItemId": "(O)66",
+                            "TradeItemAmount": 2,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON winter"
+			   		      },
+			   		      {
+                            "Id": "Ruby Dagger",
+                            "ItemId": "maat.BetterThings_Ruby_Dagger",
+                            "Price": 56000,
+							"TradeItemId": "(O)64",
+							"TradeItemAmount": 2,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON summer"
+			   		      },
+			   		      {
+                            "Id": "Blossom Dagger",
+                            "ItemId": "maat.BetterThings_Blossom_Dagger",
+                            "Price": 60000,
+							"TradeItemId": "maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 15,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON spring"
+			   		      },
+			   		      {
+                            "Id": "Diamond Dagger",
+                            "ItemId": "maat.BetterThings_Diamond_Dagger",
+                            "Price": 96000,
+							"TradeItemId": "(O)72",
+                            "TradeItemAmount": 2,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON winter"
+			   		      },
+			   		      {
+                            "Id": "Netherite Dagger",
+                            "ItemId": "maat.BetterThings_Netherite_Dagger",
+                            "Price": 126000,
+							"TradeItemId": "maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 15,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON summer"
+			   		      },
+			   		      {
+                            "Id": "Void Staff",
+                            "ItemId": "maat.BetterThings_VoidStaff",
+                            "Price": 126000,
+							"TradeItemId": "(O)maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 10,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON winter"
+			   		      },
+			   		      {
+                            "Id": "Florest Staff",
+                            "ItemId": "maat.BetterThings_FlorestStaff",
+                            "Price": 156000,
+							"TradeItemId": "(O)maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 10,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON spring"
+			   		      },
+			   		      {
+                            "Id": "Bull Staff",
+                            "ItemId": "maat.BetterThings_BullStaff",
+                            "Price": 186000,
+							"TradeItemId": "(O)maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 10,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON fall"
+			   		      },
+			   		      {
+                            "Id": "Joja Staff",
+                            "ItemId": "maat.BetterThings_JojaStaff",
+                            "Price": 1600,
+							"TradeItemId": "(O)maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 3,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON winter"
+			   		      },
+			   		      {
+                            "Id": "Staff of Light",
+                            "ItemId": "maat.BetterThings_StaffOfLight",
+                            "Price": 216000,
+							"TradeItemId": "(O)maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 10,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON summer"
+			   		      },
+			   		      {
+                            "Id": "Soul Staff",
+                            "ItemId": "maat.BetterThings_SoulStaff",
+                            "Price": 246000,
+							"TradeItemId": "(O)maat.BetterThings_BlossomCoin",
+                            "TradeItemAmount": 10,
+                            "AvailableStock": 1,
+                            "AvailableStockLimit": "Player",
+                            "Condition": "SEASON fall"
+			   		      }
+                      ]
+                  }
+            },
+            "When": { "NewStore": true }
+        },
+	{
+      "LogName": "Buyable New Cooking Recipes",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "SaloonRecipes", "Items" ],
+      "Entries": {
+         "PinaColadaRecipe": {
+            "Id": "Piña Colada",
+            "ItemId": "873",
+            "Price": 6000,
+            "TradeItemId": "maat.BetterThings_BlossomCoin",
+            "TradeItemAmount": 2,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+          },
+         "MagicRockCandyRecipe": {
+            "Id": "Magic Rock Candy",
+            "ItemId": "279",
+            "Price": 50000,
+            "TradeItemId": "maat.BetterThings_BlossomCoin",
+            "TradeItemAmount": 2,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+          },
+         "PopcornRecipe": {
+            "Id": "Popcorn",
+            "ItemId": "maat.BetterThings_Popcorn",
+            "Price": 4800,
+            "TradeItemId": "maat.BetterThings_BlossomCoin",
+            "TradeItemAmount": 1,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+          },
+         "PieceOfPizzaRecipe": {
+            "Id": "Piece of Pizza",
+            "ItemId": "maat.BetterThings_Piece_Of_Pizza",
+            "Price": 3800,
+            "TradeItemId": "maat.BetterThings_BlossomCoin",
+            "TradeItemAmount": 1,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+          },
+         "OnigiriRecipe": {
+            "Id": "Onigiri",
+            "ItemId": "maat.BetterThings_Onigiri",
+            "Price": 13000,
+            "TradeItemId": "maat.BetterThings_BlossomCoin",
+            "TradeItemAmount": 1,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+          },
+         "PretzelRecipe": {
+            "Id": "Pretzel",
+            "ItemId": "maat.BetterThings_Pretzel",
+            "Price": 18000,
+            "TradeItemId": "maat.BetterThings_BlossomCoin",
+            "TradeItemAmount": 1,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+          },
+         "TruffleCookieRecipe": {
+            "Id": "Truffle Cookie",
+            "ItemId": "maat.BetterThings_TruffleCookie",
+            "Price": 80000,
+            "TradeItemId": "maat.BetterThings_BlossomCoin",
+            "TradeItemAmount": 1,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+          },
+         "BlueberryMuffinRecipe": {
+            "Id": "Blueberry Muffin",
+            "ItemId": "maat.BetterThings_BlueberryMuffin",
+            "Price": 32000,
+            "TradeItemId": "maat.BetterThings_BlossomCoin",
+            "TradeItemAmount": 1,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+          },
+		 "CoffeeDonutRecipe": {
+            "Id": "Coffee Donut",
+            "ItemId": "maat.BetterThings_Coffee_Donut",
+            "Price": 50000,
+            "TradeItemId": "maat.BetterThings_BlossomCoin",
+            "TradeItemAmount": 2,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+          },
+		 "BlossomJuiceRecipe": { 
+		    "Id": "Blossom Juice",
+	        "ItemId": "{{ModId}}_BlossomJuice",
+		    "Price": 5000,
+			"TradeItemId": "maat.BetterThings_BlossomCoin",
+			"TradeItemAmount": 3,
+			"AvailableStockLimit": "Player",
+			"Condition": "SEASON spring",
+			"IsRecipe": true
+		  },
+		  "BlossomPotionRecipe": { 
+		    "Id": "Blossom Potion",
+	        "ItemId": "{{ModId}}_BlossomPotion",
+		    "Price": 45000,
+			"TradeItemId": "maat.BetterThings_BlossomCoin",
+			"TradeItemAmount": 5,
+			"AvailableStockLimit": "Player",
+			"Condition": "SEASON spring",
+			"IsRecipe": true
+		  }
+	   },
+	   "When": { "NewStore": true, "MoreRecipes": true },
+	   "MoveEntries": [
+          { "Id": "Piña Colada", "AfterId": "Blossom Coin" },
+		  { "Id": "Magic Rock Candy", "AfterId": "Piña Colada" },
+		  { "Id": "Popcorn", "AfterId": "Magic Rock Candy" },
+		  { "Id": "Piece of Pizza", "AfterId": "Popcorn" },
+		  { "Id": "Onigiri", "AfterId": "Piece of Pizza" },
+		  { "Id": "Pretzel", "AfterId": "Onigiri" },
+		  { "Id": "Truffle Cookie", "AfterId": "Pretzel" },
+		  { "Id": "Blueberry Muffin", "AfterId": "Truffle Cookie" },
+		  { "Id": "Coffee Donut", "BeforeId": "Blueberry Muffin" },
+		  { "Id": "Blueberry Muffin", "BeforeId": "Blossom Juice" },
+		  { "Id": "Blossom Juice", "BeforeId": "Blossom Potion" }
+       ]
+	},
+	{
+      "LogName": "Buyable Cooking Recipes",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "SaloonRecipes", "Items" ],
+      "Entries": {
+        "MossSoupRecipe": {
+            "Id": "Moss Soup",
+            "ItemId": "MossSoup",
+            "Price": 800,
+			"AvailableStock": 1,
+			"IsRecipe": true,
+		    "AvailableStockLimit": "Player"
+          },
+		"SquidInkRavioliRecipe": {
+            "Id": "Squid Ink Ravioli",
+            "ItemId": "921",
+            "Price": 1500,
+            "AvailableStock": 1,
+		    "IsRecipe": true,
+            "AvailableStockLimit": "Player"
+         },
+	    "TropicalCurryRecipe": {
+			"Id": "Tropical Curry",
+            "ItemId": "907",
+            "Price": 5000,
+            "AvailableStock": 1,
+			"IsRecipe": true,
+            "AvailableStockLimit": "Player" 
+		 },
+	    "PoiRecipe": {
+            "Id": "Poi",
+            "ItemId": "906",
+            "Price": 4000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"MangoStickyRiceRecipe": {
+            "Id": "Mango Sticky Rice",
+            "ItemId": "905",
+            "Price": 2500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"BananaPuddingRecipe": {
+            "Id": "Banana Pudding",
+            "ItemId": "904",
+            "Price": 2600,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"GingerAleRecipe": {
+            "Id": "Ginger Ale",
+            "ItemId": "903",
+            "Price": 2000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"ShrimpCocktailRecipe": {
+            "Id": "Shrimp Cocktail",
+            "ItemId": "733",
+            "Price": 1600,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+	    "CrabCakesRecipe": {
+            "Id": "Crab Cakes",
+            "ItemId": "732",
+            "Price": 2750,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"MapleBarRecipe": {
+            "Id": "Maple Bar",
+            "ItemId": "731",
+            "Price": 3000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"LobsterBisqueRecipe": {
+            "Id": "Lobster Bisque",
+            "ItemId": "730",
+            "Price": 2050,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"EscargotRecipe": {
+            "Id": "Escargot",
+            "ItemId": "729",
+            "Price": 1250,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"FishStewRecipe": {
+            "Id": "Fish Stew",
+            "ItemId": "728",
+            "Price": 1750,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"ChowderRecipe": {
+            "Id": "Chowder",
+            "ItemId": "727",
+            "Price": 1350,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"PoppyseedMuffinRecipe": {
+            "Id": "Poppyseed Muffin",
+            "ItemId": "651",
+            "Price": 2500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"FiddleheadRisottoRecipe": {
+            "Id": "Fiddlehead Risotto",
+            "ItemId": "649",
+            "Price": 3500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"ColeslawRecipe": {
+            "Id": "Coleslaw",
+            "ItemId": "648",
+            "Price": 3450,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"BruschettaRecipe": {
+            "Id": "Bruschetta",
+            "ItemId": "618",
+            "Price": 2100,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"CranberryCandyRecipe": {
+            "Id": "Cranberry Candy",
+            "ItemId": "612",
+            "Price": 4000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"BlackberryCobblerRecipe": {
+            "Id": "Blackberry Cobbler",
+            "ItemId": "611",
+            "Price": 2600,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"FruitSaladRecipe": {
+            "Id": "Fruit Salad",
+            "ItemId": "610",
+            "Price": 4500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"RadishSaladRecipe": {
+            "Id": "Radish Salad",
+            "ItemId": "609",
+            "Price": 3000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"PumpkinPieRecipe": {
+            "Id": "Pumpkin Pie",
+            "ItemId": "608",
+            "Price": 3850,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"RoastedHazelnutsRecipe": {
+            "Id": "Roasted Hazelnuts",
+            "ItemId": "607",
+            "Price": 2700,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"StirFryRecipe": {
+            "Id": "Stir Fry",
+            "ItemId": "606",
+            "Price": 3350,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"ArtichokeDipRecipe": {
+            "Id": "Artichoke Dip",
+            "ItemId": "605",
+            "Price": 2100,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"PlumPuddingRecipe": {
+            "Id": "Plum Pudding",
+            "ItemId": "604",
+            "Price": 2600,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"PaleBrothRecipe": {
+            "Id": "Pale Broth",
+            "ItemId": "457",
+            "Price": 1500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"AlgaeSoupRecipe": {
+            "Id": "Algae Soup",
+            "ItemId": "456",
+            "Price": 1000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"SeafoamPuddingRecipe": {
+            "Id": "Seafoam Pudding",
+            "ItemId": "265",
+            "Price": 3000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"TripleShotEspressoRecipe": {
+            "Id": "Triple Shot Espresso",
+            "ItemId": "253",
+            "Price": 6750,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"RootsPlatterRecipe": {
+            "Id": "Roots Platter",
+            "ItemId": "244",
+            "Price": 1500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"MinersTreatRecipe": {
+            "Id": "Miner's Treat",
+            "ItemId": "243",
+            "Price": 2000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"SurvivalBurgerRecipe": {
+            "Id": "Survival Burger",
+            "ItemId": "241",
+            "Price": 1800,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"FarmersLunchRecipe": {
+            "Id": "Farmer's Lunch",
+            "ItemId": "240",
+            "Price": 1500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"StuffingRecipe": {
+            "Id": "Stuffing",
+            "ItemId": "239",
+            "Price": 1650,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"SuperMealRecipe": {
+            "Id": "Super Meal",
+            "ItemId": "237",
+            "Price": 2200,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"PumpkinSoupRecipe": {
+            "Id": "Pumpkin Soup",
+            "ItemId": "236",
+            "Price": 3500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"AutumnsBountyRecipe": {
+            "Id": "Autumn's Bounty",
+            "ItemId": "235",
+            "Price": 3500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"BlueberryTartRecipe": {
+            "Id": "Blueberry Tart",
+            "ItemId": "234",
+            "Price": 1500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"IceCreamRecipe": {
+            "Id": "Ice Cream",
+            "ItemId": "233",
+            "Price": 1800,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"RicePuddingRecipe": {
+            "Id": "Rice Pudding",
+            "ItemId": "232",
+            "Price": 2600,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"RedPlateRecipe": {
+            "Id": "Red Plate",
+            "ItemId": "230",
+            "Price": 4000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"TortillaRecipe": {
+            "Id": "Tortilla",
+            "ItemId": "229",
+            "Price": 750,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"MakiRollRecipe": {
+            "Id": "Maki Roll",
+            "ItemId": "228",
+            "Price": 2200,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"SashimiRecipe": {
+            "Id": "Sashimi",
+            "ItemId": "227",
+            "Price": 1120,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"SpicyEelRecipe": {
+            "Id": "Spicy Eel",
+            "ItemId": "226",
+            "Price": 2620,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"FriedEelRecipe": {
+            "Id": "Fried Eel",
+            "ItemId": "225",
+            "Price": 1800,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"SpaghettiRecipe": {
+            "Id": "Spaghetti",
+            "ItemId": "224",
+            "Price": 1800,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"RhubarbPieRecipe": {
+            "Id": "Rhubarb Pie",
+            "ItemId": "222",
+            "Price": 6000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"PinkCakeRecipe": {
+            "Id": "Pink Cake",
+            "ItemId": "221",
+            "Price": 7200,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"ChocolateCakeRecipe": {
+            "Id": "Chocolate Cake",
+            "ItemId": "220",
+            "Price": 3000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"TroutSoupRecipe": {
+            "Id": "Trout Soup",
+            "ItemId": "219",
+            "Price": 1500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"TomKhaSoupRecipe": {
+            "Id": "Tom Kha Soup",
+            "ItemId": "218",
+            "Price": 3750,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"BreadRecipe": {
+            "Id": "Bread",
+            "ItemId": "216",
+            "Price": 900,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"PepperPoppersRecipe": {
+            "Id": "Pepper Poppers",
+            "ItemId": "215",
+            "Price": 3000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"CrispyBassRecipe": {
+            "Id": "Crispy Bass",
+            "ItemId": "214",
+            "Price": 2250,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"FishTacoRecipe": {
+            "Id": "Fish Taco",
+            "ItemId": "213",
+            "Price": 7500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"SalmonDinnerRecipe": {
+            "Id": "Salmon Dinner",
+            "ItemId": "212",
+            "Price": 4500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"PancakesRecipe": {
+            "Id": "Pancakes",
+            "ItemId": "211",
+            "Price": 1200,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"HashbrownsRecipe": {
+            "Id": "Hashbrowns",
+            "ItemId": "210",
+            "Price": 1800,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"CarpSurpriseRecipe": {
+            "Id": "Carp Surprise",
+            "ItemId": "209",
+            "Price": 2250,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"GlazedYamsRecipe": {
+            "Id": "Glazed Yams",
+            "ItemId": "208",
+            "Price": 3000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"BeanHotpotRecipe": {
+            "Id": "Bean Hotpot",
+            "ItemId": "207",
+            "Price": 1500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"PizzaRecipe": {
+            "Id": "Pizza",
+            "ItemId": "206",
+            "Price": 4500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"FriedMushroomRecipe": {
+            "Id": "Fried Mushroom",
+            "ItemId": "205",
+            "Price": 3000,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"LuckyLunchRecipe": {
+            "Id": "Lucky Lunch",
+            "ItemId": "204",
+            "Price": 3750,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"StrangeBunRecipe": {
+            "Id": "Strange Bun",
+            "ItemId": "203",
+            "Price": 2250,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true,
+            "Condition": "PLAYER_HAS_ITEM Any (O)203"
+		 },
+		"FriedCalamariRecipe": {
+            "Id": "Fried Calamari",
+            "ItemId": "202",
+            "Price": 2250,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"CompleteBreakfastRecipe": {
+            "Id": "Complete Breakfast",
+            "ItemId": "201",
+            "Price": 5250,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"ParsnipSoupRecipe": {
+            "Id": "Parsnip Soup",
+            "ItemId": "199",
+            "Price": 1800,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"BakedFishRecipe": {
+            "Id": "Baked Fish",
+            "ItemId": "198",
+            "Price": 1500,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"SaladRecipe": {
+            "Id": "Salad",
+            "ItemId": "196",
+            "Price": 1650,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"OmeletRecipe": {
+            "Id": "Omelet",
+            "ItemId": "195",
+            "Price": 1870,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 },
+		"FriedEggRecipe": {
+            "Id": "Fried Egg",
+            "ItemId": "194",
+            "Price": 1052,
+            "AvailableStock": 1,
+            "AvailableStockLimit": "Player",
+            "IsRecipe": true
+		 }
+       },
+	   "When": { "NewStore": true, "BuyableCookingRecipes": true },
+	   "MoveEntries": [
+          { "Id": "Moss Soup", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Squid Ink Ravioli", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Tropical Curry", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Poi", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Mango Sticky Rice", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Banana Pudding", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Ginger Ale", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Shrimp Cocktail", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Crab Cakes", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Maple Bar", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Lobster Bisque", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Escargot", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Fish Stew", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Chowder", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Poppyseed Muffin", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Fiddlehead Risotto", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Coleslaw", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Bruschetta", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Cranberry Candy", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Blackberry Cobbler", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Fruit Salad", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Radish Salad", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Pumpkin Pie", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Roasted Hazelnuts", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Stir Fry", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Artichoke Dip", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Plum Pudding", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Pale Broth", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Algae Soup", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Seafoam Pudding", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Triple Shot Espresso", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Roots Platter", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Miner's Treat", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Survival Burger", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Farmer's Lunch", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Stuffing", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Super Meal", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Pumpkin Soup", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Autumn's Bounty", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Blueberry Tart", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Ice Cream", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Rice Pudding", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Red Plate", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Tortilla", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Maki Roll", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Sashimi", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Spicy Eel", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Fried Eel", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Spaghetti", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Rhubarb Pie", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Pink Cake", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Chocolate Cake", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Trout Soup", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Tom Kha Soup", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Bread", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Pepper Poppers", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Crispy Bass", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Fish Taco", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Salmon Dinner", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Pancakes", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Hashbrowns", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Carp Surprise", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Glazed Yams", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Bean Hotpot", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Pizza", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Fried Mushroom", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Lucky Lunch", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Strange Bun", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Fried Calamari", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Complete Breakfast", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Parsnip Soup", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Baked Fish", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Salad", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Omelet", "AfterId": "Blueberry Muffin" },
+		  { "Id": "Fried Egg", "AfterId": "Blueberry Muffin" }
+       ]
+	},
+	{
+      "LogName": "Buyable Desert Festival Foods Recipes",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "SaloonRecipes", "Items" ],
+      "Entries": {
+		  "{{ModId}}_EarthyMousseBuyable": {
+            "Id": "Earthy Mousse",
+            "ItemId": "{{ModId}}_EarthyMousse",
+            "Price": 1500,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_SweetBeanCakeBuyable": {
+            "Id": "Sweet Bean Cake",
+            "ItemId": "{{ModId}}_SweetBeanCake",
+            "Price": 1750,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_SkullCaveCasseroleBuyable": {
+            "Id": "Skull Cave Casserole",
+            "ItemId": "{{ModId}}_SkullCaveCasserole",
+            "Price": 2000,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_SpicyTacosBuyable": {
+            "Id": "Spicy Tacos",
+            "ItemId": "{{ModId}}_SpicyTacos",
+            "Price": 2250,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_MountainChiliBuyable": {
+            "Id": "Mountain Chili",
+            "ItemId": "{{ModId}}_MountainChili",
+            "Price": 2500,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_CrystalCakeBuyable": {
+            "Id": "Crystal Cake",
+            "ItemId": "{{ModId}}_CrystalCake",
+            "Price": 2750,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_CaveKebabBuyable": {
+            "Id": "Cave Kebab",
+            "ItemId": "{{ModId}}_CaveKebab",
+            "Price": 3000,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_HotLogBuyable": {
+            "Id": "Hot Log",
+            "ItemId": "{{ModId}}_HotLog",
+            "Price": 3250,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_SourSaladBuyable": {
+            "Id": "Sour Salad",
+            "ItemId": "{{ModId}}_SourSalad",
+            "Price": 3500,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_SuperfoodCakeBuyable": {
+            "Id": "Superfood Cake",
+            "ItemId": "{{ModId}}_SuperfoodCake",
+            "Price": 3750,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_WarriorSmoothieBuyable": {
+            "Id": "Warrior Smoothie",
+            "ItemId": "{{ModId}}_WarriorSmoothie",
+            "Price": 4000,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_RumpledFruitSkinBuyable": {
+            "Id": "Rumpled Fruit Skin",
+            "ItemId": "{{ModId}}_RumpledFruitSkin",
+            "Price": 4250,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_CalicoPizzaBuyable": {
+            "Id": "Calico Pizza",
+            "ItemId": "{{ModId}}_CalicoPizza",
+            "Price": 4500,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_StuffedMushroomsBuyable": {
+            "Id": "Stuffed Mushrooms",
+            "ItemId": "{{ModId}}_StuffedMushrooms",
+            "Price": 4750,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_ElfQuesadillaBuyable": {
+            "Id": "Elf Quesadilla",
+            "ItemId": "{{ModId}}_ElfQuesadilla",
+            "Price": 5000,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_NachosOfTheDesertBuyable": {
+            "Id": "Nachos Of The Desert",
+            "ItemId": "{{ModId}}_NachosOfTheDesert",
+            "Price": 5250,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_CioppinoBuyable": {
+            "Id": "Cioppino",
+            "ItemId": "{{ModId}}_Cioppino",
+            "Price": 5500,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_RainforestShrimpBuyable": {
+            "Id": "Rainforest Shrimp",
+            "ItemId": "{{ModId}}_RainforestShrimp",
+            "Price": 5750,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_ShrimpDonutBuyable": {
+            "Id": "Shrimp Donut",
+            "ItemId": "{{ModId}}_ShrimpDonut",
+            "Price": 6000,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_SmellOfTheSeaBuyable": {
+            "Id": "Smell Of The Sea",
+            "ItemId": "{{ModId}}_SmellOfTheSea",
+            "Price": 6250,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          },
+		  "{{ModId}}_DesertGumboBuyable": {
+            "Id": "Desert Gumbo",
+            "ItemId": "{{ModId}}_DesertGumbo",
+            "Price": 6500,
+			"IsRecipe": true,
+			"AvailableStock": 1,
+		    "AvailableStockLimit": "Player",
+			"Condition": "SEASON spring"
+          }
+	   },
+	   "When": { "NewStore": true, "DesertFestivalFoods": true },
+	   "MoveEntries": [
+	       { "Id": "Earthy Mousse", "BeforeId": "Blueberry Muffin" },
+		   { "Id": "Sweet Bean Cake", "AfterId": "Earthy Mousse" },
+	       { "Id": "Skull Cave Casserole", "AfterId": "Sweet Bean Cake" },
+		   { "Id": "Spicy Tacos", "AfterId": "Skull Cave Casserole" },
+		   { "Id": "Mountain Chili", "AfterId": "Spicy Tacos" },
+		   { "Id": "Crystal Cake", "AfterId": "Mountain Chili" },
+		   { "Id": "Cave Kebab", "AfterId": "Crystal Cake" },
+		   { "Id": "Hot Log", "AfterId": "Cave Kebab" },
+		   { "Id": "Sour Salad", "AfterId": "Hot Log" },
+		   { "Id": "Superfood Cake", "AfterId": "Sour Salad" },
+		   { "Id": "Warrior Smoothie", "AfterId": "Superfood Cake" },
+		   { "Id": "Rumpled Fruit Skin", "AfterId": "Warrior Smoothie" },
+		   { "Id": "Calico Pizza", "AfterId": "Rumpled Fruit Skin" },
+		   { "Id": "Stuffed Mushrooms", "AfterId": "Calico Pizza" },
+		   { "Id": "Elf Quesadilla", "AfterId": "Stuffed Mushrooms" },
+		   { "Id": "Nachos Of The Desert", "AfterId": "Elf Quesadilla" },
+		   { "Id": "Cioppino", "AfterId": "Nachos Of The Desert" },
+		   { "Id": "Rainforest Shrimp", "AfterId": "Cioppino" },
+		   { "Id": "Shrimp Donut", "AfterId": "Rainforest Shrimp" },
+		   { "Id": "Smell Of The Sea", "AfterId": "Shrimp Donut" },
+		   { "Id": "Desert Gumbo", "AfterId": "Smell Of The Sea" }
+	   ]
+    },
+	{
+      "LogName": "Buyable Fruit Trees",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "SaloonRecipes", "Items" ],
+      "Entries": {
+		    "{{ModId}}_CoconutSaplingBuyable": {
+                  "Id": "CoconutSapling",
+                  "ItemId": "{{ModId}}_CoconutSapling",
+                  "Price": 3000,
+                  "TradeItemId": "maat.BetterThings_BlossomCoin",
+                  "TradeItemAmount": 2,
+                  "Condition": "SEASON summer"
+            },
+			"{{ModId}}_BlossomSaplingBuyable": {
+                  "Id": "BlossomSapling",
+                  "ItemId": "{{ModId}}_BlossomSapling",
+                  "Price": 35000,
+                  "TradeItemId": "maat.BetterThings_BlossomCoin",
+                  "TradeItemAmount": 13,
+                  "AvailableStock": 1,
+                  "AvailableStockLimit": "Player",
+                  "Condition": "SEASON spring"
+            },
+			"{{ModId}}_CoalSaplingBuyable": {
+                  "Id": "CoalSapling",
+                  "ItemId": "{{ModId}}_CoalSapling",
+                  "Price": 25000,
+                  "TradeItemId": "maat.BetterThings_BlossomCoin",
+                  "TradeItemAmount": 3,
+                  "AvailableStock": 2,
+                  "AvailableStockLimit": "Global",
+                  "Condition": "SEASON_DAY summer 1"
+			}
+	   },
+	   "When": { "NewStore": true, "FruitTree": true },
+	   "MoveEntries": [
+	       { "Id": "CoconutSapling", "AfterId": "Blossom Coin" },
+		   { "Id": "BlossomSapling", "AfterId": "Blossom Coin" },
+		   { "Id": "CoalSapling", "AfterId": "CoconutSapling" }
+		]
+	},
+	{
+      "LogName": "Buyable Machines",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "SaloonRecipes", "Items" ],
+      "Entries": {
+				   "{{ModId}}_MiniFridgeBuyable": {
+                   "Id": "MiniFridge",
+                   "ItemId": "(BC)216",
+                   "Price": 2100,
+				   "TradeItemId": "maat.BetterThings_BlossomCoin",
+                   "TradeItemAmount": 1,
+                   "AvailableStock": 1,
+                   "AvailableStockLimit": "Global"
+                },
+				   "{{ModId}}_CursedPKArcadeBuyable": {
+                   "Id": "CursedP.K.ArcadeSystem",
+                   "ItemId": "(BC)219",
+                   "Price": 100000,
+				   "TradeItemId": "maat.BetterThings_BlossomCoin",
+                   "TradeItemAmount": 15,
+                   "AvailableStock": 1,
+                   "AvailableStockLimit": "Global"
+                },
+				   "{{ModId}}_MiniShippingBinBuyable": {
+                   "Id": "MiniShippingBin",
+                   "ItemId": "(BC)248",
+                   "Price": 200000,
+				   "TradeItemId": "maat.BetterThings_BlossomCoin",
+                   "TradeItemAmount": 5,
+                   "AvailableStock": 1,
+                   "AvailableStockLimit": "Global",
+				   "Condition": "SEASON_DAY fall 28"
+                },
+				   "{{ModId}}_StatueOfEndlessFortuneBuyable": {
+                   "Id": "{{ModId}}_StatueOfEndlessFortuneBuyable",
+                   "ItemId": "(BC)127",
+                   "Price": 900000,
+				   "TradeItemId": "maat.BetterThings_BlossomCoin",
+                   "TradeItemAmount": 20,
+                   "AvailableStock": 1,
+                   "AvailableStockLimit": "Global",
+				   "Condition": "YEAR 2"
+                },
+				   "{{ModId}}_MiniFridgeRecipeBuyable": {
+                   "Id": "MiniFridgeRecipe",
+                   "ItemId": "(BC)216",
+                   "Price": 12500,
+				   "TradeItemId": "maat.BetterThings_BlossomCoin",
+                   "TradeItemAmount": 3,
+                   "AvailableStock": 1,
+                   "AvailableStockLimit": "Player",
+				   "IsRecipe": true
+                },
+				   "{{ModId}}_MiniShippingBinRecipeBuyable": {
+                   "Id": "Mini-ShippingBinRecipe",
+                   "ItemId": "(BC)248",
+                   "Price": 75000,
+				   "TradeItemId": "maat.BetterThings_BlossomCoin",
+                   "TradeItemAmount": 5,
+                   "AvailableStock": 1,
+                   "AvailableStockLimit": "Player",
+				   "IsRecipe": true
+                }
+	    },
+		 "When": { "NewStore": true, "BuyableMachines": true }
+	},
+	{
+      "LogName": "Buyable Machines - New",
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "SaloonRecipes", "Items" ],
+      "Entries": {
+                   "{{ModId}}_RadioactiveStatueBuyable": {
+                   "Id": "{{ModId}}_RadioactiveStatueBuyable",
+                   "ItemId": "(BC){{ModId}}_RadioactiveStatue",
+                   "Price": 1500000,
+				   "TradeItemId": "910",
+                   "TradeItemAmount": 5,
+                   "AvailableStock": 1,
+                   "AvailableStockLimit": "Global"
+                },
+				"{{ModId}}_MagicBaitMakerBuyable": {
+                   "Id": "{{ModId}}_MagicBaitMakerBuyable",
+                   "ItemId": "(BC){{ModId}}_MagicBaitMaker",
+                   "Price": 500000,
+				   "TradeItemId": "maat.BetterThings_BlossomCoin",
+                   "TradeItemAmount": 5,
+                   "AvailableStock": 1,
+                   "AvailableStockLimit": "Global"
+                },
+				"{{ModId}}_TreeMakerBuyable": {
+                   "Id": "{{ModId}}_TreeMakerBuyable",
+                   "ItemId": "(BC){{ModId}}_TreeMaker",
+                   "Price": 300000,
+				   "TradeItemId": "maat.BetterThings_BlossomCoin",
+                   "TradeItemAmount": 5,
+                   "AvailableStock": 1,
+                   "AvailableStockLimit": "Global"
+                },
+				"{{ModId}}_TreeSaplingMakerBuyable": {
+                   "Id": "{{ModId}}_TreeSaplingMakerBuyable",
+                   "ItemId": "(BC){{ModId}}_TreeSaplingMaker",
+                   "Price": 700000,
+				   "TradeItemId": "maat.BetterThings_BlossomCoin",
+                   "TradeItemAmount": 5,
+                   "AvailableStock": 1,
+                   "AvailableStockLimit": "Global"
+                }
+	    },
+		 "When": { "NewStore": true, "BuyableMachines": true, "NewMachines": true },
+		 "MoveEntries": [
+		   { "Id": "{{ModId}}_RadioactiveStatueBuyable", "AfterId": "{{ModId}}_StatueOfEndlessFortuneBuyable" },
+		   { "Id": "{{ModId}}_MagicBaitMakerBuyable", "AfterId": "{{ModId}}_RadioactiveStatueBuyable" },
+		   { "Id": "{{ModId}}_TreeMakerBuyable", "AfterId": "{{ModId}}_MagicBaitMakerBuyable" },
+		   { "Id": "{{ModId}}_TreeSaplingMakerBuyable", "AfterId": "{{ModId}}_TreeMakerBuyable" }
+		 ]
+	 },
+	 {
+	   "LogName": "Buyable Paintings", 
+	   "Action": "EditData",
+	   "Target": "Data/Shops",
+	   "TargetField": [ "SaloonRecipes", "Items" ],
+		 "Entries": {
+		   "{{ModId}}_BuyablePaintings": {
+            "ActionsOnPurchase": null,
+	    	"CustomFields": null,
+	    	"TradeItemId": null,
+            "TradeItemAmount": 1,
+           	"ApplyProfitMargins": null,
+	 	    "AvailableStock": -1,
+	 	    "AvailableStockLimit": "Global",
+           	"AvoidRepeat": false,
+			"UseObjectDataPrice": true,
+            "IgnoreShopPriceModifiers": true,
+    	    "PriceModifiers": null,
+    	    "PriceModifierMode": "Stack",
+    	    "AvailableStockModifiers": null,
+			"AvailableStockModifierMode": "Stack",
+            "Condition": null,
+    		"Id": "{{ModId}}_Paintings_Default",
+            "ItemId": "RANDOM_ITEMS (F)",
+    		"RandomItemId": null,
+            "MaxItems": 1,
+			"MinStack": -1,
+          	"MaxStack": -1,
+  	  	  	"Quality": -1,
+  	  	  	"ObjectInternalName": null,
+			"ObjectDisplayName": null,
+            "ToolUpgradeLevel": -1,
+	  	    "IsRecipe": false,
+	  	    "StackModifiers": null,
+          	"StackModifierMode": "Stack",
+			"QualityModifiers": null,
+			"QualityModifierMode": "Stack",
+			"PerItemCondition": "ITEM_CONTEXT_TAG Target minecraft_paintings_collection"
+		  },
+		  "{{ModId}}_BuyableSpookyPaintings": {
+            "ActionsOnPurchase": null,
+	    	"CustomFields": null,
+	    	"TradeItemId": null,
+            "TradeItemAmount": 1,
+           	"ApplyProfitMargins": null,
+	 	    "AvailableStock": -1,
+	 	    "AvailableStockLimit": "Global",
+           	"AvoidRepeat": false,
+			"UseObjectDataPrice": true,
+            "IgnoreShopPriceModifiers": true,
+    	    "PriceModifiers": null,
+    	    "PriceModifierMode": "Stack",
+    	    "AvailableStockModifiers": null,
+			"AvailableStockModifierMode": "Stack",
+            "Condition": "SEASON fall",
+    		"Id": "{{ModId}}_SpookyPaintings_Default",
+            "ItemId": "RANDOM_ITEMS (F)",
+    		"RandomItemId": null,
+            "MaxItems": 1,
+			"MinStack": -1,
+          	"MaxStack": -1,
+  	  	  	"Quality": -1,
+  	  	  	"ObjectInternalName": null,
+			"ObjectDisplayName": null,
+            "ToolUpgradeLevel": -1,
+	  	    "IsRecipe": false,
+	  	    "StackModifiers": null,
+          	"StackModifierMode": "Stack",
+			"QualityModifiers": null,
+			"QualityModifierMode": "Stack",
+			"PerItemCondition": "ITEM_CONTEXT_TAG Target spooky_paintings_collection"
+		  },
+		  "{{ModId}}_BuyableMorePaintings": {
+            "ActionsOnPurchase": null,
+	    	"CustomFields": null,
+	    	"TradeItemId": null,
+            "TradeItemAmount": 1,
+           	"ApplyProfitMargins": null,
+	 	    "AvailableStock": -1,
+	 	    "AvailableStockLimit": "Global",
+           	"AvoidRepeat": false,
+			"UseObjectDataPrice": true,
+            "IgnoreShopPriceModifiers": true,
+    	    "PriceModifiers": null,
+    	    "PriceModifierMode": "Stack",
+    	    "AvailableStockModifiers": null,
+			"AvailableStockModifierMode": "Stack",
+            "Condition": null,
+    		"Id": "{{ModId}}_MorePaintings_Default",
+            "ItemId": "RANDOM_ITEMS (F)",
+    		"RandomItemId": null,
+            "MaxItems": 1,
+			"MinStack": -1,
+          	"MaxStack": -1,
+  	  	  	"Quality": -1,
+  	  	  	"ObjectInternalName": null,
+			"ObjectDisplayName": null,
+            "ToolUpgradeLevel": -1,
+	  	    "IsRecipe": false,
+	  	    "StackModifiers": null,
+          	"StackModifierMode": "Stack",
+			"QualityModifiers": null,
+			"QualityModifierMode": "Stack",
+			"PerItemCondition": "ITEM_CONTEXT_TAG Target more_paintings_collection"
+		  }
+		},
+		"When": { "NewStore": true, "NewPaintings": true },
+		"MoveEntries": [
+		   { "Id": "{{ModId}}_Paintings_Default", "AfterId": "{{ModId}}_TreeSaplingMakerBuyable" },
+		   { "Id": "{{ModId}}_SpookyPaintings_Default", "AfterId": "{{ModId}}_Paintings_Default" },
+		   { "Id": "{{ModId}}_MorePaintings_Default", "AfterId": "{{ModId}}_Paintings_Default" }
+	    ]
+	 },
+	 {
+	  "LogName": "Leah Sculptures - Buyables",
+	  "Action": "EditData",
+	  "Target": "Data/Shops",
+	  "TargetField": [ "SaloonRecipes", "Items" ],
+	  "Entries": {
+		   "{{ModId}}_BuyableLeahSculptures": {
+            "ActionsOnPurchase": null,
+	    	"CustomFields": null,
+	    	"TradeItemId": null,
+            "TradeItemAmount": 1,
+			"Price": 1250,
+           	"ApplyProfitMargins": null,
+	 	    "AvailableStock": 2,
+	 	    "AvailableStockLimit": "Player",
+           	"AvoidRepeat": false,
+			"UseObjectDataPrice": false,
+            "IgnoreShopPriceModifiers": false,
+    	    "PriceModifiers": null,
+    	    "PriceModifierMode": "Stack",
+    	    "AvailableStockModifiers": null,
+			"AvailableStockModifierMode": "Stack",
+            "Condition": "PLAYER_HAS_SEEN_EVENT Current 53",
+    		"Id": "{{ModId}}_JustBuyThatLeah_Default",
+            "ItemId": "ALL_ITEMS (F)",
+    		"RandomItemId": null,
+            "MaxItems": null,
+			"MinStack": -1,
+          	"MaxStack": -1,
+  	  	  	"Quality": -1,
+  	  	  	"ObjectInternalName": null,
+			"ObjectDisplayName": null,
+            "ToolUpgradeLevel": -1,
+	  	    "IsRecipe": false,
+	  	    "StackModifiers": null,
+          	"StackModifierMode": "Stack",
+			"QualityModifiers": null,
+			"QualityModifierMode": "Stack",
+			"PerItemCondition": "ITEM_CONTEXT_TAG Target leah_sculpture_collection"
+		  }
+		},
+		"When": { "NewStore": true, "BuyableLeahSculptures": true },
+		"MoveEntries": [
+		   { "Id": "{{ModId}}_JustBuyThatLeah_Default", "AfterId": "{{ModId}}_TreeSaplingMakerBuyable" }
+	    ]
+	 },
+	 {
+	   "LogName": "Buyable Dinosaur Eggs", 
+	   "Action": "EditData",
+	   "Target": "Data/Shops",
+	   "TargetField": [ "SaloonRecipes", "Items" ],
+	   "Entries": {
+	     "{{ModId}}_PepperRexEgg": {
+	       "Id": "{{ModId}}_PepperRexEgg",
+	       "ItemId": "{{ModId}}_PepperRexEgg",
+	       "Price": 2300,
+		   "TradeItemId": "maat.BetterThings_BlossomCoin",
+		   "TradeItemAmount": 15,
+		   "AvailableStock": 1,
+           "AvailableStockLimit": "Global"
+         },
+	     "{{ModId}}_PepperTriceraEgg": {
+	       "Id": "{{ModId}}_PepperTriceraEgg",
+	       "ItemId": "{{ModId}}_PepperTriceraEgg",
+	       "Price": 4000,
+		   "TradeItemId": "maat.BetterThings_BlossomCoin",
+		   "TradeItemAmount": 15,
+		   "AvailableStock": 1,
+           "AvailableStockLimit": "Global"
+         },
+	     "{{ModId}}_PepperRaptorEgg": {
+	       "Id": "{{ModId}}_PepperRaptorEgg",
+	       "ItemId": "{{ModId}}_PepperRaptorEgg",
+	       "Price": 5000,
+		   "TradeItemId": "maat.BetterThings_BlossomCoin",
+           "TradeItemAmount": 15,
+		   "AvailableStock": 1,
+           "AvailableStockLimit": "Global"
+         },
+	     "{{ModId}}_PepperLongNeckEgg": {
+	       "Id": "{{ModId}}_PepperLongNeckEgg",
+	       "ItemId": "{{ModId}}_PepperLongNeckEgg",
+	       "Price": 6000,
+		   "TradeItemId": "maat.BetterThings_BlossomCoin",
+		   "TradeItemAmount": 15,
+		   "AvailableStock": 1,
+           "AvailableStockLimit": "Global"
+         }
+       },
+	   "When": { "NewStore": true, "NewFarmAnimals": true },
+	   "MoveEntries": [
+		   { "Id": "{{ModId}}_PepperRexEgg", "AfterId": "Blossom Coin" },
+		   { "Id": "{{ModId}}_PepperTriceraEgg", "AfterId": "{{ModId}}_PepperRexEgg" },
+		   { "Id": "{{ModId}}_PepperRaptorEgg", "AfterId": "{{ModId}}_PepperTriceraEgg" },
+		   { "Id": "{{ModId}}_PepperLongNeckEgg", "AfterId": "{{ModId}}_PepperRaptorEgg" }
+	    ]
+	 },
+	 {
+	   "LogName": "Buyable FireFlies A,B",
+	   "Action": "EditData",
+	   "Target": "Data/Shops",
+	   "TargetField": [ "SaloonRecipes", "Items" ],
+	   "Entries": {
+	     "{{ModId}}_Fireflies_A.Buyable": {
+	       "Id": "{{ModId}}_Fireflies_A.Buyable",
+	       "ItemId": "(BC){{ModId}}_Fireflies_A",
+	       "Price": 5000,
+		   "TradeItemId": "maat.BetterThings_BlossomCoin",
+		   "TradeItemAmount": 1,
+	       "IsRecipe": false,
+	       "AvailableStock": 20,
+	       "AvailableStockLimit": "Player",
+	       "Condition": null
+         },
+	     "{{ModId}}_Fireflies_B.Buyable": {
+	       "Id": "{{ModId}}_Fireflies_B.Buyable",
+	       "ItemId": "(BC){{ModId}}_Fireflies_B",
+	       "Price": 5000,
+		   "TradeItemId": "maat.BetterThings_BlossomCoin",
+		   "TradeItemAmount": 1,
+	       "IsRecipe": false,
+	       "AvailableStock": 20,
+	       "AvailableStockLimit": "Player",
+	       "Condition": null
+         }
+       },
+	   "When": { "NewStore": true, "HasMod |contains=spacechase0.SpaceCore": true },
+	   "MoveEntries": [
+		   { "Id": "{{ModId}}_Fireflies_A.Buyable", "AfterId": "{{ModId}}_TreeSaplingMakerBuyable" },
+		   { "Id": "{{ModId}}_Fireflies_B.Buyable", "AfterId": "{{ModId}}_Fireflies_A.Buyable" }
+	    ]
+	  },
+	  {
+	   "LogName": "Buyable Mirror",
+	   "Action": "EditData",
+	   "Target": "Data/Shops",
+	   "TargetField": [ "SaloonRecipes", "Items" ],
+	   "Entries": {
+	     "{{ModId}}_CharacterCustomizationBuyable": {
+	       "Id": "{{ModId}}_CharacterCustomizationBuyable",
+	       "ItemId": "(BC){{ModId}}_CharacterCustomization",
+	       "Price": 7600,
+		   "TradeItemId": "maat.BetterThings_BlossomCoin",
+		   "TradeItemAmount": 5,
+	       "IsRecipe": false,
+	       "AvailableStock": 1,
+	       "AvailableStockLimit": "Player",
+	       "Condition": null
+         }
+       },
+	   "When": { "HasMod |contains=leclair.bettercrafting": true, "NewStore": true },
+	   "MoveEntries": [
+		   { "Id": "{{ModId}}_CharacterCustomizationBuyable", "AfterId": "{{ModId}}_Fireflies_B.Buyable" }
+	    ]
+	  },
+	   // NPCs IN STORE
+	  {
+		"LogName": "Load NPC 0",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 0, "Y": 0, "Width": 2, "Height": 2 },
+        "ToArea": { "X": 16, "Y": 25, "Width": 2, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 2",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 2, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 18, "Y": 18, "Width": 1, "Height": 2 },
+		   "patchMode": "ReplaceByLayer",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 3",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 3, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 6, "Y": 18, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 4",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 4, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 6, "Y": 22, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 5",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 5, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 18, "Y": 21, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 12",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 12, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 1, "Y": 23, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 13",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 13, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 14, "Y": 25, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 15",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 15, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 14, "Y": 15, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 16",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 16, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 3, "Y": 22, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 19",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 19, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 4, "Y": 25, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 20",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 20, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 2, "Y": 25, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 25",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 25, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 13, "Y": 21, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 10",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 10, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 15, "Y": 21, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 8",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 8, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 7, "Y": 18, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 0 2",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 0, "Y": 2, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 25, "Y": 19, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 13 2",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 13, "Y": 2, "Width": 2, "Height": 4 },
+        "ToArea": { "X": 19, "Y": 23, "Width": 2, "Height": 4 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 16 2",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 16, "Y": 2, "Width": 2, "Height": 2 },
+        "ToArea": { "X": 26, "Y": 23, "Width": 2, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 31",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 31, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 1, "Y": 20, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+	  {
+		"LogName": "Load NPC 9",
+        "Action": "EditMap",
+        "Target": "Maps/maat.BetterThings_AgathaHouse",
+        "FromFile": "assets/npcs/Stardew_people.tmx",
+		"FromArea": { "X": 9, "Y": 0, "Width": 1, "Height": 2 },
+        "ToArea": { "X": 25, "Y": 22, "Width": 1, "Height": 2 },
+		   "patchMode": "Overlay",
+		     "When": { "DayOfWeek |contains=Wednesday": false, "NewStore": true, "Time": "{{Range: 2200, 2400}}" },
+			 "Update": "OnLocationChange"
+	  },
+
+	   // MAPS CHANGES FOR THE AGATHA'S STORE
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		     "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP, Ivy.OrnithologistsGuild.CP, Wem.Toothless": false },
+               "TextOperations": [
+                    {
+                       "Operation": "Append",
+                       "Target": [ "MapProperties", "DayTiles" ],
+                         "Value": "Buildings 8 6 48 Buildings 8 7 56 Buildings 14 6 54 Buildings 14 7 62",
+                         "Delimiter": " "
+                    },
+					{
+                       "Operation": "Append",
+                       "Target": [ "MapProperties", "NightTiles" ],
+                         "Value": "Buildings 8 6 55 Buildings 8 7 63 Buildings 14 6 71 Buildings 14 7 79",
+                         "Delimiter": " "
+                    }
+                  ]
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		     "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP, Ivy.OrnithologistsGuild.CP, Wem.Toothless": false },
+               "TextOperations": [
+                    {
+                       "Operation": "Append",
+                       "Target": [ "MapProperties", "Light" ],
+                         "Value": "11 4 4 8 6 4 14 6 4",
+                         "Delimiter": " "
+                    }
+                  ]
+	  },
+	  {
+		"LogName": "Custom Agatha's House Tilesheets",
+		"Action": "Load",
+		"Target": "Maps/spring_store_outdoor, Maps/summer_store_outdoor, Maps/fall_store_outdoor, Maps/winter_store_outdoor",
+		"FromFile": "assets/structures/store/{{TargetWithoutPath}}.png",
+		     "When": { "NewStore": true }
+	  },
+	  {
+		"LogName": "Agatha's House Season Change",
+		"Action": "EditImage",
+		"Target": "Maps/store_outdoor",
+		"FromFile": "assets/structures/store/{{season}}_store_outdoor.png",
+		     "When": { "NewStore": true }
+	  },
+	  {
+		"LogName": "AgathaHouse - Entrance",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"FromFile": "assets/structures/agathahouse_entrance.tmx",
+		"PatchMode": "Replace",
+		"FromArea": { "X": 0, "Y": 0, "Width": 9, "Height": 10 },
+		"ToArea": { "X": 7, "Y": 0, "Width": 9, "Height": 10 },
+		     "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP, Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/maat.BetterThings_AgathaHouse",
+		"AddWarps": [ "11 29 Forest 11 9" ],
+		"When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP, Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  // COMPATIBILITY WITH Ranger Taro, Lost in the Woods, Alchemistry, Lunna
+	  {
+		"LogName": "AgathaHouse - Entrance 2 - Alt",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"FromFile": "assets/structures/agathahouse_entrance_alt.tmx",
+		"PatchMode": "Overlay",
+		"FromArea": { "X": 0, "Y": 1, "Width": 9, "Height": 9 },
+		"ToArea": { "X": 7, "Y": 62, "Width": 9, "Height": 9 },
+		     "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		     "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false },
+               "TextOperations": [
+                    {
+                       "Operation": "Append",
+                       "Target": [ "MapProperties", "Light" ],
+                         "Value": "11 66 4 8 68 4 14 68 4",
+                         "Delimiter": " "
+                    }
+                  ]
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/maat.BetterThings_AgathaHouse",
+		"AddWarps": [ "11 29 Forest 11 71" ],
+		"When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 9, "Y": 65 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 8, "Y": 66 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 9, "Y": 66 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 10, "Y": 66 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 11, "Y": 66 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 12, "Y": 66 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 13, "Y": 66 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 14, "Y": 66 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  //
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 8, "Y": 67 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 9, "Y": 67 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 10, "Y": 67 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 11, "Y": 67 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 12, "Y": 67 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 13, "Y": 67 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 14, "Y": 67 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  //
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 8, "Y": 68 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 9, "Y": 68 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 10, "Y": 68 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 11, "Y": 68 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 12, "Y": 68 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 13, "Y": 68 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 14, "Y": 68 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  //
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 8, "Y": 69 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 9, "Y": 69 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 10, "Y": 69 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 11, "Y": 69 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 12, "Y": 69 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 13, "Y": 69 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 14, "Y": 69 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  //
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 7, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 8, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 9, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 10, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 11, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 12, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 13, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 14, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  //
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 8, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 9, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 10, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 11, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 12, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 13, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 14, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": false }
+	  },
+	  // COMPATIBILITY WITH: Bird overhaul - Ornithologist's Guild - Nests and feeders and more
+	  {
+		"LogName": "AgathaHouse - Entrance 3 - Alt",
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"FromFile": "assets/structures/agathahouse_entrance_alt.tmx",
+		"PatchMode": "Overlay",	
+		"FromArea": { "X": 0, "Y": 1, "Width": 9, "Height": 9 },
+		"ToArea": { "X": 42, "Y": 64, "Width": 9, "Height": 9 },
+		     "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		     "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true, "HasMod |contains=CC.AMeadow, b42ti0n.CP.LitW, Morghoula.AlchemistryCP, Rafseazz.LunnaCP": true },
+               "TextOperations": [
+                    {
+                       "Operation": "Append",
+                       "Target": [ "MapProperties", "Light" ],
+                         "Value": "46 68 4 43 71 4 49 71 4",
+                         "Delimiter": " "
+                    }
+                  ]
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/maat.BetterThings_AgathaHouse",
+		"AddWarps": [ "11 29 Forest 46 73" ],
+		"When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  //
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 42, "Y": 72 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 43, "Y": 72 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 44, "Y": 72 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 45, "Y": 72 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 46, "Y": 72 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 47, "Y": 72 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 48, "Y": 72 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 49, "Y": 72 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  //
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 42, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 43, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 44, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 45, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 46, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 47, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 48, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 49, "Y": 71 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  //
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 44, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 45, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 46, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 47, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 48, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditMap",
+		"Target": "Maps/Forest",
+		"Update": "OnLocationChange, OnTimeChange",
+		"MapTiles": [
+	    	{
+		    	"Position": { "X": 49, "Y": 70 },
+		    	"Layer": "Paths",
+		    	"Remove": "true"
+	    	}
+	     ],
+		 "When": { "NewStore": true, "HasMod |contains=Ivy.OrnithologistsGuild.CP, Wem.Toothless": true }
+	  },
+	  {
+		"Action": "EditData",
+		"Target": "Strings/StringsFromMaps",
+		"Entries": {
+                       "maat.BetterThings_AgathaStore.story.message": "{{i18n:agathastore.story}}",
+                       "maat.BetterThings_AgathaStore.bannedmembers.list.message": "{{i18n:agathastore.bannedmembers.list}}",
+					   
+					   "maat.BetterThings_AgathaStore.mom.message": "{{i18n:agathastore.mom.message}}",
+					   "maat.BetterThings_AgathaStore.kid.message": "{{i18n:agathastore.kid.message}}",
+					   "maat.BetterThings_AgathaStore.governorsguard.message": "{{i18n:agathastore.governorsguard.message}}",
+					   "maat.BetterThings_AgathaStore.governor.message": "{{i18n:agathastore.governor.message}}",
+					   "maat.BetterThings_AgathaStore.marlon.message": "{{i18n:agathastore.marlon.message}}",
+					   "maat.BetterThings_AgathaStore.casinoplayer.message": "{{i18n:agathastore.casinoplayer.message}}",
+					   "maat.BetterThings_AgathaStore.security.message": "{{i18n:agathastore.security.message}}",
+					   "maat.BetterThings_AgathaStore.gil.message": "{{i18n:agathastore.gil.message}}",
+					   "maat.BetterThings_AgathaStore.clown.message": "{{i18n:agathastore.clown.message}}"
+			},
+		     "When": { "NewStore": true }
+	  },
+	  {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+               "maat.BetterThings_AgathaHouse": {
+                 "Music": [
+                     {
+                       "Id": "{{ModId}}_AgathaHouseMusic",
+                       "Track": "Saloon1",
+					   "Condition": "TIME 2200"
+                     },
+                   ],
+                 "CreateOnLoad": {
+                       "AlwaysActive": false,
+                       "MapPath": "Maps\\maat.BetterThings_AgathaHouse"
+                    }
+                }
+			 },
+			 "When": { "NewStore": true }
+	  },
+	  {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+               "maat.BetterThings_AgathaHouse_2Floor": {
+                 "Music": [
+                     {
+                       "Id": "{{ModId}}_AgathaHouse2FloorMusic",
+                       "Track": "Saloon1",
+					   "Condition": "TIME 2200"
+                     },
+                   ],
+                 "CreateOnLoad": {
+                       "AlwaysActive": false,
+                       "MapPath": "Maps\\maat.BetterThings_AgathaHouse_2Floor"
+                    }
+                }
+			 },
+			 "When": { "NewStore": true }
+	  },
+	  {
+		  "LogName": "Agatha SecretRoom Warp",
+		  "Action": "EditMap",
+		  "Target": "Maps/maat.BetterThings_AgathaHouse",
+		  "MapTiles": [
+			{
+              "Position": { "X": "20", "Y": "3" },
+              "Layer": "Buildings",
+              "SetProperties": { "Action": "LockedDoorWarp 15 9 Custom_AgathaSecretRoom 610 2400 Agatha 2500" }
+			}
+		  ],
+		  "When": { "NewStore": true }
+	  },
+	  {
+		  "LogName": "AgathaHouse 2Floor WizardFurnitureCatalogue",
+		  "Action": "EditMap",
+		  "Target": "Maps/maat.BetterThings_AgathaHouse_2Floor",
+		  "MapTiles": [
+			{
+              "Position": { "X": "14", "Y": "23" },
+              "Layer": "Buildings",
+              "SetProperties": { "Action": "OpenShop WizardFurnitureCatalogue" }
+			}
+		  ],
+		  "When": { "NewStore": true, "DayOfWeek |contains=Wednesday": false }
+	  },
+	  {
+		  "LogName": "AgathaHouse 2Floor RetroFurnitureCatalogue",
+		  "Action": "EditMap",
+		  "Target": "Maps/maat.BetterThings_AgathaHouse_2Floor",
+		  "MapTiles": [
+			{
+              "Position": { "X": "24", "Y": "5" },
+              "Layer": "Buildings",
+              "SetProperties": { "Action": "OpenShop RetroFurnitureCatalogue" }
+			}
+		  ],
+		  "When": { "NewStore": true, "DayOfWeek |contains=Wednesday": false }
+	  },
+	  
+	  /*{
+		  "LogName": "AgathaHouse Strings",
+          "Action": "EditData",
+          "Target": "Strings/AgathaHouse",
+          "Entries": {
+              "secretRoom_lockedDoor": "{{i18n:agathaHouse.secretRoom_lockedDoor.message}}",
+		  },
+		  "When": { "NewStore": true }
+	  },*/
+   ]
+}

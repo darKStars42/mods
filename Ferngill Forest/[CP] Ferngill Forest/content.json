@@ -1,0 +1,240 @@
+{
+  "Format": "2.7.0",
+  "Changes": [
+    {//Load Maps
+      "Action": "Load",
+      "Target": "Maps/dbg.FerngillForest",
+      "FromFile": "assets/Maps/FerngillForest.tmx"
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/dbg.FerngillForestSewer",
+      "FromFile": "assets/Maps/FerngillForestSewer.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "dbg.FerngillForest": {
+          "DisplayName": "{{i18n:dbg.FerngillForest.DisplayName}}",
+          "DefaultArrivalTile": {
+            "X": 11,
+            "Y": 17
+          },
+          "CreateOnLoad": {
+            "MapPath": "Maps/dbg.FerngillForest"
+          },
+          "Fish": [
+            {
+              "Id": "dbg.FerngillForest.RainbowTrout",
+              "ItemId": "(O)138",
+              "Condition": "LOCATION_Season Here Fall Spring Summer Winter"
+            },
+            {
+              "Id": "dbg.FerngillForest.Sturgeon",
+              "ItemId": "(O)698",
+              "Condition": "LOCATION_Season Here Fall Spring Summer Winter"
+            },
+            {
+              "Id": "dbg.FerngillForest.Bullhead",
+              "ItemId": "(O)700",
+              "Condition": "LOCATION_Season Here Fall Spring Summer Winter"
+            },
+            {
+              "Id": "dbg.FerngillForest.Carp",
+              "ItemId": "(O)142",
+              "Condition": "LOCATION_Season Here Fall Spring Summer Winter"
+            },
+            {
+              "Id": "dbg.FerngillForest.Chub",
+              "ItemId": "(O)702",
+              "Condition": "LOCATION_Season Here Fall Spring Summer Winter"
+            },
+            {
+              "Id": "dbg.FerngillForest.LargemouthBass",
+              "ItemId": "(O)136",
+              "Condition": "LOCATION_Season Here Fall Spring Summer Winter"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "dbg.FerngillForestSewer": {
+          "DisplayName": "{{i18n:dbg.FerngillForestSewer.DisplayName}}",
+          "DefaultArrivalTile": {
+            "X": 8,
+            "Y": 3
+          },
+        "CreateOnLoad": {
+			"MapPath": "Maps/dbg.FerngillForestSewer"
+          }
+        }
+      }
+    },
+    {//Music
+      "Action": "EditMap",
+      "Target": "Maps/dbg.FerngillForest",
+      "MapProperties": {
+        "Music": "summer1"
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/dbg.FerngillForestSewer",
+      "MapProperties": {
+        "Music": "spirits_eve"
+      }
+    },
+    {//Central Station
+      "Action": "EditData",
+      "Target": "Mods/Pathoschild.CentralStation/Stops",
+      "Entries": {
+        "{{ModId}}_FerngillForest": {
+          "DisplayName": "{{i18n:dbgFerngillForestStopDisplay}}",
+          "ToLocation": "dbg.FerngillForest",
+          "Network": "Train",
+          "Cost": 350,
+          "ToTile": {
+            "X": 11,
+            "Y": 17
+          }
+        }
+      }
+    },
+    {//Load Location Messages
+      "LogName": "Location Messages",
+      "Action": "Include",
+      "FromFile": "assets/Data/LocationMessages.json"
+    },
+    {//Load NPCs
+	  "LogName": "Ferngill Forest Load blank.json",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/{{ModId}}_Ceridwen, Characters/schedules/{{ModId}}_Ceridwen, Strings/schedules/{{ModId}}_Ceridwen",
+      "FromFile": "assets/Data/blank.json"
+    },
+    {
+	  "LogName": "Ferngill Forest Load Disposition",
+      "Action": "Include",
+      "FromFile": "assets/Characters/Disposition/Ceridwen.json"
+    },
+    {
+	  "LogName": "Ferngill Forest Load Portraits",
+      "Action": "Load",
+      "Target": "Portraits/{{ModId}}_Ceridwen",
+      "FromFile": "assets/Characters/Portraits/Ceridwen.png"
+    },
+    {
+	  "LogName": "Ferngill Forest Load Sprites",
+      "Action": "Load",
+      "Target": "Characters/{{ModId}}_Ceridwen",
+      "FromFile": "assets/Characters/Sprites/Ceridwen.png"
+    },
+    {
+	  "LogName": "Ferngill Forest Load Dialogue",
+      "Action": "Include",
+      "FromFile": "assets/Characters/Dialogue/Ceridwen.json"
+    },
+    {
+	  "LogName": "Ferngill Forest Load Schedule",
+      "Action": "Include",
+      "FromFile": "assets/Data/schedule.json"
+    },
+    {
+	  "LogName": "Ferngill Forest Load GiftTastes",
+      "Action": "Include",
+      "FromFile": "assets/Data/gifttastes.json"
+    },
+    {
+	  "LogName": "Ferngill Forest Load Events",
+      "Action": "Load",
+      "Target": "Data/Events/dbg.FerngillForestSewer",
+	  "FromFile": "assets/Events/blank.json"
+    },
+	{
+	  "LogName": "Ferngill Forest Event Data",
+	  "Action": "Include",
+	  "FromFile": "assets/Events/CeridwenEvents.json"
+	},
+	{
+      "Action": "EditData",
+      "Target": "Data/AudioChanges",
+      "Entries": {
+				"CeridwenSong": {
+					"ID": "CeridwenSong",
+					"Category": "Music",
+					"FilePaths": [ "{{AbsoluteFilePath: assets/Events/CeridwenSong.wav}}" ],
+					"StreamedVorbis": true
+			}
+		}
+	},
+    {//Mushroom Shop
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "Entries": {
+        "dbg.FerngillForest_Shop": {
+          "Owners": [
+            {
+              "Name": "AnyOrNone",
+              "Dialogues": [
+                {
+                  "Id": "dbg.FerngillForest",
+                  "Dialogue": "Psst... Wanna buy some mushrooms?"
+                }
+              ]
+            }
+          ],
+          "Items": [
+            {
+              "Id": "dbg.FerngillForest_CommonMushroom",
+              "ItemId": "(O)404",
+              "AvailableStock": 1,
+              "AvailableStockLimit": "Player"
+            },
+            {
+              "Id": "dbg.FerngillForest_RedMushroom",
+              "ItemId": "(O)420",
+              "AvailableStock": 1,
+              "AvailableStockLimit": "Player"
+            },
+            {
+              "Id": "dbg.FerngillForest_PurpleMushroom",
+              "ItemId": "(O)422",
+              "AvailableStock": 1,
+              "AvailableStockLimit": "Player"
+            },
+            {
+              "Id": "dbg.FerngillForest_Chanterelle",
+              "ItemId": "(O)281",
+              "AvailableStock": 1,
+              "AvailableStockLimit": "Player"
+            },
+            {
+              "Id": "dbg.FerngillForest_Morel",
+              "ItemId": "(O)257",
+              "AvailableStock": 1,
+              "AvailableStockLimit": "Player"
+            },
+            {
+              "Id": "dbg.FerngillForest_MagmaCap",
+              "ItemId": "(O)851",
+              "AvailableStock": 1,
+              "AvailableStockLimit": "Player"
+            },
+            {
+              "Id": "dbg.FerngillForest_MushroomTreeSeed",
+              "ItemId": "(O)891",
+              "AvailableStock": 1,
+              "Price": 5000,
+              "Condition": "PLAYER_HAS_ACHIEVEMENT Current 40",
+              "AvailableStockLimit": "Player"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

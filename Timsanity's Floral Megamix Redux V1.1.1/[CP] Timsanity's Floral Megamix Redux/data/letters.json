@@ -1,0 +1,23 @@
+{
+	"Changes": [
+		// Add Letter
+		{
+			"Action": "EditData",
+			"Target": "Data/Mail",
+			"Entries": {
+				"Timsanity_Introduction": "[letterbg 0] {{i18n:Mail_TimsanityIntroduction}} [#]{{i18n:Timsanity_lettersendername}} %item object Timsanity_HeartRoseSeeds 1 %%"
+			}
+		},
+		// Add Letter Event
+		{
+          "Action": "EditData",
+          "Target": "Data/TriggerActions",
+          "Entries": {
+              "Timsanity_Day1Mail":{
+                  "Id": "Timsanity_Day1Mail",
+                  "Trigger": "DayStarted",
+                  "Action": "AddMail Current Timsanity_Introduction now"}
+              }
+            }
+    ]
+}

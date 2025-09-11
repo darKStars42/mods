@@ -1,0 +1,89 @@
+{
+    "Format": "2.5.0",
+    "Changes": [
+	
+	//Load Textures
+	{
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Objects",
+            "FromFile": "assets/objects.png"
+        },
+	
+	//Add False Morel
+	{
+		 "Action": "EditData",
+         "Target": "Data/Objects",
+         "Entries": {
+			"{{ModId}}_FalseMorel": {
+				"Name": "{{ModId}}_FalseMorel",
+				"Displayname": "{{i18n:False.Morel.DisplayName}}",
+				"Description": "{{i18n:False.Morel.Description}}",
+				"Type": "Basic",
+				"Category": -81,
+				"Price": 85,
+				"Texture": "Mods/{{ModId}}/Objects",
+				"SpriteIndex": 0,
+				"Edibility": -25,
+				"IsDrink": false,
+				"ContextTags": [
+					"season_spring",
+					"season_summer",
+					"edible_mushroom", 
+					],
+			}
+		 }
+	},
+	
+	//Add Sauteed False Morel
+	{
+		"Action": "EditData",
+		"Target": "Data/Objects",
+		"Entries": {
+			"{{ModId}}_SauteedFalseMorel": {
+				"Name": "{{ModId}}_SauteedFalseMorel",
+				"Displayname": "{{i18n:Sauteed.False.Morel.DisplayName}}",
+				"Description": "{{i18n:Sauteed.False.Morel.Description}}",
+				"Type": "Basic",
+				"Category": -7,
+				"Price": 300,
+				"Texture": "Mods/{{ModId}}/Objects",
+				"SpriteIndex": 1,
+				"Edibility": 60,
+				"IsDrink": false,
+				"Buffs": [
+				{
+					"Id": "FalseMorel",
+					"Duration": 86,
+					"CustomAttributes": { "ForagingLevel": 1,},
+				}
+					],
+					},
+		}
+	},
+	
+	//Add Sauteed False Morel Recipe
+	{
+		"Action": "EditData",
+		"Target": "Data/CookingRecipes",
+		"Entries": {
+				"Sautéed False Morel": "{{ModID}}_FalseMorel 1 247 1/10 10/{{ModId}}_SauteedFalseMorel 1/f Linus 2",
+				},
+	},
+	
+	//Send Sauteed False Morel Recipe
+	{
+		"Action": "EditData",
+		"Target": "Data/Events/Farm",
+		"Entries": {
+		"EVENTID/f Linus 2/z summer/z winter/z fall/x LinusCooking": "null",		
+		}		
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Mail",
+		"Entries": {
+			"LinusCooking": "{{i18n:Mail.Linus_FalseMorelRecipe}}%item cookingRecipe %%[#]{{i18n:Mail.Linus_FalseMorelRecipe_name}}"
+		}
+	},	
+    ]
+}

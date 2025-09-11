@@ -1,0 +1,42 @@
+{
+	"Changes":[
+		
+		//Mail (formerly MFM mail)
+	
+		{
+			"LogName": "Mail Data",
+			"Action": "EditData",
+			"Target": "Data/mail",
+			"Entries": {
+				"IslaLetter": "{{i18n:Isla.Letter.Body}}[#]{{i18n:Isla.Letter.Title}}",
+				"IslaInvitation": "{{i18n:Isla.Invitation.Body}}[#]{{i18n:Isla.Invitation.Title}}",
+			},
+		},
+		
+		{
+			"LogName": "Mail Triggers",
+			"Action": "EditData",
+			"Target": "Data/TriggerActions",
+			"Entries": {
+		
+			   "PaperNautilus.Isla_DateMail": {
+						"Id": "PaperNautilus.Isla_DateMail",
+						"Trigger": "DayEnding",
+						"Condition": "PLAYER_FRIENDSHIP_POINTS Current {{Isla}} 2500, PLAYER_HAS_SEEN_EVENT Current 8205025, SEASON spring summer, PLAYER_NPC_RELATIONSHIP Current {{Isla}} Dating",
+						"HostOnly": false,
+						"Action": "AddMail Current IslaLetter",
+				},
+				
+				"PaperNautilus.Isla_InvitationMail": {
+						"Id": "PaperNautilus.Isla_InvitationMail",
+						"Trigger": "DayEnding",
+						"Condition": "PLAYER_FRIENDSHIP_POINTS Current {{Isla}} 3500, SEASON spring summer, PLAYER_NPC_RELATIONSHIP Current {{Isla}} Married",
+						"HostOnly": false,
+						"Action": "AddMail Current IslaInvitation",
+				},
+			},
+		},
+	
+	
+	],
+}

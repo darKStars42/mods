@@ -1,0 +1,338 @@
+{
+
+  "Changes": [
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_CalebHouse",
+          "FromFile": "assets/Locations/EchoReef_CalebHouse.tmx"
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_CalebTreehouse",
+          "FromFile": "assets/Locations/EchoReef_CalebTreehouse.tmx"
+      },
+      {
+        "Action": "Load",
+        "Target": "Characters/MrMrRogers.EchoReef_Caleb",
+        "FromFile": "assets/Sprites/Caleb.png"
+      },
+      {
+        "Action": "Load",
+        "Target": "Portraits/MrMrRogers.EchoReef_Caleb",
+        "FromFile": "assets/Portraits/Caleb.png"
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Locations",
+          "Entries": {
+              "MrMrRogers.EchoReef_CalebHouse": {
+                  "DisplayName": "{{i18n:CalebHouse}}",
+                  "DefaultArrivalTile": {
+                    "X": 4,
+                    "Y": 9
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_CalebHouse",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              },
+              "MrMrRogers.EchoReef_CalebTreehouse": {
+                  "DisplayName": "{{i18n:CalebTreehouse}}",
+                  "DefaultArrivalTile": {
+                    "X": 6,
+                    "Y": 9
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_CalebTreehouse",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              }
+          }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_CalebHouse",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Warp": "4 10 MrMrRogers.EchoReef_Forest 7 9"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_CalebTreehouse",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Warp": "6 10 MrMrRogers.EchoReef_Forest 16 34",
+          "WindowLight": "3 2 6 6 2 6"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Forest",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 7, 
+              "Y": 8
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "LockedDoorWarp 4 9 MrMrRogers.EchoReef_CalebHouse 800 2000"
+            }
+          },
+          {
+            "Position": {
+              "X": 10,
+              "Y": 8
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "OpenShop MrMrRogers.EchoReef_BonesShop down 0800 2000 10 7 1 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Forest",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 16, 
+              "Y": 33
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Warp 6 9 MrMrRogers.EchoReef_CalebTreehouse"
+            }
+          },
+          {
+            "Position": {
+              "X": 16,
+              "Y": 31
+            },
+            "Layer": "Buildings2",
+            "SetTilesheet": "townInterior",
+            "SetIndex": "1289"
+          },
+          {
+            "Position": {
+              "X": 16,
+              "Y": 32
+            },
+            "Layer": "Buildings2",
+            "SetTilesheet": "townInterior",
+            "SetIndex": "1321"
+          },
+          {
+            "Position": {
+              "X": 16,
+              "Y": 33
+            },
+            "Layer": "Buildings2",
+            "SetTilesheet": "townInterior",
+            "SetIndex": "1353"
+          }
+        ],
+        "When": {
+          "Hearts:MrMrRogers.EchoReef_Caleb": "6"
+        }
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Characters",
+          "Entries": {
+            "MrMrRogers.EchoReef_Caleb": {
+              "DisplayName": "{{i18n:Caleb}}",
+              "BirthSeason": "Fall",
+              "BirthDay": 22,
+              "HomeRegion": "Other",
+              "Language": "Default",
+              "Gender": "Male",
+              "Age": "Adult",
+              "Manner": "Polite",
+              "SocialAnxiety": "Shy",
+              "Optimism": "Positive",
+              "IsDarkSkinned": false,
+              "CanBeRomanced": false,
+              "Calendar": "HiddenAlways",
+              "SocialTab": "HiddenUntilMet",
+              "CanSocialize": true,
+              "CanReceiveGifts": true,
+              "CanGreetNearbyCharacters": true,
+              "CanCommentOnPurchasedShopItems": true,
+              "CanVisitIsland": false,
+              "IntroductionsQuest": false,
+              "ItemDeliveryQuests": false,
+              "PerfectionScore": false,
+              "EndSlideShow": "MainGroup",
+              "SpouseAdopts": null,
+              "SpouseWantsChildren": true,
+              "SpouseGiftJealousy": false,
+              "SpouseRoom": {},
+              "SpousePatio": {},
+              "SpouseFloors": [],
+              "SpouseWallpapers": [],
+              "DumpsterDiveFriendshipEffect": 0,
+              "DumpsterDiveEmote": 8,
+              "FriendsAndFamily": {},
+              "FlowerDanceCanDance": null,
+              "WinterStarGifts": [],
+              "WinterStarParticipant": false,
+              "UnlockConditions": null,
+              "SpawnIfMissing": true,
+              "Home": [
+                {
+                  "Id": "Default",
+                  "Condition": null,
+                  "Location": "MrMrRogers.EchoReef_CalebHouse",
+                  "Tile": {
+                    "X": 6,
+                    "Y": 6
+                  },
+                  "Direction": "down"
+                }
+              ],
+              "TextureName": null,
+              "Appearance": [
+                {
+                  "Id": "MrMrRogers.EchoReef_Caleb",
+                  "Condition": null,
+                  "Season": null,
+                  "Indoors": true,
+                  "Outdoors": true,
+                  "Portrait": "Portraits/MrMrRogers.EchoReef_Caleb",
+                  "Sprite": "Characters/MrMrRogers.EchoReef_Caleb",
+                  "IsIslandAttire": false,
+                  "Precedence": 0,
+                  "Weight": 0
+                }
+              ],
+              "MugShotSourceRect": null,
+              "Size": {
+                "X": 16,
+                "Y": 32
+              },
+              "Breather": true,
+              "BreathChestRect": null,
+              "BreathChestPosition": null,
+              "Shadow": null,
+              "EmoteOffset": {
+                "X": 0,
+                "Y": 0
+              },
+              "ShakePortraits": null,
+              "KissSpriteIndex": 28,
+              "KissSpriteFacingRight": true,
+              "FormerCharacterNames": [],
+              "CustomFields": null
+            }
+          }
+      },
+      { 
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Caleb",
+            "FromFile": "assets/blank.json"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Caleb",
+          "FromFile": "assets/blank.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MrMrRogers.EchoReef_Caleb": "{{i18n:CalebGiftLoveResponse}}//{{i18n:CalebGiftLikeResponse}}//{{i18n:CalebGiftDislikeResponse}}//{{i18n:CalebGiftHateResponse}}//{{i18n:CalebGiftNeutralResponse}}//"
+            }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Caleb",
+          "Entries": {
+            "Introduction": "{{i18n:Caleb_Introduction}}",
+            "AcceptBirthdayGift_Positive": "{{i18n:Caleb_AcceptBirthdayGift_Positive}}",
+            "AcceptBirthdayGift_Negative": "{{i18n:Caleb_AcceptBirthdayGift_Negative}}",
+            "AcceptGift_(O)StardropTea": "{{i18n:Caleb_AcceptGift_(O)StardropTea}}",
+            "DumpsterDiveComment": "{{i18n:Caleb_DumpsterDiveComment}}",
+            "HitBySlingshot": "{{i18n:Caleb_HitBySlingshot}}",
+            "Mon": "{{i18n:Caleb_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Tue": "{{i18n:Caleb_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Wed": "{{i18n:Caleb_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Thu": "{{i18n:Caleb_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Fri": "{{i18n:Caleb_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sat": "{{i18n:Caleb_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sun": "{{i18n:Caleb_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/animationdescriptions",
+          "Entries": {
+            "MrMrRogers.EchoReef_Caleb_sleep": "19/19/19",
+            "mrmrrogers.echoreef_caleb_sleep": "19/19/19"
+          } 
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Caleb",
+          "Entries": {
+            "spring": "600 MrMrRogers.EchoReef_CalebHouse 6 6 2/800 MrMrRogers.EchoReef_Forest 10 7 2/2200 MrMrRogers.EchoReef_CalebHouse 6 6 2 MrMrRogers.EchoReef_Caleb_sleep"
+          }
+        }
+  ]
+}

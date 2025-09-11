@@ -1,0 +1,35 @@
+{
+    "Changes": [
+
+/*----------------------------------------------------
+Basic Ingredients
+----------------------------------------------------*/
+        {
+          "LogName": "Add Alchemistry Recipes - Basic Ingredients",
+          "Action": "EditData",
+          "Target": "Data/CookingRecipes",
+          "Entries": 
+              {
+                //Lye
+                "{{ModId}}_Lye_Recipe": "388 1 382 1/25 5/{{ModId}}_Lye/default",
+
+                //Glycerin
+                "{{ModId}}_Glycerin_Recipe": "Morghoula.AlchemistryCP_OilofNewt 1 Morghoula.AlchemistryCP_Lye 1 Morghoula.AlchemistryCP_EmptyFlask 1/25 5/{{ModId}}_Glycerin/f Harvey 4"
+              }
+        },
+        {
+          "LogName": "Add Alchemistry Recipes - Mushroom Trees",
+          "Action": "EditData",
+          "Target": "Data/CraftingRecipes",
+          "When": { "HasMod": "Kronosta.ForageCrops" },
+          "Entries": 
+              {
+                //Wild Seeds (Mushrooms)
+                "{{ModId}}_MushroomTreeSpringSeeds": "{{ModId}}_WizardsEye 1 {{ModId}}_NightCap 1 {{ModId}}_SunriseGlory 1 {{ModId}}_LostSouls 1/Field/{{ModID}}_MushroomTreeSpringSeeds 10/false/Foraging 1/{{i18n:Alchemistry_MushroomTreeSpringSeeds.name}}",
+                "{{ModId}}_MushroomTreeSummerSeeds": "{{ModId}}_LunarGlowcap 1 {{ModId}}_FalseMorel 1 {{ModId}}_RedSmilers 1 {{ModId}}_BeachedOyster 1/Field/{{ModID}}_MushroomTreeSummerSeeds 10/false/Foraging 4/{{i18n:Alchemistry_MushroomTreeSummerSeeds.name}}",
+                "{{ModId}}_MushroomTreeFallSeeds": "{{ModId}}_InkCap 1 {{ModId}}_MeteorCap 1 {{ModId}}_CapOLantern 1 {{ModId}}_HellfireBolete 1/Field/{{ModID}}_MushroomTreeFallSeeds 10/false/Foraging 6/{{i18n:Alchemistry_MushroomTreeFallSeeds.name}}",
+                "{{ModId}}_MushroomTreeWinterSeeds": "{{ModId}}_DawnsingerToadstool 2 {{ModId}}_FairieWings 2/Field/{{ModID}}_MushroomTreeWinterSeeds 10/false/Foraging 7/{{i18n:Alchemistry_MushroomTreeWinterSeeds.name}}"
+              }
+        }
+    ]
+}

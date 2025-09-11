@@ -1,0 +1,56 @@
+{
+   "Changes": [
+		{
+			"Action": "Load",
+			"Target": "Characters/Jas_GrowthSpurt, Portraits/Jas_GrowthSpurt, Characters/Jas_GrowthSpurt_Beach, Portraits/Jas_GrowthSpurt_Beach, Characters/Jas_GrowthSpurt_Winter, Portraits/Jas_GrowthSpurt_Winter",
+			"FromFile": "assets/{{Target}}.png"
+		},
+
+        {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "TargetField": [ 
+				"Jas", 
+				"Appearance"
+			],
+            "Entries": {
+				2:{
+                "Id": "GrowthSpurt",
+				"Condition": "PLAYER_HAS_CHILDREN Any 1",
+				"Season": null,
+				"Indoors": true,
+				"Outdoors": true,
+				"Portrait": "Portraits/Jas_GrowthSpurt",
+				"Sprite": "Characters/Jas_GrowthSpurt",
+				"IsIslandAttire": false,
+				"Precedence": -1000,
+				"Weight": 0
+				},
+				3:{
+                "Id": "GrowthSpurt_Beach",
+				"Condition": "PLAYER_HAS_CHILDREN Any 1",
+				"Season": null,
+				"Indoors": true,
+				"Outdoors": true,
+				"Portrait": "Portraits/Jas_GrowthSpurt_Beach",
+				"Sprite": "Characters/Jas_GrowthSpurt_Beach",
+				"IsIslandAttire": true,
+				"Precedence": -1000,
+				"Weight": 0
+				},
+				4:{
+                "Id": "GrowthSpurt_Winter",
+				"Condition": "PLAYER_HAS_CHILDREN Any 1",
+				"Season": "Winter",
+				"Indoors": true,
+				"Outdoors": true,
+				"Portrait": "Portraits/Jas_GrowthSpurt_Winter",
+				"Sprite": "Characters/Jas_GrowthSpurt_Winter",
+				"IsIslandAttire": false,
+				"Precedence": -1100,
+				"Weight": 0
+				}
+            },
+        },
+    ]
+}

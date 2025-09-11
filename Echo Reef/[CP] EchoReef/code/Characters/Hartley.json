@@ -1,0 +1,469 @@
+{
+
+  "Changes": [
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_HartleyHouse",
+          "FromFile": "assets/Locations/EchoReef_HartleyHouse.tmx"
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_HartleyMaze",
+          "FromFile": "assets/Locations/EchoReef_HartleyMaze_Hard.tmx",
+          "When": {
+            "HartleyArea": "Hard"
+          }
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_HartleyMaze",
+          "FromFile": "assets/Locations/EchoReef_HartleyMaze_Cheat.tmx",
+          "When": {
+            "HartleyArea": "Cheat"
+          }
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_HartleyMaze",
+          "FromFile": "assets/Locations/EchoReef_HartleyMaze_Easy.tmx",
+          "When": {
+            "HartleyArea": "Easy"
+          }
+      },
+      {
+          "Action": "Load",
+          "Target": "Maps/MrMrRogers.EchoReef_HartleyMaze",
+          "FromFile": "assets/Locations/EchoReef_HartleyMaze_VeryHard.tmx",
+          "When": {
+            "HartleyArea": "VeryHard"
+          }
+      },
+      {
+        "Action": "Load",
+        "Target": "Characters/MrMrRogers.EchoReef_Hartley",
+        "FromFile": "assets/Sprites/{{HartleyAppearance}}.png"
+      },
+      {
+        "Action": "Load",
+        "Target": "Portraits/MrMrRogers.EchoReef_Hartley",
+        "FromFile": "assets/Portraits/{{HartleyAppearance}}.png"
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Locations",
+          "Entries": {
+              "MrMrRogers.EchoReef_HartleyHouse": {
+                  "DisplayName": "{{i18n:HartleyHouse}}",
+                  "DefaultArrivalTile": {
+                    "X": 3,
+                    "Y": 18
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_HartleyHouse",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              },
+              "MrMrRogers.EchoReef_HartleyMaze": {
+                  "DisplayName": "{{i18n:HartleyMaze}}",
+                  "DefaultArrivalTile": {
+                    "X": 47,
+                    "Y": 0
+                  },
+                  "ExcludeFromNpcPathfinding": false,
+                  "CreateOnLoad": {
+                    "MapPath": "Maps/MrMrRogers.EchoReef_HartleyMaze",
+                    "Type": null,
+                    "AlwaysActive": false
+                  },
+                  "FormerLocationNames": [],
+                  "CanPlantHere": null,
+                  "CanHaveGreenRainSpawns": true,
+                  "ArtifactSpots": [],
+                  "FishAreas": {},
+                  "Fish": [],
+                  "Forage": [],
+                  "MinDailyWeeds": 2,
+                  "MaxDailyWeeds": 5,
+                  "FirstDayWeedMultiplier": 15,
+                  "MinDailyForageSpawn": 1,
+                  "MaxDailyForageSpawn": 4,
+                  "MaxSpawnedForageAtOnce": 6,
+                  "ChanceForClay": 0.03,
+                  "Music": [],
+                  "MusicDefault": null,
+                  "MusicContext": "Default",
+                  "MusicIgnoredInRain": false,
+                  "MusicIgnoredInSpring": false,
+                  "MusicIgnoredInSummer": false,
+                  "MusicIgnoredInFall": false,
+                  "MusicIgnoredInFallDebris": false,
+                  "MusicIgnoredInWinter": false,
+                  "MusicIsTownTheme": false,
+                  "CustomFields": null
+              }
+          }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_HartleyHouse",
+        "MapProperties": {
+          "LocationContext": "EchoReef",
+          "Doors": "5 11 townInterior 120 13 11 townInterior 120",
+          "Warp": "3 19 MrMrRogers.EchoReef_Mines 37 47",
+          "WindowLight": "3 9 6 3 10 6 6 4 6 6 5 6 9 4 6 9 5 6 14 1 6 14 2 6 17 1 6 17 2 6"
+        },
+        "MapTiles": [
+          {
+            "Position": {
+              "X": 5,
+              "Y": 11
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Door"
+            }
+          },
+          {
+            "Position": {
+              "X": 13,
+              "Y": 11
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "Door MrMrRogers.EchoReef_Hartley"
+            }
+          },
+          {
+            "Position": {
+              "X": 2,
+              "Y": 14
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "OpenShop MrMrRogers.EchoReef_MiningChallenges down 0800 2000 2 13 1 1"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_HartleyMaze",
+        "MapProperties": {
+          "Warp": "47 -1 MrMrRogers.EchoReef_Mines 49 53",
+          "LocationContext": "EchoReef",
+          "Light": "45 49 4"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Mines",
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 37, 
+              "Y": 46
+            },
+            "Layer": "Buildings",
+            "SetProperties": {
+              "Action": "LockedDoorWarp 3 18 MrMrRogers.EchoReef_HartleyHouse 800 2000"
+            }
+          }
+        ]
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/MrMrRogers.EchoReef_Mines",
+        "TextOperations": [
+          {
+            "Operation": "Append",
+            "Target": ["MapProperties", "Warp"],
+            "Value": "49 54 MrMrRogers.EchoReef_HartleyMaze 47 0",
+            "Delimiter": " "
+          }
+        ],
+        "MapTiles":[
+          {
+            "Position": { 
+              "X": 39, 
+              "Y": 52
+            },
+            "Layer": "Buildings",
+            "Remove": "true"
+          }
+        ],
+        "When": {
+          "Hearts:MrMrRogers.EchoReef_Hartley": "6"
+        }
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/Characters",
+          "Entries": {
+            "MrMrRogers.EchoReef_Hartley": {
+              "DisplayName": "{{i18n:Hartley}}",
+              "BirthSeason": "Winter",
+              "BirthDay": 28,
+              "HomeRegion": "Other",
+              "Language": "Default",
+              "Gender": "Male",
+              "Age": "Adult",
+              "Manner": "Rude",
+              "SocialAnxiety": "Neutral",
+              "Optimism": "Negative",
+              "IsDarkSkinned": false,
+              "CanBeRomanced": false,
+              "Calendar": "HiddenAlways",
+              "SocialTab": "HiddenUntilMet",
+              "CanSocialize": true,
+              "CanReceiveGifts": true,
+              "CanGreetNearbyCharacters": true,
+              "CanCommentOnPurchasedShopItems": true,
+              "CanVisitIsland": false,
+              "IntroductionsQuest": false,
+              "ItemDeliveryQuests": false,
+              "PerfectionScore": false,
+              "EndSlideShow": "MainGroup",
+              "SpouseAdopts": null,
+              "SpouseWantsChildren": true,
+              "SpouseGiftJealousy": false,
+              "SpouseRoom": {},
+              "SpousePatio": {},
+              "SpouseFloors": [],
+              "SpouseWallpapers": [],
+              "DumpsterDiveFriendshipEffect": -25,
+              "DumpsterDiveEmote": 8,
+              "FriendsAndFamily": {},
+              "FlowerDanceCanDance": null,
+              "WinterStarGifts": [],
+              "WinterStarParticipant": false,
+              "UnlockConditions": null,
+              "SpawnIfMissing": true,
+              "Home": [
+                {
+                  "Id": "Default",
+                  "Condition": null,
+                  "Location": "MrMrRogers.EchoReef_HartleyHouse",
+                  "Tile": {
+                    "X": 15,
+                    "Y": 4
+                  },
+                  "Direction": "down"
+                }
+              ],
+              "TextureName": null,
+              "Appearance": [
+                {
+                  "Id": "MrMrRogers.EchoReef_Hartley",
+                  "Condition": null,
+                  "Season": null,
+                  "Indoors": true,
+                  "Outdoors": true,
+                  "Portrait": "Portraits/MrMrRogers.EchoReef_Hartley",
+                  "Sprite": "Characters/MrMrRogers.EchoReef_Hartley",
+                  "IsIslandAttire": false,
+                  "Precedence": 0,
+                  "Weight": 0
+                }
+              ],
+              "MugShotSourceRect": null,
+              "Size": {
+                "X": 16,
+                "Y": 32
+              },
+              "Breather": true,
+              "BreathChestRect": null,
+              "BreathChestPosition": null,
+              "Shadow": {
+                "Visible": false
+              },
+              "EmoteOffset": {
+                "X": 0,
+                "Y": 0
+              },
+              "ShakePortraits": null,
+              "KissSpriteIndex": 28,
+              "KissSpriteFacingRight": true,
+              "FormerCharacterNames": [],
+              "CustomFields": null
+            }
+          },
+          "When": {
+            "HartleyShadow": false
+          }
+      },
+      {
+        "Action": "EditData",
+        "Target": "Data/Characters",
+        "Entries": {
+          "MrMrRogers.EchoReef_Hartley": {
+            "DisplayName": "{{i18n:Hartley}}",
+            "BirthSeason": "Winter",
+            "BirthDay": 28,
+            "HomeRegion": "Other",
+            "Language": "Default",
+            "Gender": "Male",
+            "Age": "Adult",
+            "Manner": "Rude",
+            "SocialAnxiety": "Neutral",
+            "Optimism": "Negative",
+            "IsDarkSkinned": false,
+            "CanBeRomanced": false,
+            "Calendar": "HiddenAlways",
+            "SocialTab": "HiddenUntilMet",
+            "CanSocialize": true,
+            "CanReceiveGifts": true,
+            "CanGreetNearbyCharacters": true,
+            "CanCommentOnPurchasedShopItems": true,
+            "CanVisitIsland": false,
+            "IntroductionsQuest": false,
+            "ItemDeliveryQuests": false,
+            "PerfectionScore": false,
+            "EndSlideShow": "MainGroup",
+            "SpouseAdopts": null,
+            "SpouseWantsChildren": true,
+            "SpouseGiftJealousy": false,
+            "SpouseRoom": {},
+            "SpousePatio": {},
+            "SpouseFloors": [],
+            "SpouseWallpapers": [],
+            "DumpsterDiveFriendshipEffect": -25,
+            "DumpsterDiveEmote": 8,
+            "FriendsAndFamily": {},
+            "FlowerDanceCanDance": null,
+            "WinterStarGifts": [],
+            "WinterStarParticipant": false,
+            "UnlockConditions": null,
+            "SpawnIfMissing": true,
+            "Home": [
+              {
+                "Id": "Default",
+                "Condition": null,
+                "Location": "MrMrRogers.EchoReef_HartleyHouse",
+                "Tile": {
+                  "X": 15,
+                  "Y": 4
+                },
+                "Direction": "down"
+              }
+            ],
+            "TextureName": null,
+            "Appearance": [
+              {
+                "Id": "MrMrRogers.EchoReef_Hartley",
+                "Condition": null,
+                "Season": null,
+                "Indoors": true,
+                "Outdoors": true,
+                "Portrait": "Portraits/MrMrRogers.EchoReef_Hartley",
+                "Sprite": "Characters/MrMrRogers.EchoReef_Hartley",
+                "IsIslandAttire": false,
+                "Precedence": 0,
+                "Weight": 0
+              }
+            ],
+            "MugShotSourceRect": null,
+            "Size": {
+              "X": 16,
+              "Y": 32
+            },
+            "Breather": true,
+            "BreathChestRect": null,
+            "BreathChestPosition": null,
+            "Shadow": {
+              "Visible": true
+            },
+            "EmoteOffset": {
+              "X": 0,
+              "Y": 0
+            },
+            "ShakePortraits": null,
+            "KissSpriteIndex": 28,
+            "KissSpriteFacingRight": true,
+            "FormerCharacterNames": [],
+            "CustomFields": null
+          }
+        },
+        "When": {
+          "HartleyShadow": true
+        }
+    },
+      { 
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Hartley",
+            "FromFile": "assets/blank.json"
+        },
+        {
+          "Action": "Load",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Hartley",
+          "FromFile": "assets/blank.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "MrMrRogers.EchoReef_Hartley": "{{i18n:HartleyGiftLoveResponse}}//{{i18n:HartleyGiftLikeResponse}}//{{i18n:HartleyGiftDislikeResponse}}//{{i18n:HartleyGiftHateResponse}}//{{i18n:HartleyGiftNeutralResponse}}//"
+            }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/MrMrRogers.EchoReef_Hartley",
+          "Entries": {
+            "Introduction": "{{i18n:Hartley_Introduction}}",
+            "AcceptBirthdayGift_Positive": "{{i18n:Hartley_AcceptBirthdayGift_Positive}}",
+            "AcceptBirthdayGift_Negative": "{{i18n:Hartley_AcceptBirthdayGift_Negative}}",
+            "AcceptGift_(O)StardropTea": "{{i18n:Hartley_AcceptGift_(O)StardropTea}}",
+            "DumpsterDiveComment": "{{i18n:Hartley_DumpsterDiveComment}}",
+            "HitBySlingshot": "{{i18n:Hartley_HitBySlingshot}}",
+            "Mon": "{{i18n:Hartley_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Tue": "{{i18n:Hartley_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Wed": "{{i18n:Hartley_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Thu": "{{i18n:Hartley_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Fri": "{{i18n:Hartley_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sat": "{{i18n:Hartley_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}",
+            "Sun": "{{i18n:Hartley_{{Random: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}}"
+          }
+        },
+        {
+          "Action": "EditData",
+          "Target": "Data/animationdescriptions",
+          "Entries": {
+            "MrMrRogers.EchoReef_Hartley_sleep": "19/19/19",
+            "mrmrrogers.echoreef_hartley_sleep": "19/19/19"
+          } 
+        },
+        {
+          "Action": "EditData",
+          "Target": "Characters/schedules/MrMrRogers.EchoReef_Hartley",
+          "Entries": {
+            "spring": "600 MrMrRogers.EchoReef_HartleyHouse 15 4 2/800 MrMrRogers.EchoReef_HartleyHouse 2 13 2/2200 MrMrRogers.EchoReef_HartleyHouse 15 4 2 MrMrRogers.EchoReef_Hartley_sleep"
+          }
+        }
+  ]
+}

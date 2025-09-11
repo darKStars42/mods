@@ -1,0 +1,49 @@
+{
+
+   "Changes": [
+
+//★★★Stardew Valley Expanded★★★
+
+
+  //●裏庭の編集(水没洞窟への入り口の追加)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "ModSupport/Flooded_Cave_Backwoods_SVE.tmx",
+        "ToArea": { "X": 23, "Y": 4, "Width": 7, "Height": 9 },
+       },
+
+  //●裏庭の編集(地下室増築後、入り口前の岩撤去パッチ)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "ModSupport/Flooded_Cave_Backwoods_Open_SVE.tmx",
+        "ToArea": { "X": 23, "Y": 4, "Width": 7, "Height": 9 },
+        "When": {
+                  "FarmhouseUpgrade": 3,
+                },
+      },
+
+  //●裏庭の編集(SVEのEnchantedGrove解放時のBackタイルのバグ対応)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "ModSupport/Flooded_Cave_Backwoods_SVE_plus.tmx",
+        "ToArea": { "X": 23, "Y": 11, "Width": 1, "Height": 1 },
+        "When": {
+                  "HasSeenEvent: anyPlayer| contains=908071": true,
+                },
+        "Update": "OnLocationChange"
+      },
+
+
+  //●水没洞窟の編集(洞窟から裏庭へのワープ書き換え)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "MapProperties": { "Warp": "31 78 Backwoods 26 8" },
+      },
+
+
+              ] //▼"Changes"の終了▼
+}

@@ -1,0 +1,708 @@
+{
+   "Changes": [
+        {
+			"LogName": "Trigger action to add mail flag for tracking Emily's daughter as firstborn.",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Add_Lizzie_Firstborn": {
+                    "Id": "{{ModId}}_Add_Lizzie_Firstborn",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current {{ModId}}_Lizzie_Firstborn Received",
+					"MarkActionApplied": false,
+                },
+                "{{ModId}}_Add_GrowingValley_Firstborn_Female": {
+                    "Id": "{{ModId}}_Add_GrowingValley_Firstborn_Female",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current GrowingValley_Firstborn_Female Received",
+					"MarkActionApplied": false,
+                },
+			}
+		},
+		
+   		{      
+			"LogName": "Load Emily's daughter's default portraits on firstborn.",
+			"Action": "Load",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Lizzie_{{FirstbornSkinTone}}.png",
+			"When": {
+				"LizziePromoEnabled": false
+			},
+		},
+   		{      
+			"LogName": "Load Emily's daughter's alternate portraits on firstborn.",
+			"Action": "Load",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Lizzie_promo_{{FirstbornSkinTone}}.png",
+			"When": {
+				"LizziePromoEnabled": true
+			},
+		},
+   		{      
+			"LogName": "Load Emily's daughter's sprites on firstborn.",
+			"Action": "Load",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Lizzie_{{FirstbornSkinTone}}.png",
+		},
+		
+		
+   		{      
+			"LogName": "Load Emily's daughter's default portraits on firstborn (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Lizzie_{{FirstbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+				"LizziePromoEnabled": false
+			},
+		},
+   		{      
+			"LogName": "Load Emily's daughter's alternate portraits on firstborn (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Lizzie_promo_{{FirstbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+				"LizziePromoEnabled": true
+			},
+		},
+   		{      
+			"LogName": "Load Emily's daughter's sprites on firstborn (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Lizzie_{{FirstbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+			},
+		},
+		
+   		{      
+			"LogName": "Edit Emily's daughter's default portraits to use winter outfit on firstborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Lizzie_Winter_{{FirstbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"LizziePromoEnabled": false,
+				"Season": "winter",
+			},
+		},
+   		{      
+			"LogName": "Edit Emily's daughter's alternate portraits to use winter outfit on firstborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/Lizzie_Winter_promo_{{FirstbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"LizziePromoEnabled": true,
+				"Season": "winter",
+			},
+		},
+   		{      
+			"LogName": "Edit Emily's daughter's sprites to use winter outfit on firstborn.",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/Lizzie_Winter_{{FirstbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"Season": "winter",
+			},
+		},
+		
+   		{      
+			"LogName": "Load bonus effect on Emily's daughter's default portraits on firstborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/bonus/Lizzie_bonus{{Random: 1, 2, 3, 4, 5, 6 |key=LHairDye_{{Time}} }}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"HasFlag:hostPlayer|contains={{ModID}}_Lizzie_Hairdye": true,
+				"LizziePromoEnabled": false,
+			},
+			"Update": "OnTimeChange"
+		},
+   		{      
+			"LogName": "Load bonus effect on Emily's daughter's alternate portraits on firstborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/bonus/Lizzie_promo_bonus{{Random: 1, 2, 3, 4, 5, 6 |key=LHairDye_{{Time}} }}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"HasFlag:hostPlayer|contains={{ModID}}_Lizzie_Hairdye": true,
+				"LizziePromoEnabled": true,
+			},
+			"Update": "OnTimeChange"
+		},
+   		{      
+			"LogName": "Load bonus effect on Emily's daughter's sprites on firstborn.",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/bonus/Lizzie_bonus{{Random: 1, 2, 3, 4, 5, 6 |key=LHairDye_{{Time}} }}.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"HasFlag:hostPlayer|contains={{ModID}}_Lizzie_Hairdye": true,
+			},
+			"Update": "OnTimeChange"
+		},
+   		{      
+			"LogName": "Un-load bonus effect on Emily's daughter's default portraits on firstborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/bonus/Lizzie_bonus0.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"HasFlag:hostPlayer|contains={{ModID}}_Lizzie_Hairdye": false,
+				"LizziePromoEnabled": false,
+			},
+		},
+   		{      
+			"LogName": "Un-load bonus effect on Emily's daughter's alternate portraits on firstborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{FirstbornName}}", 
+			"FromFile": "assets/Portraits/bonus/Lizzie_promo_bonus0.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"HasFlag:hostPlayer|contains={{ModID}}_Lizzie_Hairdye": false,
+				"LizziePromoEnabled": true,
+			},
+		},
+   		{      
+			"LogName": "Un-load bonus effect on Emily's daughter's sprites on firstborn.",
+			"Action": "EditImage",
+			"Target": "Characters/{{FirstbornName}}", 
+			"FromFile": "assets/Characters/bonus/Lizzie_bonus0.png",
+			"PatchMode": "Overlay",
+			"When": {
+				"HasFlag:hostPlayer|contains={{ModID}}_Lizzie_Hairdye": false,
+			},
+		},
+		
+		{
+			"LogName": "Add gift tastes for Emily's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"{{FirstbornName}}": "/-2 91 299 food_salad ParrotEgg MagicHairDye Book_Trash//-5 -6 -12 -79 78 18 402 418 109//241 food_seafood//305 308 769 795 alcohol_item//category_junk 233 -81 coffee_item/",
+			}
+		},
+		
+		{
+			"LogName": "Fill firstborn's empty schedule with that of Emily's daughter.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{FirstbornName}}",
+			"Entries": {
+				"fall_15": "MAIL ccVault/GOTO Mon/a1200 SandyHouse 4 6 0/1300 Desert 1 52 1/1500 Desert 9 19 0/1700 Desert 4 33 2/1800 Desert 26 32 0/1900 34 25/2000 Desert 5 55 2/a2330 Desert 28 25 3/2400 bed",
+				"Mon": "810 HaleyHouse 13 16 2 \"Strings\\schedules\\{{FirstbornName}}:Mon.000\"/1040 Town 82 16 1 \"Strings\\schedules\\{{FirstbornName}}:Mon.001\"/1500 bed",
+				"Fri": "830 Beach 10 39 3 \"Strings\\schedules\\{{FirstbornName}}:Fri.000\"/1300 SeedShop 3 26 3 \"Strings\\schedules\\{{FirstbornName}}:Fri.001\"/1500 bed",
+				"Tue": "800 Town 12 86 1/1200 Town 18 89 1 \"Strings\\schedules\\{{FirstbornName}}:trash.000\"/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000\"/1730 bed",
+				"Wed": "800 Town 47 71 0/1200 Town 51 63 1 \"Strings\\schedules\\{{FirstbornName}}:trash.001\"/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000\"/1730 bed",
+				"Thu": "800 Town 109 91 3/1300 Town 97 81 0 \"Strings\\schedules\\{{FirstbornName}}:trash.002\"/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000\"/1730 bed",
+				"Sat": "800 Town 110 52 0/1300 Town 109 56 0 \"Strings\\schedules\\{{FirstbornName}}:trash.003\"/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000\"/1730 bed",
+				"spring": "800 Town 55 85 1/1200 Town 33 96 0 \"Strings\\schedules\\{{FirstbornName}}:spring.000\"/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000\"/1730 bed",
+				"DesertFestival_1": "750 Desert 24 52 2 \"Strings\\schedules\\{{FirstbornName}}:DesertFestival.000\"/2410 bed",
+				"DesertFestival_2": "750 Desert 24 52 2 \"Strings\\schedules\\{{FirstbornName}}:DesertFestival.001\"/2410 bed",
+				"DesertFestival_3": "750 Desert 24 52 2 \"Strings\\schedules\\{{FirstbornName}}:DesertFestival.002\"/2410 bed",
+			},
+			"When": {
+				"HasMod|contains=FlashShifter.StardewValleyExpandedCP": "false",
+			},
+		},
+		
+		//SVE compat courtesy of QuoteIzkewl
+		{
+			"LogName": "Fill firstborn's empty schedule with that of Emily's daughter (SVE compat).",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{FirstbornName}}",
+			"Entries": {
+				"fall_15": "MAIL ccVault/GOTO Mon/800 BusStop 35 16 2/a1200 SandyHouse 4 6 0/1300 Desert 16 16 2/1500 Desert 29 10 0/1700 Desert 36 45 0/1900 Desert 36 24 0/2100 Desert 30 24 3/2200 bed",
+				"Mon": "810 HaleyHouse 13 16 2 \"Strings\\schedules\\{{FirstbornName}}:Mon.000\"/1040 Town 82 16 1 \"Strings\\schedules\\{{FirstbornName}}:Mon.001\"/1500 bed",
+				"Fri": "830 Beach 10 39 3 \"Strings\\schedules\\{{FirstbornName}}:Fri.000\"/1300 SeedShop 3 26 3 \"Strings\\schedules\\{{FirstbornName}}:Fri.001\"/1500 bed",
+				"Tue": "800 Town 6 89 3/1200 Town 27 85 0 \"Strings\\schedules\\{{FirstbornName}}:trash.000\"/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000\"/1730 bed",
+				"Wed": "800 Town 47 71 0/1200 Town 53 63 3 \"Strings\\schedules\\{{FirstbornName}}:trash.001\"/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000\"/1730 bed",
+				"Thu": "800 Town 108 92 0/1300 Town 89 81 1 \"Strings\\schedules\\{{FirstbornName}}:trash.002\"/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000\"/1730 bed",
+				"Sat": "800 Town 104 33 1/1300 Town 65 52 0 \"Strings\\schedules\\{{FirstbornName}}:trash.003\"/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000\"/1730 bed",
+				"spring": "800 Town 55 85 1/1200 Town 33 96 0 \"Strings\\schedules\\{{FirstbornName}}:spring.000\"/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000\"/1730 bed",
+				"DesertFestival_1": "800 Desert 24 52 2 \"Strings\\schedules\\{{FirstbornName}}:DesertFestival.000\"/2410 bed",
+				"DesertFestival_2": "800 Desert 24 52 2 \"Strings\\schedules\\{{FirstbornName}}:DesertFestival.001\"/2410 bed",
+				"DesertFestival_3": "800 Desert 24 52 2 \"Strings\\schedules\\{{FirstbornName}}:DesertFestival.002\"/2410 bed",
+			},
+			"When": {
+				"HasMod": "FlashShifter.StardewValleyExpandedCP",
+			},
+		},
+		
+		//SVE compat courtesy of QuoteIzkewl
+		{
+			"LogName": "Changes Emily's schedule when SVE is installed so she visits Sandy.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Emily",
+			"Entries": {
+				"marriage_fall_15": "MAIL ccVault/GOTO marriage_Mon/a1200 SandyHouse 4 5 3 \"Strings\\schedules\\Emily:Sandy_Birthday_Greeting\"/1300 Desert 17 16 3 \"Strings\\schedules\\Emily:Sandy_Birthday_Hangout\"/1500 Desert 30 10 0 \"Strings\\schedules\\Emily:Sandy_Birthday_Lake\"/1700 Desert 34 45 0 \"Strings\\schedules\\Emily:Sandy_Birthday_Bones\"/1900 35 24 0 \"Strings\\schedules\\Emily:Sandy_Birthday_Camel\"/2100 Desert 29 24 0 \"Strings\\schedules\\Emily:Sandy_Birthday_Bye\"/2200 bed",
+			},
+			"When": { 
+                "HasMod":"FlashShifter.StardewValleyExpandedCP",
+                }
+		},
+		
+		//Lizzie doesn't go back to class after her lunch break. this is intentional behaviour
+		{
+			"LogName": "Add Little Red School House schedule for Emily's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{FirstbornName}}",
+			"Entries": {
+				"Tue": "a1000 Custom_SchoolHouse 8 16 1 {{FirstbornName}}_read \"Strings\\schedules\\{{FirstbornName}}:Schoolhouse.000\"/1130 Town 18 89 1 \"Strings\\schedules\\{{FirstbornName}}:trash.000/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000/1730 bed",
+				"Wed": "a1000 Custom_SchoolHouse 8 16 1 {{FirstbornName}}_read \"Strings\\schedules\\{{FirstbornName}}:Schoolhouse.000\"/1130 Town 51 63 1 \"Strings\\schedules\\{{FirstbornName}}:trash.001/1600 Town 38 78 2 {{FirstbornName}}_spin \"Strings\\schedules\\{{FirstbornName}}:spin.000/1730 bed",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+			},
+		},
+		
+		{
+            "LogName": "Add animations for Emily's daughter as firstborn.",
+            "Action": "EditData",
+            "Target": "Data/animationdescriptions",
+            "Entries":
+            {
+                "{{FirstbornName}}_sit": "16/16/16",
+                "{{FirstbornName}}_read": "17/17/17",
+                "{{FirstbornName}}_spin": "0/0 0 0 0 4 4 4 4 8 8 8 8 12 12 12 12 0 0 0 0 4 4 4 4 8 8 8 8 12 12 12 12 0 0 0 0 4 4 4 4 8 8 8 8 12 12 12 12 0 0 0 0 0 0 0 0 12 12 12 12 8 8 8 8 4 4 4 4 0 0 0 0 12 12 12 12 8 8 8 8 4 4 4 4 0 0 0 0 12 12 12 12 8 8 8 8 4 4 4 4 0 0 0 0/0",
+			}
+		},
+		
+        {
+            "LogName": "Add Emily's daughter to Egg Festival as firstborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring13",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 27 66 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 28 62 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 51 63 1",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 35 66 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Emily's daughter to Flower Dance as firstborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring24",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 25 37 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 6 33 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 9 26 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "set-up_y2", 5],
+                    "Value": "/advancedMove {{FirstbornName}} true 2 650 3 600 4 500 1 675",
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 7 21 2",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Emily's daughter to Luau as firstborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer11",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 17 9 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "set-up", 5],
+                    "Value": "/advancedMove {{FirstbornName}} true 2 650 3 600 4 500 1 675",
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 30 12 1",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 41 15 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "set-up_y2", 5],
+                    "Value": "/advancedMove {{FirstbornName}} true 2 650 3 600 4 500 1 675",
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 33 11 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Emily's daughter to Moonlight Jellies as firstborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer28",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 44 11 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 26 36 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 24 32 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 24 33 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Emily's daughter to Fair as firstborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall16",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 26 78 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 36 81 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Emily's daughter to Spirit's Eve as firstborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall27",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 23 67 1",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 16 21 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "set-up_y2", 5],
+                    "Value": "/positionOffset {{FirstbornName}} 0 -32",
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Emily's daughter to Festival of Ice as firstborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter8",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 90 36 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 65 40 1",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 83 27 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 77 40 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Emily's daughter to Winter Star as firstborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter25",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{FirstbornName}} 28 72 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "secretSanta", 4],
+                    "Value": "/warp {{FirstbornName}} 36 59",
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "secretSanta", 56],
+                    "Value": "/warp {{FirstbornName}} 28 72",
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{FirstbornName}} 26 51 1",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+		
+		
+		{
+			"LogName": "Add movie concession tastes for Emily's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/ConcessionTastes",
+			"Entries": {
+				2:{
+					"Name": "{{FirstbornName}}",
+					"LovedTags": [
+					  "Hummus Snack Pack",
+					  "Star Cookie"
+					],
+					"LikedTags": [
+					  "Healthy",
+					],
+					"DislikedTags": [
+					  "Kale Smoothie",
+					  "Fatty",
+					  "Candy"
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Add movie reactions for Emily's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+			"Entries": {
+				2:{
+					"NPCName": "{{FirstbornName}}",
+					"Reactions": [
+					  {
+						"Tag": "*",
+						"Response": "love",
+						"Whitelist": [
+						  "{{PlayerCompanion}}",
+						],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": {
+							"ResponsePoint": null,
+							"Script": "Placeholder",
+							"Text": null
+						  },
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_3"
+					  },
+					  {
+						"Tag": "summer_movie_1",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_4"
+					  },
+					  {
+						"Tag": "family",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_0"
+					  },
+					  {
+						"Tag": "horror",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_1"
+					  },
+					  {
+						"Tag": "*",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_2"
+					  },
+					  {
+						"Tag": "love",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_5"
+					  },
+					  {
+						"Tag": "like",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_6"
+					  },
+					  {
+						"Tag": "dislike",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie":   {
+							"ResponsePoint": null,
+							"Script": "Placeholder",
+							"Text": null
+						  },
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_7"
+					  }
+					]
+				}
+			}
+		},
+		
+   		{      
+			"LogName": "Include dialogue files for Emily's daughter as firstborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Emily/valid_firstborn_Emily.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+   		{      
+			"LogName": "Fallback to English dialogue files if no others are available for Emily's daughter as firstborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Emily/valid_firstborn_Emily.en.json", 
+			"When": {
+				"HasFile:i18n/dialogue_files/Emily/valid_firstborn_Emily.{{Language}}.json": false
+			}
+		},
+		
+   ]
+}

@@ -1,0 +1,95 @@
+{
+    "Changes": [
+         //---------Maps Edits---------
+         // add Tile
+         {
+            "Action": "Load",
+            "Target": "Maps/COC_Tiles",
+            "FromFile": "assets/COC_Tiles.png"
+         },
+         // add Tile
+         // add location data
+         {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "{{ModId}}_CoC1": {
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/{{ModId}}_CoC1"
+                    }
+                },
+                "{{ModId}}_CoC2": {
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/{{ModId}}_CoC2"
+                    }
+                }
+            }
+        },
+        // add location data
+        // add the map file
+        {
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}_CoC1",
+            "FromFile": "assets/ArenaCave1.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}_CoC2",
+            "FromFile": "assets/ArenaCave2.tmx"
+        },
+        // add the map file
+        //Warps
+        {
+            "Action": "EditMap",
+            "Target": "Maps/{{ModId}}_CoC1",
+            "AddWarps": [
+                "11 8 {{ModId}}_CoC2 21 26"
+            ]
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/{{ModId}}_CoC2",
+            "AddWarps": [
+                "21 27 {{ModId}}_CoC1 11 9"
+            ]
+        },
+        //Warps
+        //MineCart
+        {
+            "Action": "EditData",
+            "Target": "Data/Minecarts",
+            "TargetField": [
+                "Default",
+                "Destinations"
+            ],
+            "Entries": {
+                "{{ModId}}.Minecart": {
+                    "Id": "{{ModId}}.Minecart",
+                    "DisplayName": "{{i18n:COC_MC.1}}",
+                    "TargetLocation": "{{ModId}}_CoC1",
+                    "TargetTile": {
+                        "X": 11,
+                        "Y": 18
+                    },
+                    "TargetDirection": "up"
+                }
+            }
+        },
+        //MineCart
+        //Messages
+        {
+            "Action": "EditData",
+            "Target": "Strings/StringsFromMaps",
+            "Entries": {
+                "ArenaCave.1": "{{i18n:COC.1}}",
+                "ArenaCave.2": "{{i18n:COC.2}}",
+                "ArenaCave.3": "{{i18n:COC.3}}",
+                "ArenaCave.4": "{{i18n:COC.4}}",
+                "ArenaCave.5": "{{i18n:COC.5}}",
+                "ArenaCave.6": "{{i18n:COC.6}}",
+            } 
+        }
+        //Messages
+        //---------Maps Edits---------
+    ]
+}

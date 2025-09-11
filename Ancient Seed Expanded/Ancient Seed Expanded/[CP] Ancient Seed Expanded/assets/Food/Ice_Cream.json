@@ -1,0 +1,83 @@
+{
+  "Changes": [
+    //Food
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ice_Cream":{
+          "Name": "Frost Berry Ice Cream",
+          "DisplayName": "{{i18n:Ice_Cream.DisplayName}}",
+          "Description": "{{i18n:Ice_Cream.Description}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price" : 1200,
+          "IsDrink": false,
+          "Edibility": 67,
+          "Texture": "Mods/{{ModId}}/Ice_Cream",
+          "SpriteIndex": 0,
+          "Buffs": [
+            {
+                  "Id": "Food",
+                  "BuffId": null,
+                  "IconTexture": null,
+                  "IconSpriteIndex": 0,
+                  "Duration": 400,
+                  "IsDebuff": false,
+                  "GlowColor": null,
+                  "CustomAttributes": {
+                  "FarmingLevel": 0.0,
+                  "FishingLevel": 0.0,
+                  "MiningLevel": 0.0,
+                  "LuckLevel": 2.0,
+                  "ForagingLevel": 0.0,
+                  "MaxStamina": 0.0,
+                  "MagneticRadius": 0.0,
+                  "Speed": 0.0,
+                  "Defense": 0.0,
+                  "Attack": 0.0
+                }
+              }
+            ],
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "Zexu2K_Ice_Cream"
+          ],
+        }
+      }
+    },
+        {
+            "Action": "EditData",
+            "Target": "Data/CookingRecipes",
+            "Entries": {
+                "Frost Berry Ice Cream": "{{ModId}}_Ancient_Frost_Berry 1 186 1/25 5/{{ModId}}_Ice_Cream/null/{{i18n:Ice_Cream.DisplayName}}",
+            }
+    },
+    {
+          "Action": "EditData",
+          "Target": "Data/Shops",
+          "TargetField": ["Seed_Transformer", "Items"],
+          "Entries": {
+              "{{ModId}}_Ice_Cream_recipe": {
+                  "Id": "{{ModId}}_Ice_Cream_recipe",
+                  "ItemId": "{{ModId}}_Ice_Cream",                    
+                  "Price": 0,
+                  "IsRecipe": true,
+                  "IgnoreShopPriceModifiers": true,
+                  "TradeItemId": "74", 
+                  "TradeItemAmount": 1,
+        },
+      }
+    },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Ice_Cream",
+            "FromFile": "assets/Food/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

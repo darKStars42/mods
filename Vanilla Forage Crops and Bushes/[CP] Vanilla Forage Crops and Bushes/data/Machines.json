@@ -1,0 +1,133 @@
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)ForageCrops_AlgaeTank": {
+					"OutputRules": [
+						{
+							"Id": "ForageCrops_GreenAlgae",
+							"Triggers": [
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)153"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)153",
+									"CopyQuality": true,
+									"MinStack": 3,
+									"MaxStack": 5
+								}
+							],
+							"DaysUntilReady": 3
+						},
+						{
+							"Id": "ForageCrops_WhiteAlgae",
+							"Triggers": [
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)157"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)157",
+									"CopyQuality": true,
+									"MinStack": 3,
+									"MaxStack": 5
+								}
+							],
+							"DaysUntilReady": 4
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "waterSlosh"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhenReady": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"WildHorseradishCrop": true
+			},
+			"TargetField": [
+				"(BC)25",
+				"OutputRules"
+			],
+			"Entries": {
+				"ForageCrops_WildHorseradish": {
+					"Id": "ForageCrops_WildHorseradish",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)16",
+							"RequiredCount": 1
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)ZoeyHoshi.ForageCrops_WildHorseradishSeeds",
+							"MinStack": 1,
+							"MaxStack": 3
+						}
+					],
+					"MinutesUntilReady": 20
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ForageCrops_WildHorseradish",
+					"BeforeID": "Default"
+				}
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"WinterRootCrop": true
+			},
+			"TargetField": [
+				"(BC)25",
+				"OutputRules"
+			],
+			"Entries": {
+				"ForageCrops_WinterRoot": {
+					"Id": "ForageCrops_WinterRoot",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)412",
+							"RequiredCount": 1
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)ZoeyHoshi.ForageCrops_WinterRootSeeds",
+							"MinStack": 1,
+							"MaxStack": 3
+						}
+					],
+					"MinutesUntilReady": 20
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ForageCrops_WinterRoot",
+					"BeforeID": "Default"
+				}
+			]
+		}
+	]
+}

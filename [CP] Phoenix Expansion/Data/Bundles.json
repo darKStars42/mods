@@ -1,0 +1,307 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "UnlockableBundles/Bundles",
+            "When": {"HasFlag": "Mail.Compendium1mail"},
+            "Entries": {
+      
+              "BrianOvaltine.Phoenixes_Compendium1": {
+                "Location": "BrianOvaltine.Phoenixes_PhoenixCoop",
+                "BundleName": "{{i18n:bundles.first.name}}",
+                "BundleIconAsset": "{{InternalAssetKey: assets/BundleRGB.png}}",
+                "BundleSlots": 3,
+                "BundleReward": {
+                  "BrianOvaltine.Phoenixes_Book1": 1
+                },	  
+      
+                "ShopPosition": "19, 3",
+                "ShopType": "CCMagicBook",
+                "ShopTexture": "{{InternalAssetKey: assets/MagicBook.png}}",
+                "DrawQuestionMark": false,
+                "QuestionMarkOffset": "32, 32",
+      
+                "Price": {
+                  "BrianOvaltine.Phoenixes_RedPhoenixFeather": 1,
+                  "BrianOvaltine.Phoenixes_BluePhoenixFeather": 1,
+                  "BrianOvaltine.Phoenixes_GreenPhoenixFeather": 1
+                },
+                "InstantShopRemoval": true
+            }
+        }
+    },
+    {
+        "Action": "EditData",
+        "Target": "Data/TriggerActions",
+        "Entries": {
+            "BrianOvaltine.Phoenixes_Compendium 1 mail": {
+                "Id": "BrianOvaltine.Phoenixes_Compendium 1 mail",
+                "Trigger": "DayEnding",
+                "Condition": "PLAYER_SHIPPED_BASIC_ITEM Current (O)BrianOvaltine.Phoenixes_BluePhoenixEgg 1, PLAYER_SHIPPED_BASIC_ITEM Current (O)BrianOvaltine.Phoenixes_RedPhoenixEgg 1, PLAYER_SHIPPED_BASIC_ITEM Current (O)BrianOvaltine.Phoenixes_GreenPhoenixEgg 1",
+                "Actions": [
+                    "AddMail Current Mail.Compendium1mail"
+                                ]
+            }
+        }
+    },
+    {
+        "Action": "EditData",
+        "Target": "UnlockableBundles/Bundles",
+        "When": {"HasFlag": "Mail.Compendium2mail"},
+        "Entries": {
+  
+          "BrianOvaltine.Phoenixes_Compendium2": {
+            "Location": "BrianOvaltine.Phoenixes_PhoenixCoop",
+            "BundleName": "{{i18n:bundles.second.name}}",
+            "BundleIconAsset": "{{InternalAssetKey: assets/BundleIM.png}}",
+            "BundleSlots": 2,
+            "BundleReward": {
+              "BrianOvaltine.Phoenixes_Book2": 1
+            },	  
+  
+            "ShopPosition": "19, 3",
+            "ShopType": "CCMagicBook",
+            "ShopTexture": "{{InternalAssetKey: assets/MagicBook.png}}",
+            "DrawQuestionMark": false,
+            "QuestionMarkOffset": "32, 32",
+  
+            "Price": {
+              "BrianOvaltine.Phoenixes_IcePhoenixFeather": 1,
+              "BrianOvaltine.Phoenixes_MagmaPhoenixFeather": 1
+            },
+            "InstantShopRemoval": true, 
+            "SpecialPlacementRequirements": [ {
+            "Type": "BundleCompletion",
+            "BundleKey": "BrianOvaltine.Phoenixes_Compendium1",
+            "BundleSharesBuilding": true
+            } ]
+        }
+    }
+},
+{
+    "Action": "EditData",
+    "Target": "Data/TriggerActions",
+    "When": {"DLX.Bundles/Purchased":"BrianOvaltine.Phoenixes_Compendium1"},
+    "Entries": {
+        "BrianOvaltine.Phoenixes_Compendium 2 mail": {
+            "Id": "BrianOvaltine.Phoenixes_Compendium 2 mail",
+            "Trigger": "DayEnding",
+            "Condition": "PLAYER_SHIPPED_BASIC_ITEM Current (O)BrianOvaltine.Phoenixes_IcePhoenixEgg 1, PLAYER_SHIPPED_BASIC_ITEM Current (O)BrianOvaltine.Phoenixes_MagmaPhoenixEgg 1",
+            "Actions": [
+                "AddMail Current Mail.Compendium2mail"
+                            ]
+        }
+    }
+},
+{
+        "Action": "EditData",
+        "Target": "UnlockableBundles/Bundles",
+        "When": {"HasFlag": "Mail.Compendium3mail"},
+        "Entries": {
+
+        "BrianOvaltine.Phoenixes_Compendium3": {
+            "Location": "BrianOvaltine.Phoenixes_PhoenixCoop",
+            "BundleName": "{{i18n:bundles.third.name}}",
+            "BundleIconAsset": "{{InternalAssetKey: assets/BundleARV.png}}",
+            "BundleSlots": 3,
+            "BundleReward": {
+            "BrianOvaltine.Phoenixes_Book3": 1
+            },	  
+
+            "ShopPosition": "19, 3",
+            "ShopType": "CCMagicBook",
+            "ShopTexture": "{{InternalAssetKey: assets/MagicBook.png}}",
+            "DrawQuestionMark": false,
+            "QuestionMarkOffset": "32, 32",
+
+            "Price": {
+            "BrianOvaltine.Phoenixes_VoidPhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_RadioactivePhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_AshenPhoenixFeather": 1
+            },
+            "InstantShopRemoval": true, 
+            "SpecialPlacementRequirements": [ {
+            "Type": "BundleCompletion",
+            "BundleKey": "BrianOvaltine.Phoenixes_Compendium2",
+            "BundleSharesBuilding": true
+            } ]
+        }
+    }
+},
+{
+    "Action": "EditData",
+    "Target": "Data/TriggerActions",
+    "When": {"DLX.Bundles/Purchased":"BrianOvaltine.Phoenixes_Compendium2"},
+    "Entries": {
+        "BrianOvaltine.Phoenixes_Compendium 3 mail": {
+            "Id": "BrianOvaltine.Phoenixes_Compendium 3 mail",
+            "Trigger": "DayEnding",
+            "Condition": "PLAYER_SHIPPED_BASIC_ITEM Current (O)BrianOvaltine.Phoenixes_VoidPhoenixEgg 1, PLAYER_SHIPPED_BASIC_ITEM Current (O)BrianOvaltine.Phoenixes_RadioactivePhoenixEgg 1, PLAYER_SHIPPED_BASIC_ITEM Current (O)BrianOvaltine.Phoenixes_AshenPhoenixEgg 1",
+            "Actions": [
+                "AddMail Current Mail.Compendium3mail"
+                            ]
+        }
+    }
+},
+    {
+        "Action": "EditData",
+        "Target": "UnlockableBundles/Bundles",
+        "When": {"HasFlag": "Mail.Compendium4mail"},
+        "Entries": {
+
+        "BrianOvaltine.Phoenixes_Compendium4": {
+            "Location": "BrianOvaltine.Phoenixes_PhoenixCoop",
+            "BundleName": "{{i18n:bundles.fourth.name}}",
+            "BundleIconAsset": "{{InternalAssetKey: assets/BundleG.png}}",
+            "BundleSlots": 1,
+            "BundleReward": {
+            "BrianOvaltine.Phoenixes_Book4": 1
+            },	  
+            "ShopPosition": "19, 3",
+            "ShopType": "CCMagicBook",
+            "ShopTexture": "{{InternalAssetKey: assets/MagicBook.png}}",
+            "DrawQuestionMark": false,
+            "QuestionMarkOffset": "32, 32",
+
+            "Price": {
+            "BrianOvaltine.Phoenixes_GoldenPhoenixFeather": 1
+            },
+            "InstantShopRemoval": true,
+            "SpecialPlacementRequirements": [ {
+            "Type": "BundleCompletion",
+            "BundleKey": "BrianOvaltine.Phoenixes_Compendium3",
+            "BundleSharesBuilding": true
+            } ]
+        }
+    }
+},
+{
+    "Action": "EditData",
+    "Target": "Data/TriggerActions",
+    "When": {"DLX.Bundles/Purchased":"BrianOvaltine.Phoenixes_Compendium3"},
+    "Entries": {
+        "BrianOvaltine.Phoenixes_Compendium 4 mail": {
+            "Id": "BrianOvaltine.Phoenixes_Compendium 4 mail",
+            "Trigger": "DayEnding",
+            "Condition": "PLAYER_SHIPPED_BASIC_ITEM Current (O)BrianOvaltine.Phoenixes_GoldenPhoenixEgg 1",
+            "Actions": [
+                "AddMail Current Mail.Compendium4mail"
+                            ]
+        }
+    }
+},
+{
+        "Action": "EditData",
+        "Target": "UnlockableBundles/Bundles",
+        "When": {"HasFlag": "Mail.Compendium5mail"},
+        "Entries": {
+
+        "BrianOvaltine.Phoenixes_Penultimate": {
+            "Location": "BrianOvaltine.Phoenixes_PhoenixCoop",
+            "BundleName": "{{i18n:bundles.fifth.name}}",
+            "BundleIconAsset": "{{InternalAssetKey: assets/BundleI.png}}",
+            "BundleSlots": 1,
+            "ShopPosition": "19, 3",
+            "ShopType": "CCMagicBook",
+            "ShopTexture": "{{InternalAssetKey: assets/MagicBook.png}}",
+            "DrawQuestionMark": false,
+            "QuestionMarkOffset": "32, 32",
+
+            "Price": {
+            "BrianOvaltine.Phoenixes_IridiumPhoenixFeather": 1
+            },
+            "InstantShopRemoval": true, 
+            "SpecialPlacementRequirements": [ {
+            "Type": "BundleCompletion",
+            "BundleKey": "BrianOvaltine.Phoenixes_Compendium4",
+            "BundleSharesBuilding": true
+            } ]
+        }
+    }
+},
+{
+    "Action": "EditData",
+    "Target": "Data/TriggerActions",
+    "When": {"DLX.Bundles/Purchased":"BrianOvaltine.Phoenixes_Compendium4"},
+    "Entries": {
+        "BrianOvaltine.Phoenixes_Compendium 5 mail": {
+            "Id": "BrianOvaltine.Phoenixes_Compendium 5 mail",
+            "Trigger": "DayEnding",
+            "Condition": "PLAYER_SHIPPED_BASIC_ITEM Current (O)BrianOvaltine.Phoenixes_IridiumPhoenixEgg 1",
+            "Actions": [
+                "AddMail Current Mail.Compendium5mail"
+                            ]
+        }
+    }
+},
+{
+    "Action": "EditData",
+    "Target": "Data/TriggerActions",
+    "When": {"DLX.Bundles/Purchased":"BrianOvaltine.Phoenixes_Penultimate"},
+    "Entries": {
+        "BrianOvaltine.Phoenixes_Finaltaskmail": {
+            "Id": "BrianOvaltine.Phoenixes_Finaltaskmail",
+            "Trigger": "DayEnding",
+            "Actions": [
+                "AddMail Current Mail.Finaltaskmail"
+                            ]
+        }
+    }
+},
+{
+    "Action": "EditData",
+    "Target": "UnlockableBundles/Bundles",
+    "When": {"HasFlag": "Mail.Finaltaskmail"},
+    "Entries": {
+
+    "BrianOvaltine.Phoenixes_FinalBundle": {
+        "Location": "BrianOvaltine.Phoenixes_PhoenixCoop",
+        "BundleName": "{{i18n:bundles.final.name}}",
+        "BundleIconAsset": "{{InternalAssetKey: assets/BundleP.png}}",
+        "BundleSlots": 11,
+        "ShopPosition": "19, 3",
+        "ShopType": "CCMagicBook",
+        "ShopTexture": "{{InternalAssetKey: assets/MagicBook.png}}",
+        "DrawQuestionMark": false,
+        "QuestionMarkOffset": "32, 32",
+
+        "Price": {
+            "BrianOvaltine.Phoenixes_RedPhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_BluePhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_GreenPhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_IcePhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_MagmaPhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_VoidPhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_RadioactivePhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_AshenPhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_GhostPhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_GoldenPhoenixFeather": 1,
+            "BrianOvaltine.Phoenixes_IridiumPhoenixFeather": 1
+                },
+                "InstantShopRemoval": true, 
+                "SpecialPlacementRequirements": [ {
+                "Type": "BundleCompletion",
+                "BundleKey": "BrianOvaltine.Phoenixes_Penultimate",
+                "BundleSharesBuilding": true
+                } ]
+    }
+}
+},
+{
+    "Action": "EditData",
+    "Target": "Data/TriggerActions",
+    "When": {"DLX.Bundles/Purchased":"BrianOvaltine.Phoenixes_FinalBundle", "HasFlag": "Mail.Finaltaskmail"},
+    "Entries": {
+        "BrianOvaltine.Phoenixes_phoenixfinalbundledone": {
+            "Id": "BrianOvaltine.Phoenixes_phoenixfinalbundledone",
+            "Trigger": "DayEnding",
+            "Actions": [
+                "AddMail Current Mail.phoenixfinalbundledone"
+                            ]
+        }
+    }
+}
+        ]
+}
+
+

@@ -1,0 +1,233 @@
+{
+    "Format": "2.1.2",
+        "Changes": [
+        //Seed item
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Sleepy_Berry_Seeds":{
+          "Name": "Sleepy Berry Seeds",
+          "DisplayName": "{{i18n:Sleepy Berry Seed.DisplayName}}",
+          "Description": "{{i18n:Sleepy Berry Seed.Description}}",
+          "Type": "Seeds",
+          "Category": -74,
+          "Price" : 120,
+          "Texture": "Mods/{{ModId}}/Sleepy Berry Seed",
+          "SpriteIndex": 0
+        }
+      }
+    },
+    //Crop
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Sleepy_Berry":{
+          "Name": "{{ModID}}_Sleepy_Berry",
+          "DisplayName": "{{i18n:Sleepy Berry.DisplayName}}",
+          "Description": "{{i18n:Sleepy Berry.Description}}",
+          "Type": "Fruit",
+          "Category": -79,
+          "Price" : 40,
+          "IsDrink": false,
+          "Edibility": 30,
+          "Texture": "Mods/{{ModId}}/Sleepy Berry",
+          "SpriteIndex": 0,
+          "ContextTags": [
+            "season_spring",
+            "season_summer",
+            "season_fall",
+            "color_pink"
+          ]
+        }
+      }
+    },
+    //Planted Crop
+    {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "{{ModId}}_Sleepy_Berry_Seeds": {
+                    "Seasons": ["summer"],
+                    "DaysInPhase": [ 2, 2, 2, 3, 3],
+                    "RegrowDays": 3,
+                    "HarvestItemId": "{{ModId}}_Sleepy_Berry",
+                    "Texture": "Mods/{{ModId}}/Sleepy Berry Plant",
+                    "SpriteIndex": 0,
+                    "HarvestMinStack": 5,
+                    "HarvestMaxStack": 15,
+                    "HarvestMaxIncreasePerFarmingLevel": 0.3
+                }
+            }
+        },
+        //FOOD
+        {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Sleepy_Berry_Gelly":{
+          "Name": "Sleepy_Berry_Gelly",
+          "DisplayName": "{{i18n:Sleepy Berry Gelly.DisplayName}}",
+          "Description": "{{i18n:Sleepy Berry Gelly.Description}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price" : 133,
+          "IsDrink": false,
+          "Edibility": 57,
+          "Texture": "Mods/{{ModId}}/Sleepy Berry Gelly",
+          "SpriteIndex": 0,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+        },
+        "{{ModId}}_Sleepy_Berry_Cookies":{
+          "Name": "Sleepy_Berry_Cookies",
+          "DisplayName": "{{i18n:Sleepy Berry Cookies.DisplayName}}",
+          "Description": "{{i18n:Sleepy Berry Cookies.Description}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price" : 150,
+          "IsDrink": false,
+          "Edibility": 95,
+          "Texture": "Mods/{{ModId}}/Sleepy Berry Cookies",
+          "SpriteIndex": 0,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+        },
+        "{{ModId}}_Sleepy_Berry_Cocktail":{
+          "Name": "Sleepy_Berry_Cocktail",
+          "DisplayName": "{{i18n:Sleepy Berry Cocktail.DisplayName}}",
+          "Description": "{{i18n:Sleepy Berry Cocktail.Description}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price" : 150,
+          "IsDrink": false,
+          "Edibility": 43,
+          "Texture": "Mods/{{ModId}}/Sleepy Berry Cocktail",
+          "SpriteIndex": 0,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+        },
+        "{{ModId}}_Coffee_with_Pumpkin_and_Sleepy_Berry":{
+          "Name": "Coffee_with_Pumpkin_and_Sleepy_Berry",
+          "DisplayName": "{{i18n:Coffee with Pumpkin and Sleepy Berry.DisplayName}}",
+          "Description": "{{i18n:Coffee with Pumpkin and Sleepy Berry.Description}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price" : 150,
+          "IsDrink": false,
+          "Edibility": 27,
+          "Texture": "Mods/{{ModId}}/Coffee with Pumpkin and Sleepy Berry",
+          "SpriteIndex": 0,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "Buffs": [
+            {
+                  "Id": "Food",
+                  "BuffId": null,
+                  "IconTexture": null,
+                  "IconSpriteIndex": 0,
+                  "Duration": 370,
+                  "IsDebuff": false,
+                  "GlowColor": null,
+                  "CustomAttributes": {
+                  "FarmingLevel": 0.0,
+                  "FishingLevel": 0.0,
+                  "MiningLevel": 0.0,
+                  "LuckLevel": 1.0,
+                  "ForagingLevel": 0.0,
+                  "MaxStamina": 0.0,
+                  "MagneticRadius": 0.0,
+                  "Speed": 2.0,
+                  "Defense": 0.0,
+                  "Attack": 0.0
+                }
+              }
+            ],
+        },
+      }
+    },
+    //Recipes
+    {
+            "Action": "EditData",
+            "Target": "Data/CookingRecipes",
+            "Entries": {
+                "Sleepy_Berry_Gelly": "{{ModId}}_Sleepy_Berry 1 245 1 /25 5/{{ModId}}_Sleepy_Berry_Gelly/null/{{i18n:Sleepy Berry Gelly.DisplayName}}",
+                "Sleepy_Berry_Cookies": "{{ModId}}_Sleepy_Berry 1 246 1 245 1 -5 1/25 5/{{ModId}}_Sleepy_Berry_Cookies/null/{{i18n:Sleepy Berry Cookies.DisplayName}}",
+                "Sleepy_Berry_Cocktail": "{{ModId}}_Sleepy_Berry 1 400 1 -6 1/25 5/{{ModId}}_Sleepy_Berry_Cocktail/null/{{i18n:Sleepy Berry Cocktail.DisplayName}}",
+                "Coffee_with_Pumpkin_and_Sleepy_Berry": "{{ModId}}_Sleepy_Berry 1 433 2 276 1/25 5/{{ModId}}_Coffee_with_Pumpkin_and_Sleepy_Berry/null/{{i18n:Coffee with Pumpkin and Sleepy Berry.DisplayName}}",
+            }
+    },
+    //Gus shop
+    {
+          "Action": "EditData",
+          "Target": "Data/Shops",
+          "TargetField": ["Saloon", "Items"],
+          "Entries": {
+              "{{ModId}}_Sleepy_Berry_Gelly_recipe": {
+                  "Id": "{{ModId}}_Sleepy_Berry_Gelly_recipe",
+                  "ItemId": "{{ModId}}_Sleepy_Berry_Gelly",                    
+                  "Price": 1000,
+                  "IsRecipe": true,
+                  "IgnoreShopPriceModifiers": true,
+              },
+              "{{ModId}}_Sleepy_Berry_Cookies_recipe": {
+                  "Id": "{{ModId}}_Sleepy_Berry_Cookies_recipe",
+                  "ItemId": "{{ModId}}_Sleepy_Berry_Cookies",                    
+                  "Price": 1500,
+                  "IsRecipe": true,
+                  "IgnoreShopPriceModifiers": true,
+              },
+              "{{ModId}}_Sleepy_Berry_Cocktail_recipe": {
+                  "Id": "{{ModId}}_Sleepy_Berry_Cocktail_recipe",
+                  "ItemId": "{{ModId}}_Sleepy_Berry_Cocktail",                    
+                  "Price": 1200,
+                  "IsRecipe": true,
+                  "IgnoreShopPriceModifiers": true,
+              },
+              "{{ModId}}_Coffee_with_Pumpkin_and_Sleepy_Berry_recipe": {
+                  "Id": "{{ModId}}_Coffee_with_Pumpkin_and_Sleepy_Berry_recipe",
+                  "ItemId": "{{ModId}}_Coffee_with_Pumpkin_and_Sleepy_Berry",                    
+                  "Price": 2000,
+                  "IsRecipe": true,
+                  "IgnoreShopPriceModifiers": true,
+              },
+      }
+    },
+    {
+          "Action": "EditData",
+          "Target": "Data/Shops",
+          "TargetField": ["SeedShop", "Items"],
+          "Entries": {
+              "{{ModId}}_Sleepy_Berry_Seeds": {
+                  "Id": "{{ModId}}_Sleepy_Berry_Seeds",
+                  "ItemId": "{{ModId}}_Sleepy_Berry_Seeds",                    
+                  "Price": 120,
+                  "IsRecipe": false,
+                  "IgnoreShopPriceModifiers": true,
+              }
+      }
+    },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Sleepy Berry Seed, Mods/{{ModId}}/Sleepy Berry, Mods/{{ModId}}/Sleepy Berry Plant, Mods/{{ModId}}/Sleepy Berry Cookies, Mods/{{ModId}}/Sleepy Berry Gelly, Mods/{{ModId}}/Sleepy Berry Cocktail, Mods/{{ModId}}/Coffee with Pumpkin and Sleepy Berry",
+            "FromFile": "{{TargetWithoutPath}}.png"
+        }
+    ]
+}

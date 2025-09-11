@@ -1,0 +1,77 @@
+{
+  "Changes": [
+	{	//Base das Artes
+      "Action": "Load",
+      "Target": "Characters/Miranda",
+      "FromFile": "Ativos/Personagens/Artes/Miranda/Comum/Mi.Bo_Spring_Sun.png"
+    },
+	{
+      "Action": "Load",
+      "Target": "Portraits/Miranda",
+      "FromFile": "Ativos/Personagens/Artes/Miranda/Comum/Mi.Re_Spring_Sun.png"
+    },
+	{	//Artes
+      "Action": "Load",
+      "Target": "Characters/Mi.Bo_Summer_Sun, Characters/Mi.Bo_Fall_Sun, Characters/Mi.Bo_Winter_Sun, Characters/Mi.Bo_Spring_Rain, Characters/Mi.Bo_Summer_Rain, Characters/Mi.Bo_Fall_Rain, Characters/Mi.Bo_Winter_Snow, Portraits/Mi.Re_Summer_Sun, Portraits/Mi.Re_Fall_Sun, Portraits/Mi.Re_Winter_Sun, Portraits/Mi.Re_Spring_Rain, Portraits/Mi.Re_Summer_Rain, Portraits/Mi.Re_Fall_Rain, Portraits/Mi.Re_Winter_Snow",
+      "FromFile": "Ativos/Personagens/Artes/Miranda/Comum/{{TargetWithoutPath}}.png"
+    },
+	{
+      "Action": "Load",
+      "Target": "Characters/Mi.Bo_Spring, Characters/Mi.Bo_Summer, Characters/Mi.Bo_Fall, Characters/Mi.Bo_Winter, Characters/Mi.Bo, Portraits/Mi.Re",
+      "FromFile": "Ativos/Personagens/Artes/Miranda/Casual/{{TargetWithoutPath}}.png"
+    },
+	{	//Festival Artes
+      "Action": "Load",
+      "Target": "Characters/Mi.Boneco_FlowerDance, Portraits/Mi.Retrato_FlowerDance, Characters/Mi.Boneco_Luau, Portraits/Mi.Retrato_Luau, Characters/Mi.Boneco_DanceMoonlight, Portraits/Mi.Retrato_DanceMoonlight, Characters/Mi.Boneco_Fair, Portraits/Mi.Retrato_Fair, Characters/Mi.Boneco_SpiritsEve, Portraits/Mi.Retrato_SpiritsEve, Characters/Mi.Boneco_WinterStart, Portraits/Mi.Retrato_WinterStart",
+      "FromFile": "Ativos/Personagens/Artes/Miranda/Festival/{{TargetWithoutPath}}.png"
+    },
+	{	// Miranda
+        "Action": "EditData",
+        "Target": "Data/Characters",
+		"Update": "OnDayStart",
+        "Entries": {
+			"Miranda": { "DisplayName": "{{i18n:Miranda.Display.Name}}", "Age": "teen", "Manner": "neutral", "SocialAnxiety": "neutral", "Optimism": "Positive", "Gender": "female", "CanBeRomanced": false, "LoveInterest": "null", "ExcludeFromPerfectionScore": true, "BirthSeason": "summer", "BirthDay": 12, "Calendar": "HiddenAlways", "WinterStarParticipant": "false", "CanVisitIsland": "false",
+            "Home": [ { "Id": "Ilha", "Location": "Ilha", "Tile": { "X": 4, "Y": 6 }, "Direction": "Down" } ],
+			"Appearance": [ 
+					//Praia
+					{ "IsIslandAttire": true, "Sprite": "Characters/Mi.Bo", "Portrait": "Portraits/Mi.Re", "Outdoors": true, "Indoors": false, "Precedence": -30, "Weight": 1 },
+
+					//Casual
+					{ "Season": "Spring", "Sprite": "Characters/Miranda", "Portrait": "Portraits/Miranda", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+					{ "Season": "Summer", "Sprite": "Characters/Mi.Bo_Summer", "Portrait": "Portraits/Mi.Re_Summer_Sun", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+					{ "Season": "Fall", "Sprite": "Characters/Mi.Bo_Fall", "Portrait": "Portraits/Mi.Re_Fall_Sun", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+					{ "Season": "Winter", "Sprite": "Characters/Mi.Bo_Winter", "Portrait": "Portraits/Mi.Re_Winter_Sun", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+					
+					//Comum
+					{ "Season": "Spring", "Sprite": "Characters/Miranda", "Portrait": "Portraits/Miranda", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+					{ "Season": "Summer", "Sprite": "Characters/Mi.Bo_Summer_Sun", "Portrait": "Portraits/Mi.Re_Summer_Sun", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+					{ "Season": "Fall", "Sprite": "Characters/Mi.Bo_Fall_Sun", "Portrait": "Portraits/Mi.Re_Fall_Sun", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+					{ "Season": "Winter", "Sprite": "Characters/Mi.Bo_Winter_Sun", "Portrait": "Portraits/Mi.Re_Winter_Sun", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+
+					//Chuva
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Spring", "Sprite": "Characters/Mi.Bo_Spring_Rain", "Portrait": "Portraits/Mi.Re_Spring_Rain", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Summer", "Sprite": "Characters/Mi.Bo_Summer_Rain", "Portrait": "Portraits/Mi.Re_Summer_Rain", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Fall", "Sprite": "Characters/Mi.Bo_Fall_Rain", "Portrait": "Portraits/Mi.Re_Fall_Rain", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Winter", "Sprite": "Characters/Mi.Bo_Winter_Snow", "Portrait": "Portraits/Mi.Re_Winter_Snow", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					
+					//Festival
+					{ "Condition": "EVENT_ID festival_spring24", "Sprite": "Characters/Mi.Boneco_FlowerDance", "Portrait": "Portraits/Mi.Retrato_FlowerDance", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_summer11", "Sprite": "Characters/Mi.Boneco_Luau", "Portrait": "Portraits/Mi.Retrato_Luau", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_summer28", "Sprite": "Characters/Mi.Boneco_DanceMoonlight", "Portrait": "Portraits/Mi.Retrato_DanceMoonlight", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_fall16", "Sprite": "Characters/Mi.Boneco_Fair", "Portrait": "Portraits/Mi.Retrato_Fair", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "LOCATION_NAME Target EastScarp_VillageInn_SpiritEve", "Sprite": "Characters/Mi.Boneco_SpiritsEve", "Portrait": "Portraits/Mi.Retrato_SpiritsEve", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_fall27", "Sprite": "Characters/Mi.Boneco_SpiritsEve", "Portrait": "Portraits/Mi.Retrato_SpiritsEve", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_winter25", "Sprite": "Characters/Mi.Boneco_WinterStart", "Portrait": "Portraits/Mi.Retrato_WinterStart", "Precedence": -30, "Weight": 1 }
+				]
+			}
+		}
+	},	
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Update": "OnDayStart",
+        "Fields": { "Miranda": { "Calendar": "HiddenUntilMet", "WinterStarParticipant": "true", "CanVisitIsland": "true", "Home": [ { "Id": "Casa.Interior", "Location": "Casa.Interior", "Tile": { "X": 11, "Y": 17 }, "Direction": "Down" } ] } },
+        "When": { "HasSeenEvent: anyPlayer|contains=90105264": "true", "HasSeenEvent: anyPlayer|contains=99805264": "false" }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        "Enya": {
+          "DisplayName": "{{i18n:enyaNPCdisplayname}}",
+          "Gender": "Female",
+          "Age": "Adult",
+          "CanSocialize": true,
+          "Manner": "Polite",
+          "SocialAnxiety": "Shy",
+          "Optimism": "Neutral",
+          "BirthSeason": "fall",
+          "BirthDay": "19",
+          "HomeRegion": "Town",
+          "CanBeRomanced": false,
+          "CanVisitIsland": false,
+          "SpouseAdopts": false,
+          "FlowerDanceCanDance": null,
+          "Calendar": "HiddenUntilMet",
+          "SocialTab": "HiddenUntilMet",
+          "MugShotSourceRect": {
+            "X": 0,
+            "Y": 40,
+            "Width": 16,
+            "Height": 24
+          },
+          "Home": [
+            {
+              "Id": "Default",
+              "Location": "Custom_Enya_House",
+              "Tile": {
+                "X": 6,
+                "Y": 13
+              },
+              "Direction": "down"
+            }
+          ],
+          "SpouseRoom": {
+            "MapAsset": "latteholn_Enya_SpouseRoom",
+            "MapSourceRect": {
+              "X": 0,
+              "Y": 0,
+              "Width": 6,
+              "Height": 9
+            }
+          },
+          "SpousePatio": {
+            "MapAsset": null,
+            "MapSourceRect": {
+              "X": 0,
+              "Y": 0,
+              "Width": 4,
+              "Height": 4
+            }
+          },
+          "SpriteAnimationFrames": [
+            [16, 650],
+            [17, 650],
+            [18, 650],
+            [19, 650],
+            [20, 650],
+            [21, 650],
+            [22, 650],
+            [23, 650]
+          ],
+          "SpriteAnimationPixelOffset": {
+            "X": 0,
+            "Y": 0
+          }
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "When": {
+        "HasSeenEvent: anyPlayer |contains=34356009": "true"
+      },
+      "Update": "OnTimeChange, OnLocationChange",
+      "Fields": {
+        "Enya": {
+          "CanBeRomanced": true,
+          "SpouseAdopts": true,
+          "FlowerDanceCanDance": null,
+          "MugShotSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 16,
+            "Height": 24
+          }          
+        }
+      }
+    }
+  ]
+}

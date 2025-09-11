@@ -1,0 +1,78 @@
+{
+    "Format": "2.0.0",
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "MisoMegu.MulberryTrees/FruitTrees, MisoMegu.MulberryTrees/Objects",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "MisoMegu.CP._Mulberryfruit": {
+                    "Name": "MisoMegu.CP._Mulberryfruit",
+                    "DisplayName": "Mulberry",
+                    "Description": "A sweet delicate wild berry. Be careful, it can stain your hands!",
+                    "Type": "Basic",
+                    "Category": -79,
+                    "Price": 25,
+                    "Texture": "MisoMegu.MulberryTrees/Objects",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "color_poppyseed",
+                        "category_fruits", 
+						"berry_item"
+                    ]
+                },
+                "MisoMegu.Cp_MulberrySapling": {
+                    "Name": "MisoMegu.Cp_MulberrySapling",
+                    "DisplayName": "Mulberry Sapling",
+                    "Description": "Takes 28 days to grow into a Mulberry Tree. Produces fruit in spring and summer.",
+                    "Type": "Basic",
+                    "Category": -74,
+                    "Price": 2000,
+                    "Texture": "MisoMegu.MulberryTrees/Objects",
+                    "SpriteIndex": 0
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/FruitTrees",
+            "Entries": {
+                "MisoMegu.Cp_MulberrySapling": {
+                    "DisplayName": "Mulberry Tree",
+                    "Seasons": [
+                        "spring",
+                        "summer"
+                    ],
+                    "Fruit": [
+                        {
+                            "Id": "MisoMegu.CP._Mulberryfruit",
+                            "ItemId": "MisoMegu.CP._Mulberryfruit"
+                        }
+                    ],
+                    "Texture": "MisoMegu.MulberryTrees/FruitTrees",
+                    "TextureSpriteRow": 0
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "SeedShop",
+                "Items"
+            ],
+            "Entries": {
+                "MisoMegu.Cp_MulberrySapling": {
+                    "Id": "MisoMegu.Cp_MulberrySapling",
+                    "ItemId": "MisoMegu.Cp_MulberrySapling",
+                    "Price": 1500,
+                    "IgnoreShopPriceModifiers": true
+                }
+            }
+        }
+    ]
+}

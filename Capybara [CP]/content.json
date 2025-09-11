@@ -1,0 +1,362 @@
+{
+	"Format": "2.3.0",
+  "ConfigSchema": {
+        "CapybaraUnlock": {
+            "AllowValues": "SpecialOrder, IslandFarm",
+            "Default": "SpecialOrder",
+        },
+        "SpecialOrderDropbox": {
+            "AllowValues": "Marnie, Pierre",
+            "Default": "Marnie",
+        },
+  },
+	"Changes": [
+	
+//Assets
+
+	{
+		"LogName": "Load assets",
+			"Action": "Load",
+			"Target": "assets/Capybara, assets/CapybaraBaby, assets/CapybaraIcon",
+			"FromFile": "assets/{{TargetWithoutPath}}.png"
+		},
+//Capybara
+
+		{
+            "LogName": "Animal Data",
+            "Action": "EditData",
+            "Target": "Data/FarmAnimals",
+            "Entries": {
+                "Harry.Capybara": {
+                    "DisplayName": "{{i18n:HarrisonGrey.Capybara}}",
+                    "House": "Barn",
+                    "Gender": "MaleOrFemale",
+                    "PurchasePrice": 12500,
+                    "ShopTexture": "assets/CapybaraIcon",
+                    "Sound": "dustMeep",
+                    "BabySound": "dustMeep",
+                    "ShopSourceRect": {
+                        "X": 0,
+                        "Y": 0,
+                        "Width": 32,
+                        "Height": 16
+                    },
+                    "RequiredBuilding": "Deluxe Barn",
+                    "ShopDisplayName": "{{i18n:HarrisonGrey.Capybara}}",
+                    "ShopDescription": "{{i18n:HarrisonGrey.CapybaraDescription}}",
+                    "ShopMissingBuildingDescription": "???",
+                    "UnlockCondition": "PLAYER_HAS_MAIL Current HarrisonGrey.CapybaraOrderLetter Received",
+                    "BirthText": "{{i18n:HarrisonGrey.CapybaraBorn}}",
+                    "DaysToMature": 6,
+                    "DaysToProduce": 1,
+                    "ProduceItemIDs": [
+                        {
+                        "Id": "Apricot",
+                        "Condition": "FARM_CAVE Mushrooms, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+                        "ItemID": "634"
+                        },
+                        {
+                        "Id": "Cherry",
+                        "Condition": "FARM_CAVE Mushrooms, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+                        "ItemID": "638"
+                        },
+                        {
+                        "Id": "Orange",
+                        "Condition": "FARM_CAVE Mushrooms, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+                        "ItemID": "635"
+                        },
+                        {
+                        "Id": "CommonMushroom",
+                        "Condition": "FARM_CAVE Bats, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+                        "ItemID": "404"
+                        },
+                        {
+                        "Id": "RedMushroom",
+                        "Condition": "FARM_CAVE Bats, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+                        "ItemID": "420"
+                        },
+                        {
+                        "Id": "Morel",
+                        "Condition": "FARM_CAVE Bats, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+                        "ItemID": "257"
+                        },
+                    ],
+    		    "DeluxeProduceItemIds": [
+                        {
+                        "Condition": "RANDOM 0.009 @addDailyLuck, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+                        "ItemID": "GoldenAnimalCracker"
+                        },
+     			{
+                        "Id": "Apple",
+        		"Condition": "FARM_CAVE Mushrooms, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+        		"ItemId": "613"
+      			},
+     			{
+                        "Id": "Peach",
+        		"Condition": "FARM_CAVE Mushrooms, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+        		"ItemId": "636"
+      			},
+     			{
+                        "Id": "Pomegranate",
+        		"Condition": "FARM_CAVE Mushrooms, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+        		"ItemId": "637"
+      			},
+                        {
+                        "Id": "Chantarelle",
+                        "Condition": "FARM_CAVE Bats, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+                        "ItemID": "281"
+                        },
+                        {
+                        "Id": "PurpleMushroom",
+                        "Condition": "FARM_CAVE Bats, WEATHER Here Sun Wind Festival, LOCATION_SEASON Here spring summer fall",
+                        "ItemID": "422"
+                        },
+    		    ],
+                    "HarvestType": "DropOvernight",
+                    "StatToIncrementOnProduce": [
+     			 {
+        		"Id": "CapybaraMeter",
+        		"StatName":"CapybaraMeter"
+      				}
+    			],
+                    "HappinessDrain": 6,
+                    "GrassEatAmount": 4,
+                    "ShowSummitCredits": true,
+                    "CanGetPregnant": true,
+                    "CanSwim": true,
+                    "BabiesFollowAdults": true,
+                    "Texture": "assets/Capybara",
+                    "BabyTexture": "assets/CapybaraBaby",
+                    "SwimOffset": {
+                    	"X": 0,
+                    	"Y": 160
+                    	},
+                    "ShadowWhenBabySwims": { "Visible": false },
+                    "ShadowWhenBaby": { "Visible": false },
+                    "ShadowWhenAdultSwims": { "Visible": false },
+                    "ShadowWhenAdult": { "Visible": false },
+                    "UseFlippedRightForLeft": true,
+                    "SpriteWidth": 32,
+                    "SpriteHeight": 32,
+    		    "DeluxeProduceCareDivisor": 4750.0,
+    		    "ProfessionForHappinessBoost": 3,
+    		    "ProfessionForQualityBoost": 3,
+    		    "ProfessionForFasterProduce": -1,
+    		    "CanEatGoldenCrackers": false,
+                },
+            }
+        },
+//Capybara Meter Reset
+
+	{
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "HarrisonGrey.CapybaraMailRemove": {
+                    "Id": "HarrisonGrey.CapybaraMailRemove",
+                    "Trigger": "DayStarted",
+                    "Actions": [
+                        "MarkActionApplied Current HarrisonGrey.CapybaraReset false"
+                    ]
+                },
+                "HarrisonGrey.CapybaraReset": {
+                    "Id": "HarrisonGrey.CapybaraReset",
+                    "Trigger": "LocationChanged",
+                    "Actions": [
+                        "RemoveMail Current HarrisonGrey.AutoPetFlag All",
+                        "IncrementStat CapybaraMeter -10",
+                        "MarkActionApplied Current HarrisonGrey.CapybaraSet false",
+                        "MarkActionApplied Current HarrisonGrey.CapybaraMailRemove false"
+                    ]
+                },
+                "HarrisonGrey.CapybaraSet": {
+                    "Id": "HarrisonGrey.CapybaraSet",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_STAT Current CapybaraMeter 1 100",
+                    "Actions": [
+                        "AddMail Current HarrisonGrey.AutoPetFlag received"
+                    ]
+                },
+            }
+        },
+        
+//Mail
+        
+    {
+    "LogName": "CapybaraMail",
+    "Action": "EditData",
+    "Target": "Data/Mail",
+    "Entries":  {
+    	"HarrisonGrey.AutoPetFlag": null,
+    	"HarrisonGrey.CapybaraOrderLetter": "{{i18n:HarrisonGrey.Capybara{{CapybaraUnlock}}}}[#]{{i18n:HarrisonGrey.CapybaraOrderLetterText2}}",
+      }
+    },
+	{
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "When": { "CapybaraUnlock": "IslandFarm" },
+            "Entries": {
+                "HarrisonGrey.CapybaraUnlock": {
+                    "Id": "HarrisonGrey.CapybaraUnlock",
+                    "Condition": "PLAYER_VISITED_LOCATION Current IslandWest",
+                    "Trigger": "DayStarted",
+                    "Actions": [
+                        "AddMail Current HarrisonGrey.CapybaraOrderLetter now"
+                    ]
+                },
+            }
+        },
+    
+//Special Order
+    
+   {
+            "Action": "EditMap",
+            "Target": "Maps/AnimalShop",
+            "When": { "SpecialOrderDropbox": "Marnie",
+            	      "HasMod |contains=Cornucopia.ArtisanMachines": false },
+            "MapTiles": [
+                {
+                    "Position": { "X": 28, "Y": 14 },
+                    "Layer": "Buildings",
+                    "SetProperties": {
+                        "Action": "DropBox HarrisonGrey.Marnie",
+				
+                    },
+                }
+   	],
+   },
+    {
+    "LogName": "AnimalSpecialOrders",
+    "Action": "EditData",
+    "Target": "Data/SpecialOrders",
+    "When": { "SpecialOrderDropbox": "Marnie",
+              "HasMod |contains=Cornucopia.ArtisanMachines": false },
+    "Entries":  {
+    	  "HarrisonGrey.CapybaraSpecialOrder": {
+    		"Name": "{{i18n:HarrisonGrey.CapybaraOrder}}",
+    		"Requester": "Marnie",
+    		"Duration": "Month",
+    		"Repeatable": true,
+    		"RequiredTags": "island",
+    		"OrderType": "",
+    		"SpecialRule": "",
+    		"Text": "{{i18n:HarrisonGrey.CapybaraOrderText1}}",
+    		"ItemToRemoveOnEnd": null,
+    		"MailToRemoveOnEnd": null,
+    		"RandomizedElements": [
+    			{
+    			"Name": "TropicalFruit",
+    			"Values": [
+    				 {
+    				"Value": "PICK_ITEM Banana, Mango"
+    				 }
+    				]
+    			},
+    			{
+    			"Name": "TropicalCrop",
+    			"Values": [
+    				 {
+    				"Value": "PICK_ITEM Pineapple, Taro Root"
+    				 }
+    				]
+    			},
+    		],
+    		"Objectives": [
+      		{
+        		"Type": "Collect",
+        		"Text": "{{i18n:HarrisonGrey.CapybaraOrderText2}}",
+        		"RequiredCount": "25",
+        		"Data": {
+          		   "AcceptedContextTags": "{TropicalCrop:Tags}"
+     		   		}
+      		},
+      		{
+        		"Type": "Collect",
+        		"Text": "{{i18n:HarrisonGrey.CapybaraOrderText3}}",
+        		"RequiredCount": "10",
+        		"Data": {
+          		   "AcceptedContextTags": "{TropicalFruit:Tags}"
+     		   		}
+      		},
+      		{
+        		"Type": "Collect",
+        		"Text": "{{i18n:HarrisonGrey.CapybaraOrderText4}}",
+        		"RequiredCount": "5",
+        		"Data": {
+          		   "AcceptedContextTags": "item_ginger"
+     		   		}
+      		},
+      		{
+        		"Type": "Donate",
+        		"Text": "{{i18n:HarrisonGrey.CapybaraOrderText5}}",
+        		"RequiredCount": "25",
+        		"Data": {
+          		   "DropBox": "HarrisonGrey.Marnie",
+          		   "DropBoxGameLocation": "AnimalShop",
+          		   "DropBoxIndicatorLocation": "28 13",
+          		   "AcceptedContextTags": "{TropicalCrop:Tags}"
+        			}
+      		  },
+      		{
+        		"Type": "Donate",
+        		"Text": "{{i18n:HarrisonGrey.CapybaraOrderText6}}",
+        		"RequiredCount": "10",
+        		"Data": {
+          		   "DropBox": "HarrisonGrey.Marnie",
+          		   "DropBoxGameLocation": "AnimalShop",
+          		   "DropBoxIndicatorLocation": "28 13",
+          		   "AcceptedContextTags": "{TropicalFruit:Tags}"
+        			}
+      		  },
+      		{
+        		"Type": "Donate",
+        		"Text": "{{i18n:HarrisonGrey.CapybaraOrderText7}}",
+        		"RequiredCount": "5",
+        		"Data": {
+          		   "DropBox": "HarrisonGrey.Marnie",
+          		   "DropBoxGameLocation": "AnimalShop",
+          		   "DropBoxIndicatorLocation": "28 13",
+          		   "AcceptedContextTags": "item_ginger"
+        			}
+      		  },
+    		],
+    		"Rewards": [
+      		{
+        		"Type": "Money",
+        		"Data": { "Amount": "8000" }
+     		 },
+      		{
+        		"Type": "Mail",
+        		"Data": {
+          		"MailReceived": "HarrisonGrey.CapybaraOrderLetter",
+          		"NoLetter": "false"
+        			}
+      		    }
+    		  ]
+  		},
+      }
+    },
+    
+//Compatibility Data
+    
+    {
+      "Action": "Include",
+      "FromFile": "assets/WeatherWonders.json",
+      "When": { "HasMod": "Kana.WeatherWonders" },
+    },
+    {
+      "Action": "Include",
+      "FromFile": "assets/FarmCaveNone.json",
+      "When": { "HasMod": "aedenthorn.FarmCaveFramework" },
+    },
+    {
+      "Action": "Include",
+      "FromFile": "assets/FarmCaveNone.json",
+      "When": { "FarmCave": "None" },
+    },
+    {
+      "Action": "Include",
+      "FromFile": "assets/SpecialOrders.json",
+    },
+	]
+}

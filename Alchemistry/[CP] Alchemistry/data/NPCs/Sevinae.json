@@ -1,0 +1,128 @@
+{
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "Characters/Sevinae",
+            "FromFile": "assets/Characters/Sprites/Sevinae/Sevinae.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Sevinae",
+            "FromFile": "assets/Characters/Portraits/Sevinae/Sevinae.png"
+        },
+
+        //Disposition
+        {
+            "LogName": "Sevinae - Disposition",
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+                "Sevinae": {
+                    "DisplayName": "Sevinae",
+                    "Gender": "Female",
+                    "Age": "Adult",
+                    "Manner": "Neutral",
+                    "SocialAnxiety": "Neutral",
+                    "Optimism": "Neutral",
+                    "BirthSeason": "Winter",
+                    "BirthDay": 2,
+                    "HomeRegion": "Town",
+                    "ExcludeFromIntroductionsQuest": true,
+                    "CanBeRomanced": false,
+                    "LoveInterest": null,
+                    "CanSocialize": true,
+                    "CanReceiveGifts": true,
+                    "IntroductionsQuest": false,
+                    "WinterStarParticipant": false,
+                    "CanVisitIsland": false,
+                    "PerfectionScore": true,
+                    "ItemDeliveryQuests": false,
+                    "EndSlideShow": "TrailingGroup",
+                    "SpawnIfMissing": true,
+                    "SocialTab": "UnknownUntilMet",
+                    "Calendar": "HiddenUntilMet",
+                    "Home": [
+                        {
+                            "ID": "Default",
+                            "Location": "Custom_SevinaeHouse",
+                            "Tile": {"X": "7", "Y": "6"},
+                            "Direction": "Up"
+                        }
+                    ]
+               
+            }
+    
+            }
+        },
+
+        //Gift dialogue
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "Sevinae": "{{i18n:Alchemistry_Sevinae.Dialogue.GiftLove}}/{{ModID}}_WildEctoplasm {{ModID}}_NaturesEmerald/{{i18n:Alchemistry_Sevinae.Dialogue.GiftLike}}/{{ModID}}_ForestWisp {{ModID}}_SwampLighter {{ModID}}_ManaOrb/{{i18n:Alchemistry_Sevinae.Dialogue.GiftDislike}}/286 287 288/{{i18n:Alchemistry_Sevinae.Dialogue.GiftHate}}/{{ModID}}_StagsAntler {{ModID}}_DeerHoof/{{i18n:Alchemistry_Sevinae.Dialogue.GiftNeutral}}/{{ModID}}_AquaticEctoplasm/."
+            }
+        },
+
+        //Dialogue
+        {
+            "LogName": "Sevinae - Regular Dialogue",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/Sevinae",
+            "Entries": 
+                {
+                    //Generic seasonal dialogue
+                    "spring_Wed": "{{i18n:Alchemistry_Sevinae.Dialogue.springWed}}",
+                    "summer_Tue": "{{i18n:Alchemistry_Sevinae.Dialogue.summerTue}}",
+                    "fall_Thu": "{{i18n:Alchemistry_Sevinae.Dialogue.fallThu}}",
+                    "winter_Mon": "{{i18n:Alchemistry_Sevinae.Dialogue.winterMon}}",
+
+                    //Shop announcement dialogue
+                    "Thu": "{{i18n:Alchemistry_Sevinae.Dialogue.Thu}}",
+
+                    //Generic dialogue
+                    "Mon": "{{i18n:Alchemistry_Sevinae.Dialogue.Mon}}",
+                    "Tue_1": "{{i18n:Alchemistry_Sevinae.Dialogue.Tue1}}",
+                    "Tue": "{{i18n:Alchemistry_Sevinae.Dialogue.Tue}}",
+                    "Wed": "{{i18n:Alchemistry_Sevinae.Dialogue.Wed}}",
+                    "Fri": "{{i18n:Alchemistry_Sevinae.Dialogue.Fri}}",
+                    "Sat": "{{i18n:Alchemistry_Sevinae.Dialogue.Sat}}",
+                    "Sun": "{{i18n:Alchemistry_Sevinae.Dialogue.Sun}}",
+
+                    //Friendship dialogue
+                    "Tue_4": "{{i18n:Alchemistry_Sevinae.Dialogue.Tue4}}",
+
+                    //Other dialogue
+                    "cc_Begin": "{{i18n:Alchemistry_Sevinae.Dialogue.CCBegin}}",
+                    "married_Wizard": "{{i18n:Alchemistry_Sevinae.Dialogue.marriedWizard}}",
+                    "GreenRain": "{{i18n:Alchemistry_Sevinae.Dialogue.GreenRain}}",
+                    "GreenRainFinished": "{{i18n:Alchemistry_Sevinae.Dialogue.GreenRainFinished}}",
+                    "AcceptBirthdayGift_Positive": "{{i18n:Alchemistry_Sevinae.Dialogue.BirthdayPositive}}",
+                    "AcceptBirthdayGift_Negative": "{{i18n:Alchemistry_Sevinae.Dialogue.BirthdayNegative}}",
+                    "AcceptGift_(O)StardropTea": "{{i18n:Alchemistry_Sevinae.Dialogue.StardropTea}}"
+                }
+        },
+
+        //Schedule
+        {
+            "LogName": "Sevinae - Schedule",
+            "Action": "EditData",
+            "Target": "Characters/Schedules/Sevinae",
+            "Entries": 
+                {
+                    //Regular working schedule
+                    "Mon": "0 Custom_SevinaeHouse 7 6 0/610 Custom_SevinaeHouse 7 6 0/a700 Custom_MagesRest 38 13 2/a900 Custom_MagesRest 28 7 2/1730 Custom_MagesRest 14 10 3/a2100 Custom_SevinaeHouse 7 6 0",
+                    "Tue": "0 Custom_SevinaeHouse 7 6 0/610 Custom_SevinaeHouse 7 6 0/a700 Custom_MagesRest 43 9 0/a900 Custom_MagesRest 28 7 2/1730 Custom_MagesRest 16 7 2/a2100 Custom_SevinaeHouse 3 10 3",
+                    "Wed": "0 Custom_SevinaeHouse 7 6 0/610 Custom_SevinaeHouse 7 6 0/a700 Custom_MagesRest 38 13 2/a900 Custom_MagesRest 28 7 2/1730 Custom_MagesRest 15 28 3/a2100 Custom_SevinaeHouse 7 6 0",
+                    "Thu": "0 Custom_SevinaeHouse 7 6 0/610 Custom_SevinaeHouse 7 6 0/a700 Custom_MagesRest 38 13 2/a900 Custom_MagesRest 28 7 2/1730 Custom_MagesRest 14 10 3/a2100 Custom_SevinaeHouse 11 6 1",
+                    "Sat": "0 Custom_SevinaeHouse 7 6 0/610 Custom_SevinaeHouse 7 6 0/a700 Custom_MagesRest 43 9 0/a900 Custom_MagesRest 28 7 2/1730 Custom_MagesRest 16 7 2/a2100 Custom_SevinaeHouse 10 5 0",
+                    "Sun": "0 Custom_SevinaeHouse 7 6 0/610 Custom_SevinaeHouse 7 6 0/a700 Custom_MagesRest 38 13 2/a900 Custom_MagesRest 28 7 2/1730 Custom_MagesRest 54 8 0/a2100 Custom_SevinaeHouse 11 6 1",
+
+
+                    //Non-work day
+                    "Fri": "0 Custom_SevinaeHouse 7 6 0/610 Custom_SevinaeHouse 7 6 0/a800 Custom_MagesRest 19 7 0/a1000 Custom_MagesRest 17 27 0/a1200 Custom_MagesRest 23 38 0/a1400 Custom_MagesRest 7 38 3/a1600 Custom_MagesRest 9 49 2/a1800 Custom_MagesRest 49 46 1/a2000 Custom_MagesRest 48 29 2/a2200 Custom_SevinaeHouse 3 10 3"
+                }
+        }
+
+    ]
+}

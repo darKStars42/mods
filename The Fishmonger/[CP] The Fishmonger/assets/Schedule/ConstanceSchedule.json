@@ -1,0 +1,47 @@
+// First number is time (610 = 6:10) Name of map (BusStop = Bus Stop) and finally position X Y F where x is the X tile Coordinate, Y is the y coordinate and F is facing (0 = up, 1 = right, 2 = down, 3 = left)
+//after position will be animations covered in AnimationDescriptions. (sunbathe) followed by the schedule dialogue.
+
+{
+	//Goes fishing in the morning, works her shop till the evening, then goes to her kitchen to have a cup of tea
+	"spring": "
+		610 IslandSouth 21 44 2 TheFishmonger_fish \"Strings\\schedules\\TheFishmonger:fishing.000\"/
+		850 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 5 4 2 \"Strings\\schedules\\TheFishmonger:shop.000\"/
+		1610 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 10 5 2 TheFishmonger_drinking \"Strings\\schedules\\TheFishmonger:tea.000\"
+		",
+	"spring_rain": "GOTO rain",
+	"summer": "
+		610 IslandSouth 21 44 2 TheFishmonger_fish \"Strings\\schedules\\TheFishmonger:fishing.001\"/
+		730 IslandSouth 21 44 2 \"Strings\\schedules\\TheFishmonger:pier.000\"/
+		850 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 5 4 2 \"Strings\\schedules\\TheFishmonger:shop.001\"/
+		1610 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 10 5 2 TheFishmonger_drinking \"Strings\\schedules\\TheFishmonger:tea.001\"
+		",
+	"summer_rain": "GOTO rain",
+	"fall": "
+		610 IslandSouth 21 44 2 TheFishmonger_fish \"Strings\\schedules\\TheFishmonger:fishing.002\"/
+		850 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 5 4 2 \"Strings\\schedules\\TheFishmonger:shop.001\"/
+		1610 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 10 5 2 TheFishmonger_drinking \"Strings\\schedules\\TheFishmonger:tea.002\"
+		",
+	"fall_rain": "GOTO rain",
+	"winter": "
+		610 IslandSouth 21 44 2 TheFishmonger_fish \"Strings\\schedules\\TheFishmonger:fishing.003\"/
+		730 IslandSouth 21 44 2 \"Strings\\schedules\\TheFishmonger:pier.001\"/
+		850 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 5 4 2 \"Strings\\schedules\\TheFishmonger:shop.003\"/
+		1610 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 10 5 2 TheFishmonger_drinking \"Strings\\schedules\\TheFishmonger:tea.003\"
+	",
+	"winter_rain": "GOTO rain",
+	"Tue": "
+		610 IslandWest 18 60 3 \"Strings\\schedules\\TheFishmonger:birdie.000\"/
+		1000 IslandWest 21 24 2 \"Strings\\schedules\\TheFishmonger:birdie.001\"/
+		1300 IslandWest 33 89 2 TheFishmonger_fish \"Strings\\schedules\\TheFishmonger:fishing.002\/
+		1600 IslandWest 18 60 3 \"Strings\\schedules\\TheFishmonger:birdie.003\"
+	",
+	//Walks to kitchen for morning tea, listens to the radio, checking her stock, then tends to her shop, later on drinks another tea
+	"rain": "
+		610 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 10 5 2/
+		630 9 9 2 TheFishmonger_drinking \"Strings\\schedules\\TheFishmonger:tea.000\"/
+		700 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 5 6 1 \"Strings\\schedules\\TheFishmonger:stock.000\"/
+		730 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 2 6 3 \"Strings\\schedules\\TheFishmonger:stock.001\"/
+		850 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 5 4 2/
+		1610 VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside 10 5 2 TheFishmonger_drinking \"Strings\\schedules\\TheFishmonger:tea.005\"
+		",
+}

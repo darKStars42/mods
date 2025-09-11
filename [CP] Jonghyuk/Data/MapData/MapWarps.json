@@ -1,0 +1,83 @@
+{
+  "Changes": [
+
+    //Adds the LockedDoorWarp. This tile is locked behind a specific time in-game + the player clicking on said tile.
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SBV_SunberryVillage",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 84,
+            "Y": 58
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 10 15 Custom_SBV_JonghyukHouse 610 2500" // change arimarket to the name of ur interior when its done
+          }
+        }
+
+      ],
+      "When": {
+        "HasMod: |contains=skellady.SBVCP": true
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SBV_TwilightFestival",
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 84,
+            "Y": 58
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 10 15 Custom_SBV_JonghyukHouse 610 2500" // change arimarket to the name of ur interior when its done
+          }
+        }
+
+      ],
+      "When": {
+        "HasMod: |contains=skellady.SBVCP": true
+      }
+    },
+
+    //Adds warps to leave the house
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SBV_JonghyukHouse",
+      "AddWarps": [
+        "10 16 Custom_SBV_SunberryVillage 84 59",
+        "11 16 Custom_SBV_SunberryVillage 84 59"
+
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SBV_MinesPool",
+      "AddWarps": [
+        "0 5 Custom_SBV_SunberryVillage 44 40"
+
+      ]
+    },
+
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SBV_SunberryVillage",
+      "AddWarps": [
+        "43 39 Custom_SBV_MinesPool 1 5", // first coordinates are where the player should step on IN THE VILLAGE, and second coords are where they should land IN THE CAVE. change map name to Custom_SBV_MinesPool
+        "44 39 Custom_SBV_MinesPool 1 5"
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Custom_SBV_TwilightFestival",
+      "AddWarps": [
+        "43 39 Custom_SBV_MinesPool 1 5", // first coordinates are where the player should step on IN THE VILLAGE, and second coords are where they should land IN THE CAVE. change map name to Custom_SBV_MinesPool
+        "44 39 Custom_SBV_MinesPool 1 5"
+      ]
+    },
+
+  ]
+}

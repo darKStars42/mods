@@ -1,0 +1,512 @@
+{
+  "Changes": [
+{
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+      "Entries": {
+        "Cape.Secret": {
+          "Location": "Custom_RealSecretBase2",
+          "ShopEvent": "None",
+          "BundleName": "{{i18n:UB.RealSecretBase2}}",
+          "BundleSlots": 3,
+          "DrawQuestionMark": true,
+          "BundleReward": {
+            "money": 4000,
+          },
+          "ShopPosition": "9,4",
+          "ShopType": "CCMagicBook",
+          "EditMap": "Maps/Custom_RealSecretBase2Unlocked",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+            "392": 1, //nautilusshell//
+            "393": 1, //coral//
+            "84": 1 //frozentear//
+          },
+           "RandomPriceEntries": 3,
+        }
+      }
+    },
+
+   {
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+      "When": {
+         "EssenceComplete": true, 
+      },
+      "Entries": {
+        "Cape.CapeForestFarm": {
+          "Location": "Custom_CapeForest",
+          "BundleName": "Pioneer",
+          "ShopPosition": "8, 13",
+          "ShopType": "SpeechBubble",
+          "InteractionShake": true,
+          "BundleCompletedMail": "{{i18n:junimo.mail001}}[#]Cape Forest Farm Bundle Mail",
+          "BundleDescription": "{{i18n:Dialogue.Bundl.001}}",
+          "ShopEvent": "continue/-1000 -1000/farmer -100 -100 0/changeToTemporaryMap Custom_CapeForestHomestead/fade/viewport 28 13 true/fade unfade/glow 05 90 190 false/playSound junimoKart_coin/pause 1000/changeToTemporaryMap Custom_AnnettaForest/fade/viewport 28 13 true/fade unfade/glow 120 120 20 false/playSound junimoKart_coin/pause 1000//changeToTemporaryMap Custom_CapeBusStop/fade/viewport 28 13 true/fade unfade/glow 90 90 90 false/playSound junimoKart_coin/pause 1000/pause 1000/ub_applyPatch/end",
+          "EditMap": "Maps/Custom_CapeForestHomestead",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+            "724": 2, //MapleSyrup//
+          }
+        }
+      }
+    },
+  
+  
+    {
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+      "When": {
+        "EssenceComplete": true,
+      },
+      "Entries": {
+        "Cape.Cabin": {
+          "Location": "Custom_AbandonedHauntedHouse",
+          "ShopEvent": "Carpentry",
+          "BundleName": "{{i18n:UB.simplec}}",
+          "BundleIcon": "Construction",
+          "BundleSlots": 3,
+          "DrawQuestionMark": false,
+          "BundleCompletedMail": "{{i18n:ghost.mail001}}[#]Cape Cabin Bundle Mail",
+          "BundleReward": {
+            "454": 1, //ancientfruit//
+            "384": 18, //goldore//
+            "768": 1 //solaressence//
+          },
+          "ShopPosition": "2, 7",
+          "ShopType": "AltCCBundle",
+          "EditMap": "Maps/Custom_CapeAbandonedFixed",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+            "388": 25, //wood//
+            "390": 15, //stone//
+            "169": 10, //driftwood//
+            "709": 3, //hardwood//
+            "771": 10, //fiber//
+            "840": 4, //rusticplankfloor//
+            "569": 10, //granite//
+          },
+           "RandomPriceEntries": 5,
+        }
+      }
+    },
+{
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+      "Update": "OnLocationChange",
+      "When": {
+        "HasActiveQuest |contains=CapeQuestH": true,
+        "Season": "Winter",
+      },
+      "Entries": {
+        "Cape.Cave1": {
+          "Location": "Custom_Cape",
+          "BundleName": "{{i18n:UB.title1}}",
+          "ShopEvent": "continue/-1000 -1000/farmer -100 -100 0/fade/changeToTemporaryMap Custom_CapeScene/viewport 17 11 true unfreeze/warp farmer 12 8/fade unfade/pause 1000/glow 10 200 90 true/playSound coldSpell/pause 1000/removeQuest CapeQuestH/ub_applyPatch/addMailReceived essence1/end",
+          "BundleIcon": "Adventurer",
+          "BundleSlots": 3,
+          "DrawQuestionMark": false,
+          
+          "BundleReward": {
+            "384": 5 //goldore//
+          },
+          "ShopPosition": "7, 8",
+          "ShopType": "AltCCBundle",
+          "EditMap": "Maps/Custom_CapeCaveLit",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+           "418": 1, //crocus//
+            "420": 1, //redmushroom//
+            "311": 1 //pinecone//
+          },
+"SpecialPlacementRequirements": [
+  {
+    "Type": "TriggerAction"
+  }
+]
+
+        }
+      }
+    },
+    
+    {
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+      "Update": "OnLocationChange",
+      "When": {
+        "HasActiveQuest |contains=CapeQuestH": true,
+        "Season": "Spring,Summer,Fall",
+      },
+      "Entries": {
+        "Cape.Cave1": {
+          "Location": "Custom_Cape",
+          "BundleName": "{{i18n:UB.title.summer}}",
+          "ShopEvent": "continue/-1000 -1000/farmer -100 -100 0/fade/changeToTemporaryMap Custom_CapeScene/viewport 17 11 true unfreeze/warp farmer 12 8/fade unfade/pause 1000/glow 10 200 90 true/playSound coldSpell/pause 1000/removeQuest CapeQuestH/ub_applyPatch/addMailReceived essence1/end",
+          "BundleIcon": "Adventurer",
+          "BundleSlots": 3,
+          "DrawQuestionMark": false,
+          
+          "BundleReward": {
+            "384": 5 //goldore//
+          },
+          "ShopPosition": "7, 8",
+          "ShopType": "AltCCBundle",
+          "EditMap": "Maps/Custom_CapeCaveLit",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+           "593": 1, //summerSPangle//
+            "420": 1, //redmushroom//
+            "311": 1 //pinecone//
+          },
+"SpecialPlacementRequirements": [
+  {
+    "Type": "TriggerAction"
+  }
+]
+
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+      "Update": "OnLocationChange",
+      "When": {
+        "HasActiveQuest |contains=CapeQuestI": true
+      },
+      "Entries": {
+        "Cape.Cave2": {
+          "Location": "Custom_Cape",
+          "BundleName": "{{i18n:UB.title2}}",
+          "ShopEvent": "continue/-1000 -1000/farmer -100 -100 0/fade/changeToTemporaryMap Custom_CapeScene/viewport 17 11 true unfreeze/warp farmer 12 8/fade unfade/pause 1000/glow 10 200 90 true/playSound coldSpell/pause 1000/removeQuest CapeQuestI/ub_applyPatch/addMailReceived essence1/end",
+          "BundleIcon": "Adventurer",
+          "BundleSlots": 3,
+          "DrawQuestionMark": false,
+          
+          "BundleReward": {
+            "384": 5 //goldore//
+          },
+          "ShopPosition": "7, 8",
+          "ShopType": "AltCCBundle",
+          "EditMap": "Maps/Custom_CapeCaveLit",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+            "86": 1, //earthcrystal//
+            "80": 1, //quartz
+            "420": 1 //redmushroom//
+          },
+"SpecialPlacementRequirements": [
+  {
+    "Type": "TriggerAction"
+  }
+]
+
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+"Update": "OnLocationChange",
+      "When": {
+        "HasActiveQuest |contains=CapeQuestJ": true
+      },
+      "Entries": {
+        "Cape.Cave3": {
+          "Location": "Custom_Cape",
+          "BundleName": "{{i18n:UB.title3}}",
+          "ShopEvent": "continue/-1000 -1000/farmer -100 -100 0/fade/changeToTemporaryMap Custom_CapeScene/viewport 17 11 true unfreeze/warp farmer 12 8/fade unfade/pause 1000/glow 10 200 90 true/playSound coldSpell/pause 1000/removeQuest CapeQuestJ/ub_applyPatch/addMailReceived essence1/end",
+          "BundleIcon": "Adventurer",
+          "BundleSlots": 3,
+          "DrawQuestionMark": false,
+          
+          "BundleReward": {
+            "384": 5 //goldore//
+          },
+          "ShopPosition": "7, 8",
+          "ShopType": "AltCCBundle",
+          "EditMap": "Maps/Custom_CapeCaveLit",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+            "18": 1, //daffodil//
+            "281": 1, //chanterelle//
+            "309": 1 //acorn//
+          },
+"SpecialPlacementRequirements": [
+  {
+    "Type": "TriggerAction"
+  }
+]
+
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+"Update": "OnLocationChange",
+      "When": {
+        "HasActiveQuest |contains=CapeQuestK": true
+      },
+      "Entries": {
+        "Cape.Cave4": {
+          "Location": "Custom_Cape",
+          "BundleName": "{{i18n:UB.title4}}",
+          "ShopEvent": "continue/-1000 -1000/farmer -100 -100 0/fade/changeToTemporaryMap Custom_CapeScene/viewport 17 11 true unfreeze/warp farmer 12 8/fade unfade/pause 1000/glow 10 200 90 true/playSound coldSpell/pause 1000/removeQuest CapeQuestK/ub_applyPatch/addMailReceived essence1/end",
+          "BundleIcon": "Adventurer",
+          "BundleSlots": 3,
+          "DrawQuestionMark": false,
+          
+          "BundleReward": {
+            "384": 5 //goldore//
+          },
+          "ShopPosition": "7, 8",
+          "ShopType": "AltCCBundle",
+          "EditMap": "Maps/Custom_CapeCaveLit",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+            "310": 1, //mapleseed//
+            "404": 1, //commonmushroom//
+            "597": 1 //bluejazz//
+          },
+"SpecialPlacementRequirements": [
+  {
+    "Type": "TriggerAction"
+  }
+]
+
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+"Update": "OnLocationChange",
+      "When": {
+        "HasActiveQuest |contains=CapeQuestL": true
+      },
+      "Entries": {
+        "Cape.Cave5": {
+          "Location": "Custom_Cape",
+          "BundleName": "{{i18n:UB.title5}}",
+          "ShopEvent": "continue/-1000 -1000/farmer -100 -100 0/fade/changeToTemporaryMap Custom_CapeScene/viewport 17 11 true unfreeze/warp farmer 12 8/fade unfade/pause 1000/glow 10 200 90 true/playSound coldSpell/pause 1000/removeQuest CapeQuestL/ub_applyPatch/addMailReceived essence1/end",
+          "BundleIcon": "Adventurer",
+          "BundleSlots": 3,
+          "DrawQuestionMark": false,
+          
+          "BundleReward": {
+            "384": 5 //goldore//
+          },
+          "ShopPosition": "7, 8",
+          "ShopType": "AltCCBundle",
+          "EditMap": "Maps/Custom_CapeCaveLit",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+            "78": 1, //cavecarrot//
+            "257": 1, //morel//
+            "376": 1 //Poppy//
+          },
+"SpecialPlacementRequirements": [
+  {
+    "Type": "TriggerAction"
+  }
+]
+
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+"Update": "OnLocationChange",
+      "When": {
+        "HasActiveQuest |contains=CapeQuestM": true
+      },
+      "Entries": {
+        "Cape.Cave6": {
+          "Location": "Custom_Cape",
+          "BundleName": "{{i18n:UB.title6}}",
+          "ShopEvent": "continue/-1000 -1000/farmer -100 -100 0/fade/changeToTemporaryMap Custom_CapeScene/viewport 16 11 true unfreeze/warp farmer 12 8/fade unfade/pause 1000/glow 10 200 90 true/playSound coldSpell/pause 1000/removeQuest CapeQuestM/ub_applyPatch/addMailReceived essence1/end",
+          "BundleIcon": "Adventurer",
+          "BundleSlots": 3,
+          "DrawQuestionMark": false,
+         
+          "BundleReward": {
+            "384": 5 //goldore//
+          },
+          "ShopPosition": "7, 8",
+          "ShopType": "AltCCBundle",
+          "EditMap": "Maps/Custom_CapeCaveLit",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+            "259": 1, //FiddleheadFern//
+            "422": 1, //PurpleMushroom//
+            "591": 1 //Tulip//
+          },
+"SpecialPlacementRequirements": [
+  {
+    "Type": "TriggerAction"
+  }
+]
+
+        }
+      }
+    },
+    
+    ///BridgeFixed//
+     {
+      "Action": "EditData",
+      "Target": "UnlockableBundles/Bundles",
+      "Entries": {
+        "Cape.Bridge": {
+          "Location": "Custom_AreaSecretBossLvl4",
+          "BundleName": "{{i18n:UB.BridgeTitle}}",
+          "BundleIcon": "Adventurer",
+          "BundleSlots": 4,
+          "DrawQuestionMark": false,
+          "BundleReward": {
+            "384": 4 //GOldOre//
+          },
+          "ShopPosition": "14, 17",
+          "ShopType": "AltCCBundle",
+          "EditMap": "Maps/Custom_AreaSecretBossLvl4Fixed",
+          "EditMapPosition": "0,0",
+          "EditMapMode": "Replace",
+          "Price": {
+            "709": 1, //Hardwood//
+            "337": 1, //IridiumBar//
+            "334": 1, //copperbar//
+            "388": 5, //wood//
+            "390": 5 //stone//
+          },
+          "RandomPriceEntries": 4,
+        }
+      }
+    },
+
+
+
+///GreenRainOffering//
+{
+  "Action": "EditData",
+  "Target": "UnlockableBundles/Bundles",
+  "Update": "OnLocationChange",
+  "Entries": {
+    "Cape.SecretOrb": {
+      "Location": "Custom_CapeCavingSecretroom",
+      "ShopPosition": "7, 2",
+      "ShopType": "SpeechBubble",
+      "ShopTexture": "UnlockableBundles/ShopTextures/Junimo",
+      "ShopColor": "LimeGreen",
+      "SpeechBubbleOffset": "0, -16",
+      "InteractionSound": "junimoMeep1",
+      "InteractionShake": true,
+	
+      "BundleName": "{{i18n:UB.SecretOrb}}",
+      "BundleDescription": "{{i18n:UB.SecretOrb.Description}}",
+      "OverviewDescription": "{{i18n:UB.SecretOrb.Overview}}", 
+      "OverviewColor": "rgba(120,255,120,200)",
+      "OverviewTextureWidth": 32,
+      "OverviewAnimation": "0-3@400, 4-5@600",
+
+      "BundleSlots": 1,
+      "DrawQuestionMark": true,
+
+      "Price": {
+        "MossySeed": 1
+      },
+
+      "BundleReward": {
+        "MysteryBox": 1
+      },
+
+      "BundleCompletedActions": [
+        "AddMail Current greenrainMossyDewBegin received"
+      ],
+"SpecialPlacementRequirements": [
+    {
+      "Type": "TriggerAction",
+	"TriggerActionKey": "Cape.SecretOrb",
+      
+    }
+  ],
+
+"ShopEvent": "none/-1000 -1000/farmer 7 3 2/skippable/viewport 7 6/addMailReceived greenRainMossyDew/pause 800/message \"{{i18n:MossyBundle.Text3}}\"/pause 20/addObject 7 4 OrbOfTheTides 1/pause 10/glow 0 255 0 true/pause 800/emote farmer 20/startJittering/pause 2500/stopGlowing/pause 200/globalFade/ub_applypatch/viewport -1000 -1000/end position 7 3",
+    }
+  }
+},
+
+///GreenRainOfferingRepeat//
+{
+  "Action": "EditData",
+  "Target": "UnlockableBundles/Bundles",
+  "Update": "OnLocationChange",
+  "When": {
+"HasFlag": "greenrainMossyDewBegin"
+  },
+  "Entries": {
+    "Cape.SecretOrb.Repeat": {
+      "Location": "Custom_CapeCavingSecretroom",
+      "ShopPosition": "7, 2",
+      "ShopType": "SpeechBubble",
+      "ShopTexture": "UnlockableBundles/ShopTextures/Junimo",
+      "ShopColor": "Goldenrod",
+      "SpeechBubbleOffset": "0, -16",
+      "InteractionSound": "junimoMeep1",
+      "InteractionShake": true,
+      "AlternativeShopPositions": [ "10, 4", "6, 4" ],
+      "BundleName": "{{i18n:UB.SecretOrb2}}",
+      "BundleDescription": "{{i18n:UB.SecretOrb.Description2}}",
+      "OverviewDescription": "{{i18n:UB.SecretOrb.Overview2}}",
+      "OverviewColor": "rgba(80,150,80,200)",
+      "OverviewTextureWidth": 32,
+      "OverviewAnimation": "0-3@400, 4-5@600",
+
+      "BundleSlots": 1,
+      "DrawQuestionMark": true,
+
+      "Price": {
+        "MossSoup": 1
+      },
+
+      "BundleReward": {
+        "MysteryBox": 1
+      },
+
+      "BundleCompletedActions": [
+        "AddMail Current greenrainMossyDewBegin received",
+"MarkActionApplied Current {{ModId}}_greenRainTriggerRepeat false"
+      ],
+
+      "SpecialPlacementRequirements": [
+        {
+          "Type": "TriggerAction",
+          "TriggerActionKey": "{{ModId}}_greenRainTriggerRepeat"
+        },
+        {
+          "Type": "BundleCompletion",
+          "BundleKey": "Cape.SecretOrb"
+        }
+      ],
+
+"ShopEvent": "none/-1000 -1000/farmer 7 3 2/skippable/viewport 7 6/addMailReceived greenRainMossyDew/pause 800/message \"{{i18n:MossyBundle.Text4}}\"/pause 20/addObject 7 4 OrbOfTheTides 1/pause 10/glow 0 255 0 true/pause 800/emote farmer 20/startJittering/pause 2500/stopGlowing/pause 200/globalFade/viewport -1000 -1000/ub_applypatch/end position 7 3",
+
+"EditMap": "Maps/Custom_CapeCavingSecretroomWarpsLadderUnlock",
+          "EditMapPosition": "7,2",
+          "EditMapMode": "Replace",
+    }
+}
+    }
+
+  ]
+}

@@ -1,0 +1,171 @@
+{
+	"Format": "2.0.0",
+  "DynamicTokens": [
+        {
+            "Name": "BlankFile",
+            "Value": "assets/blank.json"
+        }
+    ],
+    "CustomLocations": [
+        {
+            "Name": "Custom_Enya_Place",
+            "FromMapFile": "assets/Maps/EnyaPlace.tmx"
+        },
+        {
+            "Name": "Custom_Enya_House",
+            "FromMapFile": "assets/Maps/EnyaHouse.tmx"
+        },
+        {
+            "Name": "Custom_HecateGor",
+            "FromMapFile": "assets/Maps/HecateGor.tmx"
+        },
+        {
+            "Name": "Custom_FakeCutscene",
+            "FromMapFile": "assets/Maps/FakeCutscene.tmx"
+        },                
+        {
+            "Name": "Custom_Covenstead",
+            "FromMapFile": "assets/Maps/Covenstead.tmx"
+        },
+        {
+            "Name": "Custom_memory",
+            "FromMapFile": "assets/Maps/memory.tmx"
+        },
+        {
+            "Name": "Custom_Wedding",
+            "FromMapFile": "assets/Maps/Handfasting.tmx"
+        }, 
+        {
+            "Name": "Custom_Dark1",
+            "FromMapFile": "assets/Maps/Dark1.tmx"
+        },                               
+        {
+            "Name": "Custom_Trial",
+            "FromMapFile": "assets/Maps/Dark.tmx"
+        },
+        {
+            "Name": "Custom_Witch1",
+            "FromMapFile": "assets/Maps/Witch1.tmx"
+        },
+        {
+            "Name": "Custom_Witch2",
+            "FromMapFile": "assets/Maps/Witch2.tmx"
+        },
+        {
+            "Name": "Custom_MutedDen",
+            "FromMapFile": "assets/Maps/Trial1.tmx"
+        },
+        {
+            "Name": "Custom_Witch3Outside",
+            "FromMapFile": "assets/Maps/Witch3_Outside.tmx"
+        },
+        {
+            "Name": "Custom_Witch3Inside", 
+            "FromMapFile": "assets/Maps/Witch3_Inside.tmx"
+        }                                               
+    ],
+	"Changes": [
+      {
+         "Action": "Include",
+         "FromFile": "assets/TileSheets/TileSheets.json, assets/Maps.json, assets/ObjectsData.json, assets/music.json, assets/dialogue/Dialogue.json, assets/dialogue/ImmersiveDialogue.json, assets/disposition/Disposition.json, assets/schedule/Schedule.json, assets/schedule/ScheduleDialogue.json, assets/animations/Animations.json, assets/quests.json, assets/recipes.json, assets/mail.json, assets/events/events.json, assets/crop.json, assets/UniversalGiftTaste.json, assets/dialogue/GiftDialogue.json, assets/festivaldata.json, assets/dialogue/MarriageDialogue.json, assets/TriggerActions.json"
+      },
+      {
+        "Action": "EditData",
+        "Target": "Data/SpouseRooms",
+        "Entries": {
+            "Enya": "latteholn_Enya_SpouseRoom/0"
+        }
+      },     
+      {
+        "LogName": "Enya Sprite",
+        "Action": "Load",
+        "Target": "Characters/Enya",
+        "FromFile": "assets/sprites/Enya.png",
+      },
+      {
+        "LogName": "Enya Portrait",
+        "Action": "Load",
+        "Target": "Portraits/Enya",
+        "FromFile": "assets/portraits/Enya.png",
+      },
+      {
+        "LogName": "Young Evie",
+        "Action": "Load",
+        "Target": "Characters/Evie",
+        "FromFile": "assets/sprites/YoungEvelyn.png",
+      },
+      {
+        "LogName": "Young Evie",
+        "Action": "Load",
+        "Target": "Portraits/Evie",
+        "FromFile": "assets/portraits/YoungEvelyn.png",
+      },      
+      {
+        "LogName": "Enya Portrait Night",
+        "Action": "EditImage",
+        "Target": "Portraits/Enya",
+        "FromFile": "assets/portraits/Enya_Night.png",
+        "When": {
+            "Query: {{Time}} >= 1700": true
+        },
+        "Update": "OnTimeChange"
+      },
+      {
+        "LogName": "Event Human Enya Portrait",
+        "Action": "Load",
+        "Target": "Portraits/HumanEnya",
+        "FromFile": "assets/portraits/Event_HumanEnya.png",
+      },  
+      {
+        "LogName": "Event Human Enya Sprite",
+        "Action": "Load",
+        "Target": "Characters/HumanEnya",
+        "FromFile": "assets/sprites/Event_HumanEnya.png",
+      },      
+      {
+        "LogName": "Blank Dialogue",
+        "Action": "Load",
+        "Target": "Characters/Dialogue/Enya",
+        "FromFile": "{{BlankFile}}"
+      },
+      {
+        "LogName": "Blank Marriage Dialogue",
+        "Action": "Load",
+        "Target": "Characters/Dialogue/MarriageDialogueEnya",
+        "FromFile": "{{BlankFile}}"
+      },
+      {
+        "LogName": "Blank Schedule",
+        "Action": "Load",
+        "Target": "Characters/Schedules/Enya",
+        "FromFile": "{{BlankFile}}"
+      },
+      {
+        "LogName": "Blank Schedule Dialogue",
+        "Action": "Load",
+        "Target": "Strings/schedules/Enya",
+        "FromFile": "{{BlankFile}}"
+      },
+      {
+        "LogName": "PortraitHuman",
+        "Action": "EditImage",
+        "Target": "Portraits/Enya",
+        "FromFile": "assets/portraits/PortraitHuman_{{season}}.png",
+        "When": {
+           "HasSeenEvent": "34356009",
+           "HasSeenEvent |contains=34356009": "true"
+         },
+      },
+      {
+        "LogName": "SpritesHuman",
+        "Action": "EditImage",
+        "Target": "Characters/Enya",
+        "FromFile": "assets/sprites/SpritesHuman_{{season}}.png",
+        "When": {
+           "HasSeenEvent": "34356009",
+           "HasSeenEvent |contains=34356009": "true"
+         },
+      },
+	]
+}
+

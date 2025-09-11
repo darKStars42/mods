@@ -1,0 +1,324 @@
+// festival NPC positions
+// festival dialogue is in dialogue.json
+// nikolai custom festival in mods/nikolai.json
+{
+	"Changes": [
+		// Egg Festival
+		{
+			"LogName": "Jade - Festival - EggFestival",
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring13",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 24 63 3",
+					"Delimiter": "/"
+				},
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "MainEvent_additionalCharacters" ],
+					"Value": "Jade 25 63 2",
+					"Delimiter": "/"
+				}
+			]
+		},
+		// Flower Dance 
+		{
+			"LogName": "Jade - Festival - FlowerDance",
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring24",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 10 42 down",
+					"Delimiter": "/"
+				},
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "MainEvent_additionalCharacters" ],
+					"Value": "Jade 15 31 up",
+					"Delimiter": "/"
+				}
+			]
+		},
+		//Luau
+		{
+			"LogName": "Jade - Festival - Luau (Odd)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer11",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 27 13 right",
+					"Delimiter": "/"
+				},
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "MainEvent_additionalCharacters" ],
+					"Value": "Jade 24 13 right",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"Query: {{Year}}%2 = 0": false // odd year
+			}
+		},
+		{
+			"LogName": "Jade - Festival - Luau (Even)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer11",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 16 10 right",
+					"Delimiter": "/"
+				},
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "MainEvent_additionalCharacters" ],
+					"Value": "Jade 16 9 right",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"Query: {{Year}}%2 = 0": true // even year
+			}
+		},
+		//Moonlight Jellies
+		{
+			"LogName": "Jade - Festival - MoonlightJellies",
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer28",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 82 39 left",
+					"Delimiter": "/"
+				},
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Main-Event_additionalCharacters" ],
+					"Value": "Jade 82 39 left",
+					"Delimiter": "/"
+				}
+			]
+		},
+		//Fair
+		{
+			"LogName": "Jade - Festival - Fair",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall16",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 21 64 1",
+					"Delimiter": "/"
+				}
+			]
+		},
+		//Spirit's Eve
+		{
+			"LogName": "Jade - Festival - SpiritsEve (Odd)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall27",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 6 23 right",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": false,
+				"Query: {{Year}}%2 = 0": false // odd year
+			}
+		},
+		{
+			"LogName": "Jade - Festival - SpiritsEve (Even)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall27",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 29 13 up",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": false,
+				"Query: {{Year}}%2 = 0": true // even year
+			}
+		},
+		{
+			"LogName": "Jade - Festival - SpiritsEve SVE (Variant 1)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall27",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 16 21 right",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+				"Query: {{Year}}%2 = 0": false, // odd year
+				"Query: {{Year}}%4 = 3": false // arithmetic sequence where d=4
+			}
+		},
+		{ // same as vanilla even years
+			"LogName": "Jade - Festival - SpiritsEve SVE (Variant 2)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall27",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 29 13 up",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+				"Query: {{Year}}%2 = 0": true // even year
+
+			}
+		},
+		{
+			"LogName": "Jade - Festival - SpiritsEve SVE (Variant 3)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall27",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 47 57 down",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true,
+				"Query: {{Year}}%4 = 3": true // arithmetic sequence where d=4
+			}
+		},
+		//Ice Festival
+		{
+			"LogName": "Jade - Festival - IceFestival (odd)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter8",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 71 17 right",
+					"Delimiter": "/"
+				},
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Main-Event_additionalCharacters" ],
+					"Value": "Jade 65 34 up",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"Query: {{Year}}%2 = 0": false // odd year
+			}
+		},
+		{
+			"LogName": "Jade - Festival - IceFestival (even)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter8",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 64 45 right",
+					"Delimiter": "/"
+				},
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Main-Event_additionalCharacters" ],
+					"Value": "Jade 65 43 up",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"Query: {{Year}}%2 = 0": true // odd year
+			}
+		},
+		{
+			"LogName": "Jade - Festival - IceFestival SVE (even)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter8",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 63 49 left",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+			}
+		},
+		{
+			"LogName": "Jade - Festival - IceFestival SVE (Main-Event)",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter8",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Main-Event_additionalCharacters" ],
+					"Value": "Jade 65 47 up",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+			}
+		},
+		//Winter Star
+		{
+			"LogName": "Jade - Festival - WinterStar",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter25",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 24 62 2",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+			}
+		},
+		{
+			"LogName": "Jade - Festival - WinterStar SVE",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter25",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": [ "Entries", "Set-Up_additionalCharacters" ],
+					"Value": "Jade 25 70 left",
+					"Delimiter": "/"
+				}
+			],
+			"When": {
+				"HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+			}
+		}
+	]
+}

@@ -1,0 +1,86 @@
+{
+    "Changes": [
+
+        {
+            "LogName": "Fleurine's Map Loads",
+            "Action": "Load",
+            "Target": "Maps/Interiors/totsFleurineInterior, Maps/Interiors/FleurineSpouseRoom, Maps/Exteriors/FleurineSpousePatio, Maps/Exteriors/totsFleurineRealm",
+            "FromFile": "Assets/{{Target}}.tmx"
+        },
+
+        {
+            "LogName": "Fleurine's Location Data",
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "totsFleurineRealm": {
+                    "DisplayName": "{{i18n:OUAF.Location.Realm}}",
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Exteriors/totsFleurineRealm"
+                    },
+                    "ExcludeFromNpcPathfinding": false
+                }
+            }
+        },
+
+        {
+            "LogName": "Fleurine's Location Data",
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "totsFleurineInterior": {
+                    "DisplayName": "{{i18n:OUAF.Location.Tower}}",
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Interiors/totsFleurineInterior"
+                    },
+                    "ExcludeFromNpcPathfinding": false
+                }
+            }
+        },
+
+        {
+            "LogName": "Fleurine's Map Patch",
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "PatchMode": "Replace",
+            "FromFile": "Assets/Maps/Exteriors/FleurineDoor.tmx",
+            "FromArea": {
+                "X": "0",
+                "Y": "0",
+                "Width": "4",
+                "Height": "6"
+            },
+            "When": {
+                "Location": "Realm"
+            },
+            "ToArea": {
+                "X": "95",
+                "Y": "68",
+                "Width": "4",
+                "Height": "6"
+            }
+        },
+        {
+            "LogName": "Fleurine's Map Patch",
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "PatchMode": "Replace",
+            "FromFile": "Assets/Maps/Exteriors/totsFleurine_towerext.tmx",
+            "FromArea": {
+                "X": "0",
+                "Y": "0",
+                "Width": "9",
+                "Height": "19"
+            },
+            "When": {
+                "Location": "Cliff"
+            },
+            "ToArea": {
+                "X": "94",
+                "Y": "54",
+                "Width": "9",
+                "Height": "19"
+            }
+        }
+    ]
+}

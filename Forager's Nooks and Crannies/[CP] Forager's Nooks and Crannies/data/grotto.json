@@ -1,0 +1,48 @@
+{
+		
+"Changes": [
+
+{
+	"LogName":"Map Patch Beach for Mermaid Grotto",
+	"Action": "EditMap",
+	"Target": "Maps/Beach", 
+	"FromFile": "assets/Maps/BeachEdit.tmx",
+	"ToArea": {
+			"X": 64,
+			"Y": 3,
+			"Width": 2,
+			"Height": 3
+			},
+
+	"When":{"MermaidGrottoToken": "1"}	
+},
+
+{
+	"LogName":"Add Warps to Beach for Mermaid Grotto",
+	"Action": "EditMap",
+	"Target": "Maps/Beach",
+	"MapTiles": [
+		{
+		"Position": {
+			"X": 65,
+			"Y": 5
+		},
+		"Layer": "Buildings",
+		"SetProperties": {"Action": "Warp 27 27 Wildflour.NooksCrannies_MermaidGrotto"}
+		}
+	],
+
+	"When":{"MermaidGrottoToken": "1"}	
+},
+
+{
+	"LogName":"Add Warps to Mermaid Grotto Map",
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_MermaidGrotto",
+	"AddWarps": [	"26 31 Beach 64 6",
+					"27 31 Beach 65 7", 
+					"28 31 Beach 66 6"]
+}
+
+	]
+}

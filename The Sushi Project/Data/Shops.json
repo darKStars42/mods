@@ -1,0 +1,185 @@
+{
+	"Changes": [
+		{
+			"Action": "Load",
+			"Target": "Portraits/SushiVendor, Portraits/SushiVendorFrog",
+			"FromFile": "Assets/Images/{{TargetWithoutPath}}.png"
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"When": {
+				"Vendor": "Generic"
+			},
+			"Entries": {
+				"BeazNees.CP.TheSushiProject": {
+					"Owners": [
+						{
+							"Condition": "DAY_OF_WEEK Tuesday Saturday, TIME 600 2000",
+							"Name": "AnyOrNone",
+							"Id": "Open",
+							"Portrait": "Portraits/SushiVendor",
+							"Dialogues": [
+								{
+									"Id": "{{ModId}}.FirstDialogue",
+									"Dialogue": "{{i18n:dialogue.open.first}}",
+									"Condition": "SEASON_DAY Spring 2"
+								},
+								{
+									"Id": "{{ModId}}.OpenDialogue",
+									"Dialogue": "{{i18n:dialogue.open.{{Random:01,02,03,04,05}}}}"
+								}
+							]
+						},
+						{
+							"Condition": "DAY_OF_WEEK Tuesday Saturday, TIME 2010 2600",
+							"Name": "None",
+							"Id": "Closed",
+							"ClosedMessage": "{{i18n:dialogue.closed}}"
+						}
+					],
+					"Items": [
+						{
+							"Id": "Sushi_Stall_Seaweed",
+							"ItemId": "(O)152",
+							"AvailableStock": 20,
+							"AvailableStockLimit": "Player"
+						},
+						{
+							"Id": "Sushi_Stall_Soy_Sauce",
+							"ItemId": "(O){{ModId}}.Soy_Sauce",
+							"AvailableStockLimit": "Player",
+							"Condition": "!{{HasMod: |contains=Cornucopia.ArtisanMachines}}"
+						},
+						{
+							"Id": "Sushi_Gospel",
+							"ItemId": "(O){{ModId}}_TheGospelofSushi",
+							"AvailableStockLimit": "Player",
+							"Condition": "SEASON_DAY Spring 2"
+						},
+						{
+							"Id": "{{ModId}}_.RandomSushi",
+							"AvailableStockLimit": "Player",
+							"ItemId": "RANDOM_ITEMS (O)",
+							"MaxItems": 4,
+							"Quality": 2,
+							"PerItemCondition": "ITEM_CATEGORY Target -7, ITEM_ID_PREFIX Target {{ModId}}_",
+							"AvoidRepeat": true,
+							"IsRecipe": false,
+							"PriceModifiers": [
+								{
+									"Modification": "Divide",
+									"Amount": "{{Item Price Modifier}}"
+								}
+							]
+						},
+						{
+							"Id": "{{ModId}}_.RandomRecipes",
+							"AvailableStockLimit": "Player",
+							"ItemId": "RANDOM_ITEMS (O)",
+							"MaxItems": 4,
+							"PerItemCondition": "ITEM_CATEGORY Target -7, ITEM_ID_PREFIX Target {{ModId}}_",
+							"AvoidRepeat": true,
+							"IsRecipe": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Divide",
+									"Amount": "{{Recipe Price Modifier}}"
+								}
+							]
+						}
+					]
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"When": {
+				"Vendor": "Frog"
+			},
+			"Entries": {
+				"BeazNees.CP.TheSushiProject": {
+					"Owners": [
+						{
+							"Condition": "DAY_OF_WEEK Tuesday Saturday, TIME 600 2000",
+							"Name": "AnyOrNone",
+							"Id": "Open",
+							"Portrait": "Portraits/SushiVendorFrog",
+							"Dialogues": [
+								{
+									"Id": "{{ModId}}.OpenDialogue",
+									"Dialogue": "{{i18n:dialogue.frog.{{Random:01,02,03,04}}}}"
+								}
+							]
+						},
+						{
+							"Condition": "DAY_OF_WEEK Tuesday Saturday, TIME 2010 2600",
+							"Name": "None",
+							"Id": "Closed",
+							"ClosedMessage": "{{i18n:dialogue.closed}}"
+						}
+					],
+					"Items": [
+						{
+							"Id": "Sushi_Stall_FrogEgg",
+							"ItemId": "(TR)FrogEgg",
+							"Price": 2000,
+							"AvailableStock": 1,
+							"AvailableStockLimit": "Player"
+						},
+						{
+							"Id": "Sushi_Stall_Seaweed",
+							"ItemId": "(O)152",
+							"AvailableStock": 20,
+							"AvailableStockLimit": "Player"
+						},
+						{
+							"Id": "Sushi_Stall_Soy_Sauce",
+							"ItemId": "(O){{ModId}}.Soy_Sauce",
+							"AvailableStockLimit": "Player",
+							"Condition": "!{{HasMod: |contains=Cornucopia.ArtisanMachines}}"
+						},
+						{
+							"Id": "Sushi_Gospel",
+							"ItemId": "(O){{ModId}}_TheGospelofSushi",
+							"AvailableStockLimit": "Player",
+							"Condition": "SEASON_DAY Spring 2"
+						},
+						{
+							"Id": "{{ModId}}_.RandomSushi",
+							"AvailableStockLimit": "Player",
+							"ItemId": "RANDOM_ITEMS (O)",
+							"MaxItems": 4,
+							"Quality": 2,
+							"PerItemCondition": "ITEM_CATEGORY Target -7, ITEM_ID_PREFIX Target {{ModId}}_",
+							"AvoidRepeat": true,
+							"IsRecipe": false,
+							"PriceModifiers": [
+								{
+									"Modification": "Divide",
+									"Amount": "{{Item Price Modifier}}"
+								}
+							]
+						},
+						{
+							"Id": "{{ModId}}_.RandomRecipes",
+							"AvailableStockLimit": "Player",
+							"ItemId": "RANDOM_ITEMS (O)",
+							"MaxItems": 4,
+							"PerItemCondition": "ITEM_CATEGORY Target -7, ITEM_ID_PREFIX Target {{ModId}}_",
+							"AvoidRepeat": true,
+							"IsRecipe": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Divide",
+									"Amount": "{{Recipe Price Modifier}}"
+								}
+							]
+						}
+					]
+				}
+			}
+		}
+	]
+}

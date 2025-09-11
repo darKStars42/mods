@@ -1,0 +1,53 @@
+{
+    "Changes": [
+        // Enya Gift Reactions
+        {
+            "LogName": "Enya Gift Tastes",
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "Enya": "{{i18n:Gift.Enya.GiftReaction.Love}}/66 139 434 445 446 595 213 143 198/{{i18n:Gift.Enya.GiftReaction.Like}}/132 164 184 186 130 131 216/{{i18n:Gift.Enya.GiftReaction.Dislike}}/22 167 196/{{i18n:Gift.Enya.GiftReaction.Hate}}/220 253 395/{{i18n:Gift.Enya.GiftReaction.Neutral}}/144 340 80 60/"
+            }
+        },
+        // Unmarried/Not Dating/Not Engaged
+        {
+            "LogName": "N Abigail Flyers Reaction",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/Abigail",
+            "Entries": {
+                "AcceptGift_(O)invisibleposter": "{{i18n:Gift.Abigail.GiftReaction.invisibleposter}}"
+            }
+        },
+        {
+            "LogName": "N Emily Flyers Reaction",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/Emily",
+            "Entries": {
+                "AcceptGift_(O)invisibleposter": "{{i18n:Gift.Emily.GiftReaction.invisibleposter}}"
+            }
+        },
+        // Married/Engaged/Dating
+        {
+            "LogName": "Abigail Flyers Reaction",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/Abigail",
+            "When": {
+                "Relationship:Abigail": "Dating, Engaged, Married"
+            },
+            "Entries": {
+                "AcceptGift_(O)invisibleposter": "{{i18n:Gift.Abigail.GiftReaction.invisibleposter}}"
+            }
+        },
+        {
+            "LogName": "Emily Flyers Reaction",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/Emily",
+            "When": {
+                "Relationship:Emily": "Dating, Engaged, Married"
+            },
+            "Entries": {
+                "AcceptGift_(O)invisibleposter": "{{i18n:Gift.Emily.GiftReaction.invisibleposter}}"
+            }
+        }
+    ]
+}

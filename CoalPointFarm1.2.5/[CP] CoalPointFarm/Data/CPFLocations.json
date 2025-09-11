@@ -1,0 +1,304 @@
+{
+	"Changes": [
+		//Adding New Locations
+		{
+			"LogName": "Loading Coal Point Locations",
+			"Action": "Load",
+			"Target": "Maps/CoalPointFarm, Maps/CoalPointFarmhouse, Maps/APTMMHouse, Maps/APTMoraSpouseRoom, Maps/APTMarcusSpouseRoom, Maps/CPFSpousePatios",
+			"FromFile": "assets/{{Target}}.tmx"
+		},
+		
+		{
+			"LogName": "Loading Tilesheets",
+			"Action": "Load",
+			"Target": "maps/spring_z_APTOutdoors, maps/summer_z_APTOutdoors, maps/fall_z_APTOutdoors, maps/winter_z_APTOutdoors",
+			"FromFile": "assets/maps/{{TargetWithoutPath}}.png",
+		},
+		
+		//Temporary Maps
+		{
+			"LogName": "Loading Coal Point Locations",
+			"Action": "Load",
+			"Target": "Maps/AshidaBinocularsTown, Maps/AshidaBinocularsForest, Maps/CPF9HeartSplit, Maps/Mora10HeartMap, Maps/AshidaPolaroid, Maps/Marcus10HMountain",
+			"FromFile": "assets/maps/tempMaps/{{TargetWithoutPath}}.tmx"
+		},
+		{
+			"LogName": "Ashida Hometown 1",
+			"Action": "Load",
+            "Target": "Maps/Custom_AshidaHometown1",
+			"FromFile": "assets/maps/tempMaps/AshidaFlashback1.tmx",
+		},
+		{
+			"LogName": "Ashida Hometown 2",
+			"Action": "Load",
+            "Target": "Maps/Custom_AshidaHometown2",
+			"FromFile": "assets/maps/tempMaps/AshidaFlashback2.tmx",
+		},
+		
+		//Location Data
+		//Coal Point Farm
+		{
+			"LogName": "Coal Point Farm Location Data",
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"Entries": {
+				"CoalPointFarm": {
+					"DisplayName": "{{i18n:DisplayName.CoalPointFarm}}",
+					"FormerLocationNames": [ "Custom_CoalPointFarm" ],
+					"DefaultArrivalTile": {
+						"X": 38,
+						"Y": 48
+					},
+					"CreateOnLoad": {
+						"MapPath": "Maps/CoalPointFarm",
+					},
+					"CanPlantHere": false,
+					"ExcludeFromNpcPathfinding": false,
+					
+					"FishAreas": {
+						"CoalPointFarmDuckPond": {
+							"Position": {
+								"X": 7,
+								"Y": 16,
+								"Width": 12,
+								"Height": 8,
+							},
+							"CrabPotFishTypes": [],
+							"CrabPotJunkChance": 0.3,
+						},
+						"CoalPointFarmRavines": {
+							"Position": {
+								"X": 16,
+								"Y": 51,
+								"Width": 22,
+								"Height": 6,
+							},
+							"CrabPotFishTypes": [],
+							"CrabPotJunkChance": 0.3,
+						},
+					},
+				"ArtifactSpots": [
+    				{
+						"Chance": 0.6,
+    				    "ApplyGenerousEnchantment": true,
+    				    "OneDebrisPerDrop": true,
+    				    "Precedence": 0,
+    				    "ContinueOnDrop": false,
+    				    "Id": "(O)382",
+    				    "ItemId": "(O)382",
+    				    "MinStack": 1,
+    				    "MaxStack": 3,
+    				    "StackModifierMode": "Stack",
+    				    "QualityModifierMode": "Stack",
+    				},
+    				{
+    				    "Chance": 0.1,
+    				    "ApplyGenerousEnchantment": false,
+    				    "OneDebrisPerDrop": true,
+    				    "Precedence": 0,
+    				    "ContinueOnDrop": false,
+    				    "Id": "(O)581",
+    				    "ItemId": "(O)581",
+    				    "MinStack": -1,
+    				    "StackModifierMode": "Stack",
+    				    "QualityModifierMode": "Stack",
+    				},
+    				{
+    				    "Chance": 0.1,
+    				    "ApplyGenerousEnchantment": true,
+    				    "OneDebrisPerDrop": true,
+    				    "Precedence": 0,
+    				    "ContinueOnDrop": false,
+    				    "Id": "(O)378",
+    				    "ItemId": "(O)378",
+    				    "MinStack": 1,
+    				    "MaxStack": 3,
+    				    "StackModifierMode": "Stack",
+    				    "QualityModifierMode": "Stack",
+    				},
+    				{
+    				    "Chance": 0.15,
+    				    "ApplyGenerousEnchantment": false,
+    				    "OneDebrisPerDrop": true,
+    				    "Precedence": 0,
+    				    "ContinueOnDrop": false,
+    				    "Id": "LOST_BOOK_OR_ITEM (O)770",
+    				    "ItemId": "LOST_BOOK_OR_ITEM (O)770",
+    				    "MinStack": -1,
+    				    "StackModifierMode": "Stack",
+    				    "QualityModifierMode": "Stack",
+    				},
+    				{
+    				    "Chance": 0.25,
+    				    "ApplyGenerousEnchantment": true,
+    				    "OneDebrisPerDrop": true,
+    				    "Precedence": 0,
+    				    "ContinueOnDrop": false,
+    				    "Id": "(O)390",
+    				    "ItemId": "(O)390",
+    				    "MinStack": 1,
+    				    "MaxStack": 3,
+    				    "StackModifierMode": "Stack",
+    				    "QualityModifierMode": "Stack",
+    				}
+    				],
+					"Fish": [
+						//Ravines
+						{
+							"Id": "(O){{ModId}}_CPFCoalFish",
+							"ItemId": "(O){{ModId}}_CPFCoalFish",
+							"FishAreaId": "CoalPointFarmRavines",
+						},
+						{
+							"Id": "(O){{ModId}}_CPFPinefin",
+							"ItemId": "(O){{ModId}}_CPFPinefin",
+							"FishAreaId": "CoalPointFarmRavines",
+						},
+						{
+							"Id": "(O)158",
+							"ItemId": "(O)158",
+							"FishAreaId": "CoalPointFarmRavines",
+						},
+						{
+							"Id": "(O)698",
+							"ItemId": "(O)698",
+							"Condition": "SEASON summer winter",
+							"FishAreaId": "CoalPointFarmRavines",
+						},
+						//Duck Pond
+						{
+							"Id": "(O){{ModId}}_CPFAlgaeCoveredChub",
+							"ItemId": "(O){{ModId}}_CPFAlgaeCoveredChub",
+							"FishAreaId": "CoalPointFarmDuckPond",
+						},
+						{
+							"Id": "(O)142",
+							"ItemId": "(O)142",
+							"FishAreaId": "CoalPointFarmDuckPond",
+						},
+						{
+							"Id": "(O)153",
+							"ItemId": "(O)153",
+							"FishAreaId": "CoalPointFarmDuckPond",
+							"Chance": "0.6",
+						},
+					]
+				},
+				"CoalPointFarmhouse": {
+					"DisplayName": "{{i18n:DisplayName.CoalPointFarmhouse}}",
+					"FormerLocationNames": [ "Custom_CoalPointFarmhouse" ],
+					"DefaultArrivalTile": {
+						"X": 19,
+						"Y": 33
+					},
+					"CreateOnLoad": {
+						"MapPath": "Maps/CoalPointFarmhouse",
+					},
+					"CanPlantHere": false,
+					"ExcludeFromNpcPathfinding": false,
+				},
+				"APTMMHouse": {
+					"DisplayName": "{{i18n:DisplayName.APTMMHouse}}",
+					"FormerLocationNames": [ "Custom_APTMMHouse" ],
+					"DefaultArrivalTile": {
+						"X": 13,
+						"Y": 16
+					},
+					"CreateOnLoad": {
+						"MapPath": "Maps/APTMMHouse",
+					},
+					"CanPlantHere": false,
+					"ExcludeFromNpcPathfinding": false,
+				},
+				"AshidaBinocularsTown": {
+					"DisplayName": "{{i18n:DisplayName.AshidaBinocularsTown}}",
+					"FormerLocationNames": [ "Custom_AshidaBinocularsTown" ],
+					"DefaultArrivalTile": {
+						"X": 0,
+						"Y": 0
+					},
+					"CreateOnLoad": {
+						"MapPath": "Maps/AshidaBinocularsTown",
+					},
+					"CanPlantHere": false,
+					"ExcludeFromNpcPathfinding": true,
+				},
+				"AshidaBinocularsForest": {
+					"DisplayName": "{{i18n:DisplayName.AshidaBinocularsForest}}",
+					"FormerLocationNames": [ "Custom_AshidaBinocularsForest" ],
+					"DefaultArrivalTile": {
+						"X": 0,
+						"Y": 0
+					},
+					"CreateOnLoad": {
+						"MapPath": "Maps/AshidaBinocularsForest",
+					},
+					"CanPlantHere": false,
+					"ExcludeFromNpcPathfinding": true,
+				},
+				"CPF9HeartSplit": {
+					"DisplayName": "{{i18n:DisplayName.CPF9HeartSplit}}",
+					"DefaultArrivalTile": {
+						"X": 0,
+						"Y": 0
+					},
+					"CreateOnLoad": {
+						"MapPath": "Maps/CPF9HeartSplit",
+					},
+					"CanPlantHere": false,
+					"ExcludeFromNpcPathfinding": true,
+				},
+				"Mora10HeartMap": {
+					"DisplayName": "{{i18n:DisplayName.Mora10HeartMap}}",
+					"DefaultArrivalTile": {
+						"X": 0,
+						"Y": 0
+					},
+					"CreateOnLoad": {
+						"MapPath": "Maps/Mora10HeartMap",
+					},
+					"CanPlantHere": false,
+					"ExcludeFromNpcPathfinding": true,
+				},
+				"AshidaPolaroid": {
+					"DisplayName": "{{i18n:DisplayName.AshidaPolaroid}}",
+					"DefaultArrivalTile": {
+						"X": 0,
+						"Y": 0
+					},
+					"CreateOnLoad": {
+						"MapPath": "Maps/AshidaPolaroid",
+					},
+					"CanPlantHere": false,
+					"ExcludeFromNpcPathfinding": true,
+				},
+				"Marcus10HMountain": {
+					"DisplayName": "{{i18n:DisplayName.Marcus10HMountain}}",
+					"DefaultArrivalTile": {
+						"X": 0,
+						"Y": 0
+					},
+					"CreateOnLoad": {
+						"MapPath": "Maps/Marcus10HMountain",
+					},
+					"CanPlantHere": false,
+					"ExcludeFromNpcPathfinding": true,
+				},
+			}
+		},
+		//Garbage Cans
+		{
+			"LogName": "Coal Point Garbage",
+			"Action": "EditData",
+			"Target": "data/GarbageCans",
+			"TargetField": [ "GarbageCans" ],
+			"Entries": {
+				"{{ModId}}_MoraAndMarcus": {
+					"BaseChance": -1.0,
+					"Items": [],
+					"CustomFields": null
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "When": { "HasMod": "camiska.FrogTankFrogEgg" },
+      "Entries": {
+        "{{ModId}}_OnRainAndTadpole": {
+          "Id": "{{ModId}}_OnRainAndTadpole",
+          "Trigger": "DayEnding",
+          "Condition": "{{HasMod|contains=camiska.FrogTankFrogEgg}}, WEATHER Here Rain, PLAYER_HAS_CAUGHT_FISH Current (O)camiska.CPFrogTank_Tadpole, PLAYER_HEARTS Current Vincent 3, PLAYER_HEARTS Current Jas 3, PLAYER_HEARTS Current Marnie 5",
+          "Actions": [ "AddMail Current camiska.marnie_rain_frogs tomorrow" ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "When": { "HasMod": "camiska.FrogTankFrogEgg" },
+      "Entries": {
+        "{{ModId}}_SebFrogTankPrompt": {
+          "Id": "{{ModId}}_SebFrogTankPrompt",
+          "Trigger": "DayStarted",
+          "Condition": "ANY \"{{camiska.FrogTankFrogEgg/SRRHideSanctuary}}\" \"{{camiska.FrogTankFrogEgg/ShouldHideVanilla}}\" \"{{camiska.FrogTankFrogEgg/SebSwitchBlocksFrogTank}}\", PLAYER_HAS_SEEN_EVENT Current 9333220, PLAYER_HEARTS Current Sebastian 12, !PLAYER_HAS_CONVERSATION_TOPIC Current {{ModId}}_SebFrogTankPlacement, !PLAYER_HAS_MAIL Current {{ModId}}_SebFrogTankGiven Received",
+          "Actions": [ "AddConversationTopic {{ModId}}_SebFrogTankPlacement 4" ],
+          "MarkActionApplied": false
+        },
+        "{{ModId}}_SebFrogTankCleanup": {
+          "Id": "{{ModId}}_SebFrogTankCleanup",
+          "Trigger": "DayStarted",
+          "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_SebFrogTankGiven Received, PLAYER_HAS_CONVERSATION_TOPIC Current {{ModId}}_SebFrogTankPlacement",
+          "Actions": [
+            "RemoveConversationTopic {{ModId}}_SebFrogTankPlacement",
+            "RemoveMail {{ModId}}_SebFrogTankGiven"
+          ]
+        }
+      }
+    }
+  ]
+}

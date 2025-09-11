@@ -1,0 +1,136 @@
+{
+
+    "Changes": [
+
+
+
+//■■■Stardew Valley Expanded■■■
+
+
+
+//★★★期間、フラグでの封鎖や解放の項目★★★
+
+  //●"森"にボート追加(崖Add解放後)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Forest",
+        "FromFile": "assets/tmx/MapPatches/(SVE)_ForestBoat.tmx",
+        "ToArea": { "X": 90, "Y": 41, "Width": 3, "Height": 3 },
+        "When": {
+            "HasFlag": "{{ModId}}_CliffCave_Mail",
+        }
+      },
+
+
+
+//★★★期間、フラグでの封鎖や解放の項目(ダムロードが "true" 時の項目)★★★
+
+  //●"駅"にダムロードへのワープ追加(SVEのショトカに上書き)(ダムロード true 時のみ追加)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Railroad",
+        "FromFile": "assets/tmx/MapPatches/(SVE)_Railroad_DamRoad.tmx",
+        "ToArea": { "X": 56, "Y": 26, "Width": 1, "Height": 2 },
+        "When": {
+            "Enable the road to the dam": "true"
+        }
+      },
+
+  //●"AdventurerSummit"からダムロードへのワープ追加(上書き)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_AdventurerSummit",
+        "FromFile": "assets/tmx/MapPatches/(SVE)_AdventurerSummit_DamRoad_Warp.tmx",
+        "ToArea": { "X": 0, "Y": 14, "Width": 1, "Height": 2 },
+        "When": {
+            "Enable the road to the dam": "true"
+        }
+      },
+
+  //●"山"にダムロードへの入り口追加
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/(SVE)_Mountain_DamRoad.tmx",
+        "ToArea": { "X": 41, "Y": 0, "Width": 6, "Height": 10 },
+        "When": {
+            "Enable the road to the dam": "true"
+        }
+      },
+
+  //●"ダムロード"から山へのワープを変更
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Road",
+        "FromFile": "assets/tmx/MapPatches/(SVE)_DamRoad_Mountain_Warp.tmx",
+        "ToArea": { "X": 32, "Y": 87, "Width": 2, "Height": 1 },
+        "When": {
+            "Enable the road to the dam": "true"
+        }
+      },
+
+  //●"ダムロード"からAdventurerSummitへのワープ追加(マップ小変更)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Road",
+        "FromFile": "assets/tmx/MapPatches/(SVE)_DamRoad_AdventurerSummit_Warp.tmx",
+        "ToArea": { "X": 43, "Y": 50, "Width": 17, "Height": 11 },
+        "When": {
+            "Enable the road to the dam": "true"
+        }
+      },
+
+  //●"ダムロード"から駅へのワープ変更
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Road",
+        "FromFile": "assets/tmx/MapPatches/(SVE)_DamRoad_Railroad_Warp.tmx",
+        "ToArea": { "X": 0, "Y": 62, "Width": 1, "Height": 3 },
+        "When": {
+            "Enable the road to the dam": "true"
+        }
+      },
+
+
+
+//★★★期間、フラグでの封鎖や解放の項目(ダムロードが "false" 時の項目)★★★
+
+  //●"山"にダムロードへの入り口追加(ロード false 時)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/(SVE)_Mountain_DamRoad_false.tmx",
+        "ToArea": { "X": 41, "Y": 0, "Width": 6, "Height": 10 },
+        "When": {
+            "Enable the road to the dam": "false"
+        }
+      },
+
+  //●"山"からダムへの入り口を夏の３日まで封鎖(ロード false 時)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/StopStone.tmx",
+        "FromArea": { "X": 0, "Y": 0, "Width": 2, "Height": 2 },
+        "ToArea": { "X": 43, "Y": 4, "Width": 2, "Height": 2 },
+        "When": {
+            "Enable the road to the dam": "false",
+            "Query: {{DaysPlayed}} <= 30": "true"
+        }
+      },
+
+  //●ダムの編集(山へのマップ編集)(ロード false 時)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam",
+        "FromFile": "assets/tmx/MapPatches/(SVE)_Dam_DamRoad_false.tmx",
+        "ToArea": { "X": 13, "Y": 95, "Width": 7, "Height": 5 },
+        "When": {
+            "Enable the road to the dam": "false"
+        }
+      },
+
+
+
+    ] //▼"Changes"の終了▼
+}

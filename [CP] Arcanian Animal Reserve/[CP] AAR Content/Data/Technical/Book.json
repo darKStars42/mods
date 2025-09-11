@@ -1,0 +1,69 @@
+{
+"Changes":
+[
+	{
+"Action": "EditData",
+"Target": "spacechase0.SpaceCore/ObjectExtensionData",
+"Entries": {
+"{{ModID}}_AnimalBook": { "UseForTriggerAction": true, "CategoryTextOverride": "{{i18n:FC.Category.Book}}"},
+
+}
+},
+ {
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_AnimalBook": {
+"Id": "{{ModID}}_AnimalBook",
+"MarkActionApplied": false,
+"Trigger": "spacechase0.SpaceCore_OnItemUsed",
+"Condition": "ITEM_ID Input (O){{ModID}}_AnimalBook",
+"Actions": [
+"spacechase0.SpaceCore_OpenGuidebook {{ModId}}_AnimalBook"
+]
+}
+}
+},
+{
+"Action": "EditData",
+"Target": "spacechase0.SpaceCore/Guidebooks",
+"Entries":
+{
+"{{ModID}}_AnimalBook": {
+"Title": "{{i18n: FC.AnimalBook.Title}}",
+"PageTexture": "Mods/{{ModID}}/Page",
+"PagePadding": "16, 16",
+"DefaultChapter": "Title",
+"Chapters": {
+"Title": {
+"Name": "",
+"TabIconTexture": "Mods/{{ModID}}/Tab",
+"TabIconRect": { "X": 0, "Y": 0, "Width": 32, "Height": 16 },
+"Condition": "TRUE",
+"Pages": [
+{ "Contents": "{{i18n: FC.AnimalBook.Page.00}}" }, ///Intro
+{ "Contents": "{{i18n: FC.AnimalBook.Page.01}}" }, ///Galebison
+{ "Contents": "{{i18n: FC.AnimalBook.Page.02}}" }, ///Trabuul
+{ "Contents": "{{i18n: FC.AnimalBook.Page.03}}" }, ///Narubit
+{ "Contents": "{{i18n: FC.AnimalBook.Page.04}}" }, ///Tapi
+{ "Contents": "{{i18n: FC.AnimalBook.Page.05}}" }, ///Tuusca
+{ "Contents": "{{i18n: FC.AnimalBook.Page.06}}" }, ///Female Movoraptor
+{ "Contents": "{{i18n: FC.AnimalBook.Page.07}}" }, ///Male Movorpator
+{ "Contents": "{{i18n: FC.AnimalBook.Page.08}}" }, ///Dea Bird
+{ "Contents": "{{i18n: FC.AnimalBook.Page.09}}" }, ///Raphus Bird
+{ "Contents": "{{i18n: FC.AnimalBook.Page.10}}" }, ///Racon Dog
+{ "Contents": "{{i18n: FC.AnimalBook.Page.11}}" }, ///Shevit
+{ "Contents": "{{i18n: FC.AnimalBook.Page.12}}" }, ///Miniphant
+]
+},
+}
+}
+}
+},
+{
+"Action": "Load",
+"Target": "Mods/{{ModID}}/Page,Mods/{{ModID}}/Tab,Mods/{{ModID}}/PageDivider,Mods/{{ModID}}/FC.Book.Galebison,Mods/{{ModID}}/FC.Book.Gouud,Mods/{{ModID}}/FC.Book.Dog,Mods/{{ModID}}/FC.Book.Tapi,Mods/{{ModID}}/FC.Book.Dea,Mods/{{ModID}}/FC.Book.Miniphant,Mods/{{ModID}}/FC.Book.Movo,Mods/{{ModID}}/FC.Book.Naru,Mods/{{ModID}}/FC.Book.Raphus,Mods/{{ModID}}/FC.Book.Shevit,Mods/{{ModID}}/FC.Book.Tuusca,Mods/{{ModID}}/FC.Book.MaleMovo",
+"FromFile": "Assets/Book/{{TargetWithoutPath}}.png"
+},
+]
+}

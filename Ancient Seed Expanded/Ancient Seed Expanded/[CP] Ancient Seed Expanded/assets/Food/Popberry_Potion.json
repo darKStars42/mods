@@ -1,0 +1,81 @@
+{
+  "Changes": [
+    //Food
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Popberry_Potion":{
+          "Name": "Popberry Potion",
+          "DisplayName": "{{i18n:Popberry_Potion.DisplayName}}",
+          "Description": "{{i18n:Popberry_Potion.Description}}",
+          "Category": -7,
+          "Price" : 1800,
+          "IsDrink": false,
+          "Edibility": 343,
+          "Texture": "Mods/{{ModId}}/Popberry_Potion",
+          "SpriteIndex": 0,
+          "Buffs": [
+            {
+                  "Id": "Food",
+                  "BuffId": null,
+                  "IconTexture": null,
+                  "IconSpriteIndex": 0,
+                  "Duration": 600,
+                  "IsDebuff": false,
+                  "GlowColor": null,
+                  "CustomAttributes": {
+                  "FarmingLevel": 0.0,
+                  "FishingLevel": 0.0,
+                  "MiningLevel": 0.0,
+                  "LuckLevel": 0.0,
+                  "ForagingLevel": 0.0,
+                  "MaxStamina": 200.0,
+                  "MagneticRadius": 0.0,
+                  "Speed": 0.0,
+                  "Defense": 0.0,
+                  "Attack": 0.0
+                }
+              }
+            ],
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": null,
+          "CustomFields": null
+        }
+      }
+    },
+        {
+            "Action": "EditData",
+            "Target": "Data/CookingRecipes",
+            "Entries": {
+                "Popberry Potion": "{{ModId}}_Ancient_Popberry 1 64 2 308 1/25 5/{{ModId}}_Popberry_Potion/null/{{i18n:Popberry_Potion.DisplayName}}",
+            }
+    },
+    {
+          "Action": "EditData",
+          "Target": "Data/Shops",
+          "TargetField": ["Seed_Transformer", "Items"],
+          "Entries": {
+              "{{ModId}}_Popberry_Potion_recipe": {
+                  "Id": "{{ModId}}_Popberry_Potion_recipe",
+                  "ItemId": "{{ModId}}_Popberry_Potion",                    
+                  "Price": 0,
+                  "IsRecipe": true,
+                  "IgnoreShopPriceModifiers": true,
+                  "TradeItemId": "74", 
+                  "TradeItemAmount": 1,
+        },
+      }
+    },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Popberry_Potion",
+            "FromFile": "assets/Food/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

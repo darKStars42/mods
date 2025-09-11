@@ -1,0 +1,375 @@
+{
+	"Format": "2.6.0",
+	"Changes": [
+	{
+		"Action": "Load",
+		"Target": "Mods/Will.CitrusTrees/FruitTrees, Mods/Will.CitrusTrees/Objects",
+		"FromFile": "assets/{{TargetWithoutPath}}.png",
+	},
+	{
+		"LogName": "Adding The Saplings+Fruits+Drinks as items",
+		"Action": "EditData",
+		"Target": "Data/Objects",
+		"Entries": {
+			"{{ModID}}_Grapefruit": {
+				"Name": "{{ModID}}_Grapefruit",
+				"DisplayName": "Grapefruit",
+				"Description": "A large fruit that is bitter and sweet at the same time. It is known to react badly with many kinds of medications.",
+				"Type": "Basic",
+				"Category": -79,
+				"Price": 100,
+				"Texture": "Mods/{{ModID}}/Objects",
+				"SpriteIndex": 5,
+				"Edibility": 15,
+				"ContextTags": ["fruit_tree_item", "fruit_item", "category_fruits", "color_dark_orange"
+				]
+			},
+			"{{ModID}}_GrapefruitSapling": {
+				"Name": "{{ModID}}_GrapefruitSapling",
+				"DisplayName": "Grapefruit Sapling",
+				"Description": "Takes 28 days to produce a mature Grapefruit tree. Bears fruit in the Spring. Only grows if the surrounding tiles are empty.",
+				"Type": "Basic",
+				"Category": -74,
+				"Price": 1000,
+				"Texture": "Mods/{{ModID}}/Objects",
+				"SpriteIndex": 1,
+				"Edibility": -300,
+			},
+			"{{ModID}}_Lemon": {
+				"Name": "{{ModID}}_Lemon",
+				"DisplayName": "Lemon",
+				"Description": "A very tart fruit high in vitamin C.",
+				"Type": "Basic",
+				"Category": -79,
+				"Price": 160,
+				"Texture": "Mods/{{ModID}}/Objects",
+				"SpriteIndex": 4,
+				"Edibility": 16,
+				"ContextTags": [ "fruit_tree_item", "fruit_item", "category_fruits", "color_yellow"
+				]
+			},
+			"{{ModID}}_LemonSapling": {
+				"Name": "{{ModID}}_LemonSapling",
+				"DisplayName": "Lemon Sapling",
+				"Description": "Takes 28 days to produce a mature Lemon tree. Bears fruit in the Winter. Only grows if the surrounding tiles are empty.",
+				"Type": "Basic",
+				"Category": -74,
+				"Price": 1000,
+				"Texture": "Mods/{{ModID}}/Objects",
+				"SpriteIndex": 0,
+				"Edibility": -300,
+			},
+			"{{ModID}}_Lime": {
+				"Name": "{{ModID}}_Lime",
+				"DisplayName": "Lime",
+				"Description": "Sweeter than lemons, limes are a popular fruit for cocktails.",
+				"Type": "Basic",
+				"Category": -79,
+				"Price": 130,
+				"Texture": "Mods/{{ModID}}/Objects",
+				"SpriteIndex": 6,
+				"Edibility": 15,
+				"ContextTags": [ "fruit_tree_item", "fruit_item", "category_fruits", "color_lime"
+				]
+			},
+			"{{ModID}}_LimeSapling": {
+				"Name": "{{ModID}}_LimeSapling",
+				"DisplayName": "Lime Sapling",
+				"Description": "Takes 28 days to produce a mature Lime tree. Bears fruit in the Summer. Only grows if the surrounding tiles are empty.",
+				"Type": "Basic",
+				"Category": -74,
+				"Price": 1000,
+				"Texture": "Mods/{{ModID}}/Objects",
+				"SpriteIndex": 2,
+				"Edibility": -300,
+			},
+			"{{ModID}}_Tangerine": {
+				"Name": "{{ModID}}_Tangerine",
+				"DisplayName": "Tangerine",
+				"Description": "Easier to peel than oranges, and with a similar flavor, tangerines are a hit among younger audiences.",
+				"Type": "Basic",
+				"Category": -79,
+				"Price": 150,
+				"Texture": "Mods/{{ModID}}/Objects",
+				"SpriteIndex": 7,
+				"Edibility": 15,
+				"ContextTags": [ "fruit_tree_item", "fruit_item", "category_fruits", "color_orange"
+				]
+			},
+			"{{ModID}}_TangerineSapling": {
+				"Name": "{{ModID}}_TangerineSapling",
+				"DisplayName": "Tangerine Sapling",
+				"Description": "Takes 28 days to produce a mature Tangerine tree. Bears fruit in the Fall. Only grows if the surrounding tiles are empty.",
+				"Type": "Basic",
+				"Category": -74,
+				"Price": 1000,
+				"Texture": "Mods/{{ModID}}/Objects",
+				"SpriteIndex": 3,
+				"Edibility": -300,
+			},
+			"{{ModID}}_Limeade": {
+				"Name": "{{ModID}}_Limeade",
+				"DisplayName": "Limeade",
+				"Description": "This sweet beverage is a fantastic mixer for other drinks.",
+				"Type": "Cooking",
+				"Category": -7,
+				"Price": 300,
+				"Texture": "Mods/{{ModID}}/Objects",
+				"SpriteIndex": 8,
+				"Edibility": 50,
+				"IsDrink": "true",
+				"ContextTags": ["color_yellow_green"
+				]
+			},
+			"{{ModID}}_Lemonade": {
+				"Name": "{{ModID}}_Lemonade",
+				"DisplayName": "Lemonade",
+				"Description": "One of the most popular summer drinks for a reason, it's hard to find someone who doesn't enjoy a cold glass of lemonade.",
+				"Type": "Cooking",
+				"Category": -7,
+				"Price": 425,
+				"Texture": "Mods/{{ModID}}/Objects",
+				"SpriteIndex": 9,
+				"Edibility": 70,
+				"IsDrink": "true",
+				"ContextTags": ["color_yellow"
+				]
+			},
+		}
+	},
+	{
+		"LogName": "Adds the Fruits to the Damn Trees",
+		"Action": "EditData",
+		"Target": "Data/FruitTrees",
+		"Entries": {
+			"{{ModID}}_GrapefruitSapling": {
+				"DisplayName": "Grapefruit",
+				"Seasons": [
+				"Spring"
+				],
+				"Fruit": [
+				{
+					"ID": "GrapefruitFruit",
+					"ItemId": "{{ModID}}_Grapefruit",
+				}
+				],
+				"Texture": "Mods/{{ModID}}/FruitTrees",
+				"TextureSpriteRow": 0,
+			},
+			"{{ModID}}_LemonSapling": {
+				"DisplayName": "Lemon",
+				"Seasons": [
+				"Winter"
+				],
+				"Fruit": [
+				{
+					"ID": "LemonFruit",
+					"ItemId": "{{ModID}}_Lemon",
+				}
+				],
+				"Texture": "Mods/{{ModID}}/FruitTrees",
+				"TextureSpriteRow": 2,
+			},
+			"{{ModID}}_LimeSapling": {				
+				"DisplayName": "Lime",
+				"Seasons": [
+				"Summer"
+				],
+				"Fruit": [
+				{
+					"ID": "LimeFruit",
+					"ItemId": "{{ModID}}_Lime",
+				}
+				],
+				"Texture": "Mods/{{ModID}}/FruitTrees",
+				"TextureSpriteRow": 1,
+			},
+			"{{ModID}}_TangerineSapling": {
+				"DisplayName": "Tangerine",
+				"Seasons": [
+				"Fall"
+				],
+				"Fruit": [
+				{
+					"ID": "TangerineFruit",
+					"ItemId": "{{ModID}}_Tangerine",
+				}
+				],
+				"Texture": "Mods/{{ModID}}/FruitTrees",
+				"TextureSpriteRow": 3,
+			}
+		}
+	},
+	{
+		"LogName": "Adds To the shop",
+		"Action": "EditData",
+		"Target": "Data/Shops",
+		"TargetField": [
+		"SeedShop",
+		"Items"
+		],
+		"Entries": {
+			"{{ModID}}_GrapefruitSapling": {
+				"Id": "{{ModID}}_GrapefruitSapling",
+				"ItemId": "{{ModID}}_GrapefruitSapling",
+				"ObjectInternalName": "{{ModID}}_GrapefruitSapling",
+				"Price": 2000,
+			},
+			"{{ModID}}_LemonSapling": {
+				"Id": "{{ModID}}_LemonSapling",
+				"ItemId": "{{ModID}}_LemonSapling",
+				"ObjectInternalName": "{{ModID}}_LemonSapling",
+				"Price": 4000,
+			},
+			"{{ModID}}_LimeSapling": {
+				"Id": "{{ModID}}_LimeSapling",
+				"ItemId": "{{ModID}}_LimeSapling",
+				"ObjectInternalName": "{{ModID}}_LimeSapling",
+				"Price": 2500,
+			},
+			"{{ModID}}_TangerineSapling": {
+				"Id": "{{ModID}}_TangerineSapling",
+				"ItemId": "{{ModID}}_TangerineSapling",
+				"ObjectInternalName": "{{ModID}}_TangerineSapling",
+				"Price": 3000,
+			},
+		},
+		"MoveEntries": [
+		{
+			"ID": "{{ModID}}_GrapefruitSapling",
+			"BeforeID": "(O)630",
+		},
+		{
+			"ID": "{{ModID}}_LimeSapling",
+			"BeforeID": "(O)632",
+		},
+		{
+			"ID": "{{ModID}}_TangerineSapling",
+			"BeforeID": "(O)633",
+		},
+				{
+			"ID": "{{ModID}}_LemonSapling",
+			"AfterID": "(O)634",
+		},
+		]
+	},
+	{
+		"LogName": "Drink Recipes",
+		"Action": "EditData",
+		"Target": "Data/CookingRecipes",
+		"Entries": {
+			"{{ModID}}_Lemonade": "{{ModID}}_Lemon 2 (O)245 2/99 99/{{ModID}}_Lemonade/f Evelyn 5/",
+			"{{ModID}}_Limeade": "{{ModID}}_Lime 2 (O)245 2/99 99/{{ModID}}_Limeade/f Gus 5/",
+		}
+	},
+	{
+		"LogName": "Gift Tastes",
+		"Action": "EditData",
+		"Target": "Data/NPCGiftTastes",
+		"TextOperations": [
+		{	"Operation": "Append",
+		"Target": ["Fields", "Gus", 1],
+		"Value": "{{ModID}}_Lemon {{ModID}}_Lime",
+		"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Harvey", 1],
+			"Value": "{{ModID}}_Grapefruit",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Haley", 1],
+			"Value": "{{ModID}}_Grapefruit",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Shane", 1],
+			"Value": "{{ModID}}_Lime",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Jas", 1],
+			"Value": "{{ModID}}_Tangerine {{ModID}}_Lemonade",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Vincent", 1],
+			"Value": "{{ModID}}_Tangerine {{ModID}}_Lemonade",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Leo", 1],
+			"Value": "{{ModID}}_Tangerine {{ModID}}_Lemonade",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Emily", 1],
+			"Value": "{{ModID}}_Limeade {{ModID}}_Lemonade",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Alex", 1],
+			"Value": "{{ModID}}_Limeade",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Penny", 1],
+			"Value": "{{ModID}}_Lemonade",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Sandy", 1],
+			"Value": "{{ModID}}_Lemonade",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Jas", 5],
+			"Value": "{{ModID}}_Grapefruit {{ModID}}_Lemon",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Vincent", 5],
+			"Value": "{{ModID}}_Grapefruit {{ModID}}_Lemon",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Leo", 5],
+			"Value": "{{ModID}}_Lemon",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Lewis", 7],
+			"Value": "{{ModID}}_Grapefruit",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "George", 7],
+			"Value": "{{ModID}}_Grapefruit",
+			"Delimiter": " "
+		},
+		{
+			"Operation": "Append",
+			"Target": ["Fields", "Evelyn", 7],
+			"Value": "{{ModID}}_Grapefruit",
+			"Delimiter": " "
+		},
+		],
+	},
+			
+]
+}

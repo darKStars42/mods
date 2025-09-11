@@ -1,0 +1,59 @@
+{
+  "Changes": [
+   {
+      "Action": "EditData",
+      "Target": "Data/SpecialOrders",
+      "Entries": {
+        "maat.BetterThings_GoldenCoconutSapling": {
+          "Name": "[maat.BetterThings_Golden_Name]",
+          "Requester": "Clint",
+          "Duration": "Month",
+          "Repeatable": "true",
+          "RequiredTags": "island, season_summer",
+          "OrderType": "",
+          "SpecialRule": "",
+          "Text": "[Maat.BetterThings_Golden_Text]",
+          "ItemToRemoveOnEnd": null,
+          "MailToRemoveOnEnd": null,
+          "RandomizedElements": null,
+          "Objectives": [
+            {
+              "Type": "Collect",
+              "Text": "[maat.BetterThings_Golden_Objective_0_Text]",
+              "RequiredCount": "12",
+              "Data": {
+                "AcceptedContextTags": "item_golden_coconut"
+              }
+            },
+            {
+              "Type": "Deliver",
+              "Text": "[maat.BetterThings_Golden_Objective_1_Text]",
+              "RequiredCount": "12",
+              "Data": {
+                "AcceptedContextTags": "item_golden_coconut",
+                "Message": "{{i18n:golden.coconuts.dialoguegift}}",
+                "TargetName": "Clint"
+              }
+            }
+          ],
+          "Rewards": [
+            {
+              "Type": "Money",
+              "Data": {
+                "Amount": "75000"
+              }
+            },
+            {
+              "Type": "Mail",
+              "Data": {
+                "MailReceived": "maat.BetterThings_golden_mail",
+                "NoLetter": "false"
+              }
+            }
+          ]
+        }
+      },
+     "When": { "NewMissions": true, "FruitTree": true }
+    }
+   ]
+}

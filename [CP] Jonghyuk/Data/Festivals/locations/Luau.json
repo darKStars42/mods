@@ -1,0 +1,63 @@
+{
+	"Changes": [
+		// Without SVE
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer11",
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Jonghyuk 20 18 up",
+					"Delimiter": "/"
+				},
+				// Main Event
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"MainEvent_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Jonghyuk 20 18 right",
+					"Delimiter": "/"
+				}
+			]
+		},
+
+		// Spanner At Luau
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer11",
+			"When": {
+				"HasSeenEvent": "SpannerIntroConclusion"
+			},
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Spanner 58 36 left",
+					"Delimiter": "/"
+				},
+				// Main Event
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"MainEvent_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Spanner 58 36 left",
+					"Delimiter": "/"
+				}
+			]
+		}
+
+	]
+}

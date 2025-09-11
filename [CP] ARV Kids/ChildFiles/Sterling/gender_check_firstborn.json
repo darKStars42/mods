@@ -1,0 +1,40 @@
+{
+   "Changes": [
+	
+	
+	//1. A firstborn child which appears when the first child's internal gender is female.
+	//If using this template, remove template 3 from this file and delete the valid_any_firstborn.json from your folder
+	
+	//If you only want to load a custom female child and use the default Growing Valley child for a son, delete template 2 and the valid_male_firstborn.json file from your folder.
+	//If you want a unique son and daughter (or even just two unique children of the same gender; one will just have a differing internal gender), keep both template 1 and 2 and their required files.
+   		{      
+			"LogName": "Load a custom child as firstborn when firstborn internal gender is female.",
+			"Action": "Include",
+			"FromFile": "ChildFiles/Sterling/valid_female_firstborn.json", //Fill <parent NPC name> here. Don't keep the <>
+			"When": {
+				"FirstbornGenderInternal": "Female"
+			}
+		},
+	//template 1 end.
+		
+		
+		
+	//2. A firstborn child which appears when the first child's internal gender is male.
+	//If using this template, remove template 3 from this file and delete the valid_any_firstborn.json from your folder
+	
+	//If you only want to load a custom male child and use the default Growing Valley child for a daughter, delete template 1 and the valid_female_firstborn.json file from your folder.
+	//If you want a unique son and daughter (or even just two unique children of the same gender; one will just have a differing internal gender), keep both template 1 and 2 and their required files.
+   		{      
+			"LogName": "Load a custom child as firstborn when firstborn internal gender is male.",
+			"Action": "Include",
+			"FromFile": "ChildFiles/Sterling/valid_male_firstborn.json", //Fill <parent NPC name> here. Don't keep the <>
+			"When": {
+				"FirstbornGenderInternal": "Male"
+			}
+		},
+	//template 2 end.
+		
+		
+	
+   ] //don't delete this.
+} //don't delete this.

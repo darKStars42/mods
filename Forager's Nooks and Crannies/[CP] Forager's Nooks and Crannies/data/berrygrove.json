@@ -1,0 +1,45 @@
+{
+
+"Changes": [
+
+{
+	"LogName":"Map Patch Town for Berry Grove",
+	"Action": "EditMap",
+	"Target": "Maps/Town", 
+	"FromFile": "assets/Maps/TownEdit.tmx",
+	"ToArea": {
+			"X": 112,
+			"Y": 34,
+			"Width": 1,
+			"Height": 2
+			},
+
+	"When": {"BerryGroveToken": "1"}			
+},
+
+{
+	"LogName":"Add Warps to Berry Grove Map",
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_BerryGrove",
+	"AddWarps": ["9 24 Town 114 35"]
+},
+
+{
+	"LogName":"Add Warps from Town to Berry Grove",
+	"Action": "EditMap",
+	"Target": "Maps/Town",
+	"MapTiles": [
+		{
+		"Position": {
+			"X": 112,
+			"Y": 35
+		},
+		"Layer": "Buildings",
+		"SetProperties": {"Action": "Warp 12 24 Wildflour.NooksCrannies_BerryGrove"}
+		}
+	],
+	"When":{"BerryGroveToken": "1"}	
+}
+
+	]
+}

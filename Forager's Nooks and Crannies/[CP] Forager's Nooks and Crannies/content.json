@@ -1,0 +1,738 @@
+{
+		
+    "Format": "2.3.0",
+
+	/*"CustomLocations": [
+		{
+			"Name": "Custom_WF_AbandonedFarmhouse",
+			"FromMapFile": "assets/Maps/AbandonedFarmhouse.tmx"
+		},
+		{
+			"Name": "Custom_WF_BerryGrove",
+			"FromMapFile": "assets/Maps/BerryGrove.tmx"
+		},
+		{
+			"Name": "Custom_WF_CrystalCave",
+			"FromMapFile": "assets/Maps/CrystalCave.tmx"
+		},
+		{
+			"Name": "Custom_WF_FrogHollow",
+			"FromMapFile": "assets/Maps/FrogHollow.tmx"
+		},
+		{
+			"Name": "Custom_WF_MermaidGrotto",
+			"FromMapFile": "assets/Maps/MermaidGrotto.tmx"
+		},
+		{
+			"Name": "Custom_WF_OldForest",
+			"FromMapFile": "assets/Maps/OldForest.tmx"
+		},
+		{
+			"Name": "Custom_WF_MysticalForest",
+			"FromMapFile": "assets/Maps/MysticalForest.tmx"
+		},
+		{
+			"Name": "Custom_WF_RainforestRetreat",
+			"FromMapFile": "assets/Maps/RainforestRetreat.tmx"
+		},	
+		{
+			"Name": "Custom_WF_SecretOrchard",
+			"FromMapFile": "assets/Maps/SecretOrchard.tmx"
+		},
+		{
+			"Name": "Custom_WF_Ruins",
+			"FromMapFile": "assets/Maps/Ruins.tmx"
+		}
+		
+    ],
+*/
+	
+"DynamicTokens": [
+
+		{
+			"Name": "AbandonedFarmhouseToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5, 6, 7, 8}}",
+			"When": {"SkillLevel:Farming": "1, 2, 3"}
+		},
+		{
+			"Name": "AbandonedFarmhouseToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"SkillLevel:Farming": "4, 5"}
+		},
+		{
+			"Name": "AbandonedFarmhouseToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When":{ "SkillLevel:Farming": "6, 7, 8"}
+		},
+		{
+			"Name": "AbandonedFarmhouseToken",
+			"Value": "{{Random: 1, 2}}",
+			"When":{ "SkillLevel:Farming": "9"}
+		},
+		{
+			"Name": "AbandonedFarmhouseToken",
+			"Value": "1",
+			"When":{"Query: {{SkillLevel:Farming}} >= 10": true}
+		},
+		{
+			"Name": "AbandonedFarmhouseToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"Hearts:Evelyn":"3, 4, 5"}
+		}, 
+		{
+			"Name": "AbandonedFarmhouseToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When": {"Hearts:Evelyn":"6, 7, 8"}
+		}, 
+		{
+			"Name": "AbandonedFarmhouseToken",
+			"Value": "1",
+			"When": {"Hearts:Evelyn":"9, 10"}
+		},
+
+		{
+			"Name": "AbandonedFarmhouseToken",
+			"Value": "1",
+			"When":{"Atelier.Cauldron/ConfigValue:PresentLocationsConfig": true}
+		},
+		{
+			"Name": "AbandonedFarmhouseToken",
+			"Value": "1",
+			"When":{"HasMod|contains=Wildflour.SASS": true,"Hearts:WildflourSASS": "7,8,9,10"}
+		},
+
+		{
+			"Name": "BerryGroveToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5, 6, 7, 8}}",
+			"When": {"SkillLevel:Foraging": "1, 2, 3"}
+		},
+		{
+			"Name": "BerryGroveToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"SkillLevel:Foraging": "4, 5"}
+		},
+		{
+			"Name": "BerryGroveToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When":{ "SkillLevel:Foraging": "6, 7, 8"}
+		},
+		{
+			"Name": "BerryGroveToken",
+			"Value": "{{Random: 1, 2}}",
+			"When":{ "SkillLevel:Foraging": "9"}
+		},
+		{
+			"Name": "BerryGroveToken",
+			"Value": "1",
+			"When":{"Query: {{SkillLevel:Foraging}} >= 10": true}
+		},
+		{
+			"Name": "BerryGroveToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"Hearts:Jas":"3,4,5"}
+		}, 
+		{
+			"Name": "BerryGroveToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When": {"Hearts:Jas":"6, 7, 8"}
+		}, 
+		{
+			"Name": "BerryGroveToken",
+			"Value": "{{Random: 1}}",
+			"When": {"Hearts:Jas":"8,9,10"}
+		},
+
+		{
+			"Name": "BerryGroveToken",
+			"Value": "1",
+			"When":{"Atelier.Cauldron/ConfigValue:PresentLocationsConfig": true}
+		},
+		{
+			"Name": "BerryGroveToken",
+			"Value": "1",
+			"When":{"HasMod|contains=Wildflour.SASS": true,"Hearts:WildflourSASS": "7,8,9,10"}
+		},
+	
+		{
+			"Name": "CrystalCaveToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5, 6, 7, 8}}",
+			"When": {"SkillLevel:Mining": "1, 2, 3"}
+		},
+		{
+			"Name": "CrystalCaveToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"SkillLevel:Mining": "4, 5"}
+		},
+		{
+			"Name": "CrystalCaveToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When":{ "SkillLevel:Mining": "6, 7, 8"}
+		},
+		{
+			"Name": "CrystalCaveToken",
+			"Value": "{{Random: 1, 2}}",
+			"When":{ "SkillLevel:Mining": "9"}
+		},
+		{
+			"Name": "CrystalCaveToken",
+			"Value": "1",
+			"When":{"Query: {{SkillLevel:Mining}} >= 10": true}
+		},
+		{
+			"Name": "CrystalCaveToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"Hearts:Penny":"3, 4, 5"}
+		}, 
+		{
+			"Name": "CrystalCaveToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When": {"Hearts:Penny":"6, 7, 8"}
+		}, 
+		{
+			"Name": "CrystalCaveToken",
+			"Value": "1",
+			"When": {"Hearts:Penny":"9, 10"}
+		},
+		{
+			"Name": "CrystalCaveToken",
+			"Value": "1",
+			"When":{"Atelier.Cauldron/ConfigValue:PresentLocationsConfig": true}
+		},
+		{
+			"Name": "CrystalCaveToken",
+			"Value": "1",
+			"When":{"HasMod|contains=Wildflour.SASS": true,"Hearts:WildflourSASS": "7,8,9,10"}
+		},
+
+		{
+			"Name": "FrogHollowToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5, 6, 7, 8}}",
+			"When": {"SkillLevel:Combat": "1, 2, 3"}
+		},
+		{
+			"Name": "FrogHollowToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"SkillLevel:Combat": "4, 5"}
+		},
+		{
+			"Name": "FrogHollowToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When":{ "SkillLevel:Combat": "6, 7, 8"}
+		},
+		{
+			"Name": "FrogHollowToken",
+			"Value": "{{Random: 1, 2}}",
+			"When":{ "SkillLevel:Combat": "9"}
+		},
+		{
+			"Name": "FrogHollowToken",
+			"Value": "1",
+			"When":{"Query: {{SkillLevel:Combat}} >= 10": true}
+		},
+		{
+			"Name": "FrogHollowToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"Hearts:Sebastian":"3,4,5"}
+		}, 
+		{
+			"Name": "FrogHollowToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When": {"Hearts:Sebastian":"6,7,8"}
+		}, 
+		{
+			"Name": "FrogHollowToken",
+			"Value": "1",
+			"When": {"Hearts:Sebastian":"9,10"}
+		},
+		{
+			"Name": "FrogHollowToken",
+			"Value": "1",
+			"When":{"Atelier.Cauldron/ConfigValue:PresentLocationsConfig": true}
+		},
+		{
+			"Name": "FrogHollowToken",
+			"Value": "1",
+			"When":{"HasMod|contains=Wildflour.SASS": true,"Hearts:WildflourSASS": "7,8,9,10"}
+		},
+		
+		{
+			"Name": "OldForestToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5, 6, 7, 8}}",
+			"When": {"SkillLevel:Foraging": "1,2,3"}
+		},
+		{
+			"Name": "OldForestToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"SkillLevel:Foraging": "4,5"}
+		},
+		{
+			"Name": "OldForestToken",
+			"Value": "{{Random: 1,2,3}}",
+			"When":{ "SkillLevel:Foraging": "6,7,8"}
+		},
+		{
+			"Name": "OldForestToken",
+			"Value": "{{Random: 1,2}}",
+			"When":{ "SkillLevel:Foraging": "9"}
+		},
+		{
+			"Name": "OldForestToken",
+			"Value": "1",
+			"When":{"Query: {{SkillLevel:Foraging}} >= 10": true}
+		},
+		{
+			"Name": "OldForestToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"Hearts:Robin":"3,4,5"}
+		}, 
+		{
+			"Name": "OldForestToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When": {"Hearts:Robin":"6,7,8"}
+		}, 
+		{
+			"Name": "OldForestToken",
+			"Value": "1",
+			"When": {"Hearts:Robin":"9,10"}
+		},
+
+		{
+			"Name": "OldForestToken",
+			"Value": "1",
+			"When":{"Atelier.Cauldron/ConfigValue:PresentLocationsConfig": true}
+		},
+		{
+			"Name": "OldForestToken",
+			"Value": "1",
+			"When":{"HasMod|contains=Wildflour.SASS": true,"Hearts:WildflourSASS": "7,8,9,10"}
+		},
+
+		{
+			"Name": "MermaidGrottoToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5, 6, 7, 8}}",
+			"When": {"SkillLevel:Fishing": "1, 2, 3"}
+		},
+		{
+			"Name": "MermaidGrottoToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"SkillLevel:Fishing": "4, 5"}
+		},
+		{
+			"Name": "MermaidGrottoToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When":{ "SkillLevel:Fishing": "6,7,8"}
+		},
+		{
+			"Name": "MermaidGrottoToken",
+			"Value": "{{Random: 1, 2}}",
+			"When":{ "SkillLevel:Fishing": "9"}
+		},
+		{
+			"Name": "MermaidGrottoToken",
+			"Value": "1",
+			"When":{"Query: {{SkillLevel:Fishing}} >= 10": true}
+		},
+		{
+			"Name": "MermaidGrottoToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"Hearts:Willy":"3,4,5"}
+		}, 
+		{
+			"Name": "MermaidGrottoToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When":	{"Hearts:Willy":"6,7,8"}
+		}, 
+		{
+			"Name": "MermaidGrottoToken",
+			"Value": "1",
+			"When": {"Hearts:Willy":"9,10"}
+		},
+		{
+			"Name": "MermaidGrottoToken",
+			"Value": "1",
+			"When":{"Atelier.Cauldron/ConfigValue:PresentLocationsConfig": true}
+		},
+		{
+			"Name": "MermaidGrottoToken",
+			"Value": "1",
+			"When":{"HasMod|contains=Wildflour.SASS": true,"Hearts:WildflourSASS": "7,8,9,10"}
+		},
+
+		{
+			"Name": "MysticalForestToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5, 6, 7, 8}}",
+			"When":	{"SkillLevel:Foraging": "1, 2, 3"}
+		},
+		{
+			"Name": "MysticalForestToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When":{ "SkillLevel:Foraging": "4, 5"}
+		},
+		{
+			"Name": "MysticalForestToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When":{ "SkillLevel:Foraging": "6,7,8"}
+		},
+		{
+			"Name": "MysticalForestToken",
+			"Value": "{{Random: 1, 2}}",
+			"When":{ "SkillLevel:Foraging": "9"}
+		},
+		{
+			"Name": "MysticalForestToken",
+			"Value": "1",
+			"When":{"Query: {{SkillLevel:Foraging}} >= 10": true}
+		},
+		{
+			"Name": "MysticalForestToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"Hearts:Leah":"3,4,5"}
+		}, 
+		{
+			"Name": "MysticalForestToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When": {"Hearts:Leah":"6,7,8"}
+		}, 
+		{
+			"Name": "MysticalForestToken",
+			"Value": "1",
+			"When":{"Hearts:Leah":"9,10"}
+		},
+		{
+			"Name": "MysticalForestToken",
+			"Value": "1",
+			"When":{"Atelier.Cauldron/ConfigValue:PresentLocationsConfig": true}
+		},
+
+		{
+			"Name": "MysticalForestToken",
+			"Value": "1",
+			"When":{"HasMod|contains=Wildflour.SASS": true,"Hearts:WildflourSASS": "7,8,9,10"}
+		},
+		
+		{
+			"Name": "RainforestRetreatToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5, 6, 7, 8}}",
+			"When": {"SkillLevel:Fishing": "1, 2, 3"}
+		},
+		{
+			"Name": "RainforestRetreatToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"SkillLevel:Fishing": "4, 5"}
+		},
+		{
+			"Name": "RainforestRetreatToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When":{ "SkillLevel:Fishing": "6,7,8"}
+		},
+		{
+			"Name": "RainforestRetreatToken",
+			"Value": "{{Random: 1, 2}}",
+			"When":{ "SkillLevel:Fishing": "9"}
+		},
+		{
+			"Name": "RainforestRetreatToken",
+			"Value": "1",
+			"When":{"Query: {{SkillLevel:Fishing}} >= 10": true}
+		},
+		{
+			"Name": "RainforestRetreatToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"Hearts:Leo":"3,4,5"}
+		}, 
+		{
+			"Name": "RainforestRetreatToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When": {"Hearts:Leo":"6,7,8"}
+		}, 
+		{
+			"Name": "RainforestRetreatToken",
+			"Value": "1",
+			"When": {"Hearts:Leo":"9,10"}
+		},
+		{
+			"Name": "RainforestRetreatToken",
+			"Value": "1",
+			"When":{"Atelier.Cauldron/ConfigValue:PresentLocationsConfig": true}
+		},
+		{
+			"Name": "RainforestRetreatToken",
+			"Value": "1",
+			"When":{"HasMod|contains=Wildflour.SASS": true,"Hearts:WildflourSASS": "7,8,9,10"}
+		},
+		{
+			"Name": "SecretOrchardToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5, 6, 7, 8}}",
+			"When": {"SkillLevel:Farming": "1, 2, 3"}
+		},
+		{
+			"Name": "SecretOrchardToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"SkillLevel:Farming": "4, 5"}
+		},
+		{
+			"Name": "SecretOrchardToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When":{ "SkillLevel:Farming": "6, 7, 8"}
+		},
+		{
+			"Name": "SecretOrchardToken",
+			"Value": "{{Random: 1, 2}}",
+			"When":{ "SkillLevel:Farming": "9"}
+		},
+		{
+			"Name": "SecretOrchardToken",
+			"Value": "1",
+			"When":{"Query: {{SkillLevel:Farming}} >= 10": true}
+		},
+		{
+			"Name": "SecretOrchardToken",
+			"Value": "{{Random: 1, 2, 3, 4, 5}}",
+			"When": {"Hearts:Gus":"3,4,5"}
+		}, 
+		{
+			"Name": "SecretOrchardToken",
+			"Value": "{{Random: 1, 2, 3}}",
+			"When": {"Hearts:Gus":"6, 7"}
+		}, 
+		{
+			"Name": "SecretOrchardToken",
+			"Value": "1",
+			"When": {"Hearts:Gus":"8,9,10"}
+		},
+		{
+			"Name": "SecretOrchardToken",
+			"Value": "1",
+			"When":{"Atelier.Cauldron/ConfigValue:PresentLocationsConfig": true}
+		},
+		{
+			"Name": "SecretOrchardToken",
+			"Value": "1",
+			"When":{"HasMod|contains=Wildflour.SASS": true,"Hearts:WildflourSASS": "7,8,9,10"}
+		}
+		
+		],
+
+"Changes": [
+
+	//Add locations
+
+	{
+		"Action": "EditData",
+		"Target": "Data/Locations",
+		"Entries": {
+		  "Wildflour.NooksCrannies_AbandonedFarmhouse": {
+			"CreateOnLoad": {"MapPath": "Maps/Wildflour.NooksCrannies_AbandonedFarmhouse"},
+			"FormerLocationNames": [ "Custom_WF_AbandonedFarmhouse"],
+			"DisplayName": "{{i18n: AbandonedFarmhouse}}",
+			"ArtifactSpots": [],
+			"ExcludeFromNpcPathfinding": true
+		  },
+		  "Wildflour.NooksCrannies_BerryGrove": {
+			  "CreateOnLoad": {"MapPath": "Maps/Wildflour.NooksCrannies_BerryGrove"},
+			  "FormerLocationNames": ["Custom_WF_BerryGrove"],
+			  "DisplayName": "{{i18n: BerryGrove}}",
+			  "ExcludeFromNpcPathfinding": true
+		  },
+		  "Wildflour.NooksCrannies_CrystalCave": {
+			  "CreateOnLoad": {"MapPath": "Maps/Wildflour.NooksCrannies_CrystalCave"},
+			  "FormerLocationNames": ["Custom_WF_CrystalCave"],
+			  "DisplayName": "{{i18n: CrystalCave}}",
+			  "ExcludeFromNpcPathfinding": true
+		  },
+		  "Wildflour.NooksCrannies_FrogHollow": {
+			  "CreateOnLoad": {"MapPath": "Maps/Wildflour.NooksCrannies_FrogHollow"},
+			  "FormerLocationNames": ["Custom_WF_FrogHollow"],
+			  "DisplayName": "{{i18n: FrogHollow}}",
+			  "ExcludeFromNpcPathfinding": true
+		  },
+		  "Wildflour.NooksCrannies_MermaidGrotto": {
+			  "CreateOnLoad": {"MapPath": "Maps/Wildflour.NooksCrannies_MermaidGrotto"},
+			  "FormerLocationNames": ["Custom_WF_MermaidGrotto"],
+			  "DisplayName": "{{i18n: MermaidGrotto}}",
+			  "ExcludeFromNpcPathfinding": true,
+		  },
+		  "Wildflour.NooksCrannies_OldForest": {
+			  "CreateOnLoad": {"MapPath": "Maps/Wildflour.NooksCrannies_OldForest"},
+			  "FormerLocationNames": ["Custom_WF_OldForest"],
+			  "DisplayName": "{{i18n: OldForest}}",
+		  },
+		  "Wildflour.NooksCrannies_MysticalForest": {
+			  "CreateOnLoad": {
+				"MapPath": "Maps/Wildflour.NooksCrannies_MysticalForest"
+			  },
+			  "FormerLocationNames": [
+				"Custom_WF_MysticalForest"
+			  ],
+			  "DisplayName": "{{i18n: MysticalForest}}",
+		  },
+		  "Wildflour.NooksCrannies_RainforestRetreat": {
+			  "CreateOnLoad": {
+				"MapPath": "Maps/Wildflour.NooksCrannies_RainforestRetreat"
+			  },
+			  "FormerLocationNames": [
+				"Custom_WF_RainforestRetreat"
+			  ],
+			  "DisplayName": "{{i18n: RainforestRetreat}}"
+		  },
+		  "Wildflour.NooksCrannies_SecretOrchard": {
+			  "CreateOnLoad": {
+				"MapPath": "Maps/Wildflour.NooksCrannies_SecretOrchard"
+			  },
+			  "FormerLocationNames": [
+				"Custom_WF_SecretOrchard"
+			  ],
+			  "DisplayName": "{{i18n: SecretOrchard}}"
+		  },
+		  "Wildflour.NooksCrannies_Ruins": {
+			  "CreateOnLoad": {
+				"MapPath": "Maps/Wildflour.NooksCrannies_Ruins"
+			  },
+			  "FormerLocationNames": [
+				"Custom_WF_Ruins"
+			  ],
+			  "DisplayName": "{{i18n: Ruins}}",
+			  "CustomFields": {}
+		  }
+		}
+	},
+	 
+	/* load maps into game*/
+	{
+		"LogName": "Load Abandoned Farmhouse Map",
+		"Action": "Load",
+		"Target": "Maps/Wildflour.NooksCrannies_AbandonedFarmhouse",
+		"FromFile": "assets/Maps/AbandonedFarmhouse.tmx"
+	},
+	{
+		"LogName": "Load Berry Grove Map",
+		"Action": "Load",
+		"Target": "Maps/Wildflour.NooksCrannies_BerryGrove",
+		"FromFile": "assets/Maps/BerryGrove.tmx"
+	},
+	{
+		"LogName": "Load Crystal Cave Map",
+		"Action": "Load",
+		"Target": "Maps/Wildflour.NooksCrannies_CrystalCave",
+		"FromFile": "assets/Maps/CrystalCave.tmx"
+	},
+
+	{
+		"LogName": "Load Frog Hollow Map",
+		"Action": "Load",
+		"Target": "Maps/Wildflour.NooksCrannies_FrogHollow",
+		"FromFile": "assets/Maps/FrogHollow.tmx"
+	},
+	{
+		"LogName": "Load Mermaid Grotto Map",
+		"Action": "Load",
+		"Target": "Maps/Wildflour.NooksCrannies_MermaidGrotto",
+		"FromFile": "assets/Maps/MermaidGrotto.tmx"
+	},
+	{
+		"LogName": "Load Mystical Forest Map",
+		"Action": "Load",
+		"Target": "Maps/Wildflour.NooksCrannies_MysticalForest",
+		"FromFile": "assets/Maps/MysticalForest.tmx"
+	},
+	{
+		"LogName": "Load Old Forest Map",
+		"Action": "Load",
+		"Target": "Maps/Wildflour.NooksCrannies_OldForest",
+		"FromFile": "assets/Maps/OldForest.tmx"
+	},
+	{
+		"LogName": "Load RainforestRetreat Map",
+		"Action": "Load",
+		"Target": "Maps/Wildflour.NooksCrannies_RainforestRetreat",
+		"FromFile": "assets/Maps/RainforestRetreat.tmx"
+	},
+	{
+		"LogName": "Load Forest SecretOrchard Map",
+		"Action": "Load",
+		"Target": "Maps/Wildflour.NooksCrannies_SecretOrchard",
+		"FromFile": "assets/Maps/SecretOrchard.tmx"
+	},
+	{
+		"LogName": "Load Ruins Map",
+		"Action": "Load",
+		"Target": "Maps/Wildflour.NooksCrannies_Ruins",
+		"FromFile": "assets/Maps/Ruins.tmx"
+	},
+
+	{
+		"LogName": "Include Item Extensions Data",
+		"Action": "Include",
+		"FromFile": "Data/resources.json"
+	},
+
+  	{
+		"LogName": "Include Abandoned Farmhouse Data",
+		"Action": "Include",
+		"FromFile": "Data/farmhouse.json"
+	},
+
+	{
+		"LogName": "Include Berry Grove Data",
+		"Action": "Include",
+		"FromFile": "Data/berrygrove.json"
+	},
+
+	{
+		"LogName": "Include Old Forest Data",
+		"Action": "Include",
+		"FromFile": "Data/oldforest.json"
+	},
+
+	{
+		"LogName": "Include Secret Orchard Data",
+		"Action": "Include",
+		"FromFile": "Data/orchard.json"
+	},
+
+	{
+		"LogName": "Include Frog Hollow Data",
+		"Action": "Include",
+		"FromFile": "Data/froghollow.json"
+	},
+
+	{
+		"LogName": "Include Crystal Cave Data",
+		"Action": "Include",
+		"FromFile": "Data/crystalcave.json"
+	},
+
+	{
+		"LogName": "Include Mermaid Grotto Data",
+		"Action": "Include",
+		"FromFile": "Data/grotto.json"
+	},
+
+	{
+		"LogName": "Include Mystic Forest Data",
+		"Action": "Include",
+		"FromFile": "Data/mysticforest.json"
+	},
+
+	{
+		"LogName": "Include Rainforest Retreat Data",
+		"Action": "Include",
+		"FromFile": "Data/rainforest.json"
+	},
+
+	{
+		"LogName": "Include Ruins Data",
+		"Action": "Include",
+		"FromFile": "Data/ruins.json"
+	},
+
+	//cc data
+
+	{
+		"LogName": "Include Custom Companions Data",
+		"Action": "Include",
+		"FromFile": "Data/companions.json"
+	},
+
+	]
+}

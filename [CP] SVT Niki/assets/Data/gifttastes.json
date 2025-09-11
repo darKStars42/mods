@@ -1,0 +1,98 @@
+{
+	"Changes": 
+    [
+		{
+            "LogName": "SVTNiki Gift Taste Data - Before 14 heart event",
+            "Action": "EditData",
+            "When": {"HasSeenEvent |contains=SVTNiki14Caffeine": false},
+            "Target": "Data/NPCGiftTastes",
+            "Entries":
+            {
+                "SVTNiki": "{{i18n:SVTNiki.Gift.Love}}/264 609 230 253 Book_Horse FlashShifter.StardewValleyExpandedCP_Vegan_Cone/{{i18n:SVTNiki.Gift.Like}}/772 917 book_item FlashShifter.StardewValleyExpandedCP_Vegan_Cone/{{i18n:SVTNiki.Gift.Dislike}}/alcohol_item 814 -5/{{i18n:SVTNiki.Gift.Hate}}//{{i18n:SVTNiki.Gift.Neutral}}/semi_vegan 433 604 618 649 651 731 216 241 178 152 153 349 351 245 157/", 
+			}
+		},
+        {
+            "LogName":"SVTNiki Gift Dialogue",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/SVTNiki",
+            "Entries":{
+                "AcceptGift_(O)StardropTea": "{{i18n:SVTNiki.Gift.StardropTea}}", // Stardrop Tea (should not be removed)
+                "AcceptGift_semi_vegan": "{{i18n:SVTNiki.Gift.IsThisVegan}}",
+                "AcceptGift_(O)178": "{{i18n:SVTNiki.Gift.Hay}}", // Hay
+                "AcceptGift_book_item": "{{i18n:SVTNiki.Gift.Book}}", // Book !*test if horse: the book excluded
+                "AcceptGift_(O)ButterflyPowder": "{{i18n:SVTNiki.Gift.ButterflyPowder}}", // Butterfly Powder
+                "AcceptGift_(O)441": "{{i18n:SVTNiki.Gift.ExplosiveAmmo}}", // Explosive Ammo
+                "AcceptGift_(O)814": "{{i18n:SVTNiki.Gift.SquidInk}}", // Squid Ink
+            },
+        },        
+        {
+            "LogName":"SVTNiki Specific Gift Dialogue - Before 14 heart event",
+            "Action": "EditData",
+            "When": {"HasSeenEvent |contains=SVTNiki14Caffeine": false},
+            "Target": "Characters/Dialogue/SVTNiki",
+            "Entries":{
+                "AcceptGift_(O)253": "{{i18n:SVTNiki.Gift.TripleShotEspresso}}", // Triple Shot Espresso
+                "AcceptGift_(O)395": "{{i18n:SVTNiki.Gift.Coffee}}", // Coffee
+            },
+        },
+
+        {
+            "LogName":"SVTNiki Gift Dialogue - Unmet, Friendly",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/SVTNiki",
+            "Entries":{
+                // reject all non-vegan cooked food, mayonnaise, cheese and milk
+                "RejectItem_non_vegan": "{{i18n:SVTNiki.rejectGift.food{{Dating}}}}", // includes cheese
+                "RejectItem_milk_item": "{{i18n:SVTNiki.rejectGift.food{{Dating}}}}",
+                "RejectItem_Mayo_item": "{{i18n:SVTNiki.rejectGift.food{{Dating}}}}",
+
+                // SVE
+                "RejectItem_food_sushi": "{{i18n:SVTNiki.rejectGift.food{{Dating}}}}",
+                
+                // East Scarp
+
+                // Ridgeside Village
+
+            }
+        },
+
+        {
+            "LogName":"SVTNiki Gift Dialogue - Horsebook",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/SVTNiki",
+            "Entries":{
+                // with or without Hermy
+                "AcceptGift_(O)Book_Horse": "{{i18n:SVTNiki.Gift.HorseBook{{Marriage}}}}", // Horse: The Book
+            }
+        },
+        {
+            "LogName": "SVTNiki Gift Taste Data - After 14 heart event",
+            "Action": "EditData",
+            "When": {"HasSeenEvent": "SVTNiki14Caffeine"},
+            "Target": "Data/NPCGiftTastes",
+            "Entries":
+            // Likes TripleShotEssprosso, Neutral Coffee
+            {
+                "SVTNiki": "{{i18n:SVTNiki.Gift.Love}}/264 609 230 Book_Horse/{{i18n:SVTNiki.Gift.Like}}/772 917 book_item 253/{{i18n:SVTNiki.Gift.Dislike}}/814 -5/{{i18n:SVTNiki.Gift.Hate}}//{{i18n:SVTNiki.Gift.Neutral}}/433 604 618 649 651 731 216 241 178 152 153 349 351 245 157 395/", 
+			}
+		},
+        {
+            "LogName":"SVTNiki Specific Generic Gift Dialogue - After 14 heart event",
+            "Action": "EditData",
+            "When": {"HasSeenEvent": "SVTNiki14Caffeine"},
+            "Target": "Characters/Dialogue/SVTNiki",
+            "Entries":{
+                "AcceptGift_(O)253": "{{i18n:SVTNiki.Gift.TripleShotEspresso14}}", // Triple Shot Espresso
+                "AcceptGift_(O)395": "{{i18n:SVTNiki.Gift.Coffee14}}", // Coffee
+            },
+        },
+    ]
+}
+
+/* previously disliked Universal Hate exceptions (now hated)
+167 -20 275 BlueGrassStarter 926 378 710 852 463 872 464 297 791 GoldenMysteryBox TroutDerbyTag 380 879 MysteryBox 910 909 681 420 413 437 439 680 857 721 TentKit 93 94 690 261 688 886 689 892
+*/
+
+/* previously hated non-vegan food lists (now rejected)
+-5 424 426 -6 -14 194 195 197 198 201 202 204 206 209 211 212 213 214 215 218 219 220 221 223 225 226 227 228 231 232 233 234 240 242 243 608 727 728 729 730 732 733 904 921
+*/

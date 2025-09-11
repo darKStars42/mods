@@ -1,0 +1,225 @@
+{
+  "Format": "2.0.0",
+  "ConfigSchema": {
+    "AllowArmadillos": {
+      "AllowValues": "true, false",
+      "Default": "true"
+    },
+    "AllowBuffalo": {
+      "AllowValues": "true, false",
+      "Default": "true"
+    },
+    "AllowDeer": {
+      "AllowValues": "true, false",
+      "Default": "true"
+    },
+    "AllowMole": {
+      "AllowValues": "true, false",
+      "Default": "true"
+    },
+    "AllowBlackSheep": {
+      "AllowValues": "true, false",
+      "Default": "true"
+    },
+	"AllowPeafowl": {
+      "AllowValues": "true, false",
+      "Default": "true"
+    },
+    "AllowSilkworm": {
+      "AllowValues": "true, false",
+      "Default": "true"
+    }
+  },
+  "Changes": [
+    {
+      "LogName": "Include Amadillo",
+      "Action": "Include",
+      "When": {
+        "AllowArmadillos": "true"
+      },
+      "FromFile": "Data/armadillo.json"
+    },
+    {
+      "LogName": "Include Buffalo",
+      "Action": "Include",
+      "When": {
+        "AllowBuffalo": "true"
+      },
+      "FromFile": "Data/buffalo.json"
+    },
+    {
+      "LogName": "Include Deer",
+      "Action": "Include",
+      "When": {
+        "AllowDeer": "true"
+      },
+      "FromFile": "Data/deer.json"
+    },
+    {
+      "LogName": "Include Mole",
+      "Action": "Include",
+      "When": {
+        "AllowMole": "true"
+      },
+      "FromFile": "Data/mole.json"
+    },
+	{
+      "LogName": "Include Silkworm",
+      "Action": "Include",
+      "When": {
+        "AllowSilkworm": "true"
+      },
+      "FromFile": "Data/silkworm.json"
+    },
+	 {
+      "LogName": "Include Peafowl",
+      "Action": "Include",
+      "When": {
+        "AllowPeafowl": "true"
+      },
+      "FromFile": "Data/peafowl.json"
+    },
+    {
+      "LogName": "Include Sheep",
+      "Action": "Include",
+      "When": {
+        "AllowBlackSheep": "true"
+      },
+      "FromFile": "Data/sheep.json"
+    },
+	{
+            "LogName": "Load Shirt",
+            "Action": "Load",
+            "Target": "Clothing/TMT.TrentNewAnimals_Shirts",
+            "FromFile": "assets/Shirts.png"
+        },
+	{
+      "LogName": "Include Four Cheese Pizza",
+      "Action": "EditData",
+      "When": {
+        "AllowBuffalo": "true",
+		"AllowDeer": "true"		
+      },
+	  "Target": "Data/Objects",
+	  "Entries": {
+	  "TMT.TrentNewAnimals_Pizza_Quattro_Formaggi":{
+		  "Name": "TMT.TrentNewAnimals_Pizza_Quattro_Formaggi",
+		  "DisplayName": "{{i18n:TMT.TrentNewAnimals_Pizza_Quattro_Formaggi.name}}",
+		  "Description": "{{i18n:TMT.TrentNewAnimals_Pizza_Quattro_Formaggi.description}}",
+		  "Type": "Basic",
+		  "Category": -7,
+		  "Price": 750,
+		  "Texture": "{{InternalAssetKey: assets/Four_Cheese_Pizza.png}}",
+		  "SpriteIndex": "0",
+		  "Edibility": 150,	
+		  "ContextTags": ["color_yellow",
+		  "food_party"],
+		  },
+	  },
+    },
+	{
+      "LogName": "Include Four Cheese Pizza Recipe",
+      "Action": "EditData",
+      "When": {
+        "AllowBuffalo": "true",
+		"AllowDeer": "true"
+		},
+	  "Target": "Data/CookingRecipes",
+	  "Entries": {
+	  "TMT.TrentNewAnimals_Pizza_Quattro_Formaggi": "206 1 426 1 TMT.TrentNewAnimals_Buffalo_Cheese 1 TMT.TrentNewAnimals_Deer_Cheese 1 /1 10/TMT.TrentNewAnimals_Pizza_Quattro_Formaggi/l 100/",
+	  },
+    },
+	 {
+	 "LogName": "Include Four Cheese Pizza Recipe Shop",
+       "Action": "EditData",
+        "Target": "Data/Shops",
+        "TargetField": [
+                "Saloon",
+                "Items"
+            ],
+      "When": {
+        "AllowBuffalo": "true",
+		"AllowDeer": "true"
+		},
+	  "Entries": {
+			 "TMT.TrentNewAnimals_Pizza_Quattro_Formaggi":
+			 {
+				 "ActionsOnPurchase": null,
+				 "CustomFields": null,
+				 "TradeItemId": null,
+				 "TradeItemAmount": 1,
+				 "Price": 850,
+				 "ApplyProfitMargins": null,
+				 "AvailableStock": -1,
+				 "AvailableStockLimit": "Global",
+				 "AvoidRepeat": false,
+				 "UseObjectDataPrice": false,
+				 "IgnoreShopPriceModifiers": false,
+				 "PriceModifiers": null,
+				 "PriceModifierMode": "Stack",
+				 "AvailableStockModifiers": null,
+				 "AvailableStockModifierMode": "Stack",
+				 "Condition": null,
+				 "Id": "(O)TMT.TrentNewAnimals_Pizza_Quattro_Formaggi(Recipe)",
+				 "ItemId": "(O)TMT.TrentNewAnimals_Pizza_Quattro_Formaggi",
+				 "RandomItemId": null,
+				 "MaxItems": null,
+				 "MinStack": -1,
+				 "MaxStack": -1,
+				 "Quality": -1,
+				 "ObjectInternalName": null,
+				 "ObjectDisplayName": null,
+				 "ToolUpgradeLevel": -1,
+				 "IsRecipe": true,
+				 "StackModifiers": null,
+				 "StackModifierMode": "Stack",
+				 "QualityModifiers": null,
+				 "QualityModifierMode": "Stack",
+				 "ModData": null,
+				 "PerItemCondition": null
+				 },
+			 },
+	 },
+	  {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+	  "LogName": "GiftTastes",
+	    "When": {
+        "AllowBuffalo": "true",
+		"AllowDeer": "true"
+		},
+	  "TextOperations": [
+      {
+         "Operation": "Append",
+         "Target": ["Fields", "Shane", 1],
+         "Value": "TMT.TrentNewAnimals_Pizza_Quattro_Formaggi",
+         "Delimiter": " " // if there are already values, add a space between them and the new ones
+      },
+	  {
+         "Operation": "Append",
+         "Target": ["Fields", "Sam", 1],
+         "Value": "TMT.TrentNewAnimals_Pizza_Quattro_Formaggi",
+         "Delimiter": " " // if there are already values, add a space between them and the new ones
+      },
+	  {
+         "Operation": "Append",
+         "Target": ["Fields", "Leah", 7],
+         "Value": "TMT.TrentNewAnimals_Pizza_Quattro_Formaggi",
+         "Delimiter": " " // if there are already values, add a space between them and the new ones
+      },
+	  {
+         "Operation": "Append",
+         "Target": ["Fields", "Harvey", 5],
+         "Value": "TMT.TrentNewAnimals_Pizza_Quattro_Formaggi",
+         "Delimiter": " " // if there are already values, add a space between them and the new ones
+      },
+	  {
+         "Operation": "Append",
+         "Target": ["Fields", "Elliott", 5],
+         "Value": "TMT.TrentNewAnimals_Pizza_Quattro_Formaggi",
+         "Delimiter": " " // if there are already values, add a space between them and the new ones
+      },
+	  ],
+	  },
+  ]
+}

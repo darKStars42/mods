@@ -1,0 +1,67 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": [
+                "(BC)24",
+                "OutputRules"
+            ],
+            "Entries": {
+                "GooseMayonnaise": {
+                    "Id": "GooseMayonnaise",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)gooseEgg",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "(O)GooseMayonnaise",
+                            "ItemId": "(O)GooseMayonnaise"
+                        }
+                    ],
+                    "MinutesUntilReady": 180
+                },
+                "IridiumMayonnaise": {
+                    "Id": "IridiumMayonnaise",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)iridiumEgg",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "(O)IridiumMayonnaise",
+                            "ItemId": "(O)IridiumMayonnaise"
+                        }
+                    ],
+                    "MinutesUntilReady": 180
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+              "{{ModId}}_Curiosity_Lure": "336 1 GooseDown 3 444 1 64 1 768 5/Field/856/false/null/",
+              "Quality Bobber": "334 1 92 20 GooseDown 5/Home/877/false/null/"
+            }
+        },
+        
+        {
+            "Action": "EditData",
+            "Target": "Strings/BigCraftables",
+            "Entries": 
+                {
+                "OstrichIncubator_Name": "{{i18n:EIncubator_Name}}",
+                "OstrichIncubator_Description": "{{i18n:EIncubator_Description}}"
+                }
+
+        }
+    ]
+}

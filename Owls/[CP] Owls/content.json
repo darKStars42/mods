@@ -1,0 +1,161 @@
+{
+    "Format": "2.4.0",
+    "Changes": [
+        {
+            "LogName": "Load data for Owl (Owl)",
+            "Action": "EditData",
+            "Target": "Data/FarmAnimals",
+            "Entries": {
+                "Owl": {
+                    "DisplayName": "Owl",
+                    "House": "Coop",
+                    "Gender": "MaleOrFemale",
+                    "PurchasePrice": 1000,
+                    "ShopTexture": "Animals/Syanide23.BFAVOwl-Owl Icon",
+                    "ShopSourceRect": {
+                        "X": 0,
+                        "Y": 0,
+                        "Width": 32,
+                        "Height": 16
+                    },
+                    "RequiredBuilding": "Coop",
+                    "ShopDisplayName": "Owl",
+                    "ShopDescription": "A brown owl that lives in the coop.",
+					"EggItemIds": [
+					  "Syanide23.BFAVOwl_OwlEgg",
+					],
+					"IncubationTime": 9000,
+					"IncubatorParentSheetOffset": 1,
+					"BirthText": "A new owlet hatched!",
+                    "DaysToMature": "8",
+                    "ProduceItemIds": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 0,
+                            "ItemId": "Syanide23.BFAVOwl_OwlEgg"
+                        }
+                    ],
+                    "DeluxeProduceItemIds": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 0,
+                            "ItemId": "Syanide23.BFAVOwl_OwlEgg"
+                        }
+                    ],
+                    "DaysToProduce": "2",
+                    "HarvestType": "DropOvernight",
+                    "HarvestTool": null,
+                    "Sound": "owl",
+                    "BabySound": "owl",
+                    "Texture": "Animals/Syanide23.BFAVOwl-Owl",
+                    "HarvestedTexture": "Animals/Syanide23.BFAVOwl-Owl",
+                    "BabyTexture": "Animals/Syanide23.BFAVOwl-Owl Baby",
+					"UseFlippedRightForLeft": true,
+                    "SpriteWidth": "16",
+                    "SpriteHeight": "16",
+					"SellPrice": 500,
+                    "ShowInSummitCredits": true
+                }
+            }
+        },
+        {
+            "LogName": "Load adultSprite for Owl",
+            "Action": "Load",
+            "Target": "Animals/Syanide23.BFAVOwl-Owl",
+            "FromFile": "assets/Owl.png"
+        },
+        {
+            "LogName": "Load babySprite for Owl",
+            "Action": "Load",
+            "Target": "Animals/Syanide23.BFAVOwl-Owl Baby",
+            "FromFile": "assets/BabyOwl.png"
+        },
+        {
+            "LogName": "Load shopIcon for Owl",
+            "Action": "Load",
+            "Target": "Animals/Syanide23.BFAVOwl-Owl Icon",
+            "FromFile": "assets/owl_animalshop.png"
+        },
+		{
+			"LogName": "Load data for Owl Egg",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"Syanide23.BFAVOwl_OwlEgg": {
+				"Name": "Syanide23.BFAVOwl_OwlEgg",
+				"DisplayName": "Owl Egg",
+				"Description": "A large egg laid by an owl.",
+				"Type": "basic",
+				"Category": -5,
+				"Price": 250,
+				"Texture": "{{InternalAssetKey: assets/OwlEgg.png}}",
+				"SpriteIndex": 0,
+				"Edibility": -20,
+				"IsDrink": false,
+				"Buffs": null,
+				"GeodeDropsDefaultItems": false,
+				"GeodeDrops": null,
+				"ArtifactSpotChances": null,
+				"ExcludeFromFishingCollection": false,
+				"ExcludeFromShippingCollection": false,
+				"ExcludeFromRandomSale": false,
+				"ContextTags":null,
+				"CustomFields": null
+				}
+			}
+		},
+		{
+			"LogName": "Load data for Owl Mayonnaise",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"Syanide23.BFAVOwl_OwlMayonnaise": {
+				"Name": "Syanide23.BFAVOwl_OwlMayonnaise",
+				"DisplayName": "Owl Mayonnaise",
+				"Description": "It tastes sour.",
+				"Type": "basic",
+				"Category": -26,
+				"Price": 500,
+				"Texture": "{{InternalAssetKey: assets/OwlMayonnaise.png}}",
+				"SpriteIndex": 0,
+				"Edibility": -20,
+				"IsDrink": true,
+				"Buffs": null,
+				"GeodeDropsDefaultItems": false,
+				"GeodeDrops": null,
+				"ArtifactSpotChances": null,
+				"ExcludeFromFishingCollection": false,
+				"ExcludeFromShippingCollection": false,
+				"ExcludeFromRandomSale": false,
+				"ContextTags":null,
+				"CustomFields": null
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [ "(BC)24", "OutputRules" ],
+			"Entries": {
+				"Syanide23.BFAVOwl_OwlMayonnaise": {
+					"Id": "Syanide23.BFAVOwl_OwlMayonnaise",
+					"Triggers": 
+						[
+							{
+								"RequiredItemId": "Syanide23.BFAVOwl_OwlEgg"
+							}
+						],
+					"OutputItem":
+						[
+							{
+								"ItemId": "Syanide23.BFAVOwl_OwlMayonnaise"
+							}
+						],
+					"MinutesUntilReady": 200
+				}
+			}
+		},
+    ]
+}

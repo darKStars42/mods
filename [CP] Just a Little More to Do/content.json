@@ -1,0 +1,62 @@
+﻿{
+    "Format": "2.7.0",
+    "Changes": [
+        // ItemExtensions mod now also required
+//---Include Data---//
+        {
+            "Action": "Include",
+            "FromFile": "Data/CustomOre.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "Data/FishData.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "Data/FishPondData.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "Data/GarbageCans.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "Data/ItemExtension.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "Data/Location.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "Data/Machines.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "Data/NPCGiftTastes.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "Data/Objects.json"
+        },
+//---Load Data---//
+    {
+      "LogName": "LoadFish",
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/fish",
+      "FromFile": "assets/fish.png"
+    },
+    {
+      "LogName": "LoadGem",
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/minerals_artifacts",
+      "FromFile": "assets/minerals_artifacts.png"
+    },
+    {
+      "LogName": "LoadCrabpot",
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/crabpot",
+      "FromFile": "assets/crabpot.png"
+    },
+    ]
+}

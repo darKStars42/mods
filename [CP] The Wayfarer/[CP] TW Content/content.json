@@ -1,0 +1,186 @@
+{
+"Format":"2.7.2",
+"DynamicTokens": [
+ //Festival Year check
+   {
+"Name": "YearCheck",
+ "Value": ""
+},
+   {
+"Name": "YearCheck",
+"Value": "_y2",
+ "When": { "Query: {{Year}} % 2 = 1": false,
+}
+ },
+
+ ////Boat Patches
+      {
+"Name": "MapTarget", ///Default Beach
+"Value": "Beach",
+ "When": { 
+"DayOfWeek": "Monday,Tuesday,Wednesday,Thursday",
+}
+ },
+     {
+"Name": "BoatPatchMap", ///Default Beach
+"Value": "BoatHousePlacementBeach",
+ "When": { 
+"DayOfWeek": "Monday,Tuesday,Wednesday,Thursday",
+}
+ },
+      {
+"Name": "BoatHousePlacementSizeW", ///Default Beach
+"Value": "12",
+ "When": { 
+"DayOfWeek": "Monday,Tuesday,Wednesday,Thursday",
+}
+ },
+       {
+"Name": "BoatHousePlacementSizeH", ///Default Beach
+"Value": "8",
+ "When": { 
+"DayOfWeek": "Monday,Tuesday,Wednesday,Thursday",
+}
+ },
+    {
+"Name": "BoatPatchX", ///Default Beach
+"Value": "43",
+ "When": { 
+"DayOfWeek": "Monday,Tuesday,Wednesday,Thursday",
+}
+ },
+     {
+"Name": "BoatPatchY", ///Default Beach
+"Value": "24",
+ "When": { 
+"DayOfWeek": "Monday,Tuesday,Wednesday,Thursday",
+}
+ },
+      {
+"Name": "BoatPatchInnerWarp", ///Default Beach
+"Value": "11 12 Beach 49 30",
+ "When": { 
+"DayOfWeek": "Monday,Tuesday,Wednesday,Thursday",
+}
+ },
+       {
+"Name": "MapTarget", ///Default GingerIsland
+"Value": "Island_W",
+ "When": { 
+"DayOfWeek": "Friday,Saturday,Sunday",
+}
+ },
+      {
+"Name": "BoatPatchMap", ///Default GingerIsland
+"Value": "BoatHousePlacementGingerIsland",
+ "When": { 
+"DayOfWeek": "Friday,Saturday,Sunday",
+}
+ },
+       {
+"Name": "BoatHousePlacementSizeW", ///Default GingerIsland
+"Value": "11",
+ "When": { 
+"DayOfWeek": "Friday,Saturday,Sunday",
+}
+ },
+       {
+"Name": "BoatHousePlacementSizeH", ///Default GingerIsland
+"Value": "8",
+ "When": { 
+"DayOfWeek": "Friday,Saturday,Sunday",
+}
+ },
+    {
+"Name": "BoatPatchX", ///Default GingerIsland
+"Value": "7",
+ "When": { 
+"DayOfWeek": "Friday,Saturday,Sunday",
+}
+ },
+     {
+"Name": "BoatPatchY", ///Default GingerIsland
+"Value": "44",
+ "When": { 
+"DayOfWeek": "Friday,Saturday,Sunday",
+}
+ },
+       {
+"Name": "BoatPatchInnerWarp", ///Default GingerIsland
+"Value": "11 12 IslandWest 13 50",
+ "When": { 
+"DayOfWeek": "Friday,Saturday,Sunday",
+}
+ },
+////// Dispo Conditionals
+    {
+"Name": "RomanceTrigger", ///Default not romanceable
+"Value": "false",
+ },
+       {
+"Name": "RomanceTrigger", ///Is romancable
+"Value": "true",
+ "When": { 
+"HasFlag |contains={{ModID}}_SomethingRomantic.Mail": true,
+ }
+},
+    {
+"Name": "RoswellSpawnX", ///Default not romanceable
+"Value": "12",
+ },
+       {
+"Name": "RoswellSpawnY", ///Is romancable
+"Value": "9",
+},
+    {
+"Name": "RoswellSpawnX", ///Default not romanceable
+"Value": "50",
+ "When": { 
+"Relationship:FC.Lyell |contains=Married": true,
+}
+},
+       {
+"Name": "RoswellSpawnY", 
+"Value": "24",
+ "When": { 
+"Relationship:FC.Lyell |contains=Married": true,
+}
+},
+       {
+"Name": "RoswellSpawnMap", 
+"Value": "{{ModID}}_HalkiasResidents",
+},
+       {
+"Name": "RoswellSpawnMap", ///Is romancable
+"Value": "FarmHouse",
+ "When": { 
+"Relationship:FC.Lyell |contains=Married": true,
+}
+},
+],
+"Changes":[ 
+
+
+/************************************************
+Technical Includes
+ ************************************************/
+  {
+"LogName": "TW Technical Information",
+"Action": "Include",
+"FromFile": "Data/Technical/SecretNotes.json,Data/Technical/WorldMap.json,Data/Technical/Book.json,Data/Technical/Buffs.json,Data/Technical/Music.json,Data/Technical/WorldEvents.json,Data/Technical/Crops.json,Data/Technical/Machines.json,Data/Technical/Shops.json,Data/Technical/Quest.json,Data/Technical/MailTriggers.json,Data/Technical/Recipes.json,Data/Technical/Objects.json,Data/Technical/AnimalSpawns.json,Data/Technical/ExtraDialogue.json,Data/Technical/MapPatches.json,Data/Technical/Loadables.json,Data/Technical/LocationalMaps.json,Data/Technical/Meep.json"
+ },  
+ /************************************************
+ Character Includes
+ ************************************************/
+ {
+"LogName": "Lyell Info",
+"Action": "Include",
+"FromFile": "Data/Characters/Lyell/Events.json,Data/Characters/Lyell/Dialogue.json,Data/Characters/Lyell/Dispositions.json,Data/Characters/Lyell/Events.json,Data/Characters/Lyell/Festivals.json,Data/Characters/Lyell/GiftTaste.json,Data/Characters/Lyell/Movies.json,Data/Characters/Lyell/Schedules.json"
+ },
+  {
+"LogName": "Roswell Info",
+"Action": "Include",
+"FromFile": "Data/Characters/Roswell/Dialogue.json,Data/Characters/Roswell/Dispositions.json,Data/Characters/Roswell/GiftTaste.json,Data/Characters/Roswell/Schedules.json"
+ },
+ ] 
+}

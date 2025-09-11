@@ -1,0 +1,152 @@
+{
+
+"Changes": [
+
+{
+	"LogName":"Map Patch IslandEast for Rainforest Retreat",
+	"Action": "EditMap",
+	"Target": "Maps/Island_E", 
+	"FromFile": "assets/Maps/IslandEdit.tmx",
+	"ToArea": {
+			"X": 24,
+			"Y": 23,
+			"Width": 3,
+			"Height": 3
+			},
+
+	"When":{"RainforestRetreatToken": "1"}	
+},
+
+{
+	"LogName":"Add Warp to IslandEast for Rainforest Retreat",
+	"Action": "EditMap",
+	"Target": "Maps/Island_E",
+	"AddWarps": ["25 25 Wildflour.NooksCrannies_RainforestRetreat 36 49"],
+
+	"When":{"RainforestRetreatToken": "1"}	
+},
+
+{
+	"LogName":"Add Warps to Rainforest Retreat",
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_RainforestRetreat",
+	"AddWarps": ["36 52 IslandEast 26 32",
+				"37 52 IslandEast 27 32",
+				"38 52 IslandEast 28 32"]
+},
+
+////////////////////////
+// WILD TREE SPAWNING //
+////////////////////////
+
+{
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_RainforestRetreat",
+	"When": {"Atelier.Cauldron/ConfigValue:WildFood": "True"},
+	"MapTiles": [
+		{
+			"Position": { "X": 13, "Y": 7 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"p",
+			"SetProperties": {
+				"SpawnTree": "fruit Wildflour.AtelierGoods_Cashew_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 18, "Y": 34 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"p",
+			"SetProperties": {
+				"SpawnTree": "fruit Wildflour.AtelierGoods_Cashew_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 8, "Y": 41 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"p",
+			"SetProperties": {
+				"SpawnTree": "fruit Wildflour.AtelierGoods_Cacao_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 36, "Y": 35 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"p",
+			"SetProperties": {
+				"SpawnTree": "fruit Wildflour.AtelierGoods_Cacao_Sapling"
+			}
+		},
+		{
+			"Position": { "X": 35, "Y": 30 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"p",
+			"SetProperties": {
+				"SpawnTree": "fruit Wildflour.AtelierGoods_Olive_Sapling"
+			}
+		},
+
+	]
+},
+
+{
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_RainforestRetreat",
+	"When": {"Atelier.Cauldron/ConfigValue:WildFood": "False"},
+	"MapTiles": [
+		{
+			"Position": { "X": 13, "Y": 7 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"p",
+			"SetProperties": {
+				"SpawnTree": "fruit 835 5"
+			}
+		},
+		{
+			"Position": { "X": 18, "Y": 34 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"p",
+			"SetProperties": {
+				"SpawnTree": "fruit 835 5"
+			}
+		},
+		{
+			"Position": { "X": 8, "Y": 41 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"p",
+			"SetProperties": {
+				"SpawnTree": "fruit 69 5"
+			}
+		},
+		{
+			"Position": { "X": 36, "Y": 35 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"p",
+			"SetProperties": {
+				"SpawnTree": "fruit 69 5"
+			}
+		},
+		{
+			"Position": { "X": 35, "Y": 30 },
+			"Layer": "Paths",
+			"SetIndex": "34",
+			"SetTilesheet":"p",
+			"SetProperties": {
+				"SpawnTree": "fruit 69 5"
+			}
+		},
+
+	]
+}
+
+
+	]
+}

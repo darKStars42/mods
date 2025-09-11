@@ -1,0 +1,94 @@
+{
+"Changes": [
+	 {
+"Action": "EditImage",
+"LogName": "Overworld map edit",
+"Target": "LooseSprites/map,LooseSprites/map_summer,LooseSprites/map_fall,LooseSprites/map_winter",
+"FromFile": "Assets/Maps/Tilesheets/WorldMap.png",
+ "PatchMode":"overlay",
+"ToArea":{ "X": 183, "Y": 148, "Width": 9, "Height": 6
+ },
+  "When": { 
+"DayOfWeek": "Monday,Tuesday,Wednesday,Thursday",
+"Relationship:FC.Lyell |contains=Married": false,
+}
+ },
+{
+"Action": "EditData",
+"Target": "Data/WorldMap",
+ "When": { 
+"DayOfWeek": "Monday,Tuesday,Wednesday,Thursday",
+"Relationship:FC.Lyell |contains=Married": false,
+},
+"TargetField": [
+"Valley",
+"MapAreas"
+],
+"Entries": {
+"{{ModID}}_HalkiasResidents": {
+"Id": "{{ModID}}_HalkiasResidents",
+"PixelArea": {
+"X": 183,
+"Y": 148,
+"Width": 9,
+"Height": 6
+},
+"Tooltips": [
+{
+"Id": "{{ModID}}_HalkiasResidents",
+"Text": "{{i18n:FC.HalkiasResidents}}",
+}
+]
+}
+}
+},
+{
+"Action": "EditData",
+"Target": "Data/WorldMap",
+"TargetField": [
+"Valley",
+"MapAreas",
+"#8",
+"WorldPositions"
+],
+"Entries": {
+"{{ModID}}_HalkiasResidents": {
+"Id": "{{ModID}}_HalkiasResidents",
+"LocationContext": "Default",
+"LocationName": "{{ModID}}_HalkiasResidents",
+"Tile Area": {
+"X": 0,
+"Y": 0,
+"Width": 9,
+"Height": 6
+},
+"MapPixelArea": {
+"X": 183,
+"Y": 148,
+"Width": 9,
+"Height": 6
+},
+"ScrollText": "{{i18n:FC.HalkiasResidents}}"
+},
+"{{ModID}}_BoatBelly": {
+"Id": "{{ModID}}_BoatBelly",
+"LocationContext": "Default",
+"LocationName": "{{ModID}}_BoatBelly",
+"Tile Area": {
+"X": 0,
+"Y": 0,
+"Width": 9,
+"Height": 6
+},
+"MapPixelArea": {
+"X": 183,
+"Y": 148,
+"Width": 9,
+"Height": 6
+},
+"ScrollText": "{{i18n:FC.HalkiasResidents}}"
+}
+}
+},
+]
+}

@@ -1,0 +1,20 @@
+{
+   "Changes": [
+   		{      
+			"LogName": "Load Penny's daughter as firstborn when firstborn internal gender is female.",
+			"Action": "Include",
+			"FromFile": "ChildFiles/Penny/valid_firstborn_Penny.json", 
+			"When": {
+				"FirstbornGenderInternal": "Female"
+			}
+		},
+   		{      
+			"LogName": "Load default firstborn when firstborn internal gender is not female.",
+			"Action": "Include",
+			"FromFile": "ChildFiles/Farmer_Default/default_firstborn.json", 
+			"When": {
+				"FirstbornGenderInternal|contains=Female": false
+			}
+		},
+   ]
+}

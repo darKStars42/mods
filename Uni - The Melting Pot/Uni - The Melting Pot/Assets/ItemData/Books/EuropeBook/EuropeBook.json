@@ -1,0 +1,76 @@
+{
+    "Changes": 
+    [
+        {
+            "LogName": "Book Item Texture",
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Book/EUBook",
+            "FromFile": "Assets/Images/Book/EUBook/EUCookBook.png"
+        },
+
+        {
+            "LogName":"Add book to object data",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries":
+            {
+                "Book_AnyoneCanCook":
+                {
+                    "Name": "Anyone can cook: Except you",
+                    "DisplayName": "{{i18n:object.BookEU.name}}",
+                    "Description": "{{i18n:object.BookEU.description}}",
+                    "Type": "asdf",
+                    "Category": -102,
+                    "Price": 2500,
+                    "Texture": "Mods/{{ModId}}/Book/EUBook",
+                    "Edibility": -300,
+                    "IsDrink": false,
+                    "Buffs": null,
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromFishingCollection": false,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": false,
+                    "ContextTags": [
+                    "color_black",
+                    "book_item",
+                    "spu_recipe_book",
+                    "Book"
+                    ],
+                    "CustomFields": {
+                        "Spiderbuttons.SpecialPowerUtilities/Books/RecipePrefix": "{{ModId}}_EU_"
+                    }
+                }
+            }
+        },
+
+        {
+            "Action":"EditData",
+            "Target": "Strings/Objects",
+            "Entries":
+            {
+                "AnyoneCanCook_Name": "{{i18n:object.BookEU.name}}",
+                "AnyoneCanCook_Description": "{{i18n:object.BookEU.description}}"
+            }
+        },
+
+        {
+            "LogName":"Add Europe Book to Desert Trader",
+            "Action":"EditData",
+            "Target":"Data/Shops",
+            "TargetField": ["DesertTrade", "Items"],
+            "Entries":
+            {
+                "{{ModId}}_EUBook":
+                    {
+                      "TradeItemId":"380",
+                      "TradeItemAmount":1,
+                      "ItemId":"Book_AnyoneCanCook"
+                    }
+            }
+        }
+    ]
+}

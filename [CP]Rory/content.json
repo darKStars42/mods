@@ -1,0 +1,87 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+    {
+      "LogName": "NPC Gift Tastes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Rory": "This made my day!/66 70 80 104 126 127/I can share this with Ariah! Thanks!/156 206 220 305 422 -2/Oh. Thanks?/227 228/This feels like some kind of joke?/274 342 445/Thanks!/ "
+      }
+    },
+{
+"Action": "EditData",
+    "Target": "Data/Characters",
+    "Entries": {
+        "Rory": {
+            "Appearance": [
+                {
+                    "Id": "Default",
+                    "Portrait": "Portraits/Rory",
+                    "Sprite": "Characters/Rory"
+			}
+			]
+			}
+			}
+       },
+{
+    "Action": "Load",
+    "Target": "Characters/Rory",
+    "FromFile": "assets/img/spritesheet.png"
+
+},
+{
+    "Action": "Load",
+    "Target": "Portraits/Rory",
+    "FromFile": "assets/img/portrait.png"
+
+},
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+	"Target": "Characters/Dialogue/Rory",
+      "FromFile": "assets/dialogue/Dialogue.json"
+    },
+    {
+      "LogName": "Schedule",
+      "Action": "Include",
+      "FromFile": "assets/schedules/schedule.json"
+    },
+    {
+      "LogName": "Events",
+      "Action": "Include",
+      "FromFile": "assets/Events/Custom_Ridgeside_PurpleMansion.json, assets/Events/Custom_Ridgeside_PurpleMansion2ndFloor.json, assets/Events/Custom_Ridgeside_RidgesideVillage.json"
+    },
+    {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+                "Rory": {
+                    "DisplayName": "Rory",
+                    "BirthSeason": "Winter",
+                    "BirthDay": 3,
+                    "HomeRegion": "Other",
+                    "Gender": "Undefined",
+                    "Age": "Teen",
+                    "Manner": "Rude",
+                    "SocialAnxiety": "Outgoing",
+                    "Optimism": "Negative",
+			   "CanSocialize": "true",		
+                    "CanBeRomanced": false,
+                    "CanReceiveGifts": "true",
+   			"UnlockConditions": "DAYS_PLAYED 20",
+
+                    "Home": [
+                        {
+                            "Id": "Default",
+                            "Location": "Custom_Ridgeside_PurpleMansion",
+                            "Tile": { "X": 34, "Y": 8 },
+                            "Direction": "Down"
+                        }
+                    ]
+                }
+            }
+        }
+  ]
+}
+

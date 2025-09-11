@@ -1,0 +1,705 @@
+{
+    "Changes": [
+
+        //Load mushroom icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/ObjectsMushrooms",
+            "FromFile": "assets/Items/Forage/forage_mushrooms.png"
+        },
+
+        //Load alchemy forage icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/ObjectsAlchemyForage",
+            "FromFile": "assets/Items/Forage/forage_alchemy.png"
+        },
+
+/*----------------------------------------------------
+Mushrooms
+----------------------------------------------------*/
+
+        {
+            "LogName":"Add Alchemistry Mushrooms",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModID}}_DawnsingerToadstool": {
+                    "Name": "{{ModID}}_DawnsingerToadstool",
+                    "DisplayName": "{{i18n:Alchemistry_DawnsingerToadstool.name}}",
+                    "Description": "{{i18n:Alchemistry_DawnsingerToadstool.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 0,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 65,
+                    "Edibility": 21,
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "edible_mushroom",
+                        "Alchemistry_edible_mushroom",
+                        "preserves_pickle",
+                        "color_dark_pink"
+                    ]
+                },
+                "{{ModID}}_LunarGlowcap": {
+                    "Name": "{{ModID}}_LunarGlowcap",
+                    "DisplayName": "{{i18n:Alchemistry_LunarGlowcap.name}}",
+                    "Description": "{{i18n:Alchemistry_LunarGlowcap.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 1,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 55,
+                    "Edibility": 12,
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "edible_mushroom",
+                        "Alchemistry_edible_mushroom",
+                        "preserves_pickle",
+                        "color_aquamarine"
+                    ]
+                },
+                "{{ModID}}_InkCap": {
+                    "Name": "{{ModID}}_InkCap",
+                    "DisplayName": "{{i18n:Alchemistry_InkCap.name}}",
+                    "Description": "{{i18n:Alchemistry_InkCap.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 2,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 50,
+                    "Edibility": 19,
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "edible_mushroom",
+                        "Alchemistry_edible_mushroom",
+                        "preserves_pickle",
+                        "color_dark_gray"
+                    ]
+                },
+                "{{ModID}}_LostSouls": {
+                    "Name": "{{ModID}}_LostSouls",
+                    "DisplayName": "{{i18n:Alchemistry_LostSouls.name}}",
+                    "Description": "{{i18n:Alchemistry_LostSouls.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 3,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 80,
+                    "Edibility": -100,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_LostSoulsDebuff",
+                            "BuffId": 25,
+                            "IsDebuff": true,
+                            "Duration": 90,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 25,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -7.0,
+                                "Defense": -2.0
+                                }
+                            
+                        }
+                    ],
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "color_light_cyan"
+                    ]
+                },
+                "{{ModID}}_MeteorCap": {
+                    "Name": "{{ModID}}_MeteorCap",
+                    "DisplayName": "{{i18n:Alchemistry_MeteorCap.name}}",
+                    "Description": "{{i18n:Alchemistry_MeteorCap.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 4,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 50,
+                    "Edibility": 18,
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "edible_mushroom",
+                        "Alchemistry_edible_mushroom",
+                        "preserves_pickle",
+                        "color_black"
+                    ]
+                },
+                "{{ModID}}_FalseMorel": {
+                    "Name": "{{ModID}}_FalseMorel",
+                    "DisplayName": "{{i18n:Alchemistry_FalseMorel.name}}",
+                    "Description": "{{i18n:Alchemistry_FalseMorel.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 5,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 65,
+                    "Edibility": -100,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_FalseMorelDebuff",
+                            "BuffId": 25,
+                            "IsDebuff": true,
+                            "Duration": 200,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 25,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -5.0,
+                                "Defense": -5.0
+                                }
+                            
+                        }
+                    ],
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "color_salmon"
+                    ]
+                },
+                "{{ModID}}_WizardsEye": {
+                    "Name": "{{ModID}}_WizardsEye",
+                    "DisplayName": "{{i18n:Alchemistry_WizardsEye.name}}",
+                    "Description": "{{i18n:Alchemistry_WizardsEye.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 6,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 90,
+                    "Edibility": -30,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_WizardsEyeDebuff",
+                            "Duration": 200,
+                            "MaxDuration": -1,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -3.0
+                                }
+                            
+                        }
+                    ],
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "color_poppyseed"
+                    ]
+                },
+                "{{ModID}}_FairieWings": {
+                    "Name": "{{ModID}}_FairieWings",
+                    "DisplayName": "{{i18n:Alchemistry_FairieWings.name}}",
+                    "Description": "{{i18n:Alchemistry_FairieWings.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 7,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 95,
+                    "Edibility": -40,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_FairieWingsDebuff",
+                            "BuffId": 25,
+                            "IsDebuff": true,
+                            "Duration": 200,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 25,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -3.0,
+                                "Defense": -2.0,
+                                "Attack": -1.0
+                                }
+                            
+                        }
+                    ],
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "color_light_cyan"
+                    ]
+                },
+                "{{ModID}}_RedSmilers": {
+                    "Name": "{{ModID}}_RedSmilers",
+                    "DisplayName": "{{i18n:Alchemistry_RedSmilers.name}}",
+                    "Description": "{{i18n:Alchemistry_RedSmilers.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 8,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 85,
+                    "Edibility": -110,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_RedSmilersDebuff",
+                            "BuffId": 26,
+                            "IsDebuff": true,
+                            "Duration": 250,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 26,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -6.0,
+                                "Defense": -3.0,
+                                "Attack": -2.0
+                                }
+                            
+                        }
+                    ],
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "color_iron"
+                    ]
+                },
+                "{{ModID}}_NightCap": {
+                    "Name": "{{ModID}}_NightCap",
+                    "DisplayName": "{{i18n:Alchemistry_NightCap.name}}",
+                    "Description": "{{i18n:Alchemistry_NightCap.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 9,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 75,
+                    "Edibility": -10,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_NightCapDebuff",
+                            "BuffId": 26,
+                            "IsDebuff": true,
+                            "Duration": 90,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 26,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -6.0
+                                }
+                            
+                        }
+                    ],
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "color_gray"
+                    ]
+                },
+                "{{ModID}}_SunriseGlory": {
+                    "Name": "{{ModID}}_SunriseGlory",
+                    "DisplayName": "{{i18n:Alchemistry_SunriseGlory.name}}",
+                    "Description": "{{i18n:Alchemistry_SunriseGlory.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 10,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 80,
+                    "Edibility": 21,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_SunriseGloryBuff",
+                            "IsDebuff": false,
+                            "Duration": 500,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 9,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": 1.0
+                                }
+                            
+                        }
+                    ],
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "edible_mushroom",
+                        "Alchemistry_edible_mushroom",
+                        "preserves_pickle",
+                        "color_pink"
+                    ]
+                },
+                "{{ModID}}_CapOLantern": {
+                    "Name": "{{ModID}}_CapOLantern",
+                    "DisplayName": "{{i18n:Alchemistry_CapOLantern.name}}",
+                    "Description": "{{i18n:Alchemistry_CapOLantern.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 11,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 115,
+                    "Edibility": 21,
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "edible_mushroom",
+                        "Alchemistry_edible_mushroom",
+                        "preserves_pickle",
+                        "color_dark_orange"
+                    ]
+                },
+                "{{ModID}}_HellfireBolete": {
+                    "Name": "{{ModID}}_HellfireBolete",
+                    "DisplayName": "{{i18n:Alchemistry_HellfireBolete.name}}",
+                    "Description": "{{i18n:Alchemistry_HellfireBolete.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 12,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 90,
+                    "Edibility": -100,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_HellfireBoleteDebuff",
+                            "BuffId": 25,
+                            "IsDebuff": true,
+                            "Duration": 200,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 25,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -2.0,
+                                "Defense": -5.0
+                                }
+                            
+                        }
+                    ],
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "color_dark_red"
+                    ]
+                },
+                "{{ModID}}_SwampLighter": {
+                    "Name": "{{ModID}}_SwampLighter",
+                    "DisplayName": "{{i18n:Alchemistry_SwampLighter.name}}",
+                    "Description": "{{i18n:Alchemistry_SwampLighter.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 13,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 150,
+                    "Edibility": -75,
+                    "Buffs": [
+                        {
+                            "Id": "{{ModId}}_SwampLighterDebuff",
+                            "BuffId": 25,
+                            "IsDebuff": true,
+                            "Duration": 200,
+                            "MaxDuration": -1,
+                            "IconTexture": "TileSheets\\BuffsIcons",
+                            "IconSpriteIndex": 25,
+                            "Effects": null,
+                            "ActionsOnApply": null,
+                            "CustomAttributes": 
+                                {
+                                "Speed": -2.0,
+                                "Defense": -2.0
+                                }
+                            
+                        }
+                    ],
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "color_lime"
+                    ]
+                },
+                "{{ModID}}_BeachedOyster": {
+                    "Name": "{{ModID}}_BeachedOyster",
+                    "DisplayName": "{{i18n:Alchemistry_BeachedOyster.name}}",
+                    "Description": "{{i18n:Alchemistry_BeachedOyster.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsMushrooms",
+                    "SpriteIndex": 14,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -81,
+                    "Price": 115,
+                    "Edibility": 21,
+                    "ContextTags": [
+                        "mushroom_item",
+                        "Alchemistry_mushroom_item",
+                        "edible_mushroom",
+                        "Alchemistry_edible_mushroom",
+                        "preserves_pickle",
+                        "color_dark_blue"
+                    ]
+                },
+
+/*----------------------------------------------------
+Alchemy Forage
+----------------------------------------------------*/
+            "{{ModID}}_ForestWisp": {
+                "Name": "{{ModID}}_ForestWisp",
+                "DisplayName": "{{i18n:Alchemistry_ForestWisp.name}}",
+                "Description": "{{i18n:Alchemistry_ForestWisp.description}}",
+                "Texture": "Mods/{{ModID}}/ObjectsAlchemyForage",
+                "SpriteIndex": 0,
+                "Type": "Basic",
+                "ExcludeFromShippingCollection": false,
+                "Category": -81,
+                "Price": 250,
+                "Edibility": -300,
+                "ContextTags": [
+                    "color_aquamarine",
+                    "Alchemistry_mystic_item"
+                ]
+            },
+            "{{ModID}}_DragonRoot": {
+                "Name": "{{ModID}}_DragonRoot",
+                "DisplayName": "{{i18n:Alchemistry_DragonRoot.name}}",
+                "Description": "{{i18n:Alchemistry_DragonRoot.description}}",
+                "Texture": "Mods/{{ModID}}/ObjectsAlchemyForage",
+                "SpriteIndex": 1,
+                "Type": "Basic",
+                "ExcludeFromShippingCollection": false,
+                "Category": -81,
+                "Price": 80,
+                "Edibility": 18,
+                "ContextTags": [
+                    "color_IndianRed"
+                ]
+            },
+            "{{ModID}}_DeerHoof": {
+                "Name": "{{ModID}}_DeerHoof",
+                "DisplayName": "{{i18n:Alchemistry_DeerHoof.name}}",
+                "Description": "{{i18n:Alchemistry_DeerHoof.description}}",
+                "Texture": "Mods/{{ModID}}/ObjectsAlchemyForage",
+                "SpriteIndex": 2,
+                "Type": "Basic",
+                "Price": 30,
+                "Edibility": -300,
+                "ContextTags": [
+                    "color_brown",
+                    "Alchemistry_body_part"
+                ]
+            },
+            "{{ModID}}_StagsAntler": {
+                "Name": "{{ModID}}_StagsAntler",
+                "DisplayName": "{{i18n:Alchemistry_StagsAntler.name}}",
+                "Description": "{{i18n:Alchemistry_StagsAntler.description}}",
+                "Texture": "Mods/{{ModID}}/ObjectsAlchemyForage",
+                "SpriteIndex": 3,
+                "Type": "Basic",
+                "Price": 175,
+                "Edibility": -300,
+                "ContextTags": [
+                    "color_sand",
+                    "Alchemistry_body_part"
+                ]
+            },
+            "{{ModID}}_BirdSkull": {
+                "Name": "{{ModID}}_BirdSkull",
+                "DisplayName": "{{i18n:Alchemistry_BirdSkull.name}}",
+                "Description": "{{i18n:Alchemistry_BirdSkull.description}}",
+                "Texture": "Mods/{{ModID}}/ObjectsAlchemyForage",
+                "SpriteIndex": 4,
+                "Type": "Basic",
+                "Price": 175,
+                "Edibility": -300,
+                "ContextTags": [
+                    "color_dark_gray",
+                    "Alchemistry_body_part"
+                ]
+            }
+            }
+        },
+
+/*----------------------------------------------------
+Perfection Tracker Disabled
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_DawnsingerToadstool" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_LunarGlowcap" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_InkCap" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_LostSouls" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MeteorCap" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_FalseMorel" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_WizardsEye" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_FairieWings" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_RedSmilers" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_NightCap" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SunriseGlory" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CapOLantern" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_HellfireBolete" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SwampLighter" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BeachedOyster" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ForestWisp" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_DragonRoot" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        }
+    ]
+}

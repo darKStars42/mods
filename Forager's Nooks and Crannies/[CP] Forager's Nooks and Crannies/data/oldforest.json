@@ -1,0 +1,45 @@
+{
+
+"Changes": [
+
+{
+	"LogName":"Map Patch Mountain for Old Forest",
+	"Action": "EditMap",
+	"Target": "Maps/Mountain", 
+	"FromFile": "assets/Maps/MountainEdit2.tmx",
+	"ToArea": {
+			"X": 12,
+			"Y": 5,
+			"Width": 1,
+			"Height": 2
+			},
+
+	"When": {"OldForestToken": "1"}			
+},
+
+{
+	"LogName":"Add Warps to Old Forest Map",
+	"Action": "EditMap",
+	"Target": "Maps/Wildflour.NooksCrannies_OldForest",
+	"AddWarps": ["47 54 Mountain 12 7"]
+},
+
+{
+	"LogName":"Add Warps to Mountain for Old Forest",
+	"Action": "EditMap",
+	"Target": "Maps/Mountain",
+	"MapTiles": [
+		{
+		"Position": {
+			"X": 12,
+			"Y": 6
+		},
+		"Layer": "Buildings",
+		"SetProperties": {"Action": "Warp 49 34 Wildflour.NooksCrannies_OldForest"}
+		}
+	],
+	"When":{"OldForestToken": "1"}	
+}
+
+	]
+}

@@ -1,0 +1,1584 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DaLion.Harmonics</name>
+    </assembly>
+    <members>
+        <member name="T:DaLion.Harmonics.Commands.AddRecipesCommand">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Commands.AddRecipesCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Commands.AddRecipesCommand.#ctor(DaLion.Shared.Commands.CommandHandler)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Commands.AddRecipesCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="P:DaLion.Harmonics.Commands.AddRecipesCommand.Triggers">
+            <inheritdoc />
+        </member>
+        <member name="P:DaLion.Harmonics.Commands.AddRecipesCommand.Documentation">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Commands.AddRecipesCommand.CallbackImpl(System.String,System.String[])">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Commands.AddRecipesCommand.GetUsage">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Chord">
+            <inheritdoc cref="T:DaLion.Harmonics.Framework.IChord"/>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.#ctor(DaLion.Harmonics.Framework.Gemstone,DaLion.Harmonics.Framework.Gemstone)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Chord"/> class.Construct a Dyad instance.</summary>
+            <param name="first">The first <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the Dyad.</param>
+            <param name="second">The second <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the  Dyad.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.#ctor(DaLion.Harmonics.Framework.Gemstone,DaLion.Harmonics.Framework.Gemstone,DaLion.Harmonics.Framework.Gemstone)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Chord"/> class.Construct a Triad instance.</summary>
+            <param name="first">The first <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the Triad.</param>
+            <param name="second">The second <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the Triad.</param>
+            <param name="third">The third <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the Triad.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.#ctor(DaLion.Harmonics.Framework.Gemstone,DaLion.Harmonics.Framework.Gemstone,DaLion.Harmonics.Framework.Gemstone,DaLion.Harmonics.Framework.Gemstone)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Chord"/> class.Construct a Tetrad instance.</summary>
+            <param name="first">The first <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the Tetrad.</param>
+            <param name="second">The second <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the Tetrad.</param>
+            <param name="third">The third <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the Tetrad.</param>
+            <param name="fourth">The fourth <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the Tetrad.</param>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Chord.Notes">
+            <inheritdoc />
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Chord.Root">
+            <inheritdoc />
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Chord.Amplitude">
+            <inheritdoc />
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Chord.Id">
+            <summary>Gets a unique ID for this <see cref="T:DaLion.Harmonics.Framework.Chord"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Chord.ResonanceByGemstone">
+            <summary>Gets the total resonance of each <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> due to interference with its neighbors.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Chord.LightSourceRadius">
+            <summary>Gets the current radius of the <see cref="F:DaLion.Harmonics.Framework.Chord._lightSource"/>.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.Resonate(StardewValley.Farmer,System.Boolean)">
+            <summary>Adds resonance stat bonuses to the farmer.</summary>
+            <param name="who">The <see cref="T:StardewValley.Farmer"/>.</param>
+            <param name="audible">Whether to play the chord cue.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.Quench(StardewValley.Farmer)">
+            <summary>Removes resonating stat bonuses from the farmer.</summary>
+            <param name="who">The <see cref="T:StardewValley.Farmer"/>.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.ResonateSingleForge(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <summary>Attempts to resonate with a single <paramref name="forge"/> in the specified <paramref name="weapon"/>.</summary>
+            <param name="weapon">The <see cref="T:StardewValley.Tools.MeleeWeapon"/>.</param>
+            <param name="forge">The forge as <see cref="T:StardewValley.Enchantments.BaseWeaponEnchantment"/>.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.ResonateAllForges(StardewValley.Tools.MeleeWeapon)">
+            <summary>Attempts to resonate with all enchantments in the specified <paramref name="weapon"/>.</summary>
+            <param name="weapon">The <see cref="T:StardewValley.Tools.MeleeWeapon"/>.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.QuenchSingleForge(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <summary>Quench a single <paramref name="forge"/> in the specified <paramref name="weapon"/>.</summary>
+            <param name="weapon">The <see cref="T:StardewValley.Tools.MeleeWeapon"/>.</param>
+            <param name="forge">The forge as <see cref="T:StardewValley.Enchantments.BaseWeaponEnchantment"/>.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.QuenchAllForges(StardewValley.Tools.MeleeWeapon)">
+            <summary>Removes resonance stat bonuses from the farmer.</summary>
+            <param name="weapon">The <see cref="T:StardewValley.Tools.MeleeWeapon"/>.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.Buffer(DaLion.Harmonics.Framework.StatBuffer)">
+            <summary>Adds the total resonance stat bonuses to the <paramref name="buffer"/>.</summary>
+            <param name="buffer">A <see cref="T:DaLion.Harmonics.Framework.StatBuffer"/> for aggregating stat bonuses.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.OnNewLocation(StardewValley.GameLocation)">
+            <summary>Adds resonance effects to the new <paramref name="location"/>.</summary>
+            <param name="location">The new location.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.OnLeaveLocation(StardewValley.GameLocation)">
+            <summary>Removes resonance effects from the old <paramref name="location"/>.</summary>
+            <param name="location">The left location.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.PlayCues">
+            <summary>Begins playback of the sine wave <see cref="T:StardewValley.ICue"/> for each note in the <see cref="T:DaLion.Harmonics.Framework.Chord"/>.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.Update(StardewValley.Farmer)">
+            <summary>Updates resonance effects.</summary>
+            <param name="who">The <see cref="T:StardewValley.Farmer"/>.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.InitializeLightSource">
+            <summary>Initializes the <see cref="F:DaLion.Harmonics.Framework.Chord._lightSource"/> if a resonant harmony exists in the <see cref="T:DaLion.Harmonics.Framework.Chord"/>.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.ResetLightSource">
+            <summary>De-initializes the <see cref="F:DaLion.Harmonics.Framework.Chord._lightSource"/> if a resonant harmony exists in the <see cref="T:DaLion.Harmonics.Framework.Chord"/>.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.Harmonize">
+            <summary>Evaluate the <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s between <see cref="P:DaLion.Harmonics.Framework.Chord.Notes"/> and the resulting harmonies.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.StopCues">
+            <summary>Ceases playback of the sine wave <see cref="T:StardewValley.ICue"/> for each note in the <see cref="T:DaLion.Harmonics.Framework.Chord"/>.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Chord.FadeCues">
+            <summary>Fades out the sound cue volumes.</summary>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.DiatonicScale">
+            <summary>A heptatonic scale that includes five whole steps (whole tones) and two half steps (semitones) in each octave.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.DiatonicScale.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/> struct with
+                <see cref="F:DaLion.Harmonics.Framework.Gemstone.Ruby"/> as the root <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.
+            </summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.DiatonicScale.#ctor(DaLion.Harmonics.Framework.Gemstone)">
+            <summary>
+                Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/> struct with the
+                specified root <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.
+            </summary>
+            <param name="root">The <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> with which is the root of the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.DiatonicScale.#ctor(System.Int32)">
+            <summary>
+                Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/> struct.Constructs an instance, with the
+                <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> at the specified index in the <see cref="F:DaLion.Harmonics.Framework.Gemstone.Ruby"/> scale as the root..
+            </summary>
+            <param name="indexInRubyScale">
+                The index of the root <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the canonical
+                <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/> of <see cref="F:DaLion.Harmonics.Framework.Gemstone.Ruby"/>.
+            </param>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.DiatonicScale.Notes">
+            <summary>Gets the ordered set of <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>s that make up the notes in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.DiatonicScale.Root">
+            <summary>Gets the first <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.DiatonicScale.Item(System.Int32)">
+            <summary>Gets the <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> at the specified <paramref name="index"/>.</summary>
+            <param name="index">A <see cref="T:System.Int32"/> index.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.DiatonicScale.IndexOf(DaLion.Harmonics.Framework.Gemstone)">
+            <summary>Gets the index of the specified <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the current <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+            <param name="gemstone">Some <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.</param>
+            <returns>The <see cref="T:System.Int32"/> index of the <paramref name="gemstone"/> in the current <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.DiatonicScale.Transpose(System.Int32)">
+            <summary>Shift all notes to the left by the specified <paramref name="count"/>.</summary>
+            <param name="count">The number of shifts to perform.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.DiatonicScale.Transpose(DaLion.Harmonics.Framework.IntervalNumber)">
+            <summary>Shift all notes to the left by the specified <paramref name="interval"/>.</summary>
+            <param name="interval">The <see cref="T:DaLion.Harmonics.Framework.IntervalNumber"/>.</param>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Events.ChordDayStartedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.HarmonicsAssetRequestedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.ChordDayStartedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.HarmonicsAssetRequestedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.ChordDayStartedEvent.OnDayStartedImpl(System.Object,StardewModdingAPI.Events.DayStartedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Events.CooldownSaveLoadedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.CooldownSaveLoadedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.CooldownSaveLoadedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.CooldownSaveLoadedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.CooldownSaveLoadedEvent.OnSaveLoadedImpl(System.Object,StardewModdingAPI.Events.SaveLoadedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Events.HarmonicsAssetRequestedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.HarmonicsAssetRequestedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.HarmonicsAssetRequestedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.HarmonicsAssetRequestedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.HarmonicsAssetRequestedEvent.Initialize">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.HarmonicsAssetRequestedEvent.EditCraftingRecipesData(StardewModdingAPI.IAssetData)">
+            <summary>Edits crafting recipes with new ring recipes.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.HarmonicsAssetRequestedEvent.EditObjectsData(StardewModdingAPI.IAssetData)">
+            <summary>Patches new Garnet gemstone object.</summary>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Events.HarmonicsGameLaunchedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.HarmonicsGameLaunchedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.HarmonicsGameLaunchedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.HarmonicsGameLaunchedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.HarmonicsGameLaunchedEvent.OnGameLaunchedImpl(System.Object,StardewModdingAPI.Events.GameLaunchedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Events.HarmonicsReturnedToTitleEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.HarmonicsReturnedToTitleEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.HarmonicsReturnedToTitleEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.HarmonicsReturnedToTitleEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.HarmonicsReturnedToTitleEvent.OnReturnedToTitleImpl(System.Object,StardewModdingAPI.Events.ReturnedToTitleEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Events.HarmonicsSaveLoadedEvent">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.HarmonicsSaveLoadedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.HarmonicsSaveLoadedEvent.#ctor(DaLion.Shared.Events.EventManager)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Events.HarmonicsSaveLoadedEvent"/> class.</summary>
+            <param name="manager">The <see cref="T:DaLion.Shared.Events.EventManager"/> instance that manages this event.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Events.HarmonicsSaveLoadedEvent.OnSaveLoadedImpl(System.Object,StardewModdingAPI.Events.SaveLoadedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.GarnetEnchantment">
+            <summary>The Garnet gemstone forge.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.GarnetEnchantment.ShouldBeDisplayed">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.GarnetEnchantment.IsForge">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.GarnetEnchantment._ApplyTo(StardewValley.Item)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.GarnetEnchantment._UnapplyTo(StardewValley.Item)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Gemstone">
+            <summary>A gemstone which can be applied to an Infinity Band.</summary>
+            <remarks>
+                Each <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> vibrates with a characteristic wavelength, which allows it to resonate with
+                others in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/> of <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.
+            </remarks>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.Gemstone.Ruby">
+            <summary>The Ruby gemstone.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.Gemstone.Aquamarine">
+            <summary>The Aquamarine gemstone.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.Gemstone.Amethyst">
+            <summary>The Amethyst gemstone.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.Gemstone.Garnet">
+            <summary>The Garnet gemstone.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.Gemstone.Emerald">
+            <summary>The Emerald gemstone.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.Gemstone.Jade">
+            <summary>The Jade gemstone.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.Gemstone.Topaz">
+            <summary>The Topaz gemstone.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.Gemstone.FromObjectDict">
+            <summary>Look-up to obtain the corresponding <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> from a <see cref="T:StardewValley.Object"/> index.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.Gemstone.FromRingDict">
+            <summary>Look-up to obtain the corresponding <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> from a <see cref="T:StardewValley.Objects.Ring"/> index.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.Gemstone.RubyScale">
+            <summary>The canonical <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/> with <see cref="F:DaLion.Harmonics.Framework.Gemstone.Ruby"/> as the root.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.#ctor(System.String,System.Int32,System.String,System.String,System.Single,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> class.</summary>
+            <param name="name">The gemstone's name.</param>
+            <param name="value">The gemstone's canonical index in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/> of <see cref="F:DaLion.Harmonics.Framework.Gemstone.Ruby"/>.</param>
+            <param name="objectId">The qualified ID of the corresponding <see cref="T:StardewValley.Object"/>.</param>
+            <param name="ringId">The qualified ID of the corresponding <see cref="T:StardewValley.Objects.Ring"/>.</param>
+            <param name="glowFrequency">The characteristic wavelength with which the <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> vibrates.</param>
+            <param name="stoneColor">The characteristic color of the stone itself.</param>
+            <param name="glowColor">The characteristic glow of the emitted lightsource.</param>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.DisplayName">
+            <summary>Gets the localized name of the <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.ObjectId">
+            <summary>Gets the index of the corresponding <see cref="T:StardewValley.Object"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.RingId">
+            <summary>Gets the index of the corresponding <see cref="T:StardewValley.Objects.Ring"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.NaturalPitch">
+            <summary>Gets the pitch adjustment to the game's 440 Hz sine wave in order to produce the natural frequency for this <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.Harmonics">
+            <summary>Gets the pitch adjustments for every note in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.Cue">
+            <summary>Gets the <see cref="T:StardewValley.ICue"/> of the <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>'s vibration.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.GlowFrequency">
+            <summary>Gets the characteristic frequency with which the <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> vibrates.</summary>
+            <remarks>Measured in units of inverse <see cref="F:DaLion.Harmonics.Framework.Gemstone.Ruby"/> wavelengths.</remarks>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.StoneColor">
+            <summary>Gets the characteristic color which results from <see cref="P:DaLion.Harmonics.Framework.Gemstone.GlowFrequency"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.GlowColor">
+            <summary>Gets the inverse of <see cref="P:DaLion.Harmonics.Framework.Gemstone.StoneColor"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.TextColor">
+            <summary>Gets the color used to render text. A slightly darker tone of <see cref="P:DaLion.Harmonics.Framework.Gemstone.StoneColor"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.Second">
+            <summary>Gets the second <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.Third">
+            <summary>Gets the third <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.Fourth">
+            <summary>Gets the fourth <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.Fifth">
+            <summary>Gets the fifth <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.Sixth">
+            <summary>Gets the sixth <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.Seventh">
+            <summary>Gets the seventh <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.EnchantmentType">
+            <summary>Gets the corresponding <see cref="T:StardewValley.Enchantments.BaseWeaponEnchantment"/> type.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.IntervalWith(DaLion.Harmonics.Framework.Gemstone)">
+            <summary>
+                Gets the ascending diatonic <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/> between this and some other
+                <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.
+            </summary>
+            <param name="other">Some other <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.</param>
+            <returns>The <see cref="T:DaLion.Harmonics.Framework.IntervalNumber"/> of the <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/> between this and <paramref name="other"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.Equals(DaLion.Harmonics.Framework.Gemstone)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.CompareTo(DaLion.Harmonics.Framework.Gemstone)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.FromObject(System.String)">
+            <summary>Gets the gemstone associated with the specified object index.</summary>
+            <param name="objectId">The qualified ID of a gemstone object.</param>
+            <returns>The <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> which embedded in the <see cref="T:StardewValley.Object"/> with the specified <paramref name="objectId"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.TryFromObject(System.String,DaLion.Harmonics.Framework.Gemstone@)">
+            <summary>Try to get the gemstone associated with the specified object index.</summary>
+            <param name="objectId">The qualified ID of a gemstone object.</param>
+            <param name="gemstone">The matched gemstone, if any.</param>
+            <returns><see langword="true"/> if a matching gemstone exists, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.FromRing(System.String)">
+            <summary>Gets the gemstone associated with the specified ring index.</summary>
+            <param name="ringId">The qualified ID of a gemstone ring.</param>
+            <returns>The <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> which embedded in the <see cref="T:StardewValley.Objects.Ring"/> with the specified <paramref name="ringId"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.TryFromRing(System.String,DaLion.Harmonics.Framework.Gemstone@)">
+            <summary>Try to get the gemstone associated with the specified ring index.</summary>
+            <param name="ringId">The qualified ID of a gemstone ring.</param>
+            <param name="gemstone">The matched gemstone, if any.</param>
+            <returns><see langword="true"/> if a matching gemstone exists, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.FromType(System.Type)">
+            <summary>Gets the static gemstone instance with the specified <paramref name="type"/>.</summary>
+            <param name="type">The <see cref="T:System.Type"/> of a <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.</param>
+            <returns>The <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> whose type matches <paramref name="type"/>, if any, otherwise <see langword="null"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.Resonate(StardewValley.Buffs.BuffEffects,System.Single)">
+            <summary>
+                Resonates with the specified <paramref name="amplitude"/>, adding the corresponding stat bonuses to a
+                <see cref="T:StardewValley.Buffs.BuffEffects"/> object.
+            </summary>
+            <param name="effects">The <see cref="T:StardewValley.Buffs.BuffEffects"/>.</param>
+            <param name="amplitude">The resonance amplitude.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.Resonate(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <summary>
+                Resonates with a forge, adding the corresponding stat bonuses to the
+                <paramref name="weapon"/>.
+            </summary>
+            <param name="weapon">The <see cref="T:StardewValley.Tools.MeleeWeapon"/>.</param>
+            <param name="forge">The forge as <see cref="T:StardewValley.Enchantments.BaseWeaponEnchantment"/>.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.Quench(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <summary>
+                Quenches a forge resonance, removing the corresponding stat bonuses from the
+                <paramref name="weapon"/>.
+            </summary>
+            <param name="weapon">The <see cref="T:StardewValley.Tools.MeleeWeapon"/>.</param>
+            <param name="forge">The forge as <see cref="T:StardewValley.Enchantments.BaseWeaponEnchantment"/>.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.Buffer(DaLion.Harmonics.Framework.StatBuffer,System.Single)">
+            <summary>Adds the <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>'s corresponding stat bonus to the specified <see cref="T:DaLion.Harmonics.Framework.StatBuffer"/>.</summary>
+            <param name="buffer">Shared buffer of aggregated stat modifiers.</param>
+            <param name="multiplier">Optional value to multiply the default stat bonus.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.PlayCue">
+            <summary>Begins playback of the sine wave <see cref="T:StardewValley.ICue"/> for this <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.StopCue">
+            <summary>Ceases playback of the sine wave <see cref="T:StardewValley.ICue"/> for this <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.FadeIn">
+            <summary>Fades in the sine wave <see cref="T:StardewValley.ICue"/> volume.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.Modulate">
+            <summary>Modulates the sine wave <see cref="T:StardewValley.ICue"/> pitch.</summary>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Gemstone.RubyGemstone">
+            <inheritdoc cref="T:DaLion.Harmonics.Framework.Gemstone"/>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.RubyGemstone.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Gemstone.RubyGemstone"/> class.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.RubyGemstone.EnchantmentType">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.RubyGemstone.Resonate(StardewValley.Buffs.BuffEffects,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.RubyGemstone.Resonate(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.RubyGemstone.Quench(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.RubyGemstone.Buffer(DaLion.Harmonics.Framework.StatBuffer,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Gemstone.AquamarineGemstone">
+            <inheritdoc cref="T:DaLion.Harmonics.Framework.Gemstone"/>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.AquamarineGemstone.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Gemstone.AquamarineGemstone"/> class.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.AquamarineGemstone.EnchantmentType">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.AquamarineGemstone.Resonate(StardewValley.Buffs.BuffEffects,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.AquamarineGemstone.Resonate(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.AquamarineGemstone.Quench(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.AquamarineGemstone.Buffer(DaLion.Harmonics.Framework.StatBuffer,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Gemstone.AmethystGemstone">
+            <inheritdoc cref="T:DaLion.Harmonics.Framework.Gemstone"/>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.AmethystGemstone.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Gemstone.AmethystGemstone"/> class.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.AmethystGemstone.EnchantmentType">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.AmethystGemstone.Resonate(StardewValley.Buffs.BuffEffects,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.AmethystGemstone.Resonate(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.AmethystGemstone.Quench(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.AmethystGemstone.Buffer(DaLion.Harmonics.Framework.StatBuffer,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Gemstone.GarnetGemstone">
+            <inheritdoc cref="T:DaLion.Harmonics.Framework.Gemstone"/>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.GarnetGemstone.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Gemstone.GarnetGemstone"/> class.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.GarnetGemstone.EnchantmentType">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.GarnetGemstone.Resonate(StardewValley.Buffs.BuffEffects,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.GarnetGemstone.Resonate(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.GarnetGemstone.Quench(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.GarnetGemstone.Buffer(DaLion.Harmonics.Framework.StatBuffer,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Gemstone.EmeraldGemstone">
+            <inheritdoc cref="T:DaLion.Harmonics.Framework.Gemstone"/>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.EmeraldGemstone.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Gemstone.EmeraldGemstone"/> class.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.EmeraldGemstone.EnchantmentType">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.EmeraldGemstone.Resonate(StardewValley.Buffs.BuffEffects,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.EmeraldGemstone.Resonate(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.EmeraldGemstone.Quench(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.EmeraldGemstone.Buffer(DaLion.Harmonics.Framework.StatBuffer,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Gemstone.JadeGemstone">
+            <inheritdoc cref="T:DaLion.Harmonics.Framework.Gemstone"/>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.JadeGemstone.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Gemstone.JadeGemstone"/> class.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.JadeGemstone.EnchantmentType">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.JadeGemstone.Resonate(StardewValley.Buffs.BuffEffects,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.JadeGemstone.Resonate(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.JadeGemstone.Quench(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.JadeGemstone.Buffer(DaLion.Harmonics.Framework.StatBuffer,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Gemstone.TopazGemstone">
+            <inheritdoc cref="T:DaLion.Harmonics.Framework.Gemstone"/>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.TopazGemstone.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Gemstone.TopazGemstone"/> class.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.Gemstone.TopazGemstone.EnchantmentType">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.TopazGemstone.Resonate(StardewValley.Buffs.BuffEffects,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.TopazGemstone.Resonate(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.TopazGemstone.Quench(StardewValley.Tools.MeleeWeapon,StardewValley.Enchantments.BaseWeaponEnchantment)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Gemstone.TopazGemstone.Buffer(DaLion.Harmonics.Framework.StatBuffer,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.HarmonicInterval">
+            <summary>The difference in pitch between a <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> pair.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.HarmonicInterval.#ctor(DaLion.Harmonics.Framework.Gemstone,DaLion.Harmonics.Framework.Gemstone)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/> class.</summary>
+            <param name="first">The first <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the pair.</param>
+            <param name="second">The second <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the pair.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.HarmonicInterval.#ctor(DaLion.Harmonics.Framework.Gemstone)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/> class for a single <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> with itself.</summary>
+            <param name="single">The single <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.</param>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.HarmonicInterval.First">
+            <summary>Gets the first <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the pair.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.HarmonicInterval.Second">
+            <summary>Gets the second <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the pair.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.HarmonicInterval.Number">
+            <summary>Gets the number of steps between <see cref="P:DaLion.Harmonics.Framework.HarmonicInterval.First"/> and <see cref="P:DaLion.Harmonics.Framework.HarmonicInterval.Second"/> in a <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.HarmonicInterval.op_Addition(DaLion.Harmonics.Framework.HarmonicInterval,DaLion.Harmonics.Framework.HarmonicInterval)">
+            <summary>Adds two <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s.</summary>
+            <param name="a">The first <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>.</param>
+            <param name="b">The second <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>.</param>
+            <returns>The sum of <paramref name="a"/> and <paramref name="b"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.HarmonicInterval.Equals(DaLion.Harmonics.Framework.HarmonicInterval)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.HarmonicInterval.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.HarmonicInterval.Deconstruct(DaLion.Harmonics.Framework.Gemstone@,DaLion.Harmonics.Framework.Gemstone@)">
+            <summary>Deconstructs the instance.</summary>
+            <param name="first">The first <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the pair.</param>
+            <param name="second">The second <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the pair.</param>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.HarmonicIntervalExtensions">
+            <summary>Extensions for the <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.HarmonicIntervalExtensions.GroupByIntervalNumber(DaLion.Harmonics.Framework.HarmonicInterval[][])">
+            <summary>Groups the <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s in the specified <paramref name="intervalMatrix"/> by their respective <see cref="T:DaLion.Harmonics.Framework.IntervalNumber"/>s.</summary>
+            <param name="intervalMatrix">A 2D matrix of <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s in a <see cref="T:DaLion.Harmonics.Framework.Chord"/>.</param>
+            <returns>An <see cref="T:System.Linq.ILookup`2"/> of all <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s in the <paramref name="intervalMatrix"/> by their respective <see cref="T:DaLion.Harmonics.Framework.IntervalNumber"/>s.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.HarmonicIntervalExtensions.GroupByGemstone(DaLion.Harmonics.Framework.HarmonicInterval[][])">
+            <summary>Groups the <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s in the specified <paramref name="intervalMatrix"/> by the first <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in each interval pair.</summary>
+            <param name="intervalMatrix">A 2D matrix of <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s in a <see cref="T:DaLion.Harmonics.Framework.Chord"/>.</param>
+            <returns>An <see cref="T:System.Linq.ILookup`2"/> of all <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s in the <paramref name="intervalMatrix"/> by their respective <see cref="T:DaLion.Harmonics.Framework.IntervalNumber"/>s.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.HarmonicIntervalExtensions.GroupByNotePosition(DaLion.Harmonics.Framework.HarmonicInterval[][])">
+            <summary>Groups the <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s in the specified <paramref name="intervalMatrix"/> by the position of <see cref="P:DaLion.Harmonics.Framework.HarmonicInterval.First"/> in the <see cref="T:DaLion.Harmonics.Framework.Chord"/>.</summary>
+            <param name="intervalMatrix">A 2D matrix of <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s in a <see cref="T:DaLion.Harmonics.Framework.Chord"/>.</param>
+            <returns>An <see cref="T:System.Linq.ILookup`2"/> of all <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/>s in the <paramref name="intervalMatrix"/> by their respective <see cref="T:DaLion.Harmonics.Framework.IntervalNumber"/>s.</returns>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.IChord">
+            <summary>A harmonic set of <see cref="T:DaLion.Harmonics.Framework.IGemstone"/> wavelengths.</summary>
+            <remarks>
+                The interference of vibration patterns between neighboring <see cref="T:DaLion.Harmonics.Framework.IGemstone"/>s may amplify, dampen or
+                even create new overtones.
+            </remarks>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IChord.Notes">
+            <summary>Gets the <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>s that make up the <see cref="T:DaLion.Harmonics.Framework.Chord"/>.</summary>
+            <remarks>
+                The notes are sorted by resulting harmony, with the <see cref="P:DaLion.Harmonics.Framework.IChord.Root"/> at index zero and remaining notes
+                ordered by increasing intervals with the former.
+            </remarks>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IChord.Root">
+            <summary>
+                Gets the root <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> of the <see cref="T:DaLion.Harmonics.Framework.IChord"/>, which determines the
+                perceived wavelength.
+            </summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IChord.Amplitude">
+            <summary>Gets the amplitude of the <see cref="P:DaLion.Harmonics.Framework.IChord.Root"/> note's resonance.</summary>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.IGemstone">
+            <summary>A gemstone which can be applied to an Infinity Band.</summary>
+            <remarks>
+                Each <see cref="T:DaLion.Harmonics.Framework.IGemstone"/> vibrates with a characteristic wavelength, which allows it to resonate with
+                others in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/> of <see cref="T:DaLion.Harmonics.Framework.IGemstone"/>.
+            </remarks>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.ObjectId">
+            <summary>Gets the qualified ID of the corresponding <see cref="T:StardewValley.Object"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.RingId">
+            <summary>Gets the qualified ID of the corresponding <see cref="T:StardewValley.Objects.Ring"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.GlowFrequency">
+            <summary>Gets the characteristic frequency with which the <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> vibrates.</summary>
+            <remarks>Measured in units of inverse <see cref="F:DaLion.Harmonics.Framework.Gemstone.Ruby"/> wavelengths.</remarks>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.StoneColor">
+            <summary>Gets the characteristic color which results from <see cref="P:DaLion.Harmonics.Framework.IGemstone.GlowFrequency"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.GlowColor">
+            <summary>Gets the inverse of <see cref="P:DaLion.Harmonics.Framework.IGemstone.StoneColor"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.Second">
+            <summary>Gets the second <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.Third">
+            <summary>Gets the third <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.Fourth">
+            <summary>Gets the fourth <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.Fifth">
+            <summary>Gets the fifth <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.Sixth">
+            <summary>Gets the sixth <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.IGemstone.Seventh">
+            <summary>Gets the seventh <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the corresponding <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.IGemstone.IntervalWith(DaLion.Harmonics.Framework.Gemstone)">
+            <summary>
+                Gets the ascending diatonic <see cref="T:DaLion.Harmonics.Framework.IntervalNumber"/> between this and some other
+                <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.
+            </summary>
+            <param name="other">Some other <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>.</param>
+            <returns>The <see cref="T:DaLion.Harmonics.Framework.IntervalNumber"/> of the <see cref="T:DaLion.Harmonics.Framework.HarmonicInterval"/> between this and <paramref name="other"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Integrations.BetterCraftingIntegration.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Integrations.BetterCraftingIntegration"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Integrations.BetterCraftingIntegration.RegisterImpl">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Integrations.IBetterCraftingApi.AddRecipesToDefaultCategory(System.Boolean,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Add recipes to a default category. If a player has modified their
+            category, this will not affect them.
+            </summary>
+            <param name="cooking">If true, we alter a cooking category. Otherwise, crafting.</param>
+            <param name="categoryId">The ID of the category to alter.</param>
+            <param name="recipeNames">An enumeration of recipe names for recipes to add to the category.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Integrations.IWearMoreRingsApi.RingSlotCount">
+            <summary>
+            Get the mod's config setting for how many rings can be equipped.
+            Note that this value is not synchronized in multiplayer, so its only valid for the current player (Game1.player).
+            </summary>
+            <returns>Config setting for how many rings the local player can wear.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Integrations.IWearMoreRingsApi.GetRing(System.Int32)">
+            <summary>
+            Get the ring that the local player has equipped in the given slot.
+            </summary>
+            <param name="slot">The ring equipment slot being queried. Ranging from 0 to RingSlotCount()-1.</param>
+            <returns>The ring equipped in the given slot or null if its empty.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Integrations.IWearMoreRingsApi.SetRing(System.Int32,StardewValley.Objects.Ring)">
+            <summary>
+            Equip a new ring in the given slot. Note that this overwrites the previous ring in that slot. Use null to remove the ring.
+            </summary>
+            <param name="slot">The ring equipment slot being queried. Ranging from 0 to RingSlotCount()-1.</param>
+            <param name="ring">The new ring being equipped. Can be null to unequip the current ring.</param>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.Integrations.SpaceCoreIntegration">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Integrations.SpaceCoreIntegration"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Integrations.SpaceCoreIntegration.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Integrations.SpaceCoreIntegration"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Integrations.SpaceCoreIntegration.RegisterImpl">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Integrations.WearMoreRingsIntegration.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Integrations.WearMoreRingsIntegration"/> class.</summary>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.IntervalNumber">
+            <summary>The number of steps between two <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>s in a <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.IntervalNumber.Unison">
+            <summary>Zero. Both <see cref="T:DaLion.Harmonics.Framework.Gemstone"/>s are identical.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.IntervalNumber.Second">
+            <summary>The second <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.IntervalNumber.Third">
+            <summary>The third <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.IntervalNumber.Fourth">
+            <summary>The fourth <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.IntervalNumber.Fifth">
+            <summary>The fifth <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>, also known as the Dominant.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.IntervalNumber.Sixth">
+            <summary>The sixth <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.IntervalNumber.Seventh">
+            <summary>The seventh <see cref="T:DaLion.Harmonics.Framework.Gemstone"/> in the <see cref="T:DaLion.Harmonics.Framework.DiatonicScale"/>.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.Framework.IntervalNumber.Octave">
+            <summary>One full scale. Effectively the same as <see cref="F:DaLion.Harmonics.Framework.IntervalNumber.Unison"/>.</summary>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.IntervalNumberExtensions">
+            <summary>Extensions for the <see cref="T:DaLion.Harmonics.Framework.IntervalNumber"/> enum.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.IntervalNumberExtensions.Complement(DaLion.Harmonics.Framework.IntervalNumber)">
+            <summary>Gets the complement of the specified <paramref name="intervalNumber"/>.</summary>
+            <param name="intervalNumber">The <see cref="T:DaLion.Harmonics.Framework.IntervalNumber"/>.</param>
+            <returns>The complement of <paramref name="intervalNumber"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.BaseEnchantmentGetEnchantmentFromItemPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.BaseEnchantmentGetEnchantmentFromItemPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.BaseEnchantmentGetEnchantmentFromItemPatcher.BaseEnchantmentGetEnchantmentFromItemPostfix(StardewValley.Enchantments.BaseEnchantment@,StardewValley.Item,StardewValley.Item)">
+            <summary>Resonate with chords.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.BaseWeaponEnchantmentApplyToPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.BaseWeaponEnchantmentApplyToPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.BaseWeaponEnchantmentApplyToPatcher.ApplyImpl(HarmonyLib.Harmony)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.BaseWeaponEnchantmentApplyToPatcher.UnapplyImpl(HarmonyLib.Harmony)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.BaseWeaponEnchantmentApplyToPatcher.BaseWeaponEnchantmentApplyToPostfix(StardewValley.Enchantments.BaseWeaponEnchantment,StardewValley.Item)">
+            <summary>Resonate with chords.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.BaseWeaponEnchantmentUnapplyToPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.BaseWeaponEnchantmentUnapplyToPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.BaseWeaponEnchantmentUnapplyToPatcher.ApplyImpl(HarmonyLib.Harmony)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.BaseWeaponEnchantmentUnapplyToPatcher.UnapplyImpl(HarmonyLib.Harmony)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.BaseWeaponEnchantmentUnapplyToPatcher.BaseWeaponEnchantmentApplyToPostfix(StardewValley.Enchantments.BaseWeaponEnchantment,StardewValley.Item)">
+            <summary>Resonate with chords.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingDrawInMenuPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.CombinedRingDrawInMenuPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingDrawInMenuPatcher.CombinedRingDrawInMenuPrefix(StardewValley.Objects.CombinedRing,Microsoft.Xna.Framework.Vector2@,Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,StardewValley.StackDrawType,Microsoft.Xna.Framework.Color,System.Boolean)">
+            <summary>Draw gemstones on combined Infinity Band.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingDrawInMenuPatcher.CombinedRingDrawInMenuPostfix(StardewValley.Objects.CombinedRing,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Single,System.Single,System.Single)">
+            <summary>Draw gemstones on combined Infinity Band.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingLoadDisplayFieldsPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.CombinedRingLoadDisplayFieldsPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingLoadDisplayFieldsPatcher.CombinedRingsLoadDisplayFieldsPrefix(StardewValley.Objects.CombinedRing,System.Boolean@)">
+            <summary>Adjust Infinity Band description.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingOnEquipPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.CombinedRingOnEquipPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingOnEquipPatcher.CombinedRingOnEquipPostfix(StardewValley.Objects.CombinedRing,StardewValley.Farmer)">
+            <summary>Add Infinity Band resonance effects.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingOnLeaveLocationPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.CombinedRingOnLeaveLocationPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingOnLeaveLocationPatcher.CombinedRingOnLeaveLocationPostfix(StardewValley.Objects.CombinedRing,StardewValley.GameLocation)">
+            <summary>Remove Infinity Band resonance location effects.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingOnNewLocationPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.CombinedRingOnNewLocationPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingOnNewLocationPatcher.CombinedRingOnNewLocationPostfix(StardewValley.Objects.CombinedRing,StardewValley.GameLocation)">
+            <summary>Add Infinity Band resonance location effects.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingOnUnequipPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.CombinedRingOnUnequipPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingOnUnequipPatcher.CombinedRingOnUnequipPostfix(StardewValley.Objects.CombinedRing,StardewValley.Farmer)">
+            <summary>Remove Infinity Band resonance effects.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingUpdatePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.CombinedRingUpdatePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CombinedRingUpdatePatcher.CombinedRingUpdatePostfix(StardewValley.Objects.CombinedRing,StardewValley.Farmer)">
+            <summary>Update Infinity Band resonances.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CraftingRecipeCtorPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.CraftingRecipeCtorPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.CraftingRecipeCtorPatcher.CraftingRecipeCtorPrefix(StardewValley.CraftingRecipe,System.String,System.Boolean)">
+            <summary>Fix localized display name for custom ring recipes.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ForgeMenuCraftItemPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.ForgeMenuCraftItemPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ForgeMenuCraftItemPatcher.ForgeMenuCraftItemPrefix(StardewValley.Item@,StardewValley.Item,StardewValley.Item,System.Boolean)">
+            <summary>Allow forging Infinity Band.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ForgeMenuGetForgeCostPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.ForgeMenuGetForgeCostPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ForgeMenuGetForgeCostPatcher.ForgeMenuGetForgeCostPrefix(System.Int32@,StardewValley.Item,StardewValley.Item)">
+            <summary>Modify forge cost for Infinity Band.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ForgeMenuIsValidCraftPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.ForgeMenuIsValidCraftPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ForgeMenuIsValidCraftPatcher.ForgeMenuIsValidCraftPrefix(System.Boolean@,StardewValley.Item,StardewValley.Item)">
+            <summary>Allow forging Infinity Band.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ForgeMenuUpdatePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.ForgeMenuUpdatePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ForgeMenuUpdatePatcher.ForgeMenuUpdateTranspiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.Emit.ILGenerator,System.Reflection.MethodBase)">
+            <summary>Modify unforge behavior of combined Infinity Band.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.LightSourceLoadTextureFromConstantValuePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.LightSourceLoadTextureFromConstantValuePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.LightSourceLoadTextureFromConstantValuePatcher.LightSourceLoadTextureFromConstantValuePostfix(StardewValley.LightSource,System.Int32)">
+            <summary>Load custom phase light textures.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.MeleeWeaponDoAnimateSpecialMovePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.MeleeWeaponDoAnimateSpecialMovePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.MeleeWeaponDoAnimateSpecialMovePatcher.MeleeWeaponDoAnimateSpecialMovePostfix(StardewValley.Tools.MeleeWeapon)">
+            <summary>Implement Garnet enchantment CDR.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.MeleeWeaponDrawTooltipPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.MeleeWeaponDrawTooltipPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.MeleeWeaponDrawTooltipPatcher.MeleeWeaponDrawTooltipTranspiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.MethodBase)">
+            <summary>Display cooldown effects in tooltip.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.MeleeWeaponGetNumberOfDescriptionCategoriesPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.MeleeWeaponGetNumberOfDescriptionCategoriesPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.MeleeWeaponGetNumberOfDescriptionCategoriesPatcher.MeleeWeaponDrawTooltipPostfix(StardewValley.Tools.MeleeWeapon,System.Int32@)">
+            <summary>Display cooldown effects in tooltip.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingAddEquipmentEffectsPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.RingAddEquipmentEffectsPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingAddEquipmentEffectsPatcher.RingAddEquipmentEffectsPrefix(StardewValley.Objects.Ring,StardewValley.Buffs.BuffEffects)">
+            <summary>Iridium Band does nothing + rebalance Jade Ring + implement Garnet ring.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingCanCombinePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.RingCanCombinePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingCanCombinePatcher.RingCanCombinePrefix(StardewValley.Objects.Ring,System.Boolean@,StardewValley.Objects.Ring)">
+            <summary>Allows feeding up to four gemstone rings into an Infinity Band.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingCombinePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.RingCombinePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingCombinePatcher.RingCombinePrefix(StardewValley.Objects.Ring,StardewValley.Objects.Ring@,StardewValley.Objects.Ring)">
+            <summary>Changes combined ring to Infinity Band when combining.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingDrawInMenuPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.RingDrawInMenuPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingDrawInMenuPatcher.RingDrawInMenuReverse(System.Object,Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,StardewValley.StackDrawType,Microsoft.Xna.Framework.Color,System.Boolean)">
+            <summary>Stub for base <see cref="M:StardewValley.Objects.Ring.drawInMenu(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,StardewValley.StackDrawType,Microsoft.Xna.Framework.Color,System.Boolean)"/>.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingDrawTooltipPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.RingDrawTooltipPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingDrawTooltipPatcher.RingDrawTooltipPrefix(StardewValley.Objects.Ring,Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32@,System.Int32@,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Single)">
+            <summary>Draw combined Infinity Band tooltip.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingGetExtraSpaceNeededForTooltipSpecialIconsPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.RingGetExtraSpaceNeededForTooltipSpecialIconsPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingGetExtraSpaceNeededForTooltipSpecialIconsPatcher.RingGetExtraSpaceNeededForTooltipSpecialIconsPostfix(StardewValley.Objects.Ring,Microsoft.Xna.Framework.Point@,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Int32,System.Int32)">
+            <summary>Fix combined Infinity Band tooltip box height.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingOnEquipPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.RingOnEquipPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingOnEquipPatcher.RingOnEquipPrefix(StardewValley.Objects.Ring)">
+            <summary>Iridium Band does nothing.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingOnLeaveLocationPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.RingOnLeaveLocationPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingOnLeaveLocationPatcher.RingOnLeaveLocationPrefix(StardewValley.Objects.Ring)">
+            <summary>Iridium Band does nothing.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingOnNewLocationPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.RingOnNewLocationPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingOnNewLocationPatcher.RingOnNewLocationPrefix(StardewValley.Objects.Ring)">
+            <summary>Iridium Band does nothing.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingOnUnequipPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.RingOnUnequipPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.RingOnUnequipPatcher.RingOnUnequipPrefix(StardewValley.Objects.Ring)">
+            <summary>Iridium Band does nothing.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ToolActionWhenBeingHeldPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.ToolActionWhenBeingHeldPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ToolActionWhenBeingHeldPatcher.ToolActionWhenBeingHeldPostfix(StardewValley.Tool,StardewValley.Farmer)">
+            <summary>Apply tool resonances.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ToolActionWhenStopBeingHeldPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.Patchers.ToolActionWhenStopBeingHeldPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.Patchers.ToolActionWhenStopBeingHeldPatcher.ToolActionWhenStopBeingHeldPostfix(StardewValley.Tool,StardewValley.Farmer)">
+            <summary>Reset applied tool resonances.</summary>
+        </member>
+        <member name="T:DaLion.Harmonics.Framework.StatBuffer">
+            <summary>A buffer for aggregating stat bonuses.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.StatBuffer.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.StatBuffer"/> class with all stats set to zero.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.StatBuffer.#ctor(System.Single[])">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.StatBuffer"/> class with all stats set to the specified array values.</summary>
+            <param name="stats">An array with exactly 9 float values corresponding to each stat bonus.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.StatBuffer.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.Framework.StatBuffer"/> class with all stats set to the specified individual values.</summary>
+            <param name="attackMultiplier">The attack multiplier.</param>
+            <param name="cooldownReduction">The cooldown reduction.</param>
+            <param name="critChanceMultiplier">The critical chance multiplier.</param>
+            <param name="critPowerMultiplier">The critical power multiplier.</param>
+            <param name="defense">The added defense.</param>
+            <param name="knockbackMultiplier">The knockback multiplier.</param>
+            <param name="magneticRadius">The added magnetic radius.</param>
+            <param name="weaponSpeedMultiplier">The weapon speed multiplier.</param>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.StatBuffer.AttackMultiplier">
+            <summary>Gets or sets the attack multiplier.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.StatBuffer.CooldownReduction">
+            <summary>Gets or sets the cooldown reduction.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.StatBuffer.CriticalChanceMultiplier">
+            <summary>Gets or sets the critical chance multiplier.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.StatBuffer.CriticalPowerMultiplier">
+            <summary>Gets or sets the critical power multiplier.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.StatBuffer.Defense">
+            <summary>Gets or sets the added defense.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.StatBuffer.KnockbackMultiplier">
+            <summary>Gets or sets the knockback multiplier.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.StatBuffer.MagneticRadius">
+            <summary>Gets or sets the added magnetic radius.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.Framework.StatBuffer.WeaponSpeedMultiplier">
+            <summary>Gets or sets the weapon speed multiplier.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.StatBuffer.op_Addition(DaLion.Harmonics.Framework.StatBuffer,DaLion.Harmonics.Framework.StatBuffer)">
+            <summary>Adds two <see cref="T:DaLion.Harmonics.Framework.StatBuffer"/>s.</summary>
+            <param name="left">Source <see cref="T:DaLion.Harmonics.Framework.StatBuffer" /> on the left of the add sign.</param>
+            <param name="right">Source <see cref="T:DaLion.Harmonics.Framework.StatBuffer" /> on the right of the add sign.</param>
+            <returns>Sum of the vectors.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.StatBuffer.op_Equality(DaLion.Harmonics.Framework.StatBuffer,DaLion.Harmonics.Framework.StatBuffer)">
+            <summary>Compares two <see cref="T:DaLion.Harmonics.Framework.StatBuffer"/>s.</summary>
+            <param name="left">Source <see cref="T:DaLion.Harmonics.Framework.StatBuffer" /> on the left of the add sign.</param>
+            <param name="right">Source <see cref="T:DaLion.Harmonics.Framework.StatBuffer" /> on the right of the add sign.</param>
+            <returns>Sum of the vectors.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.StatBuffer.op_Inequality(DaLion.Harmonics.Framework.StatBuffer,DaLion.Harmonics.Framework.StatBuffer)">
+            <summary>Compares two <see cref="T:DaLion.Harmonics.Framework.StatBuffer"/>s.</summary>
+            <param name="left">Source <see cref="T:DaLion.Harmonics.Framework.StatBuffer" /> on the left of the add sign.</param>
+            <param name="right">Source <see cref="T:DaLion.Harmonics.Framework.StatBuffer" /> on the right of the add sign.</param>
+            <returns>Sum of the vectors.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.StatBuffer.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.StatBuffer.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.StatBuffer.Any">
+            <summary>Determines whether any of the buffered stats is non-zero.</summary>
+            <returns><see langword="true"/> if at least one of the buffered stats is greater than zero, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DaLion.Harmonics.Framework.StatBuffer.Count">
+            <summary>Gets the number of non-zero buffered stats.</summary>
+            <returns>The number of non-zero buffered stats.</returns>
+        </member>
+        <member name="T:DaLion.Harmonics.HarmonicsConfig">
+            <summary>Config schema for the Ponds mod.</summary>
+        </member>
+        <member name="T:DaLion.Harmonics.HarmonicsConfig.LightsourceTexture">
+            <summary>The texture that should be used as the resonance light source.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.HarmonicsConfig.LightsourceTexture.Sconce">
+            <summary>The default, Vanilla sconce light texture.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.HarmonicsConfig.LightsourceTexture.Stronger">
+            <summary>A more opaque sconce light texture.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.HarmonicsConfig.LightsourceTexture.Patterned">
+            <summary>A floral-patterned light texture.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsConfig.CraftableGemstoneRings">
+            <summary>Gets a value indicating whether to add new combat recipes for crafting gemstone rings.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsConfig.AudibleGemstones">
+            <summary>Gets a value indicating whether gemstone frequencies can be heard.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsConfig.ChordSoundDuration">
+            <summary>Gets the duration of the chord sound cue, in milliseconds.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsConfig.ColorfulResonances">
+            <summary>Gets a value indicating whether the resonance glow should inherit the root note's color.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsConfig.ResonanceLightsourceTexture">
+            <summary>Gets a value indicating the texture that should be used as the resonance light source.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.HarmonicsConfigMenu.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Harmonics.HarmonicsConfigMenu"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.HarmonicsConfigMenu.BuildMenu">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.HarmonicsConfigMenu.ResetConfig">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Harmonics.HarmonicsConfigMenu.SaveAndApply">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Harmonics.HarmonicsMod">
+            <summary>The mod entry point.</summary>
+        </member>
+        <member name="T:DaLion.Harmonics.HarmonicsMod.TextureStyle">
+            <summary>The user's current ring texture style, based on installed texture mods.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.HarmonicsMod.TextureStyle.Vanilla">
+            <summary>No ring texture mods installed.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.HarmonicsMod.TextureStyle.BetterRings">
+            <summary>Better Rings by BBR installed.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.HarmonicsMod.TextureStyle.VanillaTweaks">
+            <summary>Vanilla Tweaks by Taiyokun installed.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.HarmonicsMod.TextureStyle.VanillaTweaks_Warrior">
+            <summary>Vanilla Tweaks Warrior by Taiyokun installed.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.Instance">
+            <summary>Gets the static <see cref="T:DaLion.Harmonics.HarmonicsMod"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.Config">
+            <summary>Gets or sets the <see cref="T:DaLion.Harmonics.HarmonicsConfig"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.PerScreenState">
+            <summary>Gets the <see cref="T:StardewModdingAPI.Utilities.PerScreen`1"/> <see cref="T:DaLion.Harmonics.HarmonicsState"/>.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.State">
+            <summary>Gets or sets the <see cref="T:DaLion.Harmonics.HarmonicsState"/> of the local player.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.Data">
+            <summary>Gets the <see cref="T:DaLion.Shared.Data.ModDataManager"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.EventManager">
+            <summary>Gets the <see cref="T:DaLion.Shared.Events.EventManager"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.Broadcaster">
+            <summary>Gets the <see cref="P:DaLion.Harmonics.HarmonicsMod.Broadcaster"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.Log">
+            <summary>Gets the <see cref="T:DaLion.Shared.Logger"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.ModHelper">
+            <summary>Gets the <see cref="T:StardewModdingAPI.IModHelper"/> API.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.Manifest">
+            <summary>Gets the <see cref="T:StardewModdingAPI.IManifest"/> API.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod.UniqueId">
+            <summary>Gets the unique ID for this mod.</summary>
+        </member>
+        <member name="P:DaLion.Harmonics.HarmonicsMod._I18n">
+            <summary>Gets the <see cref="T:StardewModdingAPI.ITranslationHelper"/> API.</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.HarmonicsMod.Entry(StardewModdingAPI.IModHelper)">
+            <summary>The mod entry point, called after the mod is first loaded.</summary>
+            <param name="helper">Provides simplified APIs for writing mods.</param>
+        </member>
+        <member name="T:DaLion.Harmonics.I18n">
+            <summary>Get translations from the mod's <c>i18n</c> folder.</summary>
+            <remarks>This is auto-generated from the <c>i18n/default.json</c> file when the project is compiled.</remarks>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Translations">
+            <summary>The mod's translation helper.</summary>
+        </member>
+        <member name="T:DaLion.Harmonics.I18n.Keys">
+            <summary>A lookup of available translation keys.</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Schema">
+            <summary>The unique key for a translation equivalent to "https://smapi.io/schemas/i18n.json".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Objects_Garnet_Name">
+            <summary>The unique key for a translation equivalent to "Garnet".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Objects_Garnet_Desc">
+            <summary>The unique key for a translation equivalent to "The namesake of a beautiful princess from a faraway land.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Garnet_Name">
+            <summary>The unique key for a translation equivalent to "Garnet Ring".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Garnet_Desc">
+            <summary>The unique key for a translation equivalent to "A gold ring adorned with a garnet gemstone. Decreases special move cooldown by 10%.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Infinity_Name">
+            <summary>The unique key for a translation equivalent to "Infinity Band".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Infinity_Desc">
+            <summary>The unique key for a translation equivalent to "A vessel for great power.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Amethyst_Prefix">
+            <summary>The unique key for a translation equivalent to "A copper ring adorned with an amethyst gemstone.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Topaz_Prefix">
+            <summary>The unique key for a translation equivalent to "A copper ring adorned with a topaz gemstone.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Aquamarine_Prefix">
+            <summary>The unique key for a translation equivalent to "A silver ring adorned with an aquamarine gemstone.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Jade_Prefix">
+            <summary>The unique key for a translation equivalent to "A silver ring adorned with a jade gemstone.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Emerald_Prefix">
+            <summary>The unique key for a translation equivalent to "A gold ring adorned with an emerald gemstone.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Ruby_Prefix">
+            <summary>The unique key for a translation equivalent to "A gold ring adorned with a ruby gemstone.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Rings_Iridium_Desc">
+            <summary>The unique key for a translation equivalent to "An ordinary band of iridium.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Node_Garnet_Name">
+            <summary>The unique key for a translation equivalent to "Garnet Node".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Node_Garnet_Desc">
+            <summary>The unique key for a translation equivalent to "A clump of Garnets encased in stone.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_Resonance">
+            <summary>The unique key for a translation equivalent to "Resonance".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_Ruby">
+            <summary>The unique key for a translation equivalent to "Ruby".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_Aquamarine">
+            <summary>The unique key for a translation equivalent to "Aquamarine".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_Jade">
+            <summary>The unique key for a translation equivalent to "Jade".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_Emerald">
+            <summary>The unique key for a translation equivalent to "Emerald".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_Amethyst">
+            <summary>The unique key for a translation equivalent to "Amethyst".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_Topaz">
+            <summary>The unique key for a translation equivalent to "Topaz".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_Garnet">
+            <summary>The unique key for a translation equivalent to "Garnet".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_ItemHover_Damage">
+            <summary>The unique key for a translation equivalent to "{{amount}} Damage".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_ItemHover_CRate">
+            <summary>The unique key for a translation equivalent to "{{amount}} Crit. Chance".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_ItemHover_CPow">
+            <summary>The unique key for a translation equivalent to "{{amount}} Crit. Power".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_ItemHover_Knockback">
+            <summary>The unique key for a translation equivalent to "{{amount}} Knockback".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_ItemHover_AttackSpeed">
+            <summary>The unique key for a translation equivalent to "{{amount}} Attack Speed".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_ItemHover_Cdr">
+            <summary>The unique key for a translation equivalent to "{{amount}} Cooldown".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_ItemHover_Resist">
+            <summary>The unique key for a translation equivalent to "{{amount}} Defense".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_ItemHover_Light">
+            <summary>The unique key for a translation equivalent to "Emits Light".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Ui_ItemHover_Magnetic">
+            <summary>The unique key for a translation equivalent to "Magnetic".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Dialogue_Emily_Gemstones_First">
+            <summary>The unique key for a translation equivalent to "Have you ever really felt a gemstone? Like, the way a topaz melts into your soul, or how a ruby sets your heart on fire?#$b#Gemstones have this incredible way of resonating with our energies. It's like nature's palette of emotions.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Dialogue_Emily_Gemstones_Second">
+            <summary>The unique key for a translation equivalent to "One time I tried packing a ring with a bunch of gemstones, to resonate with all of them at once.#$b#But it kept falling apart! Clint said it's because ordinary metals aren't strong enough to handle the overlapping vibrations. So now I just wear a different one every day!".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Global_Infinitycraft">
+            <summary>The unique key for a translation equivalent to "{{someone}} forged an Infinity Band.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_CraftableGemstoneRings_Title">
+            <summary>The unique key for a translation equivalent to "Craftable Gemstone Rings".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_CraftableGemstoneRings_Desc">
+            <summary>The unique key for a translation equivalent to "Add new combat recipes for crafting gemstone rings.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_AudibleGemstones_Title">
+            <summary>The unique key for a translation equivalent to "Audible Gemstones".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_AudibleGemstones_Desc">
+            <summary>The unique key for a translation equivalent to "Whether gemstone frequencies can be heard.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_ChordSoundDuration_Title">
+            <summary>The unique key for a translation equivalent to "Chord Sound Duration".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_ChordSoundDuration_Desc">
+            <summary>The unique key for a translation equivalent to "The duration of the chord sound cue, in milliseconds.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_ColorfulResonances_Title">
+            <summary>The unique key for a translation equivalent to "Colorful Resonances".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_ColorfulResonances_Desc">
+            <summary>The unique key for a translation equivalent to "Whether the resonance glow should inherit the root note's color.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_ResonanceLightsourceTexture_Title">
+            <summary>The unique key for a translation equivalent to "Resonance Lightsource Texture".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_ResonanceLightsourceTexture_Desc">
+            <summary>The unique key for a translation equivalent to "The texture that will be used for the resonance light source.".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_LightsourceTexture_Sconce">
+            <summary>The unique key for a translation equivalent to "Sconce".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_LightsourceTexture_Stronger">
+            <summary>The unique key for a translation equivalent to "Stronger".</summary>
+        </member>
+        <member name="F:DaLion.Harmonics.I18n.Keys.Gmcm_LightsourceTexture_Patterned">
+            <summary>The unique key for a translation equivalent to "Patterned".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Init(StardewModdingAPI.ITranslationHelper)">
+            <summary>Construct an instance.</summary>
+            <param name="translations">The mod's translation helper.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Schema">
+            <summary>Get a translation equivalent to "https://smapi.io/schemas/i18n.json".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Objects_Garnet_Name">
+            <summary>Get a translation equivalent to "Garnet".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Objects_Garnet_Desc">
+            <summary>Get a translation equivalent to "The namesake of a beautiful princess from a faraway land.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Garnet_Name">
+            <summary>Get a translation equivalent to "Garnet Ring".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Garnet_Desc">
+            <summary>Get a translation equivalent to "A gold ring adorned with a garnet gemstone. Decreases special move cooldown by 10%.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Infinity_Name">
+            <summary>Get a translation equivalent to "Infinity Band".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Infinity_Desc">
+            <summary>Get a translation equivalent to "A vessel for great power.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Amethyst_Prefix">
+            <summary>Get a translation equivalent to "A copper ring adorned with an amethyst gemstone.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Topaz_Prefix">
+            <summary>Get a translation equivalent to "A copper ring adorned with a topaz gemstone.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Aquamarine_Prefix">
+            <summary>Get a translation equivalent to "A silver ring adorned with an aquamarine gemstone.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Jade_Prefix">
+            <summary>Get a translation equivalent to "A silver ring adorned with a jade gemstone.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Emerald_Prefix">
+            <summary>Get a translation equivalent to "A gold ring adorned with an emerald gemstone.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Ruby_Prefix">
+            <summary>Get a translation equivalent to "A gold ring adorned with a ruby gemstone.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Rings_Iridium_Desc">
+            <summary>Get a translation equivalent to "An ordinary band of iridium.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Node_Garnet_Name">
+            <summary>Get a translation equivalent to "Garnet Node".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Node_Garnet_Desc">
+            <summary>Get a translation equivalent to "A clump of Garnets encased in stone.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_Resonance">
+            <summary>Get a translation equivalent to "Resonance".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_Ruby">
+            <summary>Get a translation equivalent to "Ruby".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_Aquamarine">
+            <summary>Get a translation equivalent to "Aquamarine".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_Jade">
+            <summary>Get a translation equivalent to "Jade".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_Emerald">
+            <summary>Get a translation equivalent to "Emerald".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_Amethyst">
+            <summary>Get a translation equivalent to "Amethyst".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_Topaz">
+            <summary>Get a translation equivalent to "Topaz".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_Garnet">
+            <summary>Get a translation equivalent to "Garnet".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_ItemHover_Damage(System.Object)">
+            <summary>Get a translation equivalent to "{{amount}} Damage".</summary>
+            <param name="amount">The value to inject for the <c>{{amount}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_ItemHover_CRate(System.Object)">
+            <summary>Get a translation equivalent to "{{amount}} Crit. Chance".</summary>
+            <param name="amount">The value to inject for the <c>{{amount}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_ItemHover_CPow(System.Object)">
+            <summary>Get a translation equivalent to "{{amount}} Crit. Power".</summary>
+            <param name="amount">The value to inject for the <c>{{amount}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_ItemHover_Knockback(System.Object)">
+            <summary>Get a translation equivalent to "{{amount}} Knockback".</summary>
+            <param name="amount">The value to inject for the <c>{{amount}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_ItemHover_AttackSpeed(System.Object)">
+            <summary>Get a translation equivalent to "{{amount}} Attack Speed".</summary>
+            <param name="amount">The value to inject for the <c>{{amount}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_ItemHover_Cdr(System.Object)">
+            <summary>Get a translation equivalent to "{{amount}} Cooldown".</summary>
+            <param name="amount">The value to inject for the <c>{{amount}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_ItemHover_Resist(System.Object)">
+            <summary>Get a translation equivalent to "{{amount}} Defense".</summary>
+            <param name="amount">The value to inject for the <c>{{amount}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_ItemHover_Light">
+            <summary>Get a translation equivalent to "Emits Light".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Ui_ItemHover_Magnetic">
+            <summary>Get a translation equivalent to "Magnetic".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Dialogue_Emily_Gemstones_First">
+            <summary>Get a translation equivalent to "Have you ever really felt a gemstone? Like, the way a topaz melts into your soul, or how a ruby sets your heart on fire?#$b#Gemstones have this incredible way of resonating with our energies. It's like nature's palette of emotions.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Dialogue_Emily_Gemstones_Second">
+            <summary>Get a translation equivalent to "One time I tried packing a ring with a bunch of gemstones, to resonate with all of them at once.#$b#But it kept falling apart! Clint said it's because ordinary metals aren't strong enough to handle the overlapping vibrations. So now I just wear a different one every day!".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Global_Infinitycraft(System.Object)">
+            <summary>Get a translation equivalent to "{{someone}} forged an Infinity Band.".</summary>
+            <param name="someone">The value to inject for the <c>{{someone}}</c> token.</param>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_CraftableGemstoneRings_Title">
+            <summary>Get a translation equivalent to "Craftable Gemstone Rings".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_CraftableGemstoneRings_Desc">
+            <summary>Get a translation equivalent to "Add new combat recipes for crafting gemstone rings.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_AudibleGemstones_Title">
+            <summary>Get a translation equivalent to "Audible Gemstones".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_AudibleGemstones_Desc">
+            <summary>Get a translation equivalent to "Whether gemstone frequencies can be heard.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_ChordSoundDuration_Title">
+            <summary>Get a translation equivalent to "Chord Sound Duration".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_ChordSoundDuration_Desc">
+            <summary>Get a translation equivalent to "The duration of the chord sound cue, in milliseconds.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_ColorfulResonances_Title">
+            <summary>Get a translation equivalent to "Colorful Resonances".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_ColorfulResonances_Desc">
+            <summary>Get a translation equivalent to "Whether the resonance glow should inherit the root note's color.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_ResonanceLightsourceTexture_Title">
+            <summary>Get a translation equivalent to "Resonance Lightsource Texture".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_ResonanceLightsourceTexture_Desc">
+            <summary>Get a translation equivalent to "The texture that will be used for the resonance light source.".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_LightsourceTexture_Sconce">
+            <summary>Get a translation equivalent to "Sconce".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_LightsourceTexture_Stronger">
+            <summary>Get a translation equivalent to "Stronger".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.Gmcm_LightsourceTexture_Patterned">
+            <summary>Get a translation equivalent to "Patterned".</summary>
+        </member>
+        <member name="M:DaLion.Harmonics.I18n.GetByKey(System.String,System.Object)">
+            <summary>Get a translation by its key.</summary>
+            <param name="key">The translation key.</param>
+            <param name="tokens">An object containing token key/value pairs. This can be an anonymous object (like <c>new { value = 42, name = "Cranberries" }</c>), a dictionary, or a class instance.</param>
+            <remarks>You should usually use a strongly-typed method like <see cref="M:DaLion.Harmonics.I18n.Schema" /> instead.</remarks>
+        </member>
+        <member name="T:NetEscapades.EnumGenerators.EnumExtensionsAttribute">
+            <summary>
+            Add to enums to indicate that extension methods should be generated for the type
+            </summary>
+        </member>
+        <member name="P:NetEscapades.EnumGenerators.EnumExtensionsAttribute.ExtensionClassNamespace">
+            <summary>
+            The namespace to generate the extension class.
+            If not provided the namespace of the enum will be used
+            </summary>
+        </member>
+        <member name="P:NetEscapades.EnumGenerators.EnumExtensionsAttribute.ExtensionClassName">
+            <summary>
+            The name to use for the extension class.
+            If not provided, the enum name with "Extensions" will be used.
+            For example for an Enum called StatusCodes, the default name
+            will be StatusCodesExtensions
+            </summary>
+        </member>
+    </members>
+</doc>

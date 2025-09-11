@@ -1,0 +1,60 @@
+{
+    "Changes": [
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [ "(BC)12", "OutputRules" ],
+			"Entries": {
+				"ilucie.MerlotWine": {
+					"Id": "ilucie.MerlotWine",
+					"Triggers": 
+						[
+							{
+								"RequiredItemId": "(O)ilucie.Merlot",
+								"RequiredCount": 1
+							}
+						],
+					"OutputItem":
+						[
+							{
+                                "Id": "(0)ilucie.MerlotWine",
+								"ItemId": "(O)ilucie.MerlotWine",
+								"Quality": -1,
+								"CopyQuality": true
+							}
+						],
+					"MinutesUntilReady": 1800,
+                    "DaysUntilReady": -1
+				},
+				"ilucie.SemillonWine": {
+					"Id": "ilucie.SemillonWine",
+					"Triggers": 
+						[
+							{
+								"RequiredItemId": "(O)ilucie.Semillon",
+								"RequiredCount": 1
+							}
+						],
+					"OutputItem":
+						[
+							{
+                                "Id": "(0)ilucie.SemillonWine",
+								"ItemId": "(O)ilucie.SemillonWine",
+								"Quality": -1,
+								"CopyQuality": true
+							}
+						],
+					"MinutesUntilReady": 1800,
+                    "DaysUntilReady": -1
+				},				
+			},
+            "MoveEntries": 
+            [
+
+                { "Id": "ilucie.MerlotWine", "BeforeId": "Default_Wine" },
+				{ "Id": "ilucie.SemillonWine", "BeforeId": "Default_Wine" }
+            ]
+        }      
+	]
+}

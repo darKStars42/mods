@@ -1,0 +1,69 @@
+{
+  "Changes": [
+    //Seed item
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Luminaria_Fern_Seeds":{
+          "Name": "Luminaria Fern Seeds",
+          "DisplayName": "{{i18n:Luminaria_Fern_Seeds.DisplayName}}",
+          "Description": "{{i18n:Luminaria_Fern_Seeds.Description}}",
+          "Type": "Seeds",
+          "Category": -74,
+          "Price" : 35,
+          "Texture": "Mods/{{ModId}}/Luminaria_Fern_Seed",
+          "SpriteIndex": 0
+        }
+      }
+    },
+    //Crop
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Luminaria_Fern":{
+          "Name": "Luminaria Fern",
+          "DisplayName": "{{i18n:Luminaria_Fern.DisplayName}}",
+          "Description": "{{i18n:Luminaria_Fern.Description}}",
+          "Type": "Vegetable",
+          "Category": -75,
+          "Price" : 320,
+          "IsDrink": false,
+          "Edibility": -20,
+          "Texture": "Mods/{{ModId}}/Luminaria_Fern",
+          "SpriteIndex": 0,
+          "ContextTags": [
+            "season_summer",
+            "season_fall",
+            "color_green"
+          ]
+        }
+      }
+    },
+    //Planted Crop
+    {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "{{ModId}}_Luminaria_Fern_Seeds": {
+                    "Seasons": ["summer", "fall"],
+                    "DaysInPhase": [ 2, 2, 4, 3, 3],
+                    "RegrowDays": 4,
+                    "HarvestItemId": "{{ModId}}_Luminaria_Fern",
+                    "ExtraHarvestChance": 0.1,
+                    "HarvestMinStack": 1,
+                    "HarvestMaxStack": 2,
+                    "HarvestMaxIncreasePerFarmingLevel": 0.1,
+                    "Texture": "Mods/{{ModId}}/Luminaria_Fern_Planted",
+                    "SpriteIndex": 0
+                }
+            }
+        },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Luminaria_Fern_Seed, Mods/{{ModId}}/Luminaria_Fern, Mods/{{ModId}}/Luminaria_Fern_Planted",
+            "FromFile": "assets/Luminaria_Fern/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

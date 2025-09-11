@@ -1,0 +1,78 @@
+{
+    "Changes": [
+        // SCHEDULE
+        {
+        "Action": "EditData",
+            "LogName": "Vanessa Daily Schedule",
+            "Target": "Characters/schedules/Vanessa",
+            "Entries": {
+                "rain": "900 Saloon 43 8 2/1300 Saloon 35 18 0/1500 Saloon 18 18 2/1830 Saloon 33 18 0/2000 Saloon 24 17 0/2100 Saloon 43 5 2 Vanessa_Sleep",
+                "spring": "900 Saloon 43 8 2/1120 Town 63 16 2 Aa_Play/1740 Town 29 27 3/2000 Saloon 43 5 2 Vanessa_Sleep",
+                "summer": "900 Saloon 43 8 2/1120 Town 63 16 2 Aa_Play/1740 Town 29 27 3/2000 Saloon 43 5 2 Vanessa_Sleep",
+                "fall": "900 Saloon 43 8 2/1120 Town 63 16 2 Aa_Play/1740 Town 29 27 3/2000 Saloon 43 5 2 Vanessa_Sleep",
+                "winter": "900 Saloon 43 8 2/1120 Town 63 16 2 Aa_Play/1740 Town 29 27 3/2000 Saloon 43 5 2 Vanessa_Sleep",
+                "Mon": "900 Saloon 43 8 2/1120 Town 63 16 2 Aa_Play/1740 Town 29 27 3/2000 Saloon 43 5 2 Vanessa_Sleep",
+                "Tue": "900 ArchaeologyHouse 19 11 2/1400 Town 91 97 2/1620 Town 50 93 0/1740 Saloon 35 18 0/2000 Saloon 43 5 2 Vanessa_Sleep",
+                "Wed": "GOTO Tue",
+                "Thu": "GOTO season",
+                "Fri": "GOTO Tue",
+                "Sat": "GOTO Mon",
+                "Sun": "GOTO Mon",
+                "DesertFestival_3": "a1000 BusStop 24 15 square_2_2/1030 Desert 4 24 2/1700 Saloon 35 18 0/2000 Saloon 43 5 2 Vanessa_Sleep",
+                "9": "GOTO season",
+                "23":"GOTO season"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Characters/schedules/Vanessa",
+            "Entries": {
+            "DesertFestival_3": "a1000 BusStop 24 15 square_2_2/1030 Desert 4 24 2/1700 Saloon 35 18 0/2000 Saloon 43 5 2 Vanessa_Sleep",
+            "Tue": "800 Custom_SchoolHouse 23 11 3/a1000 Custom_SchoolHouse 22 11 3 Vanessa_Read/1120 Town 13 23 0/a1250 Custom_SchoolHouse 23 11 3/1300 Custom_SchoolHouse 22 11 3 Vanessa_Read/1530 Town 20 93 0/1750 Saloon 35 18 0/2000 Saloon 43 5 2 Vanessa_Sleep",
+            "Wed": "GOTO Tue",
+            "Fri": "GOTO Tue",
+            "9":"GOTO season",
+            "23":"GOTO season"
+            },
+            "When": {
+                "LRSeventBool": "true",
+                "Weather |contains=Rain,Storm,GreenRain": "false",
+                "LRSschoolDays |contains={{DayofWeek}}": "true"
+            }
+        },
+        { 
+        "Action": "EditData",
+            "Target": "characters/schedules/Vanessa",
+            "Entries": {
+                "rain": "800 Custom_SchoolHouse 23 11 3/a1000 Custom_SchoolHouse 22 11 3 Vanessa_Read/1530 Saloon 35 18 0/2000 Saloon 43 5 2 Vanessa_Sleep"
+            },
+            "When": {
+                "Weather": "Rain,Storm,GreenRain",
+                "LRSschoolDays |contains={{DayofWeek}}": "true",
+                "LRSeventBool": "true",
+                "LRSnoschool": "false"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Characters/schedules/Vanessa",
+            "Entries": {
+                "Mon": "GOTO Tue",
+                "Thu": "GOTO Tue"
+            },
+            "When": {
+                "LRSeventBool": "true",
+                "LRSfiveDays": "true",
+                "LRSnoSchool": "false",
+                "LRSschoolDays |contains={{DayofWeek}}": "true"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Strings/StringsFromMaps",
+            "Entries": {
+                "Desk.1": "{{i18n:Desk.Vanessa}}"
+            }
+        }
+    ]
+}

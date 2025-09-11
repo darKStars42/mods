@@ -1,0 +1,195 @@
+{
+	"Format": "2.7.0",
+	"ConfigSchema": {
+		//************************************
+		//      Crops
+
+		"EnableDiamondFlower": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Diamond Flower",
+			"Section": "Crops"
+		},
+		"EnableDulseSeaweed": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a water crop for growing Dulse Seaweed",
+			"Section": "Crops"
+		},
+		"EnableFerngillPrimrose": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Ferngill Primrose",
+			"Section": "Crops"
+		},
+		"EnableGoldenOceanFlower": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Golden Ocean Flower",
+			"Section": "Crops"
+		},
+		"EnableGoldenrod": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Goldenrod",
+			"Section": "Crops"
+		},
+		"EnableMushroomColony": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Mushroom Colony",
+			"Section": "Crops"
+		},
+		"EnablePoisonMushroom": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Poison Mushroom",
+			"Section": "Crops"
+		},
+		"EnableRafflesia": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Rafflesia",
+			"Section": "Crops"
+		},
+		"EnableRedBaneberry": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Red Baneberry",
+			"Section": "Crops"
+		},
+		"EnableSwampFlower": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Swamp Flowers",
+			"Section": "Crops"
+		},
+		"EnableThistle": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Thistle",
+			"Section": "Crops"
+		},
+		"EnableWinterRose": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a crop for growing Winter Star Rose",
+			"Section": "Crops"
+		},
+
+		//************************************
+		//      Saplings
+
+		"EnableBearberry": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a bush crop for growing Bearberry.",
+			"Section": "Bushes"
+		},
+		"EnableDewdropBerry": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a bush crop for growing Dewdrop Berry.",
+			"Section": "Bushes"
+		},
+		"Enable4LeafClover": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds a bush crop for growing Four Leaf Clover",
+			"Section": "Bushes"
+		},
+		"EnableMegaPurpleMushroom": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			"Description": "Adds a bush crop for growing Mega Purple Mushroom",
+			"Section": "Bushes"
+		},
+
+		//************************************
+		//      Machine
+		"EnableGreenMushroom": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			"Description": "Adds a machine for growing Green Mushroom",
+			"Section": "Machine"
+		},
+
+		//************************************
+		//      Changes
+		"EdibleGreenMushroom": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			"Description": "Allows Green Mushrooms to be put in dehydrator to make Dried Green Mushrooms",
+			"Section": "Changes"
+		},
+		"EdibleMonsterMushrooms": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			"Description": "Allows Monster Mushrooms to be put in dehydrator to make Dried Monster Mushrooms",
+			"Section": "Changes"
+		},
+		"MonsterMushroomCategoryChanges": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Changes Monster Mushrooms into the 'Mushroom' category, but this doesn't remove it from the Vegetable category, only changes the name",
+			"Section": "Changes"
+		},
+		"CategoryChanges": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Changes some items into 'Mushroom' category, has no gameplay effects",
+			"Section": "Changes"
+		},
+		"RafflesiaCategoryChanges": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			"Description": "Changes SVE's Rafflesia into the Flower category from forage, doesn't change any of Cornucopia's if installed",
+			"Section": "Changes"
+		},
+		"RafflesiaCornucopia": {
+			"AllowValues": "SVE, Cornucopia",
+			"AllowBlank": true,
+			"Default": "SVE",
+			"Description": "Use Cornucopia's texture for Raffleisa instead of SVE original look to match looks with Cornucopia",
+			"Section": "Changes"
+		},
+		"CornucopiaCompat": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Adds compatibility between SVE and Cornucopia series, such as changing names of SVE crops. Does not remove any crops",
+			"Section": "Changes"
+		}
+	},
+
+	"Changes": [
+		{
+			"LogName": "Textures",
+			"Action": "Load",
+			"Target": "ZoeyHoshi.SVEForageCrops/Crops, ZoeyHoshi.SVEForageCrops/GiantCrops, ZoeyHoshi.SVEForageCrops/Objects, ZoeyHoshi.SVEForageCrops/Bushes_indoor",
+			"FromFile": "assets/{{TargetWithoutPath}}.png"
+		},
+		{
+			"LogName": "Rafflesia Textures",
+			"Action": "Load",
+			"Target": "ZoeyHoshi.SVEForageCrops/Rafflesia",
+			"FromFile": "assets/Rafflesia_{{RafflesiaCornucopia}}.png"
+		},
+		{
+			"LogName": "Bushes Textures",
+			"Action": "Load",
+			"Target": "ZoeyHoshi.SVEForageCrops/Bushes",
+			"FromFile": "assets/Bushes_{{season}}.png"
+		},
+		{
+			"LogName": "Craftable Textures",
+			"Action": "Load",
+			"Target": "ZoeyHoshi.SVEForageCrops/Craftables",
+			"FromFile": "assets/Craftables_{{season}}.png"
+		},
+		{
+			"LogName": "SVE Forage Data",
+			"Action": "Include",
+			"FromFile": "data/BigCraftables.json, data/Compat.json, data/Crops.json, data/GiantCrops.json, data/Machines.json, data/Mail.json, data/ObjectCategories.json, data/ObjectContextTags.json, data/Objects.json, data/Shop_Dwarf.json, data/Shop_Festivals.json, data/Shop_IslandTrader.json, data/Shop_Krobus.json, data/Shop_Marlon.json, data/Shop_Marnie.json, data/Shop_Pierre.json, data/Shop_Raccoon.json, data/Shop_Willy.json, data/Teabushes.json"
+		}
+	]
+}

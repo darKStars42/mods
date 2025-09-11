@@ -1,0 +1,66 @@
+{
+  "Changes": [
+    //Seed item
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Frost_Berry_Seeds":{
+          "Name": "Ancient Frost Berry Seeds",
+          "DisplayName": "{{i18n:Ancient_Frost_Berry_Seeds.DisplayName}}",
+          "Description": "{{i18n:Ancient_Frost_Berry_Seeds.Description}}",
+          "Type": "Seeds",
+          "Category": -74,
+          "Price" : 35,
+          "Texture": "Mods/{{ModId}}/Ancient_Frost_Berry_Seeds",
+          "SpriteIndex": 0
+        }
+      }
+    },
+    //Crop
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Frost_Berry":{
+          "Name": "{{ModID}}_Ancient_Frost_Berry",
+          "DisplayName": "{{i18n:Ancient_Frost_Berry.DisplayName}}",
+          "Description": "{{i18n:Ancient_Frost_Berry.Description}}",
+          "Type": "Fruit",
+          "Category": -79,
+          "Price" : 550,
+          "IsDrink": false,
+          "Edibility": 8,
+          "Texture": "Mods/{{ModId}}/Ancient_Frost_Berry",
+          "SpriteIndex": 0,
+          "ContextTags": [
+            "season_spring",
+            "season_summer",
+            "season_fall",
+            "color_blue"
+          ]
+        }
+      }
+    },
+    //Planted Crop
+    {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "{{ModId}}_Ancient_Frost_Berry_Seeds": {
+                    "Seasons": [ "spring", "summer", "fall" ],
+                    "DaysInPhase": [ 2, 7, 7, 7, 5],
+                    "RegrowDays": 7,
+                    "HarvestItemId": "{{ModId}}_Ancient_Frost_Berry",
+                    "Texture": "Mods/{{ModId}}/Ancient_Frost_Berry_Planted",
+                    "SpriteIndex": 0
+                }
+            }
+        },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Ancient_Frost_Berry_Seeds, Mods/{{ModId}}/Ancient_Frost_Berry, Mods/{{ModId}}/Ancient_Frost_Berry_Planted",
+            "FromFile": "assets/Ancient_Frost_Berry/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

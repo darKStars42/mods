@@ -1,0 +1,455 @@
+{
+
+    "Changes": [
+      
+
+
+//■■■共通項目とバニラの編集■■■
+
+
+
+//★★★期間、フラグでの封鎖や解放の項目★★★
+
+  //●"ダム"の入り口を夏の３日まで封鎖
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam",
+        "FromFile": "assets/tmx/MapPatches/StopStone.tmx",
+        "ToArea": { "X": 4, "Y": 69, "Width": 4, "Height": 2 },
+        "When": {
+            "Query: {{DaysPlayed}} <= 30": "true"
+        }
+      },
+
+  //●"ダムロード"の入り口を夏の３日まで封鎖
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Road",
+        "FromFile": "assets/tmx/MapPatches/StopStone.tmx",
+        "ToArea": { "X": 52, "Y": 15, "Width": 4, "Height": 2 },
+        "When": {
+            "Enable the road to the dam": "true",
+            "Query: {{DaysPlayed}} <= 30": "true"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Road",
+        "FromFile": "assets/tmx/MapPatches/StopStone2.tmx",
+        "ToArea": { "X": 2, "Y": 62, "Width": 2, "Height": 3 },
+        "When": {
+            "Enable the road to the dam": "true",
+            "Query: {{DaysPlayed}} <= 30": "true"
+        }
+      },
+
+  //●"崖Add"の洞窟入り口を開放まで封鎖
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff_Add",
+        "FromFile": "assets/tmx/MapPatches/SafetyCone.tmx",
+        "ToArea": { "X": 18, "Y": 30, "Width": 1, "Height": 2 },
+        "When": {
+            "HasFlag |contains={{ModId}}_CliffCave_Mail": "false"
+        }
+      },
+
+  //●"ダム"の洞窟入り口を開放まで封鎖
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam",
+        "FromFile": "assets/tmx/MapPatches/SafetyCone.tmx",
+        "ToArea": { "X": 88, "Y": 90, "Width": 1, "Height": 2 },
+        "When": {
+            "HasFlag |contains={{ModId}}_CliffCave_Mail": "false"
+        }
+      },
+
+  //●"森"にボート追加(崖Add解放後)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Forest",
+        "FromFile": "assets/tmx/MapPatches/ForestBoat.tmx",
+        "ToArea": { "X": 89, "Y": 49, "Width": 4, "Height": 2 },
+        "When": {
+            "HasFlag": "{{ModId}}_CliffCave_Mail",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "false"
+        }
+      },
+
+  //●"植林地エリア"から捨てられた農場への洞窟を解放まで封鎖
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_AfforestationArea",
+        "FromFile": "assets/tmx/MapPatches/SafetyCone.tmx",
+        "ToArea": { "X": 43, "Y": 33, "Width": 1, "Height": 2 },
+        "When": {
+            "HasFlag |contains={{ModId}}_AfforestationArea_Mail": "false"
+        }
+      },
+
+  //●"崖Add"のﾍﾞｰｽｼﾞｬﾝﾌﾟの箱を捨てられた農場解放まで隠す
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff_Add",
+        "FromFile": "assets/tmx/MapPatches/BASEjumpingBoxHide.tmx",
+        "ToArea": { "X": 28, "Y": 25, "Width": 1, "Height": 2 },
+        "When": {
+            "HasFlag |contains={{ModId}}_AfforestationArea_Mail": "false"
+        }
+      },
+
+  //●"崖Add"のﾍﾞｰｽｼﾞｬﾝﾌﾟの足場に捨てられた農場開放まで注意メッセージを表示
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff_Add",
+        "FromFile": "assets/tmx/MapPatches/BASEjumpingMassage.tmx",
+        "ToArea": { "X": 29, "Y": 24, "Width": 1, "Height": 1 },
+        "When": {
+            "HasFlag |contains={{ModId}}_AfforestationArea_Mail": "false"
+        }
+      },
+
+  //●"植林地エリア"の橋をトロッコ解放まで封鎖
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_AfforestationArea",
+        "FromFile": "assets/tmx/MapPatches/DamAfforestationArea_BridgeHide.tmx",
+        "ToArea": { "X": 32, "Y": 75, "Width": 7, "Height": 3 },
+        "When": {
+            "HasFlag |contains=ccCraftsRoom": "false"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_AfforestationArea",
+        "FromFile": "assets/tmx/MapPatches/DamAfforestationArea_BridgeHide2.tmx",
+        "ToArea": { "X": 22, "Y": 22, "Width": 4, "Height": 3 },
+        "When": {
+            "HasFlag |contains=ccCraftsRoom": "false"
+        }
+      },
+
+
+
+//★★★期間、フラグでの封鎖や解放の項目(ダムロードが "true" 時の項目)★★★
+
+  //●"駅"にダムロードへの入り口追加(ダムロード true 時のみ追加)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Railroad",
+        "FromFile": "assets/tmx/MapPatches/Railroad_DamRoad.tmx",
+        "PatchMode": "Replace",
+        "ToArea": { "X": 56, "Y": 24, "Width": 14, "Height": 19 },
+        "When": {
+            "Enable the road to the dam": "true",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "false",
+            "Stardew Valley Reimagined 3 ver": "false"
+        }
+      },
+
+  //●"山"にダムロードへの入り口追加
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/Mountain_DamRoad.tmx",
+        "ToArea": { "X": 78, "Y": 0, "Width": 6, "Height": 11 },
+        "When": {
+            "Enable the road to the dam": "true",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "false",
+            "Stardew Valley Reimagined 3 ver": "false"
+        }
+      },
+
+
+
+//★★★期間、フラグでの封鎖や解放の項目(ダムロードが "false" 時の項目)★★★
+
+  //●"山"にダムへの入り口追加
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/Mountain_DamRoad_false.tmx",
+        "ToArea": { "X": 78, "Y": 0, "Width": 6, "Height": 11 },
+        "When": {
+            "Enable the road to the dam": "false",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "false",
+            "Stardew Valley Reimagined 3 ver": "false"
+        }
+      },
+
+  //●"山"からダムへの入り口を夏の３日まで封鎖
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/StopStone.tmx",
+        "FromArea": { "X": 0, "Y": 0, "Width": 2, "Height": 2 },
+        "ToArea": { "X": 80, "Y": 1, "Width": 2, "Height": 2 },
+        "When": {
+            "Enable the road to the dam": "false",
+            "Query: {{DaysPlayed}} <= 30": "true",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "false",
+            "Stardew Valley Reimagined 3 ver": "false"
+        }
+      },
+
+  //●"ダム"に山への入り口追加
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam",
+        "FromFile": "assets/tmx/MapPatches/Dam_DamRoad_false.tmx",
+        "ToArea": { "X": 13, "Y": 95, "Width": 7, "Height": 5 },
+        "When": {
+            "Enable the road to the dam": "false",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "false",
+        }
+      },
+
+  //●"ダム"からダムロードへの道の封鎖
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam",
+        "FromFile": "assets/tmx/MapPatches/Dam_DamRoad_false2.tmx",
+        "ToArea": { "X": 3, "Y": 68, "Width": 1, "Height": 4 },
+        "When": {
+            "Enable the road to the dam": "false"
+        }
+      },
+
+
+
+//★★★その他の項目★★★
+
+  //●"山"の石切り場に植林地エリアへの洞窟の入り口追加
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/Mountain_DamMine.tmx",
+        "ToArea": { "X": 127, "Y": 5, "Width": 4, "Height": 10 },
+        "When": {
+            //"Stardew Valley Reimagined 3 ver": "false",
+            "HasMod: |contains=Aimon111.MoreLivelyQuarryOverhaul": "false"
+        }
+      },
+
+  //●"山"の石切り場に植林地エリアへの洞窟の入り口追加(MoreLivelyQuarryOverhaul導入時)
+  //    変更項目が少ないのでここで処理
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/(MLQO)_Mountain_DamMine.tmx",
+        "ToArea": { "X": 127, "Y": 5, "Width": 4, "Height": 6 },
+        "When": {
+            //"Stardew Valley Reimagined 3 ver": "false",
+            "HasMod: |contains=Aimon111.MoreLivelyQuarryOverhaul": "true"
+        }
+      },
+
+  //●"ダム"の放水ストップ項目
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam",
+        "FromFile": "assets/tmx/MapPatches/WaterDischargeStop.tmx",
+        "ToArea": { "X": 38, "Y": 27, "Width": 18, "Height": 30 },
+        "When": {
+            "Enable the water discharge stop": "true"
+        }
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam",
+        "FromFile": "assets/tmx/MapPatches/WaterDischargeStop2.tmx",
+        "ToArea": { "X": 38, "Y": 18, "Width": 17, "Height": 1 },
+        "When": {
+            "Enable the water discharge stop": "true"
+        }
+      },
+
+  //●"バス停"にワープスクエアの追加
+      {
+        "Action": "EditMap",
+        "Target": "Maps/BusStop",
+        "FromFile": "assets/tmx/MapPatches/WarpSquare.tmx",
+        "ToArea": { "X": 12, "Y": 2, "Width": 1, "Height": 1 },
+        "When": {
+            "Enable the warp square": "true",
+            "HasFlag": "{{ModId}}_WarpSquare_Mail"
+        }
+      },
+
+
+
+//★★★ダム崖 ＆ ダム崖Add の空背景の変更項目(季節切り替えはtmxデータだから内部で)★★★
+
+  //●崖の背景変更
+      {//◆晴れの日の午前中
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff",
+        "FromFile": "assets/tmx/MapPatches/DamCliff_BackSky_Morning.tmx",
+        "ToArea": { "X": 0, "Y": 0, "Width": 40, "Height": 24 },
+        "When": {
+            "Weather": "Sun, Wind"
+        }
+      },
+      {//◆晴れの日の午後
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff",
+        "FromFile": "assets/tmx/MapPatches/DamCliff_BackSky_Noon.tmx",
+        "ToArea": { "X": 0, "Y": 0, "Width": 40, "Height": 24 },
+        "When": {
+            "Time": "{{Range: 1200, 2600}}",
+            "Weather": "Sun, Wind"
+        },
+        "Update": "OnTimeChange"
+      },
+      {//◆悪天候終日
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff",
+        "FromFile": "assets/tmx/MapPatches/DamCliff_BackSky_Rain.tmx",
+        "ToArea": { "X": 0, "Y": 0, "Width": 40, "Height": 24 },
+        "When": {
+            "Weather": "Rain, Storm, Snow",
+        }
+      },
+
+  //●崖Addの背景変更
+      {//◆晴れの日の午前中
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff_Add",
+        "FromFile": "assets/tmx/MapPatches/DamCliffAdd_BackSky_Morning.tmx",
+        "ToArea": { "X": 0, "Y": 0, "Width": 39, "Height": 40 },
+        "When": {
+            "Weather": "Sun, Wind"
+        }
+      },
+      {//◆晴れの日の午後
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff_Add",
+        "FromFile": "assets/tmx/MapPatches/DamCliffAdd_BackSky_Noon.tmx",
+        "ToArea": { "X": 0, "Y": 0, "Width": 39, "Height": 40 },
+        "When": {
+            "Time": "{{Range: 1200, 2600}}",
+            "Weather": "Sun, Wind"
+        },
+        "Update": "OnTimeChange"
+      },
+      {//◆悪天候終日
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff_Add",
+        "FromFile": "assets/tmx/MapPatches/DamCliffAdd_BackSky_Rain.tmx",
+        "ToArea": { "X": 0, "Y": 0, "Width": 39, "Height": 40 },
+        "When": {
+            "Weather": "Rain, Storm, Snow",
+        }
+      },
+
+
+
+//★★★トロッコ関係(Mod使用でのカスタムデータも)★★★
+
+  //●Dam のトロッコ関係
+      {//◆データ(ここはだけでOK) //夏の３日以降
+        "Action": "EditData",
+        "Target": "Data/Minecarts",
+        "TargetField": [ "Default", "Destinations" ],
+        "Entries": {
+            "morecarts_Dam": {
+                "Id": "Custom_Dam",
+                "DisplayName": "{{i18n:MpDamName}}",
+                "Condition": "DAYS_PLAYED 31",
+                "TargetLocation": "Custom_Dam",
+                "TargetTile": { "X": 31, "Y": 95 },
+                "TargetDirection": "up"
+            }
+        }
+      },
+
+  //●Dam_Cliff のトロッコ関係
+      {//◆データ 条件クリア(夏の３日以降、ルイス💛３、エヴリン💛３)で行き先に表示
+        "Action": "EditData",
+        "Target": "Data/Minecarts",
+        "TargetField": [ "Default", "Destinations" ],
+        "Entries": {
+            "morecarts_Dam_Cliff": {
+                "Id": "Custom_Dam_Cliff",
+                "DisplayName": "{{i18n:MpDamCliffName}}",
+                "Condition": null,
+                "TargetLocation": "Custom_Dam_Cliff",
+                "TargetTile": { "X": 13, "Y": 30 },
+                "TargetDirection": "right"
+            }
+        },
+        "When": {
+            "HasFlag": "ccBoilerRoom",
+            "HasFlag": "{{ModId}}_CliffMinecart_Mail"
+        }
+      },
+      {//◆条件クリア(ルイス💛３、エヴリン💛３)で看板を非表示に
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff",
+        "FromFile": "assets/tmx/MapPatches/DamCliff_OpenMinecartBoard.tmx",
+        "ToArea": { "X": 13, "Y": 29, "Width": 1, "Height": 2 },
+        "When": { 
+            "HasFlag": "ccBoilerRoom",
+            "HasFlag": "{{ModId}}_CliffMinecart_Mail"
+        }
+      },
+      {//◆条件クリア(ルイス💛３、エヴリン💛３)でトロッコタイルを差し替え
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_Cliff",
+        "FromFile": "assets/tmx/MapPatches/DamCliff_OpenMinecartTile.tmx",
+        "ToArea": { "X": 11, "Y": 30, "Width": 2, "Height": 1 },
+        "When": {
+            "HasFlag": "ccBoilerRoom",
+            "HasFlag": "{{ModId}}_CliffMinecart_Mail"
+        }
+      },
+
+
+  //●Dam_PastureArea のトロッコ関係
+      {//◆データ 条件クリア(夏の３日以降、ルイス💛５、クリント💛３、マーニー💛３)で行き先に表示
+        "Action": "EditData",
+        "Target": "Data/Minecarts",
+        "TargetField": [ "Default", "Destinations" ],
+        "Entries": {
+            "morecarts_Dam_PastureArea": {
+                "Id": "Custom_Dam_PastureArea",
+                "DisplayName": "{{i18n:MpDamPastureAreaName}}",
+                "Condition": null,
+                "TargetLocation": "Custom_Dam_PastureArea",
+                "TargetTile": { "X": 33, "Y": 35 },
+                "TargetDirection": "up",
+            }
+        },
+        "When": { 
+            "HasFlag": "ccBoilerRoom",
+            "HasFlag": "{{ModId}}_AfforestationAreaMinecart_Mail",
+            "HasFlag |contains={{ModId}}_PAUC_DayCount4": "false"
+        }
+      },
+      {//◆条件クリア(ルイス💛５、クリント💛３、マーニー💛３)でトロッコエリアを表示
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_PastureArea",
+        "FromFile": "assets/tmx/MapPatches/DamPastureArea_Minecart.tmx",
+        "ToArea": { "X": 32, "Y": 34, "Width": 4, "Height": 6 },
+        "When": { 
+            "HasFlag": "ccBoilerRoom",
+            "HasFlag": "{{ModId}}_AfforestationAreaMinecart_Mail",
+            "HasFlag |contains={{ModId}}_PAUC_DayCount4": "false"
+            
+        }
+      },
+
+
+
+//★★★イベント用のブランクjsonのロード★★★(優先順位的にここに配置)
+      {
+        "Action": "Load",
+        "Target": "Data/Events/Custom_Dam_PastureArea",
+        "FromFile": "assets/json/Blank.json"
+      },
+
+
+
+    ] //▼"Changes"の終了▼
+}

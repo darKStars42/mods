@@ -1,0 +1,46 @@
+{
+  "Format": "2.5.0",
+  "ConfigSchema": {
+    "AnnettaPortraitStyle": {
+      "AllowValues": "Front, AlternativeFront, 3/4(original), None(other)",
+      "Default": "Front",
+
+      "Description": "Switch the default portrait for Annetta"
+    },
+
+
+  },
+  
+  
+ "DynamicTokens": [
+{
+    "Name": "AnnettaCoastalOrder",
+    "Value": "{{HasFlag: currentPlayer, hostPlayer, anyPlayer |contains=AnetCoastalOrder}}"
+  },
+  
+  ],
+  
+  
+  "Changes": [
+     {
+      "LogName": "NPC Characters1",
+      "Action": "Include",
+      "FromFile": "Data/NPCData.json"
+    },
+    
+     {
+      "LogName": "NPC Characters2",
+      "Action": "Include",
+      "FromFile": "Data/Characters.json"
+    },
+    
+    
+	{
+            "Action": "Load",
+            "Target": "TileSheets/AnnettaIcon",
+            "FromFile": "assets/AnnettaIcon.png"
+        }
+
+    
+  ]
+}

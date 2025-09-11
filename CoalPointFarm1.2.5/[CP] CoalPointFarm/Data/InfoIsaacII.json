@@ -1,0 +1,134 @@
+{
+	"Changes": [
+		
+		//Empty Loads
+		{
+			"LogName": "IsaacII Schedule Empty Json",
+			"Action": "Load",
+			"Target": "Characters/schedules/APTIsaacII",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "IsaacII Strings Empty Jsons",
+			"Action": "Load",
+			"Target": "Strings/schedules/APTIsaacII",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "IsaacII Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/APTIsaacII",
+			"FromFile": "data/empty.json"
+		},
+		
+		//Base Visual
+		{
+			"LogName": "IsaacII Sprites",
+			"Action": "Load",
+			"Target": "Characters/APTIsaacII",
+			"FromFile": "assets/sprites/IsaacII/IsaacIISprites{{Season}}.png"
+		},
+		{
+			"LogName": "IsaacII Portraits",
+			"Action": "Load",
+			"Target": "Portraits/APTIsaacII",
+			"FromFile": "assets/portraits/IsaacII/IsaacIIPortraitsFall.png"
+		},
+		//Seasonal Loads
+		{
+			"LogName": "IsaacII Visual Loads",
+			"Action": "Load",
+			"Target": "Sprites/IsaacII/IsaacIISpritesSpring, Sprites/IsaacII/IsaacIISpritesSummer, Sprites/IsaacII/IsaacIISpritesFall, Sprites/IsaacII/IsaacIISpritesWinter, Portraits/IsaacII/IsaacIIPortraitsSpring, Portraits/IsaacII/IsaacIIPortraitsSummer, Portraits/IsaacII/IsaacIIPortraitsFall, Portraits/IsaacII/IsaacIIPortraitsWinter",
+			"FromFile": "assets/{{Target}}.png"
+		},
+		
+		{
+			"LogName": "IsaacII Disposition",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"APTIsaacII": {
+					"DisplayName": "{{i18n:Displayname.APTIsaacII}}",
+					"Gender": "Male",
+					"Age": "Child",
+					"Manner": "Polite",
+					"SocialAnxiety": "Shy",
+					"Optimism": "Positive",
+					"BirthSeason": "Fall",
+					"BirthDay": "17",
+					"HomeRegion": "Town",
+					"IsDarkSkinned": false,
+				
+					"CanSocialize": false,
+					"CanBeRomanced": false,
+					"CanReceiveGifts": false,
+					"CanGreetNearbyCharacters": false,
+					"CanVisitIsland": false,
+					"Calendar": "HiddenUntilmet",
+					"SocialTab": "HiddenAlways",
+					"IntroductionsQuest": false,
+					"EndSlideShow": "MainGroup",
+					"FriendsAndFamily": {
+						"APTAshida": "Mom",
+						"APTIsaacI": "Dad",
+						"APTMora": "Aunt",
+						"APTMarcus": "Uncle",
+					},
+				
+					"DumpsterDiveEmote": 12,
+					"DumpsterDiveFriendshipEffect": -25,
+				
+					"FlowerDanceCanDance": null,
+					"WinterStarParticipant": false,
+					"WinterStarGifts": [],
+				
+					"UnlockConditions": "PLAYER_HAS_SEEN_EVENT Any 145857",
+					"SpawnIfMissing": true,
+					"Home": [
+						{
+							"Id": "Default",
+							"Condition": null,
+							"Location": "{{IsaacIIStartingLocation}}",
+							"Tile": { "X": "{{IsaacIIStartingPositionX}}", "Y": "{{IsaacIIStartingPositionY}}" },
+							"Direction": "down"
+						}
+					],
+					
+					"TextureName": "APTIsaacII",
+					"Appearance": [
+					{
+							"Id": "APTIsaacIISpringOutfit",
+							"Season": "Spring",
+							"Portrait": "Portraits/IsaacII/IsaacIIPortraitsSpring",
+							"Sprite": "Sprites/IsaacII/IsaacIISpritesSpring",
+					},
+					{
+							"Id": "APTIsaacIISummerOutfit",
+							"Season": "Summer",
+							"Portrait": "Portraits/IsaacII/IsaacIIPortraitsSummer",
+							"Sprite": "Sprites/IsaacII/IsaacIISpritesSummer",
+					},
+					{
+							"Id": "APTIsaacIIFallOutfit",
+							"Season": "Fall",
+							"Portrait": "Portraits/IsaacII/IsaacIIPortraitsFall",
+							"Sprite": "Sprites/IsaacII/IsaacIISpritesFall",
+					},
+					{
+							"Id": "APTIsaacIIWinterOutfit",
+							"Season": "Winter",
+							"Portrait": "Portraits/IsaacII/IsaacIIPortraitsWinter",
+							"Sprite": "Sprites/IsaacII/IsaacIISpritesWinter",
+					},
+					],
+					"Size": {
+						"X": 16,
+						"Y": 32
+					},
+					"Breather": true,
+					"ShakePortraits": [],
+				},
+			},
+		},
+	]
+}

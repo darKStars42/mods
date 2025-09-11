@@ -1,0 +1,167 @@
+{
+	"Format": "2.3.0",
+	"ConfigSchema": {
+			"PlayerGetsPregnant": {
+				"AllowValues": "true, false",
+				"Default": "true", 
+				"Description": "{{i18n:PlayerGetsPregnant}}"		},
+	
+			"BabyorBaby_Dark": {
+				"AllowValues": "Baby, Baby_dark",
+				"Default": "Baby",
+				"Description": "{{i18n:BabyorBaby_DarkDescription}}"	},
+	
+			"AdoptionEvents": {
+				"AllowValues": "on, off",
+				"Default": "off",
+				"Description": "{{i18n:AdoptionEvents}}"		},
+
+
+},
+        
+
+ "DynamicTokens": [ 
+
+//Dynamic Tokens for children gender in dialogues--Credits to Jello for {{Baby1Gender}} token
+
+
+{	    "Name": "Baby1Gender",
+            "Value": "",
+			"When": {"ChildGenders |valueAt=0": "Male"},		},
+{	    "Name": "Baby2Gender",
+            "Value": "",
+			"When": {"ChildGenders |valueAt=1": "Male"},		},
+{	    "Name": "Baby1Gender",
+            "Value": "_girl",
+			"When": {"ChildGenders |valueAt=0": "Female"},		},
+{	    "Name": "Baby2Gender",
+            "Value": "_girl",
+			"When": {"ChildGenders |valueAt=1": "Female"},		},
+
+],
+
+"Changes": [
+
+//include events
+
+{           "LogName": "Include Generic Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/GenericEvents.json",
+},	
+{           "LogName": "Include Sebastian's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/SebastianEvents.json",	
+},
+{           "LogName": "Include Elliott's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/ElliottEvents.json",	
+},
+{           "LogName": "Include Shane's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/ShaneEvents.json",	
+},
+{           "LogName": "Include Sam's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/SamEvents.json",	
+},
+{           "LogName": "Include Alex's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/AlexEvents.json",	
+},
+{           "LogName": "Include Harvey's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/HarveyEvents.json",	
+},
+{           "LogName": "Include Leah's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/LeahEvents.json",	
+},
+{           "LogName": "Include Haley's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/HaleyEvents.json",	
+},
+{           "LogName": "Include Abigail's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/AbigailEvents.json",	
+},
+{           "LogName": "Include Penny's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/PennyEvents.json",	
+},
+{           "LogName": "Include Maru's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/MaruEvents.json",	
+},
+{           "LogName": "Include Emily's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/EmilyEvents.json",	
+},
+{           "LogName": "Include Emily's Events", 
+            "Action": "Include", 
+            "FromFile": "assets/Events/EmilyEvents.json",	
+},
+
+
+
+
+//HOSPITAL BED MAP--Courtesy of cptnmatruz
+{
+      "Action": "EditMap",
+      "Target": "Maps/Hospital",
+      "PatchMode": "ReplaceByLayer",
+      "FromFile": "Assets/Maps/Hospital_bed.tmx",
+      "ToArea": {
+        "X": 18,
+        "Y": 11,
+        "Width": 2,
+        "Height": 3,},
+      "Update": "OnLocationChange"
+    },
+
+
+
+
+//PRE-BIRTH MESSAGES
+		{ 	"LogName": "Pre-birth Event Name Baby, Player Gets Pregnant",
+			"Action": "EditData",
+			"Target": "strings/Events",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents":"off",},				
+			"Entries": {"BirthMessage_PlayerMother": "{{i18n:BirthMessage_PlayerMother}}",
+				    "BirthMessage_SpouseMother": "{{i18n:BirthMessage_PlayerMother}}", 
+				    "BabyNamingTitle_Male": "{{i18n:BabyNamingTitle_Male}}",
+	     	      		    "BabyNamingTitle_Female": "{{i18n:BabyNamingTitle_Female}}"},
+				    "BirthMessage_Adoption": "{{i18n:BirthMessage_PlayerMother}}",
+  				    "HaveBabyQuestion_Adoption": "{{i18n:HaveBabyQuestion}}",
+		},
+		{ 	"LogName": "Pre-birth Event Name Baby, Spouse Gets Pregnant",
+			"Action": "EditData",
+			"Target": "strings/Events",
+			"When": {"PlayerGetsPregnant":"false",
+				"AdoptionEvents":"off",},				
+			"Entries": {"BirthMessage_PlayerMother": "{{i18n:BirthMessage_SpouseMother}}",
+				    "BirthMessage_SpouseMother": "{{i18n:BirthMessage_SpouseMother}}", 
+				    "BabyNamingTitle_Male": "{{i18n:BabyNamingTitle_Male}}",
+	     	      		    "BabyNamingTitle_Female": "{{i18n:BabyNamingTitle_Female}}",
+   				    "BirthMessage_Adoption": "{{i18n:BirthMessage_SpouseMother}}",
+  				    "HaveBabyQuestion_Adoption": "{{i18n:HaveBabyQuestion}}?",		},
+		},
+		{ 	"LogName": "Adoption Event Name Baby",
+			"Action": "EditData",
+			"Target": "strings/Events",
+			"When": {"AdoptionEvents": "on",},
+			"Entries": {"BirthMessage_PlayerMother": "{{i18n:BirthMessage_Adopt}}",
+				    "BirthMessage_SpouseMother": "{{i18n:BirthMessage_Adopt}}", 
+				    "BabyNamingTitle_Male": "{{i18n:BabyNamingTitle_MaleAdopt}}",
+	     	      		    "BabyNamingTitle_Female": "{{i18n:BabyNamingTitle_FemaleAdopt}}",
+				    "HaveBabyQuestion":"{{i18n:HaveBabyQuestion_Adoption}}",		},
+		},
+
+
+
+
+		
+
+
+],
+}

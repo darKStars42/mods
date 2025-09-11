@@ -1,0 +1,56 @@
+{
+
+   "Changes": [
+
+//★★★Dam★★★
+
+  //●植林地エリアの編集(水没洞窟開放と同時に右下へパッチ)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Dam_AfforestationArea",
+        "FromFile": "ModSupport/Flooded_Cave_WwDam_Aff.tmx",
+        "ToArea": { "X": 43, "Y": 62, "Width": 24, "Height": 21 },
+        "When": {
+                  "FarmhouseUpgrade": 3,
+                },
+      },
+
+  //●水没洞窟の編集(水没洞窟の上の入り口を"開放"と植林地エリアへワープ追加)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "ModSupport/Flooded_Cave_WwDam_ExitAff.tmx",
+        "ToArea": { "X": 52, "Y": 3, "Width": 1, "Height": 2 },
+      },
+      {//◆晴れの日の夜
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "ModSupport/Flooded_Cave_WwDam_ExitAff_Night.tmx",
+        "ToArea": { "X": 52, "Y": 2, "Width": 1, "Height": 3 },
+        "When": {
+                  "Query: {{NightTime}}": true,
+                  "Weather |contains=Storm, Rain": "false",
+                },
+        "Update": "OnTimeChange",
+      },
+      {//◆悪天候終日
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "ModSupport/Flooded_Cave_WwDam_ExitAff_Night.tmx",
+        "ToArea": { "X": 52, "Y": 2, "Width": 1, "Height": 3 },
+        "When": {
+                  "Weather": "Storm, Rain"
+                },
+      },
+
+  //●水没洞窟の編集(水没洞窟の下の入り口を"封鎖"と裏森へのワープ削除)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "ModSupport/Flooded_Cave_WwDam_CloseAff.tmx",
+        "ToArea": { "X": 30, "Y": 75, "Width": 3, "Height": 4 },
+      },
+
+
+              ] //▼"Changes"の終了▼
+}

@@ -1,0 +1,127 @@
+{ 
+	"Changes":
+	[
+		{	// Tarefas Diarias Vanilla
+			"LogName":"Miranda Agendamentos",
+			"Action":"EditData",
+			"Target":"Characters/Schedules/Miranda",
+			"When": { "HasSeenEvent: anyPlayer|contains=90205264": true, "HasSeenEvent: anyPlayer|contains=90805264": false },
+			"Update": "OnDayStart",
+			"Entries":
+			{
+			"rain": "610 Casa.Interior 11 17 2 Mi.Dorme \"Strings\\schedules\\Miranda:M.Dorme.00\"/800 Casa.Interior 7 7 2 Mi.Comer /930 Casa.Superior 18 7 0 /1130 Casa.Superior 18 7 0 Mi.Nota /1800 Casa.Interior 17 5 0 Mi.Baixa.Di /2000 Casa.Interior 5 19 1 Mi.Nota.Se \"Strings\\schedules\\Miranda:M.Chuva.01\"/2340 Casa.Interior 11 17 2 miranda_sleep",	
+			"rain2": "610 Casa.Interior 11 17 2 Mi.Dorme \"Strings\\schedules\\Miranda:M.Dorme.00\"/800 Casa.Interior 7 7 2 Mi.Comer /940 ArchaeologyHouse 5 10 0 /1200 ArchaeologyHouse 18 12 3 Mi.Nota.Se /1650 Casa.Interior 17 5 0 Mi.Baixa.Di /2000 Casa.Interior 5 19 1 Mi.Nota.Se \"Strings\\schedules\\Miranda:M.Chuva.01\"/2340 Casa.Interior 11 17 2 miranda_sleep",
+			"GreenRain": "GOTO rain",
+			
+			"spring": "610 Casa.Interior 3 11 3 Mi.Rega.Fr /700 Casa.Interior 11 11 0 Mi.Rega.Fr /800 Casa.Interior 7 7 2 Mi.Comer /930 Beach 13 31 1 \"Strings\\schedules\\Miranda:M.DiasNor.02\"/1430 Town 5 52 2 Mi.Senta.Fr \"Strings\\schedules\\Miranda:M.Basico.01\"/1800 Casa.Interior 20 12 0 /1900 Casa.Interior 17 11 2 Mi.Vare /2030 Casa.Interior 17 5 1 Mi.Baixa.Di /2130 Casa.Interior 11 17 2 miranda_sleep",
+			"spring_Tue": "GOTO spring",
+			"spring_Wed": "GOTO spring",
+			"spring_Thu": "610 Casa.Interior 7 7 2 Mi.Comer /730 Casa.Interior 18 13 1 /800 Forest 69 45 2 Mi.Pisca \"Strings\\schedules\\Miranda:M.Treino.00\"/1000 Forest 69 45 0 /1010 Forest 69 45 0 Mi.Treina.2 /1100 Forest 69 45 0 Mi.Treina.1 \"Strings\\schedules\\Miranda:M.Treino.01\"/1400 Forest 69 45 1 /1430 Forest 41 10 2 Mi.Medita /1700 Saloon 13 20 1 Mi.Senta.Di \"Strings\\schedules\\Miranda:M.DiasNor.03\"/2040 Casa.Interior 11 17 2 miranda_sleep",
+			"spring_Fri": "GOTO spring_Thu",
+			"spring_Sat": "610 Casa.Interior 10 21 1 Mi.Nota /1030 Town 8 50 3 Mi.Rega.Es \"Strings\\schedules\\Miranda:M.Basico.02\"/1230 Town 32 89 2 Mi.Celu.Sen /1700 Saloon 13 20 2 Mi.Se.Di.Com /2000 Saloon 36 18 3 \"Strings\\schedules\\Miranda:M.Basico.04\"/2200 Casa.Interior 11 17 2 miranda_sleep",
+			"spring_Sun": "GOTO spring_Sat",
+			
+			"summer": "GOTO spring",
+			"summer_Tue": "GOTO spring",
+			"summer_Wed": "GOTO spring",
+			"summer_Thu": "GOTO spring_Thu",
+			"summer_Fri": "GOTO spring_Thu",
+			"summer_Sat": "GOTO spring_Sat",
+			"summer_Sun": "GOTO spring_Sat",
+			
+			"fall": "610 Casa.Interior 3 11 3 Mi.Rega.Fr /700 Casa.Interior 11 11 0 Mi.Rega.Fr /800 Casa.Interior 7 7 2 Mi.Comer /900 Mountain 55 32 2 Mi.Medita \"Strings\\schedules\\Miranda:M.DiasFri.00\"/1330 Town 74 54 2 Mi.Pisca /1600 Saloon 13 20 2 Mi.Senta.Tr /1830 Casa.Interior 8 11 2 Mi.Vare \"Strings\\schedules\\Miranda:M.DiasFri.02\"/2030 Casa.Interior 17 5 3 Mi.Baixa.Di /2130 Casa.Interior 11 17 2 miranda_sleep",
+			"fall_Tue": "GOTO fall",
+			"fall_Wed": "GOTO fall",
+			"fall_Thu": "610 Casa.Interior 7 7 2 Mi.Comer /730 Casa.Interior 18 13 1 /800 Forest 70 45 1 \"Strings\\schedules\\Miranda:M.Treino.00\"/1000 Forest 69 45 0 /1010 Forest 69 45 0 Mi.Treina.2 /1100 Forest 69 45 0 Mi.Treina.1 \"Strings\\schedules\\Miranda:M.Treino.01\"/1400 Forest 69 45 1 /1430 ArchaeologyHouse 12 9 0 /1800 Casa.Interior 9 19 1 Mi.Celu.Sen /2200 Casa.Interior 11 17 2 miranda_sleep",
+			"fall_Fri": "GOTO fall_Thu",
+			"fall_Sat": "610 Casa.Interior 11 17 2 Mi.Dorme \"Strings\\schedules\\Miranda:M.Dorme.00\"/1000 Casa.Interior 7 7 2 Mi.Comer \"Strings\\schedules\\Miranda:M.DiasFri.03\"/1130 AdventureGuild 5 13 0 /1630 Casa.Interior 15 10 0 Mi.Senta.Tr /2200 Casa.Interior 11 17 2 miranda_sleep",
+			"fall_Sun": "GOTO fall_Sat",
+			
+			"winter": "GOTO fall",
+			"winter_Tue": "GOTO fall",
+			"winter_Wed": "GOTO fall",
+			"winter_Thu": "GOTO fall_Thu",
+			"winter_Fri": "GOTO fall_Thu",
+			"winter_Sat": "GOTO fall_Sat",
+			"winter_Sun": "GOTO fall_Sat",
+			
+			"winter_15": "610 Casa.Interior 3 11 3 Mi.Rega.Fr /700 Casa.Interior 11 11 0 Mi.Rega.Fr /800 Casa.Interior 7 7 2 Mi.Comer /900 Mountain 55 32 2 Mi.Medita \"Strings\\schedules\\Miranda:M.DiasFri.00\"/1330 Town 75 54 2 Mi.Pisca /1600 Saloon 13 20 2 Mi.Senta.Tr /1830 Beach 37 32 1 Mi.Nota \"Strings\\schedules\\Miranda:M.MercNot.00\"/2130 Casa.Interior 11 17 2 miranda_sleep",
+			"winter_16": "GOTO winter_15",
+			"winter_17": "GOTO winter_15"
+
+			}
+		},
+		{	// Tarefas Diarias East Scarpe
+			"LogName": "Miranda Agendamentos East Scarpe",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Miranda",
+			"When": {	"HasMod |contains=LemurKat.EastScarpe.CP": true, "HasSeenEvent: anyPlayer|contains=90205264": true, "HasSeenEvent: anyPlayer|contains=90805264": false },
+			"Entries": 
+			{
+			"winter": "610 Casa.Interior 3 11 3 Mi.Rega.Fr /700 Casa.Interior 11 11 0 Mi.Rega.Fr /800 Casa.Interior 7 7 2 Mi.Comer /900 EastScarp_Village 50 128 2 Mi.Senta.Fr \"Strings\\schedules\\Miranda:M.Eastscarp.Mod.00\"/1430 EastScarp_Village 87 66 3 Mi.Nota /1630 Casa.Interior 8 11 2 Mi.Vare /2030 Casa.Interior 17 5 3 Mi.Baixa.Di /2130 Casa.Interior 11 17 2 miranda_sleep",
+			"winter_Tue": "GOTO winter",
+			"winter_Wed": "GOTO winter"
+			}
+		},
+		{	// Tarefas Diarias Passerby Cemetery
+			"LogName": "Miranda Agendamentos Passerby Cemetery",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Miranda",
+			"When": {	"HasMod |contains=Fellowclown.PC": true, "HasSeenEvent: anyPlayer|contains=90205264": true, "HasSeenEvent: anyPlayer|contains=90805264": false },
+			"Entries": 
+			{
+			"summer": "610 Casa.Interior 3 11 3 Mi.Rega.Fr /700 Casa.Interior 11 11 0 Mi.Rega.Fr /800 Casa.Interior 7 7 2 Mi.Comer /900 Fellowclown.PC_OldGraveYard 40 74 1 Mi.Nota \"Strings\\schedules\\Miranda:M.PasCem.00\"/1430 Fellowclown.PC_OldGraveYard 18 50 0 \"Strings\\schedules\\Miranda:M.PasCem.01\"/1630 Casa.Interior 20 12 0 /1900 Casa.Interior 17 11 2 Mi.Vare /2030 Casa.Interior 17 5 1 Mi.Baixa.Di /2130 Casa.Interior 11 17 2 miranda_sleep",
+			"summer_Tue": "GOTO summer",
+			"summer_Wed": "GOTO summer"
+			}
+		},
+		{	// Festival East Scarpe
+			"LogName": "Miranda Festival East Scarpe",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Miranda",
+			"When": {	"HasMod |contains=LemurKat.EastScarpe.CP": true, "HasSeenEvent: anyPlayer|contains=90205264": true, "HasSeenEvent: anyPlayer|contains=90805264": false },
+			"Entries": 
+			{
+			"fall_27": "610 Casa.Interior 11 17 2 Mi.Dorme \"Strings\\schedules\\Miranda:M.Dorme.00\"/830 Casa.Interior 7 7 2 Mi.Comer /940 EastScarp_VillageInn 42 32 1 \"Strings\\schedules\\Miranda:M.EasFs.00\"/1440 EastScarp_VillageInn 33 29 2 /1640 EastScarp_VillageInn 16 28 2 \"Strings\\schedules\\Miranda:M.EasFs.01\"/2000 Casa.Interior 11 17 2 miranda_sleep"
+			}
+		},
+		{	// Tarefas Dinamicas 01
+			"LogName": "Miranda Tarefas Dinamicas 01",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Miranda",
+			"When": { "HasSeenEvent: anyPlayer|contains=76142003": true, "HasSeenEvent: anyPlayer|contains=90805264": false, "Weather": "sun" },
+			"Entries": 
+			{
+			"spring_7": "610 Casa.Interior 10 21 1 Mi.Nota /1000 Casa.Interior 17 11 2 Mi.Vare /1300 Town 6 53 1 /1530 Town 32 89 2 Mi.Celu.Sen /1700 Saloon 13 20 2 Mi.Se.Di.Com /2000 Saloon 34 18 1 /2200 Casa.Interior 11 17 2 miranda_sleep",
+			"spring_21": "GOTO spring_7",
+			"fall_7": "610 Casa.Interior 11 17 2 Mi.Dorme \"Strings\\schedules\\Miranda:M.Dorme.00\"/1000 Casa.Interior 7 7 2 Mi.Comer /1130 HaleyHouse 14 19 3 /1530 Casa.Interior 15 10 0 Mi.Senta.Tr /2200 Casa.Interior 11 17 2 miranda_sleep",
+			"fall_21": "GOTO fall_11"
+			}
+		},
+		{	// Tarefas Dinamicas 02
+			"LogName": "Miranda Tarefas Dinamicas 02",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Miranda",
+			"When": { "HasSeenEvent: anyPlayer|contains=37918005": true, "HasSeenEvent: anyPlayer|contains=90805264": false, "Weather": "sun" },
+			"Entries": 
+			{
+			"spring_11": "610 Casa.Interior 7 7 2 Mi.Comer /730 Casa.Interior 18 13 1 /800 Forest 69 45 2 Mi.Pisca /1000 Forest 69 45 0 /1010 Forest 69 45 0 Mi.Treina.2 /1100 Forest 69 45 0 Mi.Treina.1 /1400 Forest 69 45 1 /1430 Forest 69 47 1 /1700 Saloon 13 20 1 Mi.Senta.Di /2040 Casa.Interior 11 17 2 miranda_sleep",
+			"summer_18": "GOTO spring_11",
+			"fall_11": "610 Casa.Interior 7 7 2 Mi.Comer /730 Casa.Interior 18 13 1 /800 Forest 70 45 1 /1000 Forest 69 45 0 /1010 Forest 69 45 0 Mi.Treina.2 /1100 Forest 69 45 0 Mi.Treina.1 /1400 Forest 69 45 1 /1430 Casa.Interior 16 12 3 /1900 Casa.Interior 9 19 1 Mi.Celu.Sen /2200 Casa.Interior 11 17 2 miranda_sleep",
+			"winter_18": "GOTO fall_11"
+			}
+		},
+		{	// Tarefas Dinamicas 03
+			"LogName": "Miranda Treino Dinamicos 03",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Miranda",
+			"When": { "HasSeenEvent: anyPlayer|contains=61743005": true, "HasSeenEvent: anyPlayer|contains=61743007": false },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_Thu": "610 Casa.Interior 7 7 2 Mi.Comer /730 Casa.Interior 18 13 1 /800 Forest 69 45 2 Mi.Pisca \"Strings\\schedules\\Miranda:M.Treino.00\"/1000 Forest 69 45 0 /1010 Forest 69 45 0 Mi.Treina.2 /1100 Forest 69 45 0 Mi.Treina.1 \"Strings\\schedules\\Miranda:M.Treino.01\"/1400 Forest 69 45 1 /1430 Forest 41 10 2 Mi.Medita /1700 Saloon 13 20 1 Mi.Senta.Di \"Strings\\schedules\\Miranda:M.DiasNor.03\"/2040 Casa.Interior 11 17 2 miranda_sleep",
+			"fall_Thu": "610 Casa.Interior 7 7 2 Mi.Comer /730 Casa.Interior 18 13 1 /800 Forest 70 45 1 \"Strings\\schedules\\Miranda:M.Treino.00\"/1000 Forest 69 45 0 /1010 Forest 69 45 0 Mi.Treina.2 /1100 Forest 69 45 0 Mi.Treina.1 \"Strings\\schedules\\Miranda:M.Treino.01\"/1400 Forest 69 45 1 /1430 ArchaeologyHouse 12 9 0 /1800 Casa.Interior 9 19 1 Mi.Celu.Sen /2200 Casa.Interior 11 17 2 miranda_sleep"
+			}
+		}
+	]
+}

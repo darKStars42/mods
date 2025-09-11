@@ -1,0 +1,160 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+    /* NPC Disposition*/
+    {
+      "LogName": "Sorren's Disposition",
+      "Action": "Include",
+      "FromFile": "assets/data/dispos.json"
+    }
+    /*Portraits*/,
+    {
+      "LogName": "Sorren Portraits",
+      "Action": "Load",
+      "Target": "Portraits/Sorren",
+      "FromFile": "assets/images/SorrenPortraits.png"
+    }
+    /*Sprites*/,
+    {
+      "LogName": "Sorren Sprites",
+      "Action": "Load",
+      "Target": "Characters/Sorren",
+      "FromFile": "assets/images/SorrenSprites.png"
+    }
+    /*Beach Sprites*/,
+    {
+      "LogName": "Sorren Swimtrunks",
+      "Action": "Load",
+      "Target": "Characters/Sorren_Swimtrunks",
+      "FromFile": "assets/images/SorrenSpritesSwim.png"
+    }
+    /*Dialogue*/,
+    {
+      "LogName": "Sorren Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Sorren",
+      "FromFile": "assets/data/dialogue.json"
+    }
+    /*Schedule*/,
+    {
+      "LogName": "Sorren Schedule",
+      "Action": "Load",
+      "Target": "Characters/schedules/Sorren",
+      "FromFile": "assets/data/schedule.json"
+    }
+    /*Schedule Dialogue*/,
+    {
+      "Action": "EditData",
+      "Target": "Strings/Schedules/Sorren",
+      "Entries": {
+        "spring.000": "Lots of salad-type dishes in the spring, but I'm not a big fan. I like something a little heartier, you know?#$b#Fortunately, Gus has plenty of other food on the menu.$1",
+        "summer.000": "You can always count on the Stardrop Saloon for a good meal. I come here for lunch every day.#$b#You hungry, @? Why don't you pull up a chair and grab a bite?$1",
+        "fall.000": "Crisp, cool air, birds singing, the sunlight dappling the grass through the trees... There's nothing like a picnic lunch in the forest.$1",
+        "winter.000": "Something about winter makes me want to eat twice as much as normal. Maybe it's just that there's so much good food this time of year.",
+        "rain.000": "Hey there, @. I'm just doing a little whittling.#$b#Don't worry, this tree is plenty big enough to keep me dry.$1",
+        "rain.001": "Rainy days call for something spicy for lunch. Spicy Eel, or maybe Pepper Poppers..."
+      }
+    }
+    /*Marriage Dialogue*/,
+    {
+      "LogName": "Sorren Marriage Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/MarriageDialogueSorren",
+      "FromFile": "assets/data/marriagedialogue.json"
+    }
+    /*Gift Tastes*/,
+    {
+      "LogName": "Gift Tastes Include",
+      "Action": "Include",
+      "FromFile": "assets/data/gifttastes.json"
+    }
+    /*Animations*/,
+    {
+      "LogName": "Sorren Animations",
+      "Action": "EditData",
+      "Target": "Data/animationdescriptions",
+      "Entries": {
+        "sorren_whittle": "16/16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 16/23",
+        "sorren_sleep": "51/51/51"
+      }
+    }
+    /* Events*/,
+    {
+      "LogName": "Events",
+      "Action": "Include",
+      "FromFile": "assets/data/events.json"
+    }
+    /*Festivals*/,
+    {
+      "LogName": "Festival Include",
+      "Action": "Include",
+      "FromFile": "assets/data/festivals.json"
+    }
+    /*Spouse Room*/,
+    {
+      "Action": "Load",
+      "Target": "Maps/SorrenSpouseRoom",
+      "FromFile": "assets/maps/SorrenSpouseRoom.tmx"
+    }
+    /* Engagement Dialogue*/,
+    {
+      "LogName": "Engagement Dialogue",
+      "Action": "EditData",
+      "Target": "Data/EngagementDialogue",
+      "Entries": {
+        "Sorren0": "Are you excited for the big day? I sure am.$4",
+        "Sorren1": "I used to think I would never be happy again. I'm so glad I was wrong, @.$5"
+      }
+    }
+    /* Wedding Vow Fix*/,
+    {
+      "Action": "EditData",
+      "Target": "strings/StringsFromCSFiles",
+      "Entries": {
+        "Utility.cs.5371": "@... Sorren... #$b# As the mayor of Pelican Town, and regional bearer of the matrimonial seal, I now pronounce you married!$h",
+        "Utility.cs.5377": "@... Sorren... #$b# As the mayor of Pelican Town, and regional bearer of the matrimonial seal, I now pronounce you married!$h",
+        "Utility.cs.5367": "When @ first arrived in Pelican Town, no one knew if they'd fit in with our community...#$b#But from this day forward, @ is going to be as much a part of this town as any of us!$h#$b#It is my great honor, on this day {0} of {1}, to unite @ and Sorren in the bonds of marriage.",
+        "Utility.cs.5369": "When @ first arrived in Pelican Town, no one knew if they'd fit in with our community...#$b#But from this day forward, @ is going to be as much a part of this town as any of us!$h#$b#It is my great honor, on this day {0} of {1}, to unite @ and Sorren in the bonds of marriage."
+      },
+      "When": {
+        "Relationship:Sorren": "Engaged, Married"
+      }
+    },
+    {
+      "LogName": "Mail",
+      "Action": "EditData",
+      "Target": "Data/mail",
+      "Entries": {
+        "SorrenBeach": "Dear @,^Would you like to go to the beach with me?^Any nice sunny day should do. Bring your swimsuit!^  -Sorren"
+      }
+    },
+    {
+      "LogName": "Send Mail",
+      "Action": "EditData",
+      "Target": "Data/Events/Farm",
+      "Entries": {
+        "247120/f Sorren 2500/D Sorren/z fall winter/x SorrenBeach": "null"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/Sorren",
+      "Entries": {
+        "summer_16": "Hi, @. I, uh, need some time alone today.$2"
+      },
+      "When": {
+        "Hearts:Sorren": "4"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/Sorren",
+      "Entries": {
+        "summer_16": "The death of a loved one leaves a lifelong scar. But maybe, with time, it can fade a little.$2"
+      },
+      "When": {
+        "Hearts:Sorren": "8"
+      }
+    }
+  ]
+}

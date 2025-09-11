@@ -1,0 +1,53 @@
+{
+    "Changes": [
+        //Disposition
+        {
+        "Action": "EditData",
+        "Target": "Data/NPCDispositions",
+        "Entries": {
+            "Liz": "adult/polite/neutral/neutral/female/non-datable/null/Other/fall 28//Custom_PeaksDinerApt 8 10 2/{{i18n:Name.Liz}}"
+            },
+        },
+        //Gift Tastes
+        {
+        "Action": "EditData",
+        "Target": "Data/NPCGiftTastes",
+        "Entries": {
+            "Liz": " {{i18n:Gift.Love.Liz}}/-80/{{i18n:Gift.Like.Liz}}/-75 -79/{{i18n:Gift.Dislike.Liz}}//{{i18n:Gift.Hate.Liz}}/-20/{{i18n:Gift.Neutral.Liz}}// "
+            },
+        },
+        //Portraits
+        {
+            "Action": "Load",
+            "Target": "Portraits/Liz",
+            "FromFile": "assets/Liz/Liz.png"
+        },
+        //Sprites
+        {
+            "Action": "Load",
+            "Target": "Characters/Liz",
+            "FromFile": "assets/Liz/LizSprite.png"
+        },
+        //Schedule
+        {
+            "Action": "Load",
+            "Target": "Characters/schedules/Liz",
+            "FromFile": "assets/Liz/schedule.json"
+        },
+        //Dialogue
+        {
+            "Action": "Include",
+            "FromFile": "assets/Liz/dialogue.json"
+        },
+        //Heart Events
+        {
+            //0 Heart
+            "Action": "EditData",
+            "Target": "Data/Events/Custom_PeaksDiner",
+            "Entries": {
+            "97300001": "jaunty/-500 -500/farmer 10 34 0 Liz 11 25 2/viewport 11 28/pause 400/skippable/warp farmer 11 31/playSound doorClose/textAboveHead Liz \"{{i18n:Liz0Hearts.01}}\"/pause 1000/move farmer 0 -4 0/pause 1000/speak Liz \"{{i18n:Liz0Hearts.02}}\"/pause 1000/emote farmer 40/speak Liz \"{{i18n:Liz0Hearts.03}}\"/pause 100/speak Liz \"{{i18n:Liz0Hearts.04}}\"/pause 1000/emote farmer 32/speak Liz \"{{i18n:Liz0Hearts.05}}\"/pause 100/speak Liz \"{{i18n:Liz0Hearts.06}}\"/pause 400/emote farmer 20/end dialogue Liz \"{{i18n:Liz0Hearts.07}}\"",
+            }
+        },
+
+    ]
+}

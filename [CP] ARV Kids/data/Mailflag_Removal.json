@@ -1,0 +1,56 @@
+{
+   "Changes": [
+   //I recommend that you make unique mailflags for your own unique children so you and other mods can track which kid is active. This file is where you remove the flags at the end of the day or when config options are changed (immediately before the flags are reapplied and/or updated).
+   //The main Growing Valley content pack handles clearing gender, custom child existence, and forceload flags, those being the following: 
+		//"RemoveMail Current GrowingValley_Firstborn_Male",
+		//"RemoveMail Current GrowingValley_Firstborn_Female",
+		//"RemoveMail Current GrowingValley_Firstborn_Other",
+		//"RemoveMail Current GrowingValley_Secondborn_Male",
+		//"RemoveMail Current GrowingValley_Secondborn_Female",
+		//"RemoveMail Current GrowingValley_Secondborn_Other",
+		
+		//"RemoveMail Current GrowingValley_Custom_Firstborn",
+		//"RemoveMail Current GrowingValley_Custom_Secondborn",
+		
+		//"RemoveMail Current GrowingValley_ForceLoad_Default_Firstborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_Clara_Firstborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_David_Firstborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_Petra_Firstborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_Stella_Firstborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_Elias_Firstborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_Lizzie_Firstborn",
+		
+		//"RemoveMail Current GrowingValley_ForceLoad_Default_Secondborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_Clara_Secondborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_David_Secondborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_Petra_Secondborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_Stella_Secondborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_Elias_Secondborn",
+		//"RemoveMail Current GrowingValley_ForceLoad_Lizzie_Secondborn",
+	
+	
+	//The custom mailflag naming format below is the same suggested naming format as the one in the child implementation template.
+	//By default in this template, this trigger action is commented out, meaning it won't do anything. You can remove the "/*" and "*/" after making your custom mailflag to uncomment it so it will function. 
+	
+	//It isn't necessary to make custom mailflags, but it can give handy information about which kid is loaded to other mods.
+		
+		/*
+        {
+			"LogName": "Trigger actions to clear mail flags for tracking any custom child loads.",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Remove_Child_Flags": {
+                    "Id": "{{ModId}}_Remove_Child_Flags",
+                    "Trigger": "DayEnding siliconmodding.GVChildrenSMAPI_OnConfigChangedEarly",
+					"Actions": [
+                        "RemoveMail Current {{ModId}}_<parent NPC name><Son/Daughter/Child>_<First/Second>born",  //fill in <parent NPC name>, <Son/Daughter/Child>, and <First/Second> depending on what mailflags you've already made. don't keep the <>
+                    ],
+					"MarkActionApplied": false,
+                },
+			}
+		},
+		*/
+		//List out any unique flags you created in other files that aren't covered above. If you skipped that step, leave this commented out (don't remove the "/*" and "*/" above and below)
+   ]
+}

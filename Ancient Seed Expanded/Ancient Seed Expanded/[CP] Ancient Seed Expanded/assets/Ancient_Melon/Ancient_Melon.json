@@ -1,0 +1,66 @@
+{
+  "Changes": [
+    //Seed item
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Melon_Seeds":{
+          "Name": "Ancient Melon Seeds",
+          "DisplayName": "{{i18n:Ancient_Melon_Seeds.DisplayName}}",
+          "Description": "{{i18n:Ancient_Melon_Seeds.Description}}",
+          "Type": "Seeds",
+          "Category": -74,
+          "Price" : 35,
+          "Texture": "Mods/{{ModId}}/Ancient_Melon_Seed",
+          "SpriteIndex": 0
+        }
+      }
+    },
+    //Crop
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Melon":{
+          "Name": "{{ModID}}_Ancient_Melon",
+          "DisplayName": "{{i18n:Ancient_Melon.DisplayName}}",
+          "Description": "{{i18n:Ancient_Melon.Description}}",
+          "Type": "Fruit",
+          "Category": -79,
+          "Price" : 550,
+          "IsDrink": false,
+          "Edibility": 10,
+          "Texture": "Mods/{{ModId}}/Ancient_Melon",
+          "SpriteIndex": 0,
+          "ContextTags": [
+            "season_spring",
+            "season_summer",
+            "season_fall",
+            "color_pink"
+          ]
+        }
+      }
+    },
+    //Planted Crop
+    {
+            "Action": "EditData",
+            "Target": "Data/Crops",
+            "Entries": {
+                "{{ModId}}_Ancient_Melon_Seeds": {
+                    "Seasons": [ "spring", "summer", "fall" ],
+                    "DaysInPhase": [ 2, 7, 7, 7, 5],
+                    "RegrowDays": 7,
+                    "HarvestItemId": "{{ModId}}_Ancient_Melon",
+                    "Texture": "Mods/{{ModId}}/Ancient_Melon_Seed_Planted",
+                    "SpriteIndex": 0
+                }
+            }
+        },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Ancient_Melon_Seed, Mods/{{ModId}}/Ancient_Melon, Mods/{{ModId}}/Ancient_Melon_Seed_Planted",
+            "FromFile": "assets/Ancient_Melon/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

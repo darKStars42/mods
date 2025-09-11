@@ -1,0 +1,80 @@
+{
+
+    "Changes": [
+
+
+
+//■■■Stardew Valley Reimagined 3■■■
+
+
+
+//★★★期間、フラグでの封鎖や解放の項目(ダムロードが "true" 時の項目)★★★
+
+  //●"駅"にダムロードへの入り口追加(ダムロード true 時のみ追加)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Railroad",
+        "FromFile": "assets/tmx/MapPatches/(SVR3)_Railroad_DamRoad.tmx",
+        "ToArea": { "X": 56, "Y": 24, "Width": 14, "Height": 19 },
+        "When": { 
+            "Enable the road to the dam": "true"
+        }
+      },
+
+  //●"山"にダムロードへの入り口追加
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/(SVR3)_Mountain_DamRoad.tmx",
+        "PatchMode": "Replace",
+        "ToArea": { "X": 79, "Y": 0, "Width": 5, "Height": 15 },
+        "When": { 
+            "Enable the road to the dam": "true"
+        }
+      },
+
+
+
+//★★★期間、フラグでの封鎖や解放の項目(ダムロードが "false" 時の項目)★★★
+
+  //●"山"にダムへの入り口追加
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/(SVR3)_Mountain_DamRoad_false.tmx",
+        "PatchMode": "Replace",
+        "ToArea": { "X": 79, "Y": 0, "Width": 5, "Height": 15 },
+        "When": { 
+            "Enable the road to the dam": "false"
+        }
+      },
+
+  //●"山"からダムへの入り口を夏の３日まで封鎖
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/StopStone.tmx",
+        "FromArea": { "X": 0, "Y": 0, "Width": 2, "Height": 2 },
+        "ToArea": { "X": 80, "Y": 1, "Width": 2, "Height": 2 },
+        "When": {
+            "Enable the road to the dam": "false",
+            "Query: {{DaysPlayed}} <= 30": "true",
+        }
+      },
+
+
+
+//★★★その他の項目★★★
+
+  //●"山"の石切り場に植林地エリアへの洞窟の入り口追加
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Mountain",
+        "FromFile": "assets/tmx/MapPatches/(SVR3)_Mountain_DamMine.tmx",
+        "ToArea": { "X": 127, "Y": 5, "Width": 4, "Height": 10 },
+      }
+
+
+
+    ] //▼"Changes"の終了▼
+}

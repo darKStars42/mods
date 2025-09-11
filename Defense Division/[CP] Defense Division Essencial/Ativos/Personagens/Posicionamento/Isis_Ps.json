@@ -1,0 +1,159 @@
+{
+  "Changes": [
+	{	//Base das Artes
+      "Action": "Load",
+      "Target": "Characters/Isis",
+      "FromFile": "Ativos/Personagens/Artes/Isis/Comum.V1/Is.Bo_Spring_Sun.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Portraits/Isis",
+      "FromFile": "Ativos/Personagens/Artes/Isis/Comum.V1/Is.Re_Spring_Sun.png"
+    },
+	{	//Artes
+      "Action": "Load",
+      "Target": "Characters/Is.Bo_Summer_Sun, Characters/Is.Bo_Fall_Sun, Characters/Is.Bo_Winter_Sun, Characters/Is.Bo_Spring_Rain, Characters/Is.Bo_Summer_Rain, Characters/Is.Bo_Fall_Rain, Characters/Is.Bo_Winter_Snow, Portraits/Is.Re_Summer_Sun, Portraits/Is.Re_Fall_Sun, Portraits/Is.Re_Winter_Sun, Portraits/Is.Re_Spring_Rain, Portraits/Is.Re_Summer_Rain, Portraits/Is.Re_Fall_Rain, Portraits/Is.Re_Winter_Snow",
+      "FromFile": "Ativos/Personagens/Artes/Isis/Comum.V1/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/Is.BoV2_Spring_Sun Characters/Is.BoV2_Summer_Sun, Characters/Is.BoV2_Fall_Sun, Characters/Is.BoV2_Winter_Sun, Characters/Is.BoV2_Spring_Rain, Characters/Is.BoV2_Summer_Rain, Characters/Is.BoV2_Fall_Rain, Characters/Is.BoV2_Winter_Snow, Portraits/Is.ReV2_Spring_Sun, Portraits/Is.ReV2_Summer_Sun, Portraits/Is.ReV2_Fall_Sun, Portraits/Is.ReV2_Winter_Sun, Portraits/Is.ReV2_Spring_Rain, Portraits/Is.ReV2_Summer_Rain, Portraits/Is.ReV2_Fall_Rain, Portraits/Is.ReV2_Winter_Snow",
+      "FromFile": "Ativos/Personagens/Artes/Isis/Comum.V2/{{TargetWithoutPath}}.png"
+    },
+	{
+      "Action": "Load",
+      "Target": "Characters/Is.Bo_Spring, Characters/Is.Bo_Summer, Characters/Is.Bo_Fall, Characters/Is.Bo_Winter, Characters/Is.Bo, Portraits/Is.Re",
+      "FromFile": "Ativos/Personagens/Artes/Isis/Casual.V1/{{TargetWithoutPath}}.png"
+    },
+	{
+      "Action": "Load",
+      "Target": "Characters/Is.BoV2_Spring, Characters/Is.BoV2_Summer, Characters/Is.BoV2_Fall, Characters/Is.BoV2_Winter, Characters/Is.BoV2, Portraits/Is.ReV2, Characters/Is.BoV2_Job, Portraits/Is.ReV2_Job",
+      "FromFile": "Ativos/Personagens/Artes/Isis/Casual.V2/{{TargetWithoutPath}}.png"
+    },
+	{	//Festival Artes
+      "Action": "Load",
+      "Target": "Characters/Is.Boneco_EggFest, Portraits/Is.Retrato_EggFest, Characters/Is.Boneco_FlowerDance, Portraits/Is.Retrato_FlowerDance, Characters/Is.Boneco_Luau, Portraits/Is.Retrato_Luau, Characters/Is.Boneco_DanceMoonlight, Portraits/Is.Retrato_DanceMoonlight, Characters/Is.Boneco_Fair, Portraits/Is.Retrato_Fair, Characters/Is.Boneco_SpiritsEve, Portraits/Is.Retrato_SpiritsEve, Characters/Is.Boneco_IceFest, Portraits/Is.Retrato_IceFest, Characters/Is.Boneco_WinterStart, Portraits/Is.Retrato_WinterStart",
+      "FromFile": "Ativos/Personagens/Artes/Isis/Festival.V1/{{TargetWithoutPath}}.png"
+    },
+	{
+      "Action": "Load",
+      "Target": "Characters/Is.BonecoV2_EggFest, Portraits/Is.RetratoV2_EggFest, Characters/Is.BonecoV2_FlowerDance, Portraits/Is.RetratoV2_FlowerDance, Characters/Is.BonecoV2_Luau, Portraits/Is.RetratoV2_Luau, Characters/Is.BonecoV2_DanceMoonlight, Portraits/Is.RetratoV2_DanceMoonlight, Characters/Is.BonecoV2_Fair, Portraits/Is.RetratoV2_Fair, Characters/Is.BonecoV2_SpiritsEve, Portraits/Is.RetratoV2_SpiritsEve, Characters/Is.BonecoV2_IceFest, Portraits/Is.RetratoV2_IceFest, Characters/Is.BonecoV2_WinterStart, Portraits/Is.RetratoV2_WinterStart",
+      "FromFile": "Ativos/Personagens/Artes/Isis/Festival.V2/{{TargetWithoutPath}}.png"
+    },
+	{	// Isis
+        "Action": "EditData",
+        "Target": "Data/Characters",
+		"Update": "OnDayStart",
+        "Entries": {
+			"Isis": { "DisplayName": "{{i18n:Isis.Display.Name}}", "Age": "teen", "Manner": "rude", "SocialAnxiety": "neutral", "Optimism": "Positive", "Gender": "female", "CanBeRomanced": false, "LoveInterest": "null", "ExcludeFromPerfectionScore": true, "BirthSeason": "fall", "BirthDay": 7, "Calendar": "HiddenAlways", "WinterStarParticipant": "false", "CanVisitIsland": "false",
+            "Home": [ { "Id": "Ilha", "Location": "Ilha", "Tile": { "X": 4, "Y": 5 }, "Direction": "Down" } ], "SpouseRoom": { "MapAsset": "Casada.Quarto_Isis" }, "SpousePatio": { "MapAsset": "Casada.Patio.Rdx_Isis" },
+			"Appearance": [ 
+					//Praia V1 e V2
+					{ "IsIslandAttire": true, "Sprite": "Characters/Is.Bo", "Portrait": "Portraits/Is.Re", "Outdoors": true, "Indoors": false, "Precedence": -30, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000", "IsIslandAttire": true, "Sprite": "Characters/Is.BoV2", "Portrait": "Portraits/Is.ReV2", "Outdoors": true, "Indoors": false, "Precedence": -40, "Weight": 1 },
+					
+					//Casual
+					{ "Season": "Spring", "Sprite": "Characters/Is.Bo_Spring", "Portrait": "Portraits/Isis", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+					{ "Season": "Summer", "Sprite": "Characters/Is.Bo_Summer", "Portrait": "Portraits/Is.Re_Summer_Sun", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+					{ "Season": "Fall", "Sprite": "Characters/Is.Bo_Fall", "Portrait": "Portraits/Is.Re_Fall_Sun", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+					{ "Season": "Winter", "Sprite": "Characters/Is.Bo_Winter", "Portrait": "Portraits/Is.Re_Winter_Sun", "Indoors": true, "Outdoors": false, "Precedence": 0 },
+
+					//Casual V2
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000", "Season": "Spring", "Sprite": "Characters/Is.BoV2_Spring", "Portrait": "Portraits/Is.ReV2_Spring_Sun", "Indoors": true, "Outdoors": false, "Precedence": -10 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000", "Season": "Summer", "Sprite": "Characters/Is.BoV2_Summer", "Portrait": "Portraits/Is.ReV2_Summer_Sun", "Indoors": true, "Outdoors": false, "Precedence": -10 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000", "Season": "Fall", "Sprite": "Characters/Is.BoV2_Fall", "Portrait": "Portraits/Is.ReV2_Fall_Sun", "Indoors": true, "Outdoors": false, "Precedence": -10 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000", "Season": "Winter", "Sprite": "Characters/Is.BoV2_Winter", "Portrait": "Portraits/Is.ReV2_Winter_Sun", "Indoors": true, "Outdoors": false, "Precedence": -10 },
+				
+					//Comum
+					{ "Season": "Spring", "Sprite": "Characters/Isis", "Portrait": "Portraits/Isis", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+					{ "Season": "Summer", "Sprite": "Characters/Is.Bo_Summer_Sun", "Portrait": "Portraits/Is.Re_Summer_Sun", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+					{ "Season": "Fall", "Sprite": "Characters/Is.Bo_Fall_Sun", "Portrait": "Portraits/Is.Re_Fall_Sun", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+					{ "Season": "Winter", "Sprite": "Characters/Is.Bo_Winter_Sun", "Portrait": "Portraits/Is.Re_Winter_Sun", "Indoors": false, "Outdoors": true, "Precedence": 0 },
+				
+					//Comum V2
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000", "Season": "Spring", "Sprite": "Characters/Is.BoV2_Spring_Sun", "Portrait": "Portraits/Is.ReV2_Spring_Sun", "Indoors": false, "Outdoors": true, "Precedence": -10 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000", "Season": "Summer", "Sprite": "Characters/Is.BoV2_Summer_Sun", "Portrait": "Portraits/Is.ReV2_Summer_Sun", "Indoors": false, "Outdoors": true, "Precedence": -10 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000", "Season": "Fall", "Sprite": "Characters/Is.BoV2_Fall_Sun", "Portrait": "Portraits/Is.ReV2_Fall_Sun", "Indoors": false, "Outdoors": true, "Precedence": -10 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000", "Season": "Winter", "Sprite": "Characters/Is.BoV2_Winter_Sun", "Portrait": "Portraits/Is.ReV2_Winter_Sun", "Indoors": false, "Outdoors": true, "Precedence": -10 },
+
+					//Chuva
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Spring", "Sprite": "Characters/Is.Bo_Spring_Rain", "Portrait": "Portraits/Is.Re_Spring_Rain", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Summer", "Sprite": "Characters/Is.Bo_Summer_Rain", "Portrait": "Portraits/Is.Re_Summer_Rain", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Fall", "Sprite": "Characters/Is.Bo_Fall_Rain", "Portrait": "Portraits/Is.Re_Fall_Rain", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+					{ "Condition": "Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Winter", "Sprite": "Characters/Is.Bo_Winter_Snow", "Portrait": "Portraits/Is.Re_Winter_Snow", "Outdoors": true, "Indoors": false, "Precedence": -10, "Weight": 1 },
+
+					//Chuva V2
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000\", Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Spring", "Sprite": "Characters/Is.BoV2_Spring_Rain", "Portrait": "Portraits/Is.ReV2_Spring_Rain", "Outdoors": true, "Indoors": false, "Precedence": -20, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000\", Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Summer", "Sprite": "Characters/Is.BoV2_Summer_Rain", "Portrait": "Portraits/Is.ReV2_Summer_Rain", "Outdoors": true, "Indoors": false, "Precedence": -20, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000\", Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Fall", "Sprite": "Characters/Is.BoV2_Fall_Rain", "Portrait": "Portraits/Is.ReV2_Fall_Rain", "Outdoors": true, "Indoors": false, "Precedence": -20, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000\", Any \"WEATHER Target rain\" \"WEATHER Target storm\" \"WEATHER Target snow\" \"WEATHER Target Kana.WeatherWonders_Drizzle\" \"WEATHER Target Kana.WeatherWonders_Hailstorm\" \"WEATHER Target Kana.WeatherWonders_MuddyRain\" \"WEATHER Target Kana.WeatherWonders_RainSnowMix\" \"WEATHER Target GreenRain\"", "Season": "Winter", "Sprite": "Characters/Is.BoV2_Winter_Snow", "Portrait": "Portraits/Is.ReV2_Winter_Snow", "Outdoors": true, "Indoors": false, "Precedence": -20, "Weight": 1 },
+
+					//Forja
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000\", LOCATION_NAME Target Blacksmith", "Sprite": "Characters/Is.Bo_Job", "Portrait": "Portraits/Is.Re_Job", "Outdoors": false, "Indoors": true, "Precedence": -20, "Weight": 1 },
+					
+					//Festival
+					{ "Condition": "EVENT_ID festival_spring13", "Sprite": "Characters/Is.Boneco_EggFest", "Portrait": "Portraits/Is.Retrato_EggFest", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_spring24", "Sprite": "Characters/Is.Boneco_FlowerDance", "Portrait": "Portraits/Is.Retrato_FlowerDance", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_summer11", "Sprite": "Characters/Is.Boneco_Luau", "Portrait": "Portraits/Is.Retrato_Luau", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_summer28", "Sprite": "Characters/Is.Boneco_DanceMoonlight", "Portrait": "Portraits/Is.Retrato_DanceMoonlight", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_fall16", "Sprite": "Characters/Is.Boneco_Fair", "Portrait": "Portraits/Is.Retrato_Fair", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "LOCATION_NAME Target EastScarp_VillageInn_SpiritEve", "Sprite": "Characters/Is.Boneco_SpiritsEve", "Portrait": "Portraits/Is.Retrato_SpiritsEve", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_fall27", "Sprite": "Characters/Is.Boneco_SpiritsEve", "Portrait": "Portraits/Is.Retrato_SpiritsEve", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_winter8", "Sprite": "Characters/Is.Boneco_IceFest", "Portrait": "Portraits/Is.Retrato_IceFest", "Precedence": -30, "Weight": 1 },
+					{ "Condition": "EVENT_ID festival_winter25", "Sprite": "Characters/Is.Boneco_WinterStart", "Portrait": "Portraits/Is.Retrato_WinterStart", "Precedence": -30, "Weight": 1 },
+					
+					//Festival V2
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000, EVENT_ID festival_spring13", "Sprite": "Characters/Is.BonecoV2_EggFest", "Portrait": "Portraits/Is.RetratoV2_EggFest", "Precedence": -40, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000, EVENT_ID festival_spring24", "Sprite": "Characters/Is.BonecoV2_FlowerDance", "Portrait": "Portraits/Is.RetratoV2_FlowerDance", "Precedence": -40, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000, EVENT_ID festival_summer11", "Sprite": "Characters/Is.BonecoV2_Luau", "Portrait": "Portraits/Is.RetratoV2_Luau", "Precedence": -40, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000, EVENT_ID festival_summer28", "Sprite": "Characters/Is.BonecoV2_DanceMoonlight", "Portrait": "Portraits/Is.RetratoV2_DanceMoonlight", "Precedence": -40, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000, EVENT_ID festival_fall16", "Sprite": "Characters/Is.BonecoV2_Fair", "Portrait": "Portraits/Is.RetratoV2_Fair", "Precedence": -40, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000, LOCATION_NAME Target EastScarp_VillageInn_SpiritEve", "Sprite": "Characters/Is.BonecoV2_SpiritsEve", "Portrait": "Portraits/Is.RetratoV2_SpiritsEve", "Precedence": -40, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000, EVENT_ID festival_fall27", "Sprite": "Characters/Is.BonecoV2_SpiritsEve", "Portrait": "Portraits/Is.RetratoV2_SpiritsEve", "Precedence": -40, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000, EVENT_ID festival_winter8", "Sprite": "Characters/Is.BonecoV2_IceFest", "Portrait": "Portraits/Is.RetratoV2_IceFest", "Precedence": -40, "Weight": 1 },
+					{ "Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000, EVENT_ID festival_winter25", "Sprite": "Characters/Is.BonecoV2_WinterStart", "Portrait": "Portraits/Is.RetratoV2_WinterStart", "Precedence": -40, "Weight": 1 }
+				]
+			}
+        }
+    },
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Update": "OnDayStart",
+        "Fields": { "Isis": { "Calendar": "HiddenUntilMet", "WinterStarParticipant": "true", "CanVisitIsland": "true", "Home": [ { "Id": "Casa.Interior", "Location": "Casa.Interior", "Tile": { "X": 3, "Y": 17 }, "Direction": "Down" } ] } },
+        "When": { "HasSeenEvent: anyPlayer|contains=90105264": "true", "HasSeenEvent: anyPlayer|contains=99805264": "false" }
+    },
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Update": "OnLocationChange",
+        "Fields": { "Isis": { "Calendar": "HiddenUntilMet", "WinterStarParticipant": "true", "CanVisitIsland": "true", "adult": "teen", "CanBeRomanced": true, "FlowerDanceCanDance": true, "Home": [ { "Id": "Casa.Interior", "Location": "Casa.Interior", "Tile": { "X": 3, "Y": 17 }, "Direction": "Down" } ] } },
+        "When": { "HasSeenEvent: anyPlayer|contains=91205264": "true", "HasSeenEvent: anyPlayer|contains=37918100": "false" }
+    },
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Update": "OnLocationChange",
+        "Fields": { "Isis": { "Home": [ { "Id": "Ilha", "Location": "Ilha", "Tile": { "X": 4, "Y": 5 }, "Direction": "Down" } ] } },
+        "When": { "HasSeenEvent: anyPlayer|contains=91705264": "true" }
+    },
+	{	// Patio Para Diversas Fazendas
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Fields": { "Isis": { "SpousePatio": { "MapAsset": "Casada.Patio_Isis" } } },
+        "When": { "FarmType": "Standard" }
+    },
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Fields": { "Isis": { "SpousePatio": { "MapAsset": "Casada.Patio_Isis" } } },
+        "When": { "FarmType": "Wilderness" }
+    },
+	{
+		"Action": "EditData",
+        "Target": "Data/Characters",
+        "Fields": { "Isis": { "SpousePatio": { "MapAsset": "Casada.Patio_Isis" } } },
+        "When": { "FarmType": "Four Corners" }
+    }
+  ]
+}

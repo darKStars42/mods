@@ -1,0 +1,594 @@
+{
+   "Changes": [
+        {
+			"LogName": "Trigger action to add mail flag for tracking Leah's son as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Add_David_Secondborn": {
+                    "Id": "{{ModId}}_Add_David_Secondborn",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current {{ModId}}_David_Secondborn Received",
+					"MarkActionApplied": false,
+                },
+                "{{ModId}}_Add_GrowingValley_Secondborn_Male": {
+                    "Id": "{{ModId}}_Add_GrowingValley_Secondborn_Male",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current GrowingValley_Secondborn_Male Received",
+					"MarkActionApplied": false,
+                },
+			}
+		},
+		
+   		{      
+			"LogName": "Load Leah's son's portraits on secondborn.",
+			"Action": "Load",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/David_{{SecondbornSkinTone}}.png",
+		},
+   		{      
+			"LogName": "Load Leah's son's sprites on secondborn.",
+			"Action": "Load",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/David_{{SecondbornSkinTone}}.png",
+		},
+		
+   		{      
+			"LogName": "Load Leah's son's portraits on secondborn (target locale).",
+			"Action": "Load",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/David_{{SecondbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+			},
+		},
+   		{      
+			"LogName": "Load Leah's son's sprites on secondborn (target locale).",
+			"Action": "Load",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/David_{{SecondbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+			},
+		},
+		
+   		{      
+			"LogName": "Edit Leah's son's portraits to use winter outfit on secondborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/David_Winter_{{SecondbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"Season": "winter",
+			},
+		},
+   		{      
+			"LogName": "Edit Leah's son's sprites to use winter outfit on secondborn.",
+			"Action": "EditImage",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/David_Winter_{{SecondbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"Season": "winter",
+			},
+		},
+		
+		{
+			"LogName": "Add gift tastes for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"{{SecondbornName}}": "/196 200 606 426 MysticTreeSeed Broccoli//-2 -5 -6 -79 -81 18 169 430 69 251 628 629 630 631 632 633//16 248 829 260 food_spicy chili_item//alcohol_item 300 212//tree_seed_item 805 coffee_item 397 721 388 709/",
+			}
+		},
+		{
+			"LogName": "Fill secondborn's empty schedule with that of Leah's son.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain": "830 Forest 64 50 2/1300 Forest 38 10 2/1730 bed",
+				"GreenRain": "830 Forest 105 33 3/1500 Forest 38 10 2/1730 bed",
+				"Mon": "830 Forest 64 50 2 \"Strings\\schedules\\{{SecondbornName}}:Mon.000\"/1500 Forest 105 34 2/1730 bed",
+				"Tue": "MAIL beenToWoods/GOTO Tue_normal/730 Woods 12 18 2 \"Strings\\schedules\\{{SecondbornName}}:Tue.000\"/1700 bed",
+				"Tue_normal": "GOTO season",
+				"winter": "900 Forest 41 9 2/1400 Forest 21 29 1/1630 bed",
+				"fall": "900 Forest 41 9 2/1400 Town 94 26 3 square_1_5_3/1800 bed",
+				"summer": "MAIL beachBridgeFixed/GOTO summer_noBridge/830 Beach 81 17 2/1800 bed",
+				"summer_noBridge": "830 Beach 41 24 2/1800 bed",
+				"spring": "830 Forest 105 34 2/1500 Forest 35 25 2/1800 bed",
+				"DesertFestival_1": "900 Desert 3 16 1 \"Strings\\schedules\\{{SecondbornName}}:DesertFestival.000\"/2520 bed",
+			},
+			"When": {
+				"HasMod|contains=FlashShifter.StardewValleyExpandedCP": "false",
+			},
+		},
+		
+		//SVE compat courtesy of QuoteIzkewl
+		{
+			"LogName": "Fill secondborn's empty schedule with that of Leah's son (SVE compat).",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain": "830 Forest 64 50 2/1300 Forest 38 10 2/1730 bed",
+				"GreenRain": "830 Forest 109 39 0/1500 Forest 38 10 2/1730 bed",
+				"Mon": "830 Forest 64 50 2 \"Strings\\schedules\\{{SecondbornName}}:Mon.000\"/1500 Forest 109 39 0/1730 bed",
+				"Tue": "MAIL beenToWoods/GOTO Tue_normal/730 Woods 54 48 3 \"Strings\\schedules\\{{SecondbornName}}:Tue.000\"/1700 bed",
+				"Tue_normal": "GOTO season",
+				"winter": "900 Forest 41 9 2/1400 Forest 21 29 1/1630 bed",
+				"fall": "900 Forest 41 9 2/1400 Town 94 26 3 square_1_5_3/1800 bed",
+				"summer": "MAIL beachBridgeFixed/GOTO summer_noBridge/830 Beach 81 17 2/1800 bed",
+				"summer_noBridge": "830 Beach 41 24 2/1800 bed",
+				"spring": "830 Forest 109 39 0/1500 Forest 35 25 2/1800 bed",
+				"DesertFestival_1": "900 Desert 3 16 1 \"Strings\\schedules\\{{SecondbornName}}:DesertFestival.000\"/2520 bed",
+			},
+			"When": {
+				"HasMod":"FlashShifter.StardewValleyExpandedCP",
+				},
+		},
+		
+		//David will visit the woods on Thursdays instead with LRSH installed
+		{
+			"LogName": "Add Little Red School House schedule for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"Tue": "a1000 Custom_SchoolHouse 1 6 1 {{SecondbornName}}_read \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.000\"/1130 Town 58 38 1 \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.001\"/1210 Custom_SchoolHouse 1 6 1 {{SecondbornName}}_read/1550 Town 94 26 3 square_1_5_3/1820 bed",
+				"Wed": "GOTO Tue",
+				"Thu": "MAIL beenToWoods/GOTO Tue_normal/730 Woods 12 18 2 \"Strings\\schedules\\{{SecondbornName}}:Tue.000\"/1700 bed",
+				"Fri": "GOTO Tue",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+				"HasMod|contains=FlashShifter.StardewValleyExpandedCP": "false",
+			},
+		},
+		
+		//SVE compat courtesy of QuoteIzkewl
+		{
+			"LogName": "Add Little Red School House schedule for Leah's son as secondborn (SVE compat).",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"Tue": "a1000 Custom_SchoolHouse 11 6 1 {{SecondbornName}}_read \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.000\"/1130 Town 58 38 1 \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.001\"/1210 Custom_SchoolHouse 11 6 1 {{SecondbornName}}_read/1550 Town 94 26 3 square_1_5_3/1820 bed",
+				"Wed": "GOTO Tue",
+				"Thu": "MAIL beenToWoods/GOTO Tue_normal/730 Woods 54 48 3 \"Strings\\schedules\\{{SecondbornName}}:Tue.000\"/1700 bed",
+				"Fri": "GOTO Tue",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+				"HasMod|contains=FlashShifter.StardewValleyExpandedCP": "true",
+                },
+		},
+		
+		{
+			"LogName": "Add Little Red School House schedule for Leah's son as secondborn (rain).",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain": "a1000 Custom_SchoolHouse 1 6 1 {{SecondbornName}}_read \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.000\"/1130 Custom_SchoolHouse 10 17 3 \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.002\"/a1250 Custom_SchoolHouse 1 6 1 {{SecondbornName}}_read/1550 Town 46 32 2/1730 bed",
+			},
+			"When": {
+				"DayOfWeek": "Tuesday, Wednesday, Friday",
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+			},
+		},
+		
+		{
+            "LogName": "Add animations for Leah's son as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/animationdescriptions",
+            "Entries":
+            {
+                "{{SecondbornName}}_sit": "16/16/16",
+                "{{SecondbornName}}_read": "17/17/17",
+			}
+		},
+		
+		
+        {
+            "LogName": "Add Leah's son to Egg Festival as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring13",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 26 67 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 31 60 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 28 69 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 24 64 1",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Leah's son to Flower Dance as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring24",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 19 41 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 14 31 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 6 21 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 6 30 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Leah's son to Luau as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer11",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 47 13 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 34 20 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 22 15 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Fields", "set-up_y2", 5],
+                    "Value": "/positionOffset {{SecondbornName}} 0 -13",
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 23 18 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Leah's son to Moonlight Jellies as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer28",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 85 40 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 27 35 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 53 24 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 24 34 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Leah's son to Fair as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall16",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 34 79 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 52 77 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Leah's son to Spirit's Eve as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall27",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 28 66 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 14 61 1",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Leah's son to Festival of Ice as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter8",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 68 15 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 69 27 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 73 18 1",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 63 35 1",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Leah's son to Winter Star as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter25",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 25 74 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 28 60 1",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+		{
+			"LogName": "Add movie concession tastes for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/ConcessionTastes",
+			"Entries": {
+				2:{
+					"Name": "{{SecondbornName}}",
+					"LovedTags": [
+					  "Truffle Popcorn",
+					  "Panzanella Salad",
+					],
+					"LikedTags": [
+					  "Sweet",
+					  "Healthy",
+					],
+					"DislikedTags": [
+					  "Fatty",
+					  "Jawbreaker",
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Add movie reactions for Leah's son as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+			"Entries": {
+				2:{
+					"NPCName": "{{SecondbornName}}",
+					"Reactions": [
+					  {
+						"Tag": "*",
+						"Response": "love",
+						"Whitelist": [
+						  "{{PlayerCompanion}}",
+						],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": {
+							"ResponsePoint": null,
+							"Script": "Placeholder",
+							"Text": null
+						  },
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_3"
+					  },
+					  {
+						"Tag": "spring_movie_0",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie":  {
+							"ResponsePoint": "sprout_leave",
+							"Script": "Placeholder",
+							"Text": "Placeholder"
+						  },
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_4"
+					  },
+					  {
+						"Tag": "family",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_0"
+					  },
+					  {
+						"Tag": "horror",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_1"
+					  },
+					  {
+						"Tag": "*",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_2"
+					  },
+					  {
+						"Tag": "love",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_5"
+					  },
+					  {
+						"Tag": "like",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_6"
+					  },
+					  {
+						"Tag": "dislike",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_7"
+					  }
+					]
+				}
+			}
+		},
+		
+   		{      
+			"LogName": "Include dialogue files for Leah's son as secondborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Leah/valid_secondborn_Leah.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+   		{      
+			"LogName": "Fallback to English dialogue files if no others are available for Leah's son as secondborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Leah/valid_secondborn_Leah.en.json", 
+			"When": {
+				"HasFile:i18n/dialogue_files/Leah/valid_secondborn_Leah.{{Language}}.json": false
+			}
+		},
+   ]
+}

@@ -1,0 +1,117 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_Converter": {
+                    "Name": "Package Converter",
+                    "DisplayName": "{{i18n: converter.name}}",
+                    "Description": "{{i18n: converter.description}}",
+                    "Price": 0,
+                    "Fragility": 0,
+                    "CanBePlacedOutdoors": true,
+                    "CanBePlacedIndoors": true,
+                    "IsLamp": false,
+                    "Texture": "{{InternalAssetKey: assets/converter.png}}",
+                    "SpriteIndex": 0,
+                    "ContextTags": null,
+                    "CustomFields": null
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_Converter": {
+                    "OutputRules": [
+                        {
+                            "Id": "Box",
+                            "Triggers": [
+                                {
+                                    "Id": "ItemPlacedInMachine_Box",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)Box"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "CopyPrice": true,
+                                    "CopyQuality": true,
+                                    "Id": "jabbic.CPArtisanPackaging_Box",
+                                    "ItemId": "jabbic.CPArtisanPackaging_Box"
+                                }
+                            ]
+                        },
+                        {
+                            "Id": "Can",
+                            "Triggers": [
+                                {
+                                    "Id": "ItemPlacedInMachine_Can",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)Canned_Fish"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "CopyPrice": true,
+                                    "CopyQuality": true,
+                                    "Id": "jabbic.CPArtisanPackaging_CannedFish",
+                                    "ItemId": "jabbic.CPArtisanPackaging_CannedFish"
+                                }
+                            ]
+                        },
+                        {
+                            "Id": "Crate",
+                            "Triggers": [
+                                {
+                                    "Id": "ItemPlacedInMachine_Crate",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)Crate"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "CopyPrice": true,
+                                    "CopyQuality": true,
+                                    "Id": "jabbic.CPArtisanPackaging_Crate",
+                                    "ItemId": "jabbic.CPArtisanPackaging_Crate"
+                                }
+                            ]
+                        },
+                    ],
+                    "LoadEffects": [
+                        {
+                            "Id": "Default",
+                            "Sounds": [
+                                {
+                                    "Id": "Ship"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_SendConverter": {
+                    "Id": "{{ModId}}_SendConverter",
+					"Trigger": "DayStarted",
+					"HostOnly": true,
+					"Action": "AddMail Current {{ModId}}_Converter now"
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "{{ModId}}_Converter": "{{i18n: mail.converter.body}}%item id (BC){{ModId}}_Converter 1 %%[#]{{i18n: mail.converter.subject}}"
+            }
+        }
+    ]
+}

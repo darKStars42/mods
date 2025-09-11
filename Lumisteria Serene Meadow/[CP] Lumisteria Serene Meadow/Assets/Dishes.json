@@ -1,0 +1,790 @@
+{
+	"Changes": [
+		/* add item  images*/
+		{
+			"LogName": "Load Dishes images",
+			"Action": "Load",
+			"Target": "Mods/{{ModID}}/Dishes",
+			"FromFile": "Assets/Images/Dishes.png"
+		},
+		{
+			"LogName": "Dishes",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModID}}_BorageRaviolis": {
+					"Name": "Borage Raviolis",
+					"DisplayName": "{{i18n: SereneMeadowBorageRaviolis_Translated}}",
+					"Description": "{{i18n: SereneMeadowBorageRaviolis_Description_Translated}}",
+					"Type": "Cooking",
+					"Category": -7,
+					"Price": 145,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 0,
+					"Edibility": 30,
+					"Buffs": [
+						{
+							"Id": "Food",
+							"IconSpriteIndex": 0,
+							"Duration": 550,
+							"CustomAttributes": {
+								"FarmingLevel": 0.0,
+								"FishingLevel": 1.0,
+								"MiningLevel": 0.0,
+								"LuckLevel": 0.0,
+								"ForagingLevel": 0.0,
+								"MaxStamina": 0.0,
+								"MagneticRadius": 5.0,
+								"Speed": 0.0,
+								"Defense": 0.0,
+								"Attack": 0.0
+							},
+							"CustomFields": null
+						}
+					],
+					"ContextTags": [
+						"color_green",
+						"food_pasta",
+					],
+					"CustomFields": {}
+				},
+				"{{ModID}}_StuffedSquash": {
+					"Name": "Stuffed Squash",
+					"DisplayName": "{{i18n: SereneMeadowStuffedSquash_Translated}}",
+					"Description": "{{i18n: SereneMeadowStuffedSquash_Description_Translated}}",
+					"Type": "Cooking",
+					"Category": -7,
+					"Price": 165,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 1,
+					"Edibility": 32,
+					"ContextTags": [
+						"color_white",
+					],
+					"CustomFields": {}
+				},
+				"{{ModID}}_RomanescoPasta": {
+					"Name": "Romanesco Pasta",
+					"DisplayName": "{{i18n: SereneMeadowRomanescoPasta_Translated}}",
+					"Description": "{{i18n: SereneMeadowRomanescoPasta_Description_Translated}}",
+					"Type": "Cooking",
+					"Category": -7,
+					"Price": 175,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 2,
+					"Edibility": 50,
+					"ContextTags": [
+						"color_green",
+						"food_pasta",
+					],
+					"CustomFields": {}
+				},
+				"{{ModID}}_PurpleFlowerTea": {
+					"Name": "Purple Flower Tea",
+					"DisplayName": "{{i18n: SereneMeadowPurpleFlowerTea_Translated}}",
+					"Description": "{{i18n: SereneMeadowPurpleFlowerTea_Description_Translated}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 100,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 3,
+					"Edibility": 6,
+					"IsDrink": true,
+					"Buffs": [
+						{
+							"Id": "Drink",
+							"IconSpriteIndex": 0,
+							"Duration": 380,
+							"CustomAttributes": {
+								"FarmingLevel": 0.0,
+								"FishingLevel": 0.0,
+								"MiningLevel": 0.0,
+								"LuckLevel": 0.0,
+								"ForagingLevel": 1.0,
+								"MaxStamina": 0.0,
+								"MagneticRadius": 0.0,
+								"Speed": 0.0,
+								"Defense": 0.0,
+								"Attack": 0.0
+							},
+							"CustomFields": null
+						}
+					],
+					"ContextTags": [
+						"color_purple",
+					],
+					"CustomFields": {}
+				},
+				"{{ModID}}_CheesecakePansy": {
+					"Name": "Cheesecake With Pansy",
+					"DisplayName": "{{i18n: SereneMeadowCheesecakePansy_Translated}}",
+					"Description": "{{i18n: SereneMeadowCheesecakePansy_Description_Translated}}",
+					"Type": "Cooking",
+					"Category": -7,
+					"Price": 200,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 5,
+					"Edibility": 44,
+					"ContextTags": [
+						"color_purple",
+					],
+					"CustomFields": {}
+				},
+				"{{ModID}}_CalendulaTea": {
+					"Name": "Calendula Tea",
+					"DisplayName": "{{i18n: SereneMeadowCalendulaTea_Translated}}",
+					"Description": "{{i18n: SereneMeadowCalendulaTea_Description_Translated}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 100,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 6,
+					"Edibility": 6,
+					"IsDrink": true,
+					"Buffs": [
+						{
+							"Id": "Drink",
+							"IconSpriteIndex": 0,
+							"Duration": 120,
+							"CustomAttributes": {
+								"FarmingLevel": 0.0,
+								"FishingLevel": 0.0,
+								"MiningLevel": 0.0,
+								"LuckLevel": 0.0,
+								"ForagingLevel": 0.0,
+								"MaxStamina": 0.0,
+								"MagneticRadius": 0.0,
+								"Speed": 1.0,
+								"Defense": 0.0,
+								"Attack": 0.0
+							},
+							"CustomFields": null
+						},
+						{
+							"Id": "{{ModId}}_CalendulaTeaBuff",
+							"IconSpriteIndex": 0,
+							"Duration": 280,
+							"CustomAttributes": {
+								"FarmingLevel": 0.0,
+								"FishingLevel": 0.0,
+								"MiningLevel": 0.0,
+								"LuckLevel": 0.0,
+								"ForagingLevel": 0.0,
+								"MaxStamina": 30.0,
+								"MagneticRadius": 0.0,
+								"Speed": 0.0,
+								"Defense": 1.0,
+								"Attack": 0.0
+							},
+							"CustomFields": null
+						}
+					],
+					"ContextTags": [
+						"color_purple",
+					],
+					"CustomFields": {}
+				},
+				"{{ModID}}_RomanescoGratin": {
+					"Name": "Romanesco Gratin",
+					"DisplayName": "{{i18n: SereneMeadowRomanescoGratin_Translated}}",
+					"Description": "{{i18n: SereneMeadowRomanescoGratin_Description_Translated}}",
+					"Type": "Cooking",
+					"Category": -7,
+					"Price": 148,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 7,
+					"Edibility": 56,
+					"ContextTags": [
+						"color_green",
+					],
+					"CustomFields": {}
+				},
+				"{{ModID}}_StuffedTropaeolum": {
+					"Name": "Stuffed Tropaeolum",
+					"DisplayName": "{{i18n: SereneMeadowStuffedTropaeolum_Translated}}",
+					"Description": "{{i18n: SereneMeadowStuffedTropaeolum_Description_Translated}}",
+					"Type": "Cooking",
+					"Category": -7,
+					"Price": 124,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 8,
+					"Edibility": 72,
+					"ContextTags": [
+						"color_orange",
+					],
+					"CustomFields": {}
+				},
+				"{{ModID}}_StuffedTropaeolumLeaves": {
+					"Name": "Stuffed Tropaeolum Leaves",
+					"DisplayName": "{{i18n: SereneMeadowStuffedTropaeolumLeaves_Translated}}",
+					"Description": "{{i18n: SereneMeadowStuffedTropaeolumLeaves_Description_Translated}}",
+					"Type": "Cooking",
+					"Category": -7,
+					"Price": 75,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 9,
+					"Edibility": 43,
+					"Buffs": [
+						{
+							"Id": "Food",
+							"IconSpriteIndex": 0,
+							"Duration": 550,
+							"CustomAttributes": {
+								"FarmingLevel": 0.0,
+								"FishingLevel": 0.0,
+								"MiningLevel": 0.0,
+								"LuckLevel": 0.0,
+								"ForagingLevel": 0.0,
+								"MaxStamina": 20.0,
+								"MagneticRadius": 0.0,
+								"Speed": 0.0,
+								"Defense": 2.0,
+								"Attack": 0.0
+							},
+							"CustomFields": null
+						}
+					],
+					"ContextTags": [
+						"color_green",
+					],
+					"CustomFields": {}
+				},
+				"{{ModID}}_FloatingIslandFuchsia": {
+					"Name": "Floating Island Fuchsia",
+					"DisplayName": "{{i18n: SereneMeadowFloatingIslandFuchsia_Translated}}",
+					"Description": "{{i18n: SereneMeadowFloatingIslandFuchsia_Description_Translated}}",
+					"Type": "Cooking",
+					"Category": -7,
+					"Price": 75,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 10,
+					"Edibility": 43,
+					"ContextTags": [
+						"color_purple",
+					],
+					"CustomFields": {}
+				},
+			},
+		},
+		{
+			"LogName": "Spacecore only",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModID}}_PickledTropaeolum": {
+					"Name": "PickledTropaeolum",
+					"DisplayName": "{{i18n: SereneMeadowPickledTropaeolum_Translated}}",
+					"Description": "{{i18n: SereneMeadowPickledTropaeolum_Description_Translated}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 200,
+					"Texture": "Mods/{{ModID}}/Dishes",
+					"SpriteIndex": 11,
+					"Edibility": -300,
+					"ContextTags": [
+						"color_green",
+						"pickle_item"
+					],
+					"CustomFields": {}
+				},
+			},
+			"When": {
+				"HasMod |contains=spacechase0.SpaceCore": "true",
+			}
+		},
+		/* add recipes*/
+		{
+			"LogName": "Recipes",
+			"Action": "EditData",
+			"Target": "Data/CookingRecipes",
+			"Entries": {
+				"{{ModId}}_BorageRaviolis": "246 2 {{ModId}}_Borage 1 424 1/1 8/{{ModId}}_BorageRaviolis/f Marnie 5",
+				"{{ModId}}_StuffedSquash": "{{ModId}}_BabyBooSquash 1 -5 1 423 1/1 8/{{ModId}}_StuffedSquash/f Jodi 5",
+				"{{ModId}}_RomanescoPasta": "{{ModId}}_RomanescoCabbage 1 139 1 246 1/1 8/{{ModId}}_RomanescoPasta/f Clint 5",
+				"{{ModId}}_CheesecakePansy": "{{ModId}}_SpringPansy 1 426 1 216/1 8/{{ModId}}_CheesecakePansy/f Haley 5",
+				"{{ModId}}_RomanescoGratin": "{{ModId}}_RomanescoCabbage 1 -5 2 424 1/1 8/{{ModId}}_RomanescoGratin/f Evelyn 5",
+				"{{ModId}}_StuffedTropaeolum": "{{ModId}}_Tropaeolum 1 426 1/1 8/{{ModId}}_StuffedTropaeolum/f Evelyn 5",
+				"{{ModId}}_StuffedTropaeolumLeaves": "{{ModId}}_Tropaeolum 1 423 1 260 1 399 1/1 8/{{ModId}}_StuffedTropaeolumLeaves 2/f Evelyn 5",
+				"{{ModId}}_FloatingIslandFuchsia": "{{ModId}}_Fuchsia 1 {{ModId}}_FuchsiaBerry 1 -5 2/1 8/{{ModId}}_FloatingIslandFuchsia/null",
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "spacechase0.SpaceCore/CookingRecipeOverrides",
+			"Entries": {
+				"{{ModId}}_RomanescoPasta": {
+					"ProductQualifiedId": "(O){{ModId}}_RomanescoPasta",
+					"ProductAmount": 1,
+					"Ingredients": [
+						{
+							"Type": "ContextTag",
+							"Value": "id_(o)lumisteria.serenemeadow_romanescocabbage, id_(o)broccoli",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientRomanescoBroccoli}}",
+							"OverrideTexturePath": "Mods/{{ModId}}/IngredientsIcons",
+							"OverrideTextureRect": {
+								"X": 0,
+								"Y": 0,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "ContextTag",
+							"Value": "trout_item, item_rainbow_trout, item_tiger_trout, item_salmon",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientSalmon}}",
+							"OverrideTexturePath": "Mods/{{ModId}}/IngredientsIcons",
+							"OverrideTextureRect": {
+								"X": 48,
+								"Y": 0,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "Item",
+							"Value": "(O)246",
+							"Amount": 1,
+						},
+					]
+				},
+				"{{ModId}}_StuffedSquash": {
+					"ProductQualifiedId": "(O){{ModId}}_StuffedSquash",
+					"ProductAmount": 1,
+					"Ingredients": [
+						{
+							"Type": "ContextTag",
+							"Value": "id_(o)lumisteria.serenemeadow_babyboosquash, id_(o)summersquash, id_(o)276",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientSquash}}",
+							"OverrideTexturePath": "Mods/{{ModId}}/IngredientsIcons",
+							"OverrideTextureRect": {
+								"X": 64,
+								"Y": 0,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "ContextTag",
+							"Value": "category_egg",
+							"Amount": 1,
+							"OverrideText": "Any Egg",
+							"OverrideTexturePath": "Maps/springobjects",
+							"OverrideTextureRect": {
+								"X": 128,
+								"Y": 112,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "Item",
+							"Value": "(O)423",
+							"Amount": 1,
+						},
+					]
+				},
+				"{{ModId}}_CheesecakePansy": {
+					"ProductQualifiedId": "(O){{ModId}}_CheesecakePansy",
+					"ProductAmount": 1,
+					"Ingredients": [
+						{
+							"Type": "ContextTag",
+							"Value": "pansy_item",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientPansy}}",
+							"OverrideTexturePath": "Mods/{{ModId}}/IngredientsIcons",
+							"OverrideTextureRect": {
+								"X": 16,
+								"Y": 0,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "ContextTag",
+							"Value": "id_(o)426, soft_cheese_item",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientSoftCheese}}",
+							"OverrideTexturePath": "Maps/springobjects",
+							"OverrideTextureRect": {
+								"X": 288,
+								"Y": 272,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "Item",
+							"Value": "(O)216",
+							"Amount": 1,
+						},
+					]
+				},
+				"{{ModId}}_RomanescoGratin": {
+					"ProductQualifiedId": "(O){{ModId}}_RomanescoGratin",
+					"ProductAmount": 1,
+					"Ingredients": [
+						{
+							"Type": "ContextTag",
+							"Value": "id_(o)lumisteria.serenemeadow_romanescocabbage, id_(o)broccoli",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientRomanescoBroccoli}}",
+							"OverrideTexturePath": "Mods/{{ModId}}/IngredientsIcons",
+							"OverrideTextureRect": {
+								"X": 0,
+								"Y": 0,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "ContextTag",
+							"Value": "category_egg",
+							"Amount": 1,
+							"OverrideText": "Any Egg",
+							"OverrideTexturePath": "Maps/springobjects",
+							"OverrideTextureRect": {
+								"X": 128,
+								"Y": 112,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "ContextTag",
+							"Value": "cheese_item, id_(o)424, id_(o)426",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientCheese}}",
+							"OverrideTexturePath": "Mods/{{ModId}}/IngredientsIcons",
+							"OverrideTextureRect": {
+								"X": 32,
+								"Y": 0,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+					]
+				},
+				"{{ModId}}_StuffedTropaeolum": {
+					"ProductQualifiedId": "(O){{ModId}}_StuffedTropaeolum",
+					"ProductAmount": 1,
+					"Ingredients": [
+						{
+							"Type": "ContextTag",
+							"Value": "id_(o)lumisteria.serenemeadow_tropaeolum, nasturtium_item",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientTropaeolum}}",
+							"OverrideTexturePath": "Mods/{{ModId}}/IngredientsIcons",
+							"OverrideTextureRect": {
+								"X": 80,
+								"Y": 0,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "ContextTag",
+							"Value": "id_(o)426, soft_cheese_item",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientSoftCheese}}",
+							"OverrideTexturePath": "Maps/springobjects",
+							"OverrideTextureRect": {
+								"X": 288,
+								"Y": 272,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+					]
+				},
+				"{{ModId}}_StuffedTropaeolumLeaves": {
+					"ProductQualifiedId": "(O){{ModId}}_StuffedTropaeolumLeaves",
+					"ProductAmount": 1,
+					"Ingredients": [
+						{
+							"Type": "ContextTag",
+							"Value": "id_(o)lumisteria.serenemeadow_tropaeolum, nasturtium_item",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientTropaeolum}}",
+							"OverrideTexturePath": "Mods/{{ModId}}/IngredientsIcons",
+							"OverrideTextureRect": {
+								"X": 80,
+								"Y": 0,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "ContextTag",
+							"Value": "id_(o)423, rice_item",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientRice}}",
+							"OverrideTexturePath": "Maps/springobjects",
+							"OverrideTextureRect": {
+								"X": 240,
+								"Y": 264,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "ContextTag",
+							"Value": "id_(o)260, pepper_item, hot_pepper_item, spice_item",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientHotPepper}}",
+							"OverrideTexturePath": "Maps/springobjects",
+							"OverrideTextureRect": {
+								"X": 320,
+								"Y": 160,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+						{
+							"Type": "ContextTag",
+							"Value": "id_(o)399, onion_item, id_(o)20",
+							"Amount": 1,
+							"OverrideText": "{{i18n: SereneMeadowIngredientOnionLeek}}",
+							"OverrideTexturePath": "Maps/springobjects",
+							"OverrideTextureRect": {
+								"X": 240,
+								"Y": 256,
+								"Width": 16,
+								"Height": 16
+							},
+						},
+					]
+				},
+			},
+			"When": {
+				"HasMod |contains=spacechase0.SpaceCore": "true",
+				"SpacecoreRecipes": "true",
+			}
+		},
+		{
+			"LogName": "Editing Keg",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)12",
+				"OutputRules"
+			],
+			"Entries": {
+				"{{ModID}}_PurpleFlowerTea": {
+					"Id": "{{ModID}}_PurpleFlowerTea",
+					"Triggers": [
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredTags": [
+								"malva_item",
+							],
+							"RequiredCount": 1,
+						}
+					],
+					"OutputItem": [
+						{
+							"Id": "{{ModID}}_PurpleFlowerTea",
+							"ItemId": "(O){{ModID}}_PurpleFlowerTea",
+							"MinStack": 1,
+						}
+					],
+					"MinutesUntilReady": 2400
+				},
+				"{{ModID}}_CalendulaTea": {
+					"Id": "{{ModID}}_CalendulaTea",
+					"Triggers": [
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredTags": [
+								"calendula_item",
+							],
+							"RequiredCount": 1,
+						}
+					],
+					"OutputItem": [
+						{
+							"Id": "{{ModID}}_CalendulaTea",
+							"ItemId": "(O){{ModID}}_CalendulaTea",
+							"MinStack": 1,
+						}
+					],
+					"MinutesUntilReady": 2400
+				},
+			},
+		},
+		{
+			"LogName": "Editing slimerrain.uncleirohapprovedteacp_Teapot",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)slimerrain.uncleirohapprovedteacp_Teapot",
+				"OutputRules"
+			],
+			"Entries": {
+				"{{ModID}}_PurpleFlowerTea": {
+					"Id": "{{ModID}}_PurpleFlowerTea",
+					"Triggers": [
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredTags": [
+								"malva_item",
+							],
+							"RequiredCount": 1,
+						}
+					],
+					"OutputItem": [
+						{
+							"Id": "{{ModID}}_PurpleFlowerTea",
+							"ItemId": "(O){{ModID}}_PurpleFlowerTea",
+							"MinStack": 1,
+						}
+					],
+					"MinutesUntilReady": 1200
+				},
+				"{{ModID}}_CalendulaTea": {
+					"Id": "{{ModID}}_CalendulaTea",
+					"Triggers": [
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredTags": [
+								"calendula_item",
+							],
+							"RequiredCount": 1,
+						}
+					],
+					"OutputItem": [
+						{
+							"Id": "{{ModID}}_CalendulaTea",
+							"ItemId": "(O){{ModID}}_CalendulaTea",
+							"MinStack": 1,
+						}
+					],
+					"MinutesUntilReady": 1200
+				},
+			},
+			"When": {
+				"HasMod |contains=slimerrain.uncleirohapprovedteacp": "true",
+			},
+			"Priority": "Late",
+		},
+		{
+			"LogName": "Editing Preserve Jar",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)15",
+				"OutputRules"
+			],
+			"Entries": {
+				"{{ModID}}_PickledTropaeolum": {
+					"Id": "{{ModID}}_PickledTropaeolum",
+					"Triggers": [
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredItemId": "{{ModID}}_TropaeolumGreenSeeds",
+							"RequiredCount": 1,
+						}
+					],
+					"OutputItem": [
+						{
+							"Id": "{{ModID}}_PickledTropaeolum",
+							"ItemId": "(O){{ModID}}_PickledTropaeolum",
+							"MinStack": 1,
+						}
+					],
+					"MinutesUntilReady": 4000
+				},
+			},
+			"MoveEntries": [
+				{
+					"ID": "{{ModID}}_PickledTropaeolum",
+					"BeforeId": "Default_Pickled"
+				},
+			],
+			"When": {
+				"HasMod |contains=spacechase0.SpaceCore": "true",
+			}
+		},
+		{
+			"LogName": "Editing Dehydrator",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)Dehydrator",
+				"OutputRules"
+			],
+			"Entries": {
+				"{{ModID}}_TropaeolumSeeds": {
+					"Id": "{{ModID}}_TropaeolumSeeds",
+					"Triggers": [
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredItemId": "{{ModID}}_TropaeolumGreenSeeds",
+							"RequiredCount": 1,
+						}
+					],
+					"OutputItem": [
+						{
+							"Id": "{{ModID}}_TropaeolumSeeds",
+							"ItemId": "(O){{ModID}}_TropaeolumSeeds",
+							"MinStack": 3,
+						}
+					],
+					"MinutesUntilReady": 200
+				},
+			},
+			"When": {
+				"HasMod |contains=spacechase0.SpaceCore": "true",
+			}
+		},
+		{
+			"LogName": "Load images",
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/IngredientsIcons",
+			"FromFile": "Assets/Images/IngredientsIcons.png"
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/TriggerActions",
+			"Entries": {
+				"{{ModID}}_GusWelcomeGiftTrigger": {
+					"Id": "{{ModID}}_GusWelcomeGiftTrigger",
+					"Condition": "SEASON Spring, Year 1 1, DAY_OF_MONTH 2 3 4 5 6 7",
+					"Trigger": "DayStarted",
+					"Action": "AddMail Current {{ModID}}_GusWelcomeGiftMail"
+				},
+				"{{ModID}}_MoiraFloatingIslandRecipeTrigger": {
+					"Id": "{{ModID}}_MoiraFloatingIslandRecipeTrigger",
+					"Condition": "{{HasMod |contains=Lumisteria.MtVapius}}, !PLAYER_HAS_COOKING_RECIPE Current {{ModId}}_FloatingIslandFuchsia, PLAYER_HEARTS Current MoiraDuboisVMV 5",
+					"Trigger": "DayStarted",
+					"Action": "AddMail Current {{ModID}}_MoiraFloatingIslandRecipeMail"
+				},
+				"{{ModID}}_HaleyFloatingIslandRecipeTrigger": {
+					"Id": "{{ModID}}_HaleyFloatingIslandRecipeTrigger",
+					"Condition": "!{{HasMod |contains=Lumisteria.MtVapius}}, !PLAYER_HAS_COOKING_RECIPE Current {{ModId}}_FloatingIslandFuchsia, PLAYER_HEARTS Current Haley 6",
+					"Trigger": "DayStarted",
+					"Action": "AddMail Current {{ModID}}_HaleyFloatingIslandRecipeMail"
+				},
+                "{{ModID}}_HaleyCheesecakeTrigger": {
+                    "Id": "{{ModID}}_HaleyCheesecakeTrigger",
+                    "Condition": "PLAYER_HEARTS Current Haley 5",
+                    "Trigger": "DayStarted",
+                    "Action": "AddMail Current {{ModID}}_HaleyCheesecakeMail"
+                },
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Mail",
+			"Entries": {
+				"{{ModID}}_GusWelcomeGiftMail": "{{i18n: SereneMeadowGusWelcomeGiftMail_Translated}}%item id (O){{ModID}}_BorageRaviolis 1 %%[#]{{i18n: SereneMeadowGusWelcomeGiftMail_Title_Translated}}",
+				"{{ModID}}_MoiraFloatingIslandRecipeMail": "{{i18n: SereneMeadowMoiraFloatingIslandRecipeMail_Translated}}%item cookingRecipe {{ModId}}_FloatingIslandFuchsia %%[#]{{i18n: SereneMeadowMoiraFloatingIslandRecipeMail_Title_Translated}}",
+				"{{ModID}}_HaleyFloatingIslandRecipeMail": "{{i18n: SereneMeadowHaleyFloatingIslandRecipeMail_Translated}}%item cookingRecipe {{ModId}}_FloatingIslandFuchsia %%[#]{{i18n: SereneMeadowHaleyFloatingIslandRecipeMail_Title_Translated}}",
+				"{{ModID}}_HaleyCheesecakeMail": "{{i18n: SereneMeadow_HaleyCheesecakeMail_Translated}}%item cookingRecipe {{ModId}}_CheesecakePansy %%[#]{{i18n: SereneMeadow_HaleyCheesecakeMail_Title_Translated}}",
+			},
+		},
+	]
+}

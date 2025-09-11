@@ -1,0 +1,112 @@
+{
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_Hedge_Purple_Flower": {
+          "Name": "Hedge_Purple_Flower",
+          "DisplayName": "{{i18n:Hedge_Purple_Flower.DisplayName}}",
+          "Description": "{{i18n:Hedge_Purple_Flower.Description}}",
+          "Type": "Crafting",
+          "Category": -8,
+          "Price": 0,
+          "Texture": "Mods/{{ModId}}/Hedge_Purple_Flower_Object",
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "CanBeGivenAsGift": true,
+          "CanBeTrashed": true,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": null,
+          "CustomFields": null
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Fences",
+      "Entries": {
+        "{{ModId}}_Hedge_Purple_Flower": {
+          "Health": 80,
+          "RepairHealthAdjustmentMinimum": -5.0,
+          "RepairHealthAdjustmentMaximum": 6.0,
+          "Texture": "Mods/{{ModId}}/Hedge_Purple_Flower",  // Domyślna tekstura, która zostanie zastąpiona w zależności od sezonu
+          "PlacementSound": "axe",
+          "RemovalSound": "axchop",
+          "RemovalToolIds": [],
+          "RemovalToolTypes": [
+            "StardewValley.Tools.Axe"
+          ],
+          "RemovalDebrisType": 12,
+          "HeldObjectDrawOffset": "0, -20",
+          "LeftEndHeldObjectDrawX": -1.0,
+          "RightEndHeldObjectDrawX": 0.0
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Hedge_Purple_Flower": "390 2 297 2/Yield/{{ModId}}_Hedge_Purple_Flower/false/null"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Carpenter", "Items" ],
+      "Entries": {
+        "{{ModId}}_Hedge_Purple_Flower": {
+          "Id": "{{ModId}}_Hedge_Purple_Flower",
+          "ItemId": "{{ModId}}_Hedge_Purple_Flower",
+          "Price": "2000",
+          "Isrecipe": true,
+          "Condition": "YEAR 2"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Hedge_Purple_Flower",
+      "FromFile": "assets/Hedge_Purple_Flower/Hedge_Purple_Flower_Spring.png",
+      "When": {
+        "Season": "spring"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Hedge_Purple_Flower",
+      "FromFile": "assets/Hedge_Purple_Flower/Hedge_Purple_Flower_Summer.png",
+      "When": {
+        "Season": "summer"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Hedge_Purple_Flower",
+      "FromFile": "assets/Hedge_Purple_Flower/Hedge_Purple_Flower_Fall.png",
+      "When": {
+        "Season": "fall"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Hedge_Purple_Flower",
+      "FromFile": "assets/Hedge_Purple_Flower/Hedge_Purple_Flower_Winter.png",
+      "When": {
+        "Season": "winter"
+      }
+    },
+     {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Hedge_Purple_Flower_Object",
+      "FromFile": "assets/Hedge_Purple_Flower/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

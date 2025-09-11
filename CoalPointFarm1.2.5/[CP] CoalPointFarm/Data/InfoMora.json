@@ -1,0 +1,327 @@
+{
+	"Changes": [
+		
+		//Empty Loads
+		{
+			"LogName": "Mora Schedule Empty Json",
+			"Action": "Load",
+			"Target": "Characters/schedules/APTMora",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Mora Strings Empty Jsons",
+			"Action": "Load",
+			"Target": "Strings/schedules/APTMora",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Mora Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/APTMora",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Mora Marriage Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/MarriageDialogueAPTMora",
+			"FromFile": "Data/empty.json",
+		},
+		
+		//Full Loads
+		{
+			"LogName": "Mora Base Sprites",
+			"Action": "Load",
+			"Target": "Characters/APTMora",
+			"FromFile": "assets/sprites/Mora/MoraSprites{{Season}}.png"
+		},
+		{
+			"LogName": "Mora Base Portraits",
+			"Action": "Load",
+			"Target": "Portraits/APTMora",
+			"FromFile": "assets/portraits/Mora/MoraPortraitsSpring.png"
+		},
+		{
+			"LogName": "MoraVisualLoads",
+			"Action": "Load",
+			"Target": "Portraits/Mora/MoraPortraitsSpring, Sprites/Mora/MoraSpritesSpring, Sprites/Mora/MoraSpritesSpringBaby, Portraits/Mora/MoraPortraitsSummerIndoors, Sprites/Mora/MoraSpritesSummerIndoors, Portraits/Mora/MoraPortraitsSummerOutdoors, Sprites/Mora/MoraSpritesSummerOutdoors, Sprites/Mora/MoraSpritesSummerBabyIndoors, Sprites/Mora/MoraSpritesSummerBabyOutdoors, Portraits/Mora/MoraPortraitsFall, Sprites/Mora/MoraSpritesFallBaby, Sprites/Mora/MoraSpritesFall, Portraits/Mora/MoraPortraitsWinter, Sprites/Mora/MoraSpritesWinter, Sprites/Mora/MoraSpritesWinterBaby, Portraits/Mora/MoraPortraitsBeach, Sprites/Mora/MoraSpritesBeach, Portraits/Mora/MoraPortraitsSpirits, Sprites/Mora/MoraSpritesSpirits, Portraits/Mora/MoraPortraitsFlower, Sprites/Mora/MoraSpritesFlower, Portraits/Mora/MoraPortraitsSpringBaby",
+			"FromFile": "assets/{{Target}}.png"
+		},
+		//baby overlay
+		{
+			"LogName": "Mora Portraits Baby Overlay",
+			"Action": "EditImage",
+			"Target": "Portraits/Mora/MoraPortraitsSpring, Portraits/Mora/MoraPortraitsSummerIndoors, Portraits/Mora/MoraPortraitsSummerOutdoors, Portraits/Mora/MoraPortraitsFall, Portraits/Mora/MoraPortraitsWinter, Portraits/Mora/MoraPortraitsSpirits",
+			"FromFile": "assets/portraits/Mora/MoraBabyOverlay{{Season}}.png",
+			"When": {
+				"DayOfWeek": "Saturday, Friday",
+				"HasSeenEvent": "145857",
+				"Time": "{{Range: 910, 2000}}",
+				"DayEvent |contains=spirit's eve": "false",
+			},
+			"PatchMode": "Overlay",
+			"Update": "OnTimeChange",
+		},
+		{
+			"LogName": "Mora Portraits Baby Sunglasses Overlay",
+			"Action": "EditImage",
+			"Target": "Portraits/Mora/MoraPortraitsSummerOutdoors",
+			"FromFile": "assets/portraits/Mora/MoraBabyOverlaySunglasses.png",
+			"When": {
+				"DayOfWeek": "Saturday, Friday",
+				"HasSeenEvent": "145857",
+				"Time": "{{Range: 910, 2000}}",
+				"DayEvent |contains=spirit's eve": "false",
+				"Season": "Summer",
+				"isOutdoors": true
+			},
+			"PatchMode": "Overlay",
+			"Update": "OnTimeChange",
+		},
+		{
+			"LogName": "Mora Portraits Baby Overlay",
+			"Action": "EditImage",
+			"Target": "Portraits/Mora/MoraPortraitsSpring",
+			"FromFile": "assets/portraits/Mora/MoraBabyOverlaySpring.png",
+			"When": {
+				"DayEvent": "egg festival",
+				"HasSeenEvent": "145857"
+			},
+			"PatchMode": "Overlay",
+		},
+		
+		//Mora Schedule is included in //FILES because of its variability
+		
+		{
+			"LogName": "Mora Disposition",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"APTMora": {
+					"DisplayName": "{{i18n:Displayname.APTMora}}",
+					"Gender": "Female",
+					"Age": "Teen",
+					"Manner": "Rude",
+					"SocialAnxiety": "Outgoing",
+					"Optimism": "Negative",
+					"BirthSeason": "Fall",
+					"BirthDay": "26",
+					"HomeRegion": "Town",
+					"IsDarkSkinned": false,
+				
+					"CanSocialize": true,
+					"CanBeRomanced": false,
+					"CanReceiveGifts": true,
+					"CanCommentOnPurchasedShopItems": true,
+					"CanGreetNearbyCharacters": true,
+					"CanVisitIsland": true,
+					"Calendar": "AlwaysShown",
+					"SocialTab": "UnknownUntilMet",
+					"SpouseAdopts": null,
+					"SpouseWantsChildren": true,
+					"SpouseGetsJealousOfGifts": true,
+					"SpouseRoom": {
+						"MapAsset": "APTMoraSpouseRoom"
+					},
+					"SpousePatio": {
+						"MapAsset": "CPFSpousePatios",
+						"MapSourceRect": {
+							"X": 0,
+							"Y": 0,
+							"Width": 4,
+							"Height": 4,
+						}
+					},
+					"IntroductionsQuest": true,
+					"ItemDeliveryQuests": true,
+					"PerfectionScore": "{{CPFNPCPerfection}}",
+					"EndSlideShow": "MainGroup",
+					"FriendsAndFamily": {
+						"APTMarcus": "Best Friend",
+						"APTIsaacII": "Nephew",
+						"APTAshida": "Aunt",
+						"APTIsaacI": "Uncle",
+					},
+				
+					"DumpsterDiveEmote": 12,
+					"DumpsterDiveFriendshipEffect": -25,
+				
+					"FlowerDanceCanDance": null,
+					"WinterStarParticipant": true,
+					"WinterStarGifts": [],
+				
+					"UnlockConditions": true,
+					"SpawnIfMissing": true,
+					"Home": [
+						{
+							"Id": "Default",
+							"Condition": null,
+							"Location": "APTMMHouse",
+							"Tile": {
+								"X": 9,
+								"Y": 7
+							},
+							"Direction": "right"
+						}
+					],
+					
+					"TextureName": "APTMora",
+					"Appearance": [
+						{
+							"Id": "APTMoraSpringOutfit",
+							"Season": "Spring",
+							"Portrait": "Portraits/Mora/MoraPortraitsSpring",
+							"Sprite": "Sprites/Mora/MoraSpritesSpring",
+						},
+						{
+							"Id": "APTMoraSpringOutfitBaby",
+							"Season": "Spring",
+							"Condition": "DAY_OF_WEEK Saturday Friday, PLAYER_HAS_SEEN_EVENT Any 145857, TIME 0910 2000",
+							"Portrait": "Portraits/Mora/MoraPortraitsSpring",
+							"Sprite": "Sprites/Mora/MoraSpritesSpringBaby",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMoraEggFestivalOutfitBaby",
+							"Condition": "SEASON_DAY spring 13, PLAYER_HAS_SEEN_EVENT Any 145857",
+							"Portrait": "Portraits/Mora/MoraPortraitsSpring",
+							"Sprite": "Sprites/Mora/MoraSpritesSpringBaby",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMoraFlowerOutfit",
+                            "Condition": "EVENT_ID festival_spring24",
+							"Portrait": "Portraits/Mora/MoraPortraitsFlower",
+							"Sprite": "Sprites/Mora/MoraSpritesFlower",
+							"Precedence": -20,
+						},
+						{
+							"Id": "APTMoraSummerOutfitIndoors",
+							"Season": "Summer",
+							"Indoors": true,
+							"Portrait": "Portraits/Mora/MoraPortraitsSummerIndoors",
+							"Sprite": "Sprites/Mora/MoraSpritesSummerIndoors",
+						},
+						{
+							"Id": "APTMoraSummerOutfitBabyIndoors",
+							"Season": "Summer",
+							"Indoors": true,
+							"Condition": "DAY_OF_WEEK Saturday Friday, PLAYER_HAS_SEEN_EVENT Any 145857, TIME 0910 2000",
+							"Portrait": "Portraits/Mora/MoraPortraitsSummerIndoors",
+							"Sprite": "Sprites/Mora/MoraSpritesSummerBabyIndoors",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMoraSummerOutfitOutdoors",
+							"Season": "Summer",
+							"Indoors": false,
+							"Portrait": "Portraits/Mora/MoraPortraitsSummerOutdoors",
+							"Sprite": "Sprites/Mora/MoraSpritesSummerOutdoors",
+						},
+						{
+							"Id": "APTMoraSummerOutfitBabyOutdoors",
+							"Season": "Summer",
+							"Indoors": false,
+							"Condition": "DAY_OF_WEEK Saturday Friday, PLAYER_HAS_SEEN_EVENT Any 145857, TIME 0910 2000",
+							"Portrait": "Portraits/Mora/MoraPortraitsSummerOutdoors",
+							"Sprite": "Sprites/Mora/MoraSpritesSummerBabyOutdoors",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMoraLuauOutfit",
+                            "Condition": "EVENT_ID festival_summer11",
+							"Portrait": "Portraits/Mora/MoraPortraitsBeach",
+							"Sprite": "Sprites/Mora/MoraSpritesBeach",
+							"Precedence": -20,
+						},
+						{
+							"Id": "APTMoraFallOutfit",
+							"Season": "Fall",
+							"Portrait": "Portraits/Mora/MoraPortraitsFall",
+							"Sprite": "Sprites/Mora/MoraSpritesFall",
+						},
+						{
+							"Id": "APTMoraFallOutfitBaby",
+							"Season": "Fall",
+							"Condition": "DAY_OF_WEEK Saturday Friday, PLAYER_HAS_SEEN_EVENT Any 145857, TIME 0910 2000",
+							"Portrait": "Portraits/Mora/MoraPortraitsFall",
+							"Sprite": "Sprites/Mora/MoraSpritesFallBaby",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMoraWinterOutfit",
+							"Season": "Winter",
+							"Portrait": "Portraits/Mora/MoraPortraitsWinter",
+							"Sprite": "Sprites/Mora/MoraSpritesWinter",
+						},
+						{
+							"Id": "APTMoraWinterOutfitBaby",
+							"Season": "Winter",
+							"Condition": "DAY_OF_WEEK Saturday Friday, PLAYER_HAS_SEEN_EVENT Any 145857, TIME 0910 2000",
+							"Portrait": "Portraits/Mora/MoraPortraitsWinter",
+							"Sprite": "Sprites/Mora/MoraSpritesWinterBaby",
+							"Precedence": -18,
+						},
+						{
+							"Id": "APTMoraSpiritsOutfit",
+                            "Condition": "SEASON_DAY fall 27",
+							"Portrait": "Portraits/Mora/MoraPortraitsSpirits",
+							"Sprite": "Sprites/Mora/MoraSpritesSpirits",
+							"Precedence": -20,
+						},
+						{
+							"Id": "APTMoraDesertFestOutfit",
+							"Condition": "IS_PASSIVE_FESTIVAL_TODAY DesertFestival, LOCATION_NAME Target DesertFestival",
+							"Portrait": "Portraits/Mora/MoraPortraitsBeach",
+							"Sprite": "Sprites/Mora/MoraSpritesBeach",
+							"Precedence": -19,
+						},
+						{
+							"Id": "APTMoraIslandOutfit",
+							"IsIslandAttire": true,
+							"Portrait": "Portraits/Mora/MoraPortraitsBeach",
+							"Sprite": "Sprites/Mora/MoraSpritesBeach",
+							"Precedence": -20,
+						},
+						{
+							"Id": "APTMoraIsaacIReturn",
+                            "Condition": "IS_EVENT CPFIsaacIIntroEvent",
+							"Portrait": "Portraits/Mora/MoraPortraitsSpring",
+							"Sprite": "Sprites/Mora/MoraSpritesSpringBaby",
+							"Precedence": -20,
+						},
+					],
+					"Size": {
+						"X": 16,
+						"Y": 32
+					},
+					"Breather": true,
+					"ShakePortraits": [
+						3, 8, 11
+					],
+					"KissSpriteIndex": 28,
+					"KissSpriteFacingDirection": "right",
+					
+					"HiddenProfileEmoteSound": null,
+					"HiddenProfileEmoteDuration": -1,
+					"HiddenProfileEmoteStartFrame": 0,
+					"HiddenProfileEmoteFrameCount": 4,
+					"HiddenProfileEmoteFrameDuration": 125,
+				},
+			},
+		},
+				//Makes her datable after 8-heart
+		{
+            "LogName": "Mora Datability",
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Fields": {
+                "APTMora": {
+                    "CanBeRomanced": true,
+                }
+            },
+            "When": {
+                "HasFlag": "Mora_isDatable",
+            }
+        },
+	]
+}

@@ -1,0 +1,70 @@
+{
+  "Changes": [
+  
+   {
+      "LogName": "Hazel",
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        "HazelLilybrook": {
+          "DisplayName": "{{i18n:Name.LilybrookHazel}}",
+          "BirthSeason": "fall",
+          "BirthDay": 4,
+          "HomeRegion": "Other",
+          "Gender": "Female",
+          "Age": "Child",
+          "Manner": "Polite",
+          "SocialAnxiety": "Shy",
+          "Optimism": "Positive",
+          "CanBeRomanced": false,
+          "CanReceiveGifts": true,
+		  "CanVisitIsland": false,
+          "Calendar": "HiddenUntilMet",
+          "SocialTab": "HiddenUntilMet",
+          "IntroductionsQuest": false,
+          "ItemDeliveryQuests": false,
+          "EndSlideShow": "MainGroup",
+          "SpawnIfMissing": true,
+          "Home": [
+            {
+              "Id": "Default",
+              "Location": "8BitAlien.Lilybrook_HazelsTree",
+              "Tile": {
+                "X": 3,
+                "Y": 2
+              },
+              "Direction": "down"
+            }
+          ],
+          "Size": {
+            "X": 16,
+            "Y": 32
+          },
+          "Breather": true
+        }
+      }
+    },
+    {
+      "LogName": "Blanks",
+      "Action": "Load",
+      "Target": "Characters/schedules/HazelLilybrook, Characters/Dialogue/HazelLilybrook",
+      "FromFile": "Data/blank.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "Data/NPCData/HazelLilybrook/Dialogue.json"
+    },
+	{
+      "Action": "Include",
+      "FromFile": "Data/NPCData/HazelLilybrook/Schedule.json"
+    },
+    {
+      "LogName": "Gift Taste",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "HazelLilybrook": "{{i18n:HazelLovedGift}}/Lilybrook.GoldenAcorn 309/{{i18n:HazelLikedGift}}/-81 -79 -75/{{i18n:HazelDislikedGift}}/-2 -12/{{i18n:HazelHatedGift}}/-7 -4/{{i18n:HazelNeutralGift}}/310 311/"
+      }
+    }
+  ]
+}

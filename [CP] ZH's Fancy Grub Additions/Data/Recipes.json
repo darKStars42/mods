@@ -1,0 +1,45 @@
+{
+	"Changes": [
+
+		//************************************
+		//       Magic Rock Candy
+		{
+			"LogName": "Magic Rock Candy Recipe",
+			"Action": "EditData",
+			"Target": "Data/CookingRecipes",
+			"Entries": {
+				"Magic Rock Candy": "74 1 MysticSyrup 1 245 1//279/null/"
+			},
+			"When": {
+				"EnableMagicRockCandy": true
+			}
+		},
+
+		//************************************
+		//         Piña Colada
+		{
+			"LogName": "Piña Colada Recipe",
+			"Action": "EditData",
+			"Target": "Data/CookingRecipes",
+			"Entries": {
+				"Piña Colada": "88 1 832 1//873//"
+			},
+			"When": {
+				"EnablePinaColada": true,
+				"HasMod|contains=Cornucopia.ArtisanMachines": false
+			}
+		},
+		{
+			"LogName": "Piña Colada Recipe - Cornucopia",
+			"Action": "EditData",
+			"Target": "Data/CookingRecipes",
+			"Entries": {
+				"Piña Colada": "Cornucopia_CoconutMilk 1 832 1//873//"
+			},
+			"When": {
+				"EnablePinaColada": true,
+				"HasMod|contains=Cornucopia.ArtisanMachines": true
+			}
+		}
+	]
+}

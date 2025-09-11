@@ -1,0 +1,785 @@
+{
+  "Changes": [
+      // RADIOACTIVE STATUE
+     {
+       "Action": "Load",
+       "Target": "Mods/{{ModId}}/Machines",
+       "FromFile": "assets/objects/BigCraftables.png",
+	    "When": { "NewMachines": true }
+     },
+	 {
+       "LogName": "Radioactive Statue - BigCraftable",
+       "Action": "EditData",
+       "Target": "Data/BigCraftables",
+       "Entries": {
+         "{{ModId}}_RadioactiveStatue": {
+           "Name": "{{ModId}}_RadioactiveStatue",
+           "DisplayName": "{{i18n:radioactive.statue.name}}",
+           "Description": "{{i18n:radioactive.statue.desc}}",
+           "Price": 100000,
+           "Fragility": 0,
+           "CanBePlacedOutdoors": true,
+           "CanBePlacedIndoors": true,
+           "IsLamp": false,
+           "Texture": "Mods/{{ModId}}/Machines",
+           "SpriteIndex": 0,
+           "CustomFields": {}
+         }
+	   },
+	   "When": { "NewMachines": true }
+	 },
+	 {
+	   "LogName": "Radioactive Statue - MachineFunction",
+	   "Action": "EditData",
+	   "Target": "Data/Machines",
+	   "Entries": {
+		 "(BC){{ModId}}_RadioactiveStatue": {
+         "OutputRules": [
+            {
+               "Id": "RadioactiveOre",
+               "Triggers": [
+				{
+		           "Trigger": "OutputCollected, MachinePutDown",
+				}
+              ],
+                   "UseFirstValidOutput": false,
+                   "OutputItem": [
+                     {
+					    "Id": "RadioactiveOre",
+                        "ItemId": "(0)909",
+						"MinStack": 1,
+                        "MaxStack": 15,
+                        "CopyPrice": false,
+                        "CopyQuality": false
+                     }
+                   ],
+                     "DaysUntilReady": 1
+               }
+             ],
+               "WobbleWhileWorking": false,
+               "AllowFairyDust": false
+			}
+		},
+		"When": { "NewMachines": true }
+	 },
+	   
+	   // GIANT SHED
+	 {
+       "LogName": "BigShed3 Building",
+       "Action": "EditData",
+       "Target": "Data/Buildings",
+       "Entries": {
+        "{{ModId}}_BigShed3": {
+          "ID": "{{ModId}}_BigShed3",
+          "Name": "{{i18n: BigShed3.name}}",
+          "Description": "{{i18n: BigShed3.description}}",
+          "Texture": "Buildings\\Big Shed",
+          "Skins": [],
+          "DrawShadow": true,
+          "UpgradeSignTile": "4.8125, 2",
+          "UpgradeSignHeight": 20.0,
+          "Size": {
+            "X": 7,
+            "Y": 3
+          },
+          "FadeWhenBehind": false,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": "StardewValley.Buildings.Shed",
+          "Builder": "Robin",
+          "BuildCondition": null,
+          "BuildDays": 3,
+          "BuildCost": 35000,
+          "BuildMaterials": [
+            {
+              "ItemId": "388", //wood
+              "Amount": 660
+            },
+			{
+              "ItemId": "709", //hardwood
+              "Amount": 30
+            },
+            {
+              "ItemId": "337", //iridium bar
+              "Amount": 35
+            }
+          ],
+          "BuildingToUpgrade": "Big Shed",
+          "MagicalConstruction": false,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": 3,
+            "Y": 2
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": "maat.BetterThings_Shed3",
+          "IndoorMapType": "StardewValley.Shed",
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": null,
+          "AdditionalTilePropertyRadius": 0,
+          "AllowsFlooringUnderneath": false,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": null
+        }
+      },
+	  "When": { "NewCustomBigShed3": true }
+    },
+	
+	  // PAINTINGS DATA
+	{
+	  "LogName": "Paintings Data",
+	  "Action": "EditData",
+	  "Target": "Data/Furniture",
+      "Entries":{
+			"0-match": "0-match/painting/-1/-1/1/300/0/{{i18n:painting.match.name}}/0/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"1-bust": "1-bust/painting/2 2/2 2/1/300/0/{{i18n:painting.bust.name}}/2/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"2-stage": "2-stage/painting/2 2/2 2/1/300/0/{{i18n:painting.stage.name}}/4/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"3-void": "3-void/painting/2 2/2 2/1/300/0/{{i18n:painting.void.name}}/6/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"4-skull_and_roses": "4-skull_and_roses/painting/2 2/2 2/1/300/0/{{i18n:painting.skull_and_roses.name}}/8/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"5-wither": "5-wither/painting/2 2/2 2/1/300/0/{{i18n:painting.wither.name}}/10/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"6-backyard": "6-backyard/painting/2 2/2 2/1/300/0/{{i18n:painting.backyard.name}}/12/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"7-baroque": "7-baroque/painting/2 2/2 2/1/300/0/{{i18n:painting.baroque.name}}/14/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"8-bouquet": "8-bouquet/painting/2 2/2 2/1/300/0/{{i18n:painting.bouquet.name}}/16/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"9-burning_skull": "9-burning_skull/painting/2 2/2 2/1/300/0/{{i18n:painting.burning_skull.name}}/18/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"10-cavebird": "10-cavebird/painting/2 2/2 2/1/300/0/{{i18n:painting.cavebird.name}}/20/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"11-cotan": "11-cotan/painting/2 2/2 2/1/300/0/{{i18n:painting.cotan.name}}/22/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"12-earth": "12-earth/painting/2 2/2 2/1/999/0/{{i18n:painting.earth.name}}/24/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"13-endboss": "13-endboss/painting/2 2/2 2/1/300/0/{{i18n:painting.endboss.name}}/26/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"14-fern": "14-fern/painting/2 2/2 2/1/300/0/{{i18n:painting.fern.name}}/28/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"15-fire": "15-fire/painting/2 2/2 2/1/999/0/{{i18n:painting.fire.name}}/30/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			
+			"16-kebab": "16-kebab/painting/1 1/1 1/1/100/0/{{i18n:painting.kebab.name}}/64/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"17-aztec": "17-aztec/painting/1 1/1 1/1/100/0/{{i18n:painting.aztec.name}}/65/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"18-alban": "18-alban/painting/1 1/1 1/1/100/0/{{i18n:painting.alban.name}}/66/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"19-aztec2": "19-aztec2/painting/1 1/1 1/1/100/0/{{i18n:painting.aztec2.name}}/67/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"20-bomb": "20-bomb/painting/1 1/1 1/1/100/0/{{i18n:painting.bomb.name}}/68/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"21-plant": "21-plant/painting/1 1/1 1/1/100/0/{{i18n:painting.plant.name}}/69/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"22-wasteland": "22-wasteland/painting/1 1/1 1/1/100/0/{{i18n:painting.wasteland.name}}/70/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"23-meditative": "23-meditative/painting/1 1/1 1/1/100/0/{{i18n:painting.meditative.name}}/71/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			
+			"24-pool": "24-pool/painting/2 1/2 1/1/250/0/{{i18n:painting.pool.name}}/96/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"25-courbet": "25-courbet/painting/2 1/2 1/1/250/0/{{i18n:painting.courbet.name}}/98/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"26-sea": "26-sea/painting/2 1/2 1/1/250/0/{{i18n:painting.sea.name}}/100/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"27-sunset": "27-sunset/painting/2 1/2 1/1/250/0/{{i18n:painting.sunset.name}}/102/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"28-creebet": "28-creebet/painting/2 1/2 1/1/250/0/{{i18n:painting.creebet.name}}/104/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			
+			"29-wanderer": "29-wanderer/painting/1 2/1 2/1/225/0/{{i18n:painting.wanderer.name}}/128/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"30-graham": "30-graham/painting/1 2/1 2/1/225/0/{{i18n:painting.graham.name}}/129/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"31-prairie_ride": "31-prairie_ride/painting/1 2/1 2/1/225/0/{{i18n:painting.prairie_ride.name}}/130/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			
+			"32-fighters": "32-fighters/painting/4 2/4 2/1/500/0/{{i18n:painting.fighters.name}}/192/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"33-changing": "33-changing/painting/4 2/4 2/1/500/0/{{i18n:painting.changing.name}}/196/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"34-donkey_kong": "34-donkey_kong/painting/4 2/4 2/1/500/0/{{i18n:painting.donkey_kong.name}}/200/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"35-finding": "35-finding/painting/4 2/4 2/1/500/0/{{i18n:painting.finding.name}}/204/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"36-lowmist": "36-lowmist/painting/4 2/4 2/1/500/0/{{i18n:painting.lowmist.name}}/208/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"37-passage": "37-passage/painting/4 2/4 2/1/500/0/{{i18n:painting.passage.name}}/212/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"38-skeleton": "38-skeleton/painting/4 2/4 2/1/500/0/{{i18n:painting.skeleton.name}}/216/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"39-unpacked": "39-unpacked/painting/4 2/4 2/1/500/0/{{i18n:painting.unpacked.name}}/220/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			
+			"40-humble": "40-humble/painting/2 2/2 2/1/300/0/{{i18n:painting.humble.name}}/256/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"41-orb": "41-orb/painting/2 2/2 2/1/300/0/{{i18n:painting.orb.name}}/258/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"42-owlemons": "42-owlemons/painting/2 2/2 2/1/300/0/{{i18n:painting.owlemons.name}}/260/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"43-pigscene": "43-pigscene/painting/2 2/2 2/1/300/0/{{i18n:painting.pigscene.name}}/262/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"44-pointer": "44-pointer/painting/2 2/2 2/1/300/0/{{i18n:painting.pointer.name}}/264/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"45-pond": "45-pond/painting/2 2/2 2/1/300/0/{{i18n:painting.pond.name}}/266/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"46-sunflowers": "46-sunflowers/painting/2 2/2 2/1/300/0/{{i18n:painting.sunflowers.name}}/268/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"47-tides": "47-tides/painting/2 2/2 2/1/300/0/{{i18n:painting.tides.name}}/270/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"48-water": "48-water/painting/2 2/2 2/1/999/0/{{i18n:painting.water.name}}/272/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			"49-wind": "49-wind/painting/2 2/2 2/1/999/0/{{i18n:painting.wind.name}}/274/TileSheets\\MinecraftPaintings/true/minecraft_paintings_collection",
+			
+			"50-spooky-pumpkin": "50-spooky-pumpkin/painting/2 2/2 2/1/1999/0/{{i18n:painting.spooky-pumpkin.name}}/320/TileSheets\\MinecraftPaintings/true/spooky_paintings_collection",
+			"51-spooky-skeleton": "51-spooky-skeleton/painting/4 2/4 2/1/1999/0/{{i18n:painting.spooky-skeleton.name}}/322/TileSheets\\MinecraftPaintings/true/spooky_paintings_collection",
+			"52-spooky-cat": "52-spooky-cat/painting/2 2/2 2/1/1999/0/{{i18n:painting.spooky-cat.name}}/326/TileSheets\\MinecraftPaintings/true/spooky_paintings_collection",
+			"53-spooky-crow": "53-spooky-crow/painting/2 2/2 2/1/1999/0/{{i18n:painting.spooky-crow.name}}/328/TileSheets\\MinecraftPaintings/true/spooky_paintings_collection",
+			"54-spooky-witch": "54-spooky-witch/painting/3 2/3 2/1/1999/0/{{i18n:painting.spooky-witch.name}}/330/TileSheets\\MinecraftPaintings/true/spooky_paintings_collection",
+			"55-wizard": "55-wizard/painting/2 2/2 2/1/1999/0/{{i18n:painting.wizard.name}}/333/TileSheets\\MinecraftPaintings/true/spooky_paintings_collection",
+			"56-spooky-rose": "56-spooky-rose/painting/1 2/1 2/1/1999/0/{{i18n:painting.spooky-rose.name}}/335/TileSheets\\MinecraftPaintings/true/spooky_paintings_collection",
+			"57-wither-flower": "57-wither-flower/painting/1 2/1 2/1/1999/0/{{i18n:painting.wither-flower.name}}/336/TileSheets\\MinecraftPaintings/true/spooky_paintings_collection",
+			"58-spooky-spider": "58-spooky-spider/painting/2 2/2 2/1/1999/0/{{i18n:painting.spooky-spider.name}}/337/TileSheets\\MinecraftPaintings/true/spooky_paintings_collection",
+			"59-spooky-flowers": "59-spooky-flowers/painting/2 2/2 2/1/2999/0/{{i18n:painting.spooky-flowers.name}}/335/TileSheets\\MinecraftPaintings/true/spooky_paintings_collection",
+			
+			"60-sakura-trees": "60-sakura-trees/painting/2 2/2 2/1/5999/0/{{i18n:painting.sakura-trees.name}}/384/TileSheets\\MinecraftPaintings/true/more_paintings_collection",
+			"61-sunset-love": "61-sunset-love/painting/2 2/2 2/1/5999/0/{{i18n:painting.sunset-love.name}}/386/TileSheets\\MinecraftPaintings/true/more_paintings_collection"
+		 },
+		 "When": { "NewPaintings": true }
+    },
+    {
+	  "Action": "Load",
+	  "Target": "TileSheets/MinecraftPaintings",
+	  "FromFile": "assets/paintings/minecraft-painting.png",
+	  "When": { "NewPaintings": true }
+    },
+	{
+	  "LogName": "Minecraft Paintings - Furniture Catalogue",
+	  "Action": "EditData",
+	  "Target": "Data/Shops",
+	  "TargetField": [ "Furniture Catalogue", "Items" ],
+	  "Entries": {
+		   "{{ModId}}_CataloguePaintings": {
+            "ActionsOnPurchase": null,
+	    	"CustomFields": null,
+	    	"TradeItemId": null,
+            "TradeItemAmount": 1,
+			"Price": 0,
+           	"ApplyProfitMargins": null,
+	 	    "AvailableStock": -1,
+	 	    "AvailableStockLimit": "Global",
+           	"AvoidRepeat": false,
+			"UseObjectDataPrice": false,
+            "IgnoreShopPriceModifiers": false,
+    	    "PriceModifiers": null,
+    	    "PriceModifierMode": "Stack",
+    	    "AvailableStockModifiers": null,
+			"AvailableStockModifierMode": "Stack",
+            "Condition": null,
+    		"Id": "{{ModId}}_Paintings_Default",
+            "ItemId": "ALL_ITEMS (F)",
+    		"RandomItemId": null,
+            "MaxItems": null,
+			"MinStack": -1,
+          	"MaxStack": -1,
+  	  	  	"Quality": -1,
+  	  	  	"ObjectInternalName": null,
+			"ObjectDisplayName": null,
+            "ToolUpgradeLevel": -1,
+	  	    "IsRecipe": false,
+	  	    "StackModifiers": null,
+          	"StackModifierMode": "Stack",
+			"QualityModifiers": null,
+			"QualityModifierMode": "Stack",
+			"PerItemCondition": "ITEM_CONTEXT_TAG Target minecraft_paintings_collection"
+		  }
+		},
+		"When": { "NewPaintings": true }
+    },
+	{
+	  "LogName": "Spooky Paintings - Wizard Catalogue",
+	  "Action": "EditData",
+	  "Target": "Data/Shops",
+	  "TargetField": [ "WizardFurnitureCatalogue", "Items" ],
+	  "Entries": {
+		   "{{ModId}}_SpookyCataloguePaintings": {
+            "ActionsOnPurchase": null,
+	    	"CustomFields": null,
+	    	"TradeItemId": null,
+            "TradeItemAmount": 1,
+			"Price": 0,
+           	"ApplyProfitMargins": null,
+	 	    "AvailableStock": -1,
+	 	    "AvailableStockLimit": "Global",
+           	"AvoidRepeat": false,
+			"UseObjectDataPrice": false,
+            "IgnoreShopPriceModifiers": false,
+    	    "PriceModifiers": null,
+    	    "PriceModifierMode": "Stack",
+    	    "AvailableStockModifiers": null,
+			"AvailableStockModifierMode": "Stack",
+            "Condition": null,
+    		"Id": "{{ModId}}_SpookyPaintings_Default",
+            "ItemId": "ALL_ITEMS (F)",
+    		"RandomItemId": null,
+            "MaxItems": null,
+			"MinStack": -1,
+          	"MaxStack": -1,
+  	  	  	"Quality": -1,
+  	  	  	"ObjectInternalName": null,
+			"ObjectDisplayName": null,
+            "ToolUpgradeLevel": -1,
+	  	    "IsRecipe": false,
+	  	    "StackModifiers": null,
+          	"StackModifierMode": "Stack",
+			"QualityModifiers": null,
+			"QualityModifierMode": "Stack",
+			"PerItemCondition": "ITEM_CONTEXT_TAG Target spooky_paintings_collection"
+		  }
+		},
+		"When": { "NewPaintings": true }
+    },
+	{
+	  "LogName": "More Paintings - Furniture Catalogue",
+	  "Action": "EditData",
+	  "Target": "Data/Shops",
+	  "TargetField": [ "Furniture Catalogue", "Items" ],
+	  "Entries": {
+		   "{{ModId}}_CatalogueMorePaintings": {
+            "ActionsOnPurchase": null,
+	    	"CustomFields": null,
+	    	"TradeItemId": null,
+            "TradeItemAmount": 1,
+			"Price": 0,
+           	"ApplyProfitMargins": null,
+	 	    "AvailableStock": -1,
+	 	    "AvailableStockLimit": "Global",
+           	"AvoidRepeat": false,
+			"UseObjectDataPrice": false,
+            "IgnoreShopPriceModifiers": false,
+    	    "PriceModifiers": null,
+    	    "PriceModifierMode": "Stack",
+    	    "AvailableStockModifiers": null,
+			"AvailableStockModifierMode": "Stack",
+            "Condition": null,
+    		"Id": "{{ModId}}_MorePaintings_Default",
+            "ItemId": "ALL_ITEMS (F)",
+    		"RandomItemId": null,
+            "MaxItems": null,
+			"MinStack": -1,
+          	"MaxStack": -1,
+  	  	  	"Quality": -1,
+  	  	  	"ObjectInternalName": null,
+			"ObjectDisplayName": null,
+            "ToolUpgradeLevel": -1,
+	  	    "IsRecipe": false,
+	  	    "StackModifiers": null,
+          	"StackModifierMode": "Stack",
+			"QualityModifiers": null,
+			"QualityModifierMode": "Stack",
+			"PerItemCondition": "ITEM_CONTEXT_TAG Target more_paintings_collection"
+		  }
+		},
+		"When": { "NewPaintings": true }
+    },
+	
+	  // WALLPAPERS AND FLOORS
+	{
+          "Action": "Load",
+          "Target": "Mods/{{ModId}}/Floors",
+          "FromFile": "assets/paintings/floors.png"
+    },
+	{
+          "Action": "Load",
+          "Target": "Mods/{{ModId}}/Wallpapers",
+          "FromFile": "assets/paintings/walls.png"
+    },
+	{
+          "Action": "EditData",
+          "Target": "Data/AdditionalWallpaperFlooring",
+          "Entries": {
+              "{{ModId}}_Floors": {
+                "ID": "{{ModId}}_Floor",
+                "Texture": "Mods/{{ModId}}/Floors",
+                "IsFlooring": true,
+                "Count": 9
+           }
+        }
+    },
+	{
+          "Action": "EditData",
+          "Target": "Data/AdditionalWallpaperFlooring",
+          "Entries": {
+              "{{ModId}}_Wallpapers": {
+                "ID": "{{ModId}}_Wallpaper",
+                "Texture": "Mods/{{ModId}}/Wallpapers",
+                "IsFlooring": false,
+                "Count": 6
+           }
+        }
+    },
+	
+	  // SCARECROWS
+	{
+        "LogName": "Load Scarecrows",
+        "Action": "Load",
+        "Target": "Mods/{{ModId}}/Scarecrows",
+        "FromFile": "assets/objects/scarecrows.png",
+		"When": { "MoreScarecrows": true }
+    },
+	{
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+        "{{ModId}}_WhiteCatScarecrow": {
+          "Name": "{{ModId}}_WhiteCatScarecrow",
+          "DisplayName": "{{i18n:white-cat.scarecrow.name}}",
+          "Description": "{{i18n:white-cat.scarecrow.description}}",
+          "Price": 7500,
+          "Fragility": 0,
+          "CanBePlacedOutDoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Scarecrows",
+          "SpriteIndex": 0,
+          "ContextTags": [ "crow_scare", "crow_scare_radius_5" ],
+          "CustomFields": {}
+        }
+      },
+	  "When": { "MoreScarecrows": true }
+    },
+	{
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+        "{{ModId}}_OrangeCatScarecrow": {
+          "Name": "{{ModId}}_OrangeCatScarecrow",
+          "DisplayName": "{{i18n:orange-cat.scarecrow.name}}",
+          "Description": "{{i18n:orange-cat.scarecrow.description}}",
+          "Price": 8500,
+          "Fragility": 0,
+          "CanBePlacedOutDoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Scarecrows",
+          "SpriteIndex": 1,
+          "ContextTags": [ "crow_scare", "crow_scare_radius_6" ],
+          "CustomFields": {}
+        }
+      },
+	  "When": { "MoreScarecrows": true }
+    },
+	{
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+        "{{ModId}}_GrayWhiteCatScarecrow": {
+          "Name": "{{ModId}}_GrayWhiteCatScarecrow",
+          "DisplayName": "{{i18n:gray-white-cat.scarecrow.name}}",
+          "Description": "{{i18n:gray-white-cat.scarecrow.description}}",
+          "Price": 9500,
+          "Fragility": 0,
+          "CanBePlacedOutDoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Scarecrows",
+          "SpriteIndex": 2,
+          "ContextTags": [ "crow_scare", "crow_scare_radius_7" ],
+          "CustomFields": {}
+        }
+      },
+	  "When": { "MoreScarecrows": true }
+    },
+	{
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+        "{{ModId}}_GrayCatScarecrow": {
+          "Name": "{{ModId}}_GrayCatScarecrow",
+          "DisplayName": "{{i18n:gray-cat.scarecrow.name}}",
+          "Description": "{{i18n:gray-cat.scarecrow.description}}",
+          "Price": 10500,
+          "Fragility": 0,
+          "CanBePlacedOutDoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Scarecrows",
+          "SpriteIndex": 3,
+          "ContextTags": [ "crow_scare", "crow_scare_radius_8" ],
+          "CustomFields": {}
+        }
+      },
+	  "When": { "MoreScarecrows": true }
+    },
+	{
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+        "{{ModId}}_StripedCatScarecrow": {
+          "Name": "{{ModId}}_StripedCatScarecrow",
+          "DisplayName": "{{i18n:striped-cat.scarecrow.name}}",
+          "Description": "{{i18n:striped-cat.scarecrow.description}}",
+          "Price": 11500,
+          "Fragility": 0,
+          "CanBePlacedOutDoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Scarecrows",
+          "SpriteIndex": 4,
+          "ContextTags": [ "crow_scare", "crow_scare_radius_9" ],
+          "CustomFields": {}
+        }
+      },
+	  "When": { "MoreScarecrows": true }
+    },
+	{
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+        "{{ModId}}_PersaTriColorCatScarecrow": {
+          "Name": "{{ModId}}_PersaTriColorCatScarecrow",
+          "DisplayName": "{{i18n:persa-tricolor-cat.scarecrow.name}}",
+          "Description": "{{i18n:persa-tricolor-cat.scarecrow.description}}",
+          "Price": 25500,
+          "Fragility": 0,
+          "CanBePlacedOutDoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Scarecrows",
+          "SpriteIndex": 5,
+          "ContextTags": [ "crow_scare", "crow_scare_radius_13" ],
+          "CustomFields": {}
+        }
+      },
+	  "When": { "MoreScarecrows": true }
+    },
+	{
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+        "{{ModId}}_LunaCatScarecrow": {
+          "Name": "{{ModId}}_LunaCatScarecrow",
+          "DisplayName": "{{i18n:luna-cat.scarecrow.name}}",
+          "Description": "{{i18n:luna-cat.scarecrow.description}}",
+          "Price": 55500,
+          "Fragility": 0,
+          "CanBePlacedOutDoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Scarecrows",
+          "SpriteIndex": 6,
+          "ContextTags": [ "crow_scare", "crow_scare_radius_18" ],
+          "CustomFields": {}
+        }
+      },
+	  "When": { "MoreScarecrows": true }
+    },
+	{
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+        "{{ModId}}_LittleGrayCatScarecrow": {
+          "Name": "{{ModId}}_LittleGrayScarecrow",
+          "DisplayName": "{{i18n:little-gray-cat.scarecrow.name}}",
+          "Description": "{{i18n:little-gray-cat.scarecrow.description}}",
+          "Price": 12500,
+          "Fragility": 0,
+          "CanBePlacedOutDoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Scarecrows",
+          "SpriteIndex": 7,
+          "ContextTags": [ "crow_scare", "crow_scare_radius_10" ],
+          "CustomFields": {}
+        }
+      },
+	  "When": { "MoreScarecrows": true }
+    },
+	{
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+        "{{ModId}}_TurkishAngoraCatScarecrow": {
+          "Name": "{{ModId}}_TurkishAngoraScarecrow",
+          "DisplayName": "{{i18n:turkish-angora-cat.scarecrow.name}}",
+          "Description": "{{i18n:turkish-angora-cat.scarecrow.description}}",
+          "Price": 44500,
+          "Fragility": 0,
+          "CanBePlacedOutDoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Scarecrows",
+          "SpriteIndex": 8,
+          "ContextTags": [ "crow_scare", "crow_scare_radius_16" ],
+          "CustomFields": {}
+        }
+      },
+	  "When": { "MoreScarecrows": true }
+    },
+	
+	 // MAGIC BAIT MAKER
+	{
+       "LogName": "BigCraftable - Magic Bait Maker",
+       "Action": "EditData",
+       "Target": "Data/BigCraftables",
+       "Entries": {
+         "{{ModId}}_MagicBaitMaker": {
+           "Name": "{{ModId}}_MagicBaitMaker",
+           "DisplayName": "{{i18n:machine.magicbaitmaker.name}}",
+           "Description": "{{i18n:machine.magicbaitmaker.desc}}",
+           "Price": 25000,
+           "Fragility": 0,
+           "CanBePlacedOutdoors": true,
+           "CanBePlacedIndoors": true,
+           "IsLamp": false,
+           "Texture": "Mods/{{ModId}}/Machines",
+           "SpriteIndex": 1,
+           "CustomFields": {}
+         }
+	   },
+	   "When": { "NewMachines": true }
+	},
+	{
+        "Action": "EditData",
+        "Target": "Data/Machines",
+        "Entries": {
+        "(BC){{ModId}}_MagicBait": {
+          "HasInput": false,
+          "HasOutput": false,
+          "InteractMethod": null,
+			"OutputRules": [
+		   {
+			"Id": "Default",
+			"Triggers": [
+		   {
+			"Id": "OutputCollected, MachinePutDown",
+			"Trigger": "OutputCollected, MachinePutDown",
+			"RequiredItemId": null,
+			"RequiredTags": null,
+			"RequiredCount": 1,
+			"Condition": null
+		   }
+				],
+			  "UseFirstValidOutput": false,
+			  "OutputItem": [
+		     {
+			    "CustomData": null,
+			    "OutputMethod": null,
+			    "CopyColor": false,
+			    "CopyPrice": false,
+			    "CopyQuality": false,
+			    "PreserveType": null,
+			    "PreserveId": null,
+			    "IncrementMachineParentSheetIndex": 0,
+			    "PriceModifiers": null,
+			    "PriceModifierMode": "Stack",
+			    "Condition": null,
+			    "Id": "(O)908",
+			    "ItemId": "(O)908",
+			    "RandomItemId": null,
+			    "MaxItems": null,
+			    "MinStack": 1,
+			    "MaxStack": 5,
+			    "Quality": -1,
+			    "ObjectInternalName": null,
+			    "ObjectDisplayName": null,
+			    "ObjectColor": null,
+			    "ToolUpgradeLevel": -1,
+			    "IsRecipe": false,
+			    "StackModifiers": null,
+			    "StackModifierMode": "Stack",
+			    "QualityModifiers": null,
+			    "QualityModifierMode": "Stack",
+			    "ModData": null,
+			    "PerItemCondition": null
+			 }
+				],
+			    "MinutesUntilReady": -1,
+			    "DaysUntilReady": 1,
+			    "InvalidCountMessage": null,
+			    "RecalculateOnCollect": false
+			 }
+				],
+			    "AdditionalConsumedItems": null,
+			    "PreventTimePass": null,
+			    "ReadyTimeModifiers": null,
+			    "ReadyTimeModifierMode": "Stack",
+			    "InvalidItemMessage": null,
+			    "InvalidItemMessageCondition": null,
+			    "InvalidCountMessage": null,
+			    "LoadEffects": null,
+			    "WorkingEffects": null,
+			    "WorkingEffectChance": 0.30,
+			    "AllowLoadWhenFull": false,
+			    "WobbleWhileWorking": true,
+			    "LightWhileWorking": null,
+			    "ShowNextIndexWhileWorking": false,
+			    "ShowNextIndexWhenReady": false,
+			    "AllowFairyDust": true,
+			    "IsIncubator": false,
+			    "OnlyCompleteOvernight": false,
+			    "ClearContentsOvernightCondition": null,
+			    "StatsToIncrementWhenLoaded": null,
+			    "StatsToIncrementWhenHarvested": null,
+			    "ExperienceGainOnHarvest": null,
+			    "CustomFields": null
+			 }
+		 },
+		 "When": { "NewMachines": true }
+	  },
+	  
+	    // TREE MAKER
+	  {
+		"LogName": "BigCraftable - Tree Maker",
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+          "{{ModId}}_TreeMaker": {
+          "Name": "{{ModId}}_TreeMaker",
+          "DisplayName": "{{i18n:machine.treemaker.name}}",
+          "Description": "{{i18n:machine.treemaker.description}}",
+          "Price": 600,
+          "Fragility": 0,
+          "CanBePlacedOutdoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Machines",
+          "SpriteIndex": 2,
+          "ContextTags": null,
+          "CustomFields": null
+		  }
+	    },
+		"When": { "NewMachines": true }
+      },
+	  
+	    // TREE SAPLING MAKER
+	  {
+		"LogName": "BigCraftable - Tree Sapling Maker",
+        "Action": "EditData",
+        "Target": "Data/BigCraftables",
+        "Entries": {
+          "{{ModId}}_TreeSaplingMaker": {
+          "Name": "{{ModId}}_TreeSaplingMaker",
+          "DisplayName": "{{i18n:machine.treesaplingmaker.name}}",
+          "Description": "{{i18n:machine.treesaplingmaker.description}}",
+          "Price": 900,
+          "Fragility": 0,
+          "CanBePlacedOutdoors": true,
+          "CanBePlacedIndoors": true,
+          "IsLamp": false,
+          "Texture": "Mods/{{ModId}}/Machines",
+          "SpriteIndex": 3,
+          "ContextTags": null,
+          "CustomFields": null
+		  }
+	    },
+		"When": { "NewMachines": true }
+      },
+	  
+	    // LEAH SCULPTURES
+	  {
+		"LogName": "Leah Sculptures",
+		"Action": "EditData",
+		"Target": "Data/Furniture",
+		"Entries": {
+		  "LeahEggSculpture": "{{ModId}}_LeahEggSculpture/decor/1 4/1 1/1/250/2/{{i18n:sculpture.egg.name}}/1635/LooseSprites\\Cursors/true/leah_sculpture_collection",
+          "LeahWomanSculpture": "{{ModId}}_LeahWomanSculpture/decor/1 4/1 1/1/250/2/{{i18n:sculpture.woman.name}}/1811/LooseSprites\\Cursors/true/leah_sculpture_collection",
+		  "LeahPinkSculpture": "{{ModId}}_LeahPinkSculpture/decor/2 4/2 2/1/250/2/{{i18n:sculpture.pink.name}}/1814/LooseSprites\\Cursors/true/leah_sculpture_collection"
+	    },
+		"When": { "BuyableLeahSculptures": true }
+	  },
+   ]
+}

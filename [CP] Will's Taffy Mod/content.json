@@ -1,0 +1,1001 @@
+{
+	"Format": "2.7.0",
+	"Changes":[
+	//Load Infuser
+	{
+		"Action": "Load",
+		"Target": "Mods/Willcraftapple11.taffymod/BigCraftables",
+		"FromFile": "assets/BigCraftables.png"
+	},
+	{
+		"Action": "Load",
+		"Target": "Mods/Willcraftapple11.taffymod/TaffyStatue",
+		"FromFile": "assets/TaffyStatue.png",
+	},
+	
+	//Load Taffy+Corn Syrup
+	{
+		"Action": "Load",
+		"Target": "Mods/Willcraftapple11.taffymod/Objects",
+		"FromFile": "assets/Objects.png"
+	},
+	//Taffy Infuser Data
+	{
+		"Action": "EditData",
+		"Target": "Data/BigCraftables",
+		"Entries": {
+			"Willcraftapple11.TaffyInfuser":{
+				"Name": "Taffy Infuser",
+				"DisplayName": "{{i18n:Infuser.name}}",
+				 "Description": "{{i18n:Infuser.desc}}",
+				 "Price": 500,
+				 "Texture": "Mods/Willcraftapple11.taffymod/BigCraftables",
+				 "SpriteIndex": 0,
+				 "ContextTags": null,
+        },
+		"Willcraftapple11.TaffyStatue": {
+			"Name": "Statue of Endless Taffy",
+			"DisplayName": "{{i18n:TaffyStatue.name}}",
+			"Description": "{{i18n:TaffyStatue.desc}}",
+			"Price": 0,
+			"Texture": "Mods/Willcraftapple11.taffymod/TaffyStatue",
+			"SpriteIndex": 0,
+			"ContextTags": null,
+		},
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/CraftingRecipes",
+		"Entries": {
+			"Taffy Infuser": "338 2 787 1 726 1//Willcraftapple11.TaffyInfuser/true/Farming 4/{{i18n:Infuser.name}}",
+		}
+	},
+	//Machine Outputs for literally 15 taffies christ.
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"Entries": {
+			"(BC)Willcraftapple11.TaffyInfuser": {
+				"OutputRules": [
+				{
+				"Id": "Willcraftapple11.BananaTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)91",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [ 
+				{
+					"Id": "Infuser Banana",
+					"ItemId": "Willcraftapple11.BananaTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.BlueberryTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)258",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Blueberry",
+					"ItemId": "Willcraftapple11.BlueberryTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.CherryTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)638",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Cherry",
+					"ItemId": "Willcraftapple11.CherryTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.CoconutTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)88",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Coconut",
+					"ItemId": "Willcraftapple11.CoconutTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.CoffeeTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)395",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Coffee",
+					"ItemId": "Willcraftapple11.CoffeeTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.GrapeTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)398",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Grape",
+					"ItemId": "Willcraftapple11.GrapeTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.MangoTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)834",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Mango",
+					"ItemId": "Willcraftapple11.MangoTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.MelonTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)254",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Melon",
+					"ItemId": "Willcraftapple11.MelonTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.OrangeTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)635",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Orange",
+					"ItemId": "Willcraftapple11.OrangeTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.PeachTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)636",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Peach",
+					"ItemId": "Willcraftapple11.PeachTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.PineappleTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)832",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Pineapple",
+					"ItemId": "Willcraftapple11.PineappleTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.PlumTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)406",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Plum",
+					"ItemId": "Willcraftapple11.PlumTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.SpicyTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)260",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Spicy",
+					"ItemId": "Willcraftapple11.SpicyTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.StarfruitTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)268",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Starfruit",
+					"ItemId": "Willcraftapple11.StarfruitTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+				"Id": "Willcraftapple11.StrawberryTaffyR",
+				"Triggers": [ 
+				{
+				"Id": "ItemPlacedInMachine",
+				"Trigger": "ItemPlacedInMachine",
+				"RequiredItemId": "(O)400",
+				"RequiredItemCount": 1,
+				},
+				],
+				"OutputItem": [
+				{
+					"Id": "Infuser Strawberry",
+					"ItemId": "Willcraftapple11.StrawberryTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+					"Id": "Willcraftapple11.MossTaffyR",
+					"Triggers": [ {
+						"Id": "ItemPlacedInMachine",
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)Moss",
+						"RequiredItemCount": 1,
+					}, ],
+				"OutputItem": [ {
+					"Id": "Infuser Moss",
+					"ItemId": "Willcraftapple11.MossTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+					"Id": "Willcraftapple11.MayoTaffyR",
+					"Triggers": [ {
+						"Id": "ItemPlacedInMachine",
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)306",
+						"RequiredItemCount": 1,
+					}, ],
+				"OutputItem": [ {
+					"Id": "Infuser Mayo",
+					"ItemId": "Willcraftapple11.MayoTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+					"Id": "Willcraftapple11.VoidTaffyR",
+					"Triggers": [ {
+						"Id": "ItemPlacedInMachine",
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)308",
+						"RequiredItemCount": 1,
+					}, ],
+				"OutputItem": [ {
+					"Id": "Infuser Void",
+					"ItemId": "Willcraftapple11.VoidTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+					"Id": "Willcraftapple11.MysteryTaffyR",
+					"Triggers": [ {
+						"Id": "ItemPlacedInMachine",
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)MysteryBox",
+						"RequiredItemCount": 1,
+					}, ],
+				"OutputItem": [ {
+					"Id": "Infuser Mystery",
+					"ItemId": "Willcraftapple11.MysteryTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+					"Id": "Willcraftapple11.AppleTaffyR",
+					"Triggers": [ {
+						"Id": "ItemPlacedInMachine",
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)613",
+						"RequiredItemCount": 1,
+					}, ],
+				"OutputItem": [ {
+					"Id": "Infuser Apple",
+					"ItemId": "Willcraftapple11.AppleTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+					"Id": "Willcraftapple11.ApricotTaffyR",
+					"Triggers": [ {
+						"Id": "ItemPlacedInMachine",
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)634",
+						"RequiredItemCount": 1,
+					}, ],
+				"OutputItem": [ {
+					"Id": "Infuser Apricot",
+					"ItemId": "Willcraftapple11.ApricotTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+					"Id": "Willcraftapple11.MapleTaffyR",
+					"Triggers": [ {
+						"Id": "ItemPlacedInMachine",
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)724",
+						"RequiredItemCount": 1,
+					}, ],
+				"OutputItem": [ {
+					"Id": "Infuser Maple",
+					"ItemId": "Willcraftapple11.MapleTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+					"Id": "Willcraftapple11.SapTaffyR",
+					"Triggers": [ {
+						"Id": "ItemPlacedInMachine",
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)92",
+						"RequiredItemCount": 1,
+					}, ],
+				"OutputItem": [ {
+					"Id": "Infuser Sap",
+					"ItemId": "Willcraftapple11.SapTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+				{
+					"Id": "Willcraftapple11.PomegranateTaffyR",
+					"Triggers": [ {
+						"Id": "ItemPlacedInMachine",
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)637",
+						"RequiredItemCount": 1,
+					}, ],
+				"OutputItem": [ {
+					"Id": "Infuser Pomegranate",
+					"ItemId": "Willcraftapple11.PomegranateTaffy",
+				},
+				],
+				"MinutesUntilReady": 150,
+				},
+			],
+			"AdditionalConsumedItems": [
+			{
+				"ItemId": "Willcraftapple11.Taffy",
+				"RequiredCount": 1,
+				"InvalidCountMessage": "{{i18n:Infuser.input.fail}}",
+			},
+			],
+			"AllowLoadWhenFull": false,
+			"WobbleWhileWorking": true,
+			"ShowNextIndexWhileWorking": false,
+			"ShowNextIndexWhenReady": false,
+			"LoadEffects": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "Sounds": [
+               {
+                "Id": "coin",
+                "Delay": 0
+               }
+             ],
+			},
+			],
+			},
+			"(BC)Willcraftapple11.TaffyStatue": {
+				"HasInput": false,
+				"InteractMethod": null,
+				"OutputRules": [
+				{
+				"Id": "Default",
+				"Triggers": [ {
+				"Id": "DayUpdate",
+				"Trigger": "DayUpdate",
+				},
+				],
+				"UseFirstValidOutput": false,
+				"OutputItem": [
+				{
+				"Id": "Random Taffies",
+				"RandomItemId": [
+				"(O)Willcraftapple11.Taffy",
+				"(O)Willcraftapple11.BananaTaffy",
+				"(O)Willcraftapple11.BlueberryTaffy",
+				"(O)Willcraftapple11.CherryTaffy",
+				"(O)Willcraftapple11.ClassicTaffy",
+				"(O)Willcraftapple11.CoconutTaffy",
+				"(O)Willcraftapple11.CoffeeTaffy",
+				"(O)Willcraftapple11.GrapeTaffy",
+				"(O)Willcraftapple11.MangoTaffy",
+				"(O)Willcraftapple11.MelonTaffy",
+				"(O)Willcraftapple11.OrangeTaffy",
+				"(O)Willcraftapple11.PeachTaffy",
+				"(O)Willcraftapple11.PineappleTaffy",
+				"(O)Willcraftapple11.PlumTaffy",
+				"(O)Willcraftapple11.SpicyTaffy",
+				"(O)Willcraftapple11.StarfruitTaffy",
+				"(O)Willcraftapple11.StrawberryTaffy",
+				"(O)Willcraftapple11.MossTaffy",
+				"(O)Willcraftapple11.MayoTaffy",
+				"(O)Willcraftapple11.VoidTaffy",
+				"(O)Willcraftapple11.MysteryTaffy",
+				"(O)Willcraftapple11.AppleTaffy",
+				"(O)Willcraftapple11.ApricotTaffy",
+				"(O)Willcraftapple11.MapleTaffy",
+				"(O)Willcraftapple11.SapTaffy",
+				"(O)Willcraftapple11.PomegranateTaffy",
+				]
+				}
+				],
+				}
+				]
+			},
+				
+				
+				
+		},
+		},
+		
+	
+	//Corn Syrup + Old Fashioned Taffy + Taffy (cooking)
+	{
+		"Action": "EditData",
+		"Target": "Data/CookingRecipes",
+		"Entries": {
+			"Corn Syrup": "270 5//Willcraftapple11.CornSyrup/Farming 3/{{i18n:CornSyrup.name}}",
+			"Old Fashioned Saltwater Taffy": "Willcraftapple11.Taffy 1 454 1//Willcraftapple11.ClassicTaffy/f Wizard 6/{{i18n:ClassicTaffy.name}} ",
+			"Saltwater Taffy": "Willcraftapple11.CornSyrup 1//Willcraftapple11.Taffy/Farming 3/{{i18n:Taffy.name}}",
+		}
+	},
+	//Taffy + Corn syrup Item 18 things
+	{
+		"Action": "EditData",
+		"Target": "Data/Objects",
+		"Entries": {
+			"Willcraftapple11.CornSyrup": {
+				"Name": "Corn Syrup",
+				"DisplayName": "{{i18n:CornSyrup.name}}",
+				"Description":"{{i18n:CornSyrup.desc}}",
+				"Category": -25,
+				"Price": 100,
+				"Edibility": -300,
+				"Type": "Basic",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 0,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.Taffy": {
+				"Name": "Saltwater Taffy",
+				"DisplayName": "{{i18n:Taffy.name}}",
+				"Description": "{{i18n:Taffy.desc}}",
+				"Category": -7,
+				"Price": 300,
+				"Edibility": 30,
+				"Type": "Cooking",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 1,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.BananaTaffy": {
+				"Name": "Banana Taffy",
+				"DisplayName": "{{i18n:BananaTaffy.name}}",
+				"Description": "{{i18n:BananaTaffy.desc}}",
+				"Category": -26,
+				"Price": 250,
+				"Edibility": 45,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 2,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.BlueberryTaffy": {
+				"Name": "Blueberry Taffy",
+				"DisplayName": "{{i18n:BlueberryTaffy.name}}",
+				"Description": "{{i18n:BlueberryTaffy.desc}}",
+				"Category": -26,
+				"Price": 200,
+				"Edibility": 40,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 3,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.CherryTaffy": {
+				"Name": "Cherry Taffy",
+				"DisplayName": "{{i18n:CherryTaffy.name}}",
+				"Description": "{{i18n:CherryTaffy.desc}}",
+				"Category": -26,
+				"Price": 250,
+				"Edibility": 45,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 4,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.ClassicTaffy": {
+				"Name": "Old Fashioned Saltwater Taffy",
+				"DisplayName": "{{i18n:ClassicTaffy.name}}",
+				"Description": "{{i18n:ClassicTaffy.desc}}",
+				"Category": -7,
+				"Price": 750,
+				"Edibility": 50,
+				"Type": "Cooking",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 10,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.CoconutTaffy": {
+				"Name": "Coconut Taffy",
+				"DisplayName": "{{i18n:CoconutTaffy.name}}",
+				"Description": "{{i18n:CoconutTaffy.desc}}",
+				"Category": -26,
+				"Price": 200,
+				"Edibility": 55,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 5,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.CoffeeTaffy": {
+				"Name": "Coffee Taffy",
+				"DisplayName": "{{i18n:CoffeeTaffy.name}}",
+				"Description": "{{i18n:CoffeeTaffy.desc}}",
+				"Category": -26,
+				"Price": 450,
+				"Edibility": 35,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 6,
+				"Buffs": [
+				{
+					"Duration": 180,
+					"CustomAttributes": {
+						"Speed": 1,
+					},
+				},
+				],
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.GrapeTaffy": {
+				"Name": "Grape Taffy",
+				"DisplayName": "{{i18n:GrapeTaffy.name}}",
+				"Description": "{{i18n:GrapeTaffy.desc}}",
+				"Category": -26,
+				"Price": 200,
+				"Edibility": 33,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 7,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.MangoTaffy": {
+				"Name": "Mango Taffy",
+				"DisplayName": "{{i18n:MangoTaffy.name}}",
+				"Description": "{{i18n:MangoTaffy.desc}}",
+				"Category": -26,
+				"Price": 400,
+				"Edibility": 70,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 8,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.MelonTaffy": {
+				"Name": "Melon Taffy",
+				"DisplayName": "{{i18n:MelonTaffy.name}}",
+				"Description": "{{i18n:MelonTaffy.desc}}",
+				"Category": -26,
+				"Price": 500,
+				"Edibility": 80,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 9,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.OrangeTaffy": {
+				"Name": "Orange Taffy",
+				"DisplayName": "{{i18n:OrangeTaffy.name}}",
+				"Description": "{{i18n:OrangeTaffy.desc}}",
+				"Category": -26,
+				"Price": 300,
+				"Edibility": 36,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 11,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.PeachTaffy": {
+				"Name": "Peach Taffy",
+				"DisplayName": "{{i18n:PeachTaffy.name}}",
+				"Description": "{{i18n:PeachTaffy.desc}}",
+				"Category": -26,
+				"Price": 350,
+				"Edibility": 45,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 12,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.PineappleTaffy": {
+				"Name": "Pineapple Taffy",
+				"DisplayName": "{{i18n:PineappleTaffy.name}}",
+				"Description": "{{i18n:PineappleTaffy.desc}}",
+				"Category": -26,
+				"Price": 500,
+				"Edibility": 80,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 13,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.PlumTaffy": {
+				"Name": "Plum Taffy",
+				"DisplayName": "{{i18n:PlumTaffy.name}}",
+				"Description": "{{i18n:PlumTaffy.desc}}",
+				"Category": -26,
+				"Price": 320,
+				"Edibility": 35,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 14,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.SpicyTaffy": {
+				"Name": "Spicy Taffy",
+				"DisplayName": "{{i18n:SpicyTaffy.name}}",
+				"Description": "{{i18n:SpicyTaffy.desc}}",
+				"Category": -26,
+				"Price": 200,
+				"Edibility": 30,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 15,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.StarfruitTaffy": {
+				"Name": "Starfruit Taffy",
+				"DisplayName": "{{i18n:StarfruitTaffy.name}}",
+				"Description": "{{i18n:StarfruitTaffy.desc}}",
+				"Category": -26,
+				"Price": 1000,
+				"Edibility": 90,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 16,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.StrawberryTaffy": {
+				"Name": "Strawberry Taffy",
+				"DisplayName": "{{i18n:StrawberryTaffy.name}}",
+				"Description": "{{i18n:StrawberryTaffy.desc}}",
+				"Category": -26,
+				"Price": 420,
+				"Edibility": 45,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 17,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.MossTaffy": {
+				"Name": "Moss Taffy",
+				"DisplayName": "{{i18n:MossTaffy.name}}",
+				"Description": "{{i18n:MossTaffy.desc}}",
+				"Category": -26,
+				"Price": 330,
+				"Edibility": 15,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 18,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.MayoTaffy": {
+				"Name": "Mayonnaise Taffy",
+				"DisplayName": "{{i18n:MayoTaffy.name}}",
+				"Description": "{{i18n:MayoTaffy.desc}}",
+				"Category": -26,
+				"Price": 500,
+				"Edibility": 63,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 19,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.VoidTaffy": {
+				"Name": "Void Taffy",
+				"DisplayName": "{{i18n:VoidTaffy.name}}",
+				"Description": "{{i18n:VoidTaffy.desc}}",
+				"Category": -26,
+				"Price": 650,
+				"Edibility": -13,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 20,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.MysteryTaffy": {
+				"Name": "Mystery Taffy",
+				"DisplayName": "{{i18n:MysteryTaffy.name}}",
+				"Description": "{{i18n:MysteryTaffy.desc}}",
+				"Category": -26,
+				"Price": 600,
+				"Edibility": 37,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 21,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.AppleTaffy": {
+				"Name": "Apple Taffy",
+				"DisplayName": "{{i18n:AppleTaffy.name}}",
+				"Description": "{{i18n:AppleTaffy.desc}}",
+				"Category": -26,
+				"Price": 500,
+				"Edibility": 53,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 22,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.ApricotTaffy": {
+				"Name": "Apricot Taffy",
+				"DisplayName": "{{i18n:ApricotTaffy.name}}",
+				"Description": "{{i18n:ApricotTaffy.desc}}",
+				"Category": -26,
+				"Price": 425,
+				"Edibility": 40,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 23,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.MapleTaffy": {
+				"Name": "Maple Taffy",
+				"DisplayName": "{{i18n:MapleTaffy.name}}",
+				"Description": "{{i18n:MapleTaffy.desc}}",
+				"Category": -26,
+				"Price": 675,
+				"Edibility": 55,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 24,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.SapTaffy": {
+				"Name": "Sap Taffy",
+				"DisplayName": "{{i18n:SapTaffy.name}}",
+				"Description": "{{i18n:SapTaffy.desc}}",
+				"Category": -26,
+				"Price": 200,
+				"Edibility": -2,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 25,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			"Willcraftapple11.PomegranateTaffy": {
+				"Name": "Pomegranate Taffy",
+				"DisplayName": "{{i18n:PomegranateTaffy.name}}",
+				"Description": "{{i18n:PomegranateTaffy.desc}}",
+				"Category": -26,
+				"Price": 475,
+				"Edibility": 45,
+				"Type": "ArtisanGoods",
+				"Texture": "Mods/Willcraftapple11.taffymod/Objects",
+				"SpriteIndex": 26,
+				"ContextTags": null,
+				"ExcludeFromFishingCollection": true,
+				"ExcludeFromShippingCollection": true,
+			},
+			
+		},
+	},
+	
+	//Shop Data to buy from Gus+Traveling Merchant. or classic taffy recipe from gus?
+	{
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "SeedShop",
+                "Items"
+            ],
+			"Entries": {
+				"Willcraftapple11.CornSyrup": {
+					"Id": "Willcraftapple11.CornSyrup",
+					"ItemId": "Willcraftapple11.CornSyrup",
+					"Price": 125,
+				},
+			},
+			"MoveEntries": [
+			{
+				"ID": "Willcraftapple11.CornSyrup",
+				"BeforeID": "(O)419",
+			},
+			],
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Mail",
+		"Entries": {
+			"WizardCooking": "{{i18n:Mail.WizardCooking}}",
+			"TaffyStatueCC": "{{i18n:Mail.TaffyStatueCC}}",
+			"TaffyStatueJoja": "{{i18n:Mail.TaffyStatueJoja}}",
+		},
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/TriggerActions",
+		"Entries": {
+			"Taffy Statue Community Center": {
+				"Id": "Mail_TaffyStatueCC",
+				"Trigger": "DayEnding",
+				"Condition": "PLAYER_HAS_SEEN_EVENT Current 191393",
+				"Actions": ["AddMail Current TaffyStatueCC"],
+			},
+			"Taffy Statue Joja Route": {
+				"Id": "Mail_TaffyStatueJoja",
+				"Trigger": "DayEnding",
+				"Condition": "PLAYER_HAS_SEEN_EVENT Current 502261",
+				"Actions": ["AddMail Current TaffyStatueJoja"],
+			},
+		},
+	},
+	],
+}

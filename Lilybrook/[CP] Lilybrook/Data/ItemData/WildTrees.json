@@ -1,0 +1,63 @@
+{
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/spring_CeruleafTree, Mods/{{ModId}}/summer_CeruleafTree, Mods/{{ModId}}/fall_CeruleafTree, Mods/{{ModId}}/winter_CeruleafTree",
+            "FromFile": "Assets/Trees/{{TargetWithoutPath}}.png"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/WildTrees",
+            "Entries": {
+                "{{ModId}}.CeruleafTree": {
+                    "Textures": [
+                        {
+                            "Condition": null,
+                            "Season": "spring",
+                            "Texture": "Mods\\{{ModId}}\\spring_CeruleafTree"
+                        },
+                        {
+                            "Condition": null,
+                            "Season": "summer",
+                            "Texture": "Mods\\{{ModId}}\\summer_CeruleafTree"
+                        },
+                        {
+                            "Condition": null,
+                            "Season": "fall",
+                            "Texture": "Mods\\{{ModId}}\\fall_CeruleafTree"
+                        },
+                        {
+                            "Condition": null,
+                            "Season": "winter",
+                            "Texture": "Mods\\{{ModId}}\\winter_CeruleafTree"
+                        },
+                    ],
+                    "SeedItemId": "(O)Lilybrook.CeruleafSeed",
+                    "SeedPlantable": true,
+                    "GrowthChance": 0.5,
+                    "FertilizedGrowthChance": 1,
+                    "DropWoodOnChop": true,
+                    "DropHardwoodOnLumberChop": true,
+                    "IsLeafy": true,
+                    "IsLeafyInWinter": true,
+                    "GrowsInWinter": true,
+                    "IsStumpDuringWinter": false,
+                    "AllowWoodpeckers": false,
+                    "UseAlternateSpriteWhenSeedReady": false,
+                    "UseAlternateSpriteWhenNotShaken": false,
+                    "ChopItems": [
+                        {
+                            "MinSize": "Tree",
+                            "ForStump": false,
+                            "Chance": 1.0,
+                            "Id": "{{ModId}}_DropSoftrootLily",
+                            "ItemId": "{{ModId}}_SoftrootLily",
+                            "MinStack": 1,
+                            "MaxStack": 2,
+                        },
+                    ]
+                }
+            }
+        }
+    ]
+}

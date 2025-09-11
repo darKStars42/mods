@@ -1,0 +1,33 @@
+{
+    "Changes": [
+        {
+            "LogName": "Load custom letter background",
+            "Action": "Load",
+            "Target": "SushiProject/MailBackground",
+            "FromFile": "Assets/Images/Mail.png"
+        },
+        {
+            "LogName": "Add your mail to the game",
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "Sushi_Stall_Mail": "[letterbg SushiProject/MailBackground 0][textcolor black]{{LetterContent}}[#]{{i18n:sushi_stall.mail.title}}"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Send_Mail": {
+                    "Id": "{{ModId}}_Send_Mail",
+                    "Trigger": "DayStarted",
+                    "Condition": "{{SushiCondition}}",
+                    "Actions": [
+                        "AddMail Current Sushi_Stall_Mail now"
+                    ],
+                    "MarkActionApplied": "{{Sushi Letter Frequency|contains=Once}}"
+                }
+            }
+        }
+    ]
+}

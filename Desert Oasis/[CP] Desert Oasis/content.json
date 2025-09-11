@@ -1,0 +1,66 @@
+{
+ "Format": "2.5.3",
+ "Changes": [
+	{
+		"LogName": "Load Oasis Location",
+		"Action": "Load",
+		"Target": "Maps/AngelOfStars.DesertOasis",
+		"FromFile": "assets/DesertOasis.tmx"
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Locations",
+		"Entries": {
+		"AngelOfStars.DesertOasis": {
+          "DisplayName": "{{i18n:Aos.DesertOasis.DisplayName}}",
+          "DefaultArrivalTile": {
+            "X": 0,
+            "Y": 27
+          },
+          "CreateOnLoad": {
+            "MapPath": "Maps/AngelOfStars.DesertOasis",
+				},
+                    "Fish": [
+                        {
+                            "Id": "Aos.DesertOasis.GreenAlgae",
+                            "ItemId": "(O)153",
+                            "Condition": "LOCATION_Season Here Fall Spring Summer Winter",
+                        },
+                        {
+                            "Id": "Aos.DesertOasis.Sandfish",
+                            "ItemId": "(O)164",
+                            "Condition": "LOCATION_Season Here Fall Spring Summer Winter",
+                        },
+                        {
+                            "Id": "Aos.DesertOasis.ScorpionCarp",
+                            "ItemId": "(O)165",
+                            "Condition": "LOCATION_Season Here Fall Spring Summer Winter",
+                   },
+               ],
+			},
+		},
+	},
+	{
+		"Action": "EditMap",
+		"Target": "Maps/AngelOfStars.DesertOasis",
+		"MapProperties":{
+			  "Music": "wavy"
+		  }
+	  },
+	  {
+    "Action": "EditData",
+    "Target": "Mods/Pathoschild.CentralStation/Stops",
+    "Entries": {
+        "{{ModId}}_AngelOfStars.DesertOasis": {
+            "DisplayName": "{{i18n:AOSDesertOasisStopDisplay}}",
+            "ToLocation": "AngelOfStars.DesertOasis",
+            "Network": "Bus",
+			"Cost": 350,
+			"Condition": "LOCATION_ACCESSIBLE Desert",
+			"ToFacingDirection": "right",
+            "ToTile": { "X": 2, "Y": 28 }
+				}
+			}
+		},
+   ]
+}

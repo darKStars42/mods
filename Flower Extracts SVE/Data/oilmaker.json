@@ -1,0 +1,50 @@
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)19",
+				"OutputRules"
+			],
+			"Entries": {
+				"Popokoes_Extract": {
+					"Id": "Popokoes_Extract",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"extract_flower_item"
+							],
+							"RequiredCount": 5
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Popokoes_Extract",
+							"ObjectInternalName": "{0} Popokoes_Extract",
+							"ObjectDisplayName": "[LocalizedText Strings/Objects:Popokoes_Extract %PRESERVED_DISPLAY_NAME]",
+							"PreserveId": "DROP_IN",
+							"CopyPrice": true,
+							"PriceModifierMode": "Stack",
+							"CustomData": {
+								"selph.ExtraMachineConfig.CopyColor": "true"
+							},
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": 10
+								},
+								{
+									"Modification": "Add",
+									"Amount": 50
+								}
+							]
+						}
+					],
+					"DaysUntilReady": 1,
+					"InvalidCountMessage": "[LocalizedText Strings\\Objects:Machine_NeedsInputCount 5]"
+				},
+			}
+		}
+	]
+}

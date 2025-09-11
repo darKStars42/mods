@@ -1,0 +1,283 @@
+{
+	"Changes": [
+		{
+			"LogName": "Thompson Schedule Empty Jsons",
+			"Action": "Load",
+			"Target": "Characters/schedules/Thompson",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Thompson Strings Empty Jsons",
+			"Action": "Load",
+			"Target": "Strings/schedules/Thompson",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Thompson Base Sprites",
+			"Action": "Load",
+			"Target": "Characters/Thompson",
+			"FromFile": "assets/sprites/Thompson{{ThompsonAppearance}}/ThompsonSprites{{Season}}.png"
+		},
+		{
+			"LogName": "Thompson Base Portraits",
+			"Action": "Load",
+			"Target": "Portraits/Thompson",
+			"FromFile": "assets/portraits/ThompsonNew/ThompsonPortraitsSpring.png"
+		},
+		//Other Info
+		{
+			"LogName": "Thompson Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/Thompson",
+			"FromFile": "data/empty.json"
+		},
+		//Thompson Portraits
+		{
+			"LogName": "NewThompsonPortraitLoads",
+			"Action": "Load",
+			"Target": "Portraits/Thompson/ThompsonPortraitsSpring, Portraits/Thompson/ThompsonPortraitsSummer, Portraits/Thompson/ThompsonPortraitsFall, Portraits/Thompson/ThompsonPortraitsWinter, Portraits/Thompson/ThompsonPortraitsSpirits, Portraits/Thompson/ThompsonPortraitsBeach, Portraits/Thompson/ThompsonPortraitsFlower",
+			"FromFile": "assets/portraits/Thompson{{ThompsonAppearance}}/{{TargetWithoutPath}}.png"
+		},
+		//Thompson Hair
+		{
+			"LogName": "Thompson Buzzcut",
+			"Action": "EditImage",
+			"Target": "Portraits/Thompson/ThompsonPortraitsSpring, Portraits/Thompson/ThompsonPortraitsSummer, Portraits/Thompson/ThompsonPortraitsFall, Portraits/Thompson/ThompsonPortraitsWinter, Portraits/Thompson/ThompsonPortraitsFlower",
+			"FromFile": "assets/portraits/ThompsonNew/Herr/ThompsonBuzz{{APTBuzzcutvalue}}.png",
+			"When": { "ThompsonAppearance": "New" },
+			"PatchMode": "Overlay"
+		},
+		{
+			"LogName": "Thompson Locks",
+			"Action": "EditImage",
+			"Target": "Portraits/Thompson/ThompsonPortraitsSpring, Portraits/Thompson/ThompsonPortraitsFall, Portraits/Thompson/ThompsonPortraitsWinter, Portraits/Thompson/ThompsonPortraitsFlower",
+			"FromFile": "assets/portraits/ThompsonNew/Herr/ThompsonHerr{{APTHerrvalue}}.png",
+			"When": { "ThompsonAppearance": "New" },
+			"PatchMode": "Overlay"
+		},
+			//Beach Hair
+		{
+			"LogName": "Thompson Beach Buzz",
+			"Action": "EditImage",
+			"Target": "Portraits/Thompson/ThompsonPortraitsBeach",
+			"FromFile": "assets/portraits/ThompsonNew/Herr/ThompsonBuzz{{APTBuzzcutvalue}}Beach.png",
+			"When": { "ThompsonAppearance": "New" },
+			"PatchMode": "Overlay"
+		},
+		//Thompson Sprites
+		{
+			"LogName": "ThompsonSpriteLoads",
+			"Action": "Load",
+			"Target": "Sprites/Thompson/ThompsonSpritesSpring, Sprites/Thompson/ThompsonSpritesSummer, Sprites/Thompson/ThompsonSpritesFall, Sprites/Thompson/ThompsonSpritesWinter, Sprites/Thompson/ThompsonSpritesSpirits, Sprites/Thompson/ThompsonSpritesBeach, Sprites/Thompson/ThompsonSpritesLuau, Sprites/Thompson/ThompsonSpritesFlower",
+			"FromFile": "assets/sprites/Thompson{{ThompsonAppearance}}/{{TargetWithoutPath}}.png"
+		}, 
+			//Sprite Hair
+		{
+			"LogName": "Thompson Sprite Buzzcut",
+			"Action": "EditImage",
+			"Target": "Sprites/Thompson/ThompsonSpritesSpring, Sprites/Thompson/ThompsonSpritesSummer, Sprites/Thompson/ThompsonSpritesFall, Sprites/Thompson/ThompsonSpritesWinter, Sprites/Thompson/ThompsonSpritesFlower, Characters/Thompson",
+			"FromFile": "assets/sprites/ThompsonNew/Herr/ThompsonBuzz{{APTBuzzcutvalue}}.png",
+			"When": { "ThompsonAppearance": "New" },
+			"PatchMode": "Overlay"
+		},
+		{
+			"LogName": "Thompson Sprite Hair",
+			"Action": "EditImage",
+			"Target": "Sprites/Thompson/ThompsonSpritesSpring, Sprites/Thompson/ThompsonSpritesFall, Sprites/Thompson/ThompsonSpritesWinter, Sprites/Thompson/ThompsonSpritesFlower, Characters/Thompson",
+			"FromFile": "assets/sprites/ThompsonNew/Herr/ThompsonHerr{{APTHerrvalue}}.png",
+			"When": { "ThompsonAppearance": "New" },
+			"PatchMode": "Overlay"
+		},
+		//Thompson Schedule is included in //FILES because of its variability
+		{
+			"LogName": "Thompson Disposition",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+			"Thompson": {
+				"DisplayName": "Thompson",
+				"Language": "Default",
+				"Gender": "Male",
+				"Age": "Teen",
+				"Manner": "Polite",
+				"SocialAnxiety": "Outgoing",
+				"Optimism": "Positive",
+				"BirthSeason": "Spring",
+				"BirthDay": 23,
+				"HomeRegion": "Town",
+				"IsDarkSkinned": false,
+				"LoveInterest": "Pierre",
+				
+				"CanSocialize": true,
+				"CanBeRomanced": false,
+				"CanReceiveGifts": true,
+				"CanCommentOnPurchasedShopItems": true,
+				"CanGreetNearbyCharacters": true,
+				"CanVisitIsland": true,
+				"Calendar": "AlwaysShown",
+				"SocialTab": "UnknownUntilMet",
+				"SpouseAdopts": null,
+				"SpouseWantsChildren": true,
+				"SpouseGetsJealousOfGifts": true,
+				"SpouseRoom": {
+					"MapAsset": "ThompsonSpouseRoom",
+					"MapSourceRect": {
+						"X": 0,
+						"Y": 0,
+						"Width": 6,
+						"Height": 9
+					}
+				},
+				"SpousePatio": {
+					"MapAsset": "ThompsonSpouseArea",
+					"MapSourceRect": {
+						"X": 0,
+						"Y": 0,
+						"Width": 4,
+						"Height": 4
+					},
+				},
+				"IntroductionsQuest": true,
+				"ItemDeliveryQuests": true,
+				"PerfectionScore": true,
+				"EndSlideShow": "MainGroup",
+				"FriendsAndFamily": {
+					"Pierre": "Landlord",
+				},
+				
+				"DumpsterDiveEmote": 12,
+				"DumpsterDiveFriendshipEffect": -25,
+				
+				"FlowerDanceCanDance": null,
+				"WinterStarParticipant": true,
+				"WinterStarGifts": [
+					{
+						"Id": "Thompson Gifts",
+						"ItemId": 745, //Stawberry Seeds
+					}
+				],
+				
+				"UnlockConditions": true,
+				"SpawnIfMissing": true,
+				"Home": [
+					{
+						"Id": "Default",
+						"Condition": null,
+						"Location": "Custom_ThompsonRoom",
+						"Tile": {
+							"X": 1,
+							"Y": 7
+					},
+					"Direction": "left"
+					}
+				],
+				
+				"TextureName": "Thompson",
+				"Appearance": [
+					{
+						"Id": "ThompsonSpringOutfit",
+						"Season": "Spring",
+						"Portrait": "Portraits/Thompson/ThompsonPortraitsSpring",
+						"Sprite": "Sprites/Thompson/ThompsonSpritesSpring"
+					},
+					{
+						"Id": "ThompsonSummerOutfit",
+						"Season": "Summer",
+						"Portrait": "Portraits/Thompson/ThompsonPortraitsSummer",
+						"Sprite": "Sprites/Thompson/ThompsonSpritesSummer"
+					},
+					{
+						"Id": "ThompsonbeachOutfit",
+                        "IsIslandAttire": true,
+						"Portrait": "Portraits/Thompson/ThompsonPortraitsBeach",
+						"Sprite": "Sprites/Thompson/ThompsonSpritesBeach",
+						"Precedence": "-20"
+					},
+					{
+						"Id": "ThompsonFallOutfit",
+						"Season": "Fall",
+						"Portrait": "Portraits/Thompson/ThompsonPortraitsFall",
+						"Sprite": "Sprites/Thompson/ThompsonSpritesFall"
+					},
+					{
+						"Id": "ThompsonSpiritsOutfit",
+						"Season": "Fall",
+						"Condition": "DAY_OF_MONTH 27",
+						"Portrait": "Portraits/Thompson/ThompsonPortraitsSpirits",
+						"Sprite": "Sprites/Thompson/ThompsonSpritesSpirits",
+						"Precedence": "-20"
+					},
+					{
+						"Id": "ThompsonWinterOutfit",
+						"Season": "Winter",
+						"Portrait": "Portraits/Thompson/ThompsonPortraitsWinter",
+						"Sprite": "Sprites/Thompson/ThompsonSpritesWinter"
+					},
+					//Festivals
+					{
+						"Id": "ThompsonFlowerOutfit",
+                        "Condition": "EVENT_ID festival_spring24",
+						"Portrait": "Portraits/Thompson/ThompsonPortraitsFlower",
+						"Sprite": "Sprites/Thompson/ThompsonSpritesFlower",
+						"Precedence": "-20"
+					},
+					{
+						"Id": "ThompsonLuauOutfit",
+                        "Condition": "EVENT_ID festival_summer11",
+						"Portrait": "Portraits/Thompson/ThompsonPortraitsBeach",
+						"Sprite": "Sprites/Thompson/ThompsonSpritesLuau",
+						"Precedence": "-20"
+					},
+					{
+						"Id": "ThompsonDesertFestOutfit",
+						"Condition": "IS_PASSIVE_FESTIVAL_TODAY DesertFestival, LOCATION_NAME Target DesertFestival",
+						"Portrait": "Portraits/Thompson/ThompsonPortraitsSpring",
+						"Sprite": "Sprites/Thompson/ThompsonSpritesSpring",
+						"Precedence": -19,
+					},
+				],
+				"Size": {
+					"X": 16,
+					"Y": 32
+				},
+				"Breather": true,
+				"ShakePortraits": [
+					9
+				],
+				"KissSpriteIndex": 28,
+				"KissSpriteFacingDirection": "right",
+				
+				"HiddenProfileEmoteSound": null,
+				"HiddenProfileEmoteDuration": -1,
+				"HiddenProfileEmoteStartFrame": 52,
+				"HiddenProfileEmoteFrameCount": 4,
+				"HiddenProfileEmoteFrameDuration": 125,
+			},
+			},
+		},
+			//Datability
+		{
+			"LogName": "Thompson Engagement",
+			"Action": "EditData",
+			"Target": "Data/EngagementDialogue",
+			"Entries": {
+				"Thompson0": "{{i18n:engagement0.Thompson}}",
+				"Thompson1": "{{i18n:engagement1.Thompson}}"
+			}
+		},  
+				//Makes him datable after 8-heart
+		{
+            "LogName": "Thompson Datability",
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Fields": {
+                "Thompson": {
+                    "CanBeRomanced": true,
+                }
+            },
+            "When": {
+                "HasFlag": "Thompson_isDatable",
+            }
+        },
+	]
+}

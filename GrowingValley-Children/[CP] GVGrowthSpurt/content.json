@@ -1,0 +1,57 @@
+{
+   "Format": "2.0.6",
+   
+   "ConfigSchema": {
+		"DisablePortraitJas": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			},
+		"DisablePortraitVincent": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			},
+		"DisablePortraitLeo": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			},
+		"DisableContent": {
+			"AllowValues": "true, false",
+			"Default": "false",
+			},
+	},
+	
+   "Changes": [
+		{
+			"LogName": "Include Jas_portraits when DisablePortraitJas is false.",
+            "Action": "Include",
+            "FromFile": "assets/Includes/Jas_portraits.json",
+			"When": {
+				"DisablePortraitJas": false
+			},
+		},
+		{
+			"LogName": "Include Vincent_portraits when DisablePortraitVincent is false.",
+            "Action": "Include",
+            "FromFile": "assets/Includes/Vincent_portraits.json",
+			"When": {
+				"DisablePortraitVincent": false
+			},
+		},
+		{
+			"LogName": "Include Leo_portraits when DisablePortraitLeo is false.",
+            "Action": "Include",
+            "FromFile": "assets/Includes/Leo_portraits.json",
+			"When": {
+				"DisablePortraitLeo": false
+			},
+		},
+		{
+			"LogName": "Include enabled_content when DisableContent is false.",
+            "Action": "Include",
+            "FromFile": "assets/Includes/enabled_content.json",
+			"When": {
+				"DisableContent": false
+			},
+		},
+    ]
+}

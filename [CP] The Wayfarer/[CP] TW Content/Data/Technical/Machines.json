@@ -1,0 +1,293 @@
+{
+"Changes": [
+	{
+"Action": "EditData",
+"Target": "Data/Machines",
+"Entries": {
+ "(BC){{ModID}}_MovoraptorIncubator": {
+    "HasInput": false,
+    "HasOutput": false,
+    "InteractMethod": null,
+    "OutputRules": [
+      {
+        "Id": "{{ModID}}_Movoraptor",
+        "Triggers": [
+          {
+            "Id": "ItemPlacedInMachine",
+            "Trigger": "ItemPlacedInMachine",
+            "RequiredItemId": "{{ModID}}_MaleMovoraptorEgg",
+            "RequiredTags": null,
+            "RequiredCount": 1,
+            "Condition": null
+          },
+              {
+            "Id": "ItemPlacedInMachine",
+            "Trigger": "ItemPlacedInMachine",
+            "RequiredItemId": "{{ModID}}_MovoraptorEgg",
+            "RequiredTags": null,
+            "RequiredCount": 1,
+            "Condition": null
+          },
+                        {
+            "Id": "ItemPlacedInMachine",
+            "Trigger": "ItemPlacedInMachine",
+            "RequiredItemId": "{{ModID}}_DeathBirdEgg",
+            "RequiredTags": null,
+            "RequiredCount": 1,
+            "Condition": null
+          },
+                                  {
+            "Id": "ItemPlacedInMachine",
+            "Trigger": "ItemPlacedInMachine",
+            "RequiredItemId": "{{ModID}}_RaphusEgg",
+            "RequiredTags": null,
+            "RequiredCount": 1,
+            "Condition": null
+          }
+        ],
+        "UseFirstValidOutput": false,
+        "OutputItem": [
+          {
+            "CustomData": null,
+            "OutputMethod": "StardewValley.Object, Stardew Valley: OutputIncubator",
+            "CopyColor": false,
+            "CopyPrice": false,
+            "CopyQuality": false,
+            "PreserveType": null,
+            "PreserveId": null,
+            "IncrementMachineParentSheetIndex": 0,
+            "PriceModifiers": null,
+            "PriceModifierMode": "Stack",
+            "Condition": null,
+            "Id": "Default",
+            "ItemId": null,
+            "RandomItemId": null,
+            "MaxItems": null,
+            "MinStack": -1,
+            "MaxStack": -1,
+            "Quality": -1,
+            "ObjectInternalName": null,
+            "ObjectDisplayName": null,
+            "ObjectColor": null,
+            "ToolUpgradeLevel": -1,
+            "IsRecipe": false,
+            "StackModifiers": null,
+            "StackModifierMode": "Stack",
+            "QualityModifiers": null,
+            "QualityModifierMode": "Stack",
+            "ModData": null,
+            "PerItemCondition": null
+          }
+        ],
+        "MinutesUntilReady": 15000,
+        "DaysUntilReady": -1,
+        "InvalidCountMessage": null,
+        "RecalculateOnCollect": false
+      }
+    ],
+    "AdditionalConsumedItems": null,
+    "PreventTimePass": null,
+    "ReadyTimeModifiers": [
+    ],
+    "ReadyTimeModifierMode": "Stack",
+    "InvalidItemMessage": null,
+    "InvalidItemMessageCondition": null,
+    "InvalidCountMessage": null,
+    "LoadEffects": [
+      {
+        "Id": "Default",
+        "Condition": null,
+        "Sounds": [
+          {
+            "Id": "coin",
+            "Delay": 0
+          }
+        ],
+        "Interval": 100,
+        "Frames": null,
+        "ShakeDuration": -1,
+        "TemporarySprites": null
+      }
+    ],
+    "WorkingEffects": null,
+    "WorkingEffectChance": 0.33,
+    "AllowLoadWhenFull": false,
+    "WobbleWhileWorking": true,
+    "LightWhileWorking": null,
+    "ShowNextIndexWhileWorking": false,
+    "ShowNextIndexWhenReady": false,
+    "AllowFairyDust": false,
+    "IsIncubator": true,
+    "OnlyCompleteOvernight": true,
+    "ClearContentsOvernightCondition": null,
+    "StatsToIncrementWhenLoaded": null,
+    "StatsToIncrementWhenHarvested": null,
+    "ExperienceGainOnHarvest": null,
+    "CustomFields": null
+  },
+}
+},
+{
+"Action": "EditData",
+"Target": "Data/Buildings",
+"TargetField": [
+"Mill",
+"ItemConversions"
+],
+"Entries": {
+"{{ModID}}_AdauulaFlour": {
+"Id": "{{ModID}}_AdauulaFlour",
+"SourceChest": "Input",
+"DestinationChest": "Output",
+"RequiredTags": [
+ "fc_mill_item"
+],
+"ProducedItems": [
+{
+"ItemId": "(O){{ModID}}_AdauulaFlour",
+"MinStack": 1,
+"MaxStack": 2,
+},
+],
+"MaxDailyConversions": -1
+}
+}
+},
+{
+"LogName": "Movorator Mayo",
+"Action": "EditData",
+"Target": "Data/Machines",
+"TargetField": [
+"(BC)24",
+"OutputRules"
+],
+"Entries": {
+"{{ModID}}_MovoraptorEgg": {
+"Id": "{{ModID}}_MovoraptorEgg",
+"Triggers": [
+{
+"Trigger": "ItemPlacedInMachine",
+"RequiredItemId": "{{ModID}}_MovoraptorEgg",
+"RequiredCount": 1
+}
+],
+"OutputItem": [
+{
+"Id": "{{ModID}}_MovoraptorMayo",
+"ItemId": "{{ModID}}_MovoraptorMayo"
+}
+],
+"MinutesUntilReady": 1800
+}
+},
+"MoveEntries": [
+{
+"Id": "{{ModID}}_MovoraptorEgg",
+"BeforeId": "Default_Egg"
+}
+]
+},
+{
+"LogName": "draga whiskey",
+"Action": "EditData",
+"Target": "Data/Machines",
+"TargetField": [
+"(BC)12",
+"OutputRules"
+],
+"Entries": {
+"{{ModID}}_DragaTonguula": {
+"Id": "{{ModID}}_DragaTonguula",
+"Triggers": [
+{
+"Trigger": "ItemPlacedInMachine",
+"RequiredItemId": "{{ModID}}_DragaTongue",
+"RequiredCount": 1
+}
+],
+"OutputItem": [
+{
+"Id": "{{ModID}}_DragaWhiskey",
+"ItemId": "{{ModID}}_DragaWhiskey"
+}
+],
+"MinutesUntilReady": 1800,
+}
+},
+"MoveEntries": [
+{
+"Id": "{{ModID}}_DragaTongue",
+"BeforeId": "Default_Wine"
+}
+]
+},
+{
+"LogName": "TropaFruit",
+"Action": "EditData",
+"Target": "Data/Machines",
+"TargetField": [
+"(BC)12",
+"OutputRules"
+],
+"Entries": {
+"{{ModID}}_TropaFruit": {
+"Id": "{{ModID}}_TropaFruit",
+"Triggers": [
+{
+"Trigger": "ItemPlacedInMachine",
+"RequiredItemId": "{{ModID}}_TropaFruit",
+"RequiredCount": 1
+}
+],
+"OutputItem": [
+{
+"Id": "{{ModID}}_TropaWine",
+"ItemId": "{{ModID}}_TropaWine"
+}
+],
+"MinutesUntilReady": 1800,
+}
+},
+"MoveEntries": [
+{
+"Id": "{{ModID}}_TropaFruit",
+"BeforeId": "Default_Wine"
+}
+]
+},
+{
+"LogName": "TropaFruit",
+"Action": "EditData",
+"Target": "Data/Machines",
+"TargetField": [
+"(BC)163",
+"OutputRules"
+],
+"Entries": {
+"{{ModID}}_TropaWine": {
+"Id": "{{ModID}}_TropaWine",
+"Triggers": [
+{
+"Trigger": "ItemPlacedInMachine",
+"RequiredItemId": "{{ModID}}_TropaWine",
+"RequiredCount": 1
+}
+],
+"OutputItem": [
+{
+"Id": "{{ModID}}_RefinedTropaWine",
+"ItemId": "{{ModID}}_RefinedTropaWine"
+}
+],
+"MinutesUntilReady": 1800,
+}
+},
+"MoveEntries": [
+{
+"Id": "{{ModID}}_TropaWine",
+"BeforeId": "Default_Roe"
+}
+]
+},
+]
+}

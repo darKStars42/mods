@@ -1,0 +1,133 @@
+{
+    "Changes": [
+
+        //Load icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Trinkets",
+            "FromFile": "assets/Items/Trinkets/trinkets.png"
+        },
+
+/*----------------------------------------------------
+Trinkets (enabled)
+----------------------------------------------------*/
+
+        {
+            "LogName":"Add Alchemistry Trinkets",
+            "Action": "EditData",
+            "Target": "Data/Trinkets",
+            "When": { "Trinkets": "Runes" },
+            "Entries": {
+                "IridiumSpur": {
+                    "ID": "IridiumSpur",
+                    "DisplayName": "{{i18n:Alchemistry_FireRune.name}}",
+                    "Description": "[LocalizedText Strings\\1_6_Strings:IridiumSpur_Description]",
+                    "Texture": "Mods/{{ModID}}/Trinkets",
+                    "SheetIndex": 0,
+                    "TrinketEffectClass": "StardewValley.Objects.Trinkets.TrinketEffect",
+                    "DropsNaturally": true,
+                    "CanBeReforged": false,
+                    "CustomFields": null,
+                    "ModData": null
+                },
+                "IceRod": {
+                    "ID": "IceRod",
+                    "DisplayName": "{{i18n:Alchemistry_IceRune.name}}",
+                    "Description": "[LocalizedText Strings\\1_6_Strings:IceRod_Description]",
+                    "Texture": "Mods/{{ModID}}/Trinkets",
+                    "SheetIndex": 1,
+                    "TrinketEffectClass": "StardewValley.Objects.Trinkets.IceOrbTrinketEffect",
+                    "DropsNaturally": true,
+                    "CanBeReforged": false,
+                    "CustomFields": null,
+                    "ModData": null
+                },
+                "BasiliskPaw": {
+                    "ID": "BasiliskPaw",
+                    "DisplayName": "{{i18n:Alchemistry_EarthRune.name}}",
+                    "Description": "[LocalizedText Strings\\1_6_Strings:BasiliskPaw_Name]",
+                    "Texture": "Mods/{{ModID}}/Trinkets",
+                    "SheetIndex": 2,
+                    "TrinketEffectClass": "StardewValley.Objects.Trinkets.TrinketEffect",
+                    "DropsNaturally": true,
+                    "CanBeReforged": false,
+                    "CustomFields": null,
+                    "ModData": null
+                },
+                "FairyBox": {
+                    "ID": "FairyBox",
+                    "DisplayName": "{{i18n:Alchemistry_ArcaneRune.name}}",
+                    "Description": "[LocalizedText Strings\\1_6_Strings:FairyBox_Description2]",
+                    "Texture": "Mods/{{ModID}}/Trinkets",
+                    "SheetIndex": 3,
+                    "TrinketEffectClass": "StardewValley.Objects.Trinkets.FairyBoxTrinketEffect",
+                    "DropsNaturally": true,
+                    "CanBeReforged": false,
+                    "CustomFields": null,
+                    "ModData": null
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Trinkets (disabled)
+----------------------------------------------------*/
+
+        {
+            "LogName":"Add Alchemistry Trinkets",
+            "Action": "EditData",
+            "Target": "Data/Trinkets",
+            "When": { "Trinkets": "Vanilla" },
+            "Entries": {
+                "IridiumSpur": {
+                    "ID": "IridiumSpur",
+                    "DisplayName": "[LocalizedText Strings\\1_6_Strings:IridiumSpur_Name]",
+                    "Description": "[LocalizedText Strings\\1_6_Strings:IridiumSpur_Description]",
+                    "Texture": "TileSheets\\Objects_2",
+                    "SheetIndex": 76,
+                    "TrinketEffectClass": "StardewValley.Objects.Trinkets.TrinketEffect",
+                    "DropsNaturally": true,
+                    "CanBeReforged": true,
+                    "CustomFields": null,
+                    "ModData": null
+                },
+                "IceRod": {
+                    "ID": "IceRod",
+                    "DisplayName": "[LocalizedText Strings\\1_6_Strings:IceRod_Name]",
+                    "Description": "[LocalizedText Strings\\1_6_Strings:IceRod_Description]",
+                    "Texture": "TileSheets\\Objects_2",
+                    "SheetIndex": 78,
+                    "TrinketEffectClass": "StardewValley.Objects.Trinkets.IceOrbTrinketEffect",
+                    "DropsNaturally": true,
+                    "CanBeReforged": true,
+                    "CustomFields": null,
+                    "ModData": null
+                },
+                "BasiliskPaw": {
+                    "ID": "BasiliskPaw",
+                    "DisplayName": "[LocalizedText Strings\\1_6_Strings:BasiliskPaw_Name]",
+                    "Description": "[LocalizedText Strings\\1_6_Strings:BasiliskPaw_Description]",
+                    "Texture": "TileSheets\\Objects_2",
+                    "SheetIndex": 77,
+                    "TrinketEffectClass": "StardewValley.Objects.Trinkets.TrinketEffect",
+                    "DropsNaturally": true,
+                    "CanBeReforged": false,
+                    "CustomFields": null,
+                    "ModData": null
+                },
+                "FairyBox": {
+                    "ID": "FairyBox",
+                    "DisplayName": "[LocalizedText Strings\\1_6_Strings:FairyBox_Name]",
+                    "Description": "[LocalizedText Strings\\1_6_Strings:FairyBox_Description2]",
+                    "Texture": "TileSheets\\Objects_2",
+                    "SheetIndex": 74,
+                    "TrinketEffectClass": "StardewValley.Objects.Trinkets.FairyBoxTrinketEffect",
+                    "DropsNaturally": true,
+                    "CanBeReforged": true,
+                    "CustomFields": null,
+                    "ModData": null
+                }
+            }
+        }
+    ]
+}

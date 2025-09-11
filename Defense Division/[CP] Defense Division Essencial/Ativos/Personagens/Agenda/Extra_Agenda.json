@@ -1,0 +1,176 @@
+{ 
+	"Changes":
+	[
+		{	//Visita do Edward : Shane (Não Casado)
+			"LogName": "Visitas Edward Extra Agendamentos 01",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Shane",
+			"When": { "HasSeenEvent: anyPlayer|contains=58614004": true, "HasSeenEvent: anyPlayer|contains=90805264": false, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_27": "700 AnimalShop 24 15 0/1200 Casa.Superior 7 9 2 shane_drink/1700 Saloon 21 17 2 shane_drink/2300 AnimalShop 27 4 1 shane_sleep",	
+			"summer_6": "GOTO spring_27",
+			"fall_6": "GOTO spring_27",
+			"winter_27": "GOTO spring_27"
+			}
+		},
+		{	//Visita do Edward : Marlon SVE Raro
+			"LogName": "Visitas Edward Extra Agendamentos 02",
+			"Action": "EditData",
+			"Target": "Characters/schedules/MarlonFay",
+			"When": { "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true, "HasSeenEvent: anyPlayer|contains=58614001": true, "HasSeenEvent: anyPlayer|contains=90805264": false, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_14": "0 Town 35 99 0/620 Town 35 99 2 Marlon_Sneaky/740 Casa.Interior 8 10 0 /1000 AdventureGuild 4 11 2",
+			"summer_14": "GOTO spring_6",
+			"fall_14": "GOTO spring_6",
+			"winter_14": "GOTO spring_6"
+			}
+		},
+		{	//Visita da Isis : Abigail (Não Casada)
+			"LogName": "Visitas Isis Extra Agendamentos 01",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Abigail",
+			"When": { "HasSeenEvent: anyPlayer|contains=37918004": true, "HasSeenEvent: anyPlayer|contains=90805264": false, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"summer_Sat": "900 SeedShop 39 5 0/1000 Casa.Interior 6 7 3/1230 Town 4 52 2 abigail_sit_down/1540 SeedShop 3 6 0 abigail_videogames/1930 SeedShop 1 9 3 abigail_sleep",
+			"winter_Sat": "900 SeedShop 39 5 0/1000 Casa.Interior 5 19 2/1500 SeedShop 3 6 0 abigail_videogames/1930 SeedShop 1 9 3 abigail_sleep"
+			}
+		},
+		{	//Visita da Miranda : Emily (Não Casada)
+			"LogName": "Visitas Miranda Extra Agendamentos 01",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Emily",
+			"When": { "HasSeenEvent: anyPlayer|contains=76142003": true, "HasSeenEvent: anyPlayer|contains=90805264": false, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_7": "930 Casa.Interior 18 12 3/1300 Town 8 53 3 /1530 Saloon 15 17 0 square_5_1_0/2430 HaleyHouse 21 4 1 emily_sleep",
+			"spring_21": "GOTO spring_7",
+			"fall_7": "900 HaleyHouse 16 5 2/1200 HaleyHouse 16 19 1/1530 Saloon 15 17 0 square_5_1_0/2430 HaleyHouse 21 4 1 emily_sleep",
+			"fall_21": "GOTO fall_7"
+			}
+		},
+		{	//Visita da Miranda e Isis Juntas : Leah (Não Casada) Raro
+			"LogName": "Visitas Isis e Miranda Extra Agendamentos 01",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Leah",
+			"When": { "HasSeenEvent: anyPlayer|contains=37918005": true, "HasSeenEvent: anyPlayer|contains=90805264": false, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_11": "900 LeahHouse 3 7 3 leah_sculpt/1200 Forest 68 50 2/1420 Forest 68 48 0/1700 Forest 21 29 1/1900 LeahHouse 8 5 0/2200 LeahHouse 13 10 2/2400 LeahHouse 2 4 3 leah_sleep",
+			"summer_18": "GOTO spring_11",
+			"fall_11": "900 LeahHouse 3 7 3 leah_sculpt/1200 Town 86 66 3 square_1_5_3/1450 Casa.Interior 18 12 1/1900 LeahHouse 13 10 2/2400 LeahHouse 2 4 3 leah_sleep",
+			"winter_18": "GOTO fall_11"
+			}
+		},
+		{	//Na Adega : Pam - Gus - Shane (Problemas) - Lewis -  Kent (Problemas) - Willy - Sebastian (Não Casado)
+			"LogName": "Adega Extra Agendamentos 01",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Pam",
+			"When": { "HasSeenEvent: anyPlayer|contains=91805264": true, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_9": "800 Trailer 15 4 2 pam_sit_down/1200 Casa.Interior 15 9 1/1600 Saloon 7 18 1/2400 Trailer 15 4 2 pam_sleep",
+			"spring_20": "GOTO spring_9",
+			"summer_9": "GOTO spring_9",
+			"summer_20": "GOTO spring_9",
+			"fall_9": "GOTO spring_9",
+			"fall_20": "GOTO spring_9",
+			"winter_9": "GOTO spring_9",
+			"winter_20": "GOTO spring_9"
+			}
+		},
+		{
+			"LogName": "Adega Extra Agendamentos 02",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Gus",
+			"When": { "HasSeenEvent: anyPlayer|contains=91805264": true, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_Wed": "910 Casa.Interior 17 6 0/1200 Saloon 14 18 2 gus_clean/1830 Saloon 12 18 0/1850 Saloon 10 18 2/1940 Saloon 12 18 0/1950 Saloon 10 18 2/2030 Saloon 12 18 0/2040 Saloon 10 18 2/2400 Saloon 23 4 1 gus_sleep",
+			"summer_Wed": "GOTO spring_Wed",
+			"fall_Wed": "GOTO spring_Wed",
+			"winter_Wed": "GOTO spring_Wed"
+			}
+		},
+		{
+			"LogName": "Adega Extra Agendamentos 03",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Shane",
+			"When": { "HasSeenEvent: anyPlayer|contains=91805264": true, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_14": "700 AnimalShop 24 15 0/1200 Casa.Interior 15 7 1/1700 Saloon 21 17 2 shane_drink/2300 AnimalShop 27 4 1 shane_sleep",
+			"summer_Wed": "GOTO spring_14",
+			"fall_14": "GOTO spring_14",
+			"winter_Wed": "GOTO spring_14"
+			}
+		},
+		{
+			"LogName": "Adega Extra Agendamentos 04",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Lewis",
+			"When": { "HasSeenEvent: anyPlayer|contains=91805264": true, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_4": "800 ManorHouse 8 5 0/1000 Town 62 88 0/1040 Town 65 86 3 lewis_garden/1300 Casa.Interior 18 8 3/1600 ManorHouse 7 5 0 square_5_1_0/2100 ManorHouse 3 6 0/2200 ManorHouse 22 4 1 lewis_sleep",
+			"summer_4": "GOTO spring_3",
+			"fall_4": "GOTO spring_3",
+			"winter_4": "GOTO spring_3"
+			}
+		},
+		{
+			"LogName": "Adega Extra Agendamentos 05",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Kent",
+			"When": { "HasSeenEvent: anyPlayer|contains=91805264": true, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_Sat": "700 Town 42 102 2/1030 Casa.Interior 20 13 3/1400 Town 6 72 1/1700 Saloon 3 23 3/2350 SamHouse 21 5 3 kent_sleep",
+			"summer_18": "GOTO spring_Sat",
+			"fall_Sat": "GOTO spring_Sat",
+			"winter_18": "GOTO spring_Sat"
+			}
+		},
+		{
+			"LogName": "Adega Extra Agendamentos 06",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Willy",
+			"When": { "HasSeenEvent: anyPlayer|contains=91805264": true, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_5": "610 Beach 38 36 2 dick_fish/850 FishShop 5 4 2/1400 Casa.Interior 16 6 0/1700 Saloon 17 22 2 \"Strings\\schedules\\Willy:Fri.000\"/2320 FishShop 5 4 2",
+			"spring_26": "GOTO spring_5",
+			"summer_9": "GOTO spring_5",
+			"fall_5": "GOTO spring_5",
+			"fall_26": "GOTO spring_5",
+			"winter_9": "GOTO spring_5"
+			}
+		},
+		{
+			"LogName": "Adega Extra Agendamentos 07",
+			"Action": "EditData",
+			"Target": "Characters/schedules/Sebastian",
+			"When": { "HasSeenEvent: anyPlayer|contains=91805264": true, "Weather": "sun" },
+			"Update": "OnDayStart",
+			"Entries": 
+			{
+			"spring_15": "930 Casa.Interior 15 8 1/1430 SebastianRoom 9 4 3 sebastian_computer/1830 Mountain 58 35 1 sebastian_smoking/2130 SebastianRoom 11 9 1 sebastian_sleep",
+			"summer_24": "GOTO spring_15",
+			"fall_1": "GOTO spring_15"
+			}
+		}
+	]
+}

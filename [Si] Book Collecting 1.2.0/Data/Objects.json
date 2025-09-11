@@ -1,0 +1,6332 @@
+{
+
+	"Changes": [
+
+	// Hello! If you're looking in this file I assume you're trying to figure out how I did things so you can too. Feel free to copy entries (but change the book names to your own). The first entry below has some helpful comments in it.
+
+	// Content //////////////////////////////////////////////////////////
+
+		// SaltBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/SaltBook",
+			"FromFile": "Data/Assets/SaltBook.png" // Loads the book sprite image.
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SaltBookNote": { // This is the secret note version object of the book. If you're adding book-specific gift tastes, this is NOT the ID you should use. Instead, use the one from the next object entry down below.
+					"Name": "{{ModId}}_SaltBookNote",
+					"DisplayName": "{{i18n:Si.BC.SaltBookName}}", // Title of the book.
+					"Description": "{{i18n:Si.BC.SaltBookDesc}}", // Description of the book. This is NOT the excerpt that the player reads when they open the book; that is defined in the SecretNotes.json entry for the book. This is what you see when you hover over the book when you receive it.
+					"Type": "asdf", // Yes this is a real category lol
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/SaltBook", // The book sprite that was loaded above.
+					"ExcludeFromShippingCollection": true, // Make sure this is in there.
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book", // Keep this tag in here, all books (SNF and giftable) should have it. If you want the book to be part of the pool of SNF books that have to be bought at either the Bookseller or Book Fair, add the sold_book tag here too, and make sure to include an entry removing it once the bok's been read.
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SaltBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book", // This adds the unread_book tag to the SNF book when it's been obtained but not read yet. Not needed for sold_book books.
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasSaltBook": true, // Mailflag for 'book has been obtained'. Set this in the mail/dialogue/map tile/etc action where the book is obtained.
+				"HasFlag: |contains={{ModId}}_ReceivedSaltBook": false, // Mailflag for 'book has been read'.
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SaltBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null, // This removes the unread_book tag from the SNF book when it's been read. Set to "sold_book": null if using sold_book above.
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSaltBook": true, // Mailflag for 'book has been read'.
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SaltBook": {
+					"Name": "{{ModId}}_SaltBook", // This is the giftable version of the book. If you're adding book-specific gift tastes, this is the object ID you want (replace {{ModId}} with Si.BC)
+					"DisplayName": "{{i18n:Si.BC.SaltBookName}}",
+					"Description": "{{i18n:Si.BC.SaltBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 809,
+					"Texture": "Mods/{{ModId}}/SaltBook", // You can use the same book sprite for both the SNF book and the giftable book.
+					"ExcludeFromShippingCollection": true, // Make sure this is in there.
+					"SpriteIndex": 0,
+					"ContextTags": [ // This is where you add genre tags to the book.
+						"recipe_book", // Can add as many tags as you'd like, but keep the most relevant/specific ones at the top.
+						"nonfiction_book", // Generally a good idea to specify either fiction_book or nonfiction_book, but not required.
+						"bc_book", // Make sure this is in here, at the bottom.
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SaltBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book", // This adds the read_book tag to the giftable book when it's been read.
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSaltBook": true, // Mailflag for 'book has been read'.
+			},
+        },
+
+		// SonataBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/SonataBook",
+			"FromFile": "Data/Assets/SonataBook.png"
+		},
+
+		{
+			"Target": "Mods/{{ModId}}/sonatabooktexture",
+			"Action": "Load",
+			"FromFile": "Data/Assets/sonatabooktexture.png",
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SonataBookNote": {
+					"Name": "{{ModId}}_SonataBookNote",
+					"DisplayName": "{{i18n:Si.BC.SonataBookName}}",
+					"Description": "{{i18n:Si.BC.SonataBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/SonataBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SonataBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasSonataBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedSonataBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SonataBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSonataBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SonataBook": {
+					"Name": "{{ModId}}_SonataBook",
+					"DisplayName": "{{i18n:Si.BC.SonataBookName}}",
+					"Description": "{{i18n:Si.BC.SonataBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 678,
+					"Texture": "Mods/{{ModId}}/SonataBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"music_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SonataBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSonataBook": true,
+			},
+        },
+
+		// NeuralBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/NeuralBook",
+			"FromFile": "Data/Assets/NeuralBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_NeuralBookNote": {
+					"Name": "{{ModId}}_NeuralBookNote",
+					"DisplayName": "{{i18n:Si.BC.NeuralBookName}}",
+					"Description": "{{i18n:Si.BC.NeuralBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/NeuralBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_NeuralBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasNeuralBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedNeuralBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_NeuralBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedNeuralBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_NeuralBook": {
+					"Name": "{{ModId}}_NeuralBook",
+					"DisplayName": "{{i18n:Si.BC.NeuralBookName}}",
+					"Description": "{{i18n:Si.BC.NeuralBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 894,
+					"Texture": "Mods/{{ModId}}/NeuralBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"science_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_NeuralBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedNeuralBook": true,
+			},
+        },
+
+
+		// AdvMagBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/AdvMagBook",
+			"FromFile": "Data/Assets/AdvMagBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_AdvMagBookNote": {
+					"Name": "{{ModId}}_AdvMagBookNote",
+					"DisplayName": "{{i18n:Si.BC.AdvMagBookName}}",
+					"Description": "{{i18n:Si.BC.AdvMagBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/AdvMagBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_AdvMagBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasAdvMagBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedAdvMagBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_AdvMagBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedAdvMagBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_AdvMagBook": {
+					"Name": "{{ModId}}_AdvMagBook",
+					"DisplayName": "{{i18n:Si.BC.AdvMagBookName}}",
+					"Description": "{{i18n:Si.BC.AdvMagBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 223,
+					"Texture": "Mods/{{ModId}}/AdvMagBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"guild_book",
+						"magazine_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_AdvMagBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedAdvMagBook": true,
+			},
+        },
+
+		// AdvHealBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/AdvHealBook",
+			"FromFile": "Data/Assets/AdvHealBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_AdvHealBookNote": {
+					"Name": "{{ModId}}_AdvHealBookNote",
+					"DisplayName": "{{i18n:Si.BC.AdvHealBookName}}",
+					"Description": "{{i18n:Si.BC.AdvHealBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/AdvHealBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_AdvHealBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasAdvHealBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedAdvHealBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_AdvHealBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedAdvHealBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_AdvHealBook": {
+					"Name": "{{ModId}}_AdvHealBook",
+					"DisplayName": "{{i18n:Si.BC.AdvHealBookName}}",
+					"Description": "{{i18n:Si.BC.AdvHealBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 612,
+					"Texture": "Mods/{{ModId}}/AdvHealBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"medical_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_AdvHealBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedAdvHealBook": true,
+			},
+        },
+
+		// AardvarkBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/AardvarkBook",
+			"FromFile": "Data/Assets/AardvarkBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_AardvarkBookNote": {
+					"Name": "{{ModId}}_AardvarkBookNote",
+					"DisplayName": "{{i18n:Si.BC.AardvarkBookName}}",
+					"Description": "{{i18n:Si.BC.AardvarkBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/AardvarkBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_AardvarkBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasAardvarkBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedAardvarkBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_AardvarkBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedAardvarkBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_AardvarkBook": {
+					"Name": "{{ModId}}_AardvarkBook",
+					"DisplayName": "{{i18n:Si.BC.AardvarkBookName}}",
+					"Description": "{{i18n:Si.BC.AardvarkBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 250,
+					"Texture": "Mods/{{ModId}}/AardvarkBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"adventure_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_AardvarkBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedAardvarkBook": true,
+			},
+        },
+
+		// ArchGuide
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ArchGuide",
+			"FromFile": "Data/Assets/ArchGuide.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ArchGuideNote": {
+					"Name": "{{ModId}}_ArchGuideNote",
+					"DisplayName": "{{i18n:Si.BC.ArchGuideName}}",
+					"Description": "{{i18n:Si.BC.ArchGuideDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/ArchGuide",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ArchGuideNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasArchGuide": true,
+				"HasFlag: |contains={{ModId}}_ReceivedArchGuide": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ArchGuideNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedArchGuide": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ArchGuide": {
+					"Name": "{{ModId}}_ArchGuide",
+					"DisplayName": "{{i18n:Si.BC.ArchGuideName}}",
+					"Description": "{{i18n:Si.BC.ArchGuideDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 781,
+					"Texture": "Mods/{{ModId}}/ArchGuide",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"history_book",
+						"guide_book",
+						"nonfiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ArchGuide", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedArchGuide": true,
+			},
+        },
+
+		// AstroBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/AstroBook",
+			"FromFile": "Data/Assets/AstroBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_AstroBookNote": {
+					"Name": "{{ModId}}_AstroBookNote",
+					"DisplayName": "{{i18n:Si.BC.AstroBookName}}",
+					"Description": "{{i18n:Si.BC.AstroBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/AstroBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_AstroBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasAstroBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedAstroBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_AstroBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedAstroBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_AstroBook": {
+					"Name": "{{ModId}}_AstroBook",
+					"DisplayName": "{{i18n:Si.BC.AstroBookName}}",
+					"Description": "{{i18n:Si.BC.AstroBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 270,
+					"Texture": "Mods/{{ModId}}/AstroBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"space_book",
+						"science_book",
+						"magazine_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_AstroBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedAstroBook": true,
+			},
+        },
+
+		// BatMatBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/BatMatBook",
+			"FromFile": "Data/Assets/BatMatBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_BatMatBookNote": {
+					"Name": "{{ModId}}_BatMatBookNote",
+					"DisplayName": "{{i18n:Si.BC.BatMatBookName}}",
+					"Description": "{{i18n:Si.BC.BatMatBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/BatMatBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_BatMatBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasBatMatBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedBatMatBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_BatMatBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedBatMatBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_BatMatBook": {
+					"Name": "{{ModId}}_BatMatBook",
+					"DisplayName": "{{i18n:Si.BC.BatMatBookName}}",
+					"Description": "{{i18n:Si.BC.BatMatBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 308,
+					"Texture": "Mods/{{ModId}}/BatMatBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"kid_book",
+						"poem_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BatMatBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedBatMatBook": true,
+			},
+        },
+
+		// BetterHomesBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/BetterHomesBook",
+			"FromFile": "Data/Assets/BetterHomesBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_BetterHomesBookNote": {
+					"Name": "{{ModId}}_BetterHomesBookNote",
+					"DisplayName": "{{i18n:Si.BC.BetterHomesBookName}}",
+					"Description": "{{i18n:Si.BC.BetterHomesBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/BetterHomesBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_BetterHomesBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasBetterHomesBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedBetterHomesBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_BetterHomesBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedBetterHomesBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_BetterHomesBook": {
+					"Name": "{{ModId}}_BetterHomesBook",
+					"DisplayName": "{{i18n:Si.BC.BetterHomesBookName}}",
+					"Description": "{{i18n:Si.BC.BetterHomesBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 460,
+					"Texture": "Mods/{{ModId}}/BetterHomesBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"recipe_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BetterHomesBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedBetterHomesBook": true,
+			},
+        },
+
+		// ElliotTowerBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ElliotTowerBook",
+			"FromFile": "Data/Assets/ElliotTowerBook.png",
+			"When": {
+				"HasSeenEvent: |contains=39": false,
+			},
+		},
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ElliotTowerBook",
+			"FromFile": "Data/Assets/ElliotTowerBook.png",
+			"When": {
+				"HasSeenEvent: |contains=39": true,
+				"HasFlag: |contains={{ModId}}_TowerFlag": true,
+			},
+		},
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ElliotTowerBook",
+			"FromFile": "Data/Assets/ElliotTowerDraft.png",
+			"When": {
+				"HasSeenEvent: |contains=39": true,
+				"HasFlag: |contains={{ModId}}_TowerFlag": false,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ElliotTowerBookNote": {
+					"Name": "{{ModId}}_ElliotTowerBookNote",
+					"DisplayName": "{{i18n:Si.BC.ElliotTowerBookName}}",
+					"Description": "{{i18n:Si.BC.ElliotTowerBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/ElliotTowerBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ElliotTowerBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasElliotTowerBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedElliotTowerBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ElliotTowerBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedElliotTowerBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ElliotTowerBook": {
+					"Name": "{{ModId}}_ElliotTowerBook",
+					"DisplayName": "{{i18n:Si.BC.ElliotTowerBookName}}",
+					"Description": "{{i18n:Si.BC.ElliotTowerBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 840,
+					"Texture": "Mods/{{ModId}}/ElliotTowerBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"elliott_book",
+						"mystery_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ElliotTowerBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedElliotTowerBook": true,
+			},
+        },
+
+		// YobaBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/YobaBook",
+			"FromFile": "Data/Assets/YobaBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_YobaBookNote": {
+					"Name": "{{ModId}}_YobaBookNote",
+					"DisplayName": "{{i18n:Si.BC.YobaBookName}}",
+					"Description": "{{i18n:Si.BC.YobaBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/YobaBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_YobaBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasYobaBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedYobaBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_YobaBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedYobaBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_YobaBook": {
+					"Name": "{{ModId}}_YobaBook",
+					"DisplayName": "{{i18n:Si.BC.YobaBookName}}",
+					"Description": "{{i18n:Si.BC.YobaBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 210,
+					"Texture": "Mods/{{ModId}}/YobaBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"selfhelp_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_YobaBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedYobaBook": true,
+			},
+        },
+
+		// BookkeepingBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/BookkeepingBook",
+			"FromFile": "Data/Assets/BookkeepingBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_BookkeepingBookNote": {
+					"Name": "{{ModId}}_BookkeepingBookNote",
+					"DisplayName": "{{i18n:Si.BC.BookkeepingBookName}}",
+					"Description": "{{i18n:Si.BC.BookkeepingBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/BookkeepingBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_BookkeepingBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasBookkeepingBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedBookkeepingBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_BookkeepingBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedBookkeepingBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_BookkeepingBook": {
+					"Name": "{{ModId}}_BookkeepingBook",
+					"DisplayName": "{{i18n:Si.BC.BookkeepingBookName}}",
+					"Description": "{{i18n:Si.BC.BookkeepingBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 456,
+					"Texture": "Mods/{{ModId}}/BookkeepingBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"business_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BookkeepingBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedBookkeepingBook": true,
+			},
+        },
+
+		// DarkroomBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/DarkroomBook",
+			"FromFile": "Data/Assets/DarkroomBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_DarkroomBookNote": {
+					"Name": "{{ModId}}_DarkroomBookNote",
+					"DisplayName": "{{i18n:Si.BC.DarkroomBookName}}",
+					"Description": "{{i18n:Si.BC.DarkroomBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/DarkroomBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_DarkroomBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasDarkroomBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedDarkroomBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_DarkroomBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedDarkroomBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_DarkroomBook": {
+					"Name": "{{ModId}}_DarkroomBook",
+					"DisplayName": "{{i18n:Si.BC.DarkroomBookName}}",
+					"Description": "{{i18n:Si.BC.DarkroomBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 792,
+					"Texture": "Mods/{{ModId}}/DarkroomBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_DarkroomBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedDarkroomBook": true,
+			},
+        },
+
+		// CSharpBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/CSharpBook",
+			"FromFile": "Data/Assets/CSharpBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CSharpBookNote": {
+					"Name": "{{ModId}}_CSharpBookNote",
+					"DisplayName": "{{i18n:Si.BC.CSharpBookName}}",
+					"Description": "{{i18n:Si.BC.CSharpBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 207,
+					"Texture": "Mods/{{ModId}}/CSharpBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CSharpBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasCSharpBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedCSharpBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CSharpBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCSharpBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CSharpBook": {
+					"Name": "{{ModId}}_CSharpBook",
+					"DisplayName": "{{i18n:Si.BC.CSharpBookName}}",
+					"Description": "{{i18n:Si.BC.CSharpBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 757,
+					"Texture": "Mods/{{ModId}}/CSharpBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CSharpBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCSharpBook": true,
+			},
+        },
+
+		// ElliotStationBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ElliotStationBook",
+			"FromFile": "Data/Assets/ElliotStationBook.png",
+			"When": {
+				"HasSeenEvent: |contains=39": false,
+			},
+		},
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ElliotStationBook",
+			"FromFile": "Data/Assets/ElliotStationBook.png",
+			"When": {
+				"HasSeenEvent: |contains=39": true,
+				"HasFlag: |contains={{ModId}}_StationFlag": true,
+			},
+		},
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ElliotStationBook",
+			"FromFile": "Data/Assets/ElliotStationDraft.png",
+			"When": {
+				"HasSeenEvent: |contains=39": true,
+				"HasFlag: |contains={{ModId}}_StationFlag": false,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ElliotStationBookNote": {
+					"Name": "{{ModId}}_ElliotStationBookNote",
+					"DisplayName": "{{i18n:Si.BC.ElliotStationBookName}}",
+					"Description": "{{i18n:Si.BC.ElliotStationBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/ElliotStationBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ElliotStationBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasElliotStationBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedElliotStationBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ElliotStationBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedElliotStationBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ElliotStationBook": {
+					"Name": "{{ModId}}_ElliotStationBook",
+					"DisplayName": "{{i18n:Si.BC.ElliotStationBookName}}",
+					"Description": "{{i18n:Si.BC.ElliotStationBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 645,
+					"Texture": "Mods/{{ModId}}/ElliotStationBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"elliott_book",
+						"romance_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ElliotStationBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedElliotStationBook": true,
+			},
+        },
+
+		// CampfireBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/CampfireBook",
+			"FromFile": "Data/Assets/CampfireBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CampfireBookNote": {
+					"Name": "{{ModId}}_CampfireBookNote",
+					"DisplayName": "{{i18n:Si.BC.CampfireBookName}}",
+					"Description": "{{i18n:Si.BC.CampfireBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/CampfireBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CampfireBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasCampfireBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedCampfireBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CampfireBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCampfireBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CampfireBook": {
+					"Name": "{{ModId}}_CampfireBook",
+					"DisplayName": "{{i18n:Si.BC.CampfireBookName}}",
+					"Description": "{{i18n:Si.BC.CampfireBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 578,
+					"Texture": "Mods/{{ModId}}/CampfireBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"recipe_book",
+						"nature_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CampfireBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCampfireBook": true,
+			},
+        },
+
+		// ChickenBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ChickenBook",
+			"FromFile": "Data/Assets/ChickenBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ChickenBookNote": {
+					"Name": "{{ModId}}_ChickenBookNote",
+					"DisplayName": "{{i18n:Si.BC.ChickenBookName}}",
+					"Description": "{{i18n:Si.BC.ChickenBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/ChickenBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ChickenBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasChickenBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedChickenBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ChickenBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedChickenBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ChickenBook": {
+					"Name": "{{ModId}}_ChickenBook",
+					"DisplayName": "{{i18n:Si.BC.ChickenBookName}}",
+					"Description": "{{i18n:Si.BC.ChickenBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 464,
+					"Texture": "Mods/{{ModId}}/ChickenBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"animal_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ChickenBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedChickenBook": true,
+			},
+        },
+
+		// CookiesBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/CookiesBook",
+			"FromFile": "Data/Assets/CookiesBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CookiesBookNote": {
+					"Name": "{{ModId}}_CookiesBookNote",
+					"DisplayName": "{{i18n:Si.BC.CookiesBookName}}",
+					"Description": "{{i18n:Si.BC.CookiesBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/CookiesBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CookiesBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasCookiesBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedCookiesBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CookiesBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCookiesBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CookiesBook": {
+					"Name": "{{ModId}}_CookiesBook",
+					"DisplayName": "{{i18n:Si.BC.CookiesBookName}}",
+					"Description": "{{i18n:Si.BC.CookiesBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 684,
+					"Texture": "Mods/{{ModId}}/CookiesBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"recipe_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CookiesBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCookiesBook": true,
+			},
+        },
+
+		// CrystalBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/CrystalBook",
+			"FromFile": "Data/Assets/CrystalBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CrystalBookNote": {
+					"Name": "{{ModId}}_CrystalBookNote",
+					"DisplayName": "{{i18n:Si.BC.CrystalBookName}}",
+					"Description": "{{i18n:Si.BC.CrystalBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/CrystalBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CrystalBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasCrystalBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedCrystalBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CrystalBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCrystalBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CrystalBook": {
+					"Name": "{{ModId}}_CrystalBook",
+					"DisplayName": "{{i18n:Si.BC.CrystalBookName}}",
+					"Description": "{{i18n:Si.BC.CrystalBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 777,
+					"Texture": "Mods/{{ModId}}/CrystalBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"selfhelp_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CrystalBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCrystalBook": true,
+			},
+        },
+
+		// WitchBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/WitchBook",
+			"FromFile": "Data/Assets/WitchBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_WitchBookNote": {
+					"Name": "{{ModId}}_WitchBookNote",
+					"DisplayName": "{{i18n:Si.BC.WitchBookName}}",
+					"Description": "{{i18n:Si.BC.WitchBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/WitchBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_WitchBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasWitchBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedWitchBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_WitchBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedWitchBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_WitchBook": {
+					"Name": "{{ModId}}_WitchBook",
+					"DisplayName": "{{i18n:Si.BC.WitchBookName}}",
+					"Description": "{{i18n:Si.BC.WitchBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 464,
+					"Texture": "Mods/{{ModId}}/WitchBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"magic_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_WitchBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedWitchBook": true,
+			},
+        },
+
+		// CoalminerBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/CoalminerBook",
+			"FromFile": "Data/Assets/CoalminerBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CoalminerBookNote": {
+					"Name": "{{ModId}}_CoalminerBookNote",
+					"DisplayName": "{{i18n:Si.BC.CoalminerBookName}}",
+					"Description": "{{i18n:Si.BC.CoalminerBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/CoalminerBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CoalminerBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasCoalminerBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedCoalminerBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CoalminerBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCoalminerBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CoalminerBook": {
+					"Name": "{{ModId}}_CoalminerBook",
+					"DisplayName": "{{i18n:Si.BC.CoalminerBookName}}",
+					"Description": "{{i18n:Si.BC.CoalminerBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 357,
+					"Texture": "Mods/{{ModId}}/CoalminerBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"history_book",
+						"nonfiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CoalminerBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCoalminerBook": true,
+			},
+        },
+
+		// LossBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/LossBook",
+			"FromFile": "Data/Assets/LossBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_LossBookNote": {
+					"Name": "{{ModId}}_LossBookNote",
+					"DisplayName": "{{i18n:Si.BC.LossBookName}}",
+					"Description": "{{i18n:Si.BC.LossBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/LossBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_LossBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasLossBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedLossBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_LossBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedLossBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_LossBook": {
+					"Name": "{{ModId}}_LossBook",
+					"DisplayName": "{{i18n:Si.BC.LossBookName}}",
+					"Description": "{{i18n:Si.BC.LossBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 631,
+					"Texture": "Mods/{{ModId}}/LossBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"relationship_book",
+						"selfhelp_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_LossBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedLossBook": true,
+			},
+        },
+
+		// KneeBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/KneeBook",
+			"FromFile": "Data/Assets/KneeBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_KneeBookNote": {
+					"Name": "{{ModId}}_KneeBookNote",
+					"DisplayName": "{{i18n:Si.BC.KneeBookName}}",
+					"Description": "{{i18n:Si.BC.KneeBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/KneeBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_KneeBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasKneeBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedKneeBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_KneeBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedKneeBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_KneeBook": {
+					"Name": "{{ModId}}_KneeBook",
+					"DisplayName": "{{i18n:Si.BC.KneeBookName}}",
+					"Description": "{{i18n:Si.BC.KneeBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 932,
+					"Texture": "Mods/{{ModId}}/KneeBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"medical_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_KneeBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedKneeBook": true,
+			},
+        },
+
+		// DMGBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/DMGBook",
+			"FromFile": "Data/Assets/DMGBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_DMGBookNote": {
+					"Name": "{{ModId}}_DMGBookNote",
+					"DisplayName": "{{i18n:Si.BC.DMGBookName}}",
+					"Description": "{{i18n:Si.BC.DMGBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/DMGBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_DMGBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasDMGBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedDMGBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_DMGBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedDMGBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_DMGBook": {
+					"Name": "{{ModId}}_DMGBook",
+					"DisplayName": "{{i18n:Si.BC.DMGBookName}}",
+					"Description": "{{i18n:Si.BC.DMGBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 656,
+					"Texture": "Mods/{{ModId}}/DMGBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"dnd_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_DMGBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedDMGBook": true,
+			},
+        },
+
+		// SmallBizBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/SmallBizBook",
+			"FromFile": "Data/Assets/SmallBizBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SmallBizBookNote": {
+					"Name": "{{ModId}}_SmallBizBookNote",
+					"DisplayName": "{{i18n:Si.BC.SmallBizBookName}}",
+					"Description": "{{i18n:Si.BC.SmallBizBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/SmallBizBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SmallBizBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasSmallBizBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedSmallBizBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SmallBizBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSmallBizBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SmallBizBook": {
+					"Name": "{{ModId}}_SmallBizBook",
+					"DisplayName": "{{i18n:Si.BC.SmallBizBookName}}",
+					"Description": "{{i18n:Si.BC.SmallBizBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 852,
+					"Texture": "Mods/{{ModId}}/SmallBizBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"business_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SmallBizBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSmallBizBook": true,
+			},
+        },
+
+		// ToolboxBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ToolboxBook",
+			"FromFile": "Data/Assets/ToolboxBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ToolboxBookNote": {
+					"Name": "{{ModId}}_ToolboxBookNote",
+					"DisplayName": "{{i18n:Si.BC.ToolboxBookName}}",
+					"Description": "{{i18n:Si.BC.ToolboxBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/ToolboxBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ToolboxBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasToolboxBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedToolboxBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ToolboxBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedToolboxBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ToolboxBook": {
+					"Name": "{{ModId}}_ToolboxBook",
+					"DisplayName": "{{i18n:Si.BC.ToolboxBookName}}",
+					"Description": "{{i18n:Si.BC.ToolboxBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 764,
+					"Texture": "Mods/{{ModId}}/ToolboxBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"science_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ToolboxBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedToolboxBook": true,
+			},
+        },
+
+		// FableBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/FableBook",
+			"FromFile": "Data/Assets/FableBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_FableBookNote": {
+					"Name": "{{ModId}}_FableBookNote",
+					"DisplayName": "{{i18n:Si.BC.FableBookName}}",
+					"Description": "{{i18n:Si.BC.FableBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/FableBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_FableBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasFableBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedFableBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_FableBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedFableBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_FableBook": {
+					"Name": "{{ModId}}_FableBook",
+					"DisplayName": "{{i18n:Si.BC.FableBookName}}",
+					"Description": "{{i18n:Si.BC.FableBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 287,
+					"Texture": "Mods/{{ModId}}/FableBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"kid_book",
+						"fantasy_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_FableBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedFableBook": true,
+			},
+        },
+
+		// FernBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/FernBook",
+			"FromFile": "Data/Assets/FernBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_FernBookNote": {
+					"Name": "{{ModId}}_FernBookNote",
+					"DisplayName": "{{i18n:Si.BC.FernBookName}}",
+					"Description": "{{i18n:Si.BC.FernBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/FernBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_FernBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasFernBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedFernBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_FernBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedFernBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_FernBook": {
+					"Name": "{{ModId}}_FernBook",
+					"DisplayName": "{{i18n:Si.BC.FernBookName}}",
+					"Description": "{{i18n:Si.BC.FernBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 187,
+					"Texture": "Mods/{{ModId}}/FernBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"travel_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_FernBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedFernBook": true,
+			},
+        },
+
+		// WoodBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/WoodBook",
+			"FromFile": "Data/Assets/WoodBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_WoodBookNote": {
+					"Name": "{{ModId}}_WoodBookNote",
+					"DisplayName": "{{i18n:Si.BC.WoodBookName}}",
+					"Description": "{{i18n:Si.BC.WoodBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/WoodBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_WoodBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasWoodBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedWoodBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_WoodBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedWoodBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_WoodBook": {
+					"Name": "{{ModId}}_WoodBook",
+					"DisplayName": "{{i18n:Si.BC.WoodBookName}}",
+					"Description": "{{i18n:Si.BC.WoodBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 744,
+					"Texture": "Mods/{{ModId}}/WoodBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"craft_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_WoodBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedWoodBook": true,
+			},
+        },
+
+		// CloakBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/CloakBook",
+			"FromFile": "Data/Assets/CloakBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CloakBookNote": {
+					"Name": "{{ModId}}_CloakBookNote",
+					"DisplayName": "{{i18n:Si.BC.CloakBookName}}",
+					"Description": "{{i18n:Si.BC.CloakBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/CloakBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CloakBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasCloakBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedCloakBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CloakBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCloakBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CloakBook": {
+					"Name": "{{ModId}}_CloakBook",
+					"DisplayName": "{{i18n:Si.BC.CloakBookName}}",
+					"Description": "{{i18n:Si.BC.CloakBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 856,
+					"Texture": "Mods/{{ModId}}/CloakBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"fashion_book",
+						"guild_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CloakBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCloakBook": true,
+			},
+        },
+
+		// FireproofingBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/FireproofingBook",
+			"FromFile": "Data/Assets/FireproofingBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_FireproofingBookNote": {
+					"Name": "{{ModId}}_FireproofingBookNote",
+					"DisplayName": "{{i18n:Si.BC.FireproofingBookName}}",
+					"Description": "{{i18n:Si.BC.FireproofingBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/FireproofingBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_FireproofingBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasFireproofingBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedFireproofingBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_FireproofingBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedFireproofingBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_FireproofingBook": {
+					"Name": "{{ModId}}_FireproofingBook",
+					"DisplayName": "{{i18n:Si.BC.FireproofingBookName}}",
+					"Description": "{{i18n:Si.BC.FireproofingBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 754,
+					"Texture": "Mods/{{ModId}}/FireproofingBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"craft_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_FireproofingBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedFireproofingBook": true,
+			},
+        },
+
+		// FerngillFishBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/FerngillFishBook",
+			"FromFile": "Data/Assets/FerngillFishBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_FerngillFishBookNote": {
+					"Name": "{{ModId}}_FerngillFishBookNote",
+					"DisplayName": "{{i18n:Si.BC.FerngillFishBookName}}",
+					"Description": "{{i18n:Si.BC.FerngillFishBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/FerngillFishBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_FerngillFishBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasFerngillFishBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedFerngillFishBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_FerngillFishBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedFerngillFishBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_FerngillFishBook": {
+					"Name": "{{ModId}}_FerngillFishBook",
+					"DisplayName": "{{i18n:Si.BC.FerngillFishBookName}}",
+					"Description": "{{i18n:Si.BC.FerngillFishBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 754,
+					"Texture": "Mods/{{ModId}}/FerngillFishBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"fish_book",
+						"nature_book",
+						"nonfiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_FerngillFishBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedFerngillFishBook": true,
+			},
+        },
+
+		// DanceBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/DanceBook",
+			"FromFile": "Data/Assets/DanceBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_DanceBookNote": {
+					"Name": "{{ModId}}_DanceBookNote",
+					"DisplayName": "{{i18n:Si.BC.DanceBookName}}",
+					"Description": "{{i18n:Si.BC.DanceBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/DanceBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_DanceBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasDanceBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedDanceBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_DanceBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedDanceBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_DanceBook": {
+					"Name": "{{ModId}}_DanceBook",
+					"DisplayName": "{{i18n:Si.BC.DanceBookName}}",
+					"Description": "{{i18n:Si.BC.DanceBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 796,
+					"Texture": "Mods/{{ModId}}/DanceBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"sport_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_DanceBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedDanceBook": true,
+			},
+        },
+
+		// TeaBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/TeaBook",
+			"FromFile": "Data/Assets/TeaBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_TeaBookNote": {
+					"Name": "{{ModId}}_TeaBookNote",
+					"DisplayName": "{{i18n:Si.BC.TeaBookName}}",
+					"Description": "{{i18n:Si.BC.TeaBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/TeaBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_TeaBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasTeaBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedTeaBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_TeaBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedTeaBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_TeaBook": {
+					"Name": "{{ModId}}_TeaBook",
+					"DisplayName": "{{i18n:Si.BC.TeaBookName}}",
+					"Description": "{{i18n:Si.BC.TeaBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 478,
+					"Texture": "Mods/{{ModId}}/TeaBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"culture_book",
+						"history_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_TeaBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedTeaBook": true,
+			},
+        },
+
+		// GridballBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/GridballBook",
+			"FromFile": "Data/Assets/GridballBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_GridballBookNote": {
+					"Name": "{{ModId}}_GridballBookNote",
+					"DisplayName": "{{i18n:Si.BC.GridballBookName}}",
+					"Description": "{{i18n:Si.BC.GridballBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/GridballBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_GridballBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasGridballBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedGridballBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_GridballBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedGridballBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_GridballBook": {
+					"Name": "{{ModId}}_GridballBook",
+					"DisplayName": "{{i18n:Si.BC.GridballBookName}}",
+					"Description": "{{i18n:Si.BC.GridballBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 743,
+					"Texture": "Mods/{{ModId}}/GridballBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"sport_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_GridballBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedGridballBook": true,
+			},
+        },
+
+		// RadioBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/RadioBook",
+			"FromFile": "Data/Assets/RadioBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_RadioBookNote": {
+					"Name": "{{ModId}}_RadioBookNote",
+					"DisplayName": "{{i18n:Si.BC.RadioBookName}}",
+					"Description": "{{i18n:Si.BC.RadioBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/RadioBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_RadioBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasRadioBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedRadioBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_RadioBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedRadioBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_RadioBook": {
+					"Name": "{{ModId}}_RadioBook",
+					"DisplayName": "{{i18n:Si.BC.RadioBookName}}",
+					"Description": "{{i18n:Si.BC.RadioBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 605,
+					"Texture": "Mods/{{ModId}}/RadioBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_RadioBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedRadioBook": true,
+			},
+        },
+
+		// GoldBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/GoldBook",
+			"FromFile": "Data/Assets/GoldBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_GoldBookNote": {
+					"Name": "{{ModId}}_GoldBookNote",
+					"DisplayName": "{{i18n:Si.BC.GoldBookName}}",
+					"Description": "{{i18n:Si.BC.GoldBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 930,
+					"Texture": "Mods/{{ModId}}/GoldBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_GoldBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasGoldBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedGoldBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_GoldBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedGoldBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_GoldBook": {
+					"Name": "{{ModId}}_GoldBook",
+					"DisplayName": "{{i18n:Si.BC.GoldBookName}}",
+					"Description": "{{i18n:Si.BC.GoldBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 808,
+					"Texture": "Mods/{{ModId}}/GoldBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"craft_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_GoldBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedGoldBook": true,
+			},
+        },
+
+		// CleanSpellsBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/CleanSpellsBook",
+			"FromFile": "Data/Assets/CleanSpellsBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CleanSpellsBookNote": {
+					"Name": "{{ModId}}_CleanSpellsBookNote",
+					"DisplayName": "{{i18n:Si.BC.CleanSpellsBookName}}",
+					"Description": "{{i18n:Si.BC.CleanSpellsBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 987,
+					"Texture": "Mods/{{ModId}}/CleanSpellsBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CleanSpellsBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasCleanSpellsBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedCleanSpellsBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CleanSpellsBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCleanSpellsBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CleanSpellsBook": {
+					"Name": "{{ModId}}_CleanSpellsBook",
+					"DisplayName": "{{i18n:Si.BC.CleanSpellsBookName}}",
+					"Description": "{{i18n:Si.BC.CleanSpellsBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 987,
+					"Texture": "Mods/{{ModId}}/CleanSpellsBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"magic_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CleanSpellsBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCleanSpellsBook": true,
+			},
+        },
+
+		// OverbearingBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/OverbearingBook",
+			"FromFile": "Data/Assets/OverbearingBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_OverbearingBookNote": {
+					"Name": "{{ModId}}_OverbearingBookNote",
+					"DisplayName": "{{i18n:Si.BC.OverbearingBookName}}",
+					"Description": "{{i18n:Si.BC.OverbearingBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/OverbearingBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_OverbearingBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasOverbearingBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedOverbearingBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_OverbearingBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedOverbearingBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_OverbearingBook": {
+					"Name": "{{ModId}}_OverbearingBook",
+					"DisplayName": "{{i18n:Si.BC.OverbearingBookName}}",
+					"Description": "{{i18n:Si.BC.OverbearingBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 688,
+					"Texture": "Mods/{{ModId}}/OverbearingBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"relationship_book",
+						"selfhelp_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_OverbearingBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedOverbearingBook": true,
+			},
+        },
+
+		// GuineaBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/GuineaBook",
+			"FromFile": "Data/Assets/GuineaBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_GuineaBookNote": {
+					"Name": "{{ModId}}_GuineaBookNote",
+					"DisplayName": "{{i18n:Si.BC.GuineaBookName}}",
+					"Description": "{{i18n:Si.BC.GuineaBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/GuineaBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_GuineaBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasGuineaBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedGuineaBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_GuineaBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedGuineaBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_GuineaBook": {
+					"Name": "{{ModId}}_GuineaBook",
+					"DisplayName": "{{i18n:Si.BC.GuineaBookName}}",
+					"Description": "{{i18n:Si.BC.GuineaBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 353,
+					"Texture": "Mods/{{ModId}}/GuineaBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"animal_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_GuineaBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedGuineaBook": true,
+			},
+        },
+
+		// Human101Book
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/Human101Book",
+			"FromFile": "Data/Assets/Human101Book.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_Human101BookNote": {
+					"Name": "{{ModId}}_Human101BookNote",
+					"DisplayName": "{{i18n:Si.BC.Human101BookName}}",
+					"Description": "{{i18n:Si.BC.Human101BookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 427,
+					"Texture": "Mods/{{ModId}}/Human101Book",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_Human101BookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasHuman101Book": true,
+				"HasFlag: |contains={{ModId}}_ReceivedHuman101Book": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_Human101BookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedHuman101Book": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_Human101Book": {
+					"Name": "{{ModId}}_Human101Book",
+					"DisplayName": "{{i18n:Si.BC.Human101BookName}}",
+					"Description": "{{i18n:Si.BC.Human101BookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 427,
+					"Texture": "Mods/{{ModId}}/Human101Book",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"culture_book",
+						"relationship_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Human101Book", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedHuman101Book": true,
+			},
+        },
+
+		// HumanLingoBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/HumanLingoBook",
+			"FromFile": "Data/Assets/HumanLingoBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_HumanLingoBookNote": {
+					"Name": "{{ModId}}_HumanLingoBookNote",
+					"DisplayName": "{{i18n:Si.BC.HumanLingoBookName}}",
+					"Description": "{{i18n:Si.BC.HumanLingoBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/HumanLingoBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_HumanLingoBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasHumanLingoBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedHumanLingoBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_HumanLingoBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedHumanLingoBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_HumanLingoBook": {
+					"Name": "{{ModId}}_HumanLingoBook",
+					"DisplayName": "{{i18n:Si.BC.HumanLingoBookName}}",
+					"Description": "{{i18n:Si.BC.HumanLingoBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 474,
+					"Texture": "Mods/{{ModId}}/HumanLingoBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"culture_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_HumanLingoBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedHumanLingoBook": true,
+			},
+        },
+
+		// FlowerLingoBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/FlowerLingoBook",
+			"FromFile": "Data/Assets/FlowerLingoBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_FlowerLingoBookNote": {
+					"Name": "{{ModId}}_FlowerLingoBookNote",
+					"DisplayName": "{{i18n:Si.BC.FlowerLingoBookName}}",
+					"Description": "{{i18n:Si.BC.FlowerLingoBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/FlowerLingoBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_FlowerLingoBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasFlowerLingoBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedFlowerLingoBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_FlowerLingoBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedFlowerLingoBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_FlowerLingoBook": {
+					"Name": "{{ModId}}_FlowerLingoBook",
+					"DisplayName": "{{i18n:Si.BC.FlowerLingoBookName}}",
+					"Description": "{{i18n:Si.BC.FlowerLingoBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 754,
+					"Texture": "Mods/{{ModId}}/FlowerLingoBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"nature_book",
+						"culture_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_FlowerLingoBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedFlowerLingoBook": true,
+			},
+        },
+
+		// BusBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/BusBook",
+			"FromFile": "Data/Assets/BusBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_BusBookNote": {
+					"Name": "{{ModId}}_BusBookNote",
+					"DisplayName": "{{i18n:Si.BC.BusBookName}}",
+					"Description": "{{i18n:Si.BC.BusBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/BusBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_BusBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasBusBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedBusBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_BusBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedBusBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_BusBook": {
+					"Name": "{{ModId}}_BusBook",
+					"DisplayName": "{{i18n:Si.BC.BusBookName}}",
+					"Description": "{{i18n:Si.BC.BusBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 275,
+					"Texture": "Mods/{{ModId}}/BusBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BusBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedBusBook": true,
+			},
+        },
+
+		// LandBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/LandBook",
+			"FromFile": "Data/Assets/LandBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_LandBookNote": {
+					"Name": "{{ModId}}_LandBookNote",
+					"DisplayName": "{{i18n:Si.BC.LandBookName}}",
+					"Description": "{{i18n:Si.BC.LandBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/LandBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_LandBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasLandBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedLandBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_LandBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedLandBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_LandBook": {
+					"Name": "{{ModId}}_LandBook",
+					"DisplayName": "{{i18n:Si.BC.LandBookName}}",
+					"Description": "{{i18n:Si.BC.LandBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 864,
+					"Texture": "Mods/{{ModId}}/LandBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"nature_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_LandBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedLandBook": true,
+			},
+        },
+
+		// PulmonaryBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/PulmonaryBook",
+			"FromFile": "Data/Assets/PulmonaryBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_PulmonaryBookNote": {
+					"Name": "{{ModId}}_PulmonaryBookNote",
+					"DisplayName": "{{i18n:Si.BC.PulmonaryBookName}}",
+					"Description": "{{i18n:Si.BC.PulmonaryBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/PulmonaryBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_PulmonaryBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasPulmonaryBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedPulmonaryBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_PulmonaryBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedPulmonaryBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_PulmonaryBook": {
+					"Name": "{{ModId}}_PulmonaryBook",
+					"DisplayName": "{{i18n:Si.BC.PulmonaryBookName}}",
+					"Description": "{{i18n:Si.BC.PulmonaryBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 923,
+					"Texture": "Mods/{{ModId}}/PulmonaryBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"medical_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_PulmonaryBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedPulmonaryBook": true,
+			},
+        },
+
+		// HomeownerBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/HomeownerBook",
+			"FromFile": "Data/Assets/HomeownerBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_HomeownerBookNote": {
+					"Name": "{{ModId}}_HomeownerBookNote",
+					"DisplayName": "{{i18n:Si.BC.HomeownerBookName}}",
+					"Description": "{{i18n:Si.BC.HomeownerBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 845,
+					"Texture": "Mods/{{ModId}}/HomeownerBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_HomeownerBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasHomeownerBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedHomeownerBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_HomeownerBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedHomeownerBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_HomeownerBook": {
+					"Name": "{{ModId}}_HomeownerBook",
+					"DisplayName": "{{i18n:Si.BC.HomeownerBookName}}",
+					"Description": "{{i18n:Si.BC.HomeownerBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 845,
+					"Texture": "Mods/{{ModId}}/HomeownerBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"guide_book",
+						"nonfiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_HomeownerBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedHomeownerBook": true,
+			},
+        },
+
+		// CastleBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/CastleBook",
+			"FromFile": "Data/Assets/CastleBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CastleBookNote": {
+					"Name": "{{ModId}}_CastleBookNote",
+					"DisplayName": "{{i18n:Si.BC.CastleBookName}}",
+					"Description": "{{i18n:Si.BC.CastleBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/CastleBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CastleBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasCastleBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedCastleBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CastleBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCastleBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CastleBook": {
+					"Name": "{{ModId}}_CastleBook",
+					"DisplayName": "{{i18n:Si.BC.CastleBookName}}",
+					"Description": "{{i18n:Si.BC.CastleBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 246,
+					"Texture": "Mods/{{ModId}}/CastleBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"adventure_book",
+						"mystery_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CastleBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCastleBook": true,
+			},
+        },
+
+		// MarketArtBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/MarketArtBook",
+			"FromFile": "Data/Assets/MarketArtBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_MarketArtBookNote": {
+					"Name": "{{ModId}}_MarketArtBookNote",
+					"DisplayName": "{{i18n:Si.BC.MarketArtBookName}}",
+					"Description": "{{i18n:Si.BC.MarketArtBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/MarketArtBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_MarketArtBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasMarketArtBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedMarketArtBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_MarketArtBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedMarketArtBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_MarketArtBook": {
+					"Name": "{{ModId}}_MarketArtBook",
+					"DisplayName": "{{i18n:Si.BC.MarketArtBookName}}",
+					"Description": "{{i18n:Si.BC.MarketArtBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 634,
+					"Texture": "Mods/{{ModId}}/MarketArtBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"business_book",
+						"art_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MarketArtBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedMarketArtBook": true,
+			},
+        },
+
+		// MarnieLogBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/MarnieLogBook",
+			"FromFile": "Data/Assets/MarnieLogBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_MarnieLogBookNote": {
+					"Name": "{{ModId}}_MarnieLogBookNote",
+					"DisplayName": "{{i18n:Si.BC.MarnieLogBookName}}",
+					"Description": "{{i18n:Si.BC.MarnieLogBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/MarnieLogBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_MarnieLogBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasMarnieLogBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedMarnieLogBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_MarnieLogBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedMarnieLogBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_MarnieLogBook": {
+					"Name": "{{ModId}}_MarnieLogBook",
+					"DisplayName": "{{i18n:Si.BC.MarnieLogBookName}}",
+					"Description": "{{i18n:Si.BC.MarnieLogBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 340,
+					"Texture": "Mods/{{ModId}}/MarnieLogBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"animal_book",
+						"personal_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MarnieLogBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedMarnieLogBook": true,
+			},
+        },
+
+		// SecondMarriageBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/SecondMarriageBook",
+			"FromFile": "Data/Assets/SecondMarriageBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SecondMarriageBookNote": {
+					"Name": "{{ModId}}_SecondMarriageBookNote",
+					"DisplayName": "{{i18n:Si.BC.SecondMarriageBookName}}",
+					"Description": "{{i18n:Si.BC.SecondMarriageBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/SecondMarriageBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SecondMarriageBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasSecondMarriageBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedSecondMarriageBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SecondMarriageBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSecondMarriageBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SecondMarriageBook": {
+					"Name": "{{ModId}}_SecondMarriageBook",
+					"DisplayName": "{{i18n:Si.BC.SecondMarriageBookName}}",
+					"Description": "{{i18n:Si.BC.SecondMarriageBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 354,
+					"Texture": "Mods/{{ModId}}/SecondMarriageBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"relationship_book",
+						"selfhelp_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SecondMarriageBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSecondMarriageBook": true,
+			},
+        },
+
+		// MusclesBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/MusclesBook",
+			"FromFile": "Data/Assets/MusclesBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_MusclesBookNote": {
+					"Name": "{{ModId}}_MusclesBookNote",
+					"DisplayName": "{{i18n:Si.BC.MusclesBookName}}",
+					"Description": "{{i18n:Si.BC.MusclesBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/MusclesBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_MusclesBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasMusclesBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedMusclesBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_MusclesBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedMusclesBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_MusclesBook": {
+					"Name": "{{ModId}}_MusclesBook",
+					"DisplayName": "{{i18n:Si.BC.MusclesBookName}}",
+					"Description": "{{i18n:Si.BC.MusclesBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 299,
+					"Texture": "Mods/{{ModId}}/MusclesBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"sport_book",
+						"magazine_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MusclesBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedMusclesBook": true,
+			},
+        },
+
+		// PennyBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/PennyBook",
+			"FromFile": "Data/Assets/PennyBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_PennyBookNote": {
+					"Name": "{{ModId}}_PennyBookNote",
+					"DisplayName": "{{i18n:Si.BC.PennyBookName}}",
+					"Description": "{{i18n:Si.BC.PennyBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/PennyBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_PennyBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasPennyBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedPennyBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_PennyBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedPennyBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_PennyBook": {
+					"Name": "{{ModId}}_PennyBook",
+					"DisplayName": "{{i18n:Si.BC.PennyBookName}}",
+					"Description": "{{i18n:Si.BC.PennyBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 856,
+					"Texture": "Mods/{{ModId}}/PennyBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"mystery_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_PennyBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedPennyBook": true,
+			},
+        },
+
+		// NatGeoBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/NatGeoBook",
+			"FromFile": "Data/Assets/NatGeoBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_NatGeoBookNote": {
+					"Name": "{{ModId}}_NatGeoBookNote",
+					"DisplayName": "{{i18n:Si.BC.NatGeoBookName}}",
+					"Description": "{{i18n:Si.BC.NatGeoBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/NatGeoBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_NatGeoBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasNatGeoBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedNatGeoBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_NatGeoBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedNatGeoBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_NatGeoBook": {
+					"Name": "{{ModId}}_NatGeoBook",
+					"DisplayName": "{{i18n:Si.BC.NatGeoBookName}}",
+					"Description": "{{i18n:Si.BC.NatGeoBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 359,
+					"Texture": "Mods/{{ModId}}/NatGeoBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"photo_book",
+						"nature_book",
+						"science_book",
+						"magazine_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_NatGeoBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedNatGeoBook": true,
+			},
+        },
+
+		// NavBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/NavBook",
+			"FromFile": "Data/Assets/NavBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_NavBookNote": {
+					"Name": "{{ModId}}_NavBookNote",
+					"DisplayName": "{{i18n:Si.BC.NavBookName}}",
+					"Description": "{{i18n:Si.BC.NavBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/NavBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_NavBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasNavBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedNavBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_NavBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedNavBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_NavBook": {
+					"Name": "{{ModId}}_NavBook",
+					"DisplayName": "{{i18n:Si.BC.NavBookName}}",
+					"Description": "{{i18n:Si.BC.NavBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 646,
+					"Texture": "Mods/{{ModId}}/NavBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"travel_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_NavBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedNavBook": true,
+			},
+        },
+
+		// TeenagerBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/TeenagerBook",
+			"FromFile": "Data/Assets/TeenagerBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_TeenagerBookNote": {
+					"Name": "{{ModId}}_TeenagerBookNote",
+					"DisplayName": "{{i18n:Si.BC.TeenagerBookName}}",
+					"Description": "{{i18n:Si.BC.TeenagerBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/TeenagerBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_TeenagerBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasTeenagerBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedTeenagerBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_TeenagerBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedTeenagerBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_TeenagerBook": {
+					"Name": "{{ModId}}_TeenagerBook",
+					"DisplayName": "{{i18n:Si.BC.TeenagerBookName}}",
+					"Description": "{{i18n:Si.BC.TeenagerBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 795,
+					"Texture": "Mods/{{ModId}}/TeenagerBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"relationship_book",
+						"selfhelp_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_TeenagerBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedTeenagerBook": true,
+			},
+        },
+
+		// PHBBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/PHBBook",
+			"FromFile": "Data/Assets/PHBBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_PHBBookNote": {
+					"Name": "{{ModId}}_PHBBookNote",
+					"DisplayName": "{{i18n:Si.BC.PHBBookName}}",
+					"Description": "{{i18n:Si.BC.PHBBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/PHBBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_PHBBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasPHBBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedPHBBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_PHBBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedPHBBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_PHBBook": {
+					"Name": "{{ModId}}_PHBBook",
+					"DisplayName": "{{i18n:Si.BC.PHBBookName}}",
+					"Description": "{{i18n:Si.BC.PHBBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 748,
+					"Texture": "Mods/{{ModId}}/PHBBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"dnd_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_PHBBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedPHBBook": true,
+			},
+        },
+
+		// StepdadBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/StepdadBook",
+			"FromFile": "Data/Assets/StepdadBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_StepdadBookNote": {
+					"Name": "{{ModId}}_StepdadBookNote",
+					"DisplayName": "{{i18n:Si.BC.StepdadBookName}}",
+					"Description": "{{i18n:Si.BC.StepdadBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/StepdadBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_StepdadBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasStepdadBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedStepdadBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_StepdadBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedStepdadBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_StepdadBook": {
+					"Name": "{{ModId}}_StepdadBook",
+					"DisplayName": "{{i18n:Si.BC.StepdadBookName}}",
+					"Description": "{{i18n:Si.BC.StepdadBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 585,
+					"Texture": "Mods/{{ModId}}/StepdadBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"relationship_book",
+						"selfhelp_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_StepdadBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedStepdadBook": true,
+			},
+        },
+
+		// PrincessBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/PrincessBook",
+			"FromFile": "Data/Assets/PrincessBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_PrincessBookNote": {
+					"Name": "{{ModId}}_PrincessBookNote",
+					"DisplayName": "{{i18n:Si.BC.PrincessBookName}}",
+					"Description": "{{i18n:Si.BC.PrincessBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/PrincessBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_PrincessBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasPrincessBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedPrincessBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_PrincessBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedPrincessBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_PrincessBook": {
+					"Name": "{{ModId}}_PrincessBook",
+					"DisplayName": "{{i18n:Si.BC.PrincessBookName}}",
+					"Description": "{{i18n:Si.BC.PrincessBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 267,
+					"Texture": "Mods/{{ModId}}/PrincessBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"kid_book",
+						"fantasy_book",
+						"adventure_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_PrincessBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedPrincessBook": true,
+			},
+        },
+
+		// ReadersDigestBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ReadersDigestBook",
+			"FromFile": "Data/Assets/ReadersDigestBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ReadersDigestBookNote": {
+					"Name": "{{ModId}}_ReadersDigestBookNote",
+					"DisplayName": "{{i18n:Si.BC.ReadersDigestBookName}}",
+					"Description": "{{i18n:Si.BC.ReadersDigestBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/ReadersDigestBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+						"sold_book",
+					],
+				}
+			}
+		},
+
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"TargetField": [ "{{ModId}}_ReadersDigestBookNote", "ContextTags" ],
+		// 	"Entries": {
+		// 		"unread_book": "unread_book",
+		// 	},
+		// 	"When": {
+		// 		"HasFlag: |contains={{ModId}}_HasReadersDigestBook": true,
+		// 		"HasFlag: |contains={{ModId}}_ReceivedReadersDigestBook": false,
+		// 	},
+		// },
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ReadersDigestBookNote", "ContextTags" ],
+			"Entries": {
+				"sold_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedReadersDigestBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ReadersDigestBook": {
+					"Name": "{{ModId}}_ReadersDigestBook",
+					"DisplayName": "{{i18n:Si.BC.ReadersDigestBookName}}",
+					"Description": "{{i18n:Si.BC.ReadersDigestBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 307,
+					"Texture": "Mods/{{ModId}}/ReadersDigestBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"magazine_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ReadersDigestBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedReadersDigestBook": true,
+			},
+        },
+
+		// ElliotPlanetBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ElliotPlanetBook",
+			"FromFile": "Data/Assets/ElliotPlanetBook.png",
+			"When": {
+				"HasSeenEvent: |contains=39": false,
+			},
+		},
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ElliotPlanetBook",
+			"FromFile": "Data/Assets/ElliotPlanetBook.png",
+			"When": {
+				"HasSeenEvent: |contains=39": true,
+				"HasFlag: |contains={{ModId}}_PlanetFlag": true,
+			},
+		},
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ElliotPlanetBook",
+			"FromFile": "Data/Assets/ElliotPlanetDraft.png",
+			"When": {
+				"HasSeenEvent: |contains=39": true,
+				"HasFlag: |contains={{ModId}}_PlanetFlag": false,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ElliotPlanetBookNote": {
+					"Name": "{{ModId}}_ElliotPlanetBookNote",
+					"DisplayName": "{{i18n:Si.BC.ElliotPlanetBookName}}",
+					"Description": "{{i18n:Si.BC.ElliotPlanetBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/ElliotPlanetBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ElliotPlanetBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasElliotPlanetBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedElliotPlanetBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ElliotPlanetBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedElliotPlanetBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ElliotPlanetBook": {
+					"Name": "{{ModId}}_ElliotPlanetBook",
+					"DisplayName": "{{i18n:Si.BC.ElliotPlanetBookName}}",
+					"Description": "{{i18n:Si.BC.ElliotPlanetBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 648,
+					"Texture": "Mods/{{ModId}}/ElliotPlanetBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"elliott_book",
+						"scifi_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ElliotPlanetBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedElliotPlanetBook": true,
+			},
+        },
+
+		// SolarionBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/SolarionBook",
+			"FromFile": "Data/Assets/SolarionBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SolarionBookNote": {
+					"Name": "{{ModId}}_SolarionBookNote",
+					"DisplayName": "{{i18n:Si.BC.SolarionBookName}}",
+					"Description": "{{i18n:Si.BC.SolarionBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/SolarionBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SolarionBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasSolarionBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedSolarionBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SolarionBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSolarionBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SolarionBook": {
+					"Name": "{{ModId}}_SolarionBook",
+					"DisplayName": "{{i18n:Si.BC.SolarionBookName}}",
+					"Description": "{{i18n:Si.BC.SolarionBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 537,
+					"Texture": "Mods/{{ModId}}/SolarionBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"fantasy_book",
+						"adventure_book",
+						"dnd_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SolarionBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSolarionBook": true,
+			},
+        },
+
+		// StyleBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/StyleBook",
+			"FromFile": "Data/Assets/StyleBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_StyleBookNote": {
+					"Name": "{{ModId}}_StyleBookNote",
+					"DisplayName": "{{i18n:Si.BC.StyleBookName}}",
+					"Description": "{{i18n:Si.BC.StyleBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/StyleBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_StyleBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasStyleBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedStyleBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_StyleBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedStyleBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_StyleBook": {
+					"Name": "{{ModId}}_StyleBook",
+					"DisplayName": "{{i18n:Si.BC.StyleBookName}}",
+					"Description": "{{i18n:Si.BC.StyleBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 789,
+					"Texture": "Mods/{{ModId}}/StyleBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"fashion_book",
+						"magazine_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_StyleBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedStyleBook": true,
+			},
+        },
+
+		// CareBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/CareBook",
+			"FromFile": "Data/Assets/CareBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CareBookNote": {
+					"Name": "{{ModId}}_CareBookNote",
+					"DisplayName": "{{i18n:Si.BC.CareBookName}}",
+					"Description": "{{i18n:Si.BC.CareBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/CareBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CareBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasCareBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedCareBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_CareBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCareBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_CareBook": {
+					"Name": "{{ModId}}_CareBook",
+					"DisplayName": "{{i18n:Si.BC.CareBookName}}",
+					"Description": "{{i18n:Si.BC.CareBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 736,
+					"Texture": "Mods/{{ModId}}/CareBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"selfhelp_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CareBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedCareBook": true,
+			},
+        },
+
+		// ChimneyBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/ChimneyBook",
+			"FromFile": "Data/Assets/ChimneyBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ChimneyBookNote": {
+					"Name": "{{ModId}}_ChimneyBookNote",
+					"DisplayName": "{{i18n:Si.BC.ChimneyBookName}}",
+					"Description": "{{i18n:Si.BC.ChimneyBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/ChimneyBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ChimneyBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasChimneyBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedChimneyBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_ChimneyBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedChimneyBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ChimneyBook": {
+					"Name": "{{ModId}}_ChimneyBook",
+					"DisplayName": "{{i18n:Si.BC.ChimneyBookName}}",
+					"Description": "{{i18n:Si.BC.ChimneyBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 864,
+					"Texture": "Mods/{{ModId}}/ChimneyBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"romance_book",
+						"fiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_ChimneyBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedChimneyBook": true,
+			},
+        },
+
+		// SecondGradeBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/SecondGradeBook",
+			"FromFile": "Data/Assets/SecondGradeBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SecondGradeBookNote": {
+					"Name": "{{ModId}}_SecondGradeBookNote",
+					"DisplayName": "{{i18n:Si.BC.SecondGradeBookName}}",
+					"Description": "{{i18n:Si.BC.SecondGradeBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/SecondGradeBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SecondGradeBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasSecondGradeBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedSecondGradeBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SecondGradeBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSecondGradeBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SecondGradeBook": {
+					"Name": "{{ModId}}_SecondGradeBook",
+					"DisplayName": "{{i18n:Si.BC.SecondGradeBookName}}",
+					"Description": "{{i18n:Si.BC.SecondGradeBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 376,
+					"Texture": "Mods/{{ModId}}/SecondGradeBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SecondGradeBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSecondGradeBook": true,
+			},
+        },
+
+		// UFOBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/UFOBook",
+			"FromFile": "Data/Assets/UFOBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_UFOBookNote": {
+					"Name": "{{ModId}}_UFOBookNote",
+					"DisplayName": "{{i18n:Si.BC.UFOBookName}}",
+					"Description": "{{i18n:Si.BC.UFOBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/UFOBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_UFOBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasUFOBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedUFOBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_UFOBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedUFOBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_UFOBook": {
+					"Name": "{{ModId}}_UFOBook",
+					"DisplayName": "{{i18n:Si.BC.UFOBookName}}",
+					"Description": "{{i18n:Si.BC.UFOBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 257,
+					"Texture": "Mods/{{ModId}}/UFOBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"travel_book",
+						"history_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_UFOBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedUFOBook": true,
+			},
+        },
+
+		// SoldierBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/SoldierBook",
+			"FromFile": "Data/Assets/SoldierBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SoldierBookNote": {
+					"Name": "{{ModId}}_SoldierBookNote",
+					"DisplayName": "{{i18n:Si.BC.SoldierBookName}}",
+					"Description": "{{i18n:Si.BC.SoldierBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/SoldierBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SoldierBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasSoldierBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedSoldierBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_SoldierBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSoldierBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_SoldierBook": {
+					"Name": "{{ModId}}_SoldierBook",
+					"DisplayName": "{{i18n:Si.BC.SoldierBookName}}",
+					"Description": "{{i18n:Si.BC.SoldierBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 783,
+					"Texture": "Mods/{{ModId}}/SoldierBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"relationship_book",
+						"selfhelp_book",
+						"nonfiction_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SoldierBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedSoldierBook": true,
+			},
+        },
+
+		// StopJojaBook
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/StopJojaBook",
+			"FromFile": "Data/Assets/StopJojaBook.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_StopJojaBookNote": {
+					"Name": "{{ModId}}_StopJojaBookNote",
+					"DisplayName": "{{i18n:Si.BC.StopJojaBookName}}",
+					"Description": "{{i18n:Si.BC.StopJojaBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 303,
+					"Texture": "Mods/{{ModId}}/StopJojaBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_StopJojaBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": "unread_book",
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_HasStopJojaBook": true,
+				"HasFlag: |contains={{ModId}}_ReceivedStopJojaBook": false,
+			},
+		},
+	
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"TargetField": [ "{{ModId}}_StopJojaBookNote", "ContextTags" ],
+			"Entries": {
+				"unread_book": null,
+			},
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedStopJojaBook": true,
+			},
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_StopJojaBook": {
+					"Name": "{{ModId}}_StopJojaBook",
+					"DisplayName": "{{i18n:Si.BC.StopJojaBookName}}",
+					"Description": "{{i18n:Si.BC.StopJojaBookDesc}}",
+					"Type": "asdf",
+					"Category": 0,
+					"Price": 689,
+					"Texture": "Mods/{{ModId}}/StopJojaBook",
+					"ExcludeFromShippingCollection": true,
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"business_book",
+						"guide_book",
+						"bc_book",
+					],
+				}
+			}
+		},
+
+		{
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_StopJojaBook", "ContextTags" ],
+            "Entries": {
+                "read_book": "read_book",
+            },
+			"When": {
+				"HasFlag: |contains={{ModId}}_ReceivedStopJojaBook": true,
+			},
+        },
+
+	// End //////////////////////////////////////////////////////////
+
+	]
+
+
+}

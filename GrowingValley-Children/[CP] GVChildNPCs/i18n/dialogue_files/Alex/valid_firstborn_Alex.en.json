@@ -1,0 +1,448 @@
+{
+   "Changes": [
+		{
+			"LogName": "Add gift dialogue to gift tastes for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 0],
+					"Value": "{{i18n:AlexChild.GiftTastes.Love {{FirstbornTokenPass}} }}", //Loved gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 2],
+					"Value": "{{i18n:AlexChild.GiftTastes.Like {{FirstbornTokenPass}} }}", //Liked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 8],
+					"Value": "{{i18n:AlexChild.GiftTastes.Neutral {{FirstbornTokenPass}} }}", //Neutral gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 4],
+					"Value": "{{i18n:AlexChild.GiftTastes.Dislike {{FirstbornTokenPass}} }}", //Disliked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{FirstbornName}}", 6],
+					"Value": "{{i18n:AlexChild.GiftTastes.Hate {{FirstbornTokenPass}} }}", //Hated gift
+					"Delimiter": "",
+				},
+			],
+		},
+		
+		{
+			"LogName": "Fill firstborn's empty schedule dialogue with that of Alex's daughter.",
+			"Action": "EditData",
+			"Target": "Strings/schedules/{{FirstbornName}}",
+			"Entries": {
+				"Sun.000": "{{i18n:AlexChild.Schedule.Sun.000 {{FirstbornTokenPass}} }}",
+				"Sun.001": "{{i18n:AlexChild.Schedule.Sun.001 {{FirstbornTokenPass}} }}",
+				"Mon.000": "{{i18n:AlexChild.Schedule.Mon.000 {{FirstbornTokenPass}} }}",
+				"DesertFestival.000": "{{i18n:AlexChild.Schedule.DesertFestival.000 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.000": "{{i18n:AlexChild.Schedule.Schoolhouse.000 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.001": "{{i18n:AlexChild.Schedule.Schoolhouse.001 {{FirstbornTokenPass}} }}",
+				"Schoolhouse.002": "{{i18n:AlexChild.Schedule.Schoolhouse.002 {{FirstbornTokenPass}} }}",
+			}
+		},
+		{
+			"LogName": "Fill firstborn's empty dialogue with that of Alex's daughter.",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{FirstbornName}}",
+			"Entries": {
+				"AcceptBirthdayGift_Positive": "{{i18n:AlexChild.Dialogue.BirthdayGift_Positive {{FirstbornTokenPass}} }}",
+				"AcceptBirthdayGift_Negative": "{{i18n:AlexChild.Dialogue.BirthdayGift_Negative {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)StardropTea": "{{i18n:AlexChild.Dialogue.Gift_StardropTea {{FirstbornTokenPass}} }}",
+				"AcceptGift_(TR)IridiumSpur": "{{i18n:AlexChild.Dialogue.Gift_GoldenSpur {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)195": "{{i18n:AlexChild.Dialogue.Gift_Omelet {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)211": "{{i18n:AlexChild.Dialogue.Gift_Pancakes {{FirstbornTokenPass}} }}",
+				"AcceptGift_category_vegetable": "{{i18n:AlexChild.Dialogue.Gift_category_vegetable {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)201": "{{i18n:AlexChild.Dialogue.Gift_CompleteBreakfast {{FirstbornTokenPass}} }}",
+				"AcceptGift_coffee_item": "{{i18n:AlexChild.Dialogue.Gift_coffee_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_category_flowers": "{{i18n:AlexChild.Dialogue.Gift_category_flowers {{FirstbornTokenPass}} }}",
+				"AcceptGift_alcohol_item": "{{i18n:AlexChild.Dialogue.Gift_alcohol_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)239": "{{i18n:AlexChild.Dialogue.Gift_nuts_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)403": "{{i18n:AlexChild.Dialogue.Gift_nuts_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)408": "{{i18n:AlexChild.Dialogue.Gift_nuts_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)607": "{{i18n:AlexChild.Dialogue.Gift_nuts_item {{FirstbornTokenPass}} }}",
+				"AcceptGift_allergen_nut": "{{i18n:AlexChild.Dialogue.Gift_nuts_item {{FirstbornTokenPass}} }}",
+				"Resort_Entering": "{{i18n:AlexChild.Dialogue.Resort_Entering {{FirstbornTokenPass}} }}",
+				"Resort_Leaving": "{{i18n:AlexChild.Dialogue.Resort_Leaving {{FirstbornTokenPass}} }}",
+				"Resort": "{{i18n:AlexChild.Dialogue.Resort {{FirstbornTokenPass}} }}",
+				"GreenRain": "{{i18n:AlexChild.Dialogue.GreenRain {{FirstbornTokenPass}} }}",
+				"Mon": "{{i18n:AlexChild.Dialogue.Mon {{FirstbornTokenPass}} }}",
+				"Tue": "{{i18n:AlexChild.Dialogue.Tue {{FirstbornTokenPass}} }}",
+				"Wed": "{{i18n:AlexChild.Dialogue.Wed {{FirstbornTokenPass}} }}",
+				"Thu": "{{i18n:AlexChild.Dialogue.Thu {{FirstbornTokenPass}} }}",
+				"Fri": "{{i18n:AlexChild.Dialogue.Fri {{FirstbornTokenPass}} }}",
+				"Sat": "{{i18n:AlexChild.Dialogue.Sat {{FirstbornTokenPass}} }}",
+				"Sun": "{{i18n:AlexChild.Dialogue.Sun {{FirstbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:AlexChild.Dialogue.summer_Mon {{FirstbornTokenPass}} }}",
+				"summer_Tue": "{{i18n:AlexChild.Dialogue.summer_Tue {{FirstbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:AlexChild.Dialogue.summer_Wed {{FirstbornTokenPass}} }}",
+				"summer_Thu": "{{i18n:AlexChild.Dialogue.summer_Thu {{FirstbornTokenPass}} }}",
+				"summer_Fri": "{{i18n:AlexChild.Dialogue.summer_Fri {{FirstbornTokenPass}} }}",
+				"summer_Sat": "{{i18n:AlexChild.Dialogue.summer_Sat {{FirstbornTokenPass}} }}",
+				"summer_Sun": "{{i18n:AlexChild.Dialogue.summer_Sun {{FirstbornTokenPass}} }}",
+				"fall_Mon": "{{i18n:AlexChild.Dialogue.fall_Mon {{FirstbornTokenPass}} }}",
+				"fall_Tue": "{{i18n:AlexChild.Dialogue.fall_Tue {{FirstbornTokenPass}} }}",
+				"fall_Wed": "{{i18n:AlexChild.Dialogue.fall_Wed {{FirstbornTokenPass}} }}",
+				"fall_Thu": "{{i18n:AlexChild.Dialogue.fall_Thu {{FirstbornTokenPass}} }}",
+				"fall_Fri": "{{i18n:AlexChild.Dialogue.fall_Fri {{FirstbornTokenPass}} }}",
+				"fall_Sat": "{{i18n:AlexChild.Dialogue.fall_Sat {{FirstbornTokenPass}} }}",
+				"fall_Sun": "{{i18n:AlexChild.Dialogue.fall_Sun {{FirstbornTokenPass}} }}",
+				"winter_Mon": "{{i18n:AlexChild.Dialogue.winter_Mon {{FirstbornTokenPass}} }}",
+				"winter_Tue": "{{i18n:AlexChild.Dialogue.winter_Tue {{FirstbornTokenPass}} }}",
+				"winter_Wed": "{{i18n:AlexChild.Dialogue.winter_Wed {{FirstbornTokenPass}} }}",
+				"winter_Thu": "{{i18n:AlexChild.Dialogue.winter_Thu {{FirstbornTokenPass}} }}",
+				"winter_Fri": "{{i18n:AlexChild.Dialogue.winter_Fri {{FirstbornTokenPass}} }}",
+				"winter_Sat": "{{i18n:AlexChild.Dialogue.winter_Sat {{FirstbornTokenPass}} }}",
+				"winter_Sun": "{{i18n:AlexChild.Dialogue.winter_Sun {{FirstbornTokenPass}} }}",
+			}
+		},
+		{
+            "LogName": "Add rain dialogue for Alex's daughter as firstborn.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/rainy",
+            "Entries": {
+				"{{FirstbornName}}": "{{i18n:AlexChild.Dialogue.Rain {{FirstbornTokenPass}} }}",
+			}
+		},
+		
+		
+        {
+			"LogName": "Add Egg Festival dialogue for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring13",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.spring13_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.spring13_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Flower Dance dialogue for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.spring24_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.spring24_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Luau dialogue for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer11",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.summer11_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.summer11_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Moonlight Jellies dialogue for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer28",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.summer28_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.summer28_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Fair dialogue for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.fall16_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.fall16_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Spirit's Eve dialogue for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.fall27_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.fall27_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Festival of Ice dialogue for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.winter8_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.winter8_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Winter Star dialogue for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.winter25_y1 {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.winter25_y2 {{FirstbornTokenPass}} }}",
+			},
+		},
+		
+		{
+			"LogName": "Add dialogue for attending movies with other parent for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_3", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:AlexChild.Movie.With_Parent_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": {
+					"ResponsePoint": null,
+					"Script": "/message \"{{i18n:GeneralChildren.Movie.With_Parent_Script {{FirstbornTokenPass}} }}\"",
+					"Text": null
+				},
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:AlexChild.Movie.With_Parent_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for summer_movie_1 for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_4", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:AlexChild.Movie.summer_1_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:AlexChild.Movie.summer_1_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for loved movies for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_5", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:AlexChild.Movie.love_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:AlexChild.Movie.love_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for liked movies for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_6", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:AlexChild.Movie.like_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:AlexChild.Movie.like_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for disliked movies for Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{FirstbornName}}", "Reactions", "reaction_7", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:AlexChild.Movie.dislike_Before {{FirstbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:AlexChild.Movie.dislike_After {{FirstbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Edit Little Red School House map string for Growing Valley; Alex's daughter as firstborn.",
+			"Action": "EditData",
+			"Target": "Strings/StringsFromMaps",
+            "Entries": {
+				"Desk.18": "{{i18n:Schoolhouse.Desk18.AlexChild {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+			},
+		},
+		
+		//Conditional dialogue (schedules)
+		{
+            "LogName": "Edit schedule dialogue for Alex's daughter as firstborn to use genericized versions.",
+            "Action": "EditData",
+            "Target": "Strings/schedules/{{FirstbornName}}",
+            "Entries": {
+				"Sun.001": "{{i18n:AlexChild.Schedule.Sun.001.noncanon {{FirstbornTokenPass}} }}",
+				"Mon.000": "{{i18n:AlexChild.Schedule.Mon.000.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		
+		//Conditional dialogue (regular)
+		{
+            "LogName": "Edit dialogue for Alex's daughter as firstborn to use genericized versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"AcceptGift_(O)195": "{{i18n:AlexChild.Dialogue.Gift_Omelet.noncanon {{FirstbornTokenPass}} }}",
+				"AcceptGift_(O)201": "{{i18n:AlexChild.Dialogue.Gift_CompleteBreakfast.noncanon {{FirstbornTokenPass}} }}",
+				"Mon": "{{i18n:AlexChild.Dialogue.Mon.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:AlexChild.Dialogue.summer_Mon.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:AlexChild.Dialogue.summer_Wed.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Fri": "{{i18n:AlexChild.Dialogue.summer_Fri.noncanon {{FirstbornTokenPass}} }}",
+				"summer_Sun": "{{i18n:AlexChild.Dialogue.summer_Sun.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Wed": "{{i18n:AlexChild.Dialogue.fall_Wed.noncanon {{FirstbornTokenPass}} }}",
+				"fall_Sun": "{{i18n:AlexChild.Dialogue.fall_Sun.noncanon {{FirstbornTokenPass}} }}",
+				"winter_Sun": "{{i18n:AlexChild.Dialogue.winter_Sun.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		{
+            "LogName": "Edit dialogue for Alex's daughter as firstborn to use single parenting versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{FirstbornName}}",
+            "Entries": {
+				"Wed": "{{i18n:AlexChild.Dialogue.Wed.single {{FirstbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:AlexChild.Dialogue.summer_Wed.single {{FirstbornTokenPass}} }}",
+				"fall_Wed": "{{i18n:AlexChild.Dialogue.fall_Wed.single {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Single": true,
+			},
+		},
+		
+		//Conditional dialogue (festivals)
+		
+        {
+			"LogName": "Edit Egg Festival dialogue for Alex's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring13",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.spring13_y1.noncanon {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.spring13_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Flower Dance dialogue for Alex's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.spring24_y1.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Fair dialogue for Alex's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.fall16_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Spirit's Eve dialogue for Alex's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.fall27_y1.noncanon {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.fall27_y2.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Winter Star dialogue for Alex's daughter as firstborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.winter25_y1.noncanon {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Winter Star dialogue for Alex's daughter as firstborn to use single parenting versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{FirstbornName}}": "{{i18n:AlexChild.Festivals.winter25_y1.single_{{SiblingStatus}} {{FirstbornTokenPass}} }}",
+				 "{{FirstbornName}}_y2": "{{i18n:AlexChild.Festivals.winter25_y2.single {{FirstbornTokenPass}} }}",
+			},
+			"When": {
+				"FirstbornDialogue|contains=Single": true,
+			},
+		},
+		
+		
+   		{      
+			"LogName": "Include dialogue files which have been modified for translation for Alex's daughter as firstborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Alex/valid_firstborn_Alex_edit.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+		
+   ]
+}

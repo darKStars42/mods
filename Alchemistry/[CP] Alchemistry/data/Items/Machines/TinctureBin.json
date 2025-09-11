@@ -1,0 +1,1044 @@
+{
+    "Changes": [
+
+/*----------------------------------------------------
+Add Tincture Bin
+----------------------------------------------------*/
+
+        { 
+            "LogName":"Add Machine - Tincture Bin",
+                "Action": "EditData",
+                "Target": "Data/BigCraftables",
+                "Entries": {
+                    "{{ModId}}_TinctureBin": {
+                        "Name": "{{ModId}}_TinctureBin",
+                        "DisplayName": "{{i18n:Alchemistry_TinctureBin.name}}",
+                        "Description": "{{i18n:Alchemistry_TinctureBin.description}}",
+                        "Fragility": 0,
+                        "CanBePlacedOutdoors": true,
+                        "CanBePlacedIndoors": true,
+                        "Price": 0,
+                        "Texture": "Mods/{{ModId}}/Machines",
+                        "SpriteIndex": 16
+                    }
+                }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": { 
+                "(BC)Morghoula.AlchemistryCP_TinctureBin": {
+                    "OutputRules": []
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Outputs
+----------------------------------------------------*/ 
+        {
+            "LogName": "Load Tincture Bin Outputs",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC)Morghoula.AlchemistryCP_TinctureBin", "OutputRules"],
+            "Entries": {
+                //Tinctures - Crops
+                "{{ModID}}_HemlockTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_HemlockPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_HemlockTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_HemlockTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_InkberryTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_InkberryPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_InkberryTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_InkberryTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_StarlightHelleboreTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_StarlightHelleborePowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_StarlightHelleboreTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_StarlightHelleboreTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_WerewolfsBaneTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_WerewolfsBanePowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_WerewolfsBaneTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_WerewolfsBaneTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_SunsetCastorTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_SunsetCastorPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_SunsetCastorTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_SunsetCastorTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_BansheesBellTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_BansheesBellPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_BansheesBellTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_BansheesBellTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_MistletoeTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_MistletoePowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_MistletoeTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_MistletoeTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_WinterWailerTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_WinterWailerPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_WinterWailerTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_WinterWailerTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_AddersTongueTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_AddersTonguePowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_AddersTongueTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_AddersTongueTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 4.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 6000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DollsEyesTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DollsEyesPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_DollsEyesTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_DollsEyesTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 4.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 6000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_NightsShadeTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_NightsShadePowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_NightsShadeTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_NightsShadeTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 4.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 6000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_BleedingHeartTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_BleedingHeartPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_BleedingHeartTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_BleedingHeartTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 4.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 6000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+
+
+
+
+                //Mushrooms
+                "{{ModID}}_DawnsingerToadstoolTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DawnsingerToadstoolPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_DawnsingerToadstoolTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_DawnsingerToadstoolTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_LunarGlowcapTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_LunarGlowcapPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_LunarGlowcapTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_LunarGlowcapTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_InkCapTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_InkCapPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_InkCapTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_InkCapTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_LostSoulsTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_LostSoulsPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_LostSoulsTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_LostSoulsTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_MeteorCapTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_MeteorCapPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_MeteorCapTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_MeteorCapTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_FalseMorelTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_FalseMorelPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_FalseMorelTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_FalseMorelTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_WizardsEyeTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_WizardsEyePowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_WizardsEyeTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_WizardsEyeTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_FairieWingsTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_FairieWingsPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_FairieWingsTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_FairieWingsTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_RedSmilersTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_RedSmilersPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_RedSmilersTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_RedSmilersTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_NightCapTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_NightCapPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_NightCapTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_NightCapTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_SunriseGloryTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_SunriseGloryPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_SunriseGloryTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_SunriseGloryTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_CapOLanternTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_CapOLanternPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_CapOLanternTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_CapOLanternTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_HellfireBoleteTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_HellfireBoletePowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_HellfireBoleteTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_HellfireBoleteTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_SwampLighterTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_SwampLighterPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_SwampLighterTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_SwampLighterTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_BeachedOysterTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_BeachedOysterPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_BeachedOysterTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_BeachedOysterTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+
+
+
+                //Misc Forage
+                "{{ModID}}_DragonRootTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DragonRootPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_DragonRootTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_DragonRootTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 4000,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_MoonBerryTincture": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_MoonBerryPowder",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)Morghoula.AlchemistryCP_Glycerin",
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1",
+                                "selph.ExtraMachineConfig.RequirementId.2": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+                                "selph.ExtraMachineConfig.RequirementCount.2": "1",
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "Combine with 1 Glycerin and 1 Empty Flask."
+                            },
+                                "Id": "{{ModID}}_MoonBerryTincture",
+                                "ItemId": "(O)Morghoula.AlchemistryCP_MoonBerryTincture",
+                                "CopyQuality": true,
+                                "CopyPrice": true,
+                                "PriceModifierMode": "Stack",
+                                "PriceModifiers": [
+                                    {
+                                        "Modification": "Multiply",
+                                        "Amount": 3.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "MinutesUntilReady": 1440,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                }
+            }
+        }
+    ]
+}

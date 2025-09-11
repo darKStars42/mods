@@ -1,0 +1,651 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_Boxer": {
+                    "HasInput": false,
+                    "HasOutput": false,
+                    "InteractMethod": null,
+                    "OutputRules": [
+                        {
+                            "Id": "Default",
+                            "Triggers": [
+                                {
+                                    "Id": "ItemPlacedInMachine_Coffee",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)433",
+                                    "RequiredTags": null,
+                                    "RequiredCount": 16,
+                                    "Condition": null
+                                },
+                                {
+                                    "Id": "ItemPlacedInMachine_Syrup",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": null,
+                                    "RequiredTags": [
+                                        "category_syrup"
+                                    ],
+                                    "RequiredCount": 16,
+                                    "Condition": null
+                                },
+                                {
+                                    "Id": "ItemPlacedInMachine_Greens",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": null,
+                                    "RequiredTags": [
+                                        "category_greens"
+                                    ],
+                                    "RequiredCount": 16,
+                                    "Condition": null
+                                },
+                                {
+                                    "Id": "ItemPlacedInMachine_Vegetables",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": null,
+                                    "RequiredTags": [
+                                        "category_vegetable"
+                                    ],
+                                    "RequiredCount": 16,
+                                    "Condition": null
+                                },
+                                {
+                                    "Id": "ItemPlacedInMachine_Fruits",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": null,
+                                    "RequiredTags": [
+                                        "category_fruits"
+                                    ],
+                                    "RequiredCount": 16,
+                                    "Condition": null
+                                },
+                                {
+                                    "Id": "ItemPlacedInMachine_Flowers",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": null,
+                                    "RequiredTags": [
+                                        "category_flowers"
+                                    ],
+                                    "RequiredCount": 16,
+                                    "Condition": null
+                                }
+                            ],
+                            "UseFirstValidOutput": false,
+                            "OutputItem": [
+                                {
+                                    "CustomData": null,
+                                    "OutputMethod": null,
+                                    "CopyColor": true,
+                                    "CopyPrice": true,
+                                    "CopyQuality": true,
+                                    "PreserveType": null,
+                                    "PreserveId": "DROP_IN",
+                                    "IncrementMachineParentSheetIndex": 0,
+                                    "PriceModifiers": [
+                                        {
+                                            "Id": "Box_Multiply_Crops_By_Stack_Tiller",
+                                            "Condition": "PLAYER_HAS_PROFESSION Target 1, !ITEM_CONTEXT_TAG Input category_syrup, !ITEM_CONTEXT_TAG Input category_greens, !ITEM_CONTEXT_TAG Input forage_item, !ITEM_ID Input 433",
+                                            "Modification": "Multiply",
+                                            "Amount": "17.6"
+                                        },
+                                        {
+                                            "Id": "Box_Multiply_Crops_By_Stack_NonTiller",
+                                            "Condition": "!PLAYER_HAS_PROFESSION Target 1, !ITEM_CONTEXT_TAG Input category_syrup, !ITEM_CONTEXT_TAG Input category_greens, !ITEM_CONTEXT_TAG Input forage_item, !ITEM_ID Input 433",
+                                            "Modification": "Multiply",
+                                            "Amount": "16"
+                                        },
+                                        {
+                                            "Id": "Box_Multiply_Syrup_By_Stack_Tapper",
+                                            "Condition": "PLAYER_HAS_PROFESSION Target 15, ITEM_CONTEXT_TAG Input category_syrup",
+                                            "Modification": "Multiply",
+                                            "Amount": "20"
+                                        },
+                                        {
+                                            "Id": "Box_Multiply_Syrup_By_Stack_NonTapper",
+                                            "Condition": "!PLAYER_HAS_PROFESSION Target 15, ITEM_CONTEXT_TAG Input category_syrup",
+                                            "Modification": "Multiply",
+                                            "Amount": "16"
+                                        },
+                                        {
+                                            "Id": "Box_Multiply_Coffe_By_Stack",
+                                            "Condition": "ANY \"ITEM_CONTEXT_TAG Input category_greens\" \"ITEM_CONTEXT_TAG Input forage_item\" \"ITEM_ID Target 433\"",
+                                            "Modification": "Multiply",
+                                            "Amount": "16"
+                                        },
+                                        {
+                                            "Id": "Box_Add",
+                                            "Modification": "Add",
+                                            "Amount": 1000,
+                                            "RandomAmount": null
+                                        }
+                                    ],
+                                    "PriceModifierMode": "Stack",
+                                    "Condition": null,
+                                    "Id": "{{ModId}}Box",
+                                    "ItemId": "{{ModId}}_Box",
+                                    "RandomItemId": null,
+                                    "MaxItems": null,
+                                    "MinStack": -1,
+                                    "MaxStack": -1,
+                                    "Quality": -1,
+                                    "ObjectInternalName": "Box{0}",
+                                    "ObjectDisplayName": "[LocalizedText Strings/Objects:{{ModId}}.BoxName %PRESERVED_DISPLAY_NAME]",
+                                    "ToolUpgradeLevel": -1,
+                                    "IsRecipe": false,
+                                    "StackModifiers": null,
+                                    "StackModifierMode": "Stack",
+                                    "QualityModifiers": null,
+                                    "QualityModifierMode": "Stack",
+                                    "ModData": null,
+                                    "PerItemCondition": null
+                                }
+                            ],
+                            "MinutesUntilReady": 240,
+                            "DaysUntilReady": -1,
+                            "InvalidCountMessage": "{{i18n: boxer.requirement.count}}",
+                            "RecalculateOnCollect": false
+                        }
+                    ],
+                    "AdditionalConsumedItems": [
+                        {
+                            "ItemId": "(O)388",
+                            "RequiredCount": 1,
+                            "InvalidCountMessage": "{{i18n: boxer.requirement.additional}}"
+                        }
+                    ],
+                    "PreventTimePass": null,
+                    "ReadyTimeModifiers": null,
+                    "ReadyTimeModifierMode": "Stack",
+                    "InvalidItemMessage": null,
+                    "InvalidItemMessageCondition": null,
+                    "InvalidCountMessage": null,
+                    "LoadEffects": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "Sounds": [
+                                {
+                                    "Id": "Ship",
+                                    "Delay": 0
+                                }
+                            ],
+                            "Interval": 100,
+                            "Frames": null,
+                            "ShakeDuration": -1,
+                            "TemporarySprites": null
+                        }
+                    ],
+                    "WorkingEffects": null,
+                    "WorkingEffectChance": 0.33,
+                    "AllowLoadWhenFull": false,
+                    "WobbleWhileWorking": true,
+                    "LightWhileWorking": null,
+                    "ShowNextIndexWhileWorking": true,
+                    "ShowNextIndexWhenReady": true,
+                    "AllowFairyDust": true,
+                    "IsIncubator": false,
+                    "ClearContentsOvernightCondition": null,
+                    "StatsToIncrementWhenLoaded": null,
+                    "StatsToIncrementWhenHarvested": null,
+                    "ExperienceGainOnHarvest": null,
+                    "CustomFields": null
+                },
+                "(BC){{ModId}}_Packer": {
+                    "HasInput": false,
+                    "HasOutput": false,
+                    "InteractMethod": null,
+                    "OutputRules": [
+                        {
+                            "Id": "Default",
+                            "Triggers": [
+                                {
+                                    "Id": "ItemPlacedInMachine_Artisan",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": null,
+                                    "RequiredTags": [
+                                        "category_artisan_goods",
+                                        "!id_(o)jabbic.cpartisanpackaging_crate",
+                                        "!id_(o)jabbic.cpartisanpackaging_box",
+                                        "!id_(o)jabbic.cpartisanpackaging_cannedfish"
+                                    ],
+                                    "RequiredCount": 10,
+                                    "Condition": null
+                                }
+                            ],
+                            "UseFirstValidOutput": false,
+                            "OutputItem": [
+                                {
+                                    "CustomData": null,
+                                    "OutputMethod": null,
+                                    "CopyColor": true,
+                                    "CopyPrice": true,
+                                    "CopyQuality": true,
+                                    "PreserveType": null,
+                                    "PreserveId": "DROP_IN",
+                                    "IncrementMachineParentSheetIndex": 0,
+                                    "PriceModifiers": [
+                                        {
+                                            "Id": "Crate_Multiply_Goods_By_Stack",
+                                            "Condition": null,
+                                            "Modification": "Multiply",
+                                            "Amount": "11"
+                                        },
+                                        {
+                                            "Id": "Crate_Multiply_Fish_By_Stack_Fisher",
+                                            "Condition": "ITEM_ID Input smokedfish, PLAYER_HAS_PROFESSION Target 8",
+                                            "Modification": "Multiply",
+                                            "Amount": "1.5"
+                                        },
+                                        {
+                                            "Id": "Crate_Multiply_Fish_By_Stack_Angler",
+                                            "Condition": "ITEM_ID Input smokedfish, !PLAYER_HAS_PROFESSION Target 8, PLAYER_HAS_PROFESSION Target 6",
+                                            "Modification": "Multiply",
+                                            "Amount": "1.25"
+                                        }
+                                    ],
+                                    "PriceModifierMode": "Stack",
+                                    "Condition": null,
+                                    "Id": "{{ModId}}CrateDefault",
+                                    "ItemId": "{{ModId}}_Crate",
+                                    "RandomItemId": null,
+                                    "MaxItems": null,
+                                    "MinStack": -1,
+                                    "MaxStack": -1,
+                                    "Quality": -1,
+                                    "ObjectInternalName": "Crate{0}",
+                                    "ObjectDisplayName": "[LocalizedText Strings/Objects:{{ModId}}.CrateName %PRESERVED_DISPLAY_NAME]",
+                                    "ToolUpgradeLevel": -1,
+                                    "IsRecipe": false,
+                                    "StackModifiers": null,
+                                    "StackModifierMode": "Stack",
+                                    "QualityModifiers": null,
+                                    "QualityModifierMode": "Stack",
+                                    "ModData": null,
+                                    "PerItemCondition": null
+                                }
+                            ],
+                            "MinutesUntilReady": 240,
+                            "DaysUntilReady": -1,
+                            "InvalidCountMessage": "{{i18n: packer.requirement.goodscount}}",
+                            "RecalculateOnCollect": false
+                        },
+                        {
+                            "Id": "Boxes",
+                            "Triggers": [
+                                {
+                                    "Id": "ItemPlacedInMachine_Boxes",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_Box",
+                                    "RequiredTags": null,
+                                    "RequiredCount": 4,
+                                    "Condition": null
+                                }
+                            ],
+                            "UseFirstValidOutput": false,
+                            "OutputItem": [
+                                {
+                                    "CustomData": null,
+                                    "OutputMethod": null,
+                                    "CopyColor": true,
+                                    "CopyPrice": true,
+                                    "CopyQuality": true,
+                                    "PreserveType": null,
+                                    "PreserveId": "DROP_IN",
+                                    "IncrementMachineParentSheetIndex": 0,
+                                    "PriceModifiers": [
+                                        {
+                                            "Id": "Crate_Multiply_Goods_By_Stack",
+                                            "Condition": null,
+                                            "Modification": "Multiply",
+                                            "Amount": "4.4"
+                                        }
+                                    ],
+                                    "PriceModifierMode": "Stack",
+                                    "Condition": null,
+                                    "Id": "{{ModId}}CrateofBoxes",
+                                    "ItemId": "{{ModId}}_Crate",
+                                    "RandomItemId": null,
+                                    "MaxItems": null,
+                                    "MinStack": -1,
+                                    "MaxStack": -1,
+                                    "Quality": -1,
+                                    "ObjectInternalName": "CrateBox",
+                                    "ObjectDisplayName": "[LocalizedText Strings/Objects:{{ModId}}.CrateOfBoxesName]",
+                                    "ToolUpgradeLevel": -1,
+                                    "IsRecipe": false,
+                                    "StackModifiers": null,
+                                    "StackModifierMode": "Stack",
+                                    "QualityModifiers": null,
+                                    "QualityModifierMode": "Stack",
+                                    "ModData": null,
+                                    "PerItemCondition": null
+                                }
+                            ],
+                            "MinutesUntilReady": 240,
+                            "DaysUntilReady": -1,
+                            "InvalidCountMessage": "{{i18n: packer.requirement.boxescount}}",
+                            "RecalculateOnCollect": false
+                        },
+                        {
+                            "Id": "Cans",
+                            "Triggers": [
+                                {
+                                    "Id": "ItemPlacedInMachine_Cans",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_CannedFish",
+                                    "RequiredTags": null,
+                                    "RequiredCount": 10,
+                                    "Condition": null
+                                }
+                            ],
+                            "UseFirstValidOutput": false,
+                            "OutputItem": [
+                                {
+                                    "CustomData": null,
+                                    "OutputMethod": null,
+                                    "CopyColor": true,
+                                    "CopyPrice": true,
+                                    "CopyQuality": true,
+                                    "PreserveType": null,
+                                    "PreserveId": "DROP_IN",
+                                    "IncrementMachineParentSheetIndex": 0,
+                                    "PriceModifiers": [
+                                        {
+                                            "Id": "Crate_Multiply_Goods_By_Stack",
+                                            "Condition": null,
+                                            "Modification": "Multiply",
+                                            "Amount": "11"
+                                        }
+                                    ],
+                                    "PriceModifierMode": "Stack",
+                                    "Condition": null,
+                                    "Id": "{{ModId}}CrateofCans",
+                                    "ItemId": "{{ModId}}_Crate",
+                                    "RandomItemId": null,
+                                    "MaxItems": null,
+                                    "MinStack": -1,
+                                    "MaxStack": -1,
+                                    "Quality": -1,
+                                    "ObjectInternalName": "CrateCan",
+                                    "ObjectDisplayName": "[LocalizedText Strings/Objects:{{ModId}}.CrateOfCansName]",
+                                    "ToolUpgradeLevel": -1,
+                                    "IsRecipe": false,
+                                    "StackModifiers": null,
+                                    "StackModifierMode": "Stack",
+                                    "QualityModifiers": null,
+                                    "QualityModifierMode": "Stack",
+                                    "ModData": null,
+                                    "PerItemCondition": null
+                                }
+                            ],
+                            "MinutesUntilReady": 240,
+                            "DaysUntilReady": -1,
+                            "InvalidCountMessage": "{{i18n: packer.requirement.cancount}}",
+                            "RecalculateOnCollect": false
+                        }
+                    ],
+                    "AdditionalConsumedItems": [
+                        {
+                            "ItemId": "(O)388",
+                            "RequiredCount": 3,
+                            "InvalidCountMessage": "{{i18n: packer.requirement.additional}}"
+                        }
+                    ],
+                    "PreventTimePass": null,
+                    "ReadyTimeModifiers": null,
+                    "ReadyTimeModifierMode": "Stack",
+                    "InvalidItemMessage": null,
+                    "InvalidItemMessageCondition": null,
+                    "InvalidCountMessage": null,
+                    "LoadEffects": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "Sounds": [
+                                {
+                                    "Id": "Ship",
+                                    "Delay": 0
+                                }
+                            ],
+                            "Interval": 100,
+                            "Frames": null,
+                            "ShakeDuration": -1,
+                            "TemporarySprites": null
+                        }
+                    ],
+                    "WorkingEffects": null,
+                    "WorkingEffectChance": 0.33,
+                    "AllowLoadWhenFull": false,
+                    "WobbleWhileWorking": true,
+                    "LightWhileWorking": null,
+                    "ShowNextIndexWhileWorking": true,
+                    "ShowNextIndexWhenReady": true,
+                    "AllowFairyDust": true,
+                    "IsIncubator": false,
+                    "ClearContentsOvernightCondition": null,
+                    "StatsToIncrementWhenLoaded": null,
+                    "StatsToIncrementWhenHarvested": null,
+                    "ExperienceGainOnHarvest": null,
+                    "CustomFields": null
+                },
+                "(BC){{ModId}}_Canner": {
+                    "HasInput": false,
+                    "HasOutput": false,
+                    "InteractMethod": null,
+                    "OutputRules": [
+                        {
+                            "Id": "Default",
+                            "Triggers": [
+                                {
+                                    "Id": "ItemPlacedInMachine_Fish",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": null,
+                                    "RequiredTags": [
+                                        "category_fish"
+                                    ],
+                                    "RequiredCount": 1,
+                                    "Condition": "ITEM_EDIBILITY Input 1"
+                                }
+                            ],
+                            "UseFirstValidOutput": false,
+                            "OutputItem": [
+                                {
+                                    "CustomData": null,
+                                    "OutputMethod": null,
+                                    "CopyColor": true,
+                                    "CopyPrice": true,
+                                    "CopyQuality": true,
+                                    "PreserveType": null,
+                                    "PreserveId": "DROP_IN",
+                                    "IncrementMachineParentSheetIndex": 0,
+                                    "PriceModifiers": [
+                                        {
+                                            "Id": "Can_Double_Fish_Price_Fisher",
+                                            "Condition": "PLAYER_HAS_PROFESSION Target 6",
+                                            "Modification": "Multiply",
+                                            "Amount": "2.5"
+                                        },
+                                        {
+                                            "Id": "Can_Double_Fish_Price_Angler",
+                                            "Condition": "PLAYER_HAS_PROFESSION Target 8",
+                                            "Modification": "Multiply",
+                                            "Amount": "1.2"
+                                        },
+                                        {
+                                            "Id": "Can_Double_Fish_Price_No_Profession",
+                                            "Condition": "!PLAYER_HAS_PROFESSION Target 6",
+                                            "Modification": "Multiply",
+                                            "Amount": "2"
+                                        }
+                                    ],
+                                    "PriceModifierMode": "Stack",
+                                    "Condition": null,
+                                    "Id": "{{ModId}}CanDefault",
+                                    "ItemId": "{{ModId}}_CannedFish",
+                                    "RandomItemId": null,
+                                    "MaxItems": null,
+                                    "MinStack": -1,
+                                    "MaxStack": -1,
+                                    "Quality": -1,
+                                    "ObjectInternalName": "Can{0}",
+                                    "ObjectDisplayName": "[LocalizedText Strings/Objects:{{ModId}}.CannedFishName %PRESERVED_DISPLAY_NAME]",
+                                    "ToolUpgradeLevel": -1,
+                                    "IsRecipe": false,
+                                    "StackModifiers": null,
+                                    "StackModifierMode": "Stack",
+                                    "QualityModifiers": null,
+                                    "QualityModifierMode": "Stack",
+                                    "ModData": null,
+                                    "PerItemCondition": null
+                                }
+                            ],
+                            "MinutesUntilReady": 120,
+                            "DaysUntilReady": -1,
+                            "InvalidCountMessage": "{{i18n: canner.requirement.goodscount}}",
+                            "RecalculateOnCollect": false
+                        },
+                        {
+                            "Id": "Crustaceans",
+                            "Triggers": [
+                                {
+                                    "Id": "ItemPlacedInMachine_Lobster",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)715",
+                                    "RequiredTags": null,
+                                    "RequiredCount": 1,
+                                    "Condition": null
+                                },
+                                {
+                                    "Id": "ItemPlacedInMachine_Crayfish",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)716",
+                                    "RequiredTags": null,
+                                    "RequiredCount": 1,
+                                    "Condition": null
+                                },
+                                {
+                                    "Id": "ItemPlacedInMachine_Crab",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)717",
+                                    "RequiredTags": null,
+                                    "RequiredCount": 1,
+                                    "Condition": null
+                                },
+                                {
+                                    "Id": "ItemPlacedInMachine_Shrimp",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)720",
+                                    "RequiredTags": null,
+                                    "RequiredCount": 1,
+                                    "Condition": null
+                                }
+                            ],
+                            "UseFirstValidOutput": false,
+                            "OutputItem": [
+                                {
+                                    "CustomData": null,
+                                    "OutputMethod": null,
+                                    "CopyColor": true,
+                                    "CopyPrice": true,
+                                    "CopyQuality": true,
+                                    "PreserveType": null,
+                                    "PreserveId": "DROP_IN",
+                                    "IncrementMachineParentSheetIndex": 0,
+                                    "PriceModifiers": [
+                                        {
+                                            "Id": "Can_Multiply_Fish_Price",
+                                            "Condition": null,
+                                            "Modification": "Multiply",
+                                            "Amount": "2"
+                                        }
+                                    ],
+                                    "PriceModifierMode": "Stack",
+                                    "Condition": null,
+                                    "Id": "{{ModId}}CanCrustaceans",
+                                    "ItemId": "{{ModId}}_CannedFish",
+                                    "RandomItemId": null,
+                                    "MaxItems": null,
+                                    "MinStack": -1,
+                                    "MaxStack": -1,
+                                    "Quality": -1,
+                                    "ObjectInternalName": "Can{0}",
+                                    "ObjectDisplayName": "[LocalizedText Strings/Objects:{{ModId}}.CannedFishName %PRESERVED_DISPLAY_NAME]",
+                                    "ToolUpgradeLevel": -1,
+                                    "IsRecipe": false,
+                                    "StackModifiers": null,
+                                    "StackModifierMode": "Stack",
+                                    "QualityModifiers": null,
+                                    "QualityModifierMode": "Stack",
+                                    "ModData": null,
+                                    "PerItemCondition": null
+                                }
+                            ],
+                            "MinutesUntilReady": 120,
+                            "DaysUntilReady": -1,
+                            "InvalidCountMessage": "{{i18n: canner.requirement.count}}",
+                            "RecalculateOnCollect": false
+                        }
+                    ],
+                    "AdditionalConsumedItems": [
+                        {
+                            "ItemId": "(O)380",
+                            "RequiredCount": 1,
+                            "InvalidCountMessage": "{{i18n: canner.requirement.additional}}"
+                        }
+                    ],
+                    "PreventTimePass": null,
+                    "ReadyTimeModifiers": null,
+                    "ReadyTimeModifierMode": "Stack",
+                    "InvalidItemMessage": null,
+                    "InvalidItemMessageCondition": null,
+                    "InvalidCountMessage": null,
+                    "LoadEffects": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "Sounds": [
+                                {
+                                    "Id": "Ship",
+                                    "Delay": 0
+                                }
+                            ],
+                            "Interval": 100,
+                            "Frames": null,
+                            "ShakeDuration": -1,
+                            "TemporarySprites": null
+                        }
+                    ],
+                    "WorkingEffects": null,
+                    "WorkingEffectChance": 0.33,
+                    "AllowLoadWhenFull": false,
+                    "WobbleWhileWorking": true,
+                    "LightWhileWorking": null,
+                    "ShowNextIndexWhileWorking": true,
+                    "ShowNextIndexWhenReady": true,
+                    "AllowFairyDust": true,
+                    "IsIncubator": false,
+                    "ClearContentsOvernightCondition": null,
+                    "StatsToIncrementWhenLoaded": null,
+                    "StatsToIncrementWhenHarvested": null,
+                    "ExperienceGainOnHarvest": null,
+                    "CustomFields": null
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": [
+                "(BC){{ModId}}_Canner",
+                "AdditionalConsumedItems"
+            ],
+            "Entries": {
+                "#0": null
+            },
+            "When": {
+                "needsiron": false
+            }
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+	"Changes": [
+{
+			"LogName": "Sebastian Pregnancy Event 1",
+			"Action": "EditData",
+			"Target": "Data/Events/FarmHouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HavingChild": "@{{playerName}}",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+		"Entries": {"64780011/O Sebastian":"continue/28 30/farmer 27 30 0 Sebastian 29 25 3 Harvey 0 0 0/addConversationTopic FarmerPregnantSebastian 13/addConversationTopic FarmerCheckUp 6/addMailReceived Pregnant1_Sebastian/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak Sebastian \"{{i18n:64780011_1}}$h #$b# {{i18n:64780011_2}}\"/pause 500 /move farmer 0 0 2/ playSound croak/animate farmer false false 350 104 105/pause 1000/emote farmer 28/move farmer 0 0 1/pause 500/speak Sebastian \"{{i18n:64780011_3}}$s#$b# {{i18n:64780011_4}}\"/viewport -100 100/changeLocation Hospital/viewport 5 5/warp Sebastian 2 5/warp farmer 3 5/showFrame Sebastian 4/warp Harvey 5 8/move Harvey 0 -3 3 false/showFrame Sebastian 4/speak Harvey \"{{i18n:Pregnancy_Dialogue_1_Farmer}}\"/emote Sebastian 8/speak Harvey \"{{i18n:Pregnancy_Dialogue_2_Farmer}}$h\"/speak Sebastian \"...#$b#...#$b#...$l#$b#...
+{{i18n:64780011_5}}$h\"/pause 500/emote farmer 20/end"},
+		},
+
+{			"LogName": "Sebastian Birth Event 1", 
+			"Action": "EditData",
+    			"Target": "Data/Events/Farmhouse",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+   		"Entries": {"64780023/e 64780011/O Sebastian/n Pregnant1_Sebastian/A FarmerPregnantSebastian/t 600 700": "sappypiano/-100 -100/farmer 19 12 2 Sebastian 20 12 2 Harvey 5 15 2/positionOffset farmer -30 -12/addConversationTopic SebastianBabySleep 14/skippable/pause 500/speak Sebastian \"{{i18n:64780023_1}}$s #$b# {{i18n:64780023_2}}$l\"/changeLocation Hospital/showFrame 5/ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak Sebastian \"{{i18n:64780023_3}}#$b# {{i18n:64780023_4}}$s \"/faceDirection Sebastian 3/pause 500/emote farmer 60/emote Sebastian 28/pause 500/speak Sebastian \"{{i18n:64780023_5}}$s\"/pause 500/move Sebastian 0 1 3/pause 500/speak Sebastian \"{{i18n:64780023_6}} #$b# {{i18n:64780023_7}} #$b# {{i18n:64780023_8}} $h\"/pause 500/move Sebastian 0 -1 3/speak Sebastian \"{{i18n:64780023_9}}$l\"/pause 500/emote farmer 20/pause 500/speak Sebastian \"{{i18n:64780023_10}}\"/pause 500/emote farmer 60/pause 500/speak Sebastian \"{{i18n:64780023_11}} #$b# {{i18n:64780023_12}}\"/pause 1000/fade/viewport -100 -100 true/warp Harvey 21 12/showFrame Harvey 12/warp Sebastian 20 11/showFrame Sebastian 0/speak Sebastian \"{{i18n:64780023_13}} $2#$b#{{i18n:64780023_14}}\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -50/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/showframe 0/positionoffset farmer 0 9/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote Sebastian 20/pause 2000/speak Sebastian \"{{i18n:Birth_Dialogue_5}}$l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end"},		
+		},
+{
+			"LogName": "Sebastian Pregnancy Event 2",
+			"Action": "EditData",
+			"Target": "Data/Events/FarmHouse,",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+ 				"HavingChild": "@{{playerName}}",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+		"Entries": {"64780035/e 64780023/O Sebastian":"continue/28 30/farmer 27 30 0 Sebastian 29 25 3 Harvey 0 0 0/addConversationTopic FarmerPregnantSebastian2 13/addMailReceived Pregnant2_Sebastian/skippable/pause 1250/viewport move 0 -5 1275/move farmer 0 -5 0/move farmer 1 0 1/speak Sebastian \"{{i18n:64780035_1}}$h #$b# {{i18n:64780035_2}}\"/pause 500 /emote farmer 40/pause 500/speak Sebastian \"{{i18n:64780035_3}}$l #$b# {{i18n:64780035_4}}\"/pause 500/viewport -100 100/changeLocation Hospital/viewport 5 5/warp Sebastian 2 5/warp farmer 3 5/showFrame Sebastian 4/warp Harvey 5 8/move Harvey 0 -3 3 false/showFrame Sebastian 4/speak Harvey \"{{i18n:Pregnancy_Dialogue_3}}$h\"/emote Sebastian 16 true/jump Sebastian 4/speak Sebastian \"{{i18n:64780035_5}}$h\"/pause 500/ speak Harvey \"{{i18n:Pregnancy_Dialogue_4}}\"/pause 500/quickquestion {{i18n:Birth_Choice_Question}}#{{i18n:Clinic_Birth}} #{{i18n:Home_Birth}}(break)speak Harvey \"{{i18n:Pregnancy_Dialogue_5}}$h #$b# {{i18n:Pregnancy_Dialogue_6}}\"\\addMailReceived ClinicBirthSebastian (break)speak Harvey \"{{i18n:Pregnancy_Dialogue_7}}$h #$b# {{i18n:Pregnancy_Dialogue_8}}\"\\addMailReceived HomeBirthSebastian/pause 500/speak Sebastian \"{{i18n:64780035_6}}\"/ emote farmer 8/speak Sebastian \"{{i18n:64780035_7}}$h\"/emote farmer 12/pause 100/emote Sebastian 32/end",},
+},
+
+{
+			"LogName": "Sebastian Birth Event 2 Clinic",
+			"Action": "EditData",
+			"Target": "Data/Events/FarmHouse,",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+		"Entries": {"64780036/e 64780035/O Sebastian/n Pregnant2_Sebastian/A FarmerPregnantSebastian2/n ClinicBirthSebastian/t 600 700":"sappypiano/-100 -100/farmer 19 12 2 Sebastian 20 12 2 Harvey 5 15 2/positionOffset farmer 0 -12/addConversationTopic SebastianBabySleep2 14/skippable/pause 500/speak Sebastian \"{{i18n:64780036_1}} #$b# {{i18n:64780036_2}} $l #$b# {{i18n:64780036_3}} $h\"/changeLocation Hospital/showFrame 5/showFrame Sebastian 12/ambientLight 150 150 150/viewport 14 11 true/pause 1000/speak Sebastian \"{{i18n:64780036_4}}#$b# {{i18n:64780036_5}}#$b# {{i18n:64780036_6}} $h\"/pause 500/emote farmer 32/pause 500/speak Sebastian \"{{i18n:64780036_7}} #$b# {{i18n:64780036_8}}\"/pause 500/emote Sebastian 60/speak Sebastian \"{{i18n:64780036_9}} $s #$b# {{i18n:64780036_10}}\"/pause 500/ emote Sebastian 28/pause 500/speak Sebastian \"{{i18n:64780036_11}} $s #$b# {{i18n:64780036_12}} $h \"/pause 500/emote farmer 20/pause 500/speak Sebastian \"{{i18n:64780036_13}} #$b# {{i18n:64780036_14}} $h\"/pause 500/emote farmer 60/pause 500/speak Sebastian \"{{i18n:64780036_15}}#$b# {{i18n:64780036_16}}#$b# {{i18n:64780036_17}}$s #$b# {{i18n:64780036_18}}$l\"/ pause 500/ emote farmer 20/emote farmer 16/pause 500/speak Sebastian \"{{i18n:Birth_2Dialogue_9}}$s\"/ pause 500/ emote farmer 12/ pause 500/ textAboveHead Sebastian \"{{i18n:Birth2_Dialogue_10}}\"/fade/viewport -100 -100 true/warp Harvey 21 12/faceDirection Harvey 3/warp Sebastian 20 11/faceDirection Sebastian 2/speak Harvey \"{{i18n:Birth2_Dialogue_11}}$h\"/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 23 15 20 12 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -53/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 18 11 true/pause 500/emote Sebastian 20/pause 2000/speak Sebastian \"{{i18n:Birth_Dialogue_6}}$l\"/emote farmer 20 true/emote Harvey 32 false/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_7}}\"/pause 1000/end",},
+},
+
+
+//We'd better go home and break the news to %kid1. #$b# I can only hope they have a better relationship with their sibling than I do with mine... $s
+
+
+{
+			"LogName": "Sebastian Birth Event 2 Farmhouse",
+			"Action": "EditData",
+			"Target": "Data/Events/FarmHouse,",
+			"When": {"PlayerGetsPregnant":"true",
+				"AdoptionEvents": "off",
+				"HasMod |contains=ApryllForever.CPPolyamorySweet": false,},
+		"Entries": {"64780037/e 64780035/O Sebastian/n Pregnant2_Sebastian/n HomeBirthSebastian/A FarmerPregnantSebastian2/t 600 700":"sappypiano/-100 -100/Harvey 35 14 3 farmer 34 14 2 Sebastian 33 14 1/addConversationTopic SebastianBabySleep2 14/skippable/pause 500/speak Sebastian \"{{i18n:64780037_1}} #$b# {{i18n:64780037_2}} $l #$b#{{i18n:64780037_3}}$h\"/makeInvisible 33 14 3 3/viewport 34 14 clamp true/showFrame Harvey 35/positionOffset Harvey -20 0/showFrame farmer 5/pause 2500/ambientLight 150 150 150/speak Harvey \"{{i18n:Birth_2Dialogue_1}} #$b# {{i18n:Birth_2Dialogue_2}}\"/positionOffset Harvey 20 0/showframe Harvey 34/emote farmer 60/speak Harvey \"{{i18n:Birth_2Dialogue_3}}$h\"/pause 500/speak Harvey \"{{i18n:Birth_2Dialogue_4}}\"/shake Sebastian 1000/textAboveHead Sebastian \"{{i18n:64780037_4}}\"/pause 2000/speak Harvey \"{{i18n:Birth_2Dialogue_5}} #$b# {{i18n:Birth_2Dialogue_6}} #$b# {{i18n:Birth_2Dialogue_7}}$h\"/pause 500/emote Sebastian 28/pause 1000/emote farmer 16/pause 500/speak Harvey \"{{i18n:Birth_2Dialogue_8}}$h#$b#{{i18n:Birth_Dialogue_12}}\"/fade/viewport -100 -100 true/pause 1500/speak Harvey \"{{i18n:Birth_Dialogue_1_Farmer}}\"/addTemporaryActor {{BabyorBaby_Dark}} 22 15 33 15 2 False Character/positionOffset {{BabyorBaby_Dark}} 0 -53/showFrame Sebastian 0/pause 500/message \"{{i18n:Birth_Dialogue_3}}\"/pause 500/showFrame Harvey 12/speak Harvey \"{{i18n:Birth_Dialogue_4}}$h\"/fade/viewport 34 14 clamp true/emote Sebastian 32/pause 1500/speak Sebastian \"{{i18n:Birth_Dialogue_6}}$l\"/emote farmer 20 true/ emote Harvey 32/pause 1500/viewport -100 -100 true/message \"{{i18n:Birth_Dialogue_8}}\"/pause 1000/end"},
+},
+
+
+]
+}

@@ -1,0 +1,164 @@
+{
+	"Changes": [
+		{
+			"LogName": "NPC Manifestation",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"Vanessa": {
+					"DisplayName": "{{i18n: SKE.Vanessa}}",
+					"Gender": "Female",
+					"Age": "Child",
+					"BirthSeason": "Spring",
+					"BirthDay": 6,
+					"HomeRegion": "Town",
+					"Manner": "Neutral",
+					"SocialAnxiety": "Outgoing",
+					"Optimism": "Positive",
+					"CanBeRomanced": false,
+					"LoveInterest": null,
+					"IntroductionsQuest": "{{IncludeInIntroductions}}",
+					"CanVisitIsland": "!DAY_OF_WEEK Tuesday Wednesday Friday",
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "Saloon",
+							"Tile": {
+								"X": 43,
+								"Y": 5
+							},
+							"Direction": "up"
+						}
+					],
+					"Breather": false,
+					"Appearance": [
+						{
+							"Id": "Vanessa.Spring",
+							"Season": "Spring",
+							"Portrait": "Portraits/Vanessa_Spring",
+							"Sprite": "Characters/Vanessa_Spring"
+						},
+						{
+							"Id": "Vanessa.Summer",
+							"Season": "Summer",
+							"Portrait": "Portraits/Vanessa_Summer",
+							"Sprite": "Characters/Vanessa_Summer"
+						},
+						{
+							"Id": "Vanessa.Fall",
+							"Season": "Fall",
+							"Portrait": "Portraits/Vanessa_Fall",
+							"Sprite": "Characters/Vanessa_Fall"
+						},
+						{
+							"Id": "Vanessa.WinterIndoor",
+							"Season": "Winter",
+							"Outdoors": false,
+							"Portrait": "Portraits/Vanessa_Winter_Inside",
+							"Sprite": "Characters/Vanessa_Winter_Inside"
+						},
+						{
+							"Id": "Vanessa.WinterOutdoor",
+							"Season": "Winter",
+							"Indoors": false,
+							"Portrait": "Portraits/Vanessa_Winter_Outside",
+							"Sprite": "Characters/Vanessa_Winter_Outside"
+						},
+						{
+							"Id": "Vanessa.Beach",
+							"IsIslandAttire": true,
+							"Portrait": "Portraits/Vanessa_Summer",
+							"Sprite": "Characters/Vanessa_Summer"
+						}
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Vanessa Base Art Loads",
+			"Action": "Load",
+			"Target": "Portraits/Vanessa, Characters/Vanessa",
+			"FromFile": "Assets/Vanessa/{{Target}}_Spring.png"
+		},
+		{
+			"LogName": "Vanessa Seasonal Art Loads",
+			"Action": "Load",
+			"Target": "Portraits/Vanessa_Spring, Characters/Vanessa_Spring, Portraits/Vanessa_Summer, Characters/Vanessa_Summer, Portraits/Vanessa_Fall, Characters/Vanessa_Fall, Portraits/Vanessa_Winter_Inside, Characters/Vanessa_Winter_Inside, Portraits/Vanessa_Winter_Outside, Characters/Vanessa_Winter_Outside",
+			"FromFile": "assets/Vanessa/{{Target}}.png"
+		},
+		{
+			"LogName": "Vanessa Dialogue & Schedule Blank",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/Vanessa, Characters/schedules/Vanessa",
+			"FromFile": "Data/blank.json"
+		},
+		{
+			"LogName": "Vanessa Dialogue & Schedule Includes",
+			"Action": "Include",
+			"FromFile": "Data/Vanessa/Vanessa_Dialogue.json, Data/Vanessa/Vanessa_Schedule.json"
+		},
+		{
+			"LogName": "Vanessa Festival Includes",
+			"Action": "Include",
+			"FromFile": "Data/Vanessa/Vanessa_Festivals.json",
+			"When": {
+				"VisitFestivals": "True"
+			}
+		},
+		{
+			"LogName": "NPC Gift Tastes",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"Vanessa": "{{i18n: SKE.Vanessa.love}}/206 211 212 213 218/{{i18n: SKE.Vanessa.like}}/194 196 198 220 227 240 247 248 274 276/{{i18n: SKE.Vanessa.dislike}}/336/{{i18n: SKE.Vanessa.hate}}/337 346/{{i18n: SKE.Vanessa.neutral}}/229/"
+			}
+		},
+		{
+			"LogName": "Animations",
+			"Action": "EditData",
+			"Target": "Data/animationDescriptions",
+			"Entries": {
+				"Vanessa_Read": "22/22/22",
+				"Vanessa_Sleep": "23/23/23",
+				"Vanessa_Jump": "24/24/24"
+			}
+		},
+		{
+			"LogName": "Vanessa Room 1",
+			"Action": "EditMap",
+			"Target": "Maps/Saloon",
+			"MapProperties": {
+				"Doors": "11 9 1 120 20 9 1 120 3 16 1 824 4 16 1 825 42 11 1 120"
+			},
+			"FromFile": "Assets/Vanessa/VanessaRoom1{{SVELUTICompat}}",
+			"ToArea": {
+				"X": 32,
+				"Y": 10,
+				"Width": 14,
+				"Height": 5
+			},
+			"When": {
+             "RoomsEnabled": "true"
+			}
+		},
+		{
+			"LogName": "Vanessa Room 2",
+			"Action": "EditMap",
+			"Target": "Maps/Saloon",
+			"MapProperties": {
+				"Doors": "11 9 1 120 20 9 1 120 3 16 1 824 4 16 1 825 42 11 1 120"
+			},
+			"FromFile": "Assets/Vanessa/VanessaRoom2.tmx",
+			"ToArea": {
+				"X": 38,
+				"Y": 1,
+				"Width": 8,
+				"Height": 9
+			},
+			"When": {
+				"RoomsEnabled": "true"
+			}
+
+		}
+	]
+}

@@ -1,0 +1,291 @@
+{
+    "Format": "2.0",
+    "ConfigSchema": {
+		  "Custom_Ores": {
+            "AllowValues": "true, false",
+            "Default": "true",
+			"Description": "A new custom ore which contains the diamonds from CapeStardew"
+		},
+},
+"DynamicTokens": [
+{
+      "Name": "CustomOresEnabled",
+      "Value": "{{Custom_Ores: currentPlayer, hostPlayer, anyPlayer |contains=true}}"
+    }
+],
+    "Changes": [
+    
+    
+    {
+            "LogName": "Add resource image1",
+            "Action": "Load",
+            "Target": "Mods/CapeOreNodes/assets/KimberLiteOreheart",
+            "FromFile": "assets/KimberLiteOreheart.png"
+        },
+         {
+            "LogName": "Add resource image2",
+            "Action": "Load",
+            "Target": "Mods/CapeOreNodes/assets/KimberLiteOrefire",
+            "FromFile": "assets/KimberLiteOrefire.png"
+        },
+         {
+            "LogName": "Add resource image3",
+            "Action": "Load",
+            "Target": "Mods/CapeOreNodes/assets/KimberLiteOreblue",
+            "FromFile": "assets/KimberLiteOreblue.png"
+        },
+        {
+            "LogName": "Add Caperesource",
+            "Action": "EditData",
+            "Target": "Mods/mistyspring.ItemExtensions/Resources",
+            "Entries": {
+                "Cape.kimberliteheart": {
+                    "Name": "Kimberliteheart",
+                    "DisplayName": "{{i18n:Cape.kimberliteoreheart_Name}}",
+                    "Description": "{{i18n:Cape.kimberliteoreheart_Description}}",
+                    "Texture": "Mods/CapeOreNodes/assets/KimberLiteOreheart",
+                    "SpriteIndex": 0,
+                    "Width": 1,
+                    "Height": 1,
+                    "Health": 5,
+                    "ItemDropped": null,
+                    "MinDrops": 0,
+                    "MaxDrops": 1,
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Cape.HeartDiamond",
+                            "Chance": 0.7,
+                            "MinStack": -1,
+                            "MaxStack": 1,
+                            "Condition": null,
+                            "Quality": 0,
+                            "IsRecipe": false
+                        }
+                    ],
+                    "Debris": "stone",
+                    "FailSounds": [
+                        "clubhit",
+                        "clank"
+                    ],
+                    "BreakingSound": "stoneCrack",
+                    "Sound": "hammer",
+                    "AddHay": 0,
+                    "SecretNotes": true,
+                    "Shake": true,
+                    "CountTowards": "None",
+                    "Tool": "Pickaxe",
+                    "SayWrongTool": null,
+                    "MinToolLevel": 0,
+                    "Exp": 8,
+                    "Skill": "mining",
+                    "ContextTags": [],
+                    "CustomFields": {},
+                    "Light": null,
+                    "OnDestroy": null,
+                    "MineSpawns": [
+                        {
+                            "Floors": "70/120, 170/-999",
+                            "Type": "All",
+                            "Condition": "PLAYER_HAS_MAIL Current prettyStone1",
+                            "SpawnFrequency": 0.05,
+                            "AdditionalChancePerLevel": 0.000001
+                        }
+                    ]
+                },
+              },
+              },
+              
+              
+              
+              
+              {
+              "LogName": "Add Caperesource2",
+            "Action": "EditData",
+            "Target": "Mods/mistyspring.ItemExtensions/Resources",
+            "Entries": {
+                "Cape.kimberlitefire": {
+		                "Name": "Kimberlitefire",
+                     "DisplayName": "{{i18n:Cape.kimberliteorefire_Name}}",
+                    "Description": "{{i18n:Cape.kimberliteorefire_Description}}",
+                    "Texture": "Mods/CapeOreNodes/assets/KimberLiteOrefire",
+                    "SpriteIndex": 0,
+                    "Width": 1,
+                    "Height": 1,
+                    "Health": 8,
+                    "ItemDropped": null,
+                    "MinDrops": 0,
+                    "MaxDrops": 1,
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Cape.FireDiamond",
+                            "Chance": 0.6,
+                            "MinStack": -1,
+                            "MaxStack": 1,
+                            "Condition": null,
+                            "Quality": 0,
+                            "IsRecipe": false
+                        }
+                    ],
+                    "Debris": "stone",
+                    "FailSounds": [
+                        "clubhit",
+                        "clank"
+                    ],
+                    "BreakingSound": "stoneCrack",
+                    "Sound": "hammer",
+                    "AddHay": 0,
+                    "SecretNotes": true,
+                    "Shake": true,
+                    "CountTowards": "None",
+                    "Tool": "Pickaxe",
+                    "SayWrongTool": null,
+                    "MinToolLevel": 0,
+                    "Exp": 8,
+                    "Skill": "mining",
+                    "ContextTags": [],
+                    "CustomFields": {},
+                    "Light": null,
+                    "OnDestroy": null,
+                    "MineSpawns": [
+                        {
+                            "Floors": "60/120, 170/-999",
+                            "Type": "All",
+                            "Condition": "PLAYER_HAS_MAIL Current prettyStone1",
+                            "SpawnFrequency": 0.05,
+                            "AdditionalChancePerLevel": 0.000001
+                        }
+                    ]
+                },
+              
+              
+              
+              },
+              
+              },
+              
+              
+              {
+               
+              "LogName": "Add Caperesource3",
+            "Action": "EditData",
+            "Target": "Mods/mistyspring.ItemExtensions/Resources",
+            "Entries": {
+                "Cape.kimberliteblue": {
+                    "Name": "Kimberliteblue",
+                     "DisplayName": "{{i18n:Cape.kimberliteoreblue_Name}}",
+                    "Description": "{{i18n:Cape.kimberliteoreblue_Description}}",
+                    "Texture": "Mods/CapeOreNodes/assets/KimberLiteOreblue",
+                    "SpriteIndex": 0,
+                    "Width": 1,
+                    "Height": 1,
+                    "Health": 5,
+                    "ItemDropped": null,
+                    "MinDrops": 0,
+                    "MaxDrops": 1,
+                    "ExtraItems": [
+                        {
+                            "ItemId": "(O)Cape.BlueDiamond",
+                            "Chance": 0.4,
+                            "MinStack": -1,
+                            "MaxStack": 1,
+                            "Condition": null,
+                            "Quality": 0,
+                            "IsRecipe": false
+                        }
+                    ],
+                    "Debris": "stone",
+                    "FailSounds": [
+                        "clubhit",
+                        "clank"
+                    ],
+                    "BreakingSound": "stoneCrack",
+                    "Sound": "hammer",
+                    "AddHay": 0,
+                    "SecretNotes": true,
+                    "Shake": true,
+                    "CountTowards": "None",
+                    "Tool": "Pickaxe",
+                    "SayWrongTool": null,
+                    "MinToolLevel": 0,
+                    "Exp": 8,
+                    "Skill": "mining",
+                    "ContextTags": [],
+                    "CustomFields": {},
+                    "Light": null,
+                    "OnDestroy": null,
+                    "MineSpawns": [
+                        {
+                            "Floors": "80/120, 180/-999",
+                            "Type": "Normal",
+                            "Condition": "PLAYER_HAS_MAIL Current prettyStone1",
+                            "SpawnFrequency": 0.05,
+                            "AdditionalChancePerLevel": 0.000001
+                        }
+                    ]
+                }
+            }
+        },
+        
+        {
+  "LogName": "Add Prismatic Diamond",
+  "Action": "EditData",
+  "Target": "Mods/mistyspring.ItemExtensions/Resources",
+  "Entries": {
+    "Cape.kimberlitecelestial": {
+      "Name": "kimberliteprisma",
+      "DisplayName": "{{i18n:Cape.kimberlitecelestial_Name}}",
+      "Description": "{{i18n:Cape.kimberlitecelestial_Description}}",
+      "Texture": "Mods/CapeOreNodes/assets/KimberLiteOreFire",
+      "SpriteIndex": 1,
+      "Width": 1,
+      "Height": 1,
+      "Health": 8,
+      "ItemDropped": null,
+      "MinDrops": 0,
+      "MaxDrops": 1,
+      "ExtraItems": [
+        {
+          "ItemId": "(O)Cape.PrismaticDiamond",
+          "Chance": 0.5,
+          "MinStack": -1,
+          "MaxStack": 1,
+          "Condition": null,
+          "Quality": 0,
+          "IsRecipe": false
+        }
+      ],
+      "Debris": "stone",
+      "FailSounds": [
+        "clubhit",
+        "clank"
+      ],
+      "BreakingSound": "stoneCrack",
+      "Sound": "hammer",
+      "AddHay": 0,
+      "SecretNotes": true,
+      "Shake": true,
+      "CountTowards": "None",
+      "Tool": "Pickaxe",
+      "SayWrongTool": null,
+      "MinToolLevel": 0,
+      "Exp": 8,
+      "Skill": "mining",
+      "ContextTags": [],
+      "CustomFields": {},
+      "Light": null,
+      "OnDestroy": null,
+      "MineSpawns": [
+        {
+          "Floors": "50/120, 180/-999",
+          "Type": "Qi",
+          "Condition": "PLAYER_HAS_MAIL Current prettyStone1",
+          "SpawnFrequency": 0.05,
+          "AdditionalChancePerLevel": 0.000001
+        }
+      ]
+    }
+  }
+}
+        
+    ]
+}

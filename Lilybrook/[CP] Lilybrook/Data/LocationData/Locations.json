@@ -1,0 +1,2258 @@
+{
+  "Changes": [
+   {
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookBeachPatch",
+      "FromFile": "assets/Maps/LilybrookBeachPatch.tmx"
+    },
+	{
+      "LogName": "Lilybrook Village Board Patch",
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookBoardPatch",
+      "FromFile": "Assets/Maps/LilybrookBoardPatch.tmx"
+    },
+	{
+	  "LogName": "Lilybrook Board Patch",
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_Lilybrook",
+	  "FromFile": "assets/Maps/LilybrookBoardPatch.tmx",
+	  "PatchMode": "Replace",
+	  "FromArea": { "X": 0, "Y": 0, "Width": 5, "Height": 3 },
+			"ToArea": { "X": 97, "Y": 63, "Width": 5, "Height": 3 },
+	  "When": {
+	            "Query: {{DaysPlayed}} <=56": false
+		   },
+	 },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookAlden4H",
+      "FromFile": "assets/Maps/LilybrookAlden4H.tmx"
+    },
+	{
+      "Action": "EditMap",
+      "Target": "Maps/BusStop",
+      "AddNpcWarps": [
+         "23 6 8BitAlien.Lilybrook_LilybrookRoad 29 22"
+            ]
+        },
+    {
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_JagHouse",
+      "FromFile": "assets/Maps/JagHouse.tmx"
+    },
+	{
+      "LogName": "Load Spouse Maps",
+      "Action": "Load",
+      "Target": "Maps/LilybrookSpouseRooms, Maps/LilybrookSpousePatios",
+      "FromFile": "Assets/Maps/{{TargetWithoutPath}}.tmx"
+        },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_JagHouse": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_JagHouse"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.JagHouse}}",
+          "DefaultArrivalTile": {
+            "X": 18,
+            "Y": 19
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_JagHouse",
+      "AddWarps": [
+        "18 20 8BitAlien.Lilybrook_Lilybrook 28 40"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_JemmaHouse",
+      "FromFile": "assets/Maps/JemmaHouse.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_JemmaHouse": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_JemmaHouse"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.JemmaHouse}}",
+          "DefaultArrivalTile": {
+            "X": 5,
+            "Y": 27
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_JemmaHouse",
+      "AddWarps": [
+        "5 28 8BitAlien.Lilybrook_Lilybrook 64 16"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_PetraHaroldHouse",
+      "FromFile": "assets/Maps/PetraHaroldHouse.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_PetraHaroldHouse": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_PetraHaroldHouse"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.PetraHaroldHouse}}",
+          "DefaultArrivalTile": {
+            "X": 4,
+            "Y": 18
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_PetraHaroldHouse",
+      "AddWarps": [
+        "4 19 8BitAlien.Lilybrook_Lilybrook 57 29"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_ArchieHouse",
+      "FromFile": "assets/Maps/ArchieHouse.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_ArchieHouse": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_ArchieHouse"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.ArchieHouse}}",
+          "DefaultArrivalTile": {
+            "X": 7,
+            "Y": 9
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_ArchieHouse",
+      "AddWarps": [
+        "7 10 8BitAlien.Lilybrook_Lilybrook 10 14"
+      ]
+    },
+ {
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookRoad",
+      "FromFile": "assets/Maps/LilybrookRoad.tmx"
+    },
+	{
+	   "Action": "EditMap",
+	   "Target": "Maps/8BitAlien.Lilybrook_LilybrookRoad",
+	   "MapTiles": [
+	  {
+          "Position": {
+            "X": 48,
+            "Y": 9
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 6 12 8BitAlien.Lilybrook_LilybrookMuseum 800 1800"
+               }
+		    }
+	    ]
+	 },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_LilybrookRoad": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_LilybrookRoad"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.LilybrookRoad}}",
+          "DefaultArrivalTile": {
+            "X": 29,
+            "Y": 23
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookRoad",
+      "AddWarps": [
+        "33 32 8BitAlien.Lilybrook_Lilybrook 74 0",
+        "34 32 8BitAlien.Lilybrook_Lilybrook 75 0"
+      ]
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_TracyHouse",
+      "FromFile": "assets/Maps/TracyHouse.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_TracyHouse": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_TracyHouse"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.TracyHouse}}",
+          "DefaultArrivalTile": {
+            "X": 11,
+            "Y": 23
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_TracyHouse",
+      "AddWarps": [
+        "11 24 8BitAlien.Lilybrook_Lilybrook 104 16",
+        "12 24 8BitAlien.Lilybrook_Lilybrook 104 16"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_BillyShop",
+      "FromFile": "assets/Maps/BillyShop.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_BillyShop": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_BillyShop"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.BillyShop}}",
+          "DefaultArrivalTile": {
+            "X": 17,
+            "Y": 19
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "distantBanjo"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_BillyShop",
+      "AddWarps": [
+        "17 20 8BitAlien.Lilybrook_Lilybrook 36 53"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_AnimalCenter",
+      "FromFile": "assets/Maps/AnimalCenter.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_AnimalCenter": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_AnimalCenter"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.AnimalCenter}}",
+          "DefaultArrivalTile": {
+            "X": 10,
+            "Y": 11
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "marnieShop"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_AnimalCenter",
+      "AddWarps": [
+        "10 12 8BitAlien.Lilybrook_LilybrookGrove 22 21"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_ButterflyHouse",
+      "FromFile": "assets/Maps/ButterflyHouse.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_ButterflyHouse": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_ButterflyHouse"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.ButterflyHouse}}",
+          "DefaultArrivalTile": {
+            "X": 10,
+            "Y": 22
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "SunRoom"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_ButterflyHouse",
+      "AddWarps": [
+        "10 24 8BitAlien.Lilybrook_Zoo 67 14"
+       ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_GiftShop",
+      "FromFile": "assets/Maps/GiftShop.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_GiftShop": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_GiftShop"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.GiftShop}}",
+          "DefaultArrivalTile": {
+            "X": 13,
+            "Y": 11
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "distantBanjo"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_GiftShop",
+      "AddWarps": [
+        "13 12 8BitAlien.Lilybrook_Zoo 28 15",
+		"14 12 8BitAlien.Lilybrook_Zoo 29 15"
+       ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_ZooMTF",
+      "FromFile": "assets/Maps/ZooMTF.tmx",
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_ZooWTS",
+      "FromFile": "assets/Maps/ZooWTS.tmx",
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_Zoo",
+      "FromFile": "assets/Maps/Zoo.tmx",
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_Zoo":{
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_Zoo"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.Zoo}}",
+          "DefaultArrivalTile": {
+            "X": 3,
+            "Y": 17
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "distantBanjo"
+            }
+          ]
+        }
+      }
+    },
+	{
+	  "LogName": "WTS Zoo Change",
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_Zoo",
+	  "FromFile": "assets/Maps/ZooWTS.tmx",
+	  "PatchMode": "Replace",
+	  "When": {
+	            "DayOfWeek": "Wednesday, Thursday, Saturday"
+				},
+	 },
+	{
+	  "LogName": "MTF Zoo Change",
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_Zoo",
+	  "FromFile": "assets/Maps/ZooMTF.tmx",
+	  "PatchMode": "Replace",
+	  "When": {
+	            "DayOfWeek": "Monday, Tuesday, Friday"
+				},
+	 },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_Zoo",
+      "AddWarps": [
+        "-1 17 8BitAlien.Lilybrook_Lilybrook 119 54",
+		"-1 18 8BitAlien.Lilybrook_Lilybrook 119 54"
+      ],
+	   "MapTiles": [
+	   {
+          "Position": {
+            "X": 67,
+            "Y": 13
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 10 22 8BitAlien.Lilybrook_ButterflyHouse 600 2600"
+           }
+	    },
+		{
+          "Position": {
+            "X": 28,
+            "Y": 14
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 13 11 8BitAlien.Lilybrook_GiftShop 800 1800"
+           }
+	    },
+		{
+          "Position": {
+            "X": 29,
+            "Y": 14
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 14 11 8BitAlien.Lilybrook_GiftShop 800 1800"
+           }
+	    }
+    ]
+},
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookFarmhouse",
+      "FromFile": "assets/Maps/LilybrookFarmhouse.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_LilybrookFarmhouse": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_LilybrookFarmhouse",
+			"Type": "StardewValley.Locations.DecoratableLocation"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.LilybrookFarmhouse}}",
+          "DefaultArrivalTile": {
+            "X": 27,
+            "Y": 30
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ]
+        }
+      }
+    },
+	{
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookFarmhouse",
+      "AddWarps": [
+        "27 31 8BitAlien.Lilybrook_LilybrookFarmhouseExterior 12 11"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookGrove",
+      "FromFile": "assets/Maps/LilybrookGrove.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_LilybrookGrove": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_LilybrookGrove"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.LilybrookGrove}}",
+          "DefaultArrivalTile": {
+            "X": 61,
+            "Y": 26
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ],
+		  "ArtifactSpots": [
+						{
+                            "Chance": 0.02,
+                            "ApplyGenerousEnchantment": false,
+                            "OneDebrisPerDrop": true,
+                            "Precedence": 0,
+                            "ContinueOnDrop": true,
+                            "Id": "Lilybrook.DwarvenCrest",
+                            "ItemId": "Lilybrook.DwarvenCrest",
+                            "MinStack": 1,
+                            "MaxStack": 1
+                        },
+						 {
+                            "Chance": 0.05,
+                            "ApplyGenerousEnchantment": false,
+                            "OneDebrisPerDrop": true,
+                            "Precedence": 0,
+                            "ContinueOnDrop": true,
+                            "Id": "Lilybrook.OldFootball",
+                            "ItemId": "Lilybrook.OldFootball",
+                            "MinStack": 1,
+                            "MaxStack": 1
+                        },
+						{
+                            "Chance": 0.05,
+                            "ApplyGenerousEnchantment": false,
+                            "OneDebrisPerDrop": true,
+                            "Precedence": 0,
+                            "ContinueOnDrop": true,
+                            "Id": "Lilybrook.ForgottenTrack",
+                            "ItemId": "Lilybrook.ForgottenTrack",
+                            "MinStack": 1,
+                            "MaxStack": 1
+                        },
+                        {
+                            "Chance": 0.2,
+                            "ApplyGenerousEnchantment": false,
+                            "OneDebrisPerDrop": true,
+                            "Precedence": 0,
+                            "ContinueOnDrop": true,
+                            "Id": "Lilybrook.HollowNut",
+                            "ItemId": "Lilybrook.HollowNut",
+                            "MinStack": 1,
+                            "MaxStack": 2
+                        }
+                    ],
+		  "Fish": [
+                        {
+                            "Id": "{{ModId}}_LeafscaleTrout",
+                            "ItemId": "{{ModId}}_LeafscaleTrout",
+							"Precedence": -1,
+							"Condition": "LOCATION_SEASON Here spring summer"
+                        },
+						{
+                            "Id": "{{ModId}}_AmoreBass",
+                            "ItemId": "{{ModId}}_AmoreBass",
+							"Precedence": -1,
+							"Condition": "LOCATION_SEASON Here summer fall"
+                        },
+						{
+                            "Id": "{{ModId}}_RoseAngelfish",
+                            "ItemId": "{{ModId}}_RoseAngelfish",
+							"Condition": "LOCATION_SEASON Here spring summer"
+                        },
+						{
+                            "Id": "{{ModId}}_ElectroBass",
+                            "ItemId": "{{ModId}}_ElectroBass",
+							"Condition": "LOCATION_SEASON Here spring summer fall, WEATHER Here Storm"
+                        },
+						{
+                            "Id": "{{ModId}}_Mushfin",
+                            "ItemId": "{{ModId}}_Mushfin",
+							"Precedence": -1,
+							"Season": "Fall"
+                        },
+						{
+                            "Id": "Largemouth Bass",
+                            "ItemId": "(O)136"
+                        },
+						{
+                            "Id": "Salmon",
+                            "ItemId": "(O)139",
+							"Season": "Fall"
+                        },
+						{
+                            "Id": "Rainbow Trout",
+                            "ItemId": "(O)138",
+							"Season": "Summer"
+                        },
+						{
+                            "Id": "Catfish",
+                            "ItemId": "(O)143",
+							"Condition": "LOCATION_SEASON Here spring fall"
+                        },
+						{
+                            "Id": "Sunfish",
+                            "ItemId": "(O)145",
+							"Condition": "LOCATION_SEASON Here spring"
+                        },
+						{
+                            "Id": "Smallmouth Bass",
+                            "ItemId": "(O)137",
+							"Condition": "LOCATION_SEASON Here spring fall"
+                        },
+						{
+                            "Id": "Bream",
+                            "ItemId": "(O)132"
+                        },
+		  ]
+        }
+      }
+    },
+	{
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_Lilybrook",
+	  "FromFile": "assets/Maps/LilybrookPatch.tmx",
+	  "PatchMode": "Replace",
+	  "When": {
+	             "Query: {{DLX.Bundles/DaysSincePurchase:8BitAlien.Lilybrook_ZooOpeningBundle}} >= 1": true
+				 },
+	  "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 10,
+        "Height": 10
+      },
+      "ToArea": {
+        "X": 109,
+        "Y": 51,
+        "Width": 10,
+        "Height": 10
+      }
+	 },
+	 {
+	   "Action": "EditMap",
+	   "Target": "Maps/8BitAlien.Lilybrook_LilybrookGrove",
+	   "AddWarps": [
+        "63 24 8BitAlien.Lilybrook_Lilybrook 0 70",
+		"63 25 8BitAlien.Lilybrook_Lilybrook 0 70",
+		"63 26 8BitAlien.Lilybrook_Lilybrook 0 70",
+		"63 27 8BitAlien.Lilybrook_Lilybrook 0 71",
+		"63 28 8BitAlien.Lilybrook_Lilybrook 0 71",
+		"-1 6 8BitAlien.Lilybrook_LilybrookFarmhouseExterior 39 9",
+		"-1 7 8BitAlien.Lilybrook_LilybrookFarmhouseExterior 39 9",
+		"-1 8 8BitAlien.Lilybrook_LilybrookFarmhouseExterior 39 10",
+		"-1 9 8BitAlien.Lilybrook_LilybrookFarmhouseExterior 39 11",
+		"-1 10 8BitAlien.Lilybrook_LilybrookFarmhouseExterior 39 12",
+		"-1 11 8BitAlien.Lilybrook_LilybrookFarmhouseExterior 39 12",
+		"-1 12 8BitAlien.Lilybrook_LilybrookFarmhouseExterior 39 12",
+		"43 4 8BitAlien.Lilybrook_GroveCave 11 16",
+      ],
+	  "MapTiles": [
+		 {
+          "Position": {
+            "X": 22,
+            "Y": 20
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 10 11 8BitAlien.Lilybrook_AnimalCenter 800 1900"
+           }
+         }
+	   ] 
+	 },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookGrove",
+	  "FromFile": "assets/Maps/LilybrookGrovePatch.tmx",
+	  "PatchMode": "Replace",
+	  "When": {
+	             "HasFlag": "{{ModId}}_PetraHaroldFarmhouse"
+				 },
+	  "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 6,
+        "Height": 8
+      },
+      "ToArea": {
+        "X": 0,
+        "Y": 6,
+        "Width": 6,
+        "Height": 8
+      },
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_FishingCave",
+      "FromFile": "assets/Maps/FishingCave.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_FishingCave": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_FishingCave"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.FishingCave}}",
+          "DefaultArrivalTile": {
+            "X": 20,
+            "Y": 34
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "moonlightJellies"
+            }
+          ],
+		  "Fish": [
+                        {
+                            "Id": "{{ModId}}_LeafscaleTrout",
+                            "ItemId": "{{ModId}}_LeafscaleTrout",
+							"Precedence": -1,
+							"Condition": "LOCATION_SEASON Here spring summer"
+                        },
+						{
+                            "Id": "{{ModId}}_AmoreBass",
+                            "ItemId": "{{ModId}}_AmoreBass",
+							"Precedence": -1,
+							"Condition": "LOCATION_SEASON Here summer fall"
+                        },
+						{
+                            "Id": "{{ModId}}_MooJaw",
+                            "ItemId": "{{ModId}}_MooJaw",
+							"Precedence": -1,
+							"Season": "Spring"
+                        },
+						{
+                            "Id": "{{ModId}}_Xergonoid",
+                            "ItemId": "{{ModId}}_Xergonoid",
+							"Precedence": -1,
+							"Season": "Spring",
+							"IsBossFish": true,
+							"CatchLimit": 1
+                        },
+							{
+                            "Id": "{{ModId}}_Mushfin",
+                            "ItemId": "{{ModId}}_Mushfin",
+							"Precedence": -1,
+							"Season": "Fall"
+                        },
+						{
+                            "Id": "Largemouth Bass",
+                            "ItemId": "(O)136"
+                        },
+						{
+                            "Id": "Salmon",
+                            "ItemId": "(O)139",
+							"Season": "Fall"
+                        },
+						{
+                            "Id": "Rainbow Trout",
+                            "ItemId": "(O)138",
+							"Season": "Summer"
+                        },
+						{
+                            "Id": "Catfish",
+                            "ItemId": "(O)143",
+							"Condition": "LOCATION_SEASON Here spring fall"
+                        },
+						{
+                            "Id": "Sunfish",
+                            "ItemId": "(O)145",
+							"Condition": "LOCATION_SEASON Here spring"
+                        },
+						{
+                            "Id": "Smallmouth Bass",
+                            "ItemId": "(O)137",
+							"Condition": "LOCATION_SEASON Here spring fall"
+                        },
+						{
+                            "Id": "Ghostfish",
+                            "ItemId": "(O)156"
+                        },
+						{
+                            "Id": "Stonefish",
+                            "ItemId": "(O)158"
+                        },
+						{
+                            "Id": "Bream",
+                            "ItemId": "(O)132"
+                        },
+		  ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_FishingCave",
+      "AddWarps": [
+        "20 35 8BitAlien.Lilybrook_LilybrookBeach 47 6"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_CoffeeShop",
+      "FromFile": "assets/Maps/CoffeeShop.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_CoffeeShop": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_CoffeeShop"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.CoffeeShop}}",
+          "DefaultArrivalTile": {
+            "X": 7,
+            "Y": 14
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "distantBanjo"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_CoffeeShop",
+      "AddWarps": [
+        "7 16 8BitAlien.Lilybrook_Lilybrook 106 87"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_GroveCave",
+      "FromFile": "assets/Maps/GroveCave.tmx"
+    },
+	{
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_GroveCave": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_GroveCave"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.GroveCave}}",
+          "DefaultArrivalTile": {
+            "X": 11,
+            "Y": 16
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "clubloop"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_GroveCave",
+      "AddWarps": [
+        "11 18 8BitAlien.Lilybrook_LilybrookGrove 43 6"
+      ]
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_OakleyFrankieHouse",
+      "FromFile": "assets/Maps/OakleyFrankieHouse.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_OakleyFrankieHouse": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_OakleyFrankieHouse"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.OakleyFrankieHouse}}",
+          "DefaultArrivalTile": {
+            "X": 20,
+            "Y": 24
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_OakleyFrankieHouse",
+      "AddWarps": [
+        "20 25 8BitAlien.Lilybrook_Lilybrook 44 75"
+      ]
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_JagDiner",
+      "FromFile": "assets/Maps/JagDiner.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_JagDiner": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_JagDiner"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.JagDiner}}",
+          "DefaultArrivalTile": {
+            "X": 14,
+            "Y": 33
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "8BitAlien.Lilybrook_DinerTheme"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_JagDiner",
+      "AddWarps": [
+        "14 34 8BitAlien.Lilybrook_Lilybrook 67 44",
+        "15 34 8BitAlien.Lilybrook_Lilybrook 68 44"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookFarmhouseExterior",
+      "FromFile": "assets/Maps/LilybrookFarmhouseExterior.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_LilybrookFarmhouseExterior": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_LilybrookFarmhouseExterior"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.LilybrookFarmhouseExterior}}",
+          "DefaultArrivalTile": {
+            "X": 39,
+            "Y": 10
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ],
+		  "Fish": [
+		             {
+                            "Id": "{{ModId}}_PondNib",
+                            "ItemId": "{{ModId}}_PondNib"
+                        },
+						{
+                            "Id": "{{ModId}}_ShadowKoi",
+                            "ItemId": "{{ModId}}_ShadowKoi"
+                        }
+				]
+        }
+      }
+    },
+	{
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookFarmhouseExterior",
+      "AddWarps": [
+        "40 9 8BitAlien.Lilybrook_LilybrookGrove 0 8",
+		"40 10 8BitAlien.Lilybrook_LilybrookGrove 0 9",
+		"40 11 8BitAlien.Lilybrook_LilybrookGrove 0 10",
+		"40 12 8BitAlien.Lilybrook_LilybrookGrove 0 10",
+		"40 13 8BitAlien.Lilybrook_LilybrookGrove 0 11",
+      ],
+      "MapTiles": [
+    {
+      "Position": {
+        "X": 12,
+        "Y": 10
+      },
+      "Layer": "Buildings",
+      "SetProperties": {
+        "Action": "LockedDoorWarp 27 30 8BitAlien.Lilybrook_LilybrookFarmhouse 600 2600"
+      }
+    }
+  ]
+},
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_ClothesShop",
+      "FromFile": "assets/Maps/ClothesShop.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_ClothesShop": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_ClothesShop"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.ClothesShop}}",
+          "DefaultArrivalTile": {
+            "X": 7,
+            "Y": 19
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "movie_nature"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_ClothesShop",
+      "AddWarps": [
+        "6 20 8BitAlien.Lilybrook_Lilybrook 74 75",
+		"7 20 8BitAlien.Lilybrook_Lilybrook 75 75"
+      ]
+    },
+	{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookCommunityCenter",
+      "FromFile": "assets/Maps/LilybrookCommunityCenter.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_LilybrookCommunityCenter": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_LilybrookCommunityCenter"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.LilybrookCommunityCenter}}",
+          "DefaultArrivalTile": {
+            "X": 24,
+            "Y": 22
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "movie_wumbus"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookCommunityCenter",
+      "AddWarps": [
+        "24 23 8BitAlien.Lilybrook_Lilybrook 101 52",
+        "25 23 8BitAlien.Lilybrook_Lilybrook 102 52"
+      ]
+    },{
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookBeach",
+      "FromFile": "assets/Maps/LilybrookBeach.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_LilybrookBeach": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_LilybrookBeach"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.LilybrookBeach}}",
+          "DefaultArrivalTile": {
+            "X": 35,
+            "Y": 0
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "ocean"
+            }
+          ],
+		  "Fish": [
+						{
+                            "Id": "Sardine",
+                            "ItemId": "(O)131",
+							"Condition": "LOCATION_SEASON Here spring fall winter"
+                        },
+						{
+                            "Id": "Tuna",
+                            "ItemId": "(O)130",
+							"Condition": "LOCATION_SEASON Here summer winter"
+                        },
+						{
+                            "Id": "Pufferfish",
+                            "ItemId": "(O)128",
+							"Season": "Summer"
+                        },
+						{
+                            "Id": "Red Snapper",
+                            "ItemId": "(O)150",
+							"Condition": "LOCATION_SEASON Here summer fall"
+                        },
+						{
+                            "Id": "Anchovy",
+                            "ItemId": "(O)129",
+							"Condition": "LOCATION_SEASON Here spring fall"
+                        },
+                        {
+                            "Id": "Herring",
+                            "ItemId": "(O)147",
+							"Condition": "LOCATION_SEASON Here spring winter"
+                        },
+						{
+                            "Id": "Sea Cucumber",
+                            "ItemId": "(O)154",
+							"Condition": "LOCATION_SEASON Here fall winter"
+                        },
+						{
+                            "Id": "Squid",
+                            "ItemId": "(O)151",
+							"Season": "Winter"
+                        },
+						{
+                            "Id": "Octopus",
+                            "ItemId": "(O)149",
+						    "Condition": "LOCATION_SEASON Here summer winter"
+                        },
+						{
+                            "Id": "Eel",
+                            "ItemId": "(O)148",
+							"Condition": "LOCATION_SEASON Here spring fall"
+                        },
+						{
+                            "Id": "Tilapia",
+                            "ItemId": "(O)701",
+							"Condition": "LOCATION_SEASON Here summer fall"
+                        },
+						{
+                            "Id": "Albacore",
+                            "ItemId": "(O)705",
+							"Condition": "LOCATION_SEASON Here fall winter"
+                        },
+						{
+                            "Id": "Halibut",
+                            "ItemId": "(O)708",
+							"Condition": "LOCATION_SEASON Here spring summer winter"
+                        },
+						{
+                            "Id": "{{ModId}}_PeppermintEel",
+                            "ItemId": "{{ModId}}_PeppermintEel",
+							"Precedence": -1,
+							"Season": "Winter"
+                        },
+						{
+                            "Id": "{{ModId}}_AzureSunfish",
+                            "ItemId": "{{ModId}}_AzureSunfish",
+							"Precedence": -1,
+							"Condition": "LOCATION_SEASON Here spring summer"
+                        },
+						{
+                            "Id": "{{ModId}}_Bubblepop",
+                            "ItemId": "{{ModId}}_Bubblepop",
+							"Precedence": -1,
+							"Condition": "LOCATION_SEASON Here spring summer fall winter"
+                        },
+						{
+                            "Id": "{{ModId}}_DuskySnapper",
+                            "ItemId": "{{ModId}}_DuskySnapper",
+							"Precedence": -1,
+							"Condition": "LOCATION_SEASON Here spring summer fall winter"
+                        },
+						{
+                            "Id": "{{ModId}}_PrincessParrotFish",
+                            "ItemId": "{{ModId}}_PrincessParrotFish",
+							"Precedence": -1,
+							"Season": "Summer"
+                        },
+		  ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookBeach",
+      "AddWarps": [
+        "35 -1 8BitAlien.Lilybrook_Lilybrook 101 99",
+        "36 -1 8BitAlien.Lilybrook_Lilybrook 102 99",
+		"47 4 8BitAlien.Lilybrook_FishingCave 20 34"
+      ]
+    },
+     {
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_HazelsTree",
+      "FromFile": "assets/Maps/HazelsTree.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_HazelsTree": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_HazelsTree"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.HazelsTree}}",
+          "DefaultArrivalTile": {
+            "X": 3,
+            "Y": 5
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "SunRoom"
+            }
+          ]
+        }
+      }
+    },
+     {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_HazelsTree",
+      "AddWarps": [
+        "3 7 8BitAlien.Lilybrook_Lilybrook 96 83"
+      ]
+    },
+
+    {
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_Lilybrook",
+      "FromFile": "assets/Maps/Lilybrook.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "8BitAlien.Lilybrook_Lilybrook": {
+          "CreateOnLoad": {
+            "MapPath": "Maps/8BitAlien.Lilybrook_Lilybrook"
+          },
+          "DisplayName": "{{i18n:Lilybrook.Locations.Lilybrook}}",
+          "DefaultArrivalTile": {
+            "X": 74,
+            "Y": 0
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "Music": [
+            {
+              "Track": "spring1",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "spring2",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "spring3",
+              "Condition": "SEASON spring, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "summer1",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "summer2",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "summer3",
+              "Condition": "SEASON summer, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "fall1",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "fall2",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "fall3",
+              "Condition": "SEASON fall, TIME 600 1800, WEATHER Here Sun Wind"
+            },
+            {
+              "Track": "winter1",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.333333"
+            },
+            {
+              "Track": "winter2",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind RANDOM 0.5"
+            },
+            {
+              "Track": "winter3",
+              "Condition": "SEASON winter, TIME 600 1800, WEATHER Here Sun Wind"
+            }
+          ],
+		  "ArtifactSpots": [
+                       
+						{
+                            "Chance": 0.02,
+                            "ApplyGenerousEnchantment": false,
+                            "OneDebrisPerDrop": true,
+                            "Precedence": 0,
+                            "ContinueOnDrop": true,
+                            "Id": "Lilybrook.DwarvenCrest",
+                            "ItemId": "Lilybrook.DwarvenCrest",
+                            "MinStack": 1,
+                            "MaxStack": 1
+                        },
+						 {
+                            "Chance": 0.05,
+                            "ApplyGenerousEnchantment": false,
+                            "OneDebrisPerDrop": true,
+                            "Precedence": 0,
+                            "ContinueOnDrop": true,
+                            "Id": "Lilybrook.OldFootball",
+                            "ItemId": "Lilybrook.OldFootball",
+                            "MinStack": 1,
+                            "MaxStack": 1
+                        },
+						{
+                            "Chance": 0.05,
+                            "ApplyGenerousEnchantment": false,
+                            "OneDebrisPerDrop": true,
+                            "Precedence": 0,
+                            "ContinueOnDrop": true,
+                            "Id": "Lilybrook.ForgottenTrack",
+                            "ItemId": "Lilybrook.ForgottenTrack",
+                            "MinStack": 1,
+                            "MaxStack": 1
+                        },
+                        {
+                            "Chance": 0.2,
+                            "ApplyGenerousEnchantment": false,
+                            "OneDebrisPerDrop": true,
+                            "Precedence": 0,
+                            "ContinueOnDrop": true,
+                            "Id": "Lilybrook.HollowNut",
+                            "ItemId": "Lilybrook.HollowNut",
+                            "MinStack": 1,
+                            "MaxStack": 2
+                        }
+                    ],
+		  "FishAreas": {
+		            "UpperRiver": {
+						    "Position": {
+                                "X": 4,
+                                "Y": 10,
+                                "Width": 59,
+                                "Height": 50
+                            },
+                            "CrabPotFishTypes": [
+                                "freshwater"
+                            ],
+                            "CrabPotJunkChance": 0.3
+                        },
+					"LowerRiver": {
+						    "Position": {
+                                "X": 22,
+                                "Y": 40,
+                                "Width": 66,
+                                "Height": 60
+                            },
+                            "CrabPotFishTypes": [
+                                "freshwater"
+                            ],
+                            "CrabPotJunkChance": 0.3
+                        },
+                        "Pond1": {
+						    "Position": {
+                                "X": 9,
+                                "Y": 60,
+                                "Width": 7,
+                                "Height": 7
+                            },
+                            "CrabPotFishTypes": [
+                                "freshwater"
+                            ],
+                            "CrabPotJunkChance": 0.3
+                        },
+					"Pond2": {
+						    "Position": {
+                                "X": 77,
+                                "Y": 34,
+                                "Width": 8,
+                                "Height": 8
+                            },
+                            "CrabPotFishTypes": [
+                                "freshwater"
+                            ],
+                            "CrabPotJunkChance": 0.3
+                        },
+						"Pond3": {
+						    "Position": {
+                                "X": 112,
+                                "Y": 16,
+                                "Width": 6,
+                                "Height": 9
+                            },
+                            "CrabPotFishTypes": [
+                                "freshwater"
+                            ],
+                            "CrabPotJunkChance": 0.3
+                        },
+					},
+			  "Fish": [
+						{
+                            "Id": "{{ModId}}_ShadowKoi",
+                            "ItemId": "{{ModId}}_ShadowKoi",
+							"FishAreaId": "Pond1"
+                        },
+						{
+                            "Id": "{{ModId}}_ShadowKoi",
+                            "ItemId": "{{ModId}}_ShadowKoi",
+							"FishAreaId": "Pond2"
+                        },
+						{
+                            "Id": "{{ModId}}_ShadowKoi",
+                            "ItemId": "{{ModId}}_ShadowKoi",
+							"FishAreaId": "Pond3"
+                        },
+						{
+                            "Id": "{{ModId}}_PondNib",
+                            "ItemId": "{{ModId}}_PondNib",
+							"FishAreaId": "Pond1"
+                        },
+						{
+                            "Id": "{{ModId}}_PondNib",
+                            "ItemId": "{{ModId}}_PondNib",
+							"FishAreaId": "Pond2"
+                        },
+						{
+                            "Id": "{{ModId}}_PondNib",
+                            "ItemId": "{{ModId}}_PondNib",
+							"FishAreaId": "Pond3"
+                        },
+						{
+                            "Id": "{{ModId}}_Mushfin",
+                            "ItemId": "{{ModId}}_Mushfin",
+							"FishAreaId": "UpperRiver",
+							"Season": "Fall"
+                        },
+						{
+                            "Id": "{{ModId}}_Mushfin",
+                            "ItemId": "{{ModId}}_Mushfin",
+							"FishAreaId": "LowerRiver",
+							"Season": "Fall"
+                        },
+						{
+                            "Id": "{{ModId}}_Cobfish",
+                            "ItemId": "{{ModId}}_Cobfish",
+							"FishAreaId": "UpperRiver",
+						    "Condition": "LOCATION_SEASON Here summer fall"
+                        },
+						{
+                            "Id": "{{ModId}}_Cobfish",
+                            "ItemId": "{{ModId}}_Cobfish",
+							"FishAreaId": "LowerRiver",
+						    "Condition": "LOCATION_SEASON Here summer fall"
+                        },
+						{
+                            "Id": "{{ModId}}_RoseAngelfish",
+                            "ItemId": "{{ModId}}_RoseAngelfish",
+							"FishAreaId": "UpperRiver",
+						    "Condition": "LOCATION_SEASON Here spring summer"
+                        },
+						{
+                            "Id": "{{ModId}}_RoseAngelfish",
+                            "ItemId": "{{ModId}}_RoseAngelfish",
+							"FishAreaId": "LowerRiver",
+						    "Condition": "LOCATION_SEASON Here spring summer"
+                        },
+						{
+                            "Id": "{{ModId}}_ElectroBass",
+                            "ItemId": "{{ModId}}_ElectroBass",
+							"FishAreaId": "UpperRiver",
+						    "Condition": "LOCATION_SEASON Here spring summer fall, WEATHER Here Storm"
+                        },
+						{
+                            "Id": "{{ModId}}_ElectroBass",
+                            "ItemId": "{{ModId}}_ElectroBass",
+							"FishAreaId": "LowerRiver",
+						    "Condition": "LOCATION_SEASON Here spring summer fall, WEATHER Here Storm"
+                        },
+						{
+                            "Id": "Largemouth Bass",
+							"FishAreaId": "LowerRiver",
+                            "ItemId": "(O)136"
+                        },
+						{
+                            "Id": "Largemouth Bass",
+							"FishAreaId": "UpperRiver",
+                            "ItemId": "(O)136"
+                        },
+						{
+                            "Id": "Salmon",
+                            "ItemId": "(O)139",
+							"FishAreaId": "LowerRiver",
+							"Season": "Fall"
+                        },
+						{
+                            "Id": "Salmon",
+                            "ItemId": "(O)139",
+							"FishAreaId": "UpperRiver",
+							"Season": "Fall"
+                        },
+						{
+                            "Id": "Rainbow Trout",
+                            "ItemId": "(O)138",
+							"FishAreaId": "LowerRiver",
+							"Season": "Summer"
+                        },
+						{
+                            "Id": "Rainbow Trout",
+                            "ItemId": "(O)138",
+							"FishAreaId": "UpperRiver",
+							"Season": "Summer"
+                        },
+						{
+                            "Id": "Catfish",
+                            "ItemId": "(O)143",
+							"FishAreaId": "LowerRiver",
+							"Condition": "LOCATION_SEASON Here spring fall, WEATHER Here Rain"
+                        },
+						{
+                            "Id": "Catfish",
+                            "ItemId": "(O)143",
+							"FishAreaId": "UpperRiver",
+							"Condition": "LOCATION_SEASON Here spring fall, WEATHER Here Rain"
+                        },
+						{
+                            "Id": "Sunfish",
+                            "ItemId": "(O)145",
+							"FishAreaId": "UpperRiver",
+							"Condition": "LOCATION_SEASON Here spring summer, WEATHER Here Sun"
+                        },
+						{
+                            "Id": "Sunfish",
+                            "ItemId": "(O)145",
+							"FishAreaId": "LowerRiver",
+							"Condition": "LOCATION_SEASON Here spring summer, WEATHER Here Sun"
+                        },
+						{
+                            "Id": "Shad",
+                            "ItemId": "(O)706",
+							"FishAreaId": "LowerRiver",
+							"Condition": "LOCATION_SEASON Here spring summer fall, WEATHER Here Rain"
+                        },
+						{
+                            "Id": "Shad",
+                            "ItemId": "(O)706",
+							"FishAreaId": "UpperRiver",
+							"Condition": "LOCATION_SEASON Here spring summer fall, WEATHER Here Rain"
+                        },
+						{
+                            "Id": "Smallmouth Bass",
+                            "ItemId": "(O)137",
+							"FishAreaId": "LowerRiver",
+							"Condition": "LOCATION_SEASON Here spring fall"
+                        },
+						{
+                            "Id": "Smallmouth Bass",
+                            "ItemId": "(O)137",
+							"FishAreaId": "UpperRiver",
+							"Condition": "LOCATION_SEASON Here spring fall"
+                        },
+						{
+                            "Id": "Bream",
+							"FishAreaId": "UpperRiver",
+                            "ItemId": "(O)132"
+                        },
+						{
+                            "Id": "Bream",
+							"FishAreaId": "LowerRiver",
+                            "ItemId": "(O)132"
+                        },
+						
+		  ]		
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_Lilybrook",
+      "AddWarps": [
+        "74 -1 8BitAlien.Lilybrook_LilybrookRoad 33 31",
+        "75 -1 8BitAlien.Lilybrook_LilybrookRoad 34 31",
+		"101 100 8BitAlien.Lilybrook_LilybrookBeach 35 0",
+		"102 100 8BitAlien.Lilybrook_LilybrookBeach 36 0",
+		"-1 70 8BitAlien.Lilybrook_LilybrookGrove 62 24",
+		"-1 71 8BitAlien.Lilybrook_LilybrookGrove 62 25",
+		"120 54 8BitAlien.Lilybrook_Zoo 3 17",
+		"120 55 8BitAlien.Lilybrook_Zoo 3 18"
+      ],
+      "MapTiles": [
+        {
+          "Position": {
+            "X": 96,
+            "Y": 82
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 3 5 8BitAlien.Lilybrook_HazelsTree 600 2600"
+          }
+        },
+		{
+          "Position": {
+            "X": 101,
+            "Y": 51
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 24 22 8BitAlien.Lilybrook_LilybrookCommunityCenter 600 2600"
+          }
+        },
+		{
+          "Position": {
+            "X": 102,
+            "Y": 51
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 25 22 8BitAlien.Lilybrook_LilybrookCommunityCenter 600 2600"
+          }
+        },
+		{
+          "Position": {
+            "X": 36,
+            "Y": 52
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 17 19 8BitAlien.Lilybrook_BillyShop 900 1800"
+          }
+        },
+		{
+          "Position": {
+            "X": 10,
+            "Y": 13
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 7 9 8BitAlien.Lilybrook_ArchieHouse 900 1800"
+          }
+        },
+        {
+          "Position": {
+            "X": 67,
+            "Y": 43
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 14 33 8BitAlien.Lilybrook_JagDiner 1200 2300"
+          }
+        },
+		{
+          "Position": {
+            "X": 57,
+            "Y": 28
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 4 18 8BitAlien.Lilybrook_PetraHaroldHouse 800 1900"
+          }
+        },
+		{
+          "Position": {
+            "X": 106,
+            "Y": 86
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 7 14 8BitAlien.Lilybrook_CoffeeShop 800 1800"
+          }
+        },
+         {
+          "Position": {
+            "X": 28,
+            "Y": 39
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 18 19 8BitAlien.Lilybrook_JagHouse 800 2000"
+          }
+        },
+        {
+          "Position": {
+            "X": 68,
+            "Y": 43
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 15 33 8BitAlien.Lilybrook_JagDiner 1200 2300"
+          }
+        },
+		{
+          "Position": {
+            "X": 74,
+            "Y": 74
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 6 19 8BitAlien.Lilybrook_ClothesShop 900 1700"
+          }
+        },
+		{
+          "Position": {
+            "X": 75,
+            "Y": 74
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 7 19 8BitAlien.Lilybrook_ClothesShop 900 1700"
+          }
+        },
+        {
+          "Position": {
+            "X": 44,
+            "Y": 74
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 20 24 8BitAlien.Lilybrook_OakleyFrankieHouse 800 1900"
+          }
+        },
+		{
+          "Position": {
+            "X": 64,
+            "Y": 15
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 5 27 8BitAlien.Lilybrook_JemmaHouse 800 1900"
+          }
+        },
+        {
+          "Position": {
+            "X": 104,
+            "Y": 15
+          },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "LockedDoorWarp 12 22 8BitAlien.Lilybrook_TracyHouse 800 2000"
+          }
+        }
+      ]
+    }
+  ]
+}

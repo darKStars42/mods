@@ -1,0 +1,154 @@
+{
+	"Format": "2.0.0",
+	"ConfigSchema": {
+		"ExtraYieldEnabled": {
+			"AllowValues": "true, false",
+			"Default": true
+		},
+		"ForestPatch": {
+			"AllowValues": "true, false",
+			"Default": true
+		},
+		"Dishes": {
+			"AllowValues": "true, false",
+			"Default": true
+		},
+		"SpacecoreRecipes": {
+			"AllowValues": "true, false",
+			"Default": true
+		},
+	/*	"HybridsEnabled": {
+			"AllowValues": "true, false",
+			"Default": false
+		},*/
+	},
+	"DynamicTokens": [
+		{
+			"Name": "FuchsiaSeason",
+			"Value": "Fuchsia",
+		},
+		{
+			"Name": "FuchsiaSeason",
+			"Value": "FuchsiaBerry",
+			"When": {
+				"season": "fall",
+				"HasMod|contains=spacechase0.SpaceCore": false
+			}
+		},
+	],
+	"Changes": [
+		{
+			"LogName": "Objects",
+			"Action": "Include",
+			"FromFile": "Assets/Objects.json",
+		},
+		{
+			"LogName": "Shops",
+			"Action": "Include",
+			"FromFile": "Assets/Shops.json",
+		},
+		{
+			"LogName": "Mails",
+			"Action": "Include",
+			"FromFile": "Assets/Mails.json",
+		},
+		{
+			"LogName": "GiftTastes",
+			"Action": "Include",
+			"FromFile": "Assets/GiftTastes.json",
+		},
+		{
+			"LogName": "Dialogues",
+			"Action": "Include",
+			"FromFile": "Assets/Dialogues.json",
+		},
+		{
+			"LogName": "Spawn",
+			"Action": "Include",
+			"FromFile": "Assets/Spawn.json",
+		},
+		{
+			"LogName": "Events",
+			"Action": "Include",
+			"FromFile": "Assets/Events.json",
+		},
+		{
+			"LogName": "MixedSeed",
+			"Action": "Include",
+			"FromFile": "Assets/MixedSeed.json",
+			"When": {
+				"HasMod |contains=mistyspring.ItemExtensions": "true",
+			}
+		},
+		{
+			"LogName": "Weeds",
+			"Action": "Include",
+			"FromFile": "Assets/Weeds.json",
+			"When": {
+				"HasMod |contains=mistyspring.ItemExtensions": "true",
+			}
+		},
+		{
+			"LogName": "ExtraYield",
+			"Action": "Include",
+			"FromFile": "Assets/ExtraYield.json",
+				"When": {"ExtraYieldEnabled": "true",
+			"HasMod |contains=spacechase0.SpaceCore": "true",
+				}
+		},
+		{
+			"LogName": "Maps",
+			"Action": "Include",
+			"FromFile": "Assets/Maps.json",
+		},
+        {
+            "Action": "EditData",
+            "Target": "Data/Minecarts",
+            "TargetField": [
+                "Default",
+                "Destinations"
+            ],
+            "Entries": {
+                "Lumisteria.SereneMeadow_ForestMeadow": {
+                    "Id": "Lumisteria.SereneMeadow_ForestMeadow",
+                    "DisplayName": "{{i18n: SereneMeadowForestMeadow}}",
+                    "Condition": "ANY \"PLAYER_VISITED_LOCATION Current Lumisteria.SereneMeadow_ForestMeadow\" \"PLAYER_FORAGING_LEVEL Current 5\"",
+                    "TargetLocation": "Lumisteria.SereneMeadow_ForestMeadow",
+                    "TargetTile": {
+                        "X": 57,
+                        "Y": 44
+                    },
+                    "TargetDirection": "down",
+                },
+            },
+        },
+		{
+			"LogName": "Dishes",
+			"Action": "Include",
+			"FromFile": "Assets/Dishes.json",
+				"When": {
+			"Dishes": "true",
+				}
+		},
+		/*{
+			"LogName": "Hybrids",
+			"Action": "Include",
+			"FromFile": "Assets/HybridObjects.json",
+				"When": {
+			"HasMod |contains=spacechase0.SpaceCore": "true",
+			"HasMod |contains=spacechase0.HybridCropEngine": "true",
+			"HybridsEnabled": "true",
+				}
+		},
+		{
+			"LogName": "Hybrids Extras",
+			"Action": "Include",
+			"FromFile": "Assets/HybridExtras.json",
+				"When": {
+			"HasMod |contains=spacechase0.SpaceCore": "true",
+			"HasMod |contains=spacechase0.HybridCropEngine": "true",
+			"HybridsEnabled": "true",
+				}
+		},*/
+	]
+}

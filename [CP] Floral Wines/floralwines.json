@@ -1,0 +1,58 @@
+
+
+{
+  "Changes":[
+      {
+         "Action":"EditData",
+         "Target":"Strings/Objects",
+         "Entries":{
+            "DraconicArcher_FloralWine":"{{i18n: floral_wine}}"
+         }
+      },
+	  {"Action": "EditData",
+  "Target": "Data/Machines",
+  "TargetField": ["(BC)12", "OutputRules"],
+  "Entries": {
+    "DraconicArcher.FloralWines_Floral": {
+      "Id": "DraconicArcher.FloralWines_Floral",
+      "Triggers": [
+								{
+									"RequiredTags": [
+										"item_type_flower"
+									],								
+                           "Condition":"!ITEM_EDIBILITY Input -299 -1"
+                        },
+						{
+									"RequiredTags": [
+										"flower_item"
+									],								
+                           "Condition":"!ITEM_EDIBILITY Input -299 -1"
+                        },
+						{
+                           "Condition":"!ITEM_EDIBILITY Input -299 -1, ITEM_CATEGORY Input -80"
+                        }
+							],
+      "OutputItem": [
+        {
+          "Id": "DraconicArcher.FloralWines_FloralOutput",
+          "ItemId": "(O)348",
+          "ObjectInternalName":"{0} DraconicArcher_FloralWine",
+                           "ObjectDisplayName":"[LocalizedText Strings/Objects:DraconicArcher_FloralWine %PRESERVED_DISPLAY_NAME]",
+                           "PreserveId":"DROP_IN",
+                           "CopyPrice":true,
+                           "CopyColor":true,
+                           "PriceModifiers":[
+                              {
+                                 "Id":"FloralWine",
+                                 "Modification":"Multiply",
+                                 "Amount":3.5
+                              }
+                           ]
+                        }
+      ],
+      "MinutesUntilReady":10000
+    }
+  }
+	  }
+  ]
+}

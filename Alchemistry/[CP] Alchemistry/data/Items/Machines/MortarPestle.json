@@ -1,0 +1,712 @@
+{
+    "Changes": [
+
+/*----------------------------------------------------
+Add Mortar and Pestle
+----------------------------------------------------*/
+
+        { 
+            "LogName":"Add Machine - Mortar and Pestle",
+                "Action": "EditData",
+                "Target": "Data/BigCraftables",
+                "Entries": {
+                    "{{ModId}}_MortarPestle": {
+                        "Name": "{{ModId}}_MortarPestle",
+                        "DisplayName": "{{i18n:Alchemistry_MortarPestle.name}}",
+                        "Description": "{{i18n:Alchemistry_MortarPestle.description}}",
+                        "Fragility": 0,
+                        "CanBePlacedOutdoors": true,
+                        "CanBePlacedIndoors": true,
+                        "Price": 0,
+                        "Texture": "Mods/{{ModId}}/Machines",
+                        "SpriteIndex": 0
+                    }
+                }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": { 
+                "(BC)Morghoula.AlchemistryCP_MortarPestle": {
+                    "OutputRules": [],
+                    "WorkingEffects":[
+                        {
+                            "Sounds": [
+                                {
+                                    "Id": "stoneCrack",
+                                    "Delay": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Outputs
+----------------------------------------------------*/ 
+        {
+            "LogName": "Load Mortar and Pestle Outputs",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC)Morghoula.AlchemistryCP_MortarPestle", "OutputRules"],
+            "Entries": {
+                //Misc
+                "{{ModID}}_BoneDust": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_BirdSkull",
+                            "RequiredCount": 1
+                        },
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_StagsAntler",
+                            "RequiredCount": 1
+                        },
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": null,
+                            "RequiredTags": [
+                            "bone_item",
+                            "!id_o_881"
+                            ],
+                            "RequiredCount": 1
+                        }
+
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_BoneDust",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_BoneDust",
+                            "CopyQuality": false,
+                            "CopyPrice": false
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_Lye": { 
+                    "Id": "{{ModID}}_Lye",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)388", //wood
+                            "RequiredCount": 1
+                        }
+                    ],
+                   "OutputItem": [
+                        {
+                            "CustomData": {
+                                "selph.ExtraMachineConfig.RequirementId.1": "(O)382", //coal
+                                "selph.ExtraMachineConfig.RequirementCount.1": "1"
+                            },
+                                "ItemId": "(O)Morghoula.AlchemistryCP_Lye",
+                                "CopyQuality": false,
+                                "CopyPrice": false
+                            }
+                    ],
+                        "MinutesUntilReady": 60,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+
+                //Moon Berry
+                "{{ModID}}_MoonBerryPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedMoonBerry",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_MoonBeryPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_MoonBerryPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+
+                //Powders - Crops
+                "{{ModID}}_HemlockPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedHemlock",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_HemlockPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_HemlockPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_InkberryPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedInkberry",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_InkberryPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_InkberryPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_StarlightHelleborePowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedStarlightHellebore",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_StarlightHelleborePowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_StarlightHelleborePowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_WerewolfsBanePowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedWerewolfsBane",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_WerewolfsBanePowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_WerewolfsBanePowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_SunsetCastorPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedSunsetCastor",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_SunsetCastorPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_SunsetCastorPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_MistletoePowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedMistletoe",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_MistletoePowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_MistletoePowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_BansheesBellPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedBansheesBell",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_BansheesBellPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_BansheesBellPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_WinterWailerPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedWinterWailer",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_WinterWailerPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_WinterWailerPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_AddersTonguePowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedAddersTongue",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_AddersTonguePowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_AddersTonguePowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 60,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_DollsEyesPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedDollsEyes",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DollsEyesPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DollsEyesPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 60,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_NightsShadePowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedNightsShade",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_NightsShadePowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_NightsShadePowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 60,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_BleedingHeartPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedBleedingHeart",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_BleedingHeartPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_BleedingHeartPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 60,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+
+
+
+
+                //Mushrooms
+                "{{ModID}}_DawnsingerToadstoolPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedDawnsingerToadstool",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DawnsingerToadstoolPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DawnsingerToadstoolPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_LunarGlowcapPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedLunarGlowcap",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_LunarGlowcapPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_LunarGlowcapPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_InkCapPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedInkCap",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_InkCapPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_InkCapPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_LostSoulsPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedLostSouls",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_LostSoulsPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_LostSoulsPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_MeteorCapPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedMeteorCap",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_MeteorCapPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_MeteorCapPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_FalseMorelPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedFalseMorel",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_FalseMorelPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_FalseMorelPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_WizardsEyePowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedWizardsEye",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_WizardsEyePowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_WizardsEyePowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_FairieWingsPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedFairieWings",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_FairieWingsPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_FairieWingsPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_RedSmilersPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedRedSmilers",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_RedSmilersPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_RedSmilersPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_NightCapPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedNightCap",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_NightCapPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_NightCapPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_SunriseGloryPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedSunriseGlory",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_SunriseGloryPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_SunriseGloryPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_CapOLanternPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedCapOLantern",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_CapOLanternPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_CapOLanternPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_HellfireBoletePowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedHellfireBolete",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_HellfireBoletePowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_HellfireBoletePowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_SwampLighterPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedSwampLighter",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_SwampLighterPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_SwampLighterPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+                "{{ModID}}_BeachedOysterPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedBeachedOyster",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_BeachedOysterPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_BeachedOysterPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                },
+
+
+
+                //Misc Forage
+                "{{ModID}}_DragonRootPowder": { 
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)Morghoula.AlchemistryCP_DriedDragonRoot",
+                            "RequiredCount": 1
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModID}}_DragonRootPowder",
+                            "ItemId": "(O)Morghoula.AlchemistryCP_DragonRootPowder",
+                            "CopyQuality": true,
+                            "CopyPrice": true
+                        }
+                    ],
+                        "MinutesUntilReady": 20,
+                        "InvalidItemMessage": "{{i18n:Alchemistry_InvalidItem.message}}",
+                        "InvalidCountMessage":"{{i18n:Alchemistry_InvalidCount.message}}"
+                }
+            }
+        }
+    ]
+}

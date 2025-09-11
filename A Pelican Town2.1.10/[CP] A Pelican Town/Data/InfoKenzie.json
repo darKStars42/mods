@@ -1,0 +1,179 @@
+{
+	"Changes": [
+		
+		{
+			"LogName": "Kenzie Schedule Empty Json",
+			"Action": "Load",
+			"Target": "Characters/schedules/Kenzie",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Kenzie Strings Empty Jsons",
+			"Action": "Load",
+			"Target": "Strings/schedules/Kenzie",
+			"FromFile": "Data/empty.json",
+		},
+		{
+			"LogName": "Kenzie Base Sprites",
+			"Action": "Load",
+			"Target": "Characters/Kenzie",
+			"FromFile": "assets/sprites/Kenzie/KenzieSprites{{Season}}.png"
+		},
+		{
+			"LogName": "Kenzie Base Portraits",
+			"Action": "Load",
+			"Target": "Portraits/Kenzie",
+			"FromFile": "assets/portraits/kenzie{{KenzieAppearance}}/KenziePortraitsSpring.png"
+		},
+		{
+			"LogName": "Kenzie Dialogue",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/Kenzie",
+			"FromFile": "data/empty.json"
+		},
+		//Kenzie Schedule is included in //FILES because of its variability
+		{
+			"LogName": "Kenzie Disposition",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+			"Kenzie": {
+				"DisplayName": "Kenzie",
+				"BirthSeason": "Winter",
+				"BirthDay": 21,
+				"HomeRegion": "Town",
+				"Language": "Default",
+				"Gender": "Female",
+				"Age": "Adult",
+				"Manner": "Neutral",
+				"SocialAnxiety": "Neutral",
+				"Optimism": "Negative",
+				"IsDarkSkinned": true,
+				"CanBeRomanced": false,
+				"LoveInterest": "Lewis",
+				
+				"Calendar": "AlwaysShown",
+				"SocialTab": "UnknownUntilMet",
+				"SocialTabIconSourceRect": null,
+				"CanSocialize": true,
+				"CanReceiveGifts": true,
+				"CanGreetNearbyCharacters": true,
+				"CanCommentOnPurchasedShopItems": true,
+				"CanVisitIsland": true,
+				"IntroductionsQuest": true,
+				"ItemDeliveryQuests": true,
+				"PerfectionScore": true,
+				"EndSlideShow": "MainGroup",
+				
+				
+				"SpouseAdopts": null,
+				"SpouseWantsChildren": null,
+				"SpouseGetsJealousOfGifts": null,
+				"SpouseRoom": null,
+				"SpousePatio": null,
+				"SpouseFloors": [],
+				"SpouseWallpapers": [],
+				"DumpsterDiveEmote": 12,
+				"DumpsterDiveFriendshipEffect": -25,
+				"FriendsAndFamily": {
+					"Lewis": "Boss",
+					"Maru": "Friend",
+					"Penny": "Friend",
+				},
+				
+				
+				"FlowerDanceCanDance": false,
+				"WinterStarParticipant": true,
+				"WinterStarGifts": [
+					{
+						"Id": "Kenzie Gifts",
+						"ItemId": 341, //Tea Set
+					}
+				],
+				
+				"UnlockConditions": true,
+				"SpawnIfMissing": true,
+				"Home": [
+					{
+						"Id": "Default",
+						"Condition": null,
+						"Location": "Custom_KenzieRoom",
+						"Tile": {
+							"X": 1,
+							"Y": 5
+						},
+						"Direction": "left"
+					}
+				],
+				"TextureName": null,
+				"Appearance": [
+					{
+						"Id": "KenzieSpringOutfit",
+						"Season": "Spring",
+						"Portrait": "{{InternalAssetKey: assets/portraits/kenzie{{KenzieAppearance}}/KenziePortraitsSpring.png}}",
+						"Sprite": "{{InternalAssetKey: Assets/Sprites/Kenzie/KenzieSpritesSpring.png}}"
+					},
+					{
+						"Id": "KenzieSummerOutfit",
+						"Season": "Summer",
+						"Portrait": "{{InternalAssetKey: assets/portraits/kenzie{{KenzieAppearance}}/KenziePortraitsSummer.png}}",
+						"Sprite": "{{InternalAssetKey: Assets/Sprites/Kenzie/KenzieSpritesSummer.png}}"
+					},
+					{
+						"Id": "KenzieFallOutfit",
+						"Season": "Fall",
+						"Portrait": "{{InternalAssetKey: assets/portraits/kenzie{{KenzieAppearance}}/KenziePortraitsFall.png}}",
+						"Sprite": "{{InternalAssetKey: Assets/Sprites/Kenzie/KenzieSpritesFall.png}}"
+					},
+					{
+						"Id": "KenzieSpiritsOutfit",
+						"Season": "Fall",
+						"Condition": "DAY_OF_MONTH 27",
+						"Portrait": "{{InternalAssetKey: assets/portraits/kenzie{{KenzieAppearance}}/KenziePortraitsSpiritsEve.png}}",
+						"Sprite": "{{InternalAssetKey: Assets/Sprites/Kenzie/KenzieSpritesSpiritsEve.png}}",
+						"Precedence": "-20",
+					},
+					{
+						"Id": "KenzieWinterOutfit",
+						"Season": "Winter",
+						"Portrait": "{{InternalAssetKey: assets/portraits/kenzie{{KenzieAppearance}}/KenziePortraitsWinter.png}}",
+						"Sprite": "{{InternalAssetKey: Assets/Sprites/Kenzie/KenzieSpritesWinter.png}}"
+					},
+					//Festivals
+					{
+						"Id": "KenzieFlowerOutfit",
+                        "Condition": "EVENT_ID festival_spring24",
+						"Portrait": "{{InternalAssetKey: assets/portraits/kenzie{{KenzieAppearance}}/KenziePortraitsFLOWER.png}}",
+						"Sprite": "{{InternalAssetKey: Assets/Sprites/Kenzie/KenzieSpritesFLOWER.png}}",
+						"Precedence": "-20",
+					},
+					{
+						"Id": "KenzieFlowerOutfit",
+                        "Condition": "EVENT_ID festival_summer11",
+						"Portrait": "{{InternalAssetKey: assets/portraits/kenzie{{KenzieAppearance}}/KenziePortraitsLUAU.png}}",
+						"Sprite": "{{InternalAssetKey: Assets/Sprites/Kenzie/KenzieSpritesLUAU.png}}",
+						"Precedence": "-20",
+					},
+				],
+				"Size": {
+					"X": 16,
+					"Y": 32
+				},
+				"Breather": true,
+				"ShakePortraits": [
+					4, 5, 7
+				],
+				"KissSpriteIndex": 28,
+				"KissSpriteFacingRight": true,
+				
+				"HiddenProfileEmoteSound": null,
+				"HiddenProfileEmoteDuration": -1,
+				"HiddenProfileEmoteStartFrame": 32,
+				"HiddenProfileEmoteFrameCount": 2,
+				"HiddenProfileEmoteFrameDuration": 250,
+				"FormerCharacterNames": [],
+			},
+			},
+		},
+	]
+}

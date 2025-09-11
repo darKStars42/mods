@@ -1,0 +1,59 @@
+{
+	"Changes": [
+		//Vanilla Schedule
+		{
+			"LogName": "Isaac I's Basegame Schdule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTIsaacI",
+			"Entries": {
+				"spring": "610 CoalPointFarmhouse 17 16 0/800 CoalPointFarm 25 33 1 IsaacIFarmingRight/1030 CoalPointFarm 17 41 3 IsaacIFarmingLeft/1400 CoalPointFarm 35 38 3 IsaacIFarmingLeft/1630 CoalPointFarmhouse 31 31 0/1750 CoalPointFarmhouse 5 31 1/2000 CoalPointFarmhouse 36 10 1",
+				"winter": "610 CoalPointFarmhouse 17 16 0/800 CoalPointFarm 25 33 1 IsaacIFarmingRight \"Strings\\schedules\\APTIsaacI:CoalPointFarm.000\"/1030 CoalPointFarm 17 41 3 IsaacIFarmingLeft \"Strings\\schedules\\APTIsaacI:CoalPointFarm.000\"/1400 CoalPointFarm 35 38 3 IsaacIFarmingLeft \"Strings\\schedules\\APTIsaacI:CoalPointFarm.000\"/1630 CoalPointFarmhouse 31 31 0/1750 CoalPointFarmhouse 5 31 1/2000 CoalPointFarmhouse 36 10 1",
+				"Mon": "610 CoalPointFarmhouse 17 16 0/800 CoalPointFarm 25 33 1 IsaacIFarmingRight/1030 CoalPointFarm 17 41 3 IsaacIFarmingLeft/1230 Mountain {{IsaacIFollowSpotMountain}}/1630 CoalPointFarmhouse 31 31 0/1750 CoalPointFarmhouse 5 31 1/2000 CoalPointFarmhouse 36 10 1", 
+				"winter_Mon": "610 CoalPointFarmhouse 17 16 0/800 CoalPointFarm 25 33 1 IsaacIFarmingRight \"Strings\\schedules\\APTIsaacI:CoalPointFarm.000\"/1030 CoalPointFarm 17 38 3 IsaacIFarmingLeft \"Strings\\schedules\\APTIsaacI:CoalPointFarm.000\"/1230 Mountain {{IsaacIFollowSpotMountain}}/1630 CoalPointFarmhouse 31 31 0/1750 CoalPointFarmhouse 5 31 1/2000 CoalPointFarmhouse 36 10 1",
+				"winter_Fri": "610 CoalPointFarmhouse 17 16 0/800 CoalPointFarm 25 33 1 IsaacIFarmingRight \"Strings\\schedules\\APTIsaacI:CoalPointFarm.000\"/1030 CoalPointFarm 17 38 3 IsaacIFarmingLeft \"Strings\\schedules\\APTIsaacI:CoalPointFarm.000\"/1230 Mountain {{IsaacIFollowSpotMountain}}/1630 CoalPointFarmhouse 31 31 0/1750 CoalPointFarmhouse 5 31 1/2000 CoalPointFarmhouse 36 10 1", 
+				"winter_17": "610 CoalPointFarmhouse 17 16 0/800 CoalPointFarmhouse 32 31 0/1030 Beach 24 33 3/1600 CoalPointFarmhouse 37 9 1",
+				"DesertFestival_2": "610 CoalPointFarmhouse 17 16 0/800 Desert 44 33 3 \"Strings\\schedules\\APTIsaacI:Desert.000\"/1800 CoalPointFarmhouse 36 10 1",
+			},
+		},
+		{
+			"LogName": "Isaac I Sunday Marcus Babysitting Schedule",
+			"Action": "EditData",
+            "Target": "Characters/schedules/APTIsaacI",
+			"Entries": {
+				"Sun": "610 CoalPointFarmhouse 17 16 0/800 CoalPointFarm 25 33 1 IsaacIFarmingRight/1100 SeedShop 38 20 0 \"Strings\\schedules\\APTIsaacI:SeedShop.000\"/1700 CoalPointFarmhouse 5 31 1/2000 CoalPointFarmhouse 36 10 1",
+				"winter_Sun": "610 CoalPointFarmhouse 17 16 0/800 CoalPointFarm 25 33 1 IsaacIFarmingRight \"Strings\\schedules\\APTIsaacI:CoalPointFarm.000\"/1100 SeedShop 38 20 0 \"Strings\\schedules\\APTIsaacI:SeedShop.000\"/1700 CoalPointFarmhouse 5 31 1/2000 CoalPointFarmhouse 36 10 1",
+			},
+			"When": {
+				"HasSeenEvent": "145868"
+			}
+		},
+		//East Scarpe
+		{
+			"LogName": "Isaac I East Scarpe Baby Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTIsaacI",
+			"When": { 
+				"HasMod |contains= LemurKat.EastScarpe.CP": true, 
+			},
+			"Entries": {
+				"Tue": "610 CoalPointFarmhouse 17 16 0/800 EastScarp_Village {{IsaacIFollowSpotEastScarp}}/1600 CoalPointFarmhouse 5 31 1/2000 CoalPointFarmhouse 36 10 1", 
+				"winter_Sat": "610 CoalPointFarmhouse 17 16 0/720 EastScarp_Village {{IsaacIFollowSpotEastScarp}}/1600 CoalPointFarmhouse 5 31 1/2000 CoalPointFarmhouse 36 10 1", 
+				"fall_27": "610 CoalPointFarmhouse 17 16 0/800 EastScarp_VillageInn 47 18 2 \"Strings\\schedules\\APTIsaacI:EastScarp_VillageInn.000\"/1800 CoalPointFarmhouse 5 31 1/2000 CoalPointFarmhouse 36 10 1", 
+			},
+		},
+		//STRINGS
+		{
+			"LogName": "Adding Isaac I's Strings",
+			"Action": "EditData",
+			"Target": "Strings/schedules/APTIsaacI",
+			"Entries": {
+				"EastScarp_VillageInn.000": "{{i18n:IsaacISchedule.EastScarp_VillageInn.000}}",
+				"Desert.000": "{{i18n:IsaacISchedule.Desert.000}}",
+				"SeedShop.000": "{{i18n:IsaacISchedule.SeedShop.000}}",
+				"CoalPointFarm.000": "{{i18n:IsaacISchedule.CoalPointFarm.000}}",
+
+			},
+		},
+		
+	],
+}

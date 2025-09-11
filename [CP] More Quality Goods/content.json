@@ -1,0 +1,57 @@
+{
+	"Format": "2.0",
+	"ConfigSchema": {
+		"Profit Scaling": {
+			"AllowValues": "1, 0.9, 0.8, 0.75, 0.7",
+			"Default": "0.7",
+			"Description": "Set the balance for your artisan machines. 0.7x makes it equal to the average profit you would make in vanilla, while 1x strictly copies quality without any price changes (giving you much higher profit)."
+		}
+	},
+	"Changes": [
+		
+		
+		{
+			"Action": "Include",
+			"FromFile": "compat/vapius.json",
+			"When": {
+				"HasMod|contains = Lumisteria.MtVapius": true
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "compat/owls.json",
+			"When": {
+				"HasMod|contains = Syanide23.BFAVOwl": true
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "compat/alpacas.json",
+			"When": {
+				"HasMod|contains = birdb.CP.Alpaca": true
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "compat/sve.json",
+			"When": {
+				"HasMod|contains = FlashShifter.StardewValleyExpandedCP": true
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "compat/floralwines.json",
+			"When": {
+				"HasMod|contains = DraconicArcher.FloralWines": true
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "compat/poison.json",
+			"When": {
+				"HasMod|contains = DraconicArcher.Poison": true
+			}
+		}
+		
+	]
+}

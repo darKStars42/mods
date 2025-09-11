@@ -1,0 +1,480 @@
+{
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/SpecialOrders",
+      "Entries": {
+        "8BitAlien.LilybrookSpecialOrders.JagRequest": {
+          "Name": "[JagRequest_Name]",
+          "Requester": "JagLilybrook",
+          "Duration": "TwoWeeks",
+          "Repeatable": "True",
+          "RequiredTags": "knows_JagLilybrook",
+          "OrderType": "Esca.EMP/LilybrookBoard",
+          "SpecialRule": "",
+          "Text": "[JagRequest_Text]",
+          "RandomizedElements": [
+            {
+              "Name": "Ingredient",
+              "Values": [
+                {
+                  "RequiredTags": "season_spring",
+                  "Value": "PICK_ITEM Parsnip, Potato, Lilybrook.Onion, Lilybrook.Lettuce, Carrot"
+                },
+                {
+                  "RequiredTags": "season_summer",
+                  "Value": "PICK_ITEM Lilybrook.BellPepper, Tomato, Pepper, Wheat"
+                },
+                {
+                  "RequiredTags": "season_fall",
+                  "Value": "PICK_ITEM Wheat, Beet, Lilybrook.Turnip, Eggplant"
+                },
+                {
+                  "RequiredTags": "season_winter",
+                  "Value": "PICK_ITEM Cheese"
+                }
+              ]
+            }
+          ],
+          "Objectives": [
+            {
+              "Type": "Collect",
+              "Text": "[JagRequest_Objective_0_Text]",
+              "RequiredCount": "20",
+              "Data": {
+                "AcceptedContextTags": "{Ingredient:Tags}"
+              }
+            },
+            {
+              "Type": "Donate",
+              "Text": "[JagRequest_Objective_1_Text]",
+              "RequiredCount": "20",
+              "Data": {
+                "DropBox": "JagDiner",
+                "DropBoxGameLocation": "8BitAlien.Lilybrook_JagDiner",
+                "DropBoxIndicatorLocation": "23 15",
+                "MinimumCapacity": "20",
+                "AcceptedContextTags": "{Ingredient:Tags}"
+              }
+            }
+          ],
+          "Rewards": [
+            {
+              "Type": "Money",
+              "Data": {
+                "Amount": "5000"
+              }
+            },
+            {
+              "Type": "Friendship",
+              "Data": {
+                "Amount": "300",
+                "TargetName": "JagLilybrook"
+              }
+            },
+          ]
+        },
+        "8BitAlien.LilybrookSpecialOrders.TracyRequest": {
+          "Name": "[TracyRequest_Name]",
+          "Requester": "TracyLilybrook",
+          "Duration": "TwoWeeks",
+          "Repeatable": "True",
+          "RequiredTags": "!season_winter",
+          "OrderType": "Esca.EMP/LilybrookBoard",
+          "SpecialRule": "",
+          "Text": "[TracyRequest_Text]",
+          "RandomizedElements": [
+            {
+              "Name": "Crop",
+              "Values": [
+                {
+                  "RequiredTags": "season_spring",
+                  "Value": "PICK_ITEM Parsnip, Potato, Lilybrook.Onion"
+                },
+                {
+                  "RequiredTags": "season_summer",
+                  "Value": "PICK_ITEM Melon, Corn, Radish, Lilybrook.BellPepper"
+                },
+                {
+                  "RequiredTags": "season_fall",
+                  "Value": "PICK_ITEM Cranberries, Beet, Yam, Lilybrook.Figlet"
+                }
+              ]
+            }
+          ],
+          "Objectives": [
+            {
+              "Type": "Collect",
+              "Text": "[TracyRequest_Objective_0_Text]",
+              "RequiredCount": "30",
+              "Data": {
+                "AcceptedContextTags": "{Crop:Tags}"
+              }
+            },
+            {
+              "Type": "Donate",
+              "Text": "[TracyRequest_Objective_1_Text]",
+              "RequiredCount": "30",
+              "Data": {
+                "DropBox": "TracyFridge",
+                "DropBoxGameLocation": "8BitAlien.Lilybrook_TracyHouse",
+                "DropBoxIndicatorLocation": "17 14",
+                "MinimumCapacity": "30",
+                "AcceptedContextTags": "{Crop:Tags}"
+              }
+            }
+          ],
+          "Rewards": [
+            {
+              "Type": "Object",
+              "Data": {
+                "Item": "PrizeTicket",
+                "Amount": 1
+              }
+            },
+            {
+              "Type": "Friendship",
+              "Data": {
+                "Amount": "300",
+                "TargetName": "TracyLilybrook"
+              }
+            },
+          ]
+        },
+		"8BitAlien.LilybrookSpecialOrders.JeffRequest": {
+          "Name": "[JeffRequest_Name]",
+          "Requester": "JeffLilybrook",
+          "Duration": "Week",
+          "Repeatable": "True",
+          "RequiredTags": "",
+          "OrderType": "Esca.EMP/LilybrookBoard",
+          "SpecialRule": "",
+          "Text": "[JeffRequest_Text]",
+          "Objectives": [
+          {
+              "Type": "Slay",
+              "Text": "[JeffRequest_Objective_0_Text]",
+              "RequiredCount": "30",
+              "Data": {
+              "TargetName": "Grub"
+                     }
+                }
+          ],
+          "Rewards": [
+             {
+              "Type": "Money",
+              "Data": {
+                "Amount": "3000"
+              }
+            },
+            {
+              "Type": "Friendship",
+              "Data": {
+                "Amount": "250",
+                "TargetName": "JeffLilybrook"
+              }
+            },
+          ]
+        },
+		"8BitAlien.LilybrookSpecialOrders.CaspianRequest": {
+          "Name": "[CaspianRequest_Name]",
+          "Requester": "CaspianLilybrook",
+          "Duration": "Week",
+          "Repeatable": "True",
+          "RequiredTags": "",
+          "OrderType": "Esca.EMP/LilybrookBoard",
+          "SpecialRule": "",
+          "Text": "[CaspianRequest_Text]",
+          "Objectives": [
+          {
+              "Type": "ReachMineFloor",
+              "Text": "[CaspianRequest_Objective_0_Text]",
+              "RequiredCount": "100",
+              "Data": {
+                "SkullCave": "true"
+                         }
+                }
+          ],
+          "Rewards": [
+             {
+              "Type": "Money",
+              "Data": {
+                "Amount": "5000"
+              }
+            },
+            {
+              "Type": "Friendship",
+              "Data": {
+                "Amount": "250",
+                "TargetName": "CaspianLilybrook"
+              }
+            }
+          ]
+        },
+		"8BitAlien.LilybrookSpecialOrders.ArchieRequest": {
+          "Name": "[ArchieRequest_Name]",
+          "Requester": "ArchieLilybrook",
+          "Duration": "TwoWeeks",
+          "Repeatable": "True",
+          "RequiredTags": "",
+          "OrderType": "Esca.EMP/LilybrookBoard",
+          "SpecialRule": "",
+          "Text": "[ArchieRequest_Text]",
+		  "RandomizedElements": [
+            {
+              "Name": "Flower",
+              "Values": [
+                {
+                  "RequiredTags": "season_spring",
+                  "Value": "PICK_ITEM Tulip, Blue Jazz"
+                },
+                {
+                  "RequiredTags": "season_summer",
+                  "Value": "PICK_ITEM Lilybrook.Plumpet, Summer Spangle, Poppy"
+                },
+                {
+                  "RequiredTags": "season_fall",
+                  "Value": "PICK_ITEM Lilybrook.Amberbud, Fairy Rose, Sunflower"
+                },
+				{
+                  "RequiredTags": "season_winter",
+                  "Value": "PICK_ITEM Lilybrook.BlueVidia"
+                }
+              ]
+            }
+          ],
+          "Objectives": [
+          {
+              "Type": "Collect",
+              "Text": "[ArchieRequest_Objective_0_Text]",
+              "RequiredCount": "20",
+              "Data": {
+                "AcceptedContextTags": "{Flower:Tags}"
+                         }
+                },
+		  {
+              "Type": "Ship",
+              "Text": "[ArchieRequest_Objective_1_Text]",
+              "RequiredCount": "20",
+              "Data": {
+                "AcceptedContextTags": "{Flower:Tags}"
+                         }
+                }
+          ],
+          "Rewards": [
+             {
+              "Type": "Money",
+              "Data": {
+                "Amount": "2000"
+              }
+            },
+            {
+              "Type": "Friendship",
+              "Data": {
+                "Amount": "250",
+                "TargetName": "ArchieLilybrook"
+              }
+            }
+          ]
+        },
+		"8BitAlien.LilybrookSpecialOrders.PetraRequest": {
+          "Name": "[PetraRequest_Name]",
+          "Requester": "PetraLilybrook",
+          "Duration": "Week",
+          "Repeatable": "True",
+          "RequiredTags": "",
+          "OrderType": "Esca.EMP/LilybrookBoard",
+          "SpecialRule": "",
+          "Text": "[PetraRequest_Text]",
+		  "RandomizedElements": [
+            {
+              "Name": "Fish",
+              "Values": [
+                {
+                  "RequiredTags": "season_spring",
+                  "Value": "PICK_ITEM Sardine, Sunfish, 8BitAlien.Lilybrook_LeafscaleTrout"
+                },
+                {
+                  "RequiredTags": "season_summer",
+                  "Value": "PICK_ITEM Tuna, Sunfish, Bullhead, 8BitAlien.Lilybrook_LeafscaleTrout,"
+                },
+                {
+                  "RequiredTags": "season_fall",
+                  "Value": "PICK_ITEM Smallmouth Bass, Chub, Anchovy, 8BitAlien.Lilybrook_AmoreBass"
+                },
+				{
+                  "RequiredTags": "season_winter",
+                  "Value": "PICK_ITEM Largemouth Bass, Carp, Herring"
+                }
+              ]
+            }
+          ],
+          "Objectives": [
+       {
+          "Type": "Fish",
+          "Text": "[PetraRequest_Objective_0_Text]",
+          "RequiredCount": "10",
+          "Data": {
+          "AcceptedContextTags": "{Fish:Tags}"
+                         }
+                    }
+          ],
+          "Rewards": [
+             {
+              "Type": "Money",
+              "Data": {
+                "Amount": "5000"
+              }
+            },
+            {
+              "Type": "Friendship",
+              "Data": {
+                "Amount": "250",
+                "TargetName": "PetraLilybrook"
+              }
+            },
+          ]
+        },
+		"8BitAlien.LilybrookSpecialOrders.KellyRequest": {
+          "Name": "[KellyRequest_Name]",
+          "Requester": "KellyLilybrook",
+          "Duration": "Week",
+          "Repeatable": "True",
+          "RequiredTags": "",
+          "OrderType": "Esca.EMP/LilybrookBoard",
+          "SpecialRule": "",
+          "Text": "[KellyRequest_Text]",
+          "RandomizedElements": [
+            {
+              "Name": "Gem",
+              "Values": [
+                {
+                  "RequiredTags": "",
+                  "Value": "PICK_ITEM Emerald, Lilybrook.Sapphire, Ruby, Aquamarine, Amethyst, Diamond, Jade"
+                }
+              ]
+            }
+          ],
+          "Objectives": [
+            {
+              "Type": "Collect",
+              "Text": "[KellyRequest_Objective_0_Text]",
+              "RequiredCount": "3",
+              "Data": {
+                "AcceptedContextTags": "{Gem:Tags}"
+              }
+            },
+           {
+              "Type": "Deliver",
+              "Text": "[KellyRequest_Objective_1_Text]",
+              "RequiredCount": "3",
+              "Data": {
+              "AcceptedContextTags": "{Gem:Tags}",
+              "TargetName": "KellyLilybrook"
+                  }
+             },
+          ],
+          "Rewards": [
+             {
+              "Type": "Money",
+              "Data": {
+                "Amount": "2500"
+              }
+            },
+            {
+              "Type": "Friendship",
+              "Data": {
+                "Amount": "300",
+                "TargetName": "KellyLilybrook"
+              }
+            },
+          ]
+        },
+		"8BitAlien.LilybrookSpecialOrders.FrankieRequest": {
+          "Name": "[FrankieRequest_Name]",
+          "Requester": "FrankieLilybrook",
+          "Duration": "Week",
+          "Repeatable": "False",
+          "RequiredTags": "",
+          "OrderType": "Esca.EMP/LilybrookBoard",
+          "SpecialRule": "",
+          "Text": "[FrankieRequest_Text]",
+          "Objectives": [
+            {
+              "Type": "JKScore",
+              "Text": "[FrankieRequest_Objective_0_Text]",
+              "RequiredCount": "40000",
+              "Data": {
+                "AcceptedContextTags": ""
+              }
+            }
+          ],
+          "Rewards": [
+             {
+              "Type": "Mail",
+              "Data": {
+                "MailReceived": "Lilybrook_FrankieJKMail",
+                "NoLetter": "false"
+              } 
+            },
+            {
+              "Type": "Friendship",
+              "Data": {
+                "Amount": "300",
+                "TargetName": "Frankie"
+              }
+            },
+          ]
+        },
+        "8BitAlien.LilybrookSpecialOrders.OakleyRequest": {
+          "Name": "[OakleyRequest_Name]",
+          "Requester": "OakleyLilybrook",
+          "Duration": "TwoWeeks",
+          "Repeatable": "True",
+          "RequiredTags": "!dropbox_OakleyShop",
+          "OrderType": "Esca.EMP/LilybrookBoard",
+          "SpecialRule": "",
+          "Text": "[OakleyRequest_Text]",
+          "Objectives": [
+            {
+              "Type": "Collect",
+              "Text": "[OakleyRequest_Objective_0_Text]",
+              "RequiredCount": "10",
+              "Data": {
+                "AcceptedContextTags": "category_clothing"
+              }
+            },
+            {
+              "Type": "Donate",
+              "Text": "[OakleyRequest_Objective_1_Text]",
+              "RequiredCount": "10",
+              "Data": {
+                "DropBox": "OakleyShop",
+                "DropBoxGameLocation": "8BitAlien.Lilybrook_ClothesShop",
+                "DropBoxIndicatorLocation": "11 4",
+                "MinimumCapacity": "18",
+                "AcceptedContextTags": "category_clothing"
+              }
+            }
+          ],
+          "Rewards": [
+            {
+              "Type": "Object",
+              "Data": {
+                "Item": "PrizeTicket",
+                "Amount": 1
+              }
+            },
+            {
+              "Type": "Friendship",
+              "Data": {
+                "Amount": "250",
+                "TargetName": "OakleyLilybrook"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

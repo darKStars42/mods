@@ -1,0 +1,62 @@
+{
+	"Changes": [
+		// Without SVE
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring24",
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Jonghyuk 23 47 right",
+					"Delimiter": "/"
+				},
+				// Main Event
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"MainEvent_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Jonghyuk 23 47 up",
+					"Delimiter": "/"
+				}
+			]
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring24",
+			"When": {
+				"HasSeenEvent": "SpannerIntroConclusion"
+			},
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Spanner 24 46 down",
+					"Delimiter": "/"
+				},
+				// Main Event
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"MainEvent_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Spanner 24 46 down",
+					"Delimiter": "/"
+				}
+			]
+		}
+
+	]
+}

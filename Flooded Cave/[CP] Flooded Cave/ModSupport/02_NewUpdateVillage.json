@@ -1,0 +1,48 @@
+{
+
+   "Changes": [
+
+//★★★New Update Village★★★
+
+
+  //●裏庭の編集(水没洞窟への入り口の追加)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "ModSupport/Flooded_Cave_Backwoods_NUV.tmx",
+        "ToArea": { "X":22, "Y": 9, "Width": 8, "Height": 3 },
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "ModSupport/Flooded_Cave_Backwoods_NUV2.tmx",
+        "ToArea": { "X":22, "Y": 4, "Width": 8, "Height": 5 },
+      },
+
+  //●裏庭の編集(地下室増築後、入り口前の岩撤去パッチ)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "ModSupport/Flooded_Cave_Backwoods_Open_NUV.tmx",
+        "PatchMode": "ReplaceByLayer",
+        "ToArea": { "X":22, "Y": 9, "Width": 8, "Height": 3 },
+        "When": {
+                  "FarmhouseUpgrade": 3,
+                },
+      },
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "ModSupport/Flooded_Cave_Backwoods_Open_NUV2.tmx",
+        "PatchMode": "ReplaceByLayer",
+        "ToArea": { "X": 22, "Y": 4, "Width": 8, "Height": 5 },
+        "When": {
+                  "FarmhouseUpgrade": 3,
+                },
+      },
+
+//●(洞窟から裏庭へのワープ書き換え は必要無し)
+
+
+              ] //▼"Changes"の終了▼
+}

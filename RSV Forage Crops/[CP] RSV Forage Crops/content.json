@@ -1,0 +1,187 @@
+{
+  "Format": "2.7.0",
+  "ConfigSchema": {
+
+    //************************************
+    //      Crops
+    //************************************
+
+    "EnableAuroreanIris": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Aurorean Iris",
+      "Section": "Crops"
+    },
+    "EnableForestAmancay": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Forest Amancay",
+      "Section": "Crops"
+    },
+    "EnableFrostClumpBerry": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Frost Clump Berry",
+      "Section": "Crops"
+    },
+    "EnableHighlandButterwort": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Highland Butterwort",
+      "Section": "Crops"
+    },
+    "EnableHighlandChard": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Highland Chard",
+      "Section": "Crops"
+    },
+    "EnableLavaLily": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Lava Lily",
+      "Section": "Crops"
+    },
+    "EnableMountainArugula": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Mountain Arugula",
+      "Section": "Crops"
+    },
+    "EnableMountainHokkaido": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Mountain Hokkaido",
+      "Section": "Crops"
+    },
+    "EnableMountainMistbloom": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Mountain Mistbloom",
+      "Section": "Crops"
+    },
+    "EnableRidgeAzoreanFlower": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Ridge Azorean Flower",
+      "Section": "Crops"
+    },
+    "EnableRidgesideMonkshood": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Ridgeside Monkshood",
+      "Section": "Crops"
+    },
+    "EnableSummitSnowbell": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Summit Snowbell",
+      "Section": "Crops"
+    },
+    "EnableVioletDevilsClaw": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a crop for growing Violet Devil's Claw",
+      "Section": "Crops"
+    },
+
+    //************************************
+    //      Bushes
+    //************************************
+
+    "EnableAutumnDropBerry": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a bush crop for growing Autumn Drop Berry",
+      "Section": "Bushes"
+    },
+    "EnableFoxbloom": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Description": "Adds a bush crop for growing Foxbloom",
+      "Section": "Bushes"
+    },
+    "EnableSierraWintergreen": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a bush crop for growing Sierra Wintergreen",
+      "Section": "Bushes"
+    },
+
+    //************************************
+    //      Trees
+    //************************************
+
+    "EnableMountainChico": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a fruit tree for Mountain Chico",
+      "Section": "FruitTrees"
+    },
+    "EnableRidgeCherry": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a fruit tree for Ridge Cherry",
+      "Section": "FruitTrees"
+    },
+    "EnableRidgeWildApple": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a fruit tree for Ridge Wild Apple",
+      "Section": "FruitTrees"
+    },
+    "EnableRidgesideClementine": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Adds a fruit tree for Ridgeside Clementine",
+      "Section": "FruitTrees"
+    },
+
+    //************************************
+    //      Misc Options
+    //************************************
+
+    "ContextTags": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Add new context tags to crop items, including tags used in Cornucopia's mods",
+      "Section": "Misc"
+    },
+
+    "ShopStock": {
+      "AllowValues": "Limited, Unlimited",
+      "Default": "Limited",
+      "Description": "Select whether stores have a limited amount of stock for RSV Forage seeds, or an unlimited amount. This excludes Foxbloom Planter and seeds not from his mod",
+      "Section": "Misc"
+    }
+  },
+
+  "Changes": [
+    {
+      "LogName": "Textures",
+      "Action": "Load",
+      "Target": "ZoeyHoshi.RSVForageCrops/Crops, ZoeyHoshi.RSVForageCrops/FruitTrees, ZoeyHoshi.RSVForageCrops/Objects, ZoeyHoshi.RSVForageCrops/Bushes_indoors",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    },
+    {
+      "LogName": "Bushes Textures",
+      "Action": "Load",
+      "Target": "ZoeyHoshi.RSVForageCrops/Bushes",
+      "FromFile": "assets/Bushes_{{season}}.png"
+    },
+    {
+      "LogName": "RSV Forage Data",
+      "Action": "Include",
+      "FromFile": "data/Bushes.json, data/Crops.json, data/FruitTrees.json, data/Objects.json, data/Shop_Festivals.json, data/Shop_Jeric.json, data/Shop_Jio.json"
+    },
+    {
+      "LogName": "Context Tag Data",
+      "Action": "Include",
+      "FromFile": "data/ObjectContextTags.json",
+      "When": {
+        "ContextTags": true
+      }
+    }
+  ]
+}
+

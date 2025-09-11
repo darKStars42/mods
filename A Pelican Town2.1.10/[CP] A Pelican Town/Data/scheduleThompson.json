@@ -1,0 +1,89 @@
+{
+	"Changes": 
+	[
+		{
+			"LogName": "Thompson Basegame Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/Thompson",
+			"Entries": {
+				"rain":"800 Custom_ThompsonRoom 3 4 2/1000 Custom_ThompsonRoom 6 14 2/1200 Custom_ThompsonRoom 12 10 2/1600 Custom_ThompsonRoom 14 4 0/1900 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+				"spring":"800 Custom_ThompsonRoom 6 14 0/1000 Town 18 59 2/1230 Town 32 78 1 ThompsonPlanting/1500 Town 84 92 1 ThompsonPlanting/1730 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+				"summer":"GOTO spring",
+				"fall":"900 Custom_ThompsonRoom 6 14 0/1100 Town 37 57 0/1400 Forest 85 49 3/1900 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+				"winter":"900 Custom_ThompsonRoom 6 14 0/1100 Custom_ThompsonRoom {{ThompsonEndofDay}}/1400 Custom_ThompsonRoom 2 7 1/1550 Custom_ThompsonRoom {{ThompsonEndofDay}}/1900 Custom_ThompsonRoom 11 10 2/2100 Custom_ThompsonRoom 1 7 3",
+				"winter_Fri":"900 Custom_ThompsonRoom 6 14 0/1100 Custom_ThompsonRoom {{ThompsonEndofDay}}/1400 Custom_ThompsonRoom 2 7 1/1530 Custom_ThompsonRoom {{ThompsonEndofDay}}/1900 Custom_ThompsonRoom 11 10 2/2100 Custom_ThompsonRoom 1 7 3",
+				"Thu":"700 Custom_ThompsonRoom 6 14 0/930 Custom_ThompsonRoom 7 5 1/1130 Saloon 27 17 1 ThompsonSinging/1700 Saloon 9 18 2/1800 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+				"Wed": "GOTO Thu",
+				"spring_Tue": "800 Custom_ThompsonRoom 6 14 0/1000 Town 18 59 2/1130 SeedShop 28 17 3/1300 SeedShop 25 19 1 ThompsonDancingNormal \"Strings\\schedules\\Thompson:SeedShop.000\"/1600 SeedShop 6 19 0/1830 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+				"summer_Tue": "GOTO spring_Tue",
+				"fall_Tue": "900 Custom_ThompsonRoom 6 14 0/1130 SeedShop 28 17 3/1300 SeedShop 25 19 1 ThompsonDancingNormal \"Strings\\schedules\\Thompson:SeedShop.000\"/1600 SeedShop 6 19 0/1830 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+				"winter_Tue": "900 Custom_ThompsonRoom 6 14 0/1130 SeedShop 28 17 3/1300 SeedShop 25 19 1 ThompsonDancingNormal \"Strings\\schedules\\Thompson:SeedShop.000\"/1600 SeedShop 6 19 0/1830 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+				"Fri":"900 Custom_ThompsonRoom 6 14 0/1000 Mountain 31 36 2/1130 Mountain 41 37 2/1300 Mountain 51 34 0/1530 Mountain 68 24 0/1730 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+				"DesertFestival_3": "800 Desert 29 68 2 \"Strings\\schedules\\Thompson:Desert.000\"/2520 Custom_ThompsonRoom {{ThompsonEndofDay}}",
+				
+				//GI TESTING
+				"winter_Fri": "610 IslandSouth 12 29 2",
+				
+				//Night Market
+				"winter_16":"900 Custom_ThompsonRoom 6 14 0/1100 Custom_ThompsonRoom {{ThompsonEndofDay}}/1400 Custom_ThompsonRoom 2 7 1/1530 Custom_ThompsonRoom {{ThompsonEndofDay}}/1800 Beach 25 32 1/2200 Custom_ThompsonRoom 1 7 3",
+				
+				//Marriage
+				"marriage_Tue": "1000 Town 18 59 3/1230 Town 32 78 1 ThompsonPlanting/1500 Town 84 92 1 ThompsonPlanting/1730 BusStop -1 23 3",
+				"marriage_Thu": "1130 Saloon 27 17 1 ThompsonSinging/1700 Saloon 9 18 2/1800 BusStop -1 23 3",
+				"marriage_Fri": "1000 Mountain 31 36 2/1130 Mountain 41 37 2/1300 Mountain 51 34 0/1530 Mountain 68 24 0/1730 BusStop -1 23 3",
+				"marriage_DesertFestival_3": "800 Desert 29 68 2 \"Strings\\schedules\\Thompson:Desert.000\"/2520 BusStop -1 23 3",
+				
+			},
+		},
+		{
+			"LogName": "Thompson Joja Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/Thompson",
+			"Entries": {
+				"Sun":"800 Custom_ThompsonRoom 6 14 0/1000 JojaMart 13 11 3/1230 JojaMart 24 5 0/1500 JojaMart 11 26 3/1700 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+			},
+			"When": { "HasFlag |contains= IsCommunityCenterComplete": false },
+		},
+		{
+			"LogName": "Thompson Community Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/Thompson",
+			"Entries": {
+				"Sun":"800 Custom_ThompsonRoom 6 14 0/1000 SeedShop 16 29 3/1130 SeedShop 14 23 0/1230 SeedShop 5 19 0/1300 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+			},
+			"When": { "HasFlag |contains= IsCommunityCenterComplete": true },
+		},
+		{
+			"LogName": "Thompson East Scarp Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/Thompson",
+			"When": { "HasMod |contains= LemurKat.EastScarpe.CP": true, },
+			"Entries": {
+				//Spirit's Eve
+				"fall_27":"800 Custom_ThompsonRoom 6 14 0/900 EastScarp_VillageInn 24 31 0 ThompsonSinging \"Strings\\schedules\\Thompson:Custom_EastScarpeInn.000\"/1900 Custom_ThompsonRoom {{ThompsonEndofDay}}/2300 Custom_ThompsonRoom 1 7 3",
+			},
+		},
+		
+		//STRINGS
+		{
+			"LogName": "Adding Thompson's Strings",
+			"Action": "EditData",
+			"Target": "Strings/schedules/Thompson",
+			"Entries": {
+				"Custom_EastScarpeInn.000": "{{i18n:APTThompson.Custom_EastScarpeInn.000}}",
+				"SeedShop.000": "{{i18n:APTThompson.SeedShop.000}}",
+				"Custom_ThompsonRoom.000": "{{i18n:APTThompson.Custom_ThompsonRoom.000}}",
+				"Desert.000": "{{i18n:APTThompson.Desert.000}}",
+
+			},
+		}
+	],
+}
+
+		//{
+		//	"LogName": "Thompson Joja Schedule",
+        //    "Action": "EditData",
+        //    "Target": "Characters/schedules/Thompson",
+		//	"Entries": {
+		//	},
+		//},

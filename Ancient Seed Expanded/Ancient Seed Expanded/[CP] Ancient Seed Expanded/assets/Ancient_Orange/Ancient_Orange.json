@@ -1,0 +1,76 @@
+{
+  "Changes": [
+    /*Seed item*/
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_Ancient_Orange_Seeds": {
+          "Name": "Ancient Orange Seeds",
+          "DisplayName": "{{i18n:Ancient_Orange_Seeds.DisplayName}}",
+          "Description": "{{i18n:Ancient_Orange_Seeds.Description}}",
+          "Type": "Seeds",
+          "Category": -74,
+          "Price": 35,
+          "Texture": "Mods/{{ModId}}/Ancient_Orange_Seeds",
+          "SpriteIndex": 0
+        }
+      }
+    }
+    /*Crop*/,
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_Ancient_Orange": {
+          "Name": "{{ModID}}_Ancient_Orange",
+          "DisplayName": "{{i18n:Ancient_Orange.DisplayName}}",
+          "Description": "{{i18n:Ancient_Orange.Description}}",
+          "Type": "Fruit",
+          "Category": -79,
+          "Price": 550,
+          "IsDrink": false,
+          "Edibility": 12,
+          "Texture": "Mods/{{ModId}}/Ancient_Orange",
+          "SpriteIndex": 0,
+          "ContextTags": [
+            "season_spring",
+            "season_summer",
+            "season_fall",
+            "color_orange"
+          ]
+        }
+      }
+    }
+    /*Planted Crop*/,
+    {
+      "Action": "EditData",
+      "Target": "Data/Crops",
+      "Entries": {
+        "{{ModId}}_Ancient_Orange_Seeds": {
+          "Seasons": [
+            "spring",
+            "summer",
+            "fall"
+          ],
+          "DaysInPhase": [
+            2,
+            7,
+            7,
+            7,
+            5
+          ],
+          "RegrowDays": 7,
+          "HarvestItemId": "{{ModId}}_Ancient_Orange",
+          "Texture": "Mods/{{ModId}}/Ancient_Orange_Planted",
+          "SpriteIndex": 0
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Ancient_Orange_Seeds, Mods/{{ModId}}/Ancient_Orange, Mods/{{ModId}}/Ancient_Orange_Planted",
+      "FromFile": "assets/Ancient_Orange/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

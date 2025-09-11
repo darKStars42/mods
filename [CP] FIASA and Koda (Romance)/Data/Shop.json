@@ -1,0 +1,196 @@
+{
+  "Changes": [
+
+
+		 {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+			
+            "Entries": {
+                "FIASA_Koda": {
+					   "ID": "FIASA_Koda",
+                    "Owners": [
+                        {
+                            "Name": "Koda",
+							"Id": "Vendor_t",
+							"Portrait": "Portraits/Koda_Vendor",
+                            "Dialogues": [
+                          
+                           
+                                {
+                                    "Id": "KodaSun",
+                                    "Condition": "WEATHER Here Sun",
+                                    "Dialogue": "FIASA stands for the Fern Isle Archipelago Science Authority."
+                                }
+                            
+                            ]
+                        }
+                    ],
+
+    "Items": [
+    
+ {
+        "ActionsOnPurchase": null,
+        "CustomFields": null,
+        "TradeItemId": "393",
+        "TradeItemAmount": 5,
+        "ApplyProfitMargins": null,
+        "AvailableStock": 1,
+        "AvailableStockLimit": "Global",
+        "AvoidRepeat": true,
+        "UseObjectDataPrice": true,
+        "IgnoreShopPriceModifiers": false,
+       
+        "AvailableStockModifiers": [
+          {
+            "Id": "RareMultiplier",
+            "Condition": "RANDOM 0.1",
+            "Modification": "Set",
+            "Amount": 5.0,
+            "RandomAmount": null
+          }
+        ],
+        "AvailableStockModifierMode": "Stack",
+        "Condition": null,
+        "Id": "RandomObjects",
+        "ItemId": "RANDOM_ITEMS (O) 2 789 @requirePrice @isRandomSale",
+        "RandomItemId": null,
+        "MaxItems": 10,
+        "MinStack": -1,
+        "MaxStack": -1,
+        "Quality": -1,
+        "ObjectInternalName": null,
+        "ObjectDisplayName": null,
+        "ObjectColor": null,
+        "ToolUpgradeLevel": -1,
+        "IsRecipe": false,
+        "StackModifiers": null,
+        "StackModifierMode": "Stack",
+        "QualityModifiers": null,
+        "QualityModifierMode": "Stack",
+        "ModData": null,
+        "PerItemCondition": "ITEM_HAS_EXPLICIT_OBJECT_CATEGORY Target, !ITEM_CATEGORY Target -999, !ITEM_OBJECT_TYPE Target Quest Minerals Arch"
+      }
+    
+	  ]
+                }
+            }
+        },	
+		 
+		 {
+      "Action": "EditMap",
+      "Target": "Maps/Boattime",
+	
+ 
+	  "When": {
+				"HasSeenEvent:hostPlayer |contains=IslandVisitor":false,
+		"DayofWeek": "Monday, Tuesday, Friday"
+			},
+      "MapTiles": [
+        {
+          "Position": { "X": 15, "Y": 10 },
+          "Layer": "Buildings",
+          "SetProperties": {
+            "Action": "OpenShop FIASA_Koda none 900 1800 15 8 16 32"
+          }
+        }
+        
+      ]
+    },
+						 {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+				
+            "Entries": {
+                "FIASA_Inke": {
+					   "ID": "FIASA_Inke",
+                    "Owners": [
+                        {
+                            "Name": "Inke",
+							"Id": "Vendor_t2",
+							"Portrait": "Portraits/Inke",
+                            "Dialogues": [
+                          
+                                // dialogue on sunny days
+                                {
+                                    "Id": "InkeSun",
+                                    "Condition": "WEATHER Here Sun",
+                                    "Dialogue": "FIASA stands for the Fern Isle Archipelago Science Authority."
+                                }
+                            ]
+                        }
+                    ],
+
+    "Items":[
+    
+ {
+        "ActionsOnPurchase": null,
+        "CustomFields": null,
+        "TradeItemId": "393",
+        "TradeItemAmount": 5,
+        "ApplyProfitMargins": null,
+        "AvailableStock": 1,
+        "AvailableStockLimit": "Global",
+        "AvoidRepeat": true,
+        "UseObjectDataPrice": true,
+        "IgnoreShopPriceModifiers": false,
+       
+        "AvailableStockModifiers": [
+          {
+            "Id": "RareMultiplier",
+            "Condition": "RANDOM 0.1",
+            "Modification": "Set",
+            "Amount": 5.0,
+            "RandomAmount": null
+          }
+        ],
+        "AvailableStockModifierMode": "Stack",
+        "Condition": null,
+        "Id": "RandomObjects",
+        "ItemId": "RANDOM_ITEMS (O) 2 789 @requirePrice @isRandomSale",
+        "RandomItemId": null,
+        "MaxItems": 10,
+        "MinStack": -1,
+        "MaxStack": -1,
+        "Quality": -1,
+        "ObjectInternalName": null,
+        "ObjectDisplayName": null,
+        "ObjectColor": null,
+        "ToolUpgradeLevel": -1,
+        "IsRecipe": false,
+        "StackModifiers": null,
+        "StackModifierMode": "Stack",
+        "QualityModifiers": null,
+        "QualityModifierMode": "Stack",
+        "ModData": null,
+        "PerItemCondition": "ITEM_HAS_EXPLICIT_OBJECT_CATEGORY Target, !ITEM_CATEGORY Target -999, !ITEM_OBJECT_TYPE Target Quest Minerals Arch"
+      }
+    
+	  ]
+                }
+            }
+        },	
+		 {
+      "Action": "EditMap",
+      "Target": "Maps/Boattime",
+
+	  "When": {
+				"HasSeenEvent:hostPlayer |contains=IslandVisitor":true,
+		"DayofWeek": "Monday, Tuesday, Friday",
+		
+				
+			},
+      "MapTiles": [
+        {
+          "Position": { "X": 15, "Y": 10 },
+          "Layer": "Buildings",
+          "SetProperties": {
+           "Action": "OpenShop FIASA_Inke none 900 1800 15 8 16 32"
+          }
+        }
+        
+      ]
+    },
+   
+    ]
+} 

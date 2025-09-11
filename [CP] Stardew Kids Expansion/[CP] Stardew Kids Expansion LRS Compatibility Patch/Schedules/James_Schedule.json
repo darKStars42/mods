@@ -1,0 +1,79 @@
+{
+    "Changes": [
+        // SCHEDULE
+        {
+            "LogName": "James Daily Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/James",
+            "Entries": {
+                "rain": "800 JoshHouse 7 19 2/1300 JoshHouse 12 5 0/1600 Town 50 69 1 Strings\\schedules\\James:spring.000/1830 JoshHouse 7 19 2/2000 JoshHouse 19 20 0/2100 JoshHouse 23 11 2 James_Sleep",
+                "Mon": "900 JoshHouse 1 20 1/1120 Town 50 69 1/1740 Town 12 11 1/2000 JoshHouse 23 11 2",
+                "Tue": "900 ArchaeologyHouse 19 15 0/1400 Town 89 93 2/1620 Town 50 68 1/1740 JoshHouse 7 19 2/2000 JoshHouse 23 11 2",
+                "Wed": "GOTO Tue",
+                "Thu": "GOTO season",
+                "Fri": "GOTO Tue",
+                "Sat": "GOTO Mon",
+                "Sun": "GOTO season",
+                "summer_16": "800 Town 65 64 2/1030 Hospital 15 16 3\"Strings\\schedules\\James:summer_16.000\"/1330 Hospital 15 15 3 \"Strings\\schedules\\James:summer_16.001\"/1600 JoshHouse 19 20 0/2400 JoshHouse 23 11 2 James_Sleep",
+                "summer": "730 Beach 21 20 0/1200 Town 86 93 2/1700 JoshHouse 12 5 0/1900 JoshHouse 7 19 2/2000 JoshHouse 31 6 0/2200 JoshHouse 23 11 2 James_Sleep",
+                "spring": "730 Beach 21 20 0/1200 Town 86 93 2/1700 JoshHouse 12 5 0/1900 JoshHouse 7 19 2/2000 JoshHouse 31 6 0/2200 JoshHouse 23 11 2 James_Sleep",
+                "winter": "730 Beach 21 20 0/1200 Town 86 93 2/1700 JoshHouse 12 5 0/1900 JoshHouse 7 19 2/2000 JoshHouse 31 6 0/2200 JoshHouse 23 11 2 James_Sleep",
+                "fall": "GOTO winter",
+                "DesertFestival_3": "a1000 BusStop 18 15 2/1030 Desert 29 33 square_2_2/1700 JoshHouse 7 19 2/2000 JoshHouse 23 11 2 James_sleep",
+                "9": "GOTO season",
+                "23":"GOTO season"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Characters/schedules/James",
+            "Entries": {
+            "DesertFestival_3": "a1000 BusStop 18 15 2/1030 Desert 29 33 square_2_2/1700 JoshHouse 7 19 2/2000 JoshHouse 23 11 2 James_sleep",
+            "Tue": "810 Custom_SchoolHouse 8 13 3 James_Read/1130 Town 12 11 1/a1300 Custom_SchoolHouse 8 13 3 James_Read/1550 Town 50 69 1/1740 JoshHouse 7 19 2/2000 JoshHouse 23 11 2 James_sleep",
+            "Wed": "GOTO Tue",
+            "Fri": "GOTO Tue",
+            "9":"GOTO season",
+            "23":"GOTO season"
+            },
+            "When": {
+                "LRSeventBool": "true",
+                "Weather |contains=Rain,Storm,GreenRain": "false",
+                "LRSschoolDays |contains={{DayofWeek}}": "true"
+            }
+        },
+        { 
+        "Action": "EditData",
+            "Target": "characters/schedules/James",
+            "Entries": {
+                "rain": "810 Custom_SchoolHouse 8 13 3 James_Read/1550 Town 50 69 1/1740 JoshHouse 7 19 2/2000 JoshHouse 23 11 2 James_sleep"
+            },
+            "When": {
+                "Weather": "Rain,Storm,GreenRain",
+                "LRSschoolDays |contains={{DayofWeek}}": "true",
+                "LRSeventBool": "true",
+                "LRSnoschool": "false"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Characters/schedules/James",
+            "Entries": {
+                "Mon": "GOTO Tue",
+                "Thu": "GOTO Tue"
+            },
+            "When": {
+                "LRSeventBool": "true",
+                "LRSfiveDays": "true",
+                "LRSnoSchool": "false",
+                "LRSschoolDays |contains={{DayofWeek}}": "true"
+            }
+        },
+        {
+        "Action": "EditData",
+            "Target": "Strings/StringsFromMaps",
+            "Entries": {
+                "Desk.1": "{{i18n:Desk.James}}"
+            }
+        }
+    ]
+}

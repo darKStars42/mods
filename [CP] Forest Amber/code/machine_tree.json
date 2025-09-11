@@ -1,0 +1,223 @@
+{
+	"Changes": [
+		//Add Producer Rules - Tree Items
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)miru.forestamber_ResinCraftingBench": {
+					"WorkingEffects":[
+						{
+							"Frames":[0,1,2,3,4,5],
+							"Interval":250,
+							"Sounds": [
+							{
+								"Id": "bubbles",
+								"Delay": 0
+                            }
+							]
+						},
+					],
+					"ShowNextIndexWhileWorking": false,
+                    "ShowNextIndexWhenReady": false,
+					"WobbleWhileWorking":false,
+					
+					"OutputRules": [
+						//Amber Resin Liquid
+						{
+							"Id": "miru.forestamber_AmberResinLiquid",
+							"Triggers": [
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)92", //Sap
+									"RequiredCount": 50
+								},
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)724", //Maple Syrup
+									"RequiredCount": 1
+								},
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)725", //Oak Resin
+									"RequiredTags": null,
+									"RequiredCount": 1
+								},
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)726", //Pine Tar
+									"RequiredTags": null,
+									"RequiredCount": 1
+								},
+							],
+							"OutputItem": [
+								{
+									"Id": "miru.forestamber_AmberResinLiquid",
+									"ItemId": "(O)miru.forestamber_AmberResinLiquid",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"MinStack": 1,
+									"MaxStack": 1,
+								}
+							],
+							"MinutesUntilReady": 400
+						},
+						{
+							"Id": "miru.forestamber_AmberResinLiquid",
+							"Triggers": [
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)MysticSyrup",
+									"RequiredCount": 1
+								},
+							],
+							"OutputItem": [
+								{
+									"Id": "miru.forestamber_AmberResinLiquid",
+									"ItemId": "(O)miru.forestamber_AmberResinLiquid",
+									"CopyQuality": false,
+									"CopyPrice": false,
+									"MinStack": 5,
+									"MaxStack": 5,
+								}
+							],
+							"MinutesUntilReady": 400
+						},
+
+						//Amber Bangle
+						{
+							"Id": "miru.forestamber_AmberBangle",
+							"Triggers": [
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)309", //Acorn
+									"RequiredCount": 10
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "miru.forestamber_AmberBangle",
+									"ItemId": "(O)miru.forestamber_AmberBangle",
+									"CustomData": {
+										"selph.ExtraMachineConfig.RequirementId.1": "miru.forestamber_AmberResinLiquid",
+										"selph.ExtraMachineConfig.RequirementAddPriceMultiplier.1":"1.0"
+                                    },
+									"CopyQuality": true,
+									"CopyPrice": true,
+									"PriceModifierMode": "Stack",
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 30
+										},
+									]
+								}
+							],
+							"MinutesUntilReady": 600
+						},
+						
+						//Amber Earrings
+						{
+							"Id": "miru.forestamber_AmberEarrings",
+							"Triggers": [
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)311", //Pine Cone
+									"RequiredCount": 10
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "miru.forestamber_AmberEarrings",
+									"ItemId": "(O)miru.forestamber_AmberEarrings",
+									"CustomData": {
+										"selph.ExtraMachineConfig.RequirementId.1": "miru.forestamber_AmberResinLiquid",
+										"selph.ExtraMachineConfig.RequirementAddPriceMultiplier.1":"1.0"
+                                    },
+									"CopyQuality": true,
+									"CopyPrice": true,
+									"PriceModifierMode": "Stack",
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 30
+										},
+									]
+								}
+							],
+							"MinutesUntilReady": 600
+						},
+						
+						//Amber Pendant
+						{
+							"Id": "miru.forestamber_AmberPendant",
+							"Triggers": [
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)310", //Maple Seed
+									"RequiredCount": 10
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "miru.forestamber_AmberPendant",
+									"ItemId": "(O)miru.forestamber_AmberPendant",
+									"CustomData": {
+										"selph.ExtraMachineConfig.RequirementId.1": "miru.forestamber_AmberResinLiquid",
+										"selph.ExtraMachineConfig.RequirementAddPriceMultiplier.1":"1.0"
+                                    },
+									"CopyQuality": true,
+									"CopyPrice": true,
+									"PriceModifierMode": "Stack",
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 30
+										},
+									]
+								}
+							],
+							"MinutesUntilReady": 600
+						},
+						
+						//Amber Ring
+						{
+							"Id": "miru.forestamber_AmberRing",
+							"Triggers": [
+								{
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredItemId": "(O)292", //Mahogany Seed
+									"RequiredCount": 5
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "miru.forestamber_AmberRing",
+									"ItemId": "(O)miru.forestamber_AmberRing",
+									"CustomData": {
+										"selph.ExtraMachineConfig.RequirementId.1": "miru.forestamber_AmberResinLiquid",
+										"selph.ExtraMachineConfig.RequirementAddPriceMultiplier.1":"1.0"
+                                    },
+									"CopyQuality": true,
+									"CopyPrice": true,
+									"PriceModifierMode": "Stack",
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 15
+										},
+									]
+								}
+							],
+							"MinutesUntilReady": 600
+						},
+					],
+
+				},
+				
+			},
+			
+		},
+
+	]
+}

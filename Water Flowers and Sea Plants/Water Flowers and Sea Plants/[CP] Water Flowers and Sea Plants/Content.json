@@ -1,0 +1,126 @@
+{
+  "Format": "2.0",
+  "Changes": [
+    {                 
+	"Action": "Include",
+	"FromFile": "data/Objects.json",
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Fish",
+      "Entries": {
+        "{{ModId}}_Red_Algae": "Red Algae/10/floater/5/19/600 2000/spring summer fall/both/689 .4 680 .1/5/.3/.1/0",
+        "{{ModId}}_Sea_Anemone": "Sea Anemone/10/floater/1/5/600 2000/spring summer fall/both/689 .4 680 .1/5/.3/.1/0",
+        "{{ModId}}_Sea_Fan": "Sea Fan/10/floater/10/20/600 2000/spring summer fall/both/689 .4 680 .1/5/.3/.1/0",
+        "{{ModId}}_Sea_Whip": "Sea Whip/10/floater/6/24/600 2000/spring summer fall/both/689 .4 680 .1/5/.3/.1/0",
+        "{{ModId}}_Soft_Coral": "Soft Coral/10/floater/5/10/600 2000/spring summer fall/both/689 .4 680 .1/5/.3/.1/0",
+        "{{ModId}}_Purple_Coral": "Purple Coral/10/floater/5/10/600 2000/spring summer fall/both/689 .4 680 .1/5/.3/.1/0"
+      }
+    },
+{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"IslandSouth",
+				"Fish"
+			],
+			"Entries": {
+				"{{ModId}}.islandsouth": {
+					"Chance": 1.0,
+					"Id": "{{ModId}}.islandsouth",
+					"ItemId": null,
+					"RandomItemId": [
+						"{{ModId}}_Red_Algae",
+						"{{ModId}}_Sea_Fan",
+                                                "{{ModId}}_Soft_Coral"
+					],
+				},
+			}
+		},
+             {
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"IslandNorth",
+				"Fish"
+			],
+			"Entries": {
+				"{{ModId}}.islandnorth": {
+					"Chance": 1.0,
+					"Id": "{{ModId}}.islandnorth",
+					"ItemId": null,
+					"RandomItemId": [
+						"{{ModId}}_Sea_Anemone",
+						"{{ModId}}_Sea_Whip",
+                                                "{{ModId}}_Purple_Coral"
+					],
+				},
+			}
+		},
+{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"otohime.AV_AxolotlTown",
+				"Fish"
+			],
+                        "When": {
+				"HasMod: |contains=otohime.AV": true
+			},
+			"Entries": {
+				"otohime.AV_AxolotlTown": {
+					"Chance": 1.0,
+					"Id": "otohime.AV_AxolotlTown",
+					"ItemId": null,
+					"RandomItemId": [
+						"{{ModId}}_Sea_Anemone",
+						"{{ModId}}_Sea_Whip",
+                                                "{{ModId}}_Purple_Coral",
+                                                "{{ModId}}_Red_Algae",
+						"{{ModId}}_Sea_Fan",
+                                                "{{ModId}}_Soft_Coral"
+					],
+				}
+			}
+		},
+{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [
+				"otohime.AV_AxolotlLake",
+				"Fish"
+			],
+                        "When": {
+				"HasMod: |contains=otohime.AV": true
+			},
+			"Entries": {
+				"{{ModId}}.lake": {
+					"Chance": 1.0,
+					"Id": "{{ModId}}.lake",
+					"ItemId": null,
+					"RandomItemId": [
+						"{{ModId}}_Sea_Anemone",
+						"{{ModId}}_Sea_Whip",
+                                                "{{ModId}}_Purple_Coral",
+                                                "{{ModId}}_Red_Algae",
+						"{{ModId}}_Sea_Fan",
+                                                "{{ModId}}_Soft_Coral"
+					],
+				}
+			}
+		},
+    {
+      "LogName": "Aquarium Data",
+      "Action": "EditData",
+      "Target": "Data/AquariumFish",
+      "Entries": {
+        "{{ModId}}_Purple_Coral": "0/static/////Mods\\otohime.WFSP\\AquariumFish",
+        "{{ModId}}_Red_Algae": "1/static/////Mods\\otohime.WFSP\\AquariumFish",
+        "{{ModId}}_Sea_Anemone": "2/static/////Mods\\otohime.WFSP\\AquariumFish",
+        "{{ModId}}_Sea_Fan": "3/static/////Mods\\otohime.WFSP\\AquariumFish",
+        "{{ModId}}_Sea_Whip": "4/static/////Mods\\otohime.WFSP\\AquariumFish",
+        "{{ModId}}_Soft_Coral": "5/static/////Mods\\otohime.WFSP\\AquariumFish"
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "Changes": [
+    {
+      "LogName": "Load Museum",
+      "Action": "Load",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookMuseum",
+      "FromFile": "Assets/Maps/LilybrookMuseum.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "{{ModID}}_LilybrookMuseum": {
+          "DisplayName": "{{i18n:Lilybrook.Locations.Museum}}",
+          "DefaultArrivalTile": {
+            "X": 6,
+            "Y": 12
+          },
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ModID}}_LilybrookMuseum"
+          },
+          "Music": [
+            {
+              "Track": "SettlingIn"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/8BitAlien.Lilybrook_LilybrookMuseum",
+      "AddWarps": [
+        "6 13 8BitAlien.Lilybrook_LilybrookRoad 48 10"
+      ]
+    },
+    {
+      "Action": "EditData",
+      "Target": "Spiderbuttons.CMF/Museums",
+      "Entries": {
+        "{{ModID}}_LilybrookMuseum": {
+          "Id": "{{ModID}}_LilybrookMuseum",
+          "Bounds": {
+            "X": 4,
+            "Y": 7,
+            "Width": 5,
+            "Height": 3
+          },
+          "ShowDonationHint": true,
+          "OverrideDescription": true,
+          "PedestalAction": {
+            "Id": "{{ModID}}_PedestalAction",
+            "InteractionType": "Default",
+            "Text": "{{i18n:Pedestal.Text}}"
+          },
+          "DonationRequirements": [
+            {
+              "Id": "{{ModId}}_MineralsAndArtifacts",
+              "ItemIds": [
+                "(O)Lilybrook.Sapphire",
+                "(O)Lilybrook.Nimbusite",
+                "(O)Lilybrook.Jubilite",
+                "(O)Lilybrook.SeaGlass",
+                "(O)Lilybrook.ForgottenTrack",
+                "(O)Lilybrook.OldFootball",
+                "(O)Lilybrook.Elvarite",
+                "(O)Lilybrook.Horseshoe",
+				"(O)Lilybrook.DwarvenCrest",
+                "(O)Lilybrook.Pomparite"
+              ],
+              "MatchType": "Any"
+            }
+          ],
+          "Strings": {
+            "CanBeDonated": "{{i18n:LBDonate}}"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+	"Format": "2.0.0",
+	"ConfigSchema": {
+		"Mayo Setting": {
+			"AllowValues": "1, 5, 10, 15, 20",
+			"Default": "5",
+			"Description": "Adjusts how many eggs are needed to make quail mayo. (Recommended: 5)"
+		},
+		"Maturity Setting": {
+			"AllowValues": "1, 2, 3, 4, 5",
+			"Default": "3",
+			"Description": "Adjusts how many days are required for chicks to mature into adults. (Recommended: 3)"
+		},
+		"Production Setting": {
+			"AllowValues": "1, 2, 3",
+			"Default": "1",
+			"Description": "Adjusts how many days are required for quails produce eggs. (Recommended: 1)"
+		},
+		"Exclusion Setting": {
+			"AllowValues": "false, true",
+			"Default": "false",
+			"Description": "Adjusts whether quail products are included or excluded from your shipping collection. Only enable if you wish to EXCLUDE quail products from your collection."
+		},
+		"Mayo or Custard": {
+			"AllowValues": "Mayonnaise, Custard",
+			"Default": "Mayonnaise",
+			"Description": "Optionally renames quail mayo to custard."
+		}
+	},
+	"Changes": [
+		{
+			"LogName": "Adding custom asset textures...",
+			"Action": "Load",
+			"Target": "{{ModId}}_assets/quailegg, {{ModId}}_assets/quailegglarge, {{ModId}}_assets/quaileggv, {{ModId}}_assets/quailegglargev, {{ModId}}_assets/quailmayo, {{ModId}}_assets/quailmayosmol, {{ModId}}_assets/commonquail, {{ModId}}_assets/commonquailbaby, {{ModId}}_assets/valleyquail, {{ModId}}_assets/valleyquailbaby, {{ModId}}_assets/shopcommon, {{ModId}}_assets/shopvalley",
+			"FromFile": "assets/{{TargetWithoutPath}}.png"
+		},
+		{
+			"LogName": "Bringing COMMON QUAIL EGGS into existence...",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_QuailEgg": {
+					"Name": "{{ModId}}_QuailEgg",
+					"DisplayName": "Common Quail Egg",
+					"Description": "A tiny speckled egg from a common quail.",
+					"Texture": "{{ModId}}_assets/quailegg",
+					"Type": "Basic",
+					"Category": -5,
+					"Price": 100,
+					"SpriteIndex": 0,
+					"Edibility": 10,
+					"IsDrink": false,
+					"Buffs": null,
+					"GeodeDropsDefaultItems": false,
+					"GeodeDrops": null,
+					"ArtifactSpotChances": null,
+					"ExcludeFromFishingCollection": true,
+					"ExcludeFromShippingCollection": "{{Exclusion Setting}}",
+					"ExcludeFromRandomSale": false,
+					"ContextTags": null,
+					"CustomFields": null
+				}
+			}
+		},
+		{
+			"LogName": "Adding jumbo serum to COMMON QUAIL EGGS...",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_LargeQuailEgg": {
+					"Name": "{{ModId}}_LargeQuailEgg",
+					"DisplayName": "Large Common Quail Egg",
+					"Description": "An unusually large speckled egg from a common quail. Ouch.",
+					"Texture": "{{ModId}}_assets/quailegglarge",
+					"Type": "Basic",
+					"Category": -5,
+					"Price": 300,
+					"SpriteIndex": 0,
+					"Edibility": 10,
+					"IsDrink": false,
+					"Buffs": null,
+					"GeodeDropsDefaultItems": false,
+					"GeodeDrops": null,
+					"ArtifactSpotChances": null,
+					"ExcludeFromFishingCollection": true,
+					"ExcludeFromShippingCollection": "{{Exclusion Setting}}",
+					"ExcludeFromRandomSale": false,
+					"ContextTags": null,
+					"CustomFields": null
+				}
+			}
+		},
+		{
+			"LogName": "Bringing VALLEY QUAIL EGGS into existence...",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_QuailEggV": {
+					"Name": "{{ModId}}_QuailEggV",
+					"DisplayName": "Valley Quail Egg",
+					"Description": "A tiny speckled egg from a valley quail.",
+					"Texture": "{{ModId}}_assets/quaileggv",
+					"Type": "Basic",
+					"Category": -5,
+					"Price": 100,
+					"SpriteIndex": 0,
+					"Edibility": 10,
+					"IsDrink": false,
+					"Buffs": null,
+					"GeodeDropsDefaultItems": false,
+					"GeodeDrops": null,
+					"ArtifactSpotChances": null,
+					"ExcludeFromFishingCollection": true,
+					"ExcludeFromShippingCollection": "{{Exclusion Setting}}",
+					"ExcludeFromRandomSale": false,
+					"ContextTags": null,
+					"CustomFields": null
+				}
+			}
+		},
+		{
+			"LogName": "Adding jumbo serum to VALLEY QUAIL EGGS...",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_LargeQuailEggV": {
+					"Name": "{{ModId}}_LargeQuailEggV",
+					"DisplayName": "Large Valley Quail Egg",
+					"Description": "An unusually large speckled egg from a valley quail. Ouch.",
+					"Texture": "{{ModId}}_assets/quailegglargev",
+					"Type": "Basic",
+					"Category": -5,
+					"Price": 300,
+					"SpriteIndex": 0,
+					"Edibility": 10,
+					"IsDrink": false,
+					"Buffs": null,
+					"GeodeDropsDefaultItems": false,
+					"GeodeDrops": null,
+					"ArtifactSpotChances": null,
+					"ExcludeFromFishingCollection": true,
+					"ExcludeFromShippingCollection": "{{Exclusion Setting}}",
+					"ExcludeFromRandomSale": false,
+					"ContextTags": null,
+					"CustomFields": null
+				}
+			}
+		},
+		{
+			"LogName": "Blending QUAIL EGGS into mayo...",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_TinyQuailMayo": {
+					"Name": "{{ModId}}_TinyQuailMayo",
+					"DisplayName": "Quail {{Mayo or Custard}}",
+					"Description": "A tiny jar of condiment made from tiny little eggs. Cute.",
+					"Texture": "{{ModId}}_assets/quailmayosmol",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 600,
+					"SpriteIndex": 0,
+					"Edibility": 20,
+					"IsDrink": true,
+					"Buffs": null,
+					"GeodeDropsDefaultItems": false,
+					"GeodeDrops": null,
+					"ArtifactSpotChances": null,
+					"ExcludeFromFishingCollection": true,
+					"ExcludeFromShippingCollection": "{{Exclusion Setting}}",
+					"ExcludeFromRandomSale": false,
+					"ContextTags": null,
+					"CustomFields": null
+				}
+			}
+		},
+		{
+			"LogName": "Blending an absurd amount of QUAIL EGGS into mayo...",
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_QuailMayo": {
+					"Name": "{{ModId}}_QuailMayo",
+					"DisplayName": "Large Quail {{Mayo or Custard}}",
+					"Description": "A creamy condiment crafted from a copious quantity of quail eggs.",
+					"Texture": "{{ModId}}_assets/quailmayo",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 1200,
+					"SpriteIndex": 0,
+					"Edibility": 20,
+					"IsDrink": true,
+					"Buffs": null,
+					"GeodeDropsDefaultItems": false,
+					"GeodeDrops": null,
+					"ArtifactSpotChances": null,
+					"ExcludeFromFishingCollection": true,
+					"ExcludeFromShippingCollection": "{{Exclusion Setting}}",
+					"ExcludeFromRandomSale": false,
+					"ContextTags": null,
+					"CustomFields": null
+				}
+			}
+		},
+		{
+			"LogName": "Teaching old machines new tricks...",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)24",
+				"OutputRules"
+			],
+			"Entries": {
+				"{{ModId}}_TinyQuailMayo1": {
+					"Id": "{{ModId}}_TinyQuailMayo1",
+					"Triggers": [
+						{
+							"RequiredItemId": "{{ModId}}_QuailEgg",
+							"RequiredCount": "{{Mayo Setting}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "{{ModId}}_TinyQuailMayo"
+						}
+					],
+					"MinutesUntilReady": 100
+				},
+				"{{ModId}}_QuailMayo1": {
+					"Id": "{{ModId}}_QuailMayo1",
+					"Triggers": [
+						{
+							"RequiredItemId": "{{ModId}}_LargeQuailEgg",
+							"RequiredCount": "{{Mayo Setting}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "{{ModId}}_QuailMayo"
+						}
+					],
+					"MinutesUntilReady": 100
+				},
+				"{{ModId}}_TinyQuailMayo2": {
+					"Id": "{{ModId}}_TinyQuailMayo2",
+					"Triggers": [
+						{
+							"RequiredItemId": "{{ModId}}_QuailEggV",
+							"RequiredCount": "{{Mayo Setting}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "{{ModId}}_TinyQuailMayo"
+						}
+					],
+					"MinutesUntilReady": 100
+				},
+				"{{ModId}}_QuailMayo2": {
+					"Id": "{{ModId}}_QuailMayo2",
+					"Triggers": [
+						{
+							"RequiredItemId": "{{ModId}}_LargeQuailEggV",
+							"RequiredCount": "{{Mayo Setting}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "{{ModId}}_QuailMayo"
+						}
+					],
+					"MinutesUntilReady": 100
+				}
+			}
+		},
+		{
+			"LogName": "Preparing COMMON QUAIL for incubation...",
+			"Action": "EditData",
+			"Target": "Data/FarmAnimals",
+			"Entries": {
+				"{{ModId}}_CommonQuail": {
+					"Name": "{{ModId}}_CommonQuail",
+					"DisplayName": "Common Quail",
+					"House": "Coop",
+					"Gender": "MaleOrFemale",
+					"PurchasePrice": 300,
+					"ShopTexture": "{{ModId}}_assets/shopcommon",
+					"ShopSourceRect": {
+						"X": 0,
+						"Y": 0,
+						"Width": 32,
+						"Height": 16
+					},
+					"RequiredBuilding": "Coop",
+					"ShopDisplayName": "Common Quail",
+					"ShopDescription": "Quaint little ground birds with mottled plumage.",
+					"EggItemIds": [
+						"{{ModId}}_QuailEgg",
+						"{{ModId}}_LargeQuailEgg"
+					],
+					"IncubationTime": -1,
+					"IncubatorParentSheetOffset": 1,
+					"BirthText": "A new common quail chick has hatched!",
+					"Sound": "crickets",
+					"BabySound": "SpringBirds",
+					"DaysToMature": "{{Maturity Setting}}",
+					"DaysToProduce": "{{Production Setting}}",
+					"ProduceItemIds": [
+						{
+							"Id": "Default",
+							"Condition": null,
+							"MinimumFriendship": 0,
+							"ItemId": "{{ModId}}_QuailEgg"
+						},
+						{
+							"Id": "Default",
+							"Condition": null,
+							"MinimumFriendship": 500,
+							"ItemId": "{{ModId}}_LargeQuailEgg"
+						}
+					],
+					"Texture": "{{ModId}}_assets/commonquail",
+					"BabyTexture": "{{ModId}}_assets/commonquailbaby",
+					"UseFlippedRightForLeft": false,
+					"SpriteWidth": 16,
+					"SpriteHeight": 16,
+					"ShowInSummitCredits": true
+				}
+			}
+		},
+		{
+			"LogName": "Preparing VALLEY QUAIL for incubation...",
+			"Action": "EditData",
+			"Target": "Data/FarmAnimals",
+			"Entries": {
+				"{{ModId}}_ValleyQuail": {
+					"Name": "{{ModId}}_ValleyQuail",
+					"DisplayName": "Valley Quail",
+					"House": "Coop",
+					"Gender": "MaleOrFemale",
+					"PurchasePrice": 300,
+					"ShopTexture": "{{ModId}}_assets/shopvalley",
+					"ShopSourceRect": {
+						"X": 0,
+						"Y": 0,
+						"Width": 32,
+						"Height": 16
+					},
+					"RequiredBuilding": "Coop",
+					"ShopDisplayName": "Valley Quail",
+					"ShopDescription": "Quaint little ground birds with a silly bobbing plume on their heads.",
+					"EggItemIds": [
+						"{{ModId}}_QuailEggV",
+						"{{ModId}}_LargeQuailEggV"
+					],
+					"IncubationTime": -1,
+					"IncubatorParentSheetOffset": 1,
+					"BirthText": "A new valley quail chick has hatched!",
+					"Sound": "crickets",
+					"BabySound": "SpringBirds",
+					"DaysToMature": "{{Maturity Setting}}",
+					"DaysToProduce": "{{Production Setting}}",
+					"ProduceItemIds": [
+						{
+							"Id": "Default",
+							"Condition": null,
+							"MinimumFriendship": 0,
+							"ItemId": "{{ModId}}_QuailEggV"
+						},
+						{
+							"Id": "Default",
+							"Condition": null,
+							"MinimumFriendship": 500,
+							"ItemId": "{{ModId}}_LargeQuailEggV"
+						}
+					],
+					"Texture": "{{ModId}}_assets/valleyquail",
+					"BabyTexture": "{{ModId}}_assets/valleyquailbaby",
+					"UseFlippedRightForLeft": false,
+					"SpriteWidth": 16,
+					"SpriteHeight": 16,
+					"ShowInSummitCredits": true
+				}
+			}
+		}
+	]
+}

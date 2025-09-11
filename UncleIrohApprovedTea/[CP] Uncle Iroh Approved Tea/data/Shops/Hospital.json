@@ -1,0 +1,57 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Hospital",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_Cassia_Tea": {
+                    "ItemId": "{{ModId}}_Cassia_Tea",
+                    "Price": 400
+                },
+                "{{ModId}}_Chrysanthemum_Tea": {
+                    "ItemId": "{{ModId}}_Chrysanthemum_Tea",
+                    "Price": 400
+                },
+                "{{ModId}}_Health_Blend_Tea": {
+                    "ItemId": "{{ModId}}_Health_Blend_Tea",
+                    "Price": 600
+                },
+                "{{ModId}}_Health_Blend_Tea_Recipe": {
+                    "Condition": "!PLAYER_HAS_COOKING_RECIPE Current {{ModId}}_Health_Blend_Tea",
+                    "ItemId": "{{ModId}}_Health_Blend_Tea",
+                    "Price": 4000,
+                    "isRecipe": true
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Hospital",
+                "Items"
+            ],
+            "When": {
+                "TeaRecipes": true
+            },
+            "Entries": {
+                "{{ModId}}_Cassia_Tea": {
+                    "Condition": "!PLAYER_HAS_COOKING_RECIPE Current {{ModId}}_Cassia_Tea",
+                    "ItemId": "{{ModId}}_Cassia_Tea",
+                    "Price": 2000,
+                    "isRecipe": true
+                },
+                "{{ModId}}_Chrysanthemum_Tea": {
+                    "Condition": " !PLAYER_HAS_COOKING_RECIPE Current {{ModId}}_Chrysanthemum_Tea",
+                    "ItemId": "{{ModId}}_Chrysanthemum_Tea",
+                    "Price": 2500,
+                    "isRecipe": true
+                }
+            }
+        }
+    ]
+}

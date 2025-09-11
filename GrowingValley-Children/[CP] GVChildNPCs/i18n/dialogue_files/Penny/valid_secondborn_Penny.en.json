@@ -1,0 +1,513 @@
+{
+   "Changes": [
+		{
+			"LogName": "Add gift dialogue to gift tastes for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{SecondbornName}}", 0],
+					"Value": "{{i18n:PennyChild.GiftTastes.Love {{SecondbornTokenPass}} }}", //Loved gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{SecondbornName}}", 2],
+					"Value": "{{i18n:PennyChild.GiftTastes.Like {{SecondbornTokenPass}} }}", //Liked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{SecondbornName}}", 8],
+					"Value": "{{i18n:PennyChild.GiftTastes.Neutral {{SecondbornTokenPass}} }}", //Neutral gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{SecondbornName}}", 4],
+					"Value": "{{i18n:PennyChild.GiftTastes.Dislike {{SecondbornTokenPass}} }}", //Disliked gift
+					"Delimiter": "",
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "{{SecondbornName}}", 6],
+					"Value": "{{i18n:PennyChild.GiftTastes.Hate {{SecondbornTokenPass}} }}", //Hated gift
+					"Delimiter": "",
+				},
+			],
+		},
+		
+		{
+			"LogName": "Fill secondborn's empty schedule dialogue with that of Penny's daughter.",
+			"Action": "EditData",
+			"Target": "Strings/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain.000": "{{i18n:PennyChild.Schedule.rain.000}}",
+				"Mon.000": "{{i18n:PennyChild.Schedule.Mon.000 {{SecondbornTokenPass}} }}",
+				"Mon.001": "{{i18n:PennyChild.Schedule.Mon.001 {{SecondbornTokenPass}} }}",
+				"Mon.002": "{{i18n:PennyChild.Schedule.Mon.002 {{SecondbornTokenPass}} }}",
+				"Tue.000": "{{i18n:PennyChild.Schedule.Tue.000 {{SecondbornTokenPass}} }}",
+				"Tue_rain.000": "{{i18n:PennyChild.Schedule.Tue_rain.000_{{LeoHome}} {{SecondbornTokenPass}} }}",
+				"Tue_rain.001": "{{i18n:PennyChild.Schedule.Tue_rain.001 {{SecondbornTokenPass}} }}",
+				"Thu.000": "{{i18n:PennyChild.Schedule.Thu.000 {{SecondbornTokenPass}} }}",
+				"DesertFestival.000": "{{i18n:PennyChild.Schedule.DesertFestival.000 {{SecondbornTokenPass}} }}",
+				"Schoolhouse.000": "{{i18n:PennyChild.Schedule.Schoolhouse.000 {{SecondbornTokenPass}} }}",
+				"Schoolhouse.001": "{{i18n:PennyChild.Schedule.Schoolhouse.001 {{SecondbornTokenPass}} }}",
+				"Schoolhouse.002": "{{i18n:PennyChild.Schedule.Schoolhouse.002 {{SecondbornTokenPass}} }}",
+			}
+		},
+		{
+			"LogName": "Fill secondborn's empty dialogue with that of Penny's daughter.",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{SecondbornName}}",
+			"Entries": {
+				"AcceptBirthdayGift_Positive": "{{i18n:PennyChild.Dialogue.BirthdayGift_Positive {{SecondbornTokenPass}} }}",
+				"AcceptBirthdayGift_Negative": "{{i18n:PennyChild.Dialogue.BirthdayGift_Negative {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)StardropTea": "{{i18n:PennyChild.Dialogue.Gift_StardropTea {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)Powdermelon": "{{i18n:PennyChild.Dialogue.Gift_Powdermelon {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)254": "{{i18n:PennyChild.Dialogue.Gift_Melon {{SecondbornTokenPass}} }}",
+				"AcceptGift_ancient_item": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_prehistoric_item": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)96": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)97": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)98": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)99": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)101": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)103": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)104": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)106": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)107": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)108": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)111": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)112": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)113": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)114": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)116": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)117": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)118": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)121": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)122": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)124": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)125": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)126": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)127": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)588": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)589": "{{i18n:PennyChild.Dialogue.Gift_ancient_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_book_item": "{{i18n:PennyChild.Dialogue.Gift_book_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_category_gem": "{{i18n:PennyChild.Dialogue.Gift_category_gem_minerals {{SecondbornTokenPass}} }}",
+				"AcceptGift_category_minerals": "{{i18n:PennyChild.Dialogue.Gift_category_gem_minerals {{SecondbornTokenPass}} }}",
+				"AcceptGift_category_vegetable": "{{i18n:PennyChild.Dialogue.Gift_category_vegetable {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)881": "{{i18n:PennyChild.Dialogue.Gift_Bone_Fragment {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)110": "{{i18n:PennyChild.Dialogue.Gift_Rusty_Spoon {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)205": "{{i18n:PennyChild.Dialogue.Gift_mushroom_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)430": "{{i18n:PennyChild.Dialogue.Gift_mushroom_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)432": "{{i18n:PennyChild.Dialogue.Gift_mushroom_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_edible_mushroom": "{{i18n:PennyChild.Dialogue.Gift_mushroom_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)DriedMushrooms": "{{i18n:PennyChild.Dialogue.Gift_mushroom_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_coffee_item": "{{i18n:PennyChild.Dialogue.Gift_coffee_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_alcohol_item": "{{i18n:PennyChild.Dialogue.Gift_alcohol_item {{SecondbornTokenPass}} }}",
+				"AcceptGift_(O)420": "{{i18n:PennyChild.Dialogue.Gift_mushroom_item {{SecondbornTokenPass}} }}",
+				"Resort_Entering": "{{i18n:PennyChild.Dialogue.Resort_Entering {{SecondbornTokenPass}} }}",
+				"Resort_Leaving": "{{i18n:PennyChild.Dialogue.Resort_Leaving {{SecondbornTokenPass}} }}",
+				"Resort": "{{i18n:PennyChild.Dialogue.Resort {{SecondbornTokenPass}} }}",
+				"GreenRain": "{{i18n:PennyChild.Dialogue.GreenRain {{SecondbornTokenPass}} }}",
+				"Mon": "{{i18n:PennyChild.Dialogue.Mon {{SecondbornTokenPass}} }}",
+				"Tue": "{{i18n:PennyChild.Dialogue.Tue {{SecondbornTokenPass}} }}",
+				"Wed": "{{i18n:PennyChild.Dialogue.Wed {{SecondbornTokenPass}} }}",
+				"Thu": "{{i18n:PennyChild.Dialogue.Thu {{SecondbornTokenPass}} }}",
+				"Fri": "{{i18n:PennyChild.Dialogue.Fri {{SecondbornTokenPass}} }}",
+				"Sat": "{{i18n:PennyChild.Dialogue.Sat {{SecondbornTokenPass}} }}",
+				"Sun": "{{i18n:PennyChild.Dialogue.Sun {{SecondbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:PennyChild.Dialogue.summer_Mon {{SecondbornTokenPass}} }}",
+				"summer_Tue": "{{i18n:PennyChild.Dialogue.summer_Tue_{{LeoHome}} {{SecondbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:PennyChild.Dialogue.summer_Wed {{SecondbornTokenPass}} }}",
+				"summer_Thu": "{{i18n:PennyChild.Dialogue.summer_Thu {{SecondbornTokenPass}} }}",
+				"summer_Fri": "{{i18n:PennyChild.Dialogue.summer_Fri {{SecondbornTokenPass}} }}",
+				"summer_Sat": "{{i18n:PennyChild.Dialogue.summer_Sat {{SecondbornTokenPass}} }}",
+				"summer_Sun": "{{i18n:PennyChild.Dialogue.summer_Sun {{SecondbornTokenPass}} }}",
+				"fall_Mon": "{{i18n:PennyChild.Dialogue.fall_Mon {{SecondbornTokenPass}} }}",
+				"fall_Tue": "{{i18n:PennyChild.Dialogue.fall_Tue {{SecondbornTokenPass}} }}",
+				"fall_Wed": "{{i18n:PennyChild.Dialogue.fall_Wed {{SecondbornTokenPass}} }}",
+				"fall_Thu": "{{i18n:PennyChild.Dialogue.fall_Thu {{SecondbornTokenPass}} }}",
+				"fall_Fri": "{{i18n:PennyChild.Dialogue.fall_Fri {{SecondbornTokenPass}} }}",
+				"fall_Sat": "{{i18n:PennyChild.Dialogue.fall_Sat {{SecondbornTokenPass}} }}",
+				"fall_Sun": "{{i18n:PennyChild.Dialogue.fall_Sun {{SecondbornTokenPass}} }}",
+				"winter_Mon": "{{i18n:PennyChild.Dialogue.winter_Mon {{SecondbornTokenPass}} }}",
+				"winter_Tue": "{{i18n:PennyChild.Dialogue.winter_Tue {{SecondbornTokenPass}} }}",
+				"winter_Wed": "{{i18n:PennyChild.Dialogue.winter_Wed_{{LeoHome}} {{SecondbornTokenPass}} }}",
+				"winter_Thu": "{{i18n:PennyChild.Dialogue.winter_Thu {{SecondbornTokenPass}} }}",
+				"winter_Fri": "{{i18n:PennyChild.Dialogue.winter_Fri {{SecondbornTokenPass}} }}",
+				"winter_Sat": "{{i18n:PennyChild.Dialogue.winter_Sat {{SecondbornTokenPass}} }}",
+				"winter_Sun": "{{i18n:PennyChild.Dialogue.winter_Sun {{SecondbornTokenPass}} }}",
+			}
+		},
+		{
+            "LogName": "Add rain dialogue for Penny's daughter as secondborn.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/rainy",
+            "Entries": {
+				"{{SecondbornName}}": "{{i18n:PennyChild.Dialogue.Rain {{SecondbornTokenPass}} }}",
+			}
+		},
+		
+		
+        {
+			"LogName": "Add Egg Festival dialogue for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring13",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.spring13_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.spring13_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Flower Dance dialogue for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.spring24_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.spring24_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Luau dialogue for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer11",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.summer11_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.summer11_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Moonlight Jellies dialogue for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer28",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.summer28_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.summer28_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Fair dialogue for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.fall16_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.fall16_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Spirit's Eve dialogue for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.fall27_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.fall27_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Festival of Ice dialogue for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.winter8_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.winter8_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+        {
+			"LogName": "Add Winter Star dialogue for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.winter25_y1 {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.winter25_y2 {{SecondbornTokenPass}} }}",
+			},
+		},
+		
+		{
+			"LogName": "Add dialogue for attending movies with other parent for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_3", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.With_Parent_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie": {
+					"ResponsePoint": null,
+					"Script": "/message \"{{i18n:GeneralChildren.Movie.With_Parent_Script {{SecondbornTokenPass}} }}\"",
+					"Text": null
+				},
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.With_Parent_After {{SecondbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for winter_movie_0 for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_4", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.winter_0_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.winter_0_After {{SecondbornTokenPass}} }}"
+				}
+			},
+			"When": {
+				"SecondbornDialogue|contains=Single": false,
+			},
+		},
+		
+		{
+			"LogName": "Add dialogue for loved movies for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_5", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.love_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.love_After {{SecondbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for liked movies for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_6", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.like_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.like_After {{SecondbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Add dialogue for disliked movies for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_7", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.dislike_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.dislike_After {{SecondbornTokenPass}} }}"
+				}
+			}
+		},
+		
+		{
+			"LogName": "Edit Little Red School House map string for Growing Valley; Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Strings/StringsFromMaps",
+            "Entries": {
+				"Desk.9": "{{i18n:Schoolhouse.Desk9.PennyChild {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+			},
+		},
+		
+		//Conditional dialogue (regular)
+		{
+            "LogName": "Edit dialogue for Penny's daughter as secondborn to use genericized versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{SecondbornName}}",
+            "Entries": {
+				"AcceptGift_alcohol_item": "{{i18n:PennyChild.Dialogue.Gift_alcohol_item.noncanon {{SecondbornTokenPass}} }}",
+				"Mon": "{{i18n:PennyChild.Dialogue.Mon.noncanon {{SecondbornTokenPass}} }}",
+				"Wed": "{{i18n:PennyChild.Dialogue.Wed.noncanon {{SecondbornTokenPass}} }}",
+				"Sun": "{{i18n:PennyChild.Dialogue.Sun.noncanon {{SecondbornTokenPass}} }}",
+				"summer_Mon": "{{i18n:PennyChild.Dialogue.summer_Mon.noncanon {{SecondbornTokenPass}} }}",
+				"summer_Sat": "{{i18n:PennyChild.Dialogue.summer_Sat.noncanon {{SecondbornTokenPass}} }}",
+				"fall_Mon": "{{i18n:PennyChild.Dialogue.fall_Mon.noncanon {{SecondbornTokenPass}} }}",
+				"fall_Tue": "{{i18n:PennyChild.Dialogue.fall_Tue.noncanon {{SecondbornTokenPass}} }}",
+				"winter_Tue": "{{i18n:PennyChild.Dialogue.winter_Tue.noncanon {{SecondbornTokenPass}} }}",
+				"winter_Sat": "{{i18n:PennyChild.Dialogue.winter_Sat.noncanon {{SecondbornTokenPass}} }}",
+				"winter_Sun": "{{i18n:PennyChild.Dialogue.winter_Sun.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		{
+            "LogName": "Edit rain dialogue for Penny's daughter as secondborn to use genericized version.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/rainy",
+            "Entries": {
+				"{{SecondbornName}}": "{{i18n:PennyChild.Dialogue.Rain.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		
+		{
+            "LogName": "Edit dialogue for Penny's daughter as secondborn to use single parenting versions.",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/{{SecondbornName}}",
+            "Entries": {
+				"Thu": "{{i18n:PennyChild.Dialogue.Thu.single {{SecondbornTokenPass}} }}",
+				"summer_Tue": "{{i18n:PennyChild.Dialogue.summer_Tue.single {{SecondbornTokenPass}} }}",
+				"summer_Wed": "{{i18n:PennyChild.Dialogue.summer_Wed.single {{SecondbornTokenPass}} }}",
+				"fall_Mon": "{{i18n:PennyChild.Dialogue.fall_Mon.single {{SecondbornTokenPass}} }}",
+				"fall_Fri": "{{i18n:PennyChild.Dialogue.fall_Fri.single {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Single": true,
+			},
+		},
+		
+		
+		//Conditional dialogue (festivals)
+        {
+			"LogName": "Edit Flower Dance dialogue for Penny's daughter as secondborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.spring24_y1.noncanon {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.spring24_y2.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Luau dialogue for Penny's daughter as secondborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer11",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.summer11_y1.noncanon {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.summer11_y2.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Moonlight Jellies dialogue for Penny's daughter as secondborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/summer28",
+			"Entries": {
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.summer28_y2.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Fair dialogue for Penny's daughter as secondborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": {
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.fall16_y2.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Spirit's Eve dialogue for Penny's daughter as secondborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.fall27_y1.noncanon {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.fall27_y2.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+        {
+			"LogName": "Edit Winter Star dialogue for Penny's daughter as secondborn to use genericized versions.",
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": {
+				 "{{SecondbornName}}": "{{i18n:PennyChild.Festivals.winter25_y1.noncanon {{SecondbornTokenPass}} }}",
+				 "{{SecondbornName}}_y2": "{{i18n:PennyChild.Festivals.winter25_y2.noncanon {{SecondbornTokenPass}} }}",
+			},
+			"When": {
+				"SecondbornDialogue|contains=Generic, Single": true,
+			},
+		},
+		
+		//Conditional dialogue (movies)
+		
+		{
+			"LogName": "Add single dialogue for for winter_movie_0 for Penny's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+            "TargetField": ["{{SecondbornName}}", "Reactions", "reaction_4", "SpecialResponses"],
+            "Entries": {
+				"BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.winter_0_Before {{SecondbornTokenPass}} }}"
+				},
+				"DuringMovie": null,
+				"AfterMovie": {
+					"ResponsePoint": null,
+					"Script": null,
+					"Text": "{{i18n:PennyChild.Movie.winter_0_After.single {{SecondbornTokenPass}} }}"
+				}
+			},
+			"When": {
+				"SecondbornDialogue|contains=Single": true,
+			},
+		},
+		
+		
+   		{      
+			"LogName": "Include dialogue files which have been modified for translation for Penny's daughter as secondborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Penny/valid_secondborn_Penny_edit.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+		
+   ]
+}

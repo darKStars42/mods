@@ -1,0 +1,44 @@
+{
+	"Changes": [
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter25",
+
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Jonghyuk 60 64 down",
+					"Delimiter": "/"
+				}
+			]
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter25",
+			"When": {
+
+				"HasSeenEvent": "SpannerIntroConclusion"
+			},
+			"TextOperations": [
+				// Set-up
+				{
+					"Operation": "Append",
+					"Target": [
+						"Entries",
+						"Set-Up_additionalCharacters{{FestivalYear}}"
+					],
+					"Value": "Spanner 59 67 right",
+					"Delimiter": "/"
+				}
+			]
+		}
+
+	]
+}

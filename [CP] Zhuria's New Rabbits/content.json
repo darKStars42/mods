@@ -1,0 +1,225 @@
+{
+"Format": "2.0.0",
+"ConfigSchema": {
+
+//Rabbit Settings
+
+	"RabbitDefault" : {
+		"AllowValues" : "Black, Black Dutch, Blue, Blue Dutch, Californian, Chocolate, Chocolate Dutch, White, Yellow, Yellow Dutch",
+		"AllowMultiple": false,
+		"AllowBlank": true,
+		"Default": "Yellow"
+	},
+	"RabbitVariation" : {
+		"AllowValues" : "Black, Black Dutch, Blue, Blue Dutch, Californian, Chocolate, Chocolate Dutch, White, Yellow, Yellow Dutch",
+		"AllowMultiple": true,
+		"AllowBlank": true,
+		"Default": "Black, Black Dutch, Blue, Blue Dutch, Californian, Chocolate, Chocolate Dutch, White, Yellow, Yellow Dutch"
+	}
+},
+
+"Changes": [
+//Rabbits
+	//Default
+	{
+		"LogName": "RabbitDefault",
+		"Action": "EditImage",
+		"Target": "Animals/Rabbit",
+		"FromFile": "assets/Rabbits/{{RabbitDefault}}.png",
+		"When": {
+			"RabbitDefault": "Black, Black Dutch, Blue, Blue Dutch, Californian, Chocolate, Chocolate Dutch, White, Yellow, Yellow Dutch"
+		}
+	},
+	{
+		"LogName": "RabbitBabyDefault",
+		"Action": "EditImage",
+		"Target": "Animals/BabyRabbit",
+		"FromFile": "assets/Rabbits/{{RabbitDefault}}Baby.png",
+		"When": {
+			"RabbitDefault": "Black, Black Dutch, Blue, Blue Dutch, Californian, Chocolate, Chocolate Dutch, White, Yellow, Yellow Dutch"
+		}
+	},
+	//Variations
+ 	{
+		"LogName": "RabbitBlack",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Rabbit", "Skins" ],
+		"Entries": {
+		"Zhuria.Rabbits_Rabbit_Black": {
+	  		"Id": "Zhuria.Rabbits_Rabbit_Black",
+		  	"Texture": "Mods\\Zhuria.Rabbits\\Rabbits\\Black",
+		  	"BabyTexture": "Mods\\Zhuria.Rabbits\\Rabbits\\BlackBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"RabbitVariation": "Black"
+		}
+ 	},
+	{
+		"LogName": "RabbitBlackDutch",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Rabbit", "Skins" ],
+		"Entries": {
+		"Zhuria.Rabbits_Rabbit_BlackDutch": {
+	  		"Id": "Zhuria.Rabbits_Rabbit_BlackDutch",
+		  	"Texture": "Mods\\Zhuria.Rabbits\\Rabbits\\Black Dutch",
+		  	"BabyTexture": "Mods\\Zhuria.Rabbits\\Rabbits\\Black DutchBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"RabbitVariation": "Black Dutch"
+		}
+ 	},
+	{
+		"LogName": "RabbitBlue",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Rabbit", "Skins" ],
+		"Entries": {
+		"Zhuria.Rabbits_Rabbit_Blue": {
+	  		"Id": "Zhuria.Rabbits_Rabbit_Blue",
+		  	"Texture": "Mods\\Zhuria.Rabbits\\Rabbits\\Blue",
+		  	"BabyTexture": "Mods\\Zhuria.Rabbits\\Rabbits\\BlueBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"RabbitVariation": "Blue"
+		}
+ 	},
+	{
+		"LogName": "RabbitBlueDutch",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Rabbit", "Skins" ],
+		"Entries": {
+		"Zhuria.Rabbits_Rabbit_BlueDutch": {
+	  		"Id": "Zhuria.Rabbits_Rabbit_BlueDutch",
+		  	"Texture": "Mods\\Zhuria.Rabbits\\Rabbits\\Blue Dutch",
+		  	"BabyTexture": "Mods\\Zhuria.Rabbits\\Rabbits\\Blue DutchBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"RabbitVariation": "Blue Dutch"
+		}
+ 	},
+	{
+		"LogName": "RabbitCalifornian",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Rabbit", "Skins" ],
+		"Entries": {
+		"Zhuria.Rabbits_Rabbit_Californian": {
+	  		"Id": "Zhuria.Rabbits_Rabbit_Californian",
+		  	"Texture": "Mods\\Zhuria.Rabbits\\Rabbits\\Californian",
+		  	"BabyTexture": "Mods\\Zhuria.Rabbits\\Rabbits\\CalifornianBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"RabbitVariation": "Californian"
+		}
+ 	},
+	{
+		"LogName": "RabbitChocolate",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Rabbit", "Skins" ],
+		"Entries": {
+		"Zhuria.Rabbits_Rabbit_Chocolate": {
+	  		"Id": "Zhuria.Rabbits_Rabbit_Chocolate",
+		  	"Texture": "Mods\\Zhuria.Rabbits\\Rabbits\\Chocolate",
+		  	"BabyTexture": "Mods\\Zhuria.Rabbits\\Rabbits\\ChocolateBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"RabbitVariation": "Chocolate"
+		}
+ 	},
+	{
+		"LogName": "RabbitChocolateDutch",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Rabbit", "Skins" ],
+		"Entries": {
+		"Zhuria.Rabbits_Rabbit_ChocolateDutch": {
+	  		"Id": "Zhuria.Rabbits_Rabbit_ChocolateDutch",
+		  	"Texture": "Mods\\Zhuria.Rabbits\\Rabbits\\Chocolate Dutch",
+		  	"BabyTexture": "Mods\\Zhuria.Rabbits\\Rabbits\\Chocolate DutchBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"RabbitVariation": "Chocolate Dutch"
+		}
+ 	},
+	{
+		"LogName": "RabbitWhite",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Rabbit", "Skins" ],
+		"Entries": {
+		"Zhuria.Rabbits_Rabbit_White": {
+	  		"Id": "Zhuria.Rabbits_Rabbit_White",
+		  	"Texture": "Mods\\Zhuria.Rabbits\\Rabbits\\White",
+		  	"BabyTexture": "Mods\\Zhuria.Rabbits\\Rabbits\\WhiteBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"RabbitVariation": "White"
+		}
+ 	},
+	{
+		"LogName": "RabbitYellow",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Rabbit", "Skins" ],
+		"Entries": {
+		"Zhuria.Rabbits_Rabbit_Yellow": {
+	  		"Id": "Zhuria.Rabbits_Rabbit_Yellow",
+		  	"Texture": "Mods\\Zhuria.Rabbits\\Rabbits\\Yellow",
+		  	"BabyTexture": "Mods\\Zhuria.Rabbits\\Rabbits\\YellowBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"RabbitVariation": "Yellow"
+		}
+ 	},
+	{
+		"LogName": "RabbitYellowDutch",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Rabbit", "Skins" ],
+		"Entries": {
+		"Zhuria.Rabbits_Rabbit_YellowDutch": {
+	  		"Id": "Zhuria.Rabbits_Rabbit_YellowDutch",
+		  	"Texture": "Mods\\Zhuria.Rabbits\\Rabbits\\Yellow Dutch",
+		  	"BabyTexture": "Mods\\Zhuria.Rabbits\\Rabbits\\Yellow DutchBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"RabbitVariation": "Yellow Dutch"
+		}
+ 	},
+
+	//Load Images
+    {
+      "LogName": "Load Rabbit Textures",
+      "Action": "Load",
+      "Target": "Mods\\Zhuria.Rabbits\\Rabbits\\Black, Mods\\Zhuria.Rabbits\\Rabbits\\Black Dutch, Mods\\Zhuria.Rabbits\\Rabbits\\Blue, Mods\\Zhuria.Rabbits\\Rabbits\\Blue Dutch,
+	  Mods\\Zhuria.Rabbits\\Rabbits\\Californian, Mods\\Zhuria.Rabbits\\Rabbits\\Chocolate, Mods\\Zhuria.Rabbits\\Rabbits\\Chocolate Dutch, Mods\\Zhuria.Rabbits\\Rabbits\\White,
+	  Mods\\Zhuria.Rabbits\\Rabbits\\Yellow, Mods\\Zhuria.Rabbits\\Rabbits\\Yellow Dutch,
+	  Mods\\Zhuria.Rabbits\\Rabbits\\BlackBaby, Mods\\Zhuria.Rabbits\\Rabbits\\Black DutchBaby, Mods\\Zhuria.Rabbits\\Rabbits\\BlueBaby, Mods\\Zhuria.Rabbits\\Rabbits\\Blue DutchBaby, Mods\\Zhuria.Rabbits\\Rabbits\\CalifornianBaby, Mods\\Zhuria.Rabbits\\Rabbits\\ChocolateBaby, Mods\\Zhuria.Rabbits\\Rabbits\\Chocolate DutchBaby, Mods\\Zhuria.Rabbits\\Rabbits\\WhiteBaby, Mods\\Zhuria.Rabbits\\Rabbits\\YellowBaby, Mods\\Zhuria.Rabbits\\Rabbits\\Yellow DutchBaby",
+      "FromFile": "assets/Rabbits/{{TargetWithoutPath}}.png"
+    }
+	]
+}

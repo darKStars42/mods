@@ -1,0 +1,137 @@
+{
+    "Changes": [
+
+        //Loading Assets
+        {
+            "LogName": "Load Eugene's Portraits",
+            "Action": "Load",
+            "Target": "Portraits/Eugene",
+            "FromFile": "Assets/Portraits/{{PortraitStyle}}/Eugene.png"
+        },
+        {
+            "LogName": "Load Eugene's Sprites",
+            "Action": "Load",
+            "Target": "Characters/Eugene",
+            "FromFile": "Assets/Characters/Eugene.png"
+        },
+        {
+            "LogName": "Load Eugene's SpouseRoom",
+            "Action": "Load",
+            "Target": "Maps/Eugene_SpouseRoom",
+            "FromFile": "assets/maps/EugeneSpouseRoom.tmx"
+        },
+        {
+            "LogName": "Load Eugene's SpousePatio",
+            "Action": "Load",
+            "Target": "Maps/Eugene_SpousePatio",
+            "FromFile": "assets/maps/EugeneSpousePatio.tmx"
+        },
+
+        //NPC Dispositions
+        {
+            "LogName": "Eugene's Disposition",
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+                "Eugene": {
+                    "DisplayName": "{{i18n:Core.Eugene.Name}}",
+                    "BirthSeason": "Spring",
+                    "BirthDay": 17,
+                    "HomeRegion": "Town",
+                    "Gender": "Male",
+                    "Age": "Adult",
+                    "Manner": "Polite",
+                    "SocialAnxiety": "Neutral",
+                    "Optimism": "Neutral",
+                    "IsDarkSkinned": false,
+                    "CanBeRomanced": true,
+                    "Calendar": "HiddenUntilMet",
+                    "SocialTab": "HiddenUntilMet",
+                    "CanSocialize": null,
+                    "CanReceiveGifts": true,
+                    "CanGreetNearbyCharacters": true,
+                    "CanCommentOnPurchasedShopItems": false,
+                    "CanVisitIsland": false,
+                    "IntroductionsQuest": false,
+                    "ItemDeliveryQuests": null,
+                    "PerfectionScore": true,
+                    "EndSlideShow": "MainGroup",
+                    "SpouseAdopts": null,
+                    "SpouseWantsChildren": null,
+                    "SpouseGiftJealousy": null,
+                    "SpouseGiftJealousyFriendshipChange": -10,
+	    	    	"SpouseRoom": {
+                        "MapAsset": "Eugene_SpouseRoom",
+                        "MapSourceRect": { "X": 0, "Y": 0, "Width": 6, "Height": 9 }
+		        	},
+                    "SpousePatio": {
+                        "MapAsset": "Eugene_SpousePatio",
+                        "MapSourceRect": { "X": 0, "Y": 0, "Width": 4, "Height": 4 },
+                        "SpriteAnimationFrames": [
+                            [32, 1500],
+                            [33, 2000],
+                            [32, 2000],
+                            [33, 1500]
+                        ]
+		        	},
+                    "DumpsterDiveFriendshipEffect": -5,
+                    "DumpsterDiveEmote": null,
+                    "FriendsAndFamily": {},
+                    "FlowerDanceCanDance": true,
+                    "WinterStarGifts": [],
+                    "WinterStarParticipant": true,
+                    "UnlockConditions": null,
+                    "SpawnIfMissing": true,
+                    "Home": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "Location": "Custom_NPCEugene_Room",
+                            "Tile": { "X": 13, "Y": 4 },
+                            "Direction": "Right"
+                        }
+                    ],
+                    "TextureName": null,
+                    "Appearance": [ ],
+                    "MugShotSourceRect": null,
+                    "Size": { "x": 16, "y": 32 },
+                    "Breather": true,
+                    "BreathChestRect": null,
+                    "BreathChestPosition": null,
+                    "Shadow": null,
+                    "EmoteOffset": { "x": 0, "y": 0 },
+                    "ShakePortraits": [],
+                    "KissSpriteIndex": 28,
+                    "KissSpriteFacingRight": true,
+                    "FormerCharacterNames": [],
+                    "CustomFields": null
+                }
+            }
+        },
+
+        //Gift Tastes
+        {
+            "LogName": "Eugene's Gift Tastes",
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "Eugene": "{{i18n:Gift.Eugene.Love}}/196 340 376 421 454 591 593 595 597 614 651 -80 tea_item muffin_item/{{i18n:Gift.Eugene.Like}}/18 22 200 222 234 283 342 344 348 350 368 369 370 371 402 418 459 610 611 724 815 food_bakery food_salad bouquet_item/{{i18n:Gift.Eugene.Dislike}}/92 420 422 768 769/{{i18n:Gift.Eugene.Hate}}/169 170 171 172 305 308 766 767/{{i18n:Gift.Eugene.Neutral}}//"
+            }
+        },
+
+        //Animations
+        {
+            "LogName": "Eugene's Animations",
+            "Action": "EditData",
+            "Target": "Data/animationDescriptions",
+            "Entries": {
+                "Eugene_nap": "36/36 36 36 36 36 36 36 37 37 37 37 37 37 37 38 38 38 38 38 38 38 39 39 39 39 39 39/39",
+                "Eugene_gardening": "16/16 16 16 17 17 17 16 16 16 17 17 17/17",
+                "Eugene_read": "32/32 32 32 32 32 32 32 32 32 32 33 33 33 33 33 33 33 33 33 33 32 32 32 32 32 32 32 32 32 32/32",
+                "Eugene_sit": "22/22/22"
+            }
+        }
+
+    ]
+
+}

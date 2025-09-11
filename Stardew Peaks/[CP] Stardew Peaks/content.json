@@ -1,0 +1,198 @@
+{
+    "Format": "2.5.0",
+
+    "ConfigSchema":{
+        "HikingTrail": {
+            "AllowValues": "true, false",
+            "Default": "true",
+         },
+    },
+    "Changes": [    
+     //Add Files
+    {
+        "Action": "Include",
+        "FromFile": "Data/locations.json, Data/strings.json, Data/shops.json"
+    },
+    //Moutain Map Patch - Hiking Trail
+    {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "assets/Maps/BackwoodsPatch.tmx",
+        "ToArea": {
+            "X": 0,
+            "Y": 14,
+            "Width": 16,
+            "Height": 14
+        },
+        "Update": "OnLocationChange, OnTimeChange",
+        "When": {
+			"HikingTrail": true,
+		 }
+    
+    },
+    { //Custom Tilesheets
+    "Action": "Load",
+    "Target": "Maps/spring_PanoramaEdit, Maps/spring_PanoramaEditDawn, Maps/spring_PanoramaEditEve, Maps/spring_PanoramaEditNight, Maps/summer_PanoramaEdit, Maps/summer_PanoramaEditDawn, Maps/summer_PanoramaEditEve, Maps/summer_PanoramaEditNight, Maps/fall_PanoramaEdit, Maps/fall_PanoramaEditDawn, Maps/fall_PanoramaEditEve, Maps/fall_PanoramaEditNight, Maps/winter_PanoramaEdit, Maps/winter_PanoramaEditDawn, Maps/winter_PanoramaEditEve, Maps/winter_PanoramaEditNight, Maps/spring_Peaks, Maps/summer_Peaks, Maps/fall_Peaks, Maps/winter_Peaks, Maps/walls_and_floors, Maps/z_cursorsEdit,",
+    "FromFile": "assets/Tilesheets/{{TargetWithoutPath}}.png",
+    },
+    //Peaks Panorama
+
+        //Spring and Summer
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Peaks",
+            "FromFile": "assets/PeaksDawn.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 57,
+                "Height": 21
+            },
+            "When": {
+                "Time": "{{Range: 600, 730}}",
+                "Season": "spring, summer"
+            },
+            "Update": "OnLocationChange, OnTimeChange"
+        
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Peaks",
+            "FromFile": "assets/PeaksEve.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 57,
+                "Height": 21
+            },
+            "When": {
+                "Time": "{{Range: 1800, 1950}}",
+                "Season": "spring, summer"
+            },
+            "Update": "OnLocationChange, OnTimeChange"
+        
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Peaks",
+            "FromFile": "assets/PeaksNight.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 57,
+                "Height": 21
+            },
+            "When": {
+                "Time": "{{Range: 2000, 2600}}",
+                "Season": "spring, summer"
+            },
+            "Update": "OnLocationChange, OnTimeChange"
+        
+        },
+        //Fall
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Peaks",
+            "FromFile": "assets/PeaksDawn.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 57,
+                "Height": 21
+            },
+            "When": {
+                "Time": "{{Range: 600, 730}}",
+                "Season": "fall"
+            },
+            "Update": "OnLocationChange, OnTimeChange"
+        
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Peaks",
+            "FromFile": "assets/PeaksEve.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 57,
+                "Height": 21
+            },
+            "When": {
+                "Time": "{{Range: 1700, 1850}}",
+                "Season": "fall"
+            },
+            "Update": "OnLocationChange, OnTimeChange"
+        
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Peaks",
+            "FromFile": "assets/PeaksNight.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 57,
+                "Height": 21
+            },
+            "When": {
+                "Time": "{{Range: 1900, 2600}}",
+                "Season": "fall"
+            },
+            "Update": "OnLocationChange, OnTimeChange"
+        
+        },
+        //Winter
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Peaks",
+            "FromFile": "assets/PeaksDawn.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 57,
+                "Height": 21
+            },
+            "When": {
+                "Time": "{{Range: 600, 730}}",
+                "Season": "winter"
+            },
+            "Update": "OnLocationChange, OnTimeChange"
+        
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Peaks",
+            "FromFile": "assets/PeaksEve.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 57,
+                "Height": 21
+            },
+            "When": {
+                "Time": "{{Range: 1600, 1750}}",
+                "Season": "winter"
+            },
+            "Update": "OnLocationChange, OnTimeChange"
+        
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Custom_Peaks",
+            "FromFile": "assets/PeaksNight.tmx",
+            "ToArea": {
+                "X": 0,
+                "Y": 0,
+                "Width": 57,
+                "Height": 21
+            },
+            "When": {
+                "Time": "{{Range: 1800, 2600}}",
+                "Season": "winter"
+            },
+            "Update": "OnLocationChange, OnTimeChange"
+        
+        },
+      
+    ]
+}

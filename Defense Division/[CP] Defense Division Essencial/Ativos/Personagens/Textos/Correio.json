@@ -1,0 +1,215 @@
+{
+"Changes": [
+	{
+	"LogName": "Mail Triggers",
+	"Action": "EditData",
+	"Target": "Data/TriggerActions",
+	"Entries": {	
+				// Correios Essenciais
+			"Kiyuga.DD_Intro.Add": {
+			"Id": "Kiyuga.DD_Intro.Add",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Any 90205264",
+			"HostOnly": false,
+			"Action": "AddMail Current DDCarta00"
+			},
+			"Kiyuga.DD_Aula.Add": {
+			"Id": "Kiyuga.DD_Aula.Add",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Current 90605264",
+			"HostOnly": false,
+			"Action": "AddMail Current DDCarta01"
+			},
+			"Kiyuga.DD_Ad.Defs.01": {
+			"Id": "Kiyuga.DD_Ad.Defs.01",
+			"Trigger": "DayStarted",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Any 90815264",
+			"HostOnly": false,
+			"Action": "AddMail Current DDCarta06"
+			},
+			"Kiyuga.DD_Ad.Defs.02": {
+			"Id": "Kiyuga.DD_Ad.Defs.02",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Any 58614000",
+			"HostOnly": false,
+			"Action": "AddMail Current DDCarta07"
+			},
+			"Kiyuga.DD_Aviso": {
+			"Id": "Kiyuga.DD_Aviso",
+			"Trigger": "LocationChanged",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Any 91205264",
+			"HostOnly": false,
+			"Action": "AddMail Current DDCarta09"
+			},
+			"Kiyuga.DD_Vol.Is": {
+			"Id": "Kiyuga.DD_Vol.Is",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Any 91335264",
+			"HostOnly": false,
+			"Action": "AddMail Current IsCarta05"
+			},
+			"Kiyuga.DD_Ad.Defs.03": {
+			"Id": "Kiyuga.DD_Ad.Defs.03",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Any 37918200",
+			"HostOnly": false,
+			"Action": "AddMail Current DDCarta08"
+			},
+			"Kiyuga.DD_PgEd.Add": {
+			"Id": "Kiyuga.DD_PgEd.Add",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_NPC_RELATIONSHIP Current Edward Married, SEASON Spring Summer Fall Winter, DAY_OF_MONTH 2",
+			"HostOnly": false,
+			"Action": "AddMail Current DDCarta04",
+			"MarkActionApplied": false
+			},
+			"Kiyuga.DD_PgEd.Rem": {
+			"Id": "Kiyuga.DD_PgEd.Rem",
+			"Trigger": "DayEnding",				
+			"Condition": "PLAYER_NPC_RELATIONSHIP Current Edward Married, SEASON Spring Summer Fall Winter, DAY_OF_MONTH 3",
+			"HostOnly": false, 
+			"Action": "RemoveMail Current DDCarta04",
+			"MarkActionApplied": false
+			},
+			"Kiyuga.DD_PgIs.Add": {
+			"Id": "Kiyuga.DD_PgIs.Add",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_NPC_RELATIONSHIP Current Isis Married, SEASON Spring Summer Fall Winter, DAY_OF_MONTH 2",
+			"HostOnly": false,
+			"Action": "AddMail Current DDCarta05",
+			"MarkActionApplied": false
+			},
+			"Kiyuga.DD_PgIs.Rem": {
+			"Id": "Kiyuga.DD_PgIs.Rem",
+			"Trigger": "DayEnding",				
+			"Condition": "PLAYER_NPC_RELATIONSHIP Current Isis Married, SEASON Spring Summer Fall Winter, DAY_OF_MONTH 3",
+			"HostOnly": false, 
+			"Action": "RemoveMail Current DDCarta05",
+			"MarkActionApplied": false
+			},
+			"Kiyuga.DD_Rec.Is": {
+			"Id": "Kiyuga.DD_Rec.Is",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Any 92105264, PLAYER_HEARTS Current Isis 4",
+			"HostOnly": false,
+			"Action": "AddMail Current IsCarta04"
+			},
+			"Kiyuga.DD_Rec.Ed.01": {
+			"Id": "Kiyuga.DD_Rec.Ed.01",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Any 92205264, PLAYER_HEARTS Current Edward 4",
+			"HostOnly": false,
+			"Action": "AddMail Current EdCarta06"
+			},
+			"Kiyuga.DD_Rec.Ed.02": {
+			"Id": "Kiyuga.DD_Rec.Ed.02",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Any 92305264, PLAYER_HEARTS Current Edward 4",
+			"HostOnly": false,
+			"Action": "AddMail Current EdCarta06"
+			},
+			"Kiyuga.DD_Rec.Ed.Dv": {
+			"Id": "Kiyuga.DD_Rec.Ed.Dv",
+			"Trigger": "LocationChanged",
+			"Condition": "PLAYER_NPC_RELATIONSHIP Current Edward Divorced",
+			"HostOnly": false,
+			"Action": "AddMail Current EdCarta05"
+			},
+			"Kiyuga.DD_Rec.Is.Dv": {
+			"Id": "Kiyuga.DD_Rec.Is.Dv",
+			"Trigger": "LocationChanged",
+			"Condition": "PLAYER_NPC_RELATIONSHIP Current Isis Divorced",
+			"HostOnly": false,
+			"Action": "AddMail Current IsCarta03"
+			},
+				// Correio Adega
+			"Kiyuga.DD_Adg.Nw": {
+			"Id": "Kiyuga.DD_Adg.Nw",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Any 91805264",
+			"HostOnly": false,
+			"Action": "AddMail Current DDCarta02"
+			},
+				// Correios Essenciais
+			"Kiyuga.Ed_Carta.01": {
+			"Id": "Kiyuga.Ed_Carta.01",
+			"Trigger": "DayEnding",
+			"Condition": "PLAYER_HAS_SEEN_EVENT Current 58614001",
+			"HostOnly": false,
+			"Action": "AddMail Current EdCarta01"
+			},
+				// Cartas Finais Extras 1.3
+			"Kiyuga.DD_Desf.Mi": {
+			"Id": "Kiyuga.DD_Desf.Mi",
+			"Trigger": "DayEnding",				
+			"Condition": "PLAYER_HEARTS Current Miranda 10, SEASON Spring Summer Fall Winter",
+			"HostOnly": false, 
+			"Action": "AddMail Current MiMissão03"
+			},
+			"Kiyuga.DD_Covt.Ed": {
+			"Id": "Kiyuga.DD_Covt.Ed",
+			"Trigger": "DayEnding",				
+			"Condition": "PLAYER_NPC_RELATIONSHIP Current Edward Married, PLAYER_HEARTS Current Edward 14, PLAYER_HAS_SEEN_EVENT Current 58614009, SEASON Spring Summer Fall Winter",
+			"HostOnly": false, 
+			"Action": "AddMail Current EdCarta07"
+			}
+		}
+	},
+	{ 	//Fundo de Cartas
+		"Action": "Load",
+		"Target": "Mods/Kiyuga.DD/LetterBackgrounds",
+		"FromFile": "Ativos/Itens/DD.letterBG.png"
+	},
+	{
+		"LogName": "Cartas Divisão de Defesa",
+		"Action": "EditData",
+		"Target": "Data/mail",
+		"Entries": {
+		
+	//Geral
+		"DDCarta00": "{{i18n:DD.Carta.01}}",
+		"DDCarta01": "{{i18n:DD.Carta.02}}",
+		"DDCarta02": "{{i18n:DD.Carta.03}}",
+	
+		"DDCarta04": "{{i18n:DD.Carta.04}}",
+		"DDCarta05": "{{i18n:DD.Carta.05}}",
+		
+		"DDCarta06": "{{i18n:DD.Carta.06}}",
+		"DDCarta07": "{{i18n:DD.Carta.07}}",
+		"DDCarta08": "{{i18n:DD.Carta.08}}",
+		"DDCarta09": "{{i18n:DD.Carta.09}}",
+		
+	//Edward
+		"EdCarta01": "{{i18n:Ed.Carta.01}}",
+		"EdCarta02": "{{i18n:Ed.Carta.02}}",
+		"EdCarta03": "{{i18n:Ed.Carta.03}}",
+		"EdCarta04": "{{i18n:Ed.Carta.04}}",
+		"EdCarta05": "{{i18n:Ed.Carta.05}}",
+		"EdCarta06": "{{i18n:Ed.Carta.06}}",
+		"EdCarta07": "{{i18n:Ed.Carta.07}}",
+		
+		"EdMissão01": "{{i18n:Ed.Carta_Missão.01}}",
+		"EdMissão02": "{{i18n:Ed.Carta_Missão.02}}",
+
+	//Isis
+		"IsCarta01": "{{i18n:Is.Carta.01}}",
+		"IsCarta02": "{{i18n:Is.Carta.02}}",
+		"IsCarta03": "{{i18n:Is.Carta.03}}",
+		"IsCarta04": "{{i18n:Is.Carta.04}}",
+		"IsCarta05": "{{i18n:Is.Carta.05}}",
+
+		"IsMissão01": "{{i18n:Is.Carta_Missão.01}}",
+		"IsMissão02": "{{i18n:Is.Carta_Missão.02}}",
+
+	//Miranda
+		"MiCarta01": "{{i18n:Mi.Carta.01}}",
+		"MiCarta02": "{{i18n:Mi.Carta.02}}",
+
+		"MiMissão01": "{{i18n:Mi.Carta_Missão.01}}",
+		"MiMissão02": "{{i18n:Mi.Carta_Missão.02}}",
+		"MiMissão03": "{{i18n:Mi.Carta_Missão.03}}"
+
+	  }
+	}
+  ]
+}

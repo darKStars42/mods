@@ -1,0 +1,786 @@
+{
+    "Changes": [
+
+        //Load icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/ObjectsPowders",
+            "FromFile": "assets/Items/Crafting/powders.png"
+        },
+
+/*----------------------------------------------------
+Misc
+----------------------------------------------------*/
+
+        {
+            "LogName":"Add Alchemistry Ingredients - Powders",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModID}}_BoneDust": {
+                    "Name": "{{ModID}}_BoneDust",
+                    "DisplayName": "{{i18n:Alchemistry_BoneDust.name}}",
+                    "Description": "{{i18n:Alchemistry_BoneDust.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 0,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 50,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_LightGray"
+                    ]
+                },
+                "{{ModID}}_Lye": {
+                    "Name": "{{ModID}}_Lye",
+                    "DisplayName": "{{i18n:Alchemistry_Lye.name}}",
+                    "Description": "{{i18n:Alchemistry_Lye.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 1,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 50,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_LightGray"                    
+                    ]
+                },
+
+                "{{ModID}}_MoonBerryPowder": {
+                    "Name": "{{ModID}}_MoonBerryPowder",
+                    "DisplayName": "{{i18n:Alchemistry_MoonBerryPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_MoonBerryPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 2,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_light_cyan"
+                    ]
+                },
+
+                //Crops
+                "{{ModID}}_HemlockPowder": {
+                    "Name": "{{ModID}}_HemlockPowder",
+                    "DisplayName": "{{i18n:Alchemistry_HemlockPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_HemlockPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 10,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_gray"
+                    ]
+                },
+                "{{ModID}}_InkberryPowder": {
+                    "Name": "{{ModID}}_InkberryPowder",
+                    "DisplayName": "{{i18n:Alchemistry_InkberryPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_InkberryPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 11,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_purple"
+                    ]
+                },
+                "{{ModID}}_StarlightHelleborePowder": {
+                    "Name": "{{ModID}}_StarlightHelleborePowder",
+                    "DisplayName": "{{i18n:Alchemistry_StarlightHelleborePowder.name}}",
+                    "Description": "{{i18n:Alchemistry_StarlightHelleborePowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 12,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_aquamarine"
+                    ]
+                },
+                "{{ModID}}_WerewolfsBanePowder": {
+                    "Name": "{{ModID}}_WerewolfsBanePowder",
+                    "DisplayName": "{{i18n:Alchemistry_WerewolfsBanePowder.name}}",
+                    "Description": "{{i18n:Alchemistry_WerewolfsBanePowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 13,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_poppyseed"
+                    ]
+                },
+                "{{ModID}}_SunsetCastorPowder": {
+                    "Name": "{{ModID}}_SunsetCastorPowder",
+                    "DisplayName": "{{i18n:Alchemistry_SunsetCastorPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_SunsetCastorPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 14,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_pale_violet_red"
+                    ]
+                },
+                "{{ModID}}_BansheesBellPowder": {
+                    "Name": "{{ModID}}_BansheesBellPowder",
+                    "DisplayName": "{{i18n:Alchemistry_BansheesBellPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_BansheesBellPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 15,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_white"
+                    ]
+                },
+                "{{ModID}}_MistletoePowder": {
+                    "Name": "{{ModID}}_MistletoePowder",
+                    "DisplayName": "{{i18n:Alchemistry_MistletoePowder.name}}",
+                    "Description": "{{i18n:Alchemistry_MistletoePowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 16,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_white"
+                    ]
+                },
+                "{{ModID}}_WinterWailerPowder": {
+                    "Name": "{{ModID}}_WinterWailerPowder",
+                    "DisplayName": "{{i18n:Alchemistry_WinterWailerPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_WinterWailerPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 17,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_light_cyan"
+                    ]
+                },
+                "{{ModID}}_AddersTonguePowder": {
+                    "Name": "{{ModID}}_AddersTonguePowder",
+                    "DisplayName": "{{i18n:Alchemistry_AddersTonguePowder.name}}",
+                    "Description": "{{i18n:Alchemistry_AddersTonguePowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 18,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_sea_green"
+                    ]
+                },
+                "{{ModID}}_DollsEyesPowder": {
+                    "Name": "{{ModID}}_DollsEyesPowder",
+                    "DisplayName": "{{i18n:Alchemistry_DollsEyesPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_DollsEyesPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 19,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_sand"
+                    ]
+                },
+                "{{ModID}}_NightsShadePowder": {
+                    "Name": "{{ModID}}_NightsShadePowder",
+                    "DisplayName": "{{i18n:Alchemistry_NightsShadePowder.name}}",
+                    "Description": "{{i18n:Alchemistry_NightsShadePowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 20,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_poppyseed"
+                    ]
+                },
+                "{{ModID}}_BleedingHeartPowder": {
+                    "Name": "{{ModID}}_BleedingHeartPowder",
+                    "DisplayName": "{{i18n:Alchemistry_BleedingHeartPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_BleedingHeartPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 21,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_dark_red"
+                    ]
+                },
+
+                //Mushrooms
+                "{{ModID}}_DawnsingerToadstoolPowder": {
+                    "Name": "{{ModID}}_DawnsingerToadstoolPowder",
+                    "DisplayName": "{{i18n:Alchemistry_DawnsingerToadstoolPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_DawnsingerToadstoolPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 40,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_dark_pink"
+                    ]
+                },
+                "{{ModID}}_LunarGlowcapPowder": {
+                    "Name": "{{ModID}}_LunarGlowcapPowder",
+                    "DisplayName": "{{i18n:Alchemistry_LunarGlowcapPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_LunarGlowcapPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 41,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_aquamarine"
+                    ]
+                },
+                "{{ModID}}_InkCapPowder": {
+                    "Name": "{{ModID}}_InkCapPowder",
+                    "DisplayName": "{{i18n:Alchemistry_InkCapPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_InkCapPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 42,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_dark_gray"
+                    ]
+                },
+                "{{ModID}}_LostSoulsPowder": {
+                    "Name": "{{ModID}}_LostSoulsPowder",
+                    "DisplayName": "{{i18n:Alchemistry_LostSoulsPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_LostSoulsPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 43,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_light_cyan"
+                    ]
+                },
+                "{{ModID}}_MeteorCapPowder": {
+                    "Name": "{{ModID}}_MeteorCapPowder",
+                    "DisplayName": "{{i18n:Alchemistry_MeteorCapPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_MeteorCapPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 44,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_black"
+                    ]
+                },
+                "{{ModID}}_FalseMorelPowder": {
+                    "Name": "{{ModID}}_FalseMorelPowder",
+                    "DisplayName": "{{i18n:Alchemistry_FalseMorelPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_FalseMorelPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 45,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_salmon"
+                    ]
+                },
+                "{{ModID}}_WizardsEyePowder": {
+                    "Name": "{{ModID}}_WizardsEyePowder",
+                    "DisplayName": "{{i18n:Alchemistry_WizardsEyePowder.name}}",
+                    "Description": "{{i18n:Alchemistry_WizardsEyePowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 46,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_poppyseed"
+                    ]
+                },
+                "{{ModID}}_FairieWingsPowder": {
+                    "Name": "{{ModID}}_FairieWingsPowder",
+                    "DisplayName": "{{i18n:Alchemistry_FairieWingsPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_FairieWingsPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 47,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_light_cyan"
+                    ]
+                },
+                "{{ModID}}_RedSmilersPowder": {
+                    "Name": "{{ModID}}_RedSmilersPowder",
+                    "DisplayName": "{{i18n:Alchemistry_RedSmilersPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_RedSmilersPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 48,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_iron"
+                    ]
+                },
+                "{{ModID}}_NightCapPowder": {
+                    "Name": "{{ModID}}_NightCapPowder",
+                    "DisplayName": "{{i18n:Alchemistry_NightCapPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_NightCapPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 49,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_gray"
+                    ]
+                },
+                "{{ModID}}_SunriseGloryPowder": {
+                    "Name": "{{ModID}}_SunriseGloryPowder",
+                    "DisplayName": "{{i18n:Alchemistry_SunriseGloryPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_SunriseGloryPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 50,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_pink"
+                    ]
+                },
+                "{{ModID}}_CapOLanternPowder": {
+                    "Name": "{{ModID}}_CapOLanternPowder",
+                    "DisplayName": "{{i18n:Alchemistry_CapOLanternPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_CapOLanternPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 51,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_dark_orange"
+                    ]
+                },
+                "{{ModID}}_HellfireBoletePowder": {
+                    "Name": "{{ModID}}_HellfireBoletePowder",
+                    "DisplayName": "{{i18n:Alchemistry_HellfireBoletePowder.name}}",
+                    "Description": "{{i18n:Alchemistry_HellfireBoletePowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 52,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_dark_red"
+                    ]
+                },
+                "{{ModID}}_SwampLighterPowder": {
+                    "Name": "{{ModID}}_SwampLighterPowder",
+                    "DisplayName": "{{i18n:Alchemistry_SwampLighterPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_SwampLighterPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 53,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_lime"
+                    ]
+                },
+                "{{ModID}}_BeachedOysterPowder": {
+                    "Name": "{{ModID}}_BeachedOysterPowder",
+                    "DisplayName": "{{i18n:Alchemistry_BeachedOysterPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_BeachedOysterPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 54,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_dark_blue"
+                    ]
+                },
+
+                //Misc Forage
+                "{{ModID}}_DragonRootPowder": {
+                    "Name": "{{ModID}}_DragonRootPowder",
+                    "DisplayName": "{{i18n:Alchemistry_DragonRootPowder.name}}",
+                    "Description": "{{i18n:Alchemistry_DragonRootPowder.description}}",
+                    "Texture": "Mods/{{ModID}}/ObjectsPowders",
+                    "SpriteIndex": 70,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "ingredient_item",
+                        "color_IndianRed"
+                    ]
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Perfection Tracker Disabled
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BoneDust" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_Lye" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MoonBerryPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+
+        //Crops
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_HemlockPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_InkberryPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_StarlightHelleborePowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_WerewolfsBanePowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SunsetCastorPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BansheesBellPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MistletoePowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_WinterWailerPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_AddersTonguePowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_DollsEyesPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_NightsShadePowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BleedingHeartPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+
+        //Mushrooms
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_DawnsingerToadstoolPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_LunarGlowcapPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_InkCapPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_LostSoulsPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MeteorCapPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_FalseMorelPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_WizardsEyePowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_FairieWingsPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_RedSmilersPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_NightCapPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SunriseGloryPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CapOLanternPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_HellfireBoletePowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_SwampLighterPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_BeachedOysterPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+
+        //Misc Forage
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_DragonRootPowder" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        }
+    ]
+}

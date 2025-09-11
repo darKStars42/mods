@@ -1,0 +1,832 @@
+{"Format":"2.5.0",
+"ConfigSchema": {
+  "Recolor Interiors": {"AllowValues": "None, EarthyInteriors, VPR, Elegant Town Interior (Light), Elegant Town Interior (Dark)",
+		"Default": "None","Section":"Recolors"}
+,
+"Recolor Exterior": {"AllowValues": "None, Earthy, VPR, Wittily",
+		"Default": "None","Section":"Recolors"}
+  },
+"Changes": [
+  //Load Custom Tilesheets
+  {
+    "Action": "Load",
+    "Target":"Maps/FRL_transparentborders",
+    "FromFile": "assets/Tilesheets/FRL_transparentborders.png"
+  },
+  {
+    "Action": "Load",
+    "Target": "Maps/FRL_Elevator",
+    "FromFile": "assets/Tilesheets/FRL_Elevator.png"
+  },
+  {
+    "Action": "Load",
+    "Target": "Maps/FRL_NPCAptExterior",
+    "FromFile": "assets/Tilesheets/FRL_NPCAptExterior.png"
+  },
+  //Add Recolor Options for Transparent Borders Tilesheet and Elevator
+  {
+    "LogName":"Recolor Interior Borders",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_transparentborders",
+    "FromFile": "assets/Tilesheets/Recolors/Earthy/FRL_transparentborders.png",
+    "When":{
+      "Recolor Interiors": "EarthyInteriors"
+    }
+  },
+  {
+    "LogName":"Recolor Elevator",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_Elevator",
+    "FromFile": "assets/Tilesheets/Recolors/Earthy/FRL_Elevator.png",
+    "When":{
+      "Recolor Interiors": "EarthyInteriors"
+    }
+  },
+  {
+    "LogName":"Recolor Elevator",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_NPCAptExterior",
+    "FromFile": "assets/Tilesheets/Recolors/Earthy/FRL_NPCAptExterior.png",
+    "When":{
+      "Recolor Exterior": "Earthy"
+    }
+  },
+  {
+    "LogName":"Recolor Interior Borders",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_transparentborders",
+    "FromFile": "assets/Tilesheets/Recolors/VPR/FRL_transparentborders.png",
+    "When":{
+      "Recolor Interiors": "VPR"
+    }
+  },
+  {
+    "LogName":"Recolor Elevator",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_Elevator",
+    "FromFile": "assets/Tilesheets/Recolors/VPR/FRL_Elevator.png",
+    "When":{
+      "Recolor Interiors": "VPR"
+    }
+  },
+  {
+    "LogName":"Recolor Apartment Building",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_NPCAptExterior",
+    "FromFile":"assets/Tilesheets/Recolors/VPR/FRL_NPCAptExterior.png",
+    "When":{
+      "Recolor Exterior": "VPR"
+    }
+  },
+  {
+    "LogName":"Recolor Interior Borders",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_NPCAptExterior",
+    "FromFile": "assets/Tilesheets/Recolors/Wittily Named Recolor/FRL_NPCAptExterior.png",
+    "When":{
+      "Recolor Exterior": "Wittily"
+    }
+  },
+  {
+    "LogName":"Recolor Interior Borders",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_transparentborders",
+    "FromFile": "assets/Tilesheets/Recolors/Elegant Town Interior/FRL_transparentborders.png",
+    "When":{
+      "Recolor Interiors": "Elegant Town Interior (Light)"
+    }
+  },
+  {
+    "LogName":"Recolor Elevator",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_Elevator",
+    "FromFile": "assets/Tilesheets/Recolors/Elegant Town Interior/FRL_Elevator.png",
+    "When":{
+      "Recolor Interiors": "Elegant Town Interior (Light)"
+    }
+  },
+  {
+    "LogName":"Recolor Interior Borders",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_transparentborders",
+    "FromFile": "assets/Tilesheets/Recolors/Elegant Town Interior Dark Brown/FRL_transparentborders.png",
+    "When":{
+      "Recolor Interiors": "Elegant Town Interior (Dark)"
+    }
+  },
+  {
+    "LogName":"Recolor Elevator",
+    "Action":"EditImage",
+    "Target":"Maps/FRL_Elevator",
+    "FromFile": "assets/Tilesheets/Recolors/Elegant Town Interior Dark Brown/FRL_Elevator.png",
+    "When":{
+      "Recolor Interiors": "Elegant Town Interior (Dark)"
+    }
+  },
+  //Load Apartment Floor Maps
+  {
+    "Action": "Load",
+    "Target": "Maps/FRL_NPCApt_PelicanValleyLoft",
+    "FromFile": "assets/Maps/FRL_PelicanValleyLoft.tmx"
+  },
+  {
+    "Action": "Load",
+    "Target": "Maps/FRL_NPCApt_Lobby",
+    "FromFile": "assets/Maps/FRL_NPCApt_Lobby.tmx"
+  },
+  {
+    "Action":"Load",
+    "Target": "Maps/FRL_NPCApt_Floor1, Maps/FRL_NPCApt_Floor2, Maps/FRL_NPCApt_Floor3, Maps/FRL_NPCApt_Floor4, Maps/FRL_NPCApt_Floor5, Maps/FRL_NPCApt_Floor6",
+    "FromFile": "assets/Maps/FRL_NPCApartments.tmx"
+  },
+  {
+    "Action":"Load",
+    "Target": "Maps/FRL_NPCApt_Floor7",
+    "FromFile": "assets/Maps/FRL_NPCApt_TopFloor.tmx"
+  },
+  {
+    "Action": "Load",
+    "Target": "Maps/FRL_NPCApt_Elevator",
+    "FromFile": "assets/Maps/FRL_NPCApt_Elevator.tmx"
+  },
+  {
+    "LogName": "Add Blank Event JSON for Apartment Locations",
+    "Action": "Load",
+    "Target": "Data/Events/FRL_NPCApt_PelicanValleyLoft, Data/Events/FRL_NPCApt_Lobby, Data/Events/FRL_NPCApt_Elevator, Data/Events/FRL_NPCApt_Floor1, Data/Events/FRL_NPCApt_Floor2, Data/Events/FRL_NPCApt_Floor3, Data/Events/FRL_NPCApt_Floor4, Data/Events/FRL_NPCApt_Floor5, Data/Events/FRL_NPCApt_Floor6, Data/Events/FRL_NPCApt_Floor7",
+    "FromFile": "assets/blank.json"
+  },
+  {
+    "LogName":"Set NPCWarp for Elevator",
+    "Action":"EditMap",
+    "Target":"Maps/FRL_NPCApt_Lobby",
+    "FromFile":"assets/Maps/FRL_NPCApt_ElevatorPatch.tmx",
+    "FromArea": {
+      "X": 0,
+      "Y": 1,
+      "Width": 4,
+      "Height": 3
+    },
+    "ToArea": {
+      "X": 25,
+      "Y": 20,
+      "Width": 4,
+      "Height": 3
+    },
+    "MapProperties":{
+      "NPCWarp": "26 22 FRL_NPCApt_Elevator 8 14 27 22 FRL_NPCApt_Elevator 9 14"
+    },
+    "MapTiles": [
+      {
+        "Layer":"Buildings",
+        "Position":{
+        "X": 26,
+        "Y": 22
+        },
+        "SetProperties": {
+          "Action": "Message \"FRL_NPCApt_ElevatorLocked\""
+      }
+      },
+      {
+        "Layer":"Buildings",
+        "Position":{
+        "X": 27,
+        "Y": 22
+        },
+        "SetProperties": {
+          "Action": "Message \"FRL_NPCApt_ElevatorLocked\""
+      }
+      }
+    ]
+  },
+  {
+    "LogName":"Set NPCWarp for Elevator",
+    "Action":"EditMap",
+    "Target": "Maps/FRL_NPCApt_Floor1, Maps/FRL_NPCApt_Floor2, Maps/FRL_NPCApt_Floor3, Maps/FRL_NPCApt_Floor4, Maps/FRL_NPCApt_Floor5, Maps/FRL_NPCApt_Floor6, Maps/FRL_NPCApt_Floor7",
+    "FromFile": "assets/Maps/FRL_NPCApt_ElevatorPatch2.tmx",
+    "FromArea": {
+      "X": 0,
+      "Y": 1,
+      "Width": 4,
+      "Height": 3
+    },
+    "ToArea": {
+      "X": 25,
+      "Y": 20,
+      "Width": 4,
+      "Height": 3
+    },
+    "MapProperties":{
+      "NPCWarp": "26 22 FRL_NPCApt_Elevator 8 14 27 22 FRL_NPCApt_Elevator 9 14"
+    },
+    "MapTiles": [
+      {
+        "Layer":"Buildings",
+        "Position":{
+        "X": 26,
+        "Y": 22
+        },
+        "SetProperties": {
+          "Action": "Message \"FRL_NPCApt_ElevatorLocked\""
+      }
+      },
+      {
+        "Layer":"Buildings",
+        "Position":{
+        "X": 27,
+        "Y": 22
+        },
+        "SetProperties": {
+          "Action": "Message \"FRL_NPCApt_ElevatorLocked\""
+      }
+      }
+    ]
+  },
+  {
+    "Action": "EditData",
+    "Target": "Data/Locations",
+    "Entries": {
+      "FRL_NPCApt_PelicanValleyLoft": {
+          "DisplayName": "Pelican Valley Loft",
+          "DefaultArrivalTile": {
+            "X": 23,
+            "Y": 22
+          },
+          "CreateOnLoad": {
+                "MapPath": "Maps/FRL_NPCApt_PelicanValleyLoft",
+                "Type":"StardewValley.Locations.DecoratableLocation",
+                "AlwaysActive": false
+            },
+            "MusicDefault": null,
+            "MusicContext": "Default",
+            "MusicIgnoredInRain": false,
+        },  
+      "FRL_NPCApt_Lobby": {
+          "DisplayName": "{{i18n:FRL_NPCApt_Lobby}}",
+          "CreateOnLoad": {
+                "MapPath": "Maps/FRL_NPCApt_Lobby",
+                "Type":"StardewValley.Locations.DecoratableLocation",
+                "AlwaysActive": false
+            },
+            "MusicDefault": null,
+            "MusicContext": "Default",
+            "MusicIgnoredInRain": false,
+        },
+        "FRL_NPCApt_Floor1": {
+          "DisplayName": "{{i18n:FRL_NPCApt_PelicanValleyLoft}} {{i18n:FRL_NPCAptFloor1}}",
+          "DefaultArrivalTile": {
+            "X": 2,
+            "Y": 26
+          },
+          "CreateOnLoad": {
+            "MapPath": "Maps/FRL_NPCApt_Floor1",
+          },
+        },
+        "FRL_NPCApt_Floor2": {
+          "DisplayName": "{{i18n:FRL_NPCApt_PelicanValleyLoft}} {{i18n:FRL_NPCAptFloor2}}",
+          "DefaultArrivalTile": {
+            "X": 2,
+            "Y": 26
+          },
+          "CreateOnLoad": {
+            "MapPath": "Maps/FRL_NPCApt_Floor2",
+          },
+        },
+        "FRL_NPCApt_Floor3": {
+            "DisplayName": "{{i18n:FRL_NPCApt_PelicanValleyLoft}} {{i18n:FRL_NPCAptFloor3}}",
+            "DefaultArrivalTile": {
+              "X": 2,
+              "Y": 26
+            },
+            "CreateOnLoad": {
+              "MapPath": "Maps/FRL_NPCApt_Floor3",
+            },
+          },
+          "FRL_NPCApt_Floor4": {
+            "DisplayName": "{{i18n:FRL_NPCApt_PelicanValleyLoft}} {{i18n:FRL_NPCAptFloor4}}",
+            "DefaultArrivalTile": {
+              "X": 2,
+              "Y": 26
+            },
+            "CreateOnLoad": {
+              "MapPath": "Maps/FRL_NPCApt_Floor4",
+            },
+          },
+          "FRL_NPCApt_Floor5": {
+            "DisplayName": "{{i18n:FRL_NPCApt_PelicanValleyLoft}} {{i18n:FRL_NPCAptFloor5}}",
+            "DefaultArrivalTile": {
+              "X": 2,
+              "Y": 26
+            },
+            "CreateOnLoad": {
+              "MapPath": "Maps/FRL_NPCApt_Floor5",
+            },
+          },
+          "FRL_NPCApt_Floor6": {
+            "DisplayName": "{{i18n:FRL_NPCApt_PelicanValleyLoft}} {{i18n:FRL_NPCAptFloor6}}",
+            "DefaultArrivalTile": {
+              "X": 2,
+              "Y": 26
+            },
+            "CreateOnLoad": {
+              "MapPath": "Maps/FRL_NPCApt_Floor6",
+            },
+          },
+          "FRL_NPCApt_Floor7": {
+            "DisplayName": "{{i18n:FRL_NPCApt_PelicanValleyLoft}} {{i18n:FRL_NPCAptFloor7}}",
+            "DefaultArrivalTile": {
+              "X": 2,
+              "Y": 26
+            },
+            "CreateOnLoad": {
+              "MapPath": "Maps/FRL_NPCApt_Floor7",
+            },
+          },
+          "FRL_NPCApt_Elevator": {
+          "DisplayName": "{{i18n:FRL_NPCApt_PelicanValleyLoft}} Elevator",
+          "DefaultArrivalTile": {
+            "X": 8,
+            "Y": 14
+          },
+          "CreateOnLoad": {
+            "MapPath": "Maps/FRL_NPCApt_Elevator",
+          },
+        },
+    }
+},
+//Add Floor and Apartment Map Strings
+{"Action":"EditData",
+"Target":"Strings/StringsFromMaps",
+"Entries": {
+  "FRL_NPCAptFloor1": "{{i18n:FRL_NPCAptFloor1 |default=First Floor}}",
+  "FRL_NPCAptFloor2": "{{i18n:FRL_NPCAptFloor2 |default=Second Floor}}",
+  "FRL_NPCAptFloor3": "{{i18n:FRL_NPCAptFloor3 |default=Third Floor}}",
+  "FRL_NPCAptFloor4": "{{i18n:FRL_NPCAptFloor4 |default=Fourth Floor}}",
+  "FRL_NPCAptFloor5": "{{i18n:FRL_NPCAptFloor5 |default=Fifth Floor}}",
+  "FRL_NPCAptFloor6": "{{i18n:FRL_NPCAptFLoor6 |default=Sixth Floor}}",
+  "FRL_NPCAptFloor7": "{{i18n:FRL_NPCAptFLoor7 |default=Seventh Floor}}",
+  "FRL_NPCAptLobby_LeasingOffice": "{{i18n:FRL_NPCAptLobby_LeasingOffice |default=It's locked...}}",
+  "FRL_NPCAptLobby_FrontDeskEmpty": "{{i18n:FRL_NPCAptLobby_FrontDeskEmpty |default=The front desk is empty.}}",
+  "FRL_NPCAptLobby_BillardsRoom": "{{i18n:FRL_NPCAptLobby_BillardsRoom |default=It seems to be some kind of scoreboard, but the names are impossible to read.}}",
+  "FRL_NPCApt_ElevatorLocked": "{{i18n:FRL_NPCApt_ElevatorLocked}}"
+}
+},
+//Add Mountain Pathway to Apartments
+{"Action": "EditMap",
+"Target": "Maps/Mountain",
+"FromFile": "assets/Maps/FRL_NPCApt_MountainPathway.tmx",
+"FromArea": {
+  "X": 0, "Y": 0, "Width": 5, "Height": 5 },
+"ToArea": {
+  "X": 18, "Y": 2, "Width": 5, "Height": 5 },
+  "PatchMode": "Overlay",
+  "AddWarps": ["20 3 FRL_NPCApt_PelicanValleyLoft 22 22"],
+  "When": {
+    "HasMod |contains=holaitsed.foragefruittrees": false,
+    "HasMod |contains=BaldursVillage.BVCP": false
+  }
+},
+{"Action": "EditMap",
+"Target": "Maps/Mountain",
+"FromFile": "assets/Maps/FRL_NPCApt_MountainPathway.tmx",
+"FromArea": {
+  "X": 2, "Y": 0, "Width": 1, "Height": 3 },
+"ToArea": {
+  "X": 20, "Y": 2, "Width": 1, "Height": 3 },
+  "PatchMode": "Replace",
+  "When": {
+    "HasMod |contains=holaitsed.foragefruittrees": false,
+    "HasMod |contains=BaldursVillage.BVCP": false
+  }
+},
+//Add Mountain Pathway Alternate Location
+{
+  "LogName": "Add compatible location for Crazy Ed's Crazy Fruit Trees",
+  "Action": "EditMap",
+  "Target":"Maps/Mountain",
+  "FromFile":"assets/Maps/FRL_NPCApt_MountainPathway.tmx",
+  "FromArea": {
+    "X": 1, "Y": 0, "Width": 3, "Height": 3
+  },
+  "ToArea": {
+    "X": 25, "Y": 26, "Width": 3, "Height": 3
+  },
+  "AddWarps": ["26 27 FRL_NPCApt_PelicanValleyLoft 22 22"],
+  "When": {
+    "HasMod |contains=holaitsed.foragefruittrees, BaldursVillage.BVCP":true
+  }
+},
+{
+  "LogName":"Edit MapTiles in Alt Location for SVE",
+  "Action": "EditMap",
+  "Target": "Maps/Mountain",
+  "MapTiles": [
+                {
+                  "Position": { "X": 24, "Y": 28 },
+                  "Layer": "Back",
+                  "SetIndex": "634"
+                },        
+                {
+                  "Position": { "X": 25, "Y": 28 },
+                  "Layer": "Back",
+                  "SetIndex": "659"
+                },          
+                {
+                  "Position": { "X": 27, "Y": 28 },
+                  "Layer": "Back",
+                  "SetIndex": "630"
+                },
+            ],
+            "When": {
+    "HasMod |contains=holaitsed.foragefruittrees, BaldursVillage.BVCP":true,
+    "HasMod |contains=FlashShifter.StardewValleyExpandedCP":false
+  }
+},
+{
+  "LogName":"Edit MapTiles in Alt Location for SVE",
+  "Action": "EditMap",
+  "Target": "Maps/Mountain",
+  "MapTiles": [ 
+                {
+                  "Position": { "X": 24, "Y": 29 },
+                  "Layer": "Back",
+                  "SetIndex": "659"
+                },          
+                {
+                    "Position": { "X": 25, "Y": 29 },
+                    "Layer": "Back",
+                    "SetIndex": "656"
+                },
+                {
+                  "Position": { "X": 26, "Y": 29 },
+                  "Layer": "Back",
+                  "SetIndex": "630"
+                },
+                {
+                  "Position": { "X": 27, "Y": 29 },
+                  "Layer": "Back",
+                  "SetIndex": "631"
+                },
+                {
+                  "Position": { "X": 28, "Y": 29 },
+                  "Layer": "Back",
+                  "SetIndex": "633"
+              },
+            ],
+            "When": {
+    "HasMod |contains=holaitsed.foragefruittrees, BaldursVillage.BVCP":true,
+    "HasMod |contains=FlashShifter.StardewValleyExpandedCP":true
+  }
+},
+{
+  "LogName":"Change Apartment Warp for Crazy Ed's Fruit Trees Compatibility",
+  "Action": "EditMap",
+  "Target": "Maps/FRL_NPCApt_PelicanValleyLoft",
+  "AddWarps": ["22 24 Mountain 26 29", "23 24 Mountain 26 29"],
+  "When": {
+    "HasMod |contains=holaitsed.foragefruittrees, BaldursVillage.BVCP":true
+  }
+},
+{
+    "LogName": "Set Warps for Floor 1",
+    "Action": "EditMap",
+    "Target": "Maps/FRL_NPCApt_Floor1",
+    "MapProperties": {
+        "Warp": "2 18 FRL_NPCApt_Floor2 2 26 3 18 FRL_NPCApt_Floor2 3 26 61 18 FRL_NPCApt_Floor2 61 26 62 18 FRL_NPCApt_Floor2 62 26 2 28 FRL_NPCApt_Lobby 2 22 3 28 FRL_NPCApt_Lobby 3 22 61 28 FRL_NPCApt_Lobby 61 22 62 28 FRL_NPCApt_Lobby 62 22",
+        },
+      "MapTiles": [
+        {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 4,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor1\""}
+        },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 5,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor1\""}
+      },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 59,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor1\""}
+        },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 60,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor1\""}
+      }
+    ]
+    },
+{
+    "LogName": "Set Warps for Floor 2",
+    "Action": "EditMap",
+    "Target": "Maps/FRL_NPCApt_Floor2",
+    "MapProperties": {
+        "Warp": "2 18 FRL_NPCApt_Floor3 2 26 3 18 FRL_NPCApt_Floor3 3 26 61 18 FRL_NPCApt_Floor3 61 26 62 18 FRL_NPCApt_Floor3 62 26 2 28 FRL_NPCApt_Floor1 2 22 3 28 FRL_NPCApt_Floor1 3 22 61 28 FRL_NPCApt_Floor1 61 22 62 28 FRL_NPCApt_Floor1 62 22",
+        },
+      "MapTiles": [ {
+      "Layer":"Buildings",
+      "Position": {
+        "X": 5,
+        "Y": 22,
+      },
+      "SetProperties": {"Action": "Message \"FRL_NPCAptFloor2\""}
+      },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 4,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor2\""}
+      },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 59,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor2\""}
+      },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 60,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor2\""}
+      }
+     ]
+    },
+//Add Warps for Floor 3
+{
+  "LogName": "Set Warps for Floor 3",
+  "Action": "EditMap",
+  "Target": "Maps/FRL_NPCApt_Floor3",
+  "MapProperties": {
+      "Warp": "2 18 FRL_NPCApt_Floor4 2 26 3 18 FRL_NPCApt_Floor4 3 26 61 18 FRL_NPCApt_Floor4 61 26 62 18 FRL_NPCApt_Floor4 62 26 2 28 FRL_NPCApt_Floor2 2 22 3 28 FRL_NPCApt_Floor2 3 22 61 28 FRL_NPCApt_Floor2 61 22 62 28 FRL_NPCApt_Floor2 62 22",
+      },
+    "MapTiles": [ {
+    "Layer":"Buildings",
+    "Position": {
+      "X": 5,
+      "Y": 22,
+    },
+    "SetProperties": {"Action": "Message \"FRL_NPCAptFloor3\""}
+    },
+    {
+      "Layer":"Buildings",
+      "Position": {
+        "X": 4,
+        "Y": 22,
+      },
+      "SetProperties": {"Action": "Message \"FRL_NPCAptFloor3\""}
+    },
+    {
+      "Layer":"Buildings",
+      "Position": {
+        "X": 59,
+        "Y": 22,
+      },
+      "SetProperties": {"Action": "Message \"FRL_NPCAptFloor3\""}
+    },
+    {
+      "Layer":"Buildings",
+      "Position": {
+        "X": 60,
+        "Y": 22,
+      },
+      "SetProperties": {"Action": "Message \"FRL_NPCAptFloor3\""}
+    }
+   ]
+  },
+//Change Warps for Additional Floors
+{
+  "LogName": "Set Warps for Floor 4",
+  "Action": "EditMap",
+  "Target": "Maps/FRL_NPCApt_Floor4",
+  "MapProperties": {
+      "Warp": "2 18 FRL_NPCApt_Floor5 2 26 3 18 FRL_NPCApt_Floor5 3 26 61 18 FRL_NPCApt_Floor5 61 26 62 18 FRL_NPCApt_Floor5 62 26 2 28 FRL_NPCApt_Floor3 2 22 3 28 FRL_NPCApt_Floor3 3 22 61 28 FRL_NPCApt_Floor3 61 22 62 28 FRL_NPCApt_Floor3 62 22",
+      },
+    "MapTiles": [ {
+    "Layer":"Buildings",
+    "Position": {
+      "X": 5,
+      "Y": 22,
+    },
+    "SetProperties": {"Action": "Message \"FRL_NPCAptFloor4\""}
+    },
+    {
+      "Layer":"Buildings",
+      "Position": {
+        "X": 4,
+        "Y": 22,
+      },
+      "SetProperties": {"Action": "Message \"FRL_NPCAptFloor4\""}
+    },
+    {
+      "Layer":"Buildings",
+      "Position": {
+        "X": 59,
+        "Y": 22,
+      },
+      "SetProperties": {"Action": "Message \"FRL_NPCAptFloor4\""}
+    },
+    {
+      "Layer":"Buildings",
+      "Position": {
+        "X": 60,
+        "Y": 22,
+      },
+      "SetProperties": {"Action": "Message \"FRL_NPCAptFloor4\""}
+    }
+   ]
+  },
+  {
+    "LogName": "Set Warps for Floor 5",
+    "Action": "EditMap",
+    "Target": "Maps/FRL_NPCApt_Floor5",
+    "MapProperties": {
+        "Warp": "2 18 FRL_NPCApt_Floor6 2 26 3 18 FRL_NPCApt_Floor6 3 26 61 18 FRL_NPCApt_Floor6 61 26 62 18 FRL_NPCApt_Floor6 62 26 2 28 FRL_NPCApt_Floor4 2 22 3 28 FRL_NPCApt_Floor4 3 22 61 28 FRL_NPCApt_Floor4 61 22 62 28 FRL_NPCApt_Floor4 62 22",
+        },
+      "MapTiles": [ {
+      "Layer":"Buildings",
+      "Position": {
+        "X": 5,
+        "Y": 22,
+      },
+      "SetProperties": {"Action": "Message \"FRL_NPCAptFloor5\""}
+      },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 4,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor5\""}
+      },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 59,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor5\""}
+      },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 60,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor5\""}
+      }
+     ]
+    },
+    {
+      "LogName": "Set Warps for Floor 6",
+      "Action": "EditMap",
+      "Target": "Maps/FRL_NPCApt_Floor6",
+      "MapProperties": {
+          "Warp": "2 18 FRL_NPCApt_Floor7 2 26 3 18 FRL_NPCApt_Floor7 3 26 61 18 FRL_NPCApt_Floor7 61 26 62 18 FRL_NPCApt_Floor7 62 26 2 28 FRL_NPCApt_Floor5 2 22 3 28 FRL_NPCApt_Floor5 3 22 61 28 FRL_NPCApt_Floor5 61 22 62 28 FRL_NPCApt_Floor5 62 22",
+          },
+        "MapTiles": [ {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 5,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor6\""}
+        },
+        {
+          "Layer":"Buildings",
+          "Position": {
+            "X": 4,
+            "Y": 22,
+          },
+          "SetProperties": {"Action": "Message \"FRL_NPCAptFloor6\""}
+        },
+        {
+          "Layer":"Buildings",
+          "Position": {
+            "X": 59,
+            "Y": 22,
+          },
+          "SetProperties": {"Action": "Message \"FRL_NPCAptFloor6\""}
+        },
+        {
+          "Layer":"Buildings",
+          "Position": {
+            "X": 60,
+            "Y": 22,
+          },
+          "SetProperties": {"Action": "Message \"FRL_NPCAptFloor6\""}
+        }
+       ]
+      },
+    {
+      "LogName": "Set Warps for Floors 7",
+      "Action": "EditMap",
+      "Target": "Maps/FRL_NPCApt_Floor7",
+      "MapProperties": {
+          "Warp": "2 28 FRL_NPCApt_Floor6 2 22 3 28 FRL_NPCApt_Floor6 3 22 61 28 FRL_NPCApt_Floor6 61 22 62 28 FRL_NPCApt_Floor6 62 22",
+          },
+      "MapTiles": [{
+        "Layer":"Buildings",
+        "Position": {
+          "X": 5,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor7\""}
+      },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 4,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor7\""}
+      },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 59,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor7\""}
+      },
+      {
+        "Layer":"Buildings",
+        "Position": {
+          "X": 60,
+          "Y": 22,
+        },
+        "SetProperties": {"Action": "Message \"FRL_NPCAptFloor7\""}
+      }
+    ]
+      },
+      //Add WorldMap Data
+      {
+        "Action":"EditData",
+        "Target": "Data/WorldMap",
+        "TargetField": ["Valley", "MapAreas"],
+        "Entries": {
+          "FRL_NPCApt_PelicanValleyLoft": {
+            "Id": "FRL_NPCApt_PelicanValleyLoft",
+            "PixelArea": {
+              "X": 177,
+              "Y": 22,
+              "Width": 7,
+              "Height": 7
+            },
+            "Tooltips":[{
+            "Text": "{{i18n:FRL_NPCApt_PelicanValleyLoft}}",
+            "LeftNeighbor": "Railroad/Railroad",
+            "RightNeighbor": "Mountain/Tent",
+            "UpNeighbor": "",
+            "DownNeighbor": "Mountain/Carpenter"
+          }],
+          }
+        }
+      },
+      {
+        "Action":"EditData",
+        "Target": "Data/WorldMap",
+        "TargetField": ["Valley", "MapAreas", "#8", "WorldPositions"],
+        "Entries": {
+          "FRL_NPCApt_PelicanValleyLoft": {
+            "ScrollTextZones": [],
+            "Id": "FRL_NPCApt_PelicanValleyLoft",
+            "Condition": null,
+            "LocationContext": null,
+            "LocationNames": ["FRL_NPCApt_PelicanValleyLoft", "FRL_NPCApt_Lobby", "FRL_NPCApt_Elevator", "FRL_NPCApt_Floor1", "FRL_NPCApt_Floor2", "FRL_NPCApt_Floor3", "FRL_NPCApt_Floor4", "FRL_NPCApt_Floor5", "FRL_NPCApt_Floor6", "FRL_NPCApt_Floor7"],
+            "ExtendedTileArea": null,
+            "TileArea": {
+              "X": 0,
+              "Y": 0,
+              "Width": 0,
+              "Height": 0
+            },
+            "MapPixelArea": {
+              "X": 180,
+              "Y": 24,
+              "Width": 1,
+              "Height": 1
+            },
+            "ScrollText": "{{i18n:FRL_NPCApt_PelicanValleyLoft}}"
+          }
+        }
+      }
+]
+}

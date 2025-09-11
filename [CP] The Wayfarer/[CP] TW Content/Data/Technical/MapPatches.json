@@ -1,0 +1,87 @@
+{
+"Changes": [
+{
+"LogName":"Boat Placement",
+"Action": "EditMap",
+"Target": "Maps/{{MapTarget}}",
+"PatchMode":"overlay",
+"Update": "OnTimeChange",
+"FromFile": "Assets/Maps/Map Patches/{{BoatPatchMap}}.tbin",
+"ToArea": { "X": "{{BoatPatchX}}", "Y": "{{BoatPatchY}}", "Width": "{{BoatHousePlacementSizeW}}", "Height": "{{BoatHousePlacementSizeH}}"
+},
+"When": {
+"HasSeenEvent |contains={{ModID}}_LyellIntro": true,
+"Relationship:FC.Lyell |contains= Married": false,
+}
+},
+{
+"LogName": "Entrance",
+ "Action": "EditMap",
+ "When": {
+"HasSeenEvent |contains={{ModID}}_LyellIntro": true,
+},
+ "Target": "Maps/{{ModID}}_HalkiasResidents",
+ "Update": "OnTimeChange",
+ "TextOperations": [
+{
+ "Operation": "Append",
+ "Target": ["MapProperties", "Warp"],
+ "Value": "{{BoatPatchInnerWarp}}",
+ "Delimiter": " "
+}
+]
+},
+{
+"LogName": "Entrance",
+ "Action": "EditMap",
+ "Target": "Maps/Island_W",
+ "TextOperations": [
+{
+ "Operation": "Append",
+ "Target": ["MapProperties", "NPCWarp"],
+ "Value": "21 24 QiNutRoom 7 6",
+ "Delimiter": " "
+}
+]
+},
+{
+"LogName": "Entrance",
+ "Action": "EditMap",
+ "Target": "Maps/FarmHouse2_marriage",
+ "TextOperations": [
+{
+ "Operation": "Append",
+ "Target": ["MapProperties", "NPCWarp"],
+ "Value": "27 30 BusStop 13 23",
+ "Delimiter": " "
+}
+]
+},
+{
+"LogName": "Entrance",
+ "Action": "EditMap",
+ "Target": "Maps/FarmHouse1_marriage",
+ "TextOperations": [
+{
+ "Operation": "Append",
+ "Target": ["MapProperties", "NPCWarp"],
+ "Value": "9 11 BusStop 13 23",
+ "Delimiter": " "
+}
+]
+},
+{
+"LogName": "Entrance",
+ "Action": "EditMap",
+ "Target": "Maps/BusStop",
+ "TextOperations": [
+{
+ "Operation": "Append",
+ "Target": ["MapProperties", "NPCWarp"],
+ "Value": "11 25 FarmHouse 27 29",
+ "Delimiter": " "
+}
+]
+},
+]
+}

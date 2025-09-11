@@ -1,0 +1,78 @@
+{
+    "Changes": 
+    [
+        {
+            "LogName": "Book Item Texture",
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Book/NABook",
+            "FromFile": "Assets/Images/Book/NABook/NACookBook.png"
+        },
+
+        {
+            "LogName":"Add book to object data",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries":
+            {
+                "Book_StateCooking":
+                {
+                    "Name": "State Cooking",
+                    "DisplayName": "{{i18n:object.BookNA.name}}",
+                    "Description": "{{i18n:object.BookNA.description}}",
+                    "Type": "asdf",
+                    "Category": -102,
+                    "Price": 2500,
+                    "Texture": "Mods/{{ModId}}/Book/NABook",
+                    "Edibility": -300,
+                    "IsDrink": false,
+                    "Buffs": null,
+                    "GeodeDropsDefaultItems": false,
+                    "GeodeDrops": null,
+                    "ArtifactSpotChances": null,
+                    "CanBeGivenAsGift": true,
+                    "CanBeTrashed": true,
+                    "ExcludeFromFishingCollection": false,
+                    "ExcludeFromShippingCollection": false,
+                    "ExcludeFromRandomSale": false,
+                    "ContextTags": [
+                    "color_purple",
+                    "book_item",
+                    "spu_recipe_book",
+                    "Book"
+                    ],
+                    "CustomFields": {
+                        "Spiderbuttons.SpecialPowerUtilities/Books/RecipePrefix": "{{ModId}}_NA_"
+                    }
+                }
+            }
+        },
+
+        {
+            "Action":"EditData",
+            "Target": "Strings/Objects",
+            "Entries":
+            {
+                "StateCooking_Name": "{{i18n:object.BookNA.name}}",
+                "StateCooking_Description": "{{i18n:object.BookNA.description}}"
+            }
+        },
+
+        
+        
+        {
+            "LogName":"Add NA Book to Desert Trader",
+            "Action":"EditData",
+            "Target":"Data/Shops",
+            "TargetField": ["DesertTrade", "Items"],
+            "Entries":
+            {
+                    "{{ModId}}_BookNA":
+                    {
+                    "TradeItemId":"113",
+                    "TradeItemAmount":1,
+                    "ItemId":"Book_StateCooking"
+                    }
+            }
+        }
+    ]
+}

@@ -1,0 +1,132 @@
+{
+	"Changes": [
+		//Vanilla Schedule
+		{
+			"LogName": "Mora Basegame Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTMora",
+			"Entries": {
+				"spring": "610 APTMMHouse 9 7 2 MoraBed/1000 APTMMHouse 24 15 0/1100 CoalPointFarm 6 38 1 MoraFarmingRight/1230 Town 24 39 2/1800 Saloon 5 20 3/2100 APTMMHouse 9 7 2 MoraPhone",
+				"spring_1": "610 SeedShop 2 21 3 \"Strings\\schedules\\APTMora:SeedShop.001\"/1300 Town 24 39 2/1600 Saloon 5 21 3/2100 APTMMHouse 9 7 2 MoraPhone",
+				"summer_1": "610 SeedShop 2 21 3 \"Strings\\schedules\\APTMora:SeedShop.001\"/1300 Town 24 39 2/1600 Saloon 5 21 3/2100 APTMMHouse 9 7 2 MoraPhone",
+				"fall_1": "610 SeedShop 2 21 3 \"Strings\\schedules\\APTMora:SeedShop.001\"/1300 Town 24 39 2/1600 Saloon 5 21 3/2100 APTMMHouse 9 7 2 MoraPhone",
+				"spring_15": "610 SeedShop 2 21 3 \"Strings\\schedules\\APTMora:SeedShop.001\"/1300 Town 24 39 2/1600 Saloon 5 21 3/2100 APTMMHouse 9 7 2 MoraPhone",
+				"summer_15": "610 SeedShop 2 21 3 \"Strings\\schedules\\APTMora:SeedShop.001\"/1300 Town 24 39 2/1600 Saloon 5 21 3/2100 APTMMHouse 9 7 2 MoraPhone",
+				"fall_15": "610 SeedShop 2 21 3 \"Strings\\schedules\\APTMora:SeedShop.001\"/1300 Town 24 39 2/1600 Saloon 5 21 3/2100 APTMMHouse 9 7 2 MoraPhone",
+				"Tue": "610 APTMMHouse 9 7 2 MoraBed/1000 CoalPointFarm 6 38 1 MoraFarmingRight/1100 Town 22 101 MoraStoneSkipFrontOffset/1630 CoalPointFarmhouse 33 31 0/1800 CoalPointFarmhouse 9 30 3/2000 APTMMHouse 9 4 1/2230 CoalPointFarm 6 58 2 MoraStoneSkipFront",
+				"Fri": "GOTO Tue",
+				"Sun": "610 APTMMHouse 9 7 2 MoraBed/900 APTMMHouse 24 15 0/1050 SeedShop 37 20 0 MoraPrayer \"Strings\\schedules\\APTMora:SeedShop.000\"/1700 CoalPointFarmhouse 9 30 3/2100 APTMMHouse 9 4 1/2230 CoalPointFarm 6 58 2 MoraStoneSkipFront",
+				"winter_17": "610 APTMMHouse 9 7 2 MoraBed/1030 Beach 24 31 3/1600 Town 56 97 3/1640 Beach 37 25 2/2100 APTMMHouse 9 7 2 MoraPhone",
+				"winter": "610 APTMMHouse 9 7 2 MoraBed/1000 APTMMHouse 24 15 0/1100 CoalPointFarmhouse 18 18 3/1300 CoalPointFarm 10 48 2 MoraSittingForward/1700 CoalPointFarmhouse 9 30 3/2100 APTMMHouse 9 4 1/2230 CoalPointFarm 6 58 2 MoraStoneSkipFront",
+				"winter_Tue": "610 APTMMHouse 9 7 2 MoraBed/1000 Saloon 42 20 3/1800 Saloon 17 20 0/2030 APTMMHouse 9 7 2 MoraPhone",
+				"winter_Wed": "GOTO winter_Tue",
+				"winter_Thu": "GOTO winter_Tue",
+				"DesertFestival_2": "610 APTMMHouse 9 7 2 MoraBed/700 Desert 34 62 3 MoraSwimming \"Strings\\schedules\\APTMora:Desert.000\"/2240 APTMMHouse 29 11 1"
+			},
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+		},
+		//Hopsital Schedule
+		{
+			"LogName": "Ashida East Scarpe Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTMora",
+			"Entries": {
+				"spring": "610 APTMMHouse 9 7 2 MoraBed/700 Hospital 22 5 2 MoraSittingForward/1900 CoalPointFarm 6 58 2 MoraStoneSkipFront",
+			},
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": true,
+			},
+		},
+		//Babysitting
+		{
+			"LogName": "Mora Babysitting Schdule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTMora",
+			"Entries": {
+				"Sat": "610 APTMMHouse 9 7 2 MoraBed/730 CoalPointFarmhouse 24 9 0/850 Town 72 54 2/1400 Town 23 26 3/1700 CoalPointFarmhouse 5 29 1/2000 APTMMHouse 29 11 1",
+				"Fri": "610 APTMMHouse 9 7 2 MoraBed/730 CoalPointFarmhouse 24 9 0/850 Forest 92 20 3/1600 CoalPointFarmhouse 9 30 3/2000 APTMMHouse 29 11 1",
+				"winter_Fri": "610 APTMMHouse 9 7 2 MoraBed/730 CoalPointFarmhouse 24 9 0/850 CoalPointFarmhouse 18 18 3/1300 CoalPointFarm 10 48 2 MoraSittingForward/1700 CoalPointFarmhouse 9 30 3/2100 APTMMHouse 9 4 1/2230 CoalPointFarm 6 58 2 MoraStoneSkipFront",
+				"winter_Sat": "GOTO winter_Fri",
+				"Sun": "610 APTMMHouse 9 7 2 MoraBed/900 APTMMHouse 24 15 0/1050 SeedShop 37 20 0 \"Strings\\schedules\\APTMora:SeedShop.000\"/1700 CoalPointFarmhouse 9 30 3/2100 APTMMHouse 9 4 1/2230 CoalPointFarm 6 58 2 MoraStoneSkipFront",
+			},
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+				"HasSeenEvent": "145857",
+				"DayEvent |contains=spirit's eve": "false",
+			},
+		},
+		{
+			"LogName": "Mora Sunday Marcus Babysitting Schedule",
+			"Action": "EditData",
+            "Target": "Characters/schedules/APTAshida",
+			"Entries": {
+				"Sun": "610 APTMMHouse 9 7 2 MoraBed/900 APTMMHouse 24 15 0/1050 SeedShop 37 20 0 MoraPrayer \"Strings\\schedules\\APTMora:SeedShop.000\"/1700 CoalPointFarmhouse 9 30 3/2100 APTMMHouse 9 4 1/2230 CoalPointFarm 6 58 2 MoraStoneSkipFront",
+			},
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+				"HasSeenEvent": "145868"
+			}
+		},
+		//East Scarp Schedule
+		{
+			"LogName": "Mora East Scarpe Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTMora",
+			"When": { 
+				"HasMod |contains= LemurKat.EastScarpe.CP": true, 
+				"HasMod |contains= FlashShifter.StardewValleyExpandedCP": false, 
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+			"Entries": {
+				"Wed": "900 EastScarp_Village 26 62 2 MoraStoneSkipFront/1709 APTMMHouse 9 7 2 MoraPhone",
+				"fall_27": "610 APTMMHouse 9 7 2 MoraBed/820 EastScarp_VillageInn 43 33 2 \"Strings\\schedules\\APTMora:EastScarp_VillageInn.000\"/2000 Town 0 0 0",
+			},
+		},
+		//Stardew Valley Expanded Schedule
+		{
+			"LogName": "Mora SVE Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTMora",
+			"When": { 
+				"HasMod |contains= LemurKat.EastScarpe.CP": false, 
+				"HasMod |contains= FlashShifter.StardewValleyExpandedCP": true, 
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+			"Entries": {
+				"Wed": "900 Town 101 102 3 MoraFarmingLeft/1500 Custom_ShearwaterBridge 26 19 0 MoraStoneSkipBack/1800 APTMMHouse 9 7 2 MoraPhone",
+			},
+		},
+		//Stardew Valley Expanded + East Scarpe Schedule
+		{
+			"LogName": "Mora SVE Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTMora",
+			"When": { 
+				"HasMod |contains= LemurKat.EastScarpe.CP": true, 
+				"HasMod |contains= FlashShifter.StardewValleyExpandedCP": true, 
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+			"Entries": {
+				"Wed": "{{MoraOnAWednesday}}",
+				"fall_27": "610 APTMMHouse 9 7 2 MoraBed/820 EastScarp_VillageInn 45 35 3 \"Strings\\schedules\\APTMora:EastScarp_VillageInn.000\"/2000 Town 0 0 0",
+			},
+		},
+		
+		//STRINGS
+		{
+			"LogName": "Adding Mora's Strings",
+			"Action": "EditData",
+			"Target": "Strings/schedules/APTMora",
+			"Entries": {
+				"Beach.000": "{{i18n:MoraSchedule.Beach.000}}",
+				"Desert.000": "{{i18n:MoraSchedule.Desert.000}}",
+				"SeedShop.000": "{{i18n:MoraSchedule.SeedShop.000}}",
+				"SeedShop.001": "{{i18n:MoraSchedule.SeedShop.001}}",
+				"EastScarp_VillageInn.000": "{{i18n:MoraSchedule.EastScarp_VillageInn.000}}",
+
+			},
+		},
+	]
+}

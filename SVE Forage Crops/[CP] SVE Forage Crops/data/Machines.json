@@ -1,0 +1,41 @@
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)ZoeyHoshi.SVEForageCrops_GreenMushroomPlanter": {
+					"OutputRules": [
+						{
+							"Id": "SVEForageCrops_GreenMushroom",
+							"Triggers": [
+								{
+									"Trigger": "OutputCollected, MachinePutDown, DayUpdate",
+									"RequiredItemId": null,
+									"RequiredTags": null,
+									"RequiredCount": 1,
+									"Condition": "!LOCATION_SEASON Target Winter"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)FlashShifter.StardewValleyExpandedCP_Green_Mushroom",
+									"MinStack": 1,
+									"MaxStack": 1
+								}
+							],
+							"DaysUntilReady": 2
+						}
+					],
+					"PreventTimePass": [
+						"Inside",
+						"Winter",
+						"Sun"
+					],
+					"WobbleWhileWorking": false,
+					"ShowNextIndexWhenReady": true
+				}
+			}
+		}
+	]
+}

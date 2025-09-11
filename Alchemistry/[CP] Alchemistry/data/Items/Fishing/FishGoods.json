@@ -1,0 +1,147 @@
+{
+    "Changes": [
+
+        //Load icons
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/FishGoods",
+            "FromFile": "assets/Items/Fishing/fish.png"
+        },
+
+/*----------------------------------------------------
+Fish Artisan Goods
+----------------------------------------------------*/
+
+        {
+            "LogName":"Add Alchemistry Fish (Artisan Goods)",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModID}}_NewtsTail": {
+                    "Name": "{{ModID}}_NewtsTail",
+                    "DisplayName": "{{i18n:Alchemistry_NewtsTail.name}}",
+                    "Description": "{{i18n:Alchemistry_NewtsTail.description}}",
+                    "Texture": "Mods/{{ModID}}/FishGoods",
+                    "SpriteIndex": 44,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 75,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "color_jade"
+                    ]
+                },
+                "{{ModID}}_OilofNewt": {
+                    "Name": "{{ModID}}_OilofNewt",
+                    "DisplayName": "{{i18n:Alchemistry_OilofNewt.name}}",
+                    "Description": "{{i18n:Alchemistry_OilofNewt.description}}",
+                    "Texture": "Mods/{{ModID}}/FishGoods",
+                    "SpriteIndex": 40,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 200,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "color_jade"
+                    ]
+                },
+                "{{ModID}}_FreshSqueezedLamprey": {
+                    "Name": "{{ModID}}_FreshSqueezedLamprey",
+                    "DisplayName": "{{i18n:Alchemistry_FreshSqueezedLamprey.name}}",
+                    "Description": "{{i18n:Alchemistry_FreshSqueezedLamprey.description}}",
+                    "Texture": "Mods/{{ModID}}/FishGoods",
+                    "SpriteIndex": 41,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 275,
+                    "Edibility": -300,
+                    "ContextTags": [
+                        "color_dark_red"
+                    ]
+                },
+                "{{ModID}}_MoonlightJelly": {
+                    "Name": "{{ModID}}_MoonlightJelly",
+                    "DisplayName": "{{i18n:Alchemistry_MoonlightJelly.name}}",
+                    "Description": "{{i18n:Alchemistry_MoonlightJelly.description}}",
+                    "Texture": "Mods/{{ModID}}/FishGoods",
+                    "SpriteIndex": 42,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 250,
+                    "Edibility": 30,
+                    "ContextTags": [
+                        "color_blue"
+                    ]
+                },
+                "{{ModID}}_CuredMoonlightJelly": {
+                    "Name": "{{ModID}}_CuredMoonlightJelly",
+                    "DisplayName": "{{i18n:Alchemistry_CuredMoonlightJelly.name}}",
+                    "Description": "{{i18n:Alchemistry_CuredMoonlightJelly.description}}",
+                    "Texture": "Mods/{{ModID}}/FishGoods",
+                    "SpriteIndex": 43,
+                    "Type": "Basic",
+                    "ExcludeFromShippingCollection": false,
+                    "Category": -26,
+                    "Price": 600,
+                    "Edibility": 75,
+                    "ContextTags": [
+                        "color_blue"
+                    ]
+                }
+            }
+        },
+
+/*----------------------------------------------------
+Fish Artisan Goods - Perfection Tracker Disabled
+----------------------------------------------------*/
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_NewtsTail" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_OilofNewt" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_FreshSqueezedLamprey" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_MoonlightJelly" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "When": { "PerfectionInclusion": false },
+            "Target": "Data/Objects",
+            "TargetField": [ "{{ModId}}_CuredMoonlightJelly" ],
+            "Entries": {
+                "ExcludeFromShippingCollection": true
+            }
+        }
+    ]
+}

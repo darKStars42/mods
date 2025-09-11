@@ -1,0 +1,163 @@
+{
+	"Format": "1.27.0",
+	"ConfigSchema": {
+		"PortraitStyle": {
+			"AllowValues": "Original, AirynS",
+			"Default": "Original",
+			"Description": "Portrait style"
+		},
+		"ShowWheelchairBack": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Show Theo's wheelchair in his portraits"
+		},
+	},
+	"DynamicTokens": [
+		{
+			"Name": "PortraitPath",
+			"Value": "Assets/Portraits/Original",
+			"When": {
+				"PortraitStyle": "Original"
+			}
+		},
+		{
+			"Name": "PortraitPath",
+			"Value": "Assets/Portraits/Airyn",
+			"When": {
+				"PortraitStyle": "AirynS"
+			}
+		},
+		{
+			"Name": "BackValue",
+			"Value": "",
+			"When": {
+				"ShowWheelchairBack": true
+			}
+		},
+		{
+			"Name": "BackValue",
+			"Value": "_NoBack",
+			"When": {
+				"ShowWheelchairBack": false
+			}
+		},
+		{
+			"Name": "IsOddYear",
+			"Value": "{{Query: {{Year}} % 2 = 1}}"
+		},
+	],
+	"CustomLocations": [
+		{
+			"Name": "Custom_StrayCatfe_CafeIndoors",
+			"FromMapFile": "Assets/Maps/CafeIndoors.tmx"
+		},
+		{
+			"Name": "Custom_StrayCatfe_CafeOutdoors",
+			"FromMapFile": "Assets/Maps/CafeOutdoors.tmx"
+		}
+	],
+	"Changes": [
+		{
+			"LogName": "TSC: Basic NPC Data",
+			"Action": "Include",
+			"FromFile": "Data/NPCData/BasicData.json"
+		},
+		{
+			"LogName": "TSC: Character Sprites",
+			"Action": "Load",
+			"Target": "Characters/Tabitha, Characters/Theo, Characters/Tabitha_Beach, Characters/Theo_Beach",
+			"FromFile": "Assets/{{Target}}.png"
+		},
+		{
+			"LogName": "TSC: Tabitha Portrait",
+			"Action": "Load",
+			"Target": "Portraits/Tabitha",
+			"FromFile": "{{PortraitPath}}/Tabitha.png",
+		},
+		{
+			"LogName": "TSC: Tabitha Beach Portrait",
+			"Action": "Load",
+			"Target": "Portraits/Tabitha_Beach",
+			"FromFile": "{{PortraitPath}}/Tabitha_Beach.png",
+		},
+		{
+			"LogName": "TSC: Theo Portrait",
+			"Action": "Load",
+			"Target": "Portraits/Theo",
+			"FromFile": "{{PortraitPath}}/Theo{{BackValue}}.png",
+		},
+		{
+			"LogName": "TSC: Theo Beach Portrait",
+			"Action": "Load",
+			"Target": "Portraits/Theo_Beach",
+			"FromFile": "{{PortraitPath}}/Theo_Beach{{BackValue}}.png",
+		},
+		{
+			"LogName": "TSC: Tabitha Schedule",
+			"Action": "Load",
+			"Target": "Characters/Schedules/Tabitha",
+			"FromFile": "Assets/Schedules/Tabitha.json",
+		},
+		{
+			"LogName": "TSC: Theo Schedule",
+			"Action": "Load",
+			"Target": "Characters/Schedules/Theo",
+			"FromFile": "Assets/Schedules/Theo.json",
+		},
+		{
+			"LogName": "TSC: Normal Dialogue",
+			"Action": "Include",
+			"FromFile": "Assets/Dialogue/NormalDialogue.json",
+		},
+		{
+			"LogName": "TSC: Marriage Dialogue",
+			"Action": "Include",
+			"FromFile": "Assets/Dialogue/MarriageDialogue.json",
+		},
+		{
+			"LogName": "TSC: Schedule Dialogue",
+			"Action": "Include",
+			"FromFile": "Assets/Dialogue/ScheduleDialogue.json",
+		},
+		{
+			"LogName": "TSC: Festival Dialogue",
+			"Action": "Include",
+			"FromFile": "Assets/Dialogue/FestivalDialogue.json"
+		},
+		{
+			"LogName": "TSC: Festival Locations",
+			"Action": "Include",
+			"FromFile": "Data/NPCData/FestivalLocations.json"
+		},
+		{
+			"LogName": "TSC: Include Events",
+			"Action": "Include",
+			"FromFile": "Data/Events/Events.json"
+		},
+		{
+			"LogName": "TSC: Include Map Patches",
+			"Action": "Include",
+			"FromFile": "Data/MapData/MapPatches.json",
+		},
+		{
+			"LogName": "TSC: Include Map Strings",
+			"Action": "Include",
+			"FromFile": "Data/MapData/MapStrings.json",
+		},
+		{
+			"LogName": "TSC: Include Spouse Rooms + Patios",
+			"Action": "Include",
+			"FromFile": "Data/NPCData/SpouseLocations.json",
+		},
+		{
+			"LogName": "TSC: Include Tilesheets",
+			"Action": "Include",
+			"FromFile": "Data/MapData/Tilesheets.json",
+		},
+		{
+			"LogName": "TSC: Include Fish Data",
+			"Action": "Include",
+			"FromFile": "Data/MapData/FishData.json",
+		},
+	]
+}

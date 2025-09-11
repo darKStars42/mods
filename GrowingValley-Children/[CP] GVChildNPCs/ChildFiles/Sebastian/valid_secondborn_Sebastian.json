@@ -1,0 +1,564 @@
+{
+   "Changes": [
+        {
+			"LogName": "Trigger action to add mail flag for tracking Sebastian's daughter as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Add_Stella_Secondborn": {
+                    "Id": "{{ModId}}_Add_Stella_Secondborn",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current {{ModId}}_Stella_Secondborn Received",
+					"MarkActionApplied": false,
+                },
+                "{{ModId}}_Add_GrowingValley_Secondborn_Female": {
+                    "Id": "{{ModId}}_Add_GrowingValley_Secondborn_Female",
+                    "Trigger": "DayStarted siliconmodding.GVChildrenSMAPI_OnConfigChangedLate",
+                    "Action": "AddMail Current GrowingValley_Secondborn_Female Received",
+					"MarkActionApplied": false,
+                },
+			}
+		},
+		
+   		{      
+			"LogName": "Load Sebastian's daughter's portraits on secondborn.",
+			"Action": "Load",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Stella_{{SecondbornSkinTone}}.png",
+		},
+   		{      
+			"LogName": "Load Sebastian's daughter's sprites on secondborn.",
+			"Action": "Load",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/Stella_{{SecondbornSkinTone}}.png",
+		},
+		
+   		{      
+			"LogName": "Load Sebastian's daughter's portraits on secondborn (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Stella_{{SecondbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+			},
+		},
+   		{      
+			"LogName": "Load Sebastian's daughter's sprites on secondborn (target locale).",
+			"Action": "Load",
+			"TargetLocale": "{{LocaleCode}}",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/Stella_{{SecondbornSkinTone}}.png",
+			"When": {
+				"Language|contains=en": false,
+			},
+		},
+		
+   		{      
+			"LogName": "Edit Sebastian's daughter's portraits to use winter outfit on secondborn.",
+			"Action": "EditImage",
+			"Target": "Portraits/{{SecondbornName}}", 
+			"FromFile": "assets/Portraits/Stella_Winter_{{SecondbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"Season": "winter",
+			},
+		},
+   		{      
+			"LogName": "Edit Sebastian's daughter's sprites to use winter outfit on secondborn.",
+			"Action": "EditImage",
+			"Target": "Characters/{{SecondbornName}}", 
+			"FromFile": "assets/Characters/Stella_Winter_{{SecondbornSkinTone}}.png",
+			"PatchMode": "Replace",
+			"When": {
+				"Season": "winter",
+			},
+		},
+		
+		{
+			"LogName": "Add gift tastes for Sebastian's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",
+			"Entries": {
+				"{{SecondbornName}}": "/208 FrogEgg 236 414 636//SkillBook_2 721 305 308 wood_item//342 16 350//coffee_item alcohol_item//-75 18 245/",
+			}
+		},
+		
+		{
+			"LogName": "Fill secondborn's empty schedule with that of Sebastian's daughter.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"rain": "1030 Beach 12 39 2 \"Strings\\schedules\\{{SecondbornName}}:rain.000\"/1700 bed",
+				"rain2": "1030 Mountain 59 23 2 \"Strings\\schedules\\{{SecondbornName}}:rain2.000\"/1700 bed",
+				"GreenRain": "1030 Mountain 46 36 3 \"Strings\\schedules\\{{SecondbornName}}:GreenRain.000\"/1500 Mountain 42 30 1 \"Strings\\schedules\\{{SecondbornName}}:GreenRain.001\"/1700 bed",
+				"Mon": "820 Mountain 58 36 1 \"Strings\\schedules\\{{SecondbornName}}:Mon.000\"/1300 ScienceHouse 7 20 0 \"Strings\\schedules\\{{SecondbornName}}:Mon.001\"/1700 bed",
+				"15": "820 Mountain 58 36 1 \"Strings\\schedules\\{{SecondbornName}}:Mon.000\"/1300 ScienceHouse 5 20 1 \"Strings\\schedules\\{{SecondbornName}}:Mon.001\"/1700 bed",
+				"Tue": "930 SeedShop 29 18 3/1300 SeedShop 29 22 3 \"Strings\\schedules\\{{SecondbornName}}:Tue.000\"/1600 SeedShop 13 23 0 \"Strings\\schedules\\{{SecondbornName}}:Tue.001\"/1900 bed",
+				"Thu": "830 ScienceHouse 6 20 0/1200 Railroad 32 47 1/1400 Railroad 64 45 3/1600 Railroad 5 45 1/1700 bed",
+				"Fri": "930 ScienceHouse 6 20 0 \"Strings\\schedules\\{{SecondbornName}}:Fri.000\"/1300 ScienceHouse 6 20 0/1600 Saloon 41 23 0 \"Strings\\schedules\\{{SecondbornName}}:Fri.001\"/2110 bed",
+				"Sun": "630 ScienceHouse 6 7 0 \"Strings\\schedules\\{{SecondbornName}}:Sun.000\"/1000 ScienceHouse 20 18 3/1130 ScienceHouse 22 21 0 \"Strings\\schedules\\{{SecondbornName}}:Sun.001\"/1400 ScienceHouse 7 20 0/1700 Mountain 19 26 2/1800 bed",
+				"summer_Sun": "630 ScienceHouse 6 7 0 \"Strings\\schedules\\{{SecondbornName}}:Sun.000\"/1000 ScienceHouse 20 18 3/1230 ScienceHouse 9 6 3 \"Strings\\schedules\\{{SecondbornName}}:summer_Sun.001\"/1500 ScienceHouse 9 6 3/1800 bed",
+				"fall_Sun": "630 ScienceHouse 6 7 0 \"Strings\\schedules\\{{SecondbornName}}:Sun.000\"/1000 ScienceHouse 20 18 3/1120 Mountain 44 9 1 \"Strings\\schedules\\{{SecondbornName}}:fall_Sun.001\"/1500 Mountain 44 9 1/1800 bed",
+				"spring": "930 ScienceHouse 6 20 0/1400 ScienceHouse 3 19 0 square_3_3/1700 Mountain 19 26 2/1800 bed",
+				"winter_16": "930 ScienceHouse 6 20 0/1600 Beach 13 32 1 \"Strings\\schedules\\{{SecondbornName}}:winter_16.000\"/2330 bed",
+				"DesertFestival_1": "820 Desert 38 60 3 \"Strings\\schedules\\{{SecondbornName}}:DesertFestival.000\"/2520 bed",
+			}
+		},
+		{
+			"LogName": "Separate patch to Sebastian's daughter's schedule as secondborn for green rain.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"{{day}}": "GOTO GreenRain",
+			},
+			"When": {
+				"Weather": "GreenRain"
+			},
+		},
+		
+		{
+			"LogName": "Add Little Red School House schedule for Sebastian's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{SecondbornName}}",
+			"Entries": {
+				"Wed": "a1000 Custom_SchoolHouse 1 6 1 {{SecondbornName}}_read \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.000\"/1130 Custom_SchoolHouse 10 5 0 \"Strings\\schedules\\{{SecondbornName}}:Schoolhouse.001\"/a1250 Custom_SchoolHouse 1 6 1 {{SecondbornName}}_read/1550 ScienceHouse 3 19 0 square_3_3/1820 bed",
+			},
+			"When": {
+				"HasMod": "Xiddav.LittleRedSchoolHouse, Xiddav.LittleRedSchoolHouseLazy",
+				"LRSH_NoSchoolDay": false,
+			},
+		},
+		//Stella will skip school on rainy days in favour of standing in the rain...
+		
+		{
+            "LogName": "Add animations for Sebastian's daughter as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/animationdescriptions",
+            "Entries":
+            {
+                "{{SecondbornName}}_sit": "16/16/16",
+                "{{SecondbornName}}_read": "17/17/17",
+			}
+		},
+		
+		
+        {
+            "LogName": "Add Sebastian's daughter to Egg Festival as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring13",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 26 77 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 20 68 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 19 65 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 35 70 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Sebastian's daughter to Flower Dance as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/spring24",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 3 36 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 23 27 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 12 21 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 15 30 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Sebastian's daughter to Luau as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer11",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 27 17 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 27 19 3",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 11 39 2",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 19 16 1",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Sebastian's daughter to Moonlight Jellies as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/summer28",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 10 39 3",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 27 35 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 13 30 1",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "MainEvent_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 24 34 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Sebastian's daughter to Fair as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall16",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 33 77 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 47 88 0",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Sebastian's daughter to Spirit's Eve as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/fall27",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 28 59 1",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 19 12 2",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Sebastian's daughter to Festival of Ice as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter8",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 67 20 0",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 77 41 0",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 55 21 1",
+                    "Delimiter": "/"
+                },
+                {   
+                    "Operation": "Append",
+                    "Target": ["Entries", "Main-Event_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 69 27 2",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+        {
+            "LogName": "Add Sebastian's daughter to Winter Star as secondborn.",
+            "Action": "EditData",
+            "Target": "Data/Festivals/winter25",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                    "Value": "{{SecondbornName}} 34 62 2",
+                    "Delimiter": "/"
+                },
+                {
+                    "Operation": "Append",
+                    "Target": ["Entries", "Set-Up_additionalCharacters_y2"],
+                    "Value": "{{SecondbornName}} 26 70 3",
+                    "Delimiter": "/"
+                },
+            ],
+        },
+		
+		
+		{
+			"LogName": "Add movie concession tastes for Sebastian's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/ConcessionTastes",
+			"Entries": {
+				2:{
+					"Name": "{{SecondbornName}}",
+					"LovedTags": [
+						"Sweet"
+					],
+					"LikedTags": [
+						"Chocolate Popcorn",
+						"Apple Slices",
+						"Jasmine Tea",
+					],
+					"DislikedTags": [
+						"Gourmet",
+						"Kale Smoothie",
+						"Sour",
+					]
+				}
+			}
+		},
+		{
+			"LogName": "Add movie reactions for Sebastian's daughter as secondborn.",
+			"Action": "EditData",
+			"Target": "Data/MoviesReactions",
+			"Entries": {
+				2:{
+					"NPCName": "{{SecondbornName}}",
+					"Reactions": [
+					  {
+						"Tag": "*",
+						"Response": "love",
+						"Whitelist": [
+						  "{{PlayerCompanion}}",
+						],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": {
+							"ResponsePoint": null,
+							"Script": "Placeholder",
+							"Text": null
+						  },
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_3"
+					  },
+					  {
+						"Tag": "*",
+						"Response": "love",
+						"Whitelist": [
+						  "Robin",
+						],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_4"
+					  },
+					  {
+						"Tag": "winter_movie_0",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_5"
+					  },
+					  {
+						"Tag": "horror",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_0"
+					  },
+					  {
+						"Tag": "winter_movie_1",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_1"
+					  },
+					  {
+						"Tag": "*",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": null,
+						"Id": "reaction_2"
+					  },
+					  {
+						"Tag": "love",
+						"Response": "love",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_6"
+					  },
+					  {
+						"Tag": "like",
+						"Response": "like",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_7"
+					  },
+					  {
+						"Tag": "dislike",
+						"Response": "dislike",
+						"Whitelist": [],
+						"SpecialResponses": {
+						  "BeforeMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  },
+						  "DuringMovie": null,
+						  "AfterMovie": {
+							"ResponsePoint": null,
+							"Script": null,
+							"Text": "Placeholder"
+						  }
+						},
+						"Id": "reaction_8"
+					  }
+					]
+				}
+			}
+		},
+		
+   		{      
+			"LogName": "Include dialogue files for Sebastian's daughter as secondborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Sebastian/valid_secondborn_Sebastian.{{Language}}.json", 
+			"When": {
+				"HasFile:{{FromFile}}": true
+			}
+		},
+   		{      
+			"LogName": "Fallback to English dialogue files if no others are available for Sebastian's daughter as secondborn.",
+			"Action": "Include",
+			"FromFile": "i18n/dialogue_files/Sebastian/valid_secondborn_Sebastian.en.json", 
+			"When": {
+				"HasFile:i18n/dialogue_files/Sebastian/valid_secondborn_Sebastian.{{Language}}.json": false
+			}
+		},
+		
+   ]
+}

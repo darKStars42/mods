@@ -1,0 +1,380 @@
+{
+   "Format": "2.0",
+
+
+
+    "ConfigSchema": {
+
+        "Enable this mod": {  
+            "AllowValues": "true,false", 
+            "Default": "true",
+        },
+        "Stone Tile Planted Tree": {  
+            "AllowValues": "true,false", 
+            "Default": "false",
+        },
+        "Translucent bridge ceiling": {  
+            "AllowValues": "true,false", 
+            "Default": "false",
+        },
+        "Show sunlight": {  
+            "AllowValues": "Improved Version 2,Improved Version,Previous Version,Do not show", 
+            "Default": "Improved Version 2"
+        },
+        "Sunlight Brightness Level": {  
+            "AllowValues": "1, 2, 3", 
+            "Default": "3",
+        },
+        "Stardew Valley Reimagined 3 ver": {  
+            "AllowValues": "true,false", 
+            "Default": "false",
+            "Section": "Change Entrance"
+        },
+        "Works with Dam mod": {  
+            "AllowValues": "true,false", 
+            "Default": "false",
+            "Section": "Change Entrance"
+        },
+        "Works with SecretWoodsExtraArea mod": {  
+            "AllowValues": "true,false", 
+            "Default": "false",
+            "Section": "Change Entrance"
+        }
+
+    },//▼"ConfigSchema"の終了▼
+
+
+
+    "DynamicTokens": [
+
+        {
+          "Name":"NightTime",
+          "Value": "(('{{Season}}' = 'spring' OR '{{Season}}' = 'summer') AND {{Time}} >= 2000 AND {{Time}} <= 2600) OR ('{{Season}}' = 'fall' AND {{Time}} >= 1900 AND {{Time}} <= 2600) OR ('{{Season}}' = 'winter' AND {{Time}} >= 1800 AND {{Time}} <= 2600)",
+        },
+        {
+          "Name":"DayTime",
+          "Value": "(('{{Season}}' = 'spring' OR '{{Season}}' = 'summer') AND {{Time}} >= 600 AND {{Time}} <= 2000) OR ('{{Season}}' = 'fall' AND {{Time}} >= 600 AND {{Time}} <= 1900) OR ('{{Season}}' = 'winter' AND {{Time}} >= 600 AND {{Time}} <= 1800)",
+        },
+        {
+          "Name":"NightTime_spring_summer_fall",
+          "Value": "(('{{Season}}' = 'spring' OR '{{Season}}' = 'summer') AND {{Time}} >= 2000 AND {{Time}} <= 2600) OR ('{{Season}}' = 'fall' AND {{Time}} >= 1900 AND {{Time}} <= 2600)",
+        },
+        {
+          "Name":"MinecartRoom_OPEN",
+          "Value": "{{DaysPlayed}} >= 31 AND {{Hearts:Lewis}} >= 8 AND {{Hearts:Clint}} >= 5 AND {{Hearts:Willy}} >= 5",
+        }
+
+    ],//▼"DynamicTokens"の終了▼
+
+
+
+    "Changes": [
+
+
+
+//■■■タイルシートの読み込み■■■
+      {
+        "Action": "Load",
+        "Target": "Maps/z_Flooded_Cave",
+        "FromFile": "assets/z_Flooded_Cave.png",
+        "When": { "Enable this mod": "true" }
+      },
+
+
+
+//■■■カスタムマップの追加■■■
+  //●マップデータ
+      {
+        "Action": "Load",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "assets/Flooded_Cave.tmx",
+        "When": {
+           "Enable this mod": "true",
+           "Stone Tile Planted Tree": "false"
+        }
+      },
+      {
+       "Action": "Load",
+       "Target": "Maps/Custom_Flooded_Cave",
+       "FromFile": "assets/Flooded_Cave_Diggable.tmx",
+       "When": {
+           "Enable this mod": "true",
+           "Stone Tile Planted Tree": "true"
+       }
+      },
+      {
+        "Action": "Load",
+        "Target": "Maps/Custom_Flooded_Cave_MinecartRoom",
+        "FromFile": "assets/Flooded_Cave_MinecartRoom.tmx",
+        "When": { "Enable this mod": "true" },
+      },
+  //●ロケーションデータ(別json読み込み)
+      {
+        "Action": "Include",
+        "FromFile": "assets/LocationsData.json",
+        "When": { "Enable this mod": "true" },
+      },
+
+
+
+//★★★エディットデータ部分★★★
+
+  //●テキストボックス導入 翻訳関係
+      {
+        "Action":"EditData",
+        "Target":"Strings/StringsFromMaps",
+        "Entries":{
+            "Flooded_Cave_01":"{{i18n:Flooded_Cave_01}}",
+            "Flooded_Cave_02":"{{i18n:Flooded_Cave_02}}",
+            "Flooded_Cave_03":"{{i18n:Flooded_Cave_03}}",
+            "Flooded_Cave_04":"{{i18n:Flooded_Cave_04}}",
+            "Flooded_Cave_05":"{{i18n:Flooded_Cave_05}}",
+            "Flooded_Cave_06":"{{i18n:Flooded_Cave_06}}",
+            "Flooded_Cave_07":"{{i18n:Flooded_Cave_07}}",
+            "Flooded_Cave_08":"{{i18n:Flooded_Cave_08}}",
+            "Flooded_Cave_09":"{{i18n:Flooded_Cave_09}}",
+        },
+        "When": { "Enable this mod": "true" }
+      },
+
+
+
+//★★★エディットマップ部分★★★
+
+  //●裏庭の編集(水没洞窟への入り口の追加)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "assets/Flooded_Cave_Backwoods.tmx",
+        "ToArea": { "X":22, "Y": 4, "Width": 8, "Height": 8 },
+        "When": {
+            "Enable this mod": "true",
+            "Stardew Valley Reimagined 3 ver": "false",
+            "Works with Dam mod": "false",
+            "Works with SecretWoodsExtraArea mod": "false",
+            "HasMod: |contains=DuduBertol.NewUpdatesCP": "false",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "false"
+        }
+      },
+
+  //●裏庭の編集(地下室増築後、入り口前の岩撤去パッチ)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+        "FromFile": "assets/Flooded_Cave_Backwoods_Open.tmx",
+        "ToArea": { "X": 22, "Y": 4, "Width": 8, "Height": 8 },
+        "When": {
+            "Enable this mod": "true",
+            "Stardew Valley Reimagined 3 ver": "false",
+            "Works with Dam mod": "false",
+            "Works with SecretWoodsExtraArea mod": "false",
+            "FarmhouseUpgrade": "3",
+            "HasMod: |contains=DuduBertol.NewUpdatesCP": "false",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "false"
+        }
+      },
+
+  //●水没洞窟の編集(天気、時間で川付近を暗くする)
+      {//◆晴れの日の夜(川付近)
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "assets/Flooded_Cave_Night.tmx",
+        "ToArea": { "X": 34, "Y": 4, "Width": 8, "Height": 7 },
+        "When": {
+            "Enable this mod": "true",
+            "Query: {{NightTime}}": "true",
+            "Weather |contains=Storm, Rain": "false"
+        },
+        "Update": "OnTimeChange"
+      },
+      {//◆悪天候終日(川付近)
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "assets/Flooded_Cave_Night.tmx",
+        "ToArea": { "X": 34, "Y": 4, "Width": 8, "Height": 7 },
+        "When": {
+            "Enable this mod": "true",
+            "Weather": "Storm, Rain"
+        }
+      },
+
+  //●水没洞窟の編集(ModConfig設定で天井の半透明有効化)
+      {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "assets/Flooded_Cave_Clear.tmx",
+        "ToArea": { "X": 36, "Y": 46, "Width": 7, "Height": 18 },
+        "When": {
+            "Enable this mod": "true",
+            "Translucent bridge ceiling": "true"
+        }
+      },
+
+  //●水没洞窟の編集(ModConfig設定で太陽光の追加)
+      {//◆改良版
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "assets/Flooded_Cave_SunLight_{{Sunlight Brightness Level}}.tmx",
+        "ToArea": { "X": 5, "Y": 24, "Width": 21, "Height": 19 },
+        "When": {
+            "Enable this mod": "true",
+            "Show sunlight": "Improved Version",
+            "Sunlight Brightness Level": "{{Sunlight Brightness Level}}",
+            "Query: {{DayTime}}": "true",
+            "Weather |contains=rain,storm": "false"
+        },
+        "Update": "OnTimeChange"
+       },
+      {//◆改良版2
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "assets/Flooded_Cave_SunLight_Iv2_{{Sunlight Brightness Level}}.tmx",
+        "ToArea": { "X": 4, "Y": 22, "Width": 22, "Height": 22 },
+        "When": {
+            "Enable this mod": "true",
+            "Show sunlight": "Improved Version 2",
+            "Sunlight Brightness Level": "{{Sunlight Brightness Level}}",
+            "Query: {{DayTime}}": "true",
+            "Weather |contains=rain,storm": "false"
+        },
+        "Update": "OnTimeChange"
+      },
+      {//◆試作版
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "assets/Flooded_Cave_SunLight.tmx",
+        "ToArea": { "X": 5, "Y": 24, "Width": 21, "Height": 19 },
+        "When": {
+            "Enable this mod": "true",
+            "Show sunlight": "Previous Version",
+            "Query: {{DayTime}}": "true",
+            "Weather |contains=rain,storm": "false"
+        },
+        "Update": "OnTimeChange"
+       },
+
+
+
+  //●トロッコ追加関連項目
+      {//◆水没洞窟地下のトロッコ(データ)
+        "Action": "EditData",
+        "Target": "Data/Minecarts",
+        "TargetField": [ "Default", "Destinations" ],
+        "Entries": {
+            "morecarts_Flooded_Cave_MinecartRoom": {
+                "Id": "Custom_Flooded_Cave_MinecartRoom",
+                "DisplayName": "{{i18n:MpFlooded_Cave_MinecartRoom_Name}}",
+                "Condition": "DAYS_PLAYED 31",
+                "TargetLocation": "Custom_Flooded_Cave_MinecartRoom",
+                "TargetTile": { "X": 6, "Y": 8 },
+                "TargetDirection": "up",
+            }
+        },
+        "When": { 
+            "Enable this mod": "true",
+            "Query: {{MinecartRoom_OPEN}}": "true",
+            "FarmhouseUpgrade": "3"
+        }
+      },
+      {//◆水没洞窟の編集(条件クリア時にトロッコルームへの看板を削除)
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Flooded_Cave",
+        "FromFile": "assets/Flooded_Cave_MinecartRoom_NoCone.tmx",
+        "ToArea": { "X": 12, "Y": 27, "Width": 1, "Height": 2 },
+        "When": {
+            "Enable this mod": "true",
+            "Query: {{MinecartRoom_OPEN}}": "true",
+            "FarmhouseUpgrade": "3"
+        }
+      },
+
+
+
+//■■■MODへの(それぞれのjsonへ飛ばす)■■■
+
+  //●Stardew Valley Reimagined 3
+      {
+        "Action": "Include",
+        "FromFile": "ModSupport/01_StardewValleyReimagined3.json",
+        "When": {
+            "Enable this mod": "true",
+            "Stardew Valley Reimagined 3 ver": "true",
+            "Works with Dam mod": "false",
+            "Works with SecretWoodsExtraArea mod": "false",
+            "HasMod: |contains=DaisyNiko.SVR3": "true",
+            "HasMod: |contains=DuduBertol.NewUpdatesCP": "false",
+            "HasMod: |contains=Lnh.CustomMpas": "false"
+        }
+      },
+
+  //●New Update Village
+      {
+        "Action": "Include",
+        "FromFile": "ModSupport/02_NewUpdateVillage.json",
+        "When": {
+            "Enable this mod": "true",
+            "Works with Dam mod": "false",
+            "Works with SecretWoodsExtraArea mod": "false",
+            "HasMod: |contains=DaisyNiko.SVR3": "false",
+            "HasMod: |contains=DuduBertol.NewUpdatesCP": "true"
+        }
+      },
+
+  //●SVR3 and Stardew Valley Additional Areas
+      {
+        "Action": "Include",
+        "FromFile": "ModSupport/03_SVR3_and_StardewValleyAdditionalAreas.json",
+        "When": {
+            "Enable this mod": "true",
+            "Stardew Valley Reimagined 3 ver": "true",
+            "Works with Dam mod": "false",
+            "Works with SecretWoodsExtraArea mod": "false",
+            "HasMod: |contains=DaisyNiko.SVR3": "true",
+            "HasMod: |contains=DuduBertol.NewUpdatesCP": "false",
+            "HasMod: |contains=Lnh.CustomMpas": "true"
+        }
+      },
+
+  //●Stardew Valley Expanded
+      {
+        "Action": "Include",
+        "FromFile": "ModSupport/04_StardewValleyExpandedCP.json",
+        "When": {
+            "Enable this mod": "true",
+            "Stardew Valley Reimagined 3 ver": "false",
+            "Works with Dam mod": "false",
+            "Works with SecretWoodsExtraArea mod": "false",
+            "HasMod: |contains=DaisyNiko.SVR3": "false",
+            "HasMod: |contains=DuduBertol.NewUpdatesCP": "false",
+            "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": "true"
+        }
+      },
+
+  //●Dam (ダムとの連携)
+      {
+        "Action": "Include",
+        "FromFile": "ModSupport/90_Dam.json",
+        "When": {
+            "Enable this mod": "true",
+            "Works with Dam mod": "true",
+            "Works with SecretWoodsExtraArea mod": "false",
+            "HasMod: |contains=Tikamin557.dam, Tikamin557.dam-MobileVersion": "true"
+        }
+      },
+
+  //●Secret Woods Extra Area (SWEAとの連携)
+      {
+        "Action": "Include",
+        "FromFile": "ModSupport/91_SecretWoodsExtraArea.json",
+        "When": {
+            "Enable this mod": "true",
+            "Works with Dam mod": "false",
+            "Works with SecretWoodsExtraArea mod": "true",
+            "HasMod: |contains=Tikamin557.CP.SecretWoodsExtraArea": "true"
+        }
+      }
+
+
+
+              ]//▼"Changes"の終了▼
+}

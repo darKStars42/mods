@@ -1,0 +1,122 @@
+{
+  "Changes": [
+	//Introduction
+	{
+            "LogName": "Fishmonger - Intro event",
+			"Action": "EditData",
+            "Target": "Data/Events/VoidWitchCult.TheFishmonger_Fishmonger_GI_Inside",
+            "Entries": {
+			"VoidWitchCult.CP.TheFishmongerNPC_Introduction/p TheFishmonger": "
+			event2/
+			-1000 -1000/
+			farmer 4 10 0 TheFishmonger 5 4 2/
+			skippable/
+			addConversationTopic GIFirstArrival/
+			viewport 4 10 true/
+			move farmer 1 0 0/
+			move farmer 0 -4 0/
+			textAboveHead TheFishmonger \"{{i18n:Event.Intro.Ahoy}}\"/
+			pause 500/
+			emote farmer 32/
+			pause 500/
+			speak TheFishmonger \"{{i18n:Event.Intro.Becareful}}\"/
+			jump farmer 4/
+			pause 500/
+			speak TheFishmonger \"{{i18n:Event.Intro.Dontworry}}\"/
+			viewport -1000 -1000/
+			end
+			"
+            }
+        },
+	//2 hearts
+		{
+            "LogName": "Fishmonger - 2 hearts event",
+			"Action": "EditData",
+            "Target": "Data/Events/IslandSouth",
+            "Entries": {
+			"VoidWitchCult.CP.TheFishmongerNPC_2Hearts/t 2200 2600/f TheFishmonger 500": "
+			starshoot/
+			-1000 -1000/
+			farmer 20 30 2/
+			addTemporaryActor TheFishmonger 16 64 21 46 2/
+			showFrame TheFishmonger 8/
+			skippable/
+			addConversationTopic 2HeartsEvent/
+			animate TheFishmonger false true 500 8 9 10 11/
+			viewport 25 40 clamp true/
+			move farmer 0 8 2/
+			pause 1000/
+			emote farmer 8/
+			pause 1000/
+			textAboveHead TheFishmonger \"{{i18n:Event.2Hearts.Ohhey}}\"/
+			pause 1000/
+			speak TheFishmonger \"{{i18n:Event.2Hearts.Sorry}}\"/
+			pause 700/
+			emote farmer 8/
+			pause 700/
+			speak TheFishmonger \"{{i18n:Event.2Hearts.Mermaids}}\"/
+			speak TheFishmonger \"{{i18n:Event.2Hearts.MermaidQ}}\"/
+			pause 300/
+			quickQuestion #{{i18n:Event.2Hearts.QQ1}}#{{i18n:Event.2Hearts.QQ2}}(break)speak TheFishmonger \"{{i18n:Event.2Hearts.QReply}}\"(break)speak TheFishmonger \"{{i18n:Event.2Hearts.Giddy}}\"/
+			pause 500/
+			emote farmer 60/
+			pause 800/
+			end
+			"
+            },
+        },
+	// 4 hearts
+		{
+            "LogName": "Fishmonger - 4 hearts event",
+			"Action": "EditData",
+            "Target": "Data/Events/IslandSouth",
+            "Entries": {
+			"VoidWitchCult.CP.TheFishmongerNPC_4Hearts/t 1400 1500/w sunny/f TheFishmonger 1000": "
+			EmilyDream/
+			-1000 -1000/
+			farmer 10 12 2 TheFishmonger 14 23 2/
+			skippable/
+			addConversationTopic 4HeartsEvent/
+			viewport 20 20 clamp true/
+			move farmer 0 11 1/
+			emote farmer 16/
+			pause 800/
+			speak TheFishmonger \"{{i18n:Event.4Hearts.Hello}}\"/
+			pause 500/
+			emote farmer 56/
+			pause 600/
+			speak TheFishmonger \"{{i18n:Event.4Hearts.Birdie}}\" /
+			pause 500 /
+			quickQuestion {{i18n:Event.4Hearts.HowAreYouQ}} #{{i18n:Event.4Hearts.HowAreYouQQ1}} #{{i18n:Event.4Hearts.HowAreYouQQ2}}(break)speak TheFishmonger \"{{i18n:Event.4Hearts.GoodToKnow}}\"(break)speak TheFishmonger \"{{i18n:Event.4Hearts.HowAreYouQQ1Reply}}\"/
+			pause 500/
+			speak TheFishmonger \"{{i18n:Event.4Hearts.ItsAlright}}\"/
+			pause 500/
+			emote TheFishmonger 12/
+			pause 600/
+			emote farmer 8/
+			pause 600/
+			speak TheFishmonger \"{{i18n:Event.4Hearts.Troubles}}\"/
+			pause 500 /
+			emote farmer 60 /
+			pause 600 /
+			speak TheFishmonger \"{{i18n:Event.4Hearts.Pathetic}}\" /
+			emote farmer 28 /
+			pause 500 /
+			quickQuestion #{{i18n:Event.4Hearts.PatheticQQ1}} #{{i18n:Event.4Hearts.PatheticQQ2}}(break)speak TheFishmonger \"{{i18n:Event.4Hearts.PatheticQQ1Reply}}\"(break)speak TheFishmonger \"{{i18n:Event.4Hearts.PatheticQQ2Reply}}\" /
+			pause 500 /
+			speak TheFishmonger \"{{i18n:Event.4Hearts.PatheticQQThankYou}}\" /
+			emote farmer 20 /
+			pause 500 /
+			speak TheFishmonger \"{{i18n:Event.4Hearts.PatheticToken}}\" /
+			jump farmer 4 /
+			emote farmer 16 /
+			pause 600 /
+			end
+			"
+            },
+        },
+  ]
+
+}
+
+//(0 = up, 1 = right, 2 = down, 3 = left)

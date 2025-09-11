@@ -1,0 +1,337 @@
+{
+  "Format": "2.7.0",
+  "ConfigSchema": {
+    "Pregnancy or Adoption": {
+      "AllowValues": "Pregnancy, Adoption",
+      "Default": "Adoption",
+      "Description": "Changes whether you have kids with Riley via pregnancy or adoption, if Pregnancy is selected; Riley will always be the one to become pregnant."
+    },
+    "Seasonal Outfits": {
+      "AllowValues": "On, Off",
+      "Default": "On",
+      "Description": "Enables or disables Riley's seasonal outfits"
+    }
+  },
+  "DynamicTokens": [
+    {
+      "Name": "RileyGender",
+      "Value": "{{Random:male, female}}"
+    },
+    {
+      "Name": "RileyMakeup",
+      "Value": "{{Random:true, true, false}}",
+      "When": {
+        "RileyGender": "female"
+      }
+    },
+    {
+      "Name": "RileyMakeup",
+      "Value": "{{Random:true, false, false}}",
+      "When": {
+        "RileyGender": "male"
+      }
+    },
+    {
+      "Name": "GNMTGenericNoun",
+      "Value": "{{i18n:GenericNounMale}}",
+      "When": {
+        "PlayerGender": "male",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTGenericNoun",
+      "Value": "{{i18n:GenericNounFemale}}",
+      "When": {
+        "PlayerGender": "female",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTGenericNoun",
+      "Value": "{{Lowercase:{{Random:{{Hana.GNMTokens/GenericNoun}}}}}}",
+      "When": {
+        "HasMod: |contains=Hana.GNMTokens": true
+      }
+    },
+    {
+      "Name": "GNMTAdultAntiquatedNoun1",
+      "Value": "{{i18n:GenericNounMale}}",
+      "When": {
+        "PlayerGender": "male",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTAdultAntiquatedNoun1",
+      "Value": "{{i18n:AdultAntiquatedNoun1Female}}",
+      "When": {
+        "PlayerGender": "female",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTAdultAntiquatedNoun1",
+      "Value": "{{Lowercase:{{Random:{{Hana.GNMTokens/AdultAntiquatedNoun}}}}}}",
+      "When": {
+        "HasMod: |contains=Hana.GNMTokens": true
+      }
+    },
+    {
+      "Name": "GNMTAdultAntiquatedNoun2",
+      "Value": "{{i18n:AdultAntiquatedNoun2Male}}",
+      "When": {
+        "PlayerGender": "male",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTAdultAntiquatedNoun2",
+      "Value": "{{i18n:AdultAntiquatedNoun2Female}}",
+      "When": {
+        "PlayerGender": "female",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTAdultAntiquatedNoun2",
+      "Value": "{{Lowercase:{{Random:{{Hana.GNMTokens/AdultAntiquatedNoun}}}}}}",
+      "When": {
+        "HasMod: |contains=Hana.GNMTokens": true
+      }
+    },
+    {
+      "Name": "GNMTAdjective",
+      "Value": "{{i18n:AdjectiveMale}}",
+      "When": {
+        "PlayerGender": "male",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTAdjective",
+      "Value": "{{i18n:AdjectiveFemale}}",
+      "When": {
+        "PlayerGender": "female",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTAdjective",
+      "Value": "{{Lowercase:{{Random:{{Hana.GNMTokens/Adjective}}}}}}",
+      "When": {
+        "HasMod: |contains=Hana.GNMTokens": true
+      }
+    },
+    {
+      "Name": "GNMTSubjectivePronoun",
+      "Value": "{{i18n:SubjectivePronounMale}}",
+      "When": {
+        "PlayerGender": "male",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTSubjectivePronoun",
+      "Value": "{{i18n:SubjectivePronounFemale}}",
+      "When": {
+        "PlayerGender": "female",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTSubjectivePronoun",
+      "Value": "{{Lowercase:{{Random:{{Hana.GNMTokens/SubjectivePronoun}}}}}}",
+      "When": {
+        "HasMod: |contains=Hana.GNMTokens": true
+      }
+    },
+    {
+      "Name": "GNMTObjectivePronoun",
+      "Value": "{{i18n:ObjectivePronounMale}}",
+      "When": {
+        "PlayerGender": "male",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTObjectivePronoun",
+      "Value": "{{i18n:ObjectivePronounFemale}}",
+      "When": {
+        "PlayerGender": "female",
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTObjectivePronoun",
+      "Value": "{{Lowercase:{{Random:{{Hana.GNMTokens/ObjectivePronoun}}}}}}",
+      "When": {
+        "HasMod: |contains=Hana.GNMTokens": true
+      }
+    },
+    {
+      "Name": "GNMTTermOfEndearment",
+      "Value": "{{i18n:TermOfEndearment}}",
+      "When": {
+        "HasMod: |contains=Hana.GNMTokens": false
+      }
+    },
+    {
+      "Name": "GNMTTermOfEndearment",
+      "Value": "{{Lowercase:{{Random:{{Hana.GNMTokens/TermOfEndearment}}}}}}",
+      "When": {
+        "HasMod: |contains=Hana.GNMTokens": true
+      }
+    }
+  ],
+  "Changes": [
+    {
+      "LogName": "Riley House World Map",
+      "Action": "EditImage",
+      "Target": "LooseSprites/map, LooseSprites/map_{{season}}",
+      "FromFile": "assets/World Map/Riley_{{season}}.png",
+      "ToArea": {
+        "X": 212,
+        "Y": 88,
+        "Width": 13,
+        "Height": 13
+      },
+      "PatchMode": "Overlay",
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false
+      }
+    },
+    {
+      "LogName": "Riley House World Map SVE",
+      "Action": "EditImage",
+      "Target": "LooseSprites/map, LooseSprites/map_{{season}}",
+      "FromFile": "assets/World Map/RileySVE_{{season}}.png",
+      "ToArea": {
+        "X": 230,
+        "Y": 92,
+        "Width": 7,
+        "Height": 8
+      },
+      "PatchMode": "Overlay",
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true
+      }
+    },
+    {
+      "LogName": "Riley's House on Minimap",
+      "Action": "EditData",
+      "Target": "Data/WorldMap",
+      "TargetField": [
+        "Valley",
+        "MapAreas"
+      ],
+      "Entries": {
+        "RileyHouse": {
+          "Id": "RileyHouse",
+          "ScrollText": "RileyHouse",
+          "Tooltips": [
+            {
+              "Id": "RileyHouse",
+              "Text": "{{i18n: RileyHouseName}}",
+              "PixelArea": {
+                "X": 212,
+                "Y": 90,
+                "Width": 13,
+                "Height": 11
+              }
+            }
+          ],
+          "WorldPositions": [
+            {
+              "Id": "RileyHouse",
+              "LocationName": "RileyHouse",
+              "MapPixelArea": {
+                "X": 214,
+                "Y": 95,
+                "Width": 3,
+                "Height": 2
+              }
+            }
+          ]
+        }
+      },
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false
+      }
+    },
+    {
+      "LogName": "Riley's House on Minimap SVE",
+      "Action": "EditData",
+      "Target": "Data/WorldMap",
+      "TargetField": [
+        "Valley",
+        "MapAreas"
+      ],
+      "Entries": {
+        "RileyHouse": {
+          "Id": "RileyHouse",
+          "ScrollText": "RileyHouse",
+          "Tooltips": [
+            {
+              "Id": "RileyHouse",
+              "Text": "{{i18n: RileyHouseName}}",
+              "PixelArea": {
+                "X": 231,
+                "Y": 92,
+                "Width": 5,
+                "Height": 7
+              }
+            }
+          ],
+          "WorldPositions": [
+            {
+              "Id": "RileyHouse",
+              "LocationName": "RileyHouse",
+              "MapPixelArea": {
+                "X": 232,
+                "Y": 95,
+                "Width": 3,
+                "Height": 2
+              }
+            }
+          ]
+        }
+      },
+      "When": {
+        "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Mail",
+      "Entries": {
+        "Riley4": "Hey @!^It's been a real blast getting to know you. Pelican Town is finally starting to feel like home, isn't it? Anyway I was just writing because I saw some cool seeds and thought of you. I don't know when you're supposed to plant them but I figured you would. ^ Best Wishes, Riley %item object 486 5 %%"
+      }
+    },
+    {
+      "LogName": "Riley Mail",
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_riley4": {
+          "Id": "{{ModId}}_riley4",
+          "Trigger": "LocationChanged",
+          "Condition": "PLAYER_HAS_DIALOGUE_ANSWER current 565608, !PLAYER_HAS_MAIL current Riley4 Any",
+          "Actions": [
+            "AddMail Current Riley4"
+          ]
+        }
+      }
+    },
+    {
+      "LogName": "Blank File Load",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Riley, Characters/Dialogue/MarriageDialogueRiley, Data/Events/RileyHouse, Strings/schedules/Riley, Characters/schedules/Riley",
+      "FromFile": "assets/blank.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/AppearanceData.json, data/Events.json, data/FestivalLocations.json, data/LocationData.json, data/NPCData.json, data/RileyStrings.json, data/Schedule.json, data/MovieData.json, data/Dialogue/Dialogue.json, data/Dialogue/FestivalDialogue.json, data/Dialogue/MarriageDialogue.json"
+    }
+  ]
+}

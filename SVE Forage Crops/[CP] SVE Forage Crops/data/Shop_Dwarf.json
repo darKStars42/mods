@@ -1,0 +1,108 @@
+{
+	"Changes": [
+
+		//-------------------------------
+		//      Diamond Flower
+		{
+			"LogName": "Dwarf's Shop - Diamond Flower",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "Dwarf", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.SVEForageCrops_DiamondFlowerSeeds": {
+					"Id": "ZoeyHoshi.SVEForageCrops_DiamondFlowerSeeds",
+					"ItemId": "ZoeyHoshi.SVEForageCrops_DiamondFlowerSeeds",
+					"IgnoreShopPriceModifiers": true
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.SVEForageCrops_DiamondFlowerSeeds",
+					"BeforeId": "(O)773"
+				}
+			],
+			"When": {
+				"EnableDiamondFlower": true,
+				"HasVisitedLocation": "Custom_DiamondCavern"
+			}
+		},
+
+		//-------------------------------
+		//       Mushroom Colony
+		{
+			"LogName": "Dwarf's Shop - Mushroom Colony",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "Dwarf", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.SVEForageCrops_MushroomColonySeeds": {
+					"Id": "ZoeyHoshi.SVEForageCrops_MushroomColonySeeds",
+					"ItemId": "ZoeyHoshi.SVEForageCrops_MushroomColonySeeds",
+					"IgnoreShopPriceModifiers": true,
+					"Condition": "SEASON fall"
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.SVEForageCrops_MushroomColonySeeds",
+					"BeforeId": "(O)773"
+				}
+			],
+			"When": {
+				"EnableMushroomColony": true
+			}
+		},
+
+		//-------------------------------
+		//      Poison Mushroom
+		{
+			"LogName": "Dwarf's Shop - Poison Mushroom",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "Dwarf", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.SVEForageCrops_PoisonMushroomSeeds": {
+					"Id": "ZoeyHoshi.SVEForageCrops_PoisonMushroomSeeds",
+					"ItemId": "ZoeyHoshi.SVEForageCrops_PoisonMushroomSeeds",
+					"IgnoreShopPriceModifiers": true,
+					"Condition": "SEASON summer fall"
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.SVEForageCrops_PoisonMushroomSeeds",
+					"BeforeId": "(O)773"
+				}
+			],
+			"When": {
+				"EnablePoisonMushroom": true
+			}
+		},
+
+		//-------------------------------
+		//      Red Baneberry
+		{
+			"LogName": "Dwarf's Shop - Red Baneberry",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "Dwarf", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.SVEForageCrops_RedBaneberrySeeds": {
+					"Id": "ZoeyHoshi.SVEForageCrops_RedBaneberrySeeds",
+					"ItemId": "ZoeyHoshi.SVEForageCrops_RedBaneberrySeeds",
+					"IgnoreShopPriceModifiers": true,
+					"Condition": "SEASON summer"
+				}
+			},
+			"MoveEntries": [
+				{
+					"Id": "ZoeyHoshi.SVEForageCrops_RedBaneberrySeeds",
+					"BeforeId": "(O)773"
+				}
+			],
+			"When": {
+				"EnableRedBaneberry": true
+			}
+		}
+	]
+}

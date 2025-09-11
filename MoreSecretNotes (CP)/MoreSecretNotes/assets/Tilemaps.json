@@ -1,0 +1,105 @@
+{
+	"Changes": [
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Backwoods",
+			"Priority": "Late",
+			"MapTiles": [
+				{
+					"Position": {
+						"X": 29,
+						"Y": 27
+					},
+					"Layer": "Buildings",
+					"SetTilesheet": "outdoor",
+					"SetIndex": "114",
+					"SetProperties": {
+						"Action": "PEEM_InteractionGetItem PEEM.Test.Pickup.BackwoodsArtifact"
+					}
+				},
+				{
+					"Position": {
+						"X": 29,
+						"Y": 27
+					},
+					"Layer": "Buildings",
+					"SetTilesheet": "outdoor",
+					"SetIndex": "114"
+				}
+			],
+			"When": {
+				"HasFlag": "{{ModId}}_24Read"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "PEEM/ItemPickups",
+			"Entries": {
+				"PEEM.Test.Pickup.BackwoodsArtifact": {
+					"ID": "PEEM.Test.Pickup.BackwoodsArtifact",
+					"ItemID": "(O)101",
+					"Quantity": 1,
+					"DaysToRefresh": 4000000,
+					"LocationName": "Backwoods",
+					"Tile": {
+						"X": "29",
+						"Y": "27"
+					}
+				}
+			}
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Town",
+			"MapTiles": [
+				{
+					"Position": {
+						"X": 101,
+						"Y": 50
+					},
+					"Layer": "Front",
+					"Remove": true
+				},
+				{
+					"Position": {
+						"X": 101,
+						"Y": 50
+					},
+					"Layer": "Buildings",
+					"SetTilesheet": "Town",
+					"SetIndex": "1931"
+				},
+				{
+					"Position": {
+						"X": 101,
+						"Y": 50
+					},
+					"Layer": "Buildings",
+					"SetProperties": {
+						"Action": "PEEM_InteractionGetItem PEEM.Test.Pickup.TownDirection"
+					}
+				}
+			],
+			"When": {
+				"HasFlag": "{{ModId}}_25Read"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "PEEM/ItemPickups",
+			"Entries": {
+				"PEEM.Test.Pickup.TownDirection": {
+					"ID": "PEEM.Test.Pickup.TownDirection",
+					"ItemID": "(F){{ModId}}_Statuer",
+					"Quantity": 1,
+					"DaysToRefresh": 4000000,
+					"LocationName": "Town",
+					"Tile": {
+						"X": "101",
+						"Y": "50"
+					}
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,286 @@
+{
+    "Changes": [
+        {
+            "LogName": "Load data for White Sheep",
+            "Action": "EditData",
+            "Target": "Data/FarmAnimals",
+            "Fields": {
+                "Sheep": {
+					"AlternatePurchaseTypes": [
+					{
+						"AnimalIds": [
+						"Sheep",
+						"Black Sheep",
+						]
+						},
+						],
+						},
+			},
+		},
+		 {
+            "LogName": "Load data for Black Sheep",
+            "Action": "EditData",
+            "Target": "Data/FarmAnimals",
+            "Entries": {
+				"Black Sheep": {
+					"DisplayName": "{{i18n:TMT.TrentNewAnimals_Black_Sheep.name}}",
+					"House": "Barn",
+					"Gender": "Female",
+					"SellPrice": 8000,
+					"PurchasePrice": -1,
+					"RequiredBuilding": "Deluxe Barn",
+					"UnlockCondition": null,
+					"AlternatePurchaseTypes": null,
+					"EggItemIds": null,
+					"IncubationTime": -1,
+					"IncubatorParentSheetOffset": 1,
+					"BirthText": null,
+					"DaysToMature": 4,
+					"CanGetPregnant": true,
+					"DaysToProduce": 3,
+					"HarvestType": "HarvestWithTool",
+					"HarvestTool": "Shears",
+					"ProduceItemIds": [
+					{
+						"Id": "Default",
+						"Condition": null,
+						"MinimumFriendship": 0,
+						"ItemId": "TMT.TrentNewAnimals_Black_Wool"
+						}
+						],
+					"DeluxeProduceItemIds": [],
+					"ProduceOnMature": true,
+					"FriendshipForFasterProduce": 900,
+					"DeluxeProduceMinimumFriendship": 200,
+					"DeluxeProduceCareDivisor": 1200.0,
+					"DeluxeProduceLuckMultiplier": 0.0,
+					"CanEatGoldenCrackers": true,
+					"ProfessionForHappinessBoost": 3,
+					"ProfessionForQualityBoost": 3,
+					"ProfessionForFasterProduce": 3,
+					"Sound": "sheep",
+					"BabySound": null,
+					"Texture": "{{InternalAssetKey: assets/SheepBlack.png}}",
+					"HarvestedTexture": "{{InternalAssetKey: assets/SheepBlackSheared.png}}",
+					"BabyTexture": "{{InternalAssetKey: assets/SheepBlackBaby.png}}",
+					"UseFlippedRightForLeft": true,
+					"UseDoubleUniqueAnimationFrames": false,
+					"SleepFrame": 12,
+					"SpriteWidth": 32,
+					"SpriteHeight": 32,
+					"EmoteOffset": {
+						"X": 0,
+						"Y": 0
+						},
+					"SwimOffset": {
+						"X": 0,
+						"Y": 112
+						},
+					"Skins": null,
+					"ShadowWhenBabySwims": null,
+					"ShadowWhenBaby": null,
+					"ShadowWhenAdultSwims": null,
+					"ShadowWhenAdult": null,
+					"CanSwim": false,
+					"BabiesFollowAdults": false,
+					"GrassEatAmount": 4,
+					"HappinessDrain": 5,
+					"UpDownPetHitboxTileSize": "1.5, 1.75",
+					"LeftRightPetHitboxTileSize": "1.75, 1.25",
+					"BabyUpDownPetHitboxTileSize": "1, 1.75",
+					"BabyLeftRightPetHitboxTileSize": "1.75, 1",
+					"StatToIncrementOnProduce": null,
+					"ShowInSummitCredits": true,
+					"CustomFields": null
+						},        
+					},
+		},
+		{
+            "Action": "EditData",
+			"LogName": "Sheep Object Data",
+			"Target": "Data/Objects",
+			"Entries": {			
+			"TMT.TrentNewAnimals_Black_Wool":{
+				"Name": "TMT.TrentNewAnimals_Black_Wool",
+				"DisplayName": "{{i18n:TMT.TrentNewAnimals_Black_Wool.name}}",
+				"Description": "{{i18n:TMT.TrentNewAnimals_Black_Wool.description}}",
+				"Type": "Basic",
+				"Category": -18,
+				"Price": 340,
+				"Texture": "{{InternalAssetKey: assets/Black_Wool.png}}",
+				"SpriteIndex": "0",
+				"Edibility": -300,	
+				"ContextTags": ["color_black"],
+				},
+			"TMT.TrentNewAnimals_Black_Cloth":{
+				"Name": "TMT.TrentNewAnimals_Black_Cloth",
+				"DisplayName": "{{i18n:TMT.TrentNewAnimals_Black_Cloth.name}}",
+				"Description": "{{i18n:TMT.TrentNewAnimals_Black_Cloth.description}}",
+				"Type": "Basic",
+				"Category": -26,
+				"Price": 470,
+				"Texture": "{{InternalAssetKey: assets/Black_Cloth.png}}",
+				"SpriteIndex": "0",
+				"Edibility": -300,	
+				"ContextTags": ["color_black","item_blackcloth"],
+				},
+            }
+        },
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [ "(BC)17", "OutputRules" ],
+			"Entries": {
+				"TMT.TrentNewAnimals_Black_Wool": {
+					"Id": "TMT.TrentNewAnimals_Black_Wool",
+					"Triggers": 
+						[
+							{
+								"RequiredItemId": "TMT.TrentNewAnimals_Black_Wool"
+							}
+						],
+					"OutputItem":
+						[
+							{
+								"ItemId": "TMT.TrentNewAnimals_Black_Cloth"
+							}
+						],
+					"StackModifiers": [
+					{
+						"Id": "DoubleQuality",
+						"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+						"Modification": "Multiply",
+						"Amount": 2.0,
+						"RandomAmount": null
+						}
+					],
+					"StackModifierMode": "Stack",
+					"QualityModifiers": null,
+					"QualityModifierMode": "Stack",
+					"MinutesUntilReady": 240
+				},
+			},
+		}, 
+{
+			"Action": "EditData",
+			"LogName": "Shirt",
+			"Target": "Data/Shirts",
+			"Entries": { 
+			"TMT.TrentNewAnimals_Mimic_Shirt": {
+				"Name": "Mimic Shirt",
+				"DisplayName": "{{i18n:TMT.TrentNewAnimals_Mimic_Shirt.name}}",
+				"Description": "{{i18n:TMT.TrentNewAnimals_Mimic_Shirt.description}}",
+				"Price": 50,
+				"Texture": "Clothing\\TMT.TrentNewAnimals_Shirts",
+				"SpriteIndex": 0,
+				"DefaultColor": null,
+				"CanBeDyed": false,
+				"IsPrismatic": false,
+				"HasSleeves": true,
+				"CanChooseDuringCharacterCustomization": false,
+				},
+				"TMT.TrentNewAnimals_Black_Vest": {
+				"Name": "Black Vest",
+				"DisplayName": "{{i18n:TMT.TrentNewAnimals_Black_Vest.name}}",
+				"Description": "{{i18n:TMT.TrentNewAnimals_Black_Vest.description}}",
+				"Price": 50,
+				"Texture": "Clothing\\TMT.TrentNewAnimals_Shirts",
+				"SpriteIndex": 2,
+				"DefaultColor": null,
+				"CanBeDyed": false,
+				"IsPrismatic": false,
+				"HasSleeves": false,
+				"CanChooseDuringCharacterCustomization": false,
+				}
+		},	
+},		
+		{
+			"Action": "EditData",
+			"LogName": "Mimic Shirt",
+			"Target": "Data/TailoringRecipes",
+			"Entries": {
+				"Mimic Shirt":
+				{
+				"FirstItemTags": [
+				"item_cloth"
+				],
+				"SecondItemTags": [
+				"item_blackcloth"
+				],
+				"SpendRightItem": true,
+				"CraftedItemId": "(S)TMT.TrentNewAnimals_Mimic_Shirt",
+				"CraftedItemIds": null,
+				"CraftedItemIdFeminine": null,
+				"Id": "(S)TMT.TrentNewAnimals_Mimic_Shirt"
+				},
+				"Black Vest":
+				{
+				"FirstItemTags": [
+				"item_blackcloth"
+				],
+				"SecondItemTags": [
+				"item_blackcloth"
+				],
+				"SpendRightItem": true,
+				"CraftedItemId": "(S)TMT.TrentNewAnimals_Black_Vest",
+				"CraftedItemIds": null,
+				"CraftedItemIdFeminine": null,
+				"Id": "(S)TMT.TrentNewAnimals_Black_Vest"
+				},
+				"Rider Bandana":
+				{
+				"FirstItemTags": [
+				"item_blackcloth"
+				],
+				"SecondItemTags": [
+				"alcohol_item"
+				],
+				"SpendRightItem": true,
+				"CraftedItemId": "(H)TMT.TrentNewAnimals_Rider_Bandana",
+				"CraftedItemIds": null,
+				"CraftedItemIdFeminine": null,
+				"Id": "(H)TMT.TrentNewAnimals_Rider_Bandana"
+				},
+			},
+		},
+		{
+            "LogName": "Load Rider",
+            "Action": "Load",
+            "Target": "Hats/TMT.TrentNewAnimals_Rider_Bandana",
+            "FromFile": "assets/Rider_Bandana.png"
+        },
+		{
+			"Action": "EditData",
+			"LogName": "Hat",
+			"Target": "Data/hats",
+			"Entries": {
+		"TMT.TrentNewAnimals_Rider_Bandana": "Rider Bandana/{{i18n:TMT.TrentNewAnimals_Rider_Bandana.description}}/false/true//{{i18n:TMT.TrentNewAnimals_Rider_Bandana.name}}/0/Hats\\TMT.TrentNewAnimals_Rider_Bandana",
+			},
+		},	
+		 {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+	  "LogName": "GiftTastes",
+	  "TextOperations": [
+	   {
+         "Operation": "Append",
+         "Target": ["Fields", "Emily", 1],
+         "Value": "TMT.TrentNewAnimals_Black_Wool TMT.TrentNewAnimals_Black_Cloth",
+         "Delimiter": " " // if there are already values, add a space between them and the new ones
+      },
+	   {
+         "Operation": "Append",
+         "Target": ["Fields", "Sebastian", 1],
+         "Value": "TMT.TrentNewAnimals_Black_Cloth",
+         "Delimiter": " " // if there are already values, add a space between them and the new ones
+      },
+	  {
+         "Operation": "Append",
+         "Target": ["Fields", "Abigail", 1],
+         "Value": "TMT.TrentNewAnimals_Black_Cloth",
+         "Delimiter": " " // if there are already values, add a space between them and the new ones
+      },
+	  ],
+	  },
+		],
+		}

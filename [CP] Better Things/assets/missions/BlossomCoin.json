@@ -1,0 +1,59 @@
+{
+  "Changes": [
+   {
+      "Action": "EditData",
+      "Target": "Data/SpecialOrders",
+      "Entries": {
+        "maat.BetterThings_BlossomCoin": {
+          "Name": "[maat.BetterThings_coin_Name]",
+          "Requester": "Emily",
+          "Duration": "TwoWeeks",
+          "Repeatable": "true",
+          "RequiredTags": "island",
+          "OrderType": "",
+          "SpecialRule": "",
+          "Text": "[Maat.BetterThings_coin_Text]",
+          "ItemToRemoveOnEnd": null,
+          "MailToRemoveOnEnd": null,
+          "RandomizedElements": null,
+          "Objectives": [
+            {
+              "Type": "Collect",
+              "Text": "[maat.BetterThings_coin_Objective_0_Text]",
+              "RequiredCount": "3",
+              "Data": {
+                "AcceptedContextTags": "item_golden_coconut"
+              }
+            },
+            {
+              "Type": "Deliver",
+              "Text": "[maat.BetterThings_coin_Objective_1_Text]",
+              "RequiredCount": "3",
+              "Data": {
+                "AcceptedContextTags": "item_golden_coconut",
+				"Message": "{{i18n:blossom.coin.dialoguegift}}",
+                "TargetName": "Emily"
+              }
+            }
+          ],
+          "Rewards": [
+            {
+              "Type": "Money",
+              "Data": {
+                "Amount": "35000"
+              }
+            },
+            {
+              "Type": "Mail",
+              "Data": {
+                "MailReceived": "maat.BetterThings_blossomcoin_mail",
+                "NoLetter": "false"
+              }
+            }
+          ]
+        }
+      },
+     "When": { "NewMissions": true, "NewStore": true }
+    }
+   ]
+}

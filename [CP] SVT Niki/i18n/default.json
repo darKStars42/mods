@@ -1,0 +1,786 @@
+{ 
+"SVTNiki.DisplayName": "Niki",
+
+// ***** CONFIG MENU *****
+"config.AlwaysByBus.name": "Remove Niki's Car",
+"config.AlwaysByBus.description": "Makes Niki always arrive by bus, whether the bus is repaired or not. If set true, removes the car parked at the bus stop and changes Niki spawning location slightly. By default, Niki arrives by car at first, but rides the bus when it is restored.",
+
+"config.CarAppearanceConfig.name": "Change Niki's Car Appearance",
+"config.CarAppearanceConfig.description": "If set to custom, recolors the car according to Niki's color palette. Defaults to movie car.",
+"config.CarAppearanceConfig.values.Movie": "Movie Car",
+"config.CarAppearanceConfig.values.Custom": "Custom",
+
+"config.IgnoreShaneEvent.name": "Ignore Shane Heart Events",
+"config.IgnoreShaneEvent.description": "Makes sure you can see Niki's heart events regardless of Shane events. Defaults to false.",
+"config.section.Festivals.name": "Festivals",
+"config.EggFestival.name": "Egg Festival",
+"config.EggFestival.description": "Niki attends the Egg Festival.",
+"config.FlowerDance.name": "Flower Dance",
+"config.FlowerDance.description": "Niki attends the Flower Dance.",
+
+
+// ***** MAIL *****
+// Change vanilla SVT mail
+"SVTNiki.mail.newsstory": "Greetings, @.^It is our pleasure to inform you that your farm will be featured in the 'up & coming' column of the Stardew Valley Tribune! Congratulations. We're impressed with your quick progress.^One of our reporters will be in Pelican Town soon to gather more details for the article.^^Keep up the amazing work.   -SVT[#]Stardew Valley Tribune",
+
+// after Niki0FirstInterview, earned a bit more money
+"SVTNiki.mail.SVT.News": "^^^^UP & COMING: New Life Breathed into Abandoned Farm^    By Niki Papadopoulou, Staff Journalist^The long-neglected farmland outside Pelican Town has been revitalized by the new farmer, @, who has quickly become the talk of the valley. Within mere seasons, the once overgrown property has become a thriving agricultural hub... (Page 7) [letterbg Mods/ConsciouslyLazy.SVTNiki/letterBG 0][textcolor black][#]SVT: Up & Coming", // Should be checked in-game when translated. It should take up just 1 page(recommended). Use "^  -^^^^"(without quotation marks) when changing page, if necessary.
+
+"SVTNiki.mail.SVT": "@,^Here's the article from the Stardew Valley Tribune! Congratulations again on all the amazing progress you've made.^I'll still be visiting from time to time for interviews. SVT plans to feature Pelican Town when there are new events. If I write about your farm, I'll send you a copy!^^See you in town.  ^   -Niki, Staff Journalist[#]Note From Niki",
+
+// After 4 heart event
+"SVTNiki.mail.PillsQuest": "Hey, @.^Sorry about the awkward situation yesterday. I spoke with Shane directly afterward and he accepted my apology. Everything's fine now, so no worries!^^On a different note, I think I might've left my pill container somewhere in town. I don't have time to search for it myself, so I was hoping you could help me out. If you happen to see it, would you mind grabbing it for me? I know you're busy, but I'd really appreciate it if you bring it to me as soon as possible.  ^   -Niki %item quest 29852900 %%[#]Niki Asks For A Favor",
+
+// 5 heart event
+"SVTNiki.mail.Offer.BeforeVisit": "@,^I'd like to visit and see how you're doing on the farm! If you have time, I ask you to give a few words about it too. I've been working on my article, and I think this will help me capture the essence of your hard work. I'll drop by soon!  ^   -Niki, Staff Journalist[#]Niki Asks For an Interview",
+"SVTNiki.mail.Offer.Farming": "@,^I looked up a few tips about farming and found this. I hope it helps!  ^   -Niki %item id (O)SkillBook_0 1 %%[#]A Gift From Niki",
+"SVTNiki.mail.Offer.Foraging": "@,^I learned a bit about foraging and thought you'd find this useful. I hope it helps!  ^   -Niki %item id (O)Book_Woodcutting 1 %%[#]A Gift From Niki",
+"SVTNiki.mail.Offer.Fishing": "@,^I looked into fishing techniques and found something for you. Happy fishing!  ^   -Niki %item id (O)SkillBook_1 1 %%[#]A Gift From Niki",
+"SVTNiki.mail.Offer.Mining": "@,^Mining is a bit out of my depth, but this should help you dig deeper!  ^   -Niki %item id (O)SkillBook_3 1 %%[#]A Gift From Niki",
+"SVTNiki.mail.Offer.Combat": "@,^I looked up a few tips about combat. I hope this helps you stay safe in your adventures!  ^   -Niki %item id (O)Book_Defense 1 %%[#]A Gift From Niki",
+
+// After 8 heart event
+"SVTNiki.mail.Horseback.News": "^^^^HORSEBACK RIDING: A DANCE OF TRUST^    By Niki Papadopoulou, Staff Journalist^As I gripped the reins for the first time, I discovered a world beyond simple transportation. The rhythmic hoofbeats, the connection between rider and mount...        (Continues on page 5)[letterbg Mods/ConsciouslyLazy.SVTNiki/letterBG 0][textcolor black][#]SVT: Horseback Riding", // Should be checked in-game when translated. It should take up just 1 page(recommended). Use "^  -^^^^"(without quotation marks) when changing page, if necessary.
+
+"SVTNiki.mail.Horseback": "@,^This one's not really about you, but you were there, so I thought I should send you. I'll admit, I wasn't totally honest in the article. I got scared and couldn't get down on my own... you had to grab me! Thanks again for giving a hand.  ^   -Niki[#]Note From Niki",
+
+// 10 heart event
+"SVTNiki.mail.Final.Interview": "@,^Could I interview you for a full-length feature on the farm? I got permission from Gunther to use the library, so let's meet there this Saturday. Thanks!  ^   -Niki, Staff Journalist[#]Niki Asks For an Interview 2",
+"SVTNiki.Before.Interview": "Don't forget, this Saturday at the library!",
+"SVTNiki.mail.Final.0": "@,^I quit!! Yay!!! It feels so weird being able to sleep in now, though my eyes still pop open early out of habit. Guess that means I'll be in town bright and early to see you like always!^^Oh, and do you remember our first interview at Town Square? You were just passing by, and I asked you for a quick chat, you said, \"I'm busy\" and just walked away. Honestly, I thought I'd never get close to you after that. I might've even thought of you as a bit of a... well, you know. But here we are now. It's so wild to think how much things can change.^Take care, @. Can't wait to see you!  ^   -Love, Niki[#]Letter From My Girlfriend",
+
+"SVTNiki.mail.Final.News.Option1": "^^^^ONE SMALL STEP: FROM CITY LIFE TO FARM LIFE^    By Niki Papadopoulou, Staff Journalist^One resident of Pelican Town shares their decision to leave the city behind and settle down on an old farm. \"I've grown sick of the city,\" the farmer explained. \"I needed a change, an escape.\"^            (Continues on page 10)[letterbg Mods/ConsciouslyLazy.SVTNiki/letterBG 0][textcolor black][#]SVT: Niki's Last SVT Article", // Takes up 1 page in vanilla font. Should be checked in-game when translated. It should take up just 1 page(recommended). Use "^  -^^^^"(without quotation marks) when changing page, if necessary.
+
+"SVTNiki.mail.Final.News.Option2": "^^^^A LEGACY IN FULL BLOOM^    By Niki Papadopoulou, Staff Journalist^When asked why they chose the farmer's life, one resident revealed a touching story: \"It was my grandfather's wish. Living here feels like honoring his memory.\".^            (Continues on page 10)[letterbg Mods/ConsciouslyLazy.SVTNiki/letterBG 0][textcolor black][#]SVT: Niki's Last SVT Article", // Should be checked in-game when translated. It should take up just 1 page(recommended). Use "^  -^^^^"(without quotation marks) when changing page, if necessary.
+
+"SVTNiki.mail.Final.News.Option3": "^^^^CULTIVATING JOY, ONE ROW AT A TIME^    By Niki Papadopoulou, Staff Journalist^Farming isn't just about crops; for one Pelican Town farmer, it's a way of life filled with passion.^\"It's just fun!\" they exclaimed with a grin. Their infectious enthusiasm is a reminder to find joy in the work we choose to do. (Continues on page 10)[letterbg Mods/ConsciouslyLazy.SVTNiki/letterBG 0][textcolor black][#]SVT: Niki's Last SVT Article", // Should be checked in-game when translated. It should take up just 1 page(recommended). Use "^  -^^^^"(without quotation marks) when changing page, if necessary.
+
+"SVTNiki.mail.Final": "@,^This is my last article. I quit!! Yay!!! It feels so weird being able to sleep in now, though my eyes still pop open early out of habit. Guess that means I'll be in town bright and early to see you like always!^Oh, and do you remember our first interview at Town Square? You were just passing by, and I asked you for a quick chat. I couldn't use that in any of my earlier articles, so I decided to include it in this one. It felt like the perfect way to wrap things up, looking back at where it all started.^It's so wild to think how far we've come.^Take care, @. Can't wait to see you!  ^   -Love, Niki[#]Letter From My Girlfriend",
+
+// When Community Center is completed
+"SVTNiki.mail.cc_Complete.News": "^^^^COMMUNITY CENTER MIRACULOUSLY RESTORED OVERNIGHT^    By Niki Papadopoulou, Staff Journalist^The long-abandoned Community Center has been magically restored, leaving Pelican Town in awe.^Mayor Lewis shared his excitement, saying, \"It was like magic — one day it was in ruins, and the next, it's as if time turned back.^  -^^^^Now our town has its heart again.\" Marnie, a local rancher, couldn't contain her joy, adding, \"When I saw it back to its old glory, I danced in front of it! It's just wonderful to have it restored.\"^Though no one knows the exact details, it's clear the restoration has brought a renewed sense of pride and togetherness to Pelican Town.[letterbg Mods/ConsciouslyLazy.SVTNiki/letterBG 0][textcolor black][#]SVT 3", // Should be checked in-game when translated.
+"SVTNiki.mail.cc_Complete": "@,^I just had to share this with you! Everyone's talking about the Community Center, and I couldn't help but notice how often you were visiting it before all this happened. Were you secretly taking care of it? Just a little speculation of mine... Either way, you deserve some credit for this incredible transformation.  ^   -Niki, Staff Journalist[#]Note From Niki 2",
+
+// ***** QUEST *****
+"SVTNiki.PillsQuest": "Niki's Pills",
+"SVTNiki.PillsQuest.description": "Niki lost her pill container after the incident with Shane. She's asking you to find and return it as soon as possible.",
+"SVTNiki.PillsQuest.objective": "Find and return Niki's pill container.",
+"SVTNiki.PillsQuest.Delivered": "This!! You found it!$1#$b#Oh, I must've left them there after talking to Shane. I was in a hurry and I probably just forgot...#$b#Now I can endure for the rest of the month. Thank you.$1",
+
+// ***** OBJECTS *****
+"SVTNikiPills.DisplayName": "Pill Container",
+"SVTNikiPills.Description": "It's for depression.",
+
+// ***** HEART EVENTS *****
+
+// Introduction (0 hearts)
+"SVTNiki.Intro.1": "Hello! I'm Niki, a journalist from the Stardew Valley Tribune.#$b#You probably saw the mail we sent about featuring your farm in our 'Up & Coming' column?#$b#I'm here to learn more about your story and capture it for the article.",
+"SVTNiki.Intro.2": "This place truly looks wonderful! I'm glad I'm here.$1#$b#I'll be around. If you have time for an interview, just talk to me, okay?",
+"SVTNiki.Intro.end": "You'll see me around on weekdays and in the evenings on weekends.#$e#In the meantime, I'm planning to get to know the other villagers better and gather their stories for my articles.",
+
+// The First Interview (0 hearts)
+"SVTNiki.FirstInterview.1": "...so, Mayor Lewis, in your two decades of leadership, what do you think has been the most significant change in Pelican Town?",
+"SVTNiki.FirstInterview.2.Lewis": "Hmm, well, that's not an easy question, Niki. Pelican Town's stayed a quiet, close-knit community for a long time.#$b#But I'd say the arrival of new faces, like our new farmer @, has been a breath of fresh air.",
+"SVTNiki.FirstInterview.3": "It sounds like @ has been quite the talk of the town. Tell me, how would you describe ${his^her^their}$ impact on the community?",
+"SVTNiki.FirstInterview.4.Lewis": "Oh, {{PlayerName}}!",
+"SVTNiki.FirstInterview.4": "It's you!",
+"SVTNiki.FirstInterview.5": "What a delightful surprise. I wasn't expecting to see you here.",
+"SVTNiki.FirstInterview.6.Lewis": "We were just talking about you, @.",
+"SVTNiki.FirstInterview.7": "I was speaking with Mayor Lewis about this wonderful town. He's been telling me all about its history and charm.",
+"SVTNiki.FirstInterview.8": "Since you're here, do you mind answering one quick question about your farm?",
+"SVTNiki.FirstInterview.9.Option0": "Sure",
+"SVTNiki.FirstInterview.9.Option1": "I'm busy",
+"SVTNiki.FirstInterview.10": "Wonderful! It won't take long, I promise.",
+"SVTNiki.FirstInterview.11": "So, what inspired you to leave your old life behind and start farming?",
+"SVTNiki.FirstInterview.12.Option1": "I've grown sick of the city.",
+"SVTNiki.FirstInterview.12.Option2": "I'm living by Grandpa's will.",
+"SVTNiki.FirstInterview.12.Option3": "Farming is fun!",
+"SVTNiki.FirstInterview.12.Option1.Response": "I completely get that. The city can feel so suffocating. Moving here must have been a refreshing change.",
+"SVTNiki.FirstInterview.12.Option1.Response.Lewis": "It's a slower pace of life, for sure, but I think it grows on you.",
+"SVTNiki.FirstInterview.12.Option2.Response": "That's really touching. It must feel meaningful to carry on his legacy.",
+"SVTNiki.FirstInterview.12.Option2.Response.Lewis": "Your grandpa would be proud of you, @.",
+"SVTNiki.FirstInterview.12.Option3.Response": "I love that enthusiasm!",
+"SVTNiki.FirstInterview.12.Option3.Response.Lewis": "That's the spirit! Farming is fun if you don't mind the dirt and sweat.$h",
+"SVTNiki.FirstInterview.13.Lewis": "You see, Niki? That's the kind of determination that keeps Pelican Town alive.",
+"SVTNiki.FirstInterview.14": "I couldn't agree more. Thank you for your time, @.",
+"SVTNiki.FirstInterview.15": "Now, Mayor Lewis. About that earlier...",
+"SVTNiki.FirstInterviewFail.1": "Oh, I completely understand. Farming keeps you busy, I'm sure. Another time, perhaps.#$b#Have a great day, @!",
+
+// About Gotoro (2 hearts)
+"SVTNiki.Gotoro.1.Sam": "...I heard some things about our national enemy, the Gotoro Empire.#$b#Those people all seem to be completely barbaric. They're like animals with no morals. I hope Dad is—$s", // year 1
+"SVTNiki.Gotoro.1.Sam_2": "...so Dad was telling me about our national enemy, the Gotoro Empire. Those people are completely barbaric. They're all like animals with no morals. Because of them, my Dad is—$s", // year 2
+"SVTNiki.Gotoro.2": "Excuse me, Sam. I don't mean to interrupt, but don't you think calling them barbaric is... unfair?$3",
+"SVTNiki.Gotoro.3.Sam": "Oh? What do you know? My Dad is fighting in that war, and you're telling me to feel sorry for them?", // year 1
+"SVTNiki.Gotoro.3.Sam_2": "Oh? What do you know? My dad fought in that war, and you're telling me to feel sorry for them?", // year 2
+"SVTNiki.Gotoro.4": "I'm not excusing anyone's actions. But aren't they just like us, people caught in the middle of something bigger than themselves?$3",
+"SVTNiki.Gotoro.5.Sam": "It's been 3 years since I've seen my Dad. And it's all because of them. You don't understand what it's like.#$b#There are stories I've heard multiple times... you don't believe any of them. do you?$a", // year 1
+"SVTNiki.Gotoro.5.Sam_2": "You don't know what it's like. You wouldn't believe the stories my dad has told me.$a", // year 2
+"SVTNiki.Gotoro.6": "Stories... or propaganda?$3",
+"SVTNiki.Gotoro.7": "You do know the Ferngill Republic has its own agenda, right? Conflict isn't black and white, Sam. Every story has multiple perspectives.$3", // year 1
+"SVTNiki.Gotoro.7.Sam_2": "My dad lived it. He was stuck in one of their prison camps, barely treated like a person! You think that's propaganda?$a", // year 2
+"SVTNiki.Gotoro.8": "I'm just saying the Gotoro people are human, too. They've got families too. Governments make wars, not people.$3",
+"SVTNiki.Gotoro.9.Sam": "You've got no idea what you're talking about. You weren't there. You didn't see what they did to our soldiers!$a", // year 1
+"SVTNiki.Gotoro.9.Sam_2": "You've got no idea what you're talking about. You weren't there. You didn't see what they did to him!$a", // year 2
+"SVTNiki.Gotoro.10.Sam": "You're just... poking around for your little articles!$a",
+"SVTNiki.Gotoro.11": "Maybe I am.$3",
+"SVTNiki.Gotoro.11.1": "...but is it really okay to direct unfocused anger at them?$2",
+"SVTNiki.Gotoro.12": "Oh. Hi, @. I didn't notice you were there.",
+"SVTNiki.Gotoro.12.1": ".......$3#$b#*sigh*...$2",
+"SVTNiki.Gotoro.12.2": "Am I being a nuisance in this village?$2#$b#I just want to know the truth... but it feels like no one here wants to talk about the war in any real way.$3#$b#They all just... swear at the Gotoro Empire and move on, like that's the end of it.$3#$b#I wanted to bring some perspective, but it seems like I'm the problem.$3",
+"SVTNiki.Gotoro.13.Option1": "You were right to bring it up. Someone has to question things.",
+"SVTNiki.Gotoro.13.Option2": "You're doing what a journalist should do.",
+"SVTNiki.Gotoro.13.Option3": "You shouldn't push people on sensitive topics.",
+"SVTNiki.Gotoro.13.Option1.Response": "Thank you. It's good to hear that I'm not completely off base.#$b#Maybe I'll try again, more carefully this time.",
+"SVTNiki.Gotoro.13.Option2.Response": "Thanks for saying that. I really needed the encouragement.#$b#Journalism is about truth, even when it's uncomfortable.",
+"SVTNiki.Gotoro.13.Option3.Response": "You're right. I was pushing too hard. I should've been more considerate.#$b#I'll try to be more careful from now on.$3",
+"SVTNiki.Gotoro.14": "I'm sorry for dragging you into this... Thanks for listening. It means a lot.",
+
+// About Shane (4 hearts)
+"SVTNiki.AboutShane.1": "Marnie, thanks for showing me the animals. Every animal seemed to be in great care.#$b#Especially the horses!$1",
+"SVTNiki.AboutShane.2.Marnie": "I'm glad you liked them. Horses really are amazing animals, aren't they?",
+"SVTNiki.AboutShane.3": "They were beautiful. If I had the time, I could have spent all day just admiring them.$1#$b#I wish I could ride one someday... Maybe in another life, huh?",
+"SVTNiki.AboutShane.4.Marnie": "If you ever want to try riding, I'd be happy to teach you. You love horses so much, I'm sure you'd do great!",
+"SVTNiki.AboutShane.5": "That's so sweet of you. But honestly, I don't think I'd even know where to start.$1#$b#Loving them is easy, but actually riding one? That feels like a whole different world!",
+"SVTNiki.AboutShane.5.1": "I should go now. @ is waiting, after all. It was nice chatting with you, Marnie.",
+"SVTNiki.AboutShane.6": "Hey there!",
+"SVTNiki.AboutShane.6.1": "You're Shane, right? Marnie's told me about you.",
+"SVTNiki.AboutShane.7.Shane": "Yeah, and? What do you want?",
+"SVTNiki.AboutShane.8": "Oh, just saying hi. And, um...$3#$b#You seem like you're going through a lot, and I thought maybe I could help.",
+"SVTNiki.AboutShane.8.1.Shane": "Help?",
+"SVTNiki.AboutShane.9":  "If you ever need someone to talk to, I'm a good listener. It's what I do for a living.",
+"SVTNiki.AboutShane.9.1.Shane": "Then listen to this: it's none of your business.",
+"SVTNiki.AboutShane.9.2.Marnie": "Shane!",
+"SVTNiki.AboutShane.10.Marnie": "I'm so sorry, Ms. Niki. Shane... he has his own way.$s",
+"SVTNiki.AboutShane.11": "It's okay. I just... I thought maybe I could do something, but I guess not.",
+"SVTNiki.AboutShane.12.Marnie": "I'll go check on him.$s",
+"SVTNiki.AboutShane.13": "Sorry about that, @. Here on business? Well, you might have to wait a couple minutes.",
+"SVTNiki.AboutShane.14": "Strange coincidence, isn't it? You always seem to catch me at my worst. I should really be more professional around you.$3",
+"SVTNiki.AboutShane.15": "I don't know. Maybe I'm not cut out for this.$2#$b#Yes, I came here as a journalist, but all I wanted to do was help him.$3",
+"SVTNiki.AboutShane.16": "Can't I be professional and friendly at the same time?$3#$b#It's hard when everyone's so closed off. I feel like an outsider.$3#$b#Well, I am an outsider, but still...$3",
+"SVTNiki.AboutShane.17": "Is it really impossible to get their trust?$3",
+"SVTNiki.AboutShane.18.Question": "I guess it's fair that they don't want someone like me poking around.",
+"SVTNiki.AboutShane.18.Option1": "You've got a good heart.",
+"SVTNiki.AboutShane.18.Option2": "You can't be a hero for everyone.",
+"SVTNiki.AboutShane.18.Option3": "Yeah, you shouldn't poke around.",
+"SVTNiki.AboutShane.18.Option4": "He's like that to me all the time. No big deal.",
+"SVTNiki.AboutShane.18.Option1.Response": "I don't think you understand.$2",
+"SVTNiki.AboutShane.18.Option2.Response": "*sigh*... You're right. I have to stop trying to fix everything. Thank you for the reminder.$3",
+"SVTNiki.AboutShane.18.Option3.Response": "I guess. Maybe I've been pushing too hard.$2#$b#It's just... I care. I know I can't force it.$3",
+"SVTNiki.AboutShane.18.Option4.Response": "Is he? I'm probably overthinking it.$2",
+"SVTNiki.AboutShane.19": "Oh, I'm late for my appointment... I really should go now.",
+"SVTNiki.AboutShane.20": "I'm sorry for rambling on like that. I tend to get caught up in my thoughts sometimes.$3#$b#You've been so patient with me, though. Thanks for that.",
+"SVTNiki.AboutShane.extraText.1.Marnie": "Oh dear...",
+
+// Niki's Offer (5 hearts)
+"SVTNiki.Offer.0": "Good morning, @!#$b#I'm here for the interview.",
+"SVTNiki.Offer.1": "Wow... Your farm is so busy. Crops, animals, tools... all demanding attention.#$b#Hmm. I can see why my interview might be a little tricky right now.",
+"SVTNiki.Offer.2": "How about this? I'll lend you a hand. I owe you a lot anyway, and it's the least I can do.",
+"SVTNiki.Offer.3": "(Ask her help with...)",
+"SVTNiki.Offer.3.Option1": "Farming",
+"SVTNiki.Offer.3.Option2": "Foraging",
+"SVTNiki.Offer.3.Option3": "Fishing",
+"SVTNiki.Offer.3.Option4": "Mining",
+"SVTNiki.Offer.3.Option5": "Combat",
+"SVTNiki.Offer.3.Option6": "Give me money",
+"SVTNiki.Offer.3.Option7": "No thanks",
+"SVTNiki.Offer.3.Option1.Response": "Farming? I thought you were the expert here!#$b#I don't think I'd be much help, but I'll do some research when I'm back in the city.",
+"SVTNiki.Offer.3.Option2.Response": "Foraging? Hmm. I'd probably get lost in the woods if I had to do it myself... but I'll read up on it when I get back.",
+"SVTNiki.Offer.3.Option3.Response": "I've never tried fishing, but I'll do some research on it.$3",
+"SVTNiki.Offer.3.Option4.Response": "Mining sounds dangerous. I don't think I'll be able to go down there with you...$3#$b#But I'll see if I can find some relevant books.",
+"SVTNiki.Offer.3.Option5.Response": "That sounds, um, really dangerous. I don't think I'll be able to go down there with you...$3#$b#But I'll see if I can find some relevant books.",
+"SVTNiki.Offer.3.Option6.Response": "Oh... really? You're asking me for money?$2#$b#I guess I can help... though I wasn't expecting that. Here.$3",
+"SVTNiki.Offer.3.Option7.Response": "Oh, alright. I just thought it might be nice to lend a hand. You seem like you've got everything under control, though.",
+"SVTNiki.Offer.4": "Anyway, thanks for letting me stop by. Have a great day!",
+
+// About War (6 hearts)
+"SVTNiki.War.1": "Hi, @.#$b#Beautiful evening, isn't it?",
+"SVTNiki.War.2.Option1": "What were you doing?",
+"SVTNiki.War.2.Option2": "What are you looking at?",
+"SVTNiki.War.2.Option3": "It's so dark out here.",
+"SVTNiki.War.3": "...Hmm? Sorry, I was zoning out.$3",
+"SVTNiki.War.4": "I was just thinking... There's a village just like this on the other side of the border, in the Gotoro Empire.$3",
+"SVTNiki.War.5": "I was there, as a a war correspondent. Back then, I've seen things... things I can't unsee.$3",
+"SVTNiki.War.6": "People had to flee their homes, leaving their animals behind. Horses, too, that were used for war... many didn't make it.$3",
+"SVTNiki.War.7": "I can't forget what I saw. It changed me.$3",
+"SVTNiki.War.8.Option1": "Is that why you're vegan?",
+"SVTNiki.War.8.Option2": "Is that why you came back to Ferngill?",
+"SVTNiki.War.8.Option3": "Is that why you're depressed?",
+"SVTNiki.War.8.Option4": "Do you regret becoming a journalist?",
+"SVTNiki.War.8.Option1.Response": "Yeah... I suppose. I just don't feel comfortable anymore.$3",
+"SVTNiki.War.8.Option2.Response": "Yeah... It's lucky I could come back. I just wanted to be anywhere the noise isn't so loud.",
+"SVTNiki.War.8.Option3.Response": "It could be part of it.$3#$b#Life just... piles up, you know? Some things stick more than others.$3",
+"SVTNiki.War.8.Option4.Response": "Not really. It gave me a voice...#$b#Though sometimes it feels like it just keeps dragging me deeper into the noise.$3",
+"SVTNiki.War.9": "Since that... happened, I've come to realize that I might not be always on the right side.$3#$b#So I try to be more understanding. There's usually another side to everything.$3",
+"SVTNiki.War.10": "It's hard sometimes... being nice to everyone, even when I get upset so easily. Trying to keep it together... I just...$3",
+"SVTNiki.War.11": "It shouldn't be so difficult, right? Not after everything I've been through.",
+"SVTNiki.War.12.Option1": "You don't have to pretend with me.",
+"SVTNiki.War.12.Option2": "You're not alone, you know.",
+"SVTNiki.War.12.Option3": "You're stronger than you think.",
+"SVTNiki.War.12.Option1.Response": "Heh... really?#$b#I try not to let people see the cracks, but... it's nice to hear you say that.",
+"SVTNiki.War.12.Option2.Response": "Thanks. I don't usually open up easily... but it's... nice knowing you're here.",
+"SVTNiki.War.12.Option3.Response": "I'm not sure about that... but thanks.$3#$b#I'm still here, right?",
+"SVTNiki.War.13": "It's funny, you know. I came here thinking I needed answers, like something would click when I meet the right precondition.$3#$b#But I think I was just running away from things... shutting myself off from it all.$3",
+"SVTNiki.War.14": "Maybe I'm still running... but at least it's away from the noise.$3",
+"SVTNiki.War.15": "This place... this town... it's peaceful. It's the kind of place I needed.#$b#Too bad I can't stay here forever.",
+"SVTNiki.War.16": "Well, I should probably head back soon.",
+"SVTNiki.War.17": "This was nice. Talking to you, I mean.#$b#See you around, @.",
+"SVTNiki.War.end": "I'm okay. Thanks, @.",
+
+// First Horseback Riding (8 hearts)
+"SVTNiki.Horseback.1": "This is amazing! I can't believe I'm actually riding a horse. Thank you so much!$1",
+"SVTNiki.Horseback.2": "My childhood dream, finally happening.",
+"SVTNiki.Horseback.3.Marnie": "You look like a natural up there, Niki! Horses can sense when someone appreciates them.",
+"SVTNiki.Horseback.4": "Aw...",
+"SVTNiki.Horseback.5": "You're just being nice!$1",
+"SVTNiki.Horseback.6.Marnie": "I mean it!",
+"SVTNiki.Horseback.7.Marnie": "@, why don't you take a stroll with her? She isn't used to controlling horses. Maybe you can help?",
+"SVTNiki.Horseback.8.Option1": "(go with Niki)",
+"SVTNiki.Horseback.8.Option2": "(leave)",
+"SVTNiki.Horseback.9.Marnie": "Have a great time, you two!",
+"SVTNiki.Horseback.10": "Thanks, Marnie. Thanks, @.",
+"SVTNiki.Horseback.11": "Woah, steady...",
+"SVTNiki.Horseback.11.1": "Thanks for coming, @. I couldn't have managed by myself.",
+"SVTNiki.Horseback.12": "Did I tell you horses are my favorite animal?",
+"SVTNiki.Horseback.13": "Since I was a kid, I dreamed of having a horse.#$b#I always thought I'd name it Hermy, after Hermes, the Greek god of travel.#$b#You know, the one with the winged sandals? He's known for his speed, so I thought it's fitting for a horse.#$b#But now that I'm here, riding a real one... I've realized speed isn't the best part.#$b#Taking a slow stroll like this, talking to you... it's perfect.",
+"SVTNiki.Horseback.14": "I wondered for a while why I was drawn to this place. It's just another small town, right?#$b#But now I know... it was to meet you.#$b#...Or to finally ride a horse. Either way, I'm glad I came.$1",
+"SVTNiki.Horseback.15": "We're almost back...",
+"SVTNiki.Horseback.16": "...There's a tiny problem.$3",
+"SVTNiki.Horseback.17": "I... I don't know how to get down.$6",
+"SVTNiki.Horseback.18": "How did I even get up here in the first place?! This is ridiculous.$6",
+"SVTNiki.Horseback.19": "I-I can't. I'm not afraid of heights, but... what if I startle her? What if she bucks me off?$6",
+"SVTNiki.Horseback.20": "What if I-",
+"SVTNiki.Horseback.20.Option1": "Come on, stop being silly.",
+"SVTNiki.Horseback.20.Option2": "Let me help you.",
+"SVTNiki.Horseback.20.Option3": "Just jump down. It's not that hard.",
+"SVTNiki.Horseback.21": "Ahh! @, grab me!$6",
+"SVTNiki.Horseback.22": "Oh! I- uh...$4",
+"SVTNiki.Horseback.23": "Well, that was awkward.$1",
+"SVTNiki.Horseback.24": "...Thanks for saving me. I need a lot more practice, huh?",
+
+"SVTNiki.Horseback.leave": "I'll be fine on my own, Marnie.",
+
+// The Last Interview (10 hearts)
+"SVTNiki.LastInterview.1": "{{PlayerName}}! You're here.",
+    // "SVTNiki.LastInterview.2.Gunther": "Hello.", // Unused dialogue
+"SVTNiki.LastInterview.2": "Thanks so much for coming. I've been looking forward to this all week.",
+"SVTNiki.LastInterview.3.Gunther":  "Well, I'll leave you two to it.",
+"SVTNiki.LastInterview.4": "Gunther's been so kind letting me use this place.",
+"SVTNiki.LastInterview.5": "Please take a seat. Let's get started.",
+"SVTNiki.LastInterview.6": "Okay, that wraps it up!",
+"SVTNiki.LastInterview.7": "Thanks for coming in just as I asked. Hearing your story... I can tell you're incredibly busy, yet you still made time for me.",
+"SVTNiki.LastInterview.8": "Hey, this is off the record...",
+"SVTNiki.LastInterview.9": "Actually, this was my last interview as a staff reporter from SVT. I've decided to quit.",
+"SVTNiki.LastInterview.10": "I was sort of a workaholic, always running from one place to another... trying to escape myself, I think.$3#$b#But then I came to Pelican Town, and I realized what kind of peace I really need.",
+"SVTNiki.LastInterview.11": "I'm saving up to move here. It might take a few years, but I'll make it come true.#$b#When I do, we'll get to see each other more often!",
+"SVTNiki.LastInterview.12": "I'll keep writing though. Not for the company, but for myself. I'm planning to write essays and post them online.#$b#Maybe one day, I'll be able to write about this little town and all the wonderful people in it... as one of the residents.",
+"SVTNiki.LastInterview.13": "You've been a big influence on me, you know? Coming to this town, meeting you... it's changed me in ways I never expected.#$b#Your presence brings hope to my life.",
+"SVTNiki.LastInterview.14": "So, um... I hope this isn't too sudden...$4",
+"SVTNiki.LastInterview.15": "Can I kiss you?",
+"SVTNiki.LastInterview.15.Option1": "Yes.",
+"SVTNiki.LastInterview.15.Option2": "(Jokingly) Definitely not.",
+"SVTNiki.LastInterview.15.Option3": "Not now.",
+"SVTNiki.LastInterview.15.Option4": "(Kiss her first)",
+"SVTNiki.LastInterview.16.Option1.Response": "...This is even better than I imagined.$4",
+"SVTNiki.LastInterview.16.Option2.Response": "Oh... okay. Sorry if I made you uncomfortable.$3",
+"SVTNiki.LastInterview.16.Option3.Response": "Of course, no pressure.",
+"SVTNiki.LastInterview.16.Option4.Response": "You always know how to surprise me, @.$1",
+
+"SVTNiki.LastInterview.17.Option1": "(Kiss her)",
+"SVTNiki.LastInterview.17.Option2": "(Continue the joke)",
+"SVTNiki.LastInterview.18.Option1.Response": "Oh, @... You're full of surprises.$4#$b#I guess we both got our answer.$1",
+"SVTNiki.LastInterview.18.Option2.Response": "Hey... I get it. I won't try again.$2",
+
+"SVTNiki.LastInterview.19": "Alright, let's go back.",
+"SVTNiki.LastInterview.20": "That didn't go well...",
+
+// About Caffeine Addiction (14 hearts) to be added
+
+// CONVERSATION TOPICS
+
+// Triggered CT
+"SVTNiki.DemetriusTalk": "I'm friends with Robin, so I see Demetrius often. One day, he told me not to get in his daughter's way??$2#$e#Yes, I've talked to Maru a few times about technology and its role in a small town, but we're not close friends.#$b#I think Demetrius misunderstood. I didn't bring it up with Robin or Maru though. He'll figure out the truth eventually.", // after Maru 2 heart event
+"SVTNiki.SVTNikiandSam": "You know, Ferngill isn't perfect either. People say Gotoro is cruel, but our soldiers...$3#$b#...$2#$e#There isn't always a clear 'good side' or 'bad side.'#$b#It's like calling Pierre a saint just because Joja is awful.", // after Niki 2 heart event
+
+// community center upgrades
+"SVTNiki.cc_Greenhouse": "I heard the dilapidated greenhouse on your farm was repaired. Congratulations!",
+"SVTNiki.cc_Minecart": "I noticed the minecart has been repaired. It must make getting to the mines much easier!#$e#Just don't push yourself too hard down there, okay? Mining can be dangerous.",
+"SVTNiki.cc_Complete": "It was fun to write about the restored Community Center. It made for a great story.#$e#Did you enjoy reading the article?",
+"SVTNiki.movieTheater": "There's a movie theater in town now. Woah, Pelican Town is starting to feel more like the city... #$b#in a good way, of course.$1#$e#Having a cultural hub here must be a huge perk!",
+"SVTNiki.cc_Bus": "I noticed the bus was repaired while I was parking near the bus stop. That's good news, but... is Pam really okay to drive it?$2#$b#I mean, she does have some unhealthy habits. Still it's a much easier way to get here.$3#$e#I'd just stick to driving myself... if I could resist the temptation of those extra few minutes of sleep.$2",
+"SVTNiki.pamHouseUpgrade": "Mayor Lewis told me about your generous donation to upgrade Pam's trailer. That's incredible, @.#$b#Not many people would go out of their way like that. You're making this town better in so many ways.",
+"SVTNiki.pamHouseUpgradeAnonymous": "Isn't it heartwarming? Someone donated to upgrade Pam's trailer, and no one even knows who.#$b#It's moments like these that make Pelican Town feel so special.#$e#I wonder if you know who it was... you seem to be at the center of everything good here.",
+
+// when you build a stable
+"SVTNiki.structureBuilt_Stable": "I've been thinking of trying horseback riding. Can you tell me how it's like?#$e#I think it would feel incredible, like flying on the ground.", // only before 8 heart events
+"SVTNiki.structureBuilt_Stable8": "You got a horse, I heard?#$b#I'm a bit jealous. It must be amazing to ride through the village like that.$1", // after 8 heart events
+
+"SVTNiki.GreenRain": "I've never seen anything like this before.$3#Some might say it's an omen, but I think there must be a scientific explanation.$3#$e#$q 2985210/2985211 GreenRain_fallback #What's your take on it?
+#$r 2985210 0 GreenRain_justrain#It's just rain. Nothing to worry about.
+#$r 2985211 0 GreenRain_eerie#It's eerie. Makes me uneasy.
+#$r 2985210 0 GreenRain_beautiful#I think it's beautiful.",
+"SVTNiki.GreenRain_justrain":"Hmm, practical and grounded. I like that perspective. Maybe you're right. It could just be harmless.$3",
+"SVTNiki.GreenRain_eerie":"I understand. The villagers feel the same way.$3#$e#Maybe there's more to it than it seems? Journalism is all about questioning so.",
+"SVTNiki.GreenRain_beautiful":"That's an interesting take. I suppose beauty can be found in the unusual.$3",
+"SVTNiki.GreenRain_fallback": "At least it's special, different from regular rain.",
+"SVTNiki.GreenRain_2": "This kind of rain is starting to lose its charm.$3#$e#Knowing how it's going to be back to normal tomorrow... it's getting boring already.$3",
+
+"SVTNiki.GreenRainFinished": "Someone mentioned you're gathering moss during the green rain.#$b#$q 2985200/2985201 GreenRainFinished_fallback#Is it for research? Or... a mysterious farmer ritual I should know about? 
+#$r 2985201 0 GreenRainFinished_mossneat#I just think the moss is neat.
+#$r 2985200 0 GreenRainFinished_figuringout#I'm trying to figure out why it appears.
+#$r 2985201 0 GreenRainFinished_everyone#Doesn't everyone collect moss?",
+"SVTNiki.GreenRainFinished_mossneat": "That's fair. A little fascination never hurt anyone.",
+"SVTNiki.GreenRainFinished_figuringout": "A curious mind! You're like a detective of nature.#$e#Let me know if you solve the mystery. I'd love to write about it.",
+"SVTNiki.GreenRainFinished_everyone": "Do they really? What do they even do with it?$3#$e#Pelican Town sure has, um... unique traditions.$3",
+"SVTNiki.GreenRainFinished_fallback": "$p 2985200#Any luck on the investigation?
+|After some digging, I'm pretty sure that you are the only one collecting moss. But hey, everyone has their quirks.",
+
+// GENERIC DIALOGUE
+"SVTNiki.MermaidPendant.Accept": "Is this a Mermaid's Pendant? I've heard about it. It's a tradition here to propose with one... Oh... wait.#$b#You're asking me to marry you?! Yes! Yes!!!$1#$b#It's going to take a few days to set everything up. I'll talk to the mayor and make the arrangements.$4", // doesn't work; need CumstomFixedDialogue mod
+"SVTNiki.MermaidPendant.PlayerWithSomeoneElse":"Is this a Mermaid's Pendant? I've heard it's used for proposals around here.$3#$b#...So? I don't get it. You are already with {0}.$2", // Player is engaged or married
+"SVTNiki.MermaidPendant.Under8Hearts":"Is this a Mermaid's Pendant? I've heard it's used for proposals around here.$3#$b#...So? I don't get it.$2", // Not dating
+"SVTNiki.MermaidPendant.Under10Hearts":"Is this a Mermaid's Pendant? I've heard it's used for proposals around here.$3#$b#...Oh, um... Is this for me? I'm sorry I can't accept it right now. It's just... I don't think we're close enough. We didn't see each other for a long time.$3#$b#Ask me again when we're closer, okay?", // Dating, but not ready to marry
+"SVTNiki.MermaidPendant.Under10Hearts.Again":"I said I'm not ready.$3#$b#Ask me again when we're closer, okay?", // Dating, but not ready to marry
+"SVTNiki.MermaidPendant.NeedHouseUpgrade":"Is this a Mermaid's Pendant? I've heard it's used for proposals around here.$3#$b#...Oh, um... Is this for me? I'm sorry I can't accept it right now. I get that you want me to live on the farm, but... I don't think there's enough room for me in your house.$3", // Need house upgrade
+"SVTNiki.RejectMovieTicket_AlreadyWatchedThisWeek": "Thanks for asking, but I'm afraid I've already watched that movie this week.",
+"SVTNiki.RejectMovieTicket_Divorced": "No thank you.$3",
+"SVTNiki.breakUp": "Are you kidding me?$2#$b#...You're serious? Oh. I didn't see that coming... There's nothing I can do to change your mind, is there?$2#$b#I hope we can still stay friends.$3",
+"SVTNiki.WipedMemory": "You must be @. Nice to meet you. I'm Niki, from the...#$b#...Why did I come here in the first place? Everything is so blurry...$2#$e#Sorry about that. I don't feel good. Please excuse me.$3",
+
+"SVTNiki.divorced": "I'm busy. Don't get in my way, will you?$3",
+"SVTNiki.RejectGift_Divorced.1": "No.$3",
+"SVTNiki.RejectGift_Divorced.2": "You really think we can be friends after all that?$3",
+"SVTNiki.RejectMermaidPendant_Divorced": "What, you changed your mind? Well, I refuse to step in that mess again.$5",
+"SVTNiki.RejectBouquet_Divorced": "What, you changed your mind? Well, I refuse to step in that mess again.$5",
+"SVTNiki.DumpsterDiveComment": "What are you doing?! Gross!$5",
+"SVTNiki.HitBySlingshot": "Not funny. Stop it.$3",
+
+"SVTNiki.MovieInvite_Invited": "I'm kind of busy, but I'll try to make time for it. Spending time with you sounds fun. Thank you for asking.$1", // friends
+"SVTNiki.MovieInvite_Invited.romantic": "Of course! I'll clear my schedule. How could I say no to a movie date with you?", // girlfriend/spouse
+
+"SVTNiki.FlowerDance_Accept_Spouse": "Definitely not.$3#$b#Just messing with you. How could I ever say no?$1",
+"SVTNiki.FlowerDance_Accept": "Yes!$1#$b#Oh, oh! I should get ready... where did I put my dress?$1",
+"SVTNiki.FlowerDance_Decline": "Sorry. I didn't prepare for that. I'm here to cover the event for my article.",
+
+"SVTNiki.Crop.Radish": "I saw your radishes were ready. Great choice to grow! So crisp and peppery...#$e#%farm farm is looking more and more wonderful every day.",
+
+// FESTIVALS: to be added in the future
+"SVTNiki.EggFestival": "This might be the most adorable 'breaking news' I've ever covered.#$b#Kids hunting eggs like investigative reporters on a hot story!#$e#I know that not all participants are children, but still. It's cute.",
+"SVTNiki.FlowerDance": "The scent of flowers makes me dizzy...$1",
+
+// JOURNALIST DIALOGUE (CC dependent)
+"SVTNiki.DailyDialogue.Wed.1": "Do you know what Pierre does on Wednesdays?#$e#He doesn't really strike me as the outdoorsy type.", // Wed, before ccComplete
+"SVTNiki.DailyDialogue.Wed.2": "Well, Pierre does need at least one rest day per week, right?#$e#I think that's still not enough. He's a hard worker.", // Wed, before ccComplete
+"SVTNiki.DailyDialogue.Wed.3": "No luck interviewing Pierre today. \"Closed on Wednesdays.\"", // Wed, before ccComplete
+"SVTNiki.DailyDialogue.Wed.4": "Wish I could take a break too.$2#$e#But I feel like I should do something.$2", // Wed, before ccComplete
+"SVTNiki.DailyDialogue.Wed.5": "I wonder how Joja manages to stay in business here with these numbers of residents.#$e#Are they operating at a loss just to keep running?", // Wed, before ccComplete
+"SVTNiki.DailyDialogue.Wed.6": "Location matters a lot. If Pierre's was tucked in a corner and JojaMart was in the middle of Town Square, Pierre's would've been in much more trouble.#$b#Especially if JojaMart throws out aggressive sales coupons.", // Wed, before ccComplete
+
+"SVTNiki.DailyDialogue.Wed.7": "You know the man living in the tent, in the mountains?$3#$b#He is avoiding me. I told him I wasn't planning to interview him or anything, just saying hi.$3#$e#Well, I shouldn't push. Still it makes me a little sad.$2", // generic
+"SVTNiki.DailyDialogue.Wed.8": "Pierre's vegetables are labeled organic, but they are so expensive.#$e#I think I'll buy my groceries at JojaMart once I get back to the city.", // generic
+
+"SVTNiki.DailyDialogue.Wed.9": "Is Pierre okay, working all week? I think he deserves some rest.$2", // after ccComplete
+"SVTNiki.DailyDialogue.Wed.10": "Is Shane doing alright? I know he worked at JojaMart before, but now...$2", // after ccComplete
+
+"SVTNiki.DailyDialogue.Wed8.1": "You've become more than a story to me.#$e#Today I'm not here to interview, but to meet you, buddy.", // generic, 8 hearts
+"SVTNiki.DailyDialogue.Wed8.2": "You know, I'd love to learn how to ride a horse properly, by taking regular lessons... If only I didn't live in the city!", // generic, 8 hearts
+"SVTNiki.DailyDialogue.summer_Wed8": "The heat is unbearable, but being around you makes everything feel just right.#$b#Hey, let's cool off together sometime.", // generic, 8 hearts
+"SVTNiki.DailyDialogue.fall_Wed8": "Look at those autumn leaves. They're so colorful, just like the way you brighten my day.", // generic, 8 hearts
+
+// JOURNALIST DIALOGUE (CC independent)
+// Interview dialogue (Journalist limited)
+"SVTNiki.Interview.Mon": "$q 2985230/2985231 Mon_Interview_fallback#Hey, @! Got a minute for a quick interview?
+#$r 2985230 0 Mon_sure#Sure
+#$r 2985231 0 Interview_nope#Nope",
+"SVTNiki.Interview.Nope": "Oh, alright. Some other time then.",
+"SVTNiki.Interview.Mon.Sure": "$q 2985232/2985233 Mon_Interview_fallback #As a farmer, you likely keep a variety of animals. Which one do you consider the best of all?
+#$r 2985232 0 Mon_Dog #Dog
+#$r 2985232 0 Mon_Cat #Cat
+#$r 2985233 20 Mon_Horse #Horse
+#$r 2985232 0 Mon_Chicken #Chicken
+#$r 2985232 0 Mon_Cow #Cow
+#$r 2985232 0 Mon_Every #Every animal is precious",
+"SVTNiki.Interview.Mon.Dog": "Dogs are wonderful companions! They're loyal, loving, and bring so much joy.#$e#If I had to choose, I'd say horses... There's something about their strength and grace that I admire.",
+"SVTNiki.Interview.Mon.Cat": "Cats are charming in their own way, for sure.#$e#For me, horses have always held a special place. They're so strong yet gentle.",
+"SVTNiki.Interview.Mon.Horse": "I knew you'd say that! Horses are the best.$1#$b#There's a beauty in their strength and grace. I'm with you on this one.",
+"SVTNiki.Interview.Mon.Chicken": "Chickens are cute. When they are well cared for, they can lay very large eggs. At least that's what I've heard.#$e#For me, horses have always held a special place. They're so strong yet gentle.",
+"SVTNiki.Interview.Mon.Cow": "Cows are great. They're very strong and intelligent.#$e#If I had to choose, I'd say horses... There's something about their speed and grace that I admire.",
+"SVTNiki.Interview.Mon.Every": "You're absolutely right. Every animal has its own unique qualities and deserves respect.",
+
+"SVTNiki.Interview.Tue2": "$q 2985240/2985241 Tue2_Interview_fallback#Hi, @! Do you have a second to talk? I've got a question for you.
+#$r 2985240 0 Tue2_sure#Sure
+#$r 2985241 0 Interview_nope#Nope",
+"SVTNiki.Interview.Tue2.Sure": "$q 2985242/2985243 Tue2_Interview_fallback#Do you go mining? Marlon says there are dangerous monsters down there.
+#$r 2985242 0 Tue2_cake#The monsters are a piece of cake.
+#$r 2985242 0 Tue2_manage#It's dangerous, but I manage.
+#$r 2985243 0 Tue2_nomine#That's why I don't mine.",
+"SVTNiki.Interview.Tue2_cake": "Wow, ${Mr.^Ms.^Mx.}$ Fearless, huh? I guess nothing can scare you.#$e#Do you even get scared of anything?",
+"SVTNiki.Interview.Tue2_manage": "You are really determined to keep going down there. Just be careful, okay?$3",
+"SVTNiki.Interview.Tue2_nomine": "Honestly, I think you shouldn't. Better safe than sorry, right?#$e#Why deal with danger if you don't have to? Makes total sense to me.",
+
+"SVTNiki.Interview.Thu4": "$q 2985250/2985251 Thu4_Interview_fallback#Hi, @! Can we chat for a bit? I promise I won't take too much of your time.
+#$r 2985250 0 Thu4_one#Sure
+#$r 2985251 0 Interview_nope#Nope",
+"SVTNiki.Interview.Thu4.Sure1": "$q 2985252/2985253 Thu4_Interview_fallback#Okay, between you and me... Who's the best villager in Pelican Town?
+#$r 2985252 0 Thu4_Lewis#Lewis
+#$r 2985252 0 Thu4_Marnie#Marnie
+#$r 2985252 0 Thu4_Gus#Gus
+#$r 2985252 0 Thu4_Pam#Pam
+#$r 2985252 0 Thu4_Robin#Robin
+#$r 2985253 20 Thu4_You#You are!
+#$r 2985254 0 Thu4_two#Give me other options",
+"SVTNiki.Interview.Thu4.Sure2": "$q 2985252/2985253 Thu4_Interview_fallback# 
+#$r 2985252 0 Thu4_Maru#Maru
+#$r 2985252 0 Thu4_Shane#Shane
+#$r 2985252 0 Thu4_Elliott#Elliott
+#$r 2985252 0 Thu4_Emily#Emily
+#$r 2985252 0 Thu4_Haley#Haley
+#$r 2985252 0 Thu4_Alex#Alex
+#$r 2985252 0 Thu4_Sam#Sam
+#$r 2985252 0 Thu4_Penny#Penny
+#$r 2985252 0 Thu4_None#My favorite villager isn't here
+#$r 2985255 0 Thu4_one#Return to previous options", // Need to test if fallback works
+"SVTNiki.Interview.Thu4_Lewis":"The town mayor? He does keep things running smoothly.#$e#I've heard that Mayor Lewis loves Green Tea. Hope this is useful information for you.",
+"SVTNiki.Interview.Thu4_Marnie":"Oh, Marnie... she's wonderful. She's so dedicated to her animals.#$e#I've heard that Marnie really likes Farmer's Lunch. How about giving her some next time?",
+"SVTNiki.Interview.Thu4_Shane":"Interesting choice, huh.$3#$e#Well, Shane obviously likes beer, but isn't it too cruel to push him further into alcoholism?$2#$b#If you're thinking of gifting him something, I'd recommend Pepper Poppers.",
+"SVTNiki.Interview.Thu4_Gus":"Gus is great. He's always so generous with his food.#$e#Gus once told me he really likes oranges. If you have an orange tree on your farm, you should definitely gift him one!",
+"SVTNiki.Interview.Thu4_Pam":"Hmm, interesting choice.#$e#Well, Pam obviously likes all kinds of alcoholic drinks, but isn't it too cruel to push her further into alcoholism?$2#$b#If you're thinking of gifting her something, I'd recommend Parsnip Soup.",
+"SVTNiki.Interview.Thu4_Robin":"Oh, Robin is incredible. She's so hardworking and creative.#$e#I had lunch with Robin several times. She loves spaghetti.#$b#Though she wasn't too thrilled when I made it for her. To be fair, it got cold on the way from the city, and well... I'm not the best cook.$2",
+"SVTNiki.Interview.Thu4_Maru":"Maru's brilliant. Every time I talk to her, I feel like I'm learning something new.#$e#Maru loves strawberries. I think I'll get her a strawberry cake for her next birthday.",
+"SVTNiki.Interview.Thu4_You":"Hey, don't mess with me!$1#$b#I'm just a journalist passing through, not even a resident. But thank you.#$e#You're my favorite villager too. I'm here to interview your farm, you know.",
+"SVTNiki.Interview.Thu4_Elliott":"He's a sweet romantic, isn't he?#$e#I've heard Elliott mention Squid Ink a few times. Apparently he really loves it.$3#$b#But... why Squid Ink? I don't really get the appeal.$2",
+"SVTNiki.Interview.Thu4_Emily":"Emily is a creative soul. She's always fascinating to interview.#$e#Emily once told me she really likes Survival Burger. I wonder what that burger's made of?",
+"SVTNiki.Interview.Thu4_Haley":"Haley can be a bit hard to figure out sometimes, but she definitely knows how to enjoy the finer things in life. At least she knows how to take proper photos.#$e#I've heard Haley mention sunflowers a few times. I'm pretty sure she would love it if you give one to her.",
+"SVTNiki.Interview.Thu4_Alex":"He's very confident, yes. That's a charming trait.#$e#I heard Alex loves Salmon Dinner. Why don't you cook it up and surprise him?",
+"SVTNiki.Interview.Thu4_Sam":"Hmm, Sam is cool. He is fun to be around.#$e#Sam seems to really like Pizza. I've seen him order it at the saloon so many times.",
+"SVTNiki.Interview.Thu4_Penny":"Penny is kind and thoughtful. I enjoy our chats.#$e#Penny really enjoys Red Plate. I shared some with her once... though I'm not sure if she actually loved it or was just being polite. She's too nice to criticize my cooking!",
+"SVTNiki.Interview.Thu4_None":"I haven't had the chance to meet everyone in town just yet. Would you like to introduce me to the rest sometime?",
+
+
+
+
+// Generic Dialogue (heart dependent)
+
+// 0~3 hearts
+"SVTNiki.DailyDialogue.Mon.1": "Sometimes, I wish I could take the time to explore the valley more. There's so much beauty in the quiet spots I've yet to see.",
+"SVTNiki.DailyDialogue.Mon.2": "How are the animals on your farm doing?#$e#It must be rewarding to befriend them.",
+"SVTNiki.DailyDialogue.Mon.3": "Do you name all your animals? I'd love to write a feature on how farmers bond with their livestock.",
+"SVTNiki.DailyDialogue.Mon.4": "I love this community. Everyone has a story, and I can't wait to uncover them.#$e#I hope they'll let me write about them.",
+
+// 4~7 hearts
+"SVTNiki.DailyDialogue.Mon.5": "Have you ever had a day where you just want to take it slow?#$b#Like, forget about everything else and just enjoy the moment?",
+"SVTNiki.DailyDialogue.Mon.6": "As a staff reporter, my boss decides where I go next.#$b#I assume I can stay here for a while... but every moment feels unstable.#$e#It makes each second feel more precious, knowing it could suddenly reach an end.",
+"SVTNiki.DailyDialogue.Mon.7": "There's a kind of peace in places like Pelican Town. It's a little bit of a sanctuary, a little escape from the chaos of city life.",
+"SVTNiki.DailyDialogue.Mon.8": "Did you know journalism is a lot like farming? Both require patience and nurturing.#$e#Do you think I'd make a good farmer?",
+
+// 8 hearts
+"SVTNiki.DailyDialogue.Mon.9": "So, when do I get my official 'Best Friend on the Farm' badge? Or is it... something more?",
+"SVTNiki.DailyDialogue.Mon.10": "You know, spending time with you feels cozy.#$e#Like the perfect cup of coffee, but better.",
+
+
+// 0~1 hearts
+"SVTNiki.DailyDialogue.Tue.1": "Do you have a horse on your farm?#$e#Robin says she can build a stable for you. And hey, it comes with a horse.#$b#Do I sound like I'm advertising? Oh no... that's not what I meant.", 
+"SVTNiki.DailyDialogue.Tue.2": "It was a long day of interviews and note-taking, and I didn't get much sleep. I could really use some hot coffee...#$e#I should swing by the Saloon soon, if I can find the time.", // she doesn't go to the saloon after all
+
+// 2~5 hearts
+"SVTNiki.DailyDialogue.Tue.3": "What do you think about the war between the Ferngill Republic and the Gotoro Empire?#$e#...Wait, that's probably not the kind of question I should be asking a farmer, huh?",
+"SVTNiki.DailyDialogue.Tue.4": "Being a journalist means you're always looking for the bigger picture.#$e#sometimes I wonder if I'm missing the small details.",
+"SVTNiki.DailyDialogue.Tue.5": "It's been about a year since I came back to Ferngill.$3#$e#Before that, I stayed in Gotoro for a while.$3#$b#Not that I'm an immigrant or refugee... Ah, this is getting too deep.$3",
+"SVTNiki.DailyDialogue.Tue.6": "I've been thinking a lot about what kind of story I want to tell.#$e#Maybe something about the relationship between man and land?",
+
+// 6 hearts
+"SVTNiki.DailyDialogue.Tue.7": "I don't know why, but there's something about farms that just makes me feel at home.",
+"SVTNiki.DailyDialogue.Tue.8": "I've been trying to figure out what makes a place feel like 'home.' Maybe it's the people, or the animals... Or the sense of peace.",
+"SVTNiki.DailyDialogue.Tue.9": "If you aren't busy, just stop and listen to the sound of the wind.#$e#There's something therapeutic about it.",
+"SVTNiki.DailyDialogue.Tue.10": "I wonder what it would be like to live on a farm.#$e#Just a small one, with horses and a little house.",
+
+
+// 0~3 hearts
+"SVTNiki.DailyDialogue.Thu.1": "As a side project, I'm compiling a series on sustainable local businesses. Your farm is definitely making the cut.",
+"SVTNiki.DailyDialogue.Thu.2": "Did you know horses can communicate through their ears? They can tell a lot just by how they move them.",
+"SVTNiki.DailyDialogue.Thu.3": "Writing isn't just about recording facts. It's about understanding the spaces between them.",
+"SVTNiki.DailyDialogue.Thu.4": "Good three cups of coffee are enough for me.#$b#Four cups are better though.",
+
+// 4~7 hearts
+"SVTNiki.DailyDialogue.Thu.5": "I've organized my notes three times today.$3#$b#Sometimes structure helps when everything feels... off.$3",
+"SVTNiki.DailyDialogue.Thu.6": "Got my notebook. Got my questions. Everything's under control.$3#$b#...Why do I feel I'm missing something?$2",
+"SVTNiki.DailyDialogue.Thu.7": "I've been reading a lot lately. There's something comforting about getting lost in a good book.",
+"SVTNiki.DailyDialogue.Thu.8": "Everyone here has their own story. I'm just here observing, piecing things together.#$e#But... do I have a story of my own?$3",
+
+// 8 hearts
+"SVTNiki.DailyDialogue.Thu.9": "I never imagined I'd fall in love with a small town like this.",
+"SVTNiki.DailyDialogue.Thu.10": "Sometimes I think about trading my notebook for a pair of farming gloves.#$e#But in my small apartment, there's no room for a garden. Farming gloves wouldn't do me any good.",
+
+
+// 0~5 hearts
+"SVTNiki.DailyDialogue.Sat.1": "*yawn*... I didn't get much sleep during the week, so I overslept.#$e#Overworking is a bad habit... but I can't help myself.",
+"SVTNiki.DailyDialogue.Sat.2": "Weekends are for deep-dive interviews.#$b#Care to chat about your farming philosophy?",
+"SVTNiki.DailyDialogue.Sat.3": "I wonder how Mayor Lewis is managing the town's finances.$2#$b#Do you pay taxes to him?$3#$e#I think it's fair that you don't. You doing so much work, providing fresh vegetables for everyone.",
+"SVTNiki.DailyDialogue.Sat.4": "I've been researching the economic impact of small farms like yours. The data is fascinating.",
+"SVTNiki.DailyDialogue.Sat.5": "Do you like to read?#$e#Books have so much wisdom inside them, letting people experience things they cannot do themselves.#$b#I've never written a book myself, but it's similar to what I do with my articles.",
+"SVTNiki.DailyDialogue.Sat.6": "Maru is an engineer and a nurse. She's incredibly smart. Every time we chat, I learn something new from her.#$b#It's fascinating, though I don't think I can write an article about it yet.#$e#Still, who knows? Someday, I might end up as a technology journalist. It's always good to be prepared for opportunities.",
+
+// 6 hearts
+"SVTNiki.DailyDialogue.Sat.7": "I'm trying to get better at cooking. A lot of my meals are just... well, let's say 'experimental.'",
+"SVTNiki.DailyDialogue.Sat.8": "City living taught me to appreciate every square inch of space.#$e#This place spoils me. After spending a day here, my apartment feels like a tiny shoebox.",
+"SVTNiki.DailyDialogue.Sat.9": "I don't have a family, but it's for the better.#$e#It means I can do whatever I want and go wherever I please without anyone worrying about me.",
+"SVTNiki.DailyDialogue.Sat.10": "I've been to some dangerous places, working as a journalist.#$b#I might have been searching for dopamine, adrenaline... don't-know-the-wordamine? Who knows.#$e#Now I just want to live peacefully. Though at the same time, I can't stand the idea of doing nothing useful.",
+
+// Seasonal dialogue (some Sun.1 and Fri.1 journalist limited)
+
+"SVTNiki.spring_Fri.1": "Pelican Town is so charming! It's almost like it belongs in the Lifestyle section.#$e#I think I'll write a piece about this beautiful town, just for myself, as a keepsake of these memories.",
+"SVTNiki.spring_Fri.2": "I don't think age matters when it comes to making friends.#$e#Though, I understand why some might be cautious.",
+"SVTNiki.spring_Fri.3": "I never realized how much beauty there is in the simple things, like a fresh batch of crops or a horse trotting through the fields.",
+"SVTNiki.spring_Fri.4": "Do you take a break on weekends?#$e#I hope you do. Rest is very important for staying strong in a long run.",
+
+"SVTNiki.spring_Sun.1": "Sorry. I'm not in a mood to talk.$3#$e#That wasn't very professional of me, was it? Especially since I'm asking you for an interview while you're so busy...#$b#Please, forget I said anything.", // Journalist
+"SVTNiki.spring_Sun.2": "I saw a field of daffodils on my way here today. It's so calming... It makes me want to stay here forever.#$e#Spring in Pelican Town is nothing like the city, where the smell of asphalt is stronger than anything in bloom.",
+"SVTNiki.spring_Sun.3": "Domestic animals are awesome. They're loyal and loving toward their owners.#$e#Better make sure to friendly to them, they depend on you for their lives.",
+"SVTNiki.spring_Sun.4": "Summer flowers are coming! Is it childish to get excited over some flowers?", // 28th
+
+"SVTNiki.summer_Fri.1": "Summer radishes are the best.#$b#They're very crunchy and fun to eat, plus they're nutritious!",
+"SVTNiki.summer_Fri.2": "This heat makes me miss the air conditioning in my office, but it's hard to complain when the town looks this gorgeous.",
+"SVTNiki.summer_Fri.3": "The golden hues of summer fit the town perfectly.#$e#I bet the summer colors fit your farm too.",
+"SVTNiki.summer_Fri.4": "Fruits are in abundance! If only there were a vegan smoothie bar around here... Now, *that* would be newsworthy!",
+
+"SVTNiki.summer_Sun.1": "I visit the Saloon to put in some occasional caffeine in my blood, but I don't drink.#$e#I'm guarding myself against alcoholism. There are, uh, some some struggles with it in town, I've noticed.",
+"SVTNiki.summer_Sun.2": "I stayed up late last night, just enjoying the warm summer breeze. It's peaceful... until the bugs decide to join in!#$e#Still, these are the kinds of nights I can never get in the city.",
+"SVTNiki.summer_Sun.3": "I was watching the waves last night.#$e# They crash and retreat, over and over...#$b#Perfect place to zone out.",
+"SVTNiki.summer_Sun.4": "I tried picking some flowers this morning, but they were covered in bees.#$e#So, uh... not really the best idea.",
+
+"SVTNiki.fall_Fri.1": "Your scarecrows looked adorable. They look welcoming rather than scary.",
+"SVTNiki.fall_Fri.2": "Fall colors are like a warm hug. It's my favorite season to be outside.#$e#It's also a great time of year to write personal essays. I get so sentimental.",
+"SVTNiki.fall_Fri.3": "Somehow, the falling leaves make me think of new beginnings. Is that odd? Fall feels like it's alive with possibilities.",
+"SVTNiki.fall_Fri.4": "It's strange how different the seasons feel out here. I don't think I've ever seen autumn colors quite like these before.",
+
+"SVTNiki.fall_Sun.1": "The Tribune's deadlines are tight, but my anxiety just melted away. the atmosphere here is oddly calming.#$e#Pelican Town is good for the soul.", // Journalist
+"SVTNiki.fall_Sun.2": "I heard when Robin builds a stable, Marnie provides the horse. It's nice to see people in the town working together like that.#$e#Is the stable so expensive because it includes the price of the horse? I should ask Robin and Marnie about it sometime.",
+"SVTNiki.fall_Sun.3": "So, I tried telling these horse jokes to the other townsfolk, but I don't think they got it.#$b#Is it because I'm from the city? Different senses of humor, you know? But hey, you're from the city too, right? You'll understand! Wanna hear one?#$e#Okay, here goes. Why did the horse refuse to play cards?#$b#It was afraid of being saddled with a bad hand!$1#$b#Get it? Saddled?#$b#Oh no, maybe it's just as bad as they said...$2#$e#Alright, one more!#$b#What is the principle part of a horse?#$b#The mane part!$1#$b#What do you think? Is this... neigh-sty humor, or should I stop horsing around?",
+"SVTNiki.fall_Sun.4": "Farms reset every season. People aren't always that lucky.$3#$e#...Is it right to call it luck? You seem to get pretty busy at the start of each season because of that.$2#$b#I guess people are better off this way.", // 28th
+
+"SVTNiki.winter_Fri.1": "Winter always slows things down, which is a blessing for a workaholic like me. Everyone needs a break sometimes.#$e#Are you getting some rest too, Farmer @?", // Journalist
+"SVTNiki.winter_Fri.2": "I'm curious how the animals handle the winter cold. Do they have a special way of keeping warm?#$e#What would they have done if they were living in the wild?",
+"SVTNiki.winter_Fri.3": "I heard you can see your breath more clearly if it's below freezing.#$b#As a science nerd, I had to try it.",
+"SVTNiki.winter_Fri.4": "I've interviewed so many people here, but I still feel like I'm only scratching the surface of what Pelican Town is really like.",
+
+"SVTNiki.winter_Sun.1": "The town looks so serene with the surrounding snow.#$e#It's like something out of a picture book... or my next column!", // Journalist
+"SVTNiki.winter_Sun.2": "Brr! It's freezing!$6#$e#But this hot espresso is enough to keep me smiling. Maybe Gus will share his recipe with me.",
+"SVTNiki.winter_Sun.3": "Isn't it funny how a quiet town like this feels livelier in winter? Maybe it's the coziness of everyone coming together.",
+"SVTNiki.winter_Sun.4": "The longer I stay, the more I realize how little I truly know about this place.#$e#There's always something new to learn.",
+
+// Quit dialogue
+"SVTNiki.spring_Sun.quit.1": "I got a part-time job at JojaMart in the city.I was surprised at how little they pay me.#$e#I'm looking for a full-time job with decent hours and a better paycheck.",
+"SVTNiki.fall_Sun.quit.1": "It's nice, not having to run around looking for the next story to write.#$e#I'm glad I quit my job.",
+"SVTNiki.winter_Fri.quit.1": "I'm considering just sleeping in my car. Rent in the city is so expensive. It will help me save up faster.#$e#But I don't think I can handle the winter cold.... I'd miss the warmth of a real bed.",
+"SVTNiki.winter_Sun.quit.1": "The city's so quiet this time of year. It's like everyone's tucked away from the cold.#$e#I've been thinking about what I want to do next.#$b#I love writing, but I'll never work for the Stardew Valley Tribune again... or any other newspaper that keeps me chained to deadlines night and day.",
+
+// specific day dialogue
+"SVTNiki.spring_1": "The fresh scent of blossoms is a journalist's dream... It's like nature's headline: 'Spring is here!'",
+// "SVTNiki.summer_1": "",
+// "SVTNiki.fall_1": "",
+// "SVTNiki.winter_1": "",
+// "SVTNiki.spring_12": "", // Day before the Egg Festival
+"SVTNiki.spring_23": "Are you dancing tomorrow?#$e#I'll be there to capture the tradition of Pelican Town.", // Day before the Flower Dance
+// "SVTNiki.summer_10": "", // Day before the Luau
+// "SVTNiki.summer_27": "", // Day before the Midnight Jellies
+// "SVTNiki.fall_15": "", // Day before the Stardew Fair
+// "SVTNiki.fall_26": "", // Day before Spirit's Eve
+// "SVTNiki.winter_7": "", // Day before the Ice Festival
+// "SVTNiki.winter_24": "", // Day before Winter Star
+
+// Daily Dialogue when it's raining
+"SVTNiki.rainy.1": "Rain like this always brings a strange heaviness.$3#$e#It's like the sky shares how it feels with me.$3",
+"SVTNiki.rainy.2": "I usually love the sound of rain... but sometimes it makes me feel a little trapped, like there's no way out of the gloom.$2",
+"SVTNiki.rainy.3": "&& It's tough to focus when everything is gray.$3",
+"SVTNiki.rainy.4": "I try to remind myself that the rain is nourishing the earth.$3#$e#But I still can't help feeling a bit down.$2",
+"SVTNiki.rainy.5": "The rain might wash away the dirt outside, but it doesn't always clean the mess inside, you know?$3",
+"SVTNiki.rainy.6": "Rain used to feel cozy when I was younger. Now it feels... overwhelming. Funny how that changes.$3",
+"SVTNiki.rainy.7": "Do you ever feel like the rain echoes your thoughts?$3#$e#Sometimes it feels too loud... and too quiet, all at once.$3",
+"SVTNiki.rainy.8": "Oh, yay... Perfect weather for investigative journalism.$3",
+"SVTNiki.rainy.9": "The town seems quieter today, just the sound of rain filling the space where conversation usually is.$3#$e#Or maybe that's just inside my head.$3",
+"SVTNiki.rainy.10": "*sigh*... Why is it always raining when I'm visiting?$2#$e#It's like the weather's matching my mood today.$2",
+
+// Quit - rainy
+"SVTNiki.rainy.quit.1": "Rain always makes me feel a little nostalgic. It's like the world slows down, just for a while.",
+"SVTNiki.rainy.quit.2": "Have you noticed how the rain makes everything smell fresh and alive?#$e#It's comforting, like nature's way of starting over.",
+"SVTNiki.rainy.quit.3": "I don't mind the rain. It's perfect weather for curling up with a notebook and letting my thoughts wander.",
+"SVTNiki.rainy.quit.4": "Rainy days feel so peaceful now. No deadlines, no rushing... just me, the sound of raindrops, and this cozy little town.",
+"SVTNiki.rainy.quit.5": "Something about the rain makes me reflective.#$e#It's like it carries memories with it, washing away the noise of the world.",
+"SVTNiki.rainy.quit.6": "Rain is important to the farm, right? It nourishes the earth.",
+
+// ***** MARRIAGE DIALOGUE *****
+// Engagement dialogue
+"SVTNiki.Engagement.0": "I still can't believe we're engaged. It feels like a dream... one I never want to wake up from.$1#$e#I can't wait to start this next chapter with you, @.$4",
+"SVTNiki.Engagement.1": "I'm already imagining how our life will be... peaceful mornings on the farm, riding horses across the field together, and just... being happy.$1#$e#This feels so right, and yet I keep questioning... how can this be true?$4",
+
+// Daily Marriage dialogue
+"SVTNiki.Marriage.patio.1": "%Niki is brushing Hermy's mane. Hermy lets out a soft, contented neigh.",
+"SVTNiki.Marriage.patio.2": "Hermy is so gentle and well-behaved... Good boy.",
+
+"SVTNiki.Marriage.spouseroom.1": "%Niki is watering the plant.",
+"SVTNiki.Marriage.spouseroom.2": "Do you think this plant is growing? I swear it's grown half an inch... Okay, maybe a quarter. Am I imagining it?",
+"SVTNiki.Marriage.spouseroom.3": "I think it's withering... Poor little thing.$2",
+
+"SVTNiki.Marriage.Rainy.Day.0": "I love how the rain sounds on the roof.#$b#It's like the world is catching its breath.",
+"SVTNiki.Marriage.Rainy.Day.1": "Rain on the fields is a blessing, but it also means extra mud. I'll help you clean up later.",
+"SVTNiki.Marriage.Rainy.Day.2": "I thought I'd take Hermy out today, but the rain said no. Guess it's a writing day instead!",
+"SVTNiki.Marriage.Rainy.Day.3": "*yawn*... The sound of rain is perfect for a lazy day.$3",
+"SVTNiki.Marriage.Rainy.Day.4": "I thought a bowl of hot soup would be good to start a rainy day like this.[236]#$b#I didn't taste it yet, but I feel good this time.#$e#Uh... It's a bit too sweet... I think I put in too much sugar.$2", // Pumpkin soup
+"SVTNiki.Marriage.Rainy.Day.Niki": "Any dinner requests for tonight?#$b#What's that look? I know I'm not a great cook. I can try though.$5",
+
+"SVTNiki.Marriage.Rainy.Night.0": "I've been scribbling random ideas all day.#$e#Do you think Pelican Town would make a good setting for a novel?",
+"SVTNiki.Marriage.Rainy.Night.1": "Want to sit by the fire with me? I'll brew some coffee.#$e#Alright, I know, it's late. Coffee probably isn't the best idea now, huh?$2",
+"SVTNiki.Marriage.Rainy.Night.2": "I tucked Hermy in for the night, and now it's your turn! Well, after a bit more time together.",
+"SVTNiki.Marriage.Rainy.Night.3": "I used to feel lonely on rainy nights, but now I have you. It's a different kind of calm.",
+"SVTNiki.Marriage.Rainy.Night.4": "The rain makes the air so fresh... but I'm glad we're inside and warm.",
+"SVTNiki.Marriage.Rainy.Night.5": "The sound of rain at night feels like a story waiting to be told. Maybe I'll write it down later.",
+"SVTNiki.Marriage.Rainy.Night.Niki": "It's the perfect kind of night for a story, isn't it? Let's make one together.",
+
+"SVTNiki.Marriage.Indoor.Day.0": "Morning, honey! I made you breakfast! [196 230 609 224]#$b#Please don't judge me about the taste. Nutrition is the important part, you know.", // Salad, Red plate, Radish salad, Spaghetti
+"SVTNiki.Marriage.Indoor.Day.1": "Good morning, sunshine! It's a beautiful day outside.",
+"SVTNiki.Marriage.Indoor.Day.2": "It's so bright out today.#$b#Hermy's eager for a stroll, so I'm heading out later in the afternoon. Want to join us?",
+"SVTNiki.Marriage.Indoor.Day.3": "The weather's perfect! On days like this... I'll have to do the laundry.",
+"SVTNiki.Marriage.Indoor.Day.4": "Good morning, honey.#$b#$q 2985280/2985281 Plan_fallback #What are you doing today?
+#$r 2985280 0 Plan_crops #Watering crops
+#$r 2985280 0 Plan_friends #Talking to friends
+#$r 2985280 10 Plan_horse #Horse riding
+#$r 2985280 10 Plan_pet #Playing with %pet
+#$r 2985281 -20 Plan_date #Dating another person",
+"SVTNiki.Marriage.Plan_crops": "Always keeping busy, huh? That's my farmer @. Just don't forget to take breaks, okay?",
+"SVTNiki.Marriage.Plan_friends": "Sounds fun! Say hi to everyone for me.",
+"SVTNiki.Marriage.Plan_horse": "Sounds fun!$1#$e#It's a shame I can't go with you. Hermy's not in a good mood.$2",
+"SVTNiki.Marriage.Plan_pet": "Aw, that's great. %pet deserves some love too.",
+"SVTNiki.Marriage.Plan_date": "...What? That's not funny.$5",
+"SVTNiki.Marriage.Plan_fallback": "#$p 2985281 What are you doing to- Oh, don't try to answer. You're going to make that joke about cheating, aren't you?$5|Have a good day! I'm always here for you.",
+"SVTNiki.Marriage.Indoor.Day.Niki": "Mornings like this make me feel like anything's possible. Do you have anything exciting planned today?",
+
+"SVTNiki.Marriage.Indoor.Night.0": "The fire's cozy tonight. Let's stay up a little longer and talk.",
+"SVTNiki.Marriage.Indoor.Night.1": "Welcome home. How was your day, @?#$e#I'm a bit tired. It's time I go to bed...",
+"SVTNiki.Marriage.Indoor.Night.2": "I was writing earlier, but then I thought... nothing I write could compare to the joy of spending time with you.$4",
+"SVTNiki.Marriage.Indoor.Night.3": "I finished an essay today. Want to read it later? It's about the little joys of farm life.",
+"SVTNiki.Marriage.Indoor.Night.4": "@, you're home! I missed you so much that I couldn't focus on anyting all day.#$e#Just kidding... but I really did miss you.",
+"SVTNiki.Marriage.Indoor.Night.Niki": "Home feels complete when you're here.#$e#Having time with you like this is great.",
+
+"SVTNiki.Marriage.Outdoor.0": "I remember when I first visited here. I was standing right here, admiring the fields.#$e#It was predestined that I fall in love with %farm farm.",
+"SVTNiki.Marriage.Outdoor.1": "I'll grab some groceries while I'm out. Is there anything you need?",
+// "SVTNiki.Marriage.Outdoor.2": "",
+// "SVTNiki.Marriage.Outdoor.3": "",
+"SVTNiki.Marriage.Outdoor.4": "Look at Hermy, always so full of energy. I still can't believe I have a horse of my own! I might need your help brushing him later.",
+// "SVTNiki.Marriage.Outdoor.Niki": "",
+
+"SVTNiki.Marriage.funLeave": "I'm taking a walk for a little. I'm trying to find some inspiration for my next essay.",
+"SVTNiki.Marriage.funReturn": "Honey, I'm home!#$b#Did anything exciting happen while I was gone?",
+
+"SVTNiki.Marriage.Good.0": "It still feels so unreal, having a family like this.",
+"SVTNiki.Marriage.Good.1": "I still can't believe I get to wake up next to you every day. You're the best part of my life.",
+"SVTNiki.Marriage.Good.2": "I made something for you! It's not perfect, but I hope it tastes okay. Just... don't judge me too harshly.[224]", // Spaghetti
+"SVTNiki.Marriage.Good.3": "I posted a new essay today. Got a few nice comments. I'm glad people are still reading them.",
+"SVTNiki.Marriage.Good.4": "The farm looks nice today. You've been working hard, haven't you? I hope you're not overdoing it.",
+"SVTNiki.Marriage.Good.5": "So I told you I'm posting essays on my website. Here's the profit. It's not much, but I want to contribute to the household.$action AddMoney 200",
+/* "SVTNiki.Marriage.Good.6": "",
+"SVTNiki.Marriage.Good.7": "",
+"SVTNiki.Marriage.Good.8": "",
+"SVTNiki.Marriage.Good.9": "",
+*/
+
+"SVTNiki.Marriage.Neutral.0": "Is %pet getting fat? Maybe I shouldn't give too many treats.$2",
+"SVTNiki.Marriage.Neutral.2": "Is %pet getting fat? Maybe I shouldn't give too many treats.$2",
+"SVTNiki.Marriage.Neutral.3": "I tried cooking again earlier, but it didn't exactly go as planned. Maybe you should take the reins next time.$2",
+"SVTNiki.Marriage.Neutral.5": "I'm not sure what to do with Hermy today. Maybe I'll just take him for a slow ride around the farm.",
+"SVTNiki.Marriage.Neutral.9": "I'm not sure what to do with Hermy today. Maybe I'll just take him for a slow ride around the farm.",
+
+"SVTNiki.Marriage.Bad.0": "Hermy's the only one who seems to understand me these days. At least he listens.$3",
+"SVTNiki.Marriage.Bad.1": "I've been feeling off lately... It's nothing to do with you. Probably just in my head.$2",
+"SVTNiki.Marriage.Bad.4": "You've been busy. That's good. I'll just keep myself occupied.$3",
+"SVTNiki.Marriage.Bad.5": "I couldn't sleep last night.$3#$e#I'm so tired... Will you leave me alone?$3",
+"SVTNiki.Marriage.Bad.6": "Hmm?$3#$e#What?$3",
+"SVTNiki.Marriage.Bad.7": "Sometimes I wonder if I deserve someone like you. Thank you for putting up with me.$3",
+"SVTNiki.Marriage.Bad.8": "Do you ever feel like things are... different between us? Or is it just me?$2",
+"SVTNiki.Marriage.Bad.9": "I'll take care of my own things today. You've got enough to deal with.$3",
+
+"SVTNiki.Marriage.OneKid.0": "I had a dream about %kid1 playing with a sword.$3#$b#Will %kid1 be interesting in fighting monsters...?$3",
+"SVTNiki.Marriage.OneKid.1": "%kid1 is growing up so fast... I wish we could freeze time sometimes, don't you?",
+"SVTNiki.Marriage.OneKid.2": "I caught %kid1 scribbling in my journal this morning. Maybe they'll grow up to be a writer too.",
+"SVTNiki.Marriage.OneKid.3": "I saw %kid1 trying to feed Hermy earlier. It was adorable, but I had to step in before things got messy.",
+"SVTNiki.Marriage.OneKid.4": "%kid1 tried to help me cook this morning. Let's just say... the kitchen needs some cleaning.",
+
+"SVTNiki.Marriage.TwoKids.0": "I think %kid2 is a genius.#$b#No, seriously... While I was working, %kid2 called for me, and I noticed I had made a typo.",
+"SVTNiki.Marriage.TwoKids.1": "I'm glad %kid1 and %kid2 are getting together well.",
+"SVTNiki.Marriage.TwoKids.2": "Sometimes I look at %kid1 and %kid2 and wonder how we got so lucky. They're everything to me.",
+"SVTNiki.Marriage.TwoKids.3": "I heard %kid2 whispering to Hermy. I think %kid2 believes Hermy can talk back.",
+"SVTNiki.Marriage.TwoKids.4": "%kid2 tried to ride Hermy! I had to explain that Hermy's a bit too big for %kid2.",
+
+"SVTNiki.Marriage.spring_Niki.1": "I love spring weather. Everything is blooming.#$b#It's clear you've blossomed too, @. Let me harvest it sometime.",
+"SVTNiki.Marriage.spring_Niki.2": "The fresh air in spring is so motivating. Makes me want to write all day... after I take Hermy for a ride.",
+"SVTNiki.Marriage.summer_Niki": "The summer sun can be a bit harsh, but it's perfect for a morning stroll.",
+"SVTNiki.Marriage.fall_Niki": "The sound of leaves crunching under Hermy's hooves... it's satisfying.#$b#I should write that down.",
+"SVTNiki.Marriage.winter_Niki.1": "It's freezing!$3#$b#Maybe we can grab some hot cocoa together later?$4",
+"SVTNiki.Marriage.winter_Niki.2": "Winter mornings are so quiet, like the world is still asleep. Hermy doesn't seem to mind the cold, but I might need another layer!",
+
+"SVTNiki.Marriage.spring_1": "The first sun of the new year...#$b#It's nice to start this year by your side.",
+"SVTNiki.Marriage.summer_1": "The summer sun has risen! My skin is burning. $1#$b#Are we planting some radishes this year?",
+"SVTNiki.Marriage.fall_1": "Fall always feels like a new chapter.#$b#The colors are changing, and so are we.",
+
+// ***** STRINGS *****
+// Strings from maps
+// spouse patio: used
+"SVTNiki.Map.Hermy.1": "Hermy the horse gives you a look.",
+"SVTNiki.Map.Hermy.2": "Hermy the horse is just standing there.",
+"SVTNiki.Map.Car": "It's locked.",
+// spouse room: unused (the game ignores it)
+/*
+"SVTNiki.Map.Plant": "It's a small haworthia in a pot. Niki takes good care of it, even though she isn't the best with plants.",
+"SVTNiki.Map.Note": "Niki has scribbled something about %adj %noun. Wonder what that's about...?",
+"SVTNiki.Map.Laptop": "A browser is open, showing Niki's blog stats. {{RandomNumber}} visitors today.",
+"SVTNiki.Map.Pills": "A small pill container sits on the desk. She takes one every night before going to bed.",
+*/
+
+// Schedule strings
+"SVTNiki.000.1": "%Niki is busy taking notes.", // taking notes
+"SVTNiki.000.2": "%Niki is busy taking notes.", // taking notes
+"SVTNiki.000.3": "%Niki is busy taking notes.", // taking notes
+"SVTNiki.000.4": "%Niki is busy taking notes.", // taking notes
+"SVTNiki.000.5": "%Niki is busy taking notes.", // taking notes
+"SVTNiki.000.6": "%Niki is busy taking notes.", // taking notes
+"SVTNiki.000.7": "%Niki is busy taking notes.", // taking notes
+"SVTNiki.000.8": "%Niki is busy taking notes.", // taking notes
+"SVTNiki.000.9": "Hmm. I suppose so...", // taking notes
+"SVTNiki.000.10": "Hmm. I suppose so...", // taking notes
+"SVTNiki.000.11": "Hmm. I suppose so...", // taking notes
+"SVTNiki.000.12": "%Niki is scribbling random nonsense on her notepad.",
+"SVTNiki.001.1": "I know it's cliché, but sunsets really are magical. If I ever settle down, I hope it's somewhere with a view like this.", // At the beach
+"SVTNiki.001.2": "The sunset here is incredible. Makes me want to write poetry instead of news articles.", // At the beach
+"SVTNiki.001.3": "%Niki is zoning out.", // At the beach
+"SVTNiki.001.4": "%Niki is gazing at the horizon, her eyes lost in the distance.", // At the beach
+"SVTNiki.001.5": "%Niki didn't notice that you are here.", // At the beach
+"SVTNiki.002": "I came to see Marnie, but she isn't working today.#$b#I wonder... if it's a regular schedule, why not post it on the door?$2", // Waiting for Marnie
+
+// GIFT DIALOGUE
+"SVTNiki.Gift.StardropTea": "Wow, I feel like I've been reborn! I'm more of a coffee person, but this tea... it's something else entirely. Thank you so much!", // when gifted StardropTea
+"SVTNiki.Gift.Love": "This? For me? Oh, thank you, @! This is exactly what I needed to make today brighter.", // $1
+"SVTNiki.Gift.Like": "Thank you, @! You're so thoughtful. This will come in handy.",
+"SVTNiki.Gift.Dislike": "Um... thank you? But I don't think this is for me. Maybe someone else will appreciate it more.",
+"SVTNiki.Gift.Hate": "Hmm. Interesting...", // $2
+"SVTNiki.Gift.Neutral": "A gift for me? I appreciate your kindness, @.",
+"SVTNiki.Gift.TripleShotEspresso": "Wow, @! I seriously needed this! You have no idea how much I crave a good cup of espresso. Thanks a lot, @.$1",
+"SVTNiki.Gift.Coffee": "Hmm... this is a little light, but I suppose it'll do for today. Thanks, @. It's better than nothing, at least!",
+"SVTNiki.Gift.IsThisVegan": "Thanks. Is this vegan? I hope it is.", // When gifted Plum Pudding, Bruschetta, Fiddlehead Risotto, Poppyseed Muffin, Maple Bar, Bread
+"SVTNiki.Gift.Hay": "Are these for the horses? Nice! I could make a straw hat out of this.",
+"SVTNiki.Gift.Book": "Oh, a book? Thanks. I can't wait to dive into it.", //"Reading is a good way to escape for a while."
+"SVTNiki.Gift.ButterflyPowder": "What is this? Sprinkle it to what? Are you serious? I thought you'd know better than to give me something like this, @.", // $2
+"SVTNiki.Gift.ExplosiveAmmo": "This brings back some bad memories...",
+"SVTNiki.Gift.SquidInk": "I don't understand why anyone would use ink from fish. I'll stick to pencils, thank you.",
+"SVTNiki.rejectGift.food": "No offense, but I can't accept this. I'm vegan, and this goes against my diet. Sorry.",
+"SVTNiki.rejectGift.food.Dating": "You should know by now I'm vegan. I'm not mad, just a litle disappointed.$2",
+"SVTNiki.Gift.HorseBook": "A book about horses?! This is amazing, @. Thank you! It feels like a little piece of my dream farm life.$1",
+"SVTNiki.Gift.HorseBook.Marriage": "A book about horses?! This is amazing, @. Thank you!$1#$b#Hermy will be jealous I'm spending more time reading about horses than being with him.",
+
+// Gift dialogue after 14 heart event
+"SVTNiki.Gift.TripleShotEspresso14": "You're spoiling me... I shouldn't drink this, but the aroma is just too good.",
+"SVTNiki.Gift.Coffee14": "Uhh... Hmm... To drink or not to drink, that's the question. I know I shouldn't, but the smell is irresistible... Well... thank you.$3",
+
+// ***** OTHER NPC DIALOGUE CHANGE *****
+"SVTNiki.Marnie.structureBuilt_Stable": "How is your horse doing on %farm farm?#$e#Horses love carrots. Be sure to feed them if you get one!", // tweaks Marnie's dialgoue so it's consistent with the background: Marnie is the one who sells horses when Robin builds a stable.
+
+"SVTNiki.Sam.SVTNikiandSam": "That newspaper woman is a jerk. She asked me all these questions about my family, then called me out for swearing at those Gotoro people.#$e#She just can't handle it when the convo gets too serious.", // Sam, after Niki 2 heart event
+
+}

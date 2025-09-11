@@ -1,0 +1,133 @@
+{
+	"Changes": [
+		//Vanilla Schedule
+		{
+			"LogName": "Ashida's Basegame Schdule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTAshida",
+			"Entries": {
+				"spring": "620 CoalPointFarmhouse 37 15 1/800 CoalPointFarmhouse 33 31 0/1000 CoalPointFarm 35 36 3 AshidaFarmingLeft/1130 CoalPointFarm 25 33 1 AshidaFarmingRight/1230 Mountain {{AshidaBinocularSpotMountain}} AshidaBinoculars/1630 CoalPointFarmhouse 33 31 0/1800 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+				"Tue": "610 CoalPointFarmhouse 37 15 1/800 CoalPointFarmhouse 33 31 0/1000 CoalPointFarm 35 36 3 AshidaFarmingLeft/1130 CoalPointFarm 25 33 1 AshidaFarmingRight/1300 CoalPointFarm 28 19 2 AshidaSittinSippin/1500 CoalPointFarm 5 55 2 AshidaBinoculars/1630 CoalPointFarmhouse 33 31 0/1800 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+				"Thu": "610 CoalPointFarmhouse 37 15 1/800 Hospital 16 4 1 AshidaSitting/1330 Mountain {{AshidaBinocularSpotMountain}} AshidaBinoculars/1630 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+				"Sat": "610 CoalPointFarmhouse 37 15 1/800 SeedShop 12 23 0/1200 SeedShop 2 23 3/1300 SeedShop 6 19 0/1400 Saloon 17 20 0/1830 CoalPointFarmhouse 37 9 1",
+				"Sun": "610 CoalPointFarmhouse 37 15 1/800 CoalPointFarmhouse 33 31 0/1050 SeedShop 36 20 0 AshidaPrayer/1700 CoalPointFarmhouse 33 31 0/2100 CoalPointFarmhouse 37 9 1",
+				"spring_13": "610 CoalPointFarmhouse 37 15 1/800 SeedShop 12 23 0/1200 SeedShop 2 23 3/1300 SeedShop 6 19 0/1400 Saloon 17 20 0/1830 CoalPointFarmhouse 37 9 1",
+				"GreenRain": "610 CoalPointFarmhouse 37 15 1/800 CoalPointFarmhouse 33 31 0",
+			},
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+			},
+		},
+		
+		//Hospital
+		{
+			"LogName": "Ashida Hospital Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTAshida",
+			"Entries": {
+				"spring": "610 Hospital 20 4 2 AshidaHospital",
+			},
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": true,
+			},
+		},
+		
+		//Babysitting
+		{
+			"LogName": "Ashida Babysitting Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTAshida",
+			"Entries": {
+				"spring": "610 CoalPointFarmhouse 24 9 0/800 CoalPointFarm 28 19 2 AshidaSittinSippin/1230 Mountain {{AshidaBinocularSpotMountain}} AshidaBinoculars/1630 CoalPointFarmhouse 33 31 0/1800 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+				"Tue": "GOTO spring",
+				"spring_Wed": "GOTO spring",
+				"Thu": "GOTO spring",
+				"Fri": "610 CoalPointFarmhouse 37 15 1/800 CoalPointFarmhouse 33 31 0/1000 CoalPointFarm 35 36 3 AshidaFarmingLeft/1130 CoalPointFarm 25 33 1 AshidaFarmingRight/1300 CoalPointFarm 28 19 2 AshidaSittinSippin/1500 CoalPointFarm 5 55 2 AshidaBinoculars/1630 CoalPointFarmhouse 33 31 0/1800 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+				"Sun": "GOTO spring",
+				"winter_Mon": "610 CoalPointFarmhouse 24 9 0/720 CoalPointFarm 32 19 2/810 CoalPointFarmhouse 14 19 1/1300 CoalPointFarm 9 48 2 AshidaSitting/1630 CoalPointFarmhouse 33 31 0/1800 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+				"winter_Tue": "GOTO winter_Mon",
+				"winter_Wed": "GOTO winter_Mon",
+				"winter_Thu": "GOTO winter_Mon",
+				//Days off
+				"winter_Fri": "610 CoalPointFarmhouse 37 15 1/800 CoalPointFarmhouse 33 31 0/1000 Mountain {{AshidaBinocularSpotMountain}} AshidaBinoculars/1630 CoalPointFarmhouse 33 31 0/1800 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+				"winter_Sat": "GOTO winter_Fri",
+				"winter_17": "610 CoalPointFarmhouse 24 9 0/800 CoalPointFarmhouse 33 31 0/1030 Beach 24 32 3 \"Strings\\schedules\\APTAshida:Beach.000\"/1600 CoalPointFarmhouse 37 9 1",
+				"DesertFestival_2": "610 CoalPointFarmhouse 24 9 0/800 Desert 44 32 3 \"Strings\\schedules\\APTAshida:Desert.000\"/1800 CoalPointFarmhouse 37 9 1",
+			},
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+				"HasSeenEvent": "145857",
+			},
+		},
+		{
+			"LogName": "Ashida Sunday Marcus Babysitting Schedule",
+			"Action": "EditData",
+            "Target": "Characters/schedules/APTAshida",
+			"Entries": {
+				"Sun": "610 CoalPointFarmhouse 37 15 1/800 CoalPointFarmhouse 33 31 0/1050 SeedShop 36 20 0 AshidaPrayer \"Strings\\schedules\\APTAshida:SeedShop.000\"/1700 CoalPointFarmhouse 33 31 0/2100 CoalPointFarmhouse 37 9 1",
+			},
+			"When": {
+                "HasConversationTopic |contains=CPFBirth": false,
+				"HasSeenEvent": "145868"
+			}
+		},
+		
+		//Visting East Scarpe
+		{
+			"LogName": "Ashida East Scarpe Pregant Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTAshida",
+			"When": { 
+				"HasMod |contains= LemurKat.EastScarpe.CP": true, 
+                "HasConversationTopic |contains=CPFBirth": false,
+                "HasSeenEvent |contains=145857": false,
+			},
+			"Entries": {
+				"Fri": "610 CoalPointFarmhouse 37 15 1/800 EastScarp_Village {{AshidaBinocularSpotEastScarp}} AshidaBinoculars/1600 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+				"fall_27": "610 CoalPointFarmhouse 37 15 1/800 EastScarp_VillageInn 22 35 0 \"Strings\\schedules\\APTAshida:EastScarp_VillageInn.000\"/1800 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+			},
+		},
+		{
+			"LogName": "Ashida East Scarpe Baby Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/APTAshida",
+			"When": { 
+				"HasMod |contains= LemurKat.EastScarpe.CP": true, 
+                "HasConversationTopic |contains=CPFBirth": false,
+                "HasSeenEvent |contains=145857": true,
+			},
+			"Entries": {
+				"Tue": "610 CoalPointFarmhouse 24 9 0/800 EastScarp_Village {{AshidaBinocularSpotEastScarp}} AshidaBinoculars/1600 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+				"winter_Sat": "610 CoalPointFarmhouse 18 27 0/720 EastScarp_Village {{AshidaBinocularSpotEastScarp}} AshidaBinoculars/1600 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+				"fall_27": "610 CoalPointFarmhouse 37 15 1/800 EastScarp_VillageInn 22 35 0 \"Strings\\schedules\\APTAshida:EastScarp_VillageInn.000\"/1800 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+			},
+		},
+		
+		//Spirit's Eve without ES
+		{
+			"LogName": "Vanilla Spirit's",
+			"Action": "EditData",
+			"Target": "Characters/schedules/APTAshida",
+			"Entries": {
+				"fall_27": "610 CoalPointFarmhouse 37 15 1/800 Mountain 35 14 2/1200 Town 87 3 2/1630 CoalPointFarmhouse 33 31 0/1800 CoalPointFarmhouse 9 28 3/2000 CoalPointFarmhouse 37 9 1",
+			},
+			"When": { 
+				"HasMod |contains= LemurKat.EastScarpe.CP": false, 
+			},
+		},
+		
+		//STRINGS
+		{
+			"LogName": "Adding Ashida's Strings",
+			"Action": "EditData",
+			"Target": "Strings/schedules/APTAshida",
+			"Entries": {
+				"Beach.000": "{{i18n:AshidaSchedule.Beach.000}}",
+				"SeedShop.000": "{{i18n:AshidaSchedule.SeedShop.000}}",
+				"EastScarp_VillageInn.000": "{{i18n:AshidaSchedule.EastScarp_VillageInn.000}}",
+				"Desert.000": "{{i18n:AshidaSchedule.Desert.000}}",
+
+			},
+		},
+	],
+}

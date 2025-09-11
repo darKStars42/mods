@@ -1,0 +1,429 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DaLion.Ponds</name>
+    </assembly>
+    <members>
+        <member name="T:DaLion.Ponds.Commands.ResetPondDataCommand">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Commands.ResetPondDataCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Commands.ResetPondDataCommand.#ctor(DaLion.Shared.Commands.CommandHandler)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Commands.ResetPondDataCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="P:DaLion.Ponds.Commands.ResetPondDataCommand.Triggers">
+            <inheritdoc />
+        </member>
+        <member name="P:DaLion.Ponds.Commands.ResetPondDataCommand.Documentation">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Ponds.Commands.ResetPondDataCommand.CallbackImpl(System.String,System.String[])">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Ponds.Commands.UnlockPopulationGatesCommand">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Commands.UnlockPopulationGatesCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Commands.UnlockPopulationGatesCommand.#ctor(DaLion.Shared.Commands.CommandHandler)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Commands.UnlockPopulationGatesCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="P:DaLion.Ponds.Commands.UnlockPopulationGatesCommand.Triggers">
+            <inheritdoc />
+        </member>
+        <member name="P:DaLion.Ponds.Commands.UnlockPopulationGatesCommand.Documentation">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Ponds.Commands.UnlockPopulationGatesCommand.CallbackImpl(System.String,System.String[])">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Ponds.Commands.UpdateMaxOccupancyCommand">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Commands.UpdateMaxOccupancyCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Commands.UpdateMaxOccupancyCommand.#ctor(DaLion.Shared.Commands.CommandHandler)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Commands.UpdateMaxOccupancyCommand"/> class.</summary>
+            <param name="handler">The <see cref="T:DaLion.Shared.Commands.CommandHandler"/> instance that handles this command.</param>
+        </member>
+        <member name="P:DaLion.Ponds.Commands.UpdateMaxOccupancyCommand.Triggers">
+            <inheritdoc />
+        </member>
+        <member name="P:DaLion.Ponds.Commands.UpdateMaxOccupancyCommand.Documentation">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Ponds.Commands.UpdateMaxOccupancyCommand.CallbackImpl(System.String,System.String[])">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Ponds.Framework.Extensions.FishPondExtensions">
+            <summary>Extensions for the <see cref="T:StardewValley.Buildings.FishPond"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.HasBossFish(StardewValley.Buildings.FishPond)">
+            <summary>Determines whether a legendary fish lives in this <paramref name="pond"/>.</summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+            <returns><see langword="true"/> if the <paramref name="pond"/> houses a legendary fish species, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.HasAlgae(StardewValley.Buildings.FishPond)">
+            <summary>Determines whether this <paramref name="pond"/> is infested with algae.</summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+            <returns><see langword="true"/> if the <paramref name="pond"/> houses any algae, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.IsRadioactive(StardewValley.Buildings.FishPond)">
+            <summary>Determines whether the <paramref name="pond"/>'s radioactivity is sufficient to enrich metallic nuclei.</summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+            <returns><see langword="true"/> if the <paramref name="pond"/> houses a mutant or radioactive fish species, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.GetProduce(StardewValley.Buildings.FishPond,System.Random)">
+            <summary>Performs object production.</summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+            <param name="r">Optional <see cref="T:System.Random"/> number generator.</param>
+            <returns>The most valuable produce <see cref="T:StardewValley.Item"/>, if any.</returns>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.GetEnrichmentTime(StardewValley.Buildings.FishPond,StardewValley.Object)">
+            <summary>Gets the number of days required to enrich a given <paramref name="metal"/> resource.</summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+            <param name="metal">An ore or bar <see cref="T:StardewValley.Object"/>.</param>
+            <returns>The number of days required to enrich the nucleus of the metal.</returns>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.RewardExp(StardewValley.Buildings.FishPond,StardewValley.Farmer)">
+            <summary>Gives the player fishing experience for harvesting the <paramref name="pond"/>.</summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+            <param name="who">The player.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.OpenChumBucketMenu(StardewValley.Buildings.FishPond,StardewValley.Farmer)">
+            <summary>
+                Opens an <see cref="T:StardewValley.Menus.ItemGrabMenu"/> instance to allow retrieve multiple items from the
+                <paramref name="pond"/>'s chum bucket.
+            </summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+            <param name="who">The <see cref="T:StardewValley.Farmer"/> interacting with the <paramref name="pond"/>.</param>
+            <returns>Always <see langword="true"/> (required by vanilla code).</returns>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.ParsePondFishes(StardewValley.Buildings.FishPond)">
+            <summary>Parses the stored <see cref="T:DaLion.Ponds.Framework.PondFish"/> data from this <paramref name="pond"/>.</summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+            <returns>A <see cref="T:System.Collections.Generic.List`1"/> of parsed <see cref="T:DaLion.Ponds.Framework.PondFish"/>.</returns>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.ResetPondFishData(StardewValley.Buildings.FishPond)">
+            <summary>Resets the <see cref="T:DaLion.Ponds.Framework.PondFish"/> data back to default values, effectively erasing stores qualities.</summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.DeserializeHeldItems(StardewValley.Buildings.FishPond)">
+            <summary>
+                Reads the serialized held item list from the <paramref name="pond"/>'s <seealso cref="T:StardewValley.Mods.ModDataDictionary"/> and
+                returns a deserialized <see cref="T:System.Collections.Generic.List`1"/> of <seealso cref="T:StardewValley.Object"/>s.
+            </summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+            <returns>A <see cref="T:System.Collections.Generic.List`1"/> of <see cref="T:StardewValley.Item"/>s encoded in the <paramref name="pond"/>'s held items data.</returns>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.FishPondExtensions.GetRoeChance(StardewValley.Buildings.FishPond,System.Nullable{System.Int32})">
+            <summary>Gets a fish's chance to produce roe in this <paramref name="pond"/>.</summary>
+            <param name="pond">The <see cref="T:StardewValley.Buildings.FishPond"/>.</param>
+            <param name="value">The fish's sale value.</param>
+            <returns>The percentage chance of a fish with the given <paramref name="value"/> to produce roe in this <paramref name="pond"/>.</returns>
+        </member>
+        <member name="T:DaLion.Ponds.Framework.Extensions.RandomExtensions">
+            <summary>Extensions for the <see cref="T:System.Random"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.RandomExtensions.NextAlgae(System.Random,System.String)">
+            <summary>Gets the item index of a random algae.</summary>
+            <param name="random">The <see cref="T:System.Random"/> number generator.</param>
+            <param name="bias">A particular type of algae that should be favored.</param>
+            <returns>The <see cref="T:System.String"/> id of an algae <see cref="T:StardewValley.Item"/>.</returns>
+        </member>
+        <member name="T:DaLion.Ponds.Framework.Extensions.SObjectExtensions">
+            <summary>Extensions for the <see cref="T:StardewValley.Object"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.SObjectExtensions.IsRadioactiveFish(StardewValley.Object)">
+            <summary>Determines whether the <paramref name="object"/> is a radioactive fish.</summary>
+            <param name="object">The <see cref="T:StardewValley.Object"/>.</param>
+            <returns><see langword="true"/> if the <paramref name="object"/> is a mutant or radioactive fish species, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Extensions.SObjectExtensions.CanBeEnriched(StardewValley.Object)">
+            <summary>Determines whether the <paramref name="object"/> is a non-radioactive ore or ingot.</summary>
+            <param name="object">The <see cref="T:StardewValley.Object"/>.</param>
+            <returns><see langword="true"/> if the <paramref name="object"/> is either copper, iron, gold or iridium, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="T:DaLion.Ponds.Framework.Lookups">
+            <summary>Holds maps which may be referenced by different modules.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.Framework.Lookups.FamilyPairs">
+            <summary>Gets a map from a legendary fish ID to that of its corresponding extended family pair.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.BuildingDayUpdatePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.BuildingDayUpdatePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishingRodPullFishFromWaterPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishingRodPullFishFromWaterPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishingRodPullFishFromWaterPatcher.FishingRodPullFishFromWaterPrefix(StardewValley.Tools.FishingRod,System.String@,System.Int32@,System.Boolean)">
+            <summary>Decrement total Fish Pond quality ratings.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondAddFishToPondPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishPondAddFishToPondPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondAddFishToPondPatcher.FishPondAddFishToPondPostfix(StardewValley.Buildings.FishPond,StardewValley.GameData.FishPonds.FishPondData,StardewValley.Object)">
+            <summary>Add to PondFish data + distinguish extended family pairs + increment total Fish Pond quality ratings.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondClearPondPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishPondClearPondPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondClearPondPatcher.FishPondClearPondPrefix(StardewValley.Buildings.FishPond,StardewValley.Object@,System.Boolean@)">
+            <summary>Clear Family Living Here data.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondCtorPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishPondCtorPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondCtorPatcher.FishPondCtorPostfix(StardewValley.Buildings.FishPond)">
+            <summary>Compensates for the game calling dayUpdate *twice* immediately upon construction.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondDayUpdatePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishPondDayUpdatePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondDayUpdatePatcher.FishPondDayUpdatePrefix(StardewValley.Buildings.FishPond,StardewValley.Item@)">
+            <summary>Reset held items each morning.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondDayUpdatePatcher.FishPondDayUpdatePostfix(StardewValley.Buildings.FishPond,StardewValley.Item,StardewValley.GameData.FishPonds.FishPondData@)">
+            <summary>Spontaneously grow algae.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondDoActionPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishPondDoActionPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondDoActionPatcher.FishPondDoActionTranspiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.Emit.ILGenerator,System.Reflection.MethodBase)">
+            <summary>
+                Inject ItemGrabMenu + allow legendary fish to share a pond with their extended families + secretly enrich
+                metals in radioactive ponds.
+            </summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondDoFishSpecificWaterColoringPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishPondDoFishSpecificWaterColoringPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondDoFishSpecificWaterColoringPatcher.FishPondDoFishSpecificWaterColoringPostfix(StardewValley.Buildings.FishPond)">
+            <summary>Recolor for algae/seaweed.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondJumpFishPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishPondJumpFishPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondJumpFishPatcher.FishPondJumpFishPrefix(StardewValley.Buildings.FishPond,System.Boolean@)">
+            <summary>Prevent un-immersive jumping algae.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondOnFishTypeChangedPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishPondOnFishTypeChangedPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondOnFishTypeChangedPatcher.FishPondOnFishTypeChangedPostfix(StardewValley.Buildings.FishPond,System.String,System.String)">
+            <summary>Reset Fish Pond data.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondSpawnFishPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishPondSpawnFishPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondSpawnFishPatcher.FishPondSpawnFishPostfix(StardewValley.Buildings.FishPond)">
+            <summary>Set the quality of newborn fishes.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondUpdateMaximumOccupancyPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.FishPondUpdateMaximumOccupancyPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.FishPondUpdateMaximumOccupancyPatcher.FishPondUpdateMaximumOccupancyPostfix(StardewValley.Buildings.FishPond,System.Int32)">
+            <summary>Fix for Professions compatibility.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.Integration.FishPondMachineOnOutputTakenPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.Integration.FishPondMachineOnOutputTakenPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.InventoryMenuHoverPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.InventoryMenuHoverPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.ItemGrabMenuCtorPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.ItemGrabMenuCtorPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.ItemGrabMenuCtorPatcher.ItemGrabMenuCtorPostfix(StardewValley.Menus.ItemGrabMenu)">
+            <summary>Update ItemsHeld data on grab menu close.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.MenuWithInventoryReadyToClosePatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.MenuWithInventoryReadyToClosePatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.MenuWithInventoryReadyToClosePatcher.MenuWithInventoryToClosePostfix(StardewValley.Menus.MenuWithInventory,System.Boolean@)">
+            <summary>Update ItemsHeld data on grab menu close.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.PondQueryMenuDrawPatcher.#ctor(DaLion.Shared.Harmony.Harmonizer,DaLion.Shared.Logger)">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.Framework.Patchers.PondQueryMenuDrawPatcher"/> class.</summary>
+            <param name="harmonizer">The <see cref="T:DaLion.Shared.Harmony.Harmonizer"/> instance that manages this patcher.</param>
+            <param name="logger">A <see cref="T:DaLion.Shared.Logger"/> instance.</param>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.PondQueryMenuDrawPatcher.PondQueryMenuDrawPrefix(StardewValley.Menus.PondQueryMenu,System.Single,Microsoft.Xna.Framework.Rectangle,System.String,System.Boolean,System.String,StardewValley.Object,StardewValley.Buildings.FishPond,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>Adjust fish pond query menu for algae and mixed legendary pairs.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.Patchers.PondQueryMenuDrawPatcher.PondQueryMenuDrawPostfix(StardewValley.Menus.PondQueryMenu,System.Single,System.Boolean,StardewValley.Object,StardewValley.Buildings.FishPond,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>Draw quality stars.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.Framework.PondFish.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Ponds.Framework.PondFish.CompareTo(DaLion.Ponds.Framework.PondFish)">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Ponds.PondsConfig">
+            <summary>Config schema for the Ponds mod.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsConfig.DaysUntilAlgaeSpawn">
+            <summary>Gets the number of days until an empty pond will begin spawning algae.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsConfig.RoeProductionChanceMultiplier">
+            <summary>Gets the multiplier to a fish's base chance to produce roe each day.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsConfig.AddLegendaryFishPondData">
+            <summary>Gets a value indicating whether to add Fish Pond data for legendary fish.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.PondsConfigMenu.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DaLion.Ponds.PondsConfigMenu"/> class.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.PondsConfigMenu.BuildMenu">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Ponds.PondsConfigMenu.ResetConfig">
+            <inheritdoc />
+        </member>
+        <member name="M:DaLion.Ponds.PondsConfigMenu.SaveAndApply">
+            <inheritdoc />
+        </member>
+        <member name="T:DaLion.Ponds.PondsMod">
+            <summary>The mod entry point.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsMod.Instance">
+            <summary>Gets the static <see cref="T:DaLion.Ponds.PondsMod"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsMod.Config">
+            <summary>Gets or sets the <see cref="T:DaLion.Ponds.PondsConfig"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsMod.Data">
+            <summary>Gets the <see cref="T:DaLion.Shared.Data.ModDataManager"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsMod.Broadcaster">
+            <summary>Gets the <see cref="P:DaLion.Ponds.PondsMod.Broadcaster"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsMod.Log">
+            <summary>Gets the <see cref="T:DaLion.Shared.Logger"/> instance.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsMod.ModHelper">
+            <summary>Gets the <see cref="T:StardewModdingAPI.IModHelper"/> API.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsMod.Manifest">
+            <summary>Gets the <see cref="T:StardewModdingAPI.IManifest"/> API.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsMod.UniqueId">
+            <summary>Gets the unique ID for this mod.</summary>
+        </member>
+        <member name="P:DaLion.Ponds.PondsMod._I18n">
+            <summary>Gets the <see cref="T:StardewModdingAPI.ITranslationHelper"/> API.</summary>
+        </member>
+        <member name="M:DaLion.Ponds.PondsMod.Entry(StardewModdingAPI.IModHelper)">
+            <summary>The mod entry point, called after the mod is first loaded.</summary>
+            <param name="helper">Provides simplified APIs for writing mods.</param>
+        </member>
+        <member name="T:DaLion.Ponds.I18n">
+            <summary>Get translations from the mod's <c>i18n</c> folder.</summary>
+            <remarks>This is auto-generated from the <c>i18n/default.json</c> file when the project is compiled.</remarks>
+        </member>
+        <member name="F:DaLion.Ponds.I18n.Translations">
+            <summary>The mod's translation helper.</summary>
+        </member>
+        <member name="T:DaLion.Ponds.I18n.Keys">
+            <summary>A lookup of available translation keys.</summary>
+        </member>
+        <member name="F:DaLion.Ponds.I18n.Keys.Schema">
+            <summary>The unique key for a translation equivalent to "https://smapi.io/schemas/i18n.json".</summary>
+        </member>
+        <member name="F:DaLion.Ponds.I18n.Keys.Algae">
+            <summary>The unique key for a translation equivalent to "Algae".</summary>
+        </member>
+        <member name="F:DaLion.Ponds.I18n.Keys.Gmcm_DaysUntilAlgaeSpawn_Title">
+            <summary>The unique key for a translation equivalent to "Days Until Algae Spawn".</summary>
+        </member>
+        <member name="F:DaLion.Ponds.I18n.Keys.Gmcm_DaysUntilAlgaeSpawn_Desc">
+            <summary>The unique key for a translation equivalent to "The number of days until an empty pond will begin spawning algae.".</summary>
+        </member>
+        <member name="F:DaLion.Ponds.I18n.Keys.Gmcm_RoeProductionChanceMultiplier_Title">
+            <summary>The unique key for a translation equivalent to "Roe Production Chance Multiplier".</summary>
+        </member>
+        <member name="F:DaLion.Ponds.I18n.Keys.Gmcm_RoeProductionChanceMultiplier_Desc">
+            <summary>The unique key for a translation equivalent to "A multiplier to a fish's base chance to produce roe each day.".</summary>
+        </member>
+        <member name="M:DaLion.Ponds.I18n.Init(StardewModdingAPI.ITranslationHelper)">
+            <summary>Construct an instance.</summary>
+            <param name="translations">The mod's translation helper.</param>
+        </member>
+        <member name="M:DaLion.Ponds.I18n.Schema">
+            <summary>Get a translation equivalent to "https://smapi.io/schemas/i18n.json".</summary>
+        </member>
+        <member name="M:DaLion.Ponds.I18n.Algae">
+            <summary>Get a translation equivalent to "Algae".</summary>
+        </member>
+        <member name="M:DaLion.Ponds.I18n.Gmcm_DaysUntilAlgaeSpawn_Title">
+            <summary>Get a translation equivalent to "Days Until Algae Spawn".</summary>
+        </member>
+        <member name="M:DaLion.Ponds.I18n.Gmcm_DaysUntilAlgaeSpawn_Desc">
+            <summary>Get a translation equivalent to "The number of days until an empty pond will begin spawning algae.".</summary>
+        </member>
+        <member name="M:DaLion.Ponds.I18n.Gmcm_RoeProductionChanceMultiplier_Title">
+            <summary>Get a translation equivalent to "Roe Production Chance Multiplier".</summary>
+        </member>
+        <member name="M:DaLion.Ponds.I18n.Gmcm_RoeProductionChanceMultiplier_Desc">
+            <summary>Get a translation equivalent to "A multiplier to a fish's base chance to produce roe each day.".</summary>
+        </member>
+        <member name="M:DaLion.Ponds.I18n.GetByKey(System.String,System.Object)">
+            <summary>Get a translation by its key.</summary>
+            <param name="key">The translation key.</param>
+            <param name="tokens">An object containing token key/value pairs. This can be an anonymous object (like <c>new { value = 42, name = "Cranberries" }</c>), a dictionary, or a class instance.</param>
+            <remarks>You should usually use a strongly-typed method like <see cref="M:DaLion.Ponds.I18n.Schema" /> instead.</remarks>
+        </member>
+        <member name="T:NetEscapades.EnumGenerators.EnumExtensionsAttribute">
+            <summary>
+            Add to enums to indicate that extension methods should be generated for the type
+            </summary>
+        </member>
+        <member name="P:NetEscapades.EnumGenerators.EnumExtensionsAttribute.ExtensionClassNamespace">
+            <summary>
+            The namespace to generate the extension class.
+            If not provided the namespace of the enum will be used
+            </summary>
+        </member>
+        <member name="P:NetEscapades.EnumGenerators.EnumExtensionsAttribute.ExtensionClassName">
+            <summary>
+            The name to use for the extension class.
+            If not provided, the enum name with "Extensions" will be used.
+            For example for an Enum called StatusCodes, the default name
+            will be StatusCodesExtensions
+            </summary>
+        </member>
+    </members>
+</doc>

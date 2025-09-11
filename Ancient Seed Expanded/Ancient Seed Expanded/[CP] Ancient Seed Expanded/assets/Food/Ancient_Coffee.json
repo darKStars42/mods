@@ -1,0 +1,118 @@
+{
+  "Changes": [
+    //Food
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries":{
+        "{{ModId}}_Ancient_Coffee":{
+          "Name": "Ancient Coffee",
+          "DisplayName": "{{i18n:Ancient_Coffee.DisplayName}}",
+          "Description": "{{i18n:Ancient_Coffee.Description}}",
+          "Type": "Cooking",
+          "Category": -7,
+          "Price" : 1700,
+          "IsDrink": true,
+          "Edibility": 14,
+          "Texture": "Mods/{{ModId}}/Ancient_Coffee",
+          "SpriteIndex": 0,
+          "Buffs": [
+            {
+                  "Id": "Food",
+                  "BuffId": null,
+                  "IconTexture": null,
+                  "IconSpriteIndex": 0,
+                  "Duration": 450,
+                  "IsDebuff": false,
+                  "GlowColor": null,
+                  "CustomAttributes": {
+                  "FarmingLevel": 0.0,
+                  "FishingLevel": 0.0,
+                  "MiningLevel": 0.0,
+                  "LuckLevel": 0.0,
+                  "ForagingLevel": 0.0,
+                  "MaxStamina": 0.0,
+                  "MagneticRadius": 0.0,
+                  "Speed": 2.5,
+                  "Defense": 0.0,
+                  "Attack": 0.0
+                }
+              }
+            ],
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "Zexu2K_Ancient_Coffee",
+            "!keg_juice"
+          ],
+        }
+      }
+    },
+        {
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC)12", "OutputRules"],
+            "Entries": {  
+              "{{ModId}}_Ancient_Coffee":
+                    {
+                      "Id": "Ancient_Bens_Seeds",
+                      "Triggers": [
+                        {
+                          "Id": "ItemPlacedInMachine",
+                          "Trigger": "ItemPlacedInMachine",
+                          "RequiredItemId": "{{ModId}}_Ancient_Bean_Seeds",
+                          "RequiredTags": null,
+                          "RequiredCount": 5,
+                          "Condition": null
+                        }
+                      ],
+                      "OutputItem": [
+                      {
+                        "CustomData": null,
+                        "OutputMethod": null,
+                        "CopyColor": false,
+                        "CopyPrice": false,
+                        "CopyQuality": false,
+                        "PreserveType": null,
+                        "PreserveId": null,
+                        "IncrementMachineParentSheetIndex": 0,
+                        "PriceModifiers": null,
+                        "PriceModifierMode": "Stack",
+                        "Condition": null,
+                        "Id": "{{ModId}}_Ancient_Coffee",
+                        "ItemId": "{{ModId}}_Ancient_Coffee",
+                        "RandomItemId": null,
+                        "MaxItems": null,
+                        "MinStack": -1,
+                        "MaxStack": -1,
+                        "Quality": -1,
+                        "ObjectInternalName": null,
+                        "ObjectDisplayName": null,
+                        "ToolUpgradeLevel": -1,
+                        "IsRecipe": false,
+                        "StackModifiers": null,
+                        "StackModifierMode": "Stack",
+                        "QualityModifiers": null,
+                        "QualityModifierMode": "Stack",
+                        "ModData": null,
+                        "PerItemCondition": null
+                      }
+                    ], 
+                      "MinutesUntilReady": 1750,
+                      "DaysUntilReady": -1,
+                      "InvalidCountMessage": null,
+                      "RecalculateOnCollect": false
+                    }
+            }
+    },
+    {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Ancient_Coffee",
+            "FromFile": "assets/Food/{{TargetWithoutPath}}.png"
+        }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+"Changes":
+[
+	{
+"Action": "EditData",
+"Target": "spacechase0.SpaceCore/ObjectExtensionData",
+"Entries": {
+"{{ModID}}_LyellsRecipeBookLearn": { "UseForTriggerAction": true, },
+
+}
+},
+
+{
+"Action": "Load",
+"Target": "Mods/{{ModID}}/Page,Mods/{{ModID}}/Tab",
+"FromFile": "Assets/Book/{{TargetWithoutPath}}.png"
+},
+{
+"Action": "EditData",
+"Target": "Data/TriggerActions",
+"Entries": {
+"{{ModID}}_LyellsRecipeBookLearn": {
+"Id": "{{ModID}}_LyellsRecipeBookLearn",
+"MarkActionApplied": false,
+"Trigger": "spacechase0.SpaceCore_OnItemUsed",
+"Condition": "ITEM_ID Input (O){{ModID}}_LyellsRecipeBookLearn",
+"Actions": [
+"MarkCookingRecipeKnown Current {{ModID}}_AdauulaCakes true",
+"MarkCookingRecipeKnown Current {{ModID}}_WarpRootTea true",
+"MarkCookingRecipeKnown Current {{ModID}}_GaggleShroomTea true",
+"MarkCookingRecipeKnown Current {{ModID}}_WarpRootIcey true",
+"MarkCookingRecipeKnown Current {{ModID}}_CheeseyGaggleStew true",
+"MarkCookingRecipeKnown Current {{ModID}}_SpicyRaphusEggScramble true",
+"MarkCookingRecipeKnown Current {{ModID}}_DeaEggHash true",
+"MarkCookingRecipeKnown Current {{ModID}}_StuffedAdauulaRoll true",
+"MarkCookingRecipeKnown Current {{ModID}}_AdauulaSweetTwist true",
+"MarkCookingRecipeKnown Current {{ModID}}_AdauulaAppleRoll true",
+"MarkCookingRecipeKnown Current {{ModID}}_TuuphPuff true",
+"MarkCookingRecipeKnown Current {{ModID}}_SourAdauulaBread true",
+"RemoveItem {{ModID}}_LyellsRecipeBookLearn",
+"spacechase0.SpaceCore_ShowHudMessage \"{{i18n:FC.LyellsRecipeBookLearned}}\" (O){{ModID}}_LyellsRecipeBookLearn",
+"spacechase0.SpaceCore_PlaySound getNewSpecialItem false",
+"AddConversationTopic LyellsRecipes 15"
+]
+}
+}
+},
+]
+}

@@ -1,0 +1,187 @@
+{
+"Format": "2.0.0",
+"ConfigSchema": {
+//Pig Settings
+	"PigDefault" : {
+		"AllowValues" : "Berkshire, Black, Black Spotted, Pink, Red, Saddleback, Sandy and Black, Smooth Vanilla, White",
+		"AllowMultiple": false,
+		"AllowBlank": true,
+		"Default": "Pink"
+	},
+	"PigVariation" : {
+		"AllowValues" : "Berkshire, Black, Black Spotted, Pink, Red, Saddleback, Sandy and Black, Smooth Vanilla, White",
+		"AllowMultiple": true,
+		"AllowBlank": true,
+		"Default": "Berkshire, Black, Black Spotted, Pink, Red, Saddleback, Sandy and Black, White"
+	}
+},
+
+"Changes": [
+//Pigs
+	//Default
+	{
+		"LogName": "PigDefault",
+		"Action": "EditImage",
+		"Target": "Animals/Pig",
+		"FromFile": "assets/Pigs/{{PigDefault}}.png",
+		"When": {
+			"PigDefault": "{{PigDefault}}"
+		}
+	},
+	{
+		"LogName": "PigBabyDefault",
+		"Action": "EditImage",
+		"Target": "Animals/BabyPig",
+		"FromFile": "assets/Pigs/{{PigDefault}}Baby.png",
+		"When": {
+			"PigDefault": "{{PigDefault}}"
+		}
+	},
+	//Variations
+ 	{
+		"LogName": "PigBerkshire",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Pig", "Skins" ],
+		"Entries": {
+		"Zhuria.Pigs_Pig_Berkshire": {
+	  		"Id": "Zhuria.Pigs_Pig_Berkshire",
+		  	"Texture": "Mods\\Zhuria.Pigs\\Pigs\\Berkshire",
+		  	"BabyTexture": "Mods\\Zhuria.Pigs\\Pigs\\BerkshireBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"PigVariation": "Berkshire"
+		}
+ 	},
+	{
+		"LogName": "PigBlack",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Pig", "Skins" ],
+		"Entries": {
+		"Zhuria.Pigs_Pig_Black": {
+	  		"Id": "Zhuria.Pigs_Pig_Black",
+		  	"Texture": "Mods\\Zhuria.Pigs\\Pigs\\Black",
+		  	"BabyTexture": "Mods\\Zhuria.Pigs\\Pigs\\BlackBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"PigVariation": "Black"
+		}
+ 	},
+	{
+		"LogName": "PigBlackSpotted",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Pig", "Skins" ],
+		"Entries": {
+		"Zhuria.Pigs_Pig_BlackSpotted": {
+	  		"Id": "Zhuria.Pigs_Pig_BlackSpotted",
+		  	"Texture": "Mods\\Zhuria.Pigs\\Pigs\\Black Spotted",
+		  	"BabyTexture": "Mods\\Zhuria.Pigs\\Pigs\\Black SpottedBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"PigVariation": "Black Spotted"
+		}
+ 	},
+	{
+		"LogName": "PigPink",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Pig", "Skins" ],
+		"Entries": {
+		"Zhuria.Pigs_Pig_Pink": {
+	  		"Id": "Zhuria.Pigs_Pig_Pink",
+		  	"Texture": "Mods\\Zhuria.Pigs\\Pigs\\Pink",
+		  	"BabyTexture": "Mods\\Zhuria.Pigs\\Pigs\\PinkBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"PigVariation": "Pink"
+		}
+ 	},
+	{
+		"LogName": "PigRed",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Pig", "Skins" ],
+		"Entries": {
+		"Zhuria.Pigs_Pig_Red": {
+	  		"Id": "Zhuria.Pigs_Pig_Red",
+		  	"Texture": "Mods\\Zhuria.Pigs\\Pigs\\Red",
+		  	"BabyTexture": "Mods\\Zhuria.Pigs\\Pigs\\RedBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"PigVariation": "Red"
+		}
+ 	},
+	{
+		"LogName": "PigSaddleback",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Pig", "Skins" ],
+		"Entries": {
+		"Zhuria.Pigs_Pig_Saddleback": {
+	  		"Id": "Zhuria.Pigs_Pig_Saddleback",
+		  	"Texture": "Mods\\Zhuria.Pigs\\Pigs\\Saddleback",
+		  	"BabyTexture": "Mods\\Zhuria.Pigs\\Pigs\\SaddlebackBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"PigVariation": "Saddleback"
+		}
+ 	},
+	{
+		"LogName": "PigSandyBlack",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Pig", "Skins" ],
+		"Entries": {
+		"Zhuria.Pigs_Pig_SandyBlack": {
+	  		"Id": "Zhuria.Pigs_Pig_SandyBlack",
+		  	"Texture": "Mods\\Zhuria.Pigs\\Pigs\\Sandy and Black",
+		  	"BabyTexture": "Mods\\Zhuria.Pigs\\Pigs\\Sandy and BlackBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"PigVariation": "Sandy and Black"
+		}
+ 	},
+	{
+		"LogName": "PigWhite",
+		"Action": "EditData",
+		"Target": "Data/FarmAnimals",
+		"TargetField": [ "Pig", "Skins" ],
+		"Entries": {
+		"Zhuria.Pigs_Pig_White": {
+	  		"Id": "Zhuria.Pigs_Pig_White",
+		  	"Texture": "Mods\\Zhuria.Pigs\\Pigs\\White",
+		  	"BabyTexture": "Mods\\Zhuria.Pigs\\Pigs\\WhiteBaby",
+		  	"Weight": "1.0"
+		  	}
+	 	},
+		"When": {
+			"PigVariation": "White"
+		}
+ 	},
+
+	//Load Images
+    {
+      "LogName": "Load Pig Textures",
+      "Action": "Load",
+      "Target": "Mods\\Zhuria.Pigs\\Pigs\\Berkshire, Mods\\Zhuria.Pigs\\Pigs\\Black, Mods\\Zhuria.Pigs\\Pigs\\Black Spotted, Mods\\Zhuria.Pigs\\Pigs\\Pink, Mods\\Zhuria.Pigs\\Pigs\\Red, Mods\\Zhuria.Pigs\\Pigs\\Saddleback, Mods\\Zhuria.Pigs\\Pigs\\Sandy and Black, Mods\\Zhuria.Pigs\\Pigs\\Smooth Vanilla, Mods\\Zhuria.Pigs\\Pigs\\White, Mods\\Zhuria.Pigs\\Pigs\\BerkshireBaby, Mods\\Zhuria.Pigs\\Pigs\\BlackBaby, Mods\\Zhuria.Pigs\\Pigs\\Black SpottedBaby, Mods\\Zhuria.Pigs\\Pigs\\PinkBaby, Mods\\Zhuria.Pigs\\Pigs\\RedBaby, Mods\\Zhuria.Pigs\\Pigs\\SaddlebackBaby, Mods\\Zhuria.Pigs\\Pigs\\Sandy and BlackBaby, Mods\\Zhuria.Pigs\\Pigs\\Smooth VanillaBaby, Mods\\Zhuria.Pigs\\Pigs\\WhiteBaby",
+      "FromFile": "assets/Pigs/{{TargetWithoutPath}}.png"
+    }
+	
+	]
+}

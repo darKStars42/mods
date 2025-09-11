@@ -1,0 +1,2695 @@
+{
+    "Changes": [
+        //Load Object Sprites
+        {
+            "LogName": "Loading fish sprites...",
+            "Action": "Load",
+            "Target": "{{ModId}}/fish",
+            "FromFile": "assets/sprites/{{TargetWithoutPath}}.png"
+        },
+        {
+            "LogName": "Loading food sprites...",
+            "Action": "Load",
+            "Target": "{{ModId}}/food",
+            "FromFile": "assets/sprites/{{TargetWithoutPath}}.png"
+        },
+        {
+            "LogName": "Loading forage sprites...",
+            "Action": "Load",
+            "Target": "{{ModId}}/forage",
+            "FromFile": "assets/sprites/forage.png"
+        },
+        {
+            "LogName": "Loading Pond Drop sprites...",
+            "Action": "Load",
+            "Target": "{{ModId}}/pond",
+            "FromFile": "assets/sprites/{{TargetWithoutPath}}.png"
+        },
+        {
+            "LogName": "Loading Necklace sprites...",
+            "Action": "Load",
+            "Target": "{{ModId}}/necklaces",
+            "FromFile": "assets/sprites/{{GemSprites}}_necklaces.png"
+        },
+        {
+            "LogName": "Loading Gem sprites...",
+            "Action": "Load",
+            "Target": "{{ModId}}/gems",
+            "FromFile": "assets/sprites/{{GemSprites}}.png"
+        },
+        {
+            "LogName": "Loading Ring sprites...",
+            "Action": "Load",
+            "Target": "{{ModId}}/rings",
+            "FromFile": "assets/sprites/{{TargetWithoutPath}}.png"
+        },
+        {
+            "LogName": "Loading Recipe Scroll sprites...",
+            "Action": "Load",
+            "Target": "{{ModId}}/scrolls",
+            "FromFile": "assets/sprites/{{TargetWithoutPath}}.png"
+        },
+        {
+            "LogName": "Loading Artisan sprites...",
+            "Action": "Load",
+            "Target": "{{ModId}}/artisan",
+            "FromFile": "assets/sprites/{{TargetWithoutPath}}.png"
+        },
+        {
+            "LogName": "Loading Totem sprites...",
+            "Action": "Load",
+            "Target": "{{ModId}}/totems",
+            "FromFile": "assets/sprites/{{TargetWithoutPath}}.png"
+        },
+        //Add Fish Objects
+        {
+            "LogName": "Adding fish objects...",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_LunarSalmon": {
+                    "Name": "{{ModId}}_LunarSalmon",
+                    "Displayname": "{{i18n:LunarSalmon_name}}",
+                    "Description": "{{i18n:LunarSalmon_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 2650,
+                    "Edibility": 68,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_dark_blue",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_MudTrout": {
+                    "Name": "{{ModId}}_MudTrout",
+                    "Displayname": "{{i18n:MudTrout_name}}",
+                    "Description": "{{i18n:MudTrout_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 160,
+                    "Edibility": 14,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_brown",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_BlueCatfish": {
+                    "Name": "{{ModId}}_BlueCatfish",
+                    "Displayname": "{{i18n:BlueCatfish_name}}",
+                    "Description": "{{i18n:BlueCatfish_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 365,
+                    "Edibility": 19,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 2,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_blue",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_ArmoredCatfish": {
+                    "Name": "{{ModId}}_ArmoredCatfish",
+                    "Displayname": "{{i18n:ArmoredCatfish_name}}",
+                    "Description": "{{i18n:ArmoredCatfish_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 410,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 3,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_gray",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_WhiteSturgeon": {
+                    "Name": "{{ModId}}_WhiteSturgeon",
+                    "Displayname": "{{i18n:WhiteSturgeon_name}}",
+                    "Description": "{{i18n:WhiteSturgeon_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 310,
+                    "Edibility": 18,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 4,
+                    "ContextTags": [
+                        "fish_lake",
+                        "fos_item",
+                        "color_white",
+                        "season_fall",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_MossyCod": {
+                    "Name": "{{ModId}}_MossyCod",
+                    "Displayname": "{{i18n:MossyCod_name}}",
+                    "Description": "{{i18n:MossyCod_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 340,
+                    "Edibility": 18,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 5,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_green",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_GhostPike": {
+                    "Name": "{{ModId}}_GhostPike",
+                    "Displayname": "{{i18n:GhostPike_name}}",
+                    "Description": "{{i18n:GhostPike_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 250,
+                    "Edibility": 17,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 6,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_gray",
+                        "season_spring",
+                        "season_summer"
+                    ]
+                },
+                "{{ModId}}_RadioactiveSunfish": {
+                    "Name": "{{ModId}}_RadioactiveSunfish",
+                    "Displayname": "{{i18n:RadioactiveSunfish_name}}",
+                    "Description": "{{i18n:RadioactiveSunfish_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 410,
+                    "Edibility": -50,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 7,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_green",
+                        "season_all",
+                        "item_radioactive"
+                    ]
+                },
+                "{{ModId}}_SpottedRay": {
+                    "Name": "{{ModId}}_SpottedRay",
+                    "DisplayName": "{{i18n:SpottedRay_name}}",
+                    "Description": "{{i18n:SpottedRay_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 305,
+                    "Edibility": 18,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 8,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_white",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_BrownShad": {
+                    "Name": "{{ModId}}_BrownShad",
+                    "DisplayName": "{{i18n:BrownShad_name}}",
+                    "Description": "{{i18n:BrownShad_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 175,
+                    "Edibility": 16,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 9,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_brown",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_DeepSeaHalibut": {
+                    "Name": "{{ModId}}_DeepSeaHalibut",
+                    "DisplayName": "{{i18n:DeepSeaHalibut_name}}",
+                    "Description": "{{i18n:DeepSeaHalibut_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 200,
+                    "Edibility": 15,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 10,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_dark_blue",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_SeaweedHalibut": {
+                    "Name": "{{ModId}}_SeaweedHalibut",
+                    "DisplayName": "{{i18n:SeaweedHalibut_name}}",
+                    "Description": "{{i18n:SeaweedHalibut_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 175,
+                    "Edibility": 15,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 11,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_green",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_CrimsonShad": {
+                    "Name": "{{ModId}}_CrimsonShad",
+                    "DisplayName": "{{i18n:CrimsonShad_name}}",
+                    "Description": "{{i18n:CrimsonShad_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 290,
+                    "Edibility": 17,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 12,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_red",
+                        "season_fall",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_SockeyeSalmon": {
+                    "Name": "{{ModId}}_SockeyeSalmon",
+                    "DisplayName": "{{i18n:SockeyeSalmon_name}}",
+                    "Description": "{{i18n:SockeyeSalmon_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 195,
+                    "Edibility": 18,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 13,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_gray",
+                        "season_fall",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_CookieOctopus": {
+                    "Name": "{{ModId}}_CookieOctopus",
+                    "DisplayName": "{{i18n:CookieOctopus_name}}",
+                    "Description": "{{i18n:CookieOctopus_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 300,
+                    "Edibility": 25,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 14,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_yellow",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_Bluegill": {
+                    "Name": "{{ModId}}_Bluegill",
+                    "DisplayName": "{{i18n:Bluegill_name}}",
+                    "Description": "{{i18n:Bluegill_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 55,
+                    "Edibility": 12,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 15,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_blue",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_BlackClownfish": {
+                    "Name": "{{ModId}}_BlackClownfish",
+                    "Displayname": "{{i18n:BlackClownfish_name}}",
+                    "Description": "{{i18n:BlackClownfish_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 335,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 16,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_black",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_MorayEel": {
+                    "Name": "{{ModId}}_MorayEel",
+                    "Displayname": "{{i18n:MorayEel_name}}",
+                    "Description": "{{i18n:MorayEel_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 376,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 17,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_green",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_VermilionCarp": {
+                    "Name": "{{ModId}}_VermilionCarp",
+                    "Displayname": "{{i18n:VermilionCarp_name}}",
+                    "Description": "{{i18n:VermilionCarp_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 265,
+                    "Edibility": 17,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 18,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_red",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_PumpkinPerch": {
+                    "Name": "{{ModId}}_PumpkinPerch",
+                    "Displayname": "{{i18n:PumpkinPerch_name}}",
+                    "Description": "{{i18n:PumpkinPerch_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 390,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 19,
+                    "ContextTags": [
+                        "fish_lake",
+                        "fos_item",
+                        "color_orange",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_YellowfinCarp": {
+                    "Name": "{{ModId}}_YellowfinCarp",
+                    "Displayname": "{{i18n:YellowfinCarp_name}}",
+                    "Description": "{{i18n:YellowfinCarp_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 260,
+                    "Edibility": 17,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 20,
+                    "ContextTags": [
+                        "fish_lake",
+                        "fos_item",
+                        "color_yellow",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_EmeraldJackfish": {
+                    "Name": "{{ModId}}_EmeraldJackfish",
+                    "Displayname": "{{i18n:EmeraldJackfish_name}}",
+                    "Description": "{{i18n:EmeraldJackfish_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 260,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 21,
+                    "ContextTags": [
+                        "fish_lake",
+                        "fos_item",
+                        "color_green",
+                        "season_spring"
+                    ]
+                },
+                "{{ModId}}_StripedChar": {
+                    "Name": "{{ModId}}_StripedChar",
+                    "Displayname": "{{i18n:StripedChar_name}}",
+                    "Description": "{{i18n:StripedChar_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 50,
+                    "Edibility": 12,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 22,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_brown",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_BabyReefShark": {
+                    "Name": "{{ModId}}_BabyReefShark",
+                    "Displayname": "{{i18n:BabyReefShark_name}}",
+                    "Description": "{{i18n:BabyReefShark_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 1870,
+                    "Edibility": 55,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 23,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_purple",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_StoneTetra": {
+                    "Name": "{{ModId}}_StoneTetra",
+                    "Displayname": "{{i18n:StoneTetra_name}}",
+                    "Description": "{{i18n:StoneTetra_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 80,
+                    "Edibility": 13,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 24,
+                    "ContextTags": [
+                        "fish_river",
+                        "fish_lake",
+                        "fos_item",
+                        "color_gray",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_MuddyTetra": {
+                    "Name": "{{ModId}}_MuddyTetra",
+                    "Displayname": "{{i18n:MuddyTetra_name}}",
+                    "Description": "{{i18n:MuddyTetra_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 105,
+                    "Edibility": 13,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 25,
+                    "ContextTags": [
+                        "fish_river",
+                        "fish_lake",
+                        "fos_item",
+                        "color_brown",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_IridiumSalmon": {
+                    "Name": "{{ModId}}_IridiumSalmon",
+                    "Displayname": "{{i18n:IridiumSalmon_name}}",
+                    "Description": "{{i18n:IridiumSalmon_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 480,
+                    "Edibility": 21,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 26,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_purple",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_Chad": {
+                    "Name": "{{ModId}}_Chad",
+                    "Displayname": "{{i18n:Chad_name}}",
+                    "Description": "{{i18n:Chad_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 220,
+                    "Edibility": 16,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 27,
+                    "ContextTags": [
+                        "fish_desert",
+                        "fos_item",
+                        "color_brown",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_SunscaledTrout": {
+                    "Name": "{{ModId}}_SunscaledTrout",
+                    "Displayname": "{{i18n:SunscaledTrout_name}}",
+                    "Description": "{{i18n:SunscaledTrout_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 240,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 28,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_yellow",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_FrostbiteFlounder": {
+                    "Name": "{{ModId}}_FrostbiteFlounder",
+                    "Displayname": "{{i18n:FrostbiteFlounder_name}}",
+                    "Description": "{{i18n:FrostbiteFlounder_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 95,
+                    "Edibility": 15,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 29,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_blue",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_GlacierBass": {
+                    "Name": "{{ModId}}_GlacierBass",
+                    "Displayname": "{{i18n:GlacierBass_name}}",
+                    "Description": "{{i18n:GlacierBass_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 210,
+                    "Edibility": 15,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 30,
+                    "ContextTags": [
+                        "fish_lake",
+                        "fos_item",
+                        "color_blue",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_WhisperingWalleye": {
+                    "Name": "{{ModId}}_WhisperingWalleye",
+                    "Displayname": "{{i18n:WhisperingWalleye_name}}",
+                    "Description": "{{i18n:WhisperingWalleye_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 245,
+                    "Edibility": 16,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 31,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_black",
+                        "season_fall",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_BandedEel": {
+                    "Name": "{{ModId}}_BandedEel",
+                    "Displayname": "{{i18n:BandedEel_name}}",
+                    "Description": "{{i18n:BandedEel_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 435,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 32,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_blue",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_IceyOctopus": {
+                    "Name": "{{ModId}}_IceyOctopus",
+                    "Displayname": "{{i18n:IceyOctopus_name}}",
+                    "Description": "{{i18n:IceyOctopus_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 235,
+                    "Edibility": 16,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 33,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_blue",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_PurpleParrotfish": {
+                    "Name": "{{ModId}}_PurpleParrotfish",
+                    "Displayname": "{{i18n:PurpleParrotfish_name}}",
+                    "Description": "{{i18n:PurpleParrotfish_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 130,
+                    "Edibility": 14,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 34,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_purple",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_SandRay": {
+                    "Name": "{{ModId}}_SandRay",
+                    "Displayname": "{{i18n:SandRay_name}}",
+                    "Description": "{{i18n:SandRay_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 340,
+                    "Edibility": 18,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 35,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_yellow",
+                        "season_summer"
+                    ]
+                },
+                "{{ModId}}_Triggerfish": {
+                    "Name": "{{ModId}}_Triggerfish",
+                    "Displayname": "{{i18n:Triggerfish_name}}",
+                    "Description": "{{i18n:Triggerfish_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 80,
+                    "Edibility": 13,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 36,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_yellow",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_Sailfin": {
+                    "Name": "{{ModId}}_Sailfin",
+                    "Displayname": "{{i18n:Sailfin_name}}",
+                    "Description": "{{i18n:Sailfin_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 5000,
+                    "Edibility": 120,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 37,
+                    "ContextTags": [
+                        "fish_legendary",
+                        "fos_item",
+                        "color_red",
+                        "season_spring"
+                    ]
+                },
+                "{{ModId}}_SaltGrouper": {
+                    "Name": "{{ModId}}_SaltGrouper",
+                    "Displayname": "{{i18n:SaltGrouper_name}}",
+                    "Description": "{{i18n:SaltGrouper_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 180,
+                    "Edibility": 15,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 38,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_green",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_MossyTetra": {
+                    "Name": "{{ModId}}_MossyTetra",
+                    "Displayname": "{{i18n:MossyTetra_name}}",
+                    "Description": "{{i18n:MossyTetra_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 105,
+                    "Edibility": 13,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 39,
+                    "ContextTags": [
+                        "fish_river",
+                        "fos_item",
+                        "color_green",
+                        "season_spring",
+                        "season_summer"
+                    ]
+                },
+                "{{ModId}}_ReefShark": {
+                    "Name": "{{ModId}}_ReefShark",
+                    "Displayname": "{{i18n:ReefShark_name}}",
+                    "Description": "{{i18n:ReefShark_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 4900,
+                    "Edibility": 115,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 40,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_purple",
+                        "season_all"
+                    ]
+                },
+                "{{ModId}}_WillowCutthroat": {
+                    "Name": "{{ModId}}_WillowCutthroat",
+                    "Displayname": "{{i18n:WillowCutthroat_name}}",
+                    "Description": "{{i18n:WillowCutthroat_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 230,
+                    "Edibility": 16,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 41,
+                    "ContextTags": [
+                        "fish_desert",
+                        "fos_item",
+                        "color_green",
+                        "season_summer",
+                        "season_fall",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_LongfinEel": {
+                    "Name": "{{ModId}}_LongfinEel",
+                    "Displayname": "{{i18n:LongfinEel_name}}",
+                    "Description": "{{i18n:LongfinEel_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 340,
+                    "Edibility": 5,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 42,
+                    "ContextTags": [
+                        "fish_river",
+                        "fish_lake",
+                        "fos_item",
+                        "color_brown",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                },
+                "{{ModId}}_BioluminescentSquid": {
+                    "Name": "{{ModId}}_BioluminescentSquid",
+                    "Displayname": "{{i18n:BioluminescentSquid_name}}",
+                    "Description": "{{i18n:BioluminescentSquid_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 435,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 43,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_green",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_SpectreJelly": {
+                    "Name": "{{ModId}}_SpectreJelly",
+                    "Displayname": "{{i18n:SpectreJelly_name}}",
+                    "Description": "{{i18n:SpectreJelly_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 455,
+                    "Edibility": 21,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 44,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_blue",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_WhiteSeaBunny": {
+                    "Name": "{{ModId}}_WhiteSeaBunny",
+                    "Displayname": "{{i18n:WhiteSeaBunny_name}}",
+                    "Description": "{{i18n:WhiteSeaBunny_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 125,
+                    "Edibility": -40,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 45,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_white",
+                        "season_spring",
+                        "season_summer"
+                    ]
+                },
+                "{{ModId}}_YellowSeaBunny": {
+                    "Name": "{{ModId}}_YellowSeaBunny",
+                    "Displayname": "{{i18n:YellowSeaBunny_name}}",
+                    "Description": "{{i18n:YellowSeaBunny_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 125,
+                    "Edibility": -40,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 46,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_yellow",
+                        "season_spring",
+                        "season_summer"
+                    ]
+                },
+                "{{ModId}}_BlueNembrotha": {
+                    "Name": "{{ModId}}_BlueNembrotha",
+                    "Displayname": "{{i18n:BlueNembrotha_name}}",
+                    "Description": "{{i18n:BlueNembrotha_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 150,
+                    "Edibility": -40,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 47,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_blue",
+                        "season_spring",
+                        "season_summer"
+                    ]
+                },
+                "{{ModId}}_BrickScaledSeaBass": {
+                    "Name": "{{ModId}}_BrickScaledSeaBass",
+                    "Displayname": "{{i18n:BrickScaledSeaBass_name}}",
+                    "Description": "{{i18n:BrickScaledSeaBass_description}}",
+                    "Type": "Fish",
+                    "Category": -4,
+                    "Price": 400,
+                    "Edibility": -38,
+                    "Texture": "{{ModId}}/fish",
+                    "SpriteIndex": 48,
+                    "ContextTags": [
+                        "fish_ocean",
+                        "fos_item",
+                        "color_red",
+                        "season_fall"
+                    ]
+                }
+            }
+        },
+        //Add Food Objects
+        {
+            "LogName": "Adding food objects...",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_SmokedSturgeonRoll": {
+                    "Name": "{{ModId}}_SmokedSturgeonRoll",
+                    "Displayname": "{{i18n:SmokedSturgeonRoll_name}}",
+                    "Description": "{{i18n:SmokedSturgeonRoll_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 850,
+                    "Edibility": 42,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_DeepSeaHalibutRoll": {
+                    "Name": "{{ModId}}_DeepSeaHalibutRoll",
+                    "Displayname": "{{i18n:DeepSeaHalibutRoll_name}}",
+                    "Description": "{{i18n:DeepSeaHalibutRoll_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 400,
+                    "Edibility": 38,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_CookieOctopusRoll": {
+                    "Name": "{{ModId}}_CookieOctopusRoll",
+                    "Displayname": "{{i18n:CookieOctopusRoll_name}}",
+                    "Description": "{{i18n:CookieOctopusRoll_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 450,
+                    "Edibility": 38,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 2,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_SmokedSalmonRoll": {
+                    "Name": "{{ModId}}_SmokedSalmonRoll",
+                    "Displayname": "{{i18n:SmokedSalmonRoll_name}}",
+                    "Description": "{{i18n:SmokedSalmonRoll_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 500,
+                    "Edibility": 50,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 3,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_MossyCodStew": {
+                    "Name": "{{ModId}}_MossyCodStew",
+                    "Displayname": "{{i18n:MossyCodStew_name}}",
+                    "Description": "{{i18n:MossyCodStew_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 650,
+                    "Edibility": 70,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 4,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BlackClownfishRoll": {
+                    "Name": "{{ModId}}_BlackClownfishRoll",
+                    "Displayname": "{{i18n:BlackClownfishRoll_name}}",
+                    "Description": "{{i18n:BlackClownfishRoll_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 750,
+                    "Edibility": 36,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 5,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_MorayEelRoll": {
+                    "Name": "{{ModId}}_MorayEelRoll",
+                    "Displayname": "{{i18n:MorayEelRoll_name}}",
+                    "Description": "{{i18n:MorayEelRoll_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 950,
+                    "Edibility": 45,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 6,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_TwilightStew": {
+                    "Name": "{{ModId}}_TwilightStew",
+                    "DisplayName": "{{i18n:TwilightStew_name}}",
+                    "Description": "{{i18n:TwilightStew_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 4600,
+                    "Edibility": 180,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 7,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_VermilionSoup": {
+                    "Name": "{{ModId}}_VermilionSoup",
+                    "DisplayName": "{{i18n:VermilionSoup_name}}",
+                    "Description": "{{i18n:VermilionSoup_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 180,
+                    "Edibility": 60,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 8,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_red",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedMudTrout": {
+                    "Name": "{{ModId}}_BakedMudTrout",
+                    "DisplayName": "{{i18n:BakedMudTrout_name}}",
+                    "Description": "{{i18n:BakedMudTrout_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 200,
+                    "Edibility": 70,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 9,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_brown",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedGhostPike": {
+                    "Name": "{{ModId}}_BakedGhostPike",
+                    "DisplayName": "{{i18n:BakedGhostPike_name}}",
+                    "Description": "{{i18n:BakedGhostPike_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 250,
+                    "Edibility": 80,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 10,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_gray",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedDeepSeaHalibut": {
+                    "Name": "{{ModId}}_BakedDeepSeaHalibut",
+                    "DisplayName": "{{i18n:BakedDeepSeaHalibut_name}}",
+                    "Description": "{{i18n:BakedDeepSeaHalibut_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 220,
+                    "Edibility": 65,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 11,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_dark_blue",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedBrownShad": {
+                    "Name": "{{ModId}}_BakedBrownShad",
+                    "DisplayName": "{{i18n:BakedBrownShad_name}}",
+                    "Description": "{{i18n:BakedBrownShad_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 200,
+                    "Edibility": 70,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 12,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_brown",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedSockeyeSalmon": {
+                    "Name": "{{ModId}}_BakedSockeyeSalmon",
+                    "DisplayName": "{{i18n:BakedSockeyeSalmon_name}}",
+                    "Description": "{{i18n:BakedSockeyeSalmon_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 200,
+                    "Edibility": 65,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 13,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_gray",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedPumpkinPerch": {
+                    "Name": "{{ModId}}_BakedPumpkinPerch",
+                    "DisplayName": "{{i18n:BakedPumpkinPerch_name}}",
+                    "Description": "{{i18n:BakedPumpkinPerch_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 275,
+                    "Edibility": 85,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 14,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_orange",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedBluegill": {
+                    "Name": "{{ModId}}_BakedBluegill",
+                    "DisplayName": "{{i18n:BakedBluegill_name}}",
+                    "Description": "{{i18n:BakedBluegill_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 120,
+                    "Edibility": 55,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 15,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_blue",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_Onigiri": {
+                    "Name": "{{ModId}}_Onigiri",
+                    "Displayname": "{{i18n:Onigiri_name}}",
+                    "Description": "{{i18n:Onigiri_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 160,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 16,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_white",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_FriedFishFilet": {
+                    "Name": "{{ModId}}_FriedFishFilet",
+                    "Displayname": "{{i18n:FriedFishFilet_name}}",
+                    "Description": "{{i18n:FriedFishFilet_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 200,
+                    "Edibility": 46,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 17,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_orange",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedStripedChar": {
+                    "Name": "{{ModId}}_BakedStripedChar",
+                    "DisplayName": "{{i18n:BakedStripedChar_name}}",
+                    "Description": "{{i18n:BakedStripedChar_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 200,
+                    "Edibility": 50,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 18,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_brown",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_SockeyeSalmonSashimi": {
+                    "Name": "{{ModId}}_SockeyeSalmonSashimi",
+                    "DisplayName": "{{i18n:SockeyeSalmonSashimi_name}}",
+                    "Description": "{{i18n:SockeyeSalmonSashimi_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 110,
+                    "Edibility": 25,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 19,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_pink",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedSunscaledTrout": {
+                    "Name": "{{ModId}}_BakedSunscaledTrout",
+                    "DisplayName": "{{i18n:BakedSunscaledTrout_name}}",
+                    "Description": "{{i18n:BakedSunscaledTrout_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 450,
+                    "Edibility": 60,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 20,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_yellow",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedVermilionCarp": {
+                    "Name": "{{ModId}}_BakedVermilionCarp",
+                    "DisplayName": "{{i18n:BakedVermilionCarp_name}}",
+                    "Description": "{{i18n:BakedVermilionCarp_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 200,
+                    "Edibility": 55,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 21,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_red",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedLunarSalmon": {
+                    "Name": "{{ModId}}_BakedLunarSalmon",
+                    "DisplayName": "{{i18n:BakedLunarSalmon_name}}",
+                    "Description": "{{i18n:BakedLunarSalmon_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 3500,
+                    "Edibility": 120,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 22,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_black",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_SeaweedSoup": {
+                    "Name": "{{ModId}}_SeaweedSoup",
+                    "DisplayName": "{{i18n:SeaweedSoup_name}}",
+                    "Description": "{{i18n:SeaweedSoup_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 120,
+                    "Edibility": 30,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 23,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BioluminescentSoup": {
+                    "Name": "{{ModId}}_BioluminescentSoup",
+                    "DisplayName": "{{i18n:BioluminescentSoup_name}}",
+                    "Description": "{{i18n:BioluminescentSoup_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 350,
+                    "Edibility": 75,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 24,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_blue",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BakedParrotfish": {
+                    "Name": "{{ModId}}_BakedParrotfish",
+                    "DisplayName": "{{i18n:BakedParrotfish_name}}",
+                    "Description": "{{i18n:BakedParrotfish_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 120,
+                    "Edibility": 60,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 25,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_TriggerfishSashimi": {
+                    "Name": "{{ModId}}_TriggerfishSashimi",
+                    "DisplayName": "{{i18n:TriggerfishSashimi_name}}",
+                    "Description": "{{i18n:TriggerfishSashimi_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 120,
+                    "Edibility": 50,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 26,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_pink",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_SeaweedCookies": {
+                    "Name": "{{ModId}}_SeaweedCookies",
+                    "DisplayName": "{{i18n:SeaweedCookies_name}}",
+                    "Description": "{{i18n:SeaweedCookies_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 180,
+                    "Edibility": 50,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 27,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BlackenedCatfish": {
+                    "Name": "{{ModId}}_BlackenedCatfish",
+                    "DisplayName": "{{i18n:BlackenedCatfish_name}}",
+                    "Description": "{{i18n:BlackenedCatfish_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 500,
+                    "Edibility": 35,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 28,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_gray",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_IroncladChowder": {
+                    "Name": "{{ModId}}_IroncladChowder",
+                    "DisplayName": "{{i18n:IroncladChowder_name}}",
+                    "Description": "{{i18n:IroncladChowder_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 650,
+                    "Edibility": 85,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 29,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_gray",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_SpottedRayBisque": {
+                    "Name": "{{ModId}}_SpottedRayBisque",
+                    "DisplayName": "{{i18n:SpottedRayBisque_name}}",
+                    "Description": "{{i18n:SpottedRayBisque_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 650,
+                    "Edibility": 29,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 30,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_white",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_CrimsonShadStew": {
+                    "Name": "{{ModId}}_CrimsonShadStew",
+                    "DisplayName": "{{i18n:CrimsonShadStew_name}}",
+                    "Description": "{{i18n:CrimsonShadStew_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 700,
+                    "Edibility": 32,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 31,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_red",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_YellowfinPowerBowl": {
+                    "Name": "{{ModId}}_YellowfinPowerBowl",
+                    "DisplayName": "{{i18n:YellowfinPowerBowl_name}}",
+                    "Description": "{{i18n:YellowfinPowerBowl_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 500,
+                    "Edibility": 45,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 32,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_yellow",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_EmeraldEnergyScramble": {
+                    "Name": "{{ModId}}_EmeraldEnergyScramble",
+                    "DisplayName": "{{i18n:EmeraldEnergyScramble_name}}",
+                    "Description": "{{i18n:EmeraldEnergyScramble_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 450,
+                    "Edibility": 35,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 33,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_SeaweedHalibutRoll": {
+                    "Name": "{{ModId}}_SeaweedHalibutRoll",
+                    "DisplayName": "{{i18n:SeaweedHalibutRoll_name}}",
+                    "Description": "{{i18n:SeaweedHalibutRoll_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 400,
+                    "Edibility": 23,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 34,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_SharkFinSoup": {
+                    "Name": "{{ModId}}_SharkFinSoup",
+                    "DisplayName": "{{i18n:SharkFinSoup_name}}",
+                    "Description": "{{i18n:SharkFinSoup_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 7350,
+                    "Edibility": 60,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 35,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_ReefSharkRoll": {
+                    "Name": "{{ModId}}_ReefSharkRoll",
+                    "DisplayName": "{{i18n:ReefSharkRoll_name}}",
+                    "Description": "{{i18n:ReefSharkRoll_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 2650,
+                    "Edibility": 38,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 36,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_FrostbiteTaco": {
+                    "Name": "{{ModId}}_FrostbiteTaco",
+                    "DisplayName": "{{i18n:FrostbiteTaco_name}}",
+                    "Description": "{{i18n:FrostbiteTaco_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 250,
+                    "Edibility": 25,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 37,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_blue",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_RockSoup": {
+                    "Name": "{{ModId}}_RockSoup",
+                    "DisplayName": "{{i18n:RockSoup_name}}",
+                    "Description": "{{i18n:RockSoup_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 100,
+                    "Edibility": 5,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 38,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_gray",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_MudBar": {
+                    "Name": "{{ModId}}_MudBar",
+                    "DisplayName": "{{i18n:MudBar_name}}",
+                    "Description": "{{i18n:MudBar_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 450,
+                    "Edibility": 30,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 39,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_brown",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_ChadBurger": {
+                    "Name": "{{ModId}}_ChadBurger",
+                    "DisplayName": "{{i18n:ChadBurger_name}}",
+                    "Description": "{{i18n:ChadBurger_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 650,
+                    "Edibility": 40,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 40,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_orange",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_IcicleRoll": {
+                    "Name": "{{ModId}}_IcicleRoll",
+                    "DisplayName": "{{i18n:IcicleRoll_name}}",
+                    "Description": "{{i18n:IcicleRoll_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 600,
+                    "Edibility": 30,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 41,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_IridiumSalmonSteaks": {
+                    "Name": "{{ModId}}_IridiumSalmonSteaks",
+                    "DisplayName": "{{i18n:IridiumSalmonSteaks_name}}",
+                    "Description": "{{i18n:IridiumSalmonSteaks_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 850,
+                    "Edibility": 31,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 42,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_SilentWatersChowder": {
+                    "Name": "{{ModId}}_SilentWatersChowder",
+                    "DisplayName": "{{i18n:SilentWatersChowder_name}}",
+                    "Description": "{{i18n:SilentWatersChowder_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 600,
+                    "Edibility": 29,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 43,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_white",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_IcyOctopusStew": {
+                    "Name": "{{ModId}}_IcyOctopusStew",
+                    "DisplayName": "{{i18n:IcyOctopusStew_name}}",
+                    "Description": "{{i18n:IcyOctopusStew_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 500,
+                    "Edibility": 27,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 44,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_blue",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_DesertRaySandwich": {
+                    "Name": "{{ModId}}_DesertRaySandwich",
+                    "DisplayName": "{{i18n:DesertRaySandwich_name}}",
+                    "Description": "{{i18n:DesertRaySandwich_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 800,
+                    "Edibility": 40,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 45,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_yellow",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_CaptainsTreasurePlatter": {
+                    "Name": "{{ModId}}_CaptainsTreasurePlatter",
+                    "DisplayName": "{{i18n:CaptainsTreasurePlatter_name}}",
+                    "Description": "{{i18n:CaptainsTreasurePlatter_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 8000,
+                    "Edibility": 80,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 46,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_red",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_BrinyDepthsBisque": {
+                    "Name": "{{ModId}}_BrinyDepthsBisque",
+                    "DisplayName": "{{i18n:BrinyDepthsBisque_name}}",
+                    "Description": "{{i18n:BrinyDepthsBisque_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 475,
+                    "Edibility": 26,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 47,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_ForestTetraSoup": {
+                    "Name": "{{ModId}}_ForestTetraSoup",
+                    "DisplayName": "{{i18n:ForestTetraSoup_name}}",
+                    "Description": "{{i18n:ForestTetraSoup_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 300,
+                    "Edibility": 28,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 48,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_RiversideCutthroatRoll": {
+                    "Name": "{{ModId}}_RiversideCutthroatRoll",
+                    "DisplayName": "{{i18n:RiversideCutthroatRoll_name}}",
+                    "Description": "{{i18n:RiversideCutthroatRoll_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 450,
+                    "Edibility": 24,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 49,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_SerpentineEelRamen": {
+                    "Name": "{{ModId}}_SerpentineEelRamen",
+                    "DisplayName": "{{i18n:SerpentineEelRamen_name}}",
+                    "Description": "{{i18n:SerpentineEelRamen_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 550,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 50,
+                    "IsDrink": true,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_brown",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_NeptunesDelight": {
+                    "Name": "{{ModId}}_NeptunesDelight",
+                    "DisplayName": "{{i18n:NeptunesDelight_name}}",
+                    "Description": "{{i18n:NeptunesDelight_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 750,
+                    "Edibility": 67,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 51,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_blue",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_SeaBassRisotto": {
+                    "Name": "{{ModId}}_SeaBassRisotto",
+                    "DisplayName": "{{i18n:SeaBassRisotto_name}}",
+                    "Description": "{{i18n:SeaBassRisotto_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 700,
+                    "Edibility": 62,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 52,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_brown",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_CatfishSticks": {
+                    "Name": "{{ModId}}_CatfishSticks",
+                    "DisplayName": "{{i18n:CatfishSticks_name}}",
+                    "Description": "{{i18n:CatfishSticks_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 410,
+                    "Edibility": 53,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 53,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                },
+                "{{ModId}}_TentacleSurprise": {
+                    "Name": "{{ModId}}_TentacleSurprise",
+                    "DisplayName": "{{i18n:TentacleSurprise_name}}",
+                    "Description": "{{i18n:TentacleSurprise_description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 1000,
+                    "Edibility": 87,
+                    "Texture": "{{ModId}}/food",
+                    "SpriteIndex": 54,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_food"
+                    ]
+                }
+            }
+        },
+        //Add Forage Objects
+        {
+            "LogName": "Adding forage objects...",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_BioluminescentSeaweed": {
+                    "Name": "{{ModId}}_BioluminescentSeaweed",
+                    "Displayname": "{{i18n:BioluminescentSeaweed_name}}",
+                    "Description": "{{i18n:BioluminescentSeaweed_description}}",
+                    "Type": "Object",
+                    "Category": 0,
+                    "Price": 400,
+                    "Edibility": 25,
+                    "Texture": "{{ModId}}/forage",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_blue",
+                        "season_spring",
+                        "season_summer"
+                    ]
+                },
+                "{{ModId}}_ArcticCockle": {
+                    "Name": "{{ModId}}_ArcticCockle",
+                    "Displayname": "{{i18n:ArcticCockle_name}}",
+                    "Description": "{{i18n:ArcticCockle_description}}",
+                    "Type": "Object",
+                    "Category": 0,
+                    "Price": 60,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/forage",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_blue",
+                        "season_winter"
+                    ]
+                },
+                "{{ModId}}_BioluminescentAlgae": {
+                    "Name": "{{ModId}}_BioluminescentAlgae",
+                    "Displayname": "{{i18n:BioluminescentAlgae_name}}",
+                    "Description": "{{i18n:BioluminescentAlgae_description}}",
+                    "Type": "Object",
+                    "Category": 0,
+                    "Price": 200,
+                    "Edibility": 10,
+                    "Texture": "{{ModId}}/forage",
+                    "SpriteIndex": 2,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_blue",
+                        "season_summer",
+                        "season_fall"
+                    ]
+                }
+            }
+        },
+        //Add Pond Objects
+        {
+            "LogName": "Adding Pond Drop objects...",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_ReefSharkTooth": {
+                    "Name": "{{ModId}}_ReefSharkTooth",
+                    "Displayname": "{{i18n:ReefSharkTooth_name}}",
+                    "Description": "{{i18n:ReefSharkTooth_description}}",
+                    "Type": "Basic",
+                    "Category": -23,
+                    "Price": 900,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_white"
+                    ]
+                },
+                "{{ModId}}_LunarScale": {
+                    "Name": "{{ModId}}_LunarScale",
+                    "Displayname": "{{i18n:LunarScale_name}}",
+                    "Description": "{{i18n:LunarScale_description}}",
+                    "Type": "Basic",
+                    "Category": -23,
+                    "Price": 350,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_black"
+                    ]
+                },
+                "{{ModId}}_SoggyCookie": {
+                    "Name": "{{ModId}}_SoggyCookie",
+                    "Displayname": "{{i18n:SoggyCookie_name}}",
+                    "Description": "{{i18n:SoggyCookie_description}}",
+                    "Type": "Object",
+                    "Category": -7,
+                    "Price": 100,
+                    "Edibility": 26,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 2,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_brown"
+                    ]
+                },
+                "{{ModId}}_SoggySeaweedCookie": {
+                    "Name": "{{ModId}}_SoggySeaweedCookie",
+                    "Displayname": "{{i18n:SoggySeaweedCookie_name}}",
+                    "Description": "{{i18n:SoggySeaweedCookie_description}}",
+                    "Type": "Object",
+                    "Category": -7,
+                    "Price": 140,
+                    "Edibility": 36,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 3,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green"
+                    ]
+                },
+                "{{ModId}}_SpottedRayVenom": {
+                    "Name": "{{ModId}}_SpottedRayVenom",
+                    "Displayname": "{{i18n:SpottedRayVenom_name}}",
+                    "Description": "{{i18n:SpottedRayVenom_description}}",
+                    "Type": "Object",
+                    "Category": -26,
+                    "Price": 600,
+                    "Edibility": -200,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 4,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple"
+                    ]
+                },
+                "{{ModId}}_SandRayVenom": {
+                    "Name": "{{ModId}}_SandRayVenom",
+                    "Displayname": "{{i18n:SandRayVenom_name}}",
+                    "Description": "{{i18n:SandRayVenom_description}}",
+                    "Type": "Object",
+                    "Category": -26,
+                    "Price": 700,
+                    "Edibility": -200,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 5,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple"
+                    ]
+                },
+                "{{ModId}}_BandedEelEgg": {
+                    "Name": "{{ModId}}_BandedEelEgg",
+                    "Displayname": "{{i18n:BandedEelEgg_name}}",
+                    "Description": "{{i18n:BandedEelEgg_description}}",
+                    "Type": "Basic",
+                    "Category": -5,
+                    "Price": 300,
+                    "Edibility": -10,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 6,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_blue"
+                    ]
+                },
+                "{{ModId}}_MorayEelEgg": {
+                    "Name": "{{ModId}}_MorayEelEgg",
+                    "Displayname": "{{i18n:MorayEelEgg_name}}",
+                    "Description": "{{i18n:MorayEelEgg_description}}",
+                    "Type": "Basic",
+                    "Category": -5,
+                    "Price": 250,
+                    "Edibility": -10,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 7,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green"
+                    ]
+                },
+                "{{ModId}}_Sunscale": {
+                    "Name": "{{ModId}}_Sunscale",
+                    "Displayname": "{{i18n:Sunscale_name}}",
+                    "Description": "{{i18n:Sunscale_description}}",
+                    "Type": "Basic",
+                    "Category": -23,
+                    "Price": 500,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 8,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_yellow"
+                    ]
+                },
+                "{{ModId}}_LongfinEelEgg": {
+                    "Name": "{{ModId}}_LongfinEelEgg",
+                    "Displayname": "{{i18n:LongfinEelEgg_name}}",
+                    "Description": "{{i18n:LongfinEelEgg_description}}",
+                    "Type": "Basic",
+                    "Category": -5,
+                    "Price": 100,
+                    "Edibility": 20,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 9,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_gray"
+                    ]
+                },
+                "{{ModId}}_EelEgg": {
+                    "Name": "{{ModId}}_EelEgg",
+                    "Displayname": "{{i18n:EelEgg_name}}",
+                    "Description": "{{i18n:EelEgg_description}}",
+                    "Type": "Basic",
+                    "Category": -5,
+                    "Price": 50,
+                    "Edibility": 15,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 10,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_yellow"
+                    ]
+                },
+                "{{ModId}}_LavaEelEgg": {
+                    "Name": "{{ModId}}_LavaEelEgg",
+                    "Displayname": "{{i18n:LavaEelEgg_name}}",
+                    "Description": "{{i18n:LavaEelEgg_description}}",
+                    "Type": "Basic",
+                    "Category": -5,
+                    "Price": 500,
+                    "Edibility": 45,
+                    "Texture": "{{ModId}}/pond",
+                    "SpriteIndex": 11,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_orange"
+                    ]
+                }
+            }
+        },
+        //Add Jewelry Objects
+        {
+            "LogName": "Adding Ring objects...",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_PrismarineRing": {
+                    "Name": "{{ModId}}_PrismarineRing",
+                    "Displayname": "{{i18n:PrismarineRing_name}}",
+                    "Description": "{{i18n:PrismarineRing_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 1250,
+                    "Texture": "{{ModId}}/rings",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "ring_item",
+                        "fos_item",
+                        "color_blue"
+                    ]
+                },
+                "{{ModId}}_FishermansBlessing": {
+                    "Name": "{{ModId}}_FishermansBlessing",
+                    "DisplayName": "{{i18n:FishermansBlessing_name}}",
+                    "Description": "{{i18n:FishermansBlessing_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 2000,
+                    "Texture": "{{ModId}}/rings",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "ring_item",
+                        "fos_item",
+                        "color_blue"
+                    ]
+                },
+                "{{ModId}}_MarinersBand": {
+                    "Name": "{{ModId}}_MarinersBand",
+                    "DisplayName": "{{i18n:MarinersBand_name}}",
+                    "Description": "{{i18n:MarinersBand_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 3000,
+                    "Texture": "{{ModId}}/rings",
+                    "SpriteIndex": 2,
+                    "ContextTags": [
+                        "ring_item",
+                        "fos_item",
+                        "color_white"
+                    ]
+                },
+                "{{ModId}}_NeptunesHalo": {
+                    "Name": "{{ModId}}_NeptunesHalo",
+                    "DisplayName": "{{i18n:NeptunesHalo_name}}",
+                    "Description": "{{i18n:NeptunesHalo_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 4000,
+                    "Texture": "{{ModId}}/rings",
+                    "SpriteIndex": 3,
+                    "ContextTags": [
+                        "ring_item",
+                        "fos_item",
+                        "color_blue"
+                    ]
+                },
+                "{{ModId}}_PoseidonsCirclet": {
+                    "Name": "{{ModId}}_PoseidonsCirclet",
+                    "DisplayName": "{{i18n:PoseidonsCirclet_name}}",
+                    "Description": "{{i18n:PoseidonsCirclet_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 3000,
+                    "Texture": "{{ModId}}/rings",
+                    "SpriteIndex": 4,
+                    "ContextTags": [
+                        "ring_item",
+                        "fos_item",
+                        "color_blue"
+                    ]
+                },
+                "{{ModId}}_CircletOfTheSea": {
+                    "Name": "{{ModId}}_CircletOfTheSea",
+                    "DisplayName": "{{i18n:{{PendantName}}OfTheSea_name}}",
+                    "Description": "{{i18n:{{PendantName}}OfTheSea_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 1000,
+                    "Texture": "{{ModId}}/necklaces",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "ring_item",
+                        "fos_item",
+                        "color_green"
+                    ]
+                },
+                "{{ModId}}_CircletOfTheCoral": {
+                    "Name": "{{ModId}}_CircletOfTheCoral",
+                    "DisplayName": "{{i18n:{{PendantName}}OfTheCoral_name}}",
+                    "Description": "{{i18n:{{PendantName}}OfTheCoral_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 2000,
+                    "Texture": "{{ModId}}/necklaces",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "ring_item",
+                        "fos_item",
+                        "color_red"
+                    ]
+                },
+                "{{ModId}}_CircletOfTheDepths": {
+                    "Name": "{{ModId}}_CircletOfTheDepths",
+                    "DisplayName": "{{i18n:{{PendantName}}OfTheDepths_name}}",
+                    "Description": "{{i18n:{{PendantName}}OfTheDepths_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 3000,
+                    "Texture": "{{ModId}}/necklaces",
+                    "SpriteIndex": 2,
+                    "ContextTags": [
+                        "ring_item",
+                        "fos_item",
+                        "color_pink"
+                    ]
+                },
+                "{{ModId}}_CircletOfTheTide": {
+                    "Name": "{{ModId}}_CircletOfTheTide",
+                    "DisplayName": "{{i18n:{{PendantName}}OfTheTide_name}}",
+                    "Description": "{{i18n:{{PendantName}}OfTheTide_description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 4000,
+                    "Texture": "{{ModId}}/necklaces",
+                    "SpriteIndex": 3,
+                    "ContextTags": [
+                        "ring_item",
+                        "fos_item",
+                        "color_purple"
+                    ]
+                }
+            }
+        },
+        //Add Scroll Objects
+        {
+            "LogName": "Adding Recipe Scroll objects...",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_RayVenomRecipe": {
+                    "Name": "{{ModId}}_RayVenomRecipe",
+                    "DisplayName": "{{i18n:RayVenomRecipe_name}}",
+                    "Description": "{{i18n:RayVenomRecipe_description}}",
+                    "Type": "Object",
+                    "Category": 0,
+                    "Price": 5000,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/scrolls",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_white"
+                    ]
+                },
+                "{{ModId}}_EelMayoRecipe": {
+                    "Name": "{{ModId}}_EelMayoRecipe",
+                    "DisplayName": "{{i18n:EelMayoRecipe_name}}",
+                    "Description": "{{i18n:EelMayoRecipe_description}}",
+                    "Type": "Object",
+                    "Category": 0,
+                    "Price": 5000,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/scrolls",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_white"
+                    ]
+                }
+            }
+        },
+        //Add Gem Objects
+        {
+            "LogName": "Adding Gem objects...",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_GemOfTheSea": {
+                    "Name": "{{ModId}}_GemOfTheSea",
+                    "Displayname": "{{i18n:{{GemName}}OfTheSea_name}}",
+                    "Description": "{{i18n:{{GemName}}OfTheSea_description}}",
+                    "Type": "Basic",
+                    "Category": -23,
+                    "Price": 500,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/gems",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_gem"
+                    ]
+                },
+                "{{ModId}}_GemOfTheCoral": {
+                    "Name": "{{ModId}}_GemOfTheCoral",
+                    "Displayname": "{{i18n:{{GemName}}OfTheCoral_name}}",
+                    "Description": "{{i18n:{{GemName}}OfTheCoral_description}}",
+                    "Type": "Basic",
+                    "Category": -23,
+                    "Price": 1000,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/gems",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_red",
+                        "fos_gem"
+                    ]
+                },
+                "{{ModId}}_GemOfTheDepths": {
+                    "Name": "{{ModId}}_GemOfTheDepths",
+                    "Displayname": "{{i18n:{{GemName}}OfTheDepths_name}}",
+                    "Description": "{{i18n:{{GemName}}OfTheDepths_description}}",
+                    "Type": "Basic",
+                    "Category": -23,
+                    "Price": 1500,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/gems",
+                    "SpriteIndex": 2,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_pink",
+                        "fos_gem"
+                    ]
+                },
+                "{{ModId}}_GemOfTheTide": {
+                    "Name": "{{ModId}}_GemOfTheTide",
+                    "Displayname": "{{i18n:{{GemName}}OfTheTide_name}}",
+                    "Description": "{{i18n:{{GemName}}OfTheTide_description}}",
+                    "Type": "Basic",
+                    "Category": -23,
+                    "Price": 2000,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/gems",
+                    "SpriteIndex": 3,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_gem"
+                    ]
+                },
+                "{{ModId}}_RadioactiveJade": {
+                    "Name": "{{ModId}}_RadioactiveJade",
+                    "Displayname": "{{i18n:RadioactiveJade_name}}",
+                    "Description": "{{i18n:RadioactiveJade_description}}",
+                    "Type": "Basic",
+                    "Category": -23,
+                    "Price": 1000,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/gems",
+                    "SpriteIndex": 4,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_gem"
+                    ]
+                },
+                "{{ModId}}_GoldenPearl": {
+                    "Name": "{{ModId}}_GoldenPearl",
+                    "Displayname": "{{i18n:GoldenPearl_name}}",
+                    "Description": "{{i18n:GoldenPearl_description}}",
+                    "Type": "Basic",
+                    "Category": -23,
+                    "Price": 5000,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/gems",
+                    "SpriteIndex": 5,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_yellow",
+                        "fos_gem"
+                    ]
+                }
+            }
+        },
+        //Add Artisan Objects
+        {
+            "LogName": "Adding Artisan objects...",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_BandedEelMayo": {
+                    "Name": "{{ModId}}_BandedEelMayo",
+                    "Displayname": "{{i18n:BandedEelMayo_name}}",
+                    "Description": "{{i18n:BandedEelMayo_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 450,
+                    "Edibility": 50,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_blue",
+                        "fos_artisangood",
+                        "mayo_item"
+                    ]
+                },
+                "{{ModId}}_MorayEelMayo": {
+                    "Name": "{{ModId}}_MorayEelMayo",
+                    "Displayname": "{{i18n:MorayEelMayo_name}}",
+                    "Description": "{{i18n:MorayEelMayo_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 400,
+                    "Edibility": 45,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_green",
+                        "fos_artisangood",
+                        "mayo_item"
+                    ]
+                },
+                "{{ModId}}_LongfinEelMayo": {
+                    "Name": "{{ModId}}_LongfinEelMayo",
+                    "Displayname": "{{i18n:LongfinEelMayo_name}}",
+                    "Description": "{{i18n:LongfinEelMayo_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 250,
+                    "Edibility": 45,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 2,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_white",
+                        "fos_artisangood",
+                        "mayo_item"
+                    ]
+                },
+                "{{ModId}}_AgedSpottedRayVenom": {
+                    "Name": "{{ModId}}_AgedSpottedRayVenom",
+                    "Displayname": "{{i18n:AgedSpottedRayVenom_name}}",
+                    "Description": "{{i18n:AgedSpottedRayVenom_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 900,
+                    "Edibility": -220,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 3,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_artisangood"
+                    ]
+                },
+                "{{ModId}}_AgedSandRayVenom": {
+                    "Name": "{{ModId}}_AgedSandRayVenom",
+                    "Displayname": "{{i18n:AgedSandRayVenom_name}}",
+                    "Description": "{{i18n:AgedSandRayVenom_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 1000,
+                    "Edibility": -220,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 4,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_artisangood"
+                    ]
+                },
+                "{{ModId}}_ConcentratedSpottedRayVenom": {
+                    "Name": "{{ModId}}_ConcentratedSpottedRayVenom",
+                    "Displayname": "{{i18n:ConcentratedSpottedRayVenom_name}}",
+                    "Description": "{{i18n:ConcentratedSpottedRayVenom_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 1200,
+                    "Edibility": -240,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 5,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_artisangood"
+                    ]
+                },
+                "{{ModId}}_ConcentratedSandRayVenom": {
+                    "Name": "{{ModId}}_ConcentratedSandRayVenom",
+                    "Displayname": "{{i18n:ConcentratedSandRayVenom_name}}",
+                    "Description": "{{i18n:ConcentratedSandRayVenom_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 1300,
+                    "Edibility": -240,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 6,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_artisangood"
+                    ]
+                },
+                "{{ModId}}_PotentSpottedRayVenom": {
+                    "Name": "{{ModId}}_PotentSpottedRayVenom",
+                    "Displayname": "{{i18n:PotentSpottedRayVenom_name}}",
+                    "Description": "{{i18n:PotentSpottedRayVenom_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 1500,
+                    "Edibility": -260,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 7,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_artisangood"
+                    ]
+                },
+                "{{ModId}}_PotentSandRayVenom": {
+                    "Name": "{{ModId}}_PotentSandRayVenom",
+                    "Displayname": "{{i18n:PotentSandRayVenom_name}}",
+                    "Description": "{{i18n:PotentSandRayVenom_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 1600,
+                    "Edibility": -260,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 8,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_artisangood"
+                    ]
+                },
+                "{{ModId}}_EelMayo": {
+                    "Name": "{{ModId}}_EelMayo",
+                    "Displayname": "{{i18n:EelMayo_name}}",
+                    "Description": "{{i18n:EelMayo_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 150,
+                    "Edibility": 35,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 9,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_purple",
+                        "fos_artisangood",
+                        "mayo_item"
+                    ]
+                },
+                "{{ModId}}_LavaEelMayo": {
+                    "Name": "{{ModId}}_LavaEelMayo",
+                    "Displayname": "{{i18n:LavaEelMayo_name}}",
+                    "Description": "{{i18n:LavaEelMayo_description}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "Price": 800,
+                    "Edibility": 60,
+                    "Texture": "{{ModId}}/artisan",
+                    "SpriteIndex": 10,
+                    "ContextTags": [
+                        "fos_item",
+                        "color_red",
+                        "fos_artisangood",
+                        "mayo_item"
+                    ]
+                }
+            }
+        },
+        //Add Totem Objects
+        {
+            "LogName": "Adding Totem objects...",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_WarpTotemForest": {
+                    "Name": "{{ModId}}_WarpTotemForest",
+                    "Displayname": "{{i18n:WarpTotemForest_name}}",
+                    "Description": "{{i18n:WarpTotemForest_description}}",
+                    "Type": "Crafting",
+                    "Category": 0,
+                    "Price": 20,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/totems",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "not_placeable",
+                        "totem_item",
+                        "fos_item",
+                        "color_green"
+                    ]
+                },
+                "{{ModId}}_WarpTotemTown": {
+                    "Name": "{{ModId}}_WarpTotemTown",
+                    "DisplayName": "{{i18n:WarpTotemTown_name}}",
+                    "Description": "{{i18n:WarpTotemTown_description}}",
+                    "Type": "Crafting",
+                    "Category": 0,
+                    "Price": 20,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/totems",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "not_placeable",
+                        "totem_item",
+                        "fos_item",
+                        "color_yellow"
+                    ]
+                },
+                "{{ModId}}_WarpTotemEastBeach": {
+                    "Name": "{{ModId}}_WarpTotemEastBeach",
+                    "DisplayName": "{{i18n:WarpTotemEastBeach_name}}",
+                    "Description": "{{i18n:WarpTotemEastBeach_description}}",
+                    "Type": "Crafting",
+                    "Category": 0,
+                    "Price": 20,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/totems",
+                    "SpriteIndex": 4,
+                    "ContextTags": [
+                        "not_placeable",
+                        "totem_item",
+                        "fos_item",
+                        "color_purple"
+                    ]
+                },
+                "{{ModId}}_WarpTotemSecretWoods": {
+                    "Name": "{{ModId}}_WarpTotemSecretWoods",
+                    "DisplayName": "{{i18n:WarpTotemSecretWoods_name}}",
+                    "Description": "{{i18n:WarpTotemSecretWoods_description}}",
+                    "Type": "Crafting",
+                    "Category": 0,
+                    "Price": 20,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/totems",
+                    "SpriteIndex": 5,
+                    "ContextTags": [
+                        "not_placeable",
+                        "totem_item",
+                        "fos_item",
+                        "color_blue"
+                    ]
+                }
+            }
+        },
+        //Add Totem objects for SVE
+        {
+            "LogName": "Adding Totem objects for SVE...",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            },
+            "Entries": {
+                "{{ModId}}_WarpTotemForestWest": {
+                    "Name": "{{ModId}}_WarpTotemForestWest",
+                    "DisplayName": "{{i18n:WarpTotemForestWest_name}}",
+                    "Description": "{{i18n:WarpTotemForestWest_description}}",
+                    "Type": "Crafting",
+                    "Category": 0,
+                    "Price": 20,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/totems",
+                    "SpriteIndex": 2,
+                    "ContextTags": [
+                        "not_placeable",
+                        "totem_item",
+                        "fos_item",
+                        "color_green"
+                    ]
+                },
+                "{{ModId}}_WarpTotemShearwaterBridge": {
+                    "Name": "{{ModId}}_WarpTotemShearwaterBridge",
+                    "DisplayName": "{{i18n:WarpTotemShearwaterBridge_name}}",
+                    "Description": "{{i18n:WarpTotemShearwaterBridge_description}}",
+                    "Type": "Crafting",
+                    "Category": 0,
+                    "Price": 20,
+                    "Edibility": -300,
+                    "Texture": "{{ModId}}/totems",
+                    "SpriteIndex": 3,
+                    "ContextTags": [
+                        "not_placeable",
+                        "totem_item",
+                        "fos_item",
+                        "color_blue"
+                    ]
+                }
+            }
+        }
+    ]
+}
