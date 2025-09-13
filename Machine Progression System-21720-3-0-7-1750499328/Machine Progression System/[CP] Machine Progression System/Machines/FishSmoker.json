@@ -1,0 +1,1397 @@
+{
+    "Changes": [
+		// Vanilla Smoked Fish
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"Enable Fish Leftovers": true
+			},
+			"Entries": {
+				"(BC)nachonline.mps_GoldFishSmoker": {
+					"OutputRules": [
+						{
+							"Id": "SmokedFish",
+							"Triggers": [
+								{	
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM SmokedFish DROP_IN_ID DROP_IN_QUALITY",
+									"MinStack": "{{G.F.S Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 100",
+											"Modification": "Add",
+											"Amount": "{{G.F.S 100 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "300ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 300",
+											"Modification": "Add",
+											"Amount": "{{G.F.S 300 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "500ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 500",
+											"Modification": "Add",
+											"Amount": "{{G.F.S 500 Items Cooked Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "GoldFishLeftoversChance"
+									}
+								}
+							],
+							"MinutesUntilReady": 50
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{G.F.S Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_DiamondFishSmoker": {
+					"OutputRules": [
+						{
+							"Id": "SmokedFish",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM SmokedFish DROP_IN_ID DROP_IN_QUALITY",
+									"MinStack": "{{D.F.S Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 100",
+											"Modification": "Add",
+											"Amount": "{{D.F.S 100 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "300ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 300",
+											"Modification": "Add",
+											"Amount": "{{D.F.S 300 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "500ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 500",
+											"Modification": "Add",
+											"Amount": "{{D.F.S 500 Items Cooked Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "DiamondFishLeftoversChance"
+									}
+								}
+							],
+							"MinutesUntilReady": 50
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{D.F.S Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_IridiumFishSmoker": {
+					"OutputRules": [
+						{
+							"Id": "SmokedFish",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM SmokedFish DROP_IN_ID DROP_IN_QUALITY",
+									"MinStack": "{{I.F.S Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 100",
+											"Modification": "Add",
+											"Amount": "{{I.F.S 100 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "300ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 300",
+											"Modification": "Add",
+											"Amount": "{{I.F.S 300 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "500ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 500",
+											"Modification": "Add",
+											"Amount": "{{I.F.S 500 Items Cooked Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "IridiumFishLeftoversChance"
+									}
+								}
+							],
+							"MinutesUntilReady": 50
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{I.F.S Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_RadioactiveFishSmoker": {
+					"OutputRules": [
+						{
+							"Id": "SmokedFish",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM SmokedFish DROP_IN_ID DROP_IN_QUALITY",
+									"MinStack": "{{R.F.S Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 100",
+											"Modification": "Add",
+											"Amount": "{{R.F.S 100 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "300ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 300",
+											"Modification": "Add",
+											"Amount": "{{R.F.S 300 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "500ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 500",
+											"Modification": "Add",
+											"Amount": "{{R.F.S 500 Items Cooked Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "RadioactiveFishLeftoversChance"
+									}
+								}
+							],
+							"MinutesUntilReady": 50
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{R.F.S Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_PrismaticFishSmoker": {
+					"OutputRules": [
+						{
+							"Id": "SmokedFish",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM SmokedFish DROP_IN_ID DROP_IN_QUALITY",
+									"MinStack": "{{P.F.S Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 100",
+											"Modification": "Add",
+											"Amount": "{{P.F.S 100 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "300ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 300",
+											"Modification": "Add",
+											"Amount": "{{P.F.S 300 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "500ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 500",
+											"Modification": "Add",
+											"Amount": "{{P.F.S 500 Items Cooked Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "PrismaticFishLeftoversChance"
+									}
+								}
+							],
+							"MinutesUntilReady": 50
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{P.F.S Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Target": "selph.ExtraMachineConfig/ExtraOutputs",
+			"Entries": {
+				"GoldFishLeftoversChance": {
+					"Id": "GoldFishLeftoversChance",
+					"ItemId": "DROP_IN",
+					"Condition": "RANDOM {{G.F.S Fish Leftovers Chance}}",
+					"MinStack": "{{G.F.S Quantity}}",
+					"CopyQuality": true
+				},
+				"DiamondFishLeftoversChance": {
+					"Id": "DiamondFishLeftoversChance",
+					"ItemId": "DROP_IN",
+					"Condition": "RANDOM {{D.F.S Fish Leftovers Chance}}",
+					"MinStack": "{{D.F.S Quantity}}",
+					"CopyQuality": true
+				},
+				"IridiumFishLeftoversChance": {
+					"Id": "IridiumFishLeftoversChance",
+					"ItemId": "DROP_IN",
+					"Condition": "RANDOM {{I.F.S Fish Leftovers Chance}}",
+					"MinStack": "{{I.F.S Quantity}}",
+					"CopyQuality": true
+				},
+				"RadioactiveFishLeftoversChance": {
+					"Id": "RadioactiveFishLeftoversChance",
+					"ItemId": "DROP_IN",
+					"Condition": "RANDOM {{R.F.S Fish Leftovers Chance}}",
+					"MinStack": "{{R.F.S Quantity}}",
+					"CopyQuality": true
+				},
+				"PrismaticFishLeftoversChance": {
+					"Id": "PrismaticFishLeftoversChance",
+					"ItemId": "DROP_IN",
+					"Condition": "RANDOM {{P.F.S Fish Leftovers Chance}}",
+					"MinStack": "{{P.F.S Quantity}}",
+					"CopyQuality": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"Enable Fish Leftovers": false
+			},
+			"Entries": {
+				"(BC)nachonline.mps_GoldFishSmoker": {
+					"OutputRules": [
+						{
+							"Id": "SmokedFish",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "FLAVORED_ITEM SmokedFish DROP_IN_ID DROP_IN_QUALITY",
+									"MinStack": "{{G.F.S Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 100",
+											"Modification": "Add",
+											"Amount": "{{G.F.S 100 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "300ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 300",
+											"Modification": "Add",
+											"Amount": "{{G.F.S 300 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "500ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 500",
+											"Modification": "Add",
+											"Amount": "{{G.F.S 500 Items Cooked Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 50
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{G.F.S Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_DiamondFishSmoker": {
+					"OutputRules": [
+						{
+							"Id": "SmokedFish",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "FLAVORED_ITEM SmokedFish DROP_IN_ID DROP_IN_QUALITY",
+									"MinStack": "{{D.F.S Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 100",
+											"Modification": "Add",
+											"Amount": "{{D.F.S 100 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "300ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 300",
+											"Modification": "Add",
+											"Amount": "{{D.F.S 300 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "500ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 500",
+											"Modification": "Add",
+											"Amount": "{{D.F.S 500 Items Cooked Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 50
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{D.F.S Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_IridiumFishSmoker": {
+					"OutputRules": [
+						{
+							"Id": "SmokedFish",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "FLAVORED_ITEM SmokedFish DROP_IN_ID DROP_IN_QUALITY",
+									"MinStack": "{{I.F.S Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 100",
+											"Modification": "Add",
+											"Amount": "{{I.F.S 100 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "300ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 300",
+											"Modification": "Add",
+											"Amount": "{{I.F.S 300 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "500ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 500",
+											"Modification": "Add",
+											"Amount": "{{I.F.S 500 Items Cooked Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 50
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{I.F.S Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_RadioactiveFishSmoker": {
+					"OutputRules": [
+						{
+							"Id": "SmokedFish",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "FLAVORED_ITEM SmokedFish DROP_IN_ID DROP_IN_QUALITY",
+									"MinStack": "{{R.F.S Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 100",
+											"Modification": "Add",
+											"Amount": "{{R.F.S 100 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "300ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 300",
+											"Modification": "Add",
+											"Amount": "{{R.F.S 300 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "500ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 500",
+											"Modification": "Add",
+											"Amount": "{{R.F.S 500 Items Cooked Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 50
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{R.F.S Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_PrismaticFishSmoker": {
+					"OutputRules": [
+						{
+							"Id": "SmokedFish",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "FLAVORED_ITEM SmokedFish DROP_IN_ID DROP_IN_QUALITY",
+									"MinStack": "{{P.F.S Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 100",
+											"Modification": "Add",
+											"Amount": "{{P.F.S 100 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "300ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 300",
+											"Modification": "Add",
+											"Amount": "{{P.F.S 300 Items Cooked Bonus}}"
+										},
+										{
+											"Id": "500ItemsCooked",
+											"Condition": "PLAYER_STAT Current itemsCooked 500",
+											"Modification": "Add",
+											"Amount": "{{P.F.S 500 Items Cooked Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 50
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{P.F.S Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				}
+			}
+		},
+		// Smoked Cheese
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFishSmoker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Smoked Cheese": true
+			},
+			"Entries": {
+				"nachonline.mps_SmokedCheese": {
+					"Id": "nachonline.mps_SmokedCheese",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"cheese_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SmokedCheese",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SmokedCheese %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SmokedCheese",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{G.F.S Quantity}}",
+							"CopyQuality": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Smoked Cheese Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 100",
+									"Modification": "Add",
+									"Amount": "{{G.F.S 100 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "300ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 300",
+									"Modification": "Add",
+									"Amount": "{{G.F.S 300 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "500ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 500",
+									"Modification": "Add",
+									"Amount": "{{G.F.S 500 Items Cooked Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 50,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFishSmoker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Smoked Cheese": true
+			},
+			"Entries": {
+				"nachonline.mps_SmokedCheese": {
+					"Id": "nachonline.mps_SmokedCheese",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"cheese_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SmokedCheese",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SmokedCheese %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SmokedCheese",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{D.F.S Quantity}}",
+							"CopyQuality": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Smoked Cheese Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 100",
+									"Modification": "Add",
+									"Amount": "{{D.F.S 100 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "300ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 300",
+									"Modification": "Add",
+									"Amount": "{{D.F.S 300 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "500ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 500",
+									"Modification": "Add",
+									"Amount": "{{D.F.S 500 Items Cooked Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 50,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFishSmoker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Smoked Cheese": true
+			},
+			"Entries": {
+				"nachonline.mps_SmokedCheese": {
+					"Id": "nachonline.mps_SmokedCheese",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"cheese_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SmokedCheese",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SmokedCheese %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SmokedCheese",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{I.F.S Quantity}}",
+							"CopyQuality": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Smoked Cheese Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 100",
+									"Modification": "Add",
+									"Amount": "{{I.F.S 100 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "300ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 300",
+									"Modification": "Add",
+									"Amount": "{{I.F.S 300 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "500ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 500",
+									"Modification": "Add",
+									"Amount": "{{I.F.S 500 Items Cooked Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 50,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveFishSmoker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Smoked Cheese": true
+			},
+			"Entries": {
+				"nachonline.mps_SmokedCheese": {
+					"Id": "nachonline.mps_SmokedCheese",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"cheese_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SmokedCheese",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SmokedCheese %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SmokedCheese",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{R.F.S Quantity}}",
+							"CopyQuality": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Smoked Cheese Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 100",
+									"Modification": "Add",
+									"Amount": "{{R.F.S 100 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "300ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 300",
+									"Modification": "Add",
+									"Amount": "{{R.F.S 300 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "500ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 500",
+									"Modification": "Add",
+									"Amount": "{{R.F.S 500 Items Cooked Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 50,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticFishSmoker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Smoked Cheese": true
+			},
+			"Entries": {
+				"nachonline.mps_SmokedCheese": {
+					"Id": "nachonline.mps_SmokedCheese",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"cheese_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SmokedCheese",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SmokedCheese %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SmokedCheese",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{P.F.S Quantity}}",
+							"CopyQuality": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Smoked Cheese Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 100",
+									"Modification": "Add",
+									"Amount": "{{P.F.S 100 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "300ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 300",
+									"Modification": "Add",
+									"Amount": "{{P.F.S 300 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "500ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 500",
+									"Modification": "Add",
+									"Amount": "{{P.F.S 500 Items Cooked Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 50,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		// Smoked Egg
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFishSmoker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Smoked Eggs": true
+			},
+			"Entries": {
+				"nachonline.mps_SmokedEgg": {
+					"Id": "nachonline.mps_SmokedEgg",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"egg_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SmokedEgg",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SmokedEgg %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SmokedEgg",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{G.F.S Quantity}}",
+							"CopyQuality": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Smoked Egg Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 100",
+									"Modification": "Add",
+									"Amount": "{{G.F.S 100 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "300ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 300",
+									"Modification": "Add",
+									"Amount": "{{G.F.S 300 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "500ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 500",
+									"Modification": "Add",
+									"Amount": "{{G.F.S 500 Items Cooked Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 50,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFishSmoker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Smoked Eggs": true
+			},
+			"Entries": {
+				"nachonline.mps_SmokedEgg": {
+					"Id": "nachonline.mps_SmokedEgg",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"egg_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SmokedEgg",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SmokedEgg %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SmokedEgg",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{D.F.S Quantity}}",
+							"CopyQuality": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Smoked Egg Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 100",
+									"Modification": "Add",
+									"Amount": "{{D.F.S 100 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "300ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 300",
+									"Modification": "Add",
+									"Amount": "{{D.F.S 300 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "500ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 500",
+									"Modification": "Add",
+									"Amount": "{{D.F.S 500 Items Cooked Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 50,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFishSmoker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Smoked Eggs": true
+			},
+			"Entries": {
+				"nachonline.mps_SmokedEgg": {
+					"Id": "nachonline.mps_SmokedEgg",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"egg_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SmokedEgg",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SmokedEgg %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SmokedEgg",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{I.F.S Quantity}}",
+							"CopyQuality": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Smoked Egg Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 100",
+									"Modification": "Add",
+									"Amount": "{{I.F.S 100 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "300ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 300",
+									"Modification": "Add",
+									"Amount": "{{I.F.S 300 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "500ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 500",
+									"Modification": "Add",
+									"Amount": "{{I.F.S 500 Items Cooked Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 50,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveFishSmoker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Smoked Eggs": true
+			},
+			"Entries": {
+				"nachonline.mps_SmokedEgg": {
+					"Id": "nachonline.mps_SmokedEgg",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"egg_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SmokedEgg",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SmokedEgg %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SmokedEgg",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{R.F.S Quantity}}",
+							"CopyQuality": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Smoked Egg Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 100",
+									"Modification": "Add",
+									"Amount": "{{R.F.S 100 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "300ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 300",
+									"Modification": "Add",
+									"Amount": "{{R.F.S 300 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "500ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 500",
+									"Modification": "Add",
+									"Amount": "{{R.F.S 500 Items Cooked Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 50,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticFishSmoker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Smoked Eggs": true
+			},
+			"Entries": {
+				"nachonline.mps_SmokedEgg": {
+					"Id": "nachonline.mps_SmokedEgg",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"egg_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SmokedEgg",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SmokedEgg %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SmokedEgg",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{P.F.S Quantity}}",
+							"CopyQuality": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Smoked Egg Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 100",
+									"Modification": "Add",
+									"Amount": "{{P.F.S 100 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "300ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 300",
+									"Modification": "Add",
+									"Amount": "{{P.F.S 300 Items Cooked Bonus}}"
+								},
+								{
+									"Id": "500ItemsCooked",
+									"Condition": "PLAYER_STAT Current itemsCooked 500",
+									"Modification": "Add",
+									"Amount": "{{P.F.S 500 Items Cooked Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 50,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+	] 
+}

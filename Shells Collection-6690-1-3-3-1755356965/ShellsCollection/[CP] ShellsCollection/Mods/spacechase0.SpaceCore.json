@@ -1,0 +1,437 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Overrides recipes to use Context Tags when SpaceCore is installed",
+            "Action": "EditData",
+            "Target": "spacechase0.SpaceCore/CookingRecipeOverrides",
+            "When": {
+                "FlexibleRecipe": true
+            },
+            "Entries": {
+                "{{ModId}}_BraisedScallopRecipe": {
+                    "ProductQualifiedId": "{{ModId}}_BraisedScallop",
+                    "ProductAmount": 1,
+                    "Ingredients": [
+                        {
+                            "Type": "Item",
+                            "Value": "(O)88",
+                            "Amount": 1
+                        },
+                        {
+                            "Type": "Item",
+                            "Value": "(O)248",
+                            "Amount": 1
+                        },
+                        {
+                            "Type": "ContextTag",
+                            "Value": "scallop_item",
+                            "Amount": 1,
+                            "OverrideText": "Any scallop",
+                            "OverrideTexturePath": "Mods/{{ModId}}/TileSheets/Objects",
+                            "OverrideTextureRect": {
+                                "X": 32,
+                                "Y": 48,
+                                "Width": 16,
+                                "Height": 16
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_PurplePlateRecipe": {
+                    "ProductQualifiedId": "{{ModId}}_PurplePlate",
+                    "ProductAmount": 1,
+                    "Ingredients": [
+                        {
+                            "Type": "Item",
+                            "Value": "(O)299",
+                            "Amount": 1
+                        },
+                        {
+                            "Type": "Item",
+                            "Value": "(O)266",
+                            "Amount": 1
+                        },
+                        {
+                            "Type": "ContextTag",
+                            "Value": "scallop_item",
+                            "Amount": 1,
+                            "OverrideText": "Any scallop",
+                            "OverrideTexturePath": "Mods/{{ModId}}/TileSheets/Objects",
+                            "OverrideTextureRect": {
+                                "X": 32,
+                                "Y": 48,
+                                "Width": 16,
+                                "Height": 16
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_MolluskSoupRecipe": {
+                    "ProductQualifiedId": "{{ModId}}_MolluskSoup",
+                    "ProductAmount": 1,
+                    "Ingredients": [
+                        {
+                            "Type": "Item",
+                            "Value": "(O)719",
+                            "Amount": 1
+                        },
+                        {
+                            "Type": "Item",
+                            "Value": "(O)153",
+                            "Amount": 1
+                        },
+                        {
+                            "Type": "ContextTag",
+                            "Value": "scallop_item",
+                            "Amount": 1,
+                            "OverrideText": "{{i18n:AnyScallop}}",
+                            "OverrideTexturePath": "Mods/{{ModId}}/TileSheets/Objects",
+                            "OverrideTextureRect": {
+                                "X": 32,
+                                "Y": 48,
+                                "Width": 16,
+                                "Height": 16
+                            }
+                        },
+                        {
+                            "Type": "ContextTag",
+                            "Value": "abalone_item",
+                            "Amount": 1,
+                            "OverrideText": "{{i18n:AnyAbalone}}",
+                            "OverrideTexturePath": "Mods/{{ModId}}/TileSheets/Objects",
+                            "OverrideTextureRect": {
+                                "X": 0,
+                                "Y": 48,
+                                "Width": 16,
+                                "Height": 16
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Shell Spawnable",
+            "Action": "EditData",
+            "Target": "spacechase0.SpaceCore/SpawnableDefinitions",
+            "Entries": {
+                "{{ModId}}_BeachSpawnable_rain": {
+                    "Type": "Forageable",
+                    "Condition": "{{Weather: valley|contains=rain, storm}}",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 1.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_DottedAbalone"
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachSpawnable_spring": {
+                    "Type": "Forageable",
+                    "Condition": "SEASON spring",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 3.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_BlueConch",
+                            }
+                        },
+                        {
+                            "Weight": 5.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_SandBucks",
+                            }
+                        },
+                        {
+                            "Weight": 5.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_LimpetShell",
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachSpawnable_summer": {
+                    "Type": "Forageable",
+                    "Condition": "SEASON summer",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 3.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_BlueConch",
+                            }
+                        },
+                        {
+                            "Weight": 4.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_SandBucks",
+                            }
+                        },
+                        {
+                            "Weight": 3.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_LimpetShell",
+                            }
+                        },
+                        {
+                            "Weight": 3.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_WingedScallop",
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachSpawnable_fall": {
+                    "Type": "Forageable",
+                    "Condition": "SEASON fall",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 3.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_BlueConch",
+                            }
+                        },
+                        {
+                            "Weight": 4.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_SandBucks",
+                            }
+                        },
+                        {
+                            "Weight": 3.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_LimpetShell",
+                            }
+                        },
+                        {
+                            "Weight": 3.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_WingedScallop",
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachSpawnable_winter": {
+                    "Type": "Forageable",
+                    "Condition": "SEASON winter",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 2.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_BlueConch",
+                            }
+                        },
+                        {
+                            "Weight": 3.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_SandBucks",
+                            }
+                        },
+                        {
+                            "Weight": 2.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_LimpetShell",
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachTidePoolsSpawnable_spring": {
+                    "Type": "Forageable",
+                    "Condition": "SEASON spring",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 1.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_CoralShell",
+                            }
+                        },
+                        {
+                            "Weight": 2.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_CrystalCowrie",
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachTidePoolsSpawnable_summer": {
+                    "Type": "Forageable",
+                    "Condition": "SEASON summer",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 1.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_CoralShell",
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachTidePoolsSpawnable_fall": {
+                    "Type": "Forageable",
+                    "Condition": "SEASON fall",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 1.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_CoralShell",
+                            }
+                        },
+                        {
+                            "Weight": 2.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_RedTrumpet",
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachTidePoolsSpawnable_winter": {
+                    "Type": "Forageable",
+                    "Condition": "SEASON winter",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 2.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_CoralShell",
+                            }
+                        },
+                        {
+                            "Weight": 1.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_LuckyMarine",
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_GingerIslandSpawnable": {
+                    "Type": "Forageable",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 2.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_KittenPaw",
+                            }
+                        },
+                        {
+                            "Weight": 2.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_SandBucks",
+                            }
+                        },
+                        {
+                            "Weight": 4.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_GemSeaWhelk",
+                            }
+                        },
+                        {
+                            "Weight": 2.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_BlueConch",
+                            }
+                        },
+                        {
+                            "Weight": 2.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_SpiderConch",
+                            }
+                        },
+                        {
+                            "Weight": 2.0,
+                            "Value": {
+                                "ItemId": "(O){{ModId}}_SandBucks",
+                            }
+                        }
+                    ]
+                },
+                "{{ModId}}_ExtraCoral": {
+                    "Type": "Forageable",
+                    "ForageableItemData": [
+                        {
+                            "Weight": 1.0,
+                            "Value": {
+                                "ItemId": "(O)393"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Shell Spawnable",
+            "Action": "EditData",
+            "Target": "spacechase0.SpaceCore/SpawningGroups",
+            "Entries": {
+                "{{ModId}}_CoralSpawningGroup": {
+                    "SpawnablesToSpawn": [
+                        {
+                            "SpawnableIds": [
+                                {
+                                    "Weight": 1.0,
+                                    "Value": "{{ModId}}_ExtraCoral"
+                                }
+                            ],
+                            "Minimum": 1,
+                            "Maximum": 3
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachSpawningGroup": {
+                    "SpawnablesToSpawn": [
+                        {
+                            "SpawnableIds": [
+                                {
+                                    "Weight": 1.0,
+                                    "Value": "{{ModId}}_BeachSpawnable_{{Season}}"
+                                }
+                            ],
+                            "Minimum": -1,
+                            "Maximum": 2
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachTidePoolsSpawningGroup": {
+                    "SpawnablesToSpawn": [
+                        {
+                            "SpawnableIds": [
+                                {
+                                    "Weight": 1.0,
+                                    "Value": "{{ModId}}_BeachTidePoolsSpawnable_{{Season}}"
+                                }
+                            ],
+                            "Minimum": 0,
+                            "Maximum": 2
+                        }
+                    ]
+                },
+                "{{ModId}}_GingerIslandSpawningGroup": {
+                    "SpawnablesToSpawn": [
+                        {
+                            "SpawnableIds": [
+                                {
+                                    "Weight": 1.0,
+                                    "Value": "{{ModId}}_GingerIslandSpawnable"
+                                }
+                            ],
+                            "Minimum": 0,
+                            "Maximum": 2
+                        }
+                    ]
+                },
+                "{{ModId}}_BeachSpawningGroup_Rain": {
+                    "SpawnablesToSpawn": [
+                        {
+                            "SpawnableIds": [
+                                {
+                                    "Weight": 1.0,
+                                    "Value": "{{ModId}}_BeachSpawnable_Rain"
+                                }
+                            ],
+                            "Minimum": 1,
+                            "Maximum": 2
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

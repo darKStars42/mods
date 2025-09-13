@@ -1,0 +1,1266 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_SteelLoom": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)440"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)428",
+									"MinStack": "{{S.L Quantity}}",
+									"CopyQuality": "{{S.L Copy Quality}}",
+									"Quality": "{{S.L Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "DoubleQuality",
+											"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+											"Modification": "Add",
+											"Amount": "{{S.L Quality Input Bonus}}"
+										},
+										{
+											"Id": "100RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{S.L 100 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{S.L 300 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "100SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{S.L 100 Sheep Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{S.L 300 Sheep Wool Produced Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{S.L Production Time}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							]
+						}
+					],
+					"ShowNextIndexWhileWorking": false,
+					"ShowNextIndexWhenReady": true,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_GoldLoom": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)440"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)428",
+									"MinStack": "{{G.L Quantity}}",
+									"CopyQuality": "{{G.L Copy Quality}}",
+									"Quality": "{{G.L Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "DoubleQuality",
+											"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+											"Modification": "Add",
+											"Amount": "{{G.L Quality Input Bonus}}"
+										},
+										{
+											"Id": "100RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{G.L 100 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{G.L 300 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "100SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{G.L 100 Sheep Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{G.L 300 Sheep Wool Produced Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{G.L Production Time}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							]
+						}
+					],
+					"ShowNextIndexWhileWorking": false,
+					"ShowNextIndexWhenReady": true,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_DiamondLoom": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)440"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)428",
+									"MinStack": "{{D.L Quantity}}",
+									"CopyQuality": "{{D.L Copy Quality}}",
+									"Quality": "{{D.L Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "DoubleQuality",
+											"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+											"Modification": "Add",
+											"Amount": "{{D.L Quality Input Bonus}}"
+										},
+										{
+											"Id": "100RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{D.L 100 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{D.L 300 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "100SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{D.L 100 Sheep Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{D.L 300 Sheep Wool Produced Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.L Production Time}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							]
+						}
+					],
+					"ShowNextIndexWhileWorking": false,
+					"ShowNextIndexWhenReady": true,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_IridiumLoom": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)440"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)428",
+									"MinStack": "{{I.L Quantity}}",
+									"CopyQuality": "{{I.L Copy Quality}}",
+									"Quality": "{{I.L Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "DoubleQuality",
+											"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+											"Modification": "Add",
+											"Amount": "{{I.L Quality Input Bonus}}"
+										},
+										{
+											"Id": "100RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{I.L 100 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{I.L 300 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "100SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{I.L 100 Sheep Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{I.L 300 Sheep Wool Produced Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.L Production Time}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							]
+						}
+					],
+					"ShowNextIndexWhileWorking": false,
+					"ShowNextIndexWhenReady": true,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_RadioactiveLoom": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)440"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)428",
+									"MinStack": "{{R.L Quantity}}",
+									"CopyQuality": "{{R.L Copy Quality}}",
+									"Quality": "{{R.L Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "DoubleQuality",
+											"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+											"Modification": "Add",
+											"Amount": "{{R.L Quality Input Bonus}}"
+										},
+										{
+											"Id": "100RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{R.L 100 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{R.L 300 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "100SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{R.L 100 Sheep Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{R.L 300 Sheep Wool Produced Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.L Production Time}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							]
+						}
+					],
+					"ShowNextIndexWhileWorking": false,
+					"ShowNextIndexWhenReady": true,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_PrismaticLoom": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)440"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)428",
+									"MinStack": "{{P.L Quantity}}",
+									"CopyQuality": "{{P.L Copy Quality}}",
+									"Quality": "{{P.L Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "DoubleQuality",
+											"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+											"Modification": "Add",
+											"Amount": "{{P.L Quality Input Bonus}}"
+										},
+										{
+											"Id": "100RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{P.L 100 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300RabbitWoolProduced",
+											"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{P.L 300 Rabbit Wool Produced Bonus}}"
+										},
+										{
+											"Id": "100SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+											"Modification": "Add",
+											"Amount": "{{P.L 100 Sheep Wool Produced Bonus}}"
+										},
+										{
+											"Id": "300SheepWoolProduced",
+											"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+											"Modification": "Add",
+											"Amount": "{{P.L 300 Sheep Wool Produced Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.L Production Time}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							]
+						}
+					],
+					"ShowNextIndexWhileWorking": false,
+					"ShowNextIndexWhenReady": true,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				}
+			}
+		},
+		// Feather Bundles
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Feather Bundles": true
+			},
+			"Entries": {
+				"nachonline.mps_FeatherBundle": {
+					"Id": "nachonline.mps_FeatherBundle",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"animal_feather_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_FeatherBundle",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_FeatherBundle %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_FeatherBundle",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{S.L Quantity}}",
+							"CopyQuality": "{{S.L Copy Quality}}",
+							"Quality": "{{S.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{S.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{S.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{S.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{S.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{S.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Feather Bundle Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.L Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Feather Bundles": true
+			},
+			"Entries": {
+				"nachonline.mps_FeatherBundle": {
+					"Id": "nachonline.mps_FeatherBundle",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"animal_feather_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_FeatherBundle",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_FeatherBundle %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_FeatherBundle",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{G.L Quantity}}",
+							"CopyQuality": "{{G.L Copy Quality}}",
+							"Quality": "{{G.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{G.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{G.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{G.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{G.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{G.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Feather Bundle Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.L Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Feather Bundles": true
+			},
+			"Entries": {
+				"nachonline.mps_FeatherBundle": {
+					"Id": "nachonline.mps_FeatherBundle",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"animal_feather_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_FeatherBundle",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_FeatherBundle %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_FeatherBundle",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{D.L Quantity}}",
+							"CopyQuality": "{{D.L Copy Quality}}",
+							"Quality": "{{D.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{D.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{D.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{D.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{D.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{D.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Feather Bundle Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.L Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Feather Bundles": true
+			},
+			"Entries": {
+				"nachonline.mps_FeatherBundle": {
+					"Id": "nachonline.mps_FeatherBundle",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"animal_feather_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_FeatherBundle",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_FeatherBundle %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_FeatherBundle",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{I.L Quantity}}",
+							"CopyQuality": "{{I.L Copy Quality}}",
+							"Quality": "{{I.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{I.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{I.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{I.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{I.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{I.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Feather Bundle Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.L Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Feather Bundles": true
+			},
+			"Entries": {
+				"nachonline.mps_FeatherBundle": {
+					"Id": "nachonline.mps_FeatherBundle",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"animal_feather_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_FeatherBundle",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_FeatherBundle %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_FeatherBundle",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{R.L Quantity}}",
+							"CopyQuality": "{{R.L Copy Quality}}",
+							"Quality": "{{R.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{R.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{R.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{R.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{R.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{R.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Feather Bundle Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.L Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Feather Bundles": true
+			},
+			"Entries": {
+				"nachonline.mps_FeatherBundle": {
+					"Id": "nachonline.mps_FeatherBundle",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"animal_feather_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_FeatherBundle",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_FeatherBundle %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_FeatherBundle",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{P.L Quantity}}",
+							"CopyQuality": "{{P.L Copy Quality}}",
+							"Quality": "{{P.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{P.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{P.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{P.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{P.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{P.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Feather Bundle Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.L Production Time}}"
+				}
+			}
+		},
+		// Luxury Cloth
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true,
+				"Enable Luxury Cloth": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryCloth": {
+					"Id": "nachonline.mps_LuxuryCloth",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_LuxuryWool"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryCloth",
+							"MinStack": "{{S.L Quantity}}",
+							"CopyQuality": "{{S.L Copy Quality}}",
+							"Quality": "{{S.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{S.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{S.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{S.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{S.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{S.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.L Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true,
+				"Enable Luxury Cloth": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryCloth": {
+					"Id": "nachonline.mps_LuxuryCloth",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_LuxuryWool"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryCloth",
+							"MinStack": "{{G.L Quantity}}",
+							"CopyQuality": "{{G.L Copy Quality}}",
+							"Quality": "{{G.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{G.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{G.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{G.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{G.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{G.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.L Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true,
+				"Enable Luxury Cloth": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryCloth": {
+					"Id": "nachonline.mps_LuxuryCloth",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_LuxuryWool"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryCloth",
+							"MinStack": "{{D.L Quantity}}",
+							"CopyQuality": "{{D.L Copy Quality}}",
+							"Quality": "{{D.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{D.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{D.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{D.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{D.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{D.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.L Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true,
+				"Enable Luxury Cloth": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryCloth": {
+					"Id": "nachonline.mps_LuxuryCloth",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_LuxuryWool"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryCloth",
+							"MinStack": "{{I.L Quantity}}",
+							"CopyQuality": "{{I.L Copy Quality}}",
+							"Quality": "{{I.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{I.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{I.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{I.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{I.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{I.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.L Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true,
+				"Enable Luxury Cloth": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryCloth": {
+					"Id": "nachonline.mps_LuxuryCloth",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_LuxuryWool"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryCloth",
+							"MinStack": "{{R.L Quantity}}",
+							"CopyQuality": "{{R.L Copy Quality}}",
+							"Quality": "{{R.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{R.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{R.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{R.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{R.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{R.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.L Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticLoom",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true,
+				"Enable Luxury Cloth": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryCloth": {
+					"Id": "nachonline.mps_LuxuryCloth",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_LuxuryWool"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryCloth",
+							"MinStack": "{{P.L Quantity}}",
+							"CopyQuality": "{{P.L Copy Quality}}",
+							"Quality": "{{P.L Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "DoubleQuality",
+									"Condition": "ANY \"ITEM_QUALITY Input 1 1, RANDOM 0.15\" \"ITEM_QUALITY Input 2 2, RANDOM 0.5\" \"ITEM_QUALITY Input 4 4, RANDOM 1\"",
+									"Modification": "Add",
+									"Amount": "{{P.L Quality Input Bonus}}"
+								},
+								{
+									"Id": "100RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{P.L 100 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300RabbitWoolProduced",
+									"Condition": "PLAYER_STAT Current rabbitWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{P.L 300 Rabbit Wool Produced Bonus}}"
+								},
+								{
+									"Id": "100SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 100",
+									"Modification": "Add",
+									"Amount": "{{P.L 100 Sheep Wool Produced Bonus}}"
+								},
+								{
+									"Id": "300SheepWoolProduced",
+									"Condition": "PLAYER_STAT Current sheepWoolProduced 300",
+									"Modification": "Add",
+									"Amount": "{{P.L 300 Sheep Wool Produced Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.L Production Time}}"
+				}
+			}
+		}
+	] 
+}

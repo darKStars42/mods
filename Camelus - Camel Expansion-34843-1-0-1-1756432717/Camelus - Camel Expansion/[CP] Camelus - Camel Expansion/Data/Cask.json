@@ -1,0 +1,135 @@
+{
+  "Changes": [
+
+    //*************************************************
+    //  Camel Cheese Rules
+    //
+    {
+      "LogName": "Add Camel Cheese Rules",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)163", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_CamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_CamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_CamelCheese",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_CamelCheese",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_CamelCheese",
+              "OutputMethod": "StardewValley.Objects.Cask, Stardew Valley: OutputCask",
+              "CustomData": {
+                "AgingMultiplier": "4"
+              }
+            }
+          ]
+        }
+      }
+    },
+    //*************************************************
+    //  Large Camel Cheese Rules
+    //
+    {
+      "LogName": "Add Large Camel Cheese Rules",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)163", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_LargeCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_LargeCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_LargeCamelCheese",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_LargeCamelCheese",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_LargeCamelCheese",
+              "OutputMethod": "StardewValley.Objects.Cask, Stardew Valley: OutputCask",
+              "CustomData": {
+                "AgingMultiplier": "4"
+              }
+            }
+          ]
+        }
+      },
+      "When": {
+        "LargeMilkResult": "LargeCheese"
+      }
+    },
+    //*************************************************
+    //  Void Camel Cheese Rules
+    //
+    {
+      "LogName": "Add Void Camel Cheese Rules",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)163", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_VoidCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_VoidCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_VoidCamelCheese",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_VoidCamelCheese",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_VoidCamelCheese",
+              "OutputMethod": "StardewValley.Objects.Cask, Stardew Valley: OutputCask",
+              "CustomData": {
+                "AgingMultiplier": "4"
+              }
+            }
+          ]
+        }
+      },
+      "When": {
+        "DisableVoidCamel": false
+      }
+    },
+    //*************************************************
+    //  Large Void Camel Cheese Rules
+    //
+    {
+      "LogName": "Add Large Void Camel Cheese Rules",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)163", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_LargeVoidCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_LargeVoidCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_LargeVoidCamelCheese",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_LargeVoidCamelCheese",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_LargeVoidCamelCheese",
+              "OutputMethod": "StardewValley.Objects.Cask, Stardew Valley: OutputCask",
+              "CustomData": {
+                "AgingMultiplier": "4"
+              }
+            }
+          ]
+        }
+      },
+      "When": {
+        "LargeMilkResult": "LargeCheese",
+        "DisableVoidCamel": false
+      }
+    }
+  ]
+}

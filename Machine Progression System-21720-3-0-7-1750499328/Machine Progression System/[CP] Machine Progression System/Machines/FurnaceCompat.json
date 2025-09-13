@@ -1,0 +1,2557 @@
+{
+    "Changes": [
+		// Alchemistry - A Witchy Gameplay Expansion Mod (https://www.nexusmods.com/stardewvalley/mods/22743)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Morghoula.AlchemistryCP_EmptyFlask": {
+					"Id": "Morghoula.AlchemistryCP_EmptyFlask",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)338",
+							"RequiredCount": "{{S.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+							"MinStack": "{{S.F Quantity}}",
+							"CopyPrice": true
+						}
+					],
+					"MinutesUntilReady": "{{S.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Morghoula.AlchemistryCP"
+			},
+			"MoveEntries": [
+				{ "Id": "Morghoula.AlchemistryCP_EmptyFlask", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Morghoula.AlchemistryCP_EmptyFlask": {
+					"Id": "Morghoula.AlchemistryCP_EmptyFlask",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)338",
+							"RequiredCount": "{{G.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+							"MinStack": "{{G.F Quantity}}",
+							"CopyPrice": true
+						}
+					],
+					"MinutesUntilReady": "{{G.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Morghoula.AlchemistryCP"
+			},
+			"MoveEntries": [
+				{ "Id": "Morghoula.AlchemistryCP_EmptyFlask", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Morghoula.AlchemistryCP_EmptyFlask": {
+					"Id": "Morghoula.AlchemistryCP_EmptyFlask",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)338",
+							"RequiredCount": "{{D.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+							"MinStack": "{{D.F Quantity}}",
+							"CopyPrice": true
+						}
+					],
+					"MinutesUntilReady": "{{D.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Morghoula.AlchemistryCP"
+			},
+			"MoveEntries": [
+				{ "Id": "Morghoula.AlchemistryCP_EmptyFlask", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Morghoula.AlchemistryCP_EmptyFlask": {
+					"Id": "Morghoula.AlchemistryCP_EmptyFlask",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)338",
+							"RequiredCount": "{{I.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+							"MinStack": "{{I.F Quantity}}",
+							"CopyPrice": true
+						}
+					],
+					"MinutesUntilReady": "{{I.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Morghoula.AlchemistryCP"
+			},
+			"MoveEntries": [
+				{ "Id": "Morghoula.AlchemistryCP_EmptyFlask", "ToPosition": "Top" }
+			]
+		},
+		
+		// Baubles (https://www.nexusmods.com/stardewvalley/mods/29720)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"appleseed.BCP.Porcelain": {
+					"Id": "appleseed.BCP.Porcelain",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)appleseed.BCP.Petuntse"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)appleseed.BCP.Porcelain",
+							"MinStack": "{{S.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Gold Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "appleseed.BCP"
+			},
+			"MoveEntries": [
+				{ "Id": "appleseed.BCP.Porcelain", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"appleseed.BCP.Porcelain": {
+					"Id": "appleseed.BCP.Porcelain",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)appleseed.BCP.Petuntse"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)appleseed.BCP.Porcelain",
+							"MinStack": "{{G.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Gold Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "appleseed.BCP"
+			},
+			"MoveEntries": [
+				{ "Id": "appleseed.BCP.Porcelain", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"appleseed.BCP.Porcelain": {
+					"Id": "appleseed.BCP.Porcelain",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)appleseed.BCP.Petuntse"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)appleseed.BCP.Porcelain",
+							"MinStack": "{{D.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Gold Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "appleseed.BCP"
+			},
+			"MoveEntries": [
+				{ "Id": "appleseed.BCP.Porcelain", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"appleseed.BCP.Porcelain": {
+					"Id": "appleseed.BCP.Porcelain",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)appleseed.BCP.Petuntse"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)appleseed.BCP.Porcelain",
+							"MinStack": "{{I.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Gold Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "appleseed.BCP"
+			},
+			"MoveEntries": [
+				{ "Id": "appleseed.BCP.Porcelain", "ToPosition": "Top" }
+			]
+		},
+		
+		// Bear Family Custom NPCS - An Add-On for East Scarp (https://www.nexusmods.com/stardewvalley/mods/16197)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MadDog.HashtagBearFam_FerskenPeach_Honey": {
+					"Id": "MadDog.HashtagBearFam_FerskenPeach_Honey",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MadDog.HashtagBearFam_FerskenPeach",
+							"Condition": "PLAYER_HAS_MAIL Current SigMansplainsHoney Any"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MadDog.HashtagBearFam_FerskenPeach_Honey",
+							"MinStack": 3,
+							"MaxStack": 6
+						}
+					],
+					"MinutesUntilReady": "{{S.F Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "MadDog.HashtagBearFam"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MadDog.HashtagBearFam_FerskenPeach_Honey": {
+					"Id": "MadDog.HashtagBearFam_FerskenPeach_Honey",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MadDog.HashtagBearFam_FerskenPeach",
+							"Condition": "PLAYER_HAS_MAIL Current SigMansplainsHoney Any"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MadDog.HashtagBearFam_FerskenPeach_Honey",
+							"MinStack": 4,
+							"MaxStack": 6
+						}
+					],
+					"MinutesUntilReady": "{{G.F Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "MadDog.HashtagBearFam"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MadDog.HashtagBearFam_FerskenPeach_Honey": {
+					"Id": "MadDog.HashtagBearFam_FerskenPeach_Honey",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MadDog.HashtagBearFam_FerskenPeach",
+							"Condition": "PLAYER_HAS_MAIL Current SigMansplainsHoney Any"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MadDog.HashtagBearFam_FerskenPeach_Honey",
+							"MinStack": 4,
+							"MaxStack": 7
+						}
+					],
+					"MinutesUntilReady": "{{D.F Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "MadDog.HashtagBearFam"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MadDog.HashtagBearFam_FerskenPeach_Honey": {
+					"Id": "MadDog.HashtagBearFam_FerskenPeach_Honey",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MadDog.HashtagBearFam_FerskenPeach",
+							"Condition": "PLAYER_HAS_MAIL Current SigMansplainsHoney Any"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MadDog.HashtagBearFam_FerskenPeach_Honey",
+							"MinStack": 5,
+							"MaxStack": 7
+						}
+					],
+					"MinutesUntilReady": "{{I.F Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "MadDog.HashtagBearFam"
+			}
+		},
+		
+		// BVG Animal Overhaul (https://www.nexusmods.com/stardewvalley/mods/24316)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"i24KittyKat.BVGCP_RefinedFireQuartz": {
+					"Id": "i24KittyKat.BVGCP_RefinedFireQuartz",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)82"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)i24KittyKat.BVGCP_RefinedFireQuartz",
+							"MinStack": "{{S.F Fire Quartz Output}}",
+							"StackModifiers": [
+								{
+									"Id": "100StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 100",
+									"Modification": "Add",
+									"Amount": "{{S.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 300",
+									"Modification": "Add",
+									"Amount": "{{S.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 500",
+									"Modification": "Add",
+									"Amount": "{{S.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"		
+						}
+					],
+					"MinutesUntilReady": "{{S.F Fire Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "i24KittyKat.BVGCP"
+			},
+			"MoveEntries": [
+				{ "Id": "i24KittyKat.BVGCP_RefinedFireQuartz", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"i24KittyKat.BVGCP_RefinedFireQuartz": {
+					"Id": "i24KittyKat.BVGCP_RefinedFireQuartz",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)82"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)i24KittyKat.BVGCP_RefinedFireQuartz",
+							"MinStack": "{{G.F Fire Quartz Output}}",
+							"StackModifiers": [
+								{
+									"Id": "100StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 100",
+									"Modification": "Add",
+									"Amount": "{{G.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 300",
+									"Modification": "Add",
+									"Amount": "{{G.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 500",
+									"Modification": "Add",
+									"Amount": "{{G.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"		
+						}
+					],
+					"MinutesUntilReady": "{{G.F Fire Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "i24KittyKat.BVGCP"
+			},
+			"MoveEntries": [
+				{ "Id": "i24KittyKat.BVGCP_RefinedFireQuartz", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"i24KittyKat.BVGCP_RefinedFireQuartz": {
+					"Id": "i24KittyKat.BVGCP_RefinedFireQuartz",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)82"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)i24KittyKat.BVGCP_RefinedFireQuartz",
+							"MinStack": "{{D.F Fire Quartz Output}}",
+							"StackModifiers": [
+								{
+									"Id": "100StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 100",
+									"Modification": "Add",
+									"Amount": "{{D.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 300",
+									"Modification": "Add",
+									"Amount": "{{D.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 500",
+									"Modification": "Add",
+									"Amount": "{{D.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"		
+						}
+					],
+					"MinutesUntilReady": "{{D.F Fire Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "i24KittyKat.BVGCP"
+			},
+			"MoveEntries": [
+				{ "Id": "i24KittyKat.BVGCP_RefinedFireQuartz", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"i24KittyKat.BVGCP_RefinedFireQuartz": {
+					"Id": "i24KittyKat.BVGCP_RefinedFireQuartz",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)82"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)i24KittyKat.BVGCP_RefinedFireQuartz",
+							"MinStack": "{{I.F Fire Quartz Output}}",
+							"StackModifiers": [
+								{
+									"Id": "100StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 100",
+									"Modification": "Add",
+									"Amount": "{{I.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 300",
+									"Modification": "Add",
+									"Amount": "{{I.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 500",
+									"Modification": "Add",
+									"Amount": "{{I.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"		
+						}
+					],
+					"MinutesUntilReady": "{{I.F Fire Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "i24KittyKat.BVGCP"
+			},
+			"MoveEntries": [
+				{ "Id": "i24KittyKat.BVGCP_RefinedFireQuartz", "ToPosition": "Top" }
+			]
+		},
+		
+		// Chocobo Valley - Custom livestock crops and more (https://www.nexusmods.com/stardewvalley/mods/22226)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Kitsutsune.Chocobovalley_MythrilBar": {
+					"Id": "Kitsutsune.Chocobovalley_MythrilBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_MythrilOre",
+							"RequiredCount": "{{S.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_MythrilBar",
+							"MinStack": "{{S.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_OrichalcumBar": {
+					"Id": "Kitsutsune.Chocobovalley_OrichalcumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumOre",
+							"RequiredCount": "{{S.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumBar",
+							"MinStack": "{{S.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Iridium Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_AdamantiteBar": {
+					"Id": "Kitsutsune.Chocobovalley_AdamantiteBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteOre",
+							"RequiredCount": "{{S.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteBar",
+							"MinStack": "{{S.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Kitsutsune.Chocobovalley"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Kitsutsune.Chocobovalley_MythrilBar": {
+					"Id": "Kitsutsune.Chocobovalley_MythrilBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_MythrilOre",
+							"RequiredCount": "{{G.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_MythrilBar",
+							"MinStack": "{{G.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_OrichalcumBar": {
+					"Id": "Kitsutsune.Chocobovalley_OrichalcumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumOre",
+							"RequiredCount": "{{G.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumBar",
+							"MinStack": "{{G.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Iridium Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_AdamantiteBar": {
+					"Id": "Kitsutsune.Chocobovalley_AdamantiteBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteOre",
+							"RequiredCount": "{{G.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteBar",
+							"MinStack": "{{G.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Kitsutsune.Chocobovalley"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Kitsutsune.Chocobovalley_MythrilBar": {
+					"Id": "Kitsutsune.Chocobovalley_MythrilBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_MythrilOre",
+							"RequiredCount": "{{D.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_MythrilBar",
+							"MinStack": "{{D.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_OrichalcumBar": {
+					"Id": "Kitsutsune.Chocobovalley_OrichalcumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumOre",
+							"RequiredCount": "{{D.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumBar",
+							"MinStack": "{{D.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Iridium Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_AdamantiteBar": {
+					"Id": "Kitsutsune.Chocobovalley_AdamantiteBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteOre",
+							"RequiredCount": "{{D.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteBar",
+							"MinStack": "{{D.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Kitsutsune.Chocobovalley"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Kitsutsune.Chocobovalley_MythrilBar": {
+					"Id": "Kitsutsune.Chocobovalley_MythrilBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_MythrilOre",
+							"RequiredCount": "{{I.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_MythrilBar",
+							"MinStack": "{{I.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_OrichalcumBar": {
+					"Id": "Kitsutsune.Chocobovalley_OrichalcumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumOre",
+							"RequiredCount": "{{I.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumBar",
+							"MinStack": "{{I.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Iridium Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_AdamantiteBar": {
+					"Id": "Kitsutsune.Chocobovalley_AdamantiteBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteOre",
+							"RequiredCount": "{{I.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteBar",
+							"MinStack": "{{I.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Kitsutsune.Chocobovalley"
+			}
+		},
+		
+		// Metalcore Goes Cottagecore - East Scarp Addon (https://www.nexusmods.com/stardewvalley/mods/29995)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Squeaks.MGC.CP_RoastedCoffeeBeans": {
+                    "Id": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+                    "Triggers": [
+                        {
+                            "RequiredItemId": "(O)433",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "ItemId": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+							"MinStack": "{{S.F Quantity}}"
+                        }
+                    ],
+                    "MinutesUntilReady": "{{S.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+                }
+			},
+			"When": {
+				"HasMod": "Squeaks.MGC.CP"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Squeaks.MGC.CP_RoastedCoffeeBeans": {
+                    "Id": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+                    "Triggers": [
+                        {
+                            "RequiredItemId": "(O)433",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "ItemId": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+							"MinStack": "{{G.F Quantity}}"
+                        }
+                    ],
+                    "MinutesUntilReady": "{{G.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+                }
+			},
+			"When": {
+				"HasMod": "Squeaks.MGC.CP"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Squeaks.MGC.CP_RoastedCoffeeBeans": {
+                    "Id": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+                    "Triggers": [
+                        {
+                            "RequiredItemId": "(O)433",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "ItemId": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+							"MinStack": "{{D.F Quantity}}"
+                        }
+                    ],
+                    "MinutesUntilReady": "{{D.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+                }
+			},
+			"When": {
+				"HasMod": "Squeaks.MGC.CP"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Squeaks.MGC.CP_RoastedCoffeeBeans": {
+                    "Id": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+                    "Triggers": [
+                        {
+                            "RequiredItemId": "(O)433",
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "ItemId": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+							"MinStack": "{{I.F Quantity}}"
+                        }
+                    ],
+                    "MinutesUntilReady": "{{I.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+                }
+			},
+			"When": {
+				"HasMod": "Squeaks.MGC.CP"
+			}
+		},
+		
+		// Passerby Cemetery (https://www.nexusmods.com/stardewvalley/mods/22600)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Fellowclown.PC_RoastedReuuNut": {	
+					"Id": "Fellowclown.PC_RoastedReuuNut",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Fellowclown.PC_ReuuNut",
+							"RequiredCount": "{{S.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Fellowclown.PC_RoastedReuuNut",
+							"MinStack": "{{S.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Fellowclown.PC"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Fellowclown.PC_RoastedReuuNut": {	
+					"Id": "Fellowclown.PC_RoastedReuuNut",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Fellowclown.PC_ReuuNut",
+							"RequiredCount": "{{G.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Fellowclown.PC_RoastedReuuNut",
+							"MinStack": "{{G.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Fellowclown.PC"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Fellowclown.PC_RoastedReuuNut": {	
+					"Id": "Fellowclown.PC_RoastedReuuNut",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Fellowclown.PC_ReuuNut",
+							"RequiredCount": "{{D.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Fellowclown.PC_RoastedReuuNut",
+							"MinStack": "{{D.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Fellowclown.PC"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Fellowclown.PC_RoastedReuuNut": {	
+					"Id": "Fellowclown.PC_RoastedReuuNut",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Fellowclown.PC_ReuuNut",
+							"RequiredCount": "{{I.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Fellowclown.PC_RoastedReuuNut",
+							"MinStack": "{{I.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Fellowclown.PC"
+			}
+		},
+		
+		// Prismatic Tools Continued (https://www.nexusmods.com/stardewvalley/mods/21450)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"iargue.PrismaticToolsContinued_PrismaticBar": {
+					"Id": "iargue.PrismaticToolsContinued_PrismaticBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)74"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)PrismaticBar",
+							"MinStack": 5
+						}
+					],
+					"MinutesUntilReady": "{{S.F Radioactive Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "iargue.PrismaticToolsContinued"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"iargue.PrismaticToolsContinued_PrismaticBar": {
+					"Id": "iargue.PrismaticToolsContinued_PrismaticBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)74",
+							"RequiredCount": 2
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)PrismaticBar",
+							"MinStack": 10
+						}
+					],
+					"MinutesUntilReady": "{{G.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "iargue.PrismaticToolsContinued"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"iargue.PrismaticToolsContinued_PrismaticBar": {
+					"Id": "iargue.PrismaticToolsContinued_PrismaticBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)74",
+							"RequiredCount": 2
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)PrismaticBar",
+							"MinStack": 10
+						}
+					],
+					"MinutesUntilReady": "{{D.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "iargue.PrismaticToolsContinued"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"iargue.PrismaticToolsContinued_PrismaticBar": {
+					"Id": "iargue.PrismaticToolsContinued_PrismaticBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)74",
+							"RequiredCount": 2
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)PrismaticBar",
+							"MinStack": 10
+						}
+					],
+					"MinutesUntilReady": "{{I.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "iargue.PrismaticToolsContinued"
+			}
+		},
+		
+		// Strange Machines Revisited (https://www.nexusmods.com/stardewvalley/mods/21244)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MrtaiyouSolariaze.StrangeMachines_NBar": {
+					"Id": "NBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelNugget",
+							"RequiredCount": "{{S.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelBar",
+							"MinStack": "{{S.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"MrtaiyouSolariaze.StrangeMachines_Blackstone": {
+					"Id": "Blackstone",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_Blackstone",
+							"RequiredCount": "{{S.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_BlackBrick",
+							"MinStack": "{{S.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "MrtaiyouSolariaze.StrangeMachines"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MrtaiyouSolariaze.StrangeMachines_NBar": {
+					"Id": "NBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelNugget",
+							"RequiredCount": "{{G.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelBar",
+							"MinStack": "{{G.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"MrtaiyouSolariaze.StrangeMachines_Blackstone": {
+					"Id": "Blackstone",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_Blackstone",
+							"RequiredCount": "{{G.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_BlackBrick",
+							"MinStack": "{{G.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "MrtaiyouSolariaze.StrangeMachines"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MrtaiyouSolariaze.StrangeMachines_NBar": {
+					"Id": "NBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelNugget",
+							"RequiredCount": "{{D.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelBar",
+							"MinStack": "{{D.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"MrtaiyouSolariaze.StrangeMachines_Blackstone": {
+					"Id": "Blackstone",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_Blackstone",
+							"RequiredCount": "{{D.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_BlackBrick",
+							"MinStack": "{{D.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "MrtaiyouSolariaze.StrangeMachines"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MrtaiyouSolariaze.StrangeMachines_NBar": {
+					"Id": "NBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelNugget",
+							"RequiredCount": "{{I.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelBar",
+							"MinStack": "{{I.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"MrtaiyouSolariaze.StrangeMachines_Blackstone": {
+					"Id": "Blackstone",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_Blackstone",
+							"RequiredCount": "{{I.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_BlackBrick",
+							"MinStack": "{{I.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "MrtaiyouSolariaze.StrangeMachines"
+			}
+		},
+		
+		// Sword and Sorcery - A Fantasy Expansion for East Scarp (https://www.nexusmods.com/stardewvalley/mods/12369)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"DN.SnS_StygiumBar": {
+					"Id": "DN.SnS_StygiumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_StygiumOre",
+							"RequiredCount": "{{S.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)DN.SnS_StygiumBar",
+							"MinStack": "{{S.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureCopperOre": {
+					"Id": "DN.SnS_PureCopperOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureCopperOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)378",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 100",
+									"Modification": "Add",
+									"Amount": "{{S.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 300",
+									"Modification": "Add",
+									"Amount": "{{S.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 500",
+									"Modification": "Add",
+									"Amount": "{{S.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Copper Production Time}}"
+				},
+				"DN.SnS_PureIronOre": {
+					"Id": "DN.SnS_PureIronOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIronOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)380",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 100",
+									"Modification": "Add",
+									"Amount": "{{S.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 300",
+									"Modification": "Add",
+									"Amount": "{{S.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 500",
+									"Modification": "Add",
+									"Amount": "{{S.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Iron Production Time}}"
+				},
+				"DN.SnS_PureGoldOre": {
+					"Id": "DN.SnS_PureGoldOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureGoldOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)384",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 100",
+									"Modification": "Add",
+									"Amount": "{{S.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 300",
+									"Modification": "Add",
+									"Amount": "{{S.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 500",
+									"Modification": "Add",
+									"Amount": "{{S.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Gold Production Time}}"
+				},
+				"DN.SnS_PureIridiumOre": {
+					"Id": "DN.SnS_PureIridiumOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIridiumOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)386",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 100",
+									"Modification": "Add",
+									"Amount": "{{S.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 300",
+									"Modification": "Add",
+									"Amount": "{{S.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 500",
+									"Modification": "Add",
+									"Amount": "{{S.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Iridium Production Time}}"
+				},
+				"DN.SnS_PureRadioactiveOre": {
+					"Id": "DN.SnS_PureRadioactiveOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureRadioactiveOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)909",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "MinesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{S.F Radioactive Mine Bonus 1}}"
+								},
+								{
+									"Id": "MinesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{S.F Radioactive Mine Bonus 2}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{S.F Radioactive Skull Cavern Bonus 1}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{S.F Radioactive Skull Cavern Bonus 2}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.F Radioactive Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "DN.SnS"
+			},
+			"MoveEntries": [
+				{ "Id": "DN.SnS_StygiumBar", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"DN.SnS_StygiumBar": {
+					"Id": "DN.SnS_StygiumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_StygiumOre",
+							"RequiredCount": "{{G.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)DN.SnS_StygiumBar",
+							"MinStack": "{{G.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureCopperOre": {
+					"Id": "DN.SnS_PureCopperOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureCopperOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)378",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 100",
+									"Modification": "Add",
+									"Amount": "{{G.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 300",
+									"Modification": "Add",
+									"Amount": "{{G.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 500",
+									"Modification": "Add",
+									"Amount": "{{G.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Copper Production Time}}"
+				},
+				"DN.SnS_PureIronOre": {
+					"Id": "DN.SnS_PureIronOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIronOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)380",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 100",
+									"Modification": "Add",
+									"Amount": "{{G.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 300",
+									"Modification": "Add",
+									"Amount": "{{G.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 500",
+									"Modification": "Add",
+									"Amount": "{{G.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Iron Production Time}}"
+				},
+				"DN.SnS_PureGoldOre": {
+					"Id": "DN.SnS_PureGoldOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureGoldOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)384",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 100",
+									"Modification": "Add",
+									"Amount": "{{G.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 300",
+									"Modification": "Add",
+									"Amount": "{{G.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 500",
+									"Modification": "Add",
+									"Amount": "{{G.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Gold Production Time}}"
+				},
+				"DN.SnS_PureIridiumOre": {
+					"Id": "DN.SnS_PureIridiumOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIridiumOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)386",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 100",
+									"Modification": "Add",
+									"Amount": "{{G.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 300",
+									"Modification": "Add",
+									"Amount": "{{G.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 500",
+									"Modification": "Add",
+									"Amount": "{{G.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Iridium Production Time}}"
+				},
+				"DN.SnS_PureRadioactiveOre": {
+					"Id": "DN.SnS_PureRadioactiveOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureRadioactiveOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)909",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "MinesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{G.F Radioactive Mine Bonus 1}}"
+								},
+								{
+									"Id": "MinesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{G.F Radioactive Mine Bonus 2}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{G.F Radioactive Skull Cavern Bonus 1}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{G.F Radioactive Skull Cavern Bonus 2}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.F Radioactive Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "DN.SnS"
+			},
+			"MoveEntries": [
+				{ "Id": "DN.SnS_StygiumBar", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"DN.SnS_StygiumBar": {
+					"Id": "DN.SnS_StygiumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_StygiumOre",
+							"RequiredCount": "{{D.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)DN.SnS_StygiumBar",
+							"MinStack": "{{D.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureCopperOre": {
+					"Id": "DN.SnS_PureCopperOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureCopperOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)378",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 100",
+									"Modification": "Add",
+									"Amount": "{{D.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 300",
+									"Modification": "Add",
+									"Amount": "{{D.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 500",
+									"Modification": "Add",
+									"Amount": "{{D.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Copper Production Time}}"
+				},
+				"DN.SnS_PureIronOre": {
+					"Id": "DN.SnS_PureIronOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIronOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)380",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 100",
+									"Modification": "Add",
+									"Amount": "{{D.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 300",
+									"Modification": "Add",
+									"Amount": "{{D.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 500",
+									"Modification": "Add",
+									"Amount": "{{D.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Iron Production Time}}"
+				},
+				"DN.SnS_PureGoldOre": {
+					"Id": "DN.SnS_PureGoldOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureGoldOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)384",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 100",
+									"Modification": "Add",
+									"Amount": "{{D.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 300",
+									"Modification": "Add",
+									"Amount": "{{D.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 500",
+									"Modification": "Add",
+									"Amount": "{{D.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Gold Production Time}}"
+				},
+				"DN.SnS_PureIridiumOre": {
+					"Id": "DN.SnS_PureIridiumOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIridiumOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)386",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 100",
+									"Modification": "Add",
+									"Amount": "{{D.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 300",
+									"Modification": "Add",
+									"Amount": "{{D.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 500",
+									"Modification": "Add",
+									"Amount": "{{D.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Iridium Production Time}}"
+				},
+				"DN.SnS_PureRadioactiveOre": {
+					"Id": "DN.SnS_PureRadioactiveOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureRadioactiveOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)909",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "MinesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{D.F Radioactive Mine Bonus 1}}"
+								},
+								{
+									"Id": "MinesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{D.F Radioactive Mine Bonus 2}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{D.F Radioactive Skull Cavern Bonus 1}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{D.F Radioactive Skull Cavern Bonus 2}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.F Radioactive Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "DN.SnS"
+			},
+			"MoveEntries": [
+				{ "Id": "DN.SnS_StygiumBar", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"DN.SnS_StygiumBar": {
+					"Id": "DN.SnS_StygiumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_StygiumOre",
+							"RequiredCount": "{{I.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)DN.SnS_StygiumBar",
+							"MinStack": "{{I.F Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureCopperOre": {
+					"Id": "DN.SnS_PureCopperOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureCopperOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)378",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 100",
+									"Modification": "Add",
+									"Amount": "{{I.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 300",
+									"Modification": "Add",
+									"Amount": "{{I.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 500",
+									"Modification": "Add",
+									"Amount": "{{I.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Copper Production Time}}"
+				},
+				"DN.SnS_PureIronOre": {
+					"Id": "DN.SnS_PureIronOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIronOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)380",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 100",
+									"Modification": "Add",
+									"Amount": "{{I.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 300",
+									"Modification": "Add",
+									"Amount": "{{I.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 500",
+									"Modification": "Add",
+									"Amount": "{{I.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Iron Production Time}}"
+				},
+				"DN.SnS_PureGoldOre": {
+					"Id": "DN.SnS_PureGoldOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureGoldOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)384",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 100",
+									"Modification": "Add",
+									"Amount": "{{I.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 300",
+									"Modification": "Add",
+									"Amount": "{{I.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 500",
+									"Modification": "Add",
+									"Amount": "{{I.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Gold Production Time}}"
+				},
+				"DN.SnS_PureIridiumOre": {
+					"Id": "DN.SnS_PureIridiumOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIridiumOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)386",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "100IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 100",
+									"Modification": "Add",
+									"Amount": "{{I.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 300",
+									"Modification": "Add",
+									"Amount": "{{I.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 500",
+									"Modification": "Add",
+									"Amount": "{{I.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Iridium Production Time}}"
+				},
+				"DN.SnS_PureRadioactiveOre": {
+					"Id": "DN.SnS_PureRadioactiveOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureRadioactiveOre"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)909",
+							"MinStack": 3,
+							"MaxStack": 5,
+							"StackModifiers": [
+								{
+									"Id": "MinesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{I.F Radioactive Mine Bonus 1}}"
+								},
+								{
+									"Id": "MinesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{I.F Radioactive Mine Bonus 2}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{I.F Radioactive Skull Cavern Bonus 1}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{I.F Radioactive Skull Cavern Bonus 2}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.F Radioactive Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "DN.SnS"
+			},
+			"MoveEntries": [
+				{ "Id": "DN.SnS_StygiumBar", "ToPosition": "Top" }
+			]
+		},
+		
+		// The Geology Mod (https://www.nexusmods.com/stardewvalley/mods/21038)
+		{
+			"LogName": "Add compatibility patch to the Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Solariaze.Geology_PrismaticShard": {	
+					"Id": "Solariaze.Geology_PrismaticShard",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Prismatic_Pieces",
+							"RequiredCount": "{{S.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)74",
+							"MinStack": "{{S.F Quantity}}"
+						}
+					],
+					"DaysUntilReady": 4,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Solariaze.Geology_PrismaticShard": {	
+					"Id": "Solariaze.Geology_PrismaticShard",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Prismatic_Pieces",
+							"RequiredCount": "{{G.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)74",
+							"MinStack": "{{G.F Quantity}}"
+						}
+					],
+					"DaysUntilReady": 3,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Solariaze.Geology_PrismaticShard": {	
+					"Id": "Solariaze.Geology_PrismaticShard",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Prismatic_Pieces",
+							"RequiredCount": "{{D.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)74",
+							"MinStack": "{{D.F Quantity}}"
+						}
+					],
+					"DaysUntilReady": 2,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Solariaze.Geology_PrismaticShard": {	
+					"Id": "Solariaze.Geology_PrismaticShard",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Prismatic_Pieces",
+							"RequiredCount": "{{I.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)74",
+							"MinStack": "{{I.F Quantity}}"
+						}
+					],
+					"DaysUntilReady": 1,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		
+		// Vanilla Plus Professions (VPP - Profession Expansion) (https://www.nexusmods.com/stardewvalley/mods/20054)
+		{
+			"LogName": "Ignitor - Steel Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelFurnace", 
+				"ReadyTimeModifiers"
+			],
+			"Entries": {  
+				"Kedi.VPP.Ignitor": {
+					"Id": "Kedi.VPP.Ignitor",
+					"Amount": 0.75,
+					"Modification": "Multiply",
+					"Condition": "KediDili.VanillaPlusProfessions_PlayerHasProfession Current Ignitor"
+				}
+			},
+			"When": {
+				"HasMod": "KediDili.VPPData.CP"
+			}
+		},
+		{
+			"LogName": "Ignitor - Gold Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldFurnace", 
+				"ReadyTimeModifiers"
+			],
+			"Entries": {  
+				"Kedi.VPP.Ignitor": {
+					"Id": "Kedi.VPP.Ignitor",
+					"Amount": 0.75,
+					"Modification": "Multiply",
+					"Condition": "KediDili.VanillaPlusProfessions_PlayerHasProfession Current Ignitor"
+				}
+			},
+			"When": {
+				"HasMod": "KediDili.VPPData.CP"
+			}
+		},
+		{
+			"LogName": "Ignitor - Diamond Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondFurnace",
+				"ReadyTimeModifiers"
+			],
+			"Entries": {
+				"Kedi.VPP.Ignitor": {
+					"Id": "Kedi.VPP.Ignitor",
+					"Amount": 0.75,
+					"Modification": "Multiply",
+					"Condition": "KediDili.VanillaPlusProfessions_PlayerHasProfession Current Ignitor"
+				}
+			},
+			"When": {
+				"HasMod": "KediDili.VPPData.CP"
+			}
+		},
+		{
+			"LogName": "Ignitor - Iridium Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumFurnace",
+				"ReadyTimeModifiers"
+			],
+			"Entries": {
+				"Kedi.VPP.Ignitor": {
+					"Id": "Kedi.VPP.Ignitor",
+					"Amount": 0.75,
+					"Modification": "Multiply",
+					"Condition": "KediDili.VanillaPlusProfessions_PlayerHasProfession Current Ignitor"
+				}
+			},
+			"When": {
+				"HasMod": "KediDili.VPPData.CP"
+			}
+		},
+	] 
+}

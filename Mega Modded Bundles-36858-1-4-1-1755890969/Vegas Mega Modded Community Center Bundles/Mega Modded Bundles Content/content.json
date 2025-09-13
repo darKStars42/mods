@@ -1,0 +1,230 @@
+{
+  "Format": "2.3.0",
+  "Changes": [
+    // add new totems
+    {
+      "Action": "Load",
+      "Target": "Mods/VegasOctober.MegaModdedBundles/sprites",
+      "FromFile": "sprites.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/VegasOctober.MegaModdedBundles/bundlesprite",
+      "FromFile": "bundlesprite.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "VegasOctober.MegaModdedBundlesContent.HighlandsWarpTotem": {
+          "Name": "VegasOctober.MegaModdedBundlesContent.HighlandsWarpTotem",
+          "DisplayName": "{{i18n:VegasOctober.MegaModdedBundlesContent.HighlandsTotemName}}",
+          "Description": "{{i18n:VegasOctober.MegaModdedBundlesContent.HighlandsTotemDescription}}",
+          "Type": "Crafting",
+          "Category": 0,
+          "Price": 200,
+          "Texture": "Mods\\VegasOctober.MegaModdedBundles\\sprites",
+          "SpriteIndex": 0,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ContextTags": [
+            "color_green",
+            "not_placeable",
+            "totem_item"
+          ],
+          "CustomFields": {}
+        },
+        "VegasOctober.MegaModdedBundlesContent.FableReefWarpTotem": {
+          "Name": "VegasOctober.MegaModdedBundlesContent.FableReefWarpTotem",
+          "DisplayName": "{{i18n:VegasOctober.MegaModdedBundlesContent.FableReefTotemName}}",
+          "Description": "{{i18n:VegasOctober.MegaModdedBundlesContent.FableReefTotemDescription}}",
+          "Type": "Crafting",
+          "Category": 0,
+          "Price": 200,
+          "Texture": "Mods\\VegasOctober.MegaModdedBundles\\sprites",
+          "SpriteIndex": 1,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ContextTags": [
+            "color_aquamarine",
+            "not_placeable",
+            "totem_item"
+          ],
+          "CustomFields": {}
+        },
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "spacechase0.SpaceCore/ObjectExtensionData",
+      "Entries": {
+        "VegasOctober.MegaModdedBundlesContent.HighlandsWarpTotem": {
+          "TotemWarp": {
+            "Location": "Custom_Highlands",
+            "Position": "128, 107",
+            "Color": {
+              "R": 11,
+              "G": 23,
+              "B": 6,
+              "A": 255
+            }
+          }
+        },
+        "VegasOctober.MegaModdedBundlesContent.FableReefWarpTotem": {
+          "TotemWarp": {
+            "Location": "Custom_FableReef",
+            "Position": "31, 41",
+            "Color": {
+              "R": 0,
+              "G": 35,
+              "B": 57,
+              "A": 255
+            }
+          }
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "VegasOctober.MegaModdedBundlesContent.HighlandsWarpTotem": "709 10 FlashShifter.StardewValleyExpandedCP_Slime_Berry 3 FlashShifter.StardewValleyExpandedCP_Diamond_Flower 1/Home/VegasOctober.MegaModdedBundlesContent.HighlandsWarpTotem/false/none/",
+        "VegasOctober.MegaModdedBundlesContent.FableReefWarpTotem": "709 10 FlashShifter.StardewValleyExpandedCP_Viper_Eel 1 FlashShifter.StardewValleyExpandedCP_Shark_Tooth 1/Home/VegasOctober.MegaModdedBundlesContent.FableReefWarpTotem/false/none/",
+      },
+    },
+
+    // add totems to vendors
+    // desert totem
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "Dwarf", "Items" ],
+      "Entries": {
+        "VegasOctober.MegaModdedBundlesContent.DesertTotem": {
+            "Id": "VegasOctober.MegaModdedBundlesContent.DesertTotem",
+            "ItemId": "(O)261",
+            "IsRecipe": false,
+            "Price": 0,
+            "TradeItemId": "(O)72", //diamond
+            "TradeItemAmount": 5,
+            "AvailableStock": 2,
+        },
+        "VegasOctober.MegaModdedBundlesContent.DesertTotemRecipe": {
+            "Id": "VegasOctober.MegaModdedBundlesContent.DesertTotemRecipe",
+            "ItemId": "(O)261",
+            "IsRecipe": true,
+            "Price": 0,
+            "TradeItemId": "(O)337", //iridium bar
+            "TradeItemAmount": 10,
+        },
+      }
+    },
+    // island totem
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "DesertTrade", "Items" ],
+      "Entries": {
+        "VegasOctober.MegaModdedBundlesContent.IslandTotem": {
+            "Id": "VegasOctober.MegaModdedBundlesContent.IslandTotem",
+            "ItemId": "(O)886",
+            "IsRecipe": false,
+            "Price": 0,
+            "TradeItemId": "(O)Cornucopia_DragonFruit",
+            "TradeItemAmount": 3,
+            "AvailableStock": 2,
+        },
+        "VegasOctober.MegaModdedBundlesContent.IslandTotemRecipe": {
+            "Id": "VegasOctober.MegaModdedBundlesContent.IslandTotemRecipe",
+            "ItemId": "(O)886",
+            "IsRecipe": true,
+            "Price": 0,
+            "TradeItemId": "(O)791", //golden coconut
+            "TradeItemAmount": 5,
+        },
+      }
+    },
+    // highlands totem
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "VolcanoShop", "Items" ],
+      "Entries": {
+        "VegasOctober.MegaModdedBundlesContent.HighlandsTotem": {
+            "Id": "VegasOctober.MegaModdedBundlesContent.HighlandsTotem",
+            "ItemId": "(O)VegasOctober.MegaModdedBundlesContent.HighlandsWarpTotem",
+            "IsRecipe": false,
+            "Price": 0,
+            "TradeItemId": "(O)896", //galaxy soul
+            "TradeItemAmount": 1,
+            "AvailableStock": 2,
+        },
+        "VegasOctober.MegaModdedBundlesContent.HighlandsTotemRecipe": {
+            "Id": "VegasOctober.MegaModdedBundlesContent.HighlandsTotemRecipe",
+            "ItemId": "(O)VegasOctober.MegaModdedBundlesContent.HighlandsWarpTotem",
+            "IsRecipe": true,
+            "Price": 0,
+            "TradeItemId": "(O)FlashShifter.StardewValleyExpandedCP_Green_Mushroom",
+            "TradeItemAmount": 5,
+        },
+      }
+    },
+    // fable reef totem
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "FlashShifter.StardewValleyExpandedCP_HighlandsDwarfShop", "Items" ],
+      "Entries": {
+        "VegasOctober.MegaModdedBundlesContent.FableReefTotem": {
+            "Id": "VegasOctober.MegaModdedBundlesContent.FableReefTotem",
+            "ItemId": "(O)VegasOctober.MegaModdedBundlesContent.FableReefWarpTotem",
+            "IsRecipe": false,
+            "Price": 0,
+            "TradeItemId": "(O)FlashShifter.StardewValleyExpandedCP_Ornate_Treasure_Chest",
+            "TradeItemAmount": 1,
+            "AvailableStock": 2,
+        },
+        "VegasOctober.MegaModdedBundlesContent.FableReefTotemRecipe": {
+            "Id": "VegasOctober.MegaModdedBundlesContent.FableReefTotemRecipe",
+            "ItemId": "(O)VegasOctober.MegaModdedBundlesContent.FableReefWarpTotem",
+            "IsRecipe": true,
+            "Price": 0,
+            "TradeItemId": "(O)FlashShifter.StardewValleyExpandedCP_Golden_Ocean_Flower",
+            "TradeItemAmount": 5,
+        },
+      }
+    },
+
+    // cooking magic rock candy
+    {
+      "Action": "EditData",
+      "Target": "Data/CookingRecipes",
+      "Entries": {
+          "Magic Rock Candy": "417 1 Cornucopia_PrismaticEssence 1 Wildflour.AtelierGoods_Flavored_Crystal_Candy 1/0 0/279/none/",
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "QiGemShop", "Items" ],
+      "Entries": {
+        "VegasOctober.MegaModdedBundlesContent.MagicRockCandyRecipe": {
+            "Id": "VegasOctober.MegaModdedBundlesContent.MagicRockCandyRecipe",
+            "ItemId": "(O)279",
+            "IsRecipe": true,
+            "Price": 0,
+            "TradeItemId": "(O)858",
+            "TradeItemAmount": 50,
+        },
+      }
+    }
+  ]
+}

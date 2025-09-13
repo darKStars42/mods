@@ -1,0 +1,59 @@
+{
+    "Changes": [
+        {
+            "LogName": "Create ",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_ButterChurn": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_Butter_Small",
+                            "Triggers": [
+                                {
+                                    "Id": "SmallMilkPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)184"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_Butter",
+                                    "ItemId": "(O){{ModId}}_Butter"
+                                }
+                            ],
+                            "MinutesUntilReady": 200
+                        },
+                        {
+                            "Id": "{{ModId}}_Butter_Large",
+                            "Triggers": [
+                                {
+                                    "Id": "LMilkPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)186"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_Butter",
+                                    "ItemId": "(O){{ModId}}_Butter",
+                                    "MinStack": 2
+                                }
+                            ],
+                            "MinutesUntilReady": 200
+                        }
+                    ],
+                    "WorkingEffects": [
+                        {
+                            "Id": "DefaultWorkEffects",
+                            "Frames": [1, 2, 3, 4],
+                            "Interval": 200
+                        }
+                    ],
+                    "WorkingEffectsChance": 1,
+                    "WobbleWhileWorking": false
+                }
+            }
+        }
+    ]
+ }

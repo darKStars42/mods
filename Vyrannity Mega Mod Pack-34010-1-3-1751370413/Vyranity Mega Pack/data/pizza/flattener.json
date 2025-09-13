@@ -1,0 +1,32 @@
+{
+    "Changes": [
+        {
+            "LogName": "Create ",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_DoughFlattener": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_PizzaCrust",
+                            "Triggers": [
+                                {
+                                    "Id": "WheatFlourPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)246"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PizzaCrust",
+                                    "ItemId": "(O){{ModId}}_PizzaCrust"
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+ }

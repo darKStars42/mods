@@ -1,0 +1,1104 @@
+{
+  "Changes": [
+
+    //*************************************************
+    //  Base Camel Edits - Bay Camel
+    //************************************
+    {
+      "LogName": "Bay Camel - Camel Edits",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "FlashShifter.StardewValleyExpandedCP_Camel": {
+          "DisplayName": "{{i18n:BayCamel_name}}",
+          "Gender": "Female",
+          "ShopTexture": "ZoeyHoshi.Camelus/ShopIcon",
+          "ShopDisplayName": "{{i18n:Camel_Shopname}}",
+          "ShopDescription": "{{i18n:Camel_Shopdescription}}",
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "AlternatePurchaseTypes": [
+            {
+              "Id": "Camelus_Camels",
+              "Condition": null,
+              "AnimalIds": [
+                "ZoeyHoshi.Camelus_Albino",
+                "ZoeyHoshi.Camelus_Ash",
+                "ZoeyHoshi.Camelus_Black",
+                "ZoeyHoshi.Camelus_BlackPiedbald",
+                "ZoeyHoshi.Camelus_Blonde",
+                "ZoeyHoshi.Camelus_BrownPiedbald",
+                "ZoeyHoshi.Camelus_Chestnut",
+                "ZoeyHoshi.Camelus_Cinnamon",
+                "ZoeyHoshi.Camelus_White"
+              ]
+            },
+            {
+              "Id": "Camelus_VoidCamel",
+              "Condition": "PLAYER_HAS_MAIL Current ZoeyHoshi.Camelus_VoidCamelsUnlocked Received",
+              "AnimalIds": [
+                "ZoeyHoshi.Camelus_Void"
+              ]
+            }
+          ],
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_Bay",
+              "ItemId": "FlashShifter.StardewValleyExpandedCP_Camel_Wool",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_CamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_Bay",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_Bay",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_Bay",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "HappinessDrain": 5,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      }
+    },
+    //*************************************************
+    //  Base Camel Edits - Original Sound
+    //************************************
+    {
+      "LogName": "Bay Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "FlashShifter.StardewValleyExpandedCP_Camel": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true
+      }
+    },
+    //*************************************************
+    //  Add Camel - Albino
+    //************************************
+    {
+      "LogName": "Albino Camel",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "ZoeyHoshi.Camelus_Albino": {
+          "DisplayName": "{{i18n:AlbinoCamel_name}}",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 24000,
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "ShopTexture": null,
+          "ShopDisplayName": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_Albino",
+              "ItemId": "ZoeyHoshi.Camelus_CamelHair_Albino",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_CamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_Albino",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_Albino",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_Albino",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 3,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "ShadowWhenBaby": {
+            "Visible": false
+          },
+          "ShadowWhenAdult": {
+            "Visible": false
+          },
+          "StatToIncrementOnProduce": "",
+          "ShowInSummitCredits": true,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      }
+    },
+    //*************************************************
+    //  Albino Camel - Original Sound
+    //************************************
+    {
+      "LogName": "Albino Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "ZoeyHoshi.Camelus_Albino": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true
+      }
+    },
+    //*************************************************
+    //  Add Camel - Ash
+    //************************************
+    {
+      "LogName": "Ash Camel",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "ZoeyHoshi.Camelus_Ash": {
+          "DisplayName": "{{i18n:AshCamel_name}}",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 24000,
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "ShopTexture": null,
+          "ShopDisplayName": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_Ash",
+              "ItemId": "ZoeyHoshi.Camelus_CamelHair_Ash",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_CamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_Ash",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_Ash",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_Ash",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 3,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "ShadowWhenBaby": {
+            "Visible": false
+          },
+          "ShadowWhenAdult": {
+            "Visible": false
+          },
+          "StatToIncrementOnProduce": "",
+          "ShowInSummitCredits": true,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      }
+    },
+    //*************************************************
+    //  Ash Camel - Original Sound
+    //************************************
+    {
+      "LogName": "Ash Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "ZoeyHoshi.Camelus_Ash": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true
+      }
+    },
+    //*************************************************
+    //  Add Camel - Black
+    //************************************
+    {
+      "LogName": "Black Camel",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "ZoeyHoshi.Camelus_Black": {
+          "DisplayName": "{{i18n:BlackCamel_name}}",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 24000,
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "ShopTexture": null,
+          "ShopDisplayName": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_Black",
+              "ItemId": "ZoeyHoshi.Camelus_CamelHair_Black",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_CamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_Black",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_Black",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_Black",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 3,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "ShadowWhenBaby": {
+            "Visible": false
+          },
+          "ShadowWhenAdult": {
+            "Visible": false
+          },
+          "StatToIncrementOnProduce": "",
+          "ShowInSummitCredits": true,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      }
+    },
+    //*************************************************
+    //  Black Camel - Original Sound
+    //************************************
+    {
+      "LogName": "Black Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "ZoeyHoshi.Camelus_Black": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true
+      }
+    },
+    //*************************************************
+    //  Add Camel - Black Piedbald
+    //************************************
+    {
+      "LogName": "Black Camel",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "ZoeyHoshi.Camelus_BlackPiedbald": {
+          "DisplayName": "{{i18n:BlackPiedbaldCamel_name}}",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 24000,
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "ShopTexture": null,
+          "ShopDisplayName": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_BlackPiedbald",
+              "ItemId": "ZoeyHoshi.Camelus_CamelHair_BlackPiedbald",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_CamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_BlackPiedbald",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_BlackPiedbald",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_BlackPiedbald",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 3,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "ShadowWhenBaby": {
+            "Visible": false
+          },
+          "ShadowWhenAdult": {
+            "Visible": false
+          },
+          "StatToIncrementOnProduce": "",
+          "ShowInSummitCredits": true,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      }
+    },
+    //*************************************************
+    //  Black Piedbald Camel - Original Sound
+    //************************************
+    {
+      "LogName": "Black Piedbald Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "ZoeyHoshi.Camelus_BlackPiedbald": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true
+      }
+    },
+    //*************************************************
+    //  Add Camel - Blonde
+    //************************************
+    {
+      "LogName": "Blonde Camel",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "ZoeyHoshi.Camelus_Blonde": {
+          "DisplayName": "{{i18n:BlondeCamel_name}}",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 24000,
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "ShopTexture": null,
+          "ShopDisplayName": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_Blonde",
+              "ItemId": "ZoeyHoshi.Camelus_CamelHair_Blonde",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_CamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_Blonde",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_Blonde",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_Blonde",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 3,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "ShadowWhenBaby": {
+            "Visible": false
+          },
+          "ShadowWhenAdult": {
+            "Visible": false
+          },
+          "StatToIncrementOnProduce": "",
+          "ShowInSummitCredits": true,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      }
+    },
+    //*************************************************
+    //  Blonde Camel - Original Sound
+    //************************************
+    {
+      "LogName": "Blonde Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "ZoeyHoshi.Camelus_Blonde": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true
+      }
+    },
+    //*************************************************
+    //  Add Camel - Brown Piedbald
+    //************************************
+    {
+      "LogName": "Brown Piedbald Camel",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "ZoeyHoshi.Camelus_BrownPiedbald": {
+          "DisplayName": "{{i18n:BrownPiedbaldCamel_name}}",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 24000,
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "ShopTexture": null,
+          "ShopDisplayName": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_BrownPiedbald",
+              "ItemId": "ZoeyHoshi.Camelus_CamelHair_BrownPiedbald",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_CamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_BrownPiedbald",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_BrownPiedbald",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_BrownPiedbald",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 3,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "ShadowWhenBaby": {
+            "Visible": false
+          },
+          "ShadowWhenAdult": {
+            "Visible": false
+          },
+          "StatToIncrementOnProduce": "",
+          "ShowInSummitCredits": true,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      }
+    },
+    //*************************************************
+    //  Brown Piedbald Camel - Original Sound
+    //************************************
+    {
+      "LogName": "Brown Piedbald Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "ZoeyHoshi.Camelus_BrownPiedbald": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true
+      }
+    },
+    //*************************************************
+    //  Add Camel - Chestnut
+    //************************************
+    {
+      "LogName": "Chestnut Camel",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "ZoeyHoshi.Camelus_Chestnut": {
+          "DisplayName": "{{i18n:ChestnutCamel_name}}",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 24000,
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "ShopTexture": null,
+          "ShopDisplayName": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_Chestnut",
+              "ItemId": "ZoeyHoshi.Camelus_CamelHair_Chestnut",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_CamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_Chestnut",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_Chestnut",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_Chestnut",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 3,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "ShadowWhenBaby": {
+            "Visible": false
+          },
+          "ShadowWhenAdult": {
+            "Visible": false
+          },
+          "StatToIncrementOnProduce": "",
+          "ShowInSummitCredits": true,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      }
+    },
+    //*************************************************
+    //  Chestnut Camel - Original Sound
+    //************************************
+    {
+      "LogName": "Chestnut Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "ZoeyHoshi.Camelus_Chestnut": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true
+      }
+    },
+    //*************************************************
+    //  Add Camel - Cinnamon
+    //************************************
+    {
+      "LogName": "Cinnamon Camel",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "ZoeyHoshi.Camelus_Cinnamon": {
+          "DisplayName": "{{i18n:CinnamonCamel_name}}",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 24000,
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "ShopTexture": null,
+          "ShopDisplayName": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_Cinnamon",
+              "ItemId": "ZoeyHoshi.Camelus_CamelHair_Cinnamon",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_CamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_Cinnamon",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_Cinnamon",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_Cinnamon",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 3,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "ShadowWhenBaby": {
+            "Visible": false
+          },
+          "ShadowWhenAdult": {
+            "Visible": false
+          },
+          "StatToIncrementOnProduce": "",
+          "ShowInSummitCredits": true,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      }
+    },
+    //*************************************************
+    //  Cinnamon Camel - Original Sound
+    //************************************
+    {
+      "LogName": "Cinnamon Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "ZoeyHoshi.Camelus_Cinnamon": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true
+      }
+    },
+    //*************************************************
+    //  Add Camel - Void
+    //************************************
+    {
+      "LogName": "Void Camel",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "ZoeyHoshi.Camelus_Void": {
+          "DisplayName": "{{i18n:VoidCamel_name}}",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 24000,
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "ShopTexture": null,
+          "ShopDisplayName": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_Void",
+              "ItemId": "ZoeyHoshi.Camelus_CamelHair_Void",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_VoidCamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_VoidCamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeVoidCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeVoidCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_Void",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_Void",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_Void",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 3,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "ShadowWhenBaby": {
+            "Visible": false
+          },
+          "ShadowWhenAdult": {
+            "Visible": false
+          },
+          "StatToIncrementOnProduce": "",
+          "ShowInSummitCredits": true,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      },
+      "When": {
+        "DisableVoidCamel": false
+      }
+    },
+    //*************************************************
+    //  Void Camel - Original Sound
+    //************************************
+    {
+      "LogName": "Void Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "ZoeyHoshi.Camelus_Void": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true,
+        "DisableVoidCamel": false
+      }
+    },
+    //*************************************************
+    //  Add Camel - White
+    //************************************
+    {
+      "LogName": "White Camel",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "ZoeyHoshi.Camelus_White": {
+          "DisplayName": "{{i18n:WhiteCamel_name}}",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 24000,
+          "DaysToMature": 6,
+          "CanGetPregnant": true,
+          "DaysToProduce": 3,
+          "ShopTexture": null,
+          "ShopDisplayName": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "HarvestType": "HarvestWithTool",
+          "HarvestTool": "Shears",
+          "ProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelHair_White",
+              "ItemId": "ZoeyHoshi.Camelus_CamelHair_White",
+              "MinimumFriendship": 0
+            },
+            {
+              "Id": "ZoeyHoshi.Camelus_CamelMilk",
+              "ItemId": "ZoeyHoshi.Camelus_CamelMilk",
+              "MinimumFriendship": 0
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "ZoeyHoshi.Camelus_LargeCamelMilk",
+              "MinimumFriendship": 0,
+              "ItemId": "ZoeyHoshi.Camelus_LargeCamelMilk"
+            }
+          ],
+          "ProfessionForFasterProduce": -1,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 2000.0,
+          "Texture": "ZoeyHoshi.Camelus/FluffyCamel_White",
+          "HarvestedTexture": "ZoeyHoshi.Camelus/ShavedCamel_White",
+          "BabyTexture": "ZoeyHoshi.Camelus/BabyCamel_White",
+          "Sound": "ZoeyHoshi.Camelus_CamelSFX",
+          "BabySound": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "UseFlippedRightForLeft": true,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 3,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "ShadowWhenBaby": {
+            "Visible": false
+          },
+          "ShadowWhenAdult": {
+            "Visible": false
+          },
+          "StatToIncrementOnProduce": "",
+          "ShowInSummitCredits": true,
+          "CustomFields": {
+            "meatIndex": "ZoeyHoshi.Camelus_CamelMeat"
+          }
+        }
+      }
+    },
+    //*************************************************
+    //  White Camel - Original Sound
+    //************************************
+    {
+      "LogName": "White Camel - Original Sound",
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "ZoeyHoshi.Camelus_White": {
+          "Sound": "camel",
+          "BabySound": null
+        }
+      },
+      "When": {
+        "DisableCamelSound": true
+      }
+    }
+  ]
+}

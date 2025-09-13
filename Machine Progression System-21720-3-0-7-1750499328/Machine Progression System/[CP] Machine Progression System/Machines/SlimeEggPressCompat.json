@@ -1,0 +1,1442 @@
+{
+    "Changes": [
+	
+		// Slime Extend (https://www.nexusmods.com/stardewvalley/mods/26457)
+		{
+			"LogName": "Add compatibility patch to the Gold Slime Egg-Press",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldSlimeEggPress",
+				"OutputRules"
+			],
+			"Entries": {
+				"skeleton.SlimeExtendCP_Slime_Seed": {	
+					"Id": "skeleton.SlimeExtendCP_Slime_Seed",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)557"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)skeleton.SlimeExtendCP_Slime_Seed",
+							"MinStack": "{{G.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_SlimeJackToGreenSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_SlimeJackToGreenSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)796"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)680",
+							"MinStack": "{{G.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_GreenToBlueSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_GreenToBlueSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)680"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)413",
+							"MinStack": "{{G.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_BlueToRedSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_BlueToRedSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)413"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)437",
+							"MinStack": "{{G.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_RedToPurpleSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_RedToPurpleSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)437"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)439",
+							"MinStack": "{{G.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_PurpleToTigerEgg": {	
+					"Id": "skeleton.SlimeExtendCP_PurpleToTigerSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)439"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)857",
+							"MinStack": "{{G.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.S.E Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "skeleton.SlimeExtendCP"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Slime Egg-Press",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondSlimeEggPress",
+				"OutputRules"
+			],
+			"Entries": {
+				"skeleton.SlimeExtendCP_Slime_Seed": {	
+					"Id": "skeleton.SlimeExtendCP_Slime_Seed",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)557"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)skeleton.SlimeExtendCP_Slime_Seed",
+							"MinStack": "{{D.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_SlimeJackToGreenSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_SlimeJackToGreenSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)796"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)680",
+							"MinStack": "{{D.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_GreenToBlueSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_GreenToBlueSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)680"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)413",
+							"MinStack": "{{D.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_BlueToRedSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_BlueToRedSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)413"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)437",
+							"MinStack": "{{D.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_RedToPurpleSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_RedToPurpleSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)437"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)439",
+							"MinStack": "{{D.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_PurpleToTigerEgg": {	
+					"Id": "skeleton.SlimeExtendCP_PurpleToTigerSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)439"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)857",
+							"MinStack": "{{D.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.S.E Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "skeleton.SlimeExtendCP"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Slime Egg-Press",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumSlimeEggPress",
+				"OutputRules"
+			],
+			"Entries": {
+				"skeleton.SlimeExtendCP_Slime_Seed": {	
+					"Id": "skeleton.SlimeExtendCP_Slime_Seed",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)557"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)skeleton.SlimeExtendCP_Slime_Seed",
+							"MinStack": "{{I.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_SlimeJackToGreenSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_SlimeJackToGreenSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)796"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)680",
+							"MinStack": "{{I.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_GreenToBlueSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_GreenToBlueSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)680"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)413",
+							"MinStack": "{{I.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_BlueToRedSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_BlueToRedSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)413"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)437",
+							"MinStack": "{{I.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_RedToPurpleSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_RedToPurpleSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)437"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)439",
+							"MinStack": "{{I.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_PurpleToTigerEgg": {	
+					"Id": "skeleton.SlimeExtendCP_PurpleToTigerSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)439"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)857",
+							"MinStack": "{{I.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.S.E Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "skeleton.SlimeExtendCP"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Radioactive Slime Egg-Press",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveSlimeEggPress",
+				"OutputRules"
+			],
+			"Entries": {
+				"skeleton.SlimeExtendCP_Slime_Seed": {	
+					"Id": "skeleton.SlimeExtendCP_Slime_Seed",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)557"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)skeleton.SlimeExtendCP_Slime_Seed",
+							"MinStack": "{{R.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_SlimeJackToGreenSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_SlimeJackToGreenSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)796"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)680",
+							"MinStack": "{{R.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_GreenToBlueSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_GreenToBlueSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)680"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)413",
+							"MinStack": "{{R.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_BlueToRedSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_BlueToRedSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)413"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)437",
+							"MinStack": "{{R.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_RedToPurpleSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_RedToPurpleSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)437"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)439",
+							"MinStack": "{{R.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_PurpleToTigerEgg": {	
+					"Id": "skeleton.SlimeExtendCP_PurpleToTigerSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)439"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)857",
+							"MinStack": "{{R.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.S.E Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "skeleton.SlimeExtendCP"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Slime Egg-Press",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticSlimeEggPress",
+				"OutputRules"
+			],
+			"Entries": {
+				"skeleton.SlimeExtendCP_Slime_Seed": {	
+					"Id": "skeleton.SlimeExtendCP_Slime_Seed",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)557"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)skeleton.SlimeExtendCP_Slime_Seed",
+							"MinStack": "{{P.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_SlimeJackToGreenSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_SlimeJackToGreenSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)796"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)680",
+							"MinStack": "{{P.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_GreenToBlueSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_GreenToBlueSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)680"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)413",
+							"MinStack": "{{P.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_BlueToRedSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_BlueToRedSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)413"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)437",
+							"MinStack": "{{P.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_RedToPurpleSlimeEgg": {	
+					"Id": "skeleton.SlimeExtendCP_RedToPurpleSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)437"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)439",
+							"MinStack": "{{P.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.S.E Production Time}}"
+				},
+				"skeleton.SlimeExtendCP_PurpleToTigerEgg": {	
+					"Id": "skeleton.SlimeExtendCP_PurpleToTigerSlimeEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)439"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)857",
+							"MinStack": "{{P.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.S.E Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "skeleton.SlimeExtendCP"
+			}
+		},
+	
+		// Wooper and Clodsire as Farm Animals (https://www.nexusmods.com/stardewvalley/mods/23178)
+		{
+			"LogName": "Add compatibility patch to the Gold Slime Egg-Press",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldSlimeEggPress",
+				"OutputRules"
+			],
+			"Entries": {
+				"DGlaky.WooperClodsireFarmAnimals_WooperSlime": {	
+					"Id": "DGlaky.WooperClodsireFarmAnimals_WooperSlime",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)WooperClodsire.WooperSlime",
+							"RequiredCount": 5
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)680",
+								"(O)413"
+							],
+							"MinStack": "{{G.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{G.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.S.E Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "DGlaky.WooperClodsireFarmAnimals"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Slime Egg-Press",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondSlimeEggPress",
+				"OutputRules"
+			],
+			"Entries": {
+				"DGlaky.WooperClodsireFarmAnimals_WooperSlime": {	
+					"Id": "DGlaky.WooperClodsireFarmAnimals_WooperSlime",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)WooperClodsire.WooperSlime",
+							"RequiredCount": 4
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)680",
+								"(O)413",
+								"(O)437"
+							],
+							"MinStack": "{{D.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{D.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.S.E Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "DGlaky.WooperClodsireFarmAnimals"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Slime Egg-Press",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumSlimeEggPress",
+				"OutputRules"
+			],
+			"Entries": {
+				"DGlaky.WooperClodsireFarmAnimals_WooperSlime": {	
+					"Id": "DGlaky.WooperClodsireFarmAnimals_WooperSlime",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)WooperClodsire.WooperSlime",
+							"RequiredCount": 3
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)680",
+								"(O)413",
+								"(O)437",
+								"(O)439"
+							],
+							"MinStack": "{{I.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{I.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.S.E Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "DGlaky.WooperClodsireFarmAnimals"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Radioactive Slime Egg-Press",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveSlimeEggPress",
+				"OutputRules"
+			],
+			"Entries": {
+				"DGlaky.WooperClodsireFarmAnimals_WooperSlime": {	
+					"Id": "DGlaky.WooperClodsireFarmAnimals_WooperSlime",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)WooperClodsire.WooperSlime",
+							"RequiredCount": 2
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)680",
+								"(O)413",
+								"(O)437",
+								"(O)439",
+								"(O)857"
+							],
+							"MinStack": "{{R.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{R.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.S.E Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "DGlaky.WooperClodsireFarmAnimals"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Slime Egg-Press",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticSlimeEggPress",
+				"OutputRules"
+			],
+			"Entries": {
+				"DGlaky.WooperClodsireFarmAnimals_WooperSlime": {	
+					"Id": "DGlaky.WooperClodsireFarmAnimals_WooperSlime",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)WooperClodsire.WooperSlime",
+							"RequiredCount": 1
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)680",
+								"(O)413",
+								"(O)437",
+								"(O)439",
+								"(O)857"
+							],
+							"MinStack": "{{P.S.E Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 100",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 100 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "300SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 300",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 300 Slimes Killed Bonus}}"
+								},
+								{
+									"Id": "500SlimesKilled",
+									"Condition": "PLAYER_STAT Current slimesKilled 500",
+									"Modification": "Add",
+									"Amount": "{{P.S.E 500 Slimes Killed Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.S.E Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "DGlaky.WooperClodsireFarmAnimals"
+			}
+		}
+	] 
+}

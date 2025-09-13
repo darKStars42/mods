@@ -1,0 +1,151 @@
+ {
+    "Changes": [
+        {
+            "LogName": "Create ",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_FlourMill": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_BarleyFlour",
+                            "Triggers": [
+                                {
+                                    "Id": "BarleyPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_Barley"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_BarleyFlour",
+                                    "ItemId": "(O){{ModId}}_BarleyFlour"
+                                }
+                            ],
+                            "MinutesUntilReady": 200
+                        },
+                        {
+                            "Id": "{{ModId}}_SpeltFlour",
+                            "Triggers": [
+                                {
+                                    "Id": "SpeltPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_Spelt"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_SpeltFlour",
+                                    "ItemId": "(O){{ModId}}_SpeltFlour"
+                                }
+                            ],
+                            "MinutesUntilReady": 200
+                        },
+                        {
+                            "Id": "{{ModId}}_RyeFlour",
+                            "Triggers": [
+                                {
+                                    "Id": "RyePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_Rye"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_RyeFlour",
+                                    "ItemId": "(O){{ModId}}_RyeFlour"
+                                }
+                            ],
+                            "MinutesUntilReady": 200
+                        },
+                        {
+                            "Id": "{{ModId}}_DurumFlour",
+                            "Triggers": [
+                                {
+                                    "Id": "DurumPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_Durum"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_DurumFlour",
+                                    "ItemId": "(O){{ModId}}_DurumFlour"
+                                }
+                            ],
+                            "MinutesUntilReady": 200
+                        },
+                        {
+                            "Id": "{{ModId}}_AmaranthFlour",
+                            "Triggers": [
+                                {
+                                    "Id": "AmaranthPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)300"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_AmaranthFlour",
+                                    "ItemId": "(O){{ModId}}_AmaranthFlour"
+                                }
+                            ],
+                            "MinutesUntilReady": 200
+                        },
+                        {
+                            "Id": "(O)246",
+                            "Triggers": [
+                                {
+                                    "Id": "PlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)262"
+                                },
+                                {
+                                    "Id": "AmaranthFlourPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_AmaranthFlour"
+                                },
+                                {
+                                    "Id": "BarleyFlourPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_BarleyFlour"
+                                },
+                                {
+                                    "Id": "DurumFlourPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_DurumFlour"
+                                },
+                                {
+                                    "Id": "RyeFlourPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_RyeFlour"
+                                },
+                                {
+                                    "Id": "SpeltFlourPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_SpeltFlour"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "246",
+                                    "ItemId": "(O)246"
+                                }
+                            ],
+                            "MinutesUntilReady": 200
+                        }
+                    ],
+                    "WorkingEffects": [
+                        {
+                            "Id": "DefaultWorkEffects",
+                            "Frames": [1, 2, 3, 4],
+                            "Interval": 200
+                        }
+                    ],
+                    "WorkingEffectsChance": 1,
+                    "WobbleWhileWorking": false
+                }
+            }
+        }
+    ]
+ }

@@ -1,0 +1,33 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Load furniture images",
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/TileSheets/Furniture",
+            "FromFile": "TileSheets/{{TargetWithoutPath}}.png"
+        },
+        {
+            "LogName": "Add furniture data",
+            "Action": "EditData",
+            "Target": "Data/Furniture",
+            "Entries": {
+                //1x2
+                "{{ModId}}_ShellTree1": "Shell Tree 1/decor/1 2/1 1/0/0/2/{{i18n:ShellTree}}/0/Mods\\{{ModId}}\\TileSheets\\Furniture/true",
+                "{{ModId}}_ShellTree2": "Shell Tree 2/decor/1 2/1 1/0/0/2/{{i18n:ShellTree}}/1/Mods\\{{ModId}}\\TileSheets\\Furniture/true",
+                "{{ModId}}_UrchinVase": "Urchin Vase/decor/1 2/1 1/0/0/2/{{i18n:UrchinVase}}/2/Mods\\{{ModId}}\\TileSheets\\Furniture/true",
+                "{{ModId}}_CoralSculpture": "Coral Sculpture/decor/1 2/1 1/0/0/2/{{i18n:CoralSculpture}}/3/Mods\\{{ModId}}\\TileSheets\\Furniture/true",
+            
+                //Painting
+                "{{ModId}}_HangingClam": "Hanging Clam/painting/2 2/2 2/0/0/0/{{i18n:HangingClam}}/4/Mods\\{{ModId}}\\TileSheets\\Furniture/true",
+                "{{ModId}}_SunsetDrape": "Sunset Drape/painting/1 3/1 3/0/0/0/{{i18n:SunsetDrape}}/20/Mods\\{{ModId}}\\TileSheets\\Furniture/true",
+                "{{ModId}}_NightDrape": "Night Drape/painting/1 3/1 3/0/0/0/{{i18n:NightDrape}}/21/Mods\\{{ModId}}\\TileSheets\\Furniture/true",
+
+                //Statue
+                "{{ModId}}_StoicFace": "Stoic Face/decor/2 3/2 1/0/0/2/{{i18n:StoicFace}}/32/Mods\\{{ModId}}\\TileSheets\\Furniture/true",
+                "{{ModId}}_MermaidStatue": "Mermaid Statue/decor/2 3/2 1/0/0/2/{{i18n:MermaidStatue}}/24/Mods\\{{ModId}}\\TileSheets\\Furniture/true",
+                "{{ModId}}_GoddessStatue": "Goddess Statue/decor/2 3/2 1/0/0/2/{{i18n:GoddessStatue}}/26/Mods\\{{ModId}}\\TileSheets\\Furniture/true",
+            }
+        }
+    ]
+}

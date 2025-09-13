@@ -1,0 +1,50 @@
+{
+    "Changes": [
+        {
+            "LogName": "Create ",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_MozzarellaMachine": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_Mozzarella_Small",
+                            "Triggers": [
+                                {
+                                    "Id": "MilkPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)184"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_Mozzarella",
+                                    "ItemId": "(O){{ModId}}_Mozzarella"
+                                }
+                            ],
+                            "MinutesUntilReady": 1000
+                        },
+                        {
+                            "Id": "{{ModId}}_Mozzarella_Large",
+                            "Triggers": [
+                                {
+                                    "Id": "LMilkPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)186"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_Mozzarella",
+                                    "ItemId": "(O){{ModId}}_Mozzarella",
+                                    "MinStack": 2
+                                }
+                            ],
+                            "MinutesUntilReady": 1000
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+ }

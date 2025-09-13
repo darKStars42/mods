@@ -1,0 +1,31 @@
+{
+	"Changes": [
+		//*************************************************
+		//  Adding Mail
+		//************************************
+		{
+			"LogName": "Mail Text",
+			"Action": "EditData",
+			"Target": "Data/Mail",
+			"Entries": {
+				"ZoeyHoshi.Camelus_VoidCamelsUnlocked": "{{i18n:Mail_VoidCamelsUnlocked}}"
+			}
+		},
+		{
+			"LogName": "Send Mail",
+			"Action": "EditData",
+			"Target": "Data/TriggerActions",
+			"Entries": {
+				"Camelus_VoidCamelsUnlocked": {
+					"Id": "Camelus_VoidCamelsUnlocked",
+					"Trigger": "DayEnding",
+					"Condition": "PLAYER_HAS_MAIL Current HasMagicInk Received, BUILDINGS_CONSTRUCTED all FlashShifter.StardewValleyExpandedCP_PremiumBarn 1",
+					"Action": "AddMail Current ZoeyHoshi.Camelus_VoidCamelsUnlocked tomorrow"
+				}
+			},
+			"When": {
+				"DisableVoidCamel": false
+			}
+		}
+	]
+}

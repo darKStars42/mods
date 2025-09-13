@@ -1,0 +1,383 @@
+{
+  "Changes": [
+
+    //*************************************************
+    //  Camel Cheese Rules
+    //
+    {
+      "LogName": "Add Camel Cheese Rules",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_CamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_CamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_CamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_CamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_CamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_CamelCheese"
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": false
+      }
+    },
+    {
+      "LogName": "Add Camel Cheese Rules - Copy Quality",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_CamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_CamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_CamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_CamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_CamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_CamelCheese",
+              "CopyQuality": true
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": true
+      }
+    },
+    //*************************************************
+    //  Double Camel Cheese Rules - WOL
+    //
+    {
+      "LogName": "Add Camel Cheese Rules - WOL",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_DoubleCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_DoubleCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_LargeCamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_LargeCamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_CamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_CamelCheese",
+              "MinStack": 2
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": false,
+        "LargeMilkResult": "WOL"
+      }
+    },
+    {
+      "LogName": "Add Camel Cheese Rules - WOL + Copy Quality",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_DoubleCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_DoubleCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_LargeCamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_LargeCamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_CamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_CamelCheese",
+              "MinStack": 2,
+              "CopyQuality": true
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": true,
+        "LargeMilkResult": "WOL"
+      }
+    },
+    //*************************************************
+    //  Large Camel Cheese Rules
+    //
+    {
+      "LogName": "Add Large Camel Cheese Rules",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_LargeCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_LargeCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_LargeCamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_LargeCamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_LargeCamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_LargeCamelCheese"
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": false,
+        "LargeMilkResult": "LargeCheese"
+      }
+    },
+    {
+      "LogName": "Add Large Camel Cheese Rules - Copy Quality",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_LargeCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_LargeCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_LargeCamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_LargeCamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_LargeCamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_LargeCamelCheese",
+              "CopyQuality": true
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": true,
+        "LargeMilkResult": "LargeCheese"
+      }
+    },
+    //*************************************************
+    //  Void Camel Cheese Rules
+    //
+    {
+      "LogName": "Add Void Camel Cheese Rules",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_VoidCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_VoidCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_VoidCamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_VoidCamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_VoidCamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_VoidCamelCheese"
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": false,
+        "DisableVoidCamel": false
+      }
+    },
+    {
+      "LogName": "Add Void Camel Cheese Rules - Copy Quality",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_VoidCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_VoidCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_VoidCamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_VoidCamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_VoidCamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_VoidCamelCheese",
+              "CopyQuality": true
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": true,
+        "DisableVoidCamel": false
+      }
+    },
+    //*************************************************
+    //  Double Void Camel Cheese Rules - WOL
+    //
+    {
+      "LogName": "Add Void Camel Cheese Rules - WOL",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_DoubleVoidCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_DoubleVoidCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_LargeVoidCamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_LargeVoidCamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_VoidCamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_VoidCamelCheese",
+              "MinStack": 2
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": false,
+        "DisableVoidCamel": false,
+        "LargeMilkResult": "WOL"
+      }
+    },
+    {
+      "LogName": "Add Camel Cheese Rules - WOL + Copy Quality",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_DoubleVoidCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_DoubleVoidCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_LargeVoidCamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_LargeVoidCamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_VoidCamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_VoidCamelCheese",
+              "MinStack": 2,
+              "CopyQuality": true
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": true,
+        "DisableVoidCamel": false,
+        "LargeMilkResult": "WOL"
+      }
+    },
+    //*************************************************
+    //  Large Void Camel Cheese Rules
+    //
+    {
+      "LogName": "Add Large Void Camel Cheese Rules",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_LargeVoidCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_LargeVoidCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_LargeVoidCamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_LargeVoidCamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_LargeVoidCamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_LargeVoidCamelCheese"
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": false,
+        "DisableVoidCamel": false,
+        "LargeMilkResult": "LargeCheese"
+      }
+    },
+    {
+      "LogName": "Add Large Camel Cheese Rules - Copy Quality",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)16", "OutputRules" ],
+      "Entries": {
+        "ZoeyHoshi.Camelus_LargeVoidCamelCheese": {
+          "Id": "ZoeyHoshi.Camelus_LargeVoidCamelCheese",
+          "Triggers": [
+            {
+              "Id": "Camelus_LargeVoidCamelMilk",
+              "RequiredItemId": "(O)ZoeyHoshi.Camelus_LargeVoidCamelMilk",
+              "Trigger": "ItemPlacedInMachine"
+            }
+          ],
+          "OutputItem": [
+            {
+              "Id": "Camelus_LargeVoidCamelCheese",
+              "ItemId": "(O)ZoeyHoshi.Camelus_LargeVoidCamelCheese",
+              "CopyQuality": true
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      },
+      "When": {
+        "CopyQuality": true,
+        "DisableVoidCamel": false,
+        "LargeMilkResult": "LargeCheese"
+      }
+    }
+  ]
+}

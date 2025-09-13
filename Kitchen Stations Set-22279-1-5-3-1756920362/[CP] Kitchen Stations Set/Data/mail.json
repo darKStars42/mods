@@ -1,0 +1,41 @@
+{
+
+    "Changes": [
+
+
+//Add Mail
+        {
+            "Action": "EditData",
+            "Target": "Data/Mail",
+                "Entries": {
+                    "BetterCraft.KitchenCounterSet.RobinLetter": "{{i18n: BetterCraft.KitchenCounterSet.RobinLetter.content}}[#]{{i18n: BetterCraft.KitchenCounterSet.RobinLetter.title}}",
+			}
+	},
+
+
+//Sending the Mail	
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+			"BetterCraft.KitchenCounterSet.RobinLetterSend": {
+				"Id": "BetterCraft.KitchenCounterSet.RobinLetterSend",
+                "Trigger": "DayStarted",
+                "Condition": "PLAYER_FARMHOUSE_UPGRADE Current 1 3",
+                "Actions": [
+                    "If !PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.RobinLetter Any ## AddMail Current BetterCraft.KitchenCounterSet.RobinLetter now",
+					"MarkActionApplied Current BetterCraft.KitchenCounterSet.RobinLetterSend_RemoveFlag false",
+                    ],
+				},
+			"BetterCraft.KitchenCounterSet.RobinLetterSend_RemoveFlag": {
+				"Id": "BetterCraft.KitchenCounterSet.RobinLetterSend_RemoveFlag",
+                "Trigger": "DayEnding",
+                "Condition": "!PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.RobinLetter Any",
+                "Actions": [
+                    "MarkActionApplied Current BetterCraft.KitchenCounterSet.RobinLetterSend false",
+                    ],
+				},
+			},
+		},
+]
+}

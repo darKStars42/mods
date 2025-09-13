@@ -1,0 +1,406 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Add stocks to Saloon",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Saloon",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_CrispyAbaloneRecipe": {
+                    "Id": "{{ModId}}_CrispyAbaloneRecipe",
+                    "ItemId": "{{ModId}}_CrispyAbalone",
+                    "Condition": "RANDOM 0.5",
+                    "IsRecipe": true,
+                    "Price": 200,
+                    "ObjectInternalName": "{{ModId}}_CrispyAbalone",
+
+                },
+                "{{ModId}}_PurplePlateRecipe": {
+                    "Id": "{{ModId}}_PurplePlateRecipe",
+                    "ItemId": "{{ModId}}_PurplePlate",
+                    "Condition": "RANDOM 0.5",
+                    "IsRecipe": true,
+                    "Price": 150,
+                    "ObjectInternalName": "{{ModId}}_PurplePlate",
+                },
+                "{{ModId}}_IslesRarecrow7": {
+                    "Id": "{{ModId}}_IslesRarecrow7",
+                    "ItemId": "(BC){{ModId}}_IslesRarecrow7",
+                    "Condition": "{{IslesRarecrowInStock}}",
+                    "Price": 5000,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_IslesRarecrow7"
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Add stocks to Desert Trader",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "DesertTrade",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_NauticalRarecrow2": {
+                    "Id": "{{ModId}}_NauticalRarecrow2",
+                    "ItemId": "(BC){{ModId}}_NauticalRarecrow2",
+                    "Condition": "DAY_OF_WEEK Monday Wednesday Friday Sunday",
+                    "TradeItemId": "(O){{ModId}}_RedTrumpet",
+                    "TradeItemAmount": 25,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_NauticalRarecrow2"
+                    ]
+                },
+                "{{ModId}}_NauticalRarecrow4": {
+                    "Id": "{{ModId}}_NauticalRarecrow4",
+                    "ItemId": "(BC){{ModId}}_NauticalRarecrow4",
+                    "Condition": "DAY_OF_WEEK Tuesday Thursday Saturday",
+                    "TradeItemId": "(O){{ModId}}_CrystalCowrie",
+                    "TradeItemAmount": 15,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_NauticalRarecrow4"
+                    ]
+                },
+                "{{ModId}}_IslesRarecrow2": {
+                    "Id": "{{ModId}}_IslesRarecrow2",
+                    "ItemId": "(BC){{ModId}}_IslesRarecrow2",
+                    "Condition": "{{IslesRarecrowInStock}}, DAY_OF_WEEK Monday Wednesday Friday Sunday",
+                    "TradeItemId": "(O){{ModId}}_LuckyMarine",
+                    "TradeItemAmount": 5,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_IslesRarecrow2"
+                    ]
+                },
+                "{{ModId}}_IslesRarecrow8": {
+                    "Id": "{{ModId}}_IslesRarecrow8",
+                    "ItemId": "(BC){{ModId}}_IslesRarecrow8",
+                    "Condition": "{{IslesRarecrowInStock}}, DAY_OF_WEEK Tuesday Thursday Saturday",
+                    "TradeItemId": "(O){{ModId}}_SpiderConch",
+                    "TradeItemAmount": 40,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_IslesRarecrow8"
+                    ]
+                },
+                "{{ModId}}_PrismaticShard": {
+                    "Id": "{{ModId}}_PrismaticShard",
+                    "ItemId": "74", //Prismatic Shard
+                    "TradeItemId": "(O){{ModId}}_SandBucks",
+                    "TradeItemAmount": 50
+                },
+                "{{ModId}}_IridiumBar": {
+                    "Id": "{{ModId}}_IridiumBar",
+                    "ItemId": "337", //Iridium Bar
+                    "TradeItemId": "(O){{ModId}}_CoralShell",
+                    "TradeItemAmount": 7
+                },
+                "{{ModId}}_ShellTree1": {
+                    "Id": "{{ModId}}_ShellTree1",
+                    "ItemId": "(F){{ModId}}_ShellTree1",
+                    "Condition": "RANDOM 0.75",
+                    "TradeItemId": "(O){{ModId}}_BlueConch",
+                    "TradeItemAmount": 10
+                },
+                "{{ModId}}_ShellTree2": {
+                    "Id": "{{ModId}}_ShellTree2",
+                    "ItemId": "(F){{ModId}}_ShellTree2",
+                    "Condition": "RANDOM 0.75",
+                    "TradeItemId": "(O){{ModId}}_DottedAbalone",
+                    "TradeItemAmount": 15
+                },
+                "{{ModId}}_UrchinVase": {
+                    "Id": "{{ModId}}_UrchinVase",
+                    "ItemId": "(F){{ModId}}_UrchinVase",
+                    "Condition": "RANDOM 0.75",
+                    "TradeItemId": "(O){{ModId}}_LimpetShell",
+                    "TradeItemAmount": 30
+                },
+                "{{ModId}}_CoralSculpture": {
+                    "Id": "{{ModId}}_CoralSculpture",
+                    "ItemId": "(F){{ModId}}_CoralSculpture",
+                    "Condition": "RANDOM 0.75",
+                    "TradeItemId": "(O){{ModId}}_GemSeaWhelk",
+                    "TradeItemAmount": 20
+                },
+            }
+        },
+        {
+            "LogName": "Add stocks to Casino",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Casino",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_NauticalRarecrow6": {
+                    "Id": "{{ModId}}_NauticalRarecrow6",
+                    "ItemId": "(BC){{ModId}}_NauticalRarecrow6",
+                    "Condition": "PLAYER_HAS_MAIL Any willyBoatFixed",
+                    "Price": 12000,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_NauticalRarecrow6"
+                    ]
+                },
+                "{{ModId}}_IslesRarecrow5": {
+                    "Id": "{{ModId}}_IslesRarecrow5",
+                    "ItemId": "(BC){{ModId}}_IslesRarecrow5",
+                    "Condition": "{{IslesRarecrowInStock}}, PLAYER_HAS_MAIL Any willyBoatFixed",
+                    "Price": 12000,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_IslesRarecrow5"
+                    ]
+                },
+                "{{ModId}}_StoicFace": {
+                    "Id": "{{ModId}}_StoicFace",
+                    "ItemId": "(F){{ModId}}_StoicFace",
+                    "Price": 7000
+                },
+                "{{ModId}}_SunsetDrape": {
+                    "Id": "{{ModId}}_SunsetDrape",
+                    "ItemId": "(F){{ModId}}_SunsetDrape",
+                    "Price": 2000
+                },
+                "{{ModId}}_NightDrape": {
+                    "Id": "{{ModId}}_NightDrape",
+                    "ItemId": "(F){{ModId}}_NightDrape",
+                    "Price": 2000
+                },
+                "{{ModId}}_MermaidStatue": {
+                    "Id": "{{ModId}}_MermaidStatue",
+                    "ItemId": "(F){{ModId}}_MermaidStatue",
+                    "Price": 15000
+                },
+                "{{ModId}}_GoddessStatue": {
+                    "Id": "{{ModId}}_GoddessStatue",
+                    "ItemId": "(F){{ModId}}_GoddessStatue",
+                    "Price": 15000
+                }
+            }
+        },
+        {
+            "LogName": "Add stocks to Island Trader",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "IslandTrade",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_GingerAle": {
+                    "Id": "{{ModId}}_GingerAle",
+                    "ItemId": "903", //Ginger Ale
+                    "TradeItemId": "(O){{ModId}}_SandBucks",
+                    "TradeItemAmount": 15
+                },
+                "{{ModId}}_DishOTheSea": {
+                    "Id": "{{ModId}}_DishOTheSea",
+                    "ItemId": "242", //Dish O' The Sea
+                    "Condition": "!WEATHER Here Rain Storm",
+                    "TradeItemId": "(O){{ModId}}_LimpetShell",
+                    "TradeItemAmount": 25
+                },
+                "{{ModId}}_SeafoamPudding": {
+                    "Id": "{{ModId}}_SeafoamPudding",
+                    "ItemId": "265", //Seafoam Pudding
+                    "Condition": "WEATHER Here Rain Storm",
+                    "TradeItemId": "(O){{ModId}}_RedTrumpet",
+                    "TradeItemAmount": 2
+                },
+                "{{ModId}}_NauticalRarecrow7": {
+                    "Id": "{{ModId}}_NauticalRarecrow7",
+                    "ItemId": "(BC){{ModId}}_NauticalRarecrow7",
+                    "Condition": "RANDOM 0.2",
+                    "TradeItemId": "393", //Coral
+                    "TradeItemAmount": 20,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_NauticalRarecrow7"
+                    ]
+                },
+                "{{ModId}}_IslesRarecrow1": {
+                    "Id": "{{ModId}}_IslesRarecrow1",
+                    "ItemId": "(BC){{ModId}}_IslesRarecrow1",
+                    "Condition": "{{IslesRarecrowInStock}}, RANDOM 0.2",
+                    "TradeItemId": "(O){{ModId}}_DottedAbalone",
+                    "TradeItemAmount": 5,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_IslesRarecrow1"
+                    ]
+                },
+                "{{ModId}}_HangingClam": {
+                    "Id": "{{ModId}}_HangingClam",
+                    "ItemId": "(F){{ModId}}_HangingClam",
+                    "TradeItemId": "(O){{ModId}}_RedTrumpet",
+                    "TradeItemAmount": 10
+                }
+            }
+        },
+        {
+            "LogName": "Add stocks to Willy Shop",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "FishShop",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_NauticalScarecrowRecipe": {
+                    "Id": "{{ModId}}_NauticalScarecrowRecipe",
+                    "ItemId": "(BC){{ModId}}_NauticalScarecrow",
+                    "Condition": "PLAYER_HAS_SEEN_EVENT Current {{ModId}}_GiftFromWilly",
+                    "IsRecipe": true,
+                    "Price": 500,
+                    "ObjectInternalName": "{{ModId}}_NauticalScarecrow",
+                },
+                "{{ModId}}_NauticalRarecrow8": {
+                    "Id": "{{ModId}}_NauticalRarecrow8",
+                    "ItemId": "(BC){{ModId}}_NauticalRarecrow8",
+                    "Condition": "PLAYER_HAS_MAIL Any willyBoatFixed",
+                    "Price": 3500,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_NauticalRarecrow8"
+                    ]
+                },
+                "{{ModId}}_SandBucksParcelRecipe": {
+                    "Id": "{{ModId}}_SandBucksParcelRecipe",
+                    "ItemId": "{{ModId}}_SandBucksParcel",
+                    "Condition": "PLAYER_HAS_SEEN_EVENT Current {{ModId}}_GiftFromWilly",
+                    "IsRecipe": true,
+                    "Price": 550,
+                    "ObjectInternalName": "{{ModId}}_SandBucksParcel",
+                },
+                "{{ModId}}_MolluskSoupRecipe": {
+                    "Id": "{{ModId}}_MolluskSoupRecipe",
+                    "ItemId": "{{ModId}}_MolluskSoup",
+                    "Condition": "RANDOM 0.5, PLAYER_HAS_SEEN_EVENT Current {{ModId}}_GiftFromWilly",
+                    "IsRecipe": true,
+                    "Price": 350,
+                    "ObjectInternalName": "{{ModId}}_MolluskSoup",
+                },
+                "{{ModId}}_IslesRarecrow4": {
+                    "Id": "{{ModId}}_IslesRarecrow4",
+                    "ItemId": "(BC){{ModId}}_IslesRarecrow4",
+                    "Condition": "{{IslesRarecrowInStock}}",
+                    "TradeItemId": "(O){{ModId}}_SandBucksParcel",
+                    "TradeItemAmount": 3,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_IslesRarecrow4"
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Add stocks to Travelling Merchant",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Traveler",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_NauticalRarecrow3": {
+                    "Id": "{{ModId}}_NauticalRarecrow3",
+                    "ItemId": "(BC){{ModId}}_NauticalRarecrow3",
+                    "Condition": "RANDOM 0.5, SEASON fall winter",
+                    "Price": 2000,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_NauticalRarecrow3"
+                    ]
+                },
+                "{{ModId}}_NauticalRarecrow5": {
+                    "Id": "{{ModId}}_NauticalRarecrow5",
+                    "ItemId": "(BC){{ModId}}_NauticalRarecrow5",
+                    "Condition": "RANDOM 0.5, SEASON spring summer",
+                    "Price": 3500,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_NauticalRarecrow5"
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Add stocks to Krobus Shop",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "ShadowShop",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_NauticalRarecrow1": {
+                    "Id": "{{ModId}}_NauticalRarecrow1",
+                    "ItemId": "(BC){{ModId}}_NauticalRarecrow1",
+                    "Price": 5000,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_NauticalRarecrow1"
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Add stocks to Sandy Shop",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Sandy",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_IslesRarecrow3": {
+                    "Id": "{{ModId}}_IslesRarecrow3",
+                    "ItemId": "(BC){{ModId}}_IslesRarecrow3",
+                    "Condition": "{{IslesRarecrowInStock}}",
+                    "Price": 5000,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_IslesRarecrow3"
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Add stocks to Raccoon Shop",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Raccoon",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_IslesRarecrow6": {
+                    "Id": "{{ModId}}_IslesRarecrow6",
+                    "ItemId": "(BC){{ModId}}_IslesRarecrow6",
+                    "Condition": "{{IslesRarecrowInStock}}",
+                    "TradeItemId": "(O){{ModId}}_BlueConch",
+                    "TradeItemAmount": 20,
+                    "ActionsOnPurchase": [
+                        "AddMail Host {{ModId}}_IslesRarecrow6"
+                    ]
+                },
+                "{{ModId}}_RiverJelly": {
+                    "Id": "{{ModId}}_RiverJelly",
+                    "ItemId": "(O)RiverJelly",
+                    "TradeItemId": "(O){{ModId}}_WingedScallop",
+                    "TradeItemAmount": 1
+                },
+                "{{ModId}}_CaveJelly": {
+                    "Id": "{{ModId}}_CaveJelly",
+                    "ItemId": "(O)CaveJelly",
+                    "TradeItemId": "(O){{ModId}}_SpiderConch",
+                    "TradeItemAmount": 1
+                },
+                "{{ModId}}_RareSeed": {
+                    "Id": "{{ModId}}_SweetGemBerry",
+                    "ItemId": "347",
+                    "Condition": "!SEASON Fall",
+                    "TradeItemId": "(O){{ModId}}_KittenPaw",
+                    "TradeItemAmount": 3
+                }
+            }
+        }
+    ]
+}

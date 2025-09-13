@@ -1,0 +1,778 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_SteelCharcoalKiln": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388",
+									"RequiredCount": "{{S.C.K Required Wood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{S.C.K Wood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_TorchCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)93",
+									"RequiredCount": "{{S.C.K Required Torches}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{S.C.K Torch to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_DriftwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)169",
+									"RequiredCount": "{{S.C.K Required Driftwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{S.C.K Driftwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_HardwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)709",
+									"RequiredCount": "{{S.C.K Required Hardwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{S.C.K Hardwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_FurnitureCoal",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_furniture"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{S.C.K Furniture to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						}
+					],
+					"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "openBox"
+								},
+								{
+									"Id": "fireball",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1728,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "-4, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_GoldCharcoalKiln": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388",
+									"RequiredCount": "{{G.C.K Required Wood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{G.C.K Wood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_TorchCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)93",
+									"RequiredCount": "{{G.C.K Required Torches}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{G.C.K Torch to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_DriftwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)169",
+									"RequiredCount": "{{G.C.K Required Driftwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{G.C.K Driftwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_HardwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)709",
+									"RequiredCount": "{{G.C.K Required Hardwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{G.C.K Hardwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_FurnitureCoal",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_furniture"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{G.C.K Furniture to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						}
+					],
+					"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "openBox"
+								},
+								{
+									"Id": "fireball",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1728,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "-4, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_DiamondCharcoalKiln": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388",
+									"RequiredCount": "{{D.C.K Required Wood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{D.C.K Wood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_TorchCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)93",
+									"RequiredCount": "{{D.C.K Required Torches}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{D.C.K Torch to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_DriftwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)169",
+									"RequiredCount": "{{D.C.K Required Driftwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{D.C.K Driftwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_HardwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)709",
+									"RequiredCount": "{{D.C.K Required Hardwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{D.C.K Hardwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_FurnitureCoal",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_furniture"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{D.C.K Furniture to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						}
+					],
+					"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "openBox"
+								},
+								{
+									"Id": "fireball",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1728,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "-4, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_IridiumCharcoalKiln": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388",
+									"RequiredCount": "{{I.C.K Required Wood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{I.C.K Wood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_TorchCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)93",
+									"RequiredCount": "{{I.C.K Required Torches}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{I.C.K Torch to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_DriftwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)169",
+									"RequiredCount": "{{I.C.K Required Driftwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{I.C.K Driftwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_HardwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)709",
+									"RequiredCount": "{{I.C.K Required Hardwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{I.C.K Hardwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_FurnitureCoal",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_furniture"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{I.C.K Furniture to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						}
+					],
+					"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "openBox"
+								},
+								{
+									"Id": "fireball",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1728,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "-4, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_RadioactiveCharcoalKiln": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388",
+									"RequiredCount": "{{R.C.K Required Wood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{R.C.K Wood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_TorchCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)93",
+									"RequiredCount": "{{R.C.K Required Torches}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{R.C.K Torch to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_DriftwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)169",
+									"RequiredCount": "{{R.C.K Required Driftwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{R.C.K Driftwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_HardwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)709",
+									"RequiredCount": "{{R.C.K Required Hardwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{R.C.K Hardwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_FurnitureCoal",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_furniture"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{R.C.K Furniture to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						}
+					],
+					"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "openBox"
+								},
+								{
+									"Id": "fireball",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1728,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "-4, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_PrismaticCharcoalKiln": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388",
+									"RequiredCount": "{{P.C.K Required Wood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{P.C.K Wood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_TorchCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)93",
+									"RequiredCount": "{{P.C.K Required Torches}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{P.C.K Torch to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_DriftwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)169",
+									"RequiredCount": "{{P.C.K Required Driftwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{P.C.K Driftwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_HardwoodCoal",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)709",
+									"RequiredCount": "{{P.C.K Required Hardwood}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{P.C.K Hardwood to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						},
+						{
+							"Id": "nachonline.mps_FurnitureCoal",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_furniture"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)382",
+									"MinStack": "{{P.C.K Furniture to Coal Output}}"
+								}
+							],
+							"MinutesUntilReady": 30
+						}
+					],
+					"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "openBox"
+								},
+								{
+									"Id": "fireball",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1728,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "-4, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": true
+				}
+			}
+		}
+	] 
+}

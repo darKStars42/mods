@@ -1,0 +1,1480 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_GoldCrabPot": {
+					"OutputRules": [
+						{
+							"Id": "nachonline.mps_GoldCrabPotNoBait",
+							"Triggers": [
+								{
+									"Trigger": "DayUpdate"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_CRAB_POT_OUTPUT true true true",
+									"Quality": "{{G.CR.P Quality}}",
+									"MinStack": "{{G.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							]
+						},
+						{
+							"Id": "nachonline.mps_GoldCrabPotTrash",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "RANDOM_ITEMS (O)",
+									"PerItemCondition": "ITEM_CONTEXT_TAG Target trash_item",
+									"MinStack": "{{G.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_GoldCrabPotAlgae",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)766"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "RANDOM_ITEMS (O)",
+									"PerItemCondition": "ITEM_CONTEXT_TAG Target algae_item",
+									"MinStack": "{{G.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_GoldCrabPotBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)685"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{G.CR.P Quality}}",
+									"MinStack": "{{Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{G.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						}
+					],
+					"ExperienceGainOnHarvest": "Fishing 5",
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "fishCaught"
+						}
+					]
+				},
+				"(BC)nachonline.mps_DiamondCrabPot": {
+					"OutputRules": [
+						{
+							"Id": "nachonline.mps_DiamondCrabPotNoBait",
+							"Triggers": [
+								{
+									"Trigger": "DayUpdate"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_CRAB_POT_OUTPUT true true true",
+									"Quality": "{{D.CR.P Quality}}",
+									"MinStack": "{{D.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							]
+						},
+						{
+							"Id": "nachonline.mps_DiamondCrabPotTrash",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "RANDOM_ITEMS (O)",
+									"PerItemCondition": "ITEM_CONTEXT_TAG Target trash_item",
+									"MinStack": "{{D.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_DiamondCrabPotAlgae",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)766"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "RANDOM_ITEMS (O)",
+									"PerItemCondition": "ITEM_CONTEXT_TAG Target algae_item",
+									"MinStack": "{{D.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_DiamondCrabPotBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)685"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{D.CR.P Quality}}",
+									"MinStack": "{{Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_DiamondCrabPotWildBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)774"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{D.CR.P Quality}}",
+									"MinStack": "{{Wild Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{D.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						}
+					],
+					"ExperienceGainOnHarvest": "Fishing 5",
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "fishCaught"
+						}
+					]
+				},
+				"(BC)nachonline.mps_IridiumCrabPot": {
+					"OutputRules": [
+						{
+							"Id": "nachonline.mps_IridiumCrabPotNoBait",
+							"Triggers": [
+								{
+									"Trigger": "DayUpdate"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_CRAB_POT_OUTPUT true true true",
+									"Quality": "{{I.CR.P Quality}}",
+									"MinStack": "{{I.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							]
+						},
+						{
+							"Id": "nachonline.mps_IridiumCrabPotTrash",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "RANDOM_ITEMS (O)",
+									"PerItemCondition": "ITEM_CONTEXT_TAG Target trash_item",
+									"MinStack": "{{I.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_IridiumCrabPotAlgae",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)766"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "RANDOM_ITEMS (O)",
+									"PerItemCondition": "ITEM_CONTEXT_TAG Target algae_item",
+									"MinStack": "{{I.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_IridiumCrabPotBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)685"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{I.CR.P Quality}}",
+									"MinStack": "{{Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_IridiumCrabPotWildBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)774"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{I.CR.P Quality}}",
+									"MinStack": "{{Wild Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_IridiumCrabPotDeluxeBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)DeluxeBait"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{I.CR.P Quality}}",
+									"MinStack": "{{Deluxe Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{I.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						}
+					],
+					"ExperienceGainOnHarvest": "Fishing 5",
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "fishCaught"
+						}
+					]
+				},
+				"(BC)nachonline.mps_RadioactiveCrabPot": {
+					"OutputRules": [
+						{
+							"Id": "nachonline.mps_RadioactiveCrabPotNoBait",
+							"Triggers": [
+								{
+									"Trigger": "DayUpdate"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_CRAB_POT_OUTPUT true true true",
+									"Quality": "{{R.CR.P Quality}}",
+									"MinStack": "{{R.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							]
+						},
+						{
+							"Id": "nachonline.mps_RadioactiveCrabPotTrash",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "RANDOM_ITEMS (O)",
+									"PerItemCondition": "ITEM_CONTEXT_TAG Target trash_item",
+									"MinStack": "{{R.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_RadioactiveCrabPotAlgae",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)766"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "RANDOM_ITEMS (O)",
+									"PerItemCondition": "ITEM_CONTEXT_TAG Target algae_item",
+									"MinStack": "{{R.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_RadioactiveCrabPotBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)685"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{R.CR.P Quality}}",
+									"MinStack": "{{Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_RadioactiveCrabPotWildBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)774"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{R.CR.P Quality}}",
+									"MinStack": "{{Wild Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_RadioactiveCrabPotDeluxeBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)DeluxeBait"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{R.CR.P Quality}}",
+									"MinStack": "{{Deluxe Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_RadioactiveCrabPotChallengeBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)ChallengeBait"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{R.CR.P Quality}}",
+									"MinStack": "{{Challenge Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{R.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						}
+					],
+					"ExperienceGainOnHarvest": "Fishing 5",
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "fishCaught"
+						}
+					]
+				},
+				"(BC)nachonline.mps_PrismaticCrabPot": {
+					"OutputRules": [
+						{
+							"Id": "nachonline.mps_PrismaticCrabPotNoBait",
+							"Triggers": [
+								{
+									"Trigger": "DayUpdate"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_CRAB_POT_OUTPUT true true true",
+									"Quality": "{{P.CR.P Quality}}",
+									"MinStack": "{{P.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							]
+						},
+						{
+							"Id": "nachonline.mps_PrismaticCrabPotTrash",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)388"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "RANDOM_ITEMS (O)",
+									"PerItemCondition": "ITEM_CONTEXT_TAG Target trash_item",
+									"MinStack": "{{P.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_PrismaticCrabPotAlgae",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)766"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "RANDOM_ITEMS (O)",
+									"PerItemCondition": "ITEM_CONTEXT_TAG Target algae_item",
+									"MinStack": "{{P.CR.P Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_PrismaticCrabPotBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)685"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{P.CR.P Quality}}",
+									"MinStack": "{{Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_PrismaticCrabPotWildBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)774"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{P.CR.P Quality}}",
+									"MinStack": "{{Wild Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_PrismaticCrabPotDeluxeBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)DeluxeBait"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{P.CR.P Quality}}",
+									"MinStack": "{{Deluxe Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_PrismaticCrabPotChallengeBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)ChallengeBait"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true false false",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{P.CR.P Quality}}",
+									"MinStack": "{{Challenge Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						},
+						{
+							"Id": "nachonline.mps_PrismaticCrabPotMagicBait",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)908"
+								}
+							],
+							"OutputItem": [
+								{	
+									"Id": "Default",
+									"ItemId": "selph.CustomTapperFramework_MACHINE_FISH_LOCATION true true true",
+									"PerItemCondition": "!ITEM_CONTEXT_TAG Target trash_item, !ITEM_CONTEXT_TAG Target algae_item, !ITEM_ID_PREFIX Target (F)",
+									"Quality": "{{P.CR.P Quality}}",
+									"MinStack": "{{Magic Bait Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 100",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 100 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "300FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 300",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 300 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "500FishCaught",
+											"Condition": "PLAYER_STAT Current fishCaught 500",
+											"Modification": "Add",
+											"Amount": "{{P.CR.P 500 Fish Caught Bonus}}"
+										},
+										{
+											"Id": "ArtOCrabbingSecretPower",
+											"Condition": "PLAYER_STAT Current Book_Crabbing 1",
+											"Modification": "Multiply",
+											"Amount": 1.25
+										}
+									],
+									"StackModifierMode": "Stack",
+									"ModData": {
+										"selph.CustomTapperFramework.CountForPerfection": "true"
+									}
+								}
+							],
+							"DaysUntilReady": 1
+						}
+					],
+					"ExperienceGainOnHarvest": "Fishing 5",
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "fishCaught"
+						}
+					]
+				}
+			}
+		}
+	] 
+}

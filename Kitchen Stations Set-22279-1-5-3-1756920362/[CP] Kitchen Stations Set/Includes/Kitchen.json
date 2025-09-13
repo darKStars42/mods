@@ -1,0 +1,48 @@
+{
+
+  "Changes": [
+
+/////////Kitchen Craftable
+
+	{
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+		"BetterCraft.Kitchen": {
+		    "Name": "BetterCraft.Kitchen",
+                    "DisplayName": "{{i18n: Kitchen.Name}}",
+                    "Description": "{{i18n: Kitchen.Description}}",
+    			"Fragility": 0,
+    			"CanBePlacedOutdoors": false,
+    			"CanBePlacedIndoors": true,
+                    "Texture": "Mods/Objects/BetterCraft.KitchenCounterSet",
+                    "SpriteIndex": 7,
+			"CustomFields": {
+        			"leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu TRUE"
+				}
+                			}
+			}
+	},
+
+	//Adding data to shop
+
+	{	
+		"Action": "EditData",	
+		"Target": "Data/Shops",
+		"TargetField": [ "Carpenter", "Items" ],
+		"Entries": {
+		    "BetterCraft.Kitchen": {
+                    "Id": "BetterCraft.Kitchen",
+                    "ItemId": "(BC)BetterCraft.Kitchen",
+                    "Price": 2000,
+		    "Condition": "PLAYER_MONEY_EARNED Current 2000"
+        		}
+		},
+	  "MoveEntries": [
+			{ "Id": "BetterCraft.Kitchen", "BeforeId": "(F)1466" }
+			]
+	}
+
+
+]
+}

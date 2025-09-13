@@ -1,0 +1,47 @@
+{
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "{{ThisModId}}_CentralStationUndergroundShops": {
+          "DisplayName": "{{i18n:OMEGAlinc.CSE.UndergroundShopsName}}",
+          "CreateOnLoad": {
+            "MapPath": "Maps/{{ThisModId}}_UndergroundShops"
+          }
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/{{ThisModId}}_UndergroundShops",
+      "FromFile": "assets/undergroundshops.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/WorldMap",
+      "TargetField": [
+        "Valley",
+        "MapAreas"
+      ],
+      "Entries": {
+        "{{ThisModId}}_CentralStationUndergroundShops": {
+          "Id": "{{ThisModId}}_CentralStationUndergroundShops",
+          "PixelArea": {
+            "X": 0,
+            "Y": 146,
+            "Width": 1,
+            "Height": 1
+          },
+          "ScrollText": "{{i18n:OMEGAlinc.CSE.UndergroundShopsName}}",
+          "WorldPositions": [
+            {
+              "Id": "UndergroundShops",
+              "LocationName": "{{ThisModId}}_CentralStationUndergroundShops"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

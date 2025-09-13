@@ -1,0 +1,66 @@
+{
+    "Format": "2.3.0",
+    "CustomLocations": [
+  {
+    "Name": "Custom_WestWoods",
+    "FromMapFile": "assets/Maps/WestWoods.tmx"
+  },
+  {
+    "Name": "Custom_YellowHouse",
+    "FromMapFile": "assets/Maps/House_Yellow.tmx",
+    "IsOutdoors": false
+  },
+  {
+    "Name": "Custom_VictorLab",
+    "FromMapFile": "assets/Maps/VictorLab.tmx",
+    "IsOutdoors": false
+  },
+  {
+    "Name": "Custom_KennyTent",
+    "FromMapFile": "assets/Maps/KennyTent.tmx",
+    "IsOutdoors": false
+  }
+],
+    "Changes": [
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "FromFile": "assets/Maps/forest.tmx",
+            "PatchMode": "Overlay"
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Forest",
+            "AddWarps": [
+                "10 10 Custom_WestWoods 2 19"
+            ]
+        },
+        {
+  "Action": "EditMap",
+  "Target": "Maps/Custom_WestWoods",
+  "FromFile": "assets/Maps/WestWoods_Summer.tmx",
+  "PatchMode": "Replace",
+  "When": {
+    "Season": "Summer"
+  }
+},
+{
+  "Action": "EditMap",
+  "Target": "Maps/Custom_WestWoods",
+  "FromFile": "assets/Maps/WestWoods_Fall.tmx",
+  "PatchMode": "Replace",
+  "When": {
+    "Season": "Fall"
+  }
+},
+{
+  "Action": "EditMap",
+  "Target": "Maps/Custom_WestWoods",
+  "FromFile": "assets/Maps/WestWoods_Winter.tmx",
+  "PatchMode": "Replace",
+  "When": {
+    "Season": "Winter"
+  }
+}
+    ]
+}

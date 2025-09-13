@@ -1,0 +1,1223 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_DiamondOilMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default_Corn",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)270"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{D.O.M Quantity}}",
+									"CopyQuality": "{{D.O.M Copy Quality}}",
+									"Quality": "{{D.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_Sunflower",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)421"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{D.O.M Quantity}}",
+									"CopyQuality": "{{D.O.M Copy Quality}}",
+									"Quality": "{{D.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_SunflowerSeeds",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)431"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{D.O.M Quantity}}",
+									"CopyQuality": "{{D.O.M Copy Quality}}",
+									"Quality": "{{D.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_Truffle",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)430"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)432",
+									"MinStack": "{{D.O.M Quantity}}",
+									"CopyQuality": "{{D.O.M Copy Quality}}",
+									"Quality": "{{D.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{D.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.O.M Production Time}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "bubbles"
+								},
+								{
+									"Id": "sipTea"
+								},
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBF00BF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Yellow"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"Id": "beveragesMade",
+							"StatName": "beveragesMade"
+						}
+					],
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_IridiumOilMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default_Corn",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)270"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{I.O.M Quantity}}",
+									"CopyQuality": "{{I.O.M Copy Quality}}",
+									"Quality": "{{I.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_Sunflower",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)421"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{I.O.M Quantity}}",
+									"CopyQuality": "{{I.O.M Copy Quality}}",
+									"Quality": "{{I.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_SunflowerSeeds",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)431"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{I.O.M Quantity}}",
+									"CopyQuality": "{{I.O.M Copy Quality}}",
+									"Quality": "{{I.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_Truffle",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)430"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)432",
+									"MinStack": "{{I.O.M Quantity}}",
+									"CopyQuality": "{{I.O.M Copy Quality}}",
+									"Quality": "{{I.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{I.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.O.M Production Time}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "bubbles"
+								},
+								{
+									"Id": "sipTea"
+								},
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBF00BF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Yellow"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"Id": "beveragesMade",
+							"StatName": "beveragesMade"
+						}
+					],
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_RadioactiveOilMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default_Corn",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)270"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{R.O.M Quantity}}",
+									"CopyQuality": "{{R.O.M Copy Quality}}",
+									"Quality": "{{R.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_Sunflower",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)421"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{R.O.M Quantity}}",
+									"CopyQuality": "{{R.O.M Copy Quality}}",
+									"Quality": "{{R.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_SunflowerSeeds",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)431"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{R.O.M Quantity}}",
+									"CopyQuality": "{{R.O.M Copy Quality}}",
+									"Quality": "{{R.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_Truffle",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)430"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)432",
+									"MinStack": "{{R.O.M Quantity}}",
+									"CopyQuality": "{{R.O.M Copy Quality}}",
+									"Quality": "{{R.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{R.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.O.M Production Time}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "bubbles"
+								},
+								{
+									"Id": "sipTea"
+								},
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBF00BF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Yellow"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"Id": "beveragesMade",
+							"StatName": "beveragesMade"
+						}
+					],
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_PrismaticOilMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default_Corn",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)270"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{P.O.M Quantity}}",
+									"CopyQuality": "{{P.O.M Copy Quality}}",
+									"Quality": "{{P.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_Sunflower",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)421"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{P.O.M Quantity}}",
+									"CopyQuality": "{{P.O.M Copy Quality}}",
+									"Quality": "{{P.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_SunflowerSeeds",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)431"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)247",
+									"MinStack": "{{P.O.M Quantity}}",
+									"CopyQuality": "{{P.O.M Copy Quality}}",
+									"Quality": "{{P.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.O.M Production Time}}"
+						},
+						{
+							"Id": "Default_Truffle",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)430"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)432",
+									"MinStack": "{{P.O.M Quantity}}",
+									"CopyQuality": "{{P.O.M Copy Quality}}",
+									"Quality": "{{P.O.M Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 100",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 100 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "300BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 300",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 300 Beverages Made Bonus}}"
+										},
+										{
+											"Id": "500BeveragesMade",
+											"Condition": "PLAYER_STAT Current beveragesMade 500",
+											"Modification": "Add",
+											"Amount": "{{P.O.M 500 Beverages Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.O.M Production Time}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "bubbles"
+								},
+								{
+									"Id": "sipTea"
+								},
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBF00BF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Yellow"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"Id": "beveragesMade",
+							"StatName": "beveragesMade"
+						}
+					],
+					"AllowFairyDust": true
+				}
+			}
+		},
+		// Flower Oil
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondOilMaker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Flower Oils": true
+			},
+			"Entries": {
+				"nachonline.mps_FlowerOil": {
+					"Id": "nachonline.mps_FlowerOil",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_flowers"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_FlowerOil",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_FlowerOil %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_FlowerOil",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{D.O.M Quantity}}",
+							"CopyQuality": "{{D.O.M Copy Quality}}",
+							"Quality": "{{D.O.M Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 100",
+									"Modification": "Add",
+									"Amount": "{{D.O.M 100 Beverages Made Bonus}}"
+								},
+								{
+									"Id": "300BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 300",
+									"Modification": "Add",
+									"Amount": "{{D.O.M 300 Beverages Made Bonus}}"
+								},
+								{
+									"Id": "500BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 500",
+									"Modification": "Add",
+									"Amount": "{{D.O.M 500 Beverages Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Flower Oil Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.O.M Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_FlowerOil", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumOilMaker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Flower Oils": true
+			},
+			"Entries": {
+				"nachonline.mps_FlowerOil": {
+					"Id": "nachonline.mps_FlowerOil",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_flowers"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_FlowerOil",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_FlowerOil %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_FlowerOil",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{I.O.M Quantity}}",
+							"CopyQuality": "{{I.O.M Copy Quality}}",
+							"Quality": "{{I.O.M Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 100",
+									"Modification": "Add",
+									"Amount": "{{I.O.M 100 Beverages Made Bonus}}"
+								},
+								{
+									"Id": "300BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 300",
+									"Modification": "Add",
+									"Amount": "{{I.O.M 300 Beverages Made Bonus}}"
+								},
+								{
+									"Id": "500BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 500",
+									"Modification": "Add",
+									"Amount": "{{I.O.M 500 Beverages Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Flower Oil Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.O.M Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_FlowerOil", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveOilMaker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Flower Oils": true
+			},
+			"Entries": {
+				"nachonline.mps_FlowerOil": {
+					"Id": "nachonline.mps_FlowerOil",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_flowers"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_FlowerOil",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_FlowerOil %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_FlowerOil",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{R.O.M Quantity}}",
+							"CopyQuality": "{{R.O.M Copy Quality}}",
+							"Quality": "{{R.O.M Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 100",
+									"Modification": "Add",
+									"Amount": "{{R.O.M 100 Beverages Made Bonus}}"
+								},
+								{
+									"Id": "300BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 300",
+									"Modification": "Add",
+									"Amount": "{{R.O.M 300 Beverages Made Bonus}}"
+								},
+								{
+									"Id": "500BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 500",
+									"Modification": "Add",
+									"Amount": "{{R.O.M 500 Beverages Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Flower Oil Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.O.M Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_FlowerOil", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticOilMaker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Flower Oils": true
+			},
+			"Entries": {
+				"nachonline.mps_FlowerOil": {
+					"Id": "nachonline.mps_FlowerOil",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_flowers"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_FlowerOil",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_FlowerOil %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_FlowerOil",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{P.O.M Quantity}}",
+							"CopyQuality": "{{P.O.M Copy Quality}}",
+							"Quality": "{{P.O.M Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 100",
+									"Modification": "Add",
+									"Amount": "{{P.O.M 100 Beverages Made Bonus}}"
+								},
+								{
+									"Id": "300BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 300",
+									"Modification": "Add",
+									"Amount": "{{P.O.M 300 Beverages Made Bonus}}"
+								},
+								{
+									"Id": "500BeveragesMade",
+									"Condition": "PLAYER_STAT Current beveragesMade 500",
+									"Modification": "Add",
+									"Amount": "{{P.O.M 500 Beverages Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Flower Oil Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.O.M Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_FlowerOil", "ToPosition": "Top" }
+			]
+		}
+	] 
+}

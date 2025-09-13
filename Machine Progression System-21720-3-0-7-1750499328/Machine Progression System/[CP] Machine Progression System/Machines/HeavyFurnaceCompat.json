@@ -1,0 +1,1341 @@
+{
+    "Changes": [
+		// Alchemistry - A Witchy Gameplay Expansion Mod (https://www.nexusmods.com/stardewvalley/mods/22743)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Morghoula.AlchemistryCP_EmptyFlask": {
+					"Id": "Morghoula.AlchemistryCP_EmptyFlask",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)338",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}",
+							"CopyPrice": true
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Morghoula.AlchemistryCP"
+			},
+			"MoveEntries": [
+				{ "Id": "Morghoula.AlchemistryCP_EmptyFlask", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Morghoula.AlchemistryCP_EmptyFlask": {
+					"Id": "Morghoula.AlchemistryCP_EmptyFlask",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)338",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Morghoula.AlchemistryCP_EmptyFlask",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}",
+							"CopyPrice": true
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Morghoula.AlchemistryCP"
+			},
+			"MoveEntries": [
+				{ "Id": "Morghoula.AlchemistryCP_EmptyFlask", "ToPosition": "Top" }
+			]
+		},
+		
+		// Baubles (https://www.nexusmods.com/stardewvalley/mods/29720)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"appleseed.BCP.Porcelain": {
+					"Id": "appleseed.BCP.Porcelain",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)appleseed.BCP.Petuntse",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)appleseed.BCP.Porcelain",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "appleseed.BCP"
+			},
+			"MoveEntries": [
+				{ "Id": "appleseed.BCP.Porcelain", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"appleseed.BCP.Porcelain": {
+					"Id": "appleseed.BCP.Porcelain",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)appleseed.BCP.Petuntse",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)appleseed.BCP.Porcelain",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "appleseed.BCP"
+			},
+			"MoveEntries": [
+				{ "Id": "appleseed.BCP.Porcelain", "ToPosition": "Top" }
+			]
+		},
+		
+		// Bear Family Custom NPCS - An Add-On for East Scarp (https://www.nexusmods.com/stardewvalley/mods/16197)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MadDog.HashtagBearFam_FerskenPeach_Honey": {
+					"Id": "MadDog.HashtagBearFam_FerskenPeach_Honey",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MadDog.HashtagBearFam_FerskenPeach",
+							"Condition": "PLAYER_HAS_MAIL Current SigMansplainsHoney Any"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MadDog.HashtagBearFam_FerskenPeach_Honey",
+							"MinStack": 5,
+							"MaxStack": 8
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "MadDog.HashtagBearFam"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MadDog.HashtagBearFam_FerskenPeach_Honey": {
+					"Id": "MadDog.HashtagBearFam_FerskenPeach_Honey",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MadDog.HashtagBearFam_FerskenPeach",
+							"Condition": "PLAYER_HAS_MAIL Current SigMansplainsHoney Any"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MadDog.HashtagBearFam_FerskenPeach_Honey",
+							"MinStack": 6,
+							"MaxStack": 8
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "MadDog.HashtagBearFam"
+			}
+		},
+		
+		// BVG Animal Overhaul (https://www.nexusmods.com/stardewvalley/mods/24316)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"i24KittyKat.BVGCP_RefinedFireQuartz": {
+					"Id": "i24KittyKat.BVGCP_RefinedFireQuartz",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)82"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)i24KittyKat.BVGCP_RefinedFireQuartz",
+							"MinStack": "{{R.H.F Minimum Fire Quartz Output}}",
+							"MaxStack": "{{R.H.F Maximum Fire Quartz Output}}",
+							"StackModifiers": [
+								{
+									"Id": "100StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 100",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 300",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 500",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"		
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Fire Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "i24KittyKat.BVGCP"
+			},
+			"MoveEntries": [
+				{ "Id": "i24KittyKat.BVGCP_RefinedFireQuartz", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"i24KittyKat.BVGCP_RefinedFireQuartz": {
+					"Id": "i24KittyKat.BVGCP_RefinedFireQuartz",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)82"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)i24KittyKat.BVGCP_RefinedFireQuartz",
+							"MinStack": "{{P.H.F Minimum Fire Quartz Output}}",
+							"MaxStack": "{{P.H.F Maximum Fire Quartz Output}}",
+							"StackModifiers": [
+								{
+									"Id": "100StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500StoneGathered",
+									"Condition": "PLAYER_STAT Current stoneGathered 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"		
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Fire Quartz Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "i24KittyKat.BVGCP"
+			},
+			"MoveEntries": [
+				{ "Id": "i24KittyKat.BVGCP_RefinedFireQuartz", "ToPosition": "Top" }
+			]
+		},
+		
+		// Chocobo Valley - Custom livestock crops and more (https://www.nexusmods.com/stardewvalley/mods/22226)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Kitsutsune.Chocobovalley_MythrilBar": {
+					"Id": "Kitsutsune.Chocobovalley_MythrilBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_MythrilOre",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_MythrilBar",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_OrichalcumBar": {
+					"Id": "Kitsutsune.Chocobovalley_OrichalcumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumOre",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumBar",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Iridium Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_AdamantiteBar": {
+					"Id": "Kitsutsune.Chocobovalley_AdamantiteBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteOre",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteBar",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Kitsutsune.Chocobovalley"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Kitsutsune.Chocobovalley_MythrilBar": {
+					"Id": "Kitsutsune.Chocobovalley_MythrilBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_MythrilOre",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_MythrilBar",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_OrichalcumBar": {
+					"Id": "Kitsutsune.Chocobovalley_OrichalcumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumOre",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_OrichalcumBar",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Iridium Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"Kitsutsune.Chocobovalley_AdamantiteBar": {
+					"Id": "Kitsutsune.Chocobovalley_AdamantiteBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteOre",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Kitsutsune.Chocobovalley_AdamantiteBar",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Kitsutsune.Chocobovalley"
+			}
+		},
+		
+		// Metalcore Goes Cottagecore - East Scarp Addon (https://www.nexusmods.com/stardewvalley/mods/29995)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Squeaks.MGC.CP_RoastedCoffeeBeans": {
+                    "Id": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+                    "Triggers": [
+                        {
+                            "RequiredItemId": "(O)433",
+                            "RequiredCount": "{{R.H.F Required Input}}"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "ItemId": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+                            "MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}"
+                        }
+                    ],
+                    "MinutesUntilReady": "{{R.H.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+                }
+			},
+			"When": {
+				"HasMod": "Squeaks.MGC.CP"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Squeaks.MGC.CP_RoastedCoffeeBeans": {
+                    "Id": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+                    "Triggers": [
+                        {
+                            "RequiredItemId": "(O)433",
+                            "RequiredCount": "{{P.H.F Required Input}}"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "ItemId": "Squeaks.MGC.CP_RoastedCoffeeBeans",
+                            "MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}"
+                        }
+                    ],
+                    "MinutesUntilReady": "{{R.H.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+                }
+			},
+			"When": {
+				"HasMod": "Squeaks.MGC.CP"
+			}
+		},
+		
+		// Passerby Cemetery (https://www.nexusmods.com/stardewvalley/mods/22600)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Fellowclown.PC_RoastedReuuNut": {	
+					"Id": "Fellowclown.PC_RoastedReuuNut",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Fellowclown.PC_ReuuNut",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Fellowclown.PC_RoastedReuuNut",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Fellowclown.PC"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Fellowclown.PC_RoastedReuuNut": {	
+					"Id": "Fellowclown.PC_RoastedReuuNut",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Fellowclown.PC_ReuuNut",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)Fellowclown.PC_RoastedReuuNut",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Fellowclown.PC"
+			}
+		},
+		
+		// Prismatic Tools Continued (https://www.nexusmods.com/stardewvalley/mods/21450)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"iargue.PrismaticToolsContinued_PrismaticBar": {
+					"Id": "iargue.PrismaticToolsContinued_PrismaticBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)74",
+							"RequiredCount": 5
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)PrismaticBar",
+							"MinStack": 25
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "iargue.PrismaticToolsContinued"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"iargue.PrismaticToolsContinued_PrismaticBar": {
+					"Id": "iargue.PrismaticToolsContinued_PrismaticBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)74",
+							"RequiredCount": 5
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)PrismaticBar",
+							"MinStack": 25
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "iargue.PrismaticToolsContinued"
+			}
+		},
+		
+		// Strange Machines Revisited (https://www.nexusmods.com/stardewvalley/mods/21244)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MrtaiyouSolariaze.StrangeMachines_NBar": {
+					"Id": "NBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelNugget",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelBar",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"MrtaiyouSolariaze.StrangeMachines_Blackstone": {
+					"Id": "Blackstone",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_Blackstone",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_BlackBrick",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "MrtaiyouSolariaze.StrangeMachines"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"MrtaiyouSolariaze.StrangeMachines_NBar": {
+					"Id": "NBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelNugget",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_NickelBar",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"MrtaiyouSolariaze.StrangeMachines_Blackstone": {
+					"Id": "Blackstone",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)MrtaiyouSolariaze.StrangeMachines_Blackstone",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)MrtaiyouSolariaze.StrangeMachines_BlackBrick",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "MrtaiyouSolariaze.StrangeMachines"
+			}
+		},
+		
+		// Sword and Sorcery - A Fantasy Expansion for East Scarp (https://www.nexusmods.com/stardewvalley/mods/12369)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"DN.SnS_StygiumBar": {
+					"Id": "DN.SnS_StygiumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_StygiumOre",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)DN.SnS_StygiumBar",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureCopperOre": {
+					"Id": "DN.SnS_PureCopperOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureCopperOre",
+							"RequiredCount": 25
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)378",
+							"MinStack": 75,
+							"MaxStack": 130,
+							"StackModifiers": [
+								{
+									"Id": "100CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 100",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 300",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 500",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureIronOre": {
+					"Id": "DN.SnS_PureIronOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIronOre",
+							"RequiredCount": 25
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)380",
+							"MinStack": 75,
+							"MaxStack": 130,
+							"StackModifiers": [
+								{
+									"Id": "100IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 100",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 300",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 500",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Iron Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureGoldOre": {
+					"Id": "DN.SnS_PureGoldOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureGoldOre",
+							"RequiredCount": 25
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)384",
+							"MinStack": 75,
+							"MaxStack": 130,
+							"StackModifiers": [
+								{
+									"Id": "100GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 100",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 300",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 500",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureIridiumOre": {
+					"Id": "DN.SnS_PureIridiumOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIridiumOre",
+							"RequiredCount": 25
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)386",
+							"MinStack": 75,
+							"MaxStack": 130,
+							"StackModifiers": [
+								{
+									"Id": "100IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 100",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 300",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 500",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Iridium Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureRadioactiveOre": {
+					"Id": "DN.SnS_PureRadioactiveOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureRadioactiveOre",
+							"RequiredCount": 25
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)909",
+							"MinStack": 75,
+							"MaxStack": 130,
+							"StackModifiers": [
+								{
+									"Id": "MinesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{R.H.F Radioactive Mine Bonus 1}}"
+								},
+								{
+									"Id": "MinesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{R.H.F Radioactive Mine Bonus 2}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{R.H.F Radioactive Skull Cavern Bonus 1}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{R.H.F Radioactive Skull Cavern Bonus 2}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "DN.SnS"
+			},
+			"MoveEntries": [
+				{ "Id": "DN.SnS_StygiumBar", "ToPosition": "Top" }
+			]
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"DN.SnS_StygiumBar": {
+					"Id": "DN.SnS_StygiumBar",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_StygiumOre",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)DN.SnS_StygiumBar",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureCopperOre": {
+					"Id": "DN.SnS_PureCopperOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureCopperOre",
+							"RequiredCount": 25
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)378",
+							"MinStack": 75,
+							"MaxStack": 130,
+							"StackModifiers": [
+								{
+									"Id": "100CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500CopperFound",
+									"Condition": "PLAYER_STAT Current copperFound 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Copper Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureIronOre": {
+					"Id": "DN.SnS_PureIronOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIronOre",
+							"RequiredCount": 25
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)380",
+							"MinStack": 75,
+							"MaxStack": 130,
+							"StackModifiers": [
+								{
+									"Id": "100IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IronFound",
+									"Condition": "PLAYER_STAT Current ironFound 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Iron Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureGoldOre": {
+					"Id": "DN.SnS_PureGoldOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureGoldOre",
+							"RequiredCount": 25
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)384",
+							"MinStack": 75,
+							"MaxStack": 130,
+							"StackModifiers": [
+								{
+									"Id": "100GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500GoldFound",
+									"Condition": "PLAYER_STAT Current goldFound 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Gold Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureIridiumOre": {
+					"Id": "DN.SnS_PureIridiumOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureIridiumOre",
+							"RequiredCount": 25
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)386",
+							"MinStack": 75,
+							"MaxStack": 130,
+							"StackModifiers": [
+								{
+									"Id": "100IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500IridiumFound",
+									"Condition": "PLAYER_STAT Current iridiumFound 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Iridium Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				},
+				"DN.SnS_PureRadioactiveOre": {
+					"Id": "DN.SnS_PureRadioactiveOre",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)DN.SnS_PureRadioactiveOre",
+							"RequiredCount": 25
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)909",
+							"MinStack": 75,
+							"MaxStack": 130,
+							"StackModifiers": [
+								{
+									"Id": "MinesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{P.H.F Radioactive Mine Bonus 1}}"
+								},
+								{
+									"Id": "MinesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD MinesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{P.H.F Radioactive Mine Bonus 2}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty1",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 1",
+									"Modification": "Add",
+									"Amount": "{{P.H.F Radioactive Skull Cavern Bonus 1}}"
+								},
+								{
+									"Id": "SkullCavesDifficulty2",
+									"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 2",
+									"Modification": "Add",
+									"Amount": "{{P.H.F Radioactive Skull Cavern Bonus 2}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Radioactive Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "DN.SnS"
+			},
+			"MoveEntries": [
+				{ "Id": "DN.SnS_StygiumBar", "ToPosition": "Top" }
+			]
+		},
+		
+		// The Geology Mod (https://www.nexusmods.com/stardewvalley/mods/21038)
+		{
+			"LogName": "Add compatibility patch to the Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Solariaze.Geology_PrismaticShard": {	
+					"Id": "Solariaze.Geology_PrismaticShard",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Prismatic_Pieces",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)74",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": 800,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"Entries": {
+				"Solariaze.Geology_PrismaticShard": {	
+					"Id": "Solariaze.Geology_PrismaticShard",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Prismatic_Pieces",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)74",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}"
+						}
+					],
+					"MinutesUntilReady": 400,
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		
+		// Vanilla Plus Professions (VPP - Profession Expansion) (https://www.nexusmods.com/stardewvalley/mods/20054)
+		{
+			"LogName": "Ignitor - Radioactive Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"ReadyTimeModifiers"
+			],
+			"Entries": {
+				"Kedi.VPP.Ignitor": {
+					"Id": "Kedi.VPP.Ignitor",
+					"Amount": 0.75,
+					"Modification": "Multiply",
+					"Condition": "KediDili.VanillaPlusProfessions_PlayerHasProfession Current Ignitor"
+				}
+			},
+			"When": {
+				"HasMod": "KediDili.VPPData.CP"
+			}
+		},
+		{
+			"LogName": "Ignitor - Prismatic Heavy Furnace",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"ReadyTimeModifiers"
+			],
+			"Entries": {
+				"Kedi.VPP.Ignitor": {
+					"Id": "Kedi.VPP.Ignitor",
+					"Amount": 0.75,
+					"Modification": "Multiply",
+					"Condition": "KediDili.VanillaPlusProfessions_PlayerHasProfession Current Ignitor"
+				}
+			},
+			"When": {
+				"HasMod": "KediDili.VPPData.CP"
+			}
+		},
+	] 
+}

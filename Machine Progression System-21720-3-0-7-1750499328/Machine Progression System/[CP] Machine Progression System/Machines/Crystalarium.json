@@ -1,0 +1,642 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"R.C Replicate Banned Items": false
+			},
+			"Entries": {
+				"(BC)nachonline.mps_RadioactiveCrystalarium": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "OutputCollected",
+									"Trigger": "OutputCollected"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Gem",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_gem",
+										"!crystalarium_banned"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Mineral",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_minerals",
+										"!crystalarium_banned"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Metal",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_metal_resources",
+										"!crystalarium_banned",
+										"!forage_item",
+										"!egg_item",
+										"!ore_item",
+										"!bone_item"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Arch",
+									"Trigger": "ItemPlacedInMachine",
+									"Condition": "ITEM_OBJECT_TYPE Input Arch"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "DROP_IN",
+									"MinStack": "{{R.C Quantity}}",
+									"CopyQuality": "{{R.C Copy Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 100",
+											"Modification": "Add",
+											"Amount": "{{R.C 100 Diamonds Found Bonus}}"
+										},
+										{
+											"Id": "300DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 300",
+											"Modification": "Add",
+											"Amount": "{{R.C 300 Diamonds Found Bonus}}"
+										},
+										{
+											"Id": "500DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 500",
+											"Modification": "Add",
+											"Amount": "{{R.C 500 Diamonds Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							]
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "Bracket1",
+							"Condition": "ITEM_PRICE Target 0 100",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 1 Production Time}}"
+						},
+						{
+							"Id": "Bracket2",
+							"Condition": "ITEM_PRICE Target 101 200",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 2 Production Time}}"
+						},
+						{
+							"Id": "Bracket3",
+							"Condition": "ITEM_PRICE Target 201 300",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 3 Production Time}}"
+						},
+						{
+							"Id": "Bracket4",
+							"Condition": "ITEM_PRICE Target 301 400",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 4 Production Time}}"
+						},
+						{
+							"Id": "Bracket5",
+							"Condition": "ITEM_PRICE Target 401 500",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 5 Production Time}}"
+						},
+						{
+							"Id": "Bracket6",
+							"Condition": "ITEM_PRICE Target 501 600",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 6 Production Time}}"
+						},
+						{
+							"Id": "Bracket7",
+							"Condition": "ITEM_PRICE Target 601 700",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 7 Production Time}}"
+						},
+						{
+							"Id": "Bracket8",
+							"Condition": "ITEM_PRICE Target 701 1000",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 8 Production Time}}"
+						},
+						{
+							"Id": "Bracket9",
+							"Condition": "ITEM_PRICE Target 1001 2000",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 9 Production Time}}"
+						},
+						{
+							"Id": "Bracket10",
+							"Condition": "ITEM_PRICE Target 2001",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 10 Production Time}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"CustomFields": {
+						"selph.ExtraMachineConfig.ReturnInput": true
+					},
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "select"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"R.C Replicate Banned Items": true
+			},
+			"Entries": {
+				"(BC)nachonline.mps_RadioactiveCrystalarium": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "OutputCollected",
+									"Trigger": "OutputCollected"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Gem",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_gem"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Mineral",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_minerals"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Metal",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_metal_resources",
+										"!forage_item",
+										"!egg_item",
+										"!ore_item",
+										"!bone_item"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Arch",
+									"Trigger": "ItemPlacedInMachine",
+									"Condition": "ITEM_OBJECT_TYPE Input Arch"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "DROP_IN",
+									"MinStack": "{{R.C Quantity}}",
+									"CopyQuality": "{{R.C Copy Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 100",
+											"Modification": "Add",
+											"Amount": "{{R.C 100 Diamonds Found Bonus}}"
+										},
+										{
+											"Id": "300DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 300",
+											"Modification": "Add",
+											"Amount": "{{R.C 300 Diamonds Found Bonus}}"
+										},
+										{
+											"Id": "500DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 500",
+											"Modification": "Add",
+											"Amount": "{{R.C 500 Diamonds Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							]
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "Bracket1",
+							"Condition": "ITEM_PRICE Target 0 100",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 1 Production Time}}"
+						},
+						{
+							"Id": "Bracket2",
+							"Condition": "ITEM_PRICE Target 101 200",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 2 Production Time}}"
+						},
+						{
+							"Id": "Bracket3",
+							"Condition": "ITEM_PRICE Target 201 300",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 3 Production Time}}"
+						},
+						{
+							"Id": "Bracket4",
+							"Condition": "ITEM_PRICE Target 301 400",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 4 Production Time}}"
+						},
+						{
+							"Id": "Bracket5",
+							"Condition": "ITEM_PRICE Target 401 500",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 5 Production Time}}"
+						},
+						{
+							"Id": "Bracket6",
+							"Condition": "ITEM_PRICE Target 501 600",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 6 Production Time}}"
+						},
+						{
+							"Id": "Bracket7",
+							"Condition": "ITEM_PRICE Target 601 700",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 7 Production Time}}"
+						},
+						{
+							"Id": "Bracket8",
+							"Condition": "ITEM_PRICE Target 701 1000",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 8 Production Time}}"
+						},
+						{
+							"Id": "Bracket9",
+							"Condition": "ITEM_PRICE Target 1001 2000",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 9 Production Time}}"
+						},
+						{
+							"Id": "Bracket10",
+							"Condition": "ITEM_PRICE Target 2001",
+							"Modification": "Set",
+							"Amount": "{{R.C Bracket 10 Production Time}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"CustomFields": {
+						"selph.ExtraMachineConfig.ReturnInput": true
+					},
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "select"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"P.C Replicate Banned Items": false
+			},
+			"Entries": {
+				"(BC)nachonline.mps_PrismaticCrystalarium": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "OutputCollected",
+									"Trigger": "OutputCollected"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Gem",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_gem",
+										"!crystalarium_banned"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Mineral",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_minerals",
+										"!crystalarium_banned"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Metal",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_metal_resources",
+										"!crystalarium_banned",
+										"!forage_item",
+										"!egg_item",
+										"!ore_item",
+										"!bone_item"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Arch",
+									"Trigger": "ItemPlacedInMachine",
+									"Condition": "ITEM_OBJECT_TYPE Input Arch"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "DROP_IN",
+									"MinStack": "{{P.C Quantity}}",
+									"CopyQuality": "{{P.C Copy Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 100",
+											"Modification": "Add",
+											"Amount": "{{P.C 100 Diamonds Found Bonus}}"
+										},
+										{
+											"Id": "300DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 300",
+											"Modification": "Add",
+											"Amount": "{{P.C 300 Diamonds Found Bonus}}"
+										},
+										{
+											"Id": "500DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 500",
+											"Modification": "Add",
+											"Amount": "{{P.C 500 Diamonds Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							]
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "Bracket1",
+							"Condition": "ITEM_PRICE Target 0 100",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 1 Production Time}}"
+						},
+						{
+							"Id": "Bracket2",
+							"Condition": "ITEM_PRICE Target 101 200",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 2 Production Time}}"
+						},
+						{
+							"Id": "Bracket3",
+							"Condition": "ITEM_PRICE Target 201 300",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 3 Production Time}}"
+						},
+						{
+							"Id": "Bracket4",
+							"Condition": "ITEM_PRICE Target 301 400",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 4 Production Time}}"
+						},
+						{
+							"Id": "Bracket5",
+							"Condition": "ITEM_PRICE Target 401 500",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 5 Production Time}}"
+						},
+						{
+							"Id": "Bracket6",
+							"Condition": "ITEM_PRICE Target 501 600",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 6 Production Time}}"
+						},
+						{
+							"Id": "Bracket7",
+							"Condition": "ITEM_PRICE Target 601 700",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 7 Production Time}}"
+						},
+						{
+							"Id": "Bracket8",
+							"Condition": "ITEM_PRICE Target 701 1000",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 8 Production Time}}"
+						},
+						{
+							"Id": "Bracket9",
+							"Condition": "ITEM_PRICE Target 1001 2000",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 9 Production Time}}"
+						},
+						{
+							"Id": "Bracket10",
+							"Condition": "ITEM_PRICE Target 2001",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 10 Production Time}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"CustomFields": {
+						"selph.ExtraMachineConfig.ReturnInput": true
+					},
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "select"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"P.C Replicate Banned Items": true
+			},
+			"Entries": {
+				"(BC)nachonline.mps_PrismaticCrystalarium": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "OutputCollected",
+									"Trigger": "OutputCollected"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Gem",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_gem"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Mineral",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_minerals"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Metal",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_metal_resources",
+										"!forage_item",
+										"!egg_item",
+										"!ore_item",
+										"!bone_item"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Arch",
+									"Trigger": "ItemPlacedInMachine",
+									"Condition": "ITEM_OBJECT_TYPE Input Arch"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "DROP_IN",
+									"MinStack": "{{P.C Quantity}}",
+									"CopyQuality": "{{P.C Copy Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 100",
+											"Modification": "Add",
+											"Amount": "{{P.C 100 Diamonds Found Bonus}}"
+										},
+										{
+											"Id": "300DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 300",
+											"Modification": "Add",
+											"Amount": "{{P.C 300 Diamonds Found Bonus}}"
+										},
+										{
+											"Id": "500DiamondsFound",
+											"Condition": "PLAYER_STAT Current diamondsFound 500",
+											"Modification": "Add",
+											"Amount": "{{P.C 500 Diamonds Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							]
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "Bracket1",
+							"Condition": "ITEM_PRICE Target 0 100",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 1 Production Time}}"
+						},
+						{
+							"Id": "Bracket2",
+							"Condition": "ITEM_PRICE Target 101 200",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 2 Production Time}}"
+						},
+						{
+							"Id": "Bracket3",
+							"Condition": "ITEM_PRICE Target 201 300",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 3 Production Time}}"
+						},
+						{
+							"Id": "Bracket4",
+							"Condition": "ITEM_PRICE Target 301 400",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 4 Production Time}}"
+						},
+						{
+							"Id": "Bracket5",
+							"Condition": "ITEM_PRICE Target 401 500",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 5 Production Time}}"
+						},
+						{
+							"Id": "Bracket6",
+							"Condition": "ITEM_PRICE Target 501 600",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 6 Production Time}}"
+						},
+						{
+							"Id": "Bracket7",
+							"Condition": "ITEM_PRICE Target 601 700",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 7 Production Time}}"
+						},
+						{
+							"Id": "Bracket8",
+							"Condition": "ITEM_PRICE Target 701 1000",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 8 Production Time}}"
+						},
+						{
+							"Id": "Bracket9",
+							"Condition": "ITEM_PRICE Target 1001 2000",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 9 Production Time}}"
+						},
+						{
+							"Id": "Bracket10",
+							"Condition": "ITEM_PRICE Target 2001",
+							"Modification": "Set",
+							"Amount": "{{P.C Bracket 10 Production Time}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"CustomFields": {
+						"selph.ExtraMachineConfig.ReturnInput": true
+					},
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "select"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				}
+			}
+		}
+	] 
+}

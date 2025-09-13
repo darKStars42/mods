@@ -1,0 +1,84 @@
+{
+    "Changes": [ 
+        {
+            "LogName": "Add machines to big craftables",
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_DoughFlattener": {
+                    "Name": "{{ModId}}_DoughFlattener",
+                    "DisplayName": "{{i18n:DoughFlattener_Name}}",
+                    "Description": "{{i18n:DoughFlattener_Desc}}",
+                    "Texture": "{{ModId}}/machines",
+                    "SpriteIndex": 80,
+                    "IsLamp": false
+                },
+                "{{ModId}}_MozzarellaMachine": {
+                    "Name": "{{ModId}}_MozzarellaMachine",
+                    "DisplayName": "{{i18n:MozzarellaMachine_Name}}",
+                    "Description": "{{i18n:MozzarellaMachine_Desc}}",
+                    "Texture": "{{ModId}}/machines",
+                    "SpriteIndex": 82,
+                    "IsLamp": false
+                },
+                "{{ModId}}_BrickPizzaOven": {
+                    "Name": "{{ModId}}_BrickPizzaOven",
+                    "DisplayName": "{{i18n:BrickPizzaOven_Name}}",
+                    "Description": "{{i18n:BrickPizzaOven_Desc}}",
+                    "Texture": "{{ModId}}/machines",
+                    "SpriteIndex": 88,
+                    "IsLamp": true
+                },
+                "{{ModId}}_IronPizzaOven": {
+                    "Name": "{{ModId}}_IronPizzaOven",
+                    "DisplayName": "{{i18n:IronPizzaOven_Name}}",
+                    "Description": "{{i18n:IronPizzaOven_Desc}}",
+                    "Texture": "{{ModId}}/machines",
+                    "SpriteIndex": 93,
+                    "IsLamp": true
+                }
+            }
+        },
+        {
+            "LogName": "Add slicer to big craftables",
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "When": {
+                "Simple Pizza": false
+            },
+            "Entries": {
+                "{{ModId}}_PizzaSlicer": {
+                    "Name": "{{ModId}}_PizzaSlicer",
+                    "DisplayName": "{{i18n:PizzaSlicer_Name}}",
+                    "Description": "{{i18n:PizzaSlicer_Desc}}",
+                    "Texture": "{{ModId}}/machines",
+                    "SpriteIndex": 84,
+                    "IsLamp": false
+                }
+            }
+        },
+        {
+            "LogName": "Add machines to crafting recipes",
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+                "{{ModId}}_DoughFlattener": "388 30 709 3/Home/{{ModId}}_DoughFlattener/true/default",
+                "{{ModId}}_MozzarellaMachine": "334 4 335 15 336 1 80 10/Home/{{ModId}}_MozzarellaMachine/true/default",
+                "{{ModId}}_BrickPizzaOven": "330 10 390 50/Home/{{ModId}}_BrickPizzaOven/true/default",
+                "{{ModId}}_IronPizzaOven": "{{ModId}}_BrickPizzaOven 1 335 20 336 1 337 1 82 5/Home/{{ModId}}_IronPizzaOven/true/default"
+            }
+        },
+        
+        {
+            "LogName": "Add slicer to crafting recipes",
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "When": {
+                "Simple Pizza": false
+            },
+            "Entries": {
+                "{{ModId}}_PizzaSlicer": "335 30 336 1 338 5/Home/{{ModId}}_PizzaSlicer/true/default"
+            }
+        }
+    ]
+}

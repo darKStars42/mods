@@ -1,0 +1,226 @@
+{
+	"$schema": "https://smapi.io/schemas/content-patcher.json",
+	"Changes": [
+		{
+			"LogName": "Add fish pond data",
+			"Action": "EditData",
+			"Target": "Data/FishPondData",
+			"Entries": {
+				"item_scallop": {
+					"RequiredTags": [
+						"item_scallop"
+					],
+					"SpawnTime": -1,
+					"ProducedItems": [
+						{
+							"RequiredPopulation": 9,
+							"Chance": 0.075,
+							"ItemID": "(O)805", //Tree Fertilizers
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 9,
+							"Chance": 0.075,
+							"ItemID": "(O)690", //Warp Totem Beach
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.088,
+							"ItemID": "(O)152", //Seaweed
+							"MinQuantity": 1,
+							"MaxQuantity": 3
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.05,
+							"ItemID": "(O)397", //Sea Urchin
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.075,
+							"ItemID": "(O)393", //Coral
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.05,
+							"ItemID": "(O)168", //Trash
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.05,
+							"ItemID": "(O)169", //Driftwood
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.05,
+							"ItemID": "(O)170", //Broken Glasses
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.05,
+							"ItemID": "(O)171", //Broken CD
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.05,
+							"ItemID": "(O)172", //Soggy Newspaper
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						}
+					],
+					"PopulationGates": {
+						"2": [
+							"152 2" //Seaweed
+						],
+						"6": [
+							"84 1", //Frozen Tear
+							"247 1", //Oil
+							"684 10" //Bug Meat
+						],
+						"8": [
+							"767 5", //Bat Wing
+							"153 10", //Green Algae
+							"398 3" //Grape
+						]
+					}
+				},
+				"item_dotted_abalone": {
+					"RequiredTags": [
+						"item_dotted_abalone"
+					],
+					"SpawnTime": -1,
+					"ProducedItems": [
+						{
+							"RequiredPopulation": 9,
+							"Chance": 0.01,
+							"ItemID": "(O)394", //Rainbow Shell
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 9,
+							"Chance": 0.075,
+							"ItemID": "(O)690", //Warp Totem Beach
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.088,
+							"ItemID": "(O)152", //Seaweed
+							"MinQuantity": 1,
+							"MaxQuantity": 3
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.05,
+							"ItemID": "(O)397", //Sea Urchin
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 5,
+							"Chance": 0.15,
+							"ItemID": "(O)70", //Jade
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						},
+						{
+							"RequiredPopulation": 0,
+							"Chance": 0.05,
+							"ItemID": "(O)169", //Driftwood
+							"MinQuantity": 1,
+							"MaxQuantity": 1
+						}
+					],
+					"PopulationGates": {
+						"4": [
+							"180 1" //Egg
+						],
+						"6": [
+							"340 2", //Honey
+							"25 6", //Stone
+							"684 10" //Bug Meat
+						],
+						"8": [
+							"768 5", //Solar Essence
+							"774 1", //Wild Bait
+							"397 1" //Sea Urchin
+						]
+					}
+				}
+			}
+		},
+		{
+			"LogName": "Move fish pond data entries to top",
+			"Action": "EditData",
+			"Target": "Data/FishPondData",
+			"MoveEntries": [
+				{
+					"ID": "item_scallop",
+					"ToPosition": "Top"
+				},
+				{
+					"ID": "item_dotted_abalone",
+					"ToPosition": "Top"
+				}
+			]
+		},
+		{
+			"LogName": "Add pearl to fish pond data",
+			"Action": "EditData",
+			"Target": "Data/FishPondData",
+			"TargetField": [
+				"item_scallop",
+				"ProducedItems"
+			],
+			"Entries": {
+				"1": {
+					"RequiredPopulation": 7,
+					"Chance": "{{WingedScallopPearlChance}}",
+					"ItemID": "(O)797", //Pearl
+					"MinQuantity": 1,
+					"MaxQuantity": 1
+				},
+			},
+			"When": {
+				"WingedScallopProducePearl": true
+			},
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/FishPondData",
+			"TargetField": [
+				"item_dotted_abalone",
+				"ProducedItems"
+			],
+			"Entries": {
+				"1": {
+					"RequiredPopulation": 7,
+					"Chance": "{{DottedAbalonePearlChance}}",
+					"ItemID": "(O)797", //Pearl
+					"MinQuantity": 1,
+					"MaxQuantity": 1
+				},
+			},
+			"When": {
+				"DottedAbaloneProducePearl": true
+			},
+		},
+	]
+}

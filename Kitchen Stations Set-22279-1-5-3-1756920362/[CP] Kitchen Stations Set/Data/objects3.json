@@ -1,0 +1,84 @@
+{
+
+    "Changes": [
+
+
+/////////Festival Foods
+
+	{
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+		"BetterCraft.DungeonGoods": {
+		    "Name": "BetterCraft.DungeonGoods",
+                    "DisplayName": "{{i18n: DungeonGoods.Name}}",
+                    "Description": "{{i18n: DungeonGoods.Description}}",
+    			"Fragility": 0,
+    			"CanBePlacedOutdoors": true,
+    			"CanBePlacedIndoors": true,
+				"IsLamp": true,
+                    "Texture": "Mods/Objects/BetterCraft.DungeonGoods",
+                    "SpriteIndex": 0,
+			"CustomFields": {
+        			"leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu BetterCraft.DungeonGoods {{AreaChoice}}"
+				},
+                			},
+			},
+	},
+
+	//Adding data to shop
+	{	
+		"Action": "EditData",	
+		"Target": "Data/Shops",
+		"TargetField": [ "AdventureShop", "Items" ],
+		"Entries": {
+		    "BetterCraft.DungeonGoods": {
+                    "Id": "BetterCraft.DungeonGoods",
+                    "ItemId": "(BC)BetterCraft.DungeonGoods",
+                    "Price": 1500,
+		    "AvailableStock": 1,
+		    "Condition": "PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.MarlonLetter Any, !PLAYER_HAS_ITEM Current (BC)BetterCraft.DungeonGoods 1",
+        		},
+		},
+	  "MoveEntries": [
+			{ "Id": "BetterCraft.DungeonGoods", "BeforeId": "(W)12" },
+		],
+	},
+
+
+//Add Mail
+        {
+            "Action": "EditData",
+            "Target": "Data/Mail",
+                "Entries": {
+                    "BetterCraft.KitchenCounterSet.MarlonLetter": "{{i18n: BetterCraft.KitchenCounterSet.MarlonLetter.content}}[#]{{i18n: BetterCraft.KitchenCounterSet.MarlonLetter.title}}",
+			}
+	},
+
+
+//Sending the Mail
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+			"BetterCraft.KitchenCounterSet.MarlonLetterSend": {
+				"Id": "BetterCraft.KitchenCounterSet.MarlonLetterSend",
+                "Trigger": "DayStarted",
+                "Condition": "MINE_LOWEST_LEVEL_REACHED 25 120",
+                "Actions": [
+                    "If !PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.MarlonLetter Any ## AddMail Current BetterCraft.KitchenCounterSet.MarlonLetter now",
+					"MarkActionApplied Current BetterCraft.KitchenCounterSet.MarlonLetterSend_RemoveFlag false",
+                    ],
+				},
+			"BetterCraft.KitchenCounterSet.MarlonLetterSend_RemoveFlag": {
+				"Id": "BetterCraft.KitchenCounterSet.MarlonLetterSend_RemoveFlag",
+                "Trigger": "DayEnding",
+                "Condition": "!PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.MarlonLetter Any",
+                "Actions": [
+                    "MarkActionApplied Current BetterCraft.KitchenCounterSet.MarlonLetterSend false",
+                    ],
+				},
+			},
+		},
+]
+}

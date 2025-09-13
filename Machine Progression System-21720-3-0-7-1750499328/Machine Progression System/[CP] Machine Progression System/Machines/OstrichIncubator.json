@@ -1,0 +1,98 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_RadioactiveOstrichIncubator": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"OutputMethod": "StardewValley.Object, Stardew Valley: OutputIncubator",
+								}
+							],
+							"MinutesUntilReady": "{{R.O.I Production Time}}"
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "Coopmaster",
+							"Condition": "PLAYER_HAS_PROFESSION Target 2",
+							"Modification": "Multiply",
+							"Amount": 0.5
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "coin"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": true,
+					"ShowNextIndexWhenReady": false,
+					"IsIncubator": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_PrismaticOstrichIncubator": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"OutputMethod": "StardewValley.Object, Stardew Valley: OutputIncubator",
+								}
+							],
+							"MinutesUntilReady": "{{P.O.I Production Time}}"
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "Coopmaster",
+							"Condition": "PLAYER_HAS_PROFESSION Target 2",
+							"Modification": "Multiply",
+							"Amount": 0.5
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "coin"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": true,
+					"ShowNextIndexWhenReady": false,
+					"IsIncubator": true,
+					"AllowFairyDust": true
+				}
+			}
+		}
+	] 
+}

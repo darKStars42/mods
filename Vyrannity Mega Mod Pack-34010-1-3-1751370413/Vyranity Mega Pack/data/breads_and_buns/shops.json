@@ -1,0 +1,99 @@
+{
+    "Changes": [
+        {
+            "LogName": "Load spring objects - Pierre",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": ["SeedShop", "Items"],
+            "Entries": {
+                "{{ModId}}_Spring_BarleySeeds": {
+                    "Id": "{{ModId}}_BarleySeeds",
+                    "ItemId": "(O){{ModId}}_BarleySeeds",
+                    "Price": 20,
+                    "IgnoreShopPriceModifiers": true,
+                    "Condition": "SEASON SPRING"
+                },
+                 "{{ModId}}_DurumSeeds": {
+                    "Id": "{{ModId}}_DurumSeeds",
+                    "ItemId": "(O){{ModId}}_DurumSeeds",
+                    "Price": 20,
+                    "IgnoreShopPriceModifiers": true,
+                    "Condition": "SEASON SPRING"
+                }
+            },
+            "MoveEntries": [
+                {
+                    "Id": "{{ModId}}_Spring_BarleySeeds",
+                    "BeforeId": "GrassStarter"
+                },
+                {
+                    "Id": "{{ModId}}_DurumSeeds",
+                    "BeforeId": "GrassStarter"
+                }
+            ]
+        },
+        {
+            "LogName": "Load summer objects - Pierre",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": ["SeedShop", "Items"],
+            "Entries": {
+                 "{{ModId}}_SpeltSeeds": {
+                    "Id": "{{ModId}}_SpeltSeeds",
+                    "ItemId": "(O){{ModId}}_SpeltSeeds",
+                    "Price": 20,
+                    "IgnoreShopPriceModifiers": true,
+                    "Condition": "SEASON SUMMER"
+                }
+            },
+            "MoveEntries": [
+                {
+                    "Id": "{{ModId}}_SpeltSeeds",
+                    "BeforeId": "GrassStarter"
+                }
+            ]
+        },
+        {
+            "LogName": "Load fall objects - Pierre",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": ["SeedShop", "Items"],
+            "Entries": {
+                 "{{ModId}}_RyeSeeds": {
+                    "Id": "{{ModId}}_RyeSeeds",
+                    "ItemId": "(O){{ModId}}_RyeSeeds",
+                    "Price": 20,
+                    "IgnoreShopPriceModifiers": true,
+                    "Condition": "SEASON FALL"
+                }
+            },
+            "MoveEntries": [
+                {
+                    "Id": "{{ModId}}_RyeSeeds",
+                    "BeforeId": "GrassStarter"
+                }
+            ]
+        },
+        {
+            "LogName": "Load winter objects - Pierre",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": ["SeedShop", "Items"],
+            "Entries": {
+                 "{{ModId}}_Winter_BarleySeeds": {
+                    "Id": "{{ModId}}_WinterBarleySeeds",
+                    "ItemId": "(O){{ModId}}_BarleySeeds",
+                    "Price": 20,
+                    "IgnoreShopPriceModifiers": true,
+                    "Condition": "SEASON WINTER"
+                }
+            },
+            "MoveEntries": [
+                {
+                    "Id": "{{ModId}}_Winter_BarleySeeds",
+                    "BeforeId": "GrassStarter"
+                }
+            ]
+        }
+    ]
+}

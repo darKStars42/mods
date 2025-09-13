@@ -1,0 +1,129 @@
+{
+  "Changes": [
+
+    //*************************************************
+    //  Changes to Camel Wool
+    //************************************
+    {
+      "LogName": "Changes to Camel Wool",
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Fields": {
+        "FlashShifter.StardewValleyExpandedCP_Camel_Wool": {
+          "Displayname": "{{i18n:CamelHair_name}}",
+          "Description": "{{i18n:CamelHair_description}}",
+          "Texture": "ZoeyHoshi.Camelus/Objects",
+          "SpriteIndex": 12
+        }
+      },
+      "When": {
+        "MatchingProductColours": false
+      }
+    },
+    {
+      "LogName": "Changes to Camel Wool - Bay",
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Fields": {
+        "FlashShifter.StardewValleyExpandedCP_Camel_Wool": {
+          "Displayname": "{{i18n:BayCamelHair_name}}",
+          "Description": "{{i18n:BayCamelHair_name}}",
+          "Texture": "ZoeyHoshi.Camelus/Objects",
+          "SpriteIndex": 12,
+          "ContextTags": [
+            "color_brown",
+            "use_reverse_name_for_sorting"
+          ]
+        }
+      },
+      "When": {
+        "MatchingProductColours": true
+      }
+    },
+    //*************************************************
+    //  Changes to Yarn
+    //************************************
+    {
+      "LogName": "Changes to Camel Yarn",
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Fields": {
+        "FlashShifter.StardewValleyExpandedCP_Yarn": {
+          "Displayname": "{{i18n:CamelHairYarn_name}}",
+          "Description": "{{i18n:CamelHairYarn_description}}",
+          "Texture": "ZoeyHoshi.Camelus/Objects",
+          "SpriteIndex": 13
+        }
+      },
+      "When": {
+        "MatchingProductColours": false
+      }
+    },
+    {
+      "LogName": "Changes to Camel Yarn - Bay",
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Fields": {
+        "FlashShifter.StardewValleyExpandedCP_Yarn": {
+          "Displayname": "{{i18n:BayCamelHairYarn_name}}",
+          "Description": "{{i18n:CamelHairYarn_description}}",
+          "Texture": "ZoeyHoshi.Camelus/Objects",
+          "SpriteIndex": 13,
+          "ContextTags": [
+            "color_brown",
+            "use_reverse_name_for_sorting"
+          ]
+        }
+      },
+      "When": {
+        "MatchingProductColours": true
+      }
+    },
+    //*************************************************
+    //  Changes to Yarn Spooler
+    //************************************
+    {
+      "LogName": "Changes to Yarn Spooler",
+      "Action": "EditData",
+      "Target": "Data/BigCraftables",
+      "Fields": {
+        "FlashShifter.StardewValleyExpandedCP_Yarn_Spooler": {
+          "Description": "{{i18n:YarnSpooler_description}}"
+        }
+      }
+    },
+    {
+      "LogName": "Changes to Yarn Spooler Invalid Message",
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "Fields": {
+        "(BC)FlashShifter.StardewValleyExpandedCP_Yarn_Spooler": {
+          "InvalidCountMessage": null
+        }
+      }
+    },
+    //*************************************************
+    //  Changes to Strings
+    //************************************
+    {
+      "Logname": "Change Failed Shear/Milk",
+      "Action": "EditData",
+      "Target": "Strings/StringsFromCSFiles",
+      "Entries": {
+        "MilkPail.cs.14175": "{{i18n:Camelus_FailedMilk}}",
+        "Shears.cs.14245": "{{i18n:Camelus_FailedShearing}}"
+      }
+    },
+    {
+      "Logname": "Change Failed Shear/Milk + Milkable Sheep",
+      "Action": "EditData",
+      "Target": "Strings/StringsFromCSFiles",
+      "Entries": {
+        "MilkPail.cs.14175": "{{i18n:Camelus_FailedMilk}}"
+      },
+      "When": {
+        "HasMod|contains=radm.milkdasheep": true
+      }
+    }
+  ]
+}

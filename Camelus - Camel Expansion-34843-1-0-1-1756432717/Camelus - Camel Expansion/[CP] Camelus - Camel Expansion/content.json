@@ -1,0 +1,206 @@
+{
+  "Format": "2.7.0",
+  "ConfigSchema": {
+    //************************************
+    //         Config
+    //
+    "DisableCamelSound": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Description": "Enabling this turns off the new camel sounds",
+      "Section": "CamelOptions"
+    },
+    "DisableVoidCamel": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Description": "Enabling this disables all Void Camel and Void Camel products",
+      "Section": "CamelOptions"
+    },
+    "MatchingProductColours": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Description": "If enabled, then Camel Hair and Camel Hair Yarn will match the colour of the camel it's from. Be warned, this means there'll be multiple colours of the same item but each colour is its own unique item. If disabled, all Camels, except for Void Camels, will produce the same item",
+      "Section": "ItemOptions"
+    },
+    "CopyQuality": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Description": "If enabled, cheeses, yarn and fabrics will stay the same quality as the ingredients used to create it",
+      "Section": "ItemOptions"
+    },
+    "LargeMilkResult": {
+      "AllowValues": "LargeCheese, WOL",
+      "Default": "LargeCheese",
+      "Description": "Choose what Large Milk produces when in Cheese Press. Between Large Cheese or follow Walk of Life's rules of double the stack",
+      "Section": "ItemOptions"
+    },
+    //************************************
+    //         ZHAG Config
+    //
+    "EnableZHAG": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Description": "Enable ZH'S style. This must be turned on if you want any of the ZH's Artisanal Goods style for any item",
+      "Section": "ZHAG"
+    },
+    "ZHAGCamelMilk": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable ZH'S style for Camel Milk & Large Camel Milk",
+      "Section": "ZHAG"
+    },
+    "ZHAGMilkCover": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Description": "Enable fabric cover over the bottle cap",
+      "Section": "ZHAG"
+    },
+    "ZHAGMilkCoverColour": {
+      "AllowValues": "Brown, Navy, Orange, PaleOrange",
+      "AllowBlank": true,
+      "Default": "Orange",
+      "Description": "Select the fabric colour for Camel Milk & Large Camel Milk (Will only appear if Fabric Cover is enabled)",
+      "Section": "ZHAG"
+    },
+    "ZHAGVoidCamelMilk": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable ZH'S style for Void Camel Milk & Large Void Camel Milk",
+      "Section": "ZHAG"
+    },
+    "ZHAGVoidMilkCover": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Description": "Enable fabric cover over the bottle cap",
+      "Section": "ZHAG"
+    },
+    "ZHAGVoidMilkCoverColour": {
+      "AllowValues": "Brown, Navy, Orange, PaleOrange",
+      "AllowBlank": true,
+      "Default": "Orange",
+      "Description": "Select the fabric colour for Void Camel Milk & Large Void Camel Milk (Will only appear if Fabric Cover is enabled)",
+      "Section": "ZHAG"
+    },
+    "ZHAGCamelCheese": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable ZH'S style for Camel Cheese & Large Camel Cheese",
+      "Section": "ZHAG"
+    },
+    "ZHAGCamelCheeseLabel": {
+      "AllowValues": "Label, NoLabel",
+      "AllowBlank": true,
+      "Default": "NoLabel",
+      "Description": "Select if you want a label on Camel Cheese & Large Camel Cheese",
+      "Section": "ZHAG"
+    },
+    "ZHAGVoidCamelCheese": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable ZH'S style for Void Camel Cheese & Large Void Camel Cheese",
+      "Section": "ZHAG"
+    },
+    "ZHAGVoidCamelCheeseLabel": {
+      "AllowValues": "Label, NoLabel",
+      "AllowBlank": true,
+      "Default": "NoLabel",
+      "Description": "Select if you want a label on Void Camel Cheese & Large Void Camel Cheese",
+      "Section": "ZHAG"
+    },
+    "ZHAGCamelHair": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable ZH'S style for all Camel Hair variations",
+      "Section": "ZHAG"
+    },
+    "ZHAGCamelHairYarn": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Description": "Enable ZH'S style for all Camel Yarn variations",
+      "Section": "ZHAG"
+    },
+    "ZHAGCamelHairYarnLabel": {
+      "AllowValues": "Label, NoLabel",
+      "AllowBlank": true,
+      "Default": "NoLabel",
+      "Description": "Select if you want a label on all Camel Yarn variations",
+      "Section": "ZHAG"
+    }
+  },
+
+  "Changes": [
+    {
+      "LogName": "Data",
+      "Action": "Include",
+      "FromFile": "data/Cask.json, data/Changes.json, data/CheesePress.json,  data/Mail.json,  data/NPCGiftTastes.json,  data/Objects.json, data/YarnSpooler.json"
+    },
+    {
+      "LogName": "ZHAG Data",
+      "Action": "Include",
+      "FromFile": "data/ZHAG.json",
+      "When": {
+        "EnableZHAG": true
+      }
+    },
+    {
+      "LogName": "AHM Data",
+      "Action": "Include",
+      "FromFile": "data/Recipes.json, data/Shops.json",
+      "When": {
+        "HasMod|contains=DIGUS.ANIMALHUSBANDRYMOD": true
+      }
+    },
+    {
+      "LogName": "Data - Matching Hair/Yarn Items",
+      "Action": "Include",
+      "FromFile": "data/ExtraAnimalConfig.json, data/FarmAnimals.json",
+      "When": {
+        "MatchingProductColours": true
+      }
+    },
+    {
+      "LogName": "Data - Single Hair/Yarn Item",
+      "Action": "Include",
+      "FromFile": "data/ExtraAnimalConfig_Single.json, data/FarmAnimals_Single.json",
+      "When": {
+        "MatchingProductColours": false
+      }
+    },
+    {
+      "LogName": "Camel Texture",
+      "Action": "Load",
+      "Target": "ZoeyHoshi.Camelus/ShopIcon, ZoeyHoshi.Camelus/BabyCamel_Albino, ZoeyHoshi.Camelus/FluffyCamel_Albino, ZoeyHoshi.Camelus/ShavedCamel_Albino, ZoeyHoshi.Camelus/BabyCamel_Ash, ZoeyHoshi.Camelus/FluffyCamel_Ash, ZoeyHoshi.Camelus/ShavedCamel_Ash, ZoeyHoshi.Camelus/BabyCamel_Bay, ZoeyHoshi.Camelus/FluffyCamel_Bay, ZoeyHoshi.Camelus/ShavedCamel_Bay, ZoeyHoshi.Camelus/BabyCamel_Black, ZoeyHoshi.Camelus/FluffyCamel_Black, ZoeyHoshi.Camelus/ShavedCamel_Black, ZoeyHoshi.Camelus/BabyCamel_BlackPiedbald, ZoeyHoshi.Camelus/FluffyCamel_BlackPiedbald, ZoeyHoshi.Camelus/ShavedCamel_BlackPiedbald, ZoeyHoshi.Camelus/BabyCamel_Blonde, ZoeyHoshi.Camelus/FluffyCamel_Blonde, ZoeyHoshi.Camelus/ShavedCamel_Blonde, ZoeyHoshi.Camelus/BabyCamel_BrownPiedbald, ZoeyHoshi.Camelus/FluffyCamel_BrownPiedbald, ZoeyHoshi.Camelus/ShavedCamel_BrownPiedbald, ZoeyHoshi.Camelus/BabyCamel_Chestnut, ZoeyHoshi.Camelus/FluffyCamel_Chestnut, ZoeyHoshi.Camelus/ShavedCamel_Chestnut, ZoeyHoshi.Camelus/BabyCamel_Cinnamon, ZoeyHoshi.Camelus/FluffyCamel_Cinnamon, ZoeyHoshi.Camelus/ShavedCamel_Cinnamon, ZoeyHoshi.Camelus/BabyCamel_Void, ZoeyHoshi.Camelus/FluffyCamel_Void, ZoeyHoshi.Camelus/ShavedCamel_Void, ZoeyHoshi.Camelus/BabyCamel_White, ZoeyHoshi.Camelus/FluffyCamel_White, ZoeyHoshi.Camelus/ShavedCamel_White",
+      "FromFile": "assets/Camels/{{TargetWithoutPath}}.png"
+    },
+    {
+      "LogName": "Camel SFX",
+      "Action": "EditData",
+      "Target": "Data/AudioChanges",
+      "Entries": {
+        "ZoeyHoshi.Camelus_CamelSFX": {
+          "ID": "ZoeyHoshi.Camelus_CamelSFX",
+          "Category": "Sound",
+          "FilePaths": [ "{{AbsoluteFilePath: Assets/SFX/Camel1.ogg}}", "{{AbsoluteFilePath: Assets/SFX/Camel2.ogg}}", "{{AbsoluteFilePath: Assets/SFX/Camel3.ogg}}", "{{AbsoluteFilePath: Assets/SFX/Camel4.ogg}}" ]
+        }
+      }
+    },
+    {
+      "LogName": "Baby Camel SFX",
+      "Action": "EditData",
+      "Target": "Data/AudioChanges",
+      "Entries": {
+        "ZoeyHoshi.Camelus_BabyCamelSFX": {
+          "ID": "ZoeyHoshi.Camelus_BabyCamelSFX",
+          "Category": "Sound",
+          "FilePaths": [ "{{AbsoluteFilePath: Assets/SFX/BabyCamel1.ogg}}", "{{AbsoluteFilePath: Assets/SFX/BabyCamel2.ogg}}" ]
+        }
+      }
+    },
+    {
+      "LogName": "Object Textures",
+      "Action": "Load",
+      "Target": "ZoeyHoshi.Camelus/Objects",
+      "FromFile": "assets/Objects/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

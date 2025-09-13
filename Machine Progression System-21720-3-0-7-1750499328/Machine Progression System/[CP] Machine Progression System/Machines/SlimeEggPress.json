@@ -1,0 +1,619 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_GoldSlimeEggPress": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)766",
+									"RequiredCount": "{{G.S.E Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"RandomItemId": [
+										"(O)680",
+										"(O)413"
+									],
+									"MinStack": "{{G.S.E Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 100",
+											"Modification": "Add",
+											"Amount": "{{G.S.E 100 Slimes Killed Bonus}}"
+										},
+										{
+											"Id": "300SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 300",
+											"Modification": "Add",
+											"Amount": "{{G.S.E 300 Slimes Killed Bonus}}"
+										},
+										{
+											"Id": "500SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 500",
+											"Modification": "Add",
+											"Amount": "{{G.S.E 500 Slimes Killed Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{G.S.E Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "slimeHit"
+								},
+								{
+									"Id": "bubbles",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Lime"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Lime"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_DiamondSlimeEggPress": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)766",
+									"RequiredCount": "{{D.S.E Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"RandomItemId": [
+										"(O)680",
+										"(O)413",
+										"(O)437"
+									],
+									"MinStack": "{{D.S.E Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 100",
+											"Modification": "Add",
+											"Amount": "{{D.S.E 100 Slimes Killed Bonus}}"
+										},
+										{
+											"Id": "300SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 300",
+											"Modification": "Add",
+											"Amount": "{{D.S.E 300 Slimes Killed Bonus}}"
+										},
+										{
+											"Id": "500SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 500",
+											"Modification": "Add",
+											"Amount": "{{D.S.E 500 Slimes Killed Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.S.E Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "slimeHit"
+								},
+								{
+									"Id": "bubbles",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Lime"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Lime"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_IridiumSlimeEggPress": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)766",
+									"RequiredCount": "{{I.S.E Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"RandomItemId": [
+										"(O)680",
+										"(O)413",
+										"(O)437",
+										"(O)439"
+									],
+									"MinStack": "{{I.S.E Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 100",
+											"Modification": "Add",
+											"Amount": "{{I.S.E 100 Slimes Killed Bonus}}"
+										},
+										{
+											"Id": "300SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 300",
+											"Modification": "Add",
+											"Amount": "{{I.S.E 300 Slimes Killed Bonus}}"
+										},
+										{
+											"Id": "500SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 500",
+											"Modification": "Add",
+											"Amount": "{{I.S.E 500 Slimes Killed Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.S.E Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "slimeHit"
+								},
+								{
+									"Id": "bubbles",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Lime"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Lime"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_RadioactiveSlimeEggPress": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)766",
+									"RequiredCount": "{{R.S.E Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"RandomItemId": [
+										"(O)680",
+										"(O)413",
+										"(O)437",
+										"(O)439",
+										"(O)857"
+									],
+									"MinStack": "{{R.S.E Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 100",
+											"Modification": "Add",
+											"Amount": "{{R.S.E 100 Slimes Killed Bonus}}"
+										},
+										{
+											"Id": "300SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 300",
+											"Modification": "Add",
+											"Amount": "{{R.S.E 300 Slimes Killed Bonus}}"
+										},
+										{
+											"Id": "500SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 500",
+											"Modification": "Add",
+											"Amount": "{{R.S.E 500 Slimes Killed Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.S.E Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "slimeHit"
+								},
+								{
+									"Id": "bubbles",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Lime"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Lime"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_PrismaticSlimeEggPress": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)766",
+									"RequiredCount": "{{P.S.E Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"RandomItemId": [
+										"(O)680",
+										"(O)413",
+										"(O)437",
+										"(O)439",
+										"(O)857"
+									],
+									"MinStack": "{{P.S.E Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 100",
+											"Modification": "Add",
+											"Amount": "{{P.S.E 100 Slimes Killed Bonus}}"
+										},
+										{
+											"Id": "300SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 300",
+											"Modification": "Add",
+											"Amount": "{{P.S.E 300 Slimes Killed Bonus}}"
+										},
+										{
+											"Id": "500SlimesKilled",
+											"Condition": "PLAYER_STAT Current slimesKilled 500",
+											"Modification": "Add",
+											"Amount": "{{P.S.E 500 Slimes Killed Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.S.E Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "slimeHit"
+								},
+								{
+									"Id": "bubbles",
+									"Delay": 50
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Lime"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "Lime"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				}
+			}
+		}
+	] 
+}

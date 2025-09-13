@@ -1,0 +1,1951 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"Enable Mercurial Items": true
+			},
+			"Entries": {
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace": {
+					"OutputRules": [
+						{
+							"Id": "Default_CopperOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)378",
+									"RequiredCount": "{{R.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)334",
+									"MinStack": "{{R.H.F Minimum Quantity}}",
+									"MaxStack": "{{R.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "RadioactiveMercurialCopperDropChance"
+									}
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Copper Production Time}}"
+						},
+						{
+							"Id": "Default_IronOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)380",
+									"RequiredCount": "{{R.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)335",
+									"MinStack": "{{R.H.F Minimum Quantity}}",
+									"MaxStack": "{{R.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "RadioactiveMercurialIronDropChance"
+									}	
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Iron Production Time}}"
+						},
+						{
+							"Id": "Default_GoldOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)384",
+									"RequiredCount": "{{R.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)336",
+									"MinStack": "{{R.H.F Minimum Quantity}}",
+									"MaxStack": "{{R.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "RadioactiveMercurialGoldDropChance"
+									}	
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Gold Production Time}}"
+						},
+						{
+							"Id": "Default_IridiumOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)386",
+									"RequiredCount": "{{R.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)337",
+									"MinStack": "{{R.H.F Minimum Quantity}}",
+									"MaxStack": "{{R.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "RadioactiveMercurialIridiumDropChance"
+									}	
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Iridium Production Time}}"
+						},
+						{
+							"Id": "Default_Quartz",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)80",
+									"RequiredCount": "{{R.H.F Required Quartz}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)338",
+									"MinStack": "{{R.H.F Minimum Quartz Output}}",
+									"MaxStack": "{{R.H.F Maximum Quartz Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Quartz Production Time}}"
+						},
+						{
+							"Id": "Default_FireQuartz",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)82",
+									"RequiredCount": "{{R.H.F Required Quartz}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)338",
+									"MinStack": "{{R.H.F Minimum Fire Quartz Output}}",
+									"MaxStack": "{{R.H.F Maximum Fire Quartz Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"		
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Fire Quartz Production Time}}"
+						},
+						{
+							"Id": "Default_Bouquet",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)458"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)277"
+								}
+							],
+							"MinutesUntilReady": 10
+						},
+						{
+							"Id": "Default_RadioactiveOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)909",
+									"RequiredCount": "{{R.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)910",
+									"MinStack": "{{R.H.F Minimum Quantity}}",
+									"MaxStack": "{{R.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "MinesDifficulty1",
+											"Condition": "WORLD_STATE_FIELD MinesDifficulty 1",
+											"Modification": "Add",
+											"Amount": "{{R.H.F Radioactive Mine Bonus 1}}"
+										},
+										{
+											"Id": "MinesDifficulty2",
+											"Condition": "WORLD_STATE_FIELD MinesDifficulty 2",
+											"Modification": "Add",
+											"Amount": "{{R.H.F Radioactive Mine Bonus 2}}"
+										},
+										{
+											"Id": "SkullCavesDifficulty1",
+											"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 1",
+											"Modification": "Add",
+											"Amount": "{{R.H.F Radioactive Skull Cavern Bonus 1}}"
+										},
+										{
+											"Id": "SkullCavesDifficulty2",
+											"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 2",
+											"Modification": "Add",
+											"Amount": "{{R.H.F Radioactive Skull Cavern Bonus 2}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "RadioactiveRadioactiveMercuryDropChance"
+									}	
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Radioactive Production Time}}"
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{R.H.F Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1920,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "0, -10",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "fireball"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1920,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "0, -4",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WorkingEffectChance": 0.165,
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_PrismaticHeavyFurnace": {
+					"OutputRules": [
+						{
+							"Id": "Default_CopperOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)378",
+									"RequiredCount": "{{P.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)334",
+									"MinStack": "{{P.H.F Minimum Quantity}}",
+									"MaxStack": "{{P.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "PrismaticMercurialCopperDropChance"
+									}
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Copper Production Time}}"
+						},
+						{
+							"Id": "Default_IronOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)380",
+									"RequiredCount": "{{P.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)335",
+									"MinStack": "{{P.H.F Minimum Quantity}}",
+									"MaxStack": "{{P.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "PrismaticMercurialIronDropChance"
+									}	
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Iron Production Time}}"
+						},
+						{
+							"Id": "Default_GoldOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)384",
+									"RequiredCount": "{{P.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)336",
+									"MinStack": "{{P.H.F Minimum Quantity}}",
+									"MaxStack": "{{P.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "PrismaticMercurialGoldDropChance"
+									}	
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Gold Production Time}}"
+						},
+						{
+							"Id": "Default_IridiumOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)386",
+									"RequiredCount": "{{P.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)337",
+									"MinStack": "{{P.H.F Minimum Quantity}}",
+									"MaxStack": "{{P.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "PrismaticMercurialIridiumDropChance"
+									}	
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Iridium Production Time}}"
+						},
+						{
+							"Id": "Default_Quartz",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)80",
+									"RequiredCount": "{{P.H.F Required Quartz}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)338",
+									"MinStack": "{{P.H.F Minimum Quartz Output}}",
+									"MaxStack": "{{P.H.F Maximum Quartz Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Quartz Production Time}}"
+						},
+						{
+							"Id": "Default_FireQuartz",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)82",
+									"RequiredCount": "{{P.H.F Required Quartz}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)338",
+									"MinStack": "{{P.H.F Minimum Fire Quartz Output}}",
+									"MaxStack": "{{P.H.F Maximum Fire Quartz Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"		
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Fire Quartz Production Time}}"
+						},
+						{
+							"Id": "Default_Bouquet",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)458"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)277"
+								}
+							],
+							"MinutesUntilReady": 10
+						},
+						{
+							"Id": "Default_RadioactiveOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)909",
+									"RequiredCount": "{{P.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)910",
+									"MinStack": "{{P.H.F Minimum Quantity}}",
+									"MaxStack": "{{P.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "MinesDifficulty1",
+											"Condition": "WORLD_STATE_FIELD MinesDifficulty 1",
+											"Modification": "Add",
+											"Amount": "{{P.H.F Radioactive Mine Bonus 1}}"
+										},
+										{
+											"Id": "MinesDifficulty2",
+											"Condition": "WORLD_STATE_FIELD MinesDifficulty 2",
+											"Modification": "Add",
+											"Amount": "{{P.H.F Radioactive Mine Bonus 2}}"
+										},
+										{
+											"Id": "SkullCavesDifficulty1",
+											"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 1",
+											"Modification": "Add",
+											"Amount": "{{P.H.F Radioactive Skull Cavern Bonus 1}}"
+										},
+										{
+											"Id": "SkullCavesDifficulty2",
+											"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 2",
+											"Modification": "Add",
+											"Amount": "{{P.H.F Radioactive Skull Cavern Bonus 2}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "PrismaticRadioactiveMercuryDropChance"
+									}	
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Radioactive Production Time}}"
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{P.H.F Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1920,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "0, -10",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "fireball"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1920,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "0, -4",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WorkingEffectChance": 0.165,
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"Enable Mercurial Items": false
+			},
+			"Entries": {
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace": {
+					"OutputRules": [
+						{
+							"Id": "Default_CopperOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)378",
+									"RequiredCount": "{{R.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)334",
+									"MinStack": "{{R.H.F Minimum Quantity}}",
+									"MaxStack": "{{R.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Copper Production Time}}"
+						},
+						{
+							"Id": "Default_IronOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)380",
+									"RequiredCount": "{{R.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)335",
+									"MinStack": "{{R.H.F Minimum Quantity}}",
+									"MaxStack": "{{R.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Iron Production Time}}"
+						},
+						{
+							"Id": "Default_GoldOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)384",
+									"RequiredCount": "{{R.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)336",
+									"MinStack": "{{R.H.F Minimum Quantity}}",
+									"MaxStack": "{{R.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Gold Production Time}}"
+						},
+						{
+							"Id": "Default_IridiumOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)386",
+									"RequiredCount": "{{R.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)337",
+									"MinStack": "{{R.H.F Minimum Quantity}}",
+									"MaxStack": "{{R.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Iridium Production Time}}"
+						},
+						{
+							"Id": "Default_Quartz",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)80",
+									"RequiredCount": "{{R.H.F Required Quartz}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)338",
+									"MinStack": "{{R.H.F Minimum Quartz Output}}",
+									"MaxStack": "{{R.H.F Maximum Quartz Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Quartz Production Time}}"
+						},
+						{
+							"Id": "Default_FireQuartz",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)82",
+									"RequiredCount": "{{R.H.F Required Quartz}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)338",
+									"MinStack": "{{R.H.F Minimum Fire Quartz Output}}",
+									"MaxStack": "{{R.H.F Maximum Fire Quartz Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 100",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 300",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 500",
+											"Modification": "Add",
+											"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"		
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Fire Quartz Production Time}}"
+						},
+						{
+							"Id": "Default_Bouquet",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)458"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)277"
+								}
+							],
+							"MinutesUntilReady": 10
+						},
+						{
+							"Id": "Default_RadioactiveOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)909",
+									"RequiredCount": "{{R.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)910",
+									"MinStack": "{{R.H.F Minimum Quantity}}",
+									"MaxStack": "{{R.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "MinesDifficulty1",
+											"Condition": "WORLD_STATE_FIELD MinesDifficulty 1",
+											"Modification": "Add",
+											"Amount": "{{R.H.F Radioactive Mine Bonus 1}}"
+										},
+										{
+											"Id": "MinesDifficulty2",
+											"Condition": "WORLD_STATE_FIELD MinesDifficulty 2",
+											"Modification": "Add",
+											"Amount": "{{R.H.F Radioactive Mine Bonus 2}}"
+										},
+										{
+											"Id": "SkullCavesDifficulty1",
+											"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 1",
+											"Modification": "Add",
+											"Amount": "{{R.H.F Radioactive Skull Cavern Bonus 1}}"
+										},
+										{
+											"Id": "SkullCavesDifficulty2",
+											"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 2",
+											"Modification": "Add",
+											"Amount": "{{R.H.F Radioactive Skull Cavern Bonus 2}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{R.H.F Radioactive Production Time}}"
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{R.H.F Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1920,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "0, -10",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "fireball"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1920,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "0, -4",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WorkingEffectChance": 0.165,
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				},
+				"(BC)nachonline.mps_PrismaticHeavyFurnace": {
+					"OutputRules": [
+						{
+							"Id": "Default_CopperOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)378",
+									"RequiredCount": "{{P.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)334",
+									"MinStack": "{{P.H.F Minimum Quantity}}",
+									"MaxStack": "{{P.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500CopperFound",
+											"Condition": "PLAYER_STAT Current copperFound 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Copper Production Time}}"
+						},
+						{
+							"Id": "Default_IronOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)380",
+									"RequiredCount": "{{P.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)335",
+									"MinStack": "{{P.H.F Minimum Quantity}}",
+									"MaxStack": "{{P.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500IronFound",
+											"Condition": "PLAYER_STAT Current ironFound 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Iron Production Time}}"
+						},
+						{
+							"Id": "Default_GoldOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)384",
+									"RequiredCount": "{{P.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)336",
+									"MinStack": "{{P.H.F Minimum Quantity}}",
+									"MaxStack": "{{P.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500GoldFound",
+											"Condition": "PLAYER_STAT Current goldFound 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Gold Production Time}}"
+						},
+						{
+							"Id": "Default_IridiumOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)386",
+									"RequiredCount": "{{P.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)337",
+									"MinStack": "{{P.H.F Minimum Quantity}}",
+									"MaxStack": "{{P.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500IridiumFound",
+											"Condition": "PLAYER_STAT Current iridiumFound 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Iridium Production Time}}"
+						},
+						{
+							"Id": "Default_Quartz",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)80",
+									"RequiredCount": "{{P.H.F Required Quartz}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)338",
+									"MinStack": "{{P.H.F Minimum Quartz Output}}",
+									"MaxStack": "{{P.H.F Maximum Quartz Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Quartz Production Time}}"
+						},
+						{
+							"Id": "Default_FireQuartz",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)82",
+									"RequiredCount": "{{P.H.F Required Quartz}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)338",
+									"MinStack": "{{P.H.F Minimum Fire Quartz Output}}",
+									"MaxStack": "{{P.H.F Maximum Fire Quartz Output}}",
+									"StackModifiers": [
+										{
+											"Id": "100StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+										},
+										{
+											"Id": "300StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+										},
+										{
+											"Id": "500StoneGathered",
+											"Condition": "PLAYER_STAT Current stoneGathered 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"		
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Fire Quartz Production Time}}"
+						},
+						{
+							"Id": "Default_Bouquet",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)458"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)277"
+								}
+							],
+							"MinutesUntilReady": 10
+						},
+						{
+							"Id": "Default_RadioactiveOre",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)909",
+									"RequiredCount": "{{P.H.F Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)910",
+									"MinStack": "{{P.H.F Minimum Quantity}}",
+									"MaxStack": "{{P.H.F Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "MinesDifficulty1",
+											"Condition": "WORLD_STATE_FIELD MinesDifficulty 1",
+											"Modification": "Add",
+											"Amount": "{{P.H.F Radioactive Mine Bonus 1}}"
+										},
+										{
+											"Id": "MinesDifficulty2",
+											"Condition": "WORLD_STATE_FIELD MinesDifficulty 2",
+											"Modification": "Add",
+											"Amount": "{{P.H.F Radioactive Mine Bonus 2}}"
+										},
+										{
+											"Id": "SkullCavesDifficulty1",
+											"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 1",
+											"Modification": "Add",
+											"Amount": "{{P.H.F Radioactive Skull Cavern Bonus 1}}"
+										},
+										{
+											"Id": "SkullCavesDifficulty2",
+											"Condition": "WORLD_STATE_FIELD SkullCavesDifficulty 2",
+											"Modification": "Add",
+											"Amount": "{{P.H.F Radioactive Skull Cavern Bonus 2}}"
+										}
+									],
+									"StackModifierMode": "Stack"	
+								}
+							],
+							"MinutesUntilReady": "{{P.H.F Radioactive Production Time}}"
+						}
+					],
+					"AdditionalConsumedItems": [
+						{
+							"ItemId": "(O)382",
+							"RequiredCount": "{{P.H.F Required Coal}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "furnace"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1920,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "0, -10",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "fireball"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 0,
+										"Y": 1920,
+										"Width": 64,
+										"Height": 64
+									},
+									"Interval": 50.0,
+									"Frames": 4,
+									"Loops": 10,
+									"PositionOffset": "0, -4",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": null
+								}
+							]
+						}
+					],
+					"WorkingEffectChance": 0.165,
+					"WobbleWhileWorking": true,
+					"LightWhileWorking": {
+						"Radius": 1.5,
+						"Color": "DarkCyan"
+					},
+					"ShowNextIndexWhileWorking": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Target": "selph.ExtraMachineConfig/ExtraOutputs",
+			"Entries": {
+				"RadioactiveMercurialCopperDropChance": {
+					"ItemId": "(O)nachonline.mps_MercurialCopper",
+					"Condition": "RANDOM {{R.H.F Mercury Chance}}"
+				},
+				"RadioactiveMercurialIronDropChance": {
+					"ItemId": "(O)nachonline.mps_MercurialIron",
+					"Condition": "RANDOM {{R.H.F Mercury Chance}}"
+				},
+				"RadioactiveMercurialGoldDropChance": {
+					"ItemId": "(O)nachonline.mps_MercurialGold",
+					"Condition": "RANDOM {{R.H.F Mercury Chance}}"
+				},
+				"RadioactiveMercurialIridiumDropChance": {
+					"ItemId": "(O)nachonline.mps_MercurialIridium",
+					"Condition": "RANDOM {{R.H.F Mercury Chance}}"
+				},
+				"RadioactiveRadioactiveMercuryDropChance": {
+					"ItemId": "(O)nachonline.mps_RadioactiveMercury",
+					"Condition": "RANDOM {{R.H.F Mercury Chance}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Target": "selph.ExtraMachineConfig/ExtraOutputs",
+			"Entries": {
+				"PrismaticMercurialCopperDropChance": {
+					"ItemId": "(O)nachonline.mps_MercurialCopper",
+					"Condition": "RANDOM {{P.H.F Mercury Chance}}"
+				},
+				"PrismaticMercurialIronDropChance": {
+					"ItemId": "(O)nachonline.mps_MercurialIron",
+					"Condition": "RANDOM {{P.H.F Mercury Chance}}"
+				},
+				"PrismaticMercurialGoldDropChance": {
+					"ItemId": "(O)nachonline.mps_MercurialGold",
+					"Condition": "RANDOM {{P.H.F Mercury Chance}}"
+				},
+				"PrismaticMercurialIridiumDropChance": {
+					"ItemId": "(O)nachonline.mps_MercurialIridium",
+					"Condition": "RANDOM {{P.H.F Mercury Chance}}"
+				},
+				"PrismaticRadioactiveMercuryDropChance": {
+					"ItemId": "(O)nachonline.mps_RadioactiveMercury",
+					"Condition": "RANDOM {{P.H.F Mercury Chance}}"
+				}
+			}
+		},
+		// Mineral Bars
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Mineral Bars": true
+			},
+			"Entries": {
+				"nachonline.mps_MineralBar": {
+					"Id": "nachonline.mps_MineralBar",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_minerals"
+							],
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_MineralBar",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_MineralBar %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_MineralBar",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Mineral Bar Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 100",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 300",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 500",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Mineral Bar Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Mineral Bars": true
+			},
+			"Entries": {
+				"nachonline.mps_MineralBar": {
+					"Id": "nachonline.mps_MineralBar",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_minerals"
+							],
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_MineralBar",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_MineralBar %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_MineralBar",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Mineral Bar Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Mineral Bar Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		// Star Essences
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Star Essences": true
+			},
+			"Entries": {
+				"nachonline.mps_StarEssence": {
+					"Id": "nachonline.mps_StarEssence",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)768",
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_StarEssence",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}",
+							"CustomData": {
+								"selph.ExtraMachineConfig.RequirementId.1": "(O)769",
+								"selph.ExtraMachineConfig.RequirementCount.1": "{{R.H.F Required Input}}",
+								"selph.ExtraMachineConfig.RequirementId.2": "(O)386",
+								"selph.ExtraMachineConfig.RequirementCount.2": "{{R.H.F Required Input}}"
+							}
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Star Essence Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Star Essences": true
+			},
+			"Entries": {
+				"nachonline.mps_StarEssence": {
+					"Id": "nachonline.mps_StarEssence",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)768",
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_StarEssence",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}",
+							"CustomData": {
+								"selph.ExtraMachineConfig.RequirementId.1": "(O)769",
+								"selph.ExtraMachineConfig.RequirementCount.1": "{{P.H.F Required Input}}",
+								"selph.ExtraMachineConfig.RequirementId.2": "(O)386",
+								"selph.ExtraMachineConfig.RequirementCount.2": "{{P.H.F Required Input}}"
+							}
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Star Essence Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		// Super Gems
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveHeavyFurnace",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Super Gems": true
+			},
+			"Entries": {
+				"nachonline.mps_SuperGem": {
+					"Id": "nachonline.mps_SuperGem",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_gem"
+							],
+							"RequiredCount": "{{R.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SuperGem",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SuperGem %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SuperGem",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{R.H.F Minimum Quantity}}",
+							"MaxStack": "{{R.H.F Maximum Quantity}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Super Gem Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 100",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 300",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 500",
+									"Modification": "Add",
+									"Amount": "{{R.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.H.F Super Gem Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticHeavyFurnace",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Super Gems": true
+			},
+			"Entries": {
+				"nachonline.mps_SuperGem": {
+					"Id": "nachonline.mps_SuperGem",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_gem"
+							],
+							"RequiredCount": "{{P.H.F Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_SuperGem",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_SuperGem %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_SuperGem",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{P.H.F Minimum Quantity}}",
+							"MaxStack": "{{P.H.F Maximum Quantity}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Super Gem Value Multiplier}}"
+								}
+							],
+							"PriceModifiersMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 100 Resource Found Bonus}}"
+								},
+								{
+									"Id": "300OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 300 Resource Found Bonus}}"
+								},
+								{
+									"Id": "500OtherPreciousGemsFound",
+									"Condition": "PLAYER_STAT Current otherPreciousGemsFound 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.F 500 Resource Found Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.H.F Super Gem Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		}
+	] 
+}

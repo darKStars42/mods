@@ -1,0 +1,426 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Add context tags to rainbow shell",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [
+                "197",
+                "ContextTags"
+            ],
+            "Entries": {
+                "shell_item": "shell_item",
+            }
+        },
+        {
+            "LogName": "Add context tags to nautilus",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "TargetField": [
+                "197",
+                "ContextTags"
+            ],
+            "Entries": {
+                "shell_item": "shell_item",
+            }
+        },
+        {
+            "LogName": "Load objects images",
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/TileSheets/Objects",
+            "FromFile": "TileSheets/{{TargetWithoutPath}}.png"
+        },
+        {
+            "LogName": "Add objects",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_BlueConch": {
+                    "Name": "Blue Conch",
+                    "Displayname": "{{i18n:BlueConch_Name}}",
+                    "Description": "{{i18n:BlueConch_Description}}",
+                    "Type": "Objects",
+                    "Category": -23,
+                    "Price": 30,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "color_blue",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall",
+                        "season_winter",
+                        "shell_item"
+                    ]
+                },
+                "{{ModId}}_CoralShell": {
+                    "Name": "Coral Shell",
+                    "Displayname": "{{i18n:CoralShell_Name}}",
+                    "Description": "{{i18n:CoralShell_Description}}",
+                    "Type": "Objects",
+                    "Category": -23,
+                    "Price": 45,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 1,
+                    "ContextTags": [
+                        "color_yellow",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall",
+                        "shell_item"
+                    ]
+                },
+                "{{ModId}}_CrystalCowrie": {
+                    "Name": "Crystal Cowrie",
+                    "Displayname": "{{i18n:CrystalCowrie_Name}}",
+                    "Description": "{{i18n:CrystalCowrie_Description}}",
+                    "Type": "Objects",
+                    "Category": -23,
+                    "Price": 75,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 2,
+                    "ContextTags": [
+                        "color_blue",
+                        "dye_strong",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_spring",
+                        "season_fall",
+                        "shell_item"
+                    ]
+                },
+                "{{ModId}}_KittenPaw": {
+                    "Name": "Kitten Paw",
+                    "Displayname": "{{i18n:KittenPaw_Name}}",
+                    "Description": "{{i18n:KittenPaw_Description}}",
+                    "Type": "Objects",
+                    "Category": -23,
+                    "Price": 30,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 4,
+                    "ContextTags": [
+                        "color_pink",
+                        "dye_strong",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_summer",
+                        "shell_item"
+                    ]
+                },
+                "{{ModId}}_LuckyMarine": {
+                    "Name": "Lucky Marine",
+                    "Displayname": "{{i18n:LuckyMarine_Name}}",
+                    "Description": "{{i18n:LuckyMarine_Description}}",
+                    "Type": "Objects",
+                    "Category": -23,
+                    "Price": 100,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 5,
+                    "ContextTags": [
+                        "color_purple",
+                        "dye_strong",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_winter",
+                        "shell_item"
+                    ]
+                },
+                "{{ModId}}_SandBucks": {
+                    "Name": "Sand Bucks",
+                    "Displayname": "{{i18n:SandBucks_Name}}",
+                    "Description": "{{i18n:SandBucks_Description}}",
+                    "Type": "Objects",
+                    "Category": -23,
+                    "Price": 15,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 6,
+                    "ContextTags": [
+                        "color_sand",
+                        "marine_item",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall",
+                        "season_winter",
+                        "shell_item"
+                    ]
+                },
+                "{{ModId}}_SpiderConch": {
+                    "Name": "Spider Conch",
+                    "Displayname": "{{i18n:SpiderConch_Name}}",
+                    "Description": "{{i18n:SpiderConch_Description}}",
+                    "Type": "Objects",
+                    "Category": -23,
+                    "Price": 75,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 7,
+                    "ContextTags": [
+                        "color_brown",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_spring",
+                        "season_winter",
+                        "shell_item"
+                    ]
+                },
+                "{{ModId}}_RedTrumpet": {
+                    "Name": "Red Trumpet",
+                    "Displayname": "{{i18n:RedTrumpet_Name}}",
+                    "Description": "{{i18n:RedTrumpet_Description}}",
+                    "Type": "Objects",
+                    "Category": -23,
+                    "Price": 20,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 8,
+                    "ContextTags": [
+                        "color_red",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_fall",
+                        "season_winter",
+                        "shell_item"
+                    ]
+                },
+                "{{ModId}}_GemSeaWhelk": {
+                    "Name": "Gem Sea Whelk",
+                    "Displayname": "{{i18n:GemSeaWhelk_Name}}",
+                    "Description": "{{i18n:GemSeaWhelk_Description}}",
+                    "Type": "Objects",
+                    "Category": -23,
+                    "Price": 40,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 9,
+                    "ContextTags": [
+                        "color_brown",
+                        "marine_item",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_summer",
+                        "shell_item"
+                    ]
+                },
+                "{{ModId}}_LimpetShell": {
+                    "Name": "Limpet Shell",
+                    "Displayname": "{{i18n:LimpetShell_Name}}",
+                    "Description": "{{i18n:LimpetShell_Description}}",
+                    "Type": "Objects",
+                    "Category": -23,
+                    "Price": 5,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 10,
+                    "ContextTags": [
+                        "color_gray",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall",
+                        "season_winter",
+                        "shell_item"
+                    ]
+                },
+                //Crab pot fish
+                "{{ModId}}_DottedAbalone": {
+                    "Name": "Dotted Abalone",
+                    "Displayname": "{{i18n:DottedAbalone_Name}}",
+                    "Description": "{{i18n:DottedAbalone_Description}}",
+                    "Type": "Objects",
+                    "Category": -4,
+                    "Price": 55,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 3,
+                    "ContextTags": [
+                        "color_green",
+                        "dye_strong",
+                        "fish_crab_pot",
+                        "fish_ocean",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall",
+                        "season_winter",
+                    ]
+                },
+                "{{ModId}}_WingedScallop": {
+                    "Name": "WingedScallop",
+                    "Displayname": "{{i18n:WingedScallop_Name}}",
+                    "Description": "{{i18n:WingedScallop_Description}}",
+                    "Type": "Objects",
+                    "Category": -4,
+                    "Price": 30,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 11,
+                    "ContextTags": [
+                        "color_gray",
+                        "fish_crab_pot",
+                        "fish_ocean",
+                        "forage_item",
+                        "forage_item_beach",
+                        "season_spring",
+                        "season_summer",
+                        "season_fall",
+                        "season_winter",
+                        "scallop_item"
+                    ]
+                },
+                //Cookings
+                "{{ModId}}_CrispyAbalone": {
+                    "Name": "Crispy Abalone",
+                    "DisplayName": "{{i18n:CrispyAbalone_Name}}",
+                    "Description": "{{i18n:CrispyAbalone_Description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 100,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 20,
+                    "Edibility": 36,
+                    "IsDrink": false,
+                    "Buff": {
+                        "Duration": 120,
+                        "CustomAttributes": {
+                            "FarmingLevel": 0,
+                            "FishingLevel": 0,
+                            "MiningLevel": 0,
+                            "LuckLevel": 2,
+                            "ForagingLevel": 0,
+                            "MaxStamina": 0,
+                            "MagneticRadius": 0,
+                            "Speed": 0,
+                            "Defense": 0,
+                            "Attack": 0
+                        }
+                    },
+                    "ContextTags": [
+                        "color_yellow",
+                        "food_seafood"
+                    ]
+                },
+                "{{ModId}}_BraisedScallop": {
+                    "Name": "Braised Scallop",
+                    "DisplayName": "{{i18n:BraisedScallop_Name}}",
+                    "Description": "{{i18n:BraisedScallop_Description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 220,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 21,
+                    "Edibility": 100,
+                    "IsDrink": false,
+                    "Buff": {},
+                    "ContextTags": [
+                        "color_yellow",
+                        "food_seafood"
+                    ]
+                },
+                "{{ModId}}_PurplePlate": {
+                    "Name": "Purple Plate",
+                    "DisplayName": "{{i18n:PurplePlate_Name}}",
+                    "Description": "{{i18n:PurplePlate_Description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 370,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 23,
+                    "Edibility": 110,
+                    "IsDrink": false,
+                    "Buff": {
+                        "Duration": 420,
+                        "CustomAttributes": {
+                            "FarmingLevel": 0,
+                            "FishingLevel": 0,
+                            "MiningLevel": 0,
+                            "LuckLevel": 1,
+                            "ForagingLevel": 0,
+                            "MaxStamina": 25,
+                            "MagneticRadius": 0,
+                            "Speed": 0,
+                            "Defense": 0,
+                            "Attack": 0
+                        }
+                    },
+                    "ContextTags": [
+                        "color_purple",
+                        "food_seafood"
+                    ]
+                },
+                "{{ModId}}_MolluskSoup": {
+                    "Name": "Mollusk Soup",
+                    "DisplayName": "{{i18n:MolluskSoup_Name}}",
+                    "Description": "{{i18n:MolluskSoup_Description}}",
+                    "Type": "Cooking",
+                    "Category": -7,
+                    "Price": 175,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 22,
+                    "Edibility": 120,
+                    "IsDrink": false,
+                    "Buff": {
+                        "Duration": 300,
+                        "CustomAttributes": {
+                            "FarmingLevel": 0,
+                            "FishingLevel": 2,
+                            "MiningLevel": 0,
+                            "LuckLevel": 2,
+                            "ForagingLevel": 0,
+                            "MaxStamina": 0,
+                            "MagneticRadius": 0,
+                            "Speed": 0,
+                            "Defense": 0,
+                            "Attack": 0
+                        }
+                    },
+                    "ContextTags": [
+                        "color_brown",
+                        "food_seafood",
+                        "food_soup"
+                    ]
+                },
+                //Craftable
+                "{{ModId}}_SandBucksParcel": {
+                    "Name": "Sand Bucks Parcel",
+                    "Displayname": "{{i18n:SandBucksParcel_Name}}",
+                    "Description": "{{i18n:SandBucksParcel_Description}}",
+                    "Type": "Crafting",
+                    "Category": -8,
+                    "Price": 625,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 30,
+                    "ContextTags": [
+                        "color_brown",
+                    ]
+                },
+                "{{ModId}}_ShellsNecklace": {
+                    "Name": "Shells Necklace",
+                    "Displayname": "{{i18n:ShellsNecklace_Name}}",
+                    "Description": "{{i18n:ShellsNecklace_Description}}",
+                    "Type": "Crafting",
+                    "Category": -8,
+                    "Price": 650,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 31,
+                    "ContextTags": []
+                },
+                "{{ModId}}_CoralFence": {
+                    "Name": "Coral Fence",
+                    "Displayname": "{{i18n:CoralFence_Name}}",
+                    "Description": "{{i18n:CoralFence_Description}}",
+                    "Type": "Crafting",
+                    "Category": -8,
+                    "Price": 10,
+                    "Texture": "Mods/{{ModId}}/TileSheets/Objects",
+                    "SpriteIndex": 32,
+                    "ContextTags": [
+                        "color_red"
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+ {
+    "Changes": [
+        {
+            "LogName": "Add machines to Big Craftables",
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_FlourMill": {
+                    "Name": "{{ModId}}_FlourMill",
+                    "DisplayName": "{{i18n:FlourMill_Name}}",
+                    "Description": "{{i18n:FlourMill_Desc}}",
+                    "Texture": "{{ModId}}/machines",
+                    "SpriteIndex": 0,
+                    "IsLamp": false
+                },
+                "{{ModId}}_StoneOven": {
+                    "Name": "{{ModId}}_StoneOven",
+                    "DisplayName": "{{i18n:StoneOven_Name}}",
+                    "Description": "{{i18n:StoneOven_Desc}}",
+                    "Texture": "{{ModId}}/machines",
+                    "SpriteIndex": 11,
+                    "IsLamp": true
+                },
+                "{{ModId}}_BrickOven": {
+                    "Name": "{{ModId}}_BrickOven",
+                    "DisplayName": "{{i18n:BrickOven_Name}}",
+                    "Description": "{{i18n:BrickOven_Desc}}",
+                    "Texture": "{{ModId}}/machines",
+                    "SpriteIndex": 22,
+                    "IsLamp": true
+                },
+                "{{ModId}}_ModernOven": {
+                    "Name": "{{ModId}}_ModernOven",
+                    "DisplayName": "{{i18n:ModernOven_Name}}",
+                    "Description": "{{i18n:ModernOven_Desc}}",
+                    "Texture": "{{ModId}}/machines",
+                    "SpriteIndex": 33,
+                    "IsLamp": true
+                }
+            }
+        },
+        {
+            "LogName": "Add machines to crafting recipes",
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+                "{{ModId}}_FlourMill": "388 100 390 10/Home/{{ModId}}_FlourMill/true/default",
+                "{{ModId}}_StoneOven": "390 50 330 5/Home/{{ModId}}_StoneOven/true/default",
+                "{{ModId}}_BrickOven": "{{ModId}}_StoneOven 1 335 10 330 20/Home/{{ModId}}_BrickOven/true/default",
+                "{{ModId}}_ModernOven": "{{ModId}}_BrickOven 1 335 10 336 3 82 5/Home/{{ModId}}_ModernOven/true/default"
+            }
+
+        }
+    ]
+ }

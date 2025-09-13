@@ -1,0 +1,89 @@
+{
+	"Changes": [
+		{
+		///Mail Text
+    "Action": "EditData",
+    "Target": "data/mail",
+		
+    "Entries": {
+		"AlexCooking1": "{{i18n:Alex3Heart.name}} %item cookingRecipe {{ModId}}_Hard_Boiled_Egg%%[#]{{i18n:Alex3HeartDesc.name}}",
+		"JasCooking1": "{{i18n:Jas2Heart.name}}[letterbg 1] %item cookingRecipe {{ModId}}_Sprinkles%%[#]{{i18n:Jas2HeartDesc.name}}",
+		"JasCooking2": "{{i18n:Jas4Heart.name}}[letterbg 1] %item cookingRecipe {{ModId}}_Confetti_Pancakes%%[#]{{i18n:Jas4HeartDesc.name}}",
+		"JasCooking3": "{{i18n:Jas10Heart.name}}[letterbg 1] %item cookingRecipe {{ModId}}_Hot_Fudge_Sundae%%[#]{{i18n:Jas10HeartDesc.name}}",
+		"SandyCooking1": "{{i18n:Sandy5Heart.name}}[letterbg 1] %item cookingRecipe {{ModId}}_Raspberry_Sorbet%%[#]{{i18n:Sandy5HeartDesc.name}}",
+		"ShaneCooking1": "{{i18n:Shane5Heart.name}} %item cookingRecipe {{ModId}}_Ember_Island_Pizza%%[#]{{i18n:Shane5HeartDesc.name}}",
+		"CranberryChickenSpecialOrder": "{{i18n:Cranberry-Chicken-Special-Order-Mail.name}} %item cookingRecipe {{ModId}}_Cranberry_Chicken%%[#]{{i18n:Cranberry-Chicken-Special-Order-MailDesc.name}}",
+		"SteakAndPastaSpecialOrder": "{{i18n:Steak-And-Pasta-Special-Order-Mail.name}} %item cookingRecipe {{ModId}}_Steak_And_Pasta%%[#]{{i18n:Steak-And-Pasta-Special-Order-MailDesc.name}}",
+				},
+		},
+		///Trigger Actions
+	{
+	"Action": "EditData",
+	"Target": "Data/TriggerActions",
+	
+	"Entries": {
+	
+	"AlexCooking1":{
+	"Id": "AlexCooking1",
+    "Trigger": "DayEnding",
+    "Condition": "PLAYER_FRIENDSHIP_POINTS Current Alex 750",
+    "HostOnly": false,
+    "Action": "AddMail Current AlexCooking1",
+    "Actions": null,
+    "CustomFields": null,
+    "MarkActionApplied": true,
+	},
+	"JasCooking1":{
+	"Id": "JasCooking1",
+    "Trigger": "DayEnding",
+    "Condition": "PLAYER_FRIENDSHIP_POINTS Current Jas 500",
+    "HostOnly": false,
+    "Action": "AddMail Current JasCooking1",
+    "Actions": null,
+    "CustomFields": null,
+    "MarkActionApplied": true,
+	},
+	"JasCooking2":{
+    "Id": "JasCooking2",
+    "Trigger": "DayEnding",
+    "Condition": "PLAYER_FRIENDSHIP_POINTS Current Jas 1000",
+    "HostOnly": false,
+    "Action": "AddMail Current JasCooking2",
+    "Actions": null,
+    "CustomFields": null,
+    "MarkActionApplied": true
+	},
+	"JasCooking3":{
+    "Id": "JasCooking3",
+    "Trigger": "DayEnding",
+    "Condition": "PLAYER_FRIENDSHIP_POINTS Current Jas 2500, SEASON summer",
+    "HostOnly": false,
+    "Action": "AddMail Current JasCooking3",
+    "Actions": null,
+    "CustomFields": null,
+    "MarkActionApplied": true
+	},
+	"ShaneCooking1":{
+    "Id": "ShaneCooking1",
+    "Trigger": "DayEnding",
+    "Condition": "PLAYER_FRIENDSHIP_POINTS Current Shane 1250",
+    "HostOnly": false,
+    "Action": "AddMail Current ShaneCooking1",
+    "Actions": null,
+    "CustomFields": null,
+    "MarkActionApplied": true
+	},
+	"SandyCooking1":{
+    "Id": "SandyCooking1",
+    "Trigger": "DayEnding",
+    "Condition": "PLAYER_FRIENDSHIP_POINTS Current Sandy 1250",
+    "HostOnly": false,
+    "Action": "AddMail Current SandyCooking1",
+    "Actions": null,
+    "CustomFields": null,
+    "MarkActionApplied": true
+	}	
+			}
+		}			
+	]
+}		

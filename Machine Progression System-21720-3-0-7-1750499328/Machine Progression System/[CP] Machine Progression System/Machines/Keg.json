@@ -1,0 +1,2814 @@
+{
+    "Changes": [
+		// Vanilla Items
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_GoldKeg": {
+					"OutputRules": [
+						{
+							"Id": "Default_CoffeeBeans",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)433",
+									"RequiredCount": "{{G.K Required Coffee Beans}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)395",
+									"MinStack": "{{G.K Quantity}}",
+									"CopyQuality": "{{G.K Copy Quality}}",
+									"Quality": "{{G.K Quality}}",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "GoldTripleShotChance"
+									}
+								}
+							],
+							"MinutesUntilReady": "{{G.K Coffee Production Time}}",
+							"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "Default_TeaLeaves",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)815"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)614",
+									"MinStack": "{{G.K Quantity}}",
+									"CopyQuality": "{{G.K Copy Quality}}",
+									"Quality": "{{G.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{G.K Tea Production Time}}"
+						},
+						{
+							"Id": "Default_Rice",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)423"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)419",
+									"MinStack": "{{G.K Vinegar Quantity}}",
+									"CopyQuality": "{{G.K Copy Quality}}",
+									"Quality": "{{G.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{G.K Vinegar Production Time}}"
+						},
+						{
+							"Id": "Default_Wheat",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)262"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)346",
+									"MinStack": "{{G.K Quantity}}",
+									"CopyQuality": "{{G.K Copy Quality}}",
+									"Quality": "{{G.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{G.K Beer Production Time}}"
+						},
+						{
+							"Id": "Default_Hops",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)304"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)303",
+									"MinStack": "{{G.K Quantity}}",
+									"CopyQuality": "{{G.K Copy Quality}}",
+									"Quality": "{{G.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{G.K Pale Ale Production Time}}"
+						},
+						{
+							"Id": "Default_Juice",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "!ITEM_CONTEXT_TAG Input edible_mushroom, ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Juice",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"keg_juice"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Juice DROP_IN_ID",
+									"MinStack": "{{G.K Juice Quantity}}",
+									"CopyQuality": "{{G.K Copy Quality}}",
+									"Quality": "{{G.K Quality}}",
+									"CopyColor": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 3
+										}
+									],
+									"PriceModifierMode": "Maximum"
+								}
+							],
+							"MinutesUntilReady": "{{G.K Juice Production Time}}"
+						},
+						{	
+							"Id": "nachonline.mps_flavored_mead",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)340"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)459",
+									"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_Mead %PRESERVED_DISPLAY_NAME]",
+									"ObjectInternalName": "{0} Mead",
+									"PreserveId": "DROP_IN_PRESERVE",
+									"MinStack": "{{G.K Quantity}}",
+									"CopyQuality": "{{G.K Copy Quality}}",
+									"Quality": "{{G.K Quality}}",
+									"CopyColor": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 2
+										}
+									]
+								}
+							],
+							"MinutesUntilReady": "{{G.K Mead Production Time}}"
+						},
+						{
+							"Id": "Default_Wine",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Wine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"keg_wine"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Wine DROP_IN_ID",
+									"MinStack": "{{G.K Quantity}}",
+									"CopyQuality": "{{G.K Copy Quality}}",
+									"Quality": "{{G.K Quality}}",
+									"CopyColor": true
+								}
+							],
+							"MinutesUntilReady": "{{G.K Wine Production Time}}"
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "100BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 100",
+							"Modification": "Multiply",
+							"Amount": "{{G.K 100 Beverages Made Speed Bonus}}"
+						},
+						{
+							"Id": "300BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 300",
+							"Modification": "Multiply",
+							"Amount": "{{G.K 300 Beverages Made Speed Bonus}}"
+						},
+						{
+							"Id": "500BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 500",
+							"Modification": "Multiply",
+							"Amount": "{{G.K 500 Beverages Made Speed Bonus}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+								"Id": "bubbles"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Yellow",
+									"Condition": "ANY \"ITEM_ID Target (O)346\" \"ITEM_ID Target 303\" \"ITEM_ID Target 459\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBF00BF"
+								},
+								{
+									"Id": "Wine",
+									"Condition": "ITEM_ID Target (O)348",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#ACACBBBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ANY \"ITEM_ID Target (O)346\" \"ITEM_ID Target 303\" \"ITEM_ID Target 459\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "bubbles"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Wine",
+									"Condition": "ITEM_ID Target (O)348",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#ACACBBBF"
+								},
+								{
+									"Id": "Juice",
+									"Condition": "ITEM_ID Target (O)350",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"Id": "beveragesMade",
+							"StatName": "beveragesMade"
+						}
+					],
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_DiamondKeg": {
+					"OutputRules": [
+						{
+							"Id": "Default_CoffeeBeans",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)433",
+									"RequiredCount": "{{D.K Required Coffee Beans}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)395",
+									"MinStack": "{{D.K Quantity}}",
+									"CopyQuality": "{{D.K Copy Quality}}",
+									"Quality": "{{D.K Quality}}",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "DiamondTripleShotChance"
+									}
+								}
+							],
+							"MinutesUntilReady": "{{D.K Coffee Production Time}}",
+							"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "Default_TeaLeaves",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)815"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)614",
+									"MinStack": "{{D.K Quantity}}",
+									"CopyQuality": "{{D.K Copy Quality}}",
+									"Quality": "{{D.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{D.K Tea Production Time}}"
+						},
+						{
+							"Id": "Default_Rice",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)423"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)419",
+									"MinStack": "{{D.K Vinegar Quantity}}",
+									"CopyQuality": "{{D.K Copy Quality}}",
+									"Quality": "{{D.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{D.K Vinegar Production Time}}"
+						},
+						{
+							"Id": "Default_Wheat",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)262"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)346",
+									"MinStack": "{{D.K Quantity}}",
+									"CopyQuality": "{{D.K Copy Quality}}",
+									"Quality": "{{D.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{D.K Beer Production Time}}"
+						},
+						{
+							"Id": "Default_Hops",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)304"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)303",
+									"MinStack": "{{D.K Quantity}}",
+									"CopyQuality": "{{D.K Copy Quality}}",
+									"Quality": "{{D.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{D.K Pale Ale Production Time}}"
+						},
+						{
+							"Id": "Default_Juice",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "!ITEM_CONTEXT_TAG Input edible_mushroom, ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Juice",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"keg_juice"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Juice DROP_IN_ID",
+									"MinStack": "{{D.K Juice Quantity}}",
+									"CopyQuality": "{{D.K Copy Quality}}",
+									"Quality": "{{D.K Quality}}",
+									"CopyColor": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 3
+										}
+									],
+									"PriceModifierMode": "Maximum"
+								}
+							],
+							"MinutesUntilReady": "{{D.K Juice Production Time}}"
+						},
+						{	
+							"Id": "nachonline.mps_flavored_mead",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)340"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)459",
+									"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_Mead %PRESERVED_DISPLAY_NAME]",
+									"ObjectInternalName": "{0} Mead",
+									"PreserveId": "DROP_IN_PRESERVE",
+									"MinStack": "{{D.K Quantity}}",
+									"CopyQuality": "{{D.K Copy Quality}}",
+									"Quality": "{{D.K Quality}}",
+									"CopyColor": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 2
+										}
+									]
+								}
+							],
+							"MinutesUntilReady": "{{D.K Mead Production Time}}"
+						},
+						{
+							"Id": "Default_Wine",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Wine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"keg_wine"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Wine DROP_IN_ID",
+									"MinStack": "{{D.K Quantity}}",
+									"CopyQuality": "{{D.K Copy Quality}}",
+									"Quality": "{{D.K Quality}}",
+									"CopyColor": true
+								}
+							],
+							"MinutesUntilReady": "{{D.K Wine Production Time}}"
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "100BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 100",
+							"Modification": "Multiply",
+							"Amount": "{{D.K 100 Beverages Made Speed Bonus}}"
+						},
+						{
+							"Id": "300BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 300",
+							"Modification": "Multiply",
+							"Amount": "{{D.K 300 Beverages Made Speed Bonus}}"
+						},
+						{
+							"Id": "500BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 500",
+							"Modification": "Multiply",
+							"Amount": "{{D.K 500 Beverages Made Speed Bonus}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+								"Id": "bubbles"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Yellow",
+									"Condition": "ANY \"ITEM_ID Target (O)346\" \"ITEM_ID Target 303\" \"ITEM_ID Target 459\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBF00BF"
+								},
+								{
+									"Id": "Wine",
+									"Condition": "ITEM_ID Target (O)348",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#ACACBBBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ANY \"ITEM_ID Target (O)346\" \"ITEM_ID Target 303\" \"ITEM_ID Target 459\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "bubbles"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Wine",
+									"Condition": "ITEM_ID Target (O)348",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#ACACBBBF"
+								},
+								{
+									"Id": "Juice",
+									"Condition": "ITEM_ID Target (O)350",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"Id": "beveragesMade",
+							"StatName": "beveragesMade"
+						}
+					],
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_IridiumKeg": {
+					"OutputRules": [
+						{
+							"Id": "Default_CoffeeBeans",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)433",
+									"RequiredCount": "{{I.K Required Coffee Beans}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)395",
+									"MinStack": "{{I.K Quantity}}",
+									"CopyQuality": "{{I.K Copy Quality}}",
+									"Quality": "{{I.K Quality}}",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "IridiumTripleShotChance"
+									}
+								}
+							],
+							"MinutesUntilReady": "{{I.K Coffee Production Time}}",
+							"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "Default_TeaLeaves",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)815"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)614",
+									"MinStack": "{{I.K Quantity}}",
+									"CopyQuality": "{{I.K Copy Quality}}",
+									"Quality": "{{I.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{I.K Tea Production Time}}"
+						},
+						{
+							"Id": "Default_Rice",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)423"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)419",
+									"MinStack": "{{I.K Vinegar Quantity}}",
+									"CopyQuality": "{{I.K Copy Quality}}",
+									"Quality": "{{I.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{I.K Vinegar Production Time}}"
+						},
+						{
+							"Id": "Default_Wheat",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)262"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)346",
+									"MinStack": "{{I.K Quantity}}",
+									"CopyQuality": "{{I.K Copy Quality}}",
+									"Quality": "{{I.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{I.K Beer Production Time}}"
+						},
+						{
+							"Id": "Default_Hops",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)304"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)303",
+									"MinStack": "{{I.K Quantity}}",
+									"CopyQuality": "{{I.K Copy Quality}}",
+									"Quality": "{{I.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{I.K Pale Ale Production Time}}"
+						},
+						{
+							"Id": "Default_Juice",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "!ITEM_CONTEXT_TAG Input edible_mushroom, ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Juice",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"keg_juice"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Juice DROP_IN_ID",
+									"MinStack": "{{I.K Juice Quantity}}",
+									"CopyQuality": "{{I.K Copy Quality}}",
+									"Quality": "{{I.K Quality}}",
+									"CopyColor": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 3
+										}
+									],
+									"PriceModifierMode": "Maximum"
+								}
+							],
+							"MinutesUntilReady": "{{I.K Juice Production Time}}"
+						},
+						{	
+							"Id": "nachonline.mps_flavored_mead",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)340"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)459",
+									"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_Mead %PRESERVED_DISPLAY_NAME]",
+									"ObjectInternalName": "{0} Mead",
+									"PreserveId": "DROP_IN_PRESERVE",
+									"MinStack": "{{I.K Quantity}}",
+									"CopyQuality": "{{I.K Copy Quality}}",
+									"Quality": "{{I.K Quality}}",
+									"CopyColor": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 2
+										}
+									]
+								}
+							],
+							"MinutesUntilReady": "{{I.K Mead Production Time}}"
+						},
+						{
+							"Id": "Default_Wine",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Wine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"keg_wine"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Wine DROP_IN_ID",
+									"MinStack": "{{I.K Quantity}}",
+									"CopyQuality": "{{I.K Copy Quality}}",
+									"Quality": "{{I.K Quality}}",
+									"CopyColor": true
+								}
+							],
+							"MinutesUntilReady": "{{I.K Wine Production Time}}"
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "100BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 100",
+							"Modification": "Multiply",
+							"Amount": "{{I.K 100 Beverages Made Speed Bonus}}"
+						},
+						{
+							"Id": "300BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 300",
+							"Modification": "Multiply",
+							"Amount": "{{I.K 300 Beverages Made Speed Bonus}}"
+						},
+						{
+							"Id": "500BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 500",
+							"Modification": "Multiply",
+							"Amount": "{{I.K 500 Beverages Made Speed Bonus}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+								"Id": "bubbles"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Yellow",
+									"Condition": "ANY \"ITEM_ID Target (O)346\" \"ITEM_ID Target 303\" \"ITEM_ID Target 459\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBF00BF"
+								},
+								{
+									"Id": "Wine",
+									"Condition": "ITEM_ID Target (O)348",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#ACACBBBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ANY \"ITEM_ID Target (O)346\" \"ITEM_ID Target 303\" \"ITEM_ID Target 459\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "bubbles"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Wine",
+									"Condition": "ITEM_ID Target (O)348",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#ACACBBBF"
+								},
+								{
+									"Id": "Juice",
+									"Condition": "ITEM_ID Target (O)350",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"Id": "beveragesMade",
+							"StatName": "beveragesMade"
+						}
+					],
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_RadioactiveKeg": {
+					"OutputRules": [
+						{
+							"Id": "Default_CoffeeBeans",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)433",
+									"RequiredCount": "{{R.K Required Coffee Beans}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)395",
+									"MinStack": "{{R.K Quantity}}",
+									"CopyQuality": "{{R.K Copy Quality}}",
+									"Quality": "{{R.K Quality}}",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "RadioactiveTripleShotChance"
+									}
+								}
+							],
+							"MinutesUntilReady": "{{R.K Coffee Production Time}}",
+							"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "Default_TeaLeaves",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)815"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)614",
+									"MinStack": "{{R.K Quantity}}",
+									"CopyQuality": "{{R.K Copy Quality}}",
+									"Quality": "{{R.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{R.K Tea Production Time}}"
+						},
+						{
+							"Id": "Default_Rice",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)423"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)419",
+									"MinStack": "{{R.K Vinegar Quantity}}",
+									"CopyQuality": "{{R.K Copy Quality}}",
+									"Quality": "{{R.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{R.K Vinegar Production Time}}"
+						},
+						{
+							"Id": "Default_Wheat",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)262"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)346",
+									"MinStack": "{{R.K Quantity}}",
+									"CopyQuality": "{{R.K Copy Quality}}",
+									"Quality": "{{R.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{R.K Beer Production Time}}"
+						},
+						{
+							"Id": "Default_Hops",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)304"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)303",
+									"MinStack": "{{R.K Quantity}}",
+									"CopyQuality": "{{R.K Copy Quality}}",
+									"Quality": "{{R.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{R.K Pale Ale Production Time}}"
+						},
+						{
+							"Id": "Default_Juice",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "!ITEM_CONTEXT_TAG Input edible_mushroom, ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Juice",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"keg_juice"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Juice DROP_IN_ID",
+									"MinStack": "{{R.K Juice Quantity}}",
+									"CopyQuality": "{{R.K Copy Quality}}",
+									"Quality": "{{R.K Quality}}",
+									"CopyColor": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 3
+										}
+									],
+									"PriceModifierMode": "Maximum"
+								}
+							],
+							"MinutesUntilReady": "{{R.K Juice Production Time}}"
+						},
+						{	
+							"Id": "nachonline.mps_flavored_mead",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)340"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)459",
+									"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_Mead %PRESERVED_DISPLAY_NAME]",
+									"ObjectInternalName": "{0} Mead",
+									"PreserveId": "DROP_IN_PRESERVE",
+									"MinStack": "{{R.K Quantity}}",
+									"CopyQuality": "{{R.K Copy Quality}}",
+									"Quality": "{{R.K Quality}}",
+									"CopyColor": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 2
+										}
+									]
+								}
+							],
+							"MinutesUntilReady": "{{R.K Mead Production Time}}"
+						},
+						{
+							"Id": "Default_Wine",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Wine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"keg_wine"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Wine DROP_IN_ID",
+									"MinStack": "{{R.K Quantity}}",
+									"CopyQuality": "{{R.K Copy Quality}}",
+									"Quality": "{{R.K Quality}}",
+									"CopyColor": true
+								}
+							],
+							"MinutesUntilReady": "{{R.K Wine Production Time}}"
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "100BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 100",
+							"Modification": "Multiply",
+							"Amount": "{{R.K 100 Beverages Made Speed Bonus}}"
+						},
+						{
+							"Id": "300BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 300",
+							"Modification": "Multiply",
+							"Amount": "{{R.K 300 Beverages Made Speed Bonus}}"
+						},
+						{
+							"Id": "500BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 500",
+							"Modification": "Multiply",
+							"Amount": "{{R.K 500 Beverages Made Speed Bonus}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+								"Id": "bubbles"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Yellow",
+									"Condition": "ANY \"ITEM_ID Target (O)346\" \"ITEM_ID Target 303\" \"ITEM_ID Target 459\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBF00BF"
+								},
+								{
+									"Id": "Wine",
+									"Condition": "ITEM_ID Target (O)348",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#ACACBBBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ANY \"ITEM_ID Target (O)346\" \"ITEM_ID Target 303\" \"ITEM_ID Target 459\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "bubbles"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Wine",
+									"Condition": "ITEM_ID Target (O)348",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#ACACBBBF"
+								},
+								{
+									"Id": "Juice",
+									"Condition": "ITEM_ID Target (O)350",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"Id": "beveragesMade",
+							"StatName": "beveragesMade"
+						}
+					],
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_PrismaticKeg": {
+					"OutputRules": [
+						{
+							"Id": "Default_CoffeeBeans",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)433",
+									"RequiredCount": "{{P.K Required Coffee Beans}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)395",
+									"MinStack": "{{P.K Quantity}}",
+									"CopyQuality": "{{P.K Copy Quality}}",
+									"Quality": "{{P.K Quality}}",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "PrismaticTripleShotChance"
+									}
+								}
+							],
+							"MinutesUntilReady": "{{P.K Coffee Production Time}}",
+							"InvalidCountMessage": "{{i18n: mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "Default_TeaLeaves",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)815"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)614",
+									"MinStack": "{{P.K Quantity}}",
+									"CopyQuality": "{{P.K Copy Quality}}",
+									"Quality": "{{P.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{P.K Tea Production Time}}"
+						},
+						{
+							"Id": "Default_Rice",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)423"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)419",
+									"MinStack": "{{P.K Vinegar Quantity}}",
+									"CopyQuality": "{{P.K Copy Quality}}",
+									"Quality": "{{P.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{P.K Vinegar Production Time}}"
+						},
+						{
+							"Id": "Default_Wheat",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)262"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)346",
+									"MinStack": "{{P.K Quantity}}",
+									"CopyQuality": "{{P.K Copy Quality}}",
+									"Quality": "{{P.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{P.K Beer Production Time}}"
+						},
+						{
+							"Id": "Default_Hops",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)304"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)303",
+									"MinStack": "{{P.K Quantity}}",
+									"CopyQuality": "{{P.K Copy Quality}}",
+									"Quality": "{{P.K Quality}}"
+								}
+							],
+							"MinutesUntilReady": "{{P.K Pale Ale Production Time}}"
+						},
+						{
+							"Id": "Default_Juice",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "!ITEM_CONTEXT_TAG Input edible_mushroom, ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Juice",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"keg_juice"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Juice DROP_IN_ID",
+									"MinStack": "{{P.K Juice Quantity}}",
+									"CopyQuality": "{{P.K Copy Quality}}",
+									"Quality": "{{P.K Quality}}",
+									"CopyColor": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 3
+										}
+									],
+									"PriceModifierMode": "Maximum"
+								}
+							],
+							"MinutesUntilReady": "{{P.K Juice Production Time}}"
+						},
+						{	
+							"Id": "nachonline.mps_flavored_mead",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)340"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)459",
+									"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_Mead %PRESERVED_DISPLAY_NAME]",
+									"ObjectInternalName": "{0} Mead",
+									"PreserveId": "DROP_IN_PRESERVE",
+									"MinStack": "{{P.K Quantity}}",
+									"CopyQuality": "{{P.K Copy Quality}}",
+									"Quality": "{{P.K Quality}}",
+									"CopyColor": true,
+									"CopyPrice": true,
+									"PriceModifiers": [
+										{
+											"Modification": "Multiply",
+											"Amount": 2
+										}
+									]
+								}
+							],
+							"MinutesUntilReady": "{{P.K Mead Production Time}}"
+						},
+						{
+							"Id": "Default_Wine",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Wine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"keg_wine"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Wine DROP_IN_ID",
+									"MinStack": "{{P.K Quantity}}",
+									"CopyQuality": "{{P.K Copy Quality}}",
+									"Quality": "{{P.K Quality}}",
+									"CopyColor": true
+								}
+							],
+							"MinutesUntilReady": "{{P.K Wine Production Time}}"
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "100BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 100",
+							"Modification": "Multiply",
+							"Amount": "{{P.K 100 Beverages Made Speed Bonus}}"
+						},
+						{
+							"Id": "300BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 300",
+							"Modification": "Multiply",
+							"Amount": "{{P.K 300 Beverages Made Speed Bonus}}"
+						},
+						{
+							"Id": "500BeveragesMadeBonus",
+							"Condition": "PLAYER_STAT Current beveragesMade 500",
+							"Modification": "Multiply",
+							"Amount": "{{P.K 500 Beverages Made Speed Bonus}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+								"Id": "bubbles"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Yellow",
+									"Condition": "ANY \"ITEM_ID Target (O)346\" \"ITEM_ID Target 303\" \"ITEM_ID Target 459\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBF00BF"
+								},
+								{
+									"Id": "Wine",
+									"Condition": "ITEM_ID Target (O)348",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#ACACBBBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ANY \"ITEM_ID Target (O)346\" \"ITEM_ID Target 303\" \"ITEM_ID Target 459\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "bubbles"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "Wine",
+									"Condition": "ITEM_ID Target (O)348",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#ACACBBBF"
+								},
+								{
+									"Id": "Juice",
+									"Condition": "ITEM_ID Target (O)350",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"Id": "beveragesMade",
+							"StatName": "beveragesMade"
+						}
+					],
+					"AllowFairyDust": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Target": "selph.ExtraMachineConfig/ExtraOutputs",
+			"Entries": {
+				"GoldTripleShotChance": {
+					"Id": "GoldTripleShotChance",
+					"Condition": "RANDOM {{G.K Triple Shot Espresso Chance}}",
+					"ItemId": "(O)253",
+					"MinStack": "{{G.K Quantity}}",
+					"CopyQuality": "{{G.K Copy Quality}}",
+					"Quality": "{{G.K Quality}}"
+				},
+				"DiamondTripleShotChance": {
+					"Id": "DiamondTripleShotChance",
+					"Condition": "RANDOM {{D.K Triple Shot Espresso Chance}}",
+					"ItemId": "(O)253",
+					"MinStack": "{{D.K Quantity}}",
+					"CopyQuality": "{{D.K Copy Quality}}",
+					"Quality": "{{D.K Quality}}"
+				},
+				"IridiumTripleShotChance": {
+					"Id": "IridiumTripleShotChance",
+					"Condition": "RANDOM {{I.K Triple Shot Espresso Chance}}",
+					"ItemId": "(O)253",
+					"MinStack": "{{I.K Quantity}}",
+					"CopyQuality": "{{I.K Copy Quality}}",
+					"Quality": "{{I.K Quality}}"
+				},
+				"RadioactiveTripleShotChance": {
+					"Id": "RadioactiveTripleShotChance",
+					"Condition": "RANDOM {{R.K Triple Shot Espresso Chance}}",
+					"ItemId": "(O)253",
+					"MinStack": "{{R.K Quantity}}",
+					"CopyQuality": "{{R.K Copy Quality}}",
+					"Quality": "{{R.K Quality}}"
+				},
+				"PrismaticTripleShotChance": {
+					"Id": "PrismaticTripleShotChance",
+					"Condition": "RANDOM {{P.K Triple Shot Espresso Chance}}",
+					"ItemId": "(O)253",
+					"MinStack": "{{P.K Quantity}}",
+					"CopyQuality": "{{P.K Copy Quality}}",
+					"Quality": "{{P.K Quality}}"
+				}
+			}
+		},
+		// Aged Coffee
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true,
+				"Enable Aged Coffee": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffee": {	
+					"Id": "nachonline.mps_AgedCoffee",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"RequiredCount": "{{G.K Required Coffee Beans}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffee",
+							"MinStack": "{{G.K Quantity}}",
+							"CopyQuality": "{{G.K Copy Quality}}",
+							"Quality": "{{G.K Quality}}",
+							"CustomData": {
+								"selph.ExtraMachineConfig.ExtraOutputIds": "GoldAgedTripleShotChance"
+							}
+						}
+					],
+					"MinutesUntilReady": "{{G.K Coffee Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true,
+				"Enable Aged Coffee": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffee": {	
+					"Id": "nachonline.mps_AgedCoffee",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"RequiredCount": "{{D.K Required Coffee Beans}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffee",
+							"MinStack": "{{D.K Quantity}}",
+							"CopyQuality": "{{D.K Copy Quality}}",
+							"Quality": "{{D.K Quality}}",
+							"CustomData": {
+								"selph.ExtraMachineConfig.ExtraOutputIds": "DiamondAgedTripleShotChance"
+							}
+						}
+					],
+					"MinutesUntilReady": "{{D.K Coffee Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true,
+				"Enable Aged Coffee": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffee": {	
+					"Id": "nachonline.mps_AgedCoffee",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"RequiredCount": "{{I.K Required Coffee Beans}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffee",
+							"MinStack": "{{I.K Quantity}}",
+							"CopyQuality": "{{I.K Copy Quality}}",
+							"Quality": "{{I.K Quality}}",
+							"CustomData": {
+								"selph.ExtraMachineConfig.ExtraOutputIds": "IridiumAgedTripleShotChance"
+							}
+						}
+					],
+					"MinutesUntilReady": "{{I.K Coffee Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true,
+				"Enable Aged Coffee": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffee": {	
+					"Id": "nachonline.mps_AgedCoffee",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"RequiredCount": "{{R.K Required Coffee Beans}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffee",
+							"MinStack": "{{R.K Quantity}}",
+							"CopyQuality": "{{R.K Copy Quality}}",
+							"Quality": "{{R.K Quality}}",
+							"CustomData": {
+								"selph.ExtraMachineConfig.ExtraOutputIds": "RadioactiveAgedTripleShotChance"
+							}
+						}
+					],
+					"MinutesUntilReady": "{{R.K Coffee Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true,
+				"Enable Aged Coffee": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffee": {	
+					"Id": "nachonline.mps_AgedCoffee",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"RequiredCount": "{{P.K Required Coffee Beans}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffee",
+							"MinStack": "{{P.K Quantity}}",
+							"CopyQuality": "{{P.K Copy Quality}}",
+							"Quality": "{{P.K Quality}}",
+							"CustomData": {
+								"selph.ExtraMachineConfig.ExtraOutputIds": "PrismaticAgedTripleShotChance"
+							}
+						}
+					],
+					"MinutesUntilReady": "{{P.K Coffee Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Target": "selph.ExtraMachineConfig/ExtraOutputs",
+			"Entries": {
+				"GoldTripleShotChance": {
+					"Id": "GoldTripleShotChance",
+					"Condition": "RANDOM {{G.K Triple Shot Espresso Chance}}",
+					"ItemId": "(O)nachonline.mps_AgedTripleShotEspresso",
+					"MinStack": "{{G.K Quantity}}",
+					"CopyQuality": "{{G.K Copy Quality}}",
+					"Quality": "{{G.K Quality}}"
+				},
+				"DiamondTripleShotChance": {
+					"Id": "DiamondTripleShotChance",
+					"Condition": "RANDOM {{D.K Triple Shot Espresso Chance}}",
+					"ItemId": "(O)nachonline.mps_AgedTripleShotEspresso",
+					"MinStack": "{{D.K Quantity}}",
+					"CopyQuality": "{{D.K Copy Quality}}",
+					"Quality": "{{D.K Quality}}"
+				},
+				"IridiumTripleShotChance": {
+					"Id": "IridiumTripleShotChance",
+					"Condition": "RANDOM {{I.K Triple Shot Espresso Chance}}",
+					"ItemId": "(O)nachonline.mps_AgedTripleShotEspresso",
+					"MinStack": "{{I.K Quantity}}",
+					"CopyQuality": "{{I.K Copy Quality}}",
+					"Quality": "{{I.K Quality}}"
+				},
+				"RadioactiveTripleShotChance": {
+					"Id": "RadioactiveTripleShotChance",
+					"Condition": "RANDOM {{R.K Triple Shot Espresso Chance}}",
+					"ItemId": "(O)nachonline.mps_AgedTripleShotEspresso",
+					"MinStack": "{{R.K Quantity}}",
+					"CopyQuality": "{{R.K Copy Quality}}",
+					"Quality": "{{R.K Quality}}"
+				},
+				"PrismaticTripleShotChance": {
+					"Id": "PrismaticTripleShotChance",
+					"Condition": "RANDOM {{P.K Triple Shot Espresso Chance}}",
+					"ItemId": "(O)nachonline.mps_AgedTripleShotEspresso",
+					"MinStack": "{{P.K Quantity}}",
+					"CopyQuality": "{{P.K Copy Quality}}",
+					"Quality": "{{P.K Quality}}"
+				}
+			}
+		},
+		// Berry Liqueur
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Berry Liqueur": true
+			},
+			"Entries": {
+				"nachonline.mps_BerryLiqueur": {	
+					"Id": "nachonline.mps_BerryLiqueur",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"berry_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BerryLiqueur",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_BerryLiqueur %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_BerryLiqueur",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{G.K Quantity}}",
+							"CopyQuality": "{{G.K Copy Quality}}",
+							"Quality": "{{G.K Quality}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Berry Liqueur Value Multiplier}}"
+								},
+								{
+									"Condition": "PLAYER_HAS_SEEN_EVENT Current 2120303",
+									"Modification": "Multiply",
+									"Amount": "{{Berry Liqueur Bear's Knowledge}}"
+								}
+							]
+						}
+					],
+					"MinutesUntilReady": "{{G.K Berry Liqueur Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BerryLiqueur", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Berry Liqueur": true
+			},
+			"Entries": {
+				"nachonline.mps_BerryLiqueur": {	
+					"Id": "nachonline.mps_BerryLiqueur",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"berry_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BerryLiqueur",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_BerryLiqueur %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_BerryLiqueur",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{D.K Quantity}}",
+							"CopyQuality": "{{D.K Copy Quality}}",
+							"Quality": "{{D.K Quality}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Berry Liqueur Value Multiplier}}"
+								},
+								{
+									"Condition": "PLAYER_HAS_SEEN_EVENT Current 2120303",
+									"Modification": "Multiply",
+									"Amount": "{{Berry Liqueur Bear's Knowledge}}"
+								}
+							]
+						}
+					],
+					"MinutesUntilReady": "{{D.K Berry Liqueur Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BerryLiqueur", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Berry Liqueur": true
+			},
+			"Entries": {
+				"nachonline.mps_BerryLiqueur": {	
+					"Id": "nachonline.mps_BerryLiqueur",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"berry_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BerryLiqueur",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_BerryLiqueur %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_BerryLiqueur",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{I.K Quantity}}",
+							"CopyQuality": "{{I.K Copy Quality}}",
+							"Quality": "{{I.K Quality}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Berry Liqueur Value Multiplier}}"
+								},
+								{
+									"Condition": "PLAYER_HAS_SEEN_EVENT Current 2120303",
+									"Modification": "Multiply",
+									"Amount": "{{Berry Liqueur Bear's Knowledge}}"
+								}
+							]
+						}
+					],
+					"MinutesUntilReady": "{{I.K Berry Liqueur Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BerryLiqueur", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Berry Liqueur": true
+			},
+			"Entries": {
+				"nachonline.mps_BerryLiqueur": {	
+					"Id": "nachonline.mps_BerryLiqueur",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"berry_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BerryLiqueur",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_BerryLiqueur %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_BerryLiqueur",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{R.K Quantity}}",
+							"CopyQuality": "{{R.K Copy Quality}}",
+							"Quality": "{{R.K Quality}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Berry Liqueur Value Multiplier}}"
+								},
+								{
+									"Condition": "PLAYER_HAS_SEEN_EVENT Current 2120303",
+									"Modification": "Multiply",
+									"Amount": "{{Berry Liqueur Bear's Knowledge}}"
+								}
+							]
+						}
+					],
+					"MinutesUntilReady": "{{R.K Berry Liqueur Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BerryLiqueur", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Berry Liqueur": true
+			},
+			"Entries": {
+				"nachonline.mps_BerryLiqueur": {	
+					"Id": "nachonline.mps_BerryLiqueur",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"berry_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BerryLiqueur",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_BerryLiqueur %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_BerryLiqueur",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{P.K Quantity}}",
+							"CopyQuality": "{{P.K Copy Quality}}",
+							"Quality": "{{P.K Quality}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Berry Liqueur Value Multiplier}}"
+								},
+								{
+									"Condition": "PLAYER_HAS_SEEN_EVENT Current 2120303",
+									"Modification": "Multiply",
+									"Amount": "{{Berry Liqueur Bear's Knowledge}}"
+								}
+							]
+						}
+					],
+					"MinutesUntilReady": "{{P.K Berry Liqueur Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BerryLiqueur", "ToPosition": "Top" }
+			]
+		},
+		// Mineral Water
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Mineral Water": true
+			},
+			"Entries": {
+				"nachonline.mps_MineralWater": {	
+					"Id": "nachonline.mps_MineralWater",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_gem"
+							]
+						},
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredTags": [
+								"category_minerals"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_MineralWater",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_MineralWater %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_MineralWater",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{G.K Quantity}}",
+							"CopyQuality": "{{G.K Copy Quality}}",
+							"Quality": "{{G.K Quality}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Mineral Water Value Multiplier}}"
+								}
+							]
+						}
+					],
+					"MinutesUntilReady": "{{G.K Mineral Water Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Mineral Water": true
+			},
+			"Entries": {
+				"nachonline.mps_MineralWater": {	
+					"Id": "nachonline.mps_MineralWater",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_gem"
+							]
+						},
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredTags": [
+								"category_minerals"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_MineralWater",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_MineralWater %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_MineralWater",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{D.K Quantity}}",
+							"CopyQuality": "{{D.K Copy Quality}}",
+							"Quality": "{{D.K Quality}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Mineral Water Value Multiplier}}"
+								}
+							]
+						}
+					],
+					"MinutesUntilReady": "{{D.K Mineral Water Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Mineral Water": true
+			},
+			"Entries": {
+				"nachonline.mps_MineralWater": {	
+					"Id": "nachonline.mps_MineralWater",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_gem"
+							]
+						},
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredTags": [
+								"category_minerals"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_MineralWater",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_MineralWater %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_MineralWater",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{I.K Quantity}}",
+							"CopyQuality": "{{I.K Copy Quality}}",
+							"Quality": "{{I.K Quality}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Mineral Water Value Multiplier}}"
+								}
+							]
+						}
+					],
+					"MinutesUntilReady": "{{I.K Mineral Water Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Mineral Water": true
+			},
+			"Entries": {
+				"nachonline.mps_MineralWater": {	
+					"Id": "nachonline.mps_MineralWater",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_gem"
+							]
+						},
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredTags": [
+								"category_minerals"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_MineralWater",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_MineralWater %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_MineralWater",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{R.K Quantity}}",
+							"CopyQuality": "{{R.K Copy Quality}}",
+							"Quality": "{{R.K Quality}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Mineral Water Value Multiplier}}"
+								}
+							]
+						}
+					],
+					"MinutesUntilReady": "{{R.K Mineral Water Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Mineral Water": true
+			},
+			"Entries": {
+				"nachonline.mps_MineralWater": {	
+					"Id": "nachonline.mps_MineralWater",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_gem"
+							]
+						},
+						{
+							"Trigger": "ItemPlacedInMachine",
+							"RequiredTags": [
+								"category_minerals"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_MineralWater",
+							"ObjectDisplayName": "[LocalizedText Strings\\Objects:mps_MineralWater %PRESERVED_DISPLAY_NAME]",
+							"ObjectInternalName": "{0} nachonline.mps_MineralWater",
+							"PreserveId": "DROP_IN",
+							"MinStack": "{{P.K Quantity}}",
+							"CopyQuality": "{{P.K Copy Quality}}",
+							"Quality": "{{P.K Quality}}",
+							"CopyColor": true,
+							"CopyPrice": true,
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Mineral Water Value Multiplier}}"
+								}
+							]
+						}
+					],
+					"MinutesUntilReady": "{{P.K Mineral Water Production Time}}"
+				}
+			}
+		},
+		// Pu-erh Tea
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true,
+				"Enable Pu-erh Tea": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTea": {	
+					"Id": "nachonline.mps_PuerhTea",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_PuerhTeaLeaves"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTea",
+							"MinStack": "{{G.K Quantity}}",
+							"CopyQuality": "{{G.K Copy Quality}}",
+							"Quality": "{{G.K Quality}}"
+						}
+					],
+					"MinutesUntilReady": "{{G.K Tea Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true,
+				"Enable Pu-erh Tea": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTea": {	
+					"Id": "nachonline.mps_PuerhTea",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_PuerhTeaLeaves"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTea",
+							"MinStack": "{{D.K Quantity}}",
+							"CopyQuality": "{{D.K Copy Quality}}",
+							"Quality": "{{D.K Quality}}"
+						}
+					],
+					"MinutesUntilReady": "{{D.K Tea Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true,
+				"Enable Pu-erh Tea": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTea": {	
+					"Id": "nachonline.mps_PuerhTea",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_PuerhTeaLeaves"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTea",
+							"MinStack": "{{I.K Quantity}}",
+							"CopyQuality": "{{I.K Copy Quality}}",
+							"Quality": "{{I.K Quality}}"
+						}
+					],
+					"MinutesUntilReady": "{{I.K Tea Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true,
+				"Enable Pu-erh Tea": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTea": {	
+					"Id": "nachonline.mps_PuerhTea",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_PuerhTeaLeaves"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTea",
+							"MinStack": "{{R.K Quantity}}",
+							"CopyQuality": "{{R.K Copy Quality}}",
+							"Quality": "{{R.K Quality}}"
+						}
+					],
+					"MinutesUntilReady": "{{R.K Tea Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticKeg",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true,
+				"Enable Pu-erh Tea": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTea": {	
+					"Id": "nachonline.mps_PuerhTea",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)nachonline.mps_PuerhTeaLeaves"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTea",
+							"MinStack": "{{P.K Quantity}}",
+							"CopyQuality": "{{P.K Copy Quality}}",
+							"Quality": "{{P.K Quality}}"
+						}
+					],
+					"MinutesUntilReady": "{{P.K Tea Production Time}}"
+				}
+			}
+		}
+	] 
+}

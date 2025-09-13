@@ -1,0 +1,428 @@
+{
+    "Format": "2.7.0",
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "{{ModId}}/bigcraftable",
+            "FromFile": "assets/bigcraftable.png"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_VPOven": {
+                    "Name": "{{ModId}}_VPOven",
+                    "DisplayName": "{{i18n:VPOvenName}}",
+                    "Description": "{{i18n:VPOvenDescription}}",
+                    "Price": 50,
+                    "Fragility": 0,
+                    "CanBePlacedOutdoors": true,
+                    "CanBePlacedIndoors": true,
+                    "Texture": "{{ModId}}/bigcraftable",
+                    "SpriteIndex": 0,
+                    "CustomFields": {
+                        "leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu True Map {{ModId}}_VPOven"
+                    }
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [
+                "Carpenter",
+                "Items"
+            ],
+            "Entries": {
+                "{{ModId}}_VPOven": {
+                    "Id": "{{ModId}}_VPOven",
+                    "ItemId": "(BC){{ModId}}_VPOven",
+                    "Price": 1000
+                }
+            },
+            "MoveEntries": [
+                {
+                    "ID": "{{ModId}}_VPOven",
+                    "BeforeID": "(F)1466"
+                }
+            ]
+        },
+        {
+            "Action": "EditData",
+            "Target": "Mods/leclair.bettercrafting/CraftingStations",
+            "Entries": {
+                "{{ModId}}_VPOven": {
+                    "Id": "{{ModId}}_VPOven",
+                    "DisplayName": "{{i18n:VPOvenName}}",
+                    "AreRecipesExclusive": true,
+                    "IsCooking": true,
+                    "Recipes": [
+                        "Shads42.VyraPack_AlgaeBread",
+                        "Shads42.VyraPack_AmaranthBread",
+                        "Shads42.VyraPack_BahnMi",
+                        "Shads42.VyraPack_BananaBread",
+                        "Shads42.VyraPack_BarleyBread",
+                        "Shads42.VyraPack_BrazilCheeseBread",
+                        "Shads42.VyraPack_BreadJuice",
+                        "Shads42.VyraPack_BurntBread",
+                        "Shads42.VyraPack_CactusBread",
+                        "Shads42.VyraPack_CauliflowerBread",
+                        "Shads42.VyraPack_CheeseBread",
+                        "Shads42.VyraPack_CornLoaf",
+                        "Shads42.VyraPack_DinoBread",
+                        "Shads42.VyraPack_DurumBread",
+                        "Shads42.VyraPack_DwarvenBread",
+                        "Shads42.VyraPack_GingerbreadLoaf",
+                        "Shads42.VyraPack_GoatCheeseBread",
+                        "Shads42.VyraPack_GoldenBread",
+                        "Shads42.VyraPack_HollyBread",
+                        "Shads42.VyraPack_HoneyBread",
+                        "Shads42.VyraPack_HugeBread",
+                        "Shads42.VyraPack_JellyBread",
+                        "Shads42.VyraPack_KaleBread",
+                        "Shads42.VyraPack_MagmaCapBread",
+                        "Shads42.VyraPack_MapleSyrupBread",
+                        "Shads42.VyraPack_MelonPan",
+                        "Shads42.VyraPack_MintBread",
+                        "Shads42.VyraPack_MushroomBread",
+                        "Shads42.VyraPack_OnionBread",
+                        "Shads42.VyraPack_ParsnipBread",
+                        "Shads42.VyraPack_PepperSpicebread",
+                        "Shads42.VyraPack_PrismaticBread",
+                        "Shads42.VyraPack_PufferfishBread",
+                        "Shads42.VyraPack_RadishBread",
+                        "Shads42.VyraPack_RhubarbBread",
+                        "Shads42.VyraPack_RyeBread",
+                        "Shads42.VyraPack_Shokupan",
+                        "Shads42.VyraPack_SolarBread",
+                        "Shads42.VyraPack_SpeltBread",
+                        "Shads42.VyraPack_StoneBread",
+                        "Shads42.VyraPack_BeetBread",
+                        "Shads42.VyraPack_Tigerbread",
+                        "Shads42.VyraPack_UrchinBread",
+                        "Shads42.VyraPack_VoidBread",
+                        "Shads42.VyraPack_VoidEssenceBread",
+                        "Shads42.VyraPack_Bagel",
+                        "Shads42.VyraPack_Brioche",
+                        "Shads42.VyraPack_BrownBun",
+                        "Shads42.VyraPack_BrownLoaf",
+                        "Shads42.VyraPack_CoconutBread",
+                        "Shads42.VyraPack_CoffeeBread",
+                        "Shads42.VyraPack_CoffeeBun",
+                        "Shads42.VyraPack_Cornbread",
+                        "Shads42.VyraPack_DuckBread",
+                        "Shads42.VyraPack_Focaccia",
+                        "Shads42.VyraPack_GarlicBread",
+                        "Shads42.VyraPack_HazelnutBread",
+                        "Shads42.VyraPack_MeatLoaf",
+                        "Shads42.VyraPack_NaanBread",
+                        "Shads42.VyraPack_PotatoBread",
+                        "Shads42.VyraPack_Pretzel",
+                        "Shads42.VyraPack_PumpkinBread",
+                        "Shads42.VyraPack_RiceBread",
+                        "Shads42.VyraPack_RiceBun",
+                        "Shads42.VyraPack_SourdoughBread",
+                        "Shads42.VyraPack_WhiteBun",
+                        "Shads42.VyraPack_WhiteLoaf",
+                        "Shads42.VyraPack_AncientFruitCake",
+                        "Shads42.VyraPack_AppleCake",
+                        "Shads42.VyraPack_AppleCrumbCake",
+                        "Shads42.VyraPack_ApricotCake",
+                        "Shads42.VyraPack_BananaCake",
+                        "Shads42.VyraPack_BlackberryCake",
+                        "Shads42.VyraPack_BlueberryCake",
+                        "Shads42.VyraPack_ButterCake",
+                        "Shads42.VyraPack_CactusFruitCake",
+                        "Shads42.VyraPack_CarrotCake",
+                        "Shads42.VyraPack_CherryCake",
+                        "Shads42.VyraPack_ChocolateCake",
+                        "Shads42.VyraPack_CoconutCake",
+                        "Shads42.VyraPack_CranberryCake",
+                        "Shads42.VyraPack_CrystalFruitCake",
+                        "Shads42.VyraPack_GenoiseCake",
+                        "Shads42.VyraPack_GrapeCake",
+                        "Shads42.VyraPack_LemonCake",
+                        "Shads42.VyraPack_MangoCake",
+                        "Shads42.VyraPack_MelonCake",
+                        "Shads42.VyraPack_OrangeCake",
+                        "Shads42.VyraPack_PeachCake",
+                        "Shads42.VyraPack_PineappleCake",
+                        "Shads42.VyraPack_PomegranateCake",
+                        "Shads42.VyraPack_RedVelvetCake",
+                        "Shads42.VyraPack_SalmonberryCake",
+                        "Shads42.VyraPack_SpiceBerryCake",
+                        "Shads42.VyraPack_StarfruitCake",
+                        "Shads42.VyraPack_StrawberryCake",
+                        "Shads42.VyraPack_WildPlumCake",
+                        "Shads42.VyraPack_Bakewell",
+                        "Shads42.VyraPack_Berliner",
+                        "Shads42.VyraPack_Brownie",
+                        "Shads42.VyraPack_ChocoCupcake",
+                        "Shads42.VyraPack_Cupcake",
+                        "Shads42.VyraPack_StrawberryCupcake",
+                        "Shads42.VyraPack_Tiramisu",
+                        "Shads42.VyraPack_ChocoChipCookie",
+                        "Shads42.VyraPack_PBCookie",
+                        "Shads42.VyraPack_Sandcookie",
+                        "Shads42.VyraPack_BerryCrepe",
+                        "Shads42.VyraPack_ChocoBananaCrepe",
+                        "Shads42.VyraPack_Crepe",
+                        "Shads42.VyraPack_RoundWaffle",
+                        "Shads42.VyraPack_Waffle",
+                        "Shads42.VyraPack_CherryJamPastry",
+                        "Shads42.VyraPack_ChocoDonut",
+                        "Shads42.VyraPack_ChocoEclair",
+                        "Shads42.VyraPack_CinnamonRoll",
+                        "Shads42.VyraPack_CinnamonFruitBiscuits",
+                        "Shads42.VyraPack_CranberryCakeRoll",
+                        "Shads42.VyraPack_Croissant",
+                        "Shads42.VyraPack_CreamBun",
+                        "Shads42.VyraPack_CreamyStrawberryPastry",
+                        "Shads42.VyraPack_GlazedPastry",
+                        "Shads42.VyraPack_Meatbun",
+                        "Shads42.VyraPack_Meatpie",
+                        "Shads42.VyraPack_MilleFeuille",
+                        "Shads42.VyraPack_PainChocolat",
+                        "Shads42.VyraPack_PlumPastry",
+                        "Shads42.VyraPack_PomegranatePastry",
+                        "Shads42.VyraPack_StrawberryDonut",
+                        "Shads42.VyraPack_StrawberryPastry",
+                        "Shads42.VyraPack_SugaredCinnamonRoll",
+                        "Shads42.VyraPack_SugaredDonut",
+                        "Shads42.VyraPack_Turnover",
+                        "Shads42.VyraPack_CakeCream",
+                        "Shads42.VyraPack_CheeseStick",
+                        "Shads42.VyraPack_CranberryCrumble",
+                        "Shads42.VyraPack_Empanada",
+                        "Shads42.VyraPack_FruitMuffin",
+                        "Shads42.VyraPack_GingerbreadMan",
+                        "Shads42.VyraPack_PomegranatePastry",
+                        "Shads42.VyraPack_Treacle"
+                    ],
+                    "Categories": [
+                        {
+                            "Id": "{{ModId}}_breads",
+                            "Name": "{{i18n:CategoryBreads}}",
+                            "Icon": {
+                                "Type": "Item",
+                                "RecipeName": "Shads42.VyraPack_AlgaeBread"
+                            },
+                            "Recipes": [
+                                "Shads42.VyraPack_AlgaeBread",
+                                "Shads42.VyraPack_AmaranthBread",
+                                "Shads42.VyraPack_BahnMi",
+                                "Shads42.VyraPack_BananaBread",
+                                "Shads42.VyraPack_BarleyBread",
+                                "Shads42.VyraPack_BrazilCheeseBread",
+                                "Shads42.VyraPack_BreadJuice",
+                                "Shads42.VyraPack_BurntBread",
+                                "Shads42.VyraPack_CactusBread",
+                                "Shads42.VyraPack_CauliflowerBread",
+                                "Shads42.VyraPack_CheeseBread",
+                                "Shads42.VyraPack_CornLoaf",
+                                "Shads42.VyraPack_DinoBread",
+                                "Shads42.VyraPack_DurumBread",
+                                "Shads42.VyraPack_DwarvenBread",
+                                "Shads42.VyraPack_GingerbreadLoaf",
+                                "Shads42.VyraPack_GoatCheeseBread",
+                                "Shads42.VyraPack_GoldenBread",
+                                "Shads42.VyraPack_HollyBread",
+                                "Shads42.VyraPack_HoneyBread",
+                                "Shads42.VyraPack_HugeBread",
+                                "Shads42.VyraPack_JellyBread",
+                                "Shads42.VyraPack_KaleBread",
+                                "Shads42.VyraPack_MagmaCapBread",
+                                "Shads42.VyraPack_MapleSyrupBread",
+                                "Shads42.VyraPack_MelonPan",
+                                "Shads42.VyraPack_MintBread",
+                                "Shads42.VyraPack_MushroomBread",
+                                "Shads42.VyraPack_OnionBread",
+                                "Shads42.VyraPack_ParsnipBread",
+                                "Shads42.VyraPack_PepperSpicebread",
+                                "Shads42.VyraPack_PrismaticBread",
+                                "Shads42.VyraPack_PufferfishBread",
+                                "Shads42.VyraPack_PumpkinBread",
+                                "Shads42.VyraPack_RadishBread",
+                                "Shads42.VyraPack_RhubarbBread",
+                                "Shads42.VyraPack_RyeBread",
+                                "Shads42.VyraPack_Shokupan",
+                                "Shads42.VyraPack_SolarBread",
+                                "Shads42.VyraPack_SpeltBread",
+                                "Shads42.VyraPack_StoneBread",
+                                "Shads42.VyraPack_BeetBread",
+                                "Shads42.VyraPack_Tigerbread",
+                                "Shads42.VyraPack_UrchinBread",
+                                "Shads42.VyraPack_VoidBread",
+                                "Shads42.VyraPack_VoidEssenceBread",
+                                "Shads42.VyraPack_Bagel",
+                                "Shads42.VyraPack_Brioche",
+                                "Shads42.VyraPack_BrownBun",
+                                "Shads42.VyraPack_BrownLoaf",
+                                "Shads42.VyraPack_CoconutBread",
+                                "Shads42.VyraPack_CoffeeBread",
+                                "Shads42.VyraPack_CoffeeBun",
+                                "Shads42.VyraPack_Cornbread",
+                                "Shads42.VyraPack_DuckBread",
+                                "Shads42.VyraPack_Focaccia",
+                                "Shads42.VyraPack_GarlicBread",
+                                "Shads42.VyraPack_HazelnutBread",
+                                "Shads42.VyraPack_NaanBread",
+                                "Shads42.VyraPack_PotatoBread",
+                                "Shads42.VyraPack_RiceBread",
+                                "Shads42.VyraPack_RiceBun",
+                                "Shads42.VyraPack_SourdoughBread",
+                                "Shads42.VyraPack_WhiteBun",
+                                "Shads42.VyraPack_WhiteLoaf"
+                            ]
+                        },
+                        {
+                            "Id": "{{ModId}}_rolls",
+                            "Name": "{{i18n:CategoryRolls}}",
+                            "Icon": {
+                                "Type": "Item",
+                                "RecipeName": "Shads42.VyraPack_CinnamonRoll"
+                            },
+                            "Recipes": [
+                                "Shads42.VyraPack_CinnamonRoll",
+                                "Shads42.VyraPack_SugaredCinnamonRoll",
+                                "Shads42.VyraPack_StrawberryDonut",
+                                "Shads42.VyraPack_SugaredDonut",
+                                "Shads42.VyraPack_ChocoDonut",
+                                "Shads42.VyraPack_CinnamonFruitBiscuits",
+                                "Shads42.VyraPack_CranberryCakeRoll"
+                            ]
+                        },
+                        {
+                            "Id": "{{ModId}}_pastries",
+                            "Name": "{{i18n:CategoryPastries}}",
+                            "Icon": {
+                                "Type": "Item",
+                                "RecipeName": "Shads42.VyraPack_Croissant"
+                            },
+                            "Recipes": [
+                                "Shads42.VyraPack_CreamBun",
+                                "Shads42.VyraPack_Croissant",
+                                "Shads42.VyraPack_Turnover",
+                                "Shads42.VyraPack_ChocoEclair",
+                                "Shads42.VyraPack_PainChocolat",
+                                "Shads42.VyraPack_MilleFeuille",
+                                "Shads42.VyraPack_PomegranatePastry",
+                                "Shads42.VyraPack_PlumPastry",
+                                "Shads42.VyraPack_StrawberryPastry",
+                                "Shads42.VyraPack_CreamyStrawberryPastry",
+                                "Shads42.VyraPack_GlazedPastry",
+                                "Shads42.VyraPack_CherryJamPastry"
+                            ]
+                        },
+                        {
+                            "Id": "{{ModId}}_cakes",
+                            "Name": "{{i18n:CategoryCakes}}",
+                            "Icon": {
+                                "Type": "Item",
+                                "RecipeName": "Shads42.VyraPack_Bakewell"
+                            },
+                            "Recipes": [
+                                "Shads42.VyraPack_AncientFruitCake",
+                                "Shads42.VyraPack_AppleCake",
+                                "Shads42.VyraPack_AppleCrumbCake",
+                                "Shads42.VyraPack_ApricotCake",
+                                "Shads42.VyraPack_BananaCake",
+                                "Shads42.VyraPack_BlackberryCake",
+                                "Shads42.VyraPack_BlueberryCake",
+                                "Shads42.VyraPack_ButterCake",
+                                "Shads42.VyraPack_CactusFruitCake",
+                                "Shads42.VyraPack_CarrotCake",
+                                "Shads42.VyraPack_CherryCake",
+                                "Shads42.VyraPack_ChocolateCake",
+                                "Shads42.VyraPack_CoconutCake",
+                                "Shads42.VyraPack_CranberryCake",
+                                "Shads42.VyraPack_CrystalFruitCake",
+                                "Shads42.VyraPack_GenoiseCake",
+                                "Shads42.VyraPack_GrapeCake",
+                                "Shads42.VyraPack_LemonCake",
+                                "Shads42.VyraPack_MangoCake",
+                                "Shads42.VyraPack_MelonCake",
+                                "Shads42.VyraPack_OrangeCake",
+                                "Shads42.VyraPack_PeachCake",
+                                "Shads42.VyraPack_PineappleCake",
+                                "Shads42.VyraPack_PomegranateCake",
+                                "Shads42.VyraPack_RedVelvetCake",
+                                "Shads42.VyraPack_SalmonberryCake",
+                                "Shads42.VyraPack_SpiceBerryCake",
+                                "Shads42.VyraPack_StarfruitCake",
+                                "Shads42.VyraPack_StrawberryCake",
+                                "Shads42.VyraPack_WildPlumCake",
+                                "Shads42.VyraPack_Bakewell",
+                                "Shads42.VyraPack_Berliner",
+                                "Shads42.VyraPack_Brownie",
+                                "Shads42.VyraPack_ChocoCupcake",
+                                "Shads42.VyraPack_Cupcake",
+                                "Shads42.VyraPack_StrawberryCupcake",
+                                "Shads42.VyraPack_Tiramisu"
+                            ]
+                        },
+                        {
+                            "Id": "{{ModId}}_cookies",
+                            "Name": "{{i18n:CategoryCookies}}",
+                            "Icon": {
+                                "Type": "Item",
+                                "RecipeName": "Shads42.VyraPack_ChocoChipCookie"
+                            },
+                            "Recipes": [
+                                "Shads42.VyraPack_ChocoChipCookie",
+                                "Shads42.VyraPack_PBCookie",
+                                "Shads42.VyraPack_Sandcookie",
+                                "Shads42.VyraPack_GingerbreadMan"
+                            ]
+                        },
+                        {
+                            "Id": "{{ModId}}_pancakes",
+                            "Name": "{{i18n:CategoryPancakes}}",
+                            "Icon": {
+                                "Type": "Item",
+                                "RecipeName": "Shads42.VyraPack_BerryCrepe"
+                            },
+                            "Recipes": [
+                                "Shads42.VyraPack_BerryCrepe",
+                                "Shads42.VyraPack_ChocoBananaCrepe",
+                                "Shads42.VyraPack_Crepe",
+                                "Shads42.VyraPack_RoundWaffle",
+                                "Shads42.VyraPack_Waffle"
+                            ]
+                        },
+                        {
+                            "Id": "{{ModId}}_savory",
+                            "Name": "{{i18n:CategorySavory}}",
+                            "Icon": {
+                                "Type": "Item",
+                                "RecipeName": "Shads42.VyraPack_Meatbun"
+                            },
+                            "Recipes": [
+                                "Shads42.VyraPack_Meatbun",
+                                "Shads42.VyraPack_MeatLoaf",
+                                "Shads42.VyraPack_Meatpie",
+                                "Shads42.VyraPack_Empanada",
+                                "Shads42.VyraPack_CheeseStick",
+                                "Shads42.VyraPack_Pretzel"
+                            ]
+                        },
+                        {
+                            "Id": "{{ModId}}_misc",
+                            "Name": "{{i18n:CategoryMisc}}",
+                            "Icon": {
+                                "Type": "Item",
+                                "RecipeName": "Shads42.VyraPack_CakeCream"
+                            },
+                            "Recipes": [
+                                "Shads42.VyraPack_CakeCream",
+                                "Shads42.VyraPack_Treacle",
+                                "Shads42.VyraPack_FruitMuffin",
+                                "Shads42.VyraPack_CranberryCrumble"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

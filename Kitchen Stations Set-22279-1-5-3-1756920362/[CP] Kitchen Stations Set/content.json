@@ -1,0 +1,425 @@
+{
+  "Format": "2.0.0",
+
+   "ConfigSchema": {
+   
+		"EnableFarmhouse": { 
+		"AllowValues": "true, false",
+		"Default": "true",
+		"AllowBlank": "false",
+		"Section": "EnableMod"
+		// "Description": "{{i18n: config.EnableFarmhouse}}"
+			},
+		"EnableIsland": { 
+		"AllowValues": "true, false",
+		"Default": "true",
+		"AllowBlank": "false",
+		"Section": "EnableMod"
+		// "Description": "{{i18n: config.EnableIsland}}"
+			},
+		"EnableCraftables": { 
+		"AllowValues": "true, false",
+		"Default": "true",
+		"AllowBlank": "false",
+		"Section": "EnableMod"
+		// "Description": "{{i18n: config.EnableCraftables}}"
+			},
+		"MagicSink": { 
+		"AllowValues": "true, false",
+		"Default": "true",
+		"AllowBlank": "false",
+		"Section": "EnableMod"
+		// "Description": "{{i18n: config.MagicSink}}"
+			},
+		"Exclusive": { 
+		"AllowValues": "true, false",
+		"Default": "false",
+		"AllowBlank": "false",
+		"Section": "Toggables"
+		// "Description": "{{i18n: config.Exclusive}}"
+			},
+		"AreaBC": { 
+		"AllowValues": "true, false",
+		"Default": "false",
+		"AllowBlank": "false",
+		"Section": "Toggables"
+		// "Description": "{{i18n: config.AreaBC}}"
+			},
+		"AreaMap": { 
+		"AllowValues": "true, false",
+		"Default": "false",
+		"AllowBlank": "false",
+		"Section": "Toggables"
+		// "Description": "{{i18n: config.AreaMap}}"
+			},
+		"TopKitchenOnly": { 
+		"AllowValues": "true, false",
+		"Default": "false",
+		"AllowBlank": "false",
+		"Section": "Toggables"
+		// "Description": "{{i18n: config.TopKitchenOnly}}"
+			},
+		"KitchenSink": { 
+		"AllowValues": "true, false",
+		"Default": "false",
+		"AllowBlank": "false",
+		"Section": "Toggables"
+		// "Description": "{{i18n: config.KitchenSink}}"
+			},
+		"DarkStove": {
+		"AllowValues": "true, false",
+		"Default": "false",
+		"AllowBlank": "false",
+		"Section": "Style"
+		// "Description": "{{i18n: config.DarkStove}}"
+			},
+		"Wood": {
+		"AllowValues": "Vanilla, BlackWood, DarkWood, BrownWood, LightBWood, WhiteWood",
+		"Default": "Vanilla",
+		"AllowBlank": "false",
+		"Section": "Style"
+		// "Description": "{{i18n: config.Wood}}"
+			},
+		"Tile": {
+		"AllowValues": "White, Blue, Green, VanillaGray",
+		"Default": "White",
+		"AllowBlank": "false",
+		"Section": "Style"
+		// "Description": "{{i18n: config.Tile}}"
+			},
+		"Decorations": {
+		"AllowValues": "KitchenCounter, DrinkSnack, OvenStove, Dessert, Cocktail, Sushi, Festival, Sink",
+		"Default": "KitchenCounter, DrinkSnack, OvenStove, Dessert, Cocktail, Sushi, Festival, Sink",
+		"AllowMultiple": "true",
+		"AllowBlank": "true",
+		"Section": "Style"
+		// "Description": "{{i18n: config.Decorations}}"
+			},
+		"BigKitchen": { 
+		"AllowValues": "true, false",
+		"Default": "true",
+		"AllowBlank": "false",
+		"Section": "Compatibility"
+		// "Description": "{{i18n: config.BigKitchen}}"
+			},
+		"NoKitchen": { 
+		"AllowValues": "true, false",
+		"Default": "false",
+		"AllowBlank": "false",
+		"Section": "Compatibility"
+		// "Description": "{{i18n: config.NoKitchen}}"
+			},
+		"Small": { 
+		"AllowValues": "true, false",
+		"Default": "false",
+		"AllowBlank": "false",
+		"Section": "Compatibility"
+		// "Description": "{{i18n: config.Small}}"
+			},
+		"KisaaFHKitchen": { 
+		"AllowValues": "small, large, full",
+		"Default": "large",
+		"AllowBlank": "false",
+		"Section": "Compatibility"
+		// "Description": "{{i18n: config.KisaaFHKitchen}}"
+			},	
+		"KisaaBuildables": { 
+		"AllowValues": "true, false",
+		"Default": "true",
+		"AllowBlank": "false",
+		"Section": "Compatibility"
+		// "Description": "{{i18n: config.KisaaBuildables}}"
+			}		
+		},		
+		
+	"DynamicTokens": [
+	//Area because why the hell not...
+		{
+			"Name": "AreaChoice",
+			"Value": "",
+			"When": {
+				"AreaBC": "false"
+			}
+		},
+		{
+			"Name": "AreaChoice",
+			"Value": "Area 12",
+			"When": {
+				"AreaBC": "true"
+			}
+		},
+		{
+			"Name": "AreaFolder",
+			"Value": "AreaNot",
+			"When": {
+				"AreaMap": "false"
+			}
+		},
+		{
+			"Name": "AreaFolder",
+			"Value": "AreaFixed",
+			"When": {
+				"AreaMap": "true"
+			}
+		}
+	],
+  "Changes": [
+
+//DON'T CHANGE THE STUFF HERE... YOU MIGHT BREAK SOMETHING!
+
+//Adding to Farmhouse Maps
+
+        {
+            "LogName": "Make the menus appear in the house",
+            "Action": "Include",
+            "FromFile": "Data/vanillafarmhouse.json",
+	"When": {
+		"HasMod |contains=Hadi.EmptyKitchen, Asterisk555..NoBuiltInKitchen, crystalinerose.RusticFarmhouse, DustBeauty.SeasonalGardernFarmhouse.v2, Aimon111.AimonsTidyCozyFarmhouse, Aimon111.RedesignedFarmHouseLayoutAlt, Lnh.FarmHouse, Lu.B17.LuneFarmhouse, Tikamin557.CP.ApartmentHouse, Lnh.SmallFarmHouse, Tortart.AshsSaunaFarmhouse, Kyuya.FarmHouse25": false,
+		"EnableFarmhouse": "true"
+		}
+        },
+
+//Compatibility with modified farmhouses
+        {
+            "LogName": "Make the menus appear in the house Kisaa's",
+            "Action": "Include",
+            "FromFile": "Data/KisaaFarmhouse.json",
+	"When": {
+		"HasMod": "crystalinerose.RusticFarmhouse",
+		"EnableFarmhouse": "true"
+		}
+        },
+        {
+            "LogName": "Make the menus appear in the house V2",
+            "Action": "Include",
+            "FromFile": "Data/V2farmhouse.json",
+	"When": {
+		"HasMod": "DustBeauty.SeasonalGardernFarmhouse.v2",
+		"EnableFarmhouse": "true"
+		}
+        },
+        {
+            "LogName": "Make the menus appear in the house TC",
+            "Action": "Include",
+            "FromFile": "Data/TidyCozyfarmhouse.json",
+	"When": {
+		"HasMod": "Aimon111.AimonsTidyCozyFarmhouse",
+		"EnableFarmhouse": "true"
+		}
+        },
+        {
+            "LogName": "Make the menus appear in the house Fancy",
+            "Action": "Include",
+            "FromFile": "Data/Fancyfarmhouse.json",
+	"When": {
+		"HasMod": "Aimon111.RedesignedFarmHouseLayoutAlt",
+		"EnableFarmhouse": "true"
+		}
+        },
+        {
+            "LogName": "Make the menus appear in the house LNH1",
+            "Action": "Include",
+            "FromFile": "Data/LNH1farmhouse.json",
+	"When": {
+		"HasMod": "Lnh.FarmHouse",
+		"EnableFarmhouse": "true"
+		}
+        },
+        {
+            "LogName": "Make the menus appear in the house Lune",
+            "Action": "Include",
+            "FromFile": "Data/LuneFarmHouses.json",
+	"When": {
+		"HasMod": "Lu.B17.LuneFarmhouse",
+		"EnableFarmhouse": "true"
+		}
+        },
+        {
+            "LogName": "Make the menus appear in the house Ts Apt",
+            "Action": "Include",
+           "FromFile": "Data/TsApt.json",
+	"When": {
+		"HasMod": "Tikamin557.CP.ApartmentHouse",
+		"EnableFarmhouse": "true"
+		}
+        },
+        {
+            "LogName": "Make the menus appear in the house LNHSmall",
+            "Action": "Include",
+           "FromFile": "Data/LNHSmol.json",
+	"When": {
+		"HasMod": "Lnh.SmallFarmHouse",
+		"EnableFarmhouse": "true"
+		}
+        },	
+        {
+            "LogName": "Make the menus appear in the house Ash",
+            "Action": "Include",
+           "FromFile": "Data/Ash.json",
+	"When": {
+		"HasMod": "Tortart.AshsSaunaFarmhouse",
+		"EnableFarmhouse": "true"
+		}
+        },	
+        {
+            "LogName": "Make the menus appear in the house NY by Kyuya",
+            "Action": "Include",
+            "FromFile": "Data/NYHouse.json",
+	"When": {
+		"HasMod": "Kyuya.FarmHouse25",
+		"EnableFarmhouse": "true"
+		}
+        },		
+//Island + Compats
+        {
+            "LogName": "Make the menus appear in the house island",
+            "Action": "Include",
+            "FromFile": "Data/islandfarmhouse.json",
+	"When": {
+		"EnableIsland": "true"
+		}
+        },
+
+//Sprite Loading
+		{
+      	    "LogName": "Load Sprites",
+      	    "Action": "Load",
+      	    "Target": "Mods/Objects/BetterCraft.KitchenCounterSet",
+     	    "FromFile": "assets/vanilla.png"
+    	},
+        {
+            "LogName": "Sprite Styles",
+            "Action": "Include",
+            "FromFile": "Data/styles.json"
+        },
+		{
+      	    "LogName": "Load Sprite Dungeon Meal",
+      	    "Action": "Load",
+      	    "Target": "Mods/Objects/BetterCraft.DungeonGoods",
+     	    "FromFile": "assets/meshitime.png"
+    	},
+		{
+      	    "LogName": "Load Sprite TMP",
+      	    "Action": "Load",
+      	    "Target": "Mods/Objects/BetterCraft.TMP",
+     	    "FromFile": "assets/tmp.png"
+    	},		
+//Compat and Rule Adding
+		/*{
+      	    "LogName": "Load Rules",
+      	    "Action": "Include",
+     	    "FromFile": "Data/rules.json"
+    	},*/
+ 		{
+            "LogName": "Rustic Kitchen Buildable Compat",
+            "Action": "Include",
+            "FromFile": "Compat/RusticKitchen.json",
+			"When": {  "KisaaBuildables": "true", "HasMod |contains=crystalinerose.RusticKitchen.Buildable":true, "HasMod |contains=sophie.Calcifer":true }
+        },
+		{
+            "LogName": "Rustic Bakery and Cafe Buildable Compat",
+            "Action": "Include",
+            "FromFile": "Compat/RusticBakery.json",
+			"When": {  "KisaaBuildables": "true", "HasMod |contains=crystalinerose.RusticBakeryCafe":true, "HasMod |contains=sophie.Calcifer":true }
+        },
+//Adding Big Craftables
+        {
+            "LogName": "Making the Big Craftables",
+            "Action": "Include",
+            "FromFile": "Data/objects.json",
+	    "When": {  "EnableCraftables": "true" }
+        },
+        {
+            "LogName": "Making the Big Craftables 2",
+            "Action": "Include",
+            "FromFile": "Data/objects2.json",
+	    "When": {  "EnableCraftables": "true", "HasMod": "Wizadroid.DFF, sapphicsaph_pitv, ZG.Mooncakes, ShiryuCasDrg.UkrainianFood, kath.wth.holidays, sisa.AOBImasterchef, GoodJobSuzette.HomeCooking"}
+        },
+        {
+            "LogName": "Making the Big Craftables Dungeon",
+            "Action": "Include",
+            "FromFile": "Data/objects3.json",
+	    "When": {  "EnableCraftables": "true", "HasMod": "stinkyvicki.DeliciousInStardew, skeleton.SlimeExtendCP, GoodJobSuzette.HomeCooking, Syanide.BugBonanza"}
+        },
+        {
+            "LogName": "Making the Big Craftables TMP",
+            "Action": "Include",
+            "FromFile": "Data/objectstmp.json",
+	    "When": {  "EnableCraftables": "true", "HasMod": "Uni.TMP"}
+        },
+        {
+            "LogName": "Big Craftables Mailing for Open Shop",
+            "Action": "Include",
+            "FromFile": "Data/mail.json",
+	    "When": {  "EnableCraftables": "true" }
+        },
+
+//Crafting Station Making
+        {
+            "LogName": "Build Cocktail Bar Menu",
+            "Action": "Include",
+            "FromFile": "Includes/CocktailBar.json"
+        },
+        {
+            "LogName": "Build Dessert Station Menu",
+            "Action": "Include",
+            "FromFile": "Includes/DessertStation.json",
+			"When": {"HasMod |contains=cindyexe.VMPPO": true}
+        },
+        {
+            "LogName": "Build Dessert Station Menu if No VMPPO",
+            "Action": "Include",
+            "FromFile": "Includes/DessertStationNoVMPPO.json",
+			"When": {"HasMod |contains=cindyexe.VMPPO": false}
+        },		
+        {
+            "LogName": "Build Drinks and Snacks Menu",
+            "Action": "Include",
+            "FromFile": "Includes/DrinknSnackBar.json"
+        },
+        {
+            "LogName": "Build Kitchen Counter Menu",
+            "Action": "Include",
+            "FromFile": "Includes/KitchenCounter.json"
+        },
+        {
+            "LogName": "Build Induction Oven and Stove Menu",
+            "Action": "Include",
+            "FromFile": "Includes/OvenStove.json",
+			"When": {"HasMod |contains=cindyexe.VMPPO": true}
+        },
+        {
+            "LogName": "Build Induction Oven and Stove Menu if No VMPPO",
+            "Action": "Include",
+            "FromFile": "Includes/OvenStoveNoVMPPO.json",
+			"When": {"HasMod |contains=cindyexe.VMPPO": false}
+        },		
+        {
+            "LogName": "Build Sushi Bar Menu",
+            "Action": "Include",
+            "FromFile": "Includes/SushiBar.json"
+        },
+        {
+            "LogName": "Build Festival Menu",
+            "Action": "Include",
+            "FromFile": "Includes/FestivalDelights.json"
+        },
+        {
+            "LogName": "Build Dungeon Menu",
+            "Action": "Include",
+            "FromFile": "Includes/MineDungeonMeal.json"
+        },
+        {
+            "LogName": "Build TMP Menu",
+            "Action": "Include",
+            "FromFile": "Includes/TMP.json"
+        },
+        {
+            "LogName": "Build Magic Kitchen",
+            "Action": "Include",
+            "FromFile": "Includes/Kitchen.json",
+			"When": {  "EnableCraftables": "true", "MagicSink": "true" }
+        }
+
+]
+}

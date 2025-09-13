@@ -1,0 +1,2227 @@
+{
+    "Changes": [
+
+		// Lumisteria Visit Mount Vapius (https://www.nexusmods.com/stardewvalley/mods/9600)
+		{
+			"LogName": "Add compatibility patch to the Iridium Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumGeodeCrusher",
+				"OutputRules"
+			],
+			"Entries": {
+				"Lumisteria.MtVapius_BlackGeode": {
+					"Id": "Lumisteria.MtVapius_BlackGeode",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_BlackGeode"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)82",
+								"(O)382",
+								"(O)386",
+								"(O)390",
+								"(O)539",
+								"(O)553",
+								"(O)558",
+								"(O)562",
+								"(O)565",
+								"(O)575",
+								"(O)122",
+								"(O)Lumisteria.MtVapius_Amber",
+								"(O)Lumisteria.MtVapius_AmberFern",
+								"(O)Lumisteria.MtVapius_Demantoide",
+								"(O)Lumisteria.MtVapius_Carnelian",
+								"(O)Lumisteria.MtVapius_Turquoise",
+								"(O)Lumisteria.MtVapius_Garnet",
+								"(O)Lumisteria.MtVapius_GemPigeonEgg",
+								"(O)Lumisteria.MtVapius_Morganite",
+								"(O)Lumisteria.MtVapius_Heliodor",
+								"(O)Lumisteria.MtVapius_Labradorite",
+								"(O)Lumisteria.MtVapius_VoidDiamond",
+								"(O)Lumisteria.MtVapius_Tourmaline",
+								"(O)Lumisteria.MtVapius_Larimar",
+								"(O)Lumisteria.MtVapius_BlueAgathe",
+								"(O)Lumisteria.MtVapius_Amber"
+							],
+							"MinStack": "{{I.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.G.C Production Time}}"
+				},
+				"Lumisteria.MtVapius_GemPigeonEgg": {
+					"Id": "Lumisteria.MtVapius_GemPigeonEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_GemPigeonEgg"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)70",
+								"(O)555",
+								"(O)558"
+							],
+							"MinStack": "{{I.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.G.C Production Time}}"
+				},
+				"Lumisteria.MtVapius_Treasures_ArtifactTrove": {
+					"Id": "Lumisteria.MtVapius_Treasures_ArtifactTrove",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_Treasures_ArtifactTrove"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedStarfish",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedMoth",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedFern",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedFish",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedAmmonites",
+								"(O)Lumisteria.MtVapius_Treasures_GiantTusk",
+								"(O)Lumisteria.MtVapius_Treasures_BrokenWatch",
+								"(O)Lumisteria.MtVapius_Treasures_BrokenTeaCup",
+								"(O)Lumisteria.MtVapius_Treasures_EfficientCog",
+								"(O)Lumisteria.MtVapius_Treasures_DwarvishDevice",
+								"(O)Lumisteria.MtVapius_Treasures_RustyChest",
+								"(O)Lumisteria.MtVapius_Treasures_PetrifiedFlower",
+								"(O)Lumisteria.MtVapius_Treasures_RailroadNail",
+								"(O)Lumisteria.MtVapius_Treasures_DahuStatuette",
+								"(O)Lumisteria.MtVapius_Treasures_FaiencePlate",
+								"(O)Lumisteria.MtVapius_Treasures_CopperFibula",
+								"(O)Lumisteria.MtVapius_Treasures_GlassBowl",
+								"(O)Lumisteria.MtVapius_Treasures_FragmentMask",
+								"(O)Lumisteria.MtVapius_Treasures_OldMinerLamp",
+								"(O)Lumisteria.MtVapius_Treasures_RustyRing",
+								"(O)Lumisteria.MtVapius_Treasures_StainedGlass",
+								"(O)Lumisteria.MtVapius_Treasures_BlueCameo",
+								"(O)Lumisteria.MtVapius_Treasures_BrokenSundial",
+								"(O)Lumisteria.MtVapius_Treasures_OldShield",
+								"(O)Lumisteria.MtVapius_Treasures_FossilFragment01",
+								"(O)Lumisteria.MtVapius_Treasures_FossilFragment02",
+								"(O)Lumisteria.MtVapius_Treasures_FossilFragment03",
+								"(O)Lumisteria.MtVapius_Treasures_RareStamp",
+								"(O)Lumisteria.MtVapius_Treasures_Medallion",
+								"(O)Lumisteria.MtVapius_Treasures_Cyanotype"
+							],
+							"MinStack": "{{I.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.G.C Production Time}}"
+				},
+				"Lumisteria.MtVapius_Treasures_RustyChest": {
+					"Id": "Lumisteria.MtVapius_Treasures_RustyChest",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_Treasures_RustyChest"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)688",
+								"(O)689",
+								"(O)690",
+								"(O)Lumisteria.MtVapius_OwlCarving",
+								"(O)Lumisteria.MtVapius_WeirdCoins",
+								"(O)275",
+								"(O)166",
+								"(O)Lumisteria.MtVapius_Treasures_DahuStatuette",
+								"(O)Lumisteria.MtVapius_Treasures_FragmentMask",
+								"(O)Lumisteria.MtVapius_Treasures_BlueCameo",
+								"(O)Lumisteria.MtVapius_Treasures_ArtifactTrove",
+								"(O)Lumisteria.MtVapius_Demantoide",
+								"(O)Lumisteria.MtVapius_Carnelian",
+								"(O)Lumisteria.MtVapius_Turquoise",
+								"(O)Lumisteria.MtVapius_Garnet",
+								"(O)Lumisteria.MtVapius_Labradorite",
+								"(O)Lumisteria.MtVapius_Emerald_Polished"
+							],
+							"MinStack": 2,
+							"MaxStack": 6,
+							"QualityModifiers": [
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.G.C Production Time}}"
+				},
+			},
+			"When": {
+				"HasMod": "Lumisteria.MtVapius"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Radioactive Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveGeodeCrusher",
+				"OutputRules"
+			],
+			"Entries": {
+				"Lumisteria.MtVapius_BlackGeode": {
+					"Id": "Lumisteria.MtVapius_BlackGeode",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_BlackGeode"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)82",
+								"(O)382",
+								"(O)386",
+								"(O)390",
+								"(O)539",
+								"(O)553",
+								"(O)558",
+								"(O)562",
+								"(O)565",
+								"(O)575",
+								"(O)122",
+								"(O)Lumisteria.MtVapius_Amber",
+								"(O)Lumisteria.MtVapius_AmberFern",
+								"(O)Lumisteria.MtVapius_Demantoide",
+								"(O)Lumisteria.MtVapius_Carnelian",
+								"(O)Lumisteria.MtVapius_Turquoise",
+								"(O)Lumisteria.MtVapius_Garnet",
+								"(O)Lumisteria.MtVapius_GemPigeonEgg",
+								"(O)Lumisteria.MtVapius_Morganite",
+								"(O)Lumisteria.MtVapius_Heliodor",
+								"(O)Lumisteria.MtVapius_Labradorite",
+								"(O)Lumisteria.MtVapius_VoidDiamond",
+								"(O)Lumisteria.MtVapius_Tourmaline",
+								"(O)Lumisteria.MtVapius_Larimar",
+								"(O)Lumisteria.MtVapius_BlueAgathe",
+								"(O)Lumisteria.MtVapius_Amber"
+							],
+							"MinStack": "{{R.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.G.C Production Time}}"
+				},
+				"Lumisteria.MtVapius_GemPigeonEgg": {
+					"Id": "Lumisteria.MtVapius_GemPigeonEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_GemPigeonEgg"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)70",
+								"(O)555",
+								"(O)558"
+							],
+							"MinStack": "{{R.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.G.C Production Time}}"
+				},
+				"Lumisteria.MtVapius_Treasures_ArtifactTrove": {
+					"Id": "Lumisteria.MtVapius_Treasures_ArtifactTrove",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_Treasures_ArtifactTrove"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedStarfish",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedMoth",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedFern",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedFish",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedAmmonites",
+								"(O)Lumisteria.MtVapius_Treasures_GiantTusk",
+								"(O)Lumisteria.MtVapius_Treasures_BrokenWatch",
+								"(O)Lumisteria.MtVapius_Treasures_BrokenTeaCup",
+								"(O)Lumisteria.MtVapius_Treasures_EfficientCog",
+								"(O)Lumisteria.MtVapius_Treasures_DwarvishDevice",
+								"(O)Lumisteria.MtVapius_Treasures_RustyChest",
+								"(O)Lumisteria.MtVapius_Treasures_PetrifiedFlower",
+								"(O)Lumisteria.MtVapius_Treasures_RailroadNail",
+								"(O)Lumisteria.MtVapius_Treasures_DahuStatuette",
+								"(O)Lumisteria.MtVapius_Treasures_FaiencePlate",
+								"(O)Lumisteria.MtVapius_Treasures_CopperFibula",
+								"(O)Lumisteria.MtVapius_Treasures_GlassBowl",
+								"(O)Lumisteria.MtVapius_Treasures_FragmentMask",
+								"(O)Lumisteria.MtVapius_Treasures_OldMinerLamp",
+								"(O)Lumisteria.MtVapius_Treasures_RustyRing",
+								"(O)Lumisteria.MtVapius_Treasures_StainedGlass",
+								"(O)Lumisteria.MtVapius_Treasures_BlueCameo",
+								"(O)Lumisteria.MtVapius_Treasures_BrokenSundial",
+								"(O)Lumisteria.MtVapius_Treasures_OldShield",
+								"(O)Lumisteria.MtVapius_Treasures_FossilFragment01",
+								"(O)Lumisteria.MtVapius_Treasures_FossilFragment02",
+								"(O)Lumisteria.MtVapius_Treasures_FossilFragment03",
+								"(O)Lumisteria.MtVapius_Treasures_RareStamp",
+								"(O)Lumisteria.MtVapius_Treasures_Medallion",
+								"(O)Lumisteria.MtVapius_Treasures_Cyanotype"
+							],
+							"MinStack": "{{R.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.G.C Production Time}}"
+				},
+				"Lumisteria.MtVapius_Treasures_RustyChest": {
+					"Id": "Lumisteria.MtVapius_Treasures_RustyChest",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_Treasures_RustyChest"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)688",
+								"(O)689",
+								"(O)690",
+								"(O)Lumisteria.MtVapius_OwlCarving",
+								"(O)Lumisteria.MtVapius_WeirdCoins",
+								"(O)275",
+								"(O)166",
+								"(O)Lumisteria.MtVapius_Treasures_DahuStatuette",
+								"(O)Lumisteria.MtVapius_Treasures_FragmentMask",
+								"(O)Lumisteria.MtVapius_Treasures_BlueCameo",
+								"(O)Lumisteria.MtVapius_Treasures_ArtifactTrove",
+								"(O)Lumisteria.MtVapius_Demantoide",
+								"(O)Lumisteria.MtVapius_Carnelian",
+								"(O)Lumisteria.MtVapius_Turquoise",
+								"(O)Lumisteria.MtVapius_Garnet",
+								"(O)Lumisteria.MtVapius_Labradorite",
+								"(O)Lumisteria.MtVapius_Emerald_Polished"
+							],
+							"MinStack": 3,
+							"MaxStack": 6,
+							"QualityModifiers": [
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.G.C Production Time}}"
+				},
+			},
+			"When": {
+				"HasMod": "Lumisteria.MtVapius"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticGeodeCrusher",
+				"OutputRules"
+			],
+			"Entries": {
+				"Lumisteria.MtVapius_BlackGeode": {
+					"Id": "Lumisteria.MtVapius_BlackGeode",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_BlackGeode"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)82",
+								"(O)382",
+								"(O)386",
+								"(O)390",
+								"(O)539",
+								"(O)553",
+								"(O)558",
+								"(O)562",
+								"(O)565",
+								"(O)575",
+								"(O)122",
+								"(O)Lumisteria.MtVapius_Amber",
+								"(O)Lumisteria.MtVapius_AmberFern",
+								"(O)Lumisteria.MtVapius_Demantoide",
+								"(O)Lumisteria.MtVapius_Carnelian",
+								"(O)Lumisteria.MtVapius_Turquoise",
+								"(O)Lumisteria.MtVapius_Garnet",
+								"(O)Lumisteria.MtVapius_GemPigeonEgg",
+								"(O)Lumisteria.MtVapius_Morganite",
+								"(O)Lumisteria.MtVapius_Heliodor",
+								"(O)Lumisteria.MtVapius_Labradorite",
+								"(O)Lumisteria.MtVapius_VoidDiamond",
+								"(O)Lumisteria.MtVapius_Tourmaline",
+								"(O)Lumisteria.MtVapius_Larimar",
+								"(O)Lumisteria.MtVapius_BlueAgathe",
+								"(O)Lumisteria.MtVapius_Amber"
+							],
+							"MinStack": "{{P.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.G.C Production Time}}"
+				},
+				"Lumisteria.MtVapius_GemPigeonEgg": {
+					"Id": "Lumisteria.MtVapius_GemPigeonEgg",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_GemPigeonEgg"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)70",
+								"(O)555",
+								"(O)558"
+							],
+							"MinStack": "{{P.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.G.C Production Time}}"
+				},
+				"Lumisteria.MtVapius_Treasures_ArtifactTrove": {
+					"Id": "Lumisteria.MtVapius_Treasures_ArtifactTrove",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_Treasures_ArtifactTrove"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedStarfish",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedMoth",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedFern",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedFish",
+								"(O)Lumisteria.MtVapius_Treasures_FossilisedAmmonites",
+								"(O)Lumisteria.MtVapius_Treasures_GiantTusk",
+								"(O)Lumisteria.MtVapius_Treasures_BrokenWatch",
+								"(O)Lumisteria.MtVapius_Treasures_BrokenTeaCup",
+								"(O)Lumisteria.MtVapius_Treasures_EfficientCog",
+								"(O)Lumisteria.MtVapius_Treasures_DwarvishDevice",
+								"(O)Lumisteria.MtVapius_Treasures_RustyChest",
+								"(O)Lumisteria.MtVapius_Treasures_PetrifiedFlower",
+								"(O)Lumisteria.MtVapius_Treasures_RailroadNail",
+								"(O)Lumisteria.MtVapius_Treasures_DahuStatuette",
+								"(O)Lumisteria.MtVapius_Treasures_FaiencePlate",
+								"(O)Lumisteria.MtVapius_Treasures_CopperFibula",
+								"(O)Lumisteria.MtVapius_Treasures_GlassBowl",
+								"(O)Lumisteria.MtVapius_Treasures_FragmentMask",
+								"(O)Lumisteria.MtVapius_Treasures_OldMinerLamp",
+								"(O)Lumisteria.MtVapius_Treasures_RustyRing",
+								"(O)Lumisteria.MtVapius_Treasures_StainedGlass",
+								"(O)Lumisteria.MtVapius_Treasures_BlueCameo",
+								"(O)Lumisteria.MtVapius_Treasures_BrokenSundial",
+								"(O)Lumisteria.MtVapius_Treasures_OldShield",
+								"(O)Lumisteria.MtVapius_Treasures_FossilFragment01",
+								"(O)Lumisteria.MtVapius_Treasures_FossilFragment02",
+								"(O)Lumisteria.MtVapius_Treasures_FossilFragment03",
+								"(O)Lumisteria.MtVapius_Treasures_RareStamp",
+								"(O)Lumisteria.MtVapius_Treasures_Medallion",
+								"(O)Lumisteria.MtVapius_Treasures_Cyanotype"
+							],
+							"MinStack": "{{P.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.G.C Production Time}}"
+				},
+				"Lumisteria.MtVapius_Treasures_RustyChest": {
+					"Id": "Lumisteria.MtVapius_Treasures_RustyChest",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Lumisteria.MtVapius_Treasures_RustyChest"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)688",
+								"(O)689",
+								"(O)690",
+								"(O)Lumisteria.MtVapius_OwlCarving",
+								"(O)Lumisteria.MtVapius_WeirdCoins",
+								"(O)275",
+								"(O)166",
+								"(O)Lumisteria.MtVapius_Treasures_DahuStatuette",
+								"(O)Lumisteria.MtVapius_Treasures_FragmentMask",
+								"(O)Lumisteria.MtVapius_Treasures_BlueCameo",
+								"(O)Lumisteria.MtVapius_Treasures_ArtifactTrove",
+								"(O)Lumisteria.MtVapius_Demantoide",
+								"(O)Lumisteria.MtVapius_Carnelian",
+								"(O)Lumisteria.MtVapius_Turquoise",
+								"(O)Lumisteria.MtVapius_Garnet",
+								"(O)Lumisteria.MtVapius_Labradorite",
+								"(O)Lumisteria.MtVapius_Emerald_Polished"
+							],
+							"MinStack": 4,
+							"MaxStack": 6,
+							"QualityModifiers": [
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.G.C Production Time}}"
+				},
+			},
+			"When": {
+				"HasMod": "Lumisteria.MtVapius"
+			}
+		},
+		
+		// Phoenix Expansion (https://www.nexusmods.com/stardewvalley/mods/22806)
+		{
+			"LogName": "Add compatibility patch to the Iridium Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_IridiumFrozenGeodeCrush",
+				"OutputItem",
+				"FrozenGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Ice Egg Geode": "(O)BrianOvaltine.Phoenixes_IcePhoenixEgg"
+			},
+			"When": {
+				"HasMod": "BrianOvaltine.Phoenixes"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 2 to the Iridium Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_IridiumMagmaGeodeCrush",
+				"OutputItem",
+				"MagmaGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Magma Egg Geode": "(O)BrianOvaltine.Phoenixes_MagmaPhoenixEgg"
+			},
+			"When": {
+				"HasMod": "BrianOvaltine.Phoenixes"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 3 to the Iridium Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_IridiumArtifactTroveCrush",
+				"OutputItem",
+				"ArtifactTroveCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Gold Egg Geode": "(O)BrianOvaltine.Phoenixes_GoldenPhoenixEgg"
+			},
+			"When": {
+				"HasMod": "BrianOvaltine.Phoenixes"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Radioactive Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_RadioactiveFrozenGeodeCrush",
+				"OutputItem",
+				"FrozenGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Ice Egg Geode": "(O)BrianOvaltine.Phoenixes_IcePhoenixEgg"
+			},
+			"When": {
+				"HasMod": "BrianOvaltine.Phoenixes"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 2 to the Radioactive Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_RadioactiveMagmaGeodeCrush",
+				"OutputItem",
+				"MagmaGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Magma Egg Geode": "(O)BrianOvaltine.Phoenixes_MagmaPhoenixEgg"
+			},
+			"When": {
+				"HasMod": "BrianOvaltine.Phoenixes"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 3 to the Radioactive Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_RadioactiveArtifactTroveCrush",
+				"OutputItem",
+				"ArtifactTroveCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Gold Egg Geode": "(O)BrianOvaltine.Phoenixes_GoldenPhoenixEgg"
+			},
+			"When": {
+				"HasMod": "BrianOvaltine.Phoenixes"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_PrismaticFrozenGeodeCrush",
+				"OutputItem",
+				"FrozenGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Ice Egg Geode": "(O)BrianOvaltine.Phoenixes_IcePhoenixEgg"
+			},
+			"When": {
+				"HasMod": "BrianOvaltine.Phoenixes"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 2 to the Prismatic Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_PrismaticMagmaGeodeCrush",
+				"OutputItem",
+				"MagmaGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Magma Egg Geode": "(O)BrianOvaltine.Phoenixes_MagmaPhoenixEgg"
+			},
+			"When": {
+				"HasMod": "BrianOvaltine.Phoenixes"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 3 to the Prismatic Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_PrismaticArtifactTroveCrush",
+				"OutputItem",
+				"ArtifactTroveCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Gold Egg Geode": "(O)BrianOvaltine.Phoenixes_GoldenPhoenixEgg"
+			},
+			"When": {
+				"HasMod": "BrianOvaltine.Phoenixes"
+			}
+		},
+		
+		// Sunberry Village (https://www.nexusmods.com/stardewvalley/mods/11111)
+		{
+			"LogName": "Add compatibility patch to the Iridium Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumGeodeCrusher",
+				"OutputRules"
+			],
+			"Entries": {
+				"skellady.SBVCP_SunberryGeode": {
+					"Id": "skellady.SBVCP_SunberryGeode",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)skellady.SBVCP_SunberryGeode"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)skellady.SBVCP_BlueAuraQuartz",
+                                "(O)skellady.SBVCP_Annabergite",
+                                "(O)skellady.SBVCP_Serpentine",
+                                "(O)562",
+                                "(O)577",
+                                "(O)553",
+                                "(O)550",
+                                "(O)570",
+                                "(O)575",
+                                "(O)386",
+								"(O)skellady.SBVCP_Purpurite",
+                                "(O)skellady.SBVCP_Moonberry",
+                                "(O)skellady.SBVCP_Citrine",
+                                "(O)551",
+                                "(O)543",
+                                "(O)558",
+                                "(O)556",
+                                "(O)573",
+                                "(O)574",
+                                "(O)578",
+                                "(O)384",
+                                "(O)380",
+                                "(O)382",
+                                "(O)378",
+                                "(O)390"
+							],
+							"MinStack": "{{I.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.G.C Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "skellady.SBVCP"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Radioactive Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveGeodeCrusher",
+				"OutputRules"
+			],
+			"Entries": {
+				"skellady.SBVCP_SunberryGeode": {
+					"Id": "skellady.SBVCP_SunberryGeode",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)skellady.SBVCP_SunberryGeode"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)skellady.SBVCP_BlueAuraQuartz",
+                                "(O)skellady.SBVCP_Annabergite",
+                                "(O)skellady.SBVCP_Serpentine",
+                                "(O)562",
+                                "(O)577",
+                                "(O)553",
+                                "(O)550",
+                                "(O)570",
+                                "(O)575",
+                                "(O)386",
+								"(O)skellady.SBVCP_Purpurite",
+                                "(O)skellady.SBVCP_Moonberry",
+                                "(O)skellady.SBVCP_Citrine",
+                                "(O)551",
+                                "(O)543",
+                                "(O)558",
+                                "(O)556",
+                                "(O)573",
+                                "(O)574",
+                                "(O)578",
+                                "(O)384",
+                                "(O)380",
+                                "(O)382",
+                                "(O)378",
+                                "(O)390"
+							],
+							"MinStack": "{{R.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsRadioactiveGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "GemsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.G.C Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "skellady.SBVCP"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticGeodeCrusher",
+				"OutputRules"
+			],
+			"Entries": {
+				"skellady.SBVCP_SunberryGeode": {
+					"Id": "skellady.SBVCP_SunberryGeode",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)skellady.SBVCP_SunberryGeode"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)skellady.SBVCP_BlueAuraQuartz",
+                                "(O)skellady.SBVCP_Annabergite",
+                                "(O)skellady.SBVCP_Serpentine",
+                                "(O)562",
+                                "(O)577",
+                                "(O)553",
+                                "(O)550",
+                                "(O)570",
+                                "(O)575",
+                                "(O)386",
+								"(O)skellady.SBVCP_Purpurite",
+                                "(O)skellady.SBVCP_Moonberry",
+                                "(O)skellady.SBVCP_Citrine",
+                                "(O)551",
+                                "(O)543",
+                                "(O)558",
+                                "(O)556",
+                                "(O)573",
+                                "(O)574",
+                                "(O)578",
+                                "(O)384",
+                                "(O)380",
+                                "(O)382",
+                                "(O)378",
+                                "(O)390"
+							],
+							"MinStack": "{{P.G.C Quantity}}",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsPrismaticGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "GemsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.G.C Production Time}}"
+				}
+			},
+			"When": {
+				"HasMod": "skellady.SBVCP"
+			}
+		},
+		
+		// The Geology Mod (https://www.nexusmods.com/stardewvalley/mods/21038)
+		{
+			"LogName": "Add compatibility patch to the Iridium Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumGeodeCrusher",
+				"OutputRules"
+			],
+			"Entries": {
+				"Solariaze.Geology_Hornblende": {
+					"Id": "Solariaze.Geology_Hornblende",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Hornblende"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)390",
+								"(O)330",
+								"(O)378",
+								"(O)380",
+								"(O)382",
+								"(O)541",
+								"(O)556",
+								"(O)559",
+								"(O)564",
+								"(O)567",
+								"(O)575",
+								"(O)123",
+								"(O)568",
+								"(O)545",
+								"(O)552",
+								"(O)548",
+								"(O)122",
+								"(O)Solariaze.Geology_Olivine", 
+								"(O)Solariaze.Geology_Peridot"
+							],
+							"MinStack": "{{I.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Gneiss": {
+					"Id": "Solariaze.Geology_Gneiss",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Gneiss"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)386",
+								"(O)384",
+								"(O)390",
+								"(O)330",
+								"(O)378",
+								"(O)380",
+								"(O)382",
+								"(O)555",
+								"(O)570",
+								"(O)569",
+								"(O)541",
+								"(O)562",
+								"(O)123",
+								"(O)568",
+								"(O)576",
+								"(O)540",
+								"(O)122",
+								"(O)553",
+								"(O)566",
+								"(O)Solariaze.Geology_Zircon", 
+								"(O)Solariaze.Geology_Onxy"
+							],
+							"MinStack": "{{I.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Schist": {
+					"Id": "Solariaze.Geology_Schist",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Schist"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)386",
+								"(O)330",
+								"(O)378",
+								"(O)380",
+								"(O)382",
+								"(O)384",
+								"(O)561",
+								"(O)548",
+								"(O)544",
+								"(O)122",
+								"(O)573",
+								"(O)557",
+								"(O)540",
+								"(O)578",
+								"(O)574",
+								"(O)538",
+								"(O)562",
+								"(O)121",
+								"(O)547",
+								"(O)Solariaze.Geology_Vanadinite", 
+								"(O)Solariaze.Geology_Sapphire", 
+								"(O)Solariaze.Geology_Sunstone"
+							],
+							"MinStack": "{{I.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Halite": {
+					"Id": "Solariaze.Geology_Halite",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Halite"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)380",
+								"(O)384",
+								"(O)390"
+							],
+							"MinStack": "{{I.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20, 90 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Mudstone": {
+					"Id": "Solariaze.Geology_Mudstone",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Mudstone"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)80",
+								"(O)86",
+								"(O)378",
+								"(O)330"
+							],
+							"MinStack": "{{I.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsIridiumGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								},
+								{
+									"Id": "GemsIridiumGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{I.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.G.C Production Time}}"
+				},
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Radioactive Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveGeodeCrusher",
+				"OutputRules"
+			],
+			"Entries": {
+				"Solariaze.Geology_Hornblende": {
+					"Id": "Solariaze.Geology_Hornblende",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Hornblende"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)390",
+								"(O)330",
+								"(O)378",
+								"(O)380",
+								"(O)382",
+								"(O)541",
+								"(O)556",
+								"(O)559",
+								"(O)564",
+								"(O)567",
+								"(O)575",
+								"(O)123",
+								"(O)568",
+								"(O)545",
+								"(O)552",
+								"(O)548",
+								"(O)122",
+								"(O)Solariaze.Geology_Olivine", 
+								"(O)Solariaze.Geology_Peridot"
+							],
+							"MinStack": "{{R.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsRadioactiveGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "GemsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Gneiss": {
+					"Id": "Solariaze.Geology_Gneiss",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Gneiss"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)386",
+								"(O)384",
+								"(O)390",
+								"(O)330",
+								"(O)378",
+								"(O)380",
+								"(O)382",
+								"(O)555",
+								"(O)570",
+								"(O)569",
+								"(O)541",
+								"(O)562",
+								"(O)123",
+								"(O)568",
+								"(O)576",
+								"(O)540",
+								"(O)122",
+								"(O)553",
+								"(O)566",
+								"(O)Solariaze.Geology_Zircon", 
+								"(O)Solariaze.Geology_Onxy"
+							],
+							"MinStack": "{{R.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsRadioactiveGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "GemsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Schist": {
+					"Id": "Solariaze.Geology_Schist",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Schist"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)386",
+								"(O)330",
+								"(O)378",
+								"(O)380",
+								"(O)382",
+								"(O)384",
+								"(O)561",
+								"(O)548",
+								"(O)544",
+								"(O)122",
+								"(O)573",
+								"(O)557",
+								"(O)540",
+								"(O)578",
+								"(O)574",
+								"(O)538",
+								"(O)562",
+								"(O)121",
+								"(O)547",
+								"(O)Solariaze.Geology_Vanadinite", 
+								"(O)Solariaze.Geology_Sapphire", 
+								"(O)Solariaze.Geology_Sunstone"
+							],
+							"MinStack": "{{R.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsRadioactiveGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "GemsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Halite": {
+					"Id": "Solariaze.Geology_Halite",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Halite"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)380",
+								"(O)384",
+								"(O)390"
+							],
+							"MinStack": "{{R.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20, 90 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsRadioactiveGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "GemsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Mudstone": {
+					"Id": "Solariaze.Geology_Mudstone",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Mudstone"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)80",
+								"(O)86",
+								"(O)378",
+								"(O)330"
+							],
+							"MinStack": "{{R.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsRadioactiveGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								},
+								{
+									"Id": "GemsRadioactiveGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{R.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.G.C Production Time}}"
+				},
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Prismatic Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticGeodeCrusher",
+				"OutputRules"
+			],
+			"Entries": {
+				"Solariaze.Geology_Hornblende": {
+					"Id": "Solariaze.Geology_Hornblende",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Hornblende"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)390",
+								"(O)330",
+								"(O)378",
+								"(O)380",
+								"(O)382",
+								"(O)541",
+								"(O)556",
+								"(O)559",
+								"(O)564",
+								"(O)567",
+								"(O)575",
+								"(O)123",
+								"(O)568",
+								"(O)545",
+								"(O)552",
+								"(O)548",
+								"(O)122",
+								"(O)Solariaze.Geology_Olivine", 
+								"(O)Solariaze.Geology_Peridot"
+							],
+							"MinStack": "{{P.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsPrismaticGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "GemsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Gneiss": {
+					"Id": "Solariaze.Geology_Gneiss",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Gneiss"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)386",
+								"(O)384",
+								"(O)390",
+								"(O)330",
+								"(O)378",
+								"(O)380",
+								"(O)382",
+								"(O)555",
+								"(O)570",
+								"(O)569",
+								"(O)541",
+								"(O)562",
+								"(O)123",
+								"(O)568",
+								"(O)576",
+								"(O)540",
+								"(O)122",
+								"(O)553",
+								"(O)566",
+								"(O)Solariaze.Geology_Zircon", 
+								"(O)Solariaze.Geology_Onxy"
+							],
+							"MinStack": "{{P.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsPrismaticGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "GemsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Schist": {
+					"Id": "Solariaze.Geology_Schist",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Schist"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)386",
+								"(O)330",
+								"(O)378",
+								"(O)380",
+								"(O)382",
+								"(O)384",
+								"(O)561",
+								"(O)548",
+								"(O)544",
+								"(O)122",
+								"(O)573",
+								"(O)557",
+								"(O)540",
+								"(O)578",
+								"(O)574",
+								"(O)538",
+								"(O)562",
+								"(O)121",
+								"(O)547",
+								"(O)Solariaze.Geology_Vanadinite", 
+								"(O)Solariaze.Geology_Sapphire", 
+								"(O)Solariaze.Geology_Sunstone"
+							],
+							"MinStack": "{{P.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsPrismaticGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "GemsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Halite": {
+					"Id": "Solariaze.Geology_Halite",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Halite"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)380",
+								"(O)384",
+								"(O)390"
+							],
+							"MinStack": "{{P.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20, 90 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsPrismaticGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "GemsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.G.C Production Time}}"
+				},
+				"Solariaze.Geology_Mudstone": {
+					"Id": "Solariaze.Geology_Mudstone",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Solariaze.Geology_Mudstone"
+						}
+					],
+					"OutputItem": [
+						{
+							"RandomItemId": [
+								"(O)80",
+								"(O)86",
+								"(O)378",
+								"(O)330"
+							],
+							"MinStack": "{{P.G.C Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "ResourcesPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -15",
+									"Modification": "Add",
+									"RandomAmount": [ 1, 3, 5, 10, 20 ]
+								}
+							],
+							"StackModifierMode": "Stack",
+							"QualityModifiers": [
+								{
+									"Id": "MineralsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -12",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "ArtifactsPrismaticGeodeCrush",
+									"Condition": "ITEM_OBJECT_TYPE Target Arch",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								},
+								{
+									"Id": "GemsPrismaticGeodeCrush",
+									"Condition": "ITEM_CATEGORY Target -2",
+									"Modification": "Set",
+									"Amount": "{{P.G.C Quality}}"
+								}
+							],
+							"QualityModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.G.C Production Time}}"
+				},
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 2 to the Iridium Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_IridiumGeodeCrush",
+				"OutputItem",
+				"GeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Hornblende": "(O)Solariaze.Geology_Hornblende", 
+				"Solariaze.Geology_Gneiss": "(O)Solariaze.Geology_Gneiss", 
+				"Solariaze.Geology_Schist": "(O)Solariaze.Geology_Schist", 
+				"Solariaze.Geology_Olivine": "(O)Solariaze.Geology_Olivine"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 3 to the Iridium Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_IridiumFrozenGeodeCrush",
+				"OutputItem",
+				"FrozenGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Lapis_Lazuli": "(O)Solariaze.Geology_Lapis_Lazuli", 
+				"Solariaze.Geology_Zircon": "(O)Solariaze.Geology_Zircon", 
+				"Solariaze.Geology_Onxy": "(O)Solariaze.Geology_Onxy"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 4 to the Iridium Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_IridiumMagmaGeodeCrush",
+				"OutputItem",
+				"MagmaGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Vanadinite": "(O)Solariaze.Geology_Vanadinite", 
+				"Solariaze.Geology_Sapphire": "(O)Solariaze.Geology_Sapphire", 
+				"Solariaze.Geology_Peridot": "(O)Solariaze.Geology_Peridot"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 5 to the Iridium Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_IridiumOmniGeodeCrush",
+				"OutputItem",
+				"OmniGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Hornblende": "(O)Solariaze.Geology_Hornblende", 
+				"Solariaze.Geology_Gneiss": "(O)Solariaze.Geology_Gneiss", 
+				"Solariaze.Geology_Schist": "(O)Solariaze.Geology_Schist", 
+				"Solariaze.Geology_Olivine": "(O)Solariaze.Geology_Olivine",
+				"Solariaze.Geology_Lapis_Lazuli": "(O)Solariaze.Geology_Lapis_Lazuli", 
+				"Solariaze.Geology_Zircon": "(O)Solariaze.Geology_Zircon", 
+				"Solariaze.Geology_Onxy": "(O)Solariaze.Geology_Onxy",
+				"Solariaze.Geology_Vanadinite": "(O)Solariaze.Geology_Vanadinite", 
+				"Solariaze.Geology_Sapphire": "(O)Solariaze.Geology_Sapphire", 
+				"Solariaze.Geology_Peridot": "(O)Solariaze.Geology_Peridot",
+				"Solariaze.Geology_Rhodochrosite": "(O)Solariaze.Geology_Rhodochrosite",
+				"Solariaze.Geology_Sunstone": "(O)Solariaze.Geology_Sunstone",
+				"Solariaze.Geology_Prismatic_Pieces": "(O)Solariaze.Geology_Prismatic_Pieces"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 2 to the Radioactive Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_RadioactiveGeodeCrush",
+				"OutputItem",
+				"GeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Hornblende": "(O)Solariaze.Geology_Hornblende", 
+				"Solariaze.Geology_Gneiss": "(O)Solariaze.Geology_Gneiss", 
+				"Solariaze.Geology_Schist": "(O)Solariaze.Geology_Schist", 
+				"Solariaze.Geology_Olivine": "(O)Solariaze.Geology_Olivine"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 3 to the Radioactive Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_RadioactiveFrozenGeodeCrush",
+				"OutputItem",
+				"FrozenGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Lapis_Lazuli": "(O)Solariaze.Geology_Lapis_Lazuli", 
+				"Solariaze.Geology_Zircon": "(O)Solariaze.Geology_Zircon", 
+				"Solariaze.Geology_Onxy": "(O)Solariaze.Geology_Onxy"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 4 to the Radioactive Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_RadioactiveMagmaGeodeCrush",
+				"OutputItem",
+				"MagmaGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Vanadinite": "(O)Solariaze.Geology_Vanadinite", 
+				"Solariaze.Geology_Sapphire": "(O)Solariaze.Geology_Sapphire", 
+				"Solariaze.Geology_Peridot": "(O)Solariaze.Geology_Peridot"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 5 to the Radioactive Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_RadioactiveOmniGeodeCrush",
+				"OutputItem",
+				"OmniGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Hornblende": "(O)Solariaze.Geology_Hornblende", 
+				"Solariaze.Geology_Gneiss": "(O)Solariaze.Geology_Gneiss", 
+				"Solariaze.Geology_Schist": "(O)Solariaze.Geology_Schist", 
+				"Solariaze.Geology_Olivine": "(O)Solariaze.Geology_Olivine",
+				"Solariaze.Geology_Lapis_Lazuli": "(O)Solariaze.Geology_Lapis_Lazuli", 
+				"Solariaze.Geology_Zircon": "(O)Solariaze.Geology_Zircon", 
+				"Solariaze.Geology_Onxy": "(O)Solariaze.Geology_Onxy",
+				"Solariaze.Geology_Vanadinite": "(O)Solariaze.Geology_Vanadinite", 
+				"Solariaze.Geology_Sapphire": "(O)Solariaze.Geology_Sapphire", 
+				"Solariaze.Geology_Peridot": "(O)Solariaze.Geology_Peridot",
+				"Solariaze.Geology_Rhodochrosite": "(O)Solariaze.Geology_Rhodochrosite",
+				"Solariaze.Geology_Sunstone": "(O)Solariaze.Geology_Sunstone",
+				"Solariaze.Geology_Prismatic_Pieces": "(O)Solariaze.Geology_Prismatic_Pieces"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 2 to the Prismatic Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_PrismaticGeodeCrush",
+				"OutputItem",
+				"GeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Hornblende": "(O)Solariaze.Geology_Hornblende", 
+				"Solariaze.Geology_Gneiss": "(O)Solariaze.Geology_Gneiss", 
+				"Solariaze.Geology_Schist": "(O)Solariaze.Geology_Schist", 
+				"Solariaze.Geology_Olivine": "(O)Solariaze.Geology_Olivine"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 3 to the Prismatic Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_PrismaticFrozenGeodeCrush",
+				"OutputItem",
+				"FrozenGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Lapis_Lazuli": "(O)Solariaze.Geology_Lapis_Lazuli", 
+				"Solariaze.Geology_Zircon": "(O)Solariaze.Geology_Zircon", 
+				"Solariaze.Geology_Onxy": "(O)Solariaze.Geology_Onxy"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 4 to the Prismatic Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_PrismaticMagmaGeodeCrush",
+				"OutputItem",
+				"MagmaGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Vanadinite": "(O)Solariaze.Geology_Vanadinite", 
+				"Solariaze.Geology_Sapphire": "(O)Solariaze.Geology_Sapphire", 
+				"Solariaze.Geology_Peridot": "(O)Solariaze.Geology_Peridot"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch 5 to the Prismatic Geode Crusher",
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticGeodeCrusher",
+				"OutputRules",
+				"nachonline.mps_PrismaticOmniGeodeCrush",
+				"OutputItem",
+				"OmniGeodeCrushed",
+				"RandomItemId"
+			],
+			"Entries": {
+				"Solariaze.Geology_Hornblende": "(O)Solariaze.Geology_Hornblende", 
+				"Solariaze.Geology_Gneiss": "(O)Solariaze.Geology_Gneiss", 
+				"Solariaze.Geology_Schist": "(O)Solariaze.Geology_Schist", 
+				"Solariaze.Geology_Olivine": "(O)Solariaze.Geology_Olivine",
+				"Solariaze.Geology_Lapis_Lazuli": "(O)Solariaze.Geology_Lapis_Lazuli", 
+				"Solariaze.Geology_Zircon": "(O)Solariaze.Geology_Zircon", 
+				"Solariaze.Geology_Onxy": "(O)Solariaze.Geology_Onxy",
+				"Solariaze.Geology_Vanadinite": "(O)Solariaze.Geology_Vanadinite", 
+				"Solariaze.Geology_Sapphire": "(O)Solariaze.Geology_Sapphire", 
+				"Solariaze.Geology_Peridot": "(O)Solariaze.Geology_Peridot",
+				"Solariaze.Geology_Rhodochrosite": "(O)Solariaze.Geology_Rhodochrosite",
+				"Solariaze.Geology_Sunstone": "(O)Solariaze.Geology_Sunstone",
+				"Solariaze.Geology_Prismatic_Pieces": "(O)Solariaze.Geology_Prismatic_Pieces"
+			},
+			"When": {
+				"HasMod": "Solariaze.Geology"
+			}
+		},
+		
+	] 
+}

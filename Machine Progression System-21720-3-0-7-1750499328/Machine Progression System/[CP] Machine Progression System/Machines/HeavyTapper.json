@@ -1,0 +1,220 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_PrismaticHeavyTapper": {
+					"OutputRules": [
+						{
+							"Id": "nachonline.mps_PrismaticHeavyTapperProduce",
+							"Triggers": [
+								{
+									"Trigger": "DayUpdate, MachinePutDown, OutputCollected"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"OutputMethod": "Selph.StardewMods.MachineTerrainFramework.Utils, CustomTapperFramework: OutputTapper",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 100",
+											"Modification": "Add",
+											"Amount": "{{P.H.T 100 Items Foraged Bonus}}"
+										},
+										{
+											"Id": "300ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 300",
+											"Modification": "Add",
+											"Amount": "{{P.H.T 300 Items Foraged Bonus}}"
+										},
+										{
+											"Id": "500ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 500",
+											"Modification": "Add",
+											"Amount": "{{P.H.T 500 Items Foraged Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							]
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Modification": "Multiply",
+							"Amount": "{{P.H.T Production Time Reduction}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"HasOutput": true,
+					"AllowFairyDust": true
+				}
+			}
+		},
+		
+		// Additional Tree Equipments (and tap giant crops) (https://www.nexusmods.com/stardewvalley/mods/22991)
+		{
+			"LogName": "Add compatibility patch to the Prismatic Heavy Tapper",
+			"Action": "EditData",
+			"Target": "selph.CustomTapperFramework/Data",
+			"Entries": {
+				"(BC)nachonline.mps_PrismaticHeavyTapper": {
+					"FruitTreeOutputRules": [
+						{
+							"DaysUntilReady": 1,
+							"Chance": 1.0,
+							"Id": "selph.ExtraTappers.Sap",
+							"ItemId": "(O)92",
+							"MinStack": 3,
+							"MaxStack": 8,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"GiantCropOutputRules": [
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input (O)433",
+							"Id": "selph.ExtraTappers.GiantCropCoffee",
+							"ItemId": "(O)395",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input (O)815",
+							"Id": "selph.ExtraTappers.GiantCropTea",
+							"ItemId": "(O)614",
+							"MinStack": 2,
+							"MaxStack": 2,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input -80",
+							"Id": "selph.ExtraTappers.GiantCropHoney",
+							"ItemId": "FLAVORED_ITEM Honey DROP_IN_ID",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Id": "selph.ExtraTappers.GiantCropJuice",
+							"ItemId": "FLAVORED_ITEM Juice DROP_IN_ID",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{P.H.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					]
+				}
+			},
+			"When": {
+				"HasMod": "selph.ExtraTappers"
+			}
+		}
+	] 
+}

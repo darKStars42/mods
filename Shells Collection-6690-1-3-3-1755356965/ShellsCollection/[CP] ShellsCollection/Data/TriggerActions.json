@@ -1,0 +1,99 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Spawn Shells in Beach and Ginger Island",
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_SendRecipeTriggerActions": { 
+                    "Id": "{{ModId}}_SendRecipeTriggerActions",
+                    "Trigger": "DayEnding",
+                    "Condition": "PLAYER_FRIENDSHIP_POINTS Current Evelyn 1000",
+                    "Action": "AddMail Current {{ModId}}_BraisedScallopRecipe Tomorrow"
+                },
+                "{{ModId}}_SendIslesRarecrowLetterTriggerActions" : {
+                    "Id": "{{ModId}}_SendIslesRarecrowLetterTriggerActions",
+                    "Trigger": "DayEnding",
+                    "Condition": "{{IslesRarecrowAlwaysAvailable |contains=false}}, PLAYER_HAS_MAIL Host {{ModId}}_NauticalRarecrow1, PLAYER_HAS_MAIL Host {{ModId}}_NauticalRarecrow2, PLAYER_HAS_MAIL Host {{ModId}}_NauticalRarecrow3, PLAYER_HAS_MAIL Host {{ModId}}_NauticalRarecrow4, PLAYER_HAS_MAIL Host {{ModId}}_NauticalRarecrow5, PLAYER_HAS_MAIL Host {{ModId}}_NauticalRarecrow6, PLAYER_HAS_MAIL Host {{ModId}}_NauticalRarecrow7, PLAYER_HAS_MAIL Host {{ModId}}_NauticalRarecrow8",
+                    "Action": "AddMail Current {{ModId}}_IslesRarecrowLaunched Tomorrow"
+                },
+                "{{ModId}}_ShellsSpawnTriggerActions": { 
+                    "Id": "{{ModId}}_ShellsSpawnTriggerActions",
+                    "Trigger": "DayStarted",
+                    "HostOnly": true,
+                    "MarkActionApplied": false,
+                    "Actions": [
+                        //Pelican
+						"spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachSpawningGroup Beach 9,11,34,6/20,16,27,5/37,21,10,4/51,13,5,10", //Beach Main
+                        "spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachTidePoolsSpawningGroup Beach 66,8,24,17", //Beach East
+                        ////Rain
+                        "if {{Weather: valley|contains=rain, storm}} ## spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachSpawningGroup_Rain Beach 9,11,34,6/20,16,27,5/37,21,10,4/51,13,5,10", //Both areas rain
+                        ////Summer bonus
+                        "if SEASON_DAY Summer 12 Summer 13 Summer 14 ## spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachSpawningGroup Beach 9,11,34,6/20,16,27,5/37,21,10,4/51,13,5,10", //Beach Main
+                        "if SEASON_DAY Summer 12 Summer 13 Summer 14 ## spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachTidePoolsSpawningGroup Beach 66,8,24,17", //Beach East
+                        ////Coral Order
+                        "if PLAYER_SPECIAL_ORDER_ACTIVE Any {{ModId}}_CoralOrder ## spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_CoralSpawningGroup Beach 66,8,24,17", //Beach Tide Pools
+                        //Ginger Island
+                        "spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_GingerIslandSpawningGroup IslandSouthEast 8,25,19,4/23,18,6,7", //Ginger Island Star
+                        "spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_GingerIslandSpawningGroup IslandSouth 9,28,30,4", //Ginger Island Resort
+                        "spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_GingerIslandSpawningGroup IslandWest 56,79,29,9/85,79,19,8/19,68,6,13/32,83,19,7/24,83,8,4" //Ginger Island Farm
+                    ]
+                },
+                "{{ModId}}_ShellsSpawn_EastScarp_TriggerActions": { 
+                    "Id": "{{ModId}}_ShellsSpawn_EastScarp_TriggerActions",
+                    "Trigger": "DayStarted",
+                    "Condition": "{{HasMod |contains=LemurKat.EastScarpe.CP}}",
+                    "HostOnly": true,
+                    "MarkActionApplied": false,
+                    "Actions": [
+						"spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachSpawningGroup EastScarp_Village 7,120,4,9/11,120,3,5/14,120,3,3/9,115,21,5/30,114,6,4/36,112,20,3", //Beach Sand
+                        "spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachTidePoolsSpawningGroup EastScarp_Village 43,100,3,5/53,99,4,2/57,102,4,2/58,94,4,2/51,110,7,2/41,105,2,6", //Beach Tide Pools
+                        "if {{Weather: valley|contains=rain, storm}} ## spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachSpawningGroup_Rain EastScarp_Village 7,120,4,9/11,120,3,5/14,120,3,3/9,115,21,5/30,114,6,4/36,112,20,3" //Beach Sand
+                    ]
+                },
+                "{{ModId}}_ShellsSpawn_CapeStardew_TriggerActions": { 
+                    "Id": "{{ModId}}_ShellsSpawn_CapeStardew_TriggerActions",
+                    "Trigger": "DayStarted",
+                    "Condition": "{{HasMod |contains=dreamy.kickitspot}}",
+                    "HostOnly": true,
+                    "MarkActionApplied": false,
+                    "Actions": [
+						"spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachSpawningGroup Custom_CapeStardew 42,33,2,31", //Beach Sand
+                        "spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachTidePoolsSpawningGroup Custom_CapeStardew 30,42,9,16", //Beach Tide Pools
+                        "if {{Weather: valley|contains=rain, storm}} ## spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_BeachSpawningGroup_Rain Custom_CapeStardew 42,33,2,31" //Beach Sand
+                    ]
+                },
+                "{{ModId}}_ShellsSpawn_SVE_TriggerActions": {
+                    "Id": "{{ModId}}_ShellsSpawn_SVE_TriggerActions",
+                    "Trigger": "DayStarted",
+                    "Condition": "{{HasMod |contains=FlashShifter.StardewValleyExpandedCP}}",
+                    "HostOnly": true,
+                    "MarkActionApplied": false,
+                    "Actions": [
+						"spacechase0.SpaceCore_TriggerSpawnGroup {{ModId}}_GingerIslandSpawningGroup Custom_FableReef 36,53,17,3/53,50,3,5/56,49,4,4/63,38,3,12/32,15,19,7"
+                    ]
+                },
+                "{{ModId}}_BackUpShellsNecklaceRecipeTriggerActions": {
+                    "Id": "{{ModId}}_BackUpShellsNecklaceRecipeTriggerActions_1_3_3",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_HAS_SEEN_EVENT Current {{ModId}}_GiftFromWilly",
+                    "Action": "MarkCraftingRecipeKnown Current {{ModId}}_ShellsNecklace"
+                },
+                "{{ModId}}_BackUpCoralFenceRecipeTriggerActions": {
+                    "Id": "{{ModId}}_BackUpCoralFenceRecipeTriggerActions_1_3_3",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_HAS_SEEN_EVENT Current {{ModId}}_CoralOrderCompleted",
+                    "Action": "MarkCraftingRecipeKnown Current {{ModId}}_CoralFence"
+                },
+                "{{ModId}}_BackUpBraisedScallopRecipeTriggerActions": {
+                    // Address error in 1.3.0 where Coral Fence isnt learned in the CoralOrderCompleted event
+                    "Id": "{{ModId}}_BackUpBraisedScallopRecipeTriggerActions_1_3_3",
+                    "Trigger": "DayStarted",
+                    "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_BraisedScallopRecipe Received",
+                    "Action": "MarkCookingRecipeKnown Current {{ModId}}_BraisedScallop"
+                }
+            }
+        }
+    ]
+}

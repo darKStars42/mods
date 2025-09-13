@@ -1,0 +1,1047 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"Enable Seed Maker Banned Items": true
+			},
+			"Entries": {
+				"(BC)nachonline.mps_IridiumSeedMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine"
+								}
+							],
+							"OutputItem": [
+								{
+									"OutputMethod": "StardewValley.Object, Stardew Valley: OutputSeedMaker",
+									"MinStack": "{{I.S.M Minimum Quantity}}",
+									"MaxStack": "{{I.S.M Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 100",
+											"Modification": "Add",
+											"Amount": "{{I.S.M 100 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "300SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 300",
+											"Modification": "Add",
+											"Amount": "{{I.S.M 300 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "500SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 500",
+											"Modification": "Add",
+											"Amount": "{{I.S.M 500 Seeds Sown Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 20
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+									"Id": "dirtyHit",
+									"Delay": 250
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_RadioactiveSeedMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine"
+								}
+							],
+							"OutputItem": [
+								{
+									"OutputMethod": "StardewValley.Object, Stardew Valley: OutputSeedMaker",
+									"MinStack": "{{R.S.M Minimum Quantity}}",
+									"MaxStack": "{{R.S.M Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 100",
+											"Modification": "Add",
+											"Amount": "{{R.S.M 100 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "300SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 300",
+											"Modification": "Add",
+											"Amount": "{{R.S.M 300 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "500SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 500",
+											"Modification": "Add",
+											"Amount": "{{R.S.M 500 Seeds Sown Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 20
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+									"Id": "dirtyHit",
+									"Delay": 250
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_PrismaticSeedMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine"
+								}
+							],
+							"OutputItem": [
+								{
+									"OutputMethod": "StardewValley.Object, Stardew Valley: OutputSeedMaker",
+									"MinStack": "{{P.S.M Minimum Quantity}}",
+									"MaxStack": "{{P.S.M Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 100",
+											"Modification": "Add",
+											"Amount": "{{P.S.M 100 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "300SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 300",
+											"Modification": "Add",
+											"Amount": "{{P.S.M 300 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "500SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 500",
+											"Modification": "Add",
+											"Amount": "{{P.S.M 500 Seeds Sown Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 20
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+									"Id": "dirtyHit",
+									"Delay": 250
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"Enable Seed Maker Banned Items": false
+			},
+			"Entries": {
+				"(BC)nachonline.mps_IridiumSeedMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"!seedmaker_banned"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"OutputMethod": "StardewValley.Object, Stardew Valley: OutputSeedMaker",
+									"MinStack": "{{I.S.M Minimum Quantity}}",
+									"MaxStack": "{{I.S.M Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 100",
+											"Modification": "Add",
+											"Amount": "{{I.S.M 100 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "300SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 300",
+											"Modification": "Add",
+											"Amount": "{{I.S.M 300 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "500SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 500",
+											"Modification": "Add",
+											"Amount": "{{I.S.M 500 Seeds Sown Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 20
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+									"Id": "dirtyHit",
+									"Delay": 250
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_RadioactiveSeedMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"!seedmaker_banned"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"OutputMethod": "StardewValley.Object, Stardew Valley: OutputSeedMaker",
+									"MinStack": "{{R.S.M Minimum Quantity}}",
+									"MaxStack": "{{R.S.M Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 100",
+											"Modification": "Add",
+											"Amount": "{{R.S.M 100 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "300SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 300",
+											"Modification": "Add",
+											"Amount": "{{R.S.M 300 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "500SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 500",
+											"Modification": "Add",
+											"Amount": "{{R.S.M 500 Seeds Sown Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 20
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+									"Id": "dirtyHit",
+									"Delay": 250
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_PrismaticSeedMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"!seedmaker_banned"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"OutputMethod": "StardewValley.Object, Stardew Valley: OutputSeedMaker",
+									"MinStack": "{{P.S.M Minimum Quantity}}",
+									"MaxStack": "{{P.S.M Maximum Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 100",
+											"Modification": "Add",
+											"Amount": "{{P.S.M 100 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "300SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 300",
+											"Modification": "Add",
+											"Amount": "{{P.S.M 300 Seeds Sown Bonus}}"
+										},
+										{
+											"Id": "500SeedsSown",
+											"Condition": "PLAYER_STAT Current seedsSown 500",
+											"Modification": "Add",
+											"Amount": "{{P.S.M 500 Seeds Sown Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 20
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								},
+								{
+									"Id": "dirtyHit",
+									"Delay": 250
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true
+				}
+			}
+		},
+		// Forage to Mixed Seeds
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumSeedMaker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Forage to Mixed Seeds": true
+			},
+			"Entries": {
+				"nachonline.mps_ForageMixedSeeds": {
+					"Id": "nachonline.mps_ForageMixedSeeds",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_greens"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)770",
+							"MinStack": "{{I.S.M Minimum Quantity}}",
+							"MaxStack": "{{I.S.M Maximum Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SeedsSown",
+									"Condition": "PLAYER_STAT Current seedsSown 100",
+									"Modification": "Add",
+									"Amount": "{{I.S.M 100 Seeds Sown Bonus}}"
+								},
+								{
+									"Id": "300SeedsSown",
+									"Condition": "PLAYER_STAT Current seedsSown 300",
+									"Modification": "Add",
+									"Amount": "{{I.S.M 300 Seeds Sown Bonus}}"
+								},
+								{
+									"Id": "500SeedsSown",
+									"Condition": "PLAYER_STAT Current seedsSown 500",
+									"Modification": "Add",
+									"Amount": "{{I.S.M 500 Seeds Sown Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 20
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_ForageMixedSeeds", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveSeedMaker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Forage to Mixed Seeds": true
+			},
+			"Entries": {
+				"nachonline.mps_ForageMixedSeeds": {
+					"Id": "nachonline.mps_ForageMixedSeeds",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_greens"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)770",
+							"MinStack": "{{R.S.M Minimum Quantity}}",
+							"MaxStack": "{{R.S.M Maximum Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SeedsSown",
+									"Condition": "PLAYER_STAT Current seedsSown 100",
+									"Modification": "Add",
+									"Amount": "{{R.S.M 100 Seeds Sown Bonus}}"
+								},
+								{
+									"Id": "300SeedsSown",
+									"Condition": "PLAYER_STAT Current seedsSown 300",
+									"Modification": "Add",
+									"Amount": "{{R.S.M 300 Seeds Sown Bonus}}"
+								},
+								{
+									"Id": "500SeedsSown",
+									"Condition": "PLAYER_STAT Current seedsSown 500",
+									"Modification": "Add",
+									"Amount": "{{R.S.M 500 Seeds Sown Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 20
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_ForageMixedSeeds", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticSeedMaker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Forage to Mixed Seeds": true
+			},
+			"Entries": {
+				"nachonline.mps_ForageMixedSeeds": {
+					"Id": "nachonline.mps_ForageMixedSeeds",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"category_greens"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)770",
+							"MinStack": "{{P.S.M Minimum Quantity}}",
+							"MaxStack": "{{P.S.M Maximum Quantity}}",
+							"StackModifiers": [
+								{
+									"Id": "100SeedsSown",
+									"Condition": "PLAYER_STAT Current seedsSown 100",
+									"Modification": "Add",
+									"Amount": "{{P.S.M 100 Seeds Sown Bonus}}"
+								},
+								{
+									"Id": "300SeedsSown",
+									"Condition": "PLAYER_STAT Current seedsSown 300",
+									"Modification": "Add",
+									"Amount": "{{P.S.M 300 Seeds Sown Bonus}}"
+								},
+								{
+									"Id": "500SeedsSown",
+									"Condition": "PLAYER_STAT Current seedsSown 500",
+									"Modification": "Add",
+									"Amount": "{{P.S.M 500 Seeds Sown Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": 20
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_ForageMixedSeeds", "ToPosition": "Top" }
+			]
+		},
+		// Tree Fruit to Sapling
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumSeedMaker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Tree Fruit to Sapling": true
+			},
+			"Entries": {
+				"nachonline.mps_BananaSapling": {
+					"Id": "nachonline.mps_BananaSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)91"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)69",
+							"MinStack": "{{I.S.M Minimum Saplings}}",
+							"MaxStack": "{{I.S.M Maximum Saplings}}",
+							"CopyQuality": "{{I.S.M Copy Quality}}",
+							"Quality": "{{I.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_CherrySapling": {
+					"Id": "nachonline.mps_CherrySapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)638"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)628",
+							"MinStack": "{{I.S.M Minimum Saplings}}",
+							"MaxStack": "{{I.S.M Maximum Saplings}}",
+							"CopyQuality": "{{I.S.M Copy Quality}}",
+							"Quality": "{{I.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_ApricotSapling": {
+					"Id": "nachonline.mps_ApricotSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)634"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)629",
+							"MinStack": "{{I.S.M Minimum Saplings}}",
+							"MaxStack": "{{I.S.M Maximum Saplings}}",
+							"CopyQuality": "{{I.S.M Copy Quality}}",
+							"Quality": "{{I.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_OrangeSapling": {
+					"Id": "nachonline.mps_OrangeSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)635"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)630",
+							"MinStack": "{{I.S.M Minimum Saplings}}",
+							"MaxStack": "{{I.S.M Maximum Saplings}}",
+							"CopyQuality": "{{I.S.M Copy Quality}}",
+							"Quality": "{{I.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_PeachSapling": {
+					"Id": "nachonline.mps_PeachSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)636"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)631",
+							"MinStack": "{{I.S.M Minimum Saplings}}",
+							"MaxStack": "{{I.S.M Maximum Saplings}}",
+							"CopyQuality": "{{I.S.M Copy Quality}}",
+							"Quality": "{{I.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_PomegranateSapling": {
+					"Id": "nachonline.mps_PomegranateSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)637"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)632",
+							"MinStack": "{{I.S.M Minimum Saplings}}",
+							"MaxStack": "{{I.S.M Maximum Saplings}}",
+							"CopyQuality": "{{I.S.M Copy Quality}}",
+							"Quality": "{{I.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_AppleSapling": {
+					"Id": "nachonline.mps_AppleSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)613"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)633",
+							"MinStack": "{{I.S.M Minimum Saplings}}",
+							"MaxStack": "{{I.S.M Maximum Saplings}}",
+							"CopyQuality": "{{I.S.M Copy Quality}}",
+							"Quality": "{{I.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_MangoSapling": {
+					"Id": "nachonline.mps_MangoSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)834"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)835",
+							"MinStack": "{{I.S.M Minimum Saplings}}",
+							"MaxStack": "{{I.S.M Maximum Saplings}}",
+							"CopyQuality": "{{I.S.M Copy Quality}}",
+							"Quality": "{{I.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BananaSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_CherrySapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_ApricotSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_OrangeSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_PeachSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_PomegranateSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_AppleSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_MangoSapling", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveSeedMaker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Tree Fruit to Sapling": true
+			},
+			"Entries": {
+				"nachonline.mps_BananaSapling": {
+					"Id": "nachonline.mps_BananaSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)91"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)69",
+							"MinStack": "{{R.S.M Minimum Saplings}}",
+							"MaxStack": "{{R.S.M Maximum Saplings}}",
+							"CopyQuality": "{{R.S.M Copy Quality}}",
+							"Quality": "{{R.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_CherrySapling": {
+					"Id": "nachonline.mps_CherrySapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)638"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)628",
+							"MinStack": "{{R.S.M Minimum Saplings}}",
+							"MaxStack": "{{R.S.M Maximum Saplings}}",
+							"CopyQuality": "{{R.S.M Copy Quality}}",
+							"Quality": "{{R.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_ApricotSapling": {
+					"Id": "nachonline.mps_ApricotSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)634"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)629",
+							"MinStack": "{{R.S.M Minimum Saplings}}",
+							"MaxStack": "{{R.S.M Maximum Saplings}}",
+							"CopyQuality": "{{R.S.M Copy Quality}}",
+							"Quality": "{{R.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_OrangeSapling": {
+					"Id": "nachonline.mps_OrangeSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)635"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)630",
+							"MinStack": "{{R.S.M Minimum Saplings}}",
+							"MaxStack": "{{R.S.M Maximum Saplings}}",
+							"CopyQuality": "{{R.S.M Copy Quality}}",
+							"Quality": "{{R.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_PeachSapling": {
+					"Id": "nachonline.mps_PeachSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)636"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)631",
+							"MinStack": "{{R.S.M Minimum Saplings}}",
+							"MaxStack": "{{R.S.M Maximum Saplings}}",
+							"CopyQuality": "{{R.S.M Copy Quality}}",
+							"Quality": "{{R.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_PomegranateSapling": {
+					"Id": "nachonline.mps_PomegranateSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)637"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)632",
+							"MinStack": "{{R.S.M Minimum Saplings}}",
+							"MaxStack": "{{R.S.M Maximum Saplings}}",
+							"CopyQuality": "{{R.S.M Copy Quality}}",
+							"Quality": "{{R.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_AppleSapling": {
+					"Id": "nachonline.mps_AppleSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)613"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)633",
+							"MinStack": "{{R.S.M Minimum Saplings}}",
+							"MaxStack": "{{R.S.M Maximum Saplings}}",
+							"CopyQuality": "{{R.S.M Copy Quality}}",
+							"Quality": "{{R.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_MangoSapling": {
+					"Id": "nachonline.mps_MangoSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)834"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)835",
+							"MinStack": "{{R.S.M Minimum Saplings}}",
+							"MaxStack": "{{R.S.M Maximum Saplings}}",
+							"CopyQuality": "{{R.S.M Copy Quality}}",
+							"Quality": "{{R.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BananaSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_CherrySapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_ApricotSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_OrangeSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_PeachSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_PomegranateSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_AppleSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_MangoSapling", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticSeedMaker",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Tree Fruit to Sapling": true
+			},
+			"Entries": {
+				"nachonline.mps_BananaSapling": {
+					"Id": "nachonline.mps_BananaSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)91"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)69",
+							"MinStack": "{{P.S.M Minimum Saplings}}",
+							"MaxStack": "{{P.S.M Maximum Saplings}}",
+							"CopyQuality": "{{P.S.M Copy Quality}}",
+							"Quality": "{{P.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_CherrySapling": {
+					"Id": "nachonline.mps_CherrySapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)638"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)628",
+							"MinStack": "{{P.S.M Minimum Saplings}}",
+							"MaxStack": "{{P.S.M Maximum Saplings}}",
+							"CopyQuality": "{{P.S.M Copy Quality}}",
+							"Quality": "{{P.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_ApricotSapling": {
+					"Id": "nachonline.mps_ApricotSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)634"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)629",
+							"MinStack": "{{P.S.M Minimum Saplings}}",
+							"MaxStack": "{{P.S.M Maximum Saplings}}",
+							"CopyQuality": "{{P.S.M Copy Quality}}",
+							"Quality": "{{P.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_OrangeSapling": {
+					"Id": "nachonline.mps_OrangeSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)635"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)630",
+							"MinStack": "{{P.S.M Minimum Saplings}}",
+							"MaxStack": "{{P.S.M Maximum Saplings}}",
+							"CopyQuality": "{{P.S.M Copy Quality}}",
+							"Quality": "{{P.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_PeachSapling": {
+					"Id": "nachonline.mps_PeachSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)636"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)631",
+							"MinStack": "{{P.S.M Minimum Saplings}}",
+							"MaxStack": "{{P.S.M Maximum Saplings}}",
+							"CopyQuality": "{{P.S.M Copy Quality}}",
+							"Quality": "{{P.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_PomegranateSapling": {
+					"Id": "nachonline.mps_PomegranateSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)637"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)632",
+							"MinStack": "{{P.S.M Minimum Saplings}}",
+							"MaxStack": "{{P.S.M Maximum Saplings}}",
+							"CopyQuality": "{{P.S.M Copy Quality}}",
+							"Quality": "{{P.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_AppleSapling": {
+					"Id": "nachonline.mps_AppleSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)613"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)633",
+							"MinStack": "{{P.S.M Minimum Saplings}}",
+							"MaxStack": "{{P.S.M Maximum Saplings}}",
+							"CopyQuality": "{{P.S.M Copy Quality}}",
+							"Quality": "{{P.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+				"nachonline.mps_MangoSapling": {
+					"Id": "nachonline.mps_MangoSapling",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)834"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)835",
+							"MinStack": "{{P.S.M Minimum Saplings}}",
+							"MaxStack": "{{P.S.M Maximum Saplings}}",
+							"CopyQuality": "{{P.S.M Copy Quality}}",
+							"Quality": "{{P.S.M Quality}}"
+						}
+					],
+					"MinutesUntilReady": 20
+				},
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BananaSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_CherrySapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_ApricotSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_OrangeSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_PeachSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_PomegranateSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_AppleSapling", "ToPosition": "Top" },
+				{ "ID": "nachonline.mps_MangoSapling", "ToPosition": "Top" }
+			]
+		}
+	] 
+}

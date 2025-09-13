@@ -1,0 +1,104 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_RadioactiveSlimeIncubator": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"slime_egg_item"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "DROP_IN"
+								}
+							],
+							"MinutesUntilReady": "{{R.S.I Production Time}}"
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "Coopmaster",
+							"Condition": "PLAYER_HAS_PROFESSION Target 2",
+							"Modification": "Multiply",
+							"Amount": 0.5
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"CustomFields": {
+						"selph.ExtraMachineConfig.IsCustomSlimeIncubator": true
+					},
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "coin"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": true,
+					"ShowNextIndexWhenReady": false,
+					"AllowFairyDust": false
+				},
+				"(BC)nachonline.mps_PrismaticSlimeIncubator": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"slime_egg_item"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "DROP_IN"
+								}
+							],
+							"MinutesUntilReady": "{{P.S.I Production Time}}"
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Id": "Coopmaster",
+							"Condition": "PLAYER_HAS_PROFESSION Target 2",
+							"Modification": "Multiply",
+							"Amount": 0.5
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"CustomFields": {
+						"selph.ExtraMachineConfig.IsCustomSlimeIncubator": true
+					},
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "coin"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true,
+					"ShowNextIndexWhileWorking": true,
+					"ShowNextIndexWhenReady": false,
+					"AllowFairyDust": false
+				}
+			}
+		}
+	] 
+}

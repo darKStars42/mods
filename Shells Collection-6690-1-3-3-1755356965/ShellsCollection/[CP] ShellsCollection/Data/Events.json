@@ -1,0 +1,98 @@
+{
+	"$schema": "https://smapi.io/schemas/content-patcher.json",
+	"Changes": [
+		{
+			"LogName": "Add event in Willy Fish Shop",
+			"Action": "EditData",
+			"Target": "Data/Events/FishShop",
+			"Entries": {
+				//GiftFromWilly
+				//Willy 1: "Oh, look who's comin.",
+				//Willy 2: "I just fumbled through some ol' stuffs down here.",
+				//Willy 3: "You came at the right time, I'd like you to have this @.",
+				//Message 1: "Learned how to craft 'Shells Necklace'",
+				//Willy 4: "You can make some fine neck wear from the shells scatterin around the beach.",
+				//Willy 5: "And maybe give em to someone you fancy. $3",
+				"{{ModId}}_GiftFromWilly/Time 600 1700/Friendship Willy 6": "
+				continue/5 7/farmer -100 -100 0 Willy 6 4 1/
+				addCraftingRecipe {{ModId}}_ShellsNecklace/mail {{ModId}}_FishShopStockExpanded/skippable/
+				showFrame Willy 26/pause 250/emote Willy 40/pause 250/emote Willy 40/pause 250/emote Willy 32/pause 1000/
+				playSound doorClose/warp farmer 5 9/pause 350/faceDirection Willy 2/pause 500/move farmer 0 -1 0 true/
+				faceDirection Willy 2/
+				speak Willy \"{{i18n:GiftFromWilly.Willy.1}}\"/
+				pause 300/emote Willy 40/pause 300/
+				speak Willy \"{{i18n:GiftFromWilly.Willy.2}}\"/
+				emote Willy 40/pause 500/faceDirection Willy 1/showFrame Willy 26/pause 500/playSound Ship/pause 800/playSound Ship/pause 1000/
+				move Willy -4 0 2 false/move Willy 0 4 1 true/faceDirection farmer 3/emote farmer 8/move Willy 2 0 1/
+				speak Willy \"{{i18n:GiftFromWilly.Willy.3}}\"/
+				pause 800/itemAboveHead/playSound getNewSpecialItem/pause 3300/
+				message \"{{i18n:GiftFromWilly.Message.1}}\"/
+				pause 800/faceDirection farmer 3/
+				speak Willy \"{{i18n:GiftFromWilly.Willy.4}}\"/
+				pause 300/faceDirection Willy 3/animate Willy true true 250 28 29 30 31/pause 500/
+				speak Willy \"{{i18n:GiftFromWilly.Willy.5}}\"/
+				faceDirection farmer 3/emote farmer 32/pause 500/end"
+			}
+		},
+		{
+			"LogName": "Add event in Robin's house",
+			"Action": "EditData",
+			"Target": "Data/Events/ScienceHouse",
+			"Entries": {
+				//CoralOrderCompleted
+				//Robin 1: Fascinating!
+				//Robin 2: It's working. We finally got it!
+				//Demetrius 1: I agree, the material totally fulfill the required criteria. It has excellent durability.#$e#This is possible all thanks to you. $1
+				//Robin 3: Oh, look who's coming!
+				//Demetrius 2: We were just inspecting a fence prototype made of the coral you've gathered.
+				//Robin 4: Ah... c'mon, after all that tests I'd call this a finished product. $2
+				//Robin 5: It might not look like it, but this fence is as sturdy as a hardwood fence.
+				//Robin 6: Guess what, you've been a great help @. #$b#You totally deserve a little reward...
+				//Message 1: Learned how to craft 'Coral Fence'
+				//Robin 7: Coral is not exactly the most abundant material to come by. But hey, isn't it nice to have the option? $4
+				//Demetrius 3: Keep in mind, this project is largely meant for science. I wouldn't suggest you to mass harvest the coral for one.
+				//Robin 8: Ugh, you know exactly how to ruin the moment... $2
+				//Question 1: I'm sure our friend here won't do such a silly.#Is that even a question?#...
+				//Robin 9: Oh, how silly of me to ask. And even then how much harm a single person could do? $4
+				//Demetrius 4: I'm sorry, I didn't mean to imply anything bad. $s#$b# I am actually confident you would use it responsibly.
+				//Demetrius 5: Well, we won't be able do this without you. You have my gratitude @! $1
+				//Robin 10: Thanks for always being our ever helpful neighbor. $1
+				"{{ModId}}_CoralOrderCompleted/Time 600 1700/GameStateQuery PLAYER_SPECIAL_ORDER_COMPLETE Current {{ModId}}_CoralOrder": "
+				breezy/20 19/farmer 9 20 1 Demetrius 19 18 1 Robin 22 18 3/
+				addCraftingRecipe {{ModId}}_CoralFence/skippable/addObject 20 18 298/addObject 21 18 {{ModId}}_CoralFence/
+				animate Demetrius false true 250 27 27 27 30 30 30 31 30 31 30 31 27 27/showFrame Robin 27/pause 500/
+				textAboveHead Robin \"{{i18n:CoralOrderCompleted.Robin.1}}\"/
+				pause 800/speak Robin \"{{i18n:CoralOrderCompleted.Robin.2}}\"/
+				stopAnimation Demetrius 27/
+				speak Demetrius \"{{i18n:CoralOrderCompleted.Demetrius.1}}\"/
+				emote Robin 32/pause 250/move farmer 3 0 1/showFrame Demetrius 12/move farmer 4 0 1/
+				speak Robin \"{{i18n:CoralOrderCompleted.Robin.3}}\"/
+				emote farmer 8/move farmer 2 0 0/showFrame Demetrius 0/move farmer 2 0 0/
+				speak Demetrius \"{{i18n:CoralOrderCompleted.Demetrius.2}}\"/
+				emote Robin 12/pause 250/
+				speak Robin \"{{i18n:CoralOrderCompleted.Robin.4}}\"/
+				emote farmer 40/pause 250/showFrame Robin 12/animate Robin false false 100 24 24 24 25 26/showFrame Robin 27/pause 150/playSound axe/pause 500/emote Demetrius 28/pause 250/
+				speak Robin \"{{i18n:CoralOrderCompleted.Robin.5}}\"/
+				emote farmer 56/move Robin 0 1 2/move Robin -2 0 2/pause 250/
+				speak Robin \"{{i18n:CoralOrderCompleted.Robin.6}}\"/
+				pause 1000/itemAboveHead/playSound getNewSpecialItem/pause 3300/
+				message \"{{i18n:CoralOrderCompleted.Message.1}}\"/
+				pause 800/faceDirection farmer 0/showFrame Robin 32/pause 250/
+				speak Robin \"{{i18n:CoralOrderCompleted.Robin.7}}\"/
+				pause 250/
+				speak Demetrius \"{{i18n:CoralOrderCompleted.Demetrius.3}}\"/
+				showFrame Robin 34/emote Robin 40/pause 250/
+				speak Robin \"{{i18n:CoralOrderCompleted.Robin.8}}\"/
+				question null \"{{i18n:CoralOrderCompleted.Question.1}}\"/
+				showFrame Robin 0/
+				speak Robin \"{{i18n:CoralOrderCompleted.Robin.9}}\"/
+				speak Demetrius \"{{i18n:CoralOrderCompleted.Demetrius.4}}\"/
+				pause 800/
+				speak Demetrius \"{{i18n:CoralOrderCompleted.Demetrius.5}}\"/
+				pause 250/
+				speak Robin \"{{i18n:CoralOrderCompleted.Robin.10}}\"/
+				emote farmer 56/faceDirection farmer 2/showFrame farmer 32/pause 800/end"
+			}
+		}
+	]
+}

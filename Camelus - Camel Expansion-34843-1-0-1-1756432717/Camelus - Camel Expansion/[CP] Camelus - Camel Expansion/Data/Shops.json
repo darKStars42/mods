@@ -1,0 +1,50 @@
+{
+	"Changes": [
+		//************************************
+		// Add Camel Steak Recipe
+		{
+			"LogName": "Add Camel Steak Recipe Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "DesertTrade", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.Camelus_CamelSteak": {
+					"Id": "ZoeyHoshi.Camelus_CamelSteak",
+					"ItemId": "(O)ZoeyHoshi.Camelus_CamelSteak",
+					"Price": -1,
+					"TradeItemId": "(O)ZoeyHoshi.Camelus_LargeCamelCheese",
+					"TradeItemAmount": 2,
+					"AvailableStock": 1,
+					"Condition": "BUILDINGS_CONSTRUCTED all FlashShifter.StardewValleyExpandedCP_PremiumBarn 1",
+					"AvailableStockLimit": "Player",
+					"IsRecipe": true
+				}
+			},
+			"When": {
+				"LargeMilkResult": "LargeCheese"
+			}
+		},
+		{
+			"LogName": "Add Camel Steak Recipe Shop - No Large Cheeses",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "DesertTrade", "Items" ],
+			"Entries": {
+				"ZoeyHoshi.Camelus_CamelSteak": {
+					"Id": "ZoeyHoshi.Camelus_CamelSteak",
+					"ItemId": "(O)ZoeyHoshi.Camelus_CamelSteak",
+					"Price": -1,
+					"TradeItemId": "(O)ZoeyHoshi.Camelus_CamelCheese",
+					"TradeItemAmount": 4,
+					"AvailableStock": 1,
+					"Condition": "BUILDINGS_CONSTRUCTED all FlashShifter.StardewValleyExpandedCP_PremiumBarn 1",
+					"AvailableStockLimit": "Player",
+					"IsRecipe": true
+				}
+			},
+			"When": {
+				"LargeMilkResult": "WOL"
+			}
+		}
+	]
+}

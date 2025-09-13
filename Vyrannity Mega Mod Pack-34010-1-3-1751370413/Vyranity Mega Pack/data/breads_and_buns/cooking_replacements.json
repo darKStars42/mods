@@ -1,0 +1,40 @@
+{
+    "Changes": [
+        {
+            "LogName": "Create recipes for generic meat",
+            "Action": "EditData",
+            "Target":"spacechase0.SpaceCore/CookingRecipeOverrides",
+            "When": {
+                "Use Generic Meat": true,
+                "HasMod | contains=spacechase0.SpaceCore": true
+            }, 
+            "Entries": {
+                // meat loaf
+                "{{ModId}}_MeatLoaf": {
+                    "ProductQualifiedId": "(O){{ModId}}_MeatLoaf",
+                    "ProductAmount": 1,
+                    "Ingredients": [
+                        {
+                            "Type": "ContextTag",
+                            "Value": "meat_item",
+                            "Amount": 1,
+                            "OverrideText": "{{i18n:OV_Meat_Text}}",
+                            "OverrideTexturePath": "Maps/springobjects",
+                            "OverrideTextureRect": {
+                                "X": 240,
+                                "Y": 416,
+                                "Width": 16,
+                                "Height": 16
+                            }
+                        },
+                        {
+                            "Type": "Item",
+                            "Value": "(O)245",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

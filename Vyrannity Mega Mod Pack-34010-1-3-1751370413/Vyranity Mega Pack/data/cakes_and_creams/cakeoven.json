@@ -1,0 +1,882 @@
+{
+    "Changes": [
+        {
+            "LogName": "Create Cake Oven",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_CakeOven": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_AncientFruitCake",
+                            "Triggers": [
+                                {
+                                    "Id": "AncientFruitPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)454"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_AncientFruitCake",
+                                    "ItemId": "(O){{ModId}}_AncientFruitCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000
+                        },
+                        {
+                            "Id": "{{ModId}}_AppleCake",
+                            "Triggers": [
+                                {
+                                    "Id": "ApplePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)613"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_AppleCake",
+                                    "ItemId": "(O){{ModId}}_AppleCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000
+                        },
+                        {
+                            "Id": "{{ModId}}_AppleCrumbCake",
+                            "Triggers": [
+                                {
+                                    "Id": "WheatFlourPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)246"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_AppleCrumbCake",
+                                    "ItemId": "(O){{ModId}}_AppleCrumbCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)613",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:CrumbCake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000
+                        },
+                        {
+                            "Id": "{{ModId}}_ApricotCake",
+                            "Triggers": [
+                                {
+                                    "Id": "ApricotPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)634"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_ApricotCake",
+                                    "ItemId": "(O){{ModId}}_ApricotCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_BananaCake",
+                            "Triggers": [
+                                {
+                                    "Id": "BananaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)91"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_BananaCake",
+                                    "ItemId": "(O){{ModId}}_BananaCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_BlackberryCake",
+                            "Triggers": [
+                                {
+                                    "Id": "BlackberryPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)410"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_BlackberryCake",
+                                    "ItemId": "(O){{ModId}}_BlackberryCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_BlueberryCake",
+                            "Triggers": [
+                                {
+                                    "Id": "BlueberryPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)258"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_BlueberryCake",
+                                    "ItemId": "(O){{ModId}}_BlueberryCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_CactusFruitCake",
+                            "Triggers": [
+                                {
+                                    "Id": "CactusFruitPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)90"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_CactusFruitCake",
+                                    "ItemId": "(O){{ModId}}_CactusFruitCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_CarrotCake",
+                            "Triggers": [
+                                {
+                                    "Id": "CarrotPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)Carrot"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_CarrotCake",
+                                    "ItemId": "(O){{ModId}}_CarrotCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_CherryCake",
+                            "Triggers": [
+                                {
+                                    "Id": "CherryPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)638"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_CherryCake",
+                                    "ItemId": "(O){{ModId}}_CherryCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_ChocolateCake",
+                            "Triggers": [
+                                {
+                                    "Id": "CocoaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{Cocoa}}"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_ChocolateCake",
+                                    "ItemId": "(O){{ModId}}_ChocolateCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_CoconutCake",
+                            "Triggers": [
+                                {
+                                    "Id": "CoconutCakePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)88"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_CoconutCake",
+                                    "ItemId": "(O){{ModId}}_CoconutCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_CranberryCake",
+                            "Triggers": [
+                                {
+                                    "Id": "CranberryPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)282"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_CranberryCake",
+                                    "ItemId": "(O){{ModId}}_CranberryCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_CrystalFruitCake",
+                            "Triggers": [
+                                {
+                                    "Id": "CrystalFruitPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)414"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_CrystalFruitCake",
+                                    "ItemId": "(O){{ModId}}_CrystalFruitCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_GenoiseCake",
+                            "Triggers": [
+                                {
+                                    "Id": "CakeCreamPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_CakeCream"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_GenoiseCake",
+                                    "ItemId": "(O){{ModId}}_GenoiseCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O)410",
+                                        "{{selphNum}}.3": 1,
+                                        "{{selphId}}.4": "(O)258",
+                                        "{{selphNum}}.4": 1,
+                                        "{{selphId}}.5": "(O)400",
+                                        "{{selphNum}}.5": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:GenoiseCake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_GrapeCake",
+                            "Triggers": [
+                                {
+                                    "Id": "GrapePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)398"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_GrapeCake",
+                                    "ItemId": "(O){{ModId}}_GrapeCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_MangoCake",
+                            "Triggers": [
+                                {
+                                    "Id": "MangoPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)834"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_MangoCake",
+                                    "ItemId": "(O){{ModId}}_MangoCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_MelonCake",
+                            "Triggers": [
+                                {
+                                    "Id": "MelonPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)254"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_MelonCake",
+                                    "ItemId": "(O){{ModId}}_MelonCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_OrangeCake",
+                            "Triggers": [
+                                {
+                                    "Id": "OrangePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)635"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_OrangeCake",
+                                    "ItemId": "(O){{ModId}}_OrangeCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_PeachCake",
+                            "Triggers": [
+                                {
+                                    "Id": "PeachPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)636"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PeachCake",
+                                    "ItemId": "(O){{ModId}}_PeachCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_PineappleCake",
+                            "Triggers": [
+                                {
+                                    "Id": "PineapplePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)832"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PineappleCake",
+                                    "ItemId": "(O){{ModId}}_PineappleCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_PomegranateCake",
+                            "Triggers": [
+                                {
+                                    "Id": "PomegranatePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)637"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PomegranateCake",
+                                    "ItemId": "(O){{ModId}}_PomegranateCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_SalmonberryCake",
+                            "Triggers": [
+                                {
+                                    "Id": "SalmonberryPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)296"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_SalmonberryCake",
+                                    "ItemId": "(O){{ModId}}_SalmonberryCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_SpiceBerryCake",
+                            "Triggers": [
+                                {
+                                    "Id": "SpiceBerryPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)396"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_SpiceBerryCake",
+                                    "ItemId": "(O){{ModId}}_SpiceBerryCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_StarfruitCake",
+                            "Triggers": [
+                                {
+                                    "Id": "StarfruitPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)268"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_StarfruitCake",
+                                    "ItemId": "(O){{ModId}}_StarfruitCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_StrawberryCake",
+                            "Triggers": [
+                                {
+                                    "Id": "StrawberryPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)400"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_StrawberryCake",
+                                    "ItemId": "(O){{ModId}}_StrawberryCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        },
+                        {
+                            "Id": "{{ModId}}_WildPlumCake",
+                            "Triggers": [
+                                {
+                                    "Id": "PlumPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)406"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_WildPlumCake",
+                                    "ItemId": "(O){{ModId}}_WildPlumCake",
+                                    "CustomData": {
+                                        "{{selphTag}}.1": "category_egg",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)246",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 1000 
+                        }
+                    ],
+                    "WorkingEffects": [
+                        {
+                            "Id": "DefaultWorkEffects",
+                            "Frames": [1],
+                            "Interval": 200
+                        }
+                    ],
+                    "WorkingEffectsChance": 1,
+                    "WobbleWhileWorking": false
+                }
+            }
+        },
+        {
+            "LogName": "Add regular buttercake recipe",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC){{ModId}}_CakeOven", "OutputRules"],
+            "Entries": {
+                "{{ModId}}_ButterCake": {
+                    "Id": "{{ModId}}_ButterCake",
+                    "Triggers": [
+                        {
+                            "Id": "ButterPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O){{ModId}}_Butter"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_ButterCake",
+                            "ItemId": "(O){{ModId}}_ButterCake",
+                            "CustomData": {
+                                "{{selphTag}}.1": "category_egg",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)246",
+                                "{{selphNum}}.2": 1,
+                                "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                "{{selphNum}}.3": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 1000 
+                }
+            },
+            "When": {
+                "Use Other Butter": false
+            }
+        },
+        {     
+            "LogName": "Add regular buttercake recipe",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC){{ModId}}_CakeOven", "OutputRules"],
+            "Entries": {
+                "{{ModId}}_ButterCake": {
+                    "Id": "{{ModId}}_ButterCake",
+                    "Triggers": [
+                        {
+                            "Id": "ButterPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredTags": ["butter_item"]
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_ButterCake",
+                            "ItemId": "(O){{ModId}}_ButterCake",
+                            "CustomData": {
+                                "{{selphTag}}.1": "category_egg",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)246",
+                                "{{selphNum}}.2": 1,
+                                "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                "{{selphNum}}.3": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cake_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 1000 
+                }
+            },
+            "When": {
+                "Use Other Butter": true
+            }
+        },
+        {
+            "LogName": "Add red velvet cornucopia recipe",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC){{ModId}}_CakeOven", "OutputRules"],
+            "Entries": {
+                "{{ModId}}_RedVelvetCake_Cornucopia": {
+                    "Id": "{{ModId}}_RedVelvetCake",
+                    "Triggers": [
+                        {
+                            "Id": "BeetPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)284"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_RedVelvetCake",
+                            "ItemId": "(O){{ModId}}_RedVelvetCake",
+                            "CustomData": {
+                                "{{selphTag}}.1": "category_egg",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)246",
+                                "{{selphNum}}.2": 1,
+                                "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                "{{selphNum}}.3": 1,
+                                "{{selphId}}.4": "(O)Cornucopia_CocoaPod",
+                                "{{selphNum}}.4": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:VelvetCake_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 1000 
+                }
+            },
+            "When": {
+                "HasMod | contains=Cornucopia.MoreCrops": true
+            }
+        },
+        {
+            "LogName": "Add red velvet regular recipe",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC){{ModId}}_CakeOven", "OutputRules"],
+            "Entries": {
+                "{{ModId}}_RedVelvetCake_Vanilla": {
+                    "Id": "{{ModId}}_RedVelvetCake",
+                    "Triggers": [
+                        {
+                            "Id": "BeetPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)284"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_RedVelvetCake",
+                            "ItemId": "(O){{ModId}}_RedVelvetCake",
+                            "CustomData": {
+                                "{{selphTag}}.1": "category_egg",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)246",
+                                "{{selphNum}}.2": 1,
+                                "{{selphId}}.3": "(O){{ModId}}_CakeCream",
+                                "{{selphNum}}.3": 1,
+                                "{{selphId}}.4": "(O)220",
+                                "{{selphNum}}.4": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:VelvetCake_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 1000 
+                }
+            },
+            "When": {
+                "HasMod | contains=Cornucopia.MoreCrops": false
+            }
+        }
+    ]
+ }

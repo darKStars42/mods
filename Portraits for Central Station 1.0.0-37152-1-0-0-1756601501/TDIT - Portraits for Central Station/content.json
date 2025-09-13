@@ -1,0 +1,566 @@
+ {
+    "Format": "2.7.0",
+	"DynamicTokens":[		
+		{	
+			"Name": "DisplayName",
+			"Value": "Original",
+		},
+		{	
+			"Name": "DisplayName",
+			"Value": "{{Spiderbuttons.CMCT/Config: DolphINaF.ExtraPortraits,DisplayName}}",
+			"When": {
+				"HasMod |contains=DolphINaF.ExtraPortraits": true,
+				"HasMod |contains=Spiderbuttons.CMCT": true,
+			}			
+		},	
+		{
+			"Name": "Amber",
+			"Value": "Mods/DolphINaF.ExtraPortraits/Strings:Name.VioletLady",
+		},			
+		{
+			"Name": "Amber",
+			"Value": "Mods/DolphINaF.ExtraPortraits/Strings:Name.Amber",
+			"When": {"DisplayName": "Named",}
+		},
+		{
+			"Name": "Terrence",
+			"Value": "Mods/DolphINaF.ExtraPortraits/Strings:Name.RedCap",
+		},			
+		{
+			"Name": "Terrence",
+			"Value": "Mods/DolphINaF.ExtraPortraits/Strings:Name.Terrence",
+			"When": {"DisplayName": "Named",}
+		},	
+		{
+			"Name": "Duke",
+			"Value": "Mods/DolphINaF.ExtraPortraits/Strings:Name.Shades",
+		},			
+		{
+			"Name": "Duke",
+			"Value": "Mods/DolphINaF.ExtraPortraits/Strings:Name.Duke",
+			"When": {"DisplayName": "Named",}
+		},	
+		{
+			"Name": "Claire",
+			"Value": "Mods/DolphINaF.ExtraPortraits/Strings:Name.PartTimerFemale",
+		},			
+		{
+			"Name": "Claire",
+			"Value": "Mods/DolphINaF.ExtraPortraits/Strings:Name.Claire",
+			"When": {"DisplayName": "Named",}
+		},	
+		{
+			"Name": "Luca",
+			"Value": "Mods/DolphINaF.ExtraPortraits/Strings:Name.CornerGuy",
+		},		
+		{
+			"Name": "Luca",
+			"Value": "Mods/DolphINaF.ExtraPortraits/Strings:Name.Luca",
+			"When": {"DisplayName": "Named",}
+		},			
+	],
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "Portraits/CSPurseDog_Default, Portraits/CSFlamingo_Default, Portraits/CSGiftShop_Default, Portraits/CSFoodCourt_Default",
+            "FromFile": "assets/{{Target}}.png",
+			"Priority": "Low"
+        },	
+		{
+			"LogName": "Strings Load",
+			"Action": "Load",
+			"Target": "Mods/DolphINaF.CSPortraits/Strings",
+			"FromFile": "patches/blank.json",
+		},
+		{
+			"LogName": "Strings",
+			"Action": "EditData",
+			"Target": "Mods/DolphINaF.CSPortraits/Strings",
+			"Entries": {
+				"Name.PurseDog": "{{i18n:Name.PurseDog}}",
+				"Name.Flamingo": "{{i18n:Name.Flamingo}}",
+				"Name.Scholar": "{{i18n:Name.Scholar}}",
+				"Name.ShroudedFigure": "{{i18n:Name.ShroudedFigure}}",
+			}
+		},	
+		{
+			"LogName": "Gift Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "Pathoschild.CentralStation_GiftShop", "Owners", "Default" ],
+			"Entries": {"Portrait": "Portraits/CSGiftShop_Default"},
+		},
+		{
+			"LogName": "Gift Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"TargetField": [ "Pathoschild.CentralStation_FoodCourt", "Owners", "Default" ],
+			"Entries": {"Portrait": "Portraits/CSFoodCourt_Default"},
+		},
+		{
+            "Action": "EditData",
+            "Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists"],
+            "Fields": {
+				"Cashier": {
+					"Condition": "{{IsCommunityCenterComplete}}, !PLAYER_HAS_MAIL Host ccMovieTheater, !{{HasMod|contains=FlashShifter.StardewValleyExpandedCP}}"
+                },
+				"ManWithDrink": {
+					"Condition": "SYNCED_CHOICE day Terrence 1 2 1"
+                },
+				"RedCapGuy": {
+					"Condition": "SYNCED_CHOICE day Terrence 1 2 2"
+                },
+            },
+        },
+
+// Tourist 0: Simon		
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "YoungBoy", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/Child_Default Mods/DolphINaF.ExtraPortraits/Strings:Name.Simon",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/Child_Default Mods/DolphINaF.ExtraPortraits/Strings:Name.Simon",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#2"],
+					"Value": "Portraits/Child_Default Mods/DolphINaF.ExtraPortraits/Strings:Name.Simon",
+					"Delimiter": "🐬"
+				},					
+			],
+		},	
+		
+// Tourist 1: Amber			
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "WomanInBlackDress", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/PurpleHairLady_Default {{Amber}}",
+					"Delimiter": "🐬"
+				},					
+			],
+		},	
+		
+// Tourist 2: Terrence Eating			
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "ManWithDrink", "Dialogue"],
+			"TextOperations": [
+			
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/RedCapGuy_Default {{Terrence}}",
+					"Delimiter": "🐬"
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Entries","#0"],
+					"Value": "$2",
+				},					
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/RedCapGuy_Default {{Terrence}}",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Append",
+					"Target": ["Entries","#1"],
+					"Value": "$2",
+				},					
+			],
+		},
+		
+// Tourist 3: Duke		
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "ManWithSunglasses", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/CraneMan_Default {{Duke}}",
+					"Delimiter": "🐬"
+				},					
+			],
+		},	
+		
+// Tourist 4: Top Hat	
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "ManWithTopHat", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/Gervig91.StardewAquariumCP_SnackVendor Mods/DolphINaF.ExtraPortraits/Strings:Name.TopHat",
+					"Delimiter": "🐬"
+				},			
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/Gervig91.StardewAquariumCP_SnackVendor Mods/DolphINaF.ExtraPortraits/Strings:Name.TopHat",
+					"Delimiter": "🐬"
+				},				
+			],
+		},	
+
+// Tourist 5: Strongman		
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "StrongMan", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/Strongman_Default Mods/DolphINaF.ExtraPortraits/Strings:Name.Strongman",
+					"Delimiter": "🐬"
+				},					
+			],
+		},	
+// Tourist 6: Racer Guy
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "DesertRacerMan", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/DesertTrader_RacerGuy Mods/DolphINaF.ExtraPortraits/Strings:Name.RacerGuy",
+					"Delimiter": "🐬"
+				},
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/DesertTrader_RacerGuy Mods/DolphINaF.ExtraPortraits/Strings:Name.RacerGuy",
+					"Delimiter": "🐬"
+				},				
+			],
+		},
+// Tourist 7: Scholar
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "DesertScholar", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/DesertTrader_Scholar Mods/DolphINaF.CSPortraits/Strings:Name.Scholar",
+					"Delimiter": "🐬"
+				},
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/DesertTrader_Scholar Mods/DolphINaF.CSPortraits/Strings:Name.Scholar",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#2"],
+					"Value": "Portraits/DesertTrader_Scholar Mods/DolphINaF.CSPortraits/Strings:Name.Scholar",
+					"Delimiter": "🐬"
+				},				
+			],
+		},	
+// Tourist 8: Flamingo
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "Flamingo", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/CSFlamingo_Default Mods/DolphINaF.CSPortraits/Strings:Name.Flamingo",
+					"Delimiter": "🐬"
+				},
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/CSFlamingo_Default Mods/DolphINaF.CSPortraits/Strings:Name.Flamingo",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#2"],
+					"Value": "Portraits/CSFlamingo_Default Mods/DolphINaF.CSPortraits/Strings:Name.Flamingo",
+					"Delimiter": "🐬"
+				},
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#3"],
+					"Value": "Portraits/CSFlamingo_Default Mods/DolphINaF.CSPortraits/Strings:Name.Flamingo",
+					"Delimiter": "🐬"
+				},
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#4"],
+					"Value": "Portraits/CSFlamingo_Default Mods/DolphINaF.CSPortraits/Strings:Name.Flamingo",
+					"Delimiter": "🐬"
+				},			
+			],
+		},	
+// Tourist 9: Shrouded Figure
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "ShroudedFigure", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/ShroudedFigure_Default Mods/DolphINaF.CSPortraits/Strings:Name.ShroudedFigure",
+					"Delimiter": "🐬"
+				},					
+			],
+		},	
+// Tourist 12: Welwick
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "Welwick", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/Welwick_Default Strings/NPCNames:Welwick",
+					"Delimiter": "🐬"
+				},		
+				{
+					"Operation": "Append",
+					"Target": ["Entries","#0"],
+					"Value": "$2",
+				},
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/Welwick_Default Strings/NPCNames:Welwick",
+					"Delimiter": "🐬"
+				},		
+				{
+					"Operation": "Append",
+					"Target": ["Entries","#1"],
+					"Value": "$2",
+				},		
+			],
+		},	
+
+// Tourist 13: Claire
+		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "Cashier", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/MovieConcessionCC_Default {{Claire}}",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/MovieConcessionCC_Default {{Claire}}",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#2"],
+					"Value": "Portraits/MovieConcessionCC_Default {{Claire}}",
+					"Delimiter": "🐬"
+				},					
+			],
+		},	
+
+// Tourist 14: Governor
+		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "Governor", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/Governor Strings/NPCNames:Governor",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/Governor Strings/NPCNames:Governor",
+					"Delimiter": "🐬"
+				},					
+			],
+		},	
+// Tourist 15: Lupini
+		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "Lupini", "Dialogue"],
+			"TextOperations": [		
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/PainterLupini_Default Mods/DolphINaF.ExtraPortraits/Strings:Name.Lupini",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/PainterLupini_Default Mods/DolphINaF.ExtraPortraits/Strings:Name.Lupini",
+					"Delimiter": "🐬"
+				},					
+			],
+		},	
+// Tourist 16: Terrence		
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "RedCapGuy", "Dialogue"],
+			"TextOperations": [
+			
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/RedCapGuy_Default {{Terrence}}",
+					"Delimiter": "🐬"
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Entries","#0"],
+					"Value": "$1",
+				},					
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/RedCapGuy_Default {{Terrence}}",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Append",
+					"Target": ["Entries","#1"],
+					"Value": "$1",
+				},					
+			],
+		},	
+
+// Tourist 17: Luca		
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "ShortsMan", "Dialogue"],
+			"TextOperations": [
+			
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/CornerGuy_Default {{Luca}}",
+					"Delimiter": "🐬"
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Entries","#0"],
+					"Value": "$1",
+				},									
+			],
+		},	
+		
+// Tourist 18: Drunk Pirate		
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "RedPirate", "Dialogue"],
+			"TextOperations": [
+			
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/DrunkPirate_Default Mods/DolphINaF.ExtraPortraits/Strings:Name.DrunkPirate",
+					"Delimiter": "🐬"
+				},									
+			],
+		},	
+
+// Tourist 19: Grim Pirate
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "GrimPirate", "Dialogue"],
+			"TextOperations": [
+			
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/GrimPirate_Default Mods/DolphINaF.ExtraPortraits/Strings:Name.GrimPirate",
+					"Delimiter": "🐬"
+				},									
+			],
+		},	
+
+// Tourist 20: Blackgull
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "BlackgullPirate", "Dialogue"],
+			"TextOperations": [
+			
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/Blackgull_Default Mods/DolphINaF.ExtraPortraits/Strings:Name.Blackgull",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/Blackgull_Default Mods/DolphINaF.ExtraPortraits/Strings:Name.Blackgull",
+					"Delimiter": "🐬"
+				},				
+			],
+		},
+
+// Tourist 24: Purse Dog		
+ 		{
+			"Action": "EditData",
+			"Target": "Mods/Pathoschild.CentralStation/Tourists",
+			"TargetField": ["Pathoschild.CentralStation", "Tourists", "BagDog", "Dialogue"],
+			"TextOperations": [
+			
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#0"],
+					"Value": "Portraits/CSPurseDog_Default Mods/DolphINaF.CSPortraits/Strings:Name.PurseDog",
+					"Delimiter": "🐬"
+				},	
+				{
+					"Operation": "Prepend",
+					"Target": ["Entries","#1"],
+					"Value": "Portraits/CSPurseDog_Default Mods/DolphINaF.CSPortraits/Strings:Name.PurseDog",
+					"Delimiter": "🐬"
+				},					
+			],
+		},				
+	]
+}

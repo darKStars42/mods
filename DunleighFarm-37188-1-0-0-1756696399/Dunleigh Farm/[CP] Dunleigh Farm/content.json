@@ -1,0 +1,80 @@
+{
+ "Format": "2.7.0",
+ "Changes": [
+	{
+		"LogName": "Load Ton Location",
+		"Action": "Load",
+		"Target": "Maps/iwiwof.DunleighFarm",
+		"FromFile": "assets/Maps/DunleighFarm.tmx"
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Locations",
+		"Entries": {
+		"iwiwof.DunleighFarm": {
+          "DisplayName": "{{i18n:iwiwof.DunleighFarm.DisplayName}}",
+          "DefaultArrivalTile": {
+            "X": 5,
+            "Y": 43
+          },
+          "CreateOnLoad": {
+            "MapPath": "Maps/iwiwof.DunleighFarm",
+				},
+                    "Fish": [
+                        {
+                            "Id": "iwiwof.DunleighFarm.Catfish",
+                            "ItemId": "(O)143",
+                            "Condition": "LOCATION_Season Here Fall Spring Summer Winter",
+                        },
+                        {
+                            "Id": "iwiwof.DunleighFarm.Walleye",
+                            "ItemId": "(O)140",
+                            "Condition": "LOCATION_Season Here Fall Spring Summer Winter",
+                        },
+						{
+                            "Id": "iwiwof.DunleighFarm.SmallmouthBass",
+                            "ItemId": "(O)137",
+                            "Condition": "LOCATION_Season Here Fall Spring Summer Winter",
+                        },
+						{
+                            "Id": "iwiwof.DunleighFarm.Woodskip",
+                            "ItemId": "(O)734",
+                            "Condition": "LOCATION_Season Here Fall Spring Summer Winter",
+                        },
+                        {
+                            "Id": "iwiwof.DunleighFarm.Perch",
+                            "ItemId": "(O)141",
+                            "Condition": "LOCATION_Season Here Fall Spring Summer Winter",
+                   },
+               ],
+			},
+		},
+	},
+	{
+		"Action": "EditMap",
+		"Target": "Maps/iwiwof.DunleighFarm",
+		"MapProperties":{
+			  "Music": "desolate"
+		  }
+	  },
+{
+	"LogName": "Location Messages",
+	"Action": "Include",
+	"FromFile": "assets/Data/LocationMessages.json"
+},
+	  {
+    "Action": "EditData",
+    "Target": "Mods/Pathoschild.CentralStation/Stops",
+    "Entries": {
+        "{{ModId}}__DunleighFarm": {
+            "DisplayName": "{{i18n:iwiwofDunleighFarmStopDisplay}}",
+            "ToLocation": "iwiwof.DunleighFarm",
+            "Network": "Bus",
+			"Cost": 350,
+            "ToTile": { "X": 5, "Y": 43 }
+				}
+			}
+		},
+
+   ]
+}

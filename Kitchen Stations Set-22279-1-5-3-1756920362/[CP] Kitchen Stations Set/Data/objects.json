@@ -1,0 +1,207 @@
+{
+
+    "Changes": [
+
+
+
+/////////////// Kitchen Counter
+
+
+	{
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+		"BetterCraft.KitchenCounter": {
+		    "Name": "BetterCraft.KitchenCounter",
+                    "DisplayName": "{{i18n: KitchenCounter.Name}}",
+                    "Description": "{{i18n: KitchenCounter.Description}}",
+    			"Fragility": 0,
+    			"CanBePlacedOutdoors": false,
+    			"CanBePlacedIndoors": true,
+                    "Texture": "Mods/Objects/BetterCraft.KitchenCounterSet",
+                    "SpriteIndex": 0,
+			"CustomFields": {
+        			"leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu BetterCraft.KitchenCounter {{AreaChoice}}"
+				}
+                			}
+			}
+	},
+
+
+/////////////Snacks and NonA Drinks
+
+	{
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+		"BetterCraft.DrinknSnackBar": {
+		    "Name": "BetterCraft.DrinknSnackBar",
+                    "DisplayName": "{{i18n: DrinknSnackBar.Name}}",
+                    "Description": "{{i18n: DrinknSnackBar.Description}}",
+    			"Fragility": 0,
+    			"CanBePlacedOutdoors": false,
+    			"CanBePlacedIndoors": true,
+                    "Texture": "Mods/Objects/BetterCraft.KitchenCounterSet",
+                    "SpriteIndex": 1,
+			"CustomFields": {
+        			"leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu BetterCraft.DrinknSnackBar {{AreaChoice}}"
+				}
+                			}
+			}
+	},
+
+
+/////////Oven thing
+
+	{
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+		"BetterCraft.OvenStove": {
+		    "Name": "BetterCraft.OvenStove",
+                    "DisplayName": "{{i18n: OvenStove.Name}}",
+                    "Description": "{{i18n: OvenStove.Description}}",
+    			"Fragility": 0,
+    			"CanBePlacedOutdoors": false,
+    			"CanBePlacedIndoors": true,
+                    "Texture": "Mods/Objects/BetterCraft.KitchenCounterSet",
+                    "SpriteIndex": 2,
+			"CustomFields": {
+        			"leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu BetterCraft.OvenStove {{AreaChoice}}"
+				}
+                			}
+			}
+	},
+
+
+
+/////////Dessert Station
+
+	{
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+		"BetterCraft.DessertStation": {
+		    "Name": "BetterCraft.DessertStation",
+                    "DisplayName": "{{i18n: DessertStation.Name}}",
+                    "Description": "{{i18n: DessertStation.Description}}",
+    			"Fragility": 0,
+    			"CanBePlacedOutdoors": false,
+    			"CanBePlacedIndoors": true,
+                    "Texture": "Mods/Objects/BetterCraft.KitchenCounterSet",
+                    "SpriteIndex": 3,
+			"CustomFields": {
+        			"leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu BetterCraft.DessertStation {{AreaChoice}}"
+				}
+                			}
+			}
+	},
+
+
+/////////Cocktail Bar
+
+	{
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+		"BetterCraft.CocktailBar": {
+		    "Name": "BetterCraft.CocktailBar",
+                    "DisplayName": "{{i18n: CocktailBar.Name}}",
+                    "Description": "{{i18n: CocktailBar.Description}}",
+    			"Fragility": 0,
+    			"CanBePlacedOutdoors": false,
+    			"CanBePlacedIndoors": true,
+                    "Texture": "Mods/Objects/BetterCraft.KitchenCounterSet",
+                    "SpriteIndex": 4,			
+			"CustomFields": {
+        			"leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu BetterCraft.CocktailBar {{AreaChoice}}"
+				}
+                			}
+			}
+	},
+
+
+/////////Sushi Bar
+
+	{
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+		"BetterCraft.SushiBar": {
+		    "Name": "BetterCraft.SushiBar",
+                    "DisplayName": "{{i18n: SushiBar.Name}}",
+                    "Description": "{{i18n: SushiBar.Description}}",
+    			"Fragility": 0,
+    			"CanBePlacedOutdoors": false,
+    			"CanBePlacedIndoors": true,
+                    "Texture": "Mods/Objects/BetterCraft.KitchenCounterSet",
+                    "SpriteIndex": 5,
+			"CustomFields": {
+        			"leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu BetterCraft.SushiBar {{AreaChoice}}"
+				}
+                			}
+			}
+	},
+
+
+
+
+
+	//Adding data to shop
+
+	{	
+		"Action": "EditData",	
+		"Target": "Data/Shops",
+		"TargetField": [ "Carpenter", "Items" ],
+		"Entries": {
+		    "BetterCraft.KitchenCounter": {
+                    "Id": "BetterCraft.KitchenCounter",
+                    "ItemId": "(BC)BetterCraft.KitchenCounter",
+                    "Price": 1500,
+		    "Condition": "PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.RobinLetter Any"
+        		},	
+		    "BetterCraft.DrinknSnackBar": {
+                    "Id": "BetterCraft.DrinknSnackBar",
+                    "ItemId": "(BC)BetterCraft.DrinknSnackBar",
+                    "Price": 1500,
+		    "Condition": "PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.RobinLetter Any"
+        		},	
+		    "BetterCraft.OvenStove": {
+                    "Id": "BetterCraft.OvenStove",
+                    "ItemId": "(BC)BetterCraft.OvenStove",
+                    "Price": 1500,
+		    "Condition": "PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.RobinLetter Any"
+        		},	
+		    "BetterCraft.DessertStation": {
+                    "Id": "BetterCraft.DessertStation",
+                    "ItemId": "(BC)BetterCraft.DessertStation",
+                    "Price": 1500,
+		    "Condition": "PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.RobinLetter Any"
+        		},	
+		    "BetterCraft.CocktailBar": {
+                    "Id": "BetterCraft.CocktailBar",
+                    "ItemId": "(BC)BetterCraft.CocktailBar",
+                    "Price": 1500,
+		    "Condition": "PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.RobinLetter Any"
+        		},	
+		    "BetterCraft.SushiBar": {
+                    "Id": "BetterCraft.SushiBar",
+                    "ItemId": "(BC)BetterCraft.SushiBar",
+                    "Price": 1500,
+		    "Condition": "PLAYER_HAS_MAIL Current BetterCraft.KitchenCounterSet.RobinLetter Any"
+        		}	
+		},
+	  "MoveEntries": [
+			{ "Id": "BetterCraft.KitchenCounter", "BeforeId": "(F)1466" },
+			{ "Id": "BetterCraft.DrinknSnackBar", "BeforeId": "(F)1466" },
+			{ "Id": "BetterCraft.OvenStove", "BeforeId": "(F)1466" },
+			{ "Id": "BetterCraft.DessertStation", "BeforeId": "(F)1466" },
+			{ "Id": "BetterCraft.CocktailBar", "BeforeId": "(F)1466" },
+			{ "Id": "BetterCraft.SushiBar", "BeforeId": "(F)1466" }
+
+		]
+	}
+
+
+]
+}

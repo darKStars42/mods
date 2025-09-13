@@ -1,0 +1,70 @@
+{
+	"$schema": "https://smapi.io/schemas/content-patcher.json",
+	"Format": "2.0.0",
+	"ConfigSchema": {
+		"FlexibleRecipe": {
+			"AllowValues": "true, false",
+			"Default": false
+		},
+		"IslesRarecrowAlwaysAvailable": {
+			"AllowValues": "true, false",
+			"Default": false
+		},
+		//Pearl Production
+		"DottedAbaloneProducePearl": {
+			"AllowValues": "true, false",
+			"Default": false,
+			"Section": "PearlProduction"
+		},
+		"DottedAbalonePearlChance": {
+			"Default": 0.01,
+			"Section": "PearlProduction"
+		},
+		"WingedScallopProducePearl": {
+			"AllowValues": "true, false",
+			"Default": false,
+			"Section": "PearlProduction"
+		},
+		"WingedScallopPearlChance": {
+			"Default": 0.01,
+			"Section": "PearlProduction"
+		}
+	},
+	"DynamicTokens": [
+		{
+			"Name": "CoralOrderStatus",
+			"Value": "Uncompleted"
+		},
+		{
+			"Name": "CoralOrderStatus",
+			"Value": "Completed",
+			"When": {
+				"HasFlag |contains={{ModId}}_CoralOrderCompleted": true
+			}
+		},
+		{
+			"Name": "IslesRarecrowInStock",
+			"Value": false
+		},
+		{
+			"Name": "IslesRarecrowInStock",
+			"Value": true,
+			"When": {
+				"HasFlag: hostPlayer|contains=NauticalRarecrowCompleted": true
+			}
+		},
+		{
+			"Name": "IslesRarecrowInStock",
+			"Value": true,
+			"When": {
+				"IslesRarecrowAlwaysAvailable": true
+			}
+		}
+	],
+	"Changes": [
+		{
+			"Action": "Include",
+			"FromFile": "Data/BigCraftables.json, Data/Recipes.json, Data/Events.json, Data/Fences.json, Data/Fish.json, Data/FishPondData.json, Data/Furniture.json, Data/Mail.json, Data/NPCGiftTastes.json, Data/Objects.json, Data/Shops.json, Data/SpecialOrders.json, Data/TriggerActions.json, Data/ConversationTopics.json, Mods/spacechase0.SpaceCore.json"
+		}
+	]
+}

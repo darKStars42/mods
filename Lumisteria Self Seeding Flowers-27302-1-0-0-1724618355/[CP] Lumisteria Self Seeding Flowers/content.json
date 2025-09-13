@@ -1,0 +1,128 @@
+{
+    "Format": "1.25.0",
+	"ConfigSchema": {
+		"Vanilla": {
+			"AllowValues": "true, false",
+			"Default": true
+		},
+		"VMV": {
+			"AllowValues": "true, false",
+			"Default": true
+		},
+		"LSM": {
+			"AllowValues": "true, false",
+			"Default": true
+		},
+		"Wildflour": {
+			"AllowValues": "true, false",
+			"Default": true
+		},
+	},
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/HybridCrops",
+            "Entries": {
+                "427": {//Tulip
+                    "BaseCropA": 427,
+                    "BaseCropB": 427,
+                    "Chance": 0.05,
+                },
+                "429": {//Jazz
+                    "BaseCropA": 429,
+                    "BaseCropB": 429,
+                    "Chance": 0.01,
+                },
+                "453": {//Poppy
+                    "BaseCropA": 453,
+                    "BaseCropB": 453,
+                    "Chance": 0.1,
+                },
+                "455": {//Spangle
+                    "BaseCropA": 455,
+                    "BaseCropB": 455,
+                    "Chance": 0.05,
+                },
+                "431": {//Sunflower
+                    "BaseCropA": 431,
+                    "BaseCropB": 431,
+                    "Chance": 0.1,
+                },
+                "425": {//FairyRose
+                    "BaseCropA": 425,
+                    "BaseCropB": 425,
+                    "Chance": 0.01,
+                },
+            },
+			"When": {
+				"Vanilla": true,
+			}
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/HybridCrops",
+            "Entries": {
+                "Lumisteria.MtVapius_TagetesSeeds":{
+                    "BaseCropA": "Lumisteria.MtVapius_TagetesSeeds",
+                    "BaseCropB": "Lumisteria.MtVapius_TagetesSeeds",
+                    "Chance": 0.1,
+                },
+                "Lumisteria.MtVapius_PrimroseSeeds":{
+                    "BaseCropA": "Lumisteria.MtVapius_PrimroseSeeds",
+                    "BaseCropB": "Lumisteria.MtVapius_PrimroseSeeds",
+                    "Chance": 0.01,
+                },
+                "Lumisteria.MtVapius_WoodSilkFlowerSeeds":{
+                    "BaseCropA": "Lumisteria.MtVapius_WoodSilkFlowerSeeds",
+                    "BaseCropB": "Lumisteria.MtVapius_WoodSilkFlowerSeeds",
+                    "Chance": 0.01,
+                },
+				
+				
+            },
+			"When": {
+				"HasMod": "Lumisteria.MtVapius",
+				"VMV": true,
+			}
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/HybridCrops",
+            "Entries": {
+                "Lumisteria.SereneMeadow_CornflowerSeeds":{
+                    "BaseCropA": "Lumisteria.SereneMeadow_CornflowerSeeds",
+                    "BaseCropB": "Lumisteria.SereneMeadow_CornflowerSeeds",
+                    "Chance": 0.1,
+                },
+                "Lumisteria.SereneMeadow_BorageSeeds":{
+                    "BaseCropA": "Lumisteria.SereneMeadow_BorageSeeds",
+                    "BaseCropB": "Lumisteria.SereneMeadow_BorageSeeds",
+                    "Chance": 0.05,
+                },
+                "Lumisteria.SereneMeadow_SnowdropSeeds":{
+                    "BaseCropA": "Lumisteria.SereneMeadow_SnowdropSeeds",
+                    "BaseCropB": "Lumisteria.SereneMeadow_SnowdropSeeds",
+                    "Chance": 0.05,
+                },
+                "Lumisteria.SereneMeadow_CalendulaSeeds":{
+                    "BaseCropA": "Lumisteria.SereneMeadow_CalendulaSeeds",
+                    "BaseCropB": "Lumisteria.SereneMeadow_CalendulaSeeds",
+                    "Chance": 0.1,
+                },
+            },
+			"When": {
+				"HasMod": "Lumisteria.SereneMeadow",
+				"LSM": true,
+			}
+        },
+		{
+			"Action": "Include",
+			"FromFile": "wildflour.json",
+			"When": {
+				"HasMod|contains=Atelier.Cauldron": true,
+				"HasMod|contains=wildflour.ateliercrops": true,
+				"Wildflour": true,
+			}
+		},
+    ]
+}

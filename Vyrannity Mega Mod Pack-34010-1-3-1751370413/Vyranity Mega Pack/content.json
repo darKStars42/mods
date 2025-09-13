@@ -1,0 +1,399 @@
+{
+    "Format": "2.0.0",
+    "ConfigSchema": {
+        "Enable Breads and Buns": {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Adds a multitude of breads to the game in the form of cooking recipes",
+            "Section": "Breads and Buns"
+        },
+         "Breads Chef's Selection": {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "Description": "Adds a carefully curated selection of breads to the game. It's less overwhelming than the default Breads and Buns",
+            "Section": "Breads and Buns"
+        },
+        "Breads as Artisan Goods": {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "Description": "Converts the breads added by this mod from cooking recipes to artisan goods",
+            "Section": "Breads and Buns"
+        },
+        "Enable Cakes and Cream": {
+            "AllowValues":"true, false",
+            "Default": "true",
+            "Description": "Adds a multitude of cakes and sweetened cream to the game in the form of cooking recipes",
+            "Section": "Cakes and Cream"
+        },
+        "Cakes as Artisan Goods": {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "Description": "Converts the cakes added by this mod from cooking recipes to artisan goods",
+            "Section": "Cakes and Cream"
+        },
+        "Enable Jams and Pies": {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Adds a variety of pizzas to the game as artisan goods",
+            "Section": "Jams and Pies"
+        },
+        "Enable Puffs and Pastries": {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Adds a multitude of various pastries to the game in the form of cooking recipes",
+            "Section": "Puffs and Pastries"
+        },
+        "Enable Pizza": {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Adds a variety of pizzas to the game as artisan goods",
+            "Section": "Pizzas"
+        },
+        "Simple Pizza": {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "Description": "Simplifies the pizza added by this mod by removing the sliced variants",
+            "Section": "Pizzas"
+        },
+        "Use Other Butter": {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "Description": "Allows for butter added by other mods to be used in this mod's recipes",
+            "Section": "Recipe Tweaks"
+        },
+        "Use Rosa's Meats": {
+            "AllowValues":"true, false",
+            "Default": "false",
+            "Description": "Utilize specific meats added by Rosa's meat mod in certain recipes",
+            "Section": "Recipe Tweaks"
+        },
+        "Use Animal Husbandry Meat": {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "Description": "Utilize specific meats added by the Animal Husbandry mod in certain recipes",
+            "Section": "Recipe Tweaks"
+        },
+        "Use Generic Meat": {
+            "AllowValues": "true, false",
+            "Default": "false",
+            "Description": "Generalizes all meat recipes to use non-specific meat-based inputs",
+            "Section": "Recipe Tweaks"
+        } 
+        // Include in Perfection 
+        // Enable Recipe Progression
+        // Pastries as Artisan Goods
+        // Pies as Cooking Recipes
+        // Pizzas as Cooking Recipes
+ 
+    },
+    "DynamicTokens": [
+        {
+            "Name": "selphId",
+            "Value": "selph.ExtraMachineConfig.RequirementId"
+        },
+        {
+            "Name": "selphNum",
+            "Value": "selph.ExtraMachineConfig.RequirementCount"
+        },
+        {
+            "Name": "selphTag",
+            "Value": "selph.ExtraMachineConfig.RequirementTags"
+        },
+        {
+            "Name": "RoseMod",
+            "Value": "Roseloves109.RosasCruelfreeMeat"
+        },
+        {
+            "Name": "RoseId",
+            "Value": "Roseloves109"
+        },
+        {
+            "Name": "AHId",
+            "Value": "DIGUS.ANIMALHUSBANDRYMOD"
+        },
+        {
+            "Name": "BBCat",
+            "Value": "-7",
+            "When": {
+                "Breads as Artisan Goods": false
+            }
+        },
+        {
+            "Name": "BBCat",
+            "Value": "-26",
+            "When": {
+                "Breads as Artisan Goods": true
+            }
+        },
+        {
+            "Name": "CakeCat",
+            "Value": "-7",
+            "When": {
+                "Cakes as Artisan Goods": false
+            }
+        },
+        {
+            "Name": "CakeCat",
+            "Value": "-26",
+            "When": {
+                "Cakes as Artisan Goods": true
+            }
+        },
+        {
+            "Name": "Butter",
+            "Value": "{{ModId}}_Butter"
+        },
+        {
+            "Name": "Cocoa",
+            "Value": "220",
+            "When": {
+                "HasMod | contains=Cornucopia.MoreCrops": false
+            }
+        },
+        {
+            "Name": "Cocoa",
+            "Value": "Cornucopia_CocoaPod",
+            "When": {
+                "HasMod | contains=Cornucopia.MoreCrops": true
+            }
+        },
+        {
+            "Name": "Mint",
+            "Value": "771"
+        },
+        {
+            "Name": "Mint",
+            "Value": "Cornucopia_Mint",
+            "When": {
+                "HasMod | contains=Cornucopia.MoreCrops": true,
+                "HasReadLetter | contains=Cornucopia.MoreCrops_HerbsPackEnabled": true
+            } 
+        },
+        {
+            "Name": "Corn",
+            "Value": "487"
+        },
+        {
+            "Name": "Corn",
+            "Value": "Cornucopia_CornFlour",
+            "When": {
+                "HasMod | contains=Cornucopia.ArtisanMachines": true
+            }
+        },
+        {
+            "Name": "Lemon",
+            "Value": "554"
+        },
+        {
+            "Name": "Lemon",
+            "Value": "Cornucopia_Lemon",
+            "When": {
+                "HasMod | contains=Cornucopia.MoreCrops": true,
+                "HasReadLetter | contains=Cornucopia.MoreCrops_ExtendedTreesPackEnabled": true
+            }
+        },
+        {
+            "Name": "Cinnamon",
+            "Value": "388"
+        },
+        {
+            "Name": "Cinnamon",
+            "Value": "Cornucopia_CinnamonSticks",
+            "When": {
+                "HasMod | contains=Cornucopia.MoreCrops": true,
+                "HasReadLetter | contains=Cornucopia.MoreCrops_HerbsPackEnabled": true
+            }
+        },
+        {
+            "Name": "Almond",
+            "Value": "408"
+        },
+        {
+            "Name": "Almond",
+            "Value": "Cornucopia_Almond",
+            "When": {
+                "HasMod | contains=Cornucopia.MoreCrops": true,
+                "HasReadLetter | contains=Cornucopia.MoreCrops_ExtendedTreesPackEnabled": true
+            }
+        },
+        {
+            "Name": "Peanut",
+            "Value": 408
+        },
+        {
+            "Name": "Peanut",
+            "Value": "Cornucopia_Peanut",
+            "When": {
+                "HasMod | contains=Cornucopia.MoreCrops": true
+            }
+        }
+    ],
+    "Changes": [
+        {
+            "LogName": "Load overall spritesheets",
+            "Action": "Load",
+            "Target": "{{ModId}}/objects, {{ModId}}/machines",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+        // load context tags if necessary 
+        {
+            "LogName": "Load context tags",
+            "Action": "Include",
+            "FromFile": "data/contexttags.json",
+            "When": {
+                "Use Generic Meat": true
+            } 
+        },
+        // breads and buns actions
+        {
+            "LogName": "Load Breads and Buns crop sprites",
+            "Action": "Load",
+            "Target": "{{ModId}}/crops, {{ModId}}/flourobjects",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+        {
+            "LogName": "Load Breads and Buns universal files/chefs selection",
+            "Action": "Include",
+            "FromFile": "data/breads_and_buns/crops.json, data/breads_and_buns/objects.json, data/breads_and_buns/gifts_chefs.json, data/breads_and_buns/objects.json",
+            "When": {
+                "Enable Breads and Buns": true                
+            }
+        },
+        {
+            "LogName": "Load Breads and Buns extra breads files",
+            "Action": "Include",
+            "FromFile": "data/breads_and_buns/objects_extra.json, data/breads_and_buns/gifts.json, data/breads_and_buns/shops.json",
+            "When": {
+                "Enable Breads and Buns": true,
+                "Breads Chef's Selection": false
+            }
+        },
+        {
+            "LogName": "Load Breads and Buns cooking recipes",
+            "Action": "Include",
+            "FromFile": "data/breads_and_buns/cooking.json, data/breads_and_buns/cooking_replacements.json",
+            "When": {
+                "Enable Breads and Buns": true,
+                "Breads as Artisan Goods": false
+            }
+        },
+        {
+            "LogName": "Load Breads and Buns Artisan Goods",
+            "Action": "Include",
+            "FromFile": "data/breads_and_buns/bigcraftables.json, data/breads_and_buns/brickbreadoven.json, data/breads_and_buns/modernbreadoven.json, data/breads_and_buns/stonebreadoven.json, data/breads_and_buns/smallflourmill.json",
+            "When": {
+                "Enable Breads and Buns": true,
+                "Breads as Artisan Goods": true
+            }
+        },
+        // cakes and creams
+        {
+            "LogName": "Load Cakes and Cream universal files",
+            "Action": "Include",
+            "FromFile": "data/cakes_and_creams/gifts.json, data/cakes_and_creams/objects.json",
+            "When": {
+                "Enable Cakes and Cream": true
+            }
+        },
+        {
+            "LogName": "Load Cakes and Cream cooking recipes",
+            "Action": "Include",
+            "FromFile": "data/cakes_and_creams/cooking.json",
+            "When": {
+                "Enable Cakes and Cream": true,
+                "Cakes as Artisan Goods": false
+            }
+        },
+        {
+            "LogName": "Load Cakes and Cream artisan goods",
+            "Action": "Include",
+            "FromFile": "data/cakes_and_creams/bigcraftables.json, data/cakes_and_creams/cakeoven.json, data/cakes_and_creams/creammixer.json",
+            "When": {
+                "Enable Cakes and Cream": true,
+                "Cakes as Artisan Goods": true
+            }
+        },
+        {
+            "LogName": "Add butter churn patch",
+            "Action": "Include",
+            "FromFile": "data/cakes_and_creams/churnpatch.json",
+            "When": {
+                "Enable Puffs and Pastries": false
+            }
+        },
+        {
+            "LogName": "load cooking replacements",
+            "Action": "Include",
+            "FromFile": "data/cakes_and_creams/cooking_replacement.json",
+            "When": {
+                "Use Other Butter": true
+            }
+        },
+
+        // add jams and pies
+        {
+            "LogName": "Load Jams and Pies universal files",
+            "Action": "Include",
+            "FromFile": "data/jams_and_pies/bigcraftables.json, data/jams_and_pies/fruitsmasher.json, data/jams_and_pies/gifts.json, data/jams_and_pies/modernsmasher.json, data/jams_and_pies/objects.json, data/jams_and_pies/pieoven.json",
+            "When": {
+                "Enable Jams and Pies": true
+            }
+        },
+        // add puffs and pastries
+        {
+            "LogName": "Load Puffs and Pastries universal files",
+            "Action": "Include",
+            "FromFile": "data/puffs_and_pastries/cooking.json, data/puffs_and_pastries/objects.json, data/puffs_and_pastries/gifts.json",
+            "When": {
+                "Enable Puffs and Pastries": true
+            }
+        },
+        {
+            "LogName": "Load vanilla based puffs and pastries recipe overrides",
+            "Action": "Include",
+            "FromFile": " data/puffs_and_pastries/cooking_replacements.json",
+            "When": {
+                "Enable Puffs and Pastries": true,
+                "HasMod | contains=Cornucopia.MoreCrops": false,
+                "Use Other Butter": true
+            }
+        },
+        {
+            "LogName": "Load cornucopia based puffs and pastries recipe overrides",
+            "Action": "Include",
+            "FromFile": " data/puffs_and_pastries/cooking_replacements_cornucopia.json",
+            "When": {
+                "Enable Puffs and Pastries": true,
+                "HasMod | contains=Cornucopia.MoreCrops": true,
+                "Use Other Butter": true
+            }
+        },
+        {
+            "LogName": "Load butter churn",
+            "Action": "Include",
+            "FromFile": "data/puffs_and_pastries/butterchurn.json, data/puffs_and_pastries/bigcraftables.json",
+            "When": {
+                "Enable Puffs and Pastries": true,
+                "Use Other Butter": false
+            }
+        },
+        // add pizzas
+        {
+            "LogName": "Load pizza universal files",
+            "Action": "Include",
+            "FromFile": "data/pizza/bigcraftables.json, data/pizza/brickpizzaoven.json, data/pizza/flattener.json, data/pizza/gifts.json, data/pizza/ironpizzaoven.json, data/pizza/mozzarellamachine.json, data/pizza/objects.json",
+            "When": {
+                "Enable Pizza": true
+            }
+        },
+        {
+            "LogName": "Load extra pizza files",
+            "Action": "Include",
+            "FromFile": "data/pizza/slicer.json, data/pizza/gifts_slices.json",
+            "When": {
+                "Enable Pizza": true,
+                "Simple Pizza": false
+            }
+        } 
+    ]
+}

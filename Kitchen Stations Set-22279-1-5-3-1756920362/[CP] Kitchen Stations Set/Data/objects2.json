@@ -1,0 +1,62 @@
+{
+
+    "Changes": [
+
+
+/////////Festival Foods
+
+	{
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+		"BetterCraft.FestivalDelights": {
+		    "Name": "BetterCraft.FestivalDelights",
+                    "DisplayName": "{{i18n: FestivalDelights.Name}}",
+                    "Description": "{{i18n: FestivalDelights.Description}}",
+    			"Fragility": 0,
+    			"CanBePlacedOutdoors": false,
+    			"CanBePlacedIndoors": true,
+                    "Texture": "Mods/Objects/BetterCraft.KitchenCounterSet",
+                    "SpriteIndex": 6,
+			"CustomFields": {
+        			"leclair.bettercrafting_PerformAction": "leclair.bettercrafting_OpenMenu BetterCraft.FestivalDelights {{AreaChoice}}"
+				},
+                			},
+			},
+	},
+
+	//Adding data to shop
+	{	
+		"Action": "EditData",	
+		"Target": "Data/Shops",
+		"TargetField": [ "Sandy", "Items" ],
+		"Entries": {
+		    "BetterCraft.FestivalDelights": {
+                    "Id": "BetterCraft.FestivalDelights",
+                    "ItemId": "(BC)BetterCraft.FestivalDelights",
+                    "Price": 1000,
+        		},
+		},
+	  "MoveEntries": [
+			{ "Id": "BetterCraft.FestivalDelights", "BeforeId": "(BC)196" },
+		],
+	},
+	{	
+		"Action": "EditData",	
+		"Target": "Data/Shops",
+		"TargetField": [ "Carpenter", "Items" ],
+		"Entries": {
+		    "BetterCraft.FestivalDelights": {
+                    "Id": "BetterCraft.FestivalDelights",
+                    "ItemId": "(BC)BetterCraft.FestivalDelights",
+                    "Price": 2000,
+		    "Condition": "PLAYER_VISITED_LOCATION Current Desert",
+        		},
+		},
+	  "MoveEntries": [
+			{ "Id": "BetterCraft.FestivalDelights", "BeforeId": "(F)1466" },
+		],
+	},
+
+]
+}

@@ -1,0 +1,454 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Add gift tastes data",
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "TextOperations": [
+                //Universal gift tastes
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Entries",
+                        "Universal_Neutral"
+                    ],
+                    "Value": "{{ModId}}_LuckyMarine",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Entries",
+                        "Universal_Neutral"
+                    ],
+                    "Value": "{{ModId}}_BlueConch {{ModId}}_CoralShell {{ModId}}_CrystalCowrie {{ModId}}_DottedAbalone {{ModId}}_KittenPaw {{ModId}}_SandBucks {{ModId}}_SpiderConch {{ModId}}_RedTrumpet {{ModId}}_GemSeaWhelk {{ModId}}_WingedScallop {{ModId}}_SandBucksParcel",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Entries",
+                        "Universal_Hate"
+                    ],
+                    "Value": "{{ModId}}_LimpetShell",
+                    "Delimiter": " "
+                },
+                //NPC gift tastes
+                //#1 = love, #3 = like, #5 = dislike, #7 = hated, #9 = neutral
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Maru",
+                        3 //Maru Like
+                    ],
+                    "Value": "{{ModId}}_PurplePlate",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Wizard",
+                        3 //Wizard Like
+                    ],
+                    "Value": "{{ModId}}_LuckyMarine",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Jodi",
+                        1 //Jodi Love
+                    ],
+                    "Value": "{{ModId}}_BraisedScallop",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Willy",
+                        1 //Willy Love
+                    ],
+                    "Value": "{{ModId}}_LuckyMarine",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Willy",
+                        3 //Willy Like
+                    ],
+                    "Value": "{{ModId}}_GemSeaWhelk",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Kent",
+                        3 //Kent Like
+                    ],
+                    "Value": "{{ModId}}_GemSeaWhelk",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Jas",
+                        1 //Jas Love
+                    ],
+                    "Value": "{{ModId}}_KittenPaw {{ModId}}_ShellNecklace",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Sam",
+                        1 //Sam Love
+                    ],
+                    "Value": "{{ModId}}_CrispyAbalone",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Sam",
+                        3 //Sam Like
+                    ],
+                    "Value": "{{ModId}}_SandBucks",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Vincent",
+                        1 //Vincent Love
+                    ],
+                    "Value": "{{ModId}}_SandBucksParcel",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Vincent",
+                        3 //Vincent Like
+                    ],
+                    "Value": "{{ModId}}_SandBucks",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Gus",
+                        3 //Gus Like
+                    ],
+                    "Value": "{{ModId}}_DottedAbalone {{ModId}}_WingedScallop",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "George",
+                        1 //George Love
+                    ],
+                    "Value": "{{ModId}}_BraisedScallop",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "George",
+                        3 //George Like
+                    ],
+                    "Value": "{{ModId}}_DottedAbalone {{ModId}}_CommonScallop",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Abigail",
+                        3 //Abigail Like
+                    ],
+                    "Value": "{{ModId}}_CrystalCowrie",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Emily",
+                        3 //Emily Like
+                    ],
+                    "Value": "{{ModId}}_CrystalCowrie {{ModId}}_KittenPaw",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Haley",
+                        3 //Haley Like
+                    ],
+                    "Value": "{{ModId}}_BlueConch",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Harvey",
+                        3 //Harvey Like
+                    ],
+                    "Value": "{{ModId}}_WingedScallop",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Demetrius",
+                        3 //Demetrius Like
+                    ],
+                    "Value": "{{ModId}}_CoralShell {{ModId}}_SpiderConch",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Elliott",
+                        3 //Robin Like
+                    ],
+                    "Value": "{{ModId}}_ShellNecklace",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Elliott",
+                        3 //Elliott Like
+                    ],
+                    "Value": "{{ModId}}_SpiderConch {{ModId}}_RedTrumpet",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Leah",
+                        3 //Leah Like
+                    ],
+                    "Value": "{{ModId}}_CoralShell {{ModId}}_RedTrumpet {{ModId}}_SandBucksParcel {{ModId}}_ShellNecklace",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Penny",
+                        3 //Penny Like
+                    ],
+                    "Value": "{{ModId}}_SandBucksParcel",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Shane",
+                        3 //Shane Like
+                    ],
+                    "Value": "{{ModId}}_SandBucksParcel",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Sandy",
+                        3 //Sandy Like
+                    ],
+                    "Value": "{{ModId}}_RedTrumpet",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Evelyn",
+                        7 //Lewis Hate
+                    ],
+                    "Value": "{{ModId}}_LuckyMarine",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Caroline",
+                        5 //Caroline Dislike
+                    ],
+                    "Value": "{{ModId}}_SandBucksParcel",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Clint",
+                        5 //Clint Dislike
+                    ],
+                    "Value": "{{ModId}}_SandBucksParcel",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Evelyn",
+                        5 //Evelyn Dislike
+                    ],
+                    "Value": "{{ModId}}_CrystalCowrie {{ModId}}_DottedAbalone {{ModId}}_SpiderConch {{ModId}}_GemSeaWhelk ShellCollection_WingedScallop",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Evelyn",
+                        7 //Evelyn Hate
+                    ],
+                    "Value": "{{ModId}}_BlueConch {{ModId}}_KittenPaw {{ModId}}_LuckyMarine {{ModId}}_RedTrumpet {{ModId}}_BraisedScallop ShellCollection_PurplePlate",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Sebastian",
+                        1 //Sebastian Love
+                    ],
+                    "Value": "ShellCollection_PurplePlate",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Pierre",
+                        1 //Pierre Love
+                    ],
+                    "Value": "ShellCollection_SandBucksParcel",
+                    "Delimiter": " "
+                },
+            ]
+        },
+        {
+            "LogName": "Add gift tastes data (SVE)",
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "When": {
+                "HasMod |contains=FlashShifter.StardewValleyExpandedCP": "true"
+            },
+            "TextOperations": [
+                //NPC gift tastes
+                //#1 = love, #3 = like, #5 = dislike, #7 = hated, #9 = neutral
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Andy",
+                        3 //Andy Like
+                    ],
+                    "Value": "{{ModId}}_WingedScallop",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Sophia",
+                        3 //Sophia Like
+                    ],
+                    "Value": "{{ModId}}_KittenPaw",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Claire",
+                        1 //Claire Love
+                    ],
+                    "Value": "{{ModId}}_BraisedScallop {{ModId}}_ShellNecklace",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Claire",
+                        3 //Claire Like
+                    ],
+                    "Value": "{{ModId}}_CoralShell",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Susan",
+                        3 //Susan Like
+                    ],
+                    "Value": "{{ModId}}_CoralShell",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Victor",
+                        1 //Victor Love
+                    ],
+                    "Value": "{{ModId}}_PurplePlate",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Victor",
+                        3 //Victor Like
+                    ],
+                    "Value": "{{ModId}}_PurplePlate",
+                    "Delimiter": " "
+                },
+                {
+                    "Operation": "Append",
+                    "Target": [
+                        "Fields",
+                        "Morgan",
+                        1 //Morgan Love
+                    ],
+                    "Value": "{{ModId}}_SandBucksParcel",
+                    "Delimiter": " "
+                }
+            ]
+        }
+    ]
+}

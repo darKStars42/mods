@@ -1,0 +1,465 @@
+{
+    "Changes": [
+        {
+            "LogName": "Create pizza slicer",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_PizzaSlicer": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_BBQChickenSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "BBQPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_BBQChickenPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_BBQChickenSlice",
+                                    "ItemId": "(O){{ModId}}_BBQChickenSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_CheeseSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "CheesePizzaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_CheesePizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_CheeseSlice",
+                                    "ItemId": "(O){{ModId}}_CheeseSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_HawaiianSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "HawaiianPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_HawaiianPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_HawaiianSlice",
+                                    "ItemId": "(O){{ModId}}_HawaiianSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_MozzarellaSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "MozzarellaPizzaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_MozzarellaPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_MozzarellaSlice",
+                                    "ItemId": "(O){{ModId}}_MozzarellaSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_PepperoniSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "PepperoniPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_PepperoniPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PepperoniSlice",
+                                    "ItemId": "(O){{ModId}}_PepperoniSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_PizzaDiavolaSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "DiavolaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_PizzaDiavola"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PizzaDiavolaSlice",
+                                    "ItemId": "(O){{ModId}}_PizzaDiavolaSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_MargheritaSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "MargheritaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_MargheritaPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_MargheritaSlice",
+                                    "ItemId": "(O){{ModId}}_MargheritaSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_PestoSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "PestoPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_PestoPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PestoSlice",
+                                    "ItemId": "(O){{ModId}}_PestoSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_VegetarianSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "VeggiePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_VegetarianPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_VegetarianSlice",
+                                    "ItemId": "(O){{ModId}}_VegetarianSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_TunaSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "TunaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_TunaPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_TunaSlice",
+                                    "ItemId": "(O){{ModId}}_TunaSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_VeganSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "VeganPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_VeganPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_VeganSlice",
+                                    "ItemId": "(O){{ModId}}_VeganSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_AnchovySlice",
+                            "Triggers": [
+                                {
+                                    "Id": "AnchovyPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_AnchovyPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_AnchovySlice",
+                                    "ItemId": "(O){{ModId}}_AnchovySlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_ArtichokeSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "ArtichokePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_ArtichokePizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_ArtichokeSlice",
+                                    "ItemId": "(O){{ModId}}_ArtichokeSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_GarlicSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "GarlicPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_GarlicPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_GarlicSlice",
+                                    "ItemId": "(O){{ModId}}_GarlicSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_CornSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "CornPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_CornPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_CornSlice",
+                                    "ItemId": "(O){{ModId}}_CornSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_MeatloversSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "MeatPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_MeatloversPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_MeatloversSlice",
+                                    "ItemId": "(O){{ModId}}_MeatloversSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_NYSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "NYPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_NYPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_NYSlice",
+                                    "ItemId": "(O){{ModId}}_NYSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_DeluxePepperoniSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "DeluxePepPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_DeluxePepperoniPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_DeluxePepperoniSlice",
+                                    "ItemId": "(O){{ModId}}_DeluxePepperoniSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_RedMushroomSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "RedMushroomPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_RedMushroomPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_RedMushroomSlice",
+                                    "ItemId": "(O){{ModId}}_RedMushroomSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_PurpleMushroomSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "PurpleMushroomPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_PurpleMushroomPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PurpleMushroomSlice",
+                                    "ItemId": "(O){{ModId}}_PurpleMushroomSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_ShawarmaSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "ShawarmaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_ShawarmaPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_ShawarmaSlice",
+                                    "ItemId": "(O){{ModId}}_ShawarmaSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_PotatoRosemarySlice",
+                            "Triggers": [
+                                {
+                                    "Id": "PotatoPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_PotatoRosemaryPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PotatoRosemarySlice",
+                                    "ItemId": "(O){{ModId}}_PotatoRosemarySlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_SausageSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "SausagePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_SausagePizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_SausageSlice",
+                                    "ItemId": "(O){{ModId}}_SausageSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }, 
+                        {
+                            "Id": "{{ModId}}_ShellfishSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "ShellfishPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_ShellfishPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_ShellfishSlice",
+                                    "ItemId": "(O){{ModId}}_ShellfishSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        },
+                        {
+                            "Id": "{{ModId}}_TomatoSlice",
+                            "Triggers": [
+                                {
+                                    "Id": "TomatoPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_TomatoPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_TomatoSlice",
+                                    "ItemId": "(O){{ModId}}_TomatoSlice",
+                                    "MinStack": 8
+                                }
+                            ],
+                            "MinutesUntilReady": 10
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+ }

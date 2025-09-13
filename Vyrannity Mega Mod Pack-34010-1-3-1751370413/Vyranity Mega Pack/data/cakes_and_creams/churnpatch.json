@@ -1,0 +1,110 @@
+{
+    "Changes": [
+        {
+            "LogName": "Add butter object",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_Butter": {
+                    "Name": "{{ModId}}_Butter",
+                    "DisplayName": "{{i18n:Butter_Name}}",
+                    "Description": "{{i18n:Butter_Desc}}",
+                    "Type": "Basic",
+                    "Category": -26,
+                    "SpriteIndex": 164,
+                    "Price": 175,
+                    "Texture": "{{ModId}}/Objects",
+                    "Edibility": 100,
+                    "ContextTags": [
+                        "vyranity_object",
+                        "cakes_and_pastries_object",
+                        "cake_object",
+                        "food_bakery",
+                        "food_dessert",
+                        "cake_item",
+                        "dessert_item"
+                    ]
+                }
+            }
+        },
+        {
+            "LogName": "Add churn to big craftables",
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "{{ModId}}_ButterChurn": {
+                    "Name": "{{ModId}}_ButterChurn",
+                    "DisplayName": "{{i18n:ButterChurn_Name}}",
+                    "Description": "{{i18n:ButterChurn_Desc}}",
+                    "Texture": "{{ModId}}/machines",
+                    "SpriteIndex": 5,
+                    "IsLamp": false
+                }
+            }
+        },
+        {
+            "LogName": "Add machines to crafting recipes",
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+                "{{ModId}}_ButterChurn": "388 40 726 1/Home/{{ModId}}_ButterChurn/true/default"
+            }
+        },
+        {
+            "LogName": "Create churn machine",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                
+                "(BC){{ModId}}_ButterChurn": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_Butter_Small",
+                            "Triggers": [
+                                {
+                                    "Id": "SmallMilkPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)184"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_Butter",
+                                    "ItemId": "(O){{ModId}}_Butter"
+                                }
+                            ],
+                            "MinutesUntilReady": 200
+                        },
+                        {
+                            "Id": "{{ModId}}_Butter_Large",
+                            "Triggers": [
+                                {
+                                    "Id": "LMilkPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)186"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_Butter",
+                                    "ItemId": "(O){{ModId}}_Butter",
+                                    "MinStack": 2
+                                }
+                            ],
+                            "MinutesUntilReady": 200
+                        }
+                    ],
+                    "WorkingEffects": [
+                        {
+                            "Id": "DefaultWorkEffects",
+                            "Frames": [1, 2, 3, 4],
+                            "Interval": 200
+                        }
+                    ],
+                    "WorkingEffectsChance": 1,
+                    "WobbleWhileWorking": false 
+                }
+            }
+        }
+    ]
+}

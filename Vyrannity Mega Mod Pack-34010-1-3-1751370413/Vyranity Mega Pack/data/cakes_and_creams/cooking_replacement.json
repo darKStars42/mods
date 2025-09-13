@@ -1,0 +1,58 @@
+{
+    "Changes": [
+        {
+            "LogName": "Create recipes for other butter ",
+            "Action": "EditData",
+            "Target": "spacechase0.SpaceCore/CookingRecipeOverrides",
+            "When": {
+                "Use Other Butter": true,
+                "HasMod | contains=spacechase0.SpaceCore": true
+            },
+            "Entries": {
+                // butter 
+                "{{ModId}}_ButterCake": {
+                    "ProductQualifiedId": "(O){{ModId}}_ButterCake",
+                    "ProductAmount": 1,
+                    "Ingredients": [
+                        {
+                            "Type": "ContextTag",
+                            "Value": "butter_item, item_butter",
+                            "Amount": 1, 
+                            "OverrideText": "{{i18n:OV_Butter_Text}}",
+                            "OverrideTexturePath": "Maps/springobjects",
+                            "OverrideTextureRect": {
+                                "X": 128,
+                                "Y": 112,
+                                "Width": 16,
+                                "Height": 16
+                            }
+                        }, 
+                        {
+                            "Type": "Item",
+                            "Value": "(O){{ModId}}_CakeCream",
+                            "Amount": 1
+                        },
+                        {
+                            "Type": "ContextTag",
+                            "Value": "category_egg, egg_item",
+                            "Amount": 1,
+                            "OverrideText": "{{i18n:OV_Egg_Text}}",
+                            "OverrideTexturePath": "Maps/springobjects",
+                            "OverrideTextureRect": {
+                                "X": 128,
+                                "Y": 112,
+                                "Width": 16,
+                                "Height": 16
+                            }
+                        },
+                        {
+                            "Type": "Item",
+                            "Value": "(O)245",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

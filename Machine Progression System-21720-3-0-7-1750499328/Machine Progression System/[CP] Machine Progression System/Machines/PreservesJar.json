@@ -1,0 +1,4403 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_SteelPreservesJar": {
+					"OutputRules": [
+						{
+							"Id": "Default_SturgeonRoe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812",
+									"RequiredTags": [
+										"preserve_sheet_index_698"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)445",
+									"MinStack": "{{S.P.J Quantity}}",
+									"Quality": "{{S.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{S.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Roe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM AgedRoe DROP_IN_ID DROP_IN_PRESERVE",
+									"MinStack": "{{S.P.J Quantity}}",
+									"Quality": "{{S.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{S.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Pickled",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Pickle",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_pickle"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Pickle DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{S.P.J Quantity}}",
+									"CopyQuality": "{{S.P.J Copy Quality}}",
+									"Quality": "{{S.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{S.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Jelly",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Jelly",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_Jelly"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Jelly DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{S.P.J Quantity}}",
+									"CopyQuality": "{{S.P.J Copy Quality}}",
+									"Quality": "{{S.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{S.P.J Production Time}}"
+						},
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "JellyOrRoe",
+									"Condition": "ANY \"ITEM_ID Target (O)344\" \"ITEM_ID Target (O)445\" \"ITEM_ID Target (O)447\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Jelly",
+									"Condition": "ITEM_ID Target (O)344",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ITEM_ID Target (O)342",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "PreservesMade"
+						}
+					]
+				},
+				"(BC)nachonline.mps_GoldPreservesJar": {
+					"OutputRules": [
+						{
+							"Id": "Default_SturgeonRoe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812",
+									"RequiredTags": [
+										"preserve_sheet_index_698"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)445",
+									"MinStack": "{{G.P.J Quantity}}",
+									"Quality": "{{G.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{G.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Roe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM AgedRoe DROP_IN_ID DROP_IN_PRESERVE",
+									"MinStack": "{{G.P.J Quantity}}",
+									"Quality": "{{G.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{G.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Pickled",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Pickle",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_pickle"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Pickle DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{G.P.J Quantity}}",
+									"CopyQuality": "{{G.P.J Copy Quality}}",
+									"Quality": "{{G.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{G.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Jelly",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Jelly",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_Jelly"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Jelly DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{G.P.J Quantity}}",
+									"CopyQuality": "{{G.P.J Copy Quality}}",
+									"Quality": "{{G.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{G.P.J Production Time}}"
+						},
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "JellyOrRoe",
+									"Condition": "ANY \"ITEM_ID Target (O)344\" \"ITEM_ID Target (O)445\" \"ITEM_ID Target (O)447\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Jelly",
+									"Condition": "ITEM_ID Target (O)344",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ITEM_ID Target (O)342",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "PreservesMade"
+						}
+					]
+				},
+				"(BC)nachonline.mps_DiamondPreservesJar": {
+					"OutputRules": [
+						{
+							"Id": "Default_SturgeonRoe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812",
+									"RequiredTags": [
+										"preserve_sheet_index_698"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)445",
+									"MinStack": "{{D.P.J Quantity}}",
+									"Quality": "{{D.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Roe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM AgedRoe DROP_IN_ID DROP_IN_PRESERVE",
+									"MinStack": "{{D.P.J Quantity}}",
+									"Quality": "{{D.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Pickled",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Pickle",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_pickle"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Pickle DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{D.P.J Quantity}}",
+									"CopyQuality": "{{D.P.J Copy Quality}}",
+									"Quality": "{{D.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Jelly",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Jelly",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_Jelly"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Jelly DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{D.P.J Quantity}}",
+									"CopyQuality": "{{D.P.J Copy Quality}}",
+									"Quality": "{{D.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.P.J Production Time}}"
+						},
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "JellyOrRoe",
+									"Condition": "ANY \"ITEM_ID Target (O)344\" \"ITEM_ID Target (O)445\" \"ITEM_ID Target (O)447\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Jelly",
+									"Condition": "ITEM_ID Target (O)344",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ITEM_ID Target (O)342",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "PreservesMade"
+						}
+					]
+				},
+				"(BC)nachonline.mps_IridiumPreservesJar": {
+					"OutputRules": [
+						{
+							"Id": "Default_SturgeonRoe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812",
+									"RequiredTags": [
+										"preserve_sheet_index_698"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)445",
+									"MinStack": "{{I.P.J Quantity}}",
+									"Quality": "{{I.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Roe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM AgedRoe DROP_IN_ID DROP_IN_PRESERVE",
+									"MinStack": "{{I.P.J Quantity}}",
+									"Quality": "{{I.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Pickled",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Pickle",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_pickle"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Pickle DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{I.P.J Quantity}}",
+									"CopyQuality": "{{I.P.J Copy Quality}}",
+									"Quality": "{{I.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Jelly",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Jelly",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_Jelly"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Jelly DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{I.P.J Quantity}}",
+									"CopyQuality": "{{I.P.J Copy Quality}}",
+									"Quality": "{{I.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.P.J Production Time}}"
+						},
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "JellyOrRoe",
+									"Condition": "ANY \"ITEM_ID Target (O)344\" \"ITEM_ID Target (O)445\" \"ITEM_ID Target (O)447\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Jelly",
+									"Condition": "ITEM_ID Target (O)344",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ITEM_ID Target (O)342",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "PreservesMade"
+						}
+					]
+				},
+				"(BC)nachonline.mps_RadioactivePreservesJar": {
+					"OutputRules": [
+						{
+							"Id": "Default_SturgeonRoe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812",
+									"RequiredTags": [
+										"preserve_sheet_index_698"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)445",
+									"MinStack": "{{R.P.J Quantity}}",
+									"Quality": "{{R.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Roe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM AgedRoe DROP_IN_ID DROP_IN_PRESERVE",
+									"MinStack": "{{R.P.J Quantity}}",
+									"Quality": "{{R.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Pickled",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Pickle",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_pickle"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Pickle DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{R.P.J Quantity}}",
+									"CopyQuality": "{{R.P.J Copy Quality}}",
+									"Quality": "{{R.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Jelly",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Jelly",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_Jelly"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Jelly DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{R.P.J Quantity}}",
+									"CopyQuality": "{{R.P.J Copy Quality}}",
+									"Quality": "{{R.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.P.J Production Time}}"
+						},
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "JellyOrRoe",
+									"Condition": "ANY \"ITEM_ID Target (O)344\" \"ITEM_ID Target (O)445\" \"ITEM_ID Target (O)447\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Jelly",
+									"Condition": "ITEM_ID Target (O)344",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ITEM_ID Target (O)342",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "PreservesMade"
+						}
+					]
+				},
+				"(BC)nachonline.mps_PrismaticPreservesJar": {
+					"OutputRules": [
+						{
+							"Id": "Default_SturgeonRoe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812",
+									"RequiredTags": [
+										"preserve_sheet_index_698"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)445",
+									"MinStack": "{{P.P.J Quantity}}",
+									"Quality": "{{P.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Roe",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)812"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM AgedRoe DROP_IN_ID DROP_IN_PRESERVE",
+									"MinStack": "{{P.P.J Quantity}}",
+									"Quality": "{{P.P.J Aged Roe/Caviar Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Pickled",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Vegetable",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_vegetable"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Forage",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_greens"
+									],
+									"Condition": "ITEM_EDIBILITY Input 1"
+								},
+								{
+									"Id": "ItemPlacedInMachine_Pickle",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_pickle"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Pickle DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{P.P.J Quantity}}",
+									"CopyQuality": "{{P.P.J Copy Quality}}",
+									"Quality": "{{P.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.P.J Production Time}}"
+						},
+						{
+							"Id": "Default_Jelly",
+							"Triggers": [
+								{
+									"Id": "ItemPlacedInMachine_Fruit",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"category_fruits"
+									]
+								},
+								{
+									"Id": "ItemPlacedInMachine_Jelly",
+									"Trigger": "ItemPlacedInMachine",
+									"RequiredTags": [
+										"preserves_Jelly"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Jelly DROP_IN_ID",
+									"CopyColor": true,
+									"MinStack": "{{P.P.J Quantity}}",
+									"CopyQuality": "{{P.P.J Copy Quality}}",
+									"Quality": "{{P.P.J Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "100PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 100",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "300PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 300",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+										},
+										{
+											"Id": "500PreservesMade",
+											"Condition": "PLAYER_STAT Current preservesMade 500",
+											"Modification": "Add",
+											"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.P.J Production Time}}"
+						},
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "Ship"
+								}
+							],
+							"TemporarySprites": [
+								{
+									"Id": "JellyOrRoe",
+									"Condition": "ANY \"ITEM_ID Target (O)344\" \"ITEM_ID Target (O)445\" \"ITEM_ID Target (O)447\"",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": null,
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}
+					],
+					"WorkingEffects": [
+						{
+							"Id": "Default",
+							"TemporarySprites": [
+								{
+									"Id": "Jelly",
+									"Condition": "ITEM_ID Target (O)344",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#81A2ACBF"
+								},
+								{
+									"Id": "Default",
+									"Condition": "ITEM_ID Target (O)342",
+									"Texture": "TileSheets\\animations",
+									"SourceRect": {
+										"X": 256,
+										"Y": 1856,
+										"Width": 64,
+										"Height": 128
+									},
+									"Interval": 80.0,
+									"Frames": 6,
+									"Loops": 999999,
+									"PositionOffset": "0, -32",
+									"Flicker": false,
+									"Flip": false,
+									"SortOffset": 0.0,
+									"AlphaFade": 0.005,
+									"Scale": 0.25,
+									"ScaleChange": 0.0,
+									"Rotation": 0.0,
+									"RotationChange": 0.0,
+									"Color": "#BFBFBFBF"
+								}
+							]
+						}	
+					],
+					"WorkingEffectChance": 0.33,
+					"WobbleWhileWorking": true,
+					"AllowFairyDust": true,
+					"StatsToIncrementWhenHarvested": [
+						{
+							"StatName": "PreservesMade"
+						}
+					]
+				}
+			}
+		},
+		// Aged Coffee Bean
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffeeBean": {
+					"Id": "nachonline.mps_AgedCoffeeBean",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)433"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"MinStack": "{{S.P.J Quantity}}",
+							"CopyQuality": "{{S.P.J Copy Quality}}",
+							"Quality": "{{S.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffeeBean": {
+					"Id": "nachonline.mps_AgedCoffeeBean",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)433"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"MinStack": "{{G.P.J Quantity}}",
+							"CopyQuality": "{{G.P.J Copy Quality}}",
+							"Quality": "{{G.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffeeBean": {
+					"Id": "nachonline.mps_AgedCoffeeBean",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)433"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"MinStack": "{{D.P.J Quantity}}",
+							"CopyQuality": "{{D.P.J Copy Quality}}",
+							"Quality": "{{D.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffeeBean": {
+					"Id": "nachonline.mps_AgedCoffeeBean",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)433"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"MinStack": "{{I.P.J Quantity}}",
+							"CopyQuality": "{{I.P.J Copy Quality}}",
+							"Quality": "{{I.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactivePreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffeeBean": {
+					"Id": "nachonline.mps_AgedCoffeeBean",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)433"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"MinStack": "{{R.P.J Quantity}}",
+							"CopyQuality": "{{R.P.J Copy Quality}}",
+							"Quality": "{{R.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Coffee Bean": true
+			},
+			"Entries": {
+				"nachonline.mps_AgedCoffeeBean": {
+					"Id": "nachonline.mps_AgedCoffeeBean",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)433"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedCoffeeBean",
+							"MinStack": "{{P.P.J Quantity}}",
+							"CopyQuality": "{{P.P.J Copy Quality}}",
+							"Quality": "{{P.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.P.J Production Time}}"
+				}
+			}
+		},
+		// Aged Milk
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Milks": true
+			},
+			"Entries": {
+				"nachonline.mps_LargeAgedMilk": {
+					"Id": "nachonline.mps_LargeAgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"large_milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LargeAgedMilk",
+							"MinStack": "{{S.P.J Quantity}}",
+							"CopyQuality": "{{S.P.J Copy Quality}}",
+							"Quality": "{{S.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.P.J Production Time}}"
+				},
+				"nachonline.mps_AgedMilk": {
+					"Id": "nachonline.mps_AgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedMilk",
+							"MinStack": "{{S.P.J Quantity}}",
+							"CopyQuality": "{{S.P.J Copy Quality}}",
+							"Quality": "{{S.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Milks": true
+			},
+			"Entries": {
+				"nachonline.mps_LargeAgedMilk": {
+					"Id": "nachonline.mps_LargeAgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"large_milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LargeAgedMilk",
+							"MinStack": "{{G.P.J Quantity}}",
+							"CopyQuality": "{{G.P.J Copy Quality}}",
+							"Quality": "{{G.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.P.J Production Time}}"
+				},
+				"nachonline.mps_AgedMilk": {
+					"Id": "nachonline.mps_AgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedMilk",
+							"MinStack": "{{G.P.J Quantity}}",
+							"CopyQuality": "{{G.P.J Copy Quality}}",
+							"Quality": "{{G.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Milks": true
+			},
+			"Entries": {
+				"nachonline.mps_LargeAgedMilk": {
+					"Id": "nachonline.mps_LargeAgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"large_milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LargeAgedMilk",
+							"MinStack": "{{D.P.J Quantity}}",
+							"CopyQuality": "{{D.P.J Copy Quality}}",
+							"Quality": "{{D.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.P.J Production Time}}"
+				},
+				"nachonline.mps_AgedMilk": {
+					"Id": "nachonline.mps_AgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedMilk",
+							"MinStack": "{{D.P.J Quantity}}",
+							"CopyQuality": "{{D.P.J Copy Quality}}",
+							"Quality": "{{D.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Milks": true
+			},
+			"Entries": {
+				"nachonline.mps_LargeAgedMilk": {
+					"Id": "nachonline.mps_LargeAgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"large_milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LargeAgedMilk",
+							"MinStack": "{{I.P.J Quantity}}",
+							"CopyQuality": "{{I.P.J Copy Quality}}",
+							"Quality": "{{I.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.P.J Production Time}}"
+				},
+				"nachonline.mps_AgedMilk": {
+					"Id": "nachonline.mps_AgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedMilk",
+							"MinStack": "{{I.P.J Quantity}}",
+							"CopyQuality": "{{I.P.J Copy Quality}}",
+							"Quality": "{{I.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactivePreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Milks": true
+			},
+			"Entries": {
+				"nachonline.mps_LargeAgedMilk": {
+					"Id": "nachonline.mps_LargeAgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"large_milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LargeAgedMilk",
+							"MinStack": "{{R.P.J Quantity}}",
+							"CopyQuality": "{{R.P.J Copy Quality}}",
+							"Quality": "{{R.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.P.J Production Time}}"
+				},
+				"nachonline.mps_AgedMilk": {
+					"Id": "nachonline.mps_AgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedMilk",
+							"MinStack": "{{R.P.J Quantity}}",
+							"CopyQuality": "{{R.P.J Copy Quality}}",
+							"Quality": "{{R.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Aged Milks": true
+			},
+			"Entries": {
+				"nachonline.mps_LargeAgedMilk": {
+					"Id": "nachonline.mps_LargeAgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"large_milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LargeAgedMilk",
+							"MinStack": "{{P.P.J Quantity}}",
+							"CopyQuality": "{{P.P.J Copy Quality}}",
+							"Quality": "{{P.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.P.J Production Time}}"
+				},
+				"nachonline.mps_AgedMilk": {
+					"Id": "nachonline.mps_AgedMilk",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"milk_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_AgedMilk",
+							"MinStack": "{{P.P.J Quantity}}",
+							"CopyQuality": "{{P.P.J Copy Quality}}",
+							"Quality": "{{P.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.P.J Production Time}}"
+				}
+			}
+		},
+		// Black Garlic
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Black Garlic": true
+			},
+			"Entries": {
+				"nachonline.mps_BlackGarlic": {
+					"Id": "nachonline.mps_BlackGarlic",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)248"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BlackGarlic",
+							"MinStack": "{{S.P.J Quantity}}",
+							"CopyQuality": "{{S.P.J Copy Quality}}",
+							"Quality": "{{S.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BlackGarlic", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Black Garlic": true
+			},
+			"Entries": {
+				"nachonline.mps_BlackGarlic": {
+					"Id": "nachonline.mps_BlackGarlic",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)248"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BlackGarlic",
+							"MinStack": "{{G.P.J Quantity}}",
+							"CopyQuality": "{{G.P.J Copy Quality}}",
+							"Quality": "{{G.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BlackGarlic", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Black Garlic": true
+			},
+			"Entries": {
+				"nachonline.mps_BlackGarlic": {
+					"Id": "nachonline.mps_BlackGarlic",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)248"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BlackGarlic",
+							"MinStack": "{{D.P.J Quantity}}",
+							"CopyQuality": "{{D.P.J Copy Quality}}",
+							"Quality": "{{D.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BlackGarlic", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Black Garlic": true
+			},
+			"Entries": {
+				"nachonline.mps_BlackGarlic": {
+					"Id": "nachonline.mps_BlackGarlic",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)248"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BlackGarlic",
+							"MinStack": "{{I.P.J Quantity}}",
+							"CopyQuality": "{{I.P.J Copy Quality}}",
+							"Quality": "{{I.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BlackGarlic", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactivePreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Black Garlic": true
+			},
+			"Entries": {
+				"nachonline.mps_BlackGarlic": {
+					"Id": "nachonline.mps_BlackGarlic",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)248"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BlackGarlic",
+							"MinStack": "{{R.P.J Quantity}}",
+							"CopyQuality": "{{R.P.J Copy Quality}}",
+							"Quality": "{{R.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BlackGarlic", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Black Garlic": true
+			},
+			"Entries": {
+				"nachonline.mps_BlackGarlic": {
+					"Id": "nachonline.mps_BlackGarlic",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)248"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_BlackGarlic",
+							"MinStack": "{{P.P.J Quantity}}",
+							"CopyQuality": "{{P.P.J Copy Quality}}",
+							"Quality": "{{P.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_BlackGarlic", "ToPosition": "Top" }
+			]
+		},
+		// Gourmet Shellfish
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Gourmet Shellfish": true
+			},
+			"Entries": {
+				"nachonline.mps_GourmetShellfish": {
+					"Id": "nachonline.mps_GourmetShellfish",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"fish_crab_pot"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_GourmetShellfish",
+							"MinStack": "{{S.P.J Quantity}}",
+							"CopyQuality": "{{S.P.J Copy Quality}}",
+							"Quality": "{{S.P.J Quality}}",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Gourmet Shellfish Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Gourmet Shellfish": true
+			},
+			"Entries": {
+				"nachonline.mps_GourmetShellfish": {
+					"Id": "nachonline.mps_GourmetShellfish",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"fish_crab_pot"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_GourmetShellfish",
+							"MinStack": "{{G.P.J Quantity}}",
+							"CopyQuality": "{{G.P.J Copy Quality}}",
+							"Quality": "{{G.P.J Quality}}",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Gourmet Shellfish Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Gourmet Shellfish": true
+			},
+			"Entries": {
+				"nachonline.mps_GourmetShellfish": {
+					"Id": "nachonline.mps_GourmetShellfish",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"fish_crab_pot"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_GourmetShellfish",
+							"MinStack": "{{D.P.J Quantity}}",
+							"CopyQuality": "{{D.P.J Copy Quality}}",
+							"Quality": "{{D.P.J Quality}}",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Gourmet Shellfish Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Gourmet Shellfish": true
+			},
+			"Entries": {
+				"nachonline.mps_GourmetShellfish": {
+					"Id": "nachonline.mps_GourmetShellfish",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"fish_crab_pot"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_GourmetShellfish",
+							"MinStack": "{{I.P.J Quantity}}",
+							"CopyQuality": "{{I.P.J Copy Quality}}",
+							"Quality": "{{I.P.J Quality}}",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Gourmet Shellfish Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactivePreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Gourmet Shellfish": true
+			},
+			"Entries": {
+				"nachonline.mps_GourmetShellfish": {
+					"Id": "nachonline.mps_GourmetShellfish",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"fish_crab_pot"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_GourmetShellfish",
+							"MinStack": "{{R.P.J Quantity}}",
+							"CopyQuality": "{{R.P.J Copy Quality}}",
+							"Quality": "{{R.P.J Quality}}",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Gourmet Shellfish Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Gourmet Shellfish": true
+			},
+			"Entries": {
+				"nachonline.mps_GourmetShellfish": {
+					"Id": "nachonline.mps_GourmetShellfish",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"fish_crab_pot"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_GourmetShellfish",
+							"MinStack": "{{P.P.J Quantity}}",
+							"CopyQuality": "{{P.P.J Copy Quality}}",
+							"Quality": "{{P.P.J Quality}}",
+							"PriceModifiers": [
+								{
+									"Modification": "Multiply",
+									"Amount": "{{Gourmet Shellfish Value Multiplier}}"
+								}
+							],
+							"PriceModifierMode": "Stack",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.P.J Production Time}}"
+				}
+			}
+		},
+		// Ink of the Abyss
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Ink of the Abyss": true
+			},
+			"Entries": {
+				"nachonline.mps_InkOfTheAbyss": {
+					"Id": "nachonline.mps_InkOfTheAbyss",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)814"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_InkOfTheAbyss",
+							"MinStack": "{{S.P.J Quantity}}",
+							"CopyQuality": "{{S.P.J Copy Quality}}",
+							"Quality": "{{S.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Ink of the Abyss": true
+			},
+			"Entries": {
+				"nachonline.mps_InkOfTheAbyss": {
+					"Id": "nachonline.mps_InkOfTheAbyss",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)814"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_InkOfTheAbyss",
+							"MinStack": "{{G.P.J Quantity}}",
+							"CopyQuality": "{{G.P.J Copy Quality}}",
+							"Quality": "{{G.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Ink of the Abyss": true
+			},
+			"Entries": {
+				"nachonline.mps_InkOfTheAbyss": {
+					"Id": "nachonline.mps_InkOfTheAbyss",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)814"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_InkOfTheAbyss",
+							"MinStack": "{{D.P.J Quantity}}",
+							"CopyQuality": "{{D.P.J Copy Quality}}",
+							"Quality": "{{D.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Ink of the Abyss": true
+			},
+			"Entries": {
+				"nachonline.mps_InkOfTheAbyss": {
+					"Id": "nachonline.mps_InkOfTheAbyss",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)814"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_InkOfTheAbyss",
+							"MinStack": "{{I.P.J Quantity}}",
+							"CopyQuality": "{{I.P.J Copy Quality}}",
+							"Quality": "{{I.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactivePreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Ink of the Abyss": true
+			},
+			"Entries": {
+				"nachonline.mps_InkOfTheAbyss": {
+					"Id": "nachonline.mps_InkOfTheAbyss",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)814"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_InkOfTheAbyss",
+							"MinStack": "{{R.P.J Quantity}}",
+							"CopyQuality": "{{R.P.J Copy Quality}}",
+							"Quality": "{{R.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Ink of the Abyss": true
+			},
+			"Entries": {
+				"nachonline.mps_InkOfTheAbyss": {
+					"Id": "nachonline.mps_InkOfTheAbyss",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)814"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_InkOfTheAbyss",
+							"MinStack": "{{P.P.J Quantity}}",
+							"CopyQuality": "{{P.P.J Copy Quality}}",
+							"Quality": "{{P.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.P.J Production Time}}"
+				}
+			}
+		},
+		// Luxury Wool
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryWool": {
+					"Id": "nachonline.mps_LuxuryWool",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)440"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryWool",
+							"MinStack": "{{S.P.J Quantity}}",
+							"CopyQuality": "{{S.P.J Copy Quality}}",
+							"Quality": "{{S.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryWool": {
+					"Id": "nachonline.mps_LuxuryWool",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)440"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryWool",
+							"MinStack": "{{G.P.J Quantity}}",
+							"CopyQuality": "{{G.P.J Copy Quality}}",
+							"Quality": "{{G.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryWool": {
+					"Id": "nachonline.mps_LuxuryWool",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)440"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryWool",
+							"MinStack": "{{D.P.J Quantity}}",
+							"CopyQuality": "{{D.P.J Copy Quality}}",
+							"Quality": "{{D.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryWool": {
+					"Id": "nachonline.mps_LuxuryWool",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)440"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryWool",
+							"MinStack": "{{I.P.J Quantity}}",
+							"CopyQuality": "{{I.P.J Copy Quality}}",
+							"Quality": "{{I.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactivePreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryWool": {
+					"Id": "nachonline.mps_LuxuryWool",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)440"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryWool",
+							"MinStack": "{{R.P.J Quantity}}",
+							"CopyQuality": "{{R.P.J Copy Quality}}",
+							"Quality": "{{R.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.P.J Production Time}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Luxury Wool": true
+			},
+			"Entries": {
+				"nachonline.mps_LuxuryWool": {
+					"Id": "nachonline.mps_LuxuryWool",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)440"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_LuxuryWool",
+							"MinStack": "{{P.P.J Quantity}}",
+							"CopyQuality": "{{P.P.J Copy Quality}}",
+							"Quality": "{{P.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.P.J Production Time}}"
+				}
+			}
+		},
+		// Pu-erh Tea Leaves
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_SteelPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTeaLeaves": {
+					"Id": "nachonline.mps_PuerhTeaLeaves",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"tea_leaves_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTeaLeaves",
+							"MinStack": "{{S.P.J Quantity}}",
+							"CopyQuality": "{{S.P.J Copy Quality}}",
+							"Quality": "{{S.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{S.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{S.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_PuerhTeaLeaves", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTeaLeaves": {
+					"Id": "nachonline.mps_PuerhTeaLeaves",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"tea_leaves_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTeaLeaves",
+							"MinStack": "{{G.P.J Quantity}}",
+							"CopyQuality": "{{G.P.J Copy Quality}}",
+							"Quality": "{{G.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{G.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_PuerhTeaLeaves", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTeaLeaves": {
+					"Id": "nachonline.mps_PuerhTeaLeaves",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"tea_leaves_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTeaLeaves",
+							"MinStack": "{{D.P.J Quantity}}",
+							"CopyQuality": "{{D.P.J Copy Quality}}",
+							"Quality": "{{D.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{D.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_PuerhTeaLeaves", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTeaLeaves": {
+					"Id": "nachonline.mps_PuerhTeaLeaves",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"tea_leaves_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTeaLeaves",
+							"MinStack": "{{I.P.J Quantity}}",
+							"CopyQuality": "{{I.P.J Copy Quality}}",
+							"Quality": "{{I.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{I.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_PuerhTeaLeaves", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactivePreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTeaLeaves": {
+					"Id": "nachonline.mps_PuerhTeaLeaves",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"tea_leaves_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTeaLeaves",
+							"MinStack": "{{R.P.J Quantity}}",
+							"CopyQuality": "{{R.P.J Copy Quality}}",
+							"Quality": "{{R.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{R.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_PuerhTeaLeaves", "ToPosition": "Top" }
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticPreservesJar",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Pu-erh Tea Leaves": true
+			},
+			"Entries": {
+				"nachonline.mps_PuerhTeaLeaves": {
+					"Id": "nachonline.mps_PuerhTeaLeaves",
+					"Triggers": [
+						{
+							"RequiredTags": [
+								"tea_leaves_item"
+							]
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_PuerhTeaLeaves",
+							"MinStack": "{{P.P.J Quantity}}",
+							"CopyQuality": "{{P.P.J Copy Quality}}",
+							"Quality": "{{P.P.J Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "100PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 100",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 100 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "300PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 300",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 300 Preserves Made Bonus}}"
+								},
+								{
+									"Id": "500PreservesMade",
+									"Condition": "PLAYER_STAT Current preservesMade 500",
+									"Modification": "Add",
+									"Amount": "{{P.P.J 500 Preserves Made Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.P.J Production Time}}"
+				}
+			},
+			"MoveEntries": [
+				{ "ID": "nachonline.mps_PuerhTeaLeaves", "ToPosition": "Top" }
+			]
+		}
+	] 
+}

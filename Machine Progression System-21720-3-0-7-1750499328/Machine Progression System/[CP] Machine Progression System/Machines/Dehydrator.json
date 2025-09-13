@@ -1,0 +1,1334 @@
+{
+    "Changes": [
+		// Vanilla Dried Items
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_GoldDehydrator": {
+					"OutputRules": [
+						{
+							"Id": "Raisins",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)398",
+									"RequiredCount": "{{G.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)Raisins",
+									"MinStack": "{{G.D Quantity}}",
+									"CopyQuality": "{{G.D Copy Quality}}",
+									"Quality": "{{G.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{G.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{G.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{G.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{G.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{G.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "DriedFruit",
+							"Triggers": [
+								{
+									"RequiredTags":  [
+										"category_fruits"
+									],
+									"RequiredCount": "{{G.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM DriedFruit DROP_IN_ID",
+									"MinStack": "{{G.D Quantity}}",
+									"CopyQuality": "{{G.D Copy Quality}}",
+									"Quality": "{{G.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{G.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{G.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{G.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{G.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{G.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "DriedMushrooms",
+							"Triggers": [
+								{
+									"RequiredTags":  [
+										"edible_mushroom"
+									],
+									"RequiredCount": "{{G.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM DriedMushroom DROP_IN_ID",
+									"MinStack": "{{G.D Quantity}}",
+									"CopyQuality": "{{G.D Copy Quality}}",
+									"Quality": "{{G.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{G.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{G.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{G.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{G.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{G.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_DiamondDehydrator": {
+					"OutputRules": [
+						{
+							"Id": "Raisins",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)398",
+									"RequiredCount": "{{D.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)Raisins",
+									"MinStack": "{{D.D Quantity}}",
+									"CopyQuality": "{{D.D Copy Quality}}",
+									"Quality": "{{D.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{D.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{D.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{D.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{D.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "DriedFruit",
+							"Triggers": [
+								{
+									"RequiredTags":  [
+										"category_fruits"
+									],
+									"RequiredCount": "{{D.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM DriedFruit DROP_IN_ID",
+									"MinStack": "{{D.D Quantity}}",
+									"CopyQuality": "{{D.D Copy Quality}}",
+									"Quality": "{{D.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{D.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{D.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{D.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{D.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "DriedMushrooms",
+							"Triggers": [
+								{
+									"RequiredTags":  [
+										"edible_mushroom"
+									],
+									"RequiredCount": "{{D.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM DriedMushroom DROP_IN_ID",
+									"MinStack": "{{D.D Quantity}}",
+									"CopyQuality": "{{D.D Copy Quality}}",
+									"Quality": "{{D.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{D.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{D.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{D.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{D.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{D.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_IridiumDehydrator": {
+					"OutputRules": [
+						{
+							"Id": "Raisins",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)398",
+									"RequiredCount": "{{I.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)Raisins",
+									"MinStack": "{{I.D Quantity}}",
+									"CopyQuality": "{{I.D Copy Quality}}",
+									"Quality": "{{I.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{I.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{I.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{I.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{I.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "DriedFruit",
+							"Triggers": [
+								{
+									"RequiredTags":  [
+										"category_fruits"
+									],
+									"RequiredCount": "{{I.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM DriedFruit DROP_IN_ID",
+									"MinStack": "{{I.D Quantity}}",
+									"CopyQuality": "{{I.D Copy Quality}}",
+									"Quality": "{{I.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{I.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{I.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{I.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{I.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "DriedMushrooms",
+							"Triggers": [
+								{
+									"RequiredTags":  [
+										"edible_mushroom"
+									],
+									"RequiredCount": "{{I.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM DriedMushroom DROP_IN_ID",
+									"MinStack": "{{I.D Quantity}}",
+									"CopyQuality": "{{I.D Copy Quality}}",
+									"Quality": "{{I.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{I.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{I.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{I.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{I.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{I.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_RadioactiveDehydrator": {
+					"OutputRules": [
+						{
+							"Id": "Raisins",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)398",
+									"RequiredCount": "{{R.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)Raisins",
+									"MinStack": "{{R.D Quantity}}",
+									"CopyQuality": "{{R.D Copy Quality}}",
+									"Quality": "{{R.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{R.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{R.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{R.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{R.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "DriedFruit",
+							"Triggers": [
+								{
+									"RequiredTags":  [
+										"category_fruits"
+									],
+									"RequiredCount": "{{R.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM DriedFruit DROP_IN_ID",
+									"MinStack": "{{R.D Quantity}}",
+									"CopyQuality": "{{R.D Copy Quality}}",
+									"Quality": "{{R.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{R.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{R.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{R.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{R.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "DriedMushrooms",
+							"Triggers": [
+								{
+									"RequiredTags":  [
+										"edible_mushroom"
+									],
+									"RequiredCount": "{{R.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM DriedMushroom DROP_IN_ID",
+									"MinStack": "{{R.D Quantity}}",
+									"CopyQuality": "{{R.D Copy Quality}}",
+									"Quality": "{{R.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{R.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{R.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{R.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{R.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{R.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_PrismaticDehydrator": {
+					"OutputRules": [
+						{
+							"Id": "Raisins",
+							"Triggers": [
+								{
+									"RequiredItemId": "(O)398",
+									"RequiredCount": "{{P.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"ItemId": "(O)Raisins",
+									"MinStack": "{{P.D Quantity}}",
+									"CopyQuality": "{{P.D Copy Quality}}",
+									"Quality": "{{P.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{P.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{P.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{P.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{P.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "DriedFruit",
+							"Triggers": [
+								{
+									"RequiredTags":  [
+										"category_fruits"
+									],
+									"RequiredCount": "{{P.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM DriedFruit DROP_IN_ID",
+									"MinStack": "{{P.D Quantity}}",
+									"CopyQuality": "{{P.D Copy Quality}}",
+									"Quality": "{{P.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{P.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{P.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{P.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{P.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						},
+						{
+							"Id": "DriedMushrooms",
+							"Triggers": [
+								{
+									"RequiredTags":  [
+										"edible_mushroom"
+									],
+									"RequiredCount": "{{P.D Required Input}}"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM DriedMushroom DROP_IN_ID",
+									"MinStack": "{{P.D Quantity}}",
+									"CopyQuality": "{{P.D Copy Quality}}",
+									"Quality": "{{P.D Quality}}",
+									"StackModifiers": [
+										{
+											"Id": "FarmingLevel5",
+											"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{P.D Farming Level 5 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{P.D Farming Level 5 Bonus Amount}}"
+										},
+										{
+											"Id": "FarmingLevel10",
+											"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{P.D Farming Level 10 Bonus Chance}}",
+											"Modification": "Add",
+											"Amount": "{{P.D Farming Level 10 Bonus Amount}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": "{{P.D Production Time}}",
+							"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+						}
+					],
+					"LoadEffects": [
+						{
+							"Id": "Default",
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				}
+			}
+		},
+		// Dried Carrot Chips
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Carrot Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedCarrotChips": {
+					"Id": "nachonline.mps_DriedCarrotChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Carrot",
+							"RequiredCount": "{{G.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedCarrotChips",
+							"MinStack": "{{G.D Quantity}}",
+							"CopyQuality": "{{G.D Copy Quality}}",
+							"Quality": "{{G.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{G.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{G.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{G.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{G.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Carrot Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedCarrotChips": {
+					"Id": "nachonline.mps_DriedCarrotChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Carrot",
+							"RequiredCount": "{{D.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedCarrotChips",
+							"MinStack": "{{D.D Quantity}}",
+							"CopyQuality": "{{D.D Copy Quality}}",
+							"Quality": "{{D.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{D.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{D.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{D.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{D.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Carrot Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedCarrotChips": {
+					"Id": "nachonline.mps_DriedCarrotChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Carrot",
+							"RequiredCount": "{{I.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedCarrotChips",
+							"MinStack": "{{I.D Quantity}}",
+							"CopyQuality": "{{I.D Copy Quality}}",
+							"Quality": "{{I.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{I.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{I.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{I.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{I.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Carrot Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedCarrotChips": {
+					"Id": "nachonline.mps_DriedCarrotChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Carrot",
+							"RequiredCount": "{{R.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedCarrotChips",
+							"MinStack": "{{R.D Quantity}}",
+							"CopyQuality": "{{R.D Copy Quality}}",
+							"Quality": "{{R.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{R.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{R.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{R.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{R.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Carrot Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedCarrotChips": {
+					"Id": "nachonline.mps_DriedCarrotChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)Carrot",
+							"RequiredCount": "{{P.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedCarrotChips",
+							"MinStack": "{{P.D Quantity}}",
+							"CopyQuality": "{{P.D Copy Quality}}",
+							"Quality": "{{P.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{P.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{P.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{P.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{P.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		// Dried Kale Chips
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Kale Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedKaleChips": {
+					"Id": "nachonline.mps_DriedKaleChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)250",
+							"RequiredCount": "{{G.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedKaleChips",
+							"MinStack": "{{G.D Quantity}}",
+							"CopyQuality": "{{G.D Copy Quality}}",
+							"Quality": "{{G.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{G.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{G.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{G.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{G.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Kale Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedKaleChips": {
+					"Id": "nachonline.mps_DriedKaleChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)250",
+							"RequiredCount": "{{D.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedKaleChips",
+							"MinStack": "{{D.D Quantity}}",
+							"CopyQuality": "{{D.D Copy Quality}}",
+							"Quality": "{{D.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{D.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{D.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{D.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{D.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Kale Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedKaleChips": {
+					"Id": "nachonline.mps_DriedKaleChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)250",
+							"RequiredCount": "{{I.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedKaleChips",
+							"MinStack": "{{I.D Quantity}}",
+							"CopyQuality": "{{I.D Copy Quality}}",
+							"Quality": "{{I.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{I.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{I.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{I.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{I.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Kale Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedKaleChips": {
+					"Id": "nachonline.mps_DriedKaleChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)250",
+							"RequiredCount": "{{R.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedKaleChips",
+							"MinStack": "{{R.D Quantity}}",
+							"CopyQuality": "{{R.D Copy Quality}}",
+							"Quality": "{{R.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{R.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{R.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{R.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{R.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Kale Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedKaleChips": {
+					"Id": "nachonline.mps_DriedKaleChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)250",
+							"RequiredCount": "{{P.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedKaleChips",
+							"MinStack": "{{P.D Quantity}}",
+							"CopyQuality": "{{P.D Copy Quality}}",
+							"Quality": "{{P.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{P.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{P.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{P.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{P.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		// Dried Potato Chips
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_GoldDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Potato Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedPotatoChips": {
+					"Id": "nachonline.mps_DriedPotatoChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)192",
+							"RequiredCount": "{{G.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedPotatoChips",
+							"MinStack": "{{G.D Quantity}}",
+							"CopyQuality": "{{G.D Copy Quality}}",
+							"Quality": "{{G.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{G.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{G.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{G.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{G.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{G.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_DiamondDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Potato Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedPotatoChips": {
+					"Id": "nachonline.mps_DriedPotatoChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)192",
+							"RequiredCount": "{{D.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedPotatoChips",
+							"MinStack": "{{D.D Quantity}}",
+							"CopyQuality": "{{D.D Copy Quality}}",
+							"Quality": "{{D.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{D.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{D.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{D.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{D.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{D.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_IridiumDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Potato Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedPotatoChips": {
+					"Id": "nachonline.mps_DriedPotatoChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)192",
+							"RequiredCount": "{{I.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedPotatoChips",
+							"MinStack": "{{I.D Quantity}}",
+							"CopyQuality": "{{I.D Copy Quality}}",
+							"Quality": "{{I.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{I.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{I.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{I.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{I.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{I.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_RadioactiveDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Potato Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedPotatoChips": {
+					"Id": "nachonline.mps_DriedPotatoChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)192",
+							"RequiredCount": "{{R.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedPotatoChips",
+							"MinStack": "{{R.D Quantity}}",
+							"CopyQuality": "{{R.D Copy Quality}}",
+							"Quality": "{{R.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{R.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{R.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{R.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{R.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{R.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"TargetField": [
+				"(BC)nachonline.mps_PrismaticDehydrator",
+				"OutputRules"
+			],
+			"When": {
+				"Enable Dried Potato Chips": true
+			},
+			"Entries": {
+				"nachonline.mps_DriedPotatoChips": {
+					"Id": "nachonline.mps_DriedPotatoChips",
+					"Triggers": [
+						{
+							"RequiredItemId": "(O)192",
+							"RequiredCount": "{{P.D Required Input}}"
+						}
+					],
+					"OutputItem": [
+						{
+							"ItemId": "(O)nachonline.mps_DriedPotatoChips",
+							"MinStack": "{{P.D Quantity}}",
+							"CopyQuality": "{{P.D Copy Quality}}",
+							"Quality": "{{P.D Quality}}",
+							"StackModifiers": [
+								{
+									"Id": "FarmingLevel5",
+									"Condition": "PLAYER_FARMING_LEVEL Any 5, RANDOM {{P.D Farming Level 5 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{P.D Farming Level 5 Bonus Amount}}"
+								},
+								{
+									"Id": "FarmingLevel10",
+									"Condition": "PLAYER_FARMING_LEVEL Any 10, RANDOM {{P.D Farming Level 10 Bonus Chance}}",
+									"Modification": "Add",
+									"Amount": "{{P.D Farming Level 10 Bonus Amount}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"MinutesUntilReady": "{{P.D Production Time}}",
+					"InvalidCountMessage": "{{i18n:mps_Invalid_Count_Message}}"
+				}
+			}
+		}
+	] 
+}

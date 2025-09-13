@@ -1,0 +1,844 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				"(BC)nachonline.mps_SteelTapper": {
+					"OutputRules": [
+						{
+							"Id": "nachonline.mps_SteelTapperProduce",
+							"Triggers": [
+								{
+									"Trigger": "DayUpdate, MachinePutDown, OutputCollected"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"OutputMethod": "Selph.StardewMods.MachineTerrainFramework.Utils, CustomTapperFramework: OutputTapper",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 100",
+											"Modification": "Add",
+											"Amount": "{{S.T 100 Items Foraged Bonus}}"
+										},
+										{
+											"Id": "300ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 300",
+											"Modification": "Add",
+											"Amount": "{{S.T 300 Items Foraged Bonus}}"
+										},
+										{
+											"Id": "500ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 500",
+											"Modification": "Add",
+											"Amount": "{{S.T 500 Items Foraged Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							]
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Modification": "Multiply",
+							"Amount": "{{S.T Production Time Reduction}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"HasOutput": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_GoldTapper": {
+					"OutputRules": [
+						{
+							"Id": "nachonline.mps_GoldTapperProduce",
+							"Triggers": [
+								{
+									"Trigger": "DayUpdate, MachinePutDown, OutputCollected"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"OutputMethod": "Selph.StardewMods.MachineTerrainFramework.Utils, CustomTapperFramework: OutputTapper",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 100",
+											"Modification": "Add",
+											"Amount": "{{G.T 100 Items Foraged Bonus}}"
+										},
+										{
+											"Id": "300ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 300",
+											"Modification": "Add",
+											"Amount": "{{G.T 300 Items Foraged Bonus}}"
+										},
+										{
+											"Id": "500ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 500",
+											"Modification": "Add",
+											"Amount": "{{G.T 500 Items Foraged Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							]
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Modification": "Multiply",
+							"Amount": "{{G.T Production Time Reduction}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"HasOutput": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_DiamondTapper": {
+					"OutputRules": [
+						{
+							"Id": "nachonline.mps_DiamondTapperProduce",
+							"Triggers": [
+								{
+									"Trigger": "DayUpdate, MachinePutDown, OutputCollected"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"OutputMethod": "Selph.StardewMods.MachineTerrainFramework.Utils, CustomTapperFramework: OutputTapper",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 100",
+											"Modification": "Add",
+											"Amount": "{{D.T 100 Items Foraged Bonus}}"
+										},
+										{
+											"Id": "300ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 300",
+											"Modification": "Add",
+											"Amount": "{{D.T 300 Items Foraged Bonus}}"
+										},
+										{
+											"Id": "500ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 500",
+											"Modification": "Add",
+											"Amount": "{{D.T 500 Items Foraged Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							]
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Modification": "Multiply",
+							"Amount": "{{D.T Production Time Reduction}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"HasOutput": true,
+					"AllowFairyDust": true
+				},
+				"(BC)nachonline.mps_IridiumTapper": {
+					"OutputRules": [
+						{
+							"Id": "nachonline.mps_IridiumTapperProduce",
+							"Triggers": [
+								{
+									"Trigger": "DayUpdate, MachinePutDown, OutputCollected"
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"OutputMethod": "Selph.StardewMods.MachineTerrainFramework.Utils, CustomTapperFramework: OutputTapper",
+									"StackModifiers": [
+										{
+											"Id": "100ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 100",
+											"Modification": "Add",
+											"Amount": "{{I.T 100 Items Foraged Bonus}}"
+										},
+										{
+											"Id": "300ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 300",
+											"Modification": "Add",
+											"Amount": "{{I.T 300 Items Foraged Bonus}}"
+										},
+										{
+											"Id": "500ItemsForaged",
+											"Condition": "PLAYER_STAT Current itemsForaged 500",
+											"Modification": "Add",
+											"Amount": "{{I.T 500 Items Foraged Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							]
+						}
+					],
+					"ReadyTimeModifiers": [
+						{
+							"Modification": "Multiply",
+							"Amount": "{{I.T Production Time Reduction}}"
+						}
+					],
+					"ReadyTimeModifierMode": "Stack",
+					"HasOutput": true,
+					"AllowFairyDust": true
+				}
+			}
+		},
+		
+		// Additional Tree Equipments (and tap giant crops) (https://www.nexusmods.com/stardewvalley/mods/22991)
+		{
+			"LogName": "Add compatibility patch to the Steel Tapper",
+			"Action": "EditData",
+			"Target": "selph.CustomTapperFramework/Data",
+			"Entries": {
+				"(BC)nachonline.mps_SteelTapper": {
+					"FruitTreeOutputRules": [
+						{
+							"DaysUntilReady": 1,
+							"Chance": 1.0,
+							"Id": "selph.ExtraTappers.Sap",
+							"ItemId": "(O)92",
+							"MinStack": 3,
+							"MaxStack": 8,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{S.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{S.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{S.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"GiantCropOutputRules": [
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input (O)433",
+							"Id": "selph.ExtraTappers.GiantCropCoffee",
+							"ItemId": "(O)395",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{S.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{S.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{S.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input (O)815",
+							"Id": "selph.ExtraTappers.GiantCropTea",
+							"ItemId": "(O)614",
+							"MinStack": 2,
+							"MaxStack": 2,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{S.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{S.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{S.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input -80",
+							"Id": "selph.ExtraTappers.GiantCropHoney",
+							"ItemId": "FLAVORED_ITEM Honey DROP_IN_ID",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{S.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{S.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{S.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Id": "selph.ExtraTappers.GiantCropJuice",
+							"ItemId": "FLAVORED_ITEM Juice DROP_IN_ID",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{S.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{S.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{S.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					]
+				}
+			},
+			"When": {
+				"HasMod": "selph.ExtraTappers"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Gold Tapper",
+			"Action": "EditData",
+			"Target": "selph.CustomTapperFramework/Data",
+			"Entries": {
+				"(BC)nachonline.mps_GoldTapper": {
+					"FruitTreeOutputRules": [
+						{
+							"DaysUntilReady": 1,
+							"Chance": 1.0,
+							"Id": "selph.ExtraTappers.Sap",
+							"ItemId": "(O)92",
+							"MinStack": 3,
+							"MaxStack": 8,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{G.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{G.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{G.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"GiantCropOutputRules": [
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input (O)433",
+							"Id": "selph.ExtraTappers.GiantCropCoffee",
+							"ItemId": "(O)395",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{G.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{G.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{G.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input (O)815",
+							"Id": "selph.ExtraTappers.GiantCropTea",
+							"ItemId": "(O)614",
+							"MinStack": 2,
+							"MaxStack": 2,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{G.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{G.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{G.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input -80",
+							"Id": "selph.ExtraTappers.GiantCropHoney",
+							"ItemId": "FLAVORED_ITEM Honey DROP_IN_ID",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{G.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{G.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{G.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Id": "selph.ExtraTappers.GiantCropJuice",
+							"ItemId": "FLAVORED_ITEM Juice DROP_IN_ID",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{G.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{G.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{G.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					]
+				}
+			},
+			"When": {
+				"HasMod": "selph.ExtraTappers"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Diamond Tapper",
+			"Action": "EditData",
+			"Target": "selph.CustomTapperFramework/Data",
+			"Entries": {
+				"(BC)nachonline.mps_DiamondTapper": {
+					"FruitTreeOutputRules": [
+						{
+							"DaysUntilReady": 1,
+							"Chance": 1.0,
+							"Id": "selph.ExtraTappers.Sap",
+							"ItemId": "(O)92",
+							"MinStack": 3,
+							"MaxStack": 8,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{D.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{D.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{D.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"GiantCropOutputRules": [
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input (O)433",
+							"Id": "selph.ExtraTappers.GiantCropCoffee",
+							"ItemId": "(O)395",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{D.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{D.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{D.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input (O)815",
+							"Id": "selph.ExtraTappers.GiantCropTea",
+							"ItemId": "(O)614",
+							"MinStack": 2,
+							"MaxStack": 2,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{D.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{D.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{D.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input -80",
+							"Id": "selph.ExtraTappers.GiantCropHoney",
+							"ItemId": "FLAVORED_ITEM Honey DROP_IN_ID",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{D.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{D.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{D.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Id": "selph.ExtraTappers.GiantCropJuice",
+							"ItemId": "FLAVORED_ITEM Juice DROP_IN_ID",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{D.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{D.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{D.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					]
+				}
+			},
+			"When": {
+				"HasMod": "selph.ExtraTappers"
+			}
+		},
+		{
+			"LogName": "Add compatibility patch to the Iridium Tapper",
+			"Action": "EditData",
+			"Target": "selph.CustomTapperFramework/Data",
+			"Entries": {
+				"(BC)nachonline.mps_IridiumTapper": {
+					"FruitTreeOutputRules": [
+						{
+							"DaysUntilReady": 1,
+							"Chance": 1.0,
+							"Id": "selph.ExtraTappers.Sap",
+							"ItemId": "(O)92",
+							"MinStack": 3,
+							"MaxStack": 8,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{I.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{I.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{I.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					],
+					"GiantCropOutputRules": [
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input (O)433",
+							"Id": "selph.ExtraTappers.GiantCropCoffee",
+							"ItemId": "(O)395",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{I.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{I.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{I.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input (O)815",
+							"Id": "selph.ExtraTappers.GiantCropTea",
+							"ItemId": "(O)614",
+							"MinStack": 2,
+							"MaxStack": 2,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{I.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{I.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{I.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Condition": "ITEM_ID Input -80",
+							"Id": "selph.ExtraTappers.GiantCropHoney",
+							"ItemId": "FLAVORED_ITEM Honey DROP_IN_ID",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{I.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{I.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{I.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						},
+						{
+							"DaysUntilReady": 1,
+							"Id": "selph.ExtraTappers.GiantCropJuice",
+							"ItemId": "FLAVORED_ITEM Juice DROP_IN_ID",
+							"MinStack": 1,
+							"MaxStack": 1,
+							"StackModifiers": [
+								{
+									"Id": "100ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 100",
+									"Modification": "Add",
+									"Amount": "{{I.T 100 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "300ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 300",
+									"Modification": "Add",
+									"Amount": "{{I.T 300 Items Foraged Bonus}}"
+								},
+								{
+									"Id": "500ItemsForaged",
+									"Condition": "PLAYER_STAT Current itemsForaged 500",
+									"Modification": "Add",
+									"Amount": "{{I.T 500 Items Foraged Bonus}}"
+								}
+							],
+							"StackModifierMode": "Stack"
+						}
+					]
+				}
+			},
+			"When": {
+				"HasMod": "selph.ExtraTappers"
+			}
+		}
+	] 
+}

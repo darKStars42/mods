@@ -1,0 +1,752 @@
+{
+    "Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"Enable Roe": true
+			},
+			"Entries": {
+				"(BC)nachonline.mps_GoldBaitMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Bait DROP_IN_ID",
+									"MinStack": "{{G.B.M Minimum Bait Quantity}}",
+									"MaxStack": "{{G.B.M Maximum Bait Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 100",
+											"Modification": "Add",
+											"Amount": "{{G.B.M 100 Times Fished Bonus}}"
+										},
+										{
+											"Id": "300TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 300",
+											"Modification": "Add",
+											"Amount": "{{G.B.M 300 Times Fished Bonus}}"
+										},
+										{
+											"Id": "500TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 500",
+											"Modification": "Add",
+											"Amount": "{{G.B.M 500 Times Fished Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "GoldRoeDropChance"
+									}
+								}
+							],
+							"MinutesUntilReady": 10
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_DiamondBaitMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Bait DROP_IN_ID",
+									"MinStack": "{{D.B.M Minimum Bait Quantity}}",
+									"MaxStack": "{{D.B.M Maximum Bait Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 100",
+											"Modification": "Add",
+											"Amount": "{{D.B.M 100 Times Fished Bonus}}"
+										},
+										{
+											"Id": "300TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 300",
+											"Modification": "Add",
+											"Amount": "{{D.B.M 300 Times Fished Bonus}}"
+										},
+										{
+											"Id": "500TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 500",
+											"Modification": "Add",
+											"Amount": "{{D.B.M 500 Times Fished Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "DiamondRoeDropChance"
+									}
+								}
+							],
+							"MinutesUntilReady": 10
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_IridiumBaitMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Bait DROP_IN_ID",
+									"MinStack": "{{I.B.M Minimum Bait Quantity}}",
+									"MaxStack": "{{I.B.M Maximum Bait Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 100",
+											"Modification": "Add",
+											"Amount": "{{I.B.M 100 Times Fished Bonus}}"
+										},
+										{
+											"Id": "300TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 300",
+											"Modification": "Add",
+											"Amount": "{{I.B.M 300 Times Fished Bonus}}"
+										},
+										{
+											"Id": "500TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 500",
+											"Modification": "Add",
+											"Amount": "{{I.B.M 500 Times Fished Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "IridiumRoeDropChance"
+									}
+								}
+							],
+							"MinutesUntilReady": 10
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_RadioactiveBaitMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Bait DROP_IN_ID",
+									"MinStack": "{{R.B.M Minimum Bait Quantity}}",
+									"MaxStack": "{{R.B.M Maximum Bait Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 100",
+											"Modification": "Add",
+											"Amount": "{{R.B.M 100 Times Fished Bonus}}"
+										},
+										{
+											"Id": "300TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 300",
+											"Modification": "Add",
+											"Amount": "{{R.B.M 300 Times Fished Bonus}}"
+										},
+										{
+											"Id": "500TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 500",
+											"Modification": "Add",
+											"Amount": "{{R.B.M 500 Times Fished Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "RadioactiveRoeDropChance"
+									}
+								}
+							],
+							"MinutesUntilReady": 10
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_PrismaticBaitMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Bait DROP_IN_ID",
+									"MinStack": "{{P.B.M Minimum Bait Quantity}}",
+									"MaxStack": "{{P.B.M Maximum Bait Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 100",
+											"Modification": "Add",
+											"Amount": "{{P.B.M 100 Times Fished Bonus}}"
+										},
+										{
+											"Id": "300TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 300",
+											"Modification": "Add",
+											"Amount": "{{P.B.M 300 Times Fished Bonus}}"
+										},
+										{
+											"Id": "500TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 500",
+											"Modification": "Add",
+											"Amount": "{{P.B.M 500 Times Fished Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack",
+									"CustomData": {
+										"selph.ExtraMachineConfig.ExtraOutputIds": "PrismaticRoeDropChance"
+									}
+								}
+							],
+							"MinutesUntilReady": 10
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"When": {
+				"Enable Roe": false
+			},
+			"Entries": {
+				"(BC)nachonline.mps_GoldBaitMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Bait DROP_IN_ID",
+									"MinStack": "{{G.B.M Minimum Bait Quantity}}",
+									"MaxStack": "{{G.B.M Maximum Bait Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 100",
+											"Modification": "Add",
+											"Amount": "{{G.B.M 100 Times Fished Bonus}}"
+										},
+										{
+											"Id": "300TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 300",
+											"Modification": "Add",
+											"Amount": "{{G.B.M 300 Times Fished Bonus}}"
+										},
+										{
+											"Id": "500TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 500",
+											"Modification": "Add",
+											"Amount": "{{G.B.M 500 Times Fished Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 10
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_DiamondBaitMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Bait DROP_IN_ID",
+									"MinStack": "{{D.B.M Minimum Bait Quantity}}",
+									"MaxStack": "{{D.B.M Maximum Bait Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 100",
+											"Modification": "Add",
+											"Amount": "{{D.B.M 100 Times Fished Bonus}}"
+										},
+										{
+											"Id": "300TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 300",
+											"Modification": "Add",
+											"Amount": "{{D.B.M 300 Times Fished Bonus}}"
+										},
+										{
+											"Id": "500TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 500",
+											"Modification": "Add",
+											"Amount": "{{D.B.M 500 Times Fished Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 10
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_IridiumBaitMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Bait DROP_IN_ID",
+									"MinStack": "{{I.B.M Minimum Bait Quantity}}",
+									"MaxStack": "{{I.B.M Maximum Bait Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 100",
+											"Modification": "Add",
+											"Amount": "{{I.B.M 100 Times Fished Bonus}}"
+										},
+										{
+											"Id": "300TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 300",
+											"Modification": "Add",
+											"Amount": "{{I.B.M 300 Times Fished Bonus}}"
+										},
+										{
+											"Id": "500TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 500",
+											"Modification": "Add",
+											"Amount": "{{I.B.M 500 Times Fished Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 10
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_RadioactiveBaitMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Bait DROP_IN_ID",
+									"MinStack": "{{R.B.M Minimum Bait Quantity}}",
+									"MaxStack": "{{R.B.M Maximum Bait Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 100",
+											"Modification": "Add",
+											"Amount": "{{R.B.M 100 Times Fished Bonus}}"
+										},
+										{
+											"Id": "300TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 300",
+											"Modification": "Add",
+											"Amount": "{{R.B.M 300 Times Fished Bonus}}"
+										},
+										{
+											"Id": "500TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 500",
+											"Modification": "Add",
+											"Amount": "{{R.B.M 500 Times Fished Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 10
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				},
+				"(BC)nachonline.mps_PrismaticBaitMaker": {
+					"OutputRules": [
+						{
+							"Id": "Default",
+							"Triggers": [
+								{
+									"RequiredTags": [
+										"category_fish"
+									]
+								}
+							],
+							"OutputItem": [
+								{
+									"Id": "Default",
+									"ItemId": "FLAVORED_ITEM Bait DROP_IN_ID",
+									"MinStack": "{{P.B.M Minimum Bait Quantity}}",
+									"MaxStack": "{{P.B.M Maximum Bait Quantity}}",
+									"StackModifiers": [
+										{
+											"Id": "100TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 100",
+											"Modification": "Add",
+											"Amount": "{{P.B.M 100 Times Fished Bonus}}"
+										},
+										{
+											"Id": "300TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 300",
+											"Modification": "Add",
+											"Amount": "{{P.B.M 300 Times Fished Bonus}}"
+										},
+										{
+											"Id": "500TimesFished",
+											"Condition": "PLAYER_STAT Current timesFished 500",
+											"Modification": "Add",
+											"Amount": "{{P.B.M 500 Times Fished Bonus}}"
+										}
+									],
+									"StackModifierMode": "Stack"
+								}
+							],
+							"MinutesUntilReady": 10
+						}
+					],
+					"LoadEffects": [
+						{
+							"Sounds": [
+								{
+									"Id": "fishSlap"
+								}
+							]
+						}
+					],
+					"WobbleWhileWorking": true
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Target": "selph.ExtraMachineConfig/ExtraOutputs",
+			"Entries": {
+				"GoldRoeDropChance": {
+					"Id": "GoldRoeDropChance",
+					"ItemId": "FLAVORED_ITEM Roe DROP_IN_ID",
+					"Condition": "RANDOM {{G.B.M Roe Chance}}",
+					"MinStack": "{{G.B.M Minimum Roe Quantity}}",
+					"MaxStack": "{{G.B.M Maximum Roe Quantity}}",
+					"StackModifiers": [
+						{
+							"Id": "100TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 100",
+							"Modification": "Add",
+							"Amount": "{{G.B.M 100 Times Fished Bonus}}"
+						},
+						{
+							"Id": "300TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 300",
+							"Modification": "Add",
+							"Amount": "{{G.B.M 300 Times Fished Bonus}}"
+						},
+						{
+							"Id": "500TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 500",
+							"Modification": "Add",
+							"Amount": "{{G.B.M 500 Times Fished Bonus}}"
+						}
+					],
+					"StackModifierMode": "Stack"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Target": "selph.ExtraMachineConfig/ExtraOutputs",
+			"Entries": {
+				"DiamondRoeDropChance": {
+					"Id": "DiamondRoeDropChance",
+					"ItemId": "FLAVORED_ITEM Roe DROP_IN_ID",
+					"Condition": "RANDOM {{D.B.M Roe Chance}}",
+					"MinStack": "{{D.B.M Minimum Roe Quantity}}",
+					"MaxStack": "{{D.B.M Maximum Roe Quantity}}",
+					"StackModifiers": [
+						{
+							"Id": "100TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 100",
+							"Modification": "Add",
+							"Amount": "{{D.B.M 100 Times Fished Bonus}}"
+						},
+						{
+							"Id": "300TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 300",
+							"Modification": "Add",
+							"Amount": "{{D.B.M 300 Times Fished Bonus}}"
+						},
+						{
+							"Id": "500TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 500",
+							"Modification": "Add",
+							"Amount": "{{D.B.M 500 Times Fished Bonus}}"
+						}
+					],
+					"StackModifierMode": "Stack"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Target": "selph.ExtraMachineConfig/ExtraOutputs",
+			"Entries": {
+				"IridiumRoeDropChance": {
+					"Id": "IridiumRoeDropChance",
+					"ItemId": "FLAVORED_ITEM Roe DROP_IN_ID",
+					"Condition": "RANDOM {{I.B.M Roe Chance}}",
+					"MinStack": "{{I.B.M Minimum Roe Quantity}}",
+					"MaxStack": "{{I.B.M Maximum Roe Quantity}}",
+					"StackModifiers": [
+						{
+							"Id": "100TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 100",
+							"Modification": "Add",
+							"Amount": "{{I.B.M 100 Times Fished Bonus}}"
+						},
+						{
+							"Id": "300TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 300",
+							"Modification": "Add",
+							"Amount": "{{I.B.M 300 Times Fished Bonus}}"
+						},
+						{
+							"Id": "500TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 500",
+							"Modification": "Add",
+							"Amount": "{{I.B.M 500 Times Fished Bonus}}"
+						}
+					],
+					"StackModifierMode": "Stack"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Target": "selph.ExtraMachineConfig/ExtraOutputs",
+			"Entries": {
+				"RadioactiveRoeDropChance": {
+					"Id": "RadioactiveRoeDropChance",
+					"ItemId": "FLAVORED_ITEM Roe DROP_IN_ID",
+					"Condition": "RANDOM {{R.B.M Roe Chance}}",
+					"MinStack": "{{R.B.M Minimum Roe Quantity}}",
+					"MaxStack": "{{R.B.M Maximum Roe Quantity}}",
+					"StackModifiers": [
+						{
+							"Id": "100TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 100",
+							"Modification": "Add",
+							"Amount": "{{R.B.M 100 Times Fished Bonus}}"
+						},
+						{
+							"Id": "300TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 300",
+							"Modification": "Add",
+							"Amount": "{{R.B.M 300 Times Fished Bonus}}"
+						},
+						{
+							"Id": "500TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 500",
+							"Modification": "Add",
+							"Amount": "{{R.B.M 500 Times Fished Bonus}}"
+						}
+					],
+					"StackModifierMode": "Stack"
+				}
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Target": "selph.ExtraMachineConfig/ExtraOutputs",
+			"Entries": {
+				"PrismaticRoeDropChance": {
+					"Id": "PrismaticRoeDropChance",
+					"ItemId": "FLAVORED_ITEM Roe DROP_IN_ID",
+					"Condition": "RANDOM {{P.B.M Roe Chance}}",
+					"MinStack": "{{P.B.M Minimum Roe Quantity}}",
+					"MaxStack": "{{P.B.M Maximum Roe Quantity}}",
+					"StackModifiers": [
+						{
+							"Id": "100TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 100",
+							"Modification": "Add",
+							"Amount": "{{P.B.M 100 Times Fished Bonus}}"
+						},
+						{
+							"Id": "300TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 300",
+							"Modification": "Add",
+							"Amount": "{{P.B.M 300 Times Fished Bonus}}"
+						},
+						{
+							"Id": "500TimesFished",
+							"Condition": "PLAYER_STAT Current timesFished 500",
+							"Modification": "Add",
+							"Amount": "{{P.B.M 500 Times Fished Bonus}}"
+						}
+					],
+					"StackModifierMode": "Stack"
+				}
+			}
+		}
+	] 
+}

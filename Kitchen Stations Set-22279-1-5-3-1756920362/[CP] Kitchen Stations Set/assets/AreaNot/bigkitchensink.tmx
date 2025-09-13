@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="5" height="4" tilewidth="16" tileheight="16" infinite="0" nextlayerid="32" nextobjectid="372">
+ <properties>
+  <property name="DayTiles" value="Front 6 83 859 Front 7 83 860 Front 6 82 827 Front 7 82 828"/>
+  <property name="EntryLocation" value="8 26"/>
+  <property name="FloorIDs" value="Bedroom, Bedroom1, Bedroom2, Bedroom3, Bedroom4, Bathroom, Hall, Hall1, Hall2, Hall3, Hall4, Hall5 Kitchen, Kitchen1, Kitchen2, Atc, Atc1, Atc2, Atc3, Atc4, balc, balc1, balc2, balc3, balc4, Nursery"/>
+  <property name="NightTiles" value="Front 6 83 861 Front 7 83 862 Front 6 82 829 Front 7 82 830"/>
+  <property name="WallIDs" value="Bedroom, Bedroom1, Bedroom2, Bedroom3, Bedroom4, Bathroom, Hall, Hall1, Hall2, Hall3, Hall5, Kitchen, Kitchen1, Kitchen2, Atc, Atc1, Atc2, Atc3, Atc4, balc, balc1, balc2, balc3, balc4, Nursery"/>
+  <property name="Warp" value="8 27 Farm 64 15 23 108 FarmHouse 29 13 24 108 FarmHouse 30 13"/>
+  <property name="asdf" type="bool" value="false"/>
+ </properties>
+ <tileset firstgid="1" name="untitled tile sheet" tilewidth="16" tileheight="16" tilecount="264" columns="12">
+  <image source="farmhouse_tiles" width="192" height="352"/>
+ </tileset>
+ <tileset firstgid="265" name="walls_and_floors" tilewidth="16" tileheight="16" tilecount="688" columns="16">
+  <image source="walls_and_floors" width="256" height="688"/>
+ </tileset>
+ <tileset firstgid="953" name="indoor" tilewidth="16" tileheight="16" tilecount="2176" columns="32">
+  <image source="townInterior.png" width="512" height="1088"/>
+ </tileset>
+ <layer id="1" name="Back" width="5" height="4">
+  <data encoding="csv">
+0,0,0,0,0,
+0,0,0,0,0,
+0,0,0,0,0,
+811,812,811,812,811
+</data>
+ </layer>
+ <layer id="2" name="Buildings" width="5" height="4">
+  <data encoding="csv">
+0,0,0,0,0,
+0,0,0,0,0,
+297,297,297,297,297,
+170,171,172,173,174
+</data>
+ </layer>
+ <layer id="3" name="Front" width="5" height="4">
+  <data encoding="csv">
+0,0,0,0,0,
+146,147,148,149,150,
+158,159,160,161,162,
+0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="4" name="Back">
+  <object id="203" name="TileData" x="0" y="0" width="80" height="16">
+   <properties>
+    <property name="Passable" value="t"/>
+    <property name="WallID" value="Kitchen"/>
+   </properties>
+  </object>
+  <object id="216" name="TileData" x="0" y="32" width="80" height="32">
+   <properties>
+    <property name="FloorID" value="Kitchen1"/>
+   </properties>
+  </object>
+  <object id="364" name="TileData" x="48" y="48" width="16" height="16">
+   <properties>
+    <property name="WaterSource" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="Buildings">
+  <object id="369" name="TileData" x="0" y="48" width="16" height="16">
+   <properties>
+    <property name="Action" value="leclair.bettercrafting_OpenMenu BetterCraft.SushiBar"/>
+   </properties>
+  </object>
+  <object id="370" name="TileData" x="16" y="48" width="16" height="16">
+   <properties>
+    <property name="Action" value="leclair.bettercrafting_OpenMenu BetterCraft.KitchenCounter"/>
+   </properties>
+  </object>
+  <object id="371" name="TileData" x="32" y="48" width="16" height="16">
+   <properties>
+    <property name="Action" value="leclair.bettercrafting_OpenMenu BetterCraft.OvenStove"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="Front"/>
+</map>

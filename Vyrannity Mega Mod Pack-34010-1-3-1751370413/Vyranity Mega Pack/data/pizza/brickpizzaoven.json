@@ -1,0 +1,1195 @@
+{
+    "Changes": [
+        {
+            "LogName": "Create brick pizza oven",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "Entries": {
+                "(BC){{ModId}}_BrickPizzaOven": {
+                    "OutputRules": [
+                        {
+                            "Id": "{{ModId}}_CheesePizza",
+                            "Triggers": [
+                                {
+                                    "Id": "CheesePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)424"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_CheesePizza",
+                                    "ItemId": "(O){{ModId}}_CheesePizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                        "{{selphNum}}.1": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Cheese_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_MozzarellaPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "MozzarellaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_Mozzarella"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_MozzarellaPizza",
+                                    "ItemId": "(O){{ModId}}_MozzarellaPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)256",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O){{ModId}}_PizzaCrust",
+                                        "{{selphNum}}.2": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Mozzarella_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_MargheritaPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "TeaLeavesPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)815"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_MargheritaPizza",
+                                    "ItemId": "(O){{ModId}}_MargheritaPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O){{ModId}}_PizzaCrust",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)256",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_Mozzarella",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Margherita_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_PestoPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "OilPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)247"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PestoPizza",
+                                    "ItemId": "(O){{ModId}}_PestoPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)815",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)248",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_Mozzarella",
+                                        "{{selphNum}}.3": 1,
+                                        "{{selphId}}.4": "(O){{ModId}}_PizzaCrust",
+                                        "{{selphNum}}.4": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Pesto_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_VegetarianPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "EggplantPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)272"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_VegetarianPizza",
+                                    "ItemId": "(O){{ModId}}_VegetarianPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)260",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O){{ModId}}_MozzarellaPizza",
+                                        "{{selphNum}}.2": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Vegetarian_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_TunaPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "TunaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)130"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_TunaPizza",
+                                    "ItemId": "(O){{ModId}}_TunaPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)399",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O){{ModId}}_MargheritaPizza",
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Tuna_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_VeganPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "SpringOnionPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)399"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_VeganPizza",
+                                    "ItemId": "(O){{ModId}}_VeganPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)260",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)404",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_PizzaCrust",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Vegan_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_AnchovyPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "AnchovyPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)129"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_AnchovyPizza",
+                                    "ItemId": "(O){{ModId}}_AnchovyPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)399",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O){{ModId}}_MargheritaPizza",
+                                        "{{selphNum}}.2": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Anchovy_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_ArtichokePizza",
+                            "Triggers": [
+                                {
+                                    "Id": "ArtichokePlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)274"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_ArtichokePizza",
+                                    "ItemId": "(O){{ModId}}_ArtichokePizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)184",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)250",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_MargheritaPizza",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Artichoke_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_GarlicPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "GarlicPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)248"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_GarlicPizza",
+                                    "ItemId": "(O){{ModId}}_GarlicPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)424",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O){{ModId}}_PizzaCrust",
+                                        "{{selphNum}}.2": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Garlic_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_CornPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "CornPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)270"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_CornPizza",
+                                    "ItemId": "(O){{ModId}}_CornPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)399",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)260",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_MozzarellaPizza",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Corn_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_NYPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "MozzarellaPizzaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_MozzarellaPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_NYPizza",
+                                    "ItemId": "(O){{ModId}}_NYPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)815",
+                                        "{{selphNum}}.1": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:NY_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_DeluxePepperoniPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "PepperoniPizzaPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O){{ModId}}_PepperoniPizza"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_DeluxePepperoniPizza",
+                                    "ItemId": "(O){{ModId}}_DeluxePepperoniPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)399",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)815",
+                                        "{{selphNum}}.2": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:DeluxePep_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_RedMushroomPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "RedMushroomPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)420"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_RedMushroomPizza",
+                                    "ItemId": "(O){{ModId}}_RedMushroomPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)404",
+                                        "{{selphNum}}.1": 3,
+                                        "{{selphId}}.2": "(O){{ModId}}_MargheritaPizza",
+                                        "{{selphNum}}.2": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Mushroom_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_PurpleMushroomPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "PurpleMushroomPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)422"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PurpleMushroomPizza",
+                                    "ItemId": "(O){{ModId}}_PurpleMushroomPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)404",
+                                        "{{selphNum}}.1": 3,
+                                        "{{selphId}}.2": "(O){{ModId}}_MargheritaPizza",
+                                        "{{selphNum}}.2": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Mushroom_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_PotatoRosemaryPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "PotatoPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)192"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_PotatoRosemaryPizza",
+                                    "ItemId": "(O){{ModId}}_PotatoRosemaryPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)815",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O){{ModId}}_MargheritaPizza",
+                                        "{{selphNum}}.2": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Potato_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_ShellfishPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "ShrimpPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)720"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_ShellfishPizza",
+                                    "ItemId": "(O){{ModId}}_ShellfishPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O)723",
+                                        "{{selphNum}}.1": 1,
+                                        "{{selphId}}.2": "(O)719",
+                                        "{{selphNum}}.2": 1,
+                                        "{{selphId}}.3": "(O){{ModId}}_MargheritaPizza",
+                                        "{{selphNum}}.3": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Shellfish_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        },
+                        {
+                            "Id": "{{ModId}}_TomatoPizza",
+                            "Triggers": [
+                                {
+                                    "Id": "TomatoPlacedInMachine",
+                                    "Trigger": "ItemPlacedInMachine",
+                                    "RequiredItemId": "(O)256"
+                                }
+                            ],
+                            "OutputItem": [
+                                {
+                                    "Id": "{{ModId}}_TomatoPizza",
+                                    "ItemId": "(O){{ModId}}_TomatoPizza",
+                                    "CustomData": {
+                                        "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                        "{{selphNum}}.1": 1,
+                                        "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Tomato_Msg}}"
+                                    }
+                                }
+                            ],
+                            "MinutesUntilReady": 600
+                        }
+                    ],
+                    "WorkingEffects": [
+                        {
+                            "Id": "DefaultWorkEffects",
+                            "Frames": [1, 2, 3, 4],
+                            "Interval": 100
+                        }
+                    ],
+                    "WorkingEffectsChance": 1,
+                    "WobbleWhileWorking": false
+                }
+            }
+        },
+        {
+            "LogName": "Add vanilla only meat recipes",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC){{ModId}}_BrickPizzaOven", "OutputRules"],
+            "Entries": {
+                "{{ModId}}_BBQChickenPizza": {
+                    "Id": "{{ModId}}_BBQChickenPizza",
+                    "Triggers": [
+                        {
+                            "Id": "CoalPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)382"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_BBQChickenPizza",
+                            "ItemId": "(O){{ModId}}_BBQChickenPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O)260",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)399",
+                                "{{selphNum}}.2": 1,
+                                "{{selphId}}.3": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.3": 1,
+                                "{{selphId}}.4": "(O)684",
+                                "{{selphNum}}.4": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:BBQ_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_HawaiianPizza": {
+                    "Id": "{{ModId}}_HawaiianPizza",
+                    "Triggers": [
+                        {
+                            "Id": "PineapplePlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)832"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_HawaiianPizza",
+                            "ItemId": "(O){{ModId}}_HawaiianPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.1": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Hawaiian_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_PizzaDiavola": {
+                    "Id": "{{ModId}}_PizzaDiavola",
+                    "Triggers": [
+                        {
+                            "Id": "HotPepperPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)260"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_PizzaDiavola",
+                            "ItemId": "(O){{ModId}}_PizzaDiavola",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)684",
+                                "{{selphNum}}.2": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Diavola_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_MeatloversPizza": {
+                    "Id": "{{ModId}}_MeatloversPizza",
+                    "Triggers": [
+                        {
+                            "Id": "BugSteakPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)874"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_MeatloversPizza",
+                            "ItemId": "(O){{ModId}}_MeatloversPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O)684",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.2": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Meatlovers_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_ShawarmaPizza": {
+                    "Id": "{{ModId}}_ShawarmaPizza",
+                    "Triggers": [
+                        {
+                            "Id": "GarlicPizzaPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O){{ModId}}_GarlicPizza"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_ShawarmaPizza",
+                            "ItemId": "(O){{ModId}}_ShawarmaPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{RoseId}}_Mutton",
+                                "{{selphNum}}.1": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Shawarma_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_PepperoniPizza": {
+                    "Id": "{{ModId}}_PepperoniPizza",
+                    "Triggers": [
+                        {
+                            "Id": "BugMeatPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)684"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_PepperoniPizza",
+                            "ItemId": "(O){{ModId}}_PepperoniPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MargheritaPizza",
+                                "{{selphNum}}.1": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Pepperoni_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_SausagePizza": {
+                    "Id": "{{ModId}}_SausagePizza",
+                    "Triggers": [
+                        {
+                            "Id": "PizzaCrustPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O){{ModId}}_PizzaCrust"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_SausagePizza",
+                            "ItemId": "(O){{ModId}}_SausagePizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_Mozzarella",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)256",
+                                "{{selphNum}}.2": 1,
+                                "{{selphId}}.3": "(O)684",
+                                "{{selphNum}}.3": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Sausage_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                }
+            },
+            "When": {
+                "Use Rosa's Meats": false,
+                "Use Animal Husbandry Meat": false,
+                "Use Generic Meat": false
+            }
+        },
+        {
+            "LogName": "Add Rosa Meat recipes",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC){{ModId}}_BrickPizzaOven", "OutputRules"],
+            "Entries": {
+                "{{ModId}}_BBQPizza_Rosa": {
+                    "Id": "{{ModId}}_BBQChickenPizza_Rosa",
+                        "Triggers": [
+                            {
+                                "Id": "CoalPlacedInMachine",
+                                "Trigger": "ItemPlacedInMachine",
+                                "RequiredItemId": "(O)382"
+                            }
+                        ],
+                        "OutputItem": [
+                            {
+                                "Id": "{{ModId}}_BBQChickenPizza",
+                                "ItemId": "(O){{ModId}}_BBQChickenPizza",
+                                "CustomData": {
+                                    "{{selphId}}.1": "(O)260",
+                                    "{{selphNum}}.1": 1,
+                                    "{{selphId}}.2": "(O)399",
+                                    "{{selphNum}}.2": 1,
+                                    "{{selphId}}.3": "(O){{ModId}}_MozzarellaPizza",
+                                    "{{selphNum}}.3": 1,
+                                    "{{selphId}}.4": "(O){{RoseId}}_Chicken",
+                                    "{{selphNum}}.4": 1,
+                                    "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:BBQRosa_Msg}}"
+                                }
+                            }
+                        ],
+                        "MinutesUntilReady": 600
+                },
+                "{{ModId}}_HawaiianPizza_Rosa": {
+                    "Id": "{{ModId}}_HawaiianPizza_Rosa",
+                    "Triggers": [
+                        {
+                            "Id": "PineapplePlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)832"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_HawaiianPizza",
+                            "ItemId": "(O){{ModId}}_HawaiianPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O){{RoseId}}_Pork",
+                                "{{selphNum}}.2": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:HawaiianRosa_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_PizzaDiavola_Rosa": {
+                    "Id": "{{ModId}}_PizzaDiavola_Rosa",
+                    "Triggers": [
+                        {
+                            "Id": "HotPepperPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)260"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_PizzaDiavola",
+                            "ItemId": "(O){{ModId}}_PizzaDiavola",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O){{RoseId}}_Beef",
+                                "{{selphNum}}.2": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:DiavolaRosa_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_Meatlovers_Rosa": {
+                    "Id": "{{ModId}}_Meatlovers_Rosa",
+                    "Triggers": [
+                        {
+                            "Id": "BugSteakPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O){{RoseId}}_Chicken"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_MeatloversPizza",
+                            "ItemId": "(O){{ModId}}_MeatloversPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{RoseId}}_Beef",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.2": 1,
+                                "{{selphId}}.3": "(O){{RoseId}}_Pork",
+                                "{{selphNum}}.3": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:MeatloversRosa_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_ShawarmaPizza_Rosa": {
+                        "Id": "{{ModId}}_ShawarmaPizza_Rosa",
+                        "Triggers": [
+                            {
+                                "Id": "GarlicPizzaPlacedInMachine",
+                                "Trigger": "ItemPlacedInMachine",
+                                "RequiredItemId": "(O){{ModId}}_GarlicPizza"
+                            }
+                        ],
+                        "OutputItem": [
+                            {
+                                "Id": "{{ModId}}_ShawarmaPizza",
+                                "ItemId": "(O){{ModId}}_ShawarmaPizza",
+                                "CustomData": {
+                                    "{{selphId}}.1": "(O){{RoseId}}_Mutton",
+                                    "{{selphNum}}.1": 1,
+                                    "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:ShawarmaRosa_Msg}}"
+                                }
+                            }
+                        ],
+                        "MinutesUntilReady": 600
+                },
+                "{{ModId}}_PepperoniPizza_Rosa": {
+                    "Id": "{{ModId}}_PepperoniPizza_Rosa",
+                    "Triggers": [
+                        {
+                            "Id": "BugMeatPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O){{RoseId}}_Beef"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_PepperoniPizza",
+                            "ItemId": "(O){{ModId}}_PepperoniPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MargheritaPizza",
+                                "{{selphNum}}.1": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:Pepperoni_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_SausagePizza_Rosa": {
+                    "Id": "{{ModId}}_SausagePizza_Rosa",
+                    "Triggers": [
+                        {
+                            "Id": "PizzaCrustPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O){{ModId}}_PizzaCrust"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_SausagePizza",
+                            "ItemId": "(O){{ModId}}_SausagePizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_Mozzarella",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)256",
+                                "{{selphNum}}.2": 1,
+                                "{{selphId}}.3": "(O){{RoseId}}_Sausage",
+                                "{{selphNum}}.3": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:SausageRosa_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                }
+            },
+            "When": {
+                "Use Rosa's Meats": true,
+                "Use Generic Meat": false
+            }
+        },
+        {
+            "LogName": "Add animal husbandry meat recipes",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC){{ModId}}_BrickPizzaOven", "OutputRules"],
+            "Entries": { 
+                "{{ModId}}_BBQPizza_AH": {
+                    "Id": "{{ModId}}_BBQChickenPizza_AH",
+                        "Triggers": [
+                            {
+                                "Id": "CoalPlacedInMachine",
+                                "Trigger": "ItemPlacedInMachine",
+                                "RequiredItemId": "(O)382"
+                            }
+                        ],
+                        "OutputItem": [
+                            {
+                                "Id": "{{ModId}}_BBQChickenPizza",
+                                "ItemId": "(O){{ModId}}_BBQChickenPizza",
+                                "CustomData": {
+                                    "{{selphId}}.1": "(O)260",
+                                    "{{selphNum}}.1": 1,
+                                    "{{selphId}}.2": "(O)399",
+                                    "{{selphNum}}.2": 1,
+                                    "{{selphId}}.3": "(O){{ModId}}_MozzarellaPizza",
+                                    "{{selphNum}}.3": 1,
+                                    "{{selphId}}.4": "(O)641",
+                                    "{{selphNum}}.4": 1,
+                                    "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:BBQAH_Msg}}"
+                                }
+                            }
+                        ],
+                        "MinutesUntilReady": 600
+                },
+                "{{ModId}}_HawaiianPizza_AH": {
+                    "Id": "{{ModId}}_HawaiianPizza_AH",
+                    "Triggers": [
+                        {
+                            "Id": "PineapplePlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)832"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_HawaiianPizza",
+                            "ItemId": "(O){{ModId}}_HawaiianPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)640",
+                                "{{selphNum}}.2": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:HawaiianAH_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_PizzaDiavola_AH": {
+                    "Id": "{{ModId}}_PizzaDiavola_AH",
+                    "Triggers": [
+                        {
+                            "Id": "HotPepperPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)260"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_PizzaDiavola",
+                            "ItemId": "(O){{ModId}}_PizzaDiavola",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)639",
+                                "{{selphNum}}.2": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:DiavolaAH_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_Meatlovers_AH": {
+                    "Id": "{{ModId}}_Meatlovers_AH",
+                    "Triggers": [
+                        {
+                            "Id": "BugSteakPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)641"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_MeatloversPizza",
+                            "ItemId": "(O){{ModId}}_MeatloversPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O)639",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.2": 1,
+                                "{{selphId}}.3": "(O)640",
+                                "{{selphNum}}.3": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:MeatloversAH_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_ShawarmaPizza_AH": {
+                        "Id": "{{ModId}}_ShawarmaPizza_AH",
+                        "Triggers": [
+                            {
+                                "Id": "GarlicPizzaPlacedInMachine",
+                                "Trigger": "ItemPlacedInMachine",
+                                "RequiredItemId": "(O){{ModId}}_GarlicPizza"
+                            }
+                        ],
+                        "OutputItem": [
+                            {
+                                "Id": "{{ModId}}_ShawarmaPizza",
+                                "ItemId": "(O){{ModId}}_ShawarmaPizza",
+                                "CustomData": {
+                                    "{{selphId}}.1": "(O)644",
+                                    "{{selphNum}}.1": 1,
+                                    "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:ShawarmaAH_Msg}}"
+                                }
+                            }
+                        ],
+                        "MinutesUntilReady": 600
+                },
+                "{{ModId}}_PepperoniPizza_AH": {
+                    "Id": "{{ModId}}_PepperoniPizza_AH",
+                    "Triggers": [
+                        {
+                            "Id": "BeefPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)639"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_PepperoniPizza",
+                            "ItemId": "(O){{ModId}}_PepperoniPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MargheritaPizza",
+                                "{{selphNum}}.1": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:PepperoniAH_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_SausagePizza_AH": {
+                    "Id": "{{ModId}}_SausagePizza_AH",
+                    "Triggers": [
+                        {
+                            "Id": "PizzaCrustPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O){{ModId}}_PizzaCrust"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_SausagePizza",
+                            "ItemId": "(O){{ModId}}_SausagePizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_Mozzarella",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)256",
+                                "{{selphNum}}.2": 1,
+                                "{{selphId}}.3": "(O)660",
+                                "{{selphNum}}.3": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:SausageRosa_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                }
+            },
+            "When": {
+                "Use Animal Husbandry Meat": true,
+                "Use Generic Meat": false
+            }
+        },
+        {
+            "LogName": "Add animal husbandry meat recipes",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": ["(BC){{ModId}}_BrickPizzaOven", "OutputRules"],
+            "Entries": { 
+                "{{ModId}}_BBQPizza_Gen": {
+                    "Id": "{{ModId}}_BBQChickenPizza_Gen",
+                        "Triggers": [
+                            {
+                                "Id": "CoalPlacedInMachine",
+                                "Trigger": "ItemPlacedInMachine",
+                                "RequiredItemId": "(O)382"
+                            }
+                        ],
+                        "OutputItem": [
+                            {
+                                "Id": "{{ModId}}_BBQChickenPizza",
+                                "ItemId": "(O){{ModId}}_BBQChickenPizza",
+                                "CustomData": {
+                                    "{{selphId}}.1": "(O)260",
+                                    "{{selphNum}}.1": 1,
+                                    "{{selphId}}.2": "(O)399",
+                                    "{{selphNum}}.2": 1,
+                                    "{{selphId}}.3": "(O){{ModId}}_MozzarellaPizza",
+                                    "{{selphNum}}.3": 1,
+                                    "{{selphTag}}.4": "meat_item",
+                                    "{{selphNum}}.4": 1,
+                                    "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:BBQGen_Msg}}"
+                                }
+                            }
+                        ],
+                        "MinutesUntilReady": 600
+                },
+                "{{ModId}}_HawaiianPizza_Gen": {
+                    "Id": "{{ModId}}_HawaiianPizza_Gen",
+                    "Triggers": [
+                        {
+                            "Id": "PineapplePlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)832"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_HawaiianPizza",
+                            "ItemId": "(O){{ModId}}_HawaiianPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.1": 1,
+                                "{{selphTag}}.2": "meat_item",
+                                "{{selphNum}}.2": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:HawaiianGen_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_PizzaDiavola_Gen": {
+                    "Id": "{{ModId}}_PizzaDiavola_Gen",
+                    "Triggers": [
+                        {
+                            "Id": "HotPepperPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O)260"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_PizzaDiavola",
+                            "ItemId": "(O){{ModId}}_PizzaDiavola",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.1": 1,
+                                "{{selphTag}}.2": "meat_item",
+                                "{{selphNum}}.2": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:DiavolaGen_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_Meatlovers_Gen": {
+                    "Id": "{{ModId}}_Meatlovers_Gen",
+                    "Triggers": [
+                        {
+                            "Id": "BugSteakPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredTags": ["meat_item"],
+                            "RequiredCount": 3
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_MeatloversPizza",
+                            "ItemId": "(O){{ModId}}_MeatloversPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MozzarellaPizza",
+                                "{{selphNum}}.1": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:MeatloversGen_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_ShawarmaPizza_Gen": {
+                        "Id": "{{ModId}}_ShawarmaPizza_Gen",
+                        "Triggers": [
+                            {
+                                "Id": "GarlicPizzaPlacedInMachine",
+                                "Trigger": "ItemPlacedInMachine",
+                                "RequiredItemId": "(O){{ModId}}_GarlicPizza"
+                            }
+                        ],
+                        "OutputItem": [
+                            {
+                                "Id": "{{ModId}}_ShawarmaPizza",
+                                "ItemId": "(O){{ModId}}_ShawarmaPizza",
+                                "CustomData": {
+                                    "{{selphTag}}.1": "meat_item",
+                                    "{{selphNum}}.1": 1,
+                                    "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:ShawarmaGen_Msg}}"
+                                }
+                            }
+                        ],
+                        "MinutesUntilReady": 600
+                },
+                "{{ModId}}_PepperoniPizza_Gen": {
+                    "Id": "{{ModId}}_PepperoniPizza_Gen",
+                    "Triggers": [
+                        {
+                            "Id": "BeefPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredTags": ["meat_item"]
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_PepperoniPizza",
+                            "ItemId": "(O){{ModId}}_PepperoniPizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_MargheritaPizza",
+                                "{{selphNum}}.1": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:PepperoniGen_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                },
+                "{{ModId}}_SausagePizza_Gen": {
+                    "Id": "{{ModId}}_SausagePizza_Gen",
+                    "Triggers": [
+                        {
+                            "Id": "PizzaCrustPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "(O){{ModId}}_PizzaCrust"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "{{ModId}}_SausagePizza",
+                            "ItemId": "(O){{ModId}}_SausagePizza",
+                            "CustomData": {
+                                "{{selphId}}.1": "(O){{ModId}}_Mozzarella",
+                                "{{selphNum}}.1": 1,
+                                "{{selphId}}.2": "(O)256",
+                                "{{selphNum}}.2": 1,
+                                "{{selphTag}}.3": "meat_item",
+                                "{{selphNum}}.3": 1,
+                                "selph.ExtraMachineConfig.RequirementInvalidMsg": "{{i18n:SausageGen_Msg}}"
+                            }
+                        }
+                    ],
+                    "MinutesUntilReady": 600
+                }
+            },
+            "When": {
+                "Use Rosa's Meats": false,
+                "Use Animal Husbandry Meat": false,
+                "Use Generic Meat": true
+            }
+        
+        } 
+    ]
+ }
